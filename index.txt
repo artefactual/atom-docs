@@ -1,0 +1,32 @@
+.. _index:
+
+===========
+User manual
+===========
+
+User guide to creating, editing, accessing, importing, exporting, and
+translating content in AtoM; includes administering the system.
+
+* Overview
+
+  This section provides an overview of the technical architecture and requirements.
+
+  * :doc:`What is ICA-AtoM? <user-manual/overview/intro>`
+  * Technical requirements
+  * Entity types
+  * Descriptive standards
+
+
+* :doc:`Getting started <user-manual/getting-started>`
+* :doc:`Add/edit content <user-manual/add-edit-content>`
+* :doc:`Access content <user-manual/access-content>`
+* :doc:`Translate <user-manual/translate>`
+* :doc:`Reports/printing <user-manual/reports-printing>`
+* :doc:`Import/export <user-manual/import-export>`
+* :doc:`Administer <user-manual/administer>`
+
+====================
+Administrator manual
+====================
+
+Instructions for installing, upgrading, importing and more.
