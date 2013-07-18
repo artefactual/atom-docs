@@ -5,6 +5,7 @@ ICA-AtoM stands for "International Council on Archives - Access to Memory".
 It is a web-based, open source application for standards based archival
 description in a multilingual, multi-repository environment.
 
+This is awesome!
 
 ==================
 Technical overview
