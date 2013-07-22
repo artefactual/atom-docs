@@ -1,3 +1,7 @@
+.. toctree::
+   :hidden:
+
+   overview/intro
 
 ***********************************
 Welcome to the AtoM 2.0 User Manual 

@@ -10,7 +10,12 @@ translating content in AtoM; includes administering the system.
 :doc:`Open the user manual <user-manual/index>`.
 
 Or don't. Cuz it' not done!
-  
+
+.. toctree::
+   :maxdepth: 2
+
+   user-manual/index
+
 ====================
 Administrator manual
 ====================
