@@ -11,6 +11,8 @@ This is awesome!
 Technical overview
 ==================
 
+.. image:: images/what-is-atom.gif
+
 ICA-AtoM comprises:
 
 HTML pages served to a web browser from a web server. Apache is used in
