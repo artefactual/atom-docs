@@ -11,7 +11,7 @@ Below you'll find an outline of the chapters in the manual, and a set of links t
 
 **Not what you were looking for?**
 
-	* Return to the `AtoM homepage <http://wwww.accesstomemory.org>`_
+	* Return to the `AtoM homepage <http://www.accesstomemory.org>`_
 	* Go the the AtoM Administrators Manual
 	* Go to the AtoM User Forum
 	* Go to AtoM online demo
