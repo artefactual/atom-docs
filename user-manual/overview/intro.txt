@@ -1,17 +1,17 @@
-What is ICA-AtoM?
+What is AtoM?
 =================
 
-ICA-AtoM stands for "International Council on Archives - Access to Memory".
-It is a web-based, open source application for standards based archival
-description in a multilingual, multi-repository environment.
+**AtoM** stands for "Access to Memory". It is a web-based, open source application for standards 
+based archival description in a multilingual, :term:`multi-repository` environment.
 
-This is awesome!
 
 ==================
 Technical overview
 ==================
 
 .. image:: images/what-is-atom.gif
+   :align: right
+
 
 ICA-AtoM comprises:
 
