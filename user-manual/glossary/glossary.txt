@@ -1,0 +1,54 @@
+.. glossary::
+
+	About page
+		The about page provides general information on AtoM. It can be reached via the :term:`user menu` in
+		the top right-hand corner of the page. The content of the about page can be edited by an
+		:term:`administrator` (see :doc:`Manage static pages <../administer/manage-static-pages>`).
+
+	Accession record
+		The accession record is an administrative and descriptive document that summarizes standard
+		information about the process of transferring materials to a repository, including
+		information about the provenance, contents and legal and physical transfer of the records
+		such as, rights and restrictions. See :doc:`Entity types <../overview/entity-types>`
+
+	Access point
+		An access point is "A name, term, keyword, phrase or code that may be used to search,
+		identify and locate an archival description." (ISAD glossary). In ICA-AtoM, access points
+		are derived from authority records and taxonomies created and customized by users. See
+		Add/edit terms.
+
+	Access privilege
+		Access privileges control the ways a user is able to interact with AtoM. For example,
+		some users are able to add and edit content while others may only be able to search and
+		browse content. Access privileges are based on defined user roles (see User roles).
+
+	Accrual
+		An accrual is "an acquisition additional to a unit of description already held by a 
+		repository." (ISAD glossary)
+
+	Add menu
+		The "Add" menu allows authorized users to add new archival descriptions, authority records,
+		archival institutions, terms, and functions. Only logged-in users can see the "Add" menu.
+
+	Add new button
+		The add new button is located in the button block of the view page and allows users to add 
+		new records (archival descriptions, authority records, archival institutions, and terms) to 
+		ICA-AtoM.
+
+	Admin menu
+		The admin menu allows users with administrator access to customize ICA-AtoM to meet 
+		institution-specific requirements and to manage user accounts and user profiles 
+		(see :ref:`Administer`).
+
+
+
+		
+		
+		
+		
+		
+	Administrator
+		The administrator is a type of user who has :term:`access privileges` to do the following:
+		install or uninstall ICA-AtoM; create, read, update, or delete any record; customize AtoM 
+		to institution-specific requirements; and manage :term:`user accounts` and :term:`user profiles` 
+		(see :doc:`User roles <../getting-started/user-roles>` and :ref:`Administer`).
