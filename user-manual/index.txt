@@ -16,6 +16,8 @@ Below you'll find an outline of the chapters in the manual, and a set of links t
 	* Go to the AtoM User Forum
 	* Go to AtoM online demo
 
+.. _overview:	
+
 ========
 Overview
 ========
@@ -27,6 +29,8 @@ Overview
   * Entity types
   * Descriptive standards
 
+.. _getting-started:
+  
 ===============  
 Getting Started  
 ===============
@@ -47,16 +51,17 @@ Add/edit content
 
 	This section describes how to add, edit, and delete content in ICA-AtoM:
 	
-	* Add/edit accession records
-	* Add/edit archival descriptions
-	* Add/edit authority records
-	* Add/edit archival institutions
-	* Add/edit deaccession records
-	* Add/edit donors
-	* Add/edit functions
-	* Add/edit rights
+	* Accession records
+	* Archival descriptions
+	* Authority records
+	* Archival institutions
+	* Deaccession records
+	* Donors
+	* Functions
+	* Rights
 	* Control area
-	* Add/edit terms
+	* Terms
+	* Physical storage
 	* Exit edit mode
 
 .. _access-content:
@@ -71,6 +76,7 @@ Access Content
 	* Advanced search
 	* Browse
 	* Navigate
+	* Context menu
 
 .. _translate:
 
