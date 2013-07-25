@@ -1,9 +1,13 @@
+==================================
+AtoM User Manual Glossary of Terms
+==================================
+
 .. glossary::
 
 	About page
 		The about page provides general information on AtoM. It can be reached via the :term:`user menu` in
-		the top right-hand corner of the page. The content of the about page can be edited by an
-		:term:`administrator` (see :doc:`Manage static pages <../administer/manage-static-pages>`).
+		the top right-hand corner of the page. The content of the about page can be edited by 
+		:term:`administrators <administrator>` (see :doc:`Manage static pages <../administer/manage-static-pages>`).
 
 	Accession record
 		The accession record is an administrative and descriptive document that summarizes standard
@@ -13,42 +17,154 @@
 
 	Access point
 		An access point is "A name, term, keyword, phrase or code that may be used to search,
-		identify and locate an archival description." (ISAD glossary). In ICA-AtoM, access points
-		are derived from authority records and taxonomies created and customized by users. See
-		Add/edit terms.
+		identify and locate an archival description." (ISAD glossary). In AtoM, access points
+		are derived from :term:`authority records <authority record>` and :term:`taxonomies <taxonomy>` 
+		created and customized by users. See :doc:`Terms </add-edit-content/terms>`.
 
 	Access privilege
 		Access privileges control the ways a user is able to interact with AtoM. For example,
 		some users are able to add and edit content while others may only be able to search and
-		browse content. Access privileges are based on defined user roles (see User roles).
+		browse content. Access privileges are based on defined :term:`user roles <user role>` (see :doc:`User roles <../getting-started/user-roles>`).
 
 	Accrual
 		An accrual is "an acquisition additional to a unit of description already held by a 
 		repository." (ISAD glossary)
 
 	Add menu
-		The "Add" menu allows authorized users to add new archival descriptions, authority records,
-		archival institutions, terms, and functions. Only logged-in users can see the "Add" menu.
+		The "Add" menu allows authorized users to add new :term:`archival descriptions <archival description>`, 
+		:term:`authority records <authority record>`, :term:`archival institutions <archival institution>`, 
+		:term:`terms <term>`, and :term:`functions <function>`. Only logged-in users can see the "Add" menu.
 
 	Add new button
-		The add new button is located in the button block of the view page and allows users to add 
-		new records (archival descriptions, authority records, archival institutions, and terms) to 
-		ICA-AtoM.
+		The add new button is located in the :term:`button block <button block>` of the :term:`view page <view page>`
+		and allows users to add new records (:term:`archival descriptions <archival description>`, 
+		:term:`authority records <authority record>`, :term:`archival institutions <archival institution>`, and
+		:term:`terms <term>`) to AtoM.
 
 	Admin menu
-		The admin menu allows users with administrator access to customize ICA-AtoM to meet 
-		institution-specific requirements and to manage user accounts and user profiles 
-		(see :ref:`Administer`).
+		The admin menu allows users with :term:`administrator <administrator>` access to customize AtoM to meet 
+		institution-specific requirements and to manage :term:`user accounts <user account> and 
+		:term:`user profiles <user profile>`. The admin menu is only visible to users with administrator privileges.
+		See :ref:`Administer <administer>`.
 
+	Administration area
+		The Administration area is part of the resource description edit template. It allows the User to
+		change the publication status of the resource - Draft (this resource description is not available for
+		public viewing) and Published (this resource description is available for public viewing).
 
-
-		
-		
-		
-		
-		
 	Administrator
-		The administrator is a type of user who has :term:`access privileges` to do the following:
-		install or uninstall ICA-AtoM; create, read, update, or delete any record; customize AtoM 
-		to institution-specific requirements; and manage :term:`user accounts` and :term:`user profiles` 
-		(see :doc:`User roles <../getting-started/user-roles>` and :ref:`Administer`).
+		The administrator is a type of user who has :term:`access privileges <access privilege>` to do the 
+		following: install or uninstall ICA-AtoM; create, read, update, or delete any record; customize AtoM 
+		to institution-specific requirements or themes; and manage :term:`user accounts <user account>` and
+		:term:`user profiles <user profile>` (see :doc:`User roles <../getting-started/user-roles>` and
+		:ref:`Administer <administer>`).
+		
+	Advanced search
+		The advanced search is used to find descriptions in AtoM that contain text matching a search query.
+		The advanced search hyperlink can be accessed in the drop-down that appears when a user places the cursor
+		in the :term:`search box`. In the advanced search page, the user can select "and, or, not" operators, and search
+		specific fields, to create a powerful search query. The option to apply filters to limit or narrow the search
+		are also provided.
+	
+	Archival description
+		An archival description is a body of information about an archival record or records. The descriptions
+		provide contextual information about the archival materials and are arranged into hierarchical levels (fonds, 
+		series, files, items, and variations of these in accordance with institutional standards).
+
+		The International Council on Archives (`ICA <http://www.ica.org/>`_) defines an archival description as 
+		"The creation of an accurate representation of a unit of description and its component parts, if any, by 
+		capturing, analyzing, organizing and recording information that serves to identify, manage, locate and 
+		explain archival materials and the context and records systems which produced it. This term also describes 
+		the products of the process" (ISAD glossary).
+
+		In AtoM the :term:`data elements <data element>` used for describing archival records are derived from the ICA's *General International 
+		Standard Archival Description* (ISAD). See :doc:`Entity types <../overview/entity-types>` and 
+		:doc:`Archival descriptions <../add-edit-content/archival-descriptions>`.
+		
+	Archival institution
+		An archival institution is "An organization which keeps and preserves archival material and makes it 
+		accessible to the public" (ISDIAH glossary). In AtoM the :term:`data elements <data element>` used to 
+		describe such institutions are based on the ICA's *International Standard for Describing Institutions with 
+		Archival Holdings* (ISDIAH). See entity types and Add/edit archival institutions.
+	
+	Archival unit
+		Archival unit is a generic term for an aggregation of archival materials. A unit can be a :term:`fonds`, series, 
+		file, item, or variation thereof, depending on institutional standards. A unit may be divided into 
+		sub-units for the purposes of description: e.g. a :term:`fonds` may contain several series, each of which 
+		may contain several files, and so forth. The smallest (and therefore indivisible) unit is the item. See also 
+		:term:`level of description`.
+		
+	Arrangmement
+		The International Council on Archives (`ICA <http://www.ica.org/>`_) defines arrangement as "the intellectual and 
+		physical processes and results of analyzing and organizing documents in accordance with archival principles" (ISAD glossary).
+		
+	Authority record
+		In AtoM, authority records are collections of information about actors - corporate bodies, persons, or families - who interact 
+		with archival materials, typically as :term:`creators <creator>`. The :term:`data elements <data element>` used to describe authority records are based on the ICA's 
+		*International Standard Archival Authority Record for Corporate Bodies, Persons and Families* (ISAAR). ISAAR defines authority record as 
+		"The authorized form of name combined with other information elements that identify and describe the named entity and may also point 
+		to other related authority records." See :doc:`Entity types <../overview/entity-types>` and 
+		:doc:`Authority records <../add-edit-content/authority-records>`.
+	
+	Browse menu
+		Browsing allows a user to see all records that have a certain type of :term:`access point` (such as :term:`subject`, :term:`name`, or 
+		:term:`place) or other type of filter, such as :term:`media type` or type of :term:`entity`. In AtoM's default theme (the Dominion theme) 
+		the browse menu appears in a drop-down next to the :term:`search box`, as well as on the :term:`home page`.
+	
+	Button block
+		The button block allows authorized users to add, edit, delete, move, and duplicate content and to save or cancel changes made 
+		in the :term:`edit pages <edit page>`.
+
+	Carousel
+		The carousel shows sets of :term:`thumbnails <thumbnail>` of :term:`digital objects <digital object>` and allows the user to scroll through the thumbnails using a mouse or keyboard scroll arrows. It 
+		is similar to the `cover flow <http://en.wikipedia.org/wiki/Cover_flow>`_ used in "the Macintosh Finder and other Apple the Macintosh Finder and other Apple Inc. 
+		products for visually flipping through snapshots of documents, website bookmarks, album artwork, or photographs. In AtoM a carousel viewer appears at the top of 
+		:term:`archival descriptions <archival description>` whenever there are associated lower-level descriptions that have digital objects attached.
+	
+	Child record
+		Child record refers to a description of the :term:`archival unit` that is one :term:`level of description` lower than the current unit, 
+		e.g. if a series belongs to a :term:`fonds`, the series is the child record of the fonds. See also: :term:`Parent record <parent record>`.
+	
+	Collection
+		In ISAD, a collection is "[a]n artificial assemblage of documents accumulated on the basis of some common characteristic without regard to 
+		the provenance of those documents. Not to be confused with an archival fonds." In the Canadian Rules for Archival Description, it is 
+		"[a] grouping of documents of any provenance intentionally assembled on the basis of some common characteristic." In Dublin Core, a collection 
+		is "[a]n aggregation of resources. A collection is described as a group; its parts may also be separately described."
+	
+	Context menu
+		The context menu appears on all :term:`view <view page>` and :term:`edit pages <edit page>` to show the current record's relationships to other records, 
+		with links, e.g. they show the hierarchical placement of :term:`archival descriptions <archival description>` within a :term:`fonds` and the relationship 
+		between :term:`archival institutions <archival institution>`, :term:`authority records <authority record>`, and archival holdings. See 
+		:doc:`Context menu <../access-content/context-menu>`. 
+	
+	Contributor
+		A contributor is a type of user who can search, browse, create, and edit descriptions. See :doc:`User roles <../getting-started/user-roles>`.
+	
+	Controlled vocabulary
+		A controlled vocabulary is a set of pre-defined, authorized :term:`terms <term>` grouped into :term:`taxonomies <taxonomy>` or entered into 
+		:term:`authority records <authority record>` and used for generating :term:`value lists <value list>` and :term:`access points <access point>`. 
+		See :doc:`Terms <../add-edit-content/terms>`.
+	
+	Corporate body
+		The International Council on Archives (`ICA <http://www.ica.org/>`_) defines a corporate body as "An organization or group of persons that is identified 
+		by a particular name and that acts, or may act, as an entity" (ISAD glossary).
+
+		Similarly, in the Canadian Rules for Archival Description (RAD), a corporate body is defined as "an organization or association of persons that is identified 
+		by a particular name and that acts, or may act, as an entity. Typical examples of corporate bodies are societies, institutions, business firms, nonprofit 
+		enterprises, governments, government agencies, religious bodies, places of worship, and conferences."
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
