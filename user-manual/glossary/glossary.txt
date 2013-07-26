@@ -202,7 +202,7 @@ AtoM User Manual Glossary of Terms
 	
 	Digital object
 		Digital objects are computer files that can be uploaded into and displayed by AtoM. They include scanned images, digital photographs, sound and moving image files, and other scanned 
-		or born-digital items. See :doc:`Upload digital objects <../import-export/upload-digital-object> and :ref:`File formats <file-formats>`.
+		or born-digital items. See :doc:`Upload digital objects <../import-export/upload-digital-object>` and :ref:`File formats <file-formats>`.
 
 	Display standard
 		The display standard indicates which archival description standard is used to display and edit the :term:`archival unit`. The default display standard for the application can be set by an 
@@ -224,7 +224,7 @@ AtoM User Manual Glossary of Terms
 	
 	Draft record
 		A draft record is an :term:`archival description` that has not been published. All new and imported :term:`archival descriptions <archival description>` have draft status until the user changes that status 
-		to published in the :term:`Administration area <administation area>` the bottom of the archival description :term:`edit page`. The :term:`Administrator <administrator>` can change the 
+		to published in the :term:`Administration area <administration area>` the bottom of the archival description :term:`edit page`. The :term:`Administrator <administrator>` can change the 
 		default publication status from draft to published in the Admin > Settings > Global > Default publication status.
 
 		The publication status is inherited from the highest :term:`level of description`. Users who are not authenticated cannot view draft records. See also :term:`Published record <published record>`.
@@ -331,11 +331,97 @@ AtoM User Manual Glossary of Terms
 		The language menu, located in the top-right corner of the page, allows the user to switch to any of the :term:`supported languages <supported language>` in AtoM. 
 		See :doc:`Choose language <../getting-started/choose-language>`; see also :doc:`Default language <../administer/default-language>` and :ref:`Add/remove languages <add-remove-languages>` .
 
+	Level of description
+		The level of description is "the position of the unit of description in the hierarchy of the :term:`fonds`" (ISAD glossary). In AtoM, the level of description is 
+		selected from a :term:`value list` in the "Identity" area of an :term:`archival description`. See :ref:`Identity area <identity-area>`.
+	
+	Main menu
+		The main menu is the the navigational tool located at the top of all pages for authenticated  (logged in) users. It allows the user to navigate to all the main areas of AtoM.
+	
+	Master digital object
+		The master digital object is the unaltered version of a :term:`digital object` that has been uploaded to AtoM. AtoM automatically generates a :term:`thumbnail` and a 
+		:term:`reference display copy` of the object. Only authenticated users may view master digital objects. See :doc:`Upload digital objects <../import-export/upload-digital-object>`.
+	
+	Media type
+		Media type refers to the format of uploaded :term:`digital objects <digital object>`. The media type is selected automatically by AtoM when a :term:`digital object` is uploaded 
+		and the :term:`thumbnail` and :term:`reference display copies <reference display copy>` of the object are generated. 
+		See :doc:`Upload digital objects <../import-export/upload-digital-object>`.
+
+		**NOTE:** Media type terms are controlled by the media type :term:`taxonomy`. AtoM ships with five :term:`terms <term>` (audio, image, text, video, other) that are locked; 
+		these cannot be edited or deleted because they are referenced by AtoM's code. :term:`Editors <editor>` and :term:`administrators <administrator>` can add new :term:`media type` 
+		terms, but unless :term:`developers <developer>` incorporate these into the code, the system will not be able to do anything with them.
+
+	Multi-repository system
+		A multi-repository system exists when a single instance of AtoM is used by a :term:`network` of :term:`archival institutions <archival institution>` or other types of repositories.
+	
+	Multi-value field
+		A multi-value field is a :term:`field` that is structured to contain more than one data entry.
+	
+	Name
+		In AtoM, names are registered in :term:`authority records <authority record>` for :term:`corporate bodies <corporate body>`, persons, and families who interact with 
+		archival materials as e.g. :term:`creators <creator>`, custodians and publishers. Names can be applied as :term:`access points <access point>` to 
+		:term:`archival descriptions <archival description>`. See :ref:`Access points <access-points>`.
+	
+	Network
+		A network is an aggregation of institutions using one instance of AtoM to produce a union list of archival holdings (a :term:`multi-repository system`).
+	
+	Parent record
+		The parent record refers to the description of the :term:`archival unit` that is one :term:`level of description` higher than the current unit. For example, a 
+		:term:`fonds` may be the parent record of a series. A parent record may have multiple :term:`child records <child record>`.
+	
+	Password
+		A password is a case-sensitive, unspaced string of characters (alpha-numeric and/or special characters) associated with a :term:`user account` and intended to be kept private, 
+		to provide a user with a secure means of logging into the AtoM application. Passwords are required by every user of the system who needs to be able to add, edit, delete, or translate content. 
+		The initial passwords are set by the system :term:`administrator` (see :doc:`Manage user accounts <../administer/manage-user-accounts>`) and can subsequently be changed by 
+		the user (see :doc:`Change password <../getting-started>`).
+		
+	Physical storage
+		Physical storage is a grouping of :term:`fields <field>` relating to the management of physical objects such as folders, boxes, shelves, and cabinets. 
+		In AtoM, users can create and edit information about physical objects by clicking on the "Link physical storage" button in the :term:`button block` of an 
+		:term:`archival description`. See :doc:`Physical storage <../add-edit-content/physical-storage>`.
+	
+	Place
+		In AtoM, a place is a geographic location registered in a :term:`taxonomy` and used as an :term:`access point` in :term:`archival descriptions <archival description>`, 
+		:term:`authority records <authority record>`, and :term:`archival institutions <archival institution>`.
+	
+	Print icon
+		An icon of a printer is located in the :term:`title bar` of the View Physical storage and Search/Advanced Search results screen. Clicking the icon will allow the user
+		to print out a report - the page display will be rendered in a simple black and white for easier printing. See :ref:`Reports/printing <reports-printing>`.
+	
+	Published record
+		A published record is an :term:`archival description` that has had its status changed from draft to published in the :term:`Administration area <administration area>` 
+		at the bottom of the :term:`archival description` :term:`edit page`.
+		
+		**NOTE:** The publication status is inherited from the highest :term:`level of description`; e.g. when a :term:`fonds` description is changed from draft to published, 
+		all :term:`child records <child record>` within the fonds are automatically changed as well. Once archival descriptions have been published, users who are not 
+		logged in can view them.
+	
+	Record
+		The International Council on Archives (`ICA <http://www.ica.org/>`_) defines a record as "recorded information in any form or medium, created or received and maintained, by 
+		an organization or person in the transaction of business or the conduct of affairs" (ISAD glossary).
+		
+		The Society of American Archivists (`SAA <http://www2.archivists.org/>`_), which maintains an excellent glossary of `archival terminology <http://www2.archivists.org/glossary>`_, 
+		holds several different definitions of a record, including: "data or information in a fixed form that is created or received in the course of individual or 
+		institutional activity and set aside (preserved) as evidence of that activity for future reference."
+
+		In AtoM, an :term:`archival description` is used to provide contextual information about and intellectual control over archival materials, which include records.
+		
+	Reference display copy
+		A reference display copy is a low-resolution version of a :term:`master digital object` generated automatically by AtoM on upload. It is used to display images on 
+		the :term:`digital object` :term:`view page` when the user clicks on a :term:`thumbnail`, on :term:`archival descriptions <archival description>` that have linked
+		digital objects, and in the digital object area of :term:`edit pages <edit page>`. See See :doc:`Upload digital objects <../import-export/upload-digital-object>`.
+	
+	Report icon
+		In AtoM a report icon can be found in the right hand :term:`context menu` of an :term:`archival description` :term:`view page`. Clicking on the report icon takes 
+		the user to a Reports screen and the choice of printing 3 different reports: File list, Item list, :term:`Physical storage <physical storage>` locations, or a set of Box labels,
+		formatted as a `CSV <https://en.wikipedia.org/wiki/Comma-separated_values>`_. See :ref:`Reports/printing <reports-printing>`.
+	
+	Researcher
+		A researcher is a type of user who is limited to searching and browsing descriptions. See :doc:`User roles <../getting-started/user-roles>`.
 	
 	
 	
-	
-	
+
 	
 	
 	
