@@ -2,11 +2,16 @@
 AtoM User Manual Glossary of Terms
 ==================================
 
+.. toctree::
+   :hidden:
+
+   user-manual/glossary/glossary
+
 .. glossary::
 
 	About page
-		The about page provides general information on AtoM. It can be reached via the :term:`user menu` in
-		the top right-hand corner of the page. The content of the about page can be edited by 
+		The about page provides general information on AtoM. It can be reached via the :term:`header bar`
+		at the top of all pages. The content of the about page can be edited by 
 		:term:`administrators <administrator>` (see :doc:`Manage static pages <../administer/manage-static-pages>`).
 
 	Accession record
@@ -43,7 +48,7 @@ AtoM User Manual Glossary of Terms
 
 	Admin menu
 		The admin menu allows users with :term:`administrator <administrator>` access to customize AtoM to meet 
-		institution-specific requirements and to manage :term:`user accounts <user account> and 
+		institution-specific requirements and to manage :term:`user accounts <user account>` and 
 		:term:`user profiles <user profile>`. The admin menu is only visible to users with administrator privileges.
 		See :ref:`Administer <administer>`.
 
@@ -55,7 +60,7 @@ AtoM User Manual Glossary of Terms
 
 	Administrator
 		The administrator is a type of user who has :term:`access privileges <access privilege>` to do the 
-		following: install or uninstall ICA-AtoM; create, read, update, or delete any record; customize AtoM 
+		following: install or uninstall AtoM; create, read, update, or delete any record; customize AtoM 
 		to institution-specific requirements or themes; and manage :term:`user accounts <user account>` and
 		:term:`user profiles <user profile>` (see :doc:`User roles <../getting-started/user-roles>` and
 		:ref:`Administer <administer>`).
@@ -72,7 +77,7 @@ AtoM User Manual Glossary of Terms
 		provide contextual information about the archival materials and are arranged into hierarchical levels (fonds, 
 		series, files, items, and variations of these in accordance with institutional standards).
 
-		The International Council on Archives (`ICA <http://www.ica.org/>`_) defines an archival description as 
+		The International Council on Archives (`ICA <http://www.ica.org/>`__) defines an archival description as 
 		"The creation of an accurate representation of a unit of description and its component parts, if any, by 
 		capturing, analyzing, organizing and recording information that serves to identify, manage, locate and 
 		explain archival materials and the context and records systems which produced it. This term also describes 
@@ -96,7 +101,7 @@ AtoM User Manual Glossary of Terms
 		:term:`level of description`.
 		
 	Arrangmement
-		The International Council on Archives (`ICA <http://www.ica.org/>`_) defines arrangement as "the intellectual and 
+		The International Council on Archives (`ICA <http://www.ica.org/>`__) defines arrangement as "the intellectual and 
 		physical processes and results of analyzing and organizing documents in accordance with archival principles" (ISAD glossary).
 		
 	Authority record
@@ -109,8 +114,8 @@ AtoM User Manual Glossary of Terms
 	
 	Browse menu
 		Browsing allows a user to see all records that have a certain type of :term:`access point` (such as :term:`subject`, :term:`name`, or 
-		:term:`place) or other type of filter, such as :term:`media type` or type of :term:`entity`. In AtoM's default theme (the Dominion theme) 
-		the browse menu appears in a drop-down next to the :term:`search box`, as well as on the :term:`home page`.
+		:term:`place`) or other type of filter, such as :term:`media type` or type of :term:`entity`. In AtoM's default theme (the Dominion theme) 
+		the browse menu appears in a drop-down next to the :term:`search box` in the :term:`header bar` on all pages, as well as on the :term:`home page`.
 	
 	Button block
 		The button block allows authorized users to add, edit, delete, move, and duplicate content and to save or cancel changes made 
@@ -132,6 +137,11 @@ AtoM User Manual Glossary of Terms
 		"[a] grouping of documents of any provenance intentionally assembled on the basis of some common characteristic." In Dublin Core, a collection 
 		is "[a]n aggregation of resources. A collection is described as a group; its parts may also be separately described."
 	
+	Column header
+		Column headers appear at the top of the lists on list pages and 
+		browse results and give the name of the :term:`field` for whatever is 
+		being listed below.
+
 	Context menu
 		The context menu appears on all :term:`view <view page>` and :term:`edit pages <edit page>` to show the current record's relationships to other records, 
 		with links, e.g. they show the hierarchical placement of :term:`archival descriptions <archival description>` within a :term:`fonds` and the relationship 
@@ -147,7 +157,7 @@ AtoM User Manual Glossary of Terms
 		See :doc:`Terms <../add-edit-content/terms>`.
 	
 	Corporate body
-		The International Council on Archives (`ICA <http://www.ica.org/>`_) defines a corporate body as "An organization or group of persons that is identified 
+		The International Council on Archives (`ICA <http://www.ica.org/>`__) defines a corporate body as "An organization or group of persons that is identified 
 		by a particular name and that acts, or may act, as an entity" (ISAD glossary).
 
 		Similarly, in the Canadian Rules for Archival Description (RAD), a corporate body is defined as "an organization or association of persons that is identified 
@@ -169,7 +179,7 @@ AtoM User Manual Glossary of Terms
 		:term:`language menu`.
 	
 	Data element
-		Data elements, or elements of description, are `ICA <http://www.ica.org>`_ standards-based units of information applied to :term:`archival descriptions <archival description>`, 
+		Data elements, or elements of description, are `ICA <http://www.ica.org>`__ standards-based units of information applied to :term:`archival descriptions <archival description>`, 
 		:term:`authority records <authority record>`, :term:`archival institutions <archival institution>`, and :term:`terms <term>`. The elements are entered into fields in AtoM's 
 		:term:`edit pages <edit page>`.
 	
@@ -215,7 +225,7 @@ AtoM User Manual Glossary of Terms
 		:doc:`Descriptive standards <../overview/descriptive-standards>`, and :doc:`Archival descriptions <../add-edit-content/archival-descriptions>`.
 	
 	Document
-		The International Council on Archives (`ICA <http://www.ica.org>`_), in the ISAD glossary, defines a document as "recorded information regardless of medium or characteristics. (See also 
+		The International Council on Archives (`ICA <http://www.ica.org>`__), in the ISAD glossary, defines a document as "recorded information regardless of medium or characteristics. (See also 
 		:term:`Record <record>`)".
 	
 	Donor dialog
@@ -287,7 +297,7 @@ AtoM User Manual Glossary of Terms
 		certain field labels and hide them from public (unauthorized Users) views. See :doc:`Visible elements <../administer/visible-elements>`.
 	
 	Finding aid
-		The International Council on Archives (`ICA <http://www.ica.org/>`_) defines a finding aid as "The broadest term to cover any description or means of reference made or received
+		The International Council on Archives (`ICA <http://www.ica.org/>`__) defines a finding aid as "The broadest term to cover any description or means of reference made or received
 		by an archives service in the course of establishing administrative or intellectual control over archival material" (ISAD Glossary)
 		
 		The finding aid is a tool for discovering information about the :term:`fonds` or :term:`collection`. In AtoM, the entirety of an archival description (including all :term:`child records <child record>` 
@@ -300,7 +310,7 @@ AtoM User Manual Glossary of Terms
 		This default can be changed by :term:`administrators <administrator>` (see :ref:`User interface labels <user-interface-labels>`).
 	
 	Function
-		A function is a type of entity that describes activities linked to records creation, maintenance and use. The International Council on Archives (`ICA <http://www.ica.org/>`_) defines a
+		A function is a type of entity that describes activities linked to records creation, maintenance and use. The International Council on Archives (`ICA <http://www.ica.org/>`__) defines a
 		function as "Any high level purpose, responsibility or task assigned to the accountability agenda of a corporate body by legislation, policy or mandate. Functions may be decomposed
 		into sets of co-ordinated operations such as subfunctions, business processes, activities, tasks or transactions" (ISDF Glossary).
 		
@@ -310,6 +320,10 @@ AtoM User Manual Glossary of Terms
 	Global search/replace
 		Global search and replace allows :term:`administrators <administrator>` to query the entire database and globally replace specific :term:`terms <term>` in each :term:`field`: title, alternate title, 
 		scope and content, bio/admin history etc. The Global search and replace menu can be found under the :term:`Admin menu <admin menu>`. See the Global search and replace menu for a full list of available fields.
+	
+	Header bar
+		The header bar is the navigational tool at the top of all pages in AtoM. It includes the :term:`search box`, :term:`browse menu`, and :term:`site logo` for all users, and the 
+		:term:`main menu` for authenticated (i.e. logged in) users.
 	
 	Holdings
 		Holdings is a generic term referring to the :term:`records <record>` and other materials held by :term:`archival institutions <archival institution>`. In AtoM a list of holdings 
@@ -321,7 +335,7 @@ AtoM User Manual Glossary of Terms
 		:term:`administrators <administrator>` (see :doc:`Manage static pages <..administer/manage-static-pages>`).
 	
 	Information area
-		Information areas appear on :term:`edit pages <edit page>` and group related :term:`fields <field>` based on the organization of elements of description in `ICA <http://www.ica.org/>`_ (or other supported) 
+		Information areas appear on :term:`edit pages <edit page>` and group related :term:`fields <field>` based on the organization of elements of description in `ICA <http://www.ica.org/>`__ (or other supported) 
 		descriptive standards. Clicking on an information area toggles it between closed (all fields in that area hidden) and open (all fields visible).
 	
 	Information object
@@ -336,7 +350,8 @@ AtoM User Manual Glossary of Terms
 		selected from a :term:`value list` in the "Identity" area of an :term:`archival description`. See :ref:`Identity area <identity-area>`.
 	
 	Main menu
-		The main menu is the the navigational tool located at the top of all pages for authenticated  (logged in) users. It allows the user to navigate to all the main areas of AtoM.
+		The main menu is the the navigational tool located at the top of all pages for authenticated  (logged in) users, as part of the :term:`header bar`. 
+		It allows the user to navigate to all the main areas of AtoM.
 	
 	Master digital object
 		The master digital object is the unaltered version of a :term:`digital object` that has been uploaded to AtoM. AtoM automatically generates a :term:`thumbnail` and a 
@@ -347,9 +362,11 @@ AtoM User Manual Glossary of Terms
 		and the :term:`thumbnail` and :term:`reference display copies <reference display copy>` of the object are generated. 
 		See :doc:`Upload digital objects <../import-export/upload-digital-object>`.
 
-		**NOTE:** Media type terms are controlled by the media type :term:`taxonomy`. AtoM ships with five :term:`terms <term>` (audio, image, text, video, other) that are locked; 
-		these cannot be edited or deleted because they are referenced by AtoM's code. :term:`Editors <editor>` and :term:`administrators <administrator>` can add new :term:`media type` 
-		terms, but unless :term:`developers <developer>` incorporate these into the code, the system will not be able to do anything with them.
+		.. NOTE::
+		
+		   Media type terms are controlled by the media type :term:`taxonomy`. AtoM ships with five :term:`terms <term>` (audio, image, text, video, other) that are locked; 
+		   these cannot be edited or deleted because they are referenced by AtoM's code. :term:`Editors <editor>` and :term:`administrators <administrator>` can add new :term:`media type` 
+		   terms, but unless :term:`developers <developer>` incorporate these into the code, the system will not be able to do anything with them.
 
 	Multi-repository system
 		A multi-repository system exists when a single instance of AtoM is used by a :term:`network` of :term:`archival institutions <archival institution>` or other types of repositories.
@@ -397,7 +414,7 @@ AtoM User Manual Glossary of Terms
 		logged in can view them.
 	
 	Record
-		The International Council on Archives (`ICA <http://www.ica.org/>`_) defines a record as "recorded information in any form or medium, created or received and maintained, by 
+		The International Council on Archives (`ICA <http://www.ica.org/>`__) defines a record as "recorded information in any form or medium, created or received and maintained, by 
 		an organization or person in the transaction of business or the conduct of affairs" (ISAD glossary).
 		
 		The Society of American Archivists (`SAA <http://www2.archivists.org/>`_), which maintains an excellent glossary of `archival terminology <http://www2.archivists.org/glossary>`_, 
@@ -419,12 +436,201 @@ AtoM User Manual Glossary of Terms
 	Researcher
 		A researcher is a type of user who is limited to searching and browsing descriptions. See :doc:`User roles <../getting-started/user-roles>`.
 	
-	
-	
-
-	
-	
-	
-	
-	
+	Rights record
+		In AtoM, Rights records can be linked to :term:`accession records <accession record>`, :term:`archival descriptions <archival description>` and 
+		:term:`digital objects <digital object>`. AtoM Rights metadata elements use `PREMIS rights elements <http://www.loc.gov/standards/premis/>`_. 
+		In AtoM restrictions can be based on Copyright(s), License, Statute(s) and Policy. For a full explanation see :doc:`Rights <../add-edit-content/rights>`. 
 		
+	Search box
+		The search box is used to find descriptions in AtoM that contain text matching a search query. The search box is located in the :term:`header bar` on all AtoM pages, including the home page. See :ref:`Access content <access-content>`.
+	
+	Setting
+		Settings is a broad term used to describe the properties that affect the way a program looks and functions. In AtoM, certain settings can be changed by 
+		an :term:`administrator` in order to customize AtoM to institution-specific requirements. See :doc:`Settings <../administer/settings>`.
+	
+	Site description
+		The site description is a brief description of the site's purpose or 
+		its contents, that can be optionally included by an 
+		:term:`administrator` when configuring the :term:`settings <setting>` 
+		of an AtoM installation. When made visible via AtoM's :doc:`Settings 
+		<../administer/settings>`, the site title appears at the top of the 
+		page directly under the :term:`header bar`. It is a configurable 
+		element - the text can be changed or removed. See 
+		:ref:`Site information <site-information>` and :ref:`Default page 
+		elements <default-page-elements>`. 
+	
+	Site logo
+		The site logo is the graphic that appears at the top of all pages in 
+		the left-hand cornder of the :term:`header bar` in AtoM. Clicking on 
+		the logo will take the user to the :term:`home page`. AtoM ships with
+		a default logo that can be replaced by 
+		:term:`administrators <administrator>` to theme the application to 
+		their own institution or :term:`network` if desired: see Site logo.
+
+	Site title
+		The site title is a configurable element in AtoM that can be managed by
+		an :term:`administrator` through the application :term:`settings <setting>`. 
+		In AtoM 2.0, the site title does not appear in the application itself, 
+		but will be present in the title bar of a user's web browser when 
+		accessing AtoM. See :ref:`Site information <site-information>`. 
+
+	SKOS
+		Simple Knowledge Organization System (SKOS) is a data standard model 
+		developed by the `World Wide Web Consortium <http://www.w3.org/>`_ 
+		(W3C) as a common data model "for expressing the basic structure and 
+		content of concept schemes such as thesauri, classification schemes, 
+		subject heading lists, taxonomies, folksonomies, and other similar 
+		types of controlled vocabulary." (`W3C SKOS Primer, 18 August 2009 
+		<http://www.w3.org/TR/2009/NOTE-skos-primer-20090818/>`_). It is used 
+		in AtoM to import and export hierarchical 
+		:term:`taxonomies <taxonomy>`. 
+		See: :doc:`Export descriptions and terms
+		<../import-export/export-descriptions-and-terms>`.
+
+	Static page
+		Static pages are pages that are designed to look the same each time 
+		they are accessed, in contrast to dynamic pages such as 
+		:ref:`search results <search-results>`, :term:`view pages <view page>`, 
+		or :term:`edit pages <edit page>`. AtoM has two static pages, the 
+		:term:`home page` and the :term:`about page`. Static pages can be 
+		edited by an :term:`administrator` (see :doc:`Manage static pages
+		<../administer/manage-static-pages>`).
+
+	Subject
+		In AtoM, subjects are :term:`controlled-vocabulary <controlled vocabulary>` 
+		:term:`terms <term>` grouped in a :term:`taxonomy` and used as 
+		:term:`access points <access point>` in :term:`archival descriptions 
+		<archival description>`.
+
+	Supported language
+		In AtoM, a supported language is one into which both :term:`data 
+		elements <data element>` and :term:`user interface` elements can be 
+		translated.
+
+	Taxonomy
+		A taxonomy is a grouping of :term:`controlled-vocabulary <controlled 
+		vocabulary>` :term:`terms <term>` used to generate :term:`value lists 
+		<value list>` and :term:`access points <access point>`. See 
+		:doc:`Terms <../add-edit-content/terms>`.
+
+	Term
+		Terms are the values that make up :term:`controlled vocabularies 
+		<controlled vocabulary>`. In AtoM, terms are grouped into 
+		:term:`taxonomies <taxonomy>` that can be added, edited, and deleted 
+		through the "Term" item of the add menu. See 
+		:doc:`Terms <../add-edit-content/terms>`.
+
+	Thumbnail
+		A thumbnail is a small, low-resolution version of a :term:`master 
+		digital object` generated automatically by AtoM on upload. Thumbnails 
+		are displayed in search and browse results and in :term:`carousel` 
+		views at higher levels of description. See :doc:`Upload digital objects 
+		<../import-export/upload-digital-object>` and :ref:`File formats 
+		<file-formats>`.
+
+	Title bar
+		The title that appears at the top of :term:`archival descriptions 
+		<archival description>`, :term:`authority records <authority record>`, 
+		:term:`archival institutions <archival institution>` and 
+		:term:`functions <function>`.
+
+	Tooltips
+		Tooltips are online text designed to assist users to enter data in 
+		:term:`edit pages <edit page>`. Tooltip text is usually derived from 
+		the standards on which the edit templates are based; in rare occasions
+		where the :term:`field` does not correspond directly to a standard, 
+		this text has been supplied. Note that :term:`administrators 
+		<administrator>` can turn tooltips on or off. See :ref:`Global settings 
+		<global-settings>`.
+
+	Translation bar
+		The translation bar appears at the bottom of the page when users with 
+		:term:`translator` :term:`access privileges <access privilege>` select 
+		a language from the :term:`language menu`. Clicking on "Translate user 
+		interface" in the bottom right-hand corner of the bar opens up the 
+		:term:`translation panel`, where the user translates :term:`user 
+		interface` elements. See :ref:`Translate <translate>`.
+
+	Translation panel
+		The translation panel is used by :term:`translators <translator>` to 
+		edit :term:`user interface` elements and is accessed via the 
+		:term:`translation bar`. See :ref:`Translate interface <translate-interface>`.	
+
+	Translator
+		A translator is a type of user who can translate :term:`data elements 
+		<data element>` and :term:`user interface` elements. See :doc:`User 
+		roles <../getting-started/user-roles>`
+
+	User account
+		User accounts are established in order to manage :term:`access 
+		privileges <access privilege>` through the assignment of :term:`user 
+		roles <user role>`. Every user who must be able to add, edit, delete, 
+		or translate content must have a user account. In AtoM user accounts 
+		are established and maintained by :term:`administrators <administrator>`. 
+		See :doc:`User roles <../getting-started/user-roles>`and  :doc:`Manage 
+		user accounts <../administer/manage-user-accounts>`.
+
+	User interface
+		The user interface is the set of elements that allow the user to 
+		interact with the AtoM application. These elements include the :
+		:term:`main menu`, :term:`drop-down menus <drop-down menu>`, 
+		:term:`context menu`, :term:`title bar`, :term:`column headers <column
+		header>`, buttons and :term:`button block`, :term:`fields <field>`, and 
+		:term:`field labels <field label>`, and any other elements used to 
+		navigate AtoM or to search for, view, add, edit, and delete 
+		:term:`database content`. The labels of some user interface elements 
+		can be customized by :term:`administrators <administrator>` (see 
+		:ref:`User interface labels <user-interface-labels>`).
+
+	Username
+		The username is a name supplied by an :term:`administrator` to any 
+		user (other than a :term:`researcher`) of the AtoM application as part 
+		of the :term:`user account`. See :doc:`Manage user accounts
+		<../administer/manage-user-accounts>`.
+
+	User profile
+		A user profile is information about a user managed in a :term:`user 
+		account`. User profiles are created and maintained by 
+		:term:`administrators  <administrator>` (see :doc:`Manage user accounts
+		<../administer/manage-user-accounts>`), although authenticated (i.e., 
+		logged in) users can view their own profiles (and change their 
+		:term:`passwords <password>`) by going through the :term:`header bar`.
+
+	User role
+		User roles define levels of access to functions in AtoM, ranging from 
+		view-only access to full administration rights. User roles are defined 
+		by groups that an :term:`administrator` can add and edit. See 
+		:doc:`User roles <../getting-started/user-roles>`and  :doc:`Manage 
+		user accounts <../administer/manage-user-accounts>`.
+
+	Value list
+		Value lists restrict data entry in certain :term:`fields <field>` to 
+		:term:`controlled vocabulary` :term:`terms <term>` or terms derived 
+		from :term:`authority records <authority record>`. They appear as 
+		:term:`drop-down menus <drop-down menu>` in :term:`edit pages 
+		<edit page>`.
+
+	View mode
+		View mode provides read-only access to the contents of :term:`archival 
+		descriptions <archival description>`, :term:`authority records 
+		<authority record>`, :term:`functions <function>` and :term:`archival 
+		institutions <archival institution>` using :term:`view pages <view 
+		page>`. In view mode, AtoM displays only those :term:`fields <field>` 
+		in a :term:`record` which contain data.			
+
+	View page
+		View pages allow users to view in detail the contents of 
+		:term:`archival descriptions <archival description>`, :term:`authority 
+		records <authority record>`, :term:`functions <function>` and 
+		:term:`archival institutions <archival institution>`. 
+
+	Visible elements
+		Visible elements enables an :term:`administrator` to "hide" specific 
+		:term:`fields <field>` in the database from the public (i.e., 
+		unauthorized users, or users who are not logged in). To review which 
+		fields can be hidden from view, select ISAD template, RAD template, 
+		Digital object metadata area, and/or Physical Storage. The 
+		:term:`administrator` can click on the checkboxes to reveal the field, 
+		while an unchecked box hides the field. See :doc:`Visible elements 
+		<../administer/visible-elements>`.
+
