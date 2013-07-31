@@ -2,6 +2,7 @@
    :hidden:
 
    overview/intro
+   glossary/glossary
 
 ***********************************
 Welcome to the AtoM 2.0 User Manual 
@@ -148,7 +149,7 @@ Glossary
 
 	Glossary of terms used throughout this user manual.
 	
-	* Glossary
+	* :doc:`Glossary <glossary/glossary>`
 	
 =====
 Index

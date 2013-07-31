@@ -5,7 +5,7 @@ AtoM User Manual Glossary of Terms
 .. toctree::
    :hidden:
 
-   user-manual/glossary/glossary
+   glossary
 
 .. glossary::
 
@@ -409,9 +409,12 @@ AtoM User Manual Glossary of Terms
 		A published record is an :term:`archival description` that has had its status changed from draft to published in the :term:`Administration area <administration area>` 
 		at the bottom of the :term:`archival description` :term:`edit page`.
 		
-		**NOTE:** The publication status is inherited from the highest :term:`level of description`; e.g. when a :term:`fonds` description is changed from draft to published, 
-		all :term:`child records <child record>` within the fonds are automatically changed as well. Once archival descriptions have been published, users who are not 
-		logged in can view them.
+		
+		.. NOTE::
+		
+		   The publication status is inherited from the highest :term:`level of description`; e.g. when a :term:`fonds` description is changed from draft to published, 
+		   all :term:`child records <child record>` within the fonds are automatically changed as well. Once archival descriptions have been published, users who are not 
+		   logged in can view them.
 	
 	Record
 		The International Council on Archives (`ICA <http://www.ica.org/>`__) defines a record as "recorded information in any form or medium, created or received and maintained, by 

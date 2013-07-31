@@ -15,6 +15,7 @@ Or don't. Cuz it' not done!
    :maxdepth: 2
 
    user-manual/index
+   
 
 ====================
 Administrator manual
