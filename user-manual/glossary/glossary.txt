@@ -10,446 +10,754 @@ AtoM User Manual Glossary of Terms
 .. glossary::
 
 	About page
-		The about page provides general information on AtoM. It can be reached via the :term:`header bar`
-		at the top of all pages. The content of the about page can be edited by 
-		:term:`administrators <administrator>` (see :doc:`Manage static pages <../administer/manage-static-pages>`).
+		The about page provides general information on AtoM. It can be reached
+		via the :term:`header bar` at the top of all pages. The content of the
+		about page can be edited by  :term:`administrators <administrator>`
+		(see :doc:`Manage static pages <../administer/manage-static-pages>`).
 
 	Accession record
-		The accession record is an administrative and descriptive document that summarizes standard
-		information about the process of transferring materials to a repository, including
-		information about the provenance, contents and legal and physical transfer of the records
-		such as, rights and restrictions. See :doc:`Entity types <../overview/entity-types>`
+		The accession record is an administrative and descriptive document
+		that summarizes standard information about the process of transferring
+		materials to a repository, including information about the provenance,
+		contents and legal and physical transfer of the records such as,
+		rights and restrictions. See :doc:`Entity types <../overview/entity-
+		types>`
 
 	Access point
-		An access point is "A name, term, keyword, phrase or code that may be used to search,
-		identify and locate an archival description." (ISAD glossary). In AtoM, access points
-		are derived from :term:`authority records <authority record>` and :term:`taxonomies <taxonomy>` 
-		created and customized by users. See :doc:`Terms </add-edit-content/terms>`.
+		An access point is "A name, term, keyword, phrase or code that may be
+		used to search, identify and locate an archival description." (ISAD
+		glossary). In AtoM, access points are derived from :term:`authority
+		records <authority record>` and :term:`taxonomies <taxonomy>` created
+		and customized by users. See :doc:`Terms </add-edit-content/terms>`.
 
 	Access privilege
-		Access privileges control the ways a user is able to interact with AtoM. For example,
-		some users are able to add and edit content while others may only be able to search and
-		browse content. Access privileges are based on defined :term:`user roles <user role>` (see :doc:`User roles <../getting-started/user-roles>`).
+		Access privileges control the ways a user is able to interact with
+		AtoM. For example, some users are able to add and edit content while
+		others may only be able to search and browse content. Access
+		privileges are based on defined :term:`user roles <user role>` (see
+		:doc:`User roles <../getting-started/user-roles>`).
 
 	Accrual
-		An accrual is "an acquisition additional to a unit of description already held by a 
-		repository." (ISAD glossary)
+		An accrual is "an acquisition additional to a unit of description
+		already held by a :term:`repository`." (ISAD glossary)
 
 	Add menu
-		The "Add" menu allows authorized users to add new :term:`archival descriptions <archival description>`, 
-		:term:`authority records <authority record>`, :term:`archival institutions <archival institution>`, 
-		:term:`terms <term>`, and :term:`functions <function>`. Only logged-in users can see the "Add" menu.
+		The "Add" menu allows authorized users to add new :term:`archival
+		descriptions <archival description>`, :term:`authority records
+		<authority record>`, :term:`archival institutions <archival
+		institution>`, :term:`terms <term>`, and :term:`functions <function>`.
+		Only logged-in users can see the "Add" menu.
 
 	Add new button
-		The add new button is located in the :term:`button block <button block>` of the :term:`view page <view page>`
-		and allows users to add new records (:term:`archival descriptions <archival description>`, 
-		:term:`authority records <authority record>`, :term:`archival institutions <archival institution>`, and
-		:term:`terms <term>`) to AtoM.
+		The add new button is located in the :term:`button block <button
+		block>` of the :term:`view page <view page>` and allows users to add
+		new records (:term:`archival descriptions <archival description>`,
+		:term:`authority records <authority record>`, :term:`archival
+		institutions <archival institution>`, and :term:`terms <term>`) to
+		AtoM.
 
 	Admin menu
-		The admin menu allows users with :term:`administrator <administrator>` access to customize AtoM to meet 
-		institution-specific requirements and to manage :term:`user accounts <user account>` and 
-		:term:`user profiles <user profile>`. The admin menu is only visible to users with administrator privileges.
-		See :ref:`Administer <administer>`.
+		The admin menu allows users with :term:`administrator <administrator>`
+		access to customize AtoM to meet institution-specific requirements and
+		to manage :term:`user accounts <user account>` and :term:`user
+		profiles <user profile>`. The admin menu is only visible to users with
+		administrator privileges. See :ref:`Administer <administer>`.
 
 	Administration area
-		The Administration area is part of the resource description edit template. It allows the User to
-		change the publication status of the resource - Draft (this resource description is not available for
-		public viewing) and Published (this resource description is available for public viewing). It also allows the user
-		to set a default :term:`display standard` for an :term:`archival description`. 
+		The Administration area is part of the resource description edit
+		template. It allows the User to change the publication status of the
+		resource - Draft (this resource description is not available for
+		public viewing) and Published (this resource description is available
+		for public viewing). It also allows the user to set a default
+		:term:`display standard` for an :term:`archival description`.
 
 	Administrator
-		The administrator is a type of user who has :term:`access privileges <access privilege>` to do the 
-		following: install or uninstall AtoM; create, read, update, or delete any record; customize AtoM 
-		to institution-specific requirements or themes; and manage :term:`user accounts <user account>` and
-		:term:`user profiles <user profile>` (see :doc:`User roles <../getting-started/user-roles>` and
-		:ref:`Administer <administer>`).
+		The administrator is a type of user who has :term:`access privileges
+		<access privilege>` to do the following: install or uninstall AtoM;
+		create, read, update, or delete any record; customize AtoM to
+		institution-specific requirements or themes; and manage :term:`user
+		accounts <user account>` and :term:`user profiles <user profile>` (see
+		:doc:`User roles <../getting-started/user-roles>` and :ref:`Administer
+		<administer>`).
 		
 	Advanced search
-		The advanced search is used to find descriptions in AtoM that contain text matching a search query.
-		The advanced search hyperlink can be accessed in the drop-down that appears when a user places the cursor
-		in the :term:`search box`. In the advanced search page, the user can select "and, or, not" operators, and search
-		specific fields, to create a powerful search query. The option to apply filters to limit or narrow the search
-		are also provided.
+		The advanced search is used to find descriptions in AtoM that contain
+		text matching a search query. The advanced search hyperlink can be
+		accessed in the drop-down that appears when a user places the cursor
+		in the :term:`search box`. In the advanced search page, the user can
+		select "and, or, not" operators, and search specific fields, to create
+		a powerful search query. The option to apply filters to limit or
+		narrow the search are also provided.
 	
 	Archival description
-		An archival description is a body of information about an archival record or records. The descriptions
-		provide contextual information about the archival materials and are arranged into hierarchical levels (fonds, 
-		series, files, items, and variations of these in accordance with institutional standards).
+		An archival description is a body of information about an archival
+		record or records. The descriptions provide contextual information
+		about the archival materials and are arranged into hierarchical levels
+		(:term:`fonds`, series, files, items, and variations of these in
+		accordance with institutional standards).
 
-		The International Council on Archives (`ICA <http://www.ica.org/>`__) defines an archival description as 
-		"The creation of an accurate representation of a unit of description and its component parts, if any, by 
-		capturing, analyzing, organizing and recording information that serves to identify, manage, locate and 
-		explain archival materials and the context and records systems which produced it. This term also describes 
-		the products of the process" (ISAD glossary).
+		The International Council on Archives (`ICA <http://www.ica.org/>`__)
+		defines an archival description as "The creation of an accurate
+		representation of a unit of description and its component parts, if
+		any, by capturing, analyzing, organizing and recording information
+		that serves to identify, manage, locate and explain archival materials
+		and the context and records systems which produced it. This term also
+		describes the products of the process" (ISAD glossary).
 
-		In AtoM the :term:`data elements <data element>` used for describing archival records are derived from the ICA's *General International 
-		Standard Archival Description* (ISAD). See :doc:`Entity types <../overview/entity-types>` and 
-		:doc:`Archival descriptions <../add-edit-content/archival-descriptions>`.
+		In AtoM the :term:`data elements <data element>` used for describing
+		archival records are derived from the ICA's *General International
+		Standard Archival Description* (ISAD). See :doc:`Entity types
+		<../overview/entity-types>` and :doc:`Archival descriptions <../add-
+		edit-content/archival-descriptions>`.
 		
 	Archival institution
-		An archival institution is "An organization which keeps and preserves archival material and makes it 
-		accessible to the public" (ISDIAH glossary). In AtoM the :term:`data elements <data element>` used to 
-		describe such institutions are based on the ICA's *International Standard for Describing Institutions with 
-		Archival Holdings* (ISDIAH). See entity types and Add/edit archival institutions.
+		An archival institution is "An organization which keeps and preserves
+		archival material and makes it accessible to the public" (ISDIAH
+		glossary). In AtoM the :term:`data elements <data element>` used to
+		describe such institutions are based on the ICA's *International
+		Standard for Describing Institutions with Archival Holdings* (ISDIAH).
+		See entity types and Add/edit archival institutions.
 	
 	Archival unit
-		Archival unit is a generic term for an aggregation of archival materials. A unit can be a :term:`fonds`, series, 
-		file, item, or variation thereof, depending on institutional standards. A unit may be divided into 
-		sub-units for the purposes of description: e.g. a :term:`fonds` may contain several series, each of which 
-		may contain several files, and so forth. The smallest (and therefore indivisible) unit is the item. See also 
+		Archival unit is a generic term for an aggregation of archival
+		materials. A unit can be a :term:`fonds`, series, file, item, or
+		variation thereof, depending on institutional standards. A unit may be
+		divided into sub-units for the purposes of description: e.g. a
+		:term:`fonds` may contain several series, each of which may contain
+		several files, and so forth. The smallest (and therefore indivisible)
+		unit is the item. See also
 		:term:`level of description`.
 		
 	Arrangmement
-		The International Council on Archives (`ICA <http://www.ica.org/>`__) defines arrangement as "the intellectual and 
-		physical processes and results of analyzing and organizing documents in accordance with archival principles" (ISAD glossary).
+		The International Council on Archives (`ICA <http://www.ica.org/>`__)
+		defines arrangement as "the intellectual and physical processes and
+		results of analyzing and organizing documents in accordance with
+		archival principles" (ISAD glossary).
 		
 	Authority record
-		In AtoM, authority records are collections of information about actors - corporate bodies, persons, or families - who interact 
-		with archival materials, typically as :term:`creators <creator>`. The :term:`data elements <data element>` used to describe authority records are based on the ICA's 
-		*International Standard Archival Authority Record for Corporate Bodies, Persons and Families* (ISAAR). ISAAR defines authority record as 
-		"The authorized form of name combined with other information elements that identify and describe the named entity and may also point 
-		to other related authority records." See :doc:`Entity types <../overview/entity-types>` and 
-		:doc:`Authority records <../add-edit-content/authority-records>`.
+		In AtoM, authority records are collections of information about actors
+		- corporate bodies, persons, or families - who interact with archival
+		materials, typically as :term:`creators <creator>`. The :term:`data
+		elements <data element>` used to describe authority records are based
+		on the ICA's *International Standard Archival Authority Record for
+		Corporate Bodies, Persons and Families* (ISAAR). ISAAR defines
+		authority record as "The authorized form of name combined with other
+		information elements that identify and describe the named entity and
+		may also point to other related authority records." See :doc:`Entity
+		types <../overview/entity-types>` and :doc:`Authority records <../add-
+		edit-content/authority-records>`.
 	
 	Browse menu
-		Browsing allows a user to see all records that have a certain type of :term:`access point` (such as :term:`subject`, :term:`name`, or 
-		:term:`place`) or other type of filter, such as :term:`media type` or type of :term:`entity`. In AtoM's default theme (the Dominion theme) 
-		the browse menu appears in a drop-down next to the :term:`search box` in the :term:`header bar` on all pages, as well as on the :term:`home page`.
+		Browsing allows a user to see all records that have a certain type of
+		:term:`access point` (such as :term:`subject`, :term:`name`, or
+		:term:`place`) or other type of filter, such as :term:`media type` or
+		type of :term:`entity`. In AtoM's default theme (the Dominion theme)
+		the browse menu appears in a drop-down next to the :term:`search box`
+		in the :term:`header bar` on all pages, as well as on the :term:`home
+		page`.
 	
 	Button block
-		The button block allows authorized users to add, edit, delete, move, and duplicate content and to save or cancel changes made 
-		in the :term:`edit pages <edit page>`.
+		The button block allows authorized users to add, edit, delete, move,
+		and duplicate content and to save or cancel changes made in the
+		:term:`edit pages <edit page>`.
 
 	Carousel
-		The carousel shows sets of :term:`thumbnails <thumbnail>` of :term:`digital objects <digital object>` and allows the user to scroll through the thumbnails using a mouse or keyboard scroll arrows. It 
-		is similar to the `cover flow <http://en.wikipedia.org/wiki/Cover_flow>`_ used in "the Macintosh Finder and other Apple Inc. products for visually flipping 
-		through snapshots of documents, website bookmarks, album artwork, or photographs. In AtoM a carousel viewer appears at the top of 
-		:term:`archival descriptions <archival description>` whenever there are associated lower-level descriptions that have digital objects attached.
+		The carousel shows sets of :term:`thumbnails <thumbnail>` of
+		:term:`digital objects <digital object>` and allows the user to scroll
+		through the thumbnails using a mouse or keyboard scroll arrows. It is
+		similar to the `cover flow <http://en.wikipedia.org/wiki/Cover_flow>`_
+		used in "the Macintosh Finder and other Apple Inc. products for
+		visually flipping through snapshots of documents, website bookmarks,
+		album artwork, or photographs. In AtoM a carousel viewer appears at
+		the top of :term:`archival descriptions <archival description>`
+		whenever there are associated lower-level descriptions that have
+		digital objects attached.
 	
 	Child record
-		Child record refers to a description of the :term:`archival unit` that is one :term:`level of description` lower than the current unit, 
-		e.g. if a series belongs to a :term:`fonds`, the series is the child record of the fonds. See also: :term:`Parent record <parent record>`.
+		Child record refers to a description of the :term:`archival unit` that
+		is one :term:`level of description` lower than the current unit, e.g.
+		if a series belongs to a :term:`fonds`, the series is the child record
+		of the fonds. See also: :term:`Parent record <parent record>`.
 	
 	Collection
-		In ISAD, a collection is "[a]n artificial assemblage of documents accumulated on the basis of some common characteristic without regard to 
-		the provenance of those documents. Not to be confused with an archival fonds." In the Canadian Rules for Archival Description, it is 
-		"[a] grouping of documents of any provenance intentionally assembled on the basis of some common characteristic." In Dublin Core, a collection 
-		is "[a]n aggregation of resources. A collection is described as a group; its parts may also be separately described."
+		In ISAD, a collection is "[a]n artificial assemblage of documents
+		accumulated on the basis of some common characteristic without regard
+		to the provenance of those documents. Not to be confused with an
+		archival fonds." In the Canadian Rules for Archival Description, it is
+		"[a] grouping of documents of any provenance intentionally assembled
+		on the basis of some common characteristic." In Dublin Core, a
+		collection is "[a]n aggregation of resources. A collection is
+		described as a group; its parts may also be separately described."
 	
 	Column header
-		Column headers appear at the top of the lists on list pages and 
-		browse results and give the name of the :term:`field` for whatever is 
-		being listed below.
+		Column headers appear at the top of the lists on list pages and browse
+		results and give the name of the :term:`field` for whatever is being
+		listed below.
 
 	Context menu
-		The context menu appears on all :term:`view <view page>` and :term:`edit pages <edit page>` to show the current record's relationships to other records, 
-		with links, e.g. they show the hierarchical placement of :term:`archival descriptions <archival description>` within a :term:`fonds` and the relationship 
-		between :term:`archival institutions <archival institution>`, :term:`authority records <authority record>`, and archival holdings. See 
-		:doc:`Context menu <../access-content/context-menu>`. 
+		The context menu appears on all :term:`view <view page>` and
+		:term:`edit pages <edit page>` to show the current record's
+		relationships to other records, with links, e.g. they show the
+		hierarchical placement of :term:`archival descriptions <archival
+		description>` within a :term:`fonds` and the relationship between
+		:term:`archival institutions <archival institution>`, :term:`authority
+		records <authority record>`, and archival holdings. See
+		:doc:`Context menu <../access-content/context-menu>`.
 	
 	Contributor
-		A contributor is a type of user who can search, browse, create, and edit descriptions. See :doc:`User roles <../getting-started/user-roles>`.
+		A contributor is a type of user who can search, browse, create, and
+		edit descriptions. See :doc:`User roles <../getting-started/user-
+		roles>`.
 	
 	Controlled vocabulary
-		A controlled vocabulary is a set of pre-defined, authorized :term:`terms <term>` grouped into :term:`taxonomies <taxonomy>` or entered into 
-		:term:`authority records <authority record>` and used for generating :term:`value lists <value list>` and :term:`access points <access point>`. 
-		See :doc:`Terms <../add-edit-content/terms>`.
+		A controlled vocabulary is a set of pre-defined, authorized
+		:term:`terms <term>` grouped into :term:`taxonomies <taxonomy>` or
+		entered into :term:`authority records <authority record>` and used for
+		generating :term:`value lists <value list>` and :term:`access points
+		<access point>`. See :doc:`Terms <../add-edit-content/terms>`.
 	
 	Corporate body
-		The International Council on Archives (`ICA <http://www.ica.org/>`__) defines a corporate body as "An organization or group of persons that is identified 
-		by a particular name and that acts, or may act, as an entity" (ISAD glossary).
+		The International Council on Archives (`ICA <http://www.ica.org/>`__)
+		defines a corporate body as "An organization or group of persons that
+		is identified by a particular name and that acts, or may act, as an
+		entity" (ISAD glossary).
 
-		Similarly, in the Canadian Rules for Archival Description (RAD), a corporate body is defined as "an organization or association of persons that is identified 
-		by a particular name and that acts, or may act, as an entity. Typical examples of corporate bodies are societies, institutions, business firms, nonprofit 
-		enterprises, governments, government agencies, religious bodies, places of worship, and conferences."
+		Similarly, in the Canadian Rules for Archival Description (RAD), a
+		corporate body is defined as "an organization or association of
+		persons that is identified by a particular name and that acts, or may
+		act, as an entity. Typical examples of corporate bodies are societies,
+		institutions, business firms, nonprofit enterprises, governments,
+		government agencies, religious bodies, places of worship, and
+		conferences."
 		
 	Create button
-		The create button, located on the :term:`button block`, is used to save new :term:`entities <entity>`. Once an entity has been saved for the first time, the 
-		create button disappears and is replaced by the "Save" button, which is used to save all subsequent changes.
+		The create button, located on the :term:`button block`, is used to
+		save new :term:`entities <entity>`. Once an entity has been saved for
+		the first time, the create button disappears and is replaced by the
+		"Save" button, which is used to save all subsequent changes.
 	
 	Creator
-		A creator is "any entity (:term:`corporate body`, family or person) that created, accumulated and/or maintained records in the conduct of personal or corporate 
-		activity" (ISAAR glossary). In AtoM, the creator is described in an :term:`authority record` linked to an :term:`archival description`, usually at the highest 
-		:term:`level of description` only. Lower levels inherit the creator from the :term:`parent record`, unless a different creator is specified. AtoM can accommodate 
-		multiple creators at all levels of description. See :ref:`Context area <context-area>`
+		A creator is "any entity (:term:`corporate body`, family or person)
+		that created, accumulated and/or maintained records in the conduct of
+		personal or corporate activity" (ISAAR glossary). In AtoM, the creator
+		is described in an :term:`authority record` linked to an
+		:term:`archival description`, usually at the highest :term:`level of
+		description` only. Lower levels inherit the creator from the
+		:term:`parent record`, unless a different creator is specified. AtoM
+		can accommodate multiple creators at all levels of description. See
+		:ref:`Context area <context-area>`
 
 	Current language
-		Refers to the language in which the :term:`user interface` elements and :term:`database content` are displayed. Users can switch between languages by using the 
-		:term:`language menu`.
+		Refers to the language in which the :term:`user interface` elements
+		and :term:`database content` are displayed. Users can switch between
+		languages by using the :term:`language menu`.
 	
 	Data element
-		Data elements, or elements of description, are `ICA <http://www.ica.org>`__ standards-based units of information applied to :term:`archival descriptions <archival description>`, 
-		:term:`authority records <authority record>`, :term:`archival institutions <archival institution>`, and :term:`terms <term>`. The elements are entered into fields in AtoM's 
+		Data elements, or elements of description, are `ICA
+		<http://www.ica.org>`__ standards-based units of information applied
+		to :term:`archival descriptions <archival description>`,
+		:term:`authority records <authority record>`, :term:`archival
+		institutions <archival institution>`, and :term:`terms <term>`. The
+		elements are entered into fields in AtoM's
 		:term:`edit pages <edit page>`.
 	
 	Database content
-		Database content refers to information stored in Atom's database tables, including :term:`data elements <data element>`, :term:`static page` content, and :term:`user profile` 
-		information.
+		Database content refers to information stored in Atom's database
+		tables, including :term:`data elements <data element>`, :term:`static
+		page` content, and :term:`user profile` information.
 	
 	Deaccession record
-		The deaccession record is used to indicate that a repository has removed an accession, in part or whole, from the collection. Instead of deleting an :term:`accession record`, 
-		the repository will create a deaccession record that is kept.
+		The deaccession record is used to indicate that a repository has
+		removed an accession, in part or whole, from the collection. Instead
+		of deleting an :term:`accession record`, the repository will create a
+		deaccession record that is kept.
 	
 	Default content
-		Default content is any :term:`database content` that is included by default when AtoM is installed. This includes things like the default :term:`home page` and :term:`drop-down menu` 
-		values that are stored in :term:`taxonomies <taxonomy>`.
+		Default content is any :term:`database content` that is included by
+		default when AtoM is installed. This includes things like the default
+		:term:`home page` and :term:`drop-down menu` values that are stored in
+		:term:`taxonomies <taxonomy>`.
 	
 	Default language
-		The default language is the language in which all :term:`user interface` elements are displayed when AtoM is opened. The language is specified when the application is installed. 
-		Users can switch to other :term:`supported languages <supported language>` and :term:`translators <translator>` can translate :term:`database content` and :term:`user interface` 
-		elements. See :doc:`Choose language <../getting-started/choose-language>` and :ref:`Translate <translate>`.
+		The default language is the language in which all :term:`user
+		interface` elements are displayed when AtoM is opened. The language is
+		specified when the application is installed. Users can switch to other
+		:term:`supported languages <supported language>` and
+		:term:`translators <translator>` can translate :term:`database
+		content` and :term:`user interface` elements. See :doc:`Choose
+		language <../getting-started/choose-language>` and :ref:`Translate
+		<translate>`.
 	
 	Delete button
-		The delete button appears in the :term:`button block`. Clicking on the delete button will prompt a warning to appear asking whether the user really intends to delete the :term:`entity`.
+		The delete button appears in the :term:`button block`. Clicking on the
+		delete button will prompt a warning to appear asking whether the user
+		really intends to delete the :term:`entity`.
 	
 	Delete icon
-		Delete icons are small buttons in :term:`edit pages <edit page>` used to delete values from :term:`multi-value fields <multi-value field>`, such as those containing 
-		:term:`event` dates or :term:`access points <access point>`.
+		Delete icons are small buttons in :term:`edit pages <edit page>` used
+		to delete values from :term:`multi-value fields <multi-value field>`,
+		such as those containing :term:`event` dates or :term:`access points 
+		<access point>`.
 
 	Developer
-		A developer is a `programmer <http://en.wikipedia.org/wiki/Programmer>`_ who is able to modify the underlying software code of an AtoM application.
+		A developer is a `programmer 
+		<http://en.wikipedia.org/wiki/Programmer>`_ who is able to modify the
+		underlying software code of an AtoM application.
 	
 	Digital object
-		Digital objects are computer files that can be uploaded into and displayed by AtoM. They include scanned images, digital photographs, sound and moving image files, and other scanned 
-		or born-digital items. See :doc:`Upload digital objects <../import-export/upload-digital-object>` and :ref:`File formats <file-formats>`.
+		Digital objects are computer files that can be uploaded into and
+		displayed by AtoM. They include scanned images, digital photographs,
+		sound and moving image files, and other scanned or born-digital items.
+		See :doc:`Upload digital objects <../import-export/upload-digital-
+		object>` and :ref:`File formats <file-formats>`.
 
 	Display standard
-		The display standard indicates which archival description standard is used to display and edit the :term:`archival unit`. The default display standard for the application can be set by an 
-		:term:`Administrator <administrator>` in the Default template area of the Settings menu. See :doc:`Settings <../administer/settings>`.
+		The display standard indicates which archival description standard is
+		used to display and edit the :term:`archival unit`. The default
+		display standard for the application can be set by an
+		:term:`Administrator <administrator>` in the Default template area of
+		the Settings menu. See :doc:`Settings <../administer/settings>`.
 		
-		AtoM also allows an authenticated user with the appropriate permissions to set which :term:`archival description` standards template is used to display the current description, and if desired, all of its related
-		:term:`child records <child record>`. Users can select from multiple standards-based templates supported in AtoM. Using this feature, located in the :term:`Administration area <administration area>` 
-		of an :term:`archival description`'s :term:`edit page`, users can choose if archival descriptions held by the same :term:`archival institution` are displayed to end-users with different archival standards templates, 
-		or even if different :term:`levels of description <level of description>` in the same :term:`fonds` or :term:`collection` are displayed with different standards templates. See :doc:`Entity types <../overview/entity-types>`, 
-		:doc:`Descriptive standards <../overview/descriptive-standards>`, and :doc:`Archival descriptions <../add-edit-content/archival-descriptions>`.
+		AtoM also allows an authenticated user with the appropriate
+		permissions to set which :term:`archival description` standards
+		template is used to display the current description, and if desired,
+		all of its related :term:`child records <child record>`. Users can
+		select from multiple standards-based templates supported in AtoM.
+		Using this feature, located in the :term:`Administration area
+		<administration area>` of an :term:`archival description`'s
+		:term:`edit page`, users can choose if archival descriptions held by
+		the same :term:`archival institution` are displayed to end-users with
+		different archival standards templates, or even if different
+		:term:`levels of description <level of description>` in the same
+		:term:`fonds` or :term:`collection` are displayed with different
+		standards templates. See :doc:`Entity types <../overview/entity-
+		types>`, :doc:`Descriptive standards <../overview/descriptive-
+		standards>`, and :doc:`Archival descriptions <../add-edit-content
+		/archival-descriptions>`.
 	
 	Document
-		The International Council on Archives (`ICA <http://www.ica.org>`__), in the ISAD glossary, defines a document as "recorded information regardless of medium or characteristics. (See also 
+		The International Council on Archives (`ICA <http://www.ica.org>`__),
+		in the ISAD glossary, defines a document as "recorded information
+		regardless of medium or characteristics. (See also
 		:term:`Record <record>`)".
 	
 	Donor dialog
-		The dialog that opens when adding donor contact information to the :term:`accession record` or when selecting to edit an existing donor record. Donor records are located under the "Manage" tab in the menu. 
-		Donor records are only available to logged-in users with permissions. See: :doc:`Donors <../add-edit-content/donors>`.
+		The dialog that opens when adding donor contact information to the
+		:term:`accession record` or when selecting to edit an existing donor
+		record. Donor records are located under the "Manage" tab in the menu.
+		Donor records are only available to logged-in users with permissions.
+		See: :doc:`Donors <../add-edit-content/donors>`.
 	
 	Draft record
-		A draft record is an :term:`archival description` that has not been published. All new and imported :term:`archival descriptions <archival description>` have draft status until the user changes that status 
-		to published in the :term:`Administration area <administration area>` the bottom of the archival description :term:`edit page`. The :term:`Administrator <administrator>` can change the 
-		default publication status from draft to published in the Admin > Settings > Global > Default publication status.
+		A draft record is an :term:`archival description` that has not been
+		published. All new and imported :term:`archival descriptions <archival
+		description>` have draft status until the user changes that status to
+		published in the :term:`Administration area <administration area>` the
+		bottom of the archival description :term:`edit page`. The
+		:term:`Administrator <administrator>` can change the default
+		publication status from draft to published in the Admin > Settings >
+		Global > Default publication status.
 
-		The publication status is inherited from the highest :term:`level of description`. Users who are not authenticated cannot view draft records. See also :term:`Published record <published record>`.
+		The publication status is inherited from the highest :term:`level of
+		description`. Users who are not authenticated cannot view draft
+		records. See also :term:`Published record <published record>`.
 	
 	Drop-down menu
-		A drop-down list menu is a list of data-entry options that appears below certain :term:`fields <field>` in :term:`edit pages <edit page>`. Values are drawn from :term:`controlled-vocabulary <controlled vocabulary>` 
-		:term:`terms <term>`, :term:`authority records <authority record>`, and default data contained in AtoM's database tables.
+		A drop-down list menu is a list of data-entry options that appears
+		below certain :term:`fields <field>` in :term:`edit pages <edit
+		page>`. Values are drawn from :term:`controlled-vocabulary <controlled
+		vocabulary>` :term:`terms <term>`, :term:`authority records <authority
+		record>`, and default data contained in AtoM's database tables.
 	
 	Duplicate button
-		The duplicate button appears at the bottom of the :term:`view page`; clicking the button takes the user to the :term:`edit duplicate`; this page is an :term:`edit page` that is pre-populated 
-		with the existing data from the original record. The user can edit the duplicate record page and then save it as a new record. Some users use the duplicate function in toM like a record skeleton when doing 
-		large amounts of data-entry on similar records.
+		The duplicate button appears at the bottom of the :term:`view page`;
+		clicking the button takes the user to the :term:`edit duplicate`; this
+		page is an :term:`edit page` that is pre-populated with the existing
+		data from the original record. The user can edit the duplicate record
+		page and then save it as a new record. Some users use the duplicate
+		function in toM like a record skeleton when doing large amounts of
+		data-entry on similar records.
 	
 	Edit button
-		The edit button appears at the bottom of :term:`view pages <view page>`; clicking the button takes the user to the :term:`edit page` for that :term:`record`.
+		The edit button appears at the bottom of :term:`view pages <view
+		page>`; clicking the button takes the user to the :term:`edit page`
+		for that :term:`record`.
 
-		The user can also switch between view and edit pages by clicking the :term:`title bar`.
+		The user can also switch between view and edit pages by clicking the
+		:term:`title bar`.
 	
 	Edit duplicate
-		After the user clicks the :term:`duplicate button` the :term:`edit page` provides a warning. The user is now editing a duplicate record (automatically draft status). After editing the 
-		duplicate record the user can click the cancel or save button at the bottom of the screen.
+		After the user clicks the :term:`duplicate button` the :term:`edit
+		page` provides a warning. The user is now editing a duplicate record
+		(automatically draft status). After editing the duplicate record the
+		user can click the cancel or save button at the bottom of the screen.
 	
 	Edit icon
-		The edit icon appears in :term:`edit pages <edit page>` next to :term:`fields <field>` that derive data from a related record. The user clicks the icon to edit the text in the related record, e.g. to 
-		edit the "Administrative/biographical history" in an :term:`archival description`, the user must click the edit icon because the data resides in the :term:`creator's <creator>` :term:`authority record`.
+		The edit icon appears in :term:`edit pages <edit page>` next to
+		:term:`fields <field>` that derive data from a related record. The
+		user clicks the icon to edit the text in the related record, e.g. to
+		edit the "Administrative/biographical history" in an :term:`archival
+		description`, the user must click the edit icon because the data
+		resides in the :term:`creator's <creator>` :term:`authority record`.
 	
 	Edit mode
-		Edit mode allows the user to add, modify, or delete the contents of :term:`archival descriptions <archival description>`, :term:`authority records <authority record>`, 
-		:term:`archival institutions <archival institution>`, :term:`terms <term>`, and other database content using :term:`edit pages <edit page>`. In edit mode, AtoM displays all 
+		Edit mode allows the user to add, modify, or delete the contents of
+		:term:`archival descriptions <archival description>`, :term:`authority
+		records <authority record>`, :term:`archival institutions <archival
+		institution>`, :term:`terms <term>`, and other database content using
+		:term:`edit pages <edit page>`. In edit mode, AtoM displays all
 		:term:`fields <field>` in a :term:`record` for data entry.
 	
 	Editor
-		An editor is a type of user who can search, browse, add, edit and delete :term:`archival descriptions <archival description>`, :term:`authority records <authority record>`, 
-		:term:`archival institutions <archival institution>`, :term:`functions <function>`, and <:term:`terms <term>`. See :doc:`User roles <../getting-started/user-roles>`.
+		An editor is a type of user who can search, browse, add, edit and
+		delete :term:`archival descriptions <archival description>`,
+		:term:`authority records <authority record>`, :term:`archival
+		institutions <archival institution>`, :term:`functions <function>`,
+		and <:term:`terms <term>`. See :doc:`User roles <../getting-started
+		/user-roles>`.
 		
 	Edit page
-		Edit pages allow users to add, edit and delete the contents of :term:`archival descriptions <archival description>`, :term:`authority records <authority record>`, 
-		:term:`archival institutions <archival institution>`, :term:`functions <function>`, and <:term:`terms <term>`. They are also used to carry out administrative functions 
-		such as changing :term:`user profiles <user profile>` and editing :term:`static pages <static page>`.
+		Edit pages allow users to add, edit and delete the contents of
+		:term:`archival descriptions <archival description>`, :term:`authority
+		records <authority record>`, :term:`archival institutions <archival
+		institution>`, :term:`functions <function>`, and <:term:`terms
+		<term>`. They are also used to carry out administrative functions such
+		as changing :term:`user profiles <user profile>` and editing
+		:term:`static pages <static page>`.
 	
 	Entity
-		An entity is an object about which an information system collects data. From the user's perspective, in AtoM there are six main entities: :term:`archival descriptions <archival description>`, 
-		:term:`authority records <authority record>`, :term:`archival institutions <archival institution>`, :term:`functions <function>`, :term:`rights records <rights record>`, and <:term:`terms <term>`. 
-		See :doc:`Entity types <../overview/entity-types>`.
+		An entity is an object about which an information system collects
+		data. From the user's perspective, in AtoM there are six main
+		entities: :term:`archival descriptions <archival description>`,
+		:term:`authority records <authority record>`, :term:`archival
+		institutions <archival institution>`, :term:`functions <function>`,
+		:term:`rights records <rights record>`, and <:term:`terms <term>`. See
+		:doc:`Entity types <../overview/entity-types>`.
 	
 	Error message
-		An error message will display when AtoM is unable to execute an action. See :ref:`Error <error>` for examples of types of error messages.
+		An error message will display when AtoM is unable to execute an
+		action. See :ref:`Error <error>` for examples of types of error
+		messages.
 	
 	Event
-		In AtoM, an event registers an action by an actor (:term:`corporate body`, person, or family) at a particular time or over a span of time and may establish a relationship between the actor and other actors or 
-		:term:`entities <entity>`. This is accomplished through the use of start and end dates in the context area of the :term:`archival description`, which links the :term:`creator` or 
-		other actor to the records for the period of time delimited by the dates. See :doc:`Entity types <../overview/entity-types>` and :ref:`Context area <context-area>`.
+		In AtoM, an event registers an action by an actor (:term:`corporate
+		body`, person, or family) at a particular time or over a span of time
+		and may establish a relationship between the actor and other actors or
+		:term:`entities <entity>`. This is accomplished through the use of
+		start and end dates in the context area of the :term:`archival
+		description`, which links the :term:`creator` or other actor to the
+		records for the period of time delimited by the dates. See
+		:doc:`Entity types <../overview/entity-types>` and :ref:`Context area
+		<context-area>`.
 	
 	Field
-		A field is a container for a :term:`data element`. Content is added to or modified in fields in :term:`edit pages <edit page>`. For further information, see the Wikipedia entry 
-		for `Field <https://en.wikipedia.org/wiki/Field_%28computer_science%29>`_.
+		A field is a container for a :term:`data element`. Content is added to
+		or modified in fields in :term:`edit pages <edit page>`. For further
+		information, see the Wikipedia entry for `Field
+		<https://en.wikipedia.org/wiki/Field_%28computer_science%29>`_.
 	
 	Field label
-		Field labels identify :term:`fields <field>` in :term:`view pages <view page>` and :term:`edit pages <edit page>`. In AtoM, the :term:`Administrator <administrator>` can select 
-		certain field labels and hide them from public (unauthorized Users) views. See :doc:`Visible elements <../administer/visible-elements>`.
+		Field labels identify :term:`fields <field>` in :term:`view pages
+		<view page>` and :term:`edit pages <edit page>`. In AtoM, the
+		:term:`Administrator <administrator>` can select certain field labels
+		and hide them from public (unauthorized Users) views. See
+		:doc:`Visible elements <../administer/visible-elements>`.
 	
 	Finding aid
-		The International Council on Archives (`ICA <http://www.ica.org/>`__) defines a finding aid as "The broadest term to cover any description or means of reference made or received
-		by an archives service in the course of establishing administrative or intellectual control over archival material" (ISAD Glossary)
+		The International Council on Archives (`ICA <http://www.ica.org/>`__)
+		defines a finding aid as "The broadest term to cover any description
+		or means of reference made or received by an archives service in the
+		course of establishing administrative or intellectual control over
+		archival material" (ISAD Glossary)
 		
-		The finding aid is a tool for discovering information about the :term:`fonds` or :term:`collection`. In AtoM, the entirety of an archival description (including all :term:`child records <child record>` 
-		and the :term:`parent record` can be understood as an online finding aid, used for discovery and access. The View archival description screen can also be printed and saved as a Finding Aid in 
-		`pdf <http://en.wikipedia.org/wiki/Portable_Document_Format>`_. 
+		The finding aid is a tool for discovering information about the
+		:term:`fonds` or :term:`collection`. In AtoM, the entirety of an
+		archival description (including all :term:`child records <child
+		record>` and the :term:`parent record` can be understood as an online
+		finding aid, used for discovery and access. The View archival
+		description screen can also be printed and saved as a Finding Aid in
+		`pdf <http://en.wikipedia.org/wiki/Portable_Document_Format>`_.
 	
 	Fonds
-		Fonds is an :term:`archival unit` defined as "The whole of the records, regardless of form or medium, organically created and/or accumulated and used by a particular person, family, or 
-		:term:`corporate body` in the course of that :term:`creator's <creator>` activities and :term:`functions <function>`." (ISAD glossary). In AtoM, the fonds is by default the highest :term:`level of description`. 
-		This default can be changed by :term:`administrators <administrator>` (see :ref:`User interface labels <user-interface-labels>`).
+		Fonds is an :term:`archival unit` defined as "The whole of the
+		records, regardless of form or medium, organically created and/or
+		accumulated and used by a particular person, family, or
+		:term:`corporate body` in the course of that :term:`creator's
+		<creator>` activities and :term:`functions <function>`." (ISAD
+		glossary). 
+
+		In AtoM, the fonds is by default the highest :term:`level
+		of description`. This default can be changed by :term:`administrators
+		<administrator>` (see :ref:`User interface labels <user-interface-
+		labels>`).
 	
 	Function
-		A function is a type of entity that describes activities linked to records creation, maintenance and use. The International Council on Archives (`ICA <http://www.ica.org/>`__) defines a
-		function as "Any high level purpose, responsibility or task assigned to the accountability agenda of a corporate body by legislation, policy or mandate. Functions may be decomposed
-		into sets of co-ordinated operations such as subfunctions, business processes, activities, tasks or transactions" (ISDF Glossary).
+		A function is a type of entity that describes activities linked to
+		records creation, maintenance and use. The International Council on
+		Archives (`ICA <http://www.ica.org/>`__) defines a function as "Any
+		high level purpose, responsibility or task assigned to the
+		accountability agenda of a corporate body by legislation, policy or
+		mandate. Functions may be decomposed into sets of co-ordinated
+		operations such as subfunctions, business processes, activities, tasks
+		or transactions" (ISDF Glossary).
 		
-		Functions in AtoM are linked to :term:`archival descriptions <archival description>`, :term:`authority records <authority record>` and other functions. In AtoM the :term:`fields <field>` for 
-		describing functions are taken from the ICA's International Standard for Describing Functions (ISDF). See :doc:`Entity types <../overview/entity-types>` and :doc:`Functions <../add-edit-content/functions>`.
+		Functions in AtoM are linked to :term:`archival descriptions <archival
+		description>`, :term:`authority records <authority record>` and other
+		functions. In AtoM the :term:`fields <field>` for describing functions
+		are taken from the ICA's International Standard for Describing
+		Functions (ISDF). See :doc:`Entity types <../overview/entity-types>`
+		and :doc:`Functions <../add-edit-content/functions>`.
 	
 	Global search/replace
-		Global search and replace allows :term:`administrators <administrator>` to query the entire database and globally replace specific :term:`terms <term>` in each :term:`field`: title, alternate title, 
-		scope and content, bio/admin history etc. The Global search and replace menu can be found under the :term:`Admin menu <admin menu>`. See the Global search and replace menu for a full list of available fields.
+		Global search and replace allows :term:`administrators
+		<administrator>` to query the entire database and globally replace
+		specific :term:`terms <term>` in each :term:`field`: title, alternate
+		title, scope and content, bio/admin history etc. The Global search and
+		replace menu can be found under the :term:`Admin menu <admin menu>`.
+		See the Global search and replace menu for a full list of available
+		fields.
 	
 	Header bar
-		The header bar is the navigational tool at the top of all pages in AtoM. It includes the :term:`search box`, :term:`browse menu`, and :term:`site logo` for all users, and the 
+		The header bar is the navigational tool at the top of all pages in
+		AtoM. It includes the :term:`search box`, :term:`browse menu`, and
+		:term:`site logo` for all users, and the
 		:term:`main menu` for authenticated (i.e. logged in) users.
 	
 	Holdings
-		Holdings is a generic term referring to the :term:`records <record>` and other materials held by :term:`archival institutions <archival institution>`. In AtoM a list of holdings 
-		is displayed in the :term:`context menu` on :term:`archival institution` :term:`view pages <view page>`. The list is generated from the titles of :term:`archival descriptions <archival description>` 
-		that have the :term:`archival institution` selected as a repository (see Context area).  See :doc:`Context menu <../access-content/context-menu>` and :ref:`Context area <context-area>`. 
+		Holdings is a generic term referring to the :term:`records <record>`
+		and other materials held by :term:`archival institutions <archival
+		institution>`. In AtoM a list of holdings is displayed in the
+		:term:`context menu` on :term:`archival institution` :term:`view pages
+		<view page>`. The list is generated from the titles of :term:`archival
+		descriptions <archival description>` that have the :term:`archival
+		institution` selected as a repository (see Context area).  See
+		:doc:`Context menu <../access-content/context-menu>` and :ref:`Context
+		area <context-area>`.
 	
 	Home page
-		The home page is the first page the user sees when opening the AtoM application. It can also be accessed by clicking the site logo. The content of the home page can be edited by 
-		:term:`administrators <administrator>` (see :doc:`Manage static pages <..administer/manage-static-pages>`).
+		The home page is the first page the user sees when opening the AtoM
+		application. It can also be accessed by clicking the site logo. The
+		content of the home page can be edited by :term:`administrators
+		<administrator>` (see :doc:`Manage static pages <..administer/manage-
+		static-pages>`).
 	
 	Information area
-		Information areas appear on :term:`edit pages <edit page>` and group related :term:`fields <field>` based on the organization of elements of description in `ICA <http://www.ica.org/>`__ (or other supported) 
-		descriptive standards. Clicking on an information area toggles it between closed (all fields in that area hidden) and open (all fields visible).
+		Information areas appear on :term:`edit pages <edit page>` and group
+		related :term:`fields <field>` based on the organization of elements
+		of description in `ICA <http://www.ica.org/>`__ (or other supported)
+		descriptive standards. Clicking on an information area toggles it
+		between closed (all fields in that area hidden) and open (all fields
+		visible).
 	
 	Information object
-		An information object is another term for an :term:`archival description` that can be more broadly applied to any description of a resource, not necessarily archival in origin.
+		An information object is another term for an :term:`archival
+		description` that can be more broadly applied to any description of a
+		resource, not necessarily archival in origin.
 	
 	Language menu
-		The language menu, located in the top-right corner of the page, allows the user to switch to any of the :term:`supported languages <supported language>` in AtoM. 
-		See :doc:`Choose language <../getting-started/choose-language>`; see also :doc:`Default language <../administer/default-language>` and :ref:`Add/remove languages <add-remove-languages>` .
+		The language menu, located in the top-right corner of the page, allows
+		the user to switch to any of the :term:`supported languages <supported
+		language>` in AtoM. See :doc:`Choose language <../getting-started
+		/choose-language>`; see also :doc:`Default language <../administer
+		/default-language>` and :ref:`Add/remove languages <add-remove-
+		languages>` .
 
 	Level of description
-		The level of description is "the position of the unit of description in the hierarchy of the :term:`fonds`" (ISAD glossary). In AtoM, the level of description is 
-		selected from a :term:`value list` in the "Identity" area of an :term:`archival description`. See :ref:`Identity area <identity-area>`.
+		The level of description is "the position of the unit of description
+		in the hierarchy of the :term:`fonds`" (ISAD glossary). In AtoM, the
+		level of description is selected from a :term:`value list` in the
+		"Identity" area of an :term:`archival description`. See :ref:`Identity
+		area <identity-area>`.
 	
 	Main menu
-		The main menu is the the navigational tool located at the top of all pages for authenticated  (logged in) users, as part of the :term:`header bar`. 
-		It allows the user to navigate to all the main areas of AtoM.
+		The main menu is the the navigational tool located at the top of all
+		pages for authenticated  (logged in) users, as part of the
+		:term:`header bar`. It allows the user to navigate to all the main
+		areas of AtoM.
 	
 	Master digital object
-		The master digital object is the unaltered version of a :term:`digital object` that has been uploaded to AtoM. AtoM automatically generates a :term:`thumbnail` and a 
-		:term:`reference display copy` of the object. Only authenticated users may view master digital objects. See :doc:`Upload digital objects <../import-export/upload-digital-object>`.
+		The master digital object is the unaltered version of a :term:`digital
+		object` that has been uploaded to AtoM. AtoM automatically generates a
+		:term:`thumbnail` and a :term:`reference display copy` of the object.
+		Only authenticated users may view master digital objects. See
+		:doc:`Upload digital objects <../import-export/upload-digital-
+		object>`.
 	
 	Media type
-		Media type refers to the format of uploaded :term:`digital objects <digital object>`. The media type is selected automatically by AtoM when a :term:`digital object` is uploaded 
-		and the :term:`thumbnail` and :term:`reference display copies <reference display copy>` of the object are generated. 
-		See :doc:`Upload digital objects <../import-export/upload-digital-object>`.
+		Media type refers to the format of uploaded :term:`digital objects
+		<digital object>`. The media type is selected automatically by AtoM
+		when a :term:`digital object` is uploaded and the :term:`thumbnail`
+		and :term:`reference display copies <reference display copy>` of the
+		object are generated. See :doc:`Upload digital objects <../import-
+		export/upload-digital-object>`.
 
 		.. NOTE::
 		
-		   Media type terms are controlled by the media type :term:`taxonomy`. AtoM ships with five :term:`terms <term>` (audio, image, text, video, other) that are locked; 
-		   these cannot be edited or deleted because they are referenced by AtoM's code. :term:`Editors <editor>` and :term:`administrators <administrator>` can add new :term:`media type` 
-		   terms, but unless :term:`developers <developer>` incorporate these into the code, the system will not be able to do anything with them.
+		   Media type terms are controlled by the media type :term:`taxonomy`.
+		   AtoM ships with five :term:`terms <term>` (audio, image, text,
+		   video, other) that are locked; these cannot be edited or deleted
+		   because they are referenced by AtoM's code. :term:`Editors
+		   <editor>` and :term:`administrators <administrator>` can add new
+		   :term:`media type` terms, but unless :term:`developers <developer>`
+		   incorporate these into the code, the system will not be able to do
+		   anything with them.
 
 	Multi-repository system
-		A multi-repository system exists when a single instance of AtoM is used by a :term:`network` of :term:`archival institutions <archival institution>` or other types of repositories.
+		A multi-repository system exists when a single instance of AtoM is
+		used by a :term:`network` of :term:`archival institutions <archival
+		institution>` or other types of repositories.
 	
 	Multi-value field
-		A multi-value field is a :term:`field` that is structured to contain more than one data entry.
+		A multi-value field is a :term:`field` that is structured to contain
+		more than one data entry.
 	
 	Name
-		In AtoM, names are registered in :term:`authority records <authority record>` for :term:`corporate bodies <corporate body>`, persons, and families who interact with 
-		archival materials as e.g. :term:`creators <creator>`, custodians and publishers. Names can be applied as :term:`access points <access point>` to 
-		:term:`archival descriptions <archival description>`. See :ref:`Access points <access-points>`.
+		In AtoM, names are registered in :term:`authority records <authority
+		record>` for :term:`corporate bodies <corporate body>`, persons, and
+		families who interact with archival materials as e.g. :term:`creators
+		<creator>`, custodians and publishers. Names can be applied as
+		:term:`access points <access point>` to :term:`archival descriptions <archival description>`. See :ref:`Access points <access-points>`.
 	
 	Network
-		A network is an aggregation of institutions using one instance of AtoM to produce a union list of archival holdings (a :term:`multi-repository system`).
+		A network is an aggregation of institutions using one instance of AtoM
+		to produce a union list of archival holdings (a :term:`multi-
+		repository system`).
 	
 	Parent record
-		The parent record refers to the description of the :term:`archival unit` that is one :term:`level of description` higher than the current unit. For example, a 
-		:term:`fonds` may be the parent record of a series. A parent record may have multiple :term:`child records <child record>`.
+		The parent record refers to the description of the :term:`archival
+		unit` that is one :term:`level of description` higher than the current
+		unit. For example, a :term:`fonds` may be the parent record of a 
+		series. A parent record may have multiple :term:`child records 
+		<child record>`.
 	
 	Password
-		A password is a case-sensitive, unspaced string of characters (alpha-numeric and/or special characters) associated with a :term:`user account` and intended to be kept private, 
-		to provide a user with a secure means of logging into the AtoM application. Passwords are required by every user of the system who needs to be able to add, edit, delete, or translate content. 
-		The initial passwords are set by the system :term:`administrator` (see :doc:`Manage user accounts <../administer/manage-user-accounts>`) and can subsequently be changed by 
-		the user (see :doc:`Change password <../getting-started>`).
+		A password is a case-sensitive, unspaced string of characters (alpha-
+		numeric and/or special characters) associated with a :term:`user
+		account` and intended to be kept private, to provide a user with a
+		secure means of logging into the AtoM application. Passwords are
+		required by every user of the system who needs to be able to add,
+		edit, delete, or translate content. The initial passwords are set by
+		the system :term:`administrator` (see :doc:`Manage user accounts
+		<../administer/manage-user-accounts>`) and can subsequently be changed
+		by the user (see :doc:`Change password <../getting-started>`).
 		
 	Physical storage
-		Physical storage is a grouping of :term:`fields <field>` relating to the management of physical objects such as folders, boxes, shelves, and cabinets. 
-		In AtoM, users can create and edit information about physical objects by clicking on the "Link physical storage" button in the :term:`button block` of an 
-		:term:`archival description`. See :doc:`Physical storage <../add-edit-content/physical-storage>`.
+		Physical storage is a grouping of :term:`fields <field>` relating to
+		the management of physical objects such as folders, boxes, shelves,
+		and cabinets. In AtoM, users can create and edit information about
+		physical objects by clicking on the "Link physical storage" button in
+		the :term:`button block` of an :term:`archival description`. See
+		:doc:`Physical storage <../add-edit-content/physical-storage>`.
 	
 	Place
-		In AtoM, a place is a geographic location registered in a :term:`taxonomy` and used as an :term:`access point` in :term:`archival descriptions <archival description>`, 
-		:term:`authority records <authority record>`, and :term:`archival institutions <archival institution>`.
+		In AtoM, a place is a geographic location registered in a
+		:term:`taxonomy` and used as an :term:`access point` in
+		:term:`archival descriptions <archival description>`, :term:`authority
+		records <authority record>`, and :term:`archival institutions
+		<archival institution>`.
 	
 	Print icon
-		An icon of a printer is located in the :term:`title bar` of the View Physical storage and Search/Advanced Search results screen. Clicking the icon will allow the user
-		to print out a report - the page display will be rendered in a simple black and white for easier printing. See :ref:`Reports/printing <reports-printing>`.
+		An icon of a printer is located in the :term:`title bar` of the View
+		Physical storage and Search/Advanced Search results screen. Clicking
+		the icon will allow the user to print out a report - the page display
+		will be rendered in a simple black and white for easier printing. See
+		:ref:`Reports/printing <reports-printing>`.
 	
 	Published record
-		A published record is an :term:`archival description` that has had its status changed from draft to published in the :term:`Administration area <administration area>` 
-		at the bottom of the :term:`archival description` :term:`edit page`.
+		A published record is an :term:`archival description` that has had its
+		status changed from draft to published in the :term:`Administration
+		area <administration area>` at the bottom of the :term:`archival
+		description` :term:`edit page`.
 		
 		
 		.. NOTE::
 		
-		   The publication status is inherited from the highest :term:`level of description`; e.g. when a :term:`fonds` description is changed from draft to published, 
-		   all :term:`child records <child record>` within the fonds are automatically changed as well. Once archival descriptions have been published, users who are not 
-		   logged in can view them.
+		   The publication status is inherited from the highest :term:`level
+		   of description`; e.g. when a :term:`fonds` description is changed
+		   from draft to published, all :term:`child records <child record>`
+		   within the fonds are automatically changed as well. Once archival
+		   descriptions have been published, users who are not logged in can
+		   view them.
 	
 	Record
-		The International Council on Archives (`ICA <http://www.ica.org/>`__) defines a record as "recorded information in any form or medium, created or received and maintained, by 
-		an organization or person in the transaction of business or the conduct of affairs" (ISAD glossary).
+		The International Council on Archives (`ICA <http://www.ica.org/>`__)
+		defines a record as "recorded information in any form or medium,
+		created or received and maintained, by an organization or person in
+		the transaction of business or the conduct of affairs" (ISAD
+		glossary).
 		
-		The Society of American Archivists (`SAA <http://www2.archivists.org/>`_), which maintains an excellent glossary of `archival terminology <http://www2.archivists.org/glossary>`_, 
-		holds several different definitions of a record, including: "data or information in a fixed form that is created or received in the course of individual or 
-		institutional activity and set aside (preserved) as evidence of that activity for future reference."
+		The Society of American Archivists (`SAA
+		<http://www2.archivists.org/>`_), which maintains an excellent
+		glossary of `archival terminology
+		<http://www2.archivists.org/glossary>`_, holds several different
+		definitions of a record, including: "data or information in a fixed
+		form that is created or received in the course of individual or
+		institutional activity and set aside (preserved) as evidence of that
+		activity for future reference."
 
-		In AtoM, an :term:`archival description` is used to provide contextual information about and intellectual control over archival materials, which include records.
+		In AtoM, an :term:`archival description` is used to provide contextual
+		information about and intellectual control over archival materials,
+		which include records.
 		
 	Reference display copy
-		A reference display copy is a low-resolution version of a :term:`master digital object` generated automatically by AtoM on upload. It is used to display images on 
-		the :term:`digital object` :term:`view page` when the user clicks on a :term:`thumbnail`, on :term:`archival descriptions <archival description>` that have linked
-		digital objects, and in the digital object area of :term:`edit pages <edit page>`. See See :doc:`Upload digital objects <../import-export/upload-digital-object>`.
+		A reference display copy is a low-resolution version of a
+		:term:`master digital object` generated automatically by AtoM on
+		upload. It is used to display images on the :term:`digital object`
+		:term:`view page` when the user clicks on a :term:`thumbnail`, on
+		:term:`archival descriptions <archival description>` that have linked
+		digital objects, and in the digital object area of :term:`edit pages
+		<edit page>`. See See :doc:`Upload digital objects <../import-export
+		/upload-digital-object>`.
 	
 	Report icon
-		In AtoM a report icon can be found in the right hand :term:`context menu` of an :term:`archival description` :term:`view page`. Clicking on the report icon takes 
-		the user to a Reports screen and the choice of printing 3 different reports: File list, Item list, :term:`Physical storage <physical storage>` locations, or a set of Box labels,
-		formatted as a `CSV <https://en.wikipedia.org/wiki/Comma-separated_values>`_. See :ref:`Reports/printing <reports-printing>`.
+		In AtoM a report icon can be found in the right hand :term:`context
+		menu` of an :term:`archival description` :term:`view page`. Clicking
+		on the report icon takes the user to a Reports screen and the choice
+		of printing 3 different reports: File list, Item list, :term:`Physical
+		storage <physical storage>` locations, or a set of Box labels,
+		formatted as a `CSV <https://en.wikipedia.org/wiki/Comma-
+		separated_values>`_. See :ref:`Reports/printing <reports-printing>`.
 	
+	Repository
+		The Society of American Archivists `Glossary
+		<http://www2.archivists.org/glossary>`__ defines a repository as "any
+		type of organization that holds documents, including business,
+		institutional, and government archives, manuscript collections,
+		libraries, museums, and historical societies, and in any form,
+		including manuscripts, photographs, moving image and sound materials,
+		and their electronic equivalents."
+
+		In AtoM, the term is sometimes used as a more generic term for
+		:term:`archival institution` that includes all cultural heritage
+		organizations. 
+
+
 	Researcher
-		A researcher is a type of user who is limited to searching and browsing descriptions. See :doc:`User roles <../getting-started/user-roles>`.
+		A researcher is a type of user who is limited to searching and
+		browsing descriptions. See :doc:`User roles <../getting-started/user-
+		roles>`.
 	
 	Rights record
-		In AtoM, Rights records can be linked to :term:`accession records <accession record>`, :term:`archival descriptions <archival description>` and 
-		:term:`digital objects <digital object>`. AtoM Rights metadata elements use `PREMIS rights elements <http://www.loc.gov/standards/premis/>`_. 
-		In AtoM restrictions can be based on Copyright(s), License, Statute(s) and Policy. For a full explanation see :doc:`Rights <../add-edit-content/rights>`. 
+		In AtoM, Rights records can be linked to :term:`accession records
+		<accession record>`, :term:`archival descriptions <archival
+		description>` and :term:`digital objects <digital object>`. AtoM
+		Rights metadata elements use `PREMIS rights elements
+		<http://www.loc.gov/standards/premis/>`_. In AtoM restrictions can be
+		based on Copyright(s), License, Statute(s) and Policy. For a full
+		explanation see :doc:`Rights <../add-edit-content/rights>`.
 		
 	Search box
-		The search box is used to find descriptions in AtoM that contain text matching a search query. The search box is located in the :term:`header bar` on all AtoM pages, including the home page. See :ref:`Access content <access-content>`.
+		The search box is used to find descriptions in AtoM that contain text
+		matching a search query. The search box is located in the
+		:term:`header bar` on all AtoM pages, including the home page. See
+		:ref:`Access content <access-content>`.
 	
 	Setting
-		Settings is a broad term used to describe the properties that affect the way a program looks and functions. In AtoM, certain settings can be changed by 
-		an :term:`administrator` in order to customize AtoM to institution-specific requirements. See :doc:`Settings <../administer/settings>`.
+		Settings is a broad term used to describe the properties that affect
+		the way a program looks and functions. In AtoM, certain settings can
+		be changed by an :term:`administrator` in order to customize AtoM to
+		institution-specific requirements. See :doc:`Settings
+		<../administer/settings>`.
 	
 	Site description
 		The site description is a brief description of the site's purpose or 
@@ -471,43 +779,43 @@ AtoM User Manual Glossary of Terms
 		their own institution or :term:`network` if desired: see Site logo.
 
 	Site title
-		The site title is a configurable element in AtoM that can be managed by
-		an :term:`administrator` through the application :term:`settings <setting>`. 
-		In AtoM 2.0, the site title does not appear in the application itself, 
-		but will be present in the title bar of a user's web browser when 
-		accessing AtoM. See :ref:`Site information <site-information>`. 
+		The site title is a configurable element in AtoM that can be managed
+		by an :term:`administrator` through the application :term:`settings
+		<setting>`. In AtoM 2.0, the site title does not appear in the
+		application itself, but will be present in the title bar of a user's
+		web browser when accessing AtoM. See :ref:`Site information <site-
+		information>`.
 
 	SKOS
-		Simple Knowledge Organization System (SKOS) is a data standard model 
-		developed by the `World Wide Web Consortium <http://www.w3.org/>`_ 
-		(W3C) as a common data model "for expressing the basic structure and 
-		content of concept schemes such as thesauri, classification schemes, 
-		subject heading lists, taxonomies, folksonomies, and other similar 
-		types of controlled vocabulary." (`W3C SKOS Primer, 18 August 2009 
-		<http://www.w3.org/TR/2009/NOTE-skos-primer-20090818/>`_). It is used 
-		in AtoM to import and export hierarchical 
-		:term:`taxonomies <taxonomy>`. 
-		See: :doc:`Export descriptions and terms
-		<../import-export/export-descriptions-and-terms>`.
+		Simple Knowledge Organization System (SKOS) is a data standard model
+		developed by the `World Wide Web Consortium <http://www.w3.org/>`_
+		(W3C) as a common data model "for expressing the basic structure and
+		content of concept schemes such as thesauri, classification schemes,
+		subject heading lists, taxonomies, folksonomies, and other similar
+		types of controlled vocabulary." (`W3C SKOS Primer, 18 August 2009
+		<http://www.w3.org/TR/2009/NOTE-skos-primer-20090818/>`_). It is used
+		in AtoM to import and export hierarchical :term:`taxonomies
+		<taxonomy>`. See: :doc:`Export descriptions and terms <../import-
+		export/export-descriptions-and-terms>`.
 
 	Static page
-		Static pages are pages that are designed to look the same each time 
-		they are accessed, in contrast to dynamic pages such as 
-		:ref:`search results <search-results>`, :term:`view pages <view page>`, 
-		or :term:`edit pages <edit page>`. AtoM has two static pages, the 
-		:term:`home page` and the :term:`about page`. Static pages can be 
+		Static pages are pages that are designed to look the same each time
+		they are accessed, in contrast to dynamic pages such as :ref:`search
+		results <search-results>`, :term:`view pages <view page>`, or
+		:term:`edit pages <edit page>`. AtoM has two static pages, the
+		:term:`home page` and the :term:`about page`. Static pages can be
 		edited by an :term:`administrator` (see :doc:`Manage static pages
 		<../administer/manage-static-pages>`).
 
 	Subject
-		In AtoM, subjects are :term:`controlled-vocabulary <controlled vocabulary>` 
-		:term:`terms <term>` grouped in a :term:`taxonomy` and used as 
-		:term:`access points <access point>` in :term:`archival descriptions 
-		<archival description>`.
+		In AtoM, subjects are :term:`controlled-vocabulary <controlled
+		vocabulary>` :term:`terms <term>` grouped in a :term:`taxonomy` and
+		used as :term:`access points <access point>` in :term:`archival
+		descriptions <archival description>`.
 
 	Supported language
-		In AtoM, a supported language is one into which both :term:`data 
-		elements <data element>` and :term:`user interface` elements can be 
+		In AtoM, a supported language is one into which both :term:`data
+		elements <data element>` and :term:`user interface` elements can be
 		translated.
 
 	Taxonomy
