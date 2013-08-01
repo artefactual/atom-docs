@@ -3,6 +3,7 @@
 
    overview/intro
    overview/technical-requirements
+   overview/entity-types
    glossary/glossary
 
 ***********************************
