@@ -2,6 +2,7 @@
    :hidden:
 
    overview/intro
+   overview/technical-requirements
    glossary/glossary
 
 ***********************************
@@ -26,7 +27,7 @@ Overview
   This section provides an overview of the technical architecture and requirements.
 
   * :doc:`What is ICA-AtoM? <overview/intro>`
-  * Technical requirements
+  * :doc:`Technical requirements <overview/technical-requirements>`
   * Entity types
   * Descriptive standards
 
