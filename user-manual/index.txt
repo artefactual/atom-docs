@@ -5,6 +5,7 @@
    overview/technical-requirements
    overview/entity-types
    overview/descriptive-standards
+   getting-started/getting-started
    glossary/glossary
 
 ***********************************
@@ -40,12 +41,12 @@ Getting Started
 ===============
 	This section describes how to start using AtoM once it has been installed. It provides a quick orientation to the home page, how to log in and log out, the various user roles in the system, the main page types a user will encounter, and how to switch languages.
 
-	* Home page
-	* Log in
-	* User roles
-	* Page types
-	* Choose language
-	* Change password
+	* :ref:`Home page <home-page>`
+	* :ref:`Log in <log-in>`
+	* :ref:`User roles <user-roles>`
+	* :ref:`Page types <page-types>`
+	* :ref:`Choose language <choose-language>`
+	* :ref:`Change password <change-password>`
 
 .. _add-edit-content:
 

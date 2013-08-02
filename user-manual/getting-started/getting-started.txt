@@ -1,0 +1,166 @@
+.. _getting-started-all:
+
+===============
+Getting Started
+===============
+
+This section describes how to start using AtoM once it has been installed. It
+provides a quick orientation to the :ref:`home page <home-page>`, how to log
+in and log out, the various :ref:`user roles <user-roles>` in the system, the
+main page types a user will encounter, and how to switch languages.
+
+.. _home-page:
+
+Home page
+=========
+
+The :term:`home page` is the first thing that a user will see when opening the
+AtoM application. :term:`Administrators <administrator>` can customize this to
+be a landing page, and from here, users can search, browse, log in as
+authenticated users (gaining access to the :term:`main menu`), change the
+language of the application interface, and more.
+
+#. Open your web browser and enter the URL of the web server hosting your AtoM
+   application. This takes you to your application's home page.
+#. On opening, AtoM displays the home page in the configured :term:`default
+   language`. In the language menu (top right-hand corner of your page, the
+   globe icon in the :term:`header bar`), a user can change the display
+   language. For choosing languages, see :ref:`Choose language
+   <choose-language>`.
+#. On opening, AtoM provides view-only access, so that any user can
+   immediately begin searching or browsing the contents of the application,
+   using the :term:`search box` or :term:`browse menu`, both located in the
+   :term:`header bar`. Any user can also use the :term:`advanced search` link.
+   For searching and browsing, see :ref:`Access content <access-content>`.
+#. The home page provides a welcome message that can be customized by the
+   :term:`administrator`. For customizing the welcome message, see
+   :doc:`Manage static pages <../administer/manage-static-pages>`.
+#. The home page also provides users with an additional :term:`browse menu`
+   and a list of the most popular recently visited records in the application.
+#. Once a user logs in via the log-in button in the right-hand corner of the
+   :term:`header bar`, more options will become available in the :term:`main
+   menu`, depending on the user's edit permissions, which are set by an
+   :term:`administrator`.
+#. To add or edit content, you must have a :term:`user account` and log in.
+#. For logging in, see :ref:`log in <log-in>`.
+#. For adding and editing, see :ref:`Add/edit content <add-edit-content>`.
+
+.. _log-in:
+
+Log in
+======
+
+To add or edit content in AtoM, you need to log in:
+
+
+* Click the log in link in the :term:`header bar`, located in the upper right-
+  hand corner of the page. AtoM routes you to the log in page
+* Enter your email address
+* Enter your :term:`password`
+* Click the log in button
+
+AtoM re-loads the :term:`home page`, now customized to your :term:`user role`.
+The :term:`main menu` is now visible. Your :term:`username` will appear where
+the log in button was, giving you access to your :term:`user profile`.
+
+To log out, click on your username in the user menu (top right-hand corner). A
+:term:`drop-down menu` will appear, with a link to your :term:`user profile`,
+and the option to log out. When the log out option is selected, AtoM returns
+you to the :term:`home page` (view-only access).
+
+.. note:: AtoM automatically logs you out after thirty minutes of inactivity.
+   To resume editing, you will have to log back in
+
+
+.. _user-roles:
+
+User roles
+==========
+
+User roles define levels of access to functions in AtoM, ranging from view-
+only access to full administration rights. Your user account in AtoM is tied
+to one of five user roles, each representing a different level of access to
+the system. User roles are defined by groups that an :term:`administrator` can
+add and edit - see :doc:`Manage user accounts <../administer/manage-user-
+accounts>` and :doc:`Edit permissions <../administer/edit-permissions>`
+
+.. _user-researcher:
+
+Researcher
+----------
+
+A researcher is any user who is not logged in (sometimes called an
+unauthenticated user) and therefore has view-only access to the application. A
+researcher can search and browse descriptions (published :term:`archival
+descriptions <archival description>`, :term:`authority records <authority
+record>`, :term:`archival institutions <archival institution>`)
+
+.. _user-contributor:
+
+Contributor
+-----------
+
+By default a contributor can search, browse, create, edit/update, view draft
+and export descriptions. The contributor cannot change the :term:`publication
+status` of an :term:`information object`. A contributor can access the
+:term:`reference <reference display copy>` and :term:`master digital object`.
+
+.. _user-editor:
+
+Editor
+------
+
+By default an editor can search, browse, create, edit/update, view draft,
+delete and export descriptions and edit :term:`controlled vocabulary`
+:term:`terms <term>`. An editor can also change the :term:`publication status`
+of an :term:`information object`. An editor can access the :term:`reference
+<reference display copy>` and :term:`master digital object`.
+
+.. _user-translator:
+
+Translator
+----------
+
+A translator can search and browse :term:`published <published record>`
+descriptions and can translate :term:`user interface` elements and
+:term:`database content`.
+
+A translator should be able to view :term:`draft descriptions <draft record>`,
+but not edit them.
+
+.. _user-administrator:
+
+Administrator
+-------------
+
+An administrator can import, export, create, read, update, publish and delete
+any record in the system, can customize application to institution specific
+requirements, and can manage :term:`user accounts <user account>` and
+:term:`profiles <user profile>`.
+
+Administrators can also create new user roles , set granular permissions
+for that role, and then assign or unassign users from the new role. For
+more information on creating a new user role, see :ref:`Add a new group
+<add-a-new-group>`.
+
+
+.. _page-types:
+
+Page types
+==========
+
+content here
+
+.. _choose-language:
+
+Choose language
+===============
+
+even more content here
+
+.. _change-password:
+
+Change password
+===============
+
+You got it - some content will go here.
