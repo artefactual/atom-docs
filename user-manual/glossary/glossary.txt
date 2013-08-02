@@ -34,7 +34,7 @@ AtoM User Manual Glossary of Terms
 		AtoM. For example, some users are able to add and edit content while
 		others may only be able to search and browse content. Access
 		privileges are based on defined :term:`user roles <user role>` (see
-		:doc:`User roles <../getting-started/user-roles>`).
+		:ref:`User roles <user-roles>`).
 
 	Accrual
 		An accrual is "an acquisition additional to a unit of description
@@ -76,8 +76,7 @@ AtoM User Manual Glossary of Terms
 		create, read, update, or delete any record; customize AtoM to
 		institution-specific requirements or themes; and manage :term:`user
 		accounts <user account>` and :term:`user profiles <user profile>` (see
-		:doc:`User roles <../getting-started/user-roles>` and :ref:`Administer
-		<administer>`).
+		:ref:`User roles <user-roles>` and :ref:`Administer <administer>`).
 
 	Advanced search
 		The advanced search is used to find descriptions in AtoM that contain
@@ -113,9 +112,10 @@ AtoM User Manual Glossary of Terms
 		An archival institution is "An organization which keeps and preserves
 		archival material and makes it accessible to the public" (ISDIAH
 		glossary). In AtoM the :term:`data elements <data element>` used to
-		describe such institutions are based on the ICA's *International
-		Standard for Describing Institutions with Archival Holdings* (ISDIAH).
-		See entity types and Add/edit archival institutions.
+		describe such institutions are based on the ICA's *International Standard
+		for Describing Institutions with Archival Holdings* (ISDIAH). See
+		:doc:`Entity types <../overview/entity-types>` and :doc:Archival
+		institutions <...add-edit-content/archival-institutions>`.
 
 	Archival unit
 		Archival unit is a generic term for an aggregation of archival
@@ -205,8 +205,7 @@ AtoM User Manual Glossary of Terms
 
 	Contributor
 		A contributor is a type of user who can search, browse, create, and
-		edit descriptions. See :doc:`User roles <../getting-started/user-
-		roles>`.
+		edit descriptions. See :ref:`User roles <user-roles>`.
 
 	Controlled vocabulary
 		A controlled vocabulary is a set of pre-defined, authorized
@@ -412,8 +411,7 @@ AtoM User Manual Glossary of Terms
 		delete :term:`archival descriptions <archival description>`,
 		:term:`authority records <authority record>`, :term:`archival
 		institutions <archival institution>`, :term:`functions <function>`,
-		and <:term:`terms <term>`. See :doc:`User roles <../getting-started
-		/user-roles>`.
+		and <:term:`terms <term>`. See :ref:`User roles <user-roles>`.
 
 	Edit page
 		Edit pages allow users to add, edit and delete the contents of
@@ -662,6 +660,15 @@ AtoM User Manual Glossary of Terms
 		will be rendered in a simple black and white for easier printing. See
 		:ref:`Reports/printing <reports-printing>`.
 
+	Publication status
+		The publication status of a record, which can be set to either :term:`draft
+		<draft record>` or :term:`published <published record>`, determines whether
+		or not the associated description is visible to unauthenticated (i.e., not
+		logged in) users, such as :term:`researchers <researcher>`. It can be
+		changed in the :term:`administration area` of a description's :term:`edit
+		page` by a user with edit permissions.
+
+
 	Published record
 		A published record is an :term:`archival description` that has had its
 		status changed from draft to published in the :term:`Administration
@@ -733,8 +740,7 @@ AtoM User Manual Glossary of Terms
 
 	Researcher
 		A researcher is a type of user who is limited to searching and
-		browsing descriptions. See :doc:`User roles <../getting-started/user-
-		roles>`.
+		browsing descriptions. See :ref:`User roles <user-roles>`.
 
 	Rights record
 		In AtoM, Rights records can be linked to :term:`accession records
@@ -877,8 +883,8 @@ AtoM User Manual Glossary of Terms
 		roles <user role>`. Every user who must be able to add, edit, delete,
 		or translate content must have a user account. In AtoM user accounts
 		are established and maintained by :term:`administrators <administrator>`.
-		See :doc:`User roles <../getting-started/user-roles>`and  :doc:`Manage
-		user accounts <../administer/manage-user-accounts>`.
+		See :ref:`User roles <user-roles>` and  :doc:`Manage user accounts
+		<../administer/manage-user-accounts>`.
 
 	User interface
 		The user interface is the set of elements that allow the user to
@@ -910,8 +916,8 @@ AtoM User Manual Glossary of Terms
 		User roles define levels of access to functions in AtoM, ranging from
 		view-only access to full administration rights. User roles are defined
 		by groups that an :term:`administrator` can add and edit. See
-		:doc:`User roles <../getting-started/user-roles>`and  :doc:`Manage
-		user accounts <../administer/manage-user-accounts>`.
+		:ref:`User roles <user-roles>` and  :doc:`Manageuser accounts
+		<../administer/manage-user-accounts>`.
 
 	Value list
 		Value lists restrict data entry in certain :term:`fields <field>` to
