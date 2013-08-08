@@ -613,7 +613,8 @@ AtoM User Manual Glossary of Terms
 		record>` for :term:`corporate bodies <corporate body>`, persons, and
 		families who interact with archival materials as e.g. :term:`creators
 		<creator>`, custodians and publishers. Names can be applied as
-		:term:`access points <access point>` to :term:`archival descriptions <archival description>`. See :ref:`Access points <access-points>`.
+		:term:`access points <access point>` to :term:`archival descriptions
+		<archival description>`. See :ref:`Access points <access-points>`.
 
 	Network
 		A network is an aggregation of institutions using one instance of AtoM
@@ -845,10 +846,14 @@ AtoM User Manual Glossary of Terms
 		<file-formats>`.
 
 	Title bar
-		The title that appears at the top of :term:`archival descriptions
-		<archival description>`, :term:`authority records <authority record>`,
-		:term:`archival institutions <archival institution>` and
-		:term:`functions <function>`.
+		The title that appears at the top of :term:` information areas
+		<information area>` in :term:`archival descriptions <archival
+		description>`, :term:`authority records <authority record>`,
+		:term:`archival institutions <archival institution>` and :term:`functions
+		<function>`. When an authenticated (i.e., logged in) user with edit
+		privileges clicks on the title bar of an :term:`information area` when in
+		:term:`view mode`, the page reloads in :term:`edit mode` so the user can
+		edit content.
 
 	Tooltips
 		Tooltips are online text designed to assist users to enter data in
@@ -910,7 +915,8 @@ AtoM User Manual Glossary of Terms
 		:term:`administrators  <administrator>` (see :doc:`Manage user accounts
 		<../administer/manage-user-accounts>`), although authenticated (i.e.,
 		logged in) users can view their own profiles (and change their
-		:term:`passwords <password>`) by going through the :term:`header bar`.
+		:term:`passwords <password>`) by going through the :term:`header bar`
+		(see: :ref:`Change password <change-password>`).
 
 	User role
 		User roles define levels of access to functions in AtoM, ranging from
