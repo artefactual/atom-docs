@@ -149,18 +149,179 @@ more information on creating a new user role, see :ref:`Add a new group
 Page types
 ==========
 
-content here
+ This section describes the main page types users of AtoM will encounter. The
+ main page types are:
+
+ * :ref:`Home page <page-type-home>`
+ * :ref:`View <page-type-view>`
+ * :ref:`Edit <page-type-edit>`
+ * :ref:`Edit digital object <page-type-edit-object>`
+ * :ref:`Search results <page-type-search>`
+ * :ref:`Browse results <page-type-browse>`
+ * :ref:`Error <page-type-error>`
+
+
+.. _page-type-home:
+
+Home page
+---------
+
+The :term:`home page` is the first page the user sees when opening the
+application. It provides basic information about the application, and links
+and buttons for user actions (search, browse, log in, log out, get help,
+switch language). When the user logs in, the :term:`main menu` becomes visible
+in the :term:`header bar`.
+
+The home page is accessible from any other page by clicking the :term:`site
+logo` in the :term:`header bar`.
+
+For further information on the features of the :term:`home page`, see the
+:ref:`Home page <home-page>` section above.
+
+.. _page-type-view:
+
+View
+----
+
+A :term:`view page` displays an individual :term:`record` in full in
+:term:`view mode`, showing only those :term:`fields <field>` that contain
+data. Logged in users can toggle between :term:`edit mode` and :term:`view
+mode` by clicking the :term:`title bar` and can also use the :term:`button
+block` to edit or add to the record (i.e. to upload :term:`digital objects
+<digital object>`, add :term:`physical storage`, etc.).
+
+Introduced in Release 1.3, view pages now include ellipses in text boxes that
+have a large number of characters (e.g., scope and content). The ellipses
+allow the User to expand the text box to read the entire body of text. The
+collapsed position provides a concise and tidy look to the record so User
+don't have to scroll down to understand what they are viewing.
+
+View pages also include ellipses in text boxes that have a large number of
+characters (e.g., scope and content, Administrative/biographical history,
+Related units of description, etc.). The ellipses, represented in AtoM as 3
+dots (...) followed by a >> button, allow the User to expand the text box to
+read the entire body of text. The collapsed position provides a concise and
+tidy look to the record so User don't have to scroll down to understand what
+they are viewing.
+
+.. _page-type-edit:
+
+Edit
+----
+
+
+* Displays an individual record in :term:`edit mode` for data entry.
+* Shows all :term:`fields <field>`, including the :term:`administration area`.
+* Groups :term:`fields <field>` by collapsible :term:`information areas
+  <information area>` - :term:`fields <field>` can be hidden or displayed by
+  section.
+* Provides :term:`button block` that contains buttons for saving or canceling
+  changes.
+* Accessible to :term:`contributors <contributor>`, :term:`editors <editor>`,
+  and :term:`administrators <administrator>`; not accessible to
+  :term:`researchers <researcher>` (for more information on these types of
+  users, see :ref:`User roles <user-roles>`)
+
+.. _page-type-edit-object:
+
+Edit digital object
+-------------------
+
+The Edit digital object page allows the authorized (i.e. logged in) User with
+edit privileges to control the rights applied to the :term:`master digital
+object`, the :term:`reference display copy`, and the :term:`thumbnail`
+representation (copy used within the database for search results, image
+gallery, :term:`carousel` etc.), as well as upload a new :term:`reference
+display copy` or :term:`thumbnail` associated with a :term:`master digital
+object`.
+
+.. _page-type-search:
+
+Search results
+--------------
+
+A search results page displays set of records that match search criteria,
+based on a user's query entered into the :term:`search box` or the
+:term:`advanced search` menu. Users can click on the title of a record listed
+in the search results page to open the record in :term:`view mode`.
+
+.. _page-type-browse:
+
+Browse results
+--------------
+
+Browse results show lists of descriptions retrieved by clicking on an item in
+the :term:`browse menu`. By default when the application is installed, results
+for :term:`archival descriptions <archival description>`, :term:`authority
+records <authority record>`, :term:`archival institutions <archival
+institution>` and :term:`functions <function>` are sorted by most recently
+updated for authenticated (i.e. logged in) users, and alphabetically for non-
+logged in users such as :term:`researchers <researcher>`; however, a :term
+:`drop-down menu` at the top-right of the browse results allows a user to
+change the sort order. Additionally, an :term:`administrator` can change the
+default sort order for both types of users via the Settings menu (see:
+:ref:`Settings <settings>`). Users can also browse by :term:`subject`,
+:term:`place`, and :term:`digital object` type.
+
+.. _page-type-error:
+
+Error
+-----
+
+An :term:`error message` displays when AtoM is unable to execute an action. The following are typical types of :term:`error messages <error message>`:
+
+* **Page not found:** usually implies a broken link; report to system
+  :term:`administrator` and to AtoM support team.
+* **No access permission:** your user account does not give you access
+  privileges to the requested page.
+* **Locked term:** the :term:`term` cannot be edited because it is referenced
+  in the underlying AtoM application code
+* **No translation permission:** you do not have :term:`translator` access in
+  the current language, or to the specific description
+* **System error (500 internal server error):** indicates a fairly major
+  system-wide problem, or problem with data corruption; report to
+  :term:`administrator`.
+* **Blank page:** indicates a fairly major system-wide problem, or problem
+  with data corruption; report to administrator and to AtoM support team.
+
 
 .. _choose-language:
 
 Choose language
 ===============
 
-even more content here
+Any user can change the :term:`current language` to one of AtoM's
+:term:`supported languages <supported language>` by clicking on a language in
+the :term:`language menu`, located in the AtoM :term:`header bar`. AtoM
+switches the :term:`user interface` to the preferred language, and:
+
+* if a translation of the database content into the preferred language exists,
+  AtoM switches to the translation;
+* if **no** translated version exists, AtoM displays the description in its
+  original source version.
+
+.. note::
+   **SEE Also:** :ref:`Add/remove languages <add-remove-languages>` for
+   information on how an :term:`administrator` can remove or restore languages
+   in the :term:`language menu`, and :ref:`Translate <translate-all>` for how
+   to translate in AtoM
 
 .. _change-password:
 
 Change password
 ===============
 
-You got it - some content will go here.
+Users can change their own :term:`passwords <password>`. If a user forgets his
+or her :term:`password`, the system :term:`administrator` must reset it (see
+:doc:`Manage user accounts <../administer/manage-user-accounts>`).
+
+#. Click your :term:`username` in the :term:`header bar`, at the upper
+   right-hand corner of the page
+#. A :term:`drop-down menu` will appear with the option to log out, or
+   navigate to your :term:`user profile` - click on "Profile"
+#. Enter your new :term:`password` under "Change password" and enter it again
+   under "Confirm password".
+#. Click the "Save" button
+
+Your password has now been updated. The new password will be in effect next
+time you log in to the application.
