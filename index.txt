@@ -7,13 +7,10 @@ User manual
 User guide to creating, editing, accessing, importing, exporting, and
 translating content in AtoM; includes administering the system.
 
-:doc:`Open the user manual <user-manual/index>`.
-
 .. toctree::
    :maxdepth: 2
 
    user-manual/index
-   
 
 ====================
 Administrator manual
