@@ -417,10 +417,10 @@ AtoM User Manual Glossary of Terms
 		Edit pages allow users to add, edit and delete the contents of
 		:term:`archival descriptions <archival description>`, :term:`authority
 		records <authority record>`, :term:`archival institutions <archival
-		institution>`, :term:`functions <function>`, and <:term:`terms
-		<term>`. They are also used to carry out administrative functions such
-		as changing :term:`user profiles <user profile>` and editing
-		:term:`static pages <static page>`.
+		institution>`, :term:`functions <function>`, <:term:`terms <term>`, and
+		:term:`accession records <accession record>`. They are also used to carry
+		out administrative functions such as changing :term:`user profiles <user
+		profile>` and editing   :term:`static pages <static page>`.
 
 	Entity
 		An entity is an object about which an information system collects
@@ -879,8 +879,8 @@ AtoM User Manual Glossary of Terms
 
 	Translator
 		A translator is a type of user who can translate :term:`data elements
-		<data element>` and :term:`user interface` elements. See :doc:`User
-		roles <../getting-started/user-roles>`
+		<data element>` and :term:`user interface` elements. See :ref:`User roles
+		<user-roles>`
 
 	User account
 		User accounts are established in order to manage :term:`access
