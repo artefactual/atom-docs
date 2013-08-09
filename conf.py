@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# AtoM documentation documentation build configuration file, created by
+# AtoM documentation build configuration file, created by
 # sphinx-quickstart on Tue Jul 16 19:48:18 2013.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -42,7 +42,7 @@ source_suffix = '.txt'
 master_doc = 'index'
 
 # General information about the project.
-project = u'AtoM documentation'
+project = u'AtoM'
 copyright = u'2013, Artefactual Systems Inc'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -169,7 +169,7 @@ html_show_sphinx = False
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'AtoMdocumentationdoc'
+htmlhelp_basename = 'AtoMdoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -188,7 +188,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'AtoMdocumentation.tex', u'AtoM documentation Documentation',
+  ('index', 'AtoM.tex', u'AtoM Documentation',
    u'Artefactual Systems Inc.', 'manual'),
 ]
 
@@ -218,7 +218,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'atomdocumentation', u'AtoM documentation Documentation',
+    ('index', 'atom', u'AtoM Documentation',
      [u'Artefactual Systems Inc.'], 1)
 ]
 
@@ -232,8 +232,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'AtoMdocumentation', u'AtoM documentation Documentation',
-   u'Artefactual Systems Inc.', 'AtoMdocumentation', 'One line description of project.',
+  ('index', 'AtoM', u'AtoM Documentation',
+   u'Artefactual Systems Inc.', 'AtoM', 'One line description of project.',
    'Miscellaneous'),
 ]
 
