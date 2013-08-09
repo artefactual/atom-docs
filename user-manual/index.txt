@@ -6,6 +6,7 @@
    overview/entity-types
    overview/descriptive-standards
    getting-started/getting-started
+   add-edit-content/accessions
    glossary/glossary
 
 ***********************************
@@ -56,7 +57,7 @@ Add/edit content
 
 	This section describes how to add, edit, and delete content in ICA-AtoM:
 
-	* Accession records
+	* :ref:`Accession records <accession-records>`
 	* Archival descriptions
 	* Authority records
 	* Archival institutions
