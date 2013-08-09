@@ -256,8 +256,8 @@ for :term:`archival descriptions <archival description>`, :term:`authority
 records <authority record>`, :term:`archival institutions <archival
 institution>` and :term:`functions <function>` are sorted by most recently
 updated for authenticated (i.e. logged in) users, and alphabetically for non-
-logged in users such as :term:`researchers <researcher>`; however, a :term
-:`drop-down menu` at the top-right of the browse results allows a user to
+logged in users such as :term:`researchers <researcher>`; however, a
+:term:`drop-down menu` at the top-right of the browse results allows a user to
 change the sort order. Additionally, an :term:`administrator` can change the
 default sort order for both types of users via the Settings menu (see:
 :ref:`Settings <settings>`). Users can also browse by :term:`subject`,
@@ -268,7 +268,8 @@ default sort order for both types of users via the Settings menu (see:
 Error
 -----
 
-An :term:`error message` displays when AtoM is unable to execute an action. The following are typical types of :term:`error messages <error message>`:
+An :term:`error message` displays when AtoM is unable to execute an action.
+The following are typical types of :term:`error messages <error message>`:
 
 * **Page not found:** usually implies a broken link; report to system
   :term:`administrator` and to AtoM support team.
