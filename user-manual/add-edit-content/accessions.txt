@@ -138,7 +138,7 @@ Link an accession record to an archival description
 Users have the option of linking a new :term:`accession record` with an
 existing :term:`archival description` in the AtoM database. The  Archival
 description :term:`information area` is located at the bottom of the accession
-record :term`edit page`. Placing the cursor in the data :term:`field` will
+record :term:`edit page`. Placing the cursor in the data :term:`field` will
 activate a drop-down list of all archival descriptions entered into the
 database. The User selects the appropriate :term:`archival description` by
 moving through the list (a blue highlight will indicate which record you are
@@ -202,7 +202,7 @@ time by a logged-in user with edit privileges.
    hyperlink Identifier. You can also search for an :term:`accession record`
    with the accession records :term:`search box` located at the bottom of the
    browse page. For more information on searching for :term:`accession records
-   <accession record>` in AtoM, see: :ref:` Searching for accession records
+   <accession record>` in AtoM, see: :ref:`Searching for accession records
    <search-accession-records>`
 
 .. TIP::
@@ -267,7 +267,7 @@ so:
    Accession number to which you are adding an accrual)
 
 4. The edit template provided for the :term:`accrual` is the same as that of a
-   new :term: accession record. Add data as required. See :ref:`Add a new
+   new :term:`accession record`. Add data as required. See :ref:`Add a new
    accession record <add-new-accession>` above for more information on working
    with the accession record template.
 
