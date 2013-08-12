@@ -7,167 +7,176 @@
    overview/descriptive-standards
    getting-started/getting-started
    add-edit-content/accessions
-   glossary/glossary
 
-***********************************
-Welcome to the AtoM 2.0 User Manual
-***********************************
+=============
+ User manual
+=============
 
-Below you'll find an outline of the chapters in the manual, and a set of links to each chapter's main sections. You can search for your topic using the quick search bar on the left.
+Below you'll find an outline of the chapters in the manual, and a set of
+links to each chapter's main sections. You can search for your topic
+using the quick search bar on the left.
 
-**Not what you were looking for?**
 
-	* Return to the `AtoM homepage <http://www.accesstomemory.org>`_
-	* Go the the AtoM Administrators Manual
-	* Go to the AtoM User Forum
-	* Go to AtoM online demo
-
-.. _overview:
-
-========
+--------
 Overview
-========
+--------
 
-  This section provides an overview of the technical architecture and requirements.
+This section provides an overview of the technical architecture and
+requirements.
 
-  * :doc:`What is ICA-AtoM? <overview/intro>`
-  * :doc:`Technical requirements <overview/technical-requirements>`
-  * :doc:`Entity types <overview/entity-types>`
-  * :doc:`Descriptive standards <overview/descriptive-standards>`
+* :doc:`What is ICA-AtoM? <overview/intro>`
+* :doc:`Technical requirements <overview/technical-requirements>`
+* :doc:`Entity types <overview/entity-types>`
+* :doc:`Descriptive standards <overview/descriptive-standards>`
+
 
 .. _getting-started:
 
-===============
+---------------
 Getting Started
-===============
-	This section describes how to start using AtoM once it has been installed. It provides a quick orientation to the home page, how to log in and log out, the various user roles in the system, the main page types a user will encounter, and how to switch languages.
+---------------
 
-	* :ref:`Home page <home-page>`
-	* :ref:`Log in <log-in>`
-	* :ref:`User roles <user-roles>`
-	* :ref:`Page types <page-types>`
-	* :ref:`Choose language <choose-language>`
-	* :ref:`Change password <change-password>`
+This section describes how to start using AtoM once it has been
+installed. It provides a quick orientation to the home page, how to log
+in and log out, the various user roles in the system, the main page
+types a user will encounter, and how to switch languages.
+
+* :ref:`Home page <home-page>`
+* :ref:`Log in <log-in>`
+* :ref:`User roles <user-roles>`
+* :ref:`Page types <page-types>`
+* :ref:`Choose language <choose-language>`
+* :ref:`Change password <change-password>`
+
 
 .. _add-edit-content:
 
-================
+----------------
 Add/edit content
-================
+----------------
 
-	This section describes how to add, edit, and delete content in ICA-AtoM:
+This section describes how to add, edit, and delete content in ICA-AtoM:
 
-	* :ref:`Accession records <accession-records>`
-	* Archival descriptions
-	* Authority records
-	* Archival institutions
-	* Deaccession records
-	* Donors
-	* Functions
-	* Rights
-	* Control area
-	* Terms
-	* Physical storage
-	* Exit edit mode
+* :ref:`Accession records <accession-records>`
+* Archival descriptions
+* Authority records
+* Archival institutions
+* Deaccession records
+* Donors
+* Functions
+* Rights
+* Control area
+* Terms
+* Physical storage
+* Exit edit mode
+
 
 .. _access-content:
 
-==============
+--------------
 Access Content
-==============
+--------------
 
-	This section provides guidelines for searching, browsing, and navigating. Most of the functions discussed are available to all user roles, including researchers with read only access. However, some navigation features (e.g. edit mode), are only available to users with edit access.
+This section provides guidelines for searching, browsing, and
+navigating. Most of the functions discussed are available to all user
+roles, including researchers with read only access. However, some
+navigation features (e.g. edit mode), are only available to users with
+edit access.
 
-	* Search
-	* Advanced search
-	* Browse
-	* Navigate
-	* Context menu
+* Search
+* Advanced search
+* Browse
+* Navigate
+* Context menu
+
 
 .. _translate:
 
-=========
+---------
 Translate
-=========
+---------
 
-	This section describes how to translate both database content and user interface elements in AtoM.
+This section describes how to translate both database content and user
+interface elements in AtoM.
 
-	* Multilingual design principles in AtoM
-	* Translate content
-	* Translate interface
-	* Translate static pages
+* Multilingual design principles in AtoM
+* Translate content
+* Translate interface
+* Translate static pages
+
 
 .. _reports-printing:
 
-================
+----------------
 Reports/Printing
-================
+----------------
 
-	This section describes how to create and print different types of reports using AtoM:
+This section describes how to create and print different types of
+reports using AtoM:
 
-	* Create file list report & print
-	* Create item list report & print
-	* Create physical storage locations report & print
-	* Print search results
-	* Print finding aid
+* Create file list report & print
+* Create item list report & print
+* Create physical storage locations report & print
+* Print search results
+* Print finding aid
+
 
 .. _import-export:
 
-=============
+-------------
 Import/export
-=============
+-------------
 
-	This section describes automated methods for getting data in and out of an AtoM application.
+This section describes automated methods for getting data in and out of
+an AtoM application.
 
 
-	* Upload digital objects
-	* Import descriptions and terms
-	* Export descriptions and terms
+* Upload digital objects
+* Import descriptions and terms
+* Export descriptions and terms
+
 
 .. _administer:
 
-==========
+----------
 Administer
-==========
+----------
+
+This section describes how to administer ICA-AtoM, whether for a single
+institution or for a network.
+
+* Install
+* Manage user accounts
+* Manage digital object storage
+* Edit user permissions
+* Manage static pages
+* Manage menus
+* Settings
+* Themes and theming
+* Default language
+* Site logo
+* Back up
+* Search for updates
+* Global search and replace
+* Visible elements
 
 
-	This section describes how to administer ICA-AtoM, whether for a single institution or for a network.
-
-	* Install
-	* Manage user accounts
-	* Manage digital object storage
-	* Edit user permissions
-	* Manage static pages
-	* Manage menus
-	* Settings
-	* Themes and theming
-	* Default language
-	* Site logo
-	* Back up
-	* Search for updates
-	* Global search and replace
-	* Visible elements
-
-========
+--------
 Glossary
-========
+--------
 
-	Glossary of terms used throughout this user manual.
+Glossary of terms used throughout this user manual.
 
-	* :doc:`Glossary <glossary/glossary>`
+* :doc:`Glossary <glossary/glossary>`
 
-=====
-Index
-=====
 
-	Index of  pages used in this manual.
-
-	* Index
-
-==========
+----------
 Questions?
-==========
+----------
 
-Please post any questions you might have to the `User Forum <https://groups.google.com/forum/#!forum/ica-atom-users>`_
+Please post any questions you might have to the `User Forum
+<https://groups.google.com/forum/#!forum/ica-atom-users>`_.
 
-If you have technical questions, please see the AtoM Administrator's manual, or post a question to the `AtoM developer's forum <https://groups.google.com/forum/#!forum/qubit-dev>`_
+If you have technical questions, please see the AtoM Administrator's
+manual, or post a question to the `AtoM developer's forum
+<https://groups.google.com/forum/#!forum/qubit-dev>`_.
