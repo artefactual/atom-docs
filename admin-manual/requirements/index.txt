@@ -1,0 +1,70 @@
+==============
+ Requirements
+==============
+
+List of requirements...
+
+
+--------
+Hardware
+--------
+
+Morbi sed orci eu nisi volutpat tempus sollicitudin a justo. Quisque
+eleifend augue magna, sit amet ullamcorper enim congue vitae. Morbi sed
+orci eu nisi volutpat tempus sollicitudin a justo. Quisque eleifend
+augue magna, sit amet ullamcorper enim congue vitae.
+
+
+----------------
+Operative system
+----------------
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+malesuada ultrices molestie. Lorem ipsum dolor sit amet, consectetur
+adipiscing elit. Morbi sed orci eu nisi volutpat tempus sollicitudin a
+justo. Quisque eleifend augue magna, sit amet ullamcorper enim congue
+vitae.
+
+
+----------
+Web server
+----------
+
+Phasellus fringilla justo id consectetur convallis. Proin et eros lorem.
+In id nulla sed neque sodales pellentesque. Ut sed arcu tempus, tempor
+nisl id, dictum enim. Sed nec malesuada massa. Quisque imperdiet dictum
+neque nec aliquam. Phasellus et varius turpis. Pellentesque a risus
+vitae enim laoreet pharetra ac vel mauris. Cras est purus, ornare a
+pretium ac, facilisis ut tellus.
+
+
+---
+PHP
+---
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+malesuada ultrices molestie. Lorem ipsum dolor sit amet, consectetur
+adipiscing elit. Morbi sed orci eu nisi volutpat tempus sollicitudin a
+justo. Quisque eleifend augue magna, sit amet ullamcorper enim congue
+vitae.
+
+
+-----
+MySQL
+-----
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+malesuada ultrices molestie. Lorem ipsum dolor sit amet, consectetur
+adipiscing elit. Morbi sed orci eu nisi volutpat tempus sollicitudin a
+justo. Quisque eleifend augue magna, sit amet ullamcorper enim congue
+vitae.
+
+-------------
+Elasticsearch
+-------------
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+malesuada ultrices molestie. Lorem ipsum dolor sit amet, consectetur
+adipiscing elit. Morbi sed orci eu nisi volutpat tempus sollicitudin a
+justo. Quisque eleifend augue magna, sit amet ullamcorper enim congue
+vitae.

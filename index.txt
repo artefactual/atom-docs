@@ -1,8 +1,10 @@
-.. _index:
+=============================
+ AtoM documentation contents
+=============================
 
-===========
+-----------
 User manual
-===========
+-----------
 
 User guide to creating, editing, accessing, importing, exporting, and
 translating content in AtoM; includes administering the system.
@@ -12,8 +14,13 @@ translating content in AtoM; includes administering the system.
 
    user-manual/index
 
-====================
+--------------------
 Administrator manual
-====================
+--------------------
 
 Instructions for installing, upgrading, importing and more.
+
+.. toctree::
+   :maxdepth: 2
+
+   admin-manual/index
