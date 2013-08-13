@@ -1,0 +1,501 @@
+.. _archival-descriptions:
+
+=====================
+Archival Descriptions
+=====================
+
+Archival descriptions are one of the core :doc:`entity types
+<../overview/entity-types>` in AtoM and provide users with invaluable
+contextual infomation about the resources held by an :term:`archival
+institution`.
+
+In AtoM, an archival description is a body of information about an archival
+record or records. The descriptions provide contextual information about the
+archival materials and are arranged into hierarchical levels (:term:`fonds`,
+series, files, items, and variations of these in accordance with institutional
+standards).
+
+Archival desription is *also* an activity, however - generally accompanied by
+the process of archival arrangemenent, it is the outcome of a process to gain
+intellectual control over a resource or collection of resources and provide
+end users (such as :term:`researchers <researcher>`) with a means of
+conceptualizing the organization of these resources and navigating to the
+specific content in which they are interested, as well as a sense of what is
+contained, how it got there, and what role it serves in the larger
+accumulation of materials. Archival description is therefore intended to
+facilitate the identification, management, and understanding of archival
+materials.
+
+The International Council on Archives (`ICA <http://www.ica.org/>`__) defines
+an archival description as *"The creation of an accurate representation of a
+unit of description and its component parts, if any, by capturing, analyzing,
+organizing and recording information that serves to identify, manage, locate
+and explain archival materials and the context and records systems which
+produced it. This term also describes the products of the process"* (ISAD
+glossary).
+
+Archival description is somewhat similar to the process of bibliographic
+description, and some standards, such as the Canadian Rules for Archival
+Description (RAD), are derived from bibliographic standards. Daniel Pitti,
+one of the original creators of the Encoded Archival Description XML-based
+metadata exchange standard (`EAD <http://www.loc.gov/ead/>`__), points out that
+one of the key differences, however, is in the hierarchical nature of
+archival description:
+
+    *The distinction between what and for whom libraries and archives remember
+    accounts form the major differences in archival and bibliographic
+    description. A bibliographic description, such as that found in a MARC
+    record, represents an individual published item, and thus is item-level.
+    There is a one-to-one correspondence between the description and the item.
+    The description is based on, and is derived from, the physical item.
+    Archival description represents a fonds, a complex body of materials,
+    frequently in more than one form or medium, sharing a common provenance.
+    The description involves a complex hierarchical and progressive analysis.
+    It begins by describing the whole, then proceeds to identify and describe
+    sub-components of the whole, and sub-components of sub-components, and so
+    on. Frequently, but by no means always, the description terminates with a
+    description of individual items. The description emphasizes the
+    intellectual structure and content of the material, rather than their
+    physical characteristics.* (`Pitti, 1999
+    <http://www.dlib.org/dlib/november99/11pitti.html>`__)
+
+Archival description is often preceded by the creation of an :ref:`accession
+record <accession-records>`, and much of the information generated during the
+accessions process can be re-used to create archival descriptions. As new
+:term:`accruals <accrual>` are added, the archival description is updated to
+reflect these changes.
+
+.. TIP::
+
+   AtoM can generate an :term:`archival description` from an existing
+   :term:`accession record` - see :ref:`Create an archival description from an
+   accession record <create-accession-description>` for more information.
+
+Below are instructions for using the Archival description module in AtoM to:
+
+* :ref:`Add a new archival description <add-archival-description>`
+
+  * :ref:`Add a new child description <add-child-archival-description>`
+
+* :ref:`Edit an existing archival description <edit-archival-description>`
+
+  * :ref:`Publish an archival description <publish-archival-description>`
+
+* :ref:`Duplicate an existing archival description
+  <duplicate-archival-description>`
+* :ref:`Move an archival description <move-archival-description>`
+* :ref:`Delete an archival description <delete-archival-description>`
+
+AtoM also includes standards-based templates for describing resources. Please
+see the sections below for more specific instructions on the use of
+:term:`fields  <field>` within each template:
+
+* General International Standard Archival Description: :ref:`ISAD(G)
+  <isad-template>`
+* Describing Archives: A Content Standard (U.S.A): :ref:`DACS <dacs-template>`
+* Dublin Core Metadata Element Set, Version 1.1: :ref:`Dublin Core
+  <dublin-core-template>`
+* Metadata Object Description Schema: :ref:`MODS <mods-template>`
+* Rules for Archival Description (Canada): :ref:`RAD <rad-template>`
+
+**SEE ALSO**
+
+* :ref:`Physical storage <physical-storage>`
+* :ref:`Upload digital objects <upload-digital-objects>`
+* :ref:`Link an accession record to an archival description
+  <link-accession-description>`
+* :ref:`Exit edit mode <exit-edit-mode>`
+
+
+
+.. _add-archival-description:
+
+Add a new archival description
+==============================
+
+This section contains instructions on how to Add a new top level archival
+description (also known as a :term:`parent record`), and how to add a new
+child description (or :term:`child record`) via two different methods
+
+.. _add-top-level-description:
+
+Add a new top level description
+-------------------------------
+
+A new :term:`archival description` can be added at any time, from anywhere in
+the application, via the :term:`main menu` available to authenticated (i.e.
+logged in) AtoM users with the appropriate privileges (such as
+:term:`contributors <contributor>`, :term:`editors <editor>`, and
+:term:`administrators <administrator>`). For more information on User roles
+and types of users in AtoM see: :ref:`User roles <user-roles>`.
+
+.. NOTE::
+
+   You must be logged in to be able to create a new :term:`archival
+   description` in AtoM. See: :ref:`Log in <log-in>`.
+
+**To create a new archival description:**
+
+#. In the :term:`main menu` located in the :term:`header bar`, click the "Add"
+   menu and select "Archival description" from the :term:`drop-down menu`.
+#. AtoM takes you to a blank :term:`edit page` for data entry.
+
+.. NOTE::
+
+   The edit page that appears will depend on the :ref:`default template
+   <default-template>` set in the application. When first installed, the
+   default template in AtoM is the :ref:`ISAD(G) <isad-template>` (General
+   International Standard for Archival Description) template. Administrators
+   can change the default template to any of the other 4 supported standards
+   (:ref:`RAD <rad-template>`, :ref:`DACS <dacs-template>`, :ref:`Dublin Core
+   <dublin-core-template>`, or :ref:`MODS <mods-template>` via **Admin >
+   Settings > Default template**. For more information, see: :doc:`Settings
+   <../administer/settings>`.
+
+3. On loading, the :term:`edit page` displays the record with all
+   :term:`information areas <information area>` closed; click on an
+   :term:`information area` to access the :term:`fields <field>` grouped under
+   it. Enter data as required.
+4. Note that new lower :term:`levels of description <level of description>`
+   (i.e. :term:`children <child record>`) can be created on the fly without
+   leaving the top-level or :term:`parent <parent record>` description you are
+   currently creating. For more information, see below, :ref:`Add a new child
+   description <method-1-child-description>`.
+5. You can quit the create process at any time by clicking the "Cancel" button
+   in the :term:`button block`; any data already entered will not be saved,
+   and no new record will be created. Note that simply navigating away from
+   the page by any other means, **without first clicking "Create"** will also
+   result in no new record being created.
+6. To save the new record, click the :term:`"Create" button <create button>`
+   located in the :term:`button block` at the bottom of the record.
+
+.. NOTE::
+
+   The default status of a newly created :term:`archival description` is
+   DRAFT. :term:`Draft records <draft record>` are not visible to
+   unauthenticated (i.e. not logged in) users such as :term:`researchers
+   <researcher>`. Under the :term:`Administration area` of the archival
+   description, users with publication privileges (see: :ref:`User roles
+   <user-roles>`) can select :term:`PUBLISHED <published record>` as the new
+   status of the archival description, making it available for read access to
+   the public.
+
+.. TIP::
+
+   :term:`Administrators <administrator>` can also change the default
+   publication status of new records throughout the application via **Admin >
+   Settings > Global > Default publication status**. For more information,
+   see: :doc:`Settings <../administer/settings>`.
+
+:ref:`Back to top <archival-descriptions>`
+
+
+.. _add-child-archival-description:
+
+Add a new child description
+---------------------------
+
+A :term:`child descriptions <child record>` is an archival description that is
+part of a larger hierarchy, often a :term:`fonds` or :term`collection`. A
+child record refers to a description of the :term:`archival unit` that is one
+:term:`level of description` lower than the current unit - for example, if a
+series belongs to a :term:`fonds`, the series is the child record of the
+fonds. AtoM helps users understand the context of the materials by depicting
+the current record's position in the treeview, which can also be used for
+navigation  (see: :doc:`Context menu <../access-content/context-menu>`)
+
+There are two ways to add a new :term:`child description <child record>` in
+AtoM - **Method 1** allows a user to add a new child record "on the fly" while
+creating a top-level description (or :term:`parent record`), but these records
+should be considered stubs or placeholders until they can be returned to and
+supplemented with further description. **Method 2** explains how to create a
+full child description at any time.
+
+.. _method-1-child-description:
+
+METHOD 1: "On the fly"
+^^^^^^^^^^^^^^^^^^^^^^
+
+AtoM includes a data entry element in the first :term:`information area` of
+the :term:`archival description` :term:`edit page` that allows users to
+generate lower :term:`levels of description <level of description>` to a
+:term:`parent record` without leaving the current :term:`edit page`.
+
+This area is located in:
+
+* The **Identity** :term:`area <information area>` of the :ref:`ISAD(G)
+  <isad-template>`  and :ref:`DACS <dacs-template>` templates
+* The **Statement of responsibility** :term:`area <information area>` of the
+  :ref:`RAD <rad-template>` template
+* The **Elements** :term:`area <information area>` of the :ref:`Dublin Core
+  <dublin-core-template>`  and :ref:`MODS <mods-template>` templates
+
+Note that this method is not meant to replace more granular description - it
+allows a user to create a sort of skeleton structure to the whole of the
+description (such as a :term:`fonds` or :term:`collection`), which can
+improve supplement an archival arrangement workflow - the child descriptions
+can then be supplemented later.
+
+Fields provided for creating lower levels of description "on the fly" via the
+:term:`parent description's <parent record>` :term:`edit page` include:
+
+* Identifier (i.e., reference number)
+* Level (of description)
+* Title
+
+.. TIP::
+
+   You can add as many levels as needed at one time; for example, to add
+   multiple series to a fonds or collection, fill in the fields under the "Add
+   new child levels" and add as many lower levels as desired. When the record
+   is saved, you will be able to see the new :term:`child records <child
+   record>` in the :term:`context menu`.
+
+.. _method-2-child-description
+
+METHOD 2: Adding a full child description
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Full :term:`child descriptions <child record>` can be added to an archival
+description at any time (by users with sufficient edit privileges) by
+navigating to the description to which you would like to add a child (the
+:term:`parent description <parent record>`).
+
+First, navigate to the :term:`parent archival description <parent record>` to
+which you wish to add a child description. You can do this by :ref:`browsing
+<../access-content/browse>` or :ref:`searching <../access-content/search>` for
+the :term:`archival description` - see :ref:`Access content <access-content>`
+for more information on navigation in AtoM.
+
+.. NOTE::
+
+   You must be logged in to be able to create a new :term:`archival
+   description` in AtoM. See: :ref:`Log in <log-in>`.
+
+#. In the :term:`view page` of the parent :term:`archival description`, scoll
+   to the bottom of the record to the :term:`button block` and click the "Add
+   new" button.
+#. You will be redirected to a new :term:`archival description` :term:`edit
+   page`.
+
+.. IMPORTANT::
+
+   It is important to note that after clicking on the "Add new" record button,
+   the edit archival description template will appear, but no reference is
+   made to the :term:`parent <parent record>` archival description. When you
+   save your record, however, you will be able to see the relationship
+   expressed in the treeview, located in the :term:`context menu` on the left-
+   hand side of the :term:`view page`.
+
+3. Enter appropriate information into the template for the lower-level
+   description, and remember to select the :term:`level of description`.
+4. Note that you can add further :term:`children <child record>` to this lower
+   level of description as you work, via The :ref:`"On the fly"
+   <method-1-child-description>` method described above.
+5. You can quit the create process at any time by clicking the "Cancel" button
+   in the :term:`button block`; any data already entered will not be saved,
+   and no new child record will be created. Note that simply navigating away
+   from the page by any other means, **without first clicking "Create"** will
+   also result in no new record being created.
+6. To save the new child record, click the :term:`"Create" button <create
+   button>` located in the :term:`button block` at the bottom of the record.
+
+After clicking "Save" you will be redirected to the :term:`view page` for the
+new child description. You can see the relationship to the parent record
+expressed in the :term:`context menu`.
+
+
+
+
+:ref:`Back to top <archival-descriptions>`
+
+.. _edit-archival-description:
+
+Edit an existing archival description
+=====================================
+
+An authenticated (i.e. logged in) user with edit privileges can edit or update
+an :term:`archival description` at any time. For more information on edit
+privileges and user roles see: :ref:`User roles <user-roles>`. For information
+on logging in, see: :ref:`Log in <log-in>`.
+
+**To edit an existing archival description:**
+
+1. First, navigate to the :term:`archival description` you wish to edit. You
+   can do this by :ref:`browsing <../access-content/browse>` or
+   :ref:`searching <../access-content/search>` for the :term:`archival
+   description` - see :ref:`Access content <access-content>` for more
+   information on navigation in AtoM.
+2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
+   button in the :term:`button block`, or by clicking on one of the
+   :term:`information area` headings; this takes you to the record's
+   :term:`edit page`.
+3. On loading, the :term:`edit page` displays the record with all
+   :term:`information areas <information area>` closed; click on an
+   information area to access the :term:`fields <field>` grouped under it
+4. Add and/or revise data as required.
+5. You can quit the create process at any time by clicking the "Cancel" button
+   in the :term:`button block`; any changes made will not be saved. Note that
+   simply navigating away from the page by any other means, **without first
+   clicking "Save"** will also result in no changes being saved to the
+   archival description.
+6. To save your edits, click the "Save" button located in the :term:`button
+   block` at the bottom of the record.
+
+You will be redirected to the :term:`view page` for the edited
+:term:`archival description`, where you can review your work.
+
+
+.. _publish-archival-description:
+
+Publish an archival description
+-------------------------------
+
+All new and imported :term:`archival descriptions <archival description>` in
+AtoM are automatically saved as :term:`draft records <draft record>`. This
+means that users who are not authenticated (i.e. logged in) cannot view these
+records.
+
+Publication status is inherited from the highest :term:`level of description`,
+meaning that changes to the publication status of the :term:`parent record`
+will affect the publication status of all :term:`child records <child
+record>`. For example, when a :term:`fonds` description is changed from draft
+to published, all child levels within the fonds (series, files, items, etc.)
+are automatically changed as well.
+
+If a :term:`contributor` (i.e. a logged in user **without** permission to
+publish descriptions - see: :ref:`User roles <user-roles>`) edits a
+:term:`published record`, the record's status is **automatically changed back
+to draft**
+
+Changing a record's status to published allows unauthenticated users such as
+:term:`researchers <researcher>` the ability to see the record, i.e. read
+access is granted to the public. Draft records are not viewable by
+unauthenticated users (i.e. those not logged in).
+
+
+**To publish an existing archival description**
+
+1. Navigate to the record you wish to publish. For more information on
+   navigation in AtoM, see: :ref:`Access content <access-content>`
+2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
+   button in the :term:`button block`, or by clicking on one of the
+   :term:`information area` headings; this takes you to the record's
+   :term:`edit page`.
+3. On loading, the :term:`edit page` displays the record with all
+   :term:`information areas <information area>` closed; click on the
+   :term:`Administration area` heading to expand it and make changes.
+4. In the :term:`drop-down menu` underneath the subheading "Publication
+   status", select "published"
+5. Scroll down to the :term:`button block` at the bottom of the :term:`edit
+   page` and click the "Save" button
+
+The archival description, and any lower :term:`levels of description <level of
+description>` associated with it, will now be published - public users who are
+not logged will now be granted read access to view (but not edit) the
+record(s). The record(s) will also be discoverable to public users via
+:ref:`browse <../access-content/browse>` or :ref:`search
+<../access-content/search>`
+
+
+
+:ref:`Back to top <archival-descriptions>`
+
+
+.. _duplicate-archival-description:
+
+Duplicate an existing archival description
+==========================================
+
+To simplify the description workflow when working with many similar
+descriptions (such as, in some cases, many items in a :term:`collection`),
+AtoM includes the ability to generate a duplicate record from an existing
+:term:`archival description`, and then edit it to make necessary changes.
+This can allow a user to avoid unnecessarily repeating data entry.
+
+**To duplicate an existing archival description:**
+
+1. First, navigate to the :term:`archival description` you wish to edit. You
+   can do this by :ref:`browsing <../access-content/browse>` or
+   :ref:`searching <../access-content/search>` for the :term:`archival
+   description` - see :ref:`Access content <access-content>` for more
+   information on navigation in AtoM.
+2. At the bottom of the archival description, click the "Duplicate" button
+   located in the :term:`button block`.
+3. You will be redirected to a new screen with an :term:`edit page` of an
+   :term:`archival description` open.
+4. The new edit page provides a warning at the top to indicate that it is a
+   duplicated record.
+5. On loading, the :term:`edit page` displays the record with all
+   :term:`information areas <information area>` closed; click on an
+   information area to access the :term:`fields <field>` grouped under it.
+   You will note that these will be populated with the exact same data found
+   in the original :term:`archival description` - you can now make any edits
+   or revisions necessary.
+6. You can quit the create process at any time by clicking the "Cancel" button
+   in the :term:`button block`; no new record will be created. Note that
+   simply navigating away from the page by any other means, **without first
+   clicking "Create"** will also result in no new record being created.
+7. To save the duplicate as a new record, click the "Save" button located in
+   the :term:`button block` at the bottom of the record.
+
+.. IMPORTANT::
+
+   If you are duplicating a :term:`child <child record>` of a :term:`parent
+   record` (such as a series, file, or item), the duplicate description will
+   automatically be created as a :term:`child <child record>` of the same
+   parent :term:`archival description`. If you duplicate a top or
+   :term:`parent <parent record>` :term:`level of description`, the new
+   record will also be a top-level description with no parent.
+
+   Records can be moved in AtoM as well - see below,
+   :ref:`Move an archival description <move-archival-description>`
+
+
+:ref:`Back to top <archival-descriptions>`
+
+
+.. _move-archival-description:
+
+Move an archival description
+============================
+
+Occasionally a user will need to move an archival description from one level
+of description to another, from one fonds to another, or simply to change the
+sort order within a number of records that share the same :term:`level of
+description` (sometimes called siblings). There are two methods of moving
+:term:`archival descriptions <archival description>` - the first method
+allows only for changing the sort order in the treeview found in the
+:term:`context menu`, while the second method, more robust, allows for a
+record to be moved broadly throughout the application, even allowing a lower
+level of description to be moved so that it becomes a new :term:`parent
+description <parent record>`.
+
+
+Method 1: Change sort order
+---------------------------
+
+.. IMPORTANT::
+
+   This method only applies when there are multiple :term:`children
+   <child record>` with the same :term:`level of description` beneath a
+   :term:`parent description <parent record>` - i.e. "siblings". It will
+   change the sort order as displayed in the treeview found in the
+   :term:`context menu` of the related descriptions.
+
+1. Navigate to the :term:`child description <child record>` whose sort order
+   you wish to change. You can do this by :ref:`browsing <../access-
+   content/browse>` or:ref:`searching <../access-content/search>` for the
+   :term:`archival description` - see :ref:`Access content <access-content>`
+   for more information on navigation in AtoM.
+
+.. _delete-archival-description:
+
+Delete an archival description
+==============================
+
+content
+
+
+
+:ref:`Back to top <archival-descriptions>`
