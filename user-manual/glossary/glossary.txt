@@ -618,8 +618,8 @@ AtoM User Manual Glossary of Terms
 
 	Network
 		A network is an aggregation of institutions using one instance of AtoM
-		to produce a union list of archival holdings (a :term:`multi-
-		repository system`).
+		to produce a union list of archival holdings (a
+		:term:`multi-repository system`).
 
 	Parent record
 		The parent record refers to the description of the :term:`archival
