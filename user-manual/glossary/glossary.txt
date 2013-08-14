@@ -1,13 +1,8 @@
-==================================
-AtoM User Manual Glossary of Terms
-==================================
-
-.. toctree::
-   :hidden:
-
-   glossary
-
 .. glossary::
+
+========
+Glossary
+========
 
 	About page
 		The about page provides general information on AtoM. It can be reached

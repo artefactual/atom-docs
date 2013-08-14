@@ -149,16 +149,16 @@ more information on creating a new user role, see :ref:`Add a new group
 Page types
 ==========
 
- This section describes the main page types users of AtoM will encounter. The
- main page types are:
+This section describes the main page types users of AtoM will encounter. The
+main page types are:
 
- * :ref:`Home page <page-type-home>`
- * :ref:`View <page-type-view>`
- * :ref:`Edit <page-type-edit>`
- * :ref:`Edit digital object <page-type-edit-object>`
- * :ref:`Search results <page-type-search>`
- * :ref:`Browse results <page-type-browse>`
- * :ref:`Error <page-type-error>`
+* :ref:`Home page <page-type-home>`
+* :ref:`View <page-type-view>`
+* :ref:`Edit <page-type-edit>`
+* :ref:`Edit digital object <page-type-edit-object>`
+* :ref:`Search results <page-type-search>`
+* :ref:`Browse results <page-type-browse>`
+* :ref:`Error <page-type-error>`
 
 
 .. _page-type-home:
