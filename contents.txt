@@ -1,0 +1,19 @@
+.. _contents:
+
+=============================
+ AtoM documentation contents
+=============================
+
+.. toctree::
+   :maxdepth: 2
+
+   user-manual/index
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+* :ref:`glossary`
