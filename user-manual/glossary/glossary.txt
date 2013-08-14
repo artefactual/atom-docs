@@ -1,8 +1,10 @@
-.. glossary::
+.. _glossary::
 
 ========
 Glossary
 ========
+
+.. glossary::
 
   About page
     The about page provides general information on AtoM. It can be reached
