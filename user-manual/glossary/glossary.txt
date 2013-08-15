@@ -1,4 +1,4 @@
-.. _glossary::
+.. _glossary:
 
 ========
 Glossary
@@ -17,7 +17,8 @@ Glossary
     summarizes standard information about the process of transferring
     materials to a repository, including information about the provenance,
     contents and legal and physical transfer of the records such as, rights
-    and restrictions. See :doc:`Entity types <../overview/entity-types>`
+    and restrictions. See :doc:`Entity types <../overview/entity-types>` and
+    :ref:`Accessions <accession-records>`.
 
   Access point
     An access point is "A name, term, keyword, phrase or code that may be
@@ -35,7 +36,9 @@ Glossary
 
   Accrual
     An accrual is "an acquisition additional to a unit of description
-    already held by a :term:`repository`." (ISAD glossary)
+    already held by a :term:`repository`." (ISAD glossary). In AtoM, an
+    accrual can be added to an existing :term:`accession record`. See:
+    :ref:`Accessions <accession-records>`.
 
   Add menu
     The "Add" menu allows authorized users to add new :term:`archival
@@ -102,8 +105,8 @@ Glossary
     In AtoM the :term:`data elements <data element>` used for describing
     archival records are derived from the ICA's *General International
     Standard Archival Description* (ISAD). See :doc:`Entity types
-    <../overview/entity-types>` and :doc:`Archival descriptions <../add-
-    edit-content/archival-descriptions>`.
+    <../overview/entity-types>` and :ref:`Archival descriptions
+    <archival-descriptions>`.
 
   Archival institution
     An archival institution is "An organization which keeps and preserves
@@ -111,8 +114,8 @@ Glossary
     glossary). In AtoM the :term:`data elements <data element>` used to
     describe such institutions are based on the ICA's *International Standard
     for Describing Institutions with Archival Holdings* (ISDIAH). See
-    :doc:`Entity types <../overview/entity-types>` and :doc:Archival
-    institutions <...add-edit-content/archival-institutions>`.
+    :doc:`Entity types <../overview/entity-types>` and :ref:`Archival
+    institutions <archival-institutions>`.
 
   Archival unit
     Archival unit is a generic term for an aggregation of archival
@@ -124,7 +127,7 @@ Glossary
     unit is the item. See also
     :term:`level of description`.
 
-  Arrangmement
+  Arrangement
     The International Council on Archives (`ICA <http://www.ica.org/>`__)
     defines arrangement as "the intellectual and physical processes and
     results of analyzing and organizing documents in accordance with
@@ -191,14 +194,22 @@ Glossary
     listed below.
 
   Context menu
-    The context menu appears on all :term:`view <view page>` and
-    :term:`edit pages <edit page>` to show the current record's
-    relationships to other records, with links, e.g. they show the
-    hierarchical placement of :term:`archival descriptions <archival
-    description>` within a :term:`fonds` and the relationship between
-    :term:`archival institutions <archival institution>`, :term:`authority
-    records <authority record>`, and archival holdings. See
-    :doc:`Context menu <../access-content/context-menu>`.
+    The context menu appears on all :term:`view <view page>` and some
+    :term:`edit pages <edit page>` to provide greater contextual information
+    about the record currently being viewed. On :term:`archival description`
+    :term:`view pages <view page>`, this includes the name and/or logo of the
+    :term:`archival institution` or :term:`repository` who holds the
+    :term:`archival unit` the current record describes (which links to the
+    repository's :term:`authority record`) and the :term:`treeview`, which
+    shows the current record's relationships to other records, with links, on
+    the left-hand side of the screen. The right-hand side of the screen
+    includes related people (i.e., :term:`authority records
+    <authority record>`), :term:`subjects <subject>`, and :term:`places
+    <place>`, as well as available formats for export. When viewing an ISDIAH
+    :term:`authority record` for an :term:`archival institution`, the context
+    menu displays a list of holdings on the left-hand side, with contact
+    information for the :term:`repository` provided on the right-hand side of
+    the record. See :doc:`Context menu <../access-content/context-menu>`.
 
   Contributor
     A contributor is a type of user who can search, browse, create, and
@@ -265,7 +276,8 @@ Glossary
     The deaccession record is used to indicate that a repository has
     removed an accession, in part or whole, from the collection. Instead
     of deleting an :term:`accession record`, the repository will create a
-    deaccession record that is kept.
+    deaccession record that is kept. See: :ref:`Deaccession records
+    <deaccession-records>`.
 
   Default content
     Default content is any :term:`database content` that is included by
@@ -350,12 +362,13 @@ Glossary
     published in the :term:`Administration area <administration area>` the
     bottom of the archival description :term:`edit page`. The
     :term:`Administrator <administrator>` can change the default
-    publication status from draft to published in the Admin > Settings >
-    Global > Default publication status.
+    publication status from draft to published in the **Admin > Settings >
+    Global > Default publication status**.
 
     The publication status is inherited from the highest :term:`level of
     description`. Users who are not authenticated cannot view draft
-    records. See also :term:`Published record <published record>`.
+    records. See also :term:`Published record <published record>`. See:
+    :ref:`Publish an archival description <publish-archival-description>`.
 
   Drop-down menu
     A drop-down list menu is a list of data-entry options that appears
@@ -379,7 +392,7 @@ Glossary
     for that :term:`record`.
 
     The user can also switch between view and edit pages by clicking the
-    :term:`title bar`.
+    :term:`title bar` of an :term:`information area`.
 
   Edit duplicate
     After the user clicks the :term:`duplicate button` the :term:`edit
@@ -408,13 +421,13 @@ Glossary
     delete :term:`archival descriptions <archival description>`,
     :term:`authority records <authority record>`, :term:`archival
     institutions <archival institution>`, :term:`functions <function>`,
-    and <:term:`terms <term>`. See :ref:`User roles <user-roles>`.
+    and :term:`terms <term>`. See :ref:`User roles <user-roles>`.
 
   Edit page
     Edit pages allow users to add, edit and delete the contents of
     :term:`archival descriptions <archival description>`, :term:`authority
     records <authority record>`, :term:`archival institutions <archival
-    institution>`, :term:`functions <function>`, <:term:`terms <term>`, and
+    institution>`, :term:`functions <function>`, :term:`terms <term>`, and
     :term:`accession records <accession record>`. They are also used to carry
     out administrative functions such as changing :term:`user profiles <user
     profile>` and editing   :term:`static pages <static page>`.
@@ -430,7 +443,7 @@ Glossary
 
   Error message
     An error message will display when AtoM is unable to execute an
-    action. See :ref:`Error <error>` for examples of types of error
+    action. See :ref:`Error <page-type-error>` for examples of types of error
     messages.
 
   Event
@@ -482,8 +495,8 @@ Glossary
 
     In AtoM, the fonds is by default the highest :term:`level
     of description`. This default can be changed by :term:`administrators
-    <administrator>` (see :ref:`User interface labels <user-interface-
-    labels>`).
+    <administrator>` (see :ref:`User interface labels
+    <user-interface-labels>`).
 
   Function
     A function is a type of entity that describes activities linked to
@@ -551,10 +564,9 @@ Glossary
   Language menu
     The language menu, located in the top-right corner of the page, allows
     the user to switch to any of the :term:`supported languages <supported
-    language>` in AtoM. See :doc:`Choose language <../getting-started
-    /choose-language>`; see also :doc:`Default language <../administer
-    /default-language>` and :ref:`Add/remove languages <add-remove-
-    languages>` .
+    language>` in AtoM. See :ref:`Choose language <choose-language>`; see also
+    :doc:`Default language <../administer/default-language>` and
+    :ref:`Add/remove languages <add-remove-languages>` .
 
   Level of description
     The level of description is "the position of the unit of description
@@ -582,8 +594,8 @@ Glossary
     <digital object>`. The media type is selected automatically by AtoM
     when a :term:`digital object` is uploaded and the :term:`thumbnail`
     and :term:`reference display copies <reference display copy>` of the
-    object are generated. See :doc:`Upload digital objects <../import-
-    export/upload-digital-object>`.
+    object are generated. See :doc:`Upload digital objects
+    <../import-export/upload-digital-object>`.
 
     .. NOTE::
 
@@ -634,7 +646,7 @@ Glossary
     edit, delete, or translate content. The initial passwords are set by
     the system :term:`administrator` (see :doc:`Manage user accounts
     <../administer/manage-user-accounts>`) and can subsequently be changed
-    by the user (see :doc:`Change password <../getting-started>`).
+    by the user (see :ref:`Change password <change-password>`).
 
   Physical storage
     Physical storage is a grouping of :term:`fields <field>` relating to
@@ -664,7 +676,8 @@ Glossary
     or not the associated description is visible to unauthenticated (i.e., not
     logged in) users, such as :term:`researchers <researcher>`. It can be
     changed in the :term:`administration area` of a description's :term:`edit
-    page` by a user with edit permissions.
+    page` by a user with edit permissions. See :ref:`Publish an archival
+    description <publish-archival-description>`
 
 
   Published record
@@ -681,7 +694,8 @@ Glossary
        from draft to published, all :term:`child records <child record>`
        within the fonds are automatically changed as well. Once archival
        descriptions have been published, users who are not logged in can
-       view them.
+       view them. See :ref:`Publish an archival description
+       <publish-archival-description>`
 
   Record
     The International Council on Archives (`ICA <http://www.ica.org/>`__)
@@ -710,8 +724,8 @@ Glossary
     :term:`view page` when the user clicks on a :term:`thumbnail`, on
     :term:`archival descriptions <archival description>` that have linked
     digital objects, and in the digital object area of :term:`edit pages
-    <edit page>`. See See :doc:`Upload digital objects <../import-export
-    /upload-digital-object>`.
+    <edit page>`. See See :doc:`Upload digital objects
+    <../import-export/upload-digital-object>`.
 
   Report icon
     In AtoM a report icon can be found in the right hand :term:`context
@@ -843,7 +857,7 @@ Glossary
     <file-formats>`.
 
   Title bar
-    The title that appears at the top of :term:` information areas
+    The title that appears at the top of :term:`information areas
     <information area>` in :term:`archival descriptions <archival
     description>`, :term:`authority records <authority record>`,
     :term:`archival institutions <archival institution>` and :term:`functions
@@ -878,6 +892,17 @@ Glossary
     A translator is a type of user who can translate :term:`data elements
     <data element>` and :term:`user interface` elements. See :ref:`User roles
     <user-roles>`
+
+  Treeview
+    The treeview is a contextual and navigation element located in the
+    :term:`context menu` for :term:`archival descriptions <archival
+    description>`, :term:`places <place>`, and :term:`subjects <subject>`. It
+    shows the current record's relationships to other records, with links,
+    e.g. the hierarchical placement of :term:`archival descriptions
+    <archival description>` within a :term:`fonds`, or the hierarchical
+    placement of a :term:`term` (such as a :term:`subject` or :term:`place`)
+    within a :term:`taxonomy`. The treeview can also be used for navigation.
+    See: :ref:`Context menu <context-menu>`.
 
   User account
     User accounts are established in order to manage :term:`access
