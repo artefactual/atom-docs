@@ -146,6 +146,37 @@ Glossary
     types <../overview/entity-types>` and :doc:`Authority records <../add-
     edit-content/authority-records>`.
 
+  Breadcrumb trail
+    A breadcrumb trail is a navigational element in a :term:`user interface`
+    that provides contextual information about the current location of a user
+    in an application or document. Breadcrumb trails provide links back to
+    each previous page the user navigated through to get to the current page
+    or — in hierarchical site structures — the parent pages of the current
+    one.
+
+    In AtoM a breadcrumb trail is displayed to add contextual information and
+    to facilitate navigation in several places. On :term:`archival
+    descriptions <archival description>`, the breadcrumb trail is located at
+    the top of record's :term:`view page` when viewing a :term:`child
+    decription <child record>` to provide information about where in the
+    hierarchy the current description appears. When moving archival
+    descriptions (see: :ref:`Move an archival description
+    <move-different-level>`), A breadcrumb trail is used to indicate where in
+    a hierarchy the Move browse results are currently showing. At the top of
+    :term:`archival institution` and :term:`authority record` view pages, the
+    breadcrumb trail is used to provide a link back to the Browse page for
+    each kind of record. Additionally, :term:`taxonomy` :term:`terms <term>`
+    (such as :term:`places <place>` and :term:`subjects <subject>`) that are
+    organized hierarchically will also display parent terms as a breadcrumb
+    trail when added to an :term:`archival description` - for example, if the
+    subject term 'Apple' is a child of the term 'Fruit', then when 'Apple' is
+    added as a subject :term:`access point` to an
+    :term:`archival description`, it will be expressed as: **Fruit >> Apple**
+
+    In AtoM, breadcrumbs (i.e. individual components of a breadcrumb trail)
+    are expressed as hyperlinks, and can be clicked to navigate to the related
+    source or parent record.
+
   Browse menu
     Browsing allows a user to see all records that have a certain type of
     :term:`access point` (such as :term:`subject`, :term:`name`, or
@@ -800,8 +831,8 @@ Glossary
     by an :term:`administrator` through the application :term:`settings
     <setting>`. In AtoM 2.0, the site title does not appear in the
     application itself, but will be present in the title bar of a user's
-    web browser when accessing AtoM. See :ref:`Site information <site-
-    information>`.
+    web browser when accessing AtoM. See :ref:`Site information
+    <site-information>`.
 
   SKOS
     Simple Knowledge Organization System (SKOS) is a data standard model
@@ -812,8 +843,8 @@ Glossary
     types of controlled vocabulary." (`W3C SKOS Primer, 18 August 2009
     <http://www.w3.org/TR/2009/NOTE-skos-primer-20090818/>`_). It is used
     in AtoM to import and export hierarchical :term:`taxonomies
-    <taxonomy>`. See: :doc:`Export descriptions and terms <../import-
-    export/export-descriptions-and-terms>`.
+    <taxonomy>`. See: :doc:`Export descriptions and terms
+    <../import-export/export-descriptions-and-terms>`.
 
   Static page
     Static pages are pages that are designed to look the same each time
