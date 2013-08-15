@@ -71,7 +71,8 @@ reflect these changes.
    :term:`accession record` - see :ref:`Create an archival description from an
    accession record <create-accession-description>` for more information.
 
-Below are instructions for using the Archival description module in AtoM to:
+**Below are instructions for using the Archival description module in AtoM
+to:**
 
 * :ref:`Add a new archival description <add-archival-description>`
 
@@ -102,6 +103,8 @@ see the sections below for more specific instructions on the use of
 
 * :ref:`Physical storage <physical-storage>`
 * :ref:`Upload digital objects <upload-digital-objects>`
+* :ref:`Create an archival description from an accession record
+  <create-accession-description>`
 * :ref:`Link an accession record to an archival description
   <link-accession-description>`
 * :ref:`Exit edit mode <exit-edit-mode>`
@@ -196,13 +199,13 @@ Add a new child description
 ---------------------------
 
 A :term:`child descriptions <child record>` is an archival description that is
-part of a larger hierarchy, often a :term:`fonds` or :term`collection`. A
+part of a larger hierarchy, often a :term:`fonds` or :term:`collection`. A
 child record refers to a description of the :term:`archival unit` that is one
 :term:`level of description` lower than the current unit - for example, if a
 series belongs to a :term:`fonds`, the series is the child record of the
 fonds. AtoM helps users understand the context of the materials by depicting
-the current record's position in the treeview, which can also be used for
-navigation  (see: :doc:`Context menu <../access-content/context-menu>`)
+the current record's position in the :term:`treeview`, which can also be used
+for navigation  (see: :doc:`Context menu <../access-content/context-menu>`)
 
 There are two ways to add a new :term:`child description <child record>` in
 AtoM - **Method 1** allows a user to add a new child record "on the fly" while
@@ -213,7 +216,7 @@ full child description at any time.
 
 .. _method-1-child-description:
 
-METHOD 1: "On the fly"
+Method 1: "On the fly"
 ^^^^^^^^^^^^^^^^^^^^^^
 
 AtoM includes a data entry element in the first :term:`information area` of
@@ -233,11 +236,12 @@ This area is located in:
 Note that this method is not meant to replace more granular description - it
 allows a user to create a sort of skeleton structure to the whole of the
 description (such as a :term:`fonds` or :term:`collection`), which can
-improve supplement an archival arrangement workflow - the child descriptions
-can then be supplemented later.
+improve supplement an archival :term:`arrangement` workflow - the :term:`child
+<child record>` descriptions can then be supplemented later.
 
-Fields provided for creating lower levels of description "on the fly" via the
-:term:`parent description's <parent record>` :term:`edit page` include:
+:term:`Fields <field>` provided for creating lower levels of description "on
+the fly" via the :term:`parent description's <parent record>` :term:`edit page`
+include:
 
 * Identifier (i.e., reference number)
 * Level (of description)
@@ -246,14 +250,14 @@ Fields provided for creating lower levels of description "on the fly" via the
 .. TIP::
 
    You can add as many levels as needed at one time; for example, to add
-   multiple series to a fonds or collection, fill in the fields under the "Add
-   new child levels" and add as many lower levels as desired. When the record
-   is saved, you will be able to see the new :term:`child records <child
-   record>` in the :term:`context menu`.
+   multiple series to a :term:`fonds` or :term:`collection`, fill in the fields
+   under the "Add new child levels" and add as many lower levels as desired.
+   When the record is saved, you will be able to see the new :term:`child
+   records <child record>` in the :term:`context menu`.
 
-.. _method-2-child-description
+.. _method-2-child-description:
 
-METHOD 2: Adding a full child description
+Method 2: Adding a full child description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Full :term:`child descriptions <child record>` can be added to an archival
@@ -284,8 +288,8 @@ for more information on navigation in AtoM.
    the edit archival description template will appear, but no reference is
    made to the :term:`parent <parent record>` archival description. When you
    save your record, however, you will be able to see the relationship
-   expressed in the treeview, located in the :term:`context menu` on the left-
-   hand side of the :term:`view page`.
+   expressed in the :term:`treeview`, located in the :term:`context menu`
+   on the left-hand side of the :term:`view page`.
 
 3. Enter appropriate information into the template for the lower-level
    description, and remember to select the :term:`level of description`.
@@ -461,41 +465,197 @@ Move an archival description
 ============================
 
 Occasionally a user will need to move an archival description from one level
-of description to another, from one fonds to another, or simply to change the
+of description to another, from one :term:`fonds` or :term:`collection`
+(or other top-level description) to another, or simply to change the
 sort order within a number of records that share the same :term:`level of
 description` (sometimes called siblings). There are two methods of moving
 :term:`archival descriptions <archival description>` - the first method
-allows only for changing the sort order in the treeview found in the
+allows only for changing the sort order in the :term:`treeview` found in the
 :term:`context menu`, while the second method, more robust, allows for a
 record to be moved broadly throughout the application, even allowing a lower
 level of description to be moved so that it becomes a new :term:`parent
 description <parent record>`.
 
+.. _change-sort-order:
 
 Method 1: Change sort order
 ---------------------------
 
+This method **only** applies when there are multiple :term:`children
+<child record>` with the same :term:`level of description` beneath a
+:term:`parent description <parent record>` - i.e. "siblings". It will
+change the sort order as displayed in the :term:`treeview` found in the
+:term:`context menu` of the related descriptions. Users can drag-and-drop
+children within the same level, for example moving series 02 above series 01
+or moving items around within the same file. This is useful for users managing
+the intellectual :term:`arrangement` of an :term:`archival unit`.
+
 .. IMPORTANT::
 
-   This method only applies when there are multiple :term:`children
-   <child record>` with the same :term:`level of description` beneath a
-   :term:`parent description <parent record>` - i.e. "siblings". It will
-   change the sort order as displayed in the treeview found in the
-   :term:`context menu` of the related descriptions.
+   To be able to change the sort order, an :term:`administrator` **must**
+   change the "Sort treeview" settings (located in **Admin > Settings >
+   Global > Sort treeview**) to "Manual". Otherwise the drag and drop
+   capabilities of the :term:`treeview` are disabled. For more information,
+   see :doc:`Settings <../administer/settings>`.
+
+**To change the sort order of sibling descriptions in the treeview:**
 
 1. Navigate to the :term:`child description <child record>` whose sort order
-   you wish to change. You can do this by :ref:`browsing <../access-
-   content/browse>` or:ref:`searching <../access-content/search>` for the
+   you wish to change. You can do this by :doc:`browsing
+   <../access-content/browse>` or :doc:`searching <../access-content/search>`
+   for the :term:`archival description` - see :ref:`Access content
+   <access-content>` for more information on navigation in AtoM.
+2. In the :term:`treeview` located in the :term:`context menu` on the left-
+   hand side of the record's :term:`view page`, the current record being
+   displayed in the :term:`view page` will be highlighted by a dark grey bar.
+3. In the :term:`treeview`, hover your cursor over the sibling record you wish
+   to move - it can be any record on the same :term:`level of description` as
+   the one currently being viewed.
+4. If the "Sort treeview" setting has been set to "Manual" by an
+   :term:`administrator` in **Admin > Settings > Global > Sort treeview**,
+   then you will see three horizontal lines or bars appear on the right-hand
+   side of the record-title you are hovering over in the treeview. This means
+   the item can be dragged and dropped to a new sort order.
+5. Click on the record in the treeview and hold, and then drag it to the new
+   position you would like it to have in the treeview. Remember, you can move
+   it to another position within the same :term:`level of description`, but
+   the record will not be moved if you attempt to drag it from a lower to a
+   higher level (e.g., from an item level to a file level, from a file level
+   to a series or fonds level, etc.)
+6. The record in the treeview will drop into its new location. No changes will
+   occur on the :term:`view page` of the current record, though the sort order
+   has been changed within the collection. You can repeat these steps as many
+   times as are necessary to achieve the sort order you wish.
+
+.. NOTE::
+
+   Changing the sort order of a description with associated lower levels of
+   description (i.e. :term:`children <child record>`) will also move the
+   description's children. For example, if File 03, which has 10 item-level
+   children, is dragged above File 01 to change the sort order, all of File
+   03's children will also be moved, and will stay associated with File 03.
+
+
+.. _move-different-level:
+
+Method 2: Move a description to a different level
+-------------------------------------------------
+
+An authenticated (i.e. logged in) user with the proper permissions (see:
+:ref:`User roles <user-roles>` and :ref:`Edit permissions <edit-permissions>`)
+can also move a description from one level to another, or even from one
+:term:`fonds` or :term:`collection` (or other top-level description), by
+using the "Move" button located in the :term:`button block` of an
+:term:`archival description's <archival description>` :term:`view page`. A
+lower level of description can also be moved so that it becomes a new
+:term:`parent <parent record>` description.
+
+.. IMPORTANT::
+
+   Moving any description using this method also moves all :term:`child-level
+   descriptions <child record>` of the description being moved. For example,
+   if you move a series that has file-level descriptions attached, all the
+   file-level descriptions will be moved along with the series.
+
+   If you wanted to move a description **without** moving all of its
+   children, you could 1) Create a duplicate of the description 2) Move the
+   duplicate record to its new position, and then 3) Edit the original
+   description (with the children). See above,  :ref:`Duplicate an existing
+   archival description <duplicate-archival-description>`.
+
+
+**To move an archival description:**
+
+1. Navigate to the :term:`child description <child record>` that you wish to
+   move. You can do this by :doc:`browsing <../access-content/browse>` or
+   :doc:`searching <../access-content/search>` for the
    :term:`archival description` - see :ref:`Access content <access-content>`
    for more information on navigation in AtoM.
+2. At the bottom of the description's :term:`view page`, press the "Move"
+   button, located in the :term:`button block`.
+3. You will be redirected to the Move page, which lists all top-level (i.e.
+   :term:`parent <parent record>`) descriptions, and provides a search bar.
+4. To find your move location more quickly ou can use the Move search bar to
+   bring up results in the Move browse results listed below. For example, if
+   you don't know the name of a series record but you do know the name of the
+   :term:`fonds` or :term:`collection`, you could search for the top-level
+   description and then use the Move browser (below) to navigate to the
+   correct level of description.
+5. The blue hyperlinks allow Users to drill down into the hierarchy of the
+   :term:`archival description` selected.  Clicking on a top-level description
+   in the Move page will display the description's lower levels of description
+   - for example, clicking on a :term:`fonds` would reveal the series or sous-
+   fonds below it, and clicking on the series would then reveal the files
+   below it. To orient yourself, a :term:`breadcrumb trail` will appear above
+   the list of potential archival descriptions, indicating where in the
+   :term:`archival unit's <archival unit>` you are currently located -
+   this is intented to help Users understand if they are moving the record to
+   a sous-fonds, series, sub-series, or a file.
+6. When you have reached the right level where you want to move the record,
+   the new :term:`parent description<parent record>` should be the last
+   breadcrumb in the :term:`breadcrumb trail`, while the new siblings will be
+   listed as hyperlinks below. Click "Move here" to move the record.
+7. To make a child-level description a top-level description (e.g. to turn a
+   series into a :term:`fonds`), click "Move here" **without** selecting one
+   of the blue links.
+8. You will be redirected to the moved record's :term:`view page`. If you look
+   at the :term:`treeview` located in the :term:`context menu` on the left-
+   hand side of the description's view page, you will see that your
+   description has been moved to a new location.
+
+
+:ref:`Back to top <archival-descriptions>`
 
 .. _delete-archival-description:
 
 Delete an archival description
 ==============================
 
-content
+An authenticated (i.e. logged in) user with the proper permissions (see:
+:ref:`User roles <user-roles>` and :ref:`Edit permissions <edit-permissions>`)
+can delete an :term:`archival description` at any time, by navigating to the
+description and using the :term:`Delete button` located in the
+:term:`button block`.
 
+.. IMPORTANT::
 
+   **Consequences of deleting an archival description in AtoM:**
+
+   * If the record has lower-level descriptions registered to it, **all the
+     lower-level records are also deleted** - i.e. if you delete a series, any
+     sub-series, files, or items that belong to the series will also be
+     deleted
+   * Any date :term:`events <event>` (i.e. date(s) of creation, of
+     publication, of contribution, etc.) associated with the description are
+     deleted
+   * The :term:`authority record` of the associated :term`creator` is **not**
+     deleted
+   * The :term:`archival institution` record of the associated
+     :term:`repository` is **not** deleted
+
+**To delete an archival description:**
+
+1. Navigate to the :term:`archival description` that you would like to
+   permanently delete. You can do this by :doc:`browsing
+   <../access-content/browse>` or :doc:`searching <../access-content/search>`
+   for the :term:`archival description` - see :ref:`Access content
+   <access-content>` for more information on navigation in AtoM.
+2. Scroll to the bottom of the description's :term:`view page`, and click the
+   :term:`Delete button` located in the :term:`button block`.
+3. AtoM will provide a warning and prompts you to confirm that you really wish
+   to delete the description. If :term:`child descriptions <child record>`
+   will be deleted as well,the warning will list them. If you are sure you
+   want to delete the record and all of its descendants/children, click
+   "Delete".
+
+.. WARNING::
+
+   Deleting a description is a permanent operation that cannot be undone, and
+   the associated data will be removed from AtoM's database. Be sure that you
+   want to delete a record before confirming the operation.
+
+4. AtoM deletes the record and returns you to the :term:`parent record` of the
+   deleted description or to the browse page if the deleted record was a top-
+   level description.
 
 :ref:`Back to top <archival-descriptions>`
