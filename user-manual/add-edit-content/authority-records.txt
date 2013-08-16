@@ -1,0 +1,107 @@
+.. _authority-records:
+
+=================
+Authority records
+=================
+
+Authority records are one of the core :doc:`entity types
+<../overview/entity-types>` in AtoM and provide users with a means to control
+the representation of information about actors - :term:`corporate bodies
+<corporate body>`, persons, or families - who interact with archival
+materials, typically as :term:`creators <creator>`. Typically, authority
+records contain information about the authorized form of name and other forms
+of name by which the actor is known, dates of existence, relevant adminstrtive
+or biographical history details, and other contextual information;
+additionally, roles in :term:`events <event>` and relationships with archival
+materials are also captured and expressed.
+
+The International Council on Archives (`ICA <http://www.ica.org/>`__) defines
+an authority record as "*The authorized form of name combined with other
+information elements that identify and describe the named entity and may also
+point to other related authority records.*" Maintaining contextual
+information about records :term:`creators <creator>` and other actors is
+essential to archival practice, and helps establish the provenance and
+authenticity of the related records. Additionally, archival authority records,
+like library authority records, can be used to control the creation and use of
+:term:`access points <access point>`, thereby improving access for
+:term:`researchers <researcher>` and other members of the public. By
+maintaining authority records separately from :term:`archival descriptions
+<archival description>`, complex relationships of creation and contribution
+can be expressed, even between materials held by different :term:`archival
+institutions <archival institution>` or in different kinds of
+:term:`repositories <repository>` such as libraries and museums. By using a
+recognized international standard to control the creation of authority
+records, :term:`archival institutions <archival institution>` have the
+opportunity to share authority records. As the `ICA <http://www.ica.org/>`__
+notes,
+
+      "*Such standardization is of particular international benefit when the
+      sharing or linking of contextual information is likely to cross national
+      boundaries. The multinational character of past and present record
+      keeping creates the incentive for international standardization which
+      will support the exchange of contextual information. For example,
+      processes such as colonialization, immigration and trade have
+      contributed to the multinational character of recordkeeping.*" (ISAAR
+      Introduction)
+
+In AtoM, the :term:`data elements <data element>` used to describe
+authority records are based on the `ICA's <http://www.ica.org/>`__
+*International Standard Archival Authority Record for Corporate Bodies,
+Persons and Families* (`ISAAR <http://www.ica.org/10203/standards/isaar-cpf-
+international-standard-archival-authority-record-for-corporate-bodies-persons-
+and-families-2nd-edition.html>`__).
+
+**Below are instructions for using the AtoM Authority records module to:**
+
+* :ref:`Create a new authority record <create-authority-record>`
+* :ref:`Link an authority record to an archival description
+  <link-authority-to-description>`
+* :ref:`Edit an existing authority record <edit-authority-record>`
+* :ref:`Delete an authority record <delete-authority-record>`
+
+.. NOTE::
+   For more information on using the specific :term:`fields <field>` within
+   the Authority record template, see: :ref:`ISAAR template <isaar-template>`
+
+**SEE ALSO:**
+
+* Adding Access points to archival descriptions
+* :doc:`Entity types <../overview/entity-types>`
+* :ref:`Exit edit mode <exit-edit-mode>`
+
+
+.. _create-authority-record:
+
+Create a new authority record
+=============================
+
+content
+
+:ref:`Back to top <authority-records>`
+
+.. _link-authority-to-description:
+
+Link an authority record to an archival description
+===================================================
+
+content
+
+:ref:`Back to top <authority-records>`
+
+.. _edit-authority-record:
+
+Edit an existing authority record
+=================================
+
+content
+
+:ref:`Back to top <authority-records>`
+
+.. _delete-authority-record:
+
+Delete an authority record
+==========================
+
+content
+
+:ref:`Back to top <authority-records>`

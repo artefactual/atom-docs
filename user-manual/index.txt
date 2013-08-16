@@ -16,4 +16,5 @@ links to each chapter's main sections.
    getting-started/getting-started
    add-edit-content/accessions
    add-edit-content/archival-descriptions
+   add-edit-content/authority-records
    glossary/glossary
