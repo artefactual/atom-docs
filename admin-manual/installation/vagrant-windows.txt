@@ -1,0 +1,7 @@
+.. _installation_vagrant_windows:
+
+=======================
+Using Vagrant (Windows)
+=======================
+
+Work in progress.
