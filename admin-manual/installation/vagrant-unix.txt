@@ -58,6 +58,11 @@ Now you should be able to connect to AtoM from your local browser.
 #. Use http://10.10.10.10:8001 if you want to try AtoM 1.x.
 #. Use http://10.10.10.10:8002 if you want to try AtoM 2.x.
 
+For both sites, the default login details are:
+
+* Username: demo@example.com
+* Password: demo
+
 
 Connect to the terminal
 -----------------------
