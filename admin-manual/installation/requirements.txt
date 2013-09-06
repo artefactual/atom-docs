@@ -4,4 +4,9 @@
 Requirements
 ============
 
+* A webserver like Apache or Nginx
+* PHP 5.3.10 or newer
+* ElasticSearch 0.90.0 or newer
+* MySQL 5.1 or newer
+
 Work in progress.
