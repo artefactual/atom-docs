@@ -1,8 +1,8 @@
 .. _archival-descriptions:
 
-============================
-Archival Descriptions DUDES!
-============================
+=====================
+Archival Descriptions
+=====================
 
 Archival descriptions are one of the core :doc:`entity types
 <../overview/entity-types>` in AtoM and provide users with invaluable
