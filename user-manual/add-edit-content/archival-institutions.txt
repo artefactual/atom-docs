@@ -1,0 +1,34 @@
+.. _archival-institutions:
+
+=====================
+Archival Institutions
+=====================
+
+.. _add-archival-institution:
+
+Add a new archival institution
+==============================
+
+content
+
+:ref:`Back to top <archival-institutions>`
+
+.. _edit-archival-institution:
+
+Edit an existing archival institution
+=====================================
+
+content
+
+:ref:`Back to top <archival-institutions>`
+
+.. _delete-archival-institution:
+
+Delete an archival institution
+==============================
+
+content
+
+:ref:`Back to top <archival-institutions>`
+
+
