@@ -75,7 +75,175 @@ and-families-2nd-edition.html>`__).
 Create a new authority record
 =============================
 
+The `ICA's <http://www.ica.org/>`__ model of authority record use and
+maintenance means that separate records are created for all actors (persons,
+families, and :term:`corporate bodies <corporate body>`), which can then be
+linked to related :term:`archival descriptions <archival description>`. In AtoM
+this process has been automated wherever possible to simplify the workflow -
+consequently, a new :term:`authority record` is automatically created any time
+a new name (such as a :term:`creator` name or a name :term:`access point`) is
+associated with a description. This means that there are several different
+ways to create new authority records:
+
+* :ref:`From the main menu <add-authority-main>`
+* :ref:`From a related archival description <add-authority-description>`
+* :ref:`From an authority record view page <add-authority-view-page>`
+
+.. NOTE::
+
+   To create new authority records, you must be logged in to AtoM with a
+   :term:`user account` with sufficient edit permissions to create authority
+   records, such as an :term:`administrator`, :term:`editor`, or
+   :term:`contributor`. For more information on types of users and edit
+   permissions, see :ref:`User roles <user-roles>`
+
+.. _add-authority-main:
+
+Add a new authority record from the main menu
+---------------------------------------------
+
+1. In the :term:`main menu`, click the "Add" button (represented by the + icon
+   in the :term:`main menu`) and select "Authority record". Alternatively,
+   navigate to an authority record view page and click the :term:`"Add new"
+   button <add new button>` in the :term:`button block`. AtoM takes you to a
+   blank edit page for data entry.
+2. On loading, the :term:`edit page` displays the record with all
+   :term:`information areas <information area>` closed; click on an
+   :term:`information area` to access the :term:`fields <field>` grouped under
+   it.
+3. Enter data as required. The authority record edit template is based on the
+   `ICA's <http://www.ica.org/>`__ *International Standard Archival Authority
+   Record for Corporate Bodies, Persons and Families* (`ISAAR
+   <http://www.ica.org/10203/standards/isaar-cpf- international-standard-
+   archival-authority-record-for-corporate-bodies-persons- and-families-2nd-
+   edition.html>`__). For more information on the use of particular fields in
+   the ISAAR authority record edit template, see: :ref:`ISAAR(CPF)
+   <isaar-template>`.
+4. You can quit the creation process at any time by clicking the "Cancel"
+   button in the :term:`button block`; any data already entered will not be
+   saved, and no new record will be created. Note that simply navigating away
+   from the page by any other means, **without first clicking "Create"** will
+   also result in no new record being created.
+5. To save the new record, click the :term:`"Create" button <create button>`
+   located in the :term:`button block` at the bottom of the record.
+
+Once the new :term:`authority record` is saved, you will be redirected to the
+record's :term:`view page`, where you can review your work. Clicking "Edit"
+in the :term:`button block` at the bottom of the record will re-open the
+authority record in :term:`edit mode`.
+
+.. IMPORTANT::
+
+   Currently, there is no "Draft" publication status for an :term:`authority
+   record` in AtoM. This means that as soon as you create an authority record,
+   it will be visible to public users (i.e. unauthenticated users who are not
+   logged in). Unauthenticated users will not have access to the
+   :term:`button block`, and cannot edit the record.
+
+.. _add-authority-description:
+
+Add a new authority record from a related archival description
+--------------------------------------------------------------
+
+In AtoM, whenever a new name is added to an archival description (generally,
+either as a :term:`creator` or as a subject by adding a name :term:`access
+point`), an authority record is automatically created for the new name. AtoM
+:term:`creator` names and name :term:`access points  <access point>` are added
+via a :term:`value list` that appears in a :term:`drop-down menu` - as you type
+data into the :term:`field`, the value list will narrow its options to present
+related suggestions. If an authority record already exists, you can select the
+name from the values and a link will be created. If no authority record
+already exists, however, new names can be added "on the fly" in these fields:
+
+* :ref:`Creator names <authority-record-creator-names>`
+* :ref:`Name access points <authority-record-name-access>`
+
+.. _authority-record-creator-names:
+
+Creator names
+^^^^^^^^^^^^^
+
+Whenever a new :term:`creator` name is added to an archival description, a
+new :term:`authority record` for that name will be generated when the
+:term:`archival description` is saved. Because each edit template uses
+different labels for the field to add a new creator, template specific
+instructions have been included below.
+
+**ISAD(G) edit template**
+
+* In the "Context :term:`area <information area>`" of the ISAD(G) edit
+  template, enter a new name in the :term:`field` named "Name of creator(s)."
+* The name will be saved as a new :term:`authority record` when you save the
+  :term:`archival description`.
+
+**Rules for Archival Description (RAD) edit template**
+
+* In the "Dates of creation" :term:`information area` of the RAD edit
+  template, click the "Add new" button that appears under the heading, "Add
+  new name and/or date(s)."
+* A dialog will appear with several fields, including "Actor name," "Event
+  type," "Date," etc.
+* Enter a new name in the "Actor name" field of the pop-up dialog, and then
+  click "Submit". The name will be saved as a new :term:`authority record`
+  when you save the :term:`archival description`.
+
+**Describing Archives: A Content Standard (DACS) edit template**
+
+* In the "Identity elements" :term:`information area`, navigate to the "Name
+  of creator(s)" section, and enter a new name. The name will be saved as a
+  new :term:`authority record` when you save the :term:`archival description`.
+
+**Dublin Core Version 1.1 (DC) edit template**
+
+* In the Dublin Core template, there is only one main :term:`information
+  area`, in which a section called "Name(s)" appears, close to the top of the
+  record's :term:`edit page`.
+* Navigate to the "Name(s)" section, and under the :term:`field` labelled
+  "Actor name," enter a new  name.
+* The name will be saved as a new :term:`authority record` when you save the
+  :term:`archival description`.
+
+**Metadata Object Description Schema (MODS) edit template**
+
+* In the MODS template, there is only one main :term:`information area`, in
+  which a section called "Names and origin info" appears, close to the top of
+  the record's :term:`edit page`.
+* Navigate to the "Names" and origin info section, and click the "Add new"
+  button that appears under the heading, "Add new name and/or date(s)."
+* Enter a new name in the "Actor name" field of the pop-up dialog, and then
+  click "Submit". The name will be saved as a new :term:`authority record`
+  when you save the :term:`archival description`.
+
+.. _authority-record-name-access:
+
+Name access points
+^^^^^^^^^^^^^^^^^^
+
+The :ref:`ISAD(G) <isad-template>`, :ref:`RAD <rad-template>`, and :ref:`DACS
+<dacs-template>` content standards support the inclusion of name
+:term:`accesss points <access point>` in :term:`archival descriptions
+<archival description>`; consequently, an "Access points" :term:`information
+area` with a :term:`field` for name :term:`access points <access point>` has
+been included on these templates.
+
+This field can be used to create an :term:`authority record` for a person,
+family, or :term:`corporate body` who is the subject of an archival
+description, but not its :term:`creator`. Type a new name into a Name
+:term:`access point` :term:`field`. When you save the :term:`archival
+description` record, AtoM creates a new :term:`authority record` for the
+name.
+
+
+
+.. _add-authority-view-page:
+
+Add a new authority record from an authority record view page
+-------------------------------------------------------------
+
 content
+
+
+
 
 :ref:`Back to top <authority-records>`
 
