@@ -29,7 +29,7 @@ restrictions. It often precedes arrangement and description, and can be used
 as the basis for the creation of an :term:`archival description` once the
 materials have been arranged.
 
-Below are instructions for using the Accessions module in AtoM to:
+**Below are instructions for using the Accessions module in AtoM to:**
 
 * :ref:`Add a new accession record <add-new-accession>`
 
