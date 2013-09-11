@@ -54,9 +54,13 @@ and-families-2nd-edition.html>`__).
 **Below are instructions for using the AtoM Authority records module to:**
 
 * :ref:`Create a new authority record <create-authority-record>`
-* :ref:`Link an authority record to an archival description
-  <link-authority-to-description>`
 * :ref:`Edit an existing authority record <edit-authority-record>`
+* :ref:`Link an existing authority record to an archival description
+  <link-authority-to-description>`
+* :ref:`Create a relationship between two authority records
+  <link-two-authority-records>`
+* :ref:`Create a relationship between an authority record and a function
+  <link-authority-record-function>`
 * :ref:`Delete an authority record <delete-authority-record>`
 
 .. NOTE::
@@ -102,11 +106,11 @@ ways to create new authority records:
 Add a new authority record from the main menu
 ---------------------------------------------
 
-1. In the :term:`main menu`, click the "Add" button (represented by the + icon
-   in the :term:`main menu`) and select "Authority record". Alternatively,
-   navigate to an authority record view page and click the :term:`"Add new"
-   button <add new button>` in the :term:`button block`. AtoM takes you to a
-   blank edit page for data entry.
+1. In the :term:`main menu`, click the "Add" button (represented by the **+**
+   icon in the :term:`header bar`) and select "Authority record".
+   Alternatively, navigate to an authority record view page and click the
+   :term:`"Add new" button <add new button>` in the :term:`button block`. AtoM
+   takes you to a blank edit page for data entry.
 2. On loading, the :term:`edit page` displays the record with all
    :term:`information areas <information area>` closed; click on an
    :term:`information area` to access the :term:`fields <field>` grouped under
@@ -158,10 +162,26 @@ already exists, however, new names can be added "on the fly" in these fields:
 * :ref:`Creator names <authority-record-creator-names>`
 * :ref:`Name access points <authority-record-name-access>`
 
+.. TIP::
+
+   When you are finished creating or editing your :term:`archival
+   description`, the new names will appear in the archival description as
+   hyperlinks to the new :term:`authority records <authority record>`. The
+   authority records generated this way ("on the fly") are merely stub records
+   or placeholders - after reviewing your archival description, you should
+   follow the hyperlink to the authority record, where you can edit it to
+   supplement the contents, such as indicating if it is a person, family, or
+   :term:`corporate body`, and adding dates of existence, history, etc. For
+   more information on working with the ISAAR-CPF Authority record template
+   :term:`fields <field>`, see: :ref:`ISAAR-CPF <isaar-template>`. For more
+   information on editing an authority record, see below, :ref:`Edit an
+   existing authority record <edit-authority-record>`.
+
+
 .. _authority-record-creator-names:
 
-Creator names
-^^^^^^^^^^^^^
+Adding Creator names
+^^^^^^^^^^^^^^^^^^^^
 
 Whenever a new :term:`creator` name is added to an archival description, a
 new :term:`authority record` for that name will be generated when the
@@ -171,16 +191,17 @@ instructions have been included below.
 
 **ISAD(G) edit template**
 
-* In the "Context :term:`area <information area>`" of the ISAD(G) edit
-  template, enter a new name in the :term:`field` named "Name of creator(s)."
+* In the "Context :term:`area <information area>`" of the :ref:`ISAD(G)
+  template <isad-template>`, enter a new name in the :term:`field` named "Name
+  of creator(s)."
 * The name will be saved as a new :term:`authority record` when you save the
   :term:`archival description`.
 
 **Rules for Archival Description (RAD) edit template**
 
-* In the "Dates of creation" :term:`information area` of the RAD edit
-  template, click the "Add new" button that appears under the heading, "Add
-  new name and/or date(s)."
+* In the "Dates of creation" :term:`information area` of the :ref:`RAD
+  template <rad-template>`, click the "Add new" button that appears under the
+  heading, "Add new name and/or date(s)."
 * A dialog will appear with several fields, including "Actor name," "Event
   type," "Date," etc.
 * Enter a new name in the "Actor name" field of the pop-up dialog, and then
@@ -189,15 +210,16 @@ instructions have been included below.
 
 **Describing Archives: A Content Standard (DACS) edit template**
 
-* In the "Identity elements" :term:`information area`, navigate to the "Name
-  of creator(s)" section, and enter a new name. The name will be saved as a
-  new :term:`authority record` when you save the :term:`archival description`.
+* In the "Identity elements" :term:`information area` of the :ref:`DACS
+  template <dacs-template>`, navigate to the "Name of creator(s)" section, and
+  enter a new name. The name will be saved as a new :term:`authority record`
+  when you save the :term:`archival description`.
 
 **Dublin Core Version 1.1 (DC) edit template**
 
-* In the Dublin Core template, there is only one main :term:`information
-  area`, in which a section called "Name(s)" appears, close to the top of the
-  record's :term:`edit page`.
+* In the :ref:`Dublin Core template <dc-template>`, there is only one main
+  :term:`information area`, in which a section called "Name(s)" appears, close
+  to the top of the record's :term:`edit page`.
 * Navigate to the "Name(s)" section, and under the :term:`field` labelled
   "Actor name," enter a new  name.
 * The name will be saved as a new :term:`authority record` when you save the
@@ -205,9 +227,9 @@ instructions have been included below.
 
 **Metadata Object Description Schema (MODS) edit template**
 
-* In the MODS template, there is only one main :term:`information area`, in
-  which a section called "Names and origin info" appears, close to the top of
-  the record's :term:`edit page`.
+* In the :ref:`MODS template <mods-template>`, there is only one main
+  :term:`information area`, in which a section called "Names and origin info"
+  appears, close to the top of the record's :term:`edit page`.
 * Navigate to the "Names" and origin info section, and click the "Add new"
   button that appears under the heading, "Add new name and/or date(s)."
 * Enter a new name in the "Actor name" field of the pop-up dialog, and then
@@ -216,8 +238,8 @@ instructions have been included below.
 
 .. _authority-record-name-access:
 
-Name access points
-^^^^^^^^^^^^^^^^^^
+Adding Name access points
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The :ref:`ISAD(G) <isad-template>`, :ref:`RAD <rad-template>`, and :ref:`DACS
 <dacs-template>` content standards support the inclusion of name
@@ -233,26 +255,44 @@ description, but not its :term:`creator`. Type a new name into a Name
 description` record, AtoM creates a new :term:`authority record` for the
 name.
 
-
-
 .. _add-authority-view-page:
 
 Add a new authority record from an authority record view page
 -------------------------------------------------------------
 
-content
+A new :term:`authority record` can also be added to AtoM from the :term:`view
+page` of any other authority record via the "Add new" button in the
+:term:`button block`. To do so:
 
+1. Navigate to an existing :term:`authority record` in AtoM. You can do this
+   by :doc:`browsing <../access-content/browse>` or by
+   :doc:`searching <../access-content/search>` for  a specific
+   :term:`authority record` - see :ref:`Access content <access-content>` for
+   more information on navigation in AtoM.
+2. At the bottom of the authority record's :term:`view page`, you will see the
+   :term:`button block` with several options (Edit, Delete, and Add new).
+   Click "Add new".
+3. Enter data as required. The authority record edit template is based on the
+   `ICA's <http://www.ica.org/>`__ *International Standard Archival Authority
+   Record for Corporate Bodies, Persons and Families* (`ISAAR
+   <http://www.ica.org/10203/standards/isaar-cpf- international-standard-
+   archival-authority-record-for-corporate-bodies-persons- and-families-2nd-
+   edition.html>`__). For more information on the use of particular fields in
+   the ISAAR authority record edit template, see: :ref:`ISAAR(CPF)
+   <isaar-template>`.
+4. You can quit the creation process at any time by clicking the "Cancel"
+   button in the :term:`button block`; any data already entered will not be
+   saved, and no new record will be created. Note that simply navigating away
+   from the page by any other means, **without first clicking "Create"** will
+   also result in no new record being created.
+5. To save the new record, click the :term:`"Create" button <create button>`
+   located in the :term:`button block` at the bottom of the record.
 
+Once the new :term:`authority record` is saved, you will be redirected to the
+record's :term:`view page`, where you can review your work. Clicking "Edit"
+in the :term:`button block` at the bottom of the record will re-open the
+authority record in :term:`edit mode`.
 
-
-:ref:`Back to top <authority-records>`
-
-.. _link-authority-to-description:
-
-Link an authority record to an archival description
-===================================================
-
-content
 
 :ref:`Back to top <authority-records>`
 
@@ -261,15 +301,292 @@ content
 Edit an existing authority record
 =================================
 
-content
+1. First, navigate to the :term:`authority record` you wish to edit. You
+   can do this by :doc:`browsing <../access-content/browse>` or
+   :doc:`searching <../access-content/search>` for the :term:`archival
+   description` - see :ref:`Access content <access-content>` for more
+   information on navigation in AtoM. See :ref:`ISAAR-CPF <isaar-template>`
+   for more information on specific fields in the authority record edit
+   template.
+2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
+   button in the :term:`button block`, or by clicking on one of the
+   :term:`information area` headings; this takes you to the record's
+   :term:`edit page`.
+3. On loading, the :term:`edit page` displays the record with all
+   :term:`information areas <information area>` closed; click on an
+   information area to access the :term:`fields <field>` grouped under it
+4. Add and/or revise data as required.
+5. You can quit the create process at any time by clicking the "Cancel" button
+   in the :term:`button block`; any changes made will not be saved. Note that
+   simply navigating away from the page by any other means, **without first
+   clicking "Save"** will also result in no changes being saved to the
+   authority record.
+6. To save your edits, click the "Save" button located in the :term:`button
+   block` at the bottom of the record.
+
+You will be redirected to the :term:`view page` for the edited
+:term:`authority record`, where you can review your work.
 
 :ref:`Back to top <authority-records>`
+
+.. _link-authority-to-description:
+
+Link an existing authority record to an archival description
+============================================================
+
+Links between existing authority records and existing archival descriptions
+can be added at any time by an authenticaed (i.e. logged in) user with
+sufficient edit permissions. For more information on types of users and edit
+permissions, see :ref:`User roles <user-roles>`. There are two main ways to
+create a link between an authority record and an archival description:
+
+* :ref:`From the archival description <authority-link-from-description>`
+* :ref:`From the authority record <authority-link-from-authority>`
+
+.. _authority-link-from-description:
+
+From the archival description
+-----------------------------
+
+1. First, navigate to the :term:`archival description` you wish to edit. You
+   can do this by :doc:`browsing <../access-content/browse>` or
+   :doc:`searching <../access-content/search>` for the :term:`archival
+   description` - see :ref:`Access content <access-content>` for more
+   information on navigation in AtoM.
+2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
+   button in the :term:`button block`, or by clicking on one of the
+   :term:`information area` headings; this takes you to the record's
+   :term:`edit page`.
+3. To create a link to an authority record for a creator, follow the steps
+   above for :ref:`adding a new creator <authority-record-creator-names>` -
+   however, instead of entering a new name, begin typing the name of the
+   authority record to which you would like to create a link. The name
+   :term:`field` is an auto-complete - as you type, matching results will
+   load in a :term:`drop-down menu` below the field. When you see the
+   authority record you would like to link, click on it to select it.
+
+.. IMPORTANT::
+
+   This method makes use of  an `auto-complete <https://en.wikipedia.org/wiki
+   /Auto-complete>`__ field to find the related :term:`authority record` as
+   you begin to type its name/title. **Be sure** to pick the record from the
+   :term:`drop-down <drop-down menu>` when it appears - if you type the full
+   name and press enter, a new :term:`authority record` will be generated
+   instead of a link being created to an existing one!
+
+4. To create links to multiple authority records, you can repeat this process
+   as needed. When you are done editing the record, save the :term:`archival
+   description` by scrolling down and pressing "Save" in the :term:`button
+   block`.
+5. The :term:`archival description` will reload in :term:`view mode`. You
+   should be able to see the creator name as a hyperlink on the archival
+   description. Follow the link to ensure you have linked to the proper
+   :term:`authority record`. The linked archival description will also appear
+   in the "Relationships" :term:`information area` of the :term:`authority
+   record`.
+
+
+.. _authority-link-from-authority:
+
+From the authority record
+-------------------------
+
+1. First, navigate to the :term:`authority record` you wish to edit. You
+   can do this by :doc:`browsing <../access-content/browse>` or
+   :doc:`searching <../access-content/search>` for the
+   :term:`authority record` - see :ref:`Access content <access-content>` for
+   more information on navigation in AtoM.
+2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
+   button in the :term:`button block`, or by clicking on one of the
+   :term:`information area` headings; this takes you to the record's
+   :term:`edit page`.
+3. In the "Relationships" :term:`information area` of the authority record's
+   :term:`edit page`, click the "Add new" button under "Related resources".
+4. AtoM will open a pop-up dialog where you can select the related
+   :term:`archival description` and define the nature and time frame of the
+   relationship.
+5. The first :term:`field` in the pop-up dialog, "Title of the related
+   resource," is an `auto-complete <https://en.wikipedia.org/wiki /Auto-
+   complete>`__ field: as you type, matching results will load in a :term
+   :`drop-down menu` below the field. When you see the
+   :term:`archival description` you would like to link, click on it to select
+   it.
+6. Add additional details in the subsequent fields to qualify the
+   relationship: the "Nature of relationship" field is a :term:`drop-down
+   menu` whose values are pulled from the Event types :term:`taxonomy` (see
+   :doc:`Terms <../add-edit-content/terms>` for more information on working
+   with taxonomies); start, end, and display dates can be added as well. When
+   you are finished, click "Submit".
+7. The related :term:`archival description` will now appear in the Related
+   resources table of the Relationships area. Click the pencil icon to re-open
+   the pop-up dialog and edit the relationship, or click the **X** icon to
+   remove the relationship link. You can also repeat this process to add
+   multiple links by clicking the "Add new" button below the Related
+   resources again - AtoM will open a new pop-up dialog. Repeat steps 3-7 as
+   needed.
+8. When you are finished, click "Save" in the :term:`button block` at the bottom
+   of the authority record's :term:`edit page` to save your changes and exit
+   :term:`edit mode`.
+9. AtoM will reload the :term:`authority record` in :term:`view mode`.
+   :ref:`Back to top <authority-records>`. The relationship link will appear
+   in the :term:`context menu` on the left-hand side of the page. You can
+   click on the related description's title to navigate to the related
+   :term:`archival description`.
+
+:ref:`Back to top <authority-records>`
+
+.. _link-two-authority-records:
+
+Create a relationship between two authority records
+===================================================
+
+1. First, navigate to the :term:`authority record` you wish to edit. You
+   can do this by :doc:`browsing <../access-content/browse>` or
+   :doc:`searching <../access-content/search>` for the
+   :term:`authority record` - see :ref:`Access content <access-content>` for
+   more information on navigation in AtoM.
+2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
+   button in the :term:`button block`, or by clicking on one of the
+   :term:`information area` headings; this takes you to the record's
+   :term:`edit page`.
+3. In the "Relationships" :term:`information area` of the authority record's
+   :term:`edit page`, click the "Add new" button under "Related  corporate
+   bodies, persons, or families".
+4. AtoM will open a pop-up dialog where you can select the related
+   :term:`authority record` and define the nature and time frame of the
+   relationship.
+5. The first :term:`field` in the pop-up dialog, "Title of the related
+   resource," is an `auto-complete <https://en.wikipedia.org/wiki /Auto-
+   complete>`__ field: as you type, matching results will load in a :term
+   :`drop-down menu` below the field. When you see the
+   :term:`authority record` you would like to link, click on it to select
+   it.
+
+.. NOTE::
+
+   You cannot create a new authority record from this dialog by entering a
+   new name. If the second authority record does not exist yet, follow the
+   steps above to :ref:`create a new authority record <create-authority-record>`
+   and then follow these steps from the new record to create the
+   relationship.
+
+6. Add additional details in the subsequent fields to qualify the
+   relationship. When you are finished, click "Submit".
+7. The related :term:`authority record` will now appear in the *Related
+   corporate bodies, persons, or families* table of the Relationships area.
+   Click the pencil icon to re-open the pop-up dialog and edit the
+   relationship, or click the **X** icon to remove the relationship link. You
+   can also repeat this process to add multiple links by clicking the "Add
+   new" button below the *Related corporate bodies, persons, or families*
+   again - AtoM will open a new pop-up dialog. Repeat steps 3-6 as needed.
+8. When you are finished, click "Save" in the :term:`button block` at the bottom
+   of the authority record's :term:`edit page` to save your changes and exit
+   :term:`edit mode`.
+9. AtoM will reload the :term:`authority record` in :term:`view mode`.
+   :ref:`Back to top <authority-records>`. The relationship is expressed in
+   the "Relationships" :term:`information area` of the authority record's
+   :term:`view page`, and the related record's name will appear as a
+   hyperlink.
+
+:ref:`Back to top <authority-records>`
+
+.. _link-authority-record-function:
+
+Create a relationship between an authority record and a function
+================================================================
+
+AtoM can also create a linked relationship between a :term:`function` and an
+:term:`authority record`. A function is a type of entity that describes
+activities linked to records creation, maintenance and use. For more
+information on working with Functions in AtoM, see: :doc:`Functions
+<../add-edit-content/functions>`. Below are the steps to create a
+relationship between an existing authority record and an existing function:
+
+1. Navigate to the :term:`function` you would like to relate to an
+   :term:`authority record`. You can do this by going to the Browse page for
+   functions (**Browse > Functions**) and then either browsing through the
+   list, or using the dedicated Functions search bar on the Browse functions
+   page to find the related function. Click on the related function to
+   navigate to its :term:`view page`. For more information on browsing and
+   searching in AtoM, see: :doc:`Browse <../access-content/browse>` or
+   :doc:`Search <../access-content/search>`.
+2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
+   button in the :term:`button block`, or by clicking on one of the
+   :term:`information area` headings; this takes you to the record's
+   :term:`edit page`.
+3. In the "Relationships" :term:`information area` of the function's
+   :term:`edit page`, click the "Add new" button under "Related  authority
+   records".
+4. AtoM will open a pop-up dialog where you can select the related
+   :term:`authority record` and define the nature and time frame of the
+   relationship.
+5. The first :term:`field` in the pop-up dialog, "Title of the related
+   resource," is an `auto-complete <https://en.wikipedia.org/wiki /Auto-
+   complete>`__ field: as you type, matching results will load in a :term
+   :`drop-down menu` below the field. When you see the
+   :term:`authority record` you would like to link, click on it to select
+   it.
+
+.. NOTE::
+
+   You cannot create a new authority record from this dialog by entering a
+   new name. If the related authority record does not exist yet, follow the
+   steps above to :ref:`create a new authority record
+   <create-authority-record>` and then follow these steps from the beginning
+   to create the relationship.
+
+6. Add additional details in the subsequent fields to qualify the
+   relationship. When you are finished, click "Submit".
+7. The related :term:`authority record` will now appear in the *Related
+   authority records* table of the Relationships area. Click the pencil icon
+   to re-open the pop-up dialog and edit the relationship, or click the **X**
+   icon to remove the relationship link. You can also repeat this process to
+   add multiple links by clicking the "Add new" button below the *Related
+   authority records* again - AtoM will open a new pop-up dialog. Repeat steps
+   3-6 as needed.
+8. When you are finished, click "Save" in the :term:`button block` at the
+   bottom of the function's :term:`edit page` to save your changes and exit
+   :term:`edit mode`.
+9. AtoM will reload the :term:`function` in :term:`view mode`.
+   :ref:`Back to top <authority-records>`. The relationship is expressed in
+   the "Relationships" :term:`information area` of the function's
+   :term:`view page`, and the related record's name will appear as a
+   hyperlink. If you follow the hyperlink, you will see that the related
+   function now appears in the "Relationships" area of the linked authority
+   record.
 
 .. _delete-authority-record:
 
 Delete an authority record
 ==========================
 
-content
+1. Navigate to the :term:`authority record` you wish to edit. You can do this
+   by :doc:`browsing <../access-content/browse>` or :doc:`searching
+   <../access-content/search>` for the :term:`authority record` - see
+   :ref:`Access content <access-content>` for more information on navigation
+   in AtoM.
+2. Click the :term:`Delete button` in the :term:`button block`.
+3. AtoM prompts you to confirm the delete request: click "Delete" to proceed
+   (or you can click "Cancel" to return to the authority record's
+   :term:`view page`).
+4. AtoM deletes the record and opens the :term:`authority record` browse
+   results page.
+
+.. IMPORTANT::
+
+   **Consequences of deleting an authority record:**
+
+   * AtoM uses authority records as the basis for its :term:`archival
+     institution` :ref:`ISDIAH <isdiah-template>` template - that is, an
+     archival institution record is a special kind of authority record. IF the
+     authority record being deleted is also registered as an :term:`archival
+     institution`, the archival institution record is ALSO deleted.
+   * Any creation :term:`events <event>` linked to the :term:`authority
+     record` are disassociated from the related :term:`archival description`,
+     but the :term:`archival description` itself is NOT deleted.
+   * Similarly, if a :term:`function` is linked to an :term:`authority record`
+     and the authority record is deleted, the relationship is disassociated,
+     but the related :term:`function` is NOT deleted.
+
 
 :ref:`Back to top <authority-records>`
