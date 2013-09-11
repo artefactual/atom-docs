@@ -9,6 +9,8 @@ User manual
 User guide to creating, editing, accessing, importing, exporting, and
 translating content in AtoM; includes administering the system.
 
+.. _overview:
+
 * **Overview**
 
   This section provides an overview of the technical architecture
@@ -22,6 +24,8 @@ translating content in AtoM; includes administering the system.
   .. raw:: html
 
     <br />
+
+.. _getting-started:
 
 * **Getting started**
 
@@ -41,6 +45,8 @@ translating content in AtoM; includes administering the system.
 
     <br />
 
+.. _add-edit-content:
+
 * **Add/edit content**
 
   This section describes how to add, edit, and delete
@@ -50,7 +56,7 @@ translating content in AtoM; includes administering the system.
   * :ref:`Archival descriptions <archival-descriptions>`
   * :ref:`Authority records <authority-records>`
   * :ref:`Archival institutions <archival-institutions>`
-  * :ref: `Deaccession records <deaccession-records>`
+  * :ref:`Deaccession records <deaccessions>`
   * Donors
   * Functions
   * Rights
@@ -62,6 +68,8 @@ translating content in AtoM; includes administering the system.
   .. raw:: html
 
     <br />
+
+.. _access-content:
 
 * **Access content**
 
@@ -80,6 +88,8 @@ translating content in AtoM; includes administering the system.
 
     <br />
 
+.. _translate:
+
 * **Translate**
 
   This section describes how to translate both database content
@@ -93,6 +103,8 @@ translating content in AtoM; includes administering the system.
   .. raw:: html
 
     <br />
+
+.. _reports-printing:
 
 * **Reports/printing**
 
@@ -109,6 +121,8 @@ translating content in AtoM; includes administering the system.
 
     <br />
 
+.. _import-export:
+
 * **Import/export**
 
   This section describes automated methods for getting dataç
@@ -121,6 +135,8 @@ translating content in AtoM; includes administering the system.
   .. raw:: html
 
     <br />
+
+.. _administer:
 
 * **Administer**
 
@@ -141,6 +157,31 @@ translating content in AtoM; includes administering the system.
   * Search for updates
   * Global search and replace
   * Visible elements
+
+  .. raw:: html
+
+    <br />
+
+.. _data-entry:
+
+* **Data entry / standards-based templates**
+
+* Archival description templates
+
+  * :ref:`ISAD(G) template <isad-template>`
+  * :ref:`RAD template <rad-template>`
+  * :ref:`DACS template <dacs-template>`
+  * :ref:`Dublin Core template <dc-template>`
+  * :ref:`MODS template <mods-template>`
+
+* Authority record templates
+
+  * :ref:`ISAAR-CPF template <isaar-template>`
+
+* Archival institution templates
+
+  * :ref:`ISDIAH template <isdiah-template>`
+
 
   .. raw:: html
 
