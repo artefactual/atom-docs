@@ -56,10 +56,10 @@ materials have been arranged.
 
 **SEE ALSO**
 
-* :ref:`Create a deaccession record <add-deaccession-record>`
-* :ref:`Edit a deaccession record <edit-deaccession-record>`
+* :ref:`Searching for accession records <search-accession-records>`
+* :ref:`Add a new deaccession record <add-deaccession-record>`
+* :ref:`Edit an existing deaccession record <edit-deaccession-record>`
 * :ref:`Delete a deaccession record <delete-deaccession-record>`
-
 
 .. _add-new-accession:
 
@@ -327,8 +327,8 @@ Method 2: Altering the Accessions mask
 Users interested in creating an :term:`accession record` that has a legacy
 accession number associated with it via the AtoM :term:`user interface`, can
 do so by first editing the  Accessions mask in the **Admin > Settings >
-Global** area, and then creating a :ref:`new accession record <add-new-
-accession>`.
+Global** area, and then creating a :ref:`new accession record
+<add-new-accession>`.
 
 By default, AtoM creates the accession record identifier as a unique number
 compiled from [**YEAR MONTH DAY Incremental#**] - this is denoted in the
