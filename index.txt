@@ -50,7 +50,7 @@ translating content in AtoM; includes administering the system.
   * :ref:`Archival descriptions <archival-descriptions>`
   * :ref:`Authority records <authority-records>`
   * :ref:`Archival institutions <archival-institutions>`
-  * Deaccession records
+  * :ref: `Deaccession records <deaccession-records>`
   * Donors
   * Functions
   * Rights

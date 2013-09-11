@@ -1,0 +1,31 @@
+.. deaccessions:
+
+===================
+Deaccession records
+===================
+
+.. add-deaccession-record:
+
+Add a new deaccession record
+============================
+
+content
+
+:ref:`Back to top <deaccessions>`
+
+.. edit-deaccession-record:
+
+Edit an existing deaccession record
+===================================
+
+content
+
+:ref:`Back to top <deaccessions>`
+
+.. delete-deaccession-record:
+
+Delete a deaccession record
+===========================
+
+:ref:`Back to top <deaccessions>`
+

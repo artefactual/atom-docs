@@ -18,4 +18,5 @@ links to each chapter's main sections.
    add-edit-content/archival-descriptions
    add-edit-content/authority-records
    add-edit-content/archival-institutions
+   add-edit-content/deaccessions
    glossary/glossary
