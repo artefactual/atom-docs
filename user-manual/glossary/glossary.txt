@@ -236,11 +236,15 @@ Glossary
     the left-hand side of the screen. The right-hand side of the screen
     includes related people (i.e., :term:`authority records
     <authority record>`), :term:`subjects <subject>`, and :term:`places
-    <place>`, as well as available formats for export. When viewing an ISDIAH
-    :term:`authority record` for an :term:`archival institution`, the context
-    menu displays a list of holdings on the left-hand side, with contact
-    information for the :term:`repository` provided on the right-hand side of
-    the record. See :doc:`Context menu <../access-content/context-menu>`.
+    <place>`, as well as available formats for export. When viewing an ISAAR-
+    CPF :term:`authority record` for a person, family, or :term:`corporate
+    body`, the left-hand side of the screen will show any relationships with
+    :term:`archival descriptions <archival description>` or other authority
+    records. When viewing an ISDIAH :term:`authority record` for an
+    :term:`archival institution`, the context menu displays a list of
+    holdings on the left-hand side, with contact information for the
+    :term:`repository` provided on the right-hand side of the record. See
+    :doc:`Context menu <../access-content/context- menu>`.
 
   Contributor
     A contributor is a type of user who can search, browse, create, and
