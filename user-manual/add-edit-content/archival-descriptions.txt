@@ -266,8 +266,8 @@ navigating to the description to which you would like to add a child (the
 :term:`parent description <parent record>`).
 
 First, navigate to the :term:`parent archival description <parent record>` to
-which you wish to add a child description. You can do this by :ref:`browsing
-<../access-content/browse>` or :ref:`searching <../access-content/search>` for
+which you wish to add a child description. You can do this by :doc:`browsing
+<../access-content/browse>` or :doc:`searching <../access-content/search>` for
 the :term:`archival description` - see :ref:`Access content <access-content>`
 for more information on navigation in AtoM.
 
@@ -326,8 +326,8 @@ on logging in, see: :ref:`Log in <log-in>`.
 **To edit an existing archival description:**
 
 1. First, navigate to the :term:`archival description` you wish to edit. You
-   can do this by :ref:`browsing <../access-content/browse>` or
-   :ref:`searching <../access-content/search>` for the :term:`archival
+   can do this by :doc:`browsing <../access-content/browse>` or
+   :doc:`searching <../access-content/search>` for the :term:`archival
    description` - see :ref:`Access content <access-content>` for more
    information on navigation in AtoM.
 2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
@@ -420,8 +420,8 @@ This can allow a user to avoid unnecessarily repeating data entry.
 **To duplicate an existing archival description:**
 
 1. First, navigate to the :term:`archival description` you wish to edit. You
-   can do this by :ref:`browsing <../access-content/browse>` or
-   :ref:`searching <../access-content/search>` for the :term:`archival
+   can do this by :doc:`browsing <../access-content/browse>` or
+   :doc:`searching <../access-content/search>` for the :term:`archival
    description` - see :ref:`Access content <access-content>` for more
    information on navigation in AtoM.
 2. At the bottom of the archival description, click the "Duplicate" button
