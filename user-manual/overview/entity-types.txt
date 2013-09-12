@@ -1,3 +1,5 @@
+.. _entity-types:
+
 ============
 Entity types
 ============
