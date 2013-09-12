@@ -1,0 +1,107 @@
+.. _donors:
+
+=============
+Donor records
+=============
+
+The `SAA Glossary <http://www2.archivists.org/glossary>`__ defines a donor as
+"*An individual or organization who gives property or money to another without
+reciprocal compensation,*" adding that in many instances, "*individuals who
+donate collections are not the provenance of the collection.*" This implies
+that a donor is not nessarily the :term:`creator` of the materials being
+donated to a :term:`repository` - rather, they are the last legal custodian of
+the records before they are passed to a :term:`repository` for long-term
+preservation.
+
+In AtoM, donor records can be used more generically than the SAA Glossary
+defintion - they can be used to manage records of all individuals who supply
+records and other materials to a repository, whether freely or with the
+expectation of compensation. They are a way to maintain a record of the
+provenance of :ref:`accessions <accession-records>`, so that donors can be
+contacted in the future if necessary. Donor records can be created
+independently; more often they are added while creating an :term:`accession
+record` via the :term:`donor dialog` that is available in the accession
+record edit template.
+
+**Below are instructions for using the Donors module in AtoM to:**
+
+* :ref:`Add a new donor record <add-donor-record>`
+* :ref:`Edit an existing donor record <edit-donor-record>`
+* :ref:`Link a donor record to an accession <link-donor-accession>`
+* :ref:`Delete a donor record <delete-donor-record>`
+
+**SEE ALSO**
+
+* :ref:`Accessions <accession-records>`
+
+.. _add-donor-record:
+
+Add a new donor record
+======================
+
+In AtoM, there are currently 2 ways to add a new Donor record:
+
+* :ref:`Using the donor dialog in the accessions template
+  <add-donor-via-accession>`
+* :ref:`From another donor record <add-donor-via-donor>`
+
+.. TIP::
+
+   Want a quicker way to add a new donor? AtoM menus are customizable; you
+   can add a link to Donors in the :term:`main menu` under **Add > Donor**.
+   To do so, you will require an :term:`administrator` account - navigate to
+   **Admin > Menus**, and click the "Add new" button at the bottom of the
+   page. Add the following information to each field in the menu template:
+
+   * **Name:** addDonor
+   * **Label:** Donor
+   * **Parent:** --add
+   * **Path:** donor/add
+
+   A link to a new Donor record edit template will now appear in the
+   :term:`main menu` under **Add > Donor**. For more information on working
+   with menus in AtoM, see: :ref:`Manage menus <manage-menus>`.
+
+
+.. _add-donor-via-accession:
+
+Using the donor dialog in the accessions template
+-------------------------------------------------
+
+content
+
+.. _add-donor-via-donor:
+
+From another donor record
+-------------------------
+
+content
+
+:ref:`Back to top <donors>`
+
+.. _edit-donor-record:
+
+Edit an existing donor record
+=============================
+
+content
+
+:ref:`Back to top <donors>`
+
+.. _link-donor-accession:
+
+Link a donor record to an accession
+===================================
+
+content
+
+:ref:`Back to top <donors>`
+
+.. _delete-donor-record:
+
+Delete a donor record
+=====================
+
+content
+
+:ref:`Back to top <donors>`
