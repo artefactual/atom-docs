@@ -1,0 +1,144 @@
+.. _navigate:
+
+==================
+Navigation in AtoM
+==================
+
+.. _atom-header-bar:
+
+The AtoM Header Bar
+===================
+
+Site logo
+search bar
+browse button
+Main menu
+Profile button (?)
+
+.. _main-menu:
+
+:ref:`Back to top <navigate>`
+
+The main menu
+=============
+
+.. _main-menu-add:
+
+Add
+---
+
+content
+
+.. _main-menu-manage:
+
+Manage
+------
+
+content
+
+.. _main-menu-import:
+
+Import
+------
+
+content
+
+
+.. _main-menu-admin:
+
+Admin
+-----
+
+content
+
+.. _main-menu-language:
+
+Language
+--------
+
+.. _recurring-page-elements:
+
+
+:ref:`Back to top <navigate>`
+
+Recurring page elements
+=======================
+
+.. _recurring-title-bar:
+
+Title bar
+---------
+
+content
+
+.. _recurring-text-links:
+
+Text links
+----------
+
+content
+
+.. _recurring-context-menu:
+
+Context menu
+------------
+
+content
+
+.. _recurring-column-headers:
+
+Column headers
+--------------
+
+content
+
+.. _recurring-information-areas:
+
+Information areas
+-----------------
+
+content
+
+.. _recurring-carousel:
+
+Carousel
+--------
+
+content
+
+.. _recurring-sort-buttons:
+
+Sort buttons
+-----------
+
+content
+
+.. _recurring-facets:
+
+Facets
+------
+
+content
+
+.. _recurring-button-block:
+
+Button block
+------------
+
+content
+
+.. _recurring-breadcrumb-trail:
+
+Breadcrumb trail
+----------------
+
+content
+
+.. _recurring-institution-logos:
+
+Institution logos
+-----------------
+
+content
+
+:ref:`Back to top <navigate>`

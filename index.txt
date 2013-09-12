@@ -81,7 +81,7 @@ translating content in AtoM; includes administering the system.
   * Search
   * Advanced search
   * Browse
-  * Navigate
+  * :ref:`Navigate <navigate>`
   * Context menu
 
   .. raw:: html
