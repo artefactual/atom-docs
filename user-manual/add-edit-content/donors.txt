@@ -16,12 +16,12 @@ preservation.
 In AtoM, donor records can be used more generically than the SAA Glossary
 defintion - they can be used to manage records of all individuals who supply
 records and other materials to a repository, whether freely or with the
-expectation of compensation. They are a way to maintain a record of the
-provenance of :ref:`accessions <accession-records>`, so that donors can be
+expectation of compensation. Donor records are a way to maintain a record of
+the provenance of :ref:`accessions <accession-records>`, so that donors can be
 contacted in the future if necessary. Donor records can be created
 independently; more often they are added while creating an :term:`accession
-record` via the :term:`donor dialog` that is available in the accession
-record edit template.
+record` via the :term:`donor dialog` that is available in the accession record
+edit template.
 
 **Below are instructions for using the Donors module in AtoM to:**
 
@@ -68,14 +68,68 @@ In AtoM, there are currently 2 ways to add a new Donor record:
 Using the donor dialog in the accessions template
 -------------------------------------------------
 
-content
+1. Begin creating a new :term:`accession record`, or navigate to an existing
+   accession record and enter :term:`edit mode`. Please see the
+   :ref:`Accession records <accession-records>` page for more information on
+   :ref:`creating a new accession <add-new-accession>` or
+   :ref:`editing an existing accession record <edit-accession-record>`.
+2. In the :term:`accession record` :term:`edit page`, Navigate to the
+   "Donor/Trasferring body" :term:`information area` and click the "Add new"
+   button.
+3. A dialog will pop up and you can enter the names and contact information
+   for related donors using the :term:`donor dialog`. The dialog allows you
+   to include the donor name and give an alternative contact person. Enter
+   data as required.
+4. Once you have completed entering the donor information, click on the
+   "Submit" button to save and return to the :term:`accession record` edit
+   template.
+5. You can add multiple donors to a single accession record by repeating steps
+   2-4 if desired. If you need to edit the donor information, click the
+   pencil icon next to the donor name in the "Donor/Transferring body area"
+   of the accession record's :term:`edit page`; the :term:`donor dialog` will
+   re-open and you can make changes. Clicking the "**X**" icon next to a
+   donor name in the "Donor/Transferring body area" will remove the Donor
+   from the :term:`accession record`.
+6. Continue adding and/or editing data in the accession record as needed. When
+   you are finished, click the "Create" (if you are creating a new accession
+   record) or "Save" (if editing an existing accession record) button in the
+   :term:`button block` of the accession record to complete adding the new
+   donor
+7. AtoM will exit :term:`edit mode` and take you to the :term:`accession
+   record` :term:`view page`. The related Donor's name will appear as a
+   hyperlink in the "Donor/Transferring body" :term:`information area` of the
+   :term:`accession record`. You can click the hyperlink to navigate to the
+   related Donor record. Alternately, you can view all donor records via the
+   :term:`main menu` by navigating to **Manage > Donors**.
+
 
 .. _add-donor-via-donor:
 
 From another donor record
 -------------------------
 
-content
+Depending upon your workflow, you might want to add donors to AtoM during the
+accession process or you might want to add donors to AtoM as a separate
+process. The first approach (:ref:`above <add-donor-via-accession>`) is the
+easiest and most logical. This second approach requires you to create the
+donor and then add the donor to the accession record - this approach also
+requires that you have donors existing in the database, otherwise you cannot
+browse the list and "add a new" donor.
+
+1. In the :term:`main menu` (located in AtoM's :term:`header bar`), navigate
+   to **Manage > Donors**.
+2. AtoM takes you to a Browse menu listing all Donor records. Click on the
+   hyperlink of an existing Donor name.
+3. AtoM takes you to the Donor record :term:`view page`. At the bottom of the
+   record, click on the "Add new" button in the :term:`button block`.
+4. AtoM will redirect you to a blank Donor record in :term:`edit mode`. Enter
+   the new donor name and select "Add new" under the contact area to enter
+   contact information about your new donor. Click "Submit" to close the
+   contact information dialog and return to the donor record. When you are
+   finished adding data, click on the :term:`Create button` in the
+   :term:`button block` to save the new Donor record.
+5. If you want to link the new Donor record to an accession record, see below,
+   :ref:`Link a donor record to an accession <link-donor-accession>`.
 
 :ref:`Back to top <donors>`
 
@@ -84,7 +138,38 @@ content
 Edit an existing donor record
 =============================
 
-content
+1. Using the :term:`main menu` located in the AtoM :term:`header bar`,
+   navigate to **Manage > Donors**.
+2. AtoM takes you to a Browse menu listing all Donor records. With a long list
+   (multiple pages) of donors, you can also type the donor name into the
+   dedicated search box, to locate a name quickly and avoid scrolling through
+   numerous pages. You can also sort the list of Donors alphabetically, or by
+   most recently updated.
+3. When you have located the Donor record you wish to edit in the Browse page,
+   click on the hyperlinked Donor name.
+4. AtoM takes you to the Donor record :term:`view page`. Click the "Edit"
+   button in the :term:`button block` located at the bottom of the record.
+5. AtoM will open the Donor record in :term:`edit mode`. Add/revise data as
+   required. You can edit existing information in the Contact
+   :term:`information area` by clicking on the pencil icon - AtoM will open
+   the contact dialog. ***Note that there are three tabs** in the Contact
+   dialog for data entry - make changes or additions as required. To close the
+   Contact dialog and save your changes, click the "Submit" button. Note that
+   your changes will not be saved until you save the Donor record.
+6. When you have made all necessary changes, click "Save" in the
+7. After saving the Donor record, AtoM takes you to the Donor record
+   :term:`view page` where you can review your changes.
+
+.. TIP::
+
+   If your Donor record is linked to an :term:`accession record`, you can also
+   arrive at a Donor record for editing by navigating to the related
+   :term:`accession record` and clicking on the Donor name in the
+   "Donor/Transferring body" :term:`information area` - AtoM will redirect
+   you to the related Donor record. Follow steps 4-7 above. For more
+   information on locating accession records see: :ref:`Edit an existing
+   accession record <edit-accession-record>` and :ref:`Access
+   content <access-content>`
 
 :ref:`Back to top <donors>`
 
@@ -93,7 +178,69 @@ content
 Link a donor record to an accession
 ===================================
 
-content
+Donor records created independently of accessions can be linked to an
+accession at a later date; a single donor can also be related to multiple
+accessions, and multiple donors can be related to a single accession.
+At this time, however, **this linking cannot be done from the Donor record**
+- instead, you will have to create the link from the :term:`accession record`
+that you would like to associate with the donor. To do so:
+
+1. Navigate to the :term:`accession record` you want to link to a donor
+   record. You can do this via the :term:`main menu` in the AtoM :term:`header
+   bar`, by clicking on **Manage > Accessions**. For more information on
+   navigation in AtoM, see: :ref:`Access content <access-content>`
+2. AtoM will redirect you to the accession record :ref:`browse page
+   <page-type-browse>`. Select the record you want by clicking on the
+   hyperlink Identifier. You can also search for an :term:`accession record`
+   with the accession records :term:`search box` located at the top of the
+   browse page. For more information on searching for :term:`accession records
+   <accession record>` in AtoM, see: :ref:`Searching for accession records
+   <search-accession-records>`
+3. Once you have selected an :term:`accession record`, you will be redirected
+   to the selected record's :term:`view page`. To enter :term:`edit mode`, you
+   can either click the "Edit" button in the :term:`button block` at the
+   bottom of the :term:`view page`, or click on any of the :term:`information
+   area` headings in the accession record. The accession record will reload in
+   edit mode.
+4. On loading, the :term:`edit page` displays the record with all
+   :term:`information areas <information area>` closed; click on an
+   information area to access the :term:`fields <field>` grouped under it.
+5. In the :term:`accession record` :term:`edit page`, Navigate to the
+   "Donor/Trasferring body" :term:`information area` and click the "Add new"
+   button.
+6. The :term:`donor dialog` will appear. Place your cursor in the "Name"
+   :term:`field` of the donor dialog, and begin typing the name of the related
+   donor. The name :term:`field` is an auto-complete - as you type, matching
+   results will load in a :term:`drop-down menu` below the field. When you see
+   the donor name you would like to link, click on it to select it.
+
+.. IMPORTANT::
+
+   This method makes use of  an `auto-complete <https://en.wikipedia.org/wiki
+   /Auto-complete>`__ field to find the related donor record as
+   you begin to type its name/title. **Be sure** to pick the record from the
+   :term:`drop-down <drop-down menu>` when it appears - if you type the full
+   name and press enter, a new donor record will be generated
+   instead of a link being created to an existing one!
+
+7. If the related Donor record already has the correct contact information,
+you do not need to add it to the remaining fields in the :term:`donor dialog`
+- it will appear when you save the accession record.
+
+.. IMPORTANT::
+
+   If you do add any information to the contact fields in the Donor dialog,
+   **any previous data will be overwritten** by the new contact information.
+
+8. To create links to multiple donor records, you can repeat this process
+   as needed. When you are done editing the record, save the
+   :term:`accession record` by scrolling down and pressing "Save" in the
+   :term:`button block`.
+9. AtoM will reload the :term:`accession record` in :term:`view mode` - the
+   related Donor's name will now appear as a hyperlink in the
+   "Donor/Transferring body" :term:`information area` of the :term:`accession
+   record`. Clicking on the hyperlink donor name will take you to the related
+   donor.
 
 :ref:`Back to top <donors>`
 
@@ -102,6 +249,30 @@ content
 Delete a donor record
 =====================
 
-content
+1. Navigate to the Donor record you would like to delete. You can do this by
+   using the :term:`main menu` located in the AtoM :term:`header bar` and
+   navigating to **Manage > Donors** and then selecting Donor record from the
+   browse list (or searching for it with the dedicated search bar for Donor
+   records provided on the Browse page). Alternately, if your donor record is
+   linked to an :term:`accession record`, you can navigate to the related
+   accession record and use the hyperlinked Donor name to redirect AtoM to the
+   desired Donor record.
+
+.. TIP::
+
+   For more information on locating Donor records, see above, :ref:`Edit an
+   existing donor record <edit-donor-record>`. For information on locating
+   :term:`accession records <accession record>`, see: :ref:`Edit an existing
+   accession record <edit-accession-record>`. For general information on
+   navigation in AtoM, see: :ref:`Access content <access-content>`
+
+2. When you have arrived at the Donor record's :term:`view page`, click on the
+   :term:`Delete button` located in the :term:`button block` located at the
+   bottom of the record.
+3. AtoM will ask you to conform that you want to delete the Donor record.
+   Click the "Delete" button to delete, or the "Cancel" button to return to
+   the Donor record :term:`view page`. If you click "Delete," the Donor
+   record will be permanently deleted.
+
 
 :ref:`Back to top <donors>`
