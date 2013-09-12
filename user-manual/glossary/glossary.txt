@@ -244,7 +244,7 @@ Glossary
     :term:`archival institution`, the context menu displays a list of
     holdings on the left-hand side, with contact information for the
     :term:`repository` provided on the right-hand side of the record. See
-    :doc:`Context menu <../access-content/context- menu>`.
+    :doc:`Context menu <../access-content/context-menu>`.
 
   Contributor
     A contributor is a type of user who can search, browse, create, and
@@ -372,16 +372,27 @@ Glossary
     different archival standards templates, or even if different
     :term:`levels of description <level of description>` in the same
     :term:`fonds` or :term:`collection` are displayed with different
-    standards templates. See :doc:`Entity types <../overview/entity-
-    types>`, :doc:`Descriptive standards <../overview/descriptive-
-    standards>`, and :doc:`Archival descriptions <../add-edit-content
-    /archival-descriptions>`.
+    standards templates. See :doc:`Entity types
+    <../overview/entity-types>`, :doc:`Descriptive standards
+    <../overview/descriptive-standards>`, and :doc:`Archival descriptions
+    <../add-edit-content/archival-descriptions>`.
 
   Document
     The International Council on Archives (`ICA <http://www.ica.org>`__),
     in the ISAD glossary, defines a document as "recorded information
     regardless of medium or characteristics. (See also
     :term:`Record <record>`)".
+
+  Dominion theme
+     The Dominion theme is the default theme that ships with AtoM 2.0. It has
+     been built using `Twitter Bootstrap <http://getbootstrap.com/>`__ 2.3,
+     with some added `JavaScript
+     <https://en.wikipedia.org/wiki/Javascript>`__ elements, and features a
+     black :term:`header bar` and a light grey application background color.
+     AtoM has been designed so that other themes can be added to the
+     application as plugins, after which an :term:`administrator` can change
+     the application theme via the :term:`user interface` by navigating to
+     **Admin > Themes**. See :ref:`Themes and theming <themes-theming>`
 
   Donor dialog
     The dialog that opens when adding donor contact information to the
@@ -580,8 +591,8 @@ Glossary
     The home page is the first page the user sees when opening the AtoM
     application. It can also be accessed by clicking the site logo. The
     content of the home page can be edited by :term:`administrators
-    <administrator>` (see :doc:`Manage static pages <..administer/manage-
-    static-pages>`).
+    <administrator>` (see :doc:`Manage static pages
+    <..administer/manage-static-pages>`).
 
   Information area
     Information areas appear on :term:`edit pages <edit page>` and group
@@ -621,8 +632,8 @@ Glossary
     object` that has been uploaded to AtoM. AtoM automatically generates a
     :term:`thumbnail` and a :term:`reference display copy` of the object.
     Only authenticated users may view master digital objects. See
-    :doc:`Upload digital objects <../import-export/upload-digital-
-    object>`.
+    :doc:`Upload digital objects
+    <../import-export/upload-digital-object>`.
 
   Media type
     Media type refers to the format of uploaded :term:`digital objects
