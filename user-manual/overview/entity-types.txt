@@ -18,13 +18,22 @@ An :term:`entity` is an object about which an information system collects data.
 AtoM's architecture includes a number of :term:`entity` types, but from a
 user's point of view there are six main types with which they will interact:
 
-* :term:`Accession record <accession record>`
-* :term:`Archival descriptions <archival description>`
-* :term:`Authority record <authority record>`
-* :term:`Archival institutions <archival institution>`
-* :term:`Functions <function>`
-* :term:`Rights records <rights record>`
-* :term:`Terms <term>`
+* :ref:`Accession record <entity-accession-record>`
+* :ref:`Archival descriptions <entity-archival-description>`
+* :ref:`Authority record <entity-authority-record>`
+* :ref:`Archival institutions <entity-archival-institution>`
+* :ref:`Functions <entity-function>`
+* :ref:`Rights records <entity-rights-record>`
+* :ref:`Terms <entity-term>`
+
+**SEE ALSO**
+
+* :ref:`Donors <donors>`
+* :ref:`Page types <page-types>`
+* :ref:`Navigation in AtoM <navigate>`
+* :ref:`Search <search>`
+* :ref:`Browse <browse>`
+
 
 .. _entity-accession-record:
 
@@ -40,7 +49,7 @@ control over a new accession at the time it is received by the
 
 The accession record is not aimed at end-user description, but AtoM provides
 the option to create an archival description from an accession record (details
-:ref:`here <create-description-from-accession>`). The following archival
+:ref:`here <create-accession-description>`). The following archival
 description fields inherit the data entered into the accession record:
 
 * Title
