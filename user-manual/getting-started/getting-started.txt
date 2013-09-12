@@ -9,6 +9,24 @@ provides a quick orientation to the :ref:`home page <home-page>`, how to log
 in and log out, the various :ref:`user roles <user-roles>` in the system, the
 main page types a user will encounter, and how to switch languages.
 
+**JUMP TO:**
+
+* :ref:`Home page <home-page>`
+* :ref:`Log in <log-in>`
+* :ref:`User roles <user-roles>`
+* :ref:`Page types <page-types>`
+* :ref:`Choose language <choose-language>`
+* :ref:`Change password <change-password>`
+
+**SEE ALSO**
+
+* :ref:`Navigation in AtoM <navigate>`
+* :ref:`Entity types <entity-types>`
+* :ref:`Search <search>`
+* :ref:`Browse <browse>`
+* :ref:`Context menu <context-menu>`
+
+
 .. _home-page:
 
 Home page
