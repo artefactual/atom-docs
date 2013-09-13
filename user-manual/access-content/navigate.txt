@@ -4,23 +4,110 @@
 Navigation in AtoM
 ==================
 
+This section introduces users to key navigation elements in AtoM, as well as
+recurring page elements that can be used to perform a variety of functions
+throughout the application. Navigating involves understanding the current
+location (:ref:`entity <entity-types>` and page), what can be done from that
+location (view, edit, add new, search, etc.), how to get related
+:ref:`entities <entity-types>`, and how to go to other pages to do other
+things unrelated to the current entity.
+
+**Below you'll find an introduction to:**
+
+* :ref:`The AtoM header bar <atom-header-bar>`
+* :ref:`The main menu <main-menu>`
+* :ref:`Recurring page elements <recurring-page-elements>`
+
+**SEE ALSO**
+
+* :ref:`Entity types <entity-types>`
+* :ref:`Page types <page-types>`
+* :ref:`Search <search>`
+* :ref:`Browse <browse>`
+* :ref:`Context menu <context-menu>`
+* :ref:`Manage menus <manage-menus>`
+* :ref:`Settings <settings>`
+
 .. _atom-header-bar:
 
 The AtoM Header Bar
 ===================
 
-Site logo
-search bar
-browse button
-Main menu
-Profile button (?)
+The :term:`header bar` is the primary means to access, manage, and
+create content in AtoM. It is persistent, meaning it remains available on all
+pages throughout the application. The :term:`header bar` includes the log-in
+button, :term:`language menu`, :term:`search box`, :term:`browse menu`, and
+:term:`site logo` for all users, and the :term:`main menu` for authenticated
+(i.e. logged in) users. Depending on a user's :term:`access privileges
+<access privilege>`, the :term:`main menu` may show/hide different options -
+for example, only :term:`administrators <administrator>` will see the
+:term:`Admin menu`. Access privileges are based on defined :term:`user roles
+<user role>` (see :ref:`User roles <user-roles>`).
 
-.. _main-menu:
+**SEE BELOW FOR MORE INFORMATION ON**
+
+* :ref:`The Log-in button <log-in-button>`
+* :ref:`The language menu <language-menu>`
+* :ref:`The main menu <main-menu>`
+* :ref:`The browse menu <browse-menu>`
+* :ref:`The search box <search-box>`
+* :ref:`The site logo <site-logo>`
+
+.. _log-in-button:
+
+Log-in button
+=============
+
+The log-in button, located in the :term:`header bar`, directs unauthenticated
+(i.e. not logged in) users to a log in screen where users with a :term:`user
+account` can enter their credentials (email and password) to log into the
+application. Once a user has successfully logged in, the log-in button will
+display their chosen user name. Clicking on the log-in button after logging in
+will reveal a :term:`drop-down menu` with the option to log out, or to visit
+the user's profile page, where a user can upate their credentials (username,
+email, password).
+
+* For more information on logging in, see: :ref:`Log in <log-in>`
+* For information on user roles, see: :ref:`User roles <user-roles>`
+
+**SEE ALSO**
+
+* :doc:`Manage user accounts <../administer/manage-user-accounts>`
+* :doc:`Edit permissions <../administer/edit-permissions>`
+
 
 :ref:`Back to top <navigate>`
 
-The main menu
+.. _language-menu:
+
+Language menu
 =============
+
+The :term:`language menu`, located in the :term:`header bar` in the top-right
+corner of the page, allows the user to switch to any of the
+:term:`supported languages <supported language>` in AtoM. It is available to
+all users (whether or not they are logged in). It is represented by a globe
+icon - clicking the globe icon will reveal a :term:`drop-down menu` that
+lists the available languages. When a user selects a language from the menu,
+the page will reload and all translated interface elements (such as menus,
+edit templates, :term:`tooltips`, labels, help text, etc.) will appear in the
+selected language, and will remain in the selected language until the user
+changes the language again.
+
+* For more information on changing the language, see: :ref:`Choose language
+  <choose-language>`
+
+**SEE ALSO**
+
+* :doc:`Default language <../administer/default-language>`
+* :ref:`Add/remove languages <add-remove-languages>`
+
+:ref:`Back to top <navigate>`
+
+.. _main-menu:
+
+Main menu
+=========
 
 .. _main-menu-add:
 
@@ -51,18 +138,40 @@ Admin
 
 content
 
-.. _main-menu-language:
+:ref:`Back to top <navigate>`
 
-Language
---------
 
-.. _recurring-page-elements:
+Browse menu
+===========
 
+content
 
 :ref:`Back to top <navigate>`
 
+.. _search-box:
+
+Search box
+==========
+
+content
+
+:ref:`Back to top <navigate>`
+
+.. _site-logo:
+
+Site logo
+=========
+
+content
+
+:ref:`Back to top <navigate>`
+
+.. _recurring-page-elements:
+
 Recurring page elements
 =======================
+
+content
 
 .. _recurring-title-bar:
 
@@ -109,7 +218,7 @@ content
 .. _recurring-sort-buttons:
 
 Sort buttons
------------
+------------
 
 content
 
