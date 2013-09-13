@@ -38,9 +38,38 @@ create content in AtoM. It is persistent, meaning it remains available on all
 pages throughout the application. The :term:`header bar` includes the log-in
 button, :term:`language menu`, :term:`search box`, :term:`browse menu`, and
 :term:`site logo` for all users, and the :term:`main menu` for authenticated
-(i.e. logged in) users. Depending on a user's :term:`access privileges
-<access privilege>`, the :term:`main menu` may show/hide different options -
-for example, only :term:`administrators <administrator>` will see the
+(i.e. logged in) users.
+
+.. figure:: images/headerBar_unauthenticated.*
+   :align: right
+   :figwidth: 40%
+   :width: 98%
+   :alt: An image of the AtoM Header bar for unauthenticated users
+
+   An image of the AtoM Header bar for unauthenticated users (shown with and
+   without the Site title and Site description visible)
+
+Additionally, an :term:`administrator` can add a :term:`site title` and a
+:term:`site description` via **Admin > Settings > Site information**, and
+then determine whether or not these are visible in the :term:`header bar` via
+**Admin > Settings > Default page elements**. The visibility of the :term:`site
+logo` can also be controlled via Default page elements. For more information
+see :ref:`Settings <settings>`.
+
+.. figure:: images/headerBar_admin.*
+   :align: right
+   :figwidth: 40%
+   :width: 98%
+   :alt: An image of the AtoM Header bar for Administrators
+
+   An image of the AtoM Header bar for logged-in Administrators (shown with
+   and without the Site title and Site description visible). Administrators
+   see all elements of the :term:`main menu`.
+
+The :term:`main menu` only becomes visible in the :term:`header bar` after a
+user has logged in. Depending on a user's :term:`access privileges <access
+privilege>`, the :term:`main menu` may show/hide different options - for
+example, only :term:`administrators <administrator>` will see the
 :term:`Admin menu`. Access privileges are based on defined :term:`user roles
 <user role>` (see :ref:`User roles <user-roles>`).
 
@@ -86,13 +115,17 @@ Language menu
 The :term:`language menu`, located in the :term:`header bar` in the top-right
 corner of the page, allows the user to switch to any of the
 :term:`supported languages <supported language>` in AtoM. It is available to
-all users (whether or not they are logged in). It is represented by a globe
+all users (whether or not they are logged in). It is represented by a |globe|
 icon - clicking the globe icon will reveal a :term:`drop-down menu` that
 lists the available languages. When a user selects a language from the menu,
 the page will reload and all translated interface elements (such as menus,
 edit templates, :term:`tooltips`, labels, help text, etc.) will appear in the
 selected language, and will remain in the selected language until the user
 changes the language again.
+
+.. |globe| image:: images/globe.png
+   :height: 15
+   :width: 15
 
 * For more information on changing the language, see: :ref:`Choose language
   <choose-language>`
@@ -108,6 +141,29 @@ changes the language again.
 
 Main menu
 =========
+
+The :term:`main menu`  is a navigational tool appears in the AtoM
+:term:`header bar` for authenticated (i.e. logged in) users. It consists of 4
+sub-menus, represented by icons:
+
+* :ref:`Add <main-menu-add>` - represented by a |plus| icon
+* :ref:`Manage <main-menu-manage>` - represented by a |pencil| icon
+* :ref:`Import <main-menu-import>` - represented by a |import| icon
+* :ref:`Admin <main-menu-admin>` - represented by a |gears| icon
+
+.. |plus| image:: images/plus-sign.png
+   :height: 15
+   :width: 15
+.. |pencil| image:: images/edit-sign.png
+   :height: 15
+   :width: 15
+.. |import| image:: images/download-alt.png
+   :height: 15
+   :width: 15
+.. |gears| image:: images/gears.png
+   :height: 15
+   :width: 15
+
 
 .. _main-menu-add:
 
@@ -140,6 +196,7 @@ content
 
 :ref:`Back to top <navigate>`
 
+.. _browse-menu:
 
 Browse menu
 ===========
