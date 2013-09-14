@@ -16,6 +16,12 @@ things unrelated to the current entity.
 
 * :ref:`The AtoM header bar <atom-header-bar>`
 * :ref:`The main menu <main-menu>`
+
+  * |plus| :ref:`Add <main-menu-add>`
+  * |pencil| :ref:`Manage <main-menu-manage>`
+  * |import| :ref:`Import <main-menu-import>`
+  * |gears| :ref:`Admin <main-menu-admin>`
+
 * :ref:`Recurring page elements <recurring-page-elements>`
 
 **SEE ALSO**
@@ -109,8 +115,12 @@ email, password).
 
 .. _language-menu:
 
-Language menu
-=============
+|globe2| Language menu
+======================
+
+.. |globe2| image:: images/globe.png
+   :height: 23
+   :width: 23
 
 The :term:`language menu`, located in the :term:`header bar` in the top-right
 corner of the page, allows the user to switch to any of the
@@ -124,8 +134,8 @@ selected language, and will remain in the selected language until the user
 changes the language again.
 
 .. |globe| image:: images/globe.png
-   :height: 15
-   :width: 15
+   :height: 18
+   :width: 18
 
 * For more information on changing the language, see: :ref:`Choose language
   <choose-language>`
@@ -152,45 +162,167 @@ sub-menus, represented by icons:
 * :ref:`Admin <main-menu-admin>` - represented by a |gears| icon
 
 .. |plus| image:: images/plus-sign.png
-   :height: 15
-   :width: 15
+   :height: 18
+   :width: 18
 .. |pencil| image:: images/edit-sign.png
-   :height: 15
-   :width: 15
+   :height: 18
+   :width: 18
 .. |import| image:: images/download-alt.png
-   :height: 15
-   :width: 15
+   :height: 18
+   :width: 18
 .. |gears| image:: images/gears.png
-   :height: 15
-   :width: 15
+   :height: 18
+   :width: 18
 
+Each sub-menu is designed as a :term:`drop-down menu` - hovering over an icon
+in the :term:`main menu` will cause a :term:`tooltip <tooltips>` to appear
+with the name of the sub-menu (Add, Manage, Import, or Admin). Clicking on
+one of the icons will cause the drop-down to reveal the options available.
 
-.. _main-menu-add:
+Access to the elements of the main menu (the sub-menus) depends on the
+:term:`access privileges <access privilege>` associated with each user
+account. Consequently, some users may not see some of the icons for the
+sub-menus in the :term:`main menu` after logging in. Access privileges are
+determined by the :term:`user role` associated with a :term:`user account` -
+for example, a :term:`contributor` will see the :ref:`Add <main-menu-add>`
+and :ref:`Manage <main-menu-manage>` menus, but not the :ref:`Import
+<main-menu-import>` or :ref:`Admin <main-menu-admin>` menus. Only
+:term:`adminstrators <administrator>` will see all 4 sub-menus (Add,
+Manage, Import, Admin) in the :term:`main menu`.
 
-Add
----
+* For information on user roles, see: :ref:`User roles <user-roles>`
+* For information on managing User accounts see: :doc:`Manage user accounts
+  <../administer/manage-user-accounts>`.
+* For information on changing the permissions associated with an account or a
+  group, see: :doc:`Edit user permissions
+  <../administer/edit-user-permissions>`
 
-content
+ .. TIP::
+
+    :term:`Administrators <administrator>` can add and remove options in the
+    sub-menus (Add, Manage, Import, Admin) of the main menu via **Admin >
+    Menus**. For more information, see :doc:`Manage menus
+    <../administer/manage-menus>`
+
+  .. _main-menu-add:
+
+|plus2| Add
+-----------
+
+.. |plus2| image:: images/plus-sign.png
+   :height: 23
+   :width: 23
+
+.. image:: images/add-menu.*
+   :align: right
+   :width: 25%
+   :alt: An image of the Add menu's options
+
+The Add menu's options will redirect users to blank records in :term:`edit
+mode`, ready for data entry. Using the Add menu, users can quickly create new
+:term:`accession records <accession record>`, :term:`archival descriptions
+<archival description>`, :term:`archival institutions <archival institution>`,
+:term:`authority records <authority record>`, :term:`functions <function>`,
+and :term:`terms <term>`.
+
+All records are created independently of other records, and will not be a
+part of a pre-existing hierarchy - that is to say, they will be top-level
+records.
+
+**Find more information on working with:**
+
+* :ref:`Accession records <accession-records>`
+* :ref:`Archival descriptions <archival-descriptions>`
+* :ref:`Archival institutions <archival-institutions>`
+* :ref:`Authority records <authority-records>`
+* :ref:`Functions <functions>`
+* :ref:`Terms <terms>`
 
 .. _main-menu-manage:
 
-Manage
-------
+|pencil2| Manage
+----------------
 
-content
+.. |pencil2| image:: images/edit-sign.png
+   :height: 23
+   :width: 23
+
+.. image:: images/manage-menu.*
+   :align: right
+   :width: 25%
+   :alt: An image of the Manage menu's options
+
+The Manage menu allows authenticated (i.e. logged in) users to quickly access
+browse lists for key :ref:`entity types <entity-types>` in AtoM -
+:term:`accessions <accession record>`, donors, :term:`physical storage`,
+:term:`rights holders <rights record>`, and :term:`taxonomies <taxonomy>`.
+When selecting from the Manage menu's :term:`drop-down <drop-down menu>`, the
+user is redirected to a browse page for the selected :term:`entity` or record
+type.
+
+The Manage menu is distinct from the :term:`Browse menu` (available next to
+the :term:`search box` in the :term:`header bar`), in that it offers users
+direct access to browse pages that are not available to unauthenticated (i.e.
+not logged in) users - public users who are not logged in cannot view
+accessions, donor records, physical storage locations, rights records, or
+access the full taxonomies list.
+
+**Find more information on working with:**
+
+* :ref:`Accession records <accession-records>`
+* :ref:`Donors <donors>`
+* :ref:`Physical storage <physical-storage>`
+* :ref:`Rights <rights>`
+* :ref:`Taxononmy terms <terms>`
 
 .. _main-menu-import:
 
-Import
-------
+|import2| Import
+----------------
 
-content
+.. |import2| image:: images/download-alt.png
+   :height: 23
+   :width: 23
 
+.. image:: images/import-menu.*
+   :align: right
+   :width: 25%
+   :alt: An image of the Import menu's options
+
+The import menu allows authenticated (i.e. logged in) users with sufficient
+:term:`access privileges <access privilege>` to import records into the
+application. By default, only :term:`administrators <administrator>` have
+access to the import menu - however, administrators can also change user
+and group permissions (see: :doc:`Edit permissions
+<../administer/edit-user-permissions>` and :doc:`Manage user accounts
+<../administer/manage-user-accounts>`).
+
+Two options are offered in the dropdown menu - XML (short for `eXtensible
+Markup Language <https://en.wikipedia.org/wiki/Xml>`__) and CSV (short for
+`Comma-Separated Values
+<https://en.wikipedia.org/wiki/Comma-separated_values>`__). Selecting one of
+the options from the Import :term:`drop-down menu` will redirect the user to
+an import page specific to the format chosen. Using these options, an
+:term:`administrator` can import descriptions and :term:`terms <term>` into
+AtoM.
+
+**Find more information on:**
+
+* :ref:`Importing descriptions and terms <import-descriptions-terms>`
 
 .. _main-menu-admin:
 
-Admin
------
+|gears2| Admin
+--------------
+
+.. |gears2| image:: images/gears.png
+   :height: 23
+   :width: 23
+
+.. image:: images/admin-menu.*
+   :align: right
+   :width: 25%
+   :alt: An image of the Admin menu's options
 
 content
 
