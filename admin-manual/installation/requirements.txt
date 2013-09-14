@@ -38,4 +38,3 @@ Other dependencies (not required)
 * FFmpeg
 * pdftotext (part of poppler-utils)
 * php5-xsl
-* PHP extension:
