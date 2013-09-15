@@ -1,6 +1,16 @@
+.. _atom-docs-home:
+
 ==================
 AtoM documentation
 ==================
+
+.. toctree::
+   :hidden:
+
+   index
+   /user-manual/index
+   /user-manual/index
+   /about-contribute/about-contribute
 
 -----------
 User manual
@@ -205,6 +215,15 @@ Instructions for installing, upgrading, importing and more.
   * :doc:`Requirements <admin-manual/installation/requirements>`
   * :doc:`Using Vagrant (Mac, Linux) <admin-manual/installation/vagrant-unix>`
   * :doc:`Using Vagrant (Windows) <admin-manual/installation/vagrant-windows>`
+
+
+-------------------------------------------
+About these docs / Contribute documentation
+-------------------------------------------
+
+* :ref:`About these docs <about-docs>`
+* :ref:`Why Sphinx? <about-why-sphinx>`
+* :ref:`Contribute documentation <about-contribute-docs>`
 
 ----------
 Questions?
