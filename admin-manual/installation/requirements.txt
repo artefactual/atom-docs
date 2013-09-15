@@ -25,9 +25,10 @@ Software dependencies (required)
 
 Additionally, the following PHP extensions are mandatory:
 
-* php5-curl
-* php5-json
-* php-apc (or php5-apcu)
+* cURL (php5-curl)
+* JSON (php5-json)
+* APC (php-apc, or php5-apcu in PHP 5.5)
+* PDO and PDO-MySQL (php5-mysql)
 
 
 Other dependencies (not required)
@@ -37,4 +38,4 @@ Other dependencies (not required)
 * Ghostscript
 * FFmpeg
 * pdftotext (part of poppler-utils)
-* php5-xsl
+* PHP extension XSL (php5-xsl)
