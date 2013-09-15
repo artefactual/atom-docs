@@ -39,7 +39,8 @@ publicly released under a Creative Commons Attribution-ShareAlike 3.0 Unported
 licence (`CC BY SA <http://creativecommons.org/licenses/by-sa/3.0/>`__), and
 we rely on input, contributions, and translations from our community to make
 our documents as useful and accessible as they can be. Information on how to
-contribute to our documentation is included `below <about-contribute-docs>`.
+contribute to our documentation is included :ref:`below
+<about-contribute-docs>`.
 
 * :ref:`Why move to Sphinx? <about-why-sphinx>`
 * :ref:`Contribute documentation <about-contribute-docs>`
