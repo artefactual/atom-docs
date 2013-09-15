@@ -30,6 +30,14 @@ Additionally, the following PHP extensions are mandatory:
 * APC (php-apc, or php5-apcu in PHP 5.5)
 * PDO and PDO-MySQL (php5-mysql)
 
+.. note::
+
+   All these dependencies can run in a number of different operative systems,
+   including Windows, Mac OS X, Solaris, FreeBSD or Linux. We based this
+   documentation in Ubuntu Linux 12.04 LTS as it seems to be the most widely
+   used Linux distribution. However, it should serve as a reference for other
+   environments and distro flavours.
+
 
 Other dependencies (not required)
 ---------------------------------
