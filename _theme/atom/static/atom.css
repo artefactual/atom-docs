@@ -14,11 +14,12 @@ body {
     color: #002b36;
     padding: 0;
     margin: 0px 80px 0px 80px;
-    min-width: 740px;	
+    min-width: 740px;
     -moz-box-shadow: 0px 0px 10px #93a1a1;
     -webkit-box-shadow: 0px 0px 10px #93a1a1;
     box-shadow: 0px 0px 10px #93a1a1;
     background: url("subtle_dots.png") repeat;
+
 
 }
 
@@ -80,6 +81,7 @@ div.related ul li a:hover {
 
 div.sphinxsidebarwrapper {
     padding: 0;
+    clear: none !important;
 }
 
 div.sphinxsidebar {
@@ -87,6 +89,7 @@ div.sphinxsidebar {
     padding: 0.5em 15px 15px 0;
     width: 210px;
     float: right;
+    clear: none !important;
     font-size: 0.9em;
     text-align: left;
 }
@@ -134,7 +137,7 @@ div.footer a {
 
 /* -- body styles ----------------------------------------------------------- */
 
-p {    
+p {
     margin: 0.8em 0 0.5em 0;
 }
 
