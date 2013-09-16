@@ -4,4 +4,4 @@
 AtoM documentation
 ==================
 
-Please visit the `ICA-AtoM wiki site<https://www.ica-atom.org/doc/Main_Page>`_.
+Please visit the `ICA-AtoM wiki site <https://www.ica-atom.org/doc/Main_Page>`_.
