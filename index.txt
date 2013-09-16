@@ -9,8 +9,8 @@ AtoM documentation
 
    index
    /user-manual/index
-   /user-manual/index
-   /about-contribute/about-contribute
+   /admin-manual/index
+
 
 -----------
 User manual
@@ -217,21 +217,3 @@ Instructions for installing, upgrading, importing and more.
   * :doc:`Using Vagrant (Windows) <admin-manual/installation/vagrant-windows>`
 
 
--------------------------------------------
-About these docs / Contribute documentation
--------------------------------------------
-
-* :ref:`About these docs <about-docs>`
-* :ref:`Why Sphinx? <about-why-sphinx>`
-* :ref:`Contribute documentation <about-contribute-docs>`
-
-----------
-Questions?
-----------
-
-Please post any questions you might have to the `User Forum
-<https://groups.google.com/forum/#!forum/ica-atom-users>`_.
-
-If you have technical questions, please see the AtoM Administrator's
-manual, or post a question to the `AtoM developer's forum
-<https://groups.google.com/forum/#!forum/qubit-dev>`_.
