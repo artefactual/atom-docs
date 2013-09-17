@@ -24,8 +24,8 @@ translating content in AtoM; includes administering the system.
 Overview
 --------
 
-This section provides an overview of the technical architecture
-and requirements.
+This section provides an overview of the technical architecture and
+requirements.
 
 * :doc:`What is AtoM? <user-manual/overview/intro>`
 * :doc:`Technical requirements <user-manual/overview/technical-requirements>`
@@ -37,10 +37,10 @@ and requirements.
 Getting started
 ----------------
 
-This section describes how to start using AtoM once it
-has been installed. It provides a quick orientation to the home page, how to
-log in and log out, the various user roles in the system, the main page types
-a user will encounter, and how to switch languages.
+This section describes how to start using AtoM once it has been installed. It
+provides a quick orientation to the home page, how to log in and log out, the
+various user roles in the system, the main page types a user will encounter, and
+how to switch languages.
 
 * :ref:`Home page <home-page>`
 * :ref:`Log in <log-in>`
@@ -54,8 +54,7 @@ a user will encounter, and how to switch languages.
 Add/edit content
 ----------------
 
-This section describes how to add, edit, and delete
-content in AtoM.
+This section describes how to add, edit, and delete content in AtoM.
 
 * :ref:`Accession records <accession-records>`
 * :ref:`Archival descriptions <archival-descriptions>`
@@ -75,10 +74,10 @@ content in AtoM.
 Access content
 --------------
 
-This section provides guidelines for searching, browsing,
-and navigating. Most of the functions discussed are available to all user
-roles, including researchers with read only access. However, some navigation
-features (e.g. edit mode), are only available to users withedit access.
+This section provides guidelines for searching, browsing, and navigating. Most
+of the functions discussed are available to all user roles, including
+researchers with read only access. However, some navigation features (e.g. edit
+mode), are only available to users withedit access.
 
 * Search
 * Advanced search
@@ -91,8 +90,8 @@ features (e.g. edit mode), are only available to users withedit access.
 Translate
 ---------
 
-This section describes how to translate both database content
-and user interface elements in AtoM.
+This section describes how to translate both database content and user interface
+elements in AtoM.
 
 * Multilingual design principles in AtoM
 * Translate content
@@ -105,8 +104,8 @@ and user interface elements in AtoM.
 Reports/printing
 ----------------
 
-This section describes how to create and print different
-types of reports using AtoM:
+This section describes how to create and print different types of reports using
+AtoM:
 
 * Create file list report & print
 * Create item list report & print
@@ -119,8 +118,8 @@ types of reports using AtoM:
 Import/export
 -------------
 
-This section describes automated methods for getting dataç
-in and out of an AtoM application.
+This section describes automated methods for getting data in and out of an AtoM
+application.
 
 * Upload digital objects
 * Import descriptions and terms
@@ -131,8 +130,8 @@ in and out of an AtoM application.
 Administer
 ----------
 
-This section describes how to administer AtoM, whether for a
-single institution or for a network.
+This section describes how to administer AtoM, whether for a single institution
+or for a network.
 
 * Install
 * Manage user accounts
@@ -161,25 +160,15 @@ guidance from the relevant standard, notes on the field's use in AtoM, and
 more.
 
 * Archival description templates
-
   * :ref:`ISAD(G) template <isad-template>`
   * :ref:`RAD template <rad-template>`
   * :ref:`DACS template <dacs-template>`
   * :ref:`Dublin Core template <dc-template>`
   * :ref:`MODS template <mods-template>`
-
 * Authority record templates
-
   * :ref:`ISAAR-CPF template <isaar-template>`
-
 * Archival institution templates
-
   * :ref:`ISDIAH template <isdiah-template>`
-
-
-  .. raw:: html
-
-    <br />
 
 Glossary
 --------
@@ -200,8 +189,6 @@ Instructions for installing, upgrading, importing and more.
 Installation
 ------------
 
-  * :doc:`Requirements <admin-manual/installation/requirements>`
-  * :doc:`Using Vagrant (Mac, Linux) <admin-manual/installation/vagrant-unix>`
-  * :doc:`Using Vagrant (Windows) <admin-manual/installation/vagrant-windows>`
-
-
+* :doc:`Requirements <admin-manual/installation/requirements>`
+* :doc:`Using Vagrant (Mac, Linux) <admin-manual/installation/vagrant-unix>`
+* :doc:`Using Vagrant (Windows) <admin-manual/installation/vagrant-windows>`
