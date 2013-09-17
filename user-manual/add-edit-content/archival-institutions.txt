@@ -88,7 +88,7 @@ institution :term:`edit page`, see:
    <user-roles>`. For information on logging in, see: :ref:`Log in <log-in>`.
    Administrators can also change the :term:`access privleges <access
    privilege>` associated with a :term:`user account` - for more information,
-   see: :ref:`Edit user permissions <edit-user-permissions`.
+   see: :ref:`Edit user permissions <edit-user-permissions>`.
 
 .. _add-archival-institution:
 
