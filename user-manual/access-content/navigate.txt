@@ -46,14 +46,10 @@ button, :term:`language menu`, :term:`search box`, :term:`browse menu`, and
 :term:`site logo` for all users, and the :term:`main menu` for authenticated
 (i.e. logged in) users.
 
-.. figure:: images/headerBar_unauthenticated.*
+.. image:: images/headerBar_unauthenticated.*
    :align: right
-   :figwidth: 40%
-   :width: 98%
+   :width: 40%
    :alt: An image of the AtoM Header bar for unauthenticated users
-
-   An image of the AtoM Header bar for unauthenticated users (shown with and
-   without the Site title and Site description visible)
 
 Additionally, an :term:`administrator` can add a :term:`site title` and a
 :term:`site description` via **Admin > Settings > Site information**, and
@@ -62,15 +58,10 @@ then determine whether or not these are visible in the :term:`header bar` via
 logo` can also be controlled via Default page elements. For more information
 see :ref:`Settings <settings>`.
 
-.. figure:: images/headerBar_admin.*
+.. image:: images/headerBar_admin.*
    :align: right
-   :figwidth: 40%
-   :width: 98%
+   :width: 40%
    :alt: An image of the AtoM Header bar for Administrators
-
-   An image of the AtoM Header bar for logged-in Administrators (shown with
-   and without the Site title and Site description visible). Administrators
-   see all elements of the :term:`main menu`.
 
 The :term:`main menu` only becomes visible in the :term:`header bar` after a
 user has logged in. Depending on a user's :term:`access privileges <access
@@ -310,6 +301,10 @@ AtoM.
 
 * :ref:`Importing descriptions and terms <import-descriptions-terms>`
 
+**SEE ALSO**
+
+* :ref:`Upload digital objects <upload-digital-objects>`
+
 .. _main-menu-admin:
 
 |gears2| Admin
@@ -324,9 +319,39 @@ AtoM.
    :width: 25%
    :alt: An image of the Admin menu's options
 
-content
+The admin menu allows users with :term:`administrator <administrator>`
+access to customize AtoM to meet institution-specific requirements and
+to manage :term:`user accounts <user account>`, :term:`user
+profiles <user profile>` and :term:`access privileges <access privilege>`. An
+administrator can also create and manage :term:`static pages <static page>`,
+alter application menus, change the visibility of elements in the
+:term:`header bar`, and change other application default settings.
+
+
+By default, the admin menu is only visible to users with :term:`administrator`
+privileges. However, an :term:`administrator` can also change user and group
+permissions (:term:`access privileges <access privilege>`) via the Admin
+menu.
+
+**For more information working with Admin menu options, see:**
+:ref:`Administer <administer>`
+
+* :ref:`Manage user accounts <manage-user-accounts>`
+* :ref:`Manage digital object storage <manage-digital-object-storage>`
+* :ref:`Edit user permissions <edit-user-permissions>`
+* :ref:`Manage static pages <manage-static-pages>`
+* :ref:`Manage menus <manage-menus>`
+* :ref:`Manage plugins <manage-plugins>`
+* :ref:`Themes and theming <themes-theming>`
+* :ref:`Settings <settings>`
+* :ref:`Default language <default-language>`
+* :ref:`Site logo <site-logo>`
+* :ref:`Search for updates <search-updates>`
+* :ref:`Visible elements <visible-elements>`
 
 :ref:`Back to top <navigate>`
+
+
 
 .. _browse-menu:
 
@@ -346,7 +371,7 @@ content
 
 :ref:`Back to top <navigate>`
 
-.. _site-logo:
+.. _site-logo-element:
 
 Site logo
 =========
