@@ -46,10 +46,18 @@ button, :term:`language menu`, :term:`search box`, :term:`browse menu`, and
 :term:`site logo` for all users, and the :term:`main menu` for authenticated
 (i.e. logged in) users.
 
+.. raw:: html
+
+   <br />
+
 .. image:: images/headerBar_unauthenticated.*
-   :align: right
-   :width: 40%
+   :align: center
+   :width: 80%
    :alt: An image of the AtoM Header bar for unauthenticated users
+
+.. raw:: html
+
+ <br />
 
 Additionally, an :term:`administrator` can add a :term:`site title` and a
 :term:`site description` via **Admin > Settings > Site information**, and
@@ -58,17 +66,25 @@ then determine whether or not these are visible in the :term:`header bar` via
 logo` can also be controlled via Default page elements. For more information
 see :ref:`Settings <settings>`.
 
-.. image:: images/headerBar_admin.*
-   :align: right
-   :width: 40%
-   :alt: An image of the AtoM Header bar for Administrators
-
 The :term:`main menu` only becomes visible in the :term:`header bar` after a
 user has logged in. Depending on a user's :term:`access privileges <access
 privilege>`, the :term:`main menu` may show/hide different options - for
 example, only :term:`administrators <administrator>` will see the
 :term:`Admin menu`. Access privileges are based on defined :term:`user roles
 <user role>` (see :ref:`User roles <user-roles>`).
+
+.. raw:: html
+
+  <br />
+
+.. image:: images/headerBar_admin.*
+   :align: center
+   :width: 80%
+   :alt: An image of the AtoM Header bar for Administrators
+
+.. raw:: html
+
+  <br />
 
 **SEE BELOW FOR MORE INFORMATION ON**
 
