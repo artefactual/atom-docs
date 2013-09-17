@@ -4,12 +4,112 @@
 Archival Institutions
 =====================
 
+:term:`Archival institution` descriptions are structured into :term:`information
+areas <information area>` based on the ICA's International Standard for
+Describing Institutions with Archival Holdings (ISDIAH). The ISDIAH glossary
+describes an archival institution as “An organization which keeps and
+preserves archival material and makes it accessible to the public”. In AtoM,
+the data elements used to describe such institutions are based on this
+definition.
+
+This section describes how to add, edit, and delete archival institutions. The
+data entry pages listed below give detailed notes and explanations on every
+field included on the edit page; wherenthere is a one-to-one correspondence
+between an ISDIAH data element and an AtoM field, the note typically just
+gives the ISDIAH rule verbatim.
+
+.. NOTE:: Only an authenticated (i.e. logged in) :term:`administrator users
+   <administrator>` can add, edit, update or delete an :term:`archival
+   institution`. For more information on edit privileges and user roles see:
+   :ref:`User roles <user-roles>`. For information on logging in, see: :ref:`Log
+   in <log-in>`.
+
+**Below are instructions for using the Archival institution module in AtoM
+to:**
+
+* :ref:`Add a new archival institution <add-archival-institution>`
+* :ref:`Edit an existing archival institution <edit-archival-institution>`
+
+  * :ref:`Edit the theme of an archival institution page <edit-institution-theme>`
+
+* :ref:`Delete an archival institution <delete-archival-institution>`
+
+
 .. _add-archival-institution:
 
 Add a new archival institution
 ==============================
 
-content
+This section contains instructions on how to Add a new archival institution
+:ref:`from the main menu <add-institution-main>`, :ref:`from the archival
+description edit page <add-institution-description-edit>`, and :ref:`from the
+view page <add-institution-view>`.
+
+.. NOTE::
+
+   Only an authenticated (i.e. logged in) :term:`administrator` user can add a
+   new :term:`archival institution`. For more information on edit privileges and
+   user roles see: :ref:`User roles <user-roles>`.
+
+:ref:`Back to top <archival-institutions>`
+
+.. _add-institution-main:
+
+Add a new archival institution from the main menu
+-------------------------------------------------
+
+.. |plus| image:: images/plus-sign.png
+   :height: 18
+   :width: 18
+
+A new archival institution can be added at any time, from anywhere in the
+application, via the :term:`main menu`.
+
+.. NOTE::
+   :term:`Administrators <administrator>` must be logged-in in order to add
+   a new :term:`archival institution`. For more information on logging in, see:
+   :ref:`Log in <log-in>`.
+
+**To create a new archival institution:**
+
+1. In the :term:`main menu` located in the :term:`header bar`, click the |plus|
+   :ref:`"Add" <main-menu-add>` menu and select "Archival institution" from the
+   :term:`drop-down menu`.
+
+   .. NOTE::
+      Adding an :term:`archival institution` will automatically create an
+      :term:`authority record` for that institution; the two will be
+      automatically linked. You must be logged in to be able to create a new
+      archival description in AtoM.
+
+2. AtoM takes you to a blank :term:`edit page` for data entry.
+3. On loading, the :term:`edit page` displays the record with all
+   :term:`information areas <information area>` closed; click on an
+   :term:`information area` to access the :term:`fields <field>` grouped under
+   it. Enter data is required.
+4. You can quit the process at any time by clicking the "Cancel" button in the
+   :term:`button block`; any data already entered will not be saved and no new
+   record will be added. Note that simply navigating away from the page by any
+   other means, **without first clicking “Create”** will also result in no new
+   record being created.
+5. To save a new record, click the :term:`"Create" button <Create button>`
+   in the :term:`button block` at the bottom of the record.
+
+.. _add-institution-description-edit:
+
+Add a new archival instituion from an archival description edit page
+--------------------------------------------------------------------
+
+
+
+:ref:`Back to top <archival-institutions>`
+
+.. _add-institution-view:
+
+Add a new archival institution from the view page
+-------------------------------------------------
+
+**To add a new archival institution from the view page:**
 
 :ref:`Back to top <archival-institutions>`
 
@@ -18,7 +118,61 @@ content
 Edit an existing archival institution
 =====================================
 
-content
+This section contains instructions on how to Edit an existing :term:`archival
+institution`, after it has been :ref:`created <add-archival-institution>`,
+including how to :ref:`Edit the theme<edit-institutiion-theme>` and/or
+:ref:`add a photo <add-institution-photo>` to an archival institution's
+record.
+
+.. NOTE::
+   Only an authenticated (i.e. logged in) :term:`administrator` user can edit or
+   update an archival institution. For more information on edit privileges and
+   user roles see: User roles.
+
+The archival institutions descriptions can be edited at any time.
+
+**To edit an existing archival institution:**
+
+1. First, navigate to the :term:`archival institution` you wish to edit. You can
+   do this by :doc:`browsing <../access-content/browse>` or :doc:`searching
+   <../access-content/search>` for the :term:`archival institution` by name. See
+   :ref:`access content <access-content>` for more information on navigation in
+   AtoM.
+2. Switch from :term:`view mode` to :term:`edit mode` by clicking the
+   :term:`"Edit" button <Edit button>` in the :term:`button block` located at
+   the bottom of the record, or by clicking on one of the :term:`information
+   area` headings; this takes you to the record's :term:`edit page`.
+3. On loading, the :term:`edit page` displays the record with all
+   :term:`information areas <information area>` closed; click on an
+   information area to access the :term:`fields <field>` grouped under it.
+4. Add and/or revise data as required.
+5. You can quit the create process at any time by clicking the "Cancel" button
+   in the :term:`button block`; any changes made will not be saved. Note that
+   simply navigating away from the page by any other means, **without first
+   clicking "Save"** will also result in no changes being saved to the
+   archival description.
+6. To save your edits, click the "Save" button located in the :term:`button
+   block` at the bottom of the record.
+
+You will be redirected to the :term:`view page` for the edited :term:`archival
+institution`, where you can review your work.
+
+.. _edit-institution-theme:
+
+Edit the theme for an existing archival institution
+---------------------------------------------------
+
+This section contains instructions on how to Edit the theme of an existing
+:term:`archival institution`.
+
+**To edit the theme for an archival institution:**
+
+.. _add-institution-photo:
+
+Add a photo to an existing archival institution
+-----------------------------------------------
+
+**To add a photo for an archival institution:**
 
 :ref:`Back to top <archival-institutions>`
 
@@ -27,7 +181,16 @@ content
 Delete an archival institution
 ==============================
 
-content
+This page will
+
+**To delete an archival institution:**
+
+1.
+
+.. IMPORTANT::
+   When deleting an :term:`archival institution`, it is important to remember
+   that the the :term:`authority record` for that archival institution will also
+   be deleted.
 
 :ref:`Back to top <archival-institutions>`
 
