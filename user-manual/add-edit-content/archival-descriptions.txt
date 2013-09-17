@@ -330,10 +330,10 @@ on logging in, see: :ref:`Log in <log-in>`.
    :doc:`searching <../access-content/search>` for the :term:`archival
    description` - see :ref:`Access content <access-content>` for more
    information on navigation in AtoM.
-2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
-   button in the :term:`button block`, or by clicking on one of the
-   :term:`information area` headings; this takes you to the record's
-   :term:`edit page`.
+2. Switch from :term:`view mode` to :term:`edit mode` by clicking the
+   :term:`"Edit" button <Edit button>` in the :term:`button block`, or by
+   clicking on one of the :term:`information area` headings; this takes you
+   to the record's :term:`edit page`.
 3. On loading, the :term:`edit page` displays the record with all
    :term:`information areas <information area>` closed; click on an
    information area to access the :term:`fields <field>` grouped under it
