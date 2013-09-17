@@ -11,22 +11,23 @@ AtoM documentation
    /user-manual/index
    /admin-manual/index
 
+.. _user-manual-home:
 
------------
 User manual
------------
+===========
 
 User guide to creating, editing, accessing, importing, exporting, and
 translating content in AtoM; includes administering the system.
 
 .. _overview:
 
-* **Overview**
+Overview
+--------
 
   This section provides an overview of the technical architecture
   and requirements.
 
-  * :doc:`What is ICA-AtoM? <user-manual/overview/intro>`
+  * :doc:`What is AtoM? <user-manual/overview/intro>`
   * :doc:`Technical requirements <user-manual/overview/technical-requirements>`
   * :doc:`Entity types <user-manual/overview/entity-types>`
   * :doc:`Descriptive standards <user-manual/overview/descriptive-standards>`
@@ -37,7 +38,8 @@ translating content in AtoM; includes administering the system.
 
 .. _getting-started:
 
-* **Getting started**
+Getting started
+----------------
 
   This section describes how to start using AtoM once it
   has been installed. It provides a quick orientation to the home page, how to
@@ -57,10 +59,11 @@ translating content in AtoM; includes administering the system.
 
 .. _add-edit-content:
 
-* **Add/edit content**
+Add/edit content
+----------------
 
   This section describes how to add, edit, and delete
-  content in ICA-AtoM.
+  content in AtoM.
 
   * :ref:`Accession records <accession-records>`
   * :ref:`Archival descriptions <archival-descriptions>`
@@ -81,7 +84,8 @@ translating content in AtoM; includes administering the system.
 
 .. _access-content:
 
-* **Access content**
+Access content
+--------------
 
   This section provides guidelines for searching, browsing,
   and navigating. Most of the functions discussed are available to all user
@@ -100,7 +104,8 @@ translating content in AtoM; includes administering the system.
 
 .. _translate:
 
-* **Translate**
+Translate
+---------
 
   This section describes how to translate both database content
   and user interface elements in AtoM.
@@ -116,7 +121,8 @@ translating content in AtoM; includes administering the system.
 
 .. _reports-printing:
 
-* **Reports/printing**
+Reports/printing
+----------------
 
   This section describes how to create and print different
   types of reports using AtoM:
@@ -133,7 +139,8 @@ translating content in AtoM; includes administering the system.
 
 .. _import-export:
 
-* **Import/export**
+Import/export
+-------------
 
   This section describes automated methods for getting dataç
   in and out of an AtoM application.
@@ -148,7 +155,8 @@ translating content in AtoM; includes administering the system.
 
 .. _administer:
 
-* **Administer**
+Administer
+----------
 
   This section describes how to administer AtoM, whether for a
   single institution or for a network.
@@ -159,6 +167,7 @@ translating content in AtoM; includes administering the system.
   * Edit user permissions
   * Manage static pages
   * Manage menus
+  * Manage plugins
   * Settings
   * Themes and theming
   * Default language
@@ -174,7 +183,13 @@ translating content in AtoM; includes administering the system.
 
 .. _data-entry:
 
-* **Data entry / standards-based templates**
+Data entry / templates
+-----------------------
+
+This section includes specific instruction on working with AtoM's
+standards-based edit templates. Data entry guidance is provided based on
+guidance from the relevant standard, notes on the field's use in AtoM, and
+more.
 
 * Archival description templates
 
@@ -197,20 +212,24 @@ translating content in AtoM; includes administering the system.
 
     <br />
 
-* **Glossary**
+Glossary
+--------
 
   Glossary of terms used throughout this user manual.
 
   * :doc:`Glossary <user-manual/glossary/glossary>`
 
+.. _admin-manual-home:
 
---------------------
 Administrator manual
---------------------
+====================
 
 Instructions for installing, upgrading, importing and more.
 
-* **Installation**
+.. _admin-installation:
+
+Installation
+------------
 
   * :doc:`Requirements <admin-manual/installation/requirements>`
   * :doc:`Using Vagrant (Mac, Linux) <admin-manual/installation/vagrant-unix>`
