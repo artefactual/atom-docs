@@ -143,7 +143,7 @@ application, via the :term:`main menu`.
 4. You can quit the process at any time by clicking the "Cancel" button in the
    :term:`button block`; any data already entered will not be saved and no new
    record will be added. Note that simply navigating away from the page by any
-   other means, **without first clicking “Create”** will also result in no new
+   other means, **without first clicking "Create"** will also result in no new
    record being created.
 5. To save a new record, click the :term:`"Create" button <Create button>`
    in the :term:`button block` at the bottom of the record.
