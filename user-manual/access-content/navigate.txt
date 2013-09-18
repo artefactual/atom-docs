@@ -15,12 +15,19 @@ things unrelated to the current entity.
 **Below you'll find an introduction to:**
 
 * :ref:`The AtoM header bar <atom-header-bar>`
-* :ref:`The main menu <main-menu>`
 
-  * |plus| :ref:`Add <main-menu-add>`
-  * |pencil| :ref:`Manage <main-menu-manage>`
-  * |import| :ref:`Import <main-menu-import>`
-  * |gears| :ref:`Admin <main-menu-admin>`
+  * :ref:`The log-in button <log-in-button>`
+  * :ref:`The language menu <language-menu>`
+  * :ref:`The main menu <main-menu>`
+
+    * |plus| :ref:`Add <main-menu-add>`
+    * |pencil| :ref:`Manage <main-menu-manage>`
+    * |import| :ref:`Import <main-menu-import>`
+    * |gears| :ref:`Admin <main-menu-admin>`
+
+  * :ref:`The browse menu <browse-menu>`
+  * :ref:`The search box <search-box>`
+  * :ref:`The site logo <site-logo-element>`
 
 * :ref:`Recurring page elements <recurring-page-elements>`
 
@@ -93,12 +100,14 @@ example, only :term:`administrators <administrator>` will see the
 * :ref:`The main menu <main-menu>`
 * :ref:`The browse menu <browse-menu>`
 * :ref:`The search box <search-box>`
-* :ref:`The site logo <site-logo>`
+* :ref:`The site logo <site-logo-element>`
 
 .. _log-in-button:
 
-Log-in button
-=============
+|login| Log-in button
+=====================
+
+.. |login| image:: images/login.png
 
 The log-in button, located in the :term:`header bar`, directs unauthenticated
 (i.e. not logged in) users to a log in screen where users with a :term:`user
@@ -367,32 +376,110 @@ menu.
 
 :ref:`Back to top <navigate>`
 
-
-
 .. _browse-menu:
 
-Browse menu
-===========
+|browse-menu| Browse menu
+=========================
 
-content
+.. |browse-menu| image:: images/browse-menu.png
+
+.. image:: images/browse-menu-full.*
+   :align: right
+   :width: 25%
+   :alt: An image of the Browse menu's options
+
+The browse menu provides persistent access to browse pages for some of AtoM's
+key :ref:`entity types <entity-types>`. Browsing allows a user to see all
+records that have a certain type of :term:`access point` (such as
+:term:`subject`, :term:`name`, or :term:`place`) or other type of filter,
+such as :term:`media type` or  type of :term:`entity`. Users can then browse
+through the results provided, and/or further narrow the results via the use
+of :term:`facet filters <facet filter>`.
+
+In AtoM's default theme (the :term:`Dominion theme`) the browse menu appears
+in a :term:`drop-down <drop-down menu>` next to the :ref:`search box
+<search-box>` in the :ref:`header bar <atom-header-bar>` on all pages. The
+:term:`drop-down menu` contains links to browse pages for :term:`archival
+descriptions <archival description>`, :term:`authority records <authority
+record>`, :term:`archival institutions <archival institution>`,
+:term:`subjects <subject>`, :term:`places <place>`, and :term:`digital
+objects <digital object>`.
+
+Additionally, a browse menu is included on the :term:`home page` when users
+first :ref:`log in <log-in>` to the application.
+
+**For more information on browsing in AtoM see:** :ref:`Browse <browse>`
+
+.. TIP::
+
+   :term:`Administrators <administrator>` can change what links appear in the
+   browse menu (and all menus) via **Admin > Menus**. For more information,
+   see: :ref:`Manage menus <manage-menus>`.
+
 
 :ref:`Back to top <navigate>`
 
 .. _search-box:
 
-Search box
-==========
+Search box |searchbox|
+=======================
 
-content
+.. |searchbox| image:: images/search-box.png
+   :height: 30px
+
+The search box is used to find descriptions in AtoM that contain text
+matching a search query. The search box is located in the
+:term:`header bar` on all AtoM pages, including the home page. By default,
+when a user enters text and presses enter, the results returned are for
+:term:`archival descriptions <archival description>`.
+
+However, the AtoM search box also implements :term:`typeahead` - as a user
+enters text into the search box, one or more possible matches are found and
+presented to the user in a :term:`drop-down <drop-down menu>` below the search
+box, which continue to narrow as the user enters further text. This allows a
+user to dynamically view results and select a resource without necessarily
+having to enter its full name or title. The search box :term:`typeahead`
+results are organized into record-type categories (or :term:`facets <facet
+filter>`), including:
+
+* :term:`Archival description`
+* :term:`Authority record`
+* :term:`Archival institution`
+* :term:`Subject`
+* :term:`Place`
+
+When multiple results for a record type exist, the :term:`typeahead`
+drop-down includes an option to view all records for a particular record
+type - clicking the "View all" link for a particular type of record will
+redirect the user to a browse page of results.
+
+Additionaly, when a user has viewed an :term:`archival institution` record,
+clicking in the search box will reveal a set of :term:`radio buttons <radio
+button>` that allow the user limit the search results to the holdings of the
+most recently viewed :term:`archival institution`, or to search globally
+(i.e., across all records in the application).
+
+**For more information on searching in AtoM, see:** :doc:`Search
+<../access-content/search>`
 
 :ref:`Back to top <navigate>`
 
 .. _site-logo-element:
 
-Site logo
-=========
+|site-logo| Site logo
+=====================
 
-content
+.. |site-logo| image:: images/site-logo.png
+   :scale: 80%
+
+The :term:`site logo` is the graphic that appears at the top of all pages in
+the left-hand corner of the :term:`header bar` in AtoM. Clicking on
+the logo will take the user to the :term:`home page`. AtoM ships with
+a default logo that can be replaced by :term:`administrators <administrator>`
+to theme the application to their own institution or :term:`network` if
+desired: see :ref:`Site logo <site-logo>`.
+
+ADD INFO HERE ABOUT SITE TITLE?
 
 :ref:`Back to top <navigate>`
 
@@ -401,7 +488,23 @@ content
 Recurring page elements
 =======================
 
-content
+This section outlines :term:`user interface` elements that appear throughout
+the AtoM application on different :ref:`page types <page-types>`.
+Understanding how these reoccurring page elements are used in the application
+will improve a user's ability to navigate the application effectively.
+Recurring page elements listed below include:
+
+* :ref:`Title bar <recurring-title-bar>`
+* :ref:`Text links <recurring-text-links>`
+* :ref:`Context menu <recurring-context-menu>`
+* :ref:`Column headers <recurring-column-headers>`
+* :ref:`Information areas <recurring-information-areas>`
+* :ref:`Carousel <recurring-carousel>`
+* :ref:`Sort buttons <recurring-sort-buttons>`
+* :ref:`Facet filters <recurring-facet-filters>`
+* :ref:`Button block <recurring-button-block>`
+* :ref:`Breadcrumb trail <recurring-breadcrumb-trail>`
+* :ref:`Institution logos <recurring-institution-logos>`
 
 .. _recurring-title-bar:
 
@@ -452,10 +555,10 @@ Sort buttons
 
 content
 
-.. _recurring-facets:
+.. _recurring-facet-filters:
 
-Facets
-------
+Facet filters
+-------------
 
 content
 
