@@ -503,6 +503,20 @@ Glossary
     :doc:`Entity types <../overview/entity-types>` and :ref:`Context area
     <context-area>`.
 
+  Facet filter
+    In information science, a facet is a clearly defined
+    concept group, characteristic, or aspect of a class or specific subejct.
+    Often made up of mutually exclusive categories drawn from the properties
+    of a group of information elements, when applied as filters, facets allow a
+    user to access and order query (search or browse) results in multiple
+    ways, rather than in a single pre-determined order.
+
+    In AtoM facet filters are available to users on search and browse pages
+    as a means of grouping and narrowing results. They are drawn from
+    available :term:`fields <field>` within the :term:`entity type` being
+    browsed or searched. See :ref:`Browse <browse>`, :doc:`Search
+    <../access-content/search>`, and :ref:`Navigate <navigate>`.
+
   Field
     A field is a container for a :term:`data element`. Content is added to
     or modified in fields in :term:`edit pages <edit page>`. For further
@@ -732,7 +746,6 @@ Glossary
     area <administration area>` at the bottom of the :term:`archival
     description` :term:`edit page`.
 
-
     .. NOTE::
 
        The publication status is inherited from the highest :term:`level
@@ -742,6 +755,13 @@ Glossary
        descriptions have been published, users who are not logged in can
        view them. See :ref:`Publish an archival description
        <publish-archival-description>`
+
+  Radio button
+    A radio button is an element of a :term:`user interface` that allows a
+    user to select only one of a predefined list of options. Radio buttons
+    are used throughout the AtoM application, including in the **Admin >
+    Themes** page to select a theme, and in the **Admin > Settings** page to
+    control a number of different options.
 
   Record
     The International Council on Archives (`ICA <http://www.ica.org/>`__)
@@ -949,6 +969,21 @@ Glossary
     placement of a :term:`term` (such as a :term:`subject` or :term:`place`)
     within a :term:`taxonomy`. The treeview can also be used for navigation.
     See: :ref:`Context menu <context-menu>`.
+
+  Typeahead
+    Typeahead (also known as incremental search or real-time suggestions) is a
+    form of auto-complete used in a :term:`user interface`. As a user enters
+    text, one or more possible matches are found and presented to the user,
+    which continue to narrow as a user enters further text.
+    This allows a user to dynamically view results and select a
+    resource without necessarily having to enter its full name or title. In
+    AtoM, the :term:`search box` implements typeahead, and presents the user
+    with results divided into :term:`entity types <entity type>` such as
+    :term:`archival description`, :term:`authority record`, :term:`archival
+    institution`, :term:`subject`, and :term:`place:`. It appears as a
+    :term:`drop-down <drop-down>` below the :term:`search box` as a user
+    enters text. See: :doc:`Search <../access-content/search>` and :ref:`The
+    search box <search-box>`.
 
   User account
     User accounts are established in order to manage :term:`access
