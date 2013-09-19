@@ -189,6 +189,12 @@ Instructions for installing, upgrading, importing and more.
 Installation
 ------------
 
-* :doc:`Requirements <admin-manual/installation/requirements>`
-* :doc:`Using Vagrant (Mac, Linux) <admin-manual/installation/vagrant-unix>`
-* :doc:`Using Vagrant (Windows) <admin-manual/installation/vagrant-windows>`
+* :ref:`installation-intended-audience`
+* :ref:`installation-requirements`
+* :ref:`installation-linux`
+* :ref:`installation-windows`
+* :ref:`installation-macosx`
+* :ref:`installation-virtual-appliance`
+* :ref:`installation-vagrant`
+* :ref:`installation-multi-node`
+* :ref:`installation-upgrading`
