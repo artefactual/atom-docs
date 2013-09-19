@@ -34,7 +34,9 @@ Spin it up
 
       mkdir atom-vagrant && cd atom-vagrant
 
-#. Download the configuration file (Vagrantfile).
+#. Download the configuration file (Vagrantfile). If you are using Windows, just
+   paste the URL in the address bar of your browser and you'll be able to
+   download the file and save it in :file:`atom-vagrant/` via the file explorer.
 
    .. code-block:: bash
 
@@ -46,7 +48,8 @@ Spin it up
 
       vagrant up
 
-   Vagrant will download our custom box and boot it in VirtualBox.
+   Vagrant will download our custom box and boot it in VirtualBox. The download
+   can take a few minutes as the box is considerably big.
 
 
 Connect to AtoM
@@ -73,4 +76,10 @@ Vagrant will connect you to the correct virtual machine.
 
    vagrant ssh
 
-You'll find the source code of AtoM under the home directory.
+The login details are:
+
+* Username: vagrant
+* Password: vagrant
+
+If you are using Windows, the preferred SSH client is
+`PuTTY <http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>`_.

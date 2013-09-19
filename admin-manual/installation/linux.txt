@@ -42,6 +42,25 @@ of the software for the management of MySQL.
 During the installation, you will be asked for the password of the defauld
 administrator user (root).
 
+Elasticsearch
+-------------
+
+A relatively new search server based on Apache Lucene and developed in Java that
+has brought to us a lot of advanced features, performance and scalability. This
+is probably the biggest change introduced in AtoM |version| and we are really
+happy with the results. Things have change a lot since we used to interact with
+Zend Search Lucene!
+
+Ubuntu doesn't provide a package but you can download it directly from the
+`Elasticsearch site <http://www.elasticsearch.org/download/>`_. It's always a
+good idea to use the latest stable version available. The installation steps
+are:
+
+.. code-block:: bash
+
+   wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.5.deb
+   sudo dpkg -i elasticsearch-0.90.5.deb
+
 Nginx
 -----
 
@@ -68,24 +87,31 @@ instead:
    sudo apt-get update
    sudo apt-get install nginx
 
-Elasticsearch
--------------
+PHP
+---
 
-A relatively new search server based on Apache Lucene and developed in Java that
-has brought to us a lot of advanced features, performance and scalability. This
-is probably the biggest change introduced in AtoM |version| and we are really
-happy with the results. Things have change a lot since we used to interact with
-Zend Search Lucene!
-
-Ubuntu doesn't provide a package but you can download it directly from the
-`Elasticsearch site <http://www.elasticsearch.org/download/>`_. It's always a
-good idea to use the latest stable version available. The installation steps
-are:
+Our favorite way to deploy AtoM is using PHP-FPM, a process manager that scales
+better than other solutions like FastCGI. The following command will install it
+along with the rest of PHP extensions required by AtoM to work properly.
 
 .. code-block:: bash
 
-   wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.5.deb
-   sudo dpkg -i elasticsearch-0.90.5.deb
+    sudo apt-get install php5-fpm php5-curl php5-mysql php-apc
+
+If you are stuck in Ubuntu 12.04 but you still want to try PHP 5.4 or PHP 5.5,
+there is a PPA channel supported by Ondřej Surý. This is probably no the safest
+way to go as his channel is not backed by the official Ubuntu team, but I can
+tell that he is being very responsive pushing new releases as soon as they come
+out from the PHP team. If you are still interested, please visit one of the
+following links:
+
+* PHP 5.4 channel: https://launchpad.net/~ondrej/+archive/php5-oldstable
+* PHP 5.5 channel: https://launchpad.net/~ondrej/+archive/php5
+
+Note that in PHP 5.5, php-apc was removed and its replacement for the user-space
+caching capabilities is emulated by php5-apcu. Additionally, the JSON extension
+is not included anymore as part of the PHP core, so you will have to install the
+php5-json extension too.
 
 
 Download AtoM
@@ -95,18 +121,18 @@ The safest way to go is to install AtoM from the tarball, that you can find in
 the `download section <http://www.accesstomemory.org/download/>`_. However,
 experienced users may prefer to check out the code from our public repository.
 
-Download the tarbal
--------------------
+The following instructions assume that we are installing AtoM under
+:file:`/usr/share/nginx` and that you are using AtoM |release|.
 
-.. parsed-literal::
+Download the tarball
+--------------------
 
-   wget atom-|release|.tar.gz
-   wget http://storage.accesstomemory.org/releases/atom-|release|.tar.gz
-   sudo mkdir /usr/share/nginx/atom
-   sudo tar czf atom-|release|.tar.gz --strip 1 -C /usr/share/nginx
+.. code-block:: bash
 
-If everything worked as expected, the application should be able to be found
-under :file:`/usr/share/nginx`.
+   wget http://storage.accesstomemory.org/releases/atom-2.0.0.tar.gz
+   sudo mkdir /usr/share/nginx/atom-2.0.0
+   sudo tar czf atom-2.0.0.tar.gz --strip 1 -C /usr/share/nginx/atom-2.0.0
+   sudo ln -sf /usr/share/nginx/atom-2.0.0 /usr/share/nginx/atom
 
 Check out the code from git
 ---------------------------
@@ -114,4 +140,70 @@ Check out the code from git
 .. code-block:: bash
 
    sudo mkdir /usr/share/nginx/atom
-   git clone git@git.artefactual.com:atom.git /usr/share/nginx/
+   sudo git clone git@git.artefactual.com:atom.git /usr/share/nginx/atom
+   cd /usr/share/nginx/atom
+   sudo git checkout tags/v2.0.0
+
+If you are using git 1.8 or newer, you can alternatively checkout a specific tag
+in one single line:
+
+.. code-block:: bash
+
+   git clone --branch v2.0.0 git@git.artefactual.com:atom.git /usr/share/nginx/atom
+
+If you are not interested in downloading all the history from git, you could
+also truncate it to a specific number of revisions, e.g.: just one revision
+
+.. code-block:: bash
+
+   git clone --depth 1 git@git.artefactual.com:atom.git /usr/share/nginx/atom
+
+
+Configure the filesystem permissions
+====================================
+
+By default, Nginx runs as the www-data user. There is a few directories under
+AtoM that needs to be writable by the web server. The easiest is to update the
+owner of the full directory and its contents by running:
+
+.. code-block:: bash
+
+   sudo chown -R -L www-data:www-data /usr/share/nginx/atom
+
+
+Create the database
+===================
+
+Assuming that you are running MySQL in localhost, please run:
+
+.. code-block:: bash
+
+   mysql -h localhost -u root -e "CREATE DATABASE atom CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
+
+If you didn't leave the root password blank (which is a good idea), you'll have
+to add the --p switch to mysql, e.g.
+
+.. code-block:: bash
+
+   mysql -h localhost -u root -pYOURSECRETPASSWORD -e "CREATE DATABASE atom CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
+
+If your MySQL server is not the same as your web server, replace "localhost"
+with the address of your MySQL server.
+
+.. warning::
+
+   Plase make sure that you are using an empty database! Don't reuse an old
+   database unless it's empty. You can always drop it by using the
+   :command:`DROP DATABASE` command and then create it again.
+
+
+Run the web installer
+=====================
+
+You should now be ready to run the installer. It's a simple web interface that
+changes some internal configuration files according to your environment and add
+the necessary tables and initial data to the database recently created.
+
+Open your browser and type the URL in the address bar. The URL can greatly
+change depending on your web server configuration. The URL will usually be
+something like "http://localhost".
