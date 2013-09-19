@@ -219,6 +219,20 @@ Glossary
     collection is "[a]n aggregation of resources. A collection is
     described as a group; its parts may also be separately described."
 
+  Color picker
+    A color picker is a graphical :term:`user interface` element that allows
+    users to set a :term:`hex color code` when theming an element of the
+    application by selecting from a visual representation of a color pallette,
+    instead of keying in alphanumeric values such as a :term:`hex color code`.
+    In AtoM, the color picker is made up of a text-box where users can enter a
+    :term:`hex color code`, a preview box where the color selected is
+    displayed, a slider (on the right-hand side of the drop-down) where a user
+    can select a hue, and a pallette (main part of drop-down) where a user can
+    select a tint. In AtoM a color picker is used when choosing the background
+    color of an :term:`archival institution` - see: :ref:`Change the
+    background color of an archival institution
+    <change-institution-background>`.
+
   Column header
     Column headers appear at the top of the lists on list pages and browse
     results and give the name of the :term:`field` for whatever is being
@@ -590,6 +604,22 @@ Glossary
     :term:`site logo` for all users, and the
     :term:`main menu` for authenticated (i.e. logged in) users.
 
+  Hex color code
+    A hexidecimal color code is a method of expressing web based colors using
+    hexidecimal notation. Hexidecimal notatation is a positional numerical
+    system that uses a base of 16 distinct symbols (0-9 to represent values
+    zero to nine, A-F to represent values ten to fifteen) to represent binary
+    notation in a more human-readable manner. In a hex color code, 6
+    consecutive symbols (a hex triplet) are used to represent the red, green,
+    and blue (RGB) components of a color - the first 2 symbols represent the
+    red value, the next two (3 and 4) represent the green value, and the last
+    two (5 and 6) represent the blue value. Each hex triplet has a value
+    range between 00 and FF, and when added together, a hex color code can
+    represent a total of 16,777,216 colors. For example, pure black is
+    represented in hex color code as 00 00 00 or `#000000`, while pure white
+    is represented as FF FF FF or `#ffffff`. Hex color codes are often used in
+    HTML, CSS, SVG, and other computing applications to represent web colors.
+
   Holdings
     Holdings is a generic term referring to the :term:`records <record>`
     and other materials held by :term:`archival institutions <archival
@@ -855,11 +885,12 @@ Glossary
 
   Site logo
     The site logo is the graphic that appears at the top of all pages in
-    the left-hand cornder of the :term:`header bar` in AtoM. Clicking on
+    the left-hand corner of the :term:`header bar` in AtoM. Clicking on
     the logo will take the user to the :term:`home page`. AtoM ships with
     a default logo that can be replaced by
     :term:`administrators <administrator>` to theme the application to
-    their own institution or :term:`network` if desired: see Site logo.
+    their own institution or :term:`network` if desired: see :ref:`Site logo
+    <site-logo>`.
 
   Site title
     The site title is a configurable element in AtoM that can be managed
