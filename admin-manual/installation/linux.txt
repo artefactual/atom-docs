@@ -102,7 +102,16 @@ Download the tarbal
 
    wget atom-|release|.tar.gz
    wget http://storage.accesstomemory.org/releases/atom-|release|.tar.gz
-   sudo tar czf atom-|release|.tar.gz -C /usr/share/nginx
+   sudo mkdir /usr/share/nginx/atom
+   sudo tar czf atom-|release|.tar.gz --strip 1 -C /usr/share/nginx
 
 If everything worked as expected, the application should be able to be found
 under :file:`/usr/share/nginx`.
+
+Check out the code from git
+---------------------------
+
+.. code-block:: bash
+
+   sudo mkdir /usr/share/nginx/atom
+   git clone git@git.artefactual.com:atom.git /usr/share/nginx/

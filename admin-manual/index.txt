@@ -1,11 +1,10 @@
-======================
- Administrator manual
-======================
+====================
+Administrator manual
+====================
 
 .. toctree::
 
    installation/index
    maintenance/index
    customization/index
-   localization/index
    security/index

@@ -198,3 +198,25 @@ Installation
 * :ref:`installation-vagrant`
 * :ref:`installation-multi-node`
 * :ref:`installation-upgrading`
+
+Maintenance
+-----------
+
+* :ref:`maintenance-cli-tools`
+* :ref:`maintenance-web-analytics`
+* :ref:`maintenance-logging`
+* :ref:`maintenance-monitoring`
+* :ref:`maintenance-troubleshooting`
+
+Customization
+-------------
+
+* :ref:`customization-theming`
+* :ref:`customization-localization`
+
+Security
+--------
+
+* :ref:`security-firewall`
+* :ref:`security-backups`
+

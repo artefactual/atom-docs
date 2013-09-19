@@ -1,0 +1,7 @@
+.. _maintenance-web-analytics:
+
+=============
+Web analytics
+=============
+
+TODO

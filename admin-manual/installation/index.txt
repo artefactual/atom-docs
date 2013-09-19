@@ -4,9 +4,6 @@
 Installation
 ============
 
-There are a number of ways to install AtoM.
-
-
 .. toctree::
    :maxdepth: 1
 
