@@ -12,6 +12,8 @@ Technical overview
 
 .. image:: images/what-is-atom.*
    :align: right
+   :width: 50%
+   :alt: A diagram of AtoM's technical architecture
 
 
 **AtoM comprises:**
