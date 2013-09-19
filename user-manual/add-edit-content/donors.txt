@@ -224,10 +224,10 @@ that you would like to associate with the donor. To do so:
    instead of a link being created to an existing one!
 
 7. If the related Donor record already has the correct contact information,
-you do not need to add it to the remaining fields in the :term:`donor dialog`
-- it will appear when you save the accession record.
+   you do not need to add it to the remaining fields in the
+   :term:`donor dialog` - it will appear when you save the accession record.
 
-.. IMPORTANT::
+.. WARNING::
 
    If you do add any information to the contact fields in the Donor dialog,
    **any previous data will be overwritten** by the new contact information.
