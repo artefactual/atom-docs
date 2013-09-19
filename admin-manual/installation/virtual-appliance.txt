@@ -1,0 +1,7 @@
+.. _installation-virtual-appliance:
+
+=================
+Virtual appliance
+=================
+
+TODO

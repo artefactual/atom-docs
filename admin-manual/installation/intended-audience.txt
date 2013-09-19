@@ -1,0 +1,13 @@
+.. _installation-intended-audience:
+
+=================
+Intended audience
+=================
+
+While we have tried to make this document usable by readers with a broad range
+of technical knowledge, it may be too complex if you have no previous experience
+with installing web applications or using the command line.
+
+If you are a non technical reader and are just interested in trying out
+AtoM, please check out the `AtoM online demo <http://demo.accesstomemory.org>`_
+or our :ref:`installation-virtual-appliance`.

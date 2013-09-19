@@ -1,4 +1,4 @@
-.. _installation_requirements:
+.. _installation-requirements:
 
 ============
 Requirements
@@ -14,14 +14,25 @@ recommended system specification for running AtoM because what is considered an
 application depends greatly on factors such as the how much data is in the
 database, and how many users are accessing the site simultaneously.
 
+Furthermore, AtoM makes use of different components and services that could be
+deployed in a distributed manner (across multiple machines in a network) in
+order to accept an escalating number of users. The main goal of this
+documentation is to describe the configuration of AtoM and its dependencies on a
+single machine, but some aspects of a :ref:`installation-multi-node` will also
+be described.
+
 
 Software dependencies (required)
 --------------------------------
 
+These are the minimum requirements, but please remember that in most of the
+cases you'll experience better results working with the latest stable releases
+of each component.
+
 * A webserver like Apache or Nginx
-* ElasticSearch 0.90.0 or newer
+* Elasticsearch 0.90.0 or newer
 * MySQL 5.1 or newer
-* PHP 5.3.10 or newer
+* PHP 5.3.10 or newer (PHP 5.4 works too, PHP 5.5 hasn't been fully tested yet).
 
 Additionally, the following PHP extensions are mandatory:
 
@@ -33,10 +44,12 @@ Additionally, the following PHP extensions are mandatory:
 .. note::
 
    All these dependencies can run in a number of different operative systems,
-   including Windows, Mac OS X, Solaris, FreeBSD or Linux. We based this
-   documentation in Ubuntu Linux 12.04 LTS as it seems to be the most widely
-   used Linux distribution. However, it should serve as a reference for other
-   environments and distro flavours.
+   including :ref:`installation-windows`, :ref:`installation-macosx`, Solaris,
+   FreeBSD or :ref:`installation-linux`. We based this documentation in **Ubuntu
+   Linux 12.04 LTS** as it seems to be the most widely used Linux distribution.
+   However, it should serve as a reference for other environments and distro
+   flavours plus we've written specific guides for other OSes like
+   :ref:`installation-windows` os :ref:`installation-macosx`.
 
 
 Other dependencies (not required)

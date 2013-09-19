@@ -1,10 +1,21 @@
+.. _installation:
+
 ============
 Installation
 ============
 
+There are a number of ways to install AtoM.
+
+
 .. toctree::
    :maxdepth: 1
 
+   intended-audience
    requirements
-   vagrant-unix
-   vagrant-windows
+   linux
+   windows
+   macosx
+   virtual-appliance
+   vagrant
+   multi-node
+   upgrading

@@ -2,13 +2,9 @@
  Administrator manual
 ======================
 
-This manual provides information about...
-
 .. toctree::
 
-   requirements/index
    installation/index
-   upgrading/index
    maintenance/index
    customization/index
    localization/index

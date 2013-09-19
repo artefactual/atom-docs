@@ -1,0 +1,7 @@
+.. _installation-multi-node:
+
+=======================
+Multi-node architecture
+=======================
+
+TODO

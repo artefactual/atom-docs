@@ -1,4 +1,4 @@
-.. _installation_vagrant_unix:
+.. _installation-vagrant:
 
 ==========================
 Using Vagrant (Mac, Linux)

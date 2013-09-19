@@ -1,0 +1,7 @@
+.. _installation-windows:
+
+=======
+Windows
+=======
+
+TODO

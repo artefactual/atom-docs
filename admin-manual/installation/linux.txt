@@ -1,0 +1,108 @@
+.. _installation-linux:
+
+=====
+Linux
+=====
+
+We use and recommend Ubuntu Linux as an easy to use Linux distro with a large
+and lively community behind it - however, we've obtained satisfactory results
+with a number of other distributions like Debian, CentOS or Fedora. Most of the
+configuration steps described in this document apply to any modern Linux
+environment, however some of them will apply only to Ubuntu and likely to any
+Ubuntu-based distribution.
+
+To be specific, this document is based in
+`Ubuntu 12.04 LTS (Precise Pangolin) <http://releases.ubuntu.com/precise/>`_.
+Once you have installed it, you should be able to follow the instructions
+described below.
+
+
+Install the dependencies
+========================
+
+The following components could be installed in a distributed manner.
+
+MySQL
+-----
+
+We strongly recommend to use MySQL 5.5 as it's much better than its previous
+major release in terms of speed, scalability and user-friendliness. Also, we've
+experienced very good results using the forks Percona Server ands MariaDB, so
+don't be afraid and use them if you want!
+
+Let's install MySQL using :command:`apt-get`:
+
+.. code-block:: bash
+
+   sudo apt-get install mysql-server-5.5 mysql-client-5.5
+
+We're also installing :program:`mysql-client-5.5` as it is an important piece
+of the software for the management of MySQL.
+
+During the installation, you will be asked for the password of the defauld
+administrator user (root).
+
+Nginx
+-----
+
+We also like Apache and you should use it if you feel more confortable with it,
+but we've found that Nginx adapts itself better to limited resource environments
+while it also scales better and more predictable under high loads.
+
+The installation in Ubuntu can't be easier:
+
+.. code-block:: bash
+
+   sudo apt-get install nginx
+
+The team behind Nginx provides an official PPA channel for Ubuntu users that
+support more recent stable packages. Ubuntu 12.04 is also supported in this
+channel. This could be a good choice if you want to enjoy some of the latest
+features and improvements added to Nginx while taking a minimal risk for your
+production environments. If you are interested, run the following commands
+instead:
+
+.. code-block:: bash
+
+   sudo add-apt-repository ppa:nginx/stable
+   sudo apt-get update
+   sudo apt-get install nginx
+
+Elasticsearch
+-------------
+
+A relatively new search server based on Apache Lucene and developed in Java that
+has brought to us a lot of advanced features, performance and scalability. This
+is probably the biggest change introduced in AtoM |version| and we are really
+happy with the results. Things have change a lot since we used to interact with
+Zend Search Lucene!
+
+Ubuntu doesn't provide a package but you can download it directly from the
+`Elasticsearch site <http://www.elasticsearch.org/download/>`_. It's always a
+good idea to use the latest stable version available. The installation steps
+are:
+
+.. code-block:: bash
+
+   wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.5.deb
+   sudo dpkg -i elasticsearch-0.90.5.deb
+
+
+Download AtoM
+=============
+
+The safest way to go is to install AtoM from the tarball, that you can find in
+the `download section <http://www.accesstomemory.org/download/>`_. However,
+experienced users may prefer to check out the code from our public repository.
+
+Download the tarbal
+-------------------
+
+.. parsed-literal::
+
+   wget atom-|release|.tar.gz
+   wget http://storage.accesstomemory.org/releases/atom-|release|.tar.gz
+   sudo tar czf atom-|release|.tar.gz -C /usr/share/nginx
+
+If everything worked as expected, the application should be able to be found
+under :file:`/usr/share/nginx`.
