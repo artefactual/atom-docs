@@ -201,7 +201,7 @@ An archival institution's description can be edited at any time.
    in the :term:`button block`; any changes made will not be saved. Note that
    simply navigating away from the page by any other means, **without first
    clicking "Save"** will also result in no changes being saved to the
-   archival description.
+   archival institution.
 6. To save your edits, click the "Save" button located in the :term:`button
    block` at the bottom of the record.
 
@@ -229,7 +229,7 @@ content here
 Edit the theme for an existing archival institution
 ===================================================
 
-This section contains instructions on how to Edit the theme of an existing
+This section contains instructions on how to edit the theme of an existing
 :term:`archival institution`. :term:`Administrators <administrator>` can
 upload an institutional logo and/or banner, as well as choose a specific
 background color for their institution's page - the background color and logo
@@ -239,7 +239,12 @@ on how to create a link between an :term:`archival description` and an
 :term:`archival institution`). Additionally, users can add custom `HTML
 <https://en.wikipedia.org/wiki/Html>`__ and inline `CSS
 <https://en.wikipedia.org/wiki/CSS>`__ to a description area for specific
-highlighted content. Editing the theme of your :term:`archival institution` is
+highlighted content. These features can be especially useful in a
+:term:`multi-repository system` as they help users visually identify where
+:term:`archival descriptions <archival description>` are held, and allow for
+an institution in a :term:`multi-repository system` such a network or
+provincial/state portal to better match their institution's local branding.
+Editing the theme of your :term:`archival institution` is
 comprised of four main elements:
 
 * :ref:`Change the background color <change-institution-background>`
@@ -252,7 +257,52 @@ comprised of four main elements:
 Change the background color of an archival institution
 ------------------------------------------------------
 
-content
+ADD Intro note here about how color will appear on all related descriptions
+as well... etc.
+
+1. First, navigate to the :term:`archival institution` whose theme you wish to
+   edit. You can do this by :doc:`browsing <../access-content/browse>` or
+   :doc:`searching <../access-content/search>` for the :term:`archival
+   institution` by name. See :ref:`access content <access-content>` for more
+   information on navigation in AtoM.
+2. Click on the "Edit theme" button in the :term:`button block` at the bottom
+   of the archival institution's :term:`edit page`.
+3. AtoM will reload load the institutions theme :term:`edit page`. From here,
+   authenticated users can change the background color, upload and logo
+   and/or banner, and add custom content.
+4. In the "Style" area, click on the Background color (you can click on the
+   title, the color swatch, or text box showing the :term:`hex color code`).
+   A :term:`color picker` will appear as a :term:`drop-down menu`.
+5. Select the color that you would like to use as the background for your
+   :term:`archival institution` record. This color will appear as the
+   background for all related :term:`archival descriptions
+   <archival description>` as well. Use the slider on the right of the
+   :term:`color picker` drop-down to select a **hue** - you can click or drag
+   the slider bar to dynamically change the color in the pallette. Use the
+   pallette to select a **tint** - you can click or drag in the pallette to
+   dynamically change the color. There is also a text-box provided where you
+   can manually enter a :term:`hex color code` if you with. The selected
+   color will be displayed in the small preview box next to the
+   :term:`hex color code` text-box. You can click anywhere outside of the the
+   :term:`color picker` to hide the :term:`drop-down <drop-down menu>`.
+6. You can quit the theming process at any time by clicking the "Cancel" button
+   in the :term:`button block`; any changes made will not be saved. Note that
+   simply navigating away from the page by any other means, **without first
+   clicking "Save"** will also result in no changes being saved to the
+   archival institution.
+7. When you have selected your new background color, click "Save" in the
+   :term:`button block` at the bottom of the page. AtoM will reload the
+   :term:`archival institution` in :term:`view mode`, where you can review how
+   the new color looks. If needed, you can repeat steps 2-6 until you are
+   happy with the selection.
+
+.. IMPORTANT::
+
+   Be sure to check the appearance of titles, text, and hyperlinks on your
+   :term:`archival institution` page and on any related :term:`archival
+   descriptions <archival description>`. Some color choices make decrease
+   accessibility, and make titles, text, and hyperlinks harder for users to
+   read.
 
 .. _add-institution-logo:
 
