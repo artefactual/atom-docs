@@ -1,4 +1,4 @@
-.. _atom-docs-home:
+.. _home:
 
 ==================
 AtoM documentation
@@ -194,6 +194,7 @@ Installation
 * :ref:`installation-linux`
 * :ref:`installation-windows`
 * :ref:`installation-macosx`
+* :ref:`installation-tuning`
 * :ref:`installation-virtual-appliance`
 * :ref:`installation-vagrant`
 * :ref:`installation-multi-node`
@@ -203,6 +204,7 @@ Maintenance
 -----------
 
 * :ref:`maintenance-cli-tools`
+* :ref:`maintenance-clear-cache`
 * :ref:`maintenance-web-analytics`
 * :ref:`maintenance-logging`
 * :ref:`maintenance-monitoring`

@@ -159,8 +159,8 @@ also truncate it to a specific number of revisions, e.g.: just one revision
    git clone --depth 1 git@git.artefactual.com:atom.git /usr/share/nginx/atom
 
 
-Configure the filesystem permissions
-====================================
+Filesystem permissions
+======================
 
 By default, Nginx runs as the www-data user. There is a few directories under
 AtoM that needs to be writable by the web server. The easiest is to update the

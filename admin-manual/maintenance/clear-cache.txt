@@ -1,0 +1,14 @@
+.. _maintenance-clear-cache:
+
+===========
+Clear cache
+===========
+
+Many problems can be resolved by clearing Symfony's cache.
+
+Basically, you need to be able to run the symfony command line application,
+which is located in the root directory of this project.
+
+.. code-block:: bash
+
+   php symfony clear:cache

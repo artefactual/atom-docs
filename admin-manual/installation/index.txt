@@ -12,6 +12,7 @@ Installation
    linux
    windows
    macosx
+   tuning
    virtual-appliance
    vagrant
    multi-node
