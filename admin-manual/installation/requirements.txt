@@ -29,7 +29,7 @@ These are the minimum requirements, but please remember that in most of the
 cases you'll experience better results working with the latest stable releases
 of each component.
 
-* A webserver like Apache or Nginx
+* A webserver like Apache or Nginx, the latter is our favorite
 * Elasticsearch 0.90.0 or newer
 * MySQL 5.1 or newer
 * PHP 5.3.10 or newer (PHP 5.4 works too, PHP 5.5 hasn't been fully tested yet).
