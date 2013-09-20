@@ -16,7 +16,7 @@ and its maintenance much easier. Installing homebrew is easy:
 
    ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 
-Note that Xcode is required, that you can download nowadays form the App Store.
+Note that Xcode is required, which you can download nowadays from the App Store.
 More instructions can be found at:
 https://github.com/mxcl/homebrew/wiki/Installation
 
