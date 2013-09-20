@@ -4,6 +4,8 @@
 Glossary
 ========
 
+.. |caret-down-grey| image:: ../access-content/images/caret-down-grey.png
+
 .. glossary::
 
   About page
@@ -211,7 +213,8 @@ Glossary
     album artwork, or photographs. In AtoM a carousel viewer appears at
     the top of :term:`archival descriptions <archival description>`
     whenever there are associated lower-level descriptions that have
-    digital objects attached.
+    digital objects attached. See: :ref:`Recurring page elements
+    <recurring-page-elements>`.
 
   Child record
     Child record refers to a description of the :term:`archival unit` that
@@ -244,9 +247,19 @@ Glossary
     <change-institution-background>`.
 
   Column header
-    Column headers appear at the top of the lists on list pages and browse
-    results and give the name of the :term:`field` for whatever is being
-    listed below.
+    :term:`Column headers <column header>` appear at the top of the lists on
+    list pages and some browse results (e.g., :term:`subject` and :term:`place`
+    browse pages), and give the name of the :term:`field` for whatever is
+    being listed below. On some pages, the column headers include a
+    |caret-down-grey| caret icon next to the column header :term:`field` name
+    - when clicked, these icons will reverse the sort order of the data in the
+    list based on that column (i.e., changing from A-Z to Z-A, or from most
+    recently updated first to oldest update first).
+
+    Column headers appear wherever display data on a page has been organized
+    into a table, and are used extensively throughout the pages available in
+    the :ref:`Admin menu <main-menu-admin>`. See: :ref:`Column headers
+    <recurring-column-headers>` for screenshots.
 
   Context menu
     The context menu appears on all :term:`view <view page>` and some
@@ -529,7 +542,7 @@ Glossary
 
   Facet filter
     In information science, a facet is a clearly defined
-    concept group, characteristic, or aspect of a class or specific subejct.
+    concept group, characteristic, or aspect of a class or subject.
     Often made up of mutually exclusive categories drawn from the properties
     of a group of information elements, when applied as filters, facets allow a
     user to access and order query (search or browse) results in multiple
@@ -629,6 +642,9 @@ Glossary
     represented in hex color code as 00 00 00 or `#000000`, while pure white
     is represented as FF FF FF or `#ffffff`. Hex color codes are often used in
     HTML, CSS, SVG, and other computing applications to represent web colors.
+    In AtoM, a user can enter a hex color code when choosing a background
+    color for an :term:`archival institution`. See: :ref:`Change the background
+    color of an archival institution <change-institution-background>`.
 
   Holdings
     Holdings is a generic term referring to the :term:`records <record>`
@@ -650,15 +666,19 @@ Glossary
 
   Information area
     Information areas appear on :term:`edit pages <edit page>` and group
-    related :term:`fields <field>` based on the organization of elements
-    of description in `ICA <http://www.ica.org/>`__ (or other supported)
-    descriptive standards. Clicking on the :term:`area header` of an
-    information area toggles it between closed (all fields in that area hidden)
-    and open (all fields visible) when in :term:`edit mode`; in :term:`view
-    mode`, clicking on an :term:`area header` will result in opening the
-    related information area in :term:`edit mode` (if the user is logged in
-    and has sufficient :term:`access privileges <access privilege>` to edit a
-    record.)
+    related :term:`fields <field>` based on the organization of elements of
+    description in `ICA <http://www.ica.org/>`__ (or other supported)
+    descriptive standards. They are comprised of a number of :term:`fields
+    <field>` in the body of the information area, and an :term:`area header`,
+    whose name is drawn from the related area or section of the standard upon
+    which the descriptive template is based. Clicking on the :term:`area
+    header` of an information area toggles it between closed (all fields in
+    that area hidden) and open (all fields visible) when in :term:`edit mode`;
+    in :term:`view mode`, clicking on an :term:`area header` will result in
+    opening the related information area in :term:`edit mode` (if the user is
+    logged in and has sufficient :term:`access privileges <access privilege>`
+    to edit a record). See: :ref:`Recurring page elements
+    <recurring-page-elements>`.
 
   Information object
     An information object is another term for an :term:`archival

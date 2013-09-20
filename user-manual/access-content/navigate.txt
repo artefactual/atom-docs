@@ -35,7 +35,7 @@ things unrelated to the current entity.
 
 * :ref:`Entity types <entity-types>`
 * :ref:`Page types <page-types>`
-* :ref:`Search <search>`
+* :doc:`Search <../access-content/search>`
 * :ref:`Browse <browse>`
 * :ref:`Context menu <context-menu>`
 * :ref:`Manage menus <manage-menus>`
@@ -517,7 +517,6 @@ Recurring page elements listed below include:
 * :ref:`Column headers <recurring-column-headers>`
 * :ref:`Information areas <recurring-information-areas>`
 * :ref:`Carousel <recurring-carousel>`
-* :ref:`Sort buttons <recurring-sort-buttons>`
 * :ref:`Facet filters <recurring-facet-filters>`
 * :ref:`Button block <recurring-button-block>`
 * :ref:`Breadcrumb trail <recurring-breadcrumb-trail>`
@@ -739,21 +738,102 @@ will result in opening the related information area in :term:`edit mode`
 Carousel
 --------
 
-content
+The :term:`carousel` shows sets of :term:`thumbnails <thumbnail>` of
+:term:`digital objects <digital object>` associated with :term:`archival
+descriptions <archival description>` and allows the user to scroll
+through the thumbnails using a mouse or keyboard scroll arrows. It is
+similar to the `cover flow <http://en.wikipedia.org/wiki/Cover_flow>`_
+used in "*the Macintosh Finder and other Apple Inc. products for
+visually flipping through snapshots of documents, website bookmarks,
+album artwork, or photographs.*"
 
-.. _recurring-sort-buttons:
+.. figure:: images/carousel.*
+   :align: right
+   :figwidth: 50%
+   :width: 98%
+   :alt: An image of the carousel in AtoM
 
-Sort buttons
-------------
+   An example of the carousel with the "Show all" button visible
 
-content
+In AtoM a :term:`carousel` viewer appears at the top of :term:`archival
+descriptions <archival description>` (but below the :ref:`title bar
+<recurring-title-bar>`)whenever there are associated lower-level descriptions
+that have :term:`digital objects <digital object>` attached. The carousel
+includes:
+
+* :term:`Thumbnails <thumbnail>` of lower-level digital objects
+* The title of the description to which the digital object is attached (titles
+  are truncated with an `...` elipsis after 25 characters)
+* A draggable slider bar (for navigating with touch or using a mouse - right
+  and left arrow keys can also be used for keyboard navigation)
+* If the lower-levels of description include more than 10 digital objects, a
+  count of all digital objects at lower levels, and a button to view all in a
+  browse page.
+
+The carousel is intended as a navigational element, and is not optimized for
+viewing or browsing all related digital objects. Using the carousel, a user
+can quickly browse the first 10 results - clicking on a :term:`thumbnail`
+will load the related lower level of description (:term:`child record`),
+where a larger version of the image and its description can be viewed. By
+default, whenever there are more than 10 digital objects at lower levels,
+only the first 10 will be displayed; a total count of related digital
+objects, with a button to "View all" digital objects in a tile-based digital
+object browse page appears to indicate to the user that there are more
+digital objects than those displayed, and providing an option to view them
+all.
+
+**Using the carousel**
+
+* Drag the slider left/right to scroll through the :term:`thumbnails
+  <thumbnail>`
+
+  * If no slider appears, this means there is only one :term:`digital object`
+    at a lower :term:`level of description`.
+  * You can also use your keyboard right and left arrows to scroll
+
+* Click on a thumbnail to view its :term:`archival description` and a larger
+  version of the :term:`digital object` that the thumbnail depicts
+* If there are more than 10 digital objects, click the "Show all" button to
+  view them all in a tile-based browse page. Click on a thumbnail in the
+  browse page to navigate to the related :term:`archival description` and a
+  larger version of the :term:`digital object` that the thumbnail depicts.
 
 .. _recurring-facet-filters:
 
 Facet filters
 -------------
 
-content
+In information science, a facet is a clearly defined component (based on a
+particular concept group, characteristic or aspect) of a class or subject.
+Facets are used in a system of faceted classification, which "*allows the
+assignment of an object to multiple characteristics (attributes), enabling the
+classification to be ordered in multiple ways, rather than in a single,
+predetermined, taxonomic order.*" (`Wikipedia
+<http://en.wikipedia.org/wiki/Faceted_classification>`__).
+
+Facets are made up of clearly defined, often mutually exclusive categories
+drawn from the properties of a group of information elements. When applied as
+filters, facets allow a user to access and order query (search or browse)
+results in multiple ways dynamically. Faceted searching and browsing has
+become popular in both library catalogues and e-commerce websites (such as
+Etsy, Amazon, Walmart, etc) to help users narrow down results to specific
+categories - for example, a music website might categorize its music by adding
+an artist facet, a genre facet, a price-range facet, and so forth. Users can
+then click on a particular sub-class to narrow the results displayed to only
+those that match the selected facet - choosing "James Baldwin" from an
+author's facet in an online library catalogue would display only books where
+James Baldwin was listed as the author.
+
+In AtoM, facet filters are available to users on search and browse pages
+as a means of grouping and narrowing results by a common characteristic.
+They are drawn from available :term:`fields <field>` within the
+:term:`entity type` being browsed or searched.
+
+
+
+
+See :ref:`Browse <browse>`, :doc:`Search
+<../access-content/search>`, and :ref:`Navigate <navigate>`.
 
 .. _recurring-button-block:
 
