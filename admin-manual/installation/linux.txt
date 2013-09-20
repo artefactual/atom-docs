@@ -14,13 +14,14 @@ Ubuntu-based distribution.
 To be specific, this document is based in
 `Ubuntu 12.04 LTS (Precise Pangolin) <http://releases.ubuntu.com/precise/>`_.
 Once you have installed it, you should be able to follow the instructions
-described below.
+described below. In particulare, we are going to use Ubuntu packages that can
+be found under the
+`repositories <https://help.ubuntu.com/community/Repositories/Ubuntu>`_ *main*
+and *universe*.
 
 
 Install the dependencies
 ========================
-
-The following components could be installed in a distributed manner.
 
 MySQL
 -----
@@ -34,39 +35,52 @@ Let's install MySQL using :command:`apt-get`:
 
 .. code-block:: bash
 
-   sudo apt-get install mysql-server-5.5 mysql-client-5.5
+   sudo apt-get install mysql-server-5.5
 
-We're also installing :program:`mysql-client-5.5` as it is an important piece
-of the software for the management of MySQL.
+During the installation, you will be prompted to set a password for the default
+administrator user (root). If you are setting one, please note it down as we are
+going to need it later.
 
-During the installation, you will be asked for the password of the defauld
-administrator user (root).
 
 Elasticsearch
 -------------
 
 A relatively new search server based on Apache Lucene and developed in Java that
-has brought to us a lot of advanced features, performance and scalability. This
-is probably the biggest change introduced in AtoM |version| and we are really
-happy with the results. Things have change a lot since we used to interact with
-Zend Search Lucene!
+has brought us a lot of advanced features, performance and scalability. This is
+probably the biggest change introduced in AtoM |version| and we are really happy
+with the results.
 
 Ubuntu doesn't provide a package but you can download it directly from the
 `Elasticsearch site <http://www.elasticsearch.org/download/>`_. It's always a
-good idea to use the latest stable version available. The installation steps
-are:
+good idea to use the latest stable version available.
+
+First, make sure that Java is installed. Elasticsearch is compatible with both
+Java 6 and Java 7.
+
+.. code-block:: bash
+
+   sudo apt-get install -y openjdk-6-jre-headless
+
+We are ready to download and install Elasticsearch:
 
 .. code-block:: bash
 
    wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.5.deb
    sudo dpkg -i elasticsearch-0.90.5.deb
+   sudo rm elasticsearch-0.90.5.deb
+
+Make sure that the service has been started:
+
+.. code-block:: bash
+
+   sudo /etc/init.d/elasticsearch start
 
 Nginx
 -----
 
 We also like Apache and you should use it if you feel more confortable with it,
-but we've found that Nginx adapts itself better to limited resource environments
-while it also scales better and more predictable under high loads.
+but we've found that Nginx adapts itself much better to limited resource
+environments while it also scales better and more predictable under high loads.
 
 The installation in Ubuntu can't be easier:
 
@@ -75,8 +89,8 @@ The installation in Ubuntu can't be easier:
    sudo apt-get install nginx
 
 The team behind Nginx provides an official PPA channel for Ubuntu users that
-support more recent stable packages. Ubuntu 12.04 is also supported in this
-channel. This could be a good choice if you want to enjoy some of the latest
+support more recent stable packages for different versions of Ubuntu, including
+12.04. This could be a good choice if you want to enjoy some of the latest
 features and improvements added to Nginx while taking a minimal risk for your
 production environments. If you are interested, run the following commands
 instead:
@@ -87,6 +101,57 @@ instead:
    sudo apt-get update
    sudo apt-get install nginx
 
+Nginx deploys a default server (aka VirtualHost, for Apache users) called
+*default*. In order to install AtoM you could edit the existing server block or
+replace it. This is how the server block should look like:
+
+.. code-block:: nginx
+
+   server {
+
+     listen 80;
+     root /usr/share/nginx/atom;
+     server_name _;
+
+     location / {
+       try_files $uri /index.php?$args;
+     }
+
+     location ~ /\. {
+       deny all;
+       return 404;
+     }
+
+     location ~* (\.yml|\.ini|\.tmpl)$ {
+       deny all;
+       return 404;
+     }
+
+     location ~* /(?:uploads|files)/.*\.php$ {
+       deny all;
+       return 404;
+     }
+
+     location ~ ^/(index|qubit_dev)\.php(/|$) {
+       include /etc/nginx/fastcgi_params;
+       fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+       fastcgi_split_path_info ^(.+\.php)(/.*)$;
+       fastcgi_pass unix:/var/run/php5-fpm.atom.sock;
+     }
+
+     location ~* \.php$ {
+       deny all;
+       return 404;
+     }
+
+   }
+
+Now you need to restart Nginx:
+
+.. code-block:: bash
+
+   sudo service nginx restart
+
 PHP
 ---
 
@@ -96,7 +161,7 @@ along with the rest of PHP extensions required by AtoM to work properly.
 
 .. code-block:: bash
 
-    sudo apt-get install php5-fpm php5-curl php5-mysql php-apc
+    sudo apt-get install php5-cli php5-fpm php5-curl php5-mysql php5-xsl php-apc
 
 If you are stuck in Ubuntu 12.04 but you still want to try PHP 5.4 or PHP 5.5,
 there is a PPA channel supported by Ondřej Surý. This is probably no the safest
@@ -113,6 +178,60 @@ caching capabilities is emulated by php5-apcu. Additionally, the JSON extension
 is not included anymore as part of the PHP core, so you will have to install the
 php5-json extension too.
 
+Let's add a new PHP pool for AtoM by adding the following contents in a new file
+called :file:`/etc/php5/fpm/pool.d/www.conf`:
+
+.. code-block:: ini
+
+   [atom]
+
+   user = www-data
+   group = www-data
+   listen = /var/run/php5-fpm.atom.sock
+   pm = dynamic
+   pm.max_children = 100
+   pm.start_servers = 10
+   pm.min_spare_servers = 10
+   pm.max_spare_servers = 50
+   pm.max_requests = 500
+   chdir = /
+
+   # Some sensible defaults for PHP
+   # http://www.php.net/manual/en/ini.list.php
+   php_admin_value[expose_php] = off
+   php_admin_value[allow_url_fopen] = off
+   php_admin_value[memory_limit] = 512M
+   php_admin_value[max_execution_time] = 120
+   php_admin_value[post_max_size] = 72M
+   php_admin_value[upload_max_filesize] = 64M
+   php_admin_value[max_file_uploads] = 10
+   php_admin_value[cgi.fix_pathinfo] = 0
+   php_admin_value[display_errors] = off
+   php_admin_value[display_startup_errors] = off
+   php_admin_value[html_errors] = off
+   php_admin_value[apc.enabled] = 1
+   php_admin_value[apc.shm_size] = 64M
+   php_admin_value[apc.num_files_hint] = 5000
+   php_admin_value[apc.stat] = 0
+
+And you need to restart the process manager:
+
+.. code-block:: bash
+
+   sudo service php5-fpm restart
+
+Other packages
+--------------
+
+If you want AtoM to be able to process digital objects in formats like JPEG or
+to extract the text from your PDF documents, there are certain packages that you
+need to install. They are not mandatory but if they can be found in the system,
+AtoM won't be able to create digital object derivatives from your master media.
+
+.. code-block:: bash
+
+   sudo apt-get install imagemagick ghostscript ffmpeg poppler-utils libavcodec-extra-53
+
 
 Download AtoM
 =============
@@ -124,18 +243,18 @@ experienced users may prefer to check out the code from our public repository.
 The following instructions assume that we are installing AtoM under
 :file:`/usr/share/nginx` and that you are using AtoM |release|.
 
-Download the tarball
---------------------
+Option 1: Download the tarball
+------------------------------
 
 .. code-block:: bash
 
    wget http://storage.accesstomemory.org/releases/atom-2.0.0.tar.gz
-   sudo mkdir /usr/share/nginx/atom-2.0.0
-   sudo tar czf atom-2.0.0.tar.gz --strip 1 -C /usr/share/nginx/atom-2.0.0
-   sudo ln -sf /usr/share/nginx/atom-2.0.0 /usr/share/nginx/atom
+   sudo mkdir /usr/share/nginx/atom
+   sudo tar czf atom-2.0.0.tar.gz -C /usr/share/nginx/atom --strip 1
 
-Check out the code from git
----------------------------
+
+Option 2: Check out the code from our git repository
+----------------------------------------------------
 
 .. code-block:: bash
 
@@ -168,7 +287,7 @@ owner of the full directory and its contents by running:
 
 .. code-block:: bash
 
-   sudo chown -R -L www-data:www-data /usr/share/nginx/atom
+   sudo chown -R www-data:www-data /usr/share/nginx/atom
 
 
 Create the database
@@ -178,23 +297,30 @@ Assuming that you are running MySQL in localhost, please run:
 
 .. code-block:: bash
 
-   mysql -h localhost -u root -e "CREATE DATABASE atom CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
-
-If you didn't leave the root password blank (which is a good idea), you'll have
-to add the --p switch to mysql, e.g.
-
-.. code-block:: bash
-
    mysql -h localhost -u root -pYOURSECRETPASSWORD -e "CREATE DATABASE atom CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
 
-If your MySQL server is not the same as your web server, replace "localhost"
-with the address of your MySQL server.
+We just created a database called "atom"!
+
+If you leave the root password in blank during the installation of
+mysql-server-5.5, you don't need to add the "-pYOURSECRETPASSWORD" option shown
+above.
+
+In case that your MySQL server is not the same as your web server, replace
+"localhost" with the address of your MySQL server.
 
 .. warning::
 
    Plase make sure that you are using an empty database! Don't reuse an old
    database unless it's empty. You can always drop it by using the
    :command:`DROP DATABASE` command and then create it again.
+
+Additionally, it's always a good idea to create a specific MySQL user for AtoM
+to keep things safer. This is how you can create an user called "atom" with
+password "12345" and the permissions needed for the "atom" database.
+
+.. code-block:: bash
+
+   mysql -h localhost -u root -pYOURSECRETPASSWORD -e "GRANT INDEX, CREATE, SELECT, INSERT, UPDATE, DELETE, ALTER, LOCK TABLES ON atom.* TO 'atom'@'localhost' IDENTIFIED BY '12345';"
 
 
 Run the web installer
@@ -206,4 +332,26 @@ the necessary tables and initial data to the database recently created.
 
 Open your browser and type the URL in the address bar. The URL can greatly
 change depending on your web server configuration. The URL will usually be
-something like "http://localhost".
+something like http://localhost. AtoM will redirect you to the installer
+automatically.
+
+The installation process consists in a number of steps where you will be asked
+for some details like the location of your database server. If you have followed
+this document to the letter, this is how you should fill the following fields:
+
+* Database name: ``atom``
+* Database username: ``atom``
+* Database password: ``12345``
+* Database host: ``localhost``
+* Database port: ``3306``
+* Search host: ``localhost``
+* Search port: ``9200``
+* Search index: ``atom``
+
+The rest of the fields can be filled as you need:
+
+* Site title
+* Site description
+* Username
+* E-mail address
+* Password

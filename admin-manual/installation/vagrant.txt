@@ -78,8 +78,8 @@ Vagrant will connect you to the correct virtual machine.
 
 The login details are:
 
-* Username: vagrant
-* Password: vagrant
+* Username: ``vagrant``
+* Password: ``vagrant``
 
 If you are using Windows, the preferred SSH client is
 `PuTTY <http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>`_.

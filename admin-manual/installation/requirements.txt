@@ -40,6 +40,7 @@ Additionally, the following PHP extensions are mandatory:
 * JSON (php5-json)
 * APC (php-apc, or php5-apcu in PHP 5.5)
 * PDO and PDO-MySQL (php5-mysql)
+* XSL (php5-xsl)
 
 .. note::
 
@@ -59,4 +60,3 @@ Other dependencies (not required)
 * Ghostscript
 * FFmpeg
 * pdftotext (part of poppler-utils)
-* PHP extension XSL (php5-xsl)
