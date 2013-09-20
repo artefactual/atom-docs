@@ -127,6 +127,16 @@ Glossary
     unit is the item. See also
     :term:`level of description`.
 
+  Area header
+    The title/heading that appears at the top of :term:`information areas
+    <information area>` in :term:`archival descriptions <archival
+    description>`, :term:`authority records <authority record>`,
+    :term:`archival institutions <archival institution>`, :term:`functions
+    <function>`, and other records. When an authenticated (i.e., logged in)
+    user with edit privileges clicks on the heading of an :term:`information
+    area` when in :term:`view mode`, the page reloads in :term:`edit mode` so
+    the user can edit content.
+
   Arrangement
     The International Council on Archives (`ICA <http://www.ica.org/>`__)
     defines arrangement as "the intellectual and physical processes and
@@ -143,8 +153,8 @@ Glossary
     authority record as "The authorized form of name combined with other
     information elements that identify and describe the named entity and
     may also point to other related authority records." See :doc:`Entity
-    types <../overview/entity-types>` and :doc:`Authority records <../add-
-    edit-content/authority-records>`.
+    types <../overview/entity-types>` and :doc:`Authority records
+    <../add-edit-content/authority-records>`.
 
   Breadcrumb trail
     A breadcrumb trail is a navigational element in a :term:`user interface`
@@ -642,9 +652,13 @@ Glossary
     Information areas appear on :term:`edit pages <edit page>` and group
     related :term:`fields <field>` based on the organization of elements
     of description in `ICA <http://www.ica.org/>`__ (or other supported)
-    descriptive standards. Clicking on an information area toggles it
-    between closed (all fields in that area hidden) and open (all fields
-    visible).
+    descriptive standards. Clicking on the :term:`area header` of an
+    information area toggles it between closed (all fields in that area hidden)
+    and open (all fields visible) when in :term:`edit mode`; in :term:`view
+    mode`, clicking on an :term:`area header` will result in opening the
+    related information area in :term:`edit mode` (if the user is logged in
+    and has sufficient :term:`access privileges <access privilege>` to edit a
+    record.)
 
   Information object
     An information object is another term for an :term:`archival
@@ -954,14 +968,24 @@ Glossary
     <file-formats>`.
 
   Title bar
-    The title that appears at the top of :term:`information areas
-    <information area>` in :term:`archival descriptions <archival
+    The :term:`title bar` is a contextual element that appears throughout AtoM
+    on various different :ref:`page types <page-types>`, offering the user an
+    indication of the type of page, and/or the name of the record, currently
+    being viewed. On a :term:`view <view page>` or :term:`edit <edit page>`
+    page, the :term:`title bar` displays the name (title) of the current entity.
+    The title bar appears at the top of core :ref:`entity <entity-types>`
+    records in AtoM, including :term:`archival descriptions <archival
     description>`, :term:`authority records <authority record>`,
-    :term:`archival institutions <archival institution>` and :term:`functions
-    <function>`. When an authenticated (i.e., logged in) user with edit
-    privileges clicks on the title bar of an :term:`information area` when in
-    :term:`view mode`, the page reloads in :term:`edit mode` so the user can
-    edit content.
+    :term:`archival institutions <archival institution>`, :term:`functions
+    <function>`, and :term:`terms <term>` (such as :term:`subjects <subject>`
+    and :term:`places <place>`), as well as at the top of :term:`physical
+    storage` locations. On Donor and :term:`accession <accession record>`
+    records, the title bar displays a message indicating whether the record
+    is in :term:`view <view mode>` or :term:`edit <edit mode>` mode, with the
+    record's name/title display below (as a sub-title). On :term:`archival
+    descriptions <archival description>`, the title bar also displays the
+    :term:`level of description` of the displayed description. See:
+    :ref:`Title bar <recurring-title-bar>`.
 
   Tooltips
     Tooltips are online text designed to assist users to enter data in
@@ -1009,10 +1033,10 @@ Glossary
     This allows a user to dynamically view results and select a
     resource without necessarily having to enter its full name or title. In
     AtoM, the :term:`search box` implements typeahead, and presents the user
-    with results divided into :term:`entity types <entity type>` such as
+    with results divided into :ref:`entity types <entity-types>` such as
     :term:`archival description`, :term:`authority record`, :term:`archival
-    institution`, :term:`subject`, and :term:`place:`. It appears as a
-    :term:`drop-down <drop-down>` below the :term:`search box` as a user
+    institution`, :term:`subject`, and :term:`place`. It appears as a
+    :term:`drop-down <drop-down menu>` below the :term:`search box` as a user
     enters text. See: :doc:`Search <../access-content/search>` and :ref:`The
     search box <search-box>`.
 

@@ -213,12 +213,12 @@ Manage, Import, Admin) in the :term:`main menu`.
   group, see: :doc:`Edit user permissions
   <../administer/edit-user-permissions>`
 
- .. TIP::
+.. TIP::
 
-    :term:`Administrators <administrator>` can add and remove options in the
-    sub-menus (Add, Manage, Import, Admin) of the main menu via **Admin >
-    Menus**. For more information, see :doc:`Manage menus
-    <../administer/manage-menus>`
+   :term:`Administrators <administrator>` can add and remove options in the
+   sub-menus (Add, Manage, Import, Admin) of the main menu via **Admin >
+   Menus**. For more information, see :doc:`Manage menus
+   <../administer/manage-menus>`
 
   .. _main-menu-add:
 
@@ -479,7 +479,24 @@ a default logo that can be replaced by :term:`administrators <administrator>`
 to theme the application to their own institution or :term:`network` if
 desired: see :ref:`Site logo <site-logo>`.
 
-ADD INFO HERE ABOUT SITE TITLE?
+.. TIP::
+
+   Users who do not have a logo, or who simply want to add a
+   :term:`site title` to the :term:`header bar`, can do so via **Admin >
+   Settings > Site information**, and make it visible in the :term:`header bar`
+   via **Admin > Settings > Default page elements**. The :term:`site title`,
+   when visible, will also act as a hyperlink to the :term:`home page`. To
+   add and control the visibility of the site title, you must be an
+   :term:`administrator`. For more information, see :ref:`Settings <settings>`.
+
+   .. image:: images/site-title-description.*
+      :align: center
+      :height: 50px
+      :alt: An image of the site logo with a site title visible
+
+   .. raw:: html
+
+      <br />
 
 :ref:`Back to top <navigate>`
 
@@ -511,35 +528,211 @@ Recurring page elements listed below include:
 Title bar
 ---------
 
-content
+.. image:: images/title-bar.*
+  :align: right
+  :width: 45%
+  :alt: An image of the title bar on an archival description
+
+The :term:`title bar` is a contextual element that appears throughout AtoM on
+various different :ref:`page types <page-types>`, offering the user an
+indication of the type of page, and/or the name of the record, currently being
+viewed.
+
+On a :term:`view <view page>` or :term:`edit <edit page>` page, the
+:term:`title bar` displays the name (title) of the current entity. The
+title bar appears at the top of core :ref:`entity <entity-types>`
+records in AtoM, including :term:`archival descriptions <archival
+description>`, :term:`authority records <authority record>`,
+:term:`archival institutions <archival institution>`, :term:`functions
+<function>`, and :term:`terms <term>` (such as :term:`subjects <subject>`
+and :term:`places <place>`), as well as at the top of :term:`physical
+storage` locations. On :term:`archival descriptions <archival description>`,
+the title bar also displays the :term:`level of description` of the displayed
+description.
+
+.. image:: images/title-bar-browse-search.*
+  :align: right
+  :width: 45%
+  :alt: An image of the title bar on a search results page
+
+On Donor and :term:`accession <accession record>` records, the title bar
+displays a message indicating whether the record is in :term:`view <view mode>`
+or :term:`edit <edit mode>` mode, with the record's name/title display below
+(as a sub-title).
+
+On :ref:`Browse <browse>` and :doc:`Search <../access-content/search>` pages,
+the :term:`title bar` displays the number of results returned for the current
+query. Elsewhere in the application, the title bar gives context to the user
+about the :ref:`page type <page-types>` currently being viewed.
 
 .. _recurring-text-links:
 
 Text links
 ----------
 
-content
+Blue text always represents a link to a related entity (for example,  from an
+:term:`archival description` to the :term:`authority record` of the record's
+:term:`creator`). When you hover your cursor over a link, the text darkens in
+color. Text links behave similarly to internet `hyperlinks
+<https://en.wikipedia.org/wiki/Hyperlink>`__, and can be used as navigational
+elements: clicking on a text link will cause AtoM to redirect a user to the
+related record referenced in the text of the text link.
+
+.. NOTE::
+
+   Some text links are white in the ArchivesCanada theme, such as in the
+   :term:`context menu` (including the :term:`treeview`) and the
+   :term:`breadcrumb trail` at the top of many :term:`entity` :term:`view
+   pages <view page>`. Text links in the :term:`Dominion theme` included as
+   the default theme in AtoM are almost universally blue.
 
 .. _recurring-context-menu:
 
 Context menu
 ------------
 
-content
+The context menu appears on all :term:`view <view page>` and some
+:term:`edit pages <edit page>` to provide greater contextual information
+about the record currently being viewed.
+
+AtoM's :term:`view <view page>` and :term:`edit <edit page>` pages are
+generally displayed in the :term:`user interface` in either a 2 or 3 column
+layout - the current record's display data is presented in the central part
+of the page, while the side column(s) are generally used to provide
+additional options and further contextual information to enhance user
+orientation and navigation.
+
+.. figure:: images/context-menu-archdesc.*
+   :align: right
+   :figwidth: 50%
+   :width: 98%
+   :alt: Example of the context menu on an archival description
+
+   Context menu (on left and right sides) on an archival description
+
+
+On :term:`archival description` :term:`view pages <view page>`, this includes
+the name and/or :ref:`logo <recurring-institution-logos>` of the
+:term:`archival institution` or :term:`repository` who holds the
+:term:`archival unit` the current record describes, and the
+:term:`treeview`, which shows the current record's relationships to other
+records, with links, on the left-hand side of the screen. The right-hand
+side of the screen includes links to related people and organizations (i.e.,
+:term:`authority records <authority record>`), :term:`subjects <subject>`, and
+:term:`places <place>`, as well as available formats for export and printing.
+Links in the right-hand column of the context menu are drawn from
+
+When viewing an :term:`authority record` for a person, family, or
+:term:`corporate body`, the left-hand side of the screen will show any
+relationships with :term:`archival descriptions <archival description>`, where
+the agent (the person, family, or corporate body described in the
+:term:`authority record`) is linked as either a :term:`creator` (or as an
+agent in any other :term:`event`), or when added as a name :term:`access
+point`. The right-hand column of the page includes available export formats.
+
+.. NOTE::
+
+   When a relationship is created between two :term:`authority records
+   <authority record>` or between an authority record and a :term:`function`,
+   the relationship is expressed in the body (i.e. the main part or center
+   column) of the authority record's :term:`view page`, in the "Relationships"
+   :term:`area <information area>` of the record.
+
+When viewing an :ref:`ISDIAH <isdiah-template>` record for an
+:term:`archival institution`, the context menu displays the institution's logo
+and a list of holdings on the left-hand side, with contact information for the
+:term:`repository` provided on the right-hand side of the record. The contact
+information is drawn from the information added to the "Contact"
+:term:`area <information area>` of the :term:`archival institution` record.
+
+On :ref:`Browse <browse>` and :doc:`Search <../access-content/search>` pages,
+the context menu includes :term:`facet filters <facet filter>` that allow the
+user to iteratively narrow the results presented. If the browse page is for a
+:term:`term` that can be organized hierarchically in a :term:`taxonomy` (such
+as a :term:`place` or :term:`subject` term), a version of the
+:term:`treeview` is also presented, showing users the terms position in the
+hierarchy as well as related "sibling" (i.e. on the same level) terms.
+
+**Find more information on using the Context menu:**
+
+* :ref:`Context menu <context-menu>`
+* :ref:`Treeview <treeview>`
+
+**SEE ALSO**
+
+* :ref:`Archival descriptions <archival-descriptions>`
+* :ref:`Authority records <authority-records>`
+* :ref:`Archival institutions <archival-institutions>`
+* :ref:`Terms <terms>`
 
 .. _recurring-column-headers:
 
 Column headers
 --------------
 
-content
+.. figure:: images/column-headers.*
+   :align: right
+   :figwidth: 40%
+   :width: 98%
+   :alt: Name and Updated column headers in the Browse Rights holders page
+
+   Name and Updated column headers in the Browse Rights holders page
+
+:term:`Column headers <column header>` appear at the top of the lists on list
+pages and some browse results (e.g., :term:`subject` and :term:`place` browse
+pages), and give the name of the :term:`field` for whatever is being isted
+below. On some pages, the column headers include a |caret-down-grey| caret
+icon next to the column header :term:`field` name - when pressed, these icons
+will reverse the sort order of the data in the list based on that column
+(i.e., changing from A-Z to Z-A, or from most recently updated first to
+oldest update first).
+
+Column headers appear wherever display data on a page has been organized into
+a table, and are used extensively throughout the pages available in the
+:ref:`Admin menu <main-menu-admin>`.
+
+.. |caret-down-grey| image:: images/caret-down-grey.png
+   :scale: 30%
 
 .. _recurring-information-areas:
 
 Information areas
 -----------------
 
-content
+.. figure:: images/information-area.*
+   :align: right
+   :figwidth: 40%
+   :width: 98%
+   :alt: The Identity and Context Areas in an ISAD(G) archival description
+
+   The Identity and Context Areas in an ISAD(G) archival description
+
+Information areas appear on :term:`view <view page>` and :term:`edit <edit
+page>` pages of any standards-based description template in AtoM, and group
+related :term:`fields <field>` based on the organization of elements of
+description in `ICA <http://www.ica.org/>`__ or other supported descriptive
+standards. They are comprised of a number of :term:`fields <field>` in the
+body of the information area, and an :term:`area header`, whose name is drawn
+from the related area or section of the standard upon which the descriptive
+template is based.
+
+By default, when no data has been entered into a :term:`field` in an
+information area's edit template, the field is not displayed when in
+:term:`view mode`. Consequently, the size (length on a page) of an information
+area will depend on the amount of data that has been entered (or imported) by
+a user.
+
+Clicking on the :term:`area header` of an information area toggles it between
+closed (all fields in that area hidden) and open (all fields visible) when in
+:term:`edit mode`; in :term:`view mode`, clicking on an :term:`area header`
+will result in opening the related information area in :term:`edit mode`
+(**if** the user is logged in and has sufficient :term:`access privileges
+<access privilege>` to edit a record.)
+
+**For more information, on supported standards, see:**
+
+* :doc:`Descriptive standards <../overview/descriptive-standards>`
+* :ref:`Data entry / templates <data-entry>`
 
 .. _recurring-carousel:
 
