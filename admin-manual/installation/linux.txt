@@ -28,7 +28,7 @@ MySQL
 
 We strongly recommend to use MySQL 5.5 as it's much better than its previous
 major release in terms of speed, scalability and user-friendliness. Also, we've
-experienced very good results using the forks Percona Server ands MariaDB, so
+experienced very good results using forks like Percona Server or MariaDB, so
 don't be afraid and use them if you want!
 
 Let's install MySQL using :command:`apt-get`:
@@ -38,8 +38,8 @@ Let's install MySQL using :command:`apt-get`:
    sudo apt-get install mysql-server-5.5
 
 During the installation, you will be prompted to set a password for the default
-administrator user (root). If you are setting one, please note it down as we are
-going to need it later.
+administrator user (root). If you are setting one, please note it down as you
+are going to need it later.
 
 
 Elasticsearch
@@ -55,13 +55,13 @@ Ubuntu doesn't provide a package but you can download it directly from the
 good idea to use the latest stable version available.
 
 First, make sure that Java is installed. Elasticsearch is compatible with both
-Java 6 and Java 7.
+Java 6 and Java 7 and both can be found in Ubuntu 12.04.
 
 .. code-block:: bash
 
-   sudo apt-get install -y openjdk-6-jre-headless
+   sudo apt-get install -y openjdk-7-jre-headless
 
-We are ready to download and install Elasticsearch:
+It's time to download download and install Elasticsearch:
 
 .. code-block:: bash
 
@@ -78,9 +78,11 @@ Make sure that the service has been started:
 Nginx
 -----
 
-We also like Apache and you should use it if you feel more confortable with it,
-but we've found that Nginx adapts itself much better to limited resource
-environments while it also scales better and more predictable under high loads.
+There are many web servers out there capable to work together with PHP. Apache
+is probably the most popular and we like it, but we've found that Nginx adapts
+itself much better to limited resource environments while it also scales better
+and more predictable under high loads. You are welcome to try other solutions,
+but we are going to focus our docs in Nginx.
 
 The installation in Ubuntu can't be easier:
 
@@ -88,12 +90,12 @@ The installation in Ubuntu can't be easier:
 
    sudo apt-get install nginx
 
-The team behind Nginx provides an official PPA channel for Ubuntu users that
-support more recent stable packages for different versions of Ubuntu, including
-12.04. This could be a good choice if you want to enjoy some of the latest
-features and improvements added to Nginx while taking a minimal risk for your
-production environments. If you are interested, run the following commands
-instead:
+Ubuntu 12.04 uses Nginx 1.1. However, the team behind Nginx provides an official
+PPA channel for Ubuntu users that supports more recent stable packages for the
+different releases of Ubuntu, including 12.04. This could be a good choice if
+you want to enjoy some of the latest features and improvements added to Nginx
+while taking a minimal risk in your production environments. If you are
+interested, run the following commands:
 
 .. code-block:: bash
 
@@ -102,8 +104,23 @@ instead:
    sudo apt-get install nginx
 
 Nginx deploys a default server (aka VirtualHost, for Apache users) called
-*default*. In order to install AtoM you could edit the existing server block or
-replace it. This is how the server block should look like:
+default and you can find it in :file:`/etc/nginx/sites-available/default`. In
+order to install AtoM you could edit the existing server block or add a new one.
+We are going to you show you how to do the latter:
+
+.. code-block:: bash
+
+   sudo touch /etc/nginx/sites-available/atom
+   sudo ln -sf /etc/nginx/sites-available/atom /etc/nginx/sites-enabled/atom
+
+We have created the configuration file and linked it from sites-enabled/, which
+is the directory where Nginx is going to look for. That means that you could
+disable a site by removing its symlink from sites-enabled/ while keeping the
+original one under sites-available/, in case that you want to re-use in the
+future. You could do that with the Nginx default server.
+
+The following is a recommended server block for AtoM. Put the following contents
+in :file:`/etc/nginx/sites-enabled/atom`.
 
 .. code-block:: nginx
 
@@ -111,8 +128,13 @@ replace it. This is how the server block should look like:
 
      listen 80;
      root /usr/share/nginx/atom;
+
+     # http://wiki.nginx.org/HttpCoreModule#server_name
+     # _ means catch any, but it's better if you replace this with your server
+     # name, e.g. archives.foobar.com
      server_name _;
 
+     # http://wiki.nginx.org/HttpCoreModule#try_files
      location / {
        try_files $uri /index.php?$args;
      }
@@ -132,6 +154,8 @@ replace it. This is how the server block should look like:
        return 404;
      }
 
+     # This is the most important part, as here we are redirecting some specific
+     # requests to PHP-FPM so PHP can do his job.
      location ~ ^/(index|qubit_dev)\.php(/|$) {
        include /etc/nginx/fastcgi_params;
        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
@@ -157,18 +181,17 @@ PHP
 
 Our favorite way to deploy AtoM is using PHP-FPM, a process manager that scales
 better than other solutions like FastCGI. The following command will install it
-along with the rest of PHP extensions required by AtoM to work properly.
+along with the rest of PHP extensions required by AtoM.
 
 .. code-block:: bash
 
     sudo apt-get install php5-cli php5-fpm php5-curl php5-mysql php5-xsl php-apc
 
-If you are stuck in Ubuntu 12.04 but you still want to try PHP 5.4 or PHP 5.5,
+If you are using Ubuntu 12.04 but you still want to try PHP 5.4 or PHP 5.5,
 there is a PPA channel supported by Ondřej Surý. This is probably no the safest
 way to go as his channel is not backed by the official Ubuntu team, but I can
 tell that he is being very responsive pushing new releases as soon as they come
-out from the PHP team. If you are still interested, please visit one of the
-following links:
+out. If you are still interested, please visit one of the following links:
 
 * PHP 5.4 channel: https://launchpad.net/~ondrej/+archive/php5-oldstable
 * PHP 5.5 channel: https://launchpad.net/~ondrej/+archive/php5
@@ -179,7 +202,7 @@ is not included anymore as part of the PHP core, so you will have to install the
 php5-json extension too.
 
 Let's add a new PHP pool for AtoM by adding the following contents in a new file
-called :file:`/etc/php5/fpm/pool.d/www.conf`:
+called :file:`/etc/php5/fpm/pool.d/atom.conf`:
 
 .. code-block:: ini
 
@@ -196,8 +219,8 @@ called :file:`/etc/php5/fpm/pool.d/www.conf`:
    pm.max_requests = 500
    chdir = /
 
-   # Some sensible defaults for PHP
-   # http://www.php.net/manual/en/ini.list.php
+   # Some defaults for your PHP production environment
+   # A full list here: http://www.php.net/manual/en/ini.list.php
    php_admin_value[expose_php] = off
    php_admin_value[allow_url_fopen] = off
    php_admin_value[memory_limit] = 512M
@@ -214,7 +237,12 @@ called :file:`/etc/php5/fpm/pool.d/www.conf`:
    php_admin_value[apc.num_files_hint] = 5000
    php_admin_value[apc.stat] = 0
 
-And you need to restart the process manager:
+   # This is algo a good place to define some environment variables, e.g. use
+   # ATOM_DEBUG_IP to define a list of IP addresses with full access to the
+   # debug frontend
+   env[ATOM_DEBUG_IP] = "10.10.10.10,127.0.0.1,"
+
+The process manager has to be restarted:
 
 .. code-block:: bash
 
@@ -225,8 +253,9 @@ Other packages
 
 If you want AtoM to be able to process digital objects in formats like JPEG or
 to extract the text from your PDF documents, there are certain packages that you
-need to install. They are not mandatory but if they can be found in the system,
-AtoM won't be able to create digital object derivatives from your master media.
+need to install. They are not mandatory but if they are found in the system,
+AtoM will usee them to produce digital object derivatives from your master
+objects.
 
 .. code-block:: bash
 
@@ -263,13 +292,6 @@ Option 2: Check out the code from our git repository
    cd /usr/share/nginx/atom
    sudo git checkout tags/v2.0.0
 
-If you are using git 1.8 or newer, you can alternatively checkout a specific tag
-in one single line:
-
-.. code-block:: bash
-
-   git clone --branch v2.0.0 git@git.artefactual.com:atom.git /usr/share/nginx/atom
-
 If you are not interested in downloading all the history from git, you could
 also truncate it to a specific number of revisions, e.g.: just one revision
 
@@ -293,15 +315,15 @@ owner of the full directory and its contents by running:
 Create the database
 ===================
 
-Assuming that you are running MySQL in localhost, please run:
+Assuming that you are running MySQL in localhost, please create the database by
+running the following command:
 
 .. code-block:: bash
 
    mysql -h localhost -u root -pYOURSECRETPASSWORD -e "CREATE DATABASE atom CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
 
-We just created a database called "atom"!
-
-If you leave the root password in blank during the installation of
+Notice that the database has been called **atom**. Feel free to change its name.
+Also, If you left the root password in blank during the installation of
 mysql-server-5.5, you don't need to add the "-pYOURSECRETPASSWORD" option shown
 above.
 
@@ -315,8 +337,8 @@ In case that your MySQL server is not the same as your web server, replace
    :command:`DROP DATABASE` command and then create it again.
 
 Additionally, it's always a good idea to create a specific MySQL user for AtoM
-to keep things safer. This is how you can create an user called "atom" with
-password "12345" and the permissions needed for the "atom" database.
+to keep things safer. This is how you can create an user called **atom** with
+password **12345** and the permissions needed for the database created above.
 
 .. code-block:: bash
 
@@ -347,6 +369,10 @@ this document to the letter, this is how you should fill the following fields:
 * Search host: ``localhost``
 * Search port: ``9200``
 * Search index: ``atom``
+
+Of course, some of these fields will look very different if you are running
+AtoM in a distributed way, where your services like MySQL or Elasticsearch are
+running in separate machines.
 
 The rest of the fields can be filled as you need:
 

@@ -20,7 +20,7 @@ Note that Xcode is required, which you can download nowadays from the App Store.
 More instructions can be found at:
 https://github.com/mxcl/homebrew/wiki/Installation
 
-Once it's installed, you ready to install all the packages needed:
+Once it's installed, you are ready to install all the packages needed:
 
 .. code-block :: bash
 
