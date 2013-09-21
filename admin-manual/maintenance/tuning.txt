@@ -12,7 +12,7 @@ code, and that's something that we are working on constantly. But there's no
 doubt that some configuration tweaks in your servers can give you better
 results.
 
-This page describes the most common performance tweaks
+This page describes the most common performance tweaks used in AtoM.
 
 
 PHP opcode cache
