@@ -1,7 +1,0 @@
-.. _installation-tuning:
-
-========================
-Tuning server parameters
-========================
-
-TODO
