@@ -240,7 +240,7 @@ called :file:`/etc/php5/fpm/pool.d/atom.conf`:
    # This is algo a good place to define some environment variables, e.g. use
    # ATOM_DEBUG_IP to define a list of IP addresses with full access to the
    # debug frontend
-   env[ATOM_DEBUG_IP] = "10.10.10.10,127.0.0.1,"
+   env[ATOM_DEBUG_IP] = "10.10.10.10,127.0.0.1"
 
 The process manager has to be restarted:
 
@@ -324,7 +324,7 @@ running the following command:
 
 Notice that the database has been called **atom**. Feel free to change its name.
 Also, If you left the root password in blank during the installation of
-mysql-server-5.5, you don't need to add the "-pYOURSECRETPASSWORD" option shown
+mysql-server-5.5, you don't need to add the ``-pYOURSECRETPASSWORD`` option shown
 above.
 
 In case that your MySQL server is not the same as your web server, replace
@@ -337,8 +337,8 @@ In case that your MySQL server is not the same as your web server, replace
    :command:`DROP DATABASE` command and then create it again.
 
 Additionally, it's always a good idea to create a specific MySQL user for AtoM
-to keep things safer. This is how you can create an user called **atom** with
-password **12345** and the permissions needed for the database created above.
+to keep things safer. This is how you can create an user called ``atom`` with
+password ``12345`` and the permissions needed for the database created above.
 
 .. code-block:: bash
 
