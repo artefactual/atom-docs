@@ -125,6 +125,7 @@ A new archival institution can be added at any time, from anywhere in the
 application, via the :term:`main menu`.
 
 .. NOTE::
+
    :term:`Administrators <administrator>` must be logged-in in order to add
    a new :term:`archival institution`. For more information on logging in,
    see: :ref:`Log in <log-in>`. See :ref:`User roles <user-roles>` for more
@@ -171,7 +172,7 @@ in the :term:`button block` at the bottom of the record.
 Whenever a new :term:`archival institution` is added to an :term:`archival
 description`, a new record for that name will be generated when the archival
 description is saved. Because each edit template uses different labels for the
-:term:`field`to add a new archival institution, template specific instructions
+:term:`field` to add a new archival institution, template specific instructions
 have been included below.
 
 **ISAD(G) edit template**
@@ -314,17 +315,18 @@ sufficient edit permissions. For more information on types of users and edit
 permissions, see :ref:`User roles <user-roles>`.
 
 **To link an archival description to an archival institution:**
+
 1.  First, navigate to the :term:`archival institution` you wish to edit. You
     can do this by :doc:`browsing <../access-content/browse>` or :doc:`Search
-    <../access-content/search>`for the archival institution - see :ref:`Access
+    <../access-content/search>` for the archival institution - see :ref:`Access
     content <access-content>` for more information on navigation in AtoM.
-2.  Switch from :term:`view mode` to :term:`edit mode` by clicking “Edit” button
+2.  Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit" button
     in the :term:`button block`, or by clicking on one of the :term:`information
     area` headings; this takes you to the record’s :term:`edit page`.
 3.  To create a link to an archival institution, follow the steps above for
-    “adding a new archival institution” - however, instead of entering a new
+    "adding a new archival institution" - however, instead of entering a new
     name, begin typing the name of the archival institution to which you would
-    like to create a link. The name :term:`field`is an auto-complete - as you
+    like to create a link. The name :term:`field` is an auto-complete - as you
     type, matching results will load in a :term:`drop-down menu` below the
     field. When you see the archival institution you would like to link, click
     on it to select it.
@@ -342,14 +344,14 @@ permissions, see :ref:`User roles <user-roles>`.
    archival description edit page <add-institution-description-edit>`.
 
 4.  When you are done editing the record, save the :term:`archival
-    description`by scrolling down and pressing "Save" in the :term:`button
+    description` by scrolling down and pressing "Save" in the :term:`button
     block`.
 5.  The :term:`archival description` will reload in :term:`view mode`. You
     should be able to see the archival institution as a hyperlink on the
     archival description. Follow the link to ensure you have linked to the
     proper :term:`archival institution`. The linked archival description will
-    also appear in the "Holdings" section of the :ref:`Context menu <context-
-    menu>` of the archival institution’s :term:`view page`.
+    also appear in the "Holdings" section of the :ref:`Context menu
+    <context-menu>` of the archival institution’s :term:`view page`.
 
 :ref:`Back to top <archival-institutions>`
 
@@ -532,7 +534,7 @@ Delete an archival institution
 
 1.  Navigate to the :term:`archival institution` record you want to delete. You
     can do this by :doc:`browsing <../access-content/browse>` or :doc:`Search
-    <../access-content/search>`for the :term:`archival description` - see
+    <../access-content/search>` for the :term:`archival description` - see
     :ref:`Access content <access-content>` for more information on
 2.  Scroll to the bottom of the institution’s :term:`view page` and click the
     :term:`Delete button` in the :term:`button block`.
@@ -543,7 +545,7 @@ Delete an archival institution
     results page.
 5.  Deleting the :term:`archival institution` record removes the :term:`archival
     institution` from the repository :term:`field` in linked :term:`archival
-    descriptions<archival descriptions>` but does not remove the archival
+    descriptions <archival description>` but does not remove the archival
     descriptions themselves.
 
 :ref:`Back to top <archival-institutions>`
