@@ -52,6 +52,7 @@ Additionally, the following PHP extensions are mandatory:
    flavours plus we've written specific guides for other OSes like
    :ref:`installation-windows` os :ref:`installation-macosx`.
 
+.. _other-dependencies:
 
 Other dependencies (not required)
 ---------------------------------

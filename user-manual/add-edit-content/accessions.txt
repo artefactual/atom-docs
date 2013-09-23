@@ -66,11 +66,16 @@ materials have been arranged.
 Add a new accession record
 ==========================
 
-#. In the :term:`main menu`, click on the "Add" menu
-#. Select "Accession records" from the :term:`drop-down menu`.
-#. AtoM takes you to an accession record :term:`edit page` screen for data
-   entry. The Accession number field is automatically assigned a Unique ID,
-   this number cannot be altered.
+.. |plus| image:: images/plus-sign.png
+   :height: 18
+   :width: 18
+
+1. In the :term:`main menu` located in the :term:`header bar`, click the |plus|
+   :ref:`"Add" <main-menu-add>` menu and select "Accession records" from the
+   :term:`drop-down menu`.
+2. AtoM takes you to an accession record :term:`edit page` screen for data
+   entry. The Accession number field is automatically assigned a Unique ID, this
+   number cannot be altered.
 
 .. TIP::
 
@@ -79,13 +84,13 @@ Add a new accession record
    **Admin > Settings > Accession mask**. For more information, see:
    :doc:`Settings</administer/settings>`
 
-4. The accession record edit template provides a variety of field types for
+3. The accession record edit template provides a variety of field types for
    data entry (e.g., calendar, free-text, pop-up dialogs and :term:`drop-downs
    <drop-down menu>`). Remember to click on each :term:`information area` to
    access the data entry fields grouped under it. Enter data as required
    (further information on filling out specific parts of the accession record
    is included below).
-5. Click the "Create" button in the :term:`button block` to create and save
+4. Click the "Create" button in the :term:`button block` to create and save
    the new :term:`accession record`. If you do not want to keep the record you
    can click the "Cancel" button and remove the record.
 
@@ -436,7 +441,7 @@ Delete an accession record
 
 To delete an :term:`accession record` in AtoM:
 
-1. Navigate to the accession record you want to edit. You can locate all
+1. Navigate to the accession record you want to delete. You can locate all
    accessions in AtoM by clicking on "Manage" in the :term:`main menu`
    (located in the AtoM :term:`header bar`) and selecting "Accessions" from
    the :term:`drop-down menu`. For more information on navigation in AtoM, see

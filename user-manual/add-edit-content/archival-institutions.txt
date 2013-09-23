@@ -153,16 +153,108 @@ application, via the :term:`main menu`.
 Add a new archival instituion from an archival description edit page
 --------------------------------------------------------------------
 
-content
+A new archival institution can be generated from an :term:`archival description`
+record at any time; it does not first have to be created separately.
+
+An :term:`archival institution` can be added via a value list that appears in a
+:term:`drop-down menu` - as you type data into the "Repository" :term:`field`,
+the value list will narrow its options to present related suggestions. If the
+archival institution already exists, you can select the name from the values and
+a link will be created.
+
+If the archival institution does not already exist, however, new names can be
+added "on the fly" by typing and entering the name of the archival institution
+in the designated :term:`field`; an archival institution record will be
+automatically created once you click the :term:`"Create" button <Create button>`
+in the :term:`button block` at the bottom of the record.
+
+Whenever a new :term:`archival institution` is added to an :term:`archival
+description`, a new record for that name will be generated when the archival
+description is saved. Because each edit template uses different labels for the
+:term:`field`to add a new archival institution, template specific instructions
+have been included below.
+
+**ISAD(G) edit template**
+
+* In the "Context area":term:`information area` of the :ref:`ISAD(G) template
+  <isad-template>`, navigate to the "Repository" :term:`field` and enter a new
+  name.
+* The name will be saved as a new archival institution when you save the
+  archival description.
+
+**Rules for Archival Description (RAD) edit template**
+
+* In the "Title and statement of responsibility area" :term:`information area`
+  of the :ref:`RAD template <rad-template>`, navigate to the "Repository"
+  :term:`field` and enter a new institution name.
+* The name will be saved as a new archival institution when you save the
+  archival description.
+
+**Describing Archives: A Content Standard (DACS) edit template**
+
+* In the "Identity elements" :term:`information area` of the `DACS template <dacs-
+  template>, navigate to the "Name and location of repository" :term:`field` and
+  enter a new name.
+* The name will be saved as a new archival institution when you save the
+  archival description.
+
+**Dublin Core Version 1.1 (DC) edit template**
+
+* In the "Elements area" :term:`information area` of the :ref:`Dublin Core
+  template <dc-template>`, navigate to the "Relation(isLocatedAt)" :term:`field`
+  and enter a new name.
+* The name will be saved as a new archival institution when you save the
+  archival description.
+
+**Metadata Object Description Schema (MODS) edit template**
+
+* In the "Elements area" :term:`information area` of the :ref:`MODS template
+  <mods-template>`, navigate to the "Repository" :term:`field` and enter a new
+  name.
+* The name will be saved as a new archival institution when you save the
+  archival description.
+
+The newly created archival institution will then have to be edited to include
+necessary data. To edit the archival institution record, see the :ref:`Edit an
+existing archival institution <edit-archival-institution>` section of this page.
+
 
 .. _add-institution-view:
 
 Add a new archival institution from the view page
 -------------------------------------------------
 
-**To add a new archival institution from the view page:**
+A new :term:`archival institution` can also be added to AtoM from the
+:term:`view page` of any other archival institution via the :term:`Add new
+button` in the :term:`button block`. To do so:
+
+1.  Navigate to an existing :term:`archival institution` in AtoM. You can do
+    this by :doc:`browsing <../access-content/browse>` or by :doc:`Search
+    <../access-content/search>`for a specific archival institution - see
+    :ref:`Access content <access-content>` for more information on navigation in
+    AtoM.
+2.  At the bottom of the archival institution :term:`view page`, you will see
+    the :term:`button block` with several options (Edit, Delete, and Add new).
+    Click the :term:`Add new button`.
+3.  AtoM takes you to a blank edit page for data entry. On loading, the
+    :term:`edit page` displays the record with all :term:`information areas
+    <information area>` closed; click on an information area to access the
+    :term:`fields<field>` grouped under it. Enter data as required.
+4.  You can quit the creation process at any time by clicking the “Cancel”
+    button in the :term:`button block`; any data already entered will not be
+    saved, and no new record will be created. Note that simply navigating away
+    from the page by any other means, **without first clicking "Create"** will
+    also result in no new record being created.
+5.  To save the new record, click the :term:`"Create" button <Create button>`
+    located in the :term:`button block` at the bottom of the record.
+
+Once the new :term:`archival institution` is saved, you will be redirected to
+the record’s :term:`view page`, where you can review your work. Clicking "Edit"
+in the :term:`button block` at the bottom of the record will re-open the
+archival institution in :term:`edit mode`.
 
 :ref:`Back to top <archival-institutions>`
+
 
 .. _edit-archival-institution:
 
@@ -212,15 +304,52 @@ institution`, where you can review your work.
 
 .. _link-archival-institution:
 
+
 Link an archival description to an archival institution
 =======================================================
 
-brief intro/summary (if it seems useful)
+Links between existing archival institution and existing archival descriptions
+can be added at any time by an authenticated (i.e. logged in) user with
+sufficient edit permissions. For more information on types of users and edit
+permissions, see :ref:`User roles <user-roles>`.
 
 **To link an archival description to an archival institution:**
+1.  First, navigate to the :term:`archival institution` you wish to edit. You
+    can do this by :doc:`browsing <../access-content/browse>` or :doc:`Search
+    <../access-content/search>`for the archival institution - see :ref:`Access
+    content <access-content>` for more information on navigation in AtoM.
+2.  Switch from :term:`view mode` to :term:`edit mode` by clicking “Edit” button
+    in the :term:`button block`, or by clicking on one of the :term:`information
+    area` headings; this takes you to the record’s :term:`edit page`.
+3.  To create a link to an archival institution, follow the steps above for
+    “adding a new archival institution” - however, instead of entering a new
+    name, begin typing the name of the archival institution to which you would
+    like to create a link. The name :term:`field`is an auto-complete - as you
+    type, matching results will load in a :term:`drop-down menu` below the
+    field. When you see the archival institution you would like to link, click
+    on it to select it.
 
-content here
+.. IMPORTANT::
 
+   This method makes use of  an `auto-complete <https://en.wikipedia.org/wiki
+   /Auto-complete>`__ field to find the right :term:`archival institution` as
+   you begin to type its name/title. **Be sure** to pick the record from the
+   :term:`drop-down <drop-down menu>` when it appears - if you type the full
+   name and press enter, a new archival institution will be generated
+   instead of a link being created to an existing one! If, however, you wish
+   to add a new archival institution from the archival description's
+   :term:`edit page`, see :ref:`Add a new archival institution from an
+   archival description edit page <add-institution-description-edit>`.
+
+4.  When you are done editing the record, save the :term:`archival
+    description`by scrolling down and pressing "Save" in the :term:`button
+    block`.
+5.  The :term:`archival description` will reload in :term:`view mode`. You
+    should be able to see the archival institution as a hyperlink on the
+    archival description. Follow the link to ensure you have linked to the
+    proper :term:`archival institution`. The linked archival description will
+    also appear in the "Holdings" section of the :ref:`Context menu <context-
+    menu>` of the archival institution’s :term:`view page`.
 
 :ref:`Back to top <archival-institutions>`
 
@@ -229,14 +358,16 @@ content here
 Edit the theme for an existing archival institution
 ===================================================
 
-This section contains instructions on how to edit the theme of an existing
-:term:`archival institution`. :term:`Administrators <administrator>` can
-upload an institutional logo and/or banner, as well as choose a specific
-background color for their institution's page - the background color and logo
-will appear on all related :term:`archival descriptions <archival
-description>` (see :ref:`below <link-archival-institution>` for information
-on how to create a link between an :term:`archival description` and an
-:term:`archival institution`). Additionally, users can add custom `HTML
+AtoM 2.0 introduces a new design feature :term:`Administrators <administrator>`,
+allowing them to customize their archival institution's page by adding/editing
+an institution logo and/or banner, as well as choose a specific background color
+for their institution's page. Once added, the background color and logo will
+appear on all of the institution's related :term:`archival descriptions
+<archival description>` (see :ref:`below <link-archival-institution>` for
+information on how to create a link between an :term:`archival description` and
+an :term:`archival institution`).
+
+Additionally, users can add custom `HTML
 <https://en.wikipedia.org/wiki/Html>`__ and inline `CSS
 <https://en.wikipedia.org/wiki/CSS>`__ to a description area for specific
 highlighted content. These features can be especially useful in a
@@ -268,7 +399,7 @@ as well... etc.
 2. Click on the "Edit theme" button in the :term:`button block` at the bottom
    of the archival institution's :term:`edit page`.
 3. AtoM will reload load the institutions theme :term:`edit page`. From here,
-   authenticated users can change the background color, upload and logo
+   authenticated users can change the background color, upload a logo
    and/or banner, and add custom content.
 4. In the "Style" area, click on the Background color (you can click on the
    title, the color swatch, or text box showing the :term:`hex color code`).
@@ -309,11 +440,45 @@ as well... etc.
 Add/edit a logo to an existing archival institution
 ---------------------------------------------------
 
-brief intro/summary (if it seems useful)
+AtoM
 
 **To add a logo for an archival institution:**
 
-content
+1.  First, navigate to the :term:`archival institution` you wish to edit. You
+    can do this  by :doc:`browsing <../access-content/browse>`or :doc:`Search
+    <../access-content/search>` for the archival institution - see :ref:`Access
+    content <access-content>` for more information on navigation in AtoM.
+2.  Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit theme"
+    button in the :term:`button block`.
+3.  From here, authenticated users can upload a logo and/or banner. In the
+    "Style" area, under the "Logo" :term:`field`, click the "Choose file"
+    button. A separate window will open; select the image on your computer that
+    you'd like to add as the logo for the institution.
+
+.. NOTE::
+
+   AtoM requires that the image uploaded as the institution logo be in **PNG
+   format**. The image cannot exceed **256k in size**. If the image selected for
+   upload does not meet these requirements, you will receive an error message
+   reading *"Invalid mime type"* will appear below the "Logo" :term:`field`
+   after clicking the "Save" button.
+
+   Ideally, the image size should be between a **200x200** and **270x270 pixels
+   square**. If the image you upload does not meet these sizing specifications,
+   it will be automatically cropped by :ref:`ImageMagick <other-dependencies>`
+   to meet the requirements listed above.
+
+4.  You can quit the theming process at any time by clicking the "Cancel" button
+    in the :term:`button block`; any changes made will not be saved. Note that
+    simply navigating away from the page by any other means, without first
+    clicking "Save" will also result in no changes being saved to the archival
+    institution.
+5.  When you have selected your new logo, click "Save" in the
+    :term:`button block` at the bottom of the page. AtoM will reload
+    the:term:`archival institution` in :term:`view mode`, where you can
+    review the logo. If needed, you can repeat steps 2-6 until you are happy
+    with the selection.
+
 
 **To edit/remove a logo from an archival institution:**
 
@@ -363,12 +528,23 @@ give users a sense of what is possible)
 Delete an archival institution
 ==============================
 
-content
+**To delete an Archival Institution in AtoM:**
 
-**To delete an archival institution:**
-
-1.
-
+1.  Navigate to the :term:`archival institution` record you want to delete. You
+    can do this by :doc:`browsing <../access-content/browse>` or :doc:`Search
+    <../access-content/search>`for the :term:`archival description` - see
+    :ref:`Access content <access-content>` for more information on
+2.  Scroll to the bottom of the institution’s :term:`view page` and click the
+    :term:`Delete button` in the :term:`button block`.
+3.  AtoM will provide a warning and prompts you to confirm that you really wish
+    to delete the institution. To delete the record, click the :term:`Delete
+    button`.
+4.  AtoM deletes the record and opens the :term:`archival institution` browse
+    results page.
+5.  Deleting the :term:`archival institution` record removes the :term:`archival
+    institution` from the repository :term:`field` in linked :term:`archival
+    descriptions<archival descriptions>` but does not remove the archival
+    descriptions themselves.
 
 :ref:`Back to top <archival-institutions>`
 

@@ -106,8 +106,12 @@ ways to create new authority records:
 Add a new authority record from the main menu
 ---------------------------------------------
 
-1. In the :term:`main menu`, click the "Add" button (represented by the **+**
-   icon in the :term:`header bar`) and select "Authority record".
+.. |plus| image:: images/plus-sign.png
+   :height: 18
+   :width: 18
+
+1. In the :term:`main menu` located in the :term:`header bar`, click the
+   |plus|:ref:`"Add" <main-menu-add>` and select "Authority record".
    Alternatively, navigate to an authority record view page and click the
    :term:`"Add new" button <add new button>` in the :term:`button block`. AtoM
    takes you to a blank edit page for data entry.
@@ -335,7 +339,7 @@ Link an existing authority record to an archival description
 ============================================================
 
 Links between existing authority records and existing archival descriptions
-can be added at any time by an authenticaed (i.e. logged in) user with
+can be added at any time by an authenticated (i.e. logged in) user with
 sufficient edit permissions. For more information on types of users and edit
 permissions, see :ref:`User roles <user-roles>`. There are two main ways to
 create a link between an authority record and an archival description:
