@@ -1,0 +1,44 @@
+.. _installation-execution-limits:
+
+====================
+PHP execution limits
+====================
+
+There are several PHP configuration settings that may be responsible for
+prematurely halting a script. This is a common source of problems!
+
+``max_execution_time``:
+  Limits the running time of a script (in seconds), e.g.:
+
+  .. code-block:: ini
+
+    max_execution_limit = 30
+
+``memory_limit``:
+  Limits the amount of memory a script may consume (in bytes [B], kilobytes
+  [K], megabytes [M] or gigabytes [G]).
+
+  .. code-block:: ini
+
+    memory_limit = 128M
+
+  Please note that this memory limit is not related to the amount of system
+  memory (RAM) available, but is an artificial limit imposed by PHP to avoid
+  run-away scripts from consuming all system resources. What this means is
+  adjusting the PHP configuration should be done before deciding whether to
+  adding more RAM to your system may be beneficial. This limit is specially
+  important if you are trying to process digital objects because it is needed
+  to allocate enough memory to process both the input and the output digital
+  object. See the following table:
+
+  +------------+------------+
+  | Size (MB)  | Megapixels |
+  +============+============+
+  | 100        | 13         |
+  +------------+------------+
+  | 128        | 18         |
+  +------------+------------+
+  | 256        | 35         |
+  +------------+------------+
+  | 512        | 70         |
+  +------------+------------+

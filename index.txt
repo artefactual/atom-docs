@@ -198,6 +198,7 @@ Installation
 * :ref:`installation-vagrant`
 * :ref:`installation-multi-node`
 * :ref:`installation-upgrading`
+* :ref:`installation-execution-limits`
 
 Maintenance
 -----------
