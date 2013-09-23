@@ -5,7 +5,10 @@ PHP execution limits
 ====================
 
 There are several PHP configuration settings that may be responsible for
-prematurely halting a script. This is a common source of problems!
+prematurely halting a script. This is a frequent problem in many installations,
+specially handling large file uploads. In the PHP site there is also a good
+guide that you should read: `Common pitfalls
+<http://www.php.net/manual/features.file-upload.common-pitfalls.php>`_.
 
 ``max_execution_time``:
   Limits the running time of a script (in seconds), e.g.:
