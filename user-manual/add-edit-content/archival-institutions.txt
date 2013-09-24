@@ -62,6 +62,16 @@ to:**
 * :ref:`Link an archival description to an archival institution
   <link-archival-institution>`
 * :ref:`Edit the theme of an archival institution page <edit-institution-theme>`
+
+  * :ref:`Change the background color <change-institution-background>`
+
+  * :ref:`Add/Edit a logo <add-institution-logo>`
+
+  * :ref:`Add/edit a banner <add-institution-banner>`
+
+* :ref:`Browse the holdings of an archival institution <browse-holdings>`
+* :ref:`Set a digital object upload limit for an archival institution <upload-
+  limit>`
 * :ref:`Delete an archival institution <delete-archival-institution>`
 
 For information on working with specific fields with AtoM's archival
@@ -96,7 +106,7 @@ Add a new archival institution
 ==============================
 
 This section contains instructions on how to Add a new :term:`archival
-institution` :ref:`from the main menu <add-institution-main>`. There are three
+institution` from the :ref:`main menu <add-institution-main>`. There are three
 main ways to add an archival institution record in AtoM - doing so via the
 |plus| :ref:`"Add" <main-menu-add>` menu is the easiest, but to accommodate
 different workflows, archival institution records can also be added from an
@@ -129,7 +139,7 @@ application, via the :term:`main menu`.
    :term:`Administrators <administrator>` must be logged-in in order to add
    a new :term:`archival institution`. For more information on logging in,
    see: :ref:`Log in <log-in>`. See :ref:`User roles <user-roles>` for more
-   informatin on groups and default permissions in AtoM.
+   information on groups and default permissions in AtoM.
 
 **To create a new archival institution:**
 
@@ -177,7 +187,7 @@ have been included below.
 
 **ISAD(G) edit template**
 
-* In the "Context area":term:`information area` of the :ref:`ISAD(G) template
+* In the "Context area" :term:`information area` of the :ref:`ISAD(G) template
   <isad-template>`, navigate to the "Repository" :term:`field` and enter a new
   name.
 * The name will be saved as a new archival institution when you save the
@@ -193,9 +203,9 @@ have been included below.
 
 **Describing Archives: A Content Standard (DACS) edit template**
 
-* In the "Identity elements" :term:`information area` of the `DACS template <dacs-
-  template>, navigate to the "Name and location of repository" :term:`field` and
-  enter a new name.
+* In the "Identity elements" :term:`information area` of the :ref:`DACS template
+  <dacs-template>`, navigate to the "Name and location of repository"
+  :term:`field` and enter a new name.
 * The name will be saved as a new archival institution when you save the
   archival description.
 
@@ -230,7 +240,7 @@ A new :term:`archival institution` can also be added to AtoM from the
 button` in the :term:`button block`. To do so:
 
 1.  Navigate to an existing :term:`archival institution` in AtoM. You can do
-    this by :doc:`browsing <../access-content/browse>` or by :doc:`Search
+    this by :doc:`browsing <../access-content/browse>` or by :doc:`searching
     <../access-content/search>`for a specific archival institution - see
     :ref:`Access content <access-content>` for more information on navigation in
     AtoM.
@@ -262,7 +272,7 @@ archival institution in :term:`edit mode`.
 Edit an existing archival institution
 =====================================
 
-This section contains instructions on how to Edit an existing :term:`archival
+This section contains instructions on how to edit an existing :term:`archival
 institution`, after it has been :ref:`created <add-archival-institution>`.
 For information on how to theme your archival institution, see :ref:`below
 <edit-institution-theme>`.
@@ -310,16 +320,17 @@ Link an archival description to an archival institution
 =======================================================
 
 Links between existing archival institution and existing archival descriptions
-can be added at any time by an authenticated (i.e. logged in) user with
-sufficient edit permissions. For more information on types of users and edit
-permissions, see :ref:`User roles <user-roles>`.
+can be added at any time by an authenticated (i.e. logged in)
+:term:`administrator` with sufficient edit permissions. For more information on
+types of users and edit permissions, see :ref:`User roles <user-roles>`.
 
 **To link an archival description to an archival institution:**
 
 1.  First, navigate to the :term:`archival institution` you wish to edit. You
-    can do this by :doc:`browsing <../access-content/browse>` or :doc:`Search
-    <../access-content/search>` for the archival institution - see :ref:`Access
-    content <access-content>` for more information on navigation in AtoM.
+    can do this by :doc:`browsing <../access-content/browse>` or
+    :doc:`searching <../access-content/search>` for the archival institution -
+    see :ref:`Access content <access-content>` for more information on
+    navigation in AtoM.
 2.  Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit" button
     in the :term:`button block`, or by clicking on one of the :term:`information
     area` headings; this takes you to the record’s :term:`edit page`.
@@ -340,8 +351,7 @@ permissions, see :ref:`User roles <user-roles>`.
    name and press enter, a new archival institution will be generated
    instead of a link being created to an existing one! If, however, you wish
    to add a new archival institution from the archival description's
-   :term:`edit page`, see :ref:`Add a new archival institution from an
-   archival description edit page <add-institution-description-edit>`.
+   :term:`edit page`, see :ref:`above <add-institution-description-edit>`.
 
 4.  When you are done editing the record, save the :term:`archival
     description` by scrolling down and pressing "Save" in the :term:`button
@@ -360,14 +370,13 @@ permissions, see :ref:`User roles <user-roles>`.
 Edit the theme for an existing archival institution
 ===================================================
 
-AtoM 2.0 introduces a new design feature :term:`Administrators <administrator>`,
-allowing them to customize their archival institution's page by adding/editing
-an institution logo and/or banner, as well as choose a specific background color
-for their institution's page. Once added, the background color and logo will
-appear on all of the institution's related :term:`archival descriptions
-<archival description>` (see :ref:`below <link-archival-institution>` for
-information on how to create a link between an :term:`archival description` and
-an :term:`archival institution`).
+AtoM 2.0 introduces a new design feature for users that allows them to customize
+their archival institution's page by adding/editing an institution logo and/or
+banner, as well as choose a specific background color for their institution's
+page. Once added, the background color and logo will appear on all of the
+institution's related :term:`archival descriptions <archival description>` (see
+:ref:`above <link-archival-institution>` for information on how to create a link
+between an :term:`archival description` and an :term:`archival institution`).
 
 Additionally, users can add custom `HTML
 <https://en.wikipedia.org/wiki/Html>`__ and inline `CSS
@@ -375,7 +384,7 @@ Additionally, users can add custom `HTML
 highlighted content. These features can be especially useful in a
 :term:`multi-repository system` as they help users visually identify where
 :term:`archival descriptions <archival description>` are held, and allow for
-an institution in a :term:`multi-repository system` such a network or
+an institution in a multi-repository system such a network or
 provincial/state portal to better match their institution's local branding.
 Editing the theme of your :term:`archival institution` is
 comprised of four main elements:
@@ -390,8 +399,15 @@ comprised of four main elements:
 Change the background color of an archival institution
 ------------------------------------------------------
 
-ADD Intro note here about how color will appear on all related descriptions
-as well... etc.
+This new design feature allows authenticated (i.e. logged in)
+:term:`administrators <administrator>` to customize their archival institution
+record by changing the background color of the page. Users can choose and
+modify (i.e. hue, tint) a color from a pre-determined color pallette.
+Changing the background color in an archival institution :term:`edit page`
+will automatically change the background color of all the :term:`archival
+description` pages linked to that specific institution.
+
+**To change the background color of an archival institution page:**
 
 1. First, navigate to the :term:`archival institution` whose theme you wish to
    edit. You can do this by :doc:`browsing <../access-content/browse>` or
@@ -442,20 +458,32 @@ as well... etc.
 Add/edit a logo to an existing archival institution
 ---------------------------------------------------
 
-AtoM
+Authenticated (i.e. logged in) :term:`administrators <administrator>` also have
+the option to customize the :term:`archival institution` record by adding a logo
+to the institution's page. Below are instructions to :ref:`add a logo
+<add-logo>` and :ref:`edit and/or delete an exisiting logo <edit-logo>` for an
+archival institution.
 
-**To add a logo for an archival institution:**
+.. _add-logo:
+
+Add a logo for an archival institution
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1.  First, navigate to the :term:`archival institution` you wish to edit. You
-    can do this  by :doc:`browsing <../access-content/browse>`or :doc:`Search
-    <../access-content/search>` for the archival institution - see :ref:`Access
-    content <access-content>` for more information on navigation in AtoM.
+    can do this by :doc:`browsing <../access-content/browse>`or
+    :doc:`searching <../access-content/search>` for the archival institution -
+    see :ref:`Access content <access-content>` for more information on
+    navigation in AtoM.
 2.  Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit theme"
     button in the :term:`button block`.
-3.  From here, authenticated users can upload a logo and/or banner. In the
-    "Style" area, under the "Logo" :term:`field`, click the "Choose file"
-    button. A separate window will open; select the image on your computer that
-    you'd like to add as the logo for the institution.
+3.  From here, authenticated users can upload a logo. In the "Style" area, under
+    the "Logo" :term:`field`, click the "Choose file" button.
+4.  A separate window will open; select the image on your computer that you'd
+    like to add as the logo for the institution. Note that AtoM supports only
+    specific sizing requirements with regards to the logo images (:ref:`See
+    below <logo-size-requirements>`).
+
+.. _logo-size-requirements:
 
 .. NOTE::
 
@@ -470,36 +498,205 @@ AtoM
    it will be automatically cropped by :ref:`ImageMagick <other-dependencies>`
    to meet the requirements listed above.
 
-4.  You can quit the theming process at any time by clicking the "Cancel" button
+5.  You can quit the theming process at any time by clicking the "Cancel" button
     in the :term:`button block`; any changes made will not be saved. Note that
-    simply navigating away from the page by any other means, without first
-    clicking "Save" will also result in no changes being saved to the archival
+    simply navigating away from the page by any other means, **without first
+    clicking "Save"** will also result in no changes being saved to the archival
     institution.
-5.  When you have selected your new logo, click "Save" in the
-    :term:`button block` at the bottom of the page. AtoM will reload
-    the:term:`archival institution` in :term:`view mode`, where you can
-    review the logo. If needed, you can repeat steps 2-6 until you are happy
-    with the selection.
+6.  When you have selected your logo, click "Save" in the :term:`button block`
+    at the bottom of the page. AtoM will reload the :term:`archival institution`
+    in :term:`view mode`, where you can review the logo. If needed, you can
+    repeat step 2 through 4 until you are happy with the selection.
 
+Once uploaded, the logo will appear above the "Upload limit" section of the
+:ref:`Context menu <context-menu>`, in the top left-hand corner of the archival
+institution’s :term:`view page`. This logo will also appear when
+:doc:`browsing <../access-content/browse>` archival institutions in AtoM,
+appearing above the name of the archival institution, as well as on any
+:term:`archival description` page linked to the archival institution.
 
-**To edit/remove a logo from an archival institution:**
+.. _edit-logo:
 
-content
+Edit/remove an exisiting logo for an archival institution
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**To edit an exisiting logo:**
+
+1.  Navigate to the :term:`archival institution` you wish to edit. You can do
+    this by :doc:`browsing <../access-content/browse>`or
+    :doc:`searching <../access-content/search>` for the archival institution -
+    see :ref:`Access content <access-content>` for more information on
+    navigation in AtoM.
+2.  Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit theme"
+    button in the :term:`button block`.
+3.  From here, navigate to the "Style" area, under the "Logo" :term:`field`,
+    click the "Choose file" button under the exisiting logo.
+4.  A separate window will open; select the image on your computer that you'd
+    like to replace the existing logo with. See the :ref:`previous section
+    <logo-size-requirements>` for direction on AtoM **sizing requirements** for
+    logo images.
+5.  You can quit the theming process at any time by clicking the "Cancel" button
+    in the :term:`button block`; any changes made will not be saved and the
+    existing logo will remain as such. Note that simply navigating away from the
+    page by any other means, **without first clicking "Save"** will also result
+    in no changes being saved to the archival institution.
+6.  Once you've selected your logo, **check the box** next to "Remove the
+    current file", located below the existing logo, and click "Save" in
+    the :term:`button block` at the bottom of the page. AtoM will reload the
+    :term:`archival institution` in :term:`view mode`.
+
+.. IMPORTANT::
+
+    You must **refresh your browser** in order to see the changes made to
+    archival institution's logo!
+
+7.  If needed, you can repeat step 2 through 4 until you are happy with the
+    selection of your logo.
+
+**To remove an existing logo:**
+
+1.  Navigate to the :term:`archival institution` you wish to edit. You can do
+    this by :doc:`browsing <../access-content/browse>`or
+    :doc:`searching <../access-content/search>` for the archival institution -
+    see :ref:`Access content <access-content>` for more information on
+    navigation in AtoM.
+2.  Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit theme"
+    button in the :term:`button block`.
+3.  From here, navigate to the "Logo" :term:`field` under the "Style" area;
+    **check the box** next to "Remove the current file", located under the
+    current logo image.
+4.  You can quit the theming process at any time by clicking the "Cancel" button
+    in the :term:`button block`; any changes made will not be saved and the
+    existing logo will remain as such. Note that simply navigating away from the
+    page by any other means, **without first clicking "Save"** will also result
+    in no changes being saved to the archival institution.
+5.  Once you've checked the box, click "Save" in the :term:`button
+    block` at the bottom of the page. AtoM will reload the :term:`archival
+    institution` in :term:`view mode`, where the logo will have been removed.
+
+A new logo can be added again at any time. See :ref:`Add a new logo
+<add-institution-logo>`.
 
 .. _add-institution-banner:
 
 Add/edit a banner to an existing archival institution
 ------------------------------------------------------
 
-brief intro/summary (if it seems useful)
+Authenticated (i.e. logged in) :term:`administrators <administrator>` can
+further customize their :term:`archival institution` page by adding a banner.
+Once uploaded, the banner will appear on the archival institution's :term:`view
+page`, below the institution's name. Unlike the institution's logo, the banner
+will *not* appear on any :term:`archival description` pages linked to the
+archival institution. Below are instructions to :ref:`add a banner <add-banner>`
+and :ref:`edit and/or delete an exisiting banner <edit-banner>` for an archival
+institution.
 
-**To add a banner for an archival institution:**
+.. _add-banner:
 
-content
+Add a banner for an archival institution
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**To edit/remove a banner for an archival institution:**
+1.  Navigate to the :term:`archival institution` you wish to edit. You can do
+    this by :doc:`browsing <../access-content/browse>` or
+    :doc:`searching <../access-content/search>` for the archival institution -
+    see :ref:`Access content <access-content>` for more information on
+    navigation in AtoM.
+2.  Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit theme"
+    button in the :term:`button block`.
+3.  From here, authenticated users can upload a banner. In the "Style" area,
+    under the "Banner" :term:`field`, click the "Choose file" button.
+4.  A separate window will open; select the image on your computer that you'd
+    like to add as the banner for the institution. Note that AtoM supports only
+    specific sizing requirements with regards to the banner images (:ref:`See
+    below <banner-size-requirements>`).
 
-content
+.. _banner-size-requirements:
+
+.. NOTE::
+
+   AtoM requires that the image uploaded as the banner be in **PNG format**. The
+   image cannot exceed **256k in size**. If the image selected for upload does
+   not meet these requirements, you will receive an error message reading
+   *"Invalid mime type"* will appear below the "Banner" :term:`field` after
+   clicking the "Save" button.
+
+   Ideally, the image size should be between **100 and 300 pixels** in
+   height, and should not exceed a **800 pixels** width. If the image you upload
+   does not meet these sizing specifications, it will be automatically cropped
+   by :ref:`ImageMagick <other-dependencies>` to meet the requirements listed
+   above.
+
+5.  You can quit the theming process at any time by clicking the "Cancel" button
+    in the :term:`button block`; any changes made will not be saved. Note that
+    simply navigating away from the page by any other means, **without first
+    clicking "Save"** will also result in no changes being saved to the archival
+    institution.
+6.  When you have selected your banner, click "Save" in the :term:`button block`
+    at the bottom of the page. AtoM will reload the :term:`archival institution`
+    in :term:`view mode`, where you can review the banner. If needed, you can
+    repeat step 2 through 4 until you are happy with the selection.
+
+.. _edit-banner:
+
+Edit/remove an existing banner for an archival institution
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**To edit an existing banner:**
+
+1.  Navigate to the :term:`archival institution` you wish to edit. You can do
+    this by :doc:`browsing <../access-content/browse>`or
+    :doc:`searching <../access-content/search>` for the archival institution -
+    see :ref:`Access content <access-content>` for more information on
+    navigation in AtoM.
+2.  Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit theme"
+    button in the :term:`button block`.
+3.  From here, navigate to the "Style" area, under the "Logo" :term:`field`,
+    click the "Choose file" button under the exisiting logo.
+4.  A separate window will open; select the image on your computer that you'd
+    like to replace the existing banner with. See the :ref:`previous section
+    <banner-size-requirements>` for direction on AtoM **sizing requirements**
+    for banner images.
+5.  You can quit the theming process at any time by clicking the "Cancel" button
+    in the :term:`button block`; any changes made will not be saved and the
+    existing banner will remain as such. Note that simply navigating away from
+    the page by any other means, **without first clicking "Save"** will also
+    result in no changes being saved to the archival institution.
+6.  Once you've selected your banner, **check the box** next to "Remove the
+    current file", located below the existing banner, and click "Save" in the
+    :term:`button block` at the bottom of the page. AtoM will reload the
+    :term:`archival institution` in :term:`view mode`.
+
+.. IMPORTANT::
+
+    You must **refresh your browser** in order to see the changes made to
+    archival institution's banner!
+
+7.  If needed, you can repeat step 2 through 4 until you are happy with the
+    selection of your banner.
+
+**To remove an existing banner:**
+
+1.  Navigate to the :term:`archival institution` you wish to edit. You can do
+    this by :doc:`browsing <../access-content/browse>`or
+    :doc:`searching <../access-content/search>` for the archival institution -
+    see :ref:`Access content <access-content>` for more information on
+    navigation in AtoM.
+2.  Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit theme"
+    button in the :term:`button block`.
+3.  From here, navigate to the "Banner" :term:`field` under the "Style" area;
+    **check the box** next to "Remove the current file", located under the
+    current banner image.
+4.  You can quit the theming process at any time by clicking the "Cancel" button
+    in the :term:`button block`; any changes made will not be saved and the
+    existing logo will remain as such. Note that simply navigating away from the
+    page by any other means, **without first clicking "Save"** will also result
+    in no changes being saved to the archival institution.
+5.  Once you've checked the box, click "Save" in the :term:`button
+    block` at the bottom of the page. AtoM will reload the :term:`archival
+    institution` in :term:`view mode`, where the banner will have been removed.
+
+A new banner can be added again at any time. See :ref:`Add a new banner
+<add-institution-banner>`.
 
 .. _add-institution-custom-content:
 
@@ -522,6 +719,100 @@ content
 then screenshot the inline code used as well, and upload them side by side to
 give users a sense of what is possible)
 
+:ref:`Back to top <archival-institutions>`
+
+
+.. _browse-holdings:
+
+Browse the holdings of an archival institution
+==============================================
+
+When viewing an :term:`archival institution` in AtoM, a list of :term:`holdings`
+is displayed in the :ref:`context menu` on the the left-hand side of the
+institution's :term:`view pages <view page>`. The list that appears will be of
+holdings, or :term:`archival descriptions <archival description>` that have been
+linked to that institution. If you click on a holding, you will be redirected
+to that description's page.
+
+.. NOTE::
+
+   For more informaiton on linking :term:`archival descrptions <archival
+   description>` to an :term:`archival institution`, see
+   :ref:`Link-archival-institution`.
+
+Only a maximum of 10 :term:`archival descriptions <archival description>` will
+appear at once; they will be listed alphabetically. If the archival institution
+has more than 10 holdings linked to its repository, a "Browse ## holdings" link
+will appear below the list, indicating the total number of :term:`holdings` (in
+place of "##") linked to that archival institution. Click on the link to be
+redirected to a browse page where all the holdings that have been linked to that
+institution will be listed. The results can be  sorted by "Most recent" or
+"Alphabetical"; hover above the visible option next to the :ref:`"Sort button"
+<recurring-sort- button>`, on the right-hand corner above the results, to select
+the alternative from a drop-down menu. For more information, see:
+:ref:`Facet filters <recurring-facet-filters>`.
+
+:ref:`Back to top <archival-institutions>`
+
+.. _upload-limit:
+
+Set digital object upload limit for an archival institution
+===========================================================
+
+When viewing an :term:`archival institution` in AtoM, an "Upload limit" bar
+is displayed in the :ref:`context menu` on the the left-hand side of the
+institution's page.
+
+.. NOTE::
+
+   By default, only authenticated (i.e. logged in) :term:`contributor` and
+   :term:`administrator` can *view* the "Upload limit" bar, and only an
+   authenticated administrator can *edit* the upload limit. For more
+   information on edit privileges and user roles see: :ref:`User roles
+   <user-roles>`. For information on logging in, see: :ref:`Log in <log-in>`.
+
+**To set the digital object upload limit for an archival institution:**
+
+1. Navigate to the :term:`archival institution` you wish to edit. You can do
+   this by :doc:`browsing <../access-content/browse>`or
+   :doc:`searching <../access-content/search>` for the archival institution -
+   see :ref:`Access content <access-content>` for more information on
+   navigation in AtoM.
+2. Click the "Edit" link located below the "Upload limit" bar on the left-hand
+   side of the page.
+3. A seperate window will appear; AtoM will prompt you to edit the upload limit.
+   From here, you can either "Disable uploads", "Allow unlimited uploads", or
+   "Limit uploads to ## GB", where administrators can specify the GB limit.
+4. You can quit the process at any time by clicking the "Cancel" button, or the
+   exiting (i.e. clicking "X") the window. Any changes made will not be saved.
+5. When you've made your selection, click the "Save" button. The :term:`archival
+   institution's <archival institution>` :term:`view page` will display your
+   changes made according to :
+
+   * If you selected "Disable uploads", the Upload limit bar will automatically
+     be removed and the Upload limit section will indicate that the uploads have
+     been disabled.
+   * If you selected "Allow unlimited uploads", the Upload limit bar will
+     automatically be removed and the Upload limit section will indicate the
+     institution's current uploaded amount, as well as the limit, which will be
+     *Unlimited* (e.g. "2.65 GB of *Unlimited*").
+   * If you selected a specific number of GB as an upload limit, that number
+     will appear below the Upload limit bar, alongside the institution's current
+     uploaded amount (e.g. "2.56 of 10 GB").
+
+6. Additional changes to the Upload limit can be made at any time by following
+   the steps 2 through 5.
+
+.. IMPORTANT::
+
+   The limits set here are different than the execution limits set by your
+   system administrator. For more information, see: :ref:`Execution limits
+   <installation-execution-limits>`.
+
+**For more information on managing digital objects, see also:**
+
+* :ref:`Upload digital objects <upload-digital-objects>`
+* :ref:`Manage digital objects storage <manage-digital-objects-storage>`
 
 :ref:`Back to top <archival-institutions>`
 
@@ -530,12 +821,13 @@ give users a sense of what is possible)
 Delete an archival institution
 ==============================
 
-**To delete an Archival Institution in AtoM:**
+Follow the instructions below to delete an archival institution in AtoM:
 
 1.  Navigate to the :term:`archival institution` record you want to delete. You
     can do this by :doc:`browsing <../access-content/browse>` or :doc:`Search
     <../access-content/search>` for the :term:`archival description` - see
-    :ref:`Access content <access-content>` for more information on
+    :ref:`Access content <access-content>` for more information on navigation in
+    AtoM.
 2.  Scroll to the bottom of the institution’s :term:`view page` and click the
     :term:`Delete button` in the :term:`button block`.
 3.  AtoM will provide a warning and prompts you to confirm that you really wish
