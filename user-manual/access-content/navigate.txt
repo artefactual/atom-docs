@@ -820,32 +820,411 @@ Etsy, Amazon, Walmart, etc) to help users narrow down results to specific
 categories - for example, a music website might categorize its music by adding
 an artist facet, a genre facet, a price-range facet, and so forth. Users can
 then click on a particular sub-class to narrow the results displayed to only
-those that match the selected facet - choosing "James Baldwin" from an
+those that match the selected facet - choosing "Virginia Woolf" from an
 author's facet in an online library catalogue would display only books where
-James Baldwin was listed as the author.
+Virginia Woolf was listed as the author.
 
-In AtoM, facet filters are available to users on search and browse pages
+.. figure:: images/facet-filters-archdesc.*
+   :align: right
+   :figwidth: 30%
+   :width: 98%
+   :alt: An image of the facet filters on an archival description browse page
+
+   Facet filters available on an archival description browse page
+
+**In AtoM**, facet filters are available to users on search and browse pages
 as a means of grouping and narrowing results by a common characteristic.
 They are drawn from available :term:`fields <field>` within the
-:term:`entity type` being browsed or searched.
+:ref:`entity <entity-types>` or record type being browsed or searched. A
+count of the records included in each facet appears next to the facet label,
+giving users a sense of how many search/browse results fall under each facet
+result.
+
+Facet filters in AtoM are configured so that each facet displays its results
+with the highest number of matches at the top. Currently, AtoM will only
+display a maximum of the top ten matched results in each facet. Facets are
+displayed in the :term:`user interface` as :term:`drop-down menus <drop-down
+menu>`; each facet can be expanded to view its available results/matches, or
+collapsed to hide match results, by clicking on the facet title - facet titles
+are highlighted in dark grey when opened in AtoM's :term:`Dominion theme`.
+
+Available facet results appear below each facet heading as blue :ref:`text
+links <recurring-text-links>`. When clicked by a user, the search/browse
+results on the page will reload, filtered to show only results that match the
+facet filter selected - for example, selecting "Series" in the Level of
+description facet on an :term:`archival description` search/browse page will
+reload the page results to display only series-level descriptions; clicking
+"Ontario" under the Places facet will reload the page to display only results
+that have a :term:`name` :term:`access point` of "Ontario" added to their
+descriptions.
+
+When a facet match result has been selected, the text changes from a blue
+:ref:`text link <recurring-text-links>` to black underlined text. By
+default, all facet filters are set to "All" when a user first arrives
+at a search/browse page (unless a user has arrived from a pre-filtered query
+- for example, clicking "Browse all holdings" in the :term:`context menu` of
+an :term:`archival institution` page will take the user to a browse page
+filtered to the holdings of that institution). the "All" filter will become a
+blue :ref:`text link <recurring-text-links>` when another filter is engaged;
+clicking "All" will then remove the current facet filter and refresh the
+results page. When a filter is applied, all other facet results will be
+refreshed to reflect the current selection, presenting filter results that
+apply to the current results - for example, when "Ontario" has been applied
+as a place filter, the "Levels of description" facet results will now display
+results that apply only to the records being displayed (records with an
+"Ontario" place :term:`access point`), until the previous facet filter is
+removed.
+
+If "All" is the only option available beneath a facet heading, it means that
+there are no relevant filters in the facet that apply to the current records
+being displayed in the search/browse results page.
+
+Facets available by record type in AtoM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: images/facet-filters-authority.*
+   :align: right
+   :figwidth: 30%
+   :width: 98%
+   :alt: An image of the facet filters on the authority records browse page
+
+   Facet filters available on the authority records browse page
+
+Currently facets are only available on :term:`archival description`,
+:term:`authority record`, and :term:`archival institution` search and browse
+pages. Additionally, filter buttons by media type are available in the
+top-right corner of the Browse digital objects page, which allow a user to
+limit the results by available media type (image, audio, video, text, or
+other).
+
+Below, an outline of each :term:`facet filter` has been provided, with
+information on what :term:`field` in the related record the information is
+being pulled from.
+
+**Archival descriptions**
+
+* **Language:** Filters for content in a different available language (i.e.,
+  if the content has been tranlsated into more than one language)
+* **Archival institution:** Limits results to only the holdings of the
+  selected institution
+* **Creator:** Limits results to only those where the :term:`name` matches
+  that of the :term:`creator` associated with the :term:`archival description`
+* **Name:** Limits results to those with a matching :term:`name` added as a
+  name :term:`access point` to an :term:`archival description`
+* **Place:** Limits results to those with a matching :term:`place` added as a
+  place :term:`access point` to an :term:`archival description`
+* **Subject:** Limits results to those with a matching :term:`subject` added
+  as a subject :term:`access point` to an :term:`archival description`
+* **Level of description:** Limits results to those that match the selected
+  :term:`level of description` (e.g. fonds, collection, series, file, item,
+  etc.)
+* **Media type:** Limits results to those with a :term:`digital object`
+  attached that matches the selected media type (image, audio, text, video,
+  or other)
+
+For more information on working with :term:`archival descriptions <archival
+description>`, see: :ref:`archival-descriptions`. For help with a specific
+standards-based data-entry template, see: :ref:`data-entry`.
+
+**Archival institutions**
+
+* **Language:** Filters for content in a different available language (i.e.,
+  if the content has been tranlsated into more than one language)
+* **Archive type:** Limits results to those with a type matching data in the
+  "Type" :term:`field` in the Identity :term:`area <information area>` of the
+  :ref:`ISDIAH <isdiah-template>` archival institution edit template
+* **Region:** Limits results to those matching data entered into the
+  "Region/province" :term:`field` in the physical location tab of the contact
+  dialogue (available in the "Contact" :term:`area <information area>` of the
+  :ref:`ISDIAH <isdiah-template>` archival institution edit template)
+
+For more information on working with :term:`archival institutions <archival
+institution>`, see: :ref:`archival-institutions`. For help with specific
+fields in the archival institution edit template, see: :ref:`ISDIAH template
+<isdiah-template>`.
+
+**Authority records (People & organizations)**
+
+* **Language:** Filters for content in a different available language (i.e.,
+  if the content has been tranlsated into more than one language)
+* **Entity type:** Limits results to those with a type matching data entered
+  in the "Type of entity" :term:`field` available in the Identity :term:`area
+  <information area>` of the :ref:`ISAAR <isaar-template>` edit template for
+  :term:`authority records <authority record>`
+
+For more infomration on working with :term:`authority records <authority
+record>` for people, families, and :term:`corporate bodies <corporate body>`,
+see :ref:`authority-records`. For help with specific fields in the authority
+record edit template, see: :ref:`ISAAR(CPF) template <isaar-template>`.
+
+**Digital objects**
+
+.. figure:: images/facet-filter-digobject.*
+   :align: right
+   :figwidth: 30%
+   :width: 98%
+   :alt: An image of the facet filter buttons on the digital object browse page
+
+   Facet filter buttons available on the digital object browse page
+
+The :term:`digital object` browse page currently includes a set of buttons,
+that work similarly to the "Media type" facet filters available in the
+:term:`archival descriptions <archival description>` search and browse pages.
+A user can toggle them by clicking to limit the results by Media type (image,
+text, video, autdio, or other). The media type is drawn from the "Media type"
+:term:`field` available on a digital object edit page - upon upload, a type
+(based on MIME type) will be automatically assigned, but a user can edit the
+digital object to change its type if desired.
+
+For more information on uploading and managing digital objects, see:
+
+* :ref:`Upload digital objects <upload-digital-objects>`
+
+**SEE ALSO:**
+
+* :ref:`Manage digital object storage <manage-digital-object-storage>`
+* :ref:`Set a digital object upload limit for an archival institution
+  <upload-limit>`
+
+.. IMPORTANT::
+
+   The usefulness of of the available :term:`facet filters <facet filter>`
+   depends on the level of detail included in the related records. For
+   example, if no :term:`place` :term:`access points <access point>` have been
+   added to the :term:`archival descriptions <archival description>` in your
+   installation, there will be not matched filter options under the "Places"
+   facet filter. The richer your descriptive data, the more useful the facet
+   filters will be.
+
+Using facet filters in AtoM:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Navigate to a :ref:`browse <browse>` or :doc:`search
+  <../access-content/search>` page
+* Available :term:`facet filters <facet filter>` will appear on the left-hand
+  side of the page (unless you are on the Digital objects browse page - the
+  filter buttons there are in the upper right-hand corner of the page). If
+  there are no facet filters present, they are not available for that
+  :term`entity` (e.g. Place, Subject, Function browse pages, etc.)
+* Click on the heading of a facet to expand or collapse its available options
+* The filter currently selected in a facet will appear in black underlined
+  text. Available filters appear as blue :ref:`text links
+  <recurring-text-links>`
+* By default, filter options are set to display "All" when a user arrives to a
+  browse page (unless a specific query has brought them there that engages a
+  filter).
+* Click on a blue :ref:`text link <recurring-text-links>` to apply a filter
+* Click on "All" under a facet to remove an applied filter
+* When a filter is applied, all other facet filters are updated to provide
+  filters that relate only to the results currently being displayed. For
+  example, if you filter by :term:`Level of description` to display only
+  series-level :term:`archival descriptions <archival description>`, all
+  other facets will only show results that relate to the series-level
+  descriptions, until the first facet is removed.
+* In general, **facet filters in AtoM are mutually exclusive** - when one
+  filter is applied, no further filters can be applied for that facet.
+  However, if multiple :term:`name`, :term:`place`, or :term:`subject`
+  :term:`access points <access point>` have been added to a description, you
+  may be able to apply more than one name/place/subject filter to the results.
+  For example, if a group of :term:`archival descriptions <archival
+  description>` all bear the subject access points "Logging" "Industry" and
+  "Unions", when a user filters by "Logging", the option to further filter
+  the returned results by common subject access point ("Industry" and "Union")
+  would remain.
+* If no data exists in the related description fields for the records
+  available under a facet, no filters (except the default "All") will appear
+  under the facet heading.
 
 
+**SEE ALSO:**
 
+* :ref:`Browse <browse>`
+* :doc:`Search <../access-content/search>`
 
-See :ref:`Browse <browse>`, :doc:`Search
-<../access-content/search>`, and :ref:`Navigate <navigate>`.
 
 .. _recurring-button-block:
 
 Button block
 ------------
 
-content
+.. figure:: images/button-block-archdesc.*
+   :align: right
+   :figwidth: 50%
+   :width: 98%
+   :alt: An image of the button block on an archival description
+
+   The button block with all options visible on an archival description
+
+The button block allows authorized users to add, edit, delete, move, and
+duplicate content and to save or cancel changes made in the :term:`edit pages
+<edit page>`. It appears to authenticated (i.e. logged in) users with
+sufficient :term:`access privileges <access privilege>` at the bottom of all
+descriptive template :term:`view <view page>` and :term:`edit <edit
+page>` pages, including :term:`accessions <accession record>` (and deaccession
+records), :term:`archival descriptions <archival description>`,
+:term:`archival institutions <archival institution>`, :term:`authority
+records <authority record>`, :term:`terms <term>` (such as :term:`places
+<place>` and :term:`subjects  <subject>`), :term:`functions <function>`,
+:term:`physical storage` locations, donors,
+:term:`rights records <rights record>`, as well as on any other page or
+content type where a user might have to add, edit, or delte data (e.g.
+:term:`static pages <static page>`, user and group permissions pages, etc).
+In short, the :term:`button block` appears anywhere a user will need to
+perform actions (add, edit, delete, move, and/or duplicate) on user data
+and/or data entry templates in the application via the :term:`user interface`.
+
+.. figure:: images/button-block-repository.*
+   :align: right
+   :figwidth: 50%
+   :width: 98%
+   :alt: An image of the button block on an archival institution
+
+   The button block on an archival institution
+
+The options available in the :term:`button block` depend on the possible
+actions associated with an :term:`entity` or record type. For example, the
+button block on an :term:`archival description`'s :term:`view <view page>` and
+:term:`edit <edit page>` pages includes a "More" button that does not appear in
+any other button block throughout the application - when clicked, further
+user options are revealed, including: Link physical storage, Link digital
+object, and Import digital objects (actions which only relate to archival
+descriptions).
+
+**Buttons found in the button block throughout AtoM:**
+
+.. |edit-button| image:: images/edit-buttonblock.png
+   :height: 22px
+
+.. |delete-button| image:: images/delete-buttonblock.png
+   :height: 22px
+
+.. |addnew-button| image:: images/addnew-buttonblock.png
+   :height: 22px
+
+.. |edittheme-button| image:: images/edit-theme-buttonblock.png
+   :height: 22px
+
+.. |duplicate-button| image:: images/duplicate-buttonblock.png
+   :height: 22px
+
+.. |move-button| image:: images/move-buttonblock.png
+   :height: 22px
+
+.. |cancel-button| image:: images/cancel-buttonblock.png
+   :height: 22px
+
+.. |save-button| image:: images/save-buttonblock.png
+   :height: 22px
+
+.. |more-button| image:: images/more-buttonblock.png
+   :height: 22px
+
+.. |create-button| image:: images/create-buttonblock.png
+   :height: 22px
+
+* |edit-button| **Edit**: Changes the current record from :term:`view mode` to
+  :term`edit mode`
+* |delete-button| **Delete**: Deletes the current record (a confirmation is
+  required first)
+* |addnew-button| **Add new**: Opens a blank record in :term:`edit mode`. If
+  you are viewing an :term:`archival description` when you click "Add new",
+  the new record will be created as a :term:`child record` of the current
+  description - i.e., it will be added as a lower :term:`level of
+  description`.
+* |duplicate-button| **Duplicate**: Only available on :term:`archival
+  descriptions <archival description>`. Creates a duplicate of the current
+  description and opens the duplicate in :term:`edit mode`. This option exists
+  to simplify the workflow for users working with many similar descriptions;
+  by editing only what needs to be changed (title, identifier, etc.) a user
+  can avoid unnecessarily repeating data entry - see:
+  :ref:`duplicate-archival-description`
+* |move-button| **Move**: Only available on :term:`archival descriptions
+  <archival description>`. Allows a user to move an archival description to a
+  new :term:`parent record` (or make it a top-level description) - see:
+  :ref:`move-archival-description`
+* |cancel-button| **Cancel**: Aborts the current operation - no data entered
+  is saved; the page will reload in :term:`view mode`
+* |create-button| **Create**: Only appears when a new record is being created
+  (when editing an existing record, the "Save" button will appear instead).
+  Saves all user-entered data in the new record and reloads the page in
+  :term:`view mode`
+* |save-button| **Save**: Saves the current record when in :term:`edit mode`.
+  All additions and changes made by the user to the current record are saved;
+  the page will reload in :term:`view mode`.
+* |more-button| **More**: Only available on :term:`archival descriptions
+  <archival description>`. Reveals three further options: Link physical
+  storage, link digital object, and Import digital objects. See:
+  :ref:`Physical storage <phsyical-storage>` and :ref:`Upload digital objects
+  <upload-digital-objects>`.
+* |edittheme-button| **Edit theme**: Only available on :term:`archival
+  institutions <archival institution>`. Opens an edit page where an
+  :term:`administrator` can customize the theme of a repository by changing
+  the background color, uploading a logo and/or banner, and adding custom
+  descriptive content - see: :ref:`edit-institution-theme`
+
+
+**For more infomation on adding and editing content in AtoM, see:**
+
+* :ref:`add-edit-content`
+
+**SEE ALSO:**
+
+* :ref:`user-roles`
+* :ref:`entity-types`
 
 .. _recurring-breadcrumb-trail:
 
 Breadcrumb trail
 ----------------
+
+A breadcrumb trail is a navigational element in a :term:`user interface`
+that provides contextual information about the current location of a user
+in an application or document. Breadcrumb trails provide links back to
+each previous page the user navigated through to get to the current page
+or — in hierarchical site structures — the parent pages of the current
+one.
+
+**In AtoM,** a breadcrumb trail is displayed to add contextual information and
+to facilitate navigation in several places:
+
+* On :term:`archival descriptions <archival description>`, the breadcrumb
+  trail is located at the top of record's :term:`view page` when viewing a
+  :term:`child decription <child record>` to provide information about where
+  in the hierarchy the current description appears.
+
+.. figure:: images/breadcrumb-archdesc.*
+   :align: center
+   :figwidth: 80%
+   :width: 98%
+   :alt: An image of breadcrumb trail on an archival description
+
+   An example of a breadcrumb trail (below the description title)
+   on a lower-level archival description
+
+* When moving archival descriptions (see: :ref:`move-archival-description`), a
+  breadcrumb trail is used to indicate where in a hierarchy the Move browse
+  results are currently showing.
+
+
+At the top of
+:term:`archival institution` and :term:`authority record` view pages, the
+breadcrumb trail is used to provide a link back to the Browse page for
+each kind of record. Additionally, :term:`taxonomy` :term:`terms <term>`
+(such as :term:`places <place>` and :term:`subjects <subject>`) that are
+organized hierarchically will also display parent terms as a breadcrumb
+trail when added to an :term:`archival description` - for example, if the
+subject term 'Apple' is a child of the term 'Fruit', then when 'Apple' is
+added as a subject :term:`access point` to an :term:`archival description`,
+it will be expressed as: **Fruit >> Apple**
+
+In AtoM, breadcrumbs (i.e. individual components of a breadcrumb trail)
+are expressed as hyperlinks, and can be clicked to navigate to the related
+source or parent record.
+
+.. _recurring-sort-button:
+
+Sort button
+-----------
 
 content
 

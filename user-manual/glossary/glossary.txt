@@ -172,13 +172,13 @@ Glossary
     the top of record's :term:`view page` when viewing a :term:`child
     decription <child record>` to provide information about where in the
     hierarchy the current description appears. When moving archival
-    descriptions (see: :ref:`Move an archival description
-    <move-different-level>`), A breadcrumb trail is used to indicate where in
-    a hierarchy the Move browse results are currently showing. At the top of
-    :term:`archival institution` and :term:`authority record` view pages, the
-    breadcrumb trail is used to provide a link back to the Browse page for
-    each kind of record. Additionally, :term:`taxonomy` :term:`terms <term>`
-    (such as :term:`places <place>` and :term:`subjects <subject>`) that are
+    descriptions (see: :ref:`move-archival-description`), A breadcrumb trail
+    is used to indicate where in a hierarchy the Move browse results are
+    currently showing. At the top of:term:`archival institution` and
+    :term:`authority record` view pages, the breadcrumb trail is used
+    to provide a link back to the Browse page for each kind of record.
+    Additionally, :term:`taxonomy` :term:`terms <term>` (such as
+    :term:`places <place>` and :term:`subjects <subject>`) that are
     organized hierarchically will also display parent terms as a breadcrumb
     trail when added to an :term:`archival description` - for example, if the
     subject term 'Apple' is a child of the term 'Fruit', then when 'Apple' is
@@ -196,12 +196,12 @@ Glossary
     type of :term:`entity`. In AtoM's default theme (the Dominion theme)
     the browse menu appears in a drop-down next to the :term:`search box`
     in the :term:`header bar` on all pages, as well as on the :term:`home
-    page`.
+    page`. See: :ref:`navigate` and :ref:`Browse <browse>`.
 
   Button block
     The button block allows authorized users to add, edit, delete, move,
     and duplicate content and to save or cancel changes made in the
-    :term:`edit pages <edit page>`.
+    :term:`edit pages <edit page>`. See: :ref:`recurring-button-block`
 
   Carousel
     The carousel shows sets of :term:`thumbnails <thumbnail>` of
@@ -541,18 +541,25 @@ Glossary
     <context-area>`.
 
   Facet filter
-    In information science, a facet is a clearly defined
-    concept group, characteristic, or aspect of a class or subject.
-    Often made up of mutually exclusive categories drawn from the properties
-    of a group of information elements, when applied as filters, facets allow a
-    user to access and order query (search or browse) results in multiple
-    ways, rather than in a single pre-determined order.
+    In information science, a facet is a clearly defined component (based on a
+    particular concept group, characteristic or aspect) of a class or subject.
+    Facets are used in a system of faceted classification, which "*allows the
+    assignment of an object to multiple characteristics (attributes), enabling
+    the classification to be ordered in multiple ways, rather than in a
+    single, predetermined, taxonomic order.*" (`Wikipedia
+    <http://en.wikipedia.org/wiki/Faceted_classification>`__).
+
+    Facets are made up of clearly defined, often mutually exclusive categories
+    drawn from the properties of a group of information elements. When applied
+    as filters, facets allow a user to access and order query (search or
+    browse) results in multiple ways dynamically.
 
     In AtoM facet filters are available to users on search and browse pages
     as a means of grouping and narrowing results. They are drawn from
     available :term:`fields <field>` within the :term:`entity type` being
-    browsed or searched. See :ref:`Browse <browse>`, :doc:`Search
-    <../access-content/search>`, and :ref:`Navigate <navigate>`.
+    browsed or searched. For further information and usage, see:
+    :ref:`recurring-facet-filters`. See also: :ref:`Browse <browse>`,
+    :doc:`Search <../access-content/search>`, and :ref:`Navigate <navigate>`.
 
   Field
     A field is a container for a :term:`data element`. Content is added to
