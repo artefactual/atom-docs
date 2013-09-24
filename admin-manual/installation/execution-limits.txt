@@ -6,8 +6,8 @@ PHP execution limits
 
 There are several PHP configuration settings that may be responsible for
 prematurely halting a script. This is a frequent problem in many installations,
-specially handling large file uploads. In the PHP site there is also a good
-guide that you should read: `Common pitfalls
+especially when handling large file uploads. In the PHP site there is also a
+useful guide we recommend reading: `Common pitfalls
 <http://www.php.net/manual/features.file-upload.common-pitfalls.php>`_.
 
 ``max_execution_time``:
@@ -27,12 +27,12 @@ guide that you should read: `Common pitfalls
 
   Please note that this memory limit is not related to the amount of system
   memory (RAM) available, but is an artificial limit imposed by PHP to avoid
-  run-away scripts from consuming all system resources. What this means is
-  adjusting the PHP configuration should be done before deciding whether to
-  adding more RAM to your system may be beneficial. This limit is specially
-  important if you are trying to process digital objects because it is needed
-  to allocate enough memory to process both the input and the output digital
-  object. See the following table:
+  run-away scripts from consuming all system resources. This implies that
+  adjusting the PHP configuration should be done **before** deciding whether
+  adding more RAM to your system may be beneficial. This limit is especially
+  important if you are trying to process :term:`digital objects <digital
+  object>` because it is needed to allocate enough memory to process both the
+  input and the output digital object. See the following table:
 
   +------------+------------+
   | Size (MB)  | Megapixels |
