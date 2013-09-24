@@ -4,10 +4,11 @@
 Using Vagrant
 =============
 
-This guide will setup a new Oracle VirtualBox virtual machine with AtoM
-installed on your computer. It works works on most operating systems, including
-MacOX, Linux, FreeBSD and others. If you can install these and have at least
-1024Mb RAM to spare you should be good.
+This guide will setup a new Oracle `VirtualBox
+<https://www.virtualbox.org/>`__ virtual machine with AtoM installed on your
+computer. It works works on most operating systems, including MacOX, Linux,
+FreeBSD and others. If you can install these and have at least 1024Mb RAM to
+spare you should be good.
 
 .. warning::
 
@@ -37,6 +38,7 @@ Spin it up
 #. Download the configuration file (Vagrantfile). If you are using Windows, just
    paste the URL in the address bar of your browser and you'll be able to
    download the file and save it in :file:`atom-vagrant/` via the file explorer.
+   Otherwise, type the following into your command-line interface:
 
    .. code-block:: bash
 
