@@ -17,7 +17,8 @@ User manual
 ===========
 
 User guide to creating, editing, accessing, importing, exporting, and
-translating content in AtoM; includes administering the system.
+translating content in AtoM; includes administering the system via the
+:term:`user interface`.
 
 .. _overview:
 
@@ -182,7 +183,8 @@ Glossary of terms used throughout this user manual.
 Administrator manual
 ====================
 
-Instructions for installing, upgrading, importing and more.
+Instructions for installing, upgrading, importing and more; includes
+administering the system via the command-line interface.
 
 .. _admin-installation:
 
