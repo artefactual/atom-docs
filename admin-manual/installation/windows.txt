@@ -25,10 +25,10 @@ virtualize it! Some of the most popular virtualization tools in Windows are:
 You should be able to use our virtual appliance in the virtualization tool of
 your choice.
 
-**SEE ALSO**
+.. seealso::
 
-* :ref:`installation-virtual-appliance`
-* :ref:`installation-vagrant`
+   * :ref:`installation-virtual-appliance`
+   * :ref:`installation-vagrant`
 
 If you keep planning to use Windows, please continue reading this document. But
 be ready for the hassle!
