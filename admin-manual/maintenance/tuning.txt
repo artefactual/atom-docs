@@ -19,9 +19,10 @@ PHP opcode cache
 ================
 
 PHP is an interpreted language. Each time a client requests a PHP page, the
-server will read the source code and compile it before it's executed! APC is one
-of the solutions available out ther that caches the compiled output of each PHP
-script in order to save CPU cycles in subsequent requests.
+server will read the source code and compile it before it's executed.
+`APC <http://php.net/manual/en/book.apc.php>`__ is one of the solutions
+available that caches the compiled output of each PHP script in order to save
+CPU cycles in subsequent requests.
 
 Deploying APC is really easy:
 
@@ -30,16 +31,16 @@ Deploying APC is really easy:
    sudo apt-get install php-apc
 
 We consider this component so important that it's listed as a mandatory
-extension under :ref:`installation-requirements`. Really, don't ignore this.
-Compiling the same source code again and again in a per-request basis is a huge
-waste of time.
+extension under :ref:`installation-requirements`. Really, don't ignore this:
+we consider compiling the same source code again and again in a per-request
+basis to be a huge waste of time and computing resources.
 
 In addition, there is one particular directive in APC that you should tweak to
-get the best performance: ``apc.stat``, enabled by default, this directive
-forces APC to check the PHP scripts on each request to determine if they have
-been modified. That's may happen frequently in development environments, but in
-production you don't really need this. When you are upgrading AtoM, just restart
-the PHP pool and the APC cache will be flushed.
+get the best performance: ``apc.stat``, enabled by default, is a directive
+that forces APC to check the PHP scripts on each request to determine if they
+have been modified. Modifying PHP scripts may happen frequently in development
+environments, but in production you don't really need this. When you are
+upgrading AtoM, just restart the PHP pool and the APC cache will be flushed.
 
 .. note::
 
