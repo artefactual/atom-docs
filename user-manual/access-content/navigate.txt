@@ -1198,41 +1198,204 @@ to facilitate navigation in several places:
    :width: 98%
    :alt: An image of breadcrumb trail on an archival description
 
-   An example of a breadcrumb trail (below the description title)
+   An example of a breadcrumb trail (below the title bar)
    on a lower-level archival description
 
-* When moving archival descriptions (see: :ref:`move-archival-description`), a
-  breadcrumb trail is used to indicate where in a hierarchy the Move browse
-  results are currently showing.
+* When moving :term:`archival descriptions <archival description>`
+  (see: :ref:`move-archival-description`), a breadcrumb trail is used to
+  indicate where in a hierarchy the Move browse results are currently showing.
 
+.. figure:: images/breadcrumb-move.*
+   :align: center
+   :figwidth: 80%
+   :width: 98%
+   :alt: An image of a hierarchy expressed as a breadcrumb in the Move screen
 
-At the top of
-:term:`archival institution` and :term:`authority record` view pages, the
-breadcrumb trail is used to provide a link back to the Browse page for
-each kind of record. Additionally, :term:`taxonomy` :term:`terms <term>`
-(such as :term:`places <place>` and :term:`subjects <subject>`) that are
-organized hierarchically will also display parent terms as a breadcrumb
-trail when added to an :term:`archival description` - for example, if the
-subject term 'Apple' is a child of the term 'Fruit', then when 'Apple' is
-added as a subject :term:`access point` to an :term:`archival description`,
-it will be expressed as: **Fruit >> Apple**
+   An example of a description hierarchy expressed as a breadcrumb trail in
+   the Move screen
+
+* At the top of :term:`archival institution` and :term:`authority record`
+  :term:`view pages <view page>`, the breadcrumb trail is used to provide a
+  link back to the Browse page for each kind of record.
+
+.. figure:: images/breadcrumb-repository.*
+   :align: center
+   :figwidth: 80%
+   :width: 98%
+   :alt: An image of a breadcrumb trail above an archival institution record
+
+   An example of a breadcrumb trail (below the title bar)
+   above an archival institution record
+
+* Additionally, :term:`taxonomy` :term:`terms <term>` (such as :term:`places
+  <place>` and :term:`subjects <subject>`) that are organized hierarchically
+  will also display parent terms as a breadcrumb trail when added to an
+  :term:`archival description` - for example, if the subject term 'Apple' is a
+  child of the term 'Fruit', then when 'Apple' is added as a subject
+  :term:`access point` to an :term:`archival description`, it will be
+  expressed as: **Fruit >> Apple**. These terms will be displayed in the
+  "Access" :ref:`information area <recurring-information-areas>` of the
+  related :term:`archival description`, as well as in the :ref:`context menu
+  <recurring-context-menu>` on the right-hand-side. (See: :ref:`Terms
+  <terms>` for more information on working with :term:`taxonomy` terms such as
+  :term:`subjects <subject>` and :term:`places <place>` in AtoM)
+
+.. figure:: images/breadcrumb-accesspoint-main.*
+   :align: center
+   :figwidth: 80%
+   :width: 98%
+   :alt: An image of a hierarchical place term expressed as a breadcrumb trail
+
+   An example of a hierarchical place term expressed as a breadcrumb trail in
+   the "Access points" area of an archival description
+
 
 In AtoM, breadcrumbs (i.e. individual components of a breadcrumb trail)
 are expressed as hyperlinks, and can be clicked to navigate to the related
-source or parent record.
+source or :term:`parent record`. Clicking a :term:`term` such as a
+:term:`subject` or :term:`place` in an :term:`access point` will bring a user
+to a Browse page listing results for other :term:`desriptions <archival
+description>` that have also been tagged with the same access point.
 
 .. _recurring-sort-button:
 
 Sort button
 -----------
 
-content
+The sort button is a navigational element that appears on some browse and
+search pages throughout AtoM. It allows a user to change the sort order of the
+results being displayed, from alphabetic to most recent. When the sort order
+is set to "Alphabetic," results are organized A-Z. When results are ordered by
+"Most recent" the most recently added and/or edited records in the results
+will appear at the top of the list, allowing users to discover new or
+recently updated content.
+
+.. IMPORTANT::
+
+   Elasticsearch does not naturally apply alphabetic sort in a human-friendly
+   way (what is often known as "**natural sort**" in computer science) -
+   instead, it applies what is known as **ASCII sort**, based on the order of
+   the characters in the `ASCII <https://en.wikipedia.org/wiki/Ascii>`__
+   character encoding scheme. Consequently, some results may appear out of
+   order, depending on how the titles have been entered. Artefactual hopes to
+   improve sorting in AtoM for future releases. In the meantime, below is an
+   image of an ASCII table - sort order is determined based on this schema -
+   so that a description whose title starts with "A" will be preceded by one
+   starting with a number, which in turn will be preceded by one beginning
+   with a quotation mark, which will be preceded by a description that begins
+   with a space before its first character. **If you are concerned about sort
+   order, be sure to consider this when naming your records.**
+
+   .. image:: images/ascii-sort.*
+      :align: center
+      :width: 400px
+
+.. figure:: images/sort-button-archdesc.*
+   :align: right
+   :figwidth: 70%
+   :width: 98%
+   :alt: An image of a sort button on an archival description browse page
+
+   An example of the sort button on an archival description browse page
+
+Sort buttons appear for the following records when on search, browse,
+or list pages:
+
+* :term:`Archival descriptions <archival description>`
+* :term:`Archival institututions <archival institution>`
+* :term:`Authority records <authority record>`
+* Donors
+* :term:`Functions <function>`
+* Rights holders
+
+.. figure:: images/sort-button-tabs.*
+   :align: right
+   :figwidth: 40%
+   :width: 98%
+   :alt: An image of the sort button tabs on a rights holder browse page
+
+   An example of the sort button tabs on a rights holder browse page
+
+The sort button appears in two different forms throughout the application,
+depending on whether or not a search or browse page contains result details,
+or simply a list.
+
+On search and/or browse pages for archival descriptions, archival
+institutions, authority records, and donors, the Sort button appears as a
+small :term:`drop-down menu` at the top right of the results. Hovering over
+the button reveals the option currently not selected - a user can click this
+option in the drop-down menu, and the page will reload in the new sort order
+(alphabetic or most recent).
+
+On search and/or browse pages for rights holders and :term:`functions
+<function>`, the same sort options are presented as tabs the user can click
+to change the view - clicking the inactive tab will reload the page in the
+new sort order (alphabetic or most recent).
 
 .. _recurring-institution-logos:
 
 Institution logos
 -----------------
 
-content
+Institution logos are theming elements that can be added by an
+:term:`administrator` to an :term:`archival institution` record. As part of
+the institutional theming module, an archival institution record can be
+customized by adding a logo, banner, custom background color, and/or
+customized descriptive content - see: :ref:`edit-institution-theme`. Some
+theming elements, such as a logo or a custom background color, will also be
+applied to any related :term:`archival descriptions <archival description>`,
+offering user a visual cue as to which institution holds the current
+description. When a logo has not been uploaded, a placeholder, which displays
+the institution name, will still appear on the institution record and any
+related archival descriptions.
+
+In addition to providing a customized look and greater context when viewing
+related archival descriptions, the institutional logo also acts as a
+navigational element: the logo (or its placeholder if no logo has been
+uploaded) operates as a hyperlink to the related :term:`archival
+institution`. This allows a user to quickly navigate to the institution's
+record to find out its location, opening hours, etc. as well as to view a
+list of other :term:`holdings` held by the :term:`archival institution`.
+
+On :term:`archival institution` records and related :term:`archival
+descriptions <archival description>`, the institution logo appears on in the
+top-left hand corner of the page, in the :term:`context menu`. On related
+:term:`archival descriptions <archival description>`, it is positioned above
+the :term:`treeview`; on the :term:`archival institution` record page, it is
+positioned above the list of related :term:`holdings`.
+
+.. figure:: images/institution-logo.*
+   :align: center
+   :figwidth: 80%
+   :width: 98%
+   :alt: An image of an institution logo on a related archival description
+
+   An example of an institution logo on a related archival description
+
+Additionally, institution logos are used on the :term:`archival institution`
+browse page (available via the :ref:`browse menu <browse-menu>`), the logos
+(or logo placeholders if no logo has been uploaded) are presented to the user
+in a tiled browse layout, with the title appearing below the logo in grey.
+
+.. figure:: images/institution-logo-browse.*
+   :align: center
+   :figwidth: 80%
+   :width: 98%
+   :alt: An image of institution logos the archival institution browse page
+
+   Institution logos on the Archival institution browse page. In the image,
+   the Alberton Museum and the Alex Youck School Museum represent
+   institutions without uploaded logos, showing placeholders instead.
+
+**For information on adding a logo to an archival institution, see:**
+
+* :ref:`add-institution-logo`
+
+**SEE ALSO**
+
+* :ref:`archival-institutions`
+* :ref:`edit-institution-theme`
+* :ref:`ISDIAH template <isdiah-template>`
+* :ref:`link-archival-institution`
 
 :ref:`Back to top <navigate>`
