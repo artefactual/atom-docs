@@ -221,15 +221,21 @@ called :file:`/etc/php5/fpm/pool.d/atom.conf`:
 
    [atom]
 
+   # The user running the application
    user = www-data
    group = www-data
+
+   # Use UNIX sockets if Nginx and PHP-FPM are running in the same machine
    listen = /var/run/php5-fpm.atom.sock
+
+   # The following directives should be tweaked based in your hardware resources
    pm = dynamic
    pm.max_children = 100
    pm.start_servers = 10
    pm.min_spare_servers = 10
    pm.max_spare_servers = 50
    pm.max_requests = 500
+
    chdir = /
 
    # Some defaults for your PHP production environment
@@ -260,6 +266,13 @@ The process manager has to be restarted:
 .. code-block:: bash
 
    sudo service php5-fpm restart
+
+If you are not planning to use the default PHP pool (``www``), feel free to
+remove it:
+
+.. code-block:: bash
+
+   sudo rm /etc/php5/fpm/pool.d/www.conf
 
 Other packages
 --------------
