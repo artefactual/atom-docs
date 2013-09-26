@@ -27,7 +27,7 @@ Glossary
     used to search, identify and locate an archival description." (ISAD
     glossary). In AtoM, access points are derived from :term:`authority
     records <authority record>` and :term:`taxonomies <taxonomy>` created
-    and customized by users. See :doc:`Terms </add-edit-content/terms>`.
+    and customized by users. See :doc:`Terms <../add-edit-content/terms>`.
 
   Access privilege
     Access privileges control the ways a user is able to interact with
@@ -47,7 +47,8 @@ Glossary
     descriptions <archival description>`, :term:`authority records
     <authority record>`, :term:`archival institutions <archival
     institution>`, :term:`terms <term>`, and :term:`functions <function>`.
-    Only logged-in users can see the "Add" menu.
+    Only logged-in users can see the "Add" menu, which appears in the
+    :term:`main menu` located in the :term:`header bar`. See: :ref:`main-menu`
 
   Add new button
     The add new button is located in the :term:`button block <button
@@ -137,7 +138,7 @@ Glossary
     <function>`, and other records. When an authenticated (i.e., logged in)
     user with edit privileges clicks on the heading of an :term:`information
     area` when in :term:`view mode`, the page reloads in :term:`edit mode` so
-    the user can edit content.
+    the user can edit content. See: `recurring-information-areas`
 
   Arrangement
     The International Council on Archives (`ICA <http://www.ica.org/>`__)
@@ -196,7 +197,8 @@ Glossary
     type of :term:`entity`. In AtoM's default theme (the Dominion theme)
     the browse menu appears in a drop-down next to the :term:`search box`
     in the :term:`header bar` on all pages, as well as on the :term:`home
-    page`. See: :ref:`navigate` and :ref:`Browse <browse>`.
+    page`. See: :ref:`navigate` and :ref:`Browse <browse>`; see also:
+    :ref:`browse-menu`.
 
   Button block
     The button block allows authorized users to add, edit, delete, move,
@@ -213,8 +215,8 @@ Glossary
     album artwork, or photographs. In AtoM a carousel viewer appears at
     the top of :term:`archival descriptions <archival description>`
     whenever there are associated lower-level descriptions that have
-    digital objects attached. See: :ref:`Recurring page elements
-    <recurring-page-elements>`.
+    digital objects attached. See: :ref:`recurring-carousel`; see also:
+    :ref:`upload-digital-objects`
 
   Child record
     Child record refers to a description of the :term:`archival unit` that
@@ -281,7 +283,8 @@ Glossary
     :term:`archival institution`, the context menu displays a list of
     holdings on the left-hand side, with contact information for the
     :term:`repository` provided on the right-hand side of the record. See
-    :doc:`Context menu <../access-content/context-menu>`.
+    :doc:`Context menu <../access-content/context-menu>`. See also:
+    :ref:`recurring-page-elements`
 
   Contributor
     A contributor is a type of user who can search, browse, create, and
@@ -312,7 +315,8 @@ Glossary
     The create button, located on the :term:`button block`, is used to
     save new :term:`entities <entity>`. Once an entity has been saved for
     the first time, the create button disappears and is replaced by the
-    "Save" button, which is used to save all subsequent changes.
+    "Save" button, which is used to save all subsequent changes. See:
+    :ref:`recurring-button-block`
 
   Creator
     A creator is "any entity (:term:`corporate body`, family or person)
@@ -328,7 +332,7 @@ Glossary
   Current language
     Refers to the language in which the :term:`user interface` elements
     and :term:`database content` are displayed. Users can switch between
-    languages by using the :term:`language menu`.
+    languages by using the :term:`language menu`. See: :ref:`language-menu`
 
   Data element
     Data elements, or elements of description, are `ICA
@@ -370,13 +374,14 @@ Glossary
   Delete button
     The delete button appears in the :term:`button block`. Clicking on the
     delete button will prompt a warning to appear asking whether the user
-    really intends to delete the :term:`entity`.
+    really intends to delete the :term:`entity`. See:
+    :ref:`recurring-button-block`
 
   Delete icon
     Delete icons are small buttons in :term:`edit pages <edit page>` used
     to delete values from :term:`multi-value fields <multi-value field>`,
     such as those containing :term:`event` dates or :term:`access points
-    <access point>`.
+    <access point>`. They are generally portrayed as an "**X**".
 
   Developer
     A developer is a `programmer
@@ -466,8 +471,10 @@ Glossary
     page is an :term:`edit page` that is pre-populated with the existing
     data from the original record. The user can edit the duplicate record
     page and then save it as a new record. Some users use the duplicate
-    function in toM like a record skeleton when doing large amounts of
-    data-entry on similar records.
+    function in AtoM like a record skeleton when doing large amounts of
+    data-entry on similar records. See:
+    :ref:`duplicate-archival-description`; see also:
+    :ref:`recurring-button-block`
 
   Edit button
     The edit button appears at the bottom of :term:`view pages <view
@@ -475,7 +482,8 @@ Glossary
     for that :term:`record`.
 
     The user can also switch between view and edit pages by clicking the
-    :term:`title bar` of an :term:`information area`.
+    :term:`title bar` of an :term:`information area`. See:
+    :ref:`recurring-button-block`
 
   Edit duplicate
     After the user clicks the :term:`duplicate button` the :term:`edit
@@ -554,9 +562,9 @@ Glossary
     as filters, facets allow a user to access and order query (search or
     browse) results in multiple ways dynamically.
 
-    In AtoM facet filters are available to users on search and browse pages
-    as a means of grouping and narrowing results. They are drawn from
-    available :term:`fields <field>` within the :term:`entity type` being
+    In AtoM facet filters are available to users on search and browse pages as
+    a means of grouping and narrowing results. They are drawn from available
+    :term:`fields <field>` within the :ref:`entity type <entity-types>` being
     browsed or searched. For further information and usage, see:
     :ref:`recurring-facet-filters`. See also: :ref:`Browse <browse>`,
     :doc:`Search <../access-content/search>`, and :ref:`Navigate <navigate>`.
@@ -632,7 +640,8 @@ Glossary
     The header bar is the navigational tool at the top of all pages in
     AtoM. It includes the :term:`search box`, :term:`browse menu`, and
     :term:`site logo` for all users, and the
-    :term:`main menu` for authenticated (i.e. logged in) users.
+    :term:`main menu` for authenticated (i.e. logged in) users. See:
+    :ref:`atom-header-bar`
 
   Hex color code
     A hexidecimal color code is a method of expressing web based colors using
@@ -684,8 +693,7 @@ Glossary
     in :term:`view mode`, clicking on an :term:`area header` will result in
     opening the related information area in :term:`edit mode` (if the user is
     logged in and has sufficient :term:`access privileges <access privilege>`
-    to edit a record). See: :ref:`Recurring page elements
-    <recurring-page-elements>`.
+    to edit a record). See: `recurring-information-areas`
 
   Information object
     An information object is another term for an :term:`archival
@@ -710,7 +718,7 @@ Glossary
     The main menu is the the navigational tool located at the top of all
     pages for authenticated  (logged in) users, as part of the
     :term:`header bar`. It allows the user to navigate to all the main
-    areas of AtoM.
+    areas of AtoM. See: :ref:`main-menu`
 
   Master digital object
     The master digital object is the unaltered version of a :term:`digital
@@ -884,7 +892,8 @@ Glossary
 
     In AtoM, the term is sometimes used as a more generic term for
     :term:`archival institution` that includes all cultural heritage
-    organizations.
+    organizations. For instructions on working with repositories in AtoM,
+    see: :ref:`archival-institutions`
 
 
   Researcher
@@ -904,7 +913,8 @@ Glossary
     The search box is used to find descriptions in AtoM that contain text
     matching a search query. The search box is located in the
     :term:`header bar` on all AtoM pages, including the home page. See
-    :ref:`Access content <access-content>`.
+    :ref:`Access content <access-content>` and :doc:`Search
+    <../access-content/search>`
 
   Setting
     Settings is a broad term used to describe the properties that affect
@@ -922,7 +932,7 @@ Glossary
     page directly under the :term:`header bar`. It is a configurable
     element - the text can be changed or removed. See
     :ref:`Site information <site-information>` and :ref:`Default page
-    elements <default-page-elements>`.
+    elements <default-page-elements>`. See also:`recurring-page-elements`
 
   Site logo
     The site logo is the graphic that appears at the top of all pages in
@@ -939,7 +949,7 @@ Glossary
     <setting>`. In AtoM 2.0, the site title does not appear in the
     application itself, but will be present in the title bar of a user's
     web browser when accessing AtoM. See :ref:`Site information
-    <site-information>`.
+    <site-information>`; see also: :ref:`navigate`
 
   SKOS
     Simple Knowledge Organization System (SKOS) is a data standard model
@@ -952,6 +962,15 @@ Glossary
     in AtoM to import and export hierarchical :term:`taxonomies
     <taxonomy>`. See: :doc:`Export descriptions and terms
     <../import-export/export-descriptions-and-terms>`.
+
+  Sort button
+    The sort button is a navigational element that appears on some browse and
+    search pages throughout AtoM. It allows a user to change the sort order of
+    the results being displayed, from alphabetic to most recent. When the sort
+    order is set to "Alphabetic," results are organized A-Z. When results are
+    ordered by "Most recent" the most recently added and/or edited records in
+    the results will appear at the top of the list, allowing users to discover
+    new or recently updated content. See: :ref:`recurring-sort-button`
 
   Static page
     Static pages are pages that are designed to look the same each time
@@ -966,12 +985,12 @@ Glossary
     In AtoM, subjects are :term:`controlled-vocabulary <controlled
     vocabulary>` :term:`terms <term>` grouped in a :term:`taxonomy` and
     used as :term:`access points <access point>` in :term:`archival
-    descriptions <archival description>`.
+    descriptions <archival description>`. See: :ref:`terms`
 
   Supported language
     In AtoM, a supported language is one into which both :term:`data
     elements <data element>` and :term:`user interface` elements can be
-    translated.
+    translated. See: :ref:`default-language`; see also: :ref:`translate`
 
   Taxonomy
     A taxonomy is a grouping of :term:`controlled-vocabulary <controlled
