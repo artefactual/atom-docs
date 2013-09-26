@@ -21,4 +21,5 @@ links to each chapter's main sections.
    add-edit-content/deaccessions
    add-edit-content/donors
    access-content/navigate
+   administer/manage-user-accounts
    glossary/glossary
