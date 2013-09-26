@@ -35,6 +35,8 @@ extension under :ref:`installation-requirements`. Really, don't ignore this:
 we consider compiling the same source code again and again in a per-request
 basis to be a huge waste of time and computing resources.
 
+.. _maintenance-tuning-apc-stat:
+
 In addition, there is one particular directive in APC that you should tweak to
 get the best performance: ``apc.stat``, enabled by default, is a directive
 that forces APC to check the PHP scripts on each request to determine if they
