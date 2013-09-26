@@ -301,10 +301,16 @@ Option 1: Download the tarball
 Option 2: Check out the code from our git repository
 ----------------------------------------------------
 
+Install git:
+
+.. code-block:: bash
+
+   sudo apt-get install git
+
 .. code-block:: bash
 
    sudo mkdir /usr/share/nginx/atom
-   sudo git clone git@git.artefactual.com:atom.git /usr/share/nginx/atom
+   sudo git clone http://github.com/artefactual/atom.git /usr/share/nginx/atom
    cd /usr/share/nginx/atom
    sudo git checkout tags/v2.0.0
 
