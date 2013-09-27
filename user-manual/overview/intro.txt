@@ -3,7 +3,7 @@ What is AtoM?
 ==============
 
 **AtoM** stands for "Access to Memory". It is a web-based, open source
-application for standards-based archival description and accessin a
+application for standards-based archival description and access in a
 multilingual, :term:`multi-repository <multi-repository system>` environment.
 
 
@@ -18,27 +18,34 @@ Technical overview
 
 **AtoM comprises:**
 
-HTML pages served to a web browser from a web server. `Apache
-<https://en.wikipedia.org/wiki/Apache_HTTP_Server>`_ is used in
-development but AtoM is also compatible with `IIS
-<https://en.wikipedia.org/wiki/Internet_Information_Services>`_.
+HTML pages served to a web browser from a web server. `NGINX
+<http://nginx.org/>`_ is used in development but AtoM is also compatible with
+`Apache <https://httpd.apache.org/>`_; other web servers might be used but
+they are not tested by AtoM developers.
 
 A database on a database server. `MySQL
-<https://en.wikipedia.org/wiki/MySQL>`_ is used in development but AtoM uses a
-database abstraction layer and is therefore also compatible with Postgres,
-SQLite, SQLServer, Oracle, etc.
+<https://en.wikipedia.org/wiki/MySQL>`_ (5.1+) is used in development but AtoM
+uses a database abstraction layer and is therefore potentially compatible with
+Postgres, SQLite, SQLServer, Oracle, etc. (other solutions are not tested by
+AtoM developers)
 
-PHP software code that manages requests and responses between the web
+PHP (5.3.10+) software code that manages requests and responses between the web
 clients, the application logic, and the application content stored in
-the database.
+the database. AtoM also makes use of a number of PHP extensions; see:
+:ref:`installation-requirements`
 
 The Symfony (`1.4 <http://symfony.com/legacy>`_) framework that organizes the
 component parts using object orientation and best practice web design
 patterns.
 
-The Qubit Open Information Management Toolkit, developed by the AtoM
-project and customized to make the AtoM application.
+`Elasticsearch <http://www.elasticsearch.org/>`__ ( 0.90.0+), which acts
+the application's search and analytic engine.
 
+To encourage applicatation reliability (i.e. the replacement of nodes in case
+of failure) and scalability (i.e. joining of efforts), all elements of AtoM's
+core stack can be configured in a `distributed
+<https://en.wikipedia.org/wiki/Distributed_computing>`__ manner. For more
+information, see: :ref:`installation-multi-node`.
 
 Web-based
 =========
@@ -60,16 +67,66 @@ to the user's browser.
   Please see :doc:`Technical requirements <technical-requirements>` for more
   information.
 
+Typical request-response cycle in AtoM
+---------------------------------------
+
+To help illustrate how AtoM's underlying architecture works to deliver
+content to an end-user via a web browser, we've ennumerated a typical
+request-response cycle as it is passed through AtoM's various architectural
+elements. When properly configured, all of these interactions take place in
+under a second!
+
+1. User opens `http://yourwebsite.accesstomemory.org`
+2. The browser opens a connection with your web server (Nginx or Apache).
+3. The browser sends the HTTP request within the connection.
+4. Nginx passes the request to `PHP5-FPM <http://php-fpm.org/>`__, a service
+   that manages a pool of PHP
+   processes, and keeps the connection alive until PHP5-FPM finishes.
+5. PHP5-FPM selects, or creates as needed, an available PHP process and passes
+   the client petition.
+6. The PHP interpreter runs the code in AtoM, passing the request data from
+   the browser (e.g. the address, cookies, etc).
+7. AtoM, with the help of the Symfony (`1.4 <http://symfony.com/legacy>`_)
+   framework, analyzes the URL and follows its path, routing the application
+   to the corresponding piece of code and then running it - accessing the
+   database, Elasticsearch, etc. as needed to assemble the component pieces.
+   This data is sent back to the page template, and the template is rendered
+   and sent to the client via PHP5-FPM.
+8. PHP5-FPM passes that information back to Nginx.
+9. Nginx reuses the same connection (in step 4) in order to insert the HTTP
+   response.
+10. The connection is closed.
+11. The browser parses the HTTP response, which is formed by a few headers
+    with information about the size of the response, the codification, the
+    cache status, the response code (200 normally), the cookies, etc. The body
+    of the resposne is the HTML sent to the user's browser.
+12. The browser parses the HTML and udentifies a references to CSS files,
+    images, javascript elements, etc.
+13. The browser starts fetching these referenced files from the server (go to
+    step 2 again)
+14. The difference now is that now the browser is asking for static files, not
+    content generated dynamically. Nginx will pass the request to PHP5-FPM
+    anyways, PHP5-FPM will hit AtoM, AtoM will find out that the contents are
+    static so Nginx will lookfor the static files in the hard disk instead of
+    requesting that AtoM build them - once found, they will be embedded into
+    the HTTP response.
+15. The browser loads the static files and renders the site.
+
 Open source
 ===========
 
-AtoM is built with open source tools (Apache, MySQL, PHP, symfony)
-rather than proprietary software. The underlying AtoM code is itself open
-source, with the source code freely available for use or modification as users
-or other :term:`developers <developer>` see fit (under the `A-GPL version 3
-<https://www.gnu.org/licenses/agpl-3.0.html>`_ license). Therefore **there is
-no cost to download any of the software required to run the AtoM
-application.**
+AtoM is built with open source tools (NGINX, MySQL, PHP, Symfony,
+Elasticsearch) rather than proprietary software. The underlying AtoM code is
+itself open source, with the source code freely available for use or
+modification as users or other :term:`developers <developer>` see fit (under
+the `A-GPL version 3 <https://www.gnu.org/licenses/agpl-3.0.html>`_ license).
+Therefore **there is no cost to download any of the software required to run
+the AtoM application.**
+
+Our documentation is also freely available under a  Creative Commons
+Attribution-ShareAlike 3.0 Unported licence (`CC BY SA
+<http://creativecommons.org/licenses/by-sa/3.0/>`__), and we maintain a free
+public `User forum <https://groups.google.com/forum/#!forum/ica-atom-users>`__.
 
 Find out more information on Open Source and Free Software from:
 
@@ -83,14 +140,14 @@ Standards-based
 AtoM is built around `International Council on Archives
 <http://www.ica.org>`_ (ICA) descriptive standards:
 
-* General International Standard Archival Description (ISAD) - 2nd
-  edition, 1999
+* General International Standard Archival Description (:ref:`ISAD
+  <isad-template>`) - 2nd edition, 1999
 * International Standard Archival Authority Record (Corporate bodies,
-  Persons, Families) (ISAAR) - 2nd edition, 2003
+  Persons, Families) (:ref:`ISAAR <isaar-template>`) - 2nd edition, 2003
 * International Standard For Describing Institutions with Archival
-  Holdings (ISDIAH) - 1st edition, March 2008
-* International Standard For Describing Functions (ISDF) - 1st edition,
-  May 2007
+  Holdings (:ref:`ISDIAH <isdiah-template>`) - 1st edition, March 2008
+* International Standard For Describing Functions (:ref:`ISDF <isdf-template>`)
+  - 1st edition, May 2007
 
 AtoM supports Simple Knowledge Organization System (`SKOS
 <http://www.w3.org/2004/02/skos/>`_) - W3C Recommendation 18 August 2009.
