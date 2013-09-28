@@ -99,16 +99,15 @@ see the sections below for more specific instructions on the use of
 * Metadata Object Description Schema: :ref:`MODS <mods-template>`
 * Rules for Archival Description (Canada): :ref:`RAD <rad-template>`
 
-**SEE ALSO**
+.. seealso::
 
-* :ref:`Physical storage <physical-storage>`
-* :ref:`Upload digital objects <upload-digital-objects>`
-* :ref:`Create an archival description from an accession record
-  <create-accession-description>`
-* :ref:`Link an accession record to an archival description
-  <link-accession-description>`
-* :ref:`Exit edit mode <exit-edit-mode>`
-
+   * :ref:`Physical storage <physical-storage>`
+   * :ref:`Upload digital objects <upload-digital-objects>`
+   * :ref:`Create an archival description from an accession record
+     <create-accession-description>`
+   * :ref:`Link an accession record to an archival description
+     <link-accession-description>`
+   * :ref:`Exit edit mode <exit-edit-mode>`
 
 
 .. _add-archival-description:

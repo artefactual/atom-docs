@@ -54,12 +54,12 @@ materials have been arranged.
    information on types of users and edit permissions, see :ref:`User roles
    <user-roles>`
 
-**SEE ALSO**
+.. seealso::
 
-* :ref:`Searching for accession records <search-accession-records>`
-* :ref:`Add a new deaccession record <add-deaccession-record>`
-* :ref:`Edit an existing deaccession record <edit-deaccession-record>`
-* :ref:`Delete a deaccession record <delete-deaccession-record>`
+   * :ref:`Searching for accession records <search-accession-records>`
+   * :ref:`Add a new deaccession record <add-deaccession-record>`
+   * :ref:`Edit an existing deaccession record <edit-deaccession-record>`
+   * :ref:`Delete a deaccession record <delete-deaccession-record>`
 
 .. _add-new-accession:
 

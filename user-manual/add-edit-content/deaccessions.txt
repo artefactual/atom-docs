@@ -40,10 +40,10 @@ reasons behind the deaccssion. Fields include:
 * :ref:`Edit an existing deaccession record <edit-deaccession-record>`
 * :ref:`Delete a deaccession record <delete-deaccession-record>`
 
-**SEE ALSO**
+.. seealso::
 
-* :ref:`Accessions <accession-records>`
-* :ref:`Searching for accession records <search-accession-records>`
+   * :ref:`Accessions <accession-records>`
+   * :ref:`Searching for accession records <search-accession-records>`
 
 .. NOTE::
 

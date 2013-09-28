@@ -31,15 +31,15 @@ things unrelated to the current entity.
 
 * :ref:`Recurring page elements <recurring-page-elements>`
 
-**SEE ALSO**
+.. seealso::
 
-* :ref:`Entity types <entity-types>`
-* :ref:`Page types <page-types>`
-* :doc:`Search <../access-content/search>`
-* :ref:`Browse <browse>`
-* :ref:`Context menu <context-menu>`
-* :ref:`Manage menus <manage-menus>`
-* :ref:`Settings <settings>`
+   * :ref:`Entity types <entity-types>`
+   * :ref:`Page types <page-types>`
+   * :doc:`Search <../access-content/search>`
+   * :ref:`Browse <browse>`
+   * :ref:`Context menu <context-menu>`
+   * :ref:`Manage menus <manage-menus>`
+   * :ref:`Settings <settings>`
 
 .. _atom-header-bar:
 
@@ -53,18 +53,10 @@ button, :term:`language menu`, :term:`search box`, :term:`browse menu`, and
 :term:`site logo` for all users, and the :term:`main menu` for authenticated
 (i.e. logged in) users.
 
-.. raw:: html
-
-   <br />
-
 .. image:: images/headerBar_unauthenticated.*
    :align: center
    :width: 80%
    :alt: An image of the AtoM Header bar for unauthenticated users
-
-.. raw:: html
-
- <br />
 
 Additionally, an :term:`administrator` can add a :term:`site title` and a
 :term:`site description` via **Admin > Settings > Site information**, and
@@ -80,27 +72,19 @@ example, only :term:`administrators <administrator>` will see the
 :term:`Admin menu`. Access privileges are based on defined :term:`user roles
 <user role>` (see :ref:`User roles <user-roles>`).
 
-.. raw:: html
-
-  <br />
-
 .. image:: images/headerBar_admin.*
    :align: center
    :width: 80%
    :alt: An image of the AtoM Header bar for Administrators
 
-.. raw:: html
+.. seealso::
 
-  <br />
-
-**SEE BELOW FOR MORE INFORMATION ON**
-
-* :ref:`The Log-in button <log-in-button>`
-* :ref:`The language menu <language-menu>`
-* :ref:`The main menu <main-menu>`
-* :ref:`The browse menu <browse-menu>`
-* :ref:`The search box <search-box>`
-* :ref:`The site logo <site-logo-element>`
+   * :ref:`The Log-in button <log-in-button>`
+   * :ref:`The language menu <language-menu>`
+   * :ref:`The main menu <main-menu>`
+   * :ref:`The browse menu <browse-menu>`
+   * :ref:`The search box <search-box>`
+   * :ref:`The site logo <site-logo-element>`
 
 .. _log-in-button:
 
@@ -121,11 +105,10 @@ email, password).
 * For more information on logging in, see: :ref:`Log in <log-in>`
 * For information on user roles, see: :ref:`User roles <user-roles>`
 
-**SEE ALSO**
+.. seealso::
 
-* :doc:`Manage user accounts <../administer/manage-user-accounts>`
-* :doc:`Edit permissions <../administer/edit-permissions>`
-
+   * :doc:`Manage user accounts <../administer/manage-user-accounts>`
+   * :doc:`Edit permissions <../administer/edit-permissions>`
 
 :ref:`Back to top <navigate>`
 
@@ -156,10 +139,10 @@ changes the language again.
 * For more information on changing the language, see: :ref:`Choose language
   <choose-language>`
 
-**SEE ALSO**
+.. seealso::
 
-* :doc:`Default language <../administer/default-language>`
-* :ref:`Add/remove languages <add-remove-languages>`
+   * :doc:`Default language <../administer/default-language>`
+   * :ref:`Add/remove languages <add-remove-languages>`
 
 :ref:`Back to top <navigate>`
 
@@ -326,9 +309,9 @@ AtoM.
 
 * :ref:`Importing descriptions and terms <import-descriptions-terms>`
 
-**SEE ALSO**
+.. seealso::
 
-* :ref:`Upload digital objects <upload-digital-objects>`
+   * :ref:`Upload digital objects <upload-digital-objects>`
 
 .. _main-menu-admin:
 
@@ -494,10 +477,6 @@ desired: see :ref:`Site logo <site-logo>`.
       :height: 50px
       :alt: An image of the site logo with a site title visible
 
-   .. raw:: html
-
-      <br />
-
 :ref:`Back to top <navigate>`
 
 .. _recurring-page-elements:
@@ -657,12 +636,12 @@ hierarchy as well as related "sibling" (i.e. on the same level) terms.
 * :ref:`Context menu <context-menu>`
 * :ref:`Treeview <treeview>`
 
-**SEE ALSO**
+.. seealso::
 
-* :ref:`Archival descriptions <archival-descriptions>`
-* :ref:`Authority records <authority-records>`
-* :ref:`Archival institutions <archival-institutions>`
-* :ref:`Terms <terms>`
+   * :ref:`Archival descriptions <archival-descriptions>`
+   * :ref:`Authority records <authority-records>`
+   * :ref:`Archival institutions <archival-institutions>`
+   * :ref:`Terms <terms>`
 
 .. _recurring-column-headers:
 
@@ -980,11 +959,11 @@ For more information on uploading and managing digital objects, see:
 
 * :ref:`Upload digital objects <upload-digital-objects>`
 
-**SEE ALSO:**
+.. seealso::
 
-* :ref:`Manage digital object storage <manage-digital-object-storage>`
-* :ref:`Set a digital object upload limit for an archival institution
-  <upload-limit>`
+   * :ref:`Manage digital object storage <manage-digital-object-storage>`
+   * :ref:`Set a digital object upload limit for an archival institution
+     <upload-limit>`
 
 .. IMPORTANT::
 
@@ -1036,10 +1015,10 @@ Using facet filters in AtoM:
   under the facet heading.
 
 
-**SEE ALSO:**
+.. seealso::
 
-* :ref:`Browse <browse>`
-* :doc:`Search <../access-content/search>`
+   * :ref:`Browse <browse>`
+   * :doc:`Search <../access-content/search>`
 
 
 .. _recurring-button-block:
@@ -1167,10 +1146,10 @@ descriptions).
 
 * :ref:`add-edit-content`
 
-**SEE ALSO:**
+.. seealso::
 
-* :ref:`user-roles`
-* :ref:`entity-types`
+   * :ref:`user-roles`
+   * :ref:`entity-types`
 
 .. _recurring-breadcrumb-trail:
 
@@ -1391,11 +1370,11 @@ in a tiled browse layout, with the title appearing below the logo in grey.
 
 * :ref:`add-institution-logo`
 
-**SEE ALSO**
+.. seealso::
 
-* :ref:`archival-institutions`
-* :ref:`edit-institution-theme`
-* :ref:`ISDIAH template <isdiah-template>`
-* :ref:`link-archival-institution`
+   * :ref:`archival-institutions`
+   * :ref:`edit-institution-theme`
+   * :ref:`ISDIAH template <isdiah-template>`
+   * :ref:`link-archival-institution`
 
 :ref:`Back to top <navigate>`

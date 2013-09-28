@@ -67,11 +67,11 @@ and-families-2nd-edition.html>`__).
    For more information on using the specific :term:`fields <field>` within
    the Authority record template, see: :ref:`ISAAR template <isaar-template>`
 
-**SEE ALSO:**
+.. seealso::
 
-* Adding Access points to archival descriptions
-* :doc:`Entity types <../overview/entity-types>`
-* :ref:`Exit edit mode <exit-edit-mode>`
+   * Adding Access points to archival descriptions
+   * :doc:`Entity types <../overview/entity-types>`
+   * :ref:`Exit edit mode <exit-edit-mode>`
 
 
 .. _create-authority-record:

@@ -80,15 +80,15 @@ institution :term:`edit page`, see:
 * International Standard for Describing Institutions with Archival Holdings
   (:ref:`ISDIAH <isdiah-template>`)
 
-**SEE ALSO**
+.. seealso::
 
-* :ref:`Archival descriptions <archival-descriptions>`
-* :ref:`Authority records <authority-records>`
-* :ref:`Access content <access-content>`
-* :ref:`User roles <user-roles>`
-* :ref:`Entity types <entity-types>`
-* :ref:`Log in <log-in>`
-* :ref:`Exit edit mode <exit-edit-mode>`
+   * :ref:`Archival descriptions <archival-descriptions>`
+   * :ref:`Authority records <authority-records>`
+   * :ref:`Access content <access-content>`
+   * :ref:`User roles <user-roles>`
+   * :ref:`Entity types <entity-types>`
+   * :ref:`Log in <log-in>`
+   * :ref:`Exit edit mode <exit-edit-mode>`
 
 .. NOTE::
 

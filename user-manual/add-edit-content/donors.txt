@@ -30,9 +30,9 @@ edit template.
 * :ref:`Link a donor record to an accession <link-donor-accession>`
 * :ref:`Delete a donor record <delete-donor-record>`
 
-**SEE ALSO**
+.. seealso::
 
-* :ref:`Accessions <accession-records>`
+   * :ref:`Accessions <accession-records>`
 
 .. _add-donor-record:
 

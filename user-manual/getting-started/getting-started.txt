@@ -18,13 +18,13 @@ main page types a user will encounter, and how to switch languages.
 * :ref:`Choose language <choose-language>`
 * :ref:`Change password <change-password>`
 
-**SEE ALSO**
+.. seealso::
 
-* :ref:`Navigation in AtoM <navigate>`
-* :ref:`Entity types <entity-types>`
-* :ref:`Search <search>`
-* :ref:`Browse <browse>`
-* :ref:`Context menu <context-menu>`
+   * :ref:`Navigation in AtoM <navigate>`
+   * :ref:`Entity types <entity-types>`
+   * :ref:`Search <search>`
+   * :ref:`Browse <browse>`
+   * :ref:`Context menu <context-menu>`
 
 
 .. _home-page:
@@ -320,7 +320,8 @@ switches the :term:`user interface` to the preferred language, and:
   original source version.
 
 .. note::
-   **SEE Also:** :ref:`Add/remove languages <add-remove-languages>` for
+
+   :ref:`Add/remove languages <add-remove-languages>` for
    information on how an :term:`administrator` can remove or restore languages
    in the :term:`language menu`, and :ref:`Translate <translate-all>` for how
    to translate in AtoM
