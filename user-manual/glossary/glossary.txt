@@ -835,6 +835,12 @@ Glossary
        view them. See :ref:`Publish an archival description
        <publish-archival-description>`
 
+  Quick links menu
+    The quick links menu, located in the :term:`header bar` in the top-right
+    corner of the page, allows users to navigate to :term:`static pages
+    <static page>` and/or other external links added to the application by an
+    :term:`administrator`. See: :ref:`quick-links-menu`.
+
   Radio button
     A radio button is an element of a :term:`user interface` that allows a
     user to select only one of a predefined list of options. Radio buttons
@@ -978,8 +984,9 @@ Glossary
     results <search-results>`, :term:`view pages <view page>`, or
     :term:`edit pages <edit page>`. AtoM has two static pages, the
     :term:`home page` and the :term:`about page`. Static pages can be
-    edited by an :term:`administrator` (see :doc:`Manage static pages
-    <../administer/manage-static-pages>`).
+    edited by an :term:`administrator`, and new static pages can be created.
+    (see :doc:`Manage static pages <../administer/manage-static-pages>`; see
+    also: :ref:`quick-links-menu`).
 
   Subject
     In AtoM, subjects are :term:`controlled-vocabulary <controlled

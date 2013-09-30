@@ -17,6 +17,7 @@ things unrelated to the current entity.
 * :ref:`The AtoM header bar <atom-header-bar>`
 
   * :ref:`The log-in button <log-in-button>`
+  * :ref:`The quick links menu <quick-links-menu>`
   * :ref:`The language menu <language-menu>`
   * :ref:`The main menu <main-menu>`
 
@@ -49,9 +50,9 @@ The AtoM Header Bar
 The :term:`header bar` is the primary means to access, manage, and
 create content in AtoM. It is persistent, meaning it remains available on all
 pages throughout the application. The :term:`header bar` includes the log-in
-button, :term:`language menu`, :term:`search box`, :term:`browse menu`, and
-:term:`site logo` for all users, and the :term:`main menu` for authenticated
-(i.e. logged in) users.
+button, :term:`quick links menu`, :term:`language menu`, :term:`search box`,
+:term:`browse menu`, and :term:`site logo` for all users, and the
+:term:`main menu` for authenticated (i.e. logged in) users.
 
 .. image:: images/headerBar_unauthenticated.*
    :align: center
@@ -80,6 +81,7 @@ example, only :term:`administrators <administrator>` will see the
 .. seealso::
 
    * :ref:`The Log-in button <log-in-button>`
+   * :ref:`The quick links menu <quick-links-menu>`
    * :ref:`The language menu <language-menu>`
    * :ref:`The main menu <main-menu>`
    * :ref:`The browse menu <browse-menu>`
@@ -109,6 +111,42 @@ email, password).
 
    * :doc:`Manage user accounts <../administer/manage-user-accounts>`
    * :doc:`Edit permissions <../administer/edit-permissions>`
+
+:ref:`Back to top <navigate>`
+
+.. _quick-links-menu:
+
+|info| Quick links menu
+=======================
+
+.. |info| image:: images/info-sign.png
+   :height: 23
+   :width: 23
+
+The :term:`quick links menu`, located in the :term:`header bar` in the
+top-right corner of the page, allows users to navigate to :term:`static pages
+<static page>` and/or other external links added to the application by an
+:term:`administrator`.
+
+By default, several static pages are included in AtoM and available through
+the quick links menu - the :term:`home page` and the :term:`about page`.
+:term:`Administrators <administator>` can customize the content on these pages
+via the :term:`user interface` and/or create new static pages (see:
+:ref:`manage-static-pages`). Additionally, external links can be added to the
+quick links menu (or any menu) via **Admin > Menus** - often an administrator
+will add a direct link to their institution home page, and/or a link to the
+AtoM documentation (as a"Help" link).
+
+**For more information on managing menus and static pages, see:**
+
+* :ref:`manage-menus`
+* :ref:`manage-static-pages`
+
+.. TIP::
+
+   Don't need or want the quick links menu in the :term:`header bar`? You can
+   remove it entirely if you prefer - see: :ref:`manage-menus` for more
+   information.
 
 :ref:`Back to top <navigate>`
 
@@ -499,6 +537,7 @@ Recurring page elements listed below include:
 * :ref:`Facet filters <recurring-facet-filters>`
 * :ref:`Button block <recurring-button-block>`
 * :ref:`Breadcrumb trail <recurring-breadcrumb-trail>`
+* :ref:`Sort button <recurring-sort-button>`
 * :ref:`Institution logos <recurring-institution-logos>`
 
 .. _recurring-title-bar:
@@ -1241,15 +1280,7 @@ description>` that have also been tagged with the same access point.
 Sort button
 -----------
 
-The sort button is a navigational element that appears on some browse and
-search pages throughout AtoM. It allows a user to change the sort order of the
-results being displayed, from alphabetic to most recent. When the sort order
-is set to "Alphabetic," results are organized A-Z. When results are ordered by
-"Most recent" the most recently added and/or edited records in the results
-will appear at the top of the list, allowing users to discover new or
-recently updated content.
-
-.. IMPORTANT::
+.. sidebar:: IMPORTANT: Sort order in AtoM
 
    Elasticsearch does not naturally apply alphabetic sort in a human-friendly
    way (what is often known as "**natural sort**" in computer science) -
@@ -1267,7 +1298,15 @@ recently updated content.
 
    .. image:: images/ascii-sort.*
       :align: center
-      :width: 400px
+      :width: 97%
+
+The sort button is a navigational element that appears on some browse and
+search pages throughout AtoM. It allows a user to change the sort order of the
+results being displayed, from alphabetic to most recent. When the sort order
+is set to "Alphabetic," results are organized A-Z. When results are ordered by
+"Most recent" the most recently added and/or edited records in the results
+will appear at the top of the list, allowing users to discover new or
+recently updated content.
 
 .. figure:: images/sort-button-archdesc.*
    :align: right
