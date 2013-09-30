@@ -1283,6 +1283,7 @@ Sort button
 .. figure:: images/sort-button-archdesc.*
    :align: right
    :figwidth: 70%
+   :width: 99%
    :alt: An image of a sort button on an archival description browse page
 
    An example of the sort button on an archival description browse page
