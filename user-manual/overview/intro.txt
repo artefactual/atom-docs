@@ -18,10 +18,12 @@ Technical overview
 
 **AtoM comprises:**
 
-HTML pages served to a web browser from a web server. `NGINX
-<http://nginx.org/>`_ is used in development but AtoM is also compatible with
-`Apache <https://httpd.apache.org/>`_; other web servers might be used but
-they are not tested by AtoM developers.
+HTML pages served to a web browser from a web server. The team at
+`Artefactual <http://www.artefactual.com/>`__ (lead developers of the AtoM
+project) prefers `Nginx <http://wiki.nginx.org/Main>`_ in both development and
+production environments, but `Apache <https://httpd.apache.org/>`_ has been
+tested as well; other web servers might be used but they are not tested by
+AtoM :term:`developers <developer>`.
 
 A database on a database server. `MySQL
 <https://en.wikipedia.org/wiki/MySQL>`_ (5.1+) is used in development but AtoM
@@ -32,20 +34,25 @@ AtoM developers)
 PHP (5.3.10+) software code that manages requests and responses between the web
 clients, the application logic, and the application content stored in
 the database. AtoM also makes use of a number of PHP extensions; see:
-:ref:`installation-requirements`
+:ref:`installation-requirements`.
 
 The Symfony (`1.4 <http://symfony.com/legacy>`_) framework that organizes the
 component parts using object orientation and best practice web design
 patterns.
 
-`Elasticsearch <http://www.elasticsearch.org/>`__ ( 0.90.0+), which acts
-the application's search and analytic engine.
+`Elasticsearch <http://www.elasticsearch.org/>`__ ( 0.90.0+), a distributed
+search server based on Apache Lucene, which acts as the application's search
+and analytic engine. Elasticsearch is not integrated directly into AtoM code
+as a library, but as a service deployed in the same network which AtoM
+interacts with through a
+`REST <https://en.wikipedia.org/wiki/Representational_State_Transfer>`__ ful
+`API <https://en.wikipedia.org/wiki/API>`__.
 
-To encourage applicatation reliability (i.e. the replacement of nodes in case
-of failure) and scalability (i.e. joining of efforts), all elements of AtoM's
-core stack can be configured in a `distributed
-<https://en.wikipedia.org/wiki/Distributed_computing>`__ manner. For more
-information, see: :ref:`installation-multi-node`.
+To encourage application reliability (for example, the replacement of nodes in
+case of failure) and scalability (e.g. the ability to handle more traffic,
+requests, etc.), all elements of AtoM's core stack can be configured in a
+`distributed <https://en.wikipedia.org/wiki/Distributed_computing>`__ manner.
+For more information, see: :ref:`installation-multi-node`.
 
 Web-based
 =========
@@ -67,50 +74,6 @@ to the user's browser.
   Please see :doc:`Technical requirements <technical-requirements>` for more
   information.
 
-Typical request-response cycle in AtoM
----------------------------------------
-
-To help illustrate how AtoM's underlying architecture works to deliver
-content to an end-user via a web browser, we've ennumerated a typical
-request-response cycle as it is passed through AtoM's various architectural
-elements. When properly configured, all of these interactions take place in
-under a second!
-
-1. User opens `http://yourwebsite.accesstomemory.org`
-2. The browser opens a connection with your web server (Nginx or Apache).
-3. The browser sends the HTTP request within the connection.
-4. Nginx passes the request to `PHP5-FPM <http://php-fpm.org/>`__, a service
-   that manages a pool of PHP
-   processes, and keeps the connection alive until PHP5-FPM finishes.
-5. PHP5-FPM selects, or creates as needed, an available PHP process and passes
-   the client petition.
-6. The PHP interpreter runs the code in AtoM, passing the request data from
-   the browser (e.g. the address, cookies, etc).
-7. AtoM, with the help of the Symfony (`1.4 <http://symfony.com/legacy>`_)
-   framework, analyzes the URL and follows its path, routing the application
-   to the corresponding piece of code and then running it - accessing the
-   database, Elasticsearch, etc. as needed to assemble the component pieces.
-   This data is sent back to the page template, and the template is rendered
-   and sent to the client via PHP5-FPM.
-8. PHP5-FPM passes that information back to Nginx.
-9. Nginx reuses the same connection (in step 4) in order to insert the HTTP
-   response.
-10. The connection is closed.
-11. The browser parses the HTTP response, which is formed by a few headers
-    with information about the size of the response, the codification, the
-    cache status, the response code (200 normally), the cookies, etc. The body
-    of the resposne is the HTML sent to the user's browser.
-12. The browser parses the HTML and udentifies a references to CSS files,
-    images, javascript elements, etc.
-13. The browser starts fetching these referenced files from the server (go to
-    step 2 again)
-14. The difference now is that now the browser is asking for static files, not
-    content generated dynamically. Nginx will pass the request to PHP5-FPM
-    anyways, PHP5-FPM will hit AtoM, AtoM will find out that the contents are
-    static so Nginx will lookfor the static files in the hard disk instead of
-    requesting that AtoM build them - once found, they will be embedded into
-    the HTTP response.
-15. The browser loads the static files and renders the site.
 
 Open source
 ===========
@@ -161,31 +124,17 @@ Multilingual
 ============
 
 All user interface elements and database content can be translated into
-multiple languages. The current version of AtoM (2.0) supports the
-following languages:
-
-* Arabic
-* Dutch
-* English
-* Farsi
-* French
-* German
-* Greek
-* Icelandic
-* Italian
-* Japanese
-* Korean
-* Polish
-* Portuguese
-* Slovenian
-* Spanish
-
-Our translations are generously provided by volunteer translators from the
+multiple languages. AtoM comes with several translations installed, all of
+which are generously provided by volunteer translators from the
 AtoM User Community.
+
+Want to help us translate AtoM into your language, or improve an existing
+translation? Find more information on how to contribute
+`here <https://www.accesstomemory.org/community/translate>`__.
 
 Multi-repository
 ================
 
-AtoM can be used by a single institution for its own descriptions or
-it can be set up as a :term:`multi-repository <multi-repository system>` "union
-list" accepting descriptions from any number of contributing institutions.
+AtoM can be used by a single institution for its own descriptions or it can be
+set up as a :term:`multi-repository <multi-repository system>` "union list"
+accepting descriptions from any number of contributing institutions.
