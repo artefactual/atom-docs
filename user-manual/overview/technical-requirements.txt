@@ -2,6 +2,17 @@
 Technical Requirements
 =======================
 
+Server-side requirements (for installation, hosting, etc.)
+==========================================================
+
+Details for the hardware and server environment, and the software
+dependencies (both required and recommended) have been documented in our
+:ref:`Administator Manual <admin-manual-home>`. For further details, see:
+:ref:`installation-requirements`.
+
+
+Client-side requirements (for end users)
+========================================
 
 AtoM has been designed with minimal assumptions about the technology
 available to users and contributors. All that is required is access to the
