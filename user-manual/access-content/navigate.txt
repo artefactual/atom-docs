@@ -1280,7 +1280,23 @@ description>` that have also been tagged with the same access point.
 Sort button
 -----------
 
-.. sidebar:: IMPORTANT: Sort order in AtoM
+The sort button is a navigational element that appears on some browse and
+search pages throughout AtoM. It allows a user to change the sort order of the
+results being displayed, from alphabetic to most recent. When the sort order
+is set to "Alphabetic," results are organized A-Z. When results are ordered by
+"Most recent" the most recently added and/or edited records in the results
+will appear at the top of the list, allowing users to discover new or
+recently updated content.
+
+.. figure:: images/sort-button-archdesc.*
+   :align: right
+   :figwidth: 70%
+   :width: 98%
+   :alt: An image of a sort button on an archival description browse page
+
+   An example of the sort button on an archival description browse page
+
+.. IMPORTANT::
 
    Elasticsearch does not naturally apply alphabetic sort in a human-friendly
    way (what is often known as "**natural sort**" in computer science) -
@@ -1297,24 +1313,9 @@ Sort button
    order, be sure to consider this when naming your records.**
 
    .. image:: images/ascii-sort.*
-      :align: center
-      :width: 97%
+      :align: right
+      :width: 47%
 
-The sort button is a navigational element that appears on some browse and
-search pages throughout AtoM. It allows a user to change the sort order of the
-results being displayed, from alphabetic to most recent. When the sort order
-is set to "Alphabetic," results are organized A-Z. When results are ordered by
-"Most recent" the most recently added and/or edited records in the results
-will appear at the top of the list, allowing users to discover new or
-recently updated content.
-
-.. figure:: images/sort-button-archdesc.*
-   :align: right
-   :figwidth: 70%
-   :width: 98%
-   :alt: An image of a sort button on an archival description browse page
-
-   An example of the sort button on an archival description browse page
 
 Sort buttons appear for the following records when on search, browse,
 or list pages:
