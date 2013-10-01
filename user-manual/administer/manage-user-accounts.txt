@@ -3,3 +3,142 @@
 ====================
 Manage user accounts
 ====================
+
+Content
+
+
+**Below you'll find instructions on how to:**
+
+* :ref:`Add a new user <add-user>`
+* :ref:`Add a new group <add-group>`
+*
+
+:ref:`Back to top <manage-user-accounts>`
+
+.. _add-user:
+
+Add a new user
+==============
+
+.. |gears| image:: images/gears.png
+   :height: 18
+   :width: 18
+
+.. |plus| image:: images/plus-sign.png
+   :height: 18
+   :width: 18
+
+Every user who wishes to add, edit, or delete content within the database must
+have a registered :term:`user account`. Only an authenticated (i.e. logged in)
+:term:`administrator` can add a new user account.
+
+1. In the :term:`main menu` located in the :term:`header bar`, click the |gears|
+   :ref:`Admin <main-menu-admin>` menu and select "Users" from the
+   :term:`drop-down menu`. This will take you to a list of current user
+   accounts.
+
+.. NOTE::
+
+   The "List users" page has two presentation options: "Show active only" and
+   "Show inactive only" which allow the Administrator to view active users and
+   inactive users in the system.
+
+2. Scroll to the botom of the "List users" page and click the "Add new" button
+   in the :term:`button block`. AtoM will direct you to a blank User :term:`edit
+   page`.
+3. In the "Basic info" :term:`information area`, enter the following data:
+
+  * In :term:`"Username" <Username>`, enter the user's name;
+  * In "Email", enter the user's email address. The email address (rather than
+    the username) is used when logging in. For more information on logging in,
+    see: :ref:`log in <log-in>`;
+  * In :term:`"Password" <Password>`, enter the user's default password. Users
+    can later change their own password. For more information, see: :ref
+    :`change-password`.
+  * In "Confirm password" enter the :term:`password` again.
+
+4. In the "Access control" information area, type the appropriate "User groups".
+   You must choose between 4 options:
+
+    * :term:`Administrator`
+    * :term:`Editor`
+    * :term:`Contributor`
+    * :term:`Translator`
+   As you type, matching results will load in a :term:`drop-down menu` below the
+   field.
+
+.. NOTE::
+
+   The user group, or :term:`user role` determines the user's :term:`access
+   privileges <access privilege>`. This will control the way the user can
+   interact with AtoM. The user role of a specific user can be changed at any
+   time by an auhenticated (i.e. logged-in) :term:`administrator`. For more
+   information on user roles, see: :ref:`User roles <user-roles>`.
+
+.. TIP::
+
+   Multiple :term:`user roles <user role>` can be added to one user. A user may
+   need to have both :term:`editor` and :term:`translator` :term:`access
+   privileges <access privilege>`. Once one user role has been selected, it will
+   appear in bullet form under "User groups" and a second group can then be
+   added. To remove a selected user group, simply hover over the user group you
+   would like to select; click on the "x" that will appear next the group name.
+
+5. Under the "Allowed languages for translation" section, select one of three
+   options:
+
+    * English
+    * French
+    * Spanish
+   As you type, matching results will load in a :term:`drop-down menu` below the
+   field.
+6. You can quit the process at any time by clicking the "Cancel" button, or the
+   exiting (i.e. clicking "X") the window. Any changes made will not be saved.
+7. When you have complete, click the "Create" button. You will be redirected to
+   a :term:`view page` where the new :term:`user profile` will be displayed. The
+   user profile will also display the following permission :term:`information
+   areas <information area>`: Information object permissions", "Actor
+   permissions", "Taxonomy permissions", and "Archival institution permissions".
+   For more information on user permissions, see :ref:`edit-user-permissions`.
+
+.. Note::
+
+   By default, the user will be automatically *Active* once the new user account
+   is created. You must un-check the box next to "Active" in order to make a
+   user inactive.
+
+For more on user roles, see :ref:`user roles <user-roles>`.
+
+:ref:`Back to top <manage-user-accounts>`
+
+.. _add-group:
+
+Add a new group
+===============
+
+content
+
+1. In the :term:`main menu` located in the :term:`header bar`, click the |gears|
+   :ref:`Admin <main-menu-admin>` menu and select "Groups" from the
+   :term:`drop-down menu`. This will take you to a list of current groups and
+   the number of members within each group.
+2. Scroll to the botom of the "List groups" page and click the "Add new" button
+   in the :term:`button block`. AtoM will direct you to a blank Group
+   :term:`edit page`.
+3. In the "Main area" :term:`information area`, enter the "Name" and the
+   "Description" of the group, and select whether or not the group will have
+   the :term:`access privilege` permission to "Translate". For more information
+   on user roles, see: :ref:`user-roles`.
+4. You can quit the process at any time by clicking the "Cancel" button, or the
+   exiting (i.e. clicking "X") the window. Any changes made will not be saved.
+5. When you have complete, click the "Create" button. You will be redirected to
+   a :term:`view page` where the new :term:`user profile` will be displayed.
+   When you have complete, click the "Create" button. You will be redirected to
+   a :term:`view page` where the changed made to the new group will be
+   displayed. The group profile will also display the following permission
+   :term:`information areas <information area>`: Information object
+   permissions", "Actor permissions", "Taxonomy permissions", and "Archival
+   institution permissions". For more information on user permissions, see :ref
+   :`edit-user-permissions`.
+
+:ref:`Back to top <manage-user-accounts>`
