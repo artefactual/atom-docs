@@ -135,7 +135,7 @@ This section describes how to administer AtoM, whether for a single institution
 or for a network.
 
 * Install
-* Manage user accounts
+* :ref:`Manage user accounts and user groups <manage-user-accounts>`
 * Manage digital object storage
 * Edit user permissions
 * Manage static pages

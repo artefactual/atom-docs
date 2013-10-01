@@ -1,8 +1,8 @@
 .. _manage-user-accounts:
 
-====================
-Manage user accounts
-====================
+====================================
+Manage user accounts and user groups
+====================================
 
 Content
 
@@ -11,9 +11,13 @@ Content
 
 * :ref:`Add a new user <add-user>`
 * :ref:`Add a new group <add-group>`
-*
+* :ref:`Mark a user inactive <mark-user-inactive>`
+* :ref:`Delete a user <delete-user>`
 
-:ref:`Back to top <manage-user-accounts>`
+.. SEE ALSO::
+
+   * :ref:`Edit user permissions <edit-user-permissions>`
+   * :ref:`User roles <user-roles>`
 
 .. _add-user:
 
@@ -48,24 +52,25 @@ have a registered :term:`user account`. Only an authenticated (i.e. logged in)
    page`.
 3. In the "Basic info" :term:`information area`, enter the following data:
 
-  * In :term:`"Username" <Username>`, enter the user's name;
-  * In "Email", enter the user's email address. The email address (rather than
-    the username) is used when logging in. For more information on logging in,
-    see: :ref:`log in <log-in>`;
-  * In :term:`"Password" <Password>`, enter the user's default password. Users
-    can later change their own password. For more information, see: :ref
-    :`change-password`.
-  * In "Confirm password" enter the :term:`password` again.
+* In :term:`"Username" <Username>`, enter the user's name;
+* In "Email", enter the user's email address. The email address (rather than
+  the username) is used when logging in. For more information on logging in,
+  see: :ref:`log in <log-in>`;
+* In :term:`"Password" <Password>`, enter the user's default password. Users
+  can later change their own password. For more information, see:
+  :ref:`change-password`.
+* In "Confirm password" enter the :term:`password` again.
 
 4. In the "Access control" information area, type the appropriate "User groups".
    You must choose between 4 options:
 
-    * :term:`Administrator`
-    * :term:`Editor`
-    * :term:`Contributor`
-    * :term:`Translator`
-   As you type, matching results will load in a :term:`drop-down menu` below the
-   field.
+* :term:`Administrator`
+* :term:`Editor`
+* :term:`Contributor`
+* :term:`Translator`
+
+ As you type, matching results will load in a :term:`drop-down menu` below the
+ field.
 
 .. NOTE::
 
@@ -82,30 +87,35 @@ have a registered :term:`user account`. Only an authenticated (i.e. logged in)
    privileges <access privilege>`. Once one user role has been selected, it will
    appear in bullet form under "User groups" and a second group can then be
    added. To remove a selected user group, simply hover over the user group you
-   would like to select; click on the "x" that will appear next the group name.
+   would like to select; click on the "**X**" that will appear next the group
+   name.
 
 5. Under the "Allowed languages for translation" section, select one of three
    options:
 
-    * English
-    * French
-    * Spanish
-   As you type, matching results will load in a :term:`drop-down menu` below the
-   field.
-6. You can quit the process at any time by clicking the "Cancel" button, or the
-   exiting (i.e. clicking "X") the window. Any changes made will not be saved.
-7. When you have complete, click the "Create" button. You will be redirected to
-   a :term:`view page` where the new :term:`user profile` will be displayed. The
-   user profile will also display the following permission :term:`information
-   areas <information area>`: Information object permissions", "Actor
-   permissions", "Taxonomy permissions", and "Archival institution permissions".
-   For more information on user permissions, see :ref:`edit-user-permissions`.
+* English
+* French
+* Spanish
+
+ As you type, matching results will load in a :term:`drop-down menu` below the
+ field.
+
+6. You can quit the process at any time by clicking the "Cancel" button, or
+   the exiting (i.e. clicking "**X**") the window. Any changes made will not
+   be saved.
+7. When you have complete, click the "Create" button. You will be redirected
+   to a :term:`view page` where the new :term:`user profile` will be
+   displayed. The user profile will also display the following permission
+   :term:`information areas <information area>`: Information object
+   permissions", "Actor permissions", "Taxonomy permissions", and "Archival
+   institution permissions". For more information on user permissions, see
+   :ref:`Edit user permissions <edit-user-permissions>`.
 
 .. Note::
 
-   By default, the user will be automatically *Active* once the new user account
-   is created. You must un-check the box next to "Active" in order to make a
-   user inactive.
+   By default, the user will be automatically *Active* once the new user
+   account is created. You must un-check the box next to "Active" in order to
+   make a user inactive.
 
 For more on user roles, see :ref:`user roles <user-roles>`.
 
@@ -129,8 +139,9 @@ content
    "Description" of the group, and select whether or not the group will have
    the :term:`access privilege` permission to "Translate". For more information
    on user roles, see: :ref:`user-roles`.
-4. You can quit the process at any time by clicking the "Cancel" button, or the
-   exiting (i.e. clicking "X") the window. Any changes made will not be saved.
+4. You can quit the process at any time by clicking the "Cancel" button, or
+   the exiting (i.e. clicking "**X**") the window. Any changes made will not
+   be saved.
 5. When you have complete, click the "Create" button. You will be redirected to
    a :term:`view page` where the new :term:`user profile` will be displayed.
    When you have complete, click the "Create" button. You will be redirected to
@@ -138,7 +149,40 @@ content
    displayed. The group profile will also display the following permission
    :term:`information areas <information area>`: Information object
    permissions", "Actor permissions", "Taxonomy permissions", and "Archival
-   institution permissions". For more information on user permissions, see :ref
-   :`edit-user-permissions`.
+   institution permissions". For more information on user permissions, see
+   :ref:`Edit user permissions <edit-user-permissions>`.
+
+:ref:`Back to top <manage-user-accounts>`
+
+.. _mark-user-inactive:
+
+Mark a user inactive
+====================
+
+What does this do? Why does this exist
+
+**To mark a user inactive in AtoM:**
+
+1. stuff
+2. other stuff
+
+:ref:`Back to top <manage-user-accounts>`
+
+.. _delete-user:
+
+Delete a user
+=============
+
+content
+
+.. WARNING::
+
+   Something about how this is permanent, etc. , and how it might be better
+   practice to mark a user inactive instead.
+
+**To delete a user in AtoM:**
+
+1. stuff
+2. other stuff
 
 :ref:`Back to top <manage-user-accounts>`
