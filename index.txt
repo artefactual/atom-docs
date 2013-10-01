@@ -80,7 +80,7 @@ of the functions discussed are available to all user roles, including
 researchers with read only access. However, some navigation features (e.g. edit
 mode), are only available to users withedit access.
 
-* Search
+* :ref:`Search <search-atom>`
 * Advanced search
 * Browse
 * :ref:`Navigate <navigate>`

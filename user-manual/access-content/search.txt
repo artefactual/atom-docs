@@ -1,0 +1,140 @@
+.. _search-atom:
+
+======
+Search
+======
+
+Overview
+
+.. SEE ALSO::
+
+   * :ref:`Advanced search <advanced-search>`
+   * :ref:`navigate`
+
+
+The AtoM Search box |searchbox|
+===============================
+
+.. |searchbox| image:: images/search-box.png
+   :height: 30px
+
+The search box is the primary means to find descriptions in AtoM that contain
+text matching a search query. The search box is located in the
+:term:`header bar` on all AtoM pages, including the home page. By default,
+when a user enters text and presses enter, the results returned are for
+:term:`archival descriptions <archival description>`. However, other
+record-type results can be discovered via the :term:`typeahead` results
+presented in the search box (see: :ref:`below <search-typeahead>`).
+
+Search terms entered in the search box are, by default, searched with an "OR"
+operator - that is to say, searching for *kitty cat* would by default search
+*kitty* OR *kat*. AtoM supports a number of :term:`Boolean <boolean search>`
+operators
+
+
+
+.. _search-typeahead:
+
+Typeahead and faceted search box results
+-----------------------------------------
+
+Additionally, the AtoM search box also implements :term:`typeahead` - as a user
+enters text into the search box, one or more possible matches are found and
+presented to the user in a :term:`drop-down <drop-down menu>` below the search
+box, which continue to narrow as the user enters further text. This allows a
+user to dynamically view results and select a resource without necessarily
+having to enter its full name or title. The search box :term:`typeahead`
+results are organized into record-type categories (or :term:`facets <facet
+filter>`), including:
+
+* :term:`Archival description`
+* :term:`Authority record`
+* :term:`Archival institution`
+* :term:`Subject`
+* :term:`Place`
+
+When multiple results for a record type exist, the :term:`typeahead`
+drop-down includes an option to view all records for a particular record
+type - clicking the "View all" link for a particular type of record will
+redirect the user to a browse page of results.
+
+The :term:`typeahead` is set by default to begin providing suggestions only
+after at least three characters have been entered - for example, entering "a"
+or "an" in the search box will not prompt suggestions, but entering "ant"
+might produce suggestions such as an authority record for a person named
+"Anthony," etc.
+
+.. _search-box-delimiters:
+
+Search box delimiters
+---------------------
+
+Additionaly, when a user has viewed an :term:`archival institution` record or
+an :term:`archival description` related to an archival institution, clicking
+in the search box will reveal a set of :term:`radio buttons <radio button>`
+that allow the user limit the search results to the holdings of the most
+recently viewed :term:`archival institution`, or to search globally (i.e.,
+across all records in the application).
+
+
+
+Using the search box
+
+Default settings (or)
+
+See: boolean operators (advanced search)
+
+
+.. _search-results-facets:
+
+Search results and facet filters
+--------------------------------
+
+content
+
+:ref:`Back to top <search-atom>`
+
+
+Search for archival descriptions
+=================================
+
+content
+
+:ref:`Back to top <search-atom>`
+
+Dedicated search boxes
+======================
+
+Content
+
+Fact that they only return titles for now
+
+.. _dedicated-search-authority
+
+Authority records
+-----------------
+
+content
+
+.. _dedicated-search-accessions
+
+Accession records
+-----------------
+
+content
+
+.. _dedicated-search-donors:
+
+Donors
+------
+
+content
+
+.. _dedicated-search-rights:
+
+Rights holders
+--------------
+
+content
+
+:ref:`Back to top <search-atom>`

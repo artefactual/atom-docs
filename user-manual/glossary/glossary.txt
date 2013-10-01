@@ -159,6 +159,24 @@ Glossary
     types <../overview/entity-types>` and :doc:`Authority records
     <../add-edit-content/authority-records>`.
 
+  Boolean search
+    Boolean searching is a particular application of what is known as boolean
+    logic, a subset of algebra used for creating true/false statements
+    originally developed by George Boole, a 19th century English
+    mathematician. Since computers operate in binary (using ones and zeroes),
+    computer logic can often be expressed in boolen terms (true/false).
+    Boolean expressions use a number of operators, the most common of which
+    are AND, OR, and NOT - using Boolean operators in terms of search queries
+    (Boolean search) allows a user to limit, widen, or otherwise define a
+    searc in granular terms. Most modern web search engines support boolean
+    search statements,allowing complex queries to be expressed in human-
+    readable form - for example, searching "fonds OR collection" would widen a
+    search to include results that have either term in their title. In AtoM,
+    boolean search operators are supported in the :term:`search box` and in
+    the Adanced search menu - see: :ref:`Search <search-atom>` and
+    :ref:`Advanced search <advanced-search>`.
+
+
   Breadcrumb trail
     A breadcrumb trail is a navigational element in a :term:`user interface`
     that provides contextual information about the current location of a user
