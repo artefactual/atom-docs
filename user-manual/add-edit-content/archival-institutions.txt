@@ -100,6 +100,8 @@ institution :term:`edit page`, see:
    privilege>` associated with a :term:`user account` - for more information,
    see: :ref:`Edit user permissions <edit-user-permissions>`.
 
+:ref:`Back to top <archival-institutions>`
+
 .. _add-archival-institution:
 
 Add a new archival institution
@@ -247,8 +249,8 @@ button` in the :term:`button block`. To do so:
 2.  At the bottom of the archival institution :term:`view page`, you will see
     the :term:`button block` with several options (Edit, Delete, and Add new).
     Click the :term:`Add new button`.
-3.  AtoM takes you to a blank edit page for data entry. On loading, the
-    :term:`edit page` displays the record with all :term:`information areas
+3.  AtoM takes you to a blank :term:`edit page` for data entry. On loading, the
+    edit page displays the record with all :term:`information areas
     <information area>` closed; click on an information area to access the
     :term:`fields<field>` grouped under it. Enter data as required.
 4.  You can quit the creation process at any time by clicking the “Cancel”
@@ -265,7 +267,6 @@ in the :term:`button block` at the bottom of the record will re-open the
 archival institution in :term:`edit mode`.
 
 :ref:`Back to top <archival-institutions>`
-
 
 .. _edit-archival-institution:
 
@@ -314,7 +315,6 @@ institution`, where you can review your work.
 :ref:`Back to top <archival-institutions>`
 
 .. _link-archival-institution:
-
 
 Link an archival description to an archival institution
 =======================================================
@@ -393,6 +393,8 @@ comprised of four main elements:
 * :ref:`Add/edit a logo <add-institution-logo>`
 * :ref:`Add/edit a banner <add-institution-banner>`
 * :ref:`Add/edit a custom description <add-institution-custom-content>`
+
+:ref:`Back to top <archival-institutions>`
 
 .. _change-institution-background:
 
@@ -720,7 +722,6 @@ then screenshot the inline code used as well, and upload them side by side to
 give users a sense of what is possible)
 
 :ref:`Back to top <archival-institutions>`
-
 
 .. _browse-holdings:
 
