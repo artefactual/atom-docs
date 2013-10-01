@@ -1141,7 +1141,7 @@ descriptions).
    :height: 22px
 
 * |edit-button| **Edit**: Changes the current record from :term:`view mode` to
-  :term`edit mode`
+  :term:`edit mode`
 * |delete-button| **Delete**: Deletes the current record (a confirmation is
   required first)
 * |addnew-button| **Add new**: Opens a blank record in :term:`edit mode`. If
