@@ -142,7 +142,9 @@ in :file:`/etc/nginx/sites-enabled/atom`.
      # name, e.g. archives.foobar.com
      server_name _;
 
-     # http://wiki.nginx.org/HttpCoreModule#try_files
+     client_max_body_size 72M;
+
+     # http://wiki.nginx.org/HttpCoreModule#try_files
      location / {
        try_files $uri /index.php?$args;
      }
