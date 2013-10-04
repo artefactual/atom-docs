@@ -108,7 +108,7 @@ Add a new archival institution
 ==============================
 
 This section contains instructions on how to Add a new :term:`archival
-institution` from the :ref:`main menu <add-institution-main>`. There are three
+institution` in AtoM. There are three
 main ways to add an archival institution record in AtoM - doing so via the
 |plus| :ref:`"Add" <main-menu-add>` menu is the easiest, but to accommodate
 different workflows, archival institution records can also be added from an
@@ -253,7 +253,7 @@ button` in the :term:`button block`. To do so:
     edit page displays the record with all :term:`information areas
     <information area>` closed; click on an information area to access the
     :term:`fields<field>` grouped under it. Enter data as required.
-4.  You can quit the creation process at any time by clicking the “Cancel”
+4.  You can quit the creation process at any time by clicking the "Cancel"
     button in the :term:`button block`; any data already entered will not be
     saved, and no new record will be created. Note that simply navigating away
     from the page by any other means, **without first clicking "Create"** will
