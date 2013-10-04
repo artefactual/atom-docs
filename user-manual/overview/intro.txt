@@ -40,7 +40,7 @@ The Symfony (`1.4 <http://symfony.com/legacy>`_) framework that organizes the
 component parts using object orientation and best practice web design
 patterns.
 
-`Elasticsearch <http://www.elasticsearch.org/>`__ ( 0.90.0+), a distributed
+`Elasticsearch <http://www.elasticsearch.org/>`__ ( 0.90.5+), a distributed
 search server based on Apache Lucene, which acts as the application's search
 and analytic engine. Elasticsearch is not integrated directly into AtoM code
 as a library, but as a service deployed in the same network which AtoM
