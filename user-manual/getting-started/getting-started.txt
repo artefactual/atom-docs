@@ -178,6 +178,10 @@ main page types are:
 * :ref:`Browse results <page-type-browse>`
 * :ref:`Error <page-type-error>`
 
+.. SEE ALSO::
+
+   * :ref:`navigate`
+
 
 .. _page-type-home:
 
