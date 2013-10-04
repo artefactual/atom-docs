@@ -22,7 +22,7 @@ main page types a user will encounter, and how to switch languages.
 
    * :ref:`Navigation in AtoM <navigate>`
    * :ref:`Entity types <entity-types>`
-   * :ref:`Search <search>`
+   * :ref:`Search <search-atom>`
    * :ref:`Browse <browse>`
    * :ref:`Context menu <context-menu>`
 
@@ -34,9 +34,9 @@ Home page
 
 The :term:`home page` is the first thing that a user will see when opening the
 AtoM application. :term:`Administrators <administrator>` can customize this to
-be a landing page, and from here, users can search, browse, log in as
-authenticated users (gaining access to the :term:`main menu`), change the
-language of the application interface, and more.
+be a landing page, and from here, users can :ref:`search <search-atom>`,
+:ref:`browse <browse>`, log in as authenticated users (gaining access to the
+:term:`main menu`), change the language of the application interface, and more.
 
 #. Open your web browser and enter the URL of the web server hosting your AtoM
    application. This takes you to your application's home page.
@@ -181,6 +181,7 @@ main page types are:
 .. SEE ALSO::
 
    * :ref:`navigate`
+   * :ref:`Search <search-atom>`
 
 
 .. _page-type-home:
@@ -269,7 +270,8 @@ Search results
 A search results page displays set of records that match search criteria,
 based on a user's query entered into the :term:`search box` or the
 :term:`advanced search` menu. Users can click on the title of a record listed
-in the search results page to open the record in :term:`view mode`.
+in the search results page to open the record in :term:`view mode`. For more
+information on search in AtoM, see: :ref:`search-atom`.
 
 .. _page-type-browse:
 
@@ -287,7 +289,8 @@ logged in users such as :term:`researchers <researcher>`; however, a
 change the sort order. Additionally, an :term:`administrator` can change the
 default sort order for both types of users via the Settings menu (see:
 :ref:`Settings <settings>`). Users can also browse by :term:`subject`,
-:term:`place`, and :term:`digital object` type.
+:term:`place`, and :term:`digital object` type. For mroe information on
+browsing in AtoM, see: :ref:`browse <browse>`.
 
 .. _page-type-error:
 
@@ -334,6 +337,8 @@ switches the :term:`user interface` to the preferred language, and:
    in the :term:`language menu`, and :ref:`Translate <translate-all>` for how
    to translate in AtoM
 
+For more information on the language menu, see: :ref:`language-menu`
+
 .. _change-password:
 
 Change password
@@ -353,3 +358,8 @@ or her :term:`password`, the system :term:`administrator` must reset it (see
 
 Your password has now been updated. The new password will be in effect next
 time you log in to the application.
+
+.. seealso::
+
+   * :ref:`log-in-button`
+

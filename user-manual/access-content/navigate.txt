@@ -36,7 +36,7 @@ things unrelated to the current entity.
 
    * :ref:`Entity types <entity-types>`
    * :ref:`Page types <page-types>`
-   * :doc:`Search <../access-content/search>`
+   * :doc:`Search <../access-content/search-atom>`
    * :ref:`Browse <browse>`
    * :ref:`Context menu <context-menu>`
    * :ref:`Manage menus <manage-menus>`
@@ -481,7 +481,7 @@ most recently viewed :term:`archival institution`, or to search globally
 (i.e., across all records in the application).
 
 **For more information on searching in AtoM, see:** :doc:`Search
-<../access-content/search>`
+<../access-content/search-atom>`
 
 :ref:`Back to top <navigate>`
 
@@ -577,10 +577,10 @@ displays a message indicating whether the record is in :term:`view <view mode>`
 or :term:`edit <edit mode>` mode, with the record's name/title display below
 (as a sub-title).
 
-On :ref:`Browse <browse>` and :doc:`Search <../access-content/search>` pages,
-the :term:`title bar` displays the number of results returned for the current
-query. Elsewhere in the application, the title bar gives context to the user
-about the :ref:`page type <page-types>` currently being viewed.
+On :ref:`Browse <browse>` and :doc:`Search <../access-content/search-atom>`
+pages, the :term:`title bar` displays the number of results returned for the
+current query. Elsewhere in the application, the title bar gives context to
+the user about the :ref:`page type <page-types>` currently being viewed.
 
 .. _recurring-text-links:
 
@@ -662,11 +662,11 @@ and a list of holdings on the left-hand side, with contact information for the
 information is drawn from the information added to the "Contact"
 :term:`area <information area>` of the :term:`archival institution` record.
 
-On :ref:`Browse <browse>` and :doc:`Search <../access-content/search>` pages,
-the context menu includes :term:`facet filters <facet filter>` that allow the
-user to iteratively narrow the results presented. If the browse page is for a
-:term:`term` that can be organized hierarchically in a :term:`taxonomy` (such
-as a :term:`place` or :term:`subject` term), a version of the
+On :ref:`Browse <browse>` and :doc:`Search <../access-content/search-atom>`
+pages, the context menu includes :term:`facet filters <facet filter>` that
+allow the user to iteratively narrow the results presented. If the browse page
+is for a :term:`term` that can be organized hierarchically in a :term:`taxonomy`
+(such as a :term:`place` or :term:`subject` term), a version of the
 :term:`treeview` is also presented, showing users the terms position in the
 hierarchy as well as related "sibling" (i.e. on the same level) terms.
 
@@ -1018,7 +1018,7 @@ Using facet filters in AtoM:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Navigate to a :ref:`browse <browse>` or :doc:`search
-  <../access-content/search>` page
+  <../access-content/search-atom>` page
 * Available :term:`facet filters <facet filter>` will appear on the left-hand
   side of the page (unless you are on the Digital objects browse page - the
   filter buttons there are in the upper right-hand corner of the page). If
@@ -1057,7 +1057,7 @@ Using facet filters in AtoM:
 .. seealso::
 
    * :ref:`Browse <browse>`
-   * :doc:`Search <../access-content/search>`
+   * :doc:`Search <../access-content/search-atom>`
 
 
 .. _recurring-button-block:

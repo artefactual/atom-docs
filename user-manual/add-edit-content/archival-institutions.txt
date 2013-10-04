@@ -243,7 +243,7 @@ button` in the :term:`button block`. To do so:
 
 1.  Navigate to an existing :term:`archival institution` in AtoM. You can do
     this by :doc:`browsing <../access-content/browse>` or by :doc:`searching
-    <../access-content/search>`for a specific archival institution - see
+    <../access-content/search-atom>`for a specific archival institution - see
     :ref:`Access content <access-content>` for more information on navigation in
     AtoM.
 2.  At the bottom of the archival institution :term:`view page`, you will see
@@ -289,9 +289,9 @@ An archival institution's description can be edited at any time.
 
 1. First, navigate to the :term:`archival institution` you wish to edit. You can
    do this by :doc:`browsing <../access-content/browse>` or :doc:`searching
-   <../access-content/search>` for the :term:`archival institution` by name. See
-   :ref:`access content <access-content>` for more information on navigation in
-   AtoM.
+   <../access-content/search-atom>` for the :term:`archival institution`
+   by name. See :ref:`access content <access-content>` for more information
+   on navigation in AtoM.
 2. Switch from :term:`view mode` to :term:`edit mode` by clicking the
    :term:`"Edit" button <Edit button>` in the :term:`button block` located at
    the bottom of the record, or by clicking on one of the :term:`information
@@ -328,9 +328,9 @@ types of users and edit permissions, see :ref:`User roles <user-roles>`.
 
 1.  First, navigate to the :term:`archival institution` you wish to edit. You
     can do this by :doc:`browsing <../access-content/browse>` or
-    :doc:`searching <../access-content/search>` for the archival institution -
-    see :ref:`Access content <access-content>` for more information on
-    navigation in AtoM.
+    :doc:`searching <../access-content/search-atom>` for the archival
+    institution - see :ref:`Access content <access-content>` for more
+    information on navigation in AtoM.
 2.  Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit" button
     in the :term:`button block`, or by clicking on one of the :term:`information
     area` headings; this takes you to the record’s :term:`edit page`.
@@ -413,7 +413,7 @@ description` pages linked to that specific institution.
 
 1. First, navigate to the :term:`archival institution` whose theme you wish to
    edit. You can do this by :doc:`browsing <../access-content/browse>` or
-   :doc:`searching <../access-content/search>` for the :term:`archival
+   :doc:`searching <../access-content/search-atom>` for the :term:`archival
    institution` by name. See :ref:`access content <access-content>` for more
    information on navigation in AtoM.
 2. Click on the "Edit theme" button in the :term:`button block` at the bottom
@@ -473,9 +473,9 @@ Add a logo for an archival institution
 
 1.  First, navigate to the :term:`archival institution` you wish to edit. You
     can do this by :doc:`browsing <../access-content/browse>`or
-    :doc:`searching <../access-content/search>` for the archival institution -
-    see :ref:`Access content <access-content>` for more information on
-    navigation in AtoM.
+    :doc:`searching <../access-content/search-atom>` for the archival
+    institution - see :ref:`Access content <access-content>` for more
+    information on navigation in AtoM.
 2.  Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit theme"
     button in the :term:`button block`.
 3.  From here, authenticated users can upload a logo. In the "Style" area, under
@@ -526,9 +526,9 @@ Edit/remove an exisiting logo for an archival institution
 
 1.  Navigate to the :term:`archival institution` you wish to edit. You can do
     this by :doc:`browsing <../access-content/browse>`or
-    :doc:`searching <../access-content/search>` for the archival institution -
-    see :ref:`Access content <access-content>` for more information on
-    navigation in AtoM.
+    :doc:`searching <../access-content/search-atom>` for the archival
+    institution - see :ref:`Access content <access-content>` for more
+    information on navigation in AtoM.
 2.  Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit theme"
     button in the :term:`button block`.
 3.  From here, navigate to the "Style" area, under the "Logo" :term:`field`,
@@ -559,9 +559,9 @@ Edit/remove an exisiting logo for an archival institution
 
 1.  Navigate to the :term:`archival institution` you wish to edit. You can do
     this by :doc:`browsing <../access-content/browse>`or
-    :doc:`searching <../access-content/search>` for the archival institution -
-    see :ref:`Access content <access-content>` for more information on
-    navigation in AtoM.
+    :doc:`searching <../access-content/search-atom>` for the archival
+    institution - see :ref:`Access content <access-content>` for more
+    information on navigation in AtoM.
 2.  Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit theme"
     button in the :term:`button block`.
 3.  From here, navigate to the "Logo" :term:`field` under the "Style" area;
@@ -600,9 +600,9 @@ Add a banner for an archival institution
 
 1.  Navigate to the :term:`archival institution` you wish to edit. You can do
     this by :doc:`browsing <../access-content/browse>` or
-    :doc:`searching <../access-content/search>` for the archival institution -
-    see :ref:`Access content <access-content>` for more information on
-    navigation in AtoM.
+    :doc:`searching <../access-content/search-atom>` for the archival
+    institution - see :ref:`Access content <access-content>` for more
+    information on navigation in AtoM.
 2.  Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit theme"
     button in the :term:`button block`.
 3.  From here, authenticated users can upload a banner. In the "Style" area,
@@ -647,7 +647,7 @@ Edit/remove an existing banner for an archival institution
 
 1.  Navigate to the :term:`archival institution` you wish to edit. You can do
     this by :doc:`browsing <../access-content/browse>`or
-    :doc:`searching <../access-content/search>` for the archival institution -
+    :doc:`searching <../access-content/search-atom>` for the archival institution -
     see :ref:`Access content <access-content>` for more information on
     navigation in AtoM.
 2.  Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit theme"
@@ -680,7 +680,7 @@ Edit/remove an existing banner for an archival institution
 
 1.  Navigate to the :term:`archival institution` you wish to edit. You can do
     this by :doc:`browsing <../access-content/browse>`or
-    :doc:`searching <../access-content/search>` for the archival institution -
+    :doc:`searching <../access-content/search-atom>` for the archival institution -
     see :ref:`Access content <access-content>` for more information on
     navigation in AtoM.
 2.  Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit theme"
@@ -776,9 +776,9 @@ institution's page.
 
 1. Navigate to the :term:`archival institution` you wish to edit. You can do
    this by :doc:`browsing <../access-content/browse>`or
-   :doc:`searching <../access-content/search>` for the archival institution -
-   see :ref:`Access content <access-content>` for more information on
-   navigation in AtoM.
+   :doc:`searching <../access-content/search-atom>` for the archival
+   institution - see :ref:`Access content <access-content>` for more
+   information on navigation in AtoM.
 2. Click the "Edit" link located below the "Upload limit" bar on the left-hand
    side of the page.
 3. A seperate window will appear; AtoM will prompt you to edit the upload limit.
@@ -826,7 +826,7 @@ Follow the instructions below to delete an archival institution in AtoM:
 
 1.  Navigate to the :term:`archival institution` record you want to delete. You
     can do this by :doc:`browsing <../access-content/browse>` or :doc:`Search
-    <../access-content/search>` for the :term:`archival description` - see
+    <../access-content/search-atom>` for the :term:`archival description` - see
     :ref:`Access content <access-content>` for more information on navigation in
     AtoM.
 2.  Scroll to the bottom of the institution’s :term:`view page` and click the

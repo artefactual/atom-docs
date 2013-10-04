@@ -31,7 +31,7 @@ user's point of view there are six main types with which they will interact:
    * :ref:`Donors <donors>`
    * :ref:`Page types <page-types>`
    * :ref:`Navigation in AtoM <navigate>`
-   * :ref:`Search <search>`
+   * :ref:`Search <search-atom>`
    * :ref:`Browse <browse>`
 
 

@@ -266,9 +266,10 @@ navigating to the description to which you would like to add a child (the
 
 First, navigate to the :term:`parent archival description <parent record>` to
 which you wish to add a child description. You can do this by :doc:`browsing
-<../access-content/browse>` or :doc:`searching <../access-content/search>` for
-the :term:`archival description` - see :ref:`Access content <access-content>`
-for more information on navigation in AtoM.
+<../access-content/browse>` or :doc:`searching <../access-content/search-atom>`
+for the :term:`archival description` - see
+:ref:`Access content <access-content>` for more information on navigation in
+AtoM.
 
 .. NOTE::
 
@@ -326,7 +327,7 @@ on logging in, see: :ref:`Log in <log-in>`.
 
 1. First, navigate to the :term:`archival description` you wish to edit. You
    can do this by :doc:`browsing <../access-content/browse>` or
-   :doc:`searching <../access-content/search>` for the :term:`archival
+   :doc:`searching <../access-content/search-atom>` for the :term:`archival
    description` - see :ref:`Access content <access-content>` for more
    information on navigation in AtoM.
 2. Switch from :term:`view mode` to :term:`edit mode` by clicking the
@@ -397,8 +398,8 @@ The archival description, and any lower :term:`levels of description <level of
 description>` associated with it, will now be published - public users who are
 not logged will now be granted read access to view (but not edit) the
 record(s). The record(s) will also be discoverable to public users via
-:ref:`browse <../access-content/browse>` or :ref:`search
-<../access-content/search>`
+:ref:`browse <../access-content/browse>` or :ref:`search-atom`
+
 
 
 
@@ -420,7 +421,7 @@ This can allow a user to avoid unnecessarily repeating data entry.
 
 1. First, navigate to the :term:`archival description` you wish to edit. You
    can do this by :doc:`browsing <../access-content/browse>` or
-   :doc:`searching <../access-content/search>` for the :term:`archival
+   :doc:`searching <../access-content/search-atom>` for the :term:`archival
    description` - see :ref:`Access content <access-content>` for more
    information on navigation in AtoM.
 2. At the bottom of the archival description, click the "Duplicate" button
@@ -501,7 +502,7 @@ the intellectual :term:`arrangement` of an :term:`archival unit`.
 
 1. Navigate to the :term:`child description <child record>` whose sort order
    you wish to change. You can do this by :doc:`browsing
-   <../access-content/browse>` or :doc:`searching <../access-content/search>`
+   <../access-content/browse>` or :ref:`searching <search-atom>`
    for the :term:`archival description` - see :ref:`Access content
    <access-content>` for more information on navigation in AtoM.
 2. In the :term:`treeview` located in the :term:`context menu` on the left-
@@ -567,7 +568,7 @@ lower level of description can also be moved so that it becomes a new
 
 1. Navigate to the :term:`child description <child record>` that you wish to
    move. You can do this by :doc:`browsing <../access-content/browse>` or
-   :doc:`searching <../access-content/search>` for the
+   :doc:`searching <../access-content/search-atom>` for the
    :term:`archival description` - see :ref:`Access content <access-content>`
    for more information on navigation in AtoM.
 2. At the bottom of the description's :term:`view page`, press the "Move"
@@ -636,7 +637,7 @@ description and using the :term:`Delete button` located in the
 
 1. Navigate to the :term:`archival description` that you would like to
    permanently delete. You can do this by :doc:`browsing
-   <../access-content/browse>` or :doc:`searching <../access-content/search>`
+   <../access-content/browse>` or :ref:`searching <search-atom>`
    for the :term:`archival description` - see :ref:`Access content
    <access-content>` for more information on navigation in AtoM.
 2. Scroll to the bottom of the description's :term:`view page`, and click the

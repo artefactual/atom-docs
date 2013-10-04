@@ -195,7 +195,7 @@ that you would like to associate with the donor. To do so:
    with the accession records :term:`search box` located at the top of the
    browse page. For more information on searching for :term:`accession records
    <accession record>` in AtoM, see: :ref:`Searching for accession records
-   <search-accession-records>`
+   <dedicated-search-accessions>`
 3. Once you have selected an :term:`accession record`, you will be redirected
    to the selected record's :term:`view page`. To enter :term:`edit mode`, you
    can either click the "Edit" button in the :term:`button block` at the

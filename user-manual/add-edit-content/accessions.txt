@@ -56,7 +56,7 @@ materials have been arranged.
 
 .. seealso::
 
-   * :ref:`Searching for accession records <search-accession-records>`
+   * :ref:`Searching for accession records <dedicated-search-accessions>`
    * :ref:`Add a new deaccession record <add-deaccession-record>`
    * :ref:`Edit an existing deaccession record <edit-deaccession-record>`
    * :ref:`Delete a deaccession record <delete-deaccession-record>`
@@ -207,7 +207,7 @@ time by a logged-in user with edit privileges.
    with the accession records :term:`search box` located at the bottom of the
    browse page. For more information on searching for :term:`accession records
    <accession record>` in AtoM, see: :ref:`Searching for accession records
-   <search-accession-records>`
+   <dedicated-search-accessions>`
 
 .. TIP::
 

@@ -270,7 +270,7 @@ page` of any other authority record via the "Add new" button in the
 
 1. Navigate to an existing :term:`authority record` in AtoM. You can do this
    by :doc:`browsing <../access-content/browse>` or by
-   :doc:`searching <../access-content/search>` for  a specific
+   :doc:`searching <../access-content/search-atom>` for  a specific
    :term:`authority record` - see :ref:`Access content <access-content>` for
    more information on navigation in AtoM.
 2. At the bottom of the authority record's :term:`view page`, you will see the
@@ -307,7 +307,7 @@ Edit an existing authority record
 
 1. First, navigate to the :term:`authority record` you wish to edit. You
    can do this by :doc:`browsing <../access-content/browse>` or
-   :doc:`searching <../access-content/search>` for the :term:`archival
+   :doc:`searching <../access-content/search-atom>` for the :term:`archival
    description` - see :ref:`Access content <access-content>` for more
    information on navigation in AtoM. See :ref:`ISAAR-CPF <isaar-template>`
    for more information on specific fields in the authority record edit
@@ -354,7 +354,7 @@ From the archival description
 
 1. First, navigate to the :term:`archival description` you wish to edit. You
    can do this by :doc:`browsing <../access-content/browse>` or
-   :doc:`searching <../access-content/search>` for the :term:`archival
+   :doc:`searching <../access-content/search-atom>` for the :term:`archival
    description` - see :ref:`Access content <access-content>` for more
    information on navigation in AtoM.
 2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
@@ -397,7 +397,7 @@ From the authority record
 
 1. First, navigate to the :term:`authority record` you wish to edit. You
    can do this by :doc:`browsing <../access-content/browse>` or
-   :doc:`searching <../access-content/search>` for the
+   :doc:`searching <../access-content/search-atom>` for the
    :term:`authority record` - see :ref:`Access content <access-content>` for
    more information on navigation in AtoM.
 2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
@@ -446,7 +446,7 @@ Create a relationship between two authority records
 
 1. First, navigate to the :term:`authority record` you wish to edit. You
    can do this by :doc:`browsing <../access-content/browse>` or
-   :doc:`searching <../access-content/search>` for the
+   :doc:`searching <../access-content/search-atom>` for the
    :term:`authority record` - see :ref:`Access content <access-content>` for
    more information on navigation in AtoM.
 2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
@@ -513,7 +513,7 @@ relationship between an existing authority record and an existing function:
    page to find the related function. Click on the related function to
    navigate to its :term:`view page`. For more information on browsing and
    searching in AtoM, see: :doc:`Browse <../access-content/browse>` or
-   :doc:`Search <../access-content/search>`.
+   :doc:`Search <../access-content/search-atom>`.
 2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
    button in the :term:`button block`, or by clicking on one of the
    :term:`information area` headings; this takes you to the record's
@@ -566,7 +566,7 @@ Delete an authority record
 
 1. Navigate to the :term:`authority record` you wish to edit. You can do this
    by :doc:`browsing <../access-content/browse>` or :doc:`searching
-   <../access-content/search>` for the :term:`authority record` - see
+   <../access-content/search-atom>` for the :term:`authority record` - see
    :ref:`Access content <access-content>` for more information on navigation
    in AtoM.
 2. Click the :term:`Delete button` in the :term:`button block`.
