@@ -48,7 +48,7 @@ Glossary
     <authority record>`, :term:`archival institutions <archival
     institution>`, :term:`terms <term>`, and :term:`functions <function>`.
     Only logged-in users can see the "Add" menu, which appears in the
-    :term:`main menu` located in the :term:`header bar`. See: :ref:`main-menu`
+    :term:`main menu` located in the :term:`header bar`. See: :ref:`main-menu`.
 
   Add new button
     The add new button is located in the :term:`button block <button
@@ -127,8 +127,7 @@ Glossary
     divided into sub-units for the purposes of description: e.g. a
     :term:`fonds` may contain several series, each of which may contain
     several files, and so forth. The smallest (and therefore indivisible)
-    unit is the item. See also
-    :term:`level of description`.
+    unit is the item. See also :term:`level of description`.
 
   Area header
     The title/heading that appears at the top of :term:`information areas
@@ -138,7 +137,7 @@ Glossary
     <function>`, and other records. When an authenticated (i.e., logged in)
     user with edit privileges clicks on the heading of an :term:`information
     area` when in :term:`view mode`, the page reloads in :term:`edit mode` so
-    the user can edit content. See: `recurring-information-areas`
+    the user can edit content. See: `recurring-information-areas`.
 
   Arrangement
     The International Council on Archives (`ICA <http://www.ica.org/>`__)
@@ -221,7 +220,7 @@ Glossary
   Button block
     The button block allows authorized users to add, edit, delete, move,
     and duplicate content and to save or cancel changes made in the
-    :term:`edit pages <edit page>`. See: :ref:`recurring-button-block`
+    :term:`edit pages <edit page>`. See: :ref:`recurring-button-block`.
 
   Carousel
     The carousel shows sets of :term:`thumbnails <thumbnail>` of
@@ -234,7 +233,7 @@ Glossary
     the top of :term:`archival descriptions <archival description>`
     whenever there are associated lower-level descriptions that have
     digital objects attached. See: :ref:`recurring-carousel`; see also:
-    :ref:`upload-digital-objects`
+    :ref:`upload-digital-objects`.
 
   Child record
     Child record refers to a description of the :term:`archival unit` that
@@ -302,7 +301,7 @@ Glossary
     holdings on the left-hand side, with contact information for the
     :term:`repository` provided on the right-hand side of the record. See
     :doc:`Context menu <../access-content/context-menu>`. See also:
-    :ref:`recurring-page-elements`
+    :ref:`recurring-page-elements`.
 
   Contributor
     A contributor is a type of user who can search, browse, create, and
@@ -334,7 +333,7 @@ Glossary
     save new :term:`entities <entity>`. Once an entity has been saved for
     the first time, the create button disappears and is replaced by the
     "Save" button, which is used to save all subsequent changes. See:
-    :ref:`recurring-button-block`
+    :ref:`recurring-button-block`.
 
   Creator
     A creator is "any entity (:term:`corporate body`, family or person)
@@ -345,12 +344,12 @@ Glossary
     description` only. Lower levels inherit the creator from the
     :term:`parent record`, unless a different creator is specified. AtoM
     can accommodate multiple creators at all levels of description. See
-    :ref:`Context area <context-area>`
+    :ref:`Context area <context-area>`.
 
   Current language
     Refers to the language in which the :term:`user interface` elements
     and :term:`database content` are displayed. Users can switch between
-    languages by using the :term:`language menu`. See: :ref:`language-menu`
+    languages by using the :term:`language menu`. See: :ref:`language-menu`.
 
   Data element
     Data elements, or elements of description, are `ICA
@@ -393,7 +392,7 @@ Glossary
     The delete button appears in the :term:`button block`. Clicking on the
     delete button will prompt a warning to appear asking whether the user
     really intends to delete the :term:`entity`. See:
-    :ref:`recurring-button-block`
+    :ref:`recurring-button-block`.
 
   Delete icon
     Delete icons are small buttons in :term:`edit pages <edit page>` used
@@ -452,7 +451,7 @@ Glossary
      AtoM has been designed so that other themes can be added to the
      application as plugins, after which an :term:`administrator` can change
      the application theme via the :term:`user interface` by navigating to
-     **Admin > Themes**. See :ref:`Themes and theming <themes-theming>`
+     **Admin > Themes**. See :ref:`Themes and theming <themes-theming>`.
 
   Donor dialog
     The dialog that opens when adding donor contact information to the
@@ -492,7 +491,7 @@ Glossary
     function in AtoM like a record skeleton when doing large amounts of
     data-entry on similar records. See:
     :ref:`duplicate-archival-description`; see also:
-    :ref:`recurring-button-block`
+    :ref:`recurring-button-block`.
 
   Edit button
     The edit button appears at the bottom of :term:`view pages <view
@@ -501,7 +500,7 @@ Glossary
 
     The user can also switch between view and edit pages by clicking the
     :term:`title bar` of an :term:`information area`. See:
-    :ref:`recurring-button-block`
+    :ref:`recurring-button-block`.
 
   Edit duplicate
     After the user clicks the :term:`duplicate button` the :term:`edit
@@ -1010,12 +1009,12 @@ Glossary
     In AtoM, subjects are :term:`controlled-vocabulary <controlled
     vocabulary>` :term:`terms <term>` grouped in a :term:`taxonomy` and
     used as :term:`access points <access point>` in :term:`archival
-    descriptions <archival description>`. See: :ref:`terms`
+    descriptions <archival description>`. See: :ref:`terms`.
 
   Supported language
     In AtoM, a supported language is one into which both :term:`data
     elements <data element>` and :term:`user interface` elements can be
-    translated. See: :ref:`default-language`; see also: :ref:`translate`
+    translated. See: :ref:`default-language`; see also: :ref:`translate`.
 
   Taxonomy
     A taxonomy is a grouping of :term:`controlled-vocabulary <controlled
@@ -1076,9 +1075,10 @@ Glossary
     interface` elements. See :ref:`Translate <translate>`.
 
   Translation panel
-    The translation panel is used by :term:`translators <translator>` to
-    edit :term:`user interface` elements and is accessed via the
-    :term:`translation bar`. See :ref:`Translate interface <translate-interface>`.
+    The translation panel is used by :term:`translators <translator>` to edit
+    :term:`user interface` elements and is accessed via the
+    :term:`translation bar`. See :ref:`Translate interface
+    <translate-interface>`.
 
   Translator
     A translator is a type of user who can translate :term:`data elements
@@ -1151,7 +1151,7 @@ Glossary
     User roles define levels of access to functions in AtoM, ranging from
     view-only access to full administration rights. User roles are defined
     by groups that an :term:`administrator` can add and edit. See
-    :ref:`User roles <user-roles>` and  :doc:`Manageuser accounts
+    :ref:`User roles <user-roles>` and :doc:`Manage user accounts
     <../administer/manage-user-accounts>`.
 
   Value list
