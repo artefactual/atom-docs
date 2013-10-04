@@ -159,7 +159,7 @@ requirements, and can manage :term:`user accounts <user account>` and
 Administrators can also create new user roles , set granular permissions
 for that role, and then assign or unassign users from the new role. For
 more information on creating a new user role, see :ref:`Add a new group
-<add-a-new-group>`.
+<add-group>`.
 
 
 .. _page-types:
@@ -217,10 +217,14 @@ don't have to scroll down to understand what they are viewing.
 View pages also include ellipses in text boxes that have a large number of
 characters (e.g., scope and content, Administrative/biographical history,
 Related units of description, etc.). The ellipses, represented in AtoM as 3
-dots (...) followed by a >> button, allow the User to expand the text box to
-read the entire body of text. The collapsed position provides a concise and
-tidy look to the record so User don't have to scroll down to understand what
-they are viewing.
+dots (...) followed by a |expand| "expand" button, allow the User to expand
+the text box to read the entire body of text. The collapsed position provides
+a concise and tidy look to the record so users don't have to scroll down to
+understand what they are viewing.
+
+.. |expand| image:: images/expand.png
+   :height: 23
+
 
 .. _page-type-edit:
 
