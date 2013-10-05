@@ -88,7 +88,7 @@ Glossary
     in the :term:`search box`. In the advanced search page, the user can
     select "and, or, not" operators, and search specific fields, to create
     a powerful search query. The option to apply filters to limit or
-    narrow the search are also provided.
+    narrow the search are also provided. See: :ref:`advanced-search`.
 
   Archival description
     An archival description is a body of information about an archival
@@ -584,7 +584,7 @@ Glossary
     :term:`fields <field>` within the :ref:`entity type <entity-types>` being
     browsed or searched. For further information and usage, see:
     :ref:`recurring-facet-filters`. See also: :ref:`Browse <browse>`,
-    :doc:`Search <../access-content/search>`, and :ref:`Navigate <navigate>`.
+    :ref:`search-atom`, and :ref:`Navigate <navigate>`.
 
   Field
     A field is a container for a :term:`data element`. Content is added to
@@ -936,8 +936,7 @@ Glossary
     The search box is used to find descriptions in AtoM that contain text
     matching a search query. The search box is located in the
     :term:`header bar` on all AtoM pages, including the home page. See
-    :ref:`Access content <access-content>` and :doc:`Search
-    <../access-content/search>`
+    :ref:`Access content <access-content>` and :ref:`search-atom`
 
   Setting
     Settings is a broad term used to describe the properties that affect
@@ -1108,8 +1107,8 @@ Glossary
     :term:`archival description`, :term:`authority record`, :term:`archival
     institution`, :term:`subject`, and :term:`place`. It appears as a
     :term:`drop-down <drop-down menu>` below the :term:`search box` as a user
-    enters text. See: :doc:`Search <../access-content/search>` and :ref:`The
-    search box <search-box>`.
+    enters text. See: :doc:`Search <../access-content/search-atom>` and
+    :ref:`The search box <search-box>`.
 
   User account
     User accounts are established in order to manage :term:`access
