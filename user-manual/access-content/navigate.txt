@@ -466,8 +466,6 @@ filter>`), including:
 * :term:`Archival description`
 * :term:`Authority record`
 * :term:`Archival institution`
-* :term:`Subject`
-* :term:`Place`
 
 When multiple results for a record type exist, the :term:`typeahead`
 drop-down includes an option to view all records for a particular record
@@ -481,7 +479,7 @@ most recently viewed :term:`archival institution`, or to search globally
 (i.e., across all records in the application).
 
 **For more information on searching in AtoM, see:** :doc:`Search
-<../access-content/search-atom>`
+<../access-content/search-atom>`. **See also:** :ref:`advanced-search`.
 
 :ref:`Back to top <navigate>`
 
