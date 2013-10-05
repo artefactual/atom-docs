@@ -29,14 +29,20 @@ presented in the search box (see: :ref:`below <search-typeahead>`).
 Search terms entered in the search box are, by default, searched with an "OR"
 operator - that is to say, searching for *kitty cat* would by default search
 *kitty* OR *kat*. AtoM supports a number of :term:`Boolean <boolean search>`
-operators
-
-
+operators - see: :ref:`Advanced search <advanced-search>`.
 
 .. _search-typeahead:
 
 Typeahead and faceted search box results
 -----------------------------------------
+
+.. figure:: images/typeahead.*
+   :align: right
+   :figwidth: 40%
+   :width: 100%
+   :alt: Example of the typeahead in the search box
+
+   As a user types, typeahead search suggestions appear below the search box.
 
 Additionally, the AtoM search box also implements :term:`typeahead` - as a user
 enters text into the search box, one or more possible matches are found and
@@ -50,8 +56,6 @@ filter>`), including:
 * :term:`Archival description`
 * :term:`Authority record`
 * :term:`Archival institution`
-* :term:`Subject`
-* :term:`Place`
 
 When multiple results for a record type exist, the :term:`typeahead`
 drop-down includes an option to view all records for a particular record
@@ -64,23 +68,125 @@ or "an" in the search box will not prompt suggestions, but entering "ant"
 might produce suggestions such as an authority record for a person named
 "Anthony," etc.
 
+.. IMPORTANT::
+
+   The :term:`typeahead` search results are intended as a navigational tool
+   for quick searching of multiple :ref:`entity types <entity-types>`, but
+   **by default pressing enter after entering a query in the search bar will
+   load a results page for archival descriptions**. If you wish to search for
+   an :term:`authority record` or :term:`archival institution` using the main
+   search box, you must either click it when it appears in the drop-down, or
+   alternately select it from a browse page when clicking the "all matching"
+   option below each search facet in the typeahead. At this time, the main
+   :term:`search box` cannot be configured to return other record types when
+   pressing enter. However, there are also dedicated search bars for authority
+   records and archival institutions -- see :ref:`below <dedicated-search>`.
+
 .. _search-box-delimiters:
 
 Search box delimiters
 ---------------------
+
+.. figure:: images/search-delimiter.*
+   :align: right
+   :figwidth: 40%
+   :width: 100%
+   :alt: Example of the search delimiters below the search box
+
+   When viewing an archival description linked to an archival institution, or
+   the institution record, the option to limit your search to the current
+   institution appears as a radio button in a drop-down beneath the search
+   box.
 
 Additionaly, when a user has viewed an :term:`archival institution` record or
 an :term:`archival description` related to an archival institution, clicking
 in the search box will reveal a set of :term:`radio buttons <radio button>`
 that allow the user limit the search results to the holdings of the most
 recently viewed :term:`archival institution`, or to search globally (i.e.,
-across all records in the application).
+across all records in the application). Help text appears in the
+:term:`search box` to indicate at a glance which setting is engaged: if the
+search box text says "Search", the delimiter is set to perform a global
+search. If the help text says "Search [Name of Institution]" (where the name
+of the current related institution appears), this indicates that the
+delimiter is set to limit search box query results to the :term:`holdings` of
+that institution.
 
+.. NOTE::
+
+   When a user views a linked :term:`archival description` or an
+   :term:`archival institution` record, the :term:`search box` delimiter will
+   **default to search within that institution**. If you would like to
+   perform a global search (i.e. across all records in the application),
+   switch the radio button to *Global search* before proceeding. See below
+   for further instructions on using the search box delimiters.
+
+When the delimiter is set to limit search results to a specific
+:term:`archival institution`, :term:`typeahead` search results for
+:term:`archival descriptions <archival description>` will also be limited to
+the :term:`holdings` of that institution. However, other typehead results,
+such as :term:`authority record` and :term:`archival institution`
+suggestions, will **not** be limited (instead AtoM will continue to make
+suggestions from all records in the application for those types).
+
+If a user enters a search query in the :term:`search box` while the delimiter.
+is set to a particular :term:`repository`, the :ref:`search results
+<page-type-search>` page will include a **filter tag** at the top of the
+results, to offer a visual cue to the user that the results are limited to
+those of a specific :term:`archival institution`. Clicking the "**X**" on the
+filter tag will remove it, and the results page will reload and display
+global search results. This offers two advantages to the user:
+
+* When a delimited search is performed, the user is given a clear visual
+  indication (the filter tag bearing the :term:`repository` name)
+* If a delimited search is performed *by accident* (i.e. the user meant to
+  perform a global search), the filter can be removed without having to
+  perform the search again.
+
+.. figure:: images/search-filter-tag.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: Example of a filter tag on a search results page
+
+   An example of a search results page with a filter tag visible - in this
+   instance, the user has performed a search for "allan" delimited to the
+   holdings of the Desoronto Archives
+
+**USING THE SEARCH BOX DELIMITERS**
+
+1. Navigate to an :term:`archival description` linked to an :term:`archival
+   institution`, or to an archival institution's page. You can do this either
+   by searching for the name of the institution or description, or by
+   :ref:`browsing <browse>`.
+2. Place your cursor in the :term:`search box` located in the AtoM
+   :term:`header bar`. A :term:`drop-down menu` will appear beneath the search
+   box with two radio buttons.
+3. By default, the radio button will be set to the related :term:`archival
+   institution`. If you would like to search within the :term:`holdings` of
+   that institution, you can begin typing your query.
+4. If you would like to search all records held in AtoM (i.e. globally), click
+   the "Global search" radio button in the :term:`drop-down <drop-down
+   menu>`. Begin typing your query.
+5. If you see the result you are looking for appear in the :ref:`typeahead
+   <search-typeahead>`, you can click it to go straight to the record - AtoM
+   will redirect you to the selected description's :term:`view page`.
+6. When you have entered your search term(s), press enter to submit and begin
+   your search. AtoM will redirect you to a :ref:`search results
+   <page-type-search>` page with descriptions that contain data that match
+   your search query.
+7. The search results page includes a number :ref:`facet filters <facet
+   filter>`, to help you sort through the results and find the content you are
+   looking for. For more information on working with facet filters, see:
+   :ref:`recurring-facet-filters`.
+8. Search results can be sorted either alphabetically, or by most-recently
+   updated, using the :term:`sort button` available at the top-left side of
+   the search results. For more information, see:
+   :ref:`recurring-sort-button`.
 
 
 Using the search box
 
-Default settings (or)
+
 
 See: boolean operators (advanced search)
 
@@ -102,12 +208,14 @@ content
 
 :ref:`Back to top <search-atom>`
 
+.. _dedicated-search:
+
 Dedicated search boxes
 ======================
 
 Content
 
-Fact that they only return titles for now
+Fact that some only return titles for now
 
 .. _dedicated-search-authority:
 
