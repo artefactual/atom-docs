@@ -454,14 +454,16 @@ matching a search query. The search box is located in the
 when a user enters text and presses enter, the results returned are for
 :term:`archival descriptions <archival description>`.
 
-However, the AtoM search box also implements :term:`typeahead` - as a user
-enters text into the search box, one or more possible matches are found and
-presented to the user in a :term:`drop-down <drop-down menu>` below the search
-box, which continue to narrow as the user enters further text. This allows a
-user to dynamically view results and select a resource without necessarily
-having to enter its full name or title. The search box :term:`typeahead`
-results are organized into record-type categories (or :term:`facets <facet
-filter>`), including:
+To enable the quick location of other core :ref:`entity types <entity-types>`
+such as :term:`authority records <authority record>` and :term:`archival
+institutions <archival institution>`, the AtoM search box also implements
+:term:`typeahead`. As a user enters text into the search box, one or more
+possible matches are found and presented to the user in a :term:`drop-down
+<drop-down menu>` below the search box, which continue to narrow as the user
+enters further text. This allows a user to dynamically view results and select
+a resource without necessarily having to enter its full name or title. The
+search box :term:`typeahead` results are organized into record-type categories
+(or :term:`facets <facet filter>`), including:
 
 * :term:`Archival description`
 * :term:`Authority record`
@@ -620,7 +622,7 @@ orientation and navigation.
 .. figure:: images/context-menu-archdesc.*
    :align: right
    :figwidth: 50%
-   :width: 98%
+   :width: 100%
    :alt: Example of the context menu on an archival description
 
    Context menu (on left and right sides) on an archival description
@@ -688,7 +690,7 @@ Column headers
 .. figure:: images/column-headers.*
    :align: right
    :figwidth: 40%
-   :width: 98%
+   :width: 100%
    :alt: Name and Updated column headers in the Browse Rights holders page
 
    Name and Updated column headers in the Browse Rights holders page
@@ -717,7 +719,7 @@ Information areas
 .. figure:: images/information-area.*
    :align: right
    :figwidth: 40%
-   :width: 98%
+   :width: 100%
    :alt: The Identity and Context Areas in an ISAD(G) archival description
 
    The Identity and Context Areas in an ISAD(G) archival description
@@ -766,7 +768,7 @@ album artwork, or photographs.*"
 .. figure:: images/carousel.*
    :align: right
    :figwidth: 50%
-   :width: 98%
+   :width: 100%
    :alt: An image of the carousel in AtoM
 
    An example of the carousel with the "Show all" button visible
@@ -843,7 +845,7 @@ Virginia Woolf was listed as the author.
 .. figure:: images/facet-filters-archdesc.*
    :align: right
    :figwidth: 30%
-   :width: 98%
+   :width: 100%
    :alt: An image of the facet filters on an archival description browse page
 
    Facet filters available on an archival description browse page
@@ -901,7 +903,7 @@ Facets available by record type in AtoM
 .. figure:: images/facet-filters-authority.*
    :align: right
    :figwidth: 30%
-   :width: 98%
+   :width: 100%
    :alt: An image of the facet filters on the authority records browse page
 
    Facet filters available on the authority records browse page
@@ -978,7 +980,7 @@ record edit template, see: :ref:`ISAAR(CPF) template <isaar-template>`.
 .. figure:: images/facet-filter-digobject.*
    :align: right
    :figwidth: 30%
-   :width: 98%
+   :width: 100%
    :alt: An image of the facet filter buttons on the digital object browse page
 
    Facet filter buttons available on the digital object browse page
@@ -1066,7 +1068,7 @@ Button block
 .. figure:: images/button-block-archdesc.*
    :align: right
    :figwidth: 50%
-   :width: 98%
+   :width: 100%
    :alt: An image of the button block on an archival description
 
    The button block with all options visible on an archival description
@@ -1092,7 +1094,7 @@ and/or data entry templates in the application via the :term:`user interface`.
 .. figure:: images/button-block-repository.*
    :align: right
    :figwidth: 50%
-   :width: 98%
+   :width: 100%
    :alt: An image of the button block on an archival institution
 
    The button block on an archival institution
@@ -1211,7 +1213,7 @@ to facilitate navigation in several places:
 .. figure:: images/breadcrumb-archdesc.*
    :align: center
    :figwidth: 80%
-   :width: 98%
+   :width: 100%
    :alt: An image of breadcrumb trail on an archival description
 
    An example of a breadcrumb trail (below the title bar)
@@ -1224,7 +1226,7 @@ to facilitate navigation in several places:
 .. figure:: images/breadcrumb-move.*
    :align: center
    :figwidth: 80%
-   :width: 98%
+   :width: 100%
    :alt: An image of a hierarchy expressed as a breadcrumb in the Move screen
 
    An example of a description hierarchy expressed as a breadcrumb trail in
@@ -1237,7 +1239,7 @@ to facilitate navigation in several places:
 .. figure:: images/breadcrumb-repository.*
    :align: center
    :figwidth: 80%
-   :width: 98%
+   :width: 100%
    :alt: An image of a breadcrumb trail above an archival institution record
 
    An example of a breadcrumb trail (below the title bar)
@@ -1259,7 +1261,7 @@ to facilitate navigation in several places:
 .. figure:: images/breadcrumb-accesspoint-main.*
    :align: center
    :figwidth: 80%
-   :width: 98%
+   :width: 100%
    :alt: An image of a hierarchical place term expressed as a breadcrumb trail
 
    An example of a hierarchical place term expressed as a breadcrumb trail in
@@ -1281,7 +1283,7 @@ Sort button
 .. figure:: images/sort-button-archdesc.*
    :align: right
    :figwidth: 70%
-   :width: 99%
+   :width: 100%
    :alt: An image of a sort button on an archival description browse page
 
    An example of the sort button on an archival description browse page
@@ -1328,7 +1330,7 @@ or list pages:
 .. figure:: images/sort-button-tabs.*
    :align: right
    :figwidth: 40%
-   :width: 98%
+   :width: 100%
    :alt: An image of the sort button tabs on a rights holder browse page
 
    An example of the sort button tabs on a rights holder browse page
@@ -1384,7 +1386,7 @@ positioned above the list of related :term:`holdings`.
 .. figure:: images/institution-logo.*
    :align: center
    :figwidth: 80%
-   :width: 98%
+   :width: 100%
    :alt: An image of an institution logo on a related archival description
 
    An example of an institution logo on a related archival description
@@ -1397,7 +1399,7 @@ in a tiled browse layout, with the title appearing below the logo in grey.
 .. figure:: images/institution-logo-browse.*
    :align: center
    :figwidth: 80%
-   :width: 98%
+   :width: 100%
    :alt: An image of institution logos the archival institution browse page
 
    Institution logos on the Archival institution browse page. In the image,
