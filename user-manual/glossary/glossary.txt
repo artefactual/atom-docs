@@ -599,6 +599,40 @@ Glossary
     and hide them from public (unauthorized Users) views. See
     :doc:`Visible elements <../administer/visible-elements>`.
 
+  Filter tag
+    A filter tag appears at the top of a search or browse results page when a
+    user arrives there with a search already delimited to a particular
+    :term:`collection`, :term:`archival institution`, or other aspect of the
+    results (for example, showing only :term:`digital objects <digital
+    object>`). Displayed as a white tag with orange text indicating the
+    filter being applied (for example, the name of a :term:`repository` to
+    which search or browse results have been limited), the filter tag also
+    includes a grey "**X**" that, when clicked by a user, will remove the
+    filter and reload the page to display global search results (i.e. results
+    from throughout all :term:`holdings` in the application).
+
+    The most common uses of filter tags in AtoM are: **1)** When a user clicks
+    the "Show results with digital objects" option provided at the top of
+    :term:`archival description` search/browse pages, the page will reload
+    with a filter tag in place reading, "Only digital objects." **2)** When a
+    user performs a search in the :term:`search box` using the :ref:`search-
+    box-delimiters`, a search results page with a filter tag for that
+    institution will appear (limiting results to the :term:`holdings` of the
+    related :term:`repository`). **3)** When a user visits an :term:`archival
+    institution` page, and clicks the "Browse # holdings" option below the
+    list of the institution's :term:`holdings` in the left-hand
+    :term:`context menu`, a browse results page with a filter tag for that
+    institution will appear. **4)** When a user performs a :ref:`quick search
+    <treeview-search>` on an :term:`archival description` using the
+    :term:`treeview` search tab, an option to "Browse all descriptions" is
+    presented. If the user clicks the option, AtoM will redirect the user to a
+    browse page with a filter tag in place limiting the results to the current
+    :term:`fonds` or :term:`collection`. In all cases, clicking the "**X**"
+    will remove the filter tag and reload the search results correspondingly.
+
+    See: :ref:`search-atom`; see particularly :ref:`search-box-delimiters`
+    for a screenshot and example application of the filter tags.
+
   Finding aid
     The International Council on Archives (`ICA <http://www.ica.org/>`__)
     defines a finding aid as "The broadest term to cover any description

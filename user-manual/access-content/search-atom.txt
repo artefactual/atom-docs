@@ -60,7 +60,7 @@ filter>`), including:
 When multiple results for a record type exist, the :term:`typeahead`
 drop-down includes an option to view all records for a particular record
 type - clicking the "View all" link for a particular type of record will
-redirect the user to a browse page of results.
+redirect the user to a :ref:`browse page <page-type-browse>` of results.
 
 The :term:`typeahead` is set by default to begin providing suggestions only
 after at least three characters have been entered - for example, entering "a"
@@ -84,8 +84,8 @@ might produce suggestions such as an authority record for a person named
 
 .. _search-box-delimiters:
 
-Search box delimiters
----------------------
+Institutional search box delimiters
+-----------------------------------
 
 .. figure:: images/search-delimiter.*
    :align: right
@@ -98,18 +98,24 @@ Search box delimiters
    institution appears as a radio button in a drop-down beneath the search
    box.
 
-Additionaly, when a user has viewed an :term:`archival institution` record or
-an :term:`archival description` related to an archival institution, clicking
-in the search box will reveal a set of :term:`radio buttons <radio button>`
-that allow the user limit the search results to the holdings of the most
-recently viewed :term:`archival institution`, or to search globally (i.e.,
-across all records in the application). Help text appears in the
-:term:`search box` to indicate at a glance which setting is engaged: if the
-search box text says "Search", the delimiter is set to perform a global
-search. If the help text says "Search [Name of Institution]" (where the name
-of the current related institution appears), this indicates that the
-delimiter is set to limit search box query results to the :term:`holdings` of
-that institution.
+To better support the use of AtoM as a :term:`multi-repository system`, AtoM
+provides users with an institutional search box delimiter that can be toggled
+between a global search setting and a setting restricted to the
+:term:`holdings` of a particular :term:`archival institution`.
+
+When a user has viewed an :term:`archival institution` record or an
+:term:`archival description` related to an archival institution, clicking in
+the search box will reveal a set of :term:`radio buttons <radio button>` that
+allow the user limit the search results to the holdings of the most recently
+viewed :term:`archival institution`, or to search globally (i.e., across all
+records in the application).
+
+Help text appears in the :term:`search box` to indicate at a glance which
+setting is engaged: if the search box text says "Search", the delimiter is set
+to perform a global search. If the help text says "Search [Name of
+Institution]" (where the name of the current related institution appears),
+this indicates that the delimiter is set to limit search box query results to
+the :term:`holdings` of that institution.
 
 .. NOTE::
 
@@ -128,13 +134,18 @@ such as :term:`authority record` and :term:`archival institution`
 suggestions, will **not** be limited (instead AtoM will continue to make
 suggestions from all records in the application for those types).
 
+.. _search-delimiter-filter-tag:
+
+Filter tags
+^^^^^^^^^^^
+
 If a user enters a search query in the :term:`search box` while the delimiter.
-is set to a particular :term:`repository`, the :ref:`search results
-<page-type-search>` page will include a **filter tag** at the top of the
-results, to offer a visual cue to the user that the results are limited to
-those of a specific :term:`archival institution`. Clicking the "**X**" on the
-filter tag will remove it, and the results page will reload and display
-global search results. This offers two advantages to the user:
+is set to a particular :term:`repository` and presses enter, the
+:ref:`search results <page-type-search>` page will include a :term:`filter tag`
+at the top of the results, to offer a visual cue to the user that the results
+are limited to those of a specific :term:`archival institution`. Clicking the
+"**X**" on the filter tag will remove it, and the results page will reload and
+display global search results. This offers two advantages to the user:
 
 * When a delimited search is performed, the user is given a clear visual
   indication (the filter tag bearing the :term:`repository` name)
@@ -152,7 +163,10 @@ global search results. This offers two advantages to the user:
    instance, the user has performed a search for "allan" delimited to the
    holdings of the Desoronto Archives
 
-**USING THE SEARCH BOX DELIMITERS**
+.. _search-using-delimiters:
+
+Using the Institutional search box delimiters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Navigate to an :term:`archival description` linked to an :term:`archival
    institution`, or to an archival institution's page. You can do this either
@@ -174,21 +188,24 @@ global search results. This offers two advantages to the user:
    your search. AtoM will redirect you to a :ref:`search results
    <page-type-search>` page with descriptions that contain data that match
    your search query.
-7. The search results page includes a number :ref:`facet filters <facet
+7. If you have used the institutional search box delimiter, a :term:`filter
+   tag` will appear at the top of your search results, indicating that these
+   results have been limited to the current :term:`repository`. If you wish
+   to broaden the search results to all records in AtoM (i.e., if you did not
+   intend to use the institutional search delimiter), you can click the
+   "**X**" on the :term:`filter tag` to remove it; AtoM will reload global
+   search results.
+8. The search results page includes a number :term:`facet filters <facet
    filter>`, to help you sort through the results and find the content you are
    looking for. For more information on working with facet filters, see:
    :ref:`recurring-facet-filters`.
-8. Search results can be sorted either alphabetically, or by most-recently
+9. Search results can be sorted either alphabetically, or by most-recently
    updated, using the :term:`sort button` available at the top-left side of
    the search results. For more information, see:
    :ref:`recurring-sort-button`.
 
 
-Using the search box
-
-
-
-See: boolean operators (advanced search)
+:ref:`Back to top <search-atom>`
 
 
 .. _search-results-facets:
@@ -196,7 +213,13 @@ See: boolean operators (advanced search)
 Search results and facet filters
 --------------------------------
 
-content
+AtoM's search and browse pages include a number of :ref:`facet filters
+<recurring-facet-filters>` to enhance a user's ability to quickly sift
+through results and find specific records.
+
+**For more information on using the facet filters in AtoM, see:**
+
+* :ref:`recurring-facet-filters`
 
 :ref:`Back to top <search-atom>`
 
@@ -205,6 +228,13 @@ Search for archival descriptions
 =================================
 
 content
+
+.. _treeview-search:
+
+Treeview quick search
+----------------------
+
+content here.
 
 :ref:`Back to top <search-atom>`
 
