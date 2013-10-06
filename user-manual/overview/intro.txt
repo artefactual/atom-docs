@@ -100,7 +100,7 @@ Find out more information on Open Source and Free Software from:
 Standards-based
 ===============
 
-AtoM is built around `International Council on Archives
+AtoM was originally built around `International Council on Archives
 <http://www.ica.org>`_ (ICA) descriptive standards:
 
 * General International Standard Archival Description (:ref:`ISAD
@@ -117,7 +117,8 @@ AtoM supports Simple Knowledge Organization System (`SKOS
 
 AtoM is designed to be flexible enough for adaptation to other
 descriptive standards; see :doc:`Descriptive standards
-<descriptive-standards>`.
+<descriptive-standards>` for a full list of other standards currently
+supported.
 
 
 Multilingual
