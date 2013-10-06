@@ -5,17 +5,33 @@ Descriptive standards
 .. figure:: images/ica-standards.*
    :align: right
    :figwidth: 40%
-   :width: 98%
+   :width: 100%
    :alt: AtoM is built around the ICA's descriptive standards
 
    AtoM is built around the ICA's descriptive standards
 
+At its core, AtoM was originally designed to provide archivists with a
+freely available, user-friendly access system that would facilitate
+international standards adoption. Consequently, AtoM implements a number of
+standards-based edit templates, which are based on the International Council
+on Archives'(`ICA <http://www.ica.org/>`__) international descriptive
+standards, including:
 
-While AtoM is designed around the `ICA's <http://www.ica.org/>`__
+* General International Standard Archival Description (:ref:`ISAD
+  <isad-template>`)
+* International Standard Archival Authority Records (Corporate bodies,
+  persons, and families) (:ref:`ISAAR-CPF <isaar-template>`)
+* International Standard for Describing Institutions with Archival Holdings
+  (:ref:`ISDIAH <isdiah-template>`)
+* International Standard for Describing Functions (:ref:`ISDF
+  <isdf-template>`)
+
+
+While AtoM was originally designed around the `ICA's <http://www.ica.org/>`__
 international descriptive standards (ISAD, ISAAR, ISDIAH and ISDF), it is
 intended to be flexible enough to accommodate other practices based on other
-(national or local) descriptive standards.
-
+(national or local) descriptive standards, including those intended for
+libraries, museums, and art galleries.
 
 .. _standards-support:
 
@@ -78,7 +94,8 @@ Rules for Archival Description (RAD)
 RAD is maintained by the `Canadian Council of Archives
 <http://cdncouncilarchives.ca/>`__ and is available at
 http://www.cdncouncilarchives.ca/archdesrules.html. RAD-specific sections of
-this manual are available at Rules for Archival Description.
+this manual are available at: Rules for Archival Description (:ref:`RAD
+<rad-template>`).
 
 .. _standards-dacs:
 
@@ -93,7 +110,8 @@ Describing Archives: A Content Standard (DACS)
 DACS is maintained by the `Society of American Archivists
 <http://www2.archivists.org/>`__ and is available at
 http://files.archivists.org/pubs/DACS2E-2013.pdf (**PDF**). DACS-specific sections
-of this manual are available at Describing Archives: A Content Standard.
+of this manual are available at: Describing Archives: A Content Standard
+(:ref:`DACS <dacs-template>`)
 
 .. _standards-dc:
 
@@ -102,7 +120,7 @@ Dublin Core Metadata Element Set, Version 1.1
 
 AtoM implements unqualified `Dublin Core Metadata Element Set, Version 1.1.
 <http://dublincore.org/documents/dces/>`__. Dublin Core-specific sections of
-this manual are available at Dublin Core.
+this manual are available at Dublin Core (:ref:`DC <dc-template>`).
 
 .. _standards-mods:
 
@@ -115,5 +133,6 @@ is available at http://www.loc.gov/standards/mods/mods-outline.html. Currently
 AtoM supports the Digital Library Federation second level of adoption for MODS
 (see `DLF Aquifer MODS Guidelines Levels of Adoption <https://wiki.dlib.indian
 a.edu/display/DLFAquifer/MODS+Guidelines+Levels+of+Adoption>`__). MODS-
-specific sections of this manual are available at MODS.
+specific sections of this manual are available at: Metadata Object Description
+Schema (:ref:`MODS <mods-template>`).
 
