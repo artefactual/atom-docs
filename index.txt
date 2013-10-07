@@ -137,7 +137,7 @@ or for a network.
 * Install
 * :ref:`Manage user accounts and user groups <manage-user-accounts>`
 * Manage digital object storage
-* Edit user permissions
+* :ref:`Edit user permissions <edit-user-permissions>`
 * Manage static pages
 * Manage menus
 * Manage plugins
