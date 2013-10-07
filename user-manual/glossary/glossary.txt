@@ -34,7 +34,7 @@ Glossary
     AtoM. For example, some users are able to add and edit content while
     others may only be able to search and browse content. Access
     privileges are based on defined :term:`user roles <user role>` (see
-    :ref:`User roles <user-roles>`).
+    :ref:`User roles <user-roles>`). See : :ref:`edit-user-permissions`.
 
   Accrual
     An accrual is "an acquisition additional to a unit of description
