@@ -32,14 +32,64 @@ main page types a user will encounter, and how to switch languages.
 Home page
 =========
 
+.. figure:: images/home-page-ac.*
+   :align: right
+   :figwidth: 40%
+   :width: 100%
+   :alt: Example of a customized homepage in AtoM
+
+   An example of a customized home page: the ArchivesCanada theme in AtoM,
+   prepared for the `Canadian Council on Archives
+   <http://www.cdncouncilarchives.ca/>`__ as Canada's new national archival
+   portal.
+
 The :term:`home page` is the first thing that a user will see when opening the
 AtoM application. :term:`Administrators <administrator>` can customize this to
 be a landing page, and from here, users can :ref:`search <search-atom>`,
 :ref:`browse <browse>`, log in as authenticated users (gaining access to the
 :term:`main menu`), change the language of the application interface, and more.
 
+By default, the :term:`home page` includes:
+
+* An editable :term:`static page` area - users with sufficient :term:`access
+  privileges <access privilege>` can customize the home page by adding and
+  editing content (including, if desired, raw HTML and inline CSS) through
+  the :term:`user interface` - for more information, see: :ref:`Manage static
+  pages <manage-static-pages>`.
+* A :term:`browse menu` that will take users to a :ref:`browse page
+  <page-type-browse>` for some of the core :ref:`entity types
+  <entity-types>`, including :term:`archival descriptions
+  <archival description>`, :term:`authority records <authority record>`
+  (listed by default as "People & organizations"), :term:`archival
+  institutions <archival institution>`, :term:`subjects <subject>`,
+  :term:`places <place>`, and :term:`digital objects <digital object>` (i.e.,
+  a dedicated browse page for archival descriptions with linked digital
+  objects). For more information on the browse menu, see: :ref:`browse-menu`.
+* A "Popular this week" listing of the most visited (i.e. most number of page
+  views) resources in the past week. Resources listed in the "Popular this
+  week" menu include: :term:`archival descriptions
+  <archival description>`, :term:`authority records <authority record>`, and
+  :term:`archival institutions <archival institution>`.
+
+.. TIP::
+
+   A :term:`developer` can customize the look and feel of the AtoM home page
+   by editing the CSS files associated with it. This can be done to match
+   institutional theming, include images and other content. For more
+   information, see in the Administrator's Manual:
+   :ref:`customization-theming`.
+
+Like all pages in AtoM the :term:`home page` also includes the AtoM
+:term:`header bar`, providing access to a :ref:`search box <search-box>`,
+:ref:`browse menu <browse-menu>`, :ref:`log-in button <log-in-button>`,
+:ref:`language menu <language-menu>`, and :ref:`quick links menu
+<quick-links-menu>`. For more information on using the header bar in AtoM, see:
+:ref:`atom-header-bar`.
+
+**USING THE HOME PAGE IN AtoM:**
+
 #. Open your web browser and enter the URL of the web server hosting your AtoM
-   application. This takes you to your application's home page.
+   application. This takes you to your application's :term:`home page`.
 #. On opening, AtoM displays the home page in the configured :term:`default
    language`. In the language menu (top right-hand corner of your page, the
    globe icon in the :term:`header bar`), a user can change the display
@@ -68,22 +118,42 @@ be a landing page, and from here, users can :ref:`search <search-atom>`,
 Log in
 ======
 
-To add or edit content in AtoM, you need to log in:
+To add or edit content and access the :term:`main menu` in AtoM, you need to
+log in:
 
+.. figure:: images/log-in.*
+   :align: right
+   :figwidth: 20%
+   :width: 100%
+   :alt: An image of the log in button in AtoM
+
+   The log-in button in AtoM, when clicked by a user
 
 * Click the log in link in the :term:`header bar`, located in the upper right-
-  hand corner of the page. AtoM routes you to the log in page
+  hand corner of the page. A :term:`drop-down menu` will appear with two
+  :terM:`fields <field>` for an email, and a password.
 * Enter your email address
 * Enter your :term:`password`
-* Click the log in button
+* Click the "log in" button in the drop-down
 
 AtoM re-loads the :term:`home page`, now customized to your :term:`user role`.
 The :term:`main menu` is now visible. Your :term:`username` will appear where
 the log in button was, giving you access to your :term:`user profile`.
 
+.. figure:: images/logged-in.*
+   :align: right
+   :figwidth: 20%
+   :width: 100%
+   :alt: An image of the log in drop-down after a user has logged in
+
+   After logging in, an option to view and edit your user profile is
+   available in the log-in button drop-down
+
 To log out, click on your username in the user menu (top right-hand corner). A
 :term:`drop-down menu` will appear, with a link to your :term:`user profile`,
-and the option to log out. When the log out option is selected, AtoM returns
+and the option to log out. When the profile option is selected, a user can
+update their own user name, email, and password - see below,
+:ref:`change-password`. When the log out option is selected, AtoM returns
 you to the :term:`home page` (view-only access).
 
 .. note:: AtoM automatically logs you out after thirty minutes of inactivity.
@@ -189,6 +259,15 @@ main page types are:
 Home page
 ---------
 
+.. figure:: images/home-page-demo.*
+   :align: right
+   :figwidth: 30%
+   :width: 100%
+   :alt: Example of the AtoM demo site home page
+
+   An example of the AtoM online demo home page as it appears to a logged-in
+   administrator
+
 The :term:`home page` is the first page the user sees when opening the
 application. It provides basic information about the application, and links
 and buttons for user actions (search, browse, log in, log out, get help,
@@ -209,15 +288,10 @@ View
 A :term:`view page` displays an individual :term:`record` in full in
 :term:`view mode`, showing only those :term:`fields <field>` that contain
 data. Logged in users can toggle between :term:`edit mode` and :term:`view
-mode` by clicking the :term:`title bar` and can also use the :term:`button
-block` to edit or add to the record (i.e. to upload :term:`digital objects
-<digital object>`, add :term:`physical storage`, etc.).
-
-Introduced in Release 1.3, view pages now include ellipses in text boxes that
-have a large number of characters (e.g., scope and content). The ellipses
-allow the User to expand the text box to read the entire body of text. The
-collapsed position provides a concise and tidy look to the record so User
-don't have to scroll down to understand what they are viewing.
+mode` by clicking the :term:`area header` of an :term:`information area`, and
+can also use the :term:`button block` to edit or add to the record (i.e. to
+upload :term:`digital objects <digital object>`, add :term:`physical storage`,
+etc).
 
 View pages also include ellipses in text boxes that have a large number of
 characters (e.g., scope and content, Administrative/biographical history,
