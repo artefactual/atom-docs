@@ -1,8 +1,26 @@
 .. _atom-docs-home:
 
-==================
-AtoM documentation
-==================
+======================
+ICA-AtoM documentation
+======================
 
-Our documentation on ICA-AtoM can be found in the `ICA-AtoM wiki site
-<https://www.ica-atom.org/doc/Main_Page>`_.
+**ICA-AtoM 1.4 has not yet been released.**
+
+Our hope is to eventually move all ICA-AtoM documentation to the `Sphinx
+platform <http://sphinx-doc.org/>`__ - you will find new documents added here
+as we are able to complete the migration. In the meantime, all ICA-AtoM
+documentation can be found on the `ICA-AtoM wiki site <https://www.ica-
+atom.org/doc/Main_Page>`__.
+
+The **ICA-AtoM User Manual** is available
+`here <https://www.ica-atom.org/doc/User_manual>`__
+
+The current release of ICA-AtoM is 1.3.1 – find release information `here
+<https://www.ica-atom.org/doc/Release_1.3.1>`__, or download ICA-AtoM 1.3.1
+`here <https://www.ica-atom.org/download.html>`__.
+
+**Why not consider using AtoM 2.0?** Learn more `here
+<https://www.accesstomemory.org/en/docs/2.0/>`__.
+
+Find more information about our documentation move here: `About / Contribute
+<https://www.accesstomemory.org/en/docs/about-contribute/>`__.
