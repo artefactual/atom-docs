@@ -1,0 +1,416 @@
+.. _edit-user-permissions:
+
+=====================
+Edit user permissions
+=====================
+
+* :ref:`Default user group permissions settings in AtoM
+  <default-group-permissions>`
+* :ref:`Setting permissions by archival description
+  <archival-description-permissions>`
+* :ref:`Setting permissions by authority record <authority-record-permissions>`
+* :ref:`Setting permissions by term and taxonomy <taxonomy-permissions>`
+* :ref:`Setting permissions by archival institution <institution-permissions>`
+
+Each permission setting can be edited either by *user** or by **group**; each
+section mentioned above can thus be navigated according to "Edit permissions by
+user" or "Edit permissions by user group".
+
+
+.. IMPORTANT:
+
+Only an authenticated (i.e. logged-in) :term:`administrator` can modify a
+user's :term:`access privileges <access privilege>` After the desired changes
+have been made to a user's access permission settings, the administrator can log
+out and log back in as the user  in order to verify the results of the
+modifications.
+
+
+.. _default-group-permissions:
+
+Default user group permissions settings in AtoM
+===============================================
+
+In AtoM, user :term:`access privileges <access privilege>` are divided by 4
+permissions :term:`information areas <information area>`:
+
+* :ref:`Archival description permissions <archival-description-permissions>`
+* :ref:`Authority record permissions <authority-record-permissions>`
+* :ref:`Taxonomy permissions <taxonomy-permissions>`
+* :ref:`Archival institution permissions <institution-permissions>`
+
+Each permission :term:`information area` contains individual permission
+settings. By clicking on the specific permissions information area, AtoM will
+direct you to the :term:`view page` of that permission, where the permission
+settings for that specific user group will be displayed. Permissions can be
+edited by switching from :term:`view mode` to :term:`edit mode`; simply click
+the :term:`"Edit" button <Edit button>` in the :term:`button block`.
+
+.. IMPORTANT::
+
+   An authenticated (i.e. logged-in) :term:`administrator` must be in
+   :term:`edit mode` in order to be able to view *all* actions permissions that
+   are available for a specific permission. In :term:`view mode`, only those
+   actions which are not indicated as "Inherit", or in default, will be
+   displayed.
+
+On loading, AtoM will display the "Action" and the "Permission"
+setting for that specific permissions :term:`information area`. In AtoM, an
+"Action" represents different types of permissions, or :term:`access privileges
+<access privilege>` that can be given to a user. "Actions" will vary according
+to the permission type (i.e. the permission :term:`information area`) that you
+are viewing. Each permissions type will contain a list of default actions
+
+**Archival description permissions**
+
+contentcontencontent
+contententnnrnenfngn
+
+.. image:: images/description-actions.*
+   :align: right
+   :width: 25%
+   :alt: An image of default actions in Archival description permissions
+
+**Authority record permissions**
+
+contentcontencontent
+contententnnrnenfngn
+
+.. image:: images/authority-actions.*
+   :align: right
+   :width: 25%
+   :alt: An image of default actions in Authority record permissions
+
+**Taxonomy permissions**
+
+contentcontencontent
+contententnnrnenfngn
+
+.. image:: images/taxonomy-actions.*
+   :align: right
+   :width: 25%
+   :alt: An image of default actions in Taxonomy permissions
+
+
+**Archival institution permission**
+
+contentcontencontent
+contententnnrnenfngn
+
+.. image:: images/institution-actions.*
+   :align: right
+   :width: 25%
+   :alt: An image of default actions in Archival institution permissions
+
+Every "Action" includes the option to select one of the following three
+permission settings:
+
+* Grant |grant|
+* Deny |deny|
+* Inherit |inherit|
+
+.. |grant| image:: images/grant.png
+   :height: 23
+   :width: 65
+
+.. |deny| image:: images/deny.png
+   :height: 23
+   :width: 65
+
+.. |inherit| image:: images/inherit.png
+   :height: 23
+   :width: 65
+
+.. |inherit-select| image:: images/inherit-select.png
+   :height: 23
+   :width: 65
+
+.. |dash| image:: images/dash.png
+   :height: 23
+   :width: 20
+
+Default permission settings will be displayed in 2 ways in AtoM: when viewing
+permission settings in :term:`edit mode`, "Inherit" |inherit-select| will
+automatically be selected when the default setting has been chosen by an
+:term:`administrator` for a specific action; when viewing permission settings in
+:term:`view mode`, AtoM will simply display a dash |dash| in place of "Inherit"
+when the default setting has been chosen by an :term:`administrator` for a
+specific action.
+
+
+.. _archival-description-permissions:
+
+Setting permissions by archival description
+===========================================
+
+Permissions for all archival description
+
+Permissions by archival description
+
+Permissions by archival institutions
+
+* :ref:`Edit permissions for a user <user-info-object-permissions>`
+* :ref:`Edit permissions for a group <group-description-permissions>`
+
+
+
+.. _user-info-object-permissions:
+
+Edit archival description permissions by user
+---------------------------------------------
+
+You may want to edit a specific user's :term:`access privileges <access
+privilege>`.
+
+.. NOTE::
+
+   When navigating AtoM by user profiles, the "Archival description permissions"
+   :term:`information area` will appear as an "Information object permissions"
+   information area.
+
+.. |gears| image:: images/gears.png
+   :height: 18
+   :width: 18
+
+1. First, navigate to an existing user in AtoM. You can do this by click the
+   |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
+   in the :term:`header bar` and selecting "Users" from the
+   :term:`drop-down menu`. This will take you to a list of
+   current users accounts (i.e. the "List users" page). By default, the list
+   that appears will be of all "Active" users (i.e. "Show Active only").
+2. Select whether you wish to view "Active" users (i.e. "Show Active only") or
+   "Inactive" users (i.e. "Show Inactive only").
+3. Select the user you wish to edit from the list of users that appears on the
+   page. You can navigate through the list of users by scrolling to the bottom
+   of the "List users" page and clicking through the page numbers. By clicking
+   on the :term:`username` of the user you wish to edit, AtoM will direct you to
+   that :term:`user's profile <user profile>` :term:`view page`.
+4. Click on the "Information object permissions" :term:`information area`.
+   AtoM will direct you to the "Information object permissions" :term:`view
+   page`.
+5. To switch from :term:`view mode` to :term:`edit mode`, click the
+   :term:`"Edit" button <Edit button>` in the :term:`button block`; this takes
+   you to the user's :term:`edit page` for this :term:`access privilege`.
+6.
+
+
+.. _group-description-permissions:
+
+Edit archival description permissions by group
+----------------------------------------------
+
+1. Navigate to an existing group in AtoM. You can do this by click the
+   |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
+   in the :term:`header bar` and selecting "Groups" from the
+   :term:`drop-down menu`. This will take you to a list of current user groups.
+2. Select a group from the list that appears on the page by clicking on the
+   group name. AtoM will direct you to that user group's :term:`view page`.
+3. Click on the "Archival description permissions" :term:`information area`.
+   AtoM will direct you to the "Archival description permissions" :term:`view
+   page`.
+4. To switch from :term:`view mode` to :term:`edit mode`, click the
+   :term:`"Edit" button <Edit button>` in the :term:`button block`; this takes
+   you to the group's :term:`edit page` for this :term:`access privilege`.
+
+
+:ref:`Back to top <edit-user-permissions>`
+
+.. _authority-record-permissions:
+
+Setting permissions by authority record
+=======================================
+
+
+* :ref:`Edit permissions for a user <user-actor-permissions>`
+* :ref:`Edit permissions for a group <group-authority-record-permissions>`
+
+.. _user-actor-permissions:
+
+Edit authority record permissions by user
+-----------------------------------------
+
+.. NOTE::
+
+   When navigating AtoM by user profiles, the "Authority record permissions"
+   :term:`information area` will appear as an "Actor permissions" information
+   area.
+
+1. First, navigate to an existing user in AtoM. You can do this by click the
+   |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
+   in the :term:`header bar` and selecting "Users" from the
+   :term:`drop-down menu`. This will take you to a list of
+   current users accounts (i.e. the "List users" page). By default, the list
+   that appears will be of all "Active" users (i.e. "Show Active only").
+2. Select whether you wish to view "Active" users (i.e. "Show Active only") or
+   "Inactive" users (i.e. "Show Inactive only").
+3. Select the user you wish to edit from the list of users that appears on the
+   page. You can navigate through the list of users by scrolling to the bottom
+   of the "List users" page and clicking through the page numbers. By clicking
+   on the :term:`username` of the user you wish to edit, AtoM will direct you to
+   that :term:`user's profile <user profile>` :term:`view page`.
+4. Click on the "Actor permissions" :term:`information area`.
+   AtoM will direct you to the "Actor permissions" :term:`view page`.
+5. To switch from :term:`view mode` to :term:`edit mode`, click the
+   :term:`"Edit" button <Edit button>` in the :term:`button block`; this takes
+   you to the user's :term:`edit page` for this :term:`access privilege`.
+6.
+
+.. _group-authority-record-permissions:
+
+Edit authority record permissions by group
+------------------------------------------
+
+1. Navigate to an existing group in AtoM. You can do this by click the
+   |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
+   in the :term:`header bar` and selecting "Groups" from the
+   :term:`drop-down menu`. This will take you to a list of current user groups.
+2. Select a group from the list that appears on the page by clicking on the
+   group name. AtoM will direct you to that user group's :term:`view page`.
+3. Click on the "Authority record permissions" :term:`information area`.
+   AtoM will direct you to the "Authority record permissions" :term:`view
+   page`.
+4. To switch from :term:`view mode` to :term:`edit mode`, click the
+   :term:`"Edit" button <Edit button>` in the :term:`button block`; this takes
+   you to the group's :term:`edit page` for this :term:`access privilege`.
+
+:ref:`Back to top <edit-user-permissions>`
+
+.. _taxonomy-permissions:
+
+Setting permissions by term and taxonomy
+========================================
+
+Permissions for all term
+
+Permissions by taxonomy
+
+
+* :ref:`Edit permissions for a user <user-taxonomy-permissions>`
+* :ref:`Edit permissions for a group <group-taxonomy-permissions>`
+
+.. _user-taxonomy-permissions:
+
+Edit term and taxonomy permissions by user
+------------------------------------------
+
+1. First, navigate to an existing user in AtoM. You can do this by click the
+   |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
+   in the :term:`header bar` and selecting "Users" from the
+   :term:`drop-down menu`. This will take you to a list of
+   current users accounts (i.e. the "List users" page). By default, the list
+   that appears will be of all "Active" users (i.e. "Show Active only").
+2. Select whether you wish to view "Active" users (i.e. "Show Active only") or
+   "Inactive" users (i.e. "Show Inactive only").
+3. Select the user you wish to edit from the list of users that appears on the
+   page. You can navigate through the list of users by scrolling to the bottom
+   of the "List users" page and clicking through the page numbers. By clicking
+   on the :term:`username` of the user you wish to edit, AtoM will direct you to
+   that :term:`user's profile <user profile>` :term:`view page`.
+4. Click on the "Taxonomy permissions" :term:`information area`.
+   AtoM will direct you to the "Taxonomy permissions" :term:`view
+   page`.
+5. To switch from :term:`view mode` to :term:`edit mode`, click the
+   :term:`"Edit" button <Edit button>` in the :term:`button block`; this takes
+   you to the user's :term:`edit page` for this :term:`access privilege`.
+6.
+
+.. _group-taxonomy-permissions:
+
+Edit term and taxonomy permissions by group
+-------------------------------------------
+
+1. Navigate to an existing group in AtoM. You can do this by click the
+   |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
+   in the :term:`header bar` and selecting "Groups" from the
+   :term:`drop-down menu`. This will take you to a list of current user groups.
+2. Select a group from the list that appears on the page by clicking on the
+   group name. AtoM will direct you to that user group's :term:`view page`.
+3. Click on the "Taxonomy permissions" :term:`information area`.
+   AtoM will direct you to the "Taxonomy permissions" :term:`view
+   page`.
+4. To switch from :term:`view mode` to :term:`edit mode`, click the
+   :term:`"Edit" button <Edit button>` in the :term:`button block`; this takes
+   you to the group's :term:`edit page` for this :term:`access privilege`.
+
+
+:ref:`Back to top <edit-user-permissions>`
+
+
+.. _institution-permissions:
+
+Setting permissions by archival institution
+===========================================
+
+* :ref:`Edit permissions for a user <user-institution-permissions>`
+* :ref:`Edit permissions for a group <group-institution-permissions>`
+
+.. _user-institution-permissions:
+
+Edit archival institution permissions by user
+---------------------------------------------
+
+1. First, navigate to an existing user in AtoM. You can do this by click the
+   |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
+   in the :term:`header bar` and selecting "Users" from the
+   :term:`drop-down menu`. This will take you to a list of
+   current users accounts (i.e. the "List users" page). By default, the list
+   that appears will be of all "Active" users (i.e. "Show Active only").
+2. Select whether you wish to view "Active" users (i.e. "Show Active only") or
+   "Inactive" users (i.e. "Show Inactive only").
+3. Select the user you wish to edit from the list of users that appears on the
+   page. You can navigate through the list of users by scrolling to the bottom
+   of the "List users" page and clicking through the page numbers. By clicking
+   on the :term:`username` of the user you wish to edit, AtoM will direct you to
+   that :term:`user's profile <user profile>` :term:`view page`.
+4. Click on the "Archival institution permissions" :term:`information area`.
+   AtoM will direct you to the "Archival instiution permissions" :term:`view
+   page`.
+5. To switch from :term:`view mode` to :term:`edit mode`, click the
+   :term:`"Edit" button <Edit button>` in the :term:`button block`; this takes
+   you to the user's :term:`edit page` for this :term:`access privilege`.
+6.
+
+.. _group-institution-permissions:
+
+Edit archival institution permissions by group
+----------------------------------------------
+
+1. Navigate to an existing group in AtoM. You can do this by click the
+   |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
+   in the :term:`header bar` and selecting "Groups" from the
+   :term:`drop-down menu`. This will take you to a list of current user groups.
+2. Select a group from the list that appears on the page by clicking on the
+   group name. AtoM will direct you to that user group's :term:`view page`.
+3. Click on the "Archival institution permissions" :term:`information area`.
+   AtoM will direct you to the "Archival instiution permissions" :term:`view
+   page`.
+4. To switch from :term:`view mode` to :term:`edit mode`, click the
+   :term:`"Edit" button <Edit button>` in the :term:`button block`; this takes
+   you to the group's :term:`edit page` for this :term:`access privilege`.
+5. On loading, the :term:`edit page` will display the current permission
+   settings as they have been set; if a :ref:`default user group <user-roles>`
+   was chosen, the edit page will display all permissions as "Inherit" for each
+   "Action"
+
+
+:ref:`Back to top <edit-user-permissions>`
+
+
+
+
+
+:ref:`Back to top <edit-user-permissions>`
+
+.. NOTE::
+
+   In order to fully test the scenarios in this section, you should have two or
+   more archival institutions in your system, with several hierarchical
+   descriptions attached and some digital objects uploaded.
+
+
+:ref:`Back to top <edit-user-permissions>`
+
+
+
+
+:ref:`Back to top <edit-user-permissions>`
