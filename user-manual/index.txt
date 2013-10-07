@@ -23,4 +23,5 @@ links to each chapter's main sections.
    access-content/search-atom
    access-content/navigate
    administer/manage-user-accounts
+   administer/edit-permissions
    glossary/glossary
