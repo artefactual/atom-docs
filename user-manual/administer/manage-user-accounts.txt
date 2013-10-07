@@ -112,7 +112,7 @@ application, via the :term:`main menu`.
    time by an auhenticated (i.e. logged-in) :term:`administrator`. For more
    information on user roles, see: :ref:`User roles <user-roles>`. For more
    information on editing user :term:`access privileges <access privilege>`,
-   see :ref:`<edit-user-permissions>`.
+   see :ref:`Edit user permissions <edit-user-permissions>`.
 
 5. Under the "Allowed languages for translation" section, type the appropriate
    "language" for translation. As you type, matching results will load in a
@@ -152,15 +152,20 @@ permissions", "Taxonomy permissions", and "Archival institution permissions".
 You can navigate through these sections to customize the user's :term:`access
 privileges <access privilege>` if you are not satisfied with those established
 by the user group, or if a user group was not selected.For more information on
-user permissions, see :ref:`<edit-user-permissions>`.
+user permissions, see :ref:`Edit user permissions <edit-user-permissions>`.
 
 .. Note::
 
    By default, the user will be automatically *Active* once the new user account
-   has been created. You must un-check the box next to "Active" in order to make
-   a user inactive. For more information, see: :ref:`mark-user-inactive`.
+   has been created. You must un-check the box next to "Active" |Inactive| in
+   order to make a user "Inactive". For more information, see:
+   :ref:`mark-user-inactive`.
 
 For more on user roles, see :ref:`user roles <user-roles>`.
+
+.. |Inactive| image:: images/Inactive.png
+   :height: 22
+   :width: 65
 
 .. _add-user-view:
 
@@ -278,11 +283,12 @@ The following 4 user groups are established as default "Groups" in AtoM:
 
 When :ref:`creating a new user <add-user>` in AtoM, :term:`administrators
 <administrator>` will be able to select from these 4 groups by default. These
-default user groups also have default
-:term:`access privileges <access privilege>`; for more information on these,
-see :ref:`edit-user-permissions`.These default groups can be deleted at any time
-by an authenticatd (i.e.logged-in) administrator, and new user groups can also
-be added at any time.
+:ref:`default user groups <default-group-permissions>` also have default
+:term:`access privileges <access privilege>`; for more information on these, see
+:ref:`Edit user permissions :ref:`Edit user permissions
+<edit-user-permissions>`.These default groups can be deleted at any time by an
+authenticatd (i.e.logged-in) administrator, and new user groups can also be
+added at any time.
 
 For more information on user roles, see: :ref:`User roles <user-roles>`.
 
@@ -436,9 +442,9 @@ information on user roles, see: :ref:`user-roles`.
    :term:`"Edit" button <Edit button>` in the :term:`button block`, or by
    clicking on the "User details" heading; this takes you to the user's
    :term:`edit page`.
-5. Mark the user as "Inactive" by unchecking the box next to "Active" in the
-   "Basic info" :term:`information area` of the :term:`user's profile <user
-   profile>`; a blank box will set that user's status as "Inactive".
+5. Mark the user as "Inactive" by unchecking the box next to "Active" |Inactive|
+   in the "Basic info" :term:`information area` of the :term:`user's profile
+   <user profile>`; a blank box will set that user's status as "Inactive".
 
 .. TIP::
 
