@@ -1,109 +1,211 @@
 .. _edit-user-permissions:
 
-=====================
-Edit user permissions
-=====================
+================
+Edit permissions
+================
 
-* :ref:`Default user group permissions settings in AtoM
-  <default-group-permissions>`
-* :ref:`Setting permissions by archival description
-  <archival-description-permissions>`
+User permissions define levels of access to functions in AtoM, ranging from
+view-only access to full administration rights. These :term:`access privileges
+<access privilege>`, or permissions, can be navigated by :ref:`user-roles`,
+which are defined by "Groups" that an authenticated (i.e. logged-in)
+:term:`administrator` can add and edit (see :ref:`manage-user-accounts`). When a
+specific user is assigned to a "Group", he/she automatically inherits the
+access privileges of that user group. However, administrators can also edit the
+access privileges of a specific user if they wish. Each access privilege can
+be edited either by **User** or by **Group**; the sections below have been
+drafted in a way that reflects these options.
+
+**Below you'll find instructions on how to:**
+
+* :ref:`Default user permissions settings in AtoM <default-user-permissions>`
+* :ref:`Setting permissions by archival description <description-permissions>`
+    * :ref:`For a user <user-info-object-permissions>`
+    * :ref:`For a group <group-description-permissions>`
+
 * :ref:`Setting permissions by authority record <authority-record-permissions>`
+    * :ref:`For a user <user-actor-permissions>`
+    * :ref:`For a group <group-authority-record-permissions>`
+
 * :ref:`Setting permissions by term and taxonomy <taxonomy-permissions>`
+    * :ref:`For a user <user-taxonomy-permissions>`
+    * :ref:`For a group <group-taxonomy-permissions>`
+
 * :ref:`Setting permissions by archival institution <institution-permissions>`
+    * :ref:`For a user <user-institution-permissions>`
+    * :ref:`For a group <group-institution-permissions>`
 
-Each permission setting can be edited either by *user** or by **group**; each
-section mentioned above can thus be navigated according to "Edit permissions by
-user" or "Edit permissions by user group".
+.. seealso::
 
-
-.. IMPORTANT:
-
-Only an authenticated (i.e. logged-in) :term:`administrator` can modify a
-user's :term:`access privileges <access privilege>` After the desired changes
-have been made to a user's access permission settings, the administrator can log
-out and log back in as the user  in order to verify the results of the
-modifications.
+   * :ref:`manage-user-accounts`
+   * :ref:`user-roles`
 
 
-.. _default-group-permissions:
+.. _default-user-permissions:
 
-Default user group permissions settings in AtoM
-===============================================
+Default user permissions settings in AtoM
+=========================================
 
-In AtoM, user :term:`access privileges <access privilege>` are divided by 4
-permissions :term:`information areas <information area>`:
+content
 
-* :ref:`Archival description permissions <archival-description-permissions>`
+.. _default-access-privileges:
+
+Default access privileges
+-------------------------
+
+An authenticated (i.e. logged-in)
+:term:`administrator` can view and edit access privileges of either a group or a
+user by navigating between 4 different :term:`permissions tabs <permissions
+tab>`:
+
+* :ref:`Archival description permissions <description-permissions>`
 * :ref:`Authority record permissions <authority-record-permissions>`
 * :ref:`Taxonomy permissions <taxonomy-permissions>`
 * :ref:`Archival institution permissions <institution-permissions>`
 
-Each permission :term:`information area` contains individual permission
-settings. By clicking on the specific permissions information area, AtoM will
-direct you to the :term:`view page` of that permission, where the permission
-settings for that specific user group will be displayed. Permissions can be
-edited by switching from :term:`view mode` to :term:`edit mode`; simply click
-the :term:`"Edit" button <Edit button>` in the :term:`button block`.
+Each :term:`permissions tab` contains individual :term:`access privileges
+<access privilege>` located under a header labeled as "Action". Clicking on a
+specific permissions tab will direct you to the :term:`view page` of that
+permission, where the access privileges for that specific user role will be
+displayed under a heading labeled "Permissions". An authenticated (i.e. logged-
+in) :term:`administrator` can edit access privileges by switching from
+:term:`view mode` to :term:`edit mode`; simply click the
+:term:`"Edit" button <Edit button>` in the :term:`button block`.
 
-.. IMPORTANT::
+.. NOTE::
 
    An authenticated (i.e. logged-in) :term:`administrator` must be in
-   :term:`edit mode` in order to be able to view *all* actions permissions that
-   are available for a specific permission. In :term:`view mode`, only those
-   actions which are not indicated as "Inherit", or in default, will be
-   displayed.
+   :term:`edit mode` in order to be able to view and edit *all* :term:`access
+   privileges <access privilege>` that are available for a specific
+   :term:`permissions tab` In :term:`view mode`, only those actions which
+   are not indicated as "Inherit", or in default, will be displayed.
 
-On loading, AtoM will display the "Action" and the "Permission"
-setting for that specific permissions :term:`information area`. In AtoM, an
-"Action" represents different types of permissions, or :term:`access privileges
-<access privilege>` that can be given to a user. "Actions" will vary according
-to the permission type (i.e. the permission :term:`information area`) that you
-are viewing. Each permissions type will contain a list of default actions
+Access privileges, or "Actions" will vary according to the permission type (i.e.
+the :term:`permissions tab`) that has been selected. Because each permission
+type has a different list of default "Actions", this section lists permission-
+specific instructions have been included below.
+
+.. _description-default-actions:
 
 **Archival description permissions**
 
-contentcontencontent
-contententnnrnenfngn
+The "Archival description permissions" :term:`tab <permissions tab>` will
+display the specific :term:`access privileges <access privilege>` that can be
+maintained for users interacting with an :term:`archival institution's <archival
+institution>` :term:`archival descriptions <archival description>`. Specific
+privileges can be set with regards to reading, creating, updating, deleting,
+viewing drafts, publishing, acccessing master copies and/or accessing reference
+copies of either *all* archival descriptions, specific archival descriptions, or
+*all* archival descriptions of a specific institution.
+
+.. NOTE::
+
+   In order to fully test the option of setting specific :term:`access
+   privileges <access privilege>` for *all* :term:`archival descriptions
+   <archival description>` linked to a specific :term:`archival institution`,
+   you should have two or more archival institutions in your system, with
+   several hierarchical descriptions attached and some digital objects uploaded.
+
+A authenticated (i.e.logged-in) :term:`administrator` can **Grant** or **Deny**
+a user's access privileges to a specific *Action*, or administrators can rely on
+the default permissions as they are established by AtoM by selecting a default
+user "Group". For more information on default access settings, see:
+:ref:`below <default-permissions-by-role>`.
 
 .. image:: images/description-actions.*
    :align: right
    :width: 25%
    :alt: An image of default actions in Archival description permissions
 
+
+.. _authority-default-actions:
+
 **Authority record permissions**
 
-contentcontencontent
-contententnnrnenfngn
+The "Authority record permissions" :term:`tab <permissions tab>` will display
+the specific :term:`access privileges <access privilege>` that can be maintained
+for users interacting with an :term:`archival institution's <archival
+institution>` :term:`authority records <authority record>`. Specific privileges
+can be set with regards to reading, creating, updating, and deleting either
+*all* authority records or specific authority records
+belonging to an archival institution. A authenticated (i.e. logged-in)
+:term:`administrator` can **Grant** or **Deny** a user's access privileges to a
+specific *Action*, or administrators can rely on the default permissions as
+they are established by AtoM by selecting a default user "Group". For more
+information on default access settings, see: :ref:`below
+<default-permissions-by-role>`.
 
 .. image:: images/authority-actions.*
    :align: right
    :width: 25%
    :alt: An image of default actions in Authority record permissions
 
+.. _taxonomy-default-actions:
+
 **Taxonomy permissions**
 
-contentcontencontent
-contententnnrnenfngn
+The "Taxonomy permissions" :term:`tab <permissions tab>` will display the
+specific :term:`access privileges <access privilege>` that can be maintained for
+users interacting with :term:`terms <term>` and :term:`taxonomies <taxonomy>`.
+Specific privileges can be set with regards to creating, updating, and deleting
+either *all* terms, or specific taxonomies. A authenticated (i.e. logged-in)
+:term:`administrator` can **Grant** or **Deny** a user's access privileges to
+a specific *Action*, or administrators can rely on the default permissions as
+they are established by AtoM by selecting a default user "Group". For more
+information on default access settings, see: :ref:`below
+<default-permissions-by-role>`.
 
 .. image:: images/taxonomy-actions.*
    :align: right
-   :width: 25%
+   :width: 20%
    :alt: An image of default actions in Taxonomy permissions
 
+.. _institution-default-actions:
 
-**Archival institution permission**
+**Archival institution permissions**
 
-contentcontencontent
-contententnnrnenfngn
+.. NOTE::
+
+   In order to fully test the scenarios in this section, you should have two or
+   more archival institutions in your system, with several hierarchical
+   descriptions attached and some digital objects uploaded.
+
+The "Archival institution permissions" :term:`tab <permissions tab>` will
+display the specific :term:`access privileges <access privilege>` that can be
+maintained for users interacting with an :term:`archival institution's <archival
+institution>` settings. Specific privileges can be set with regards to reading,
+creating, updating, and deleting the settings for either *all* the archival
+institutions linked to one system, or a specific archival institution linked to
+one system. A authenticated (i.e. logged-in) :term:`administrator` can **Grant**
+or **Deny** a user's access privileges to a specific *Action*, or administrators
+can rely on the default permissions as they are established by AtoM by selecting
+a default user "Group". For more information on default access settings, see:
+:ref:`below <default-permissions-by-role>`.
 
 .. image:: images/institution-actions.*
    :align: right
    :width: 25%
    :alt: An image of default actions in Archival institution permissions
 
-Every "Action" includes the option to select one of the following three
-permission settings:
+
+.. _default-permissions-by-role:
+
+Default permissions by user role
+--------------------------------
+
+When creating a new user in AtoM, the user account can be tied to one of 5
+default "User groups":
+
+* :term:`Researcher`
+* :term:`Administrator`
+* :term:`Editor`
+* :term:`Contributor`
+* :term:`Translator`
+
+Each user group contains default :term:`access privileges <access privilege>`,
+or "Actions" that define levels of access to functions in AtoM, ranging from
+view-only access to full administration rights. Each "Action" includes the
+option to select one of the following three :term:`access privileges <access
+privilege>, or "Permission", displayed as radio buttons:
 
 * Grant |grant|
 * Deny |deny|
@@ -129,19 +231,54 @@ permission settings:
    :height: 23
    :width: 20
 
-Default permission settings will be displayed in 2 ways in AtoM: when viewing
-permission settings in :term:`edit mode`, "Inherit" |inherit-select| will
-automatically be selected when the default setting has been chosen by an
-:term:`administrator` for a specific action; when viewing permission settings in
-:term:`view mode`, AtoM will simply display a dash |dash| in place of "Inherit"
-when the default setting has been chosen by an :term:`administrator` for a
-specific action.
+Access privileges, or "Actions" will vary according to the permission type
+(i.e. the :term:`permissions tab`) that has been selected. Because each
+permission type has a different list of default "Permissions",
+this section lists permission-specific instructions have been included below.
+
+**Default settings: Researcher**
 
 
-.. _archival-description-permissions:
+**Default settings: Administrator**
+
+
+**Default settings: Editor**
+
+
+**Default settings: Contributor**
+
+
+**Default settings: Translator**
+
+
+.. NOTE::
+
+   Default permission settings will be displayed in 2 ways in AtoM: when viewing
+   permission settings in :term:`edit mode`, "Inherit" |inherit-select| will
+   automatically be selected when the default setting has been chosen by an
+   :term:`administrator` for a specific action; when viewing permission settings
+   in :term:`view mode`, AtoM will simply display a dash |dash| in place of
+   "Inherit" when the default setting has been chosen by an
+   :term:`administrator` for a specific action.
+
+For more information on user roles, see: :ref:`user-roles`.
+
+:ref:`Back to top <edit-user-permissions>`
+
+.. _description-permissions:
 
 Setting permissions by archival description
 ===========================================
+
+
+.. IMPORTANT:
+
+Only an authenticated (i.e. logged-in) :term:`administrator` can modify a user's
+:term:`access privileges <access privilege>`. After the desired changes have
+been made to a user's access privileges, or "Permissions", the
+administrator can log out and log back in as that specific user in order to
+verify the results of the modifications.
+
 
 Permissions for all archival description
 
@@ -165,8 +302,8 @@ privilege>`.
 .. NOTE::
 
    When navigating AtoM by user profiles, the "Archival description permissions"
-   :term:`information area` will appear as an "Information object permissions"
-   information area.
+   :term:`permissions tab` will appear as an "Information object permissions"
+   permissions tab.
 
 .. |gears| image:: images/gears.png
    :height: 18
@@ -185,14 +322,49 @@ privilege>`.
    of the "List users" page and clicking through the page numbers. By clicking
    on the :term:`username` of the user you wish to edit, AtoM will direct you to
    that :term:`user's profile <user profile>` :term:`view page`.
-4. Click on the "Information object permissions" :term:`information area`.
-   AtoM will direct you to the "Information object permissions" :term:`view
-   page`.
-5. To switch from :term:`view mode` to :term:`edit mode`, click the
-   :term:`"Edit" button <Edit button>` in the :term:`button block`; this takes
-   you to the user's :term:`edit page` for this :term:`access privilege`.
-6.
+4. By clicking on the "Information object permissions" :term:`information area`,
+   you will be directed to the :term:`permissions tab` :term:`view page` where
+   the "Archival description permissions" for that particular user will be
+   displayed.
+5. To edit user permissions, click the:term:`"Edit" button <Edit button>` in the
+   :term:`button block`. On loading, the :term:`edit page` will display the
+   "Permissions for all archival description"  the
+   :ref:`default *Actions* <description-default-actions>` and *Permissions* for
+   that user with regards to *All archival descriptions*.
 
+.. NOTE::
+
+   Changes made in the "Permissions for all archival description"
+   :term:`information area` will apply to *all* archival descriptions for your
+   institution. Follow steps 6 through 8 below if you wish to edit a user's
+   :term:`access privileges <access privilege>` based on a specific
+   *archival description* and *archival institution*.
+
+6. A user's :term:`access privileges <access privilege>` can also be edited
+   according to a specific *archival description* or *archival institution*. To
+   do this, click on either the "Permissions by archival description"
+   :term:`field` or "Permisisons by archival institution" :term:`information area` to open
+   the _____.
+7.
+
+.. NOTE::
+
+   In order to fully test the scenarios in this section, you should have two or
+   more archival institutions in your system, with several hierarchical
+   descriptions attached and some digital objects uploaded.
+
+
+8. You can quit the process at any time by clicking the "Cancel" button
+   in the :term:`button block`; any changes made will not be saved. Note that
+   simply navigating away from the page by any other means, **without first
+   clicking "Save"** will also result in no changes being saved to the user
+   profile.
+9. To save your edits, click the "Save" button located in the :term:`button
+   block`.
+
+You will be redirected to the :term:`view page` for the edited user where
+you can review your work. Follow steps 5 through 7 if you are not satisfied
+with your changes.
 
 .. _group-description-permissions:
 
@@ -341,6 +513,12 @@ Edit term and taxonomy permissions by group
 Setting permissions by archival institution
 ===========================================
 
+.. NOTE::
+
+   In order to fully test the scenarios in this section, you should have two or
+   more archival institutions in your system, with several hierarchical
+   descriptions attached and some digital objects uploaded.
+
 * :ref:`Edit permissions for a user <user-institution-permissions>`
 * :ref:`Edit permissions for a group <group-institution-permissions>`
 
@@ -399,13 +577,9 @@ Edit archival institution permissions by group
 
 
 
-:ref:`Back to top <edit-user-permissions>`
 
-.. NOTE::
 
-   In order to fully test the scenarios in this section, you should have two or
-   more archival institutions in your system, with several hierarchical
-   descriptions attached and some digital objects uploaded.
+
 
 
 :ref:`Back to top <edit-user-permissions>`

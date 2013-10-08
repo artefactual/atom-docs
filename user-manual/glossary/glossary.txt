@@ -687,6 +687,15 @@ Glossary
     See the Global search and replace menu for a full list of available
     fields.
 
+  Group profile
+    A "Group" profile is information about a user group in AtoM. The following 4
+    user groups are established as default "Groups" in AtoM and each contain
+    their own Group profile: :term:`Administrator`; :term:`Editor`;
+    :term:`Contributor`; and :term:`Translator` (see: :ref:`user-roles`).
+    Additional Group profiles can also be created and maintained by
+    authenticated (i.e. logged-in) :term:`administrators <administrator>`.
+    See: :ref:`Manage user accounts <manage-user-accounts>`.
+
   Header bar
     The header bar is the navigational tool at the top of all pages in
     AtoM. It includes the :term:`search box`, :term:`browse menu`, and
@@ -838,6 +847,19 @@ Glossary
     <../administer/manage-user-accounts>`) and can subsequently be changed
     by the user (see :ref:`Change password <change-password>`).
 
+  Permissions tab
+    In AtoM, permission tabs can be viewed and maintained when navigating
+    through :term:`user profiles <user profile>` and :term:`group profiles
+    <group profile>`. When editing permissions of a user group, these tabs will
+    appear under the user name as follows: "Archival description permissions";
+    "Authority records permissions"; "Taxonomy permissions"; and "Archival
+    institution permissions". When editing permissions of a user, these tabs
+    will appear under the user group name as follows: "Information object
+    permissions"; "Actor permissions"; "Taxonomy permissions"; and "Archival
+    institution permissions". Each permission tab will contain the specific
+    :term:`access privileges <access privilege>` for that particular user or
+    group. See: :ref:`Edit user permissions <edit-user-permissions>`.
+
   Physical storage
     Physical storage is a grouping of :term:`fields <field>` relating to
     the management of physical objects such as folders, boxes, shelves,
@@ -868,7 +890,6 @@ Glossary
     changed in the :term:`administration area` of a description's :term:`edit
     page` by a user with edit permissions. See :ref:`Publish an archival
     description <publish-archival-description>`
-
 
   Published record
     A published record is an :term:`archival description` that has had its
@@ -1150,8 +1171,8 @@ Glossary
     roles <user role>`. Every user who must be able to add, edit, delete,
     or translate content must have a user account. In AtoM user accounts
     are established and maintained by :term:`administrators <administrator>`.
-    See :ref:`User roles <user-roles>` and  :doc:`Manage user accounts
-    <../administer/manage-user-accounts>`.
+    See :ref:`user-roles`, :ref:`manage-user-accounts`, and
+    :ref:`edit-user-permissions`.
 
   User interface
     The user interface is the set of elements that allow the user to
@@ -1168,8 +1189,7 @@ Glossary
   Username
     The username is a name supplied by an :term:`administrator` to any
     user (other than a :term:`researcher`) of the AtoM application as part
-    of the :term:`user account`. See :doc:`Manage user accounts
-    <../administer/manage-user-accounts>`.
+    of the :term:`user account`. See :ref:`manage-user-accounts`.
 
   User profile
     A user profile is information about a user managed in a :term:`user
@@ -1178,14 +1198,15 @@ Glossary
     <../administer/manage-user-accounts>`), although authenticated (i.e.,
     logged in) users can view their own profiles (and change their
     :term:`passwords <password>`) by going through the :term:`header bar`
-    (see: :ref:`Change password <change-password>`).
+    (see: :ref:`Change password <change-password>`). See:
+    :ref:`manage-user-accounts`.
 
   User role
     User roles define levels of access to functions in AtoM, ranging from
     view-only access to full administration rights. User roles are defined
     by groups that an :term:`administrator` can add and edit. See
-    :ref:`User roles <user-roles>` and :doc:`Manage user accounts
-    <../administer/manage-user-accounts>`.
+    :ref:`User roles <user-roles>`, :ref:`manage-user-accounts`, and
+    :ref:`edit-user-permissions`.
 
   Value list
     Value lists restrict data entry in certain :term:`fields <field>` to
