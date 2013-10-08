@@ -86,7 +86,13 @@ specific instructions have been included below.
 
 .. _description-default-actions:
 
-**Archival description permissions**
+Archival description permissions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: images/description-actions.*
+   :align: right
+   :width: 25%
+   :alt: An image of default actions in Archival description permissions
 
 The "Archival description permissions" :term:`tab <permissions tab>` will
 display the specific :term:`access privileges <access privilege>` that can be
@@ -111,15 +117,15 @@ the default permissions as they are established by AtoM by selecting a default
 user "Group". For more information on default access settings, see:
 :ref:`below <default-permissions-by-role>`.
 
-.. image:: images/description-actions.*
-   :align: right
-   :width: 25%
-   :alt: An image of default actions in Archival description permissions
-
-
 .. _authority-default-actions:
 
-**Authority record permissions**
+Authority record permissions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: images/authority-actions.*
+   :align: right
+   :width: 25%
+   :alt: An image of default actions in Authority record permissions
 
 The "Authority record permissions" :term:`tab <permissions tab>` will display
 the specific :term:`access privileges <access privilege>` that can be maintained
@@ -134,14 +140,16 @@ they are established by AtoM by selecting a default user "Group". For more
 information on default access settings, see: :ref:`below
 <default-permissions-by-role>`.
 
-.. image:: images/authority-actions.*
-   :align: right
-   :width: 25%
-   :alt: An image of default actions in Authority record permissions
 
 .. _taxonomy-default-actions:
 
-**Taxonomy permissions**
+Taxonomy permissions
+^^^^^^^^^^^^^^^^^^^^
+
+.. image:: images/taxonomy-actions.*
+   :align: right
+   :width: 25%
+   :alt: An image of default actions in Taxonomy permissions
 
 The "Taxonomy permissions" :term:`tab <permissions tab>` will display the
 specific :term:`access privileges <access privilege>` that can be maintained for
@@ -154,14 +162,16 @@ they are established by AtoM by selecting a default user "Group". For more
 information on default access settings, see: :ref:`below
 <default-permissions-by-role>`.
 
-.. image:: images/taxonomy-actions.*
-   :align: right
-   :width: 20%
-   :alt: An image of default actions in Taxonomy permissions
 
 .. _institution-default-actions:
 
-**Archival institution permissions**
+Archival institution permissions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: images/institution-actions.*
+   :align: right
+   :width: 25%
+   :alt: An image of default actions in Archival institution permissions
 
 .. NOTE::
 
@@ -180,11 +190,6 @@ or **Deny** a user's access privileges to a specific *Action*, or administrators
 can rely on the default permissions as they are established by AtoM by selecting
 a default user "Group". For more information on default access settings, see:
 :ref:`below <default-permissions-by-role>`.
-
-.. image:: images/institution-actions.*
-   :align: right
-   :width: 25%
-   :alt: An image of default actions in Archival institution permissions
 
 
 .. _default-permissions-by-role:
@@ -236,20 +241,20 @@ Access privileges, or "Actions" will vary according to the permission type
 permission type has a different list of default "Permissions",
 this section lists permission-specific instructions have been included below.
 
-**Default settings: Researcher**
+Default settings: Researcher
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Default settings: Administrator
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Default settings: Administrator**
+Default settings: Editor
+^^^^^^^^^^^^^^^^^^^^^^^^
 
+Default settings: Contributor
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Default settings: Editor**
-
-
-**Default settings: Contributor**
-
-
-**Default settings: Translator**
-
+Default settings: Translator
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. NOTE::
 
