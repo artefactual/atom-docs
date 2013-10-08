@@ -170,7 +170,7 @@ only access to full administration rights. Your user account in AtoM is tied
 to one of five user roles, each representing a different level of access to
 the system. User roles are defined by groups that an :term:`administrator` can
 add and edit - see :ref:`manage-user-accounts` and
-:doc:`Edit permissions <../administer/edit-permissions>`
+:ref:`edit-user-permissions`.
 
 .. _user-researcher:
 
