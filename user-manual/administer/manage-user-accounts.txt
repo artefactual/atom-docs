@@ -10,8 +10,7 @@ role>`, which define levels of access, or :term:`access privileges
 <access privilege>` to functions in AtoM, ranging from view-only access to full
 administration rights. Anyone who wishes to use and interact with AtoM *must*
 have a user account, and only an authenticated (i.e. logged-in)
-:term:`administrator` can add a new user and edit a user's access privileges in
-AtoM.
+:term:`administrator` can add, edit and delete a user or a group in AtoM.
 
 **Below you'll find instructions on how to:**
 
@@ -23,7 +22,7 @@ AtoM.
 * :ref:`Delete a user <delete-user>`
 * :ref:`Delete a group <delete-group>`
 
-.. SEE ALSO::
+.. seealso::
 
    * :ref:`Edit user permissions <edit-user-permissions>`
    * :ref:`User roles <user-roles>`
