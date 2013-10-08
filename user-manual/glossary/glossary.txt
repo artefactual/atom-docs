@@ -689,12 +689,12 @@ Glossary
 
   Group profile
     A "Group" profile is information about a user group in AtoM. The following 4
-    user groups are established as default "Groups" in AtoM and each contain
-    their own Group profile: :term:`Administrator`; :term:`Editor`;
-    :term:`Contributor`; and :term:`Translator` (see: :ref:`user-roles`).
-    Additional Group profiles can also be created and maintained by
-    authenticated (i.e. logged-in) :term:`administrators <administrator>`.
-    See: :ref:`Manage user accounts <manage-user-accounts>`.
+    :term:`user roles <user role>` are established as default "Groups" in AtoM
+    and each contain their own Group profile: :term:`Administrator`;
+    :term:`Editor`; :term:`Contributor`; and :term:`Translator`
+    (see: :ref:`user-roles`). Additional Group profiles can also be created and
+    maintained by authenticated (i.e. logged-in) :term:`administrators
+    <administrator>`. See: :ref:`Manage user accounts <manage-user-accounts>`.
 
   Header bar
     The header bar is the navigational tool at the top of all pages in
@@ -848,17 +848,17 @@ Glossary
     by the user (see :ref:`Change password <change-password>`).
 
   Permissions tab
-    In AtoM, permission tabs can be viewed and maintained when navigating
-    through :term:`user profiles <user profile>` and :term:`group profiles
-    <group profile>`. When editing permissions of a user group, these tabs will
-    appear under the user name as follows: "Archival description permissions";
-    "Authority records permissions"; "Taxonomy permissions"; and "Archival
-    institution permissions". When editing permissions of a user, these tabs
-    will appear under the user group name as follows: "Information object
-    permissions"; "Actor permissions"; "Taxonomy permissions"; and "Archival
-    institution permissions". Each permission tab will contain the specific
-    :term:`access privileges <access privilege>` for that particular user or
-    group. See: :ref:`Edit user permissions <edit-user-permissions>`.
+    In AtoM, permissions tabs can be viewed by navigating through :term:`user
+    profiles <user profile>` and :term:`group profiles <group profile>`. An
+    administrator can view and maintain user and group :term:`access privileges
+    <access privilege>` by navigating through these tabs. When editing a user's
+    access privileges, these tabs will appear under the user's name as follows:
+    "Archival description permissions"; "Authority records permissions";
+    "Taxonomy permissions"; and "Archival institution permissions". When editing
+    a group's access privileges, these tabs will appear under the user group's
+    name as follows: "Information object permissions"; "Actor permissions";
+    "Taxonomy permissions"; and "Archival institution permissions".
+    See: :ref:`Edit user permissions <edit-user-permissions>`.
 
   Physical storage
     Physical storage is a grouping of :term:`fields <field>` relating to

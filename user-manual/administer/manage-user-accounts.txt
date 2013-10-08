@@ -273,19 +273,23 @@ a user to a specific user group thus establishes the user's :term:`access
 privileges <access privilege>` within AtoM. This will control the way the user
 can interact with the system.
 
-The following 4 user groups are established as default "Groups" in AtoM:
+The following 5 :term:`user roles <user role>` are established as default
+"Groups" in AtoM:
 
+* :term:`Researcher`
 * :term:`Administrator`
 * :term:`Editor`
 * :term:`Contributor`
 * :term:`Translator`
 
 When :ref:`creating a new user <add-user>` in AtoM, :term:`administrators
-<administrator>` will be able to select from these 4 groups by default. These
-:ref:`default user groups <default-group-permissions>` also have default
-:term:`access privileges <access privilege>`; for more information on these, see
-:ref:`Edit user permissions :ref:`Edit user permissions
-<edit-user-permissions>`.These default groups can be deleted at any time by an
+<administrator>` can select from these 5 groups by default, as well as other
+"Groups" that may have been added by an administrator. These default "Groups"
+contain default :term:`access privileges <access privilege>` that define levels
+of access to functions in AtoM; for more information on these, see :ref:`edit-
+user-permissions`.
+
+These default groups can be deleted at any time by an
 authenticatd (i.e.logged-in) administrator, and new user groups can also be
 added at any time.
 
