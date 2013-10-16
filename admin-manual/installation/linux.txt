@@ -310,7 +310,7 @@ Option 1: Download the tarball
 
    wget http://storage.accesstomemory.org/releases/atom-2.0.0.tar.gz
    sudo mkdir /usr/share/nginx/atom
-   sudo tar czf atom-2.0.0.tar.gz -C /usr/share/nginx/atom --strip 1
+   sudo tar xzf atom-2.0.0.tar.gz -C /usr/share/nginx/atom --strip 1
 
 
 Option 2: Check out the code from our git repository
