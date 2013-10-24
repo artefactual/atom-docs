@@ -164,7 +164,7 @@ in :file:`/etc/nginx/sites-enabled/atom`.
        return 404;
      }
 
-     # This is the most important part, as here we are redirecting some specific
+     # This is the most important part, as here we are redirecting some specific
      # requests to PHP-FPM so PHP can do its job passing data to and from the
      # web server.
      location ~ ^/(index|qubit_dev)\.php(/|$) {
@@ -257,11 +257,14 @@ called :file:`/etc/php5/fpm/pool.d/atom.conf`:
    php_admin_value[apc.shm_size] = 64M
    php_admin_value[apc.num_files_hint] = 5000
    php_admin_value[apc.stat] = 0
+   php_admin_value[session.use-only-cookies] = 1
 
-   # This is algo a good place to define some environment variables, e.g. use
+   # This is a good place to define some environment variables, e.g. use
    # ATOM_DEBUG_IP to define a list of IP addresses with full access to the
-   # debug frontend
+   # debug frontend or ATOM_READ_ONLY if you want AtoM to prevent
+   # authenticated users
    env[ATOM_DEBUG_IP] = "10.10.10.10,127.0.0.1"
+   env[ATOM_READ_ONLY] = off
 
 The process manager has to be restarted:
 
