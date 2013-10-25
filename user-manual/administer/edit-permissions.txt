@@ -268,6 +268,7 @@ and/or public users. By default, these types of users are limited to searching
 and browsing descriptions.
 
 *Archival descriptions*
+
 +-------------------+---------------+
 | **Permissions**   |  **Granted?** |
 +===================+===============+
@@ -291,6 +292,7 @@ and browsing descriptions.
 +-------------------+---------------+
 
 *Authority records*
+
 +-------------------+---------------+
 | **Permissions**   |  **Granted?** |
 +===================+===============+
@@ -306,6 +308,7 @@ and browsing descriptions.
 +-------------------+---------------+
 
 *Taxonomy*
+
 +-------------------+---------------+
 | **Permissions**   |  **Granted?** |
 +===================+===============+
@@ -321,6 +324,7 @@ and browsing descriptions.
 +-------------------+---------------+
 
 *Archival institutions*
+
 +-------------------+---------------+
 | **Permissions**   |  **Granted?** |
 +===================+===============+
@@ -351,6 +355,7 @@ groups and individual users. By default, administrators are granted permission
 for almost all access privileges.
 
 *Archival descriptions*
+
 +-------------------+---------------+
 | **Permissions**   |  **Granted?** |
 +===================+===============+
@@ -374,6 +379,7 @@ for almost all access privileges.
 +-------------------+---------------+
 
 *Authority records*
+
 +-------------------+---------------+
 | **Permissions**   |  **Granted?** |
 +===================+===============+
@@ -389,6 +395,7 @@ for almost all access privileges.
 +-------------------+---------------+
 
 *Taxonomy*
+
 +-------------------+---------------+
 | **Permissions**   |  **Granted?** |
 +===================+===============+
@@ -404,6 +411,7 @@ for almost all access privileges.
 +-------------------+---------------+
 
 *Archival institutions*
+
 +-------------------+---------------+
 | **Permissions**   |  **Granted?** |
 +===================+===============+
@@ -430,6 +438,7 @@ An :term:`editor's <editor>` default :term:`access privileges <access
 privilege>` in AtoM are very similar to those of an :term:`administrator`.
 
 *Archival descriptions*
+
 +-------------------+---------------+
 | **Permissions**   |  **Granted?** |
 +===================+===============+
@@ -453,6 +462,7 @@ privilege>` in AtoM are very similar to those of an :term:`administrator`.
 +-------------------+---------------+
 
 *Authority records*
+
 +-------------------+---------------+
 | **Permissions**   |  **Granted?** |
 +===================+===============+
@@ -468,6 +478,7 @@ privilege>` in AtoM are very similar to those of an :term:`administrator`.
 +-------------------+---------------+
 
 *Taxonomy*
+
 +-------------------+---------------+
 | **Permissions**   |  **Granted?** |
 +===================+===============+
@@ -483,6 +494,7 @@ privilege>` in AtoM are very similar to those of an :term:`administrator`.
 +-------------------+---------------+
 
 *Archival institutions*
+
 +-------------------+---------------+
 | **Permissions**   |  **Granted?** |
 +===================+===============+
@@ -510,6 +522,7 @@ privileges by default but is nevertheless granted the permission to modify and
 update content as needed.
 
 *Archival descriptions*
+
 +-------------------+---------------+
 | **Permissions**   |  **Granted?** |
 +===================+===============+
@@ -533,6 +546,7 @@ update content as needed.
 +-------------------+---------------+
 
 *Authority records*
+
 +-------------------+---------------+
 | **Permissions**   |  **Granted?** |
 +===================+===============+
@@ -548,6 +562,7 @@ update content as needed.
 +-------------------+---------------+
 
 *Taxonomy*
+
 +-------------------+---------------+
 | **Permissions**   |  **Granted?** |
 +===================+===============+
@@ -563,6 +578,7 @@ update content as needed.
 +-------------------+---------------+
 
 *Archival institutions*
+
 +-------------------+---------------+
 | **Permissions**   |  **Granted?** |
 +===================+===============+
@@ -590,6 +606,7 @@ edit the content in your AtoM system. Their :term:`access privileges <access
 privilege>`, however, are limited to translating and viewing records.
 
 *Archival descriptions*
+
 +-------------------+---------------+
 | **Permissions**   |  **Granted?** |
 +===================+===============+
@@ -613,6 +630,7 @@ privilege>`, however, are limited to translating and viewing records.
 +-------------------+---------------+
 
 *Authority records*
+
 +-------------------+---------------+
 | **Permissions**   |  **Granted?** |
 +===================+===============+
@@ -628,6 +646,7 @@ privilege>`, however, are limited to translating and viewing records.
 +-------------------+---------------+
 
 *Taxonomy*
+
 +-------------------+---------------+
 | **Permissions**   |  **Granted?** |
 +===================+===============+
@@ -643,6 +662,7 @@ privilege>`, however, are limited to translating and viewing records.
 +-------------------+---------------+
 
 *Archival institutions*
+
 +-------------------+---------------+
 | **Permissions**   |  **Granted?** |
 +===================+===============+
