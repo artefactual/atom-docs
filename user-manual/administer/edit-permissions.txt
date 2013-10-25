@@ -45,7 +45,17 @@ drafted in a way that reflects these options.
 Default user permissions settings in AtoM
 =========================================
 
-content
+When a new user or user group is created in AtoM, they are automatically
+assigned default user permission settings. These permissions will affect the way
+they can view, edit, and interact with different :doc:`Entity types <../overview
+/entity-types>` in the system: for example, by default, a :term:`researcher` or
+public user of the system can only Read archival descriptions, authority
+records, archival institutions and terms. In AtoM, default user permissions
+consist of both default :ref:`access privileges <default-access-privileges>` and
+default :ref:`permissions based on user roles <default-permissions-by-role>`: in
+the previous example, "Read" is the access privilege and the "Researcher" is the
+user role. These permissions can only be edited (i.e. Granted or Denied) by an
+authenticated (i.e. logged-in) :term:`administrator`.
 
 .. _default-access-privileges:
 
@@ -139,7 +149,6 @@ they are established by AtoM by selecting a default user "Group". For more
 information on default access settings, see: :ref:`below
 <default-permissions-by-role>`.
 
-
 .. _taxonomy-default-actions:
 
 Taxonomy privileges
@@ -160,7 +169,6 @@ a specific *Action*, or administrators can rely on the default permissions as
 they are established by AtoM by selecting a default user "Group". For more
 information on default access settings, see: :ref:`below
 <default-permissions-by-role>`.
-
 
 .. _institution-default-actions:
 
@@ -1244,19 +1252,45 @@ you can review your work.
 Setting permissions by archival institution
 ===========================================
 
+In AtoM, an :term:`archival institution` provide users with
+the means of managing information about :term:`repositories <repository>`
+and other institutions and organizations that hold archival materials or
+other cultural heritage items and artifacts. Users and user groups can Read and
+potentially Create, Update and Delete archival institutions when given
+permission.
+
+.. IMPORTANT:
+
+Only an authenticated (i.e. logged-in) :term:`administrator` can modify a user's
+or a group's :term:`access privileges <access privilege>` or "Permissions".
+After the desired changes have been made, the administrator can log out and log
+back in as that specific user in order to verify the results of the
+modifications.
+
+For more information, jump to the following sections:
+* :ref:`Edit permissions for a user <user-institution-permissions>`
+* :ref:`Edit permissions for a group <group-institution-permissions>`
+
+For more information on archival institutions, see
+:ref:`archival-institutions`.
+
 .. NOTE::
 
    In order to fully test the scenarios in this section, you should have two or
    more archival institutions in your system.
 
-
-* :ref:`Edit permissions for a user <user-institution-permissions>`
-* :ref:`Edit permissions for a group <group-institution-permissions>`
-
 .. _user-institution-permissions:
 
 Edit archival institution permissions by user
 ---------------------------------------------
+
+An :term:`administrator` may want to edit a specific user's
+:term:`access privileges <access privilege>` with regards to different
+:term:`archival institutions <archival institution>: for example, you may wish
+to Grant a specific user the permission to only Update your archival
+institutions; or you may want to Deny a user's permission to Read a specific
+archival instituion. This section provides instructions on how to edit
+archival institution permissions by user.
 
 1. First, navigate to an existing user in AtoM. You can do this by click the
    |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
@@ -1277,12 +1311,63 @@ Edit archival institution permissions by user
 5. To switch from :term:`view mode` to :term:`edit mode`, click the
    :term:`"Edit" button <Edit button>` in the :term:`button block`; this takes
    you to the user's :term:`edit page` for this :term:`access privilege`.
-6.
+6. On loading, the :term:`edit page` will display the :ref:`default *Actions*
+   and *Permissions* <default-permissions-by-role>` for that user for *All
+   archival institution* belonging to your repository. *Permissions* can be
+   edited (i.e. Grant or Deny) as required.
+
+   If you wish to **only** edit the user's permissions for *All archival
+   institution*, please skip steps 7 through 9 and **proceed to step 10**.
+
+.. NOTE::
+
+   Changes made in the "Edit permissions" :term:`information area` will be
+   applied to *all* :term:`archival institutions <archival institution>`
+   for your repository. Follow **steps 7 through 9** below if you wish
+   to edit a user's :term:`access privileges <access privilege>` based on a
+   specific archival institution.
+
+7. A user's :term:`access privileges <access privilege>` can also be edited
+   according to a specific *archival institution*. To do this, click on the "Add
+   archival institution" :term:`field` located under the "Add permissions by
+   archival institution" :term:`information area`.
+8. A seperate window will appear. One or more specific :term:`archival
+   institutions <archival institution>` can be added via a :term:`value list`
+   that appears in a :term:`drop-down menu` - as you type, the value list will
+   narrow its options to present related suggestions.
+9. Once you've added an archival institution, the page will load the default
+   *Actions* and *Permissions* (i.e. "Inherit") for that user with regards to
+   the archival institution you have selected. *Permissions* can be edited as
+   required.
+
+.. NOTE::
+
+   In order to fully test the scenarios in this section, you should have two or
+   more :term:`archival institutions <archival institution>` in your system.
+
+10. You can quit the process at any time by clicking the "Cancel" button
+    in the :term:`button block`; any changes made will not be saved. Note that
+    simply navigating away from the page by any other means, **without first
+    clicking "Save"** will also result in no changes being saved to the user
+    profile.
+11. To save your edits, click the "Save" button located in the :term:`button
+    block`.
+
+You will be redirected to the :term:`view page` for the edited user where
+you can review your work.
 
 .. _group-institution-permissions:
 
 Edit archival institution permissions by group
 ----------------------------------------------
+
+As an :term:`administrator`, you may want to edit a specific group's
+:term:`access privileges <access privilege>` with regards to different
+:term:`archival institutions <archival institution> within your repository: for
+example, you may only wish for a specific user group to have viewing permissions
+for one archival institution, but full edit permissions for another. Follow the
+instructions below to learn how to edit archival institution permissions by user
+group.
 
 1. Navigate to an existing group in AtoM. You can do this by click the
    |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
@@ -1296,26 +1381,49 @@ Edit archival institution permissions by group
 4. To switch from :term:`view mode` to :term:`edit mode`, click the
    :term:`"Edit" button <Edit button>` in the :term:`button block`; this takes
    you to the group's :term:`edit page` for this :term:`access privilege`.
-5. On loading, the :term:`edit page` will display the current permission
-   settings as they have been set; if a :ref:`default user group <user-roles>`
-   was chosen, the edit page will display all permissions as "Inherit" for each
-   "Action"
+5. On loading, the :term:`edit page` will display the default *Actions*
+   and *Permissions* for that group for *All archival institution* in your
+   repository. *Permissions* can be edited (i.e. Grant or Deny) as required.
 
+   If you wish to **only** edit the group's permissions for *All archival
+   institution*, please skip steps 6 through 8 and **proceed to step 9**.
+
+.. NOTE::
+
+   Changes made in the "Edit permissions"
+   :term:`information area` will be applied to *all* :term:`archival
+   institutions <archival institution>` in your repository. Follow **steps 6
+   through 8** below if you wish to edit a group's :term:`access privileges
+   <access privilege>` based on a specific archival institution.
+
+6. A group's :term:`access privileges <access privilege>` can also be edited
+   according to a specific *archival institution*. To do this, click on the "Add
+   archival institution: :term:`field` located under the "Add permissions by
+   archival institution" :term:`information area`.
+7. A seperate window will appear. One or more specific :term:`archival
+   institutions <archival institution>` can be added via a :term:`value list`
+   that appears in a :term:`drop-down menu` - as you type, the value list
+   will narrow its options to present related suggestions.
+8. Once you've added an archival institution, the page will load the default
+   *Actions* and *Permissions* (i.e. "Inherit") for that group with regards to
+   the archival institution you have selected. *Permissions* can be edited as
+   required.
+
+.. NOTE::
+
+   In order to fully test the scenarios in this section, you should have two or
+   more :term:`archival institutions <archival institution>` in your system.
+
+9. You can quit the process at any time by clicking the "Cancel" button
+   in the :term:`button block`; any changes made will not be saved. Note that
+   simply navigating away from the page by any other means, **without first
+   clicking "Save"** will also result in no changes being saved to the group
+   profile.
+10. To save your edits, click the "Save" button located in the :term:`button
+    block`.
+
+You will be redirected to the :term:`view page` for the edited group where
+you can review your work.
 
 :ref:`Back to top <edit-user-permissions>`
 
-
-
-
-
-
-
-
-
-
-:ref:`Back to top <edit-user-permissions>`
-
-
-
-
-:ref:`Back to top <edit-user-permissions>`
