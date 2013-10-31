@@ -175,7 +175,6 @@ Glossary
     the Adanced search menu - see: :ref:`Search <search-atom>` and
     :ref:`Advanced search <advanced-search>`.
 
-
   Breadcrumb trail
     A breadcrumb trail is a navigational element in a :term:`user interface`
     that provides contextual information about the current location of a user
@@ -972,7 +971,6 @@ Glossary
     :term:`archival institution` that includes all cultural heritage
     organizations. For instructions on working with repositories in AtoM,
     see: :ref:`archival-institutions`
-
 
   Researcher
     A researcher is a type of user who is limited to searching and
