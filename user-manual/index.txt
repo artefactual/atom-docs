@@ -24,4 +24,5 @@ links to each chapter's main sections.
    access-content/navigate
    administer/manage-user-accounts
    administer/edit-permissions
+   administer/manage-menus
    glossary/glossary

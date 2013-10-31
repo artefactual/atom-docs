@@ -139,7 +139,7 @@ or for a network.
 * Manage digital object storage
 * :ref:`Edit user permissions <edit-user-permissions>`
 * Manage static pages
-* Manage menus
+* :ref:`Manage menus <manage-menus>`
 * Manage plugins
 * Settings
 * Themes and theming
