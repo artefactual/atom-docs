@@ -18,18 +18,17 @@ drafted in a way that reflects these options.
 **Below you'll find instructions on how to:**
 
 * :ref:`Default user permissions settings in AtoM <default-user-permissions>`
+    * :ref:`Default access privileges <default-access-privileges>`
+    * :ref:`Default user role <default-permissions-by-role>`
 * :ref:`Setting permissions by archival description <description-permissions>`
     * :ref:`For a user <user-info-object-permissions>`
     * :ref:`For a group <group-description-permissions>`
-
 * :ref:`Setting permissions by authority record <authority-record-permissions>`
     * :ref:`For a user <user-actor-permissions>`
     * :ref:`For a group <group-authority-record-permissions>`
-
 * :ref:`Setting permissions by term and taxonomy <taxonomy-permissions>`
     * :ref:`For a user <user-taxonomy-permissions>`
     * :ref:`For a group <group-taxonomy-permissions>`
-
 * :ref:`Setting permissions by archival institution <institution-permissions>`
     * :ref:`For a user <user-institution-permissions>`
     * :ref:`For a group <group-institution-permissions>`
@@ -67,10 +66,10 @@ An authenticated (i.e. logged-in)
 privilege>` of either a group or a user by navigating between 4 different
 :term:`permissions tabs <permissions tab>`:
 
-* :ref:`Archival description permissions <description-permissions>`
-* :ref:`Authority record permissions <authority-record-permissions>`
-* :ref:`Taxonomy permissions <taxonomy-permissions>`
-* :ref:`Archival institution permissions <institution-permissions>`
+* :ref:`Archival description permissions <description-default-actions>`
+* :ref:`Authority record permissions <authority-default-actions>`
+* :ref:`Taxonomy permissions <taxonomy-default-actions>`
+* :ref:`Archival institution permissions <institution-default-actions>`
 
 Clicking on a specific :term:`permissions tab` will direct you to the
 :term:`view page` of that permission, where the :term:`access privileges <access
@@ -198,6 +197,7 @@ can rely on the default permissions as they are established by AtoM by selecting
 a default user "Group". For more information on default access settings, see:
 :ref:`below <default-permissions-by-role>`.
 
+:ref:`Back to top <edit-user-permissions>`
 
 .. _default-permissions-by-role:
 
@@ -207,11 +207,11 @@ Default permissions by user role
 When creating a new user in AtoM, the user account can be tied to one of 5
 default "User groups":
 
-* :term:`Researcher`
-* :term:`Administrator`
-* :term:`Editor`
-* :term:`Contributor`
-* :term:`Translator`
+* :ref:`Researcher <researcher-default>`
+* :ref:`Administrator <administrator-default>`
+* :ref:`Editor <editor-default>`
+* :ref:`Contributor <contributor-default>`
+* :ref:`Translator <translator-default>`
 
 Each user group contains default :term:`access privileges <access privilege>`,
 or "Actions" that define levels of access to functions in AtoM, ranging from
@@ -259,6 +259,8 @@ this section lists permission-specific instructions have been included below.
    :term:`administrator` for a specific action.
 
 For more information on user roles, see: :ref:`user-roles`.
+
+.. _researcher-default:
 
 Default settings: Researcher
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -343,6 +345,8 @@ Creating a user group of "Researchers" will automatically assign the above
 default :term:`access privieleges <access privilege>` to that group. However,
 the access privileges of individual users in that user group can still be
 edited without it altering the overall privileges of that group as a whole.
+
+.. _administrator-default:
 
 Default settings: Administrator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -431,6 +435,8 @@ default :term:`access privieleges <access privilege>` to that group. However,
 the access privileges of individual users in that user group can still be
 edited without it altering the overall privileges of that group as a whole.
 
+.. _editor-default:
+
 Default settings: Editor
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -513,6 +519,8 @@ Creating a user group of "Editors" will automatically assign the above
 default :term:`access privieleges <access privilege>` to that group. However,
 the access privileges of individual users in that user group can still be
 edited without it altering the overall privileges of that group as a whole.
+
+.. _contributor-default:
 
 Default settings: Contributor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -597,6 +605,8 @@ Creating a user group of "Editors" will automatically assign the above
 default :term:`access privieleges <access privilege>` to that group. However,
 the access privileges of individual users in that user group can still be
 edited without it altering the overall privileges of that group as a whole.
+
+.. _translator-default:
 
 Default settings: Translator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -733,19 +743,20 @@ to edit user permissions by archival description.
    :height: 18
    :width: 18
 
-1. First, navigate to an existing user in AtoM. You can do this by click the
+1. First, navigate to an existing user in AtoM. You can do this by clicking the
    |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
    in the :term:`header bar` and selecting "Users" from the
    :term:`drop-down menu`. This will take you to a list of
-   current users accounts (i.e. the "List users" page). By default, the list
-   that appears will be of all "Active" users (i.e. "Show Active only").
-2. Select whether you wish to view "Active" users (i.e. "Show Active only") or
-   "Inactive" users (i.e. "Show Inactive only").
-3. Select the user you wish to edit from the list of users that appears on the
-   page. You can navigate through the list of users by scrolling to the bottom
-   of the "List users" page and clicking through the page numbers. By clicking
-   on the :term:`username` of the user you wish to edit, AtoM will direct you to
-   that :term:`user's profile <user profile>` :term:`view page`.
+   current users accounts (i.e. the "List users" page).
+2. By default, the list that appears will be of all "Active" users (i.e. "Show
+   Active only"). Select whether you wish to view "Active" users or "Inactive"
+   users (i.e. "Show Inactive only"). All :term:`usernames <username>` will
+   appear in alphabetical order.
+3. You can find the user you wish to edit by using the "Search users" box
+   located at the top of the "List users" page, or by navigating through the
+   list by scrolling to the bottom of the page and clicking through the page
+   numbers. Click on the user's usernameto be redirected to that
+   :term:`user's profile <user profile>` :term:`view page`.
 4. By clicking on the "Information object permissions" :term:`information area`,
    you will be directed to the :term:`permissions tab` :term:`view page` where
    the "Archival description permissions" for that particular user will be
@@ -824,7 +835,7 @@ repository, you may want to update only the archival descriptions belonging to
 one specific archival institution. Follow the instructions below to edit group
 permissions by archival description.
 
-1. Navigate to an existing group in AtoM. You can do this by click the
+1. Navigate to an existing group in AtoM. You can do this by clicking the
    |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
    in the :term:`header bar` and selecting "Groups" from the
    :term:`drop-down menu`. This will take you to a list of current user groups.
@@ -949,19 +960,20 @@ the instructions below to edit user permissions by authority record.
    will default back to "Permissions for all authority record" when in
    :term:`edit mode`.
 
-1. First, navigate to an existing user in AtoM. You can do this by click the
+1. First, navigate to an existing user in AtoM. Do this by clicking the
    |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
-   in the :term:`header bar` and selecting "Users" from the
+   in the :term:`header bar`. Select "Users" from the
    :term:`drop-down menu`. This will take you to a list of
-   current users accounts (i.e. the "List users" page). By default, the list
-   that appears will be of all "Active" users (i.e. "Show Active only").
-2. Select whether you wish to view "Active" users (i.e. "Show Active only") or
-   "Inactive" users (i.e. "Show Inactive only").
-3. Select the user you wish to edit from the list of users that appears on the
-   page. You can navigate through the list of users by scrolling to the bottom
-   of the "List users" page and clicking through the page numbers. By clicking
-   on the :term:`username` of the user you wish to edit, AtoM will direct you to
-   that :term:`user's profile <user profile>` :term:`view page`.
+   current users accounts (i.e. the "List users" page).
+2. By default, the list that appears will be of all "Active" users (i.e. "Show
+   Active only"). Select whether you wish to view "Active" users or "Inactive"
+   users (i.e. "Show Inactive only"). All :term:`usernames <username>` will
+   appear in alphabetical order.
+3. Find the user you wish to edit by either using the "Search users" box or by
+   navigating through the list of users by clicking through the page numbers
+   located at the bottom of the page. Click on the :term:`username` of the user
+   you wish to edit to be directed to that :term:`user's profile <user profile>`
+   :term:`view page`.
 4. Click on the "Actor permissions" :term:`information area`.
    AtoM will direct you to the "Actor permissions" :term:`view page`.
 5. To switch from :term:`view mode` to :term:`edit mode`, click the
@@ -1024,7 +1036,7 @@ authority records in your repository; or you may want to enable a group of
 "Translators" to translate certain authority records into a specific language.
 Follow the instructions below to edit user permissions by authority record.
 
-1. Navigate to an existing group in AtoM. You can do this by click the
+1. Navigate to an existing group in AtoM. You can do this by clicking the
    |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
    in the :term:`header bar` and selecting "Groups" from the
    :term:`drop-down menu`. This will take you to a list of current user groups.
@@ -1132,19 +1144,20 @@ taxonomies, or he may wish to Deny a user's permission to edit any terms
 within the system. Follow the instructions below for information on how to
 edit user :term:`access privileges <access privilege>` in AtoM.
 
-1. First, navigate to an existing user in AtoM. You can do this by click the
+1. First, navigate to an existing user in AtoM. Click on the
    |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
-   in the :term:`header bar` and selecting "Users" from the
+   in the :term:`header bar` and select "Users" from the
    :term:`drop-down menu`. This will take you to a list of
-   current users accounts (i.e. the "List users" page). By default, the list
-   that appears will be of all "Active" users (i.e. "Show Active only").
-2. Select whether you wish to view "Active" users (i.e. "Show Active only") or
-   "Inactive" users (i.e. "Show Inactive only").
-3. Select the user you wish to edit from the list of users that appears on the
-   page. You can navigate through the list of users by scrolling to the bottom
-   of the "List users" page and clicking through the page numbers. By clicking
-   on the :term:`username` of the user you wish to edit, AtoM will direct you to
-   that :term:`user's profile <user profile>` :term:`view page`.
+   current users accounts (i.e. the "List users" page).
+2. By default, the list that appears will be of all "Active" users (i.e. "Show
+   Active only"). Select whether you wish to view "Active" users or "Inactive"
+   users (i.e. "Show Inactive only"). All :term:`usernames <username>` will
+   appear in alphabetical order.
+3. Find the user you wish to edit by either using the "Search users" box to
+   search for the user or by clicking through the user list by clicking through
+   the page numbers, located at the bottom of the page. By clicking on the
+   :term:`username` of the user you wish to edit, AtoM will direct you to that
+   :term:`user's profile <user profile>` :term:`view page`.
 4. Click on the "Taxonomy permissions" :term:`information area`.
    AtoM will direct you to the "Taxonomy permissions" :term:`view
    page`.
@@ -1207,7 +1220,7 @@ may wish to Grant a group the permission to Update one specific
 taxonomy, or Deny another group the permission to Delete any of the terms in its
 system. See below for instructions on how to edit access privileges for groups.
 
-1. Navigate to an existing group in AtoM. You can do this by click the
+1. Navigate to an existing group in AtoM. You can do this by clicking the
    |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
    in the :term:`header bar` and selecting "Groups" from the
    :term:`drop-down menu`. This will take you to a list of current user groups.
@@ -1312,19 +1325,21 @@ institutions; or you may want to Deny a user's permission to Read a specific
 archival instituion. This section provides instructions on how to edit
 archival institution permissions by user.
 
-1. First, navigate to an existing user in AtoM. You can do this by click the
+1. First, navigate to an existing user in AtoM. Click the
    |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
-   in the :term:`header bar` and selecting "Users" from the
+   in the :term:`header bar` and select "Users" from the
    :term:`drop-down menu`. This will take you to a list of
-   current users accounts (i.e. the "List users" page). By default, the list
-   that appears will be of all "Active" users (i.e. "Show Active only").
-2. Select whether you wish to view "Active" users (i.e. "Show Active only") or
-   "Inactive" users (i.e. "Show Inactive only").
-3. Select the user you wish to edit from the list of users that appears on the
-   page. You can navigate through the list of users by scrolling to the bottom
-   of the "List users" page and clicking through the page numbers. By clicking
-   on the :term:`username` of the user you wish to edit, AtoM will direct you to
-   that :term:`user's profile <user profile>` :term:`view page`.
+   current users accounts (i.e. the "List users" page).
+2. By default, the list that appears will be of all "Active" users (i.e. "Show
+   Active only"). Select whether you wish to view "Active" users or "Inactive"
+   users (i.e. "Show Inactive only"). All :term:`usernames <username>` will
+   appear in alphabetical order.
+3. Select the user you wish to edit. You can search for user by either using the
+   "Search users" box at the top of the page, or by navigating through the list
+   of users by scrolling to the bottom of the "List users" page and clicking
+   through the page numbers. Click on the :term:`username` of the user you wish
+   to edit to be directed to that :term:`user's profile <user profile>`
+   :term:`view page`.
 4. Click on the "Archival institution permissions" :term:`information area`.
    AtoM will direct you to the "Archival instiution permissions" :term:`view
    page`.
@@ -1389,7 +1404,7 @@ for one archival institution, but full edit permissions for another. Follow the
 instructions below to learn how to edit archival institution permissions by user
 group.
 
-1. Navigate to an existing group in AtoM. You can do this by click the
+1. Navigate to an existing group in AtoM. You can do this by clicking the
    |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
    in the :term:`header bar` and selecting "Groups" from the
    :term:`drop-down menu`. This will take you to a list of current user groups.
