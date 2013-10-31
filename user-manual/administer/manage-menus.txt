@@ -1,0 +1,107 @@
+.. _manage-menus:
+
+============
+Manage Menus
+============
+
+AtoM includes a menu customization feature that allows authenticated (i.e.
+logged-in) :term:`administrators <administrator>` to manage menu labels; menus
+can be edited, created, moved menus to different positions on the page, deleted
+as necessary.
+
+In AtoM, "menus" and "menu labels" refer to
+
+.. |gears| image:: images/gears.png
+   :height: 18
+   :width: 18
+
+To view a list of menus, click the |gears|:ref:`Admin <main-menu-admin>` menu in
+the :term:`main menu` located in the :term:`header bar` and select "Menus" from
+the :term:`drop-down menu`.
+
+.. image:: images/site-menu-list.*
+   :align: center
+   :width: 50%
+   :alt: An image of menus list in AtoM
+
+Below, you will find instructions on how to:
+
+* :ref:`Add a new menu <add-menu>`
+* :ref:`Edit an existing menu <edit-menu>`
+* :ref:`Move a menu <move-menu>`
+* :ref:`Delete a menu <delete-menu>`
+
+
+.. _add-menu:
+
+Add a new menu
+==============
+
+An authenticated (i.e. logged in) user with edit privileges can edit or update
+a menu type at any time. For more information on edit
+privileges and user roles see: :ref:`User roles <user-roles>`. For information
+on logging in, see: :ref:`Log in <log-in>`.
+
+**To add a menu in AtoM:**
+
+1. Navigate to the menu list: click on the |gears|:ref:`Admin <main-
+   menu-admin>` menu in the :term:`main menu` located in the :term:`header bar`
+   and select "Menus" from the :term:`drop-down menu`. AtoM will direct you to
+   the "Site menu list" :term:`view page`.
+2. Click on the blue menu name you wish to edit to be directed to that menu's
+   :term:`edit page`.
+3. On loading, the :term:`edit page` displays the menu name with all
+   :term:`information areas <information area>` and editable :term:`fields
+   <field>` grouped under them.
+4. Add or edit data as required.
+5. You can quit the create process at any time by clicking the "Cancel" button
+   in the :term:`button block`; any changes made will not be saved. Note that
+   simply navigating away from the page by any other means, **without first
+   clicking "Save"** will also result in no changes being saved to the
+   menu type.
+6. To save your edits, click the "Save" button located in the :term:`button
+   block` at the bottom of the record. You will be redirected to the main page.
+
+:ref:`Back to top <manage-menus>`
+
+.. _edit-menu:
+
+Edit an existing menu
+=====================
+
+To edit an existing menu in AtoM:
+
+1. Navigate to the menu list: click on the |gears|:ref:`Admin <main-
+   menu-admin>` menu in the :term:`main menu` located in the :term:`header bar`
+   and select "Menus" from the :term:`drop-down menu`. AtoM will direct you to
+   the "Site menu list" :term:`view page`.
+2. Click on the blue menu name you wish to edit to be directed to that menu's
+   :term:`edit page`.
+3. On loading, the :term:`edit page` displays the menu name with all
+   :term:`information areas <information area>` and editable :term:`fields
+   <field>` grouped under them. Edit data as required.
+
+
+
+
+:ref:`Back to top <manage-menus>`
+
+.. _move-menu:
+
+Move an existing menu
+=====================
+
+
+:ref:`Back to top <manage-menus>`
+
+.. _delete-menu
+
+Delete an existing menu
+=======================
+
+
+
+
+
+
+:ref:`Back to top <manage-menus>`
