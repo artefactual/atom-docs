@@ -781,8 +781,8 @@ to edit user permissions by archival description.
    :term:`information area` will be applied to *all* archival descriptions
    belonging to your institution. Follow **steps 6 through 9** below if you wish
    to edit a user's :term:`access privileges <access privilege>` based on a
-   specific :term:`*archival description* <archival description>` and/or
-   :term:`*archival institution* <archival institution>`.
+   specific :term:`archival description <archival description>` and/or
+   :term:`archival institution <archival institution>`.
 
 6. A user's :term:`access privileges <access privilege>` can also be edited
    according to a specific *archival description* or *archival institution*. To
@@ -865,8 +865,8 @@ permissions by archival description.
    :term:`information area` will be applied to *all* archival descriptions
    belonging to your institution. Follow **steps 6 through 9** below if you wish
    to edit a group's :term:`access privileges <access privilege>` based on a
-   specific :term:`*archival description* <archival description>` and/or
-   :term:`*archival institution* <archival institution>`.
+   specific :term:`archival description <archival description>` and/or
+   :term:`archival institution <archival institution>`.
 
 6. A group's :term:`access privileges <access privilege>` can also be edited
    according to a specific *archival description* or *archival institution*. To
@@ -896,9 +896,8 @@ permissions by archival description.
 
    In order to fully test the scenarios in this section, you should have two or
    more :term:`archival institutions <archival institution>` in your system,
-   with several hierarchical
-   :term:`descriptions <archival description>` attached and some digital objects
-   uploaded.
+   with several hierarchical :term:`descriptions <archival description>`
+   attached and some digital objects uploaded.
 
 10. You can quit the process at any time by clicking the "Cancel" button
     in the :term:`button block`; any changes made will not be saved. Note that
@@ -1365,7 +1364,7 @@ archival institution permissions by user.
    applied to *all* :term:`archival institutions <archival institution>`
    for your repository. Follow **steps 7 through 9** below if you wish
    to edit a user's :term:`access privileges <access privilege>` based on a
-   specific archival institution.
+   specific :term:`archival institution`.
 
 7. A user's :term:`access privileges <access privilege>` can also be edited
    according to a specific *archival institution*. To do this, click on the "Add
@@ -1435,7 +1434,7 @@ group.
    applied to *all* :term:`archival institutions <archival institution>` in
    your repository. Follow **steps 6 through 8** below if you wish to edit a
    group's :term:`access privileges <access privilege>` based on a specific
-   archival institution.
+   :term:`archival institution`.
 
 6. A group's :term:`access privileges <access privilege>` can also be edited
    according to a specific *archival institution*. To do this, click on the "Add
