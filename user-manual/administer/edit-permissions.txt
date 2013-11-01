@@ -6,7 +6,7 @@ Edit permissions
 
 User permissions define levels of access to functions in AtoM, ranging from
 view-only access to full administration rights. These :term:`access privileges
-<access privilege>`, or permissions, can be navigated by :ref:`user-roles`,
+<access privilege>`, or *Permissions*, can be navigated by :ref:`user-roles`,
 which are defined by "Groups" that an authenticated (i.e. logged-in)
 :term:`administrator` can add and edit (see :ref:`manage-user-accounts`). When a
 specific user is assigned to a "Group", he/she automatically inherits the
@@ -18,33 +18,23 @@ drafted in a way that reflects these options.
 **Below you'll find instructions on how to:**
 
 * :ref:`Default user permissions settings in AtoM <default-user-permissions>`
-
     * :ref:`Default access privileges <default-access-privileges>`
-
     * :ref:`Default user role <default-permissions-by-role>`
 
 * :ref:`Setting permissions by archival description <description-permissions>`
-
     * :ref:`For a user <user-info-object-permissions>`
-
     * :ref:`For a group <group-description-permissions>`
 
 * :ref:`Setting permissions by authority record <authority-record-permissions>`
-
     * :ref:`For a user <user-actor-permissions>`
-
     * :ref:`For a group <group-authority-record-permissions>`
 
 * :ref:`Setting permissions by term and taxonomy <taxonomy-permissions>`
-
     * :ref:`For a user <user-taxonomy-permissions>`
-
     * :ref:`For a group <group-taxonomy-permissions>`
 
 * :ref:`Setting permissions by archival institution <institution-permissions>`
-
     * :ref:`For a user <user-institution-permissions>`
-
     * :ref:`For a group <group-institution-permissions>`
 
 .. seealso::
@@ -88,7 +78,7 @@ privilege>` of either a group or a user by navigating between 4 different
 Clicking on a specific :term:`permissions tab` will direct you to the
 :term:`view page` of that permission, where the :term:`access privileges <access
 privilege>` for that permission will be displayed under a :term:`field` labeled
-as "Action". An authenticated (i.e. logged-in) :term:`administrator` can edit
+as *Action*. An authenticated (i.e. logged-in) :term:`administrator` can edit
 access privileges by switching from :term:`view mode` to :term:`edit mode`;
 simply click the :term:`"Edit" button <Edit button>` in the :term:`button
 block`.
@@ -101,9 +91,9 @@ block`.
    :term:`permissions tab` In :term:`view mode`, only those actions which
    are not indicated as "Inherit", or in default, will be displayed.
 
-Access privileges, or "Actions" will vary according to the permission type (i.e.
+Access privileges, or *Actions* will vary according to the permission type (i.e.
 the :term:`permissions tab`) that has been selected. Because each permission
-type has a different list of default "Actions", permission-specific instructions
+type has a different list of default *Actions*, permission-specific instructions
 have been included below.
 
 .. _description-default-actions:
@@ -228,10 +218,10 @@ default "User groups":
 * :ref:`Translator <translator-default>`
 
 Each user group contains default :term:`access privileges <access privilege>`,
-or "Actions" that define levels of access to functions in AtoM, ranging from
-view-only access to full administration rights. Each "Action" includes the
+or *Actions* that define levels of access to functions in AtoM, ranging from
+view-only access to full administration rights. Each *Action* includes the
 option to select one of the following three :term:`access privileges
-<access privilege>, or "Permission", displayed as radio buttons:
+<access privilege>`, or *Permission*, displayed as radio buttons:
 
 * Grant |grant|
 * Deny |deny|
@@ -257,9 +247,9 @@ option to select one of the following three :term:`access privileges
    :height: 23
    :width: 20
 
-Access privileges, or "Actions" will vary according to the permission type
+Access privileges, or *Actions* will vary according to the permission type
 (i.e. the :term:`permissions tab`) that has been selected. Because each
-permission type has a different list of default "Permissions",
+permission type has a different list of default *Permissions*,
 this section lists permission-specific instructions have been included below.
 
 .. NOTE::
@@ -725,7 +715,7 @@ descriptions and/or archival institutions.
 .. IMPORTANT:
 
 Only an authenticated (i.e. logged-in) :term:`administrator` can modify a user's
-or a group's :term:`access privileges <access privilege>` or "Permissions".
+or a group's :term:`access privileges <access privilege>` or *Permissions*.
 After the desired changes have been made, the administrator can log out and log
 back in as that specific user in order to verify the results of the
 modifications.
@@ -780,7 +770,7 @@ to edit user permissions by archival description.
    :ref:`Actions <description-default-actions>` and :ref:`Permissions
    <default-permissions-by-role>` for that user with regards to *All archival
    descriptions* belonging to your archival institution. *Permissions* can
-   be edited (i.e. Grant or Deny) as required.
+   be edited (i.e. **Grant** or **Deny**) as required.
 
    If you wish to **only** edit the user's permissions for *All archival
    descriptions*, please skip steps 6 through 9 and **proceed to step 10**.
@@ -864,7 +854,7 @@ permissions by archival description.
 5. On loading, the :term:`edit page` will display the default *Actions* and
    *Permissions* for that group as "Inherit" for *All archival descriptions*
    belonging to your archival institution. *Permissions* can be edited (i.e.
-   Grant or Deny) as required.
+   **Grant** or **Deny**) as required.
 
    If you wish to **only** edit the group's permissions for *All archival
    descriptions*, please skip steps 6 through 9 and **proceed to step 10**.
@@ -936,15 +926,14 @@ with archival materials. By default, only an authenticated (i.e. logged-in)
 :term:`Access privileges <access privilege>` for other users or groups with
 regards to authority records, such as reading, creating, updating and
 deleting authority records, can be edited according to both users and
-groups; they can be granted, denied, or :term:`administrators
-<administrator>`can choose to rely on the default (i.e."Inherit") setting as set
-by AtoM. Specific permissions can be set for *all* authority records, or
-edited based on a specific authority record.
+groups; they can be granted, denied, or administrators can choose to rely on
+the default (i.e."Inherit") setting as set by AtoM. Specific permissions can be
+set for *all* authority records, or edited based on a specific authority record.
 
 .. IMPORTANT:
 
 Only an authenticated (i.e. logged-in) :term:`administrator` can modify a user's
-or a group's :term:`access privileges <access privilege>` or "Permissions".
+or a group's :term:`access privileges <access privilege>` or *Permissions*.
 After the desired changes have been made, the administrator can log out and log
 back in as that specific user in order to verify the results of the
 modifications.
@@ -997,7 +986,7 @@ the instructions below to edit user permissions by authority record.
    :ref:`Actions <authority-default-actions>` and :ref:`Permissions
    <default-permissions-by-role>` for that user for *All authority record*
    belonging to your archival institution. *Permissions* can be edited
-   (i.e. Grant or Deny) as required.
+   (i.e. **Grant** or **Deny**) as required.
 
    If you wish to **only** edit the user's permissions for *All authority
    record*, please skip steps 7 through 9 and **proceed to step 10**.
@@ -1066,7 +1055,7 @@ Follow the instructions below to edit user permissions by authority record.
 5. On loading, the :term:`edit page` will display the default *Actions*
    and *Permissions* as "Inherit" for that group for *All
    authority record* belonging to your archival institution. *Permissions* can
-   be edited (i.e. Grant or Deny) as required.
+   be edited (i.e. **Grant** or **Deny**) as required.
 
    If you wish to **only** edit the group's permissions for *All authority
    record*, please skip steps 6 through 8 and **proceed to step 9**.
@@ -1125,7 +1114,7 @@ and deleted.
 .. IMPORTANT:
 
 Only an authenticated (i.e. logged-in) :term:`administrator` can modify a user's
-or a group's :term:`access privileges <access privilege>` or "Permissions".
+or a group's :term:`access privileges <access privilege>` or *Permissions*.
 After the desired changes have been made, the administrator can log out and log
 back in as that specific user in order to verify the results of the
 modifications.
@@ -1155,7 +1144,7 @@ Edit term and taxonomy permissions by user
 Users can be granted or denied permissions to Create, Update or Delete different
 :term:`terms <term>` and :term:`taxonomies <taxonomy>` within a system. An
 :term:`administrator` may wish to allow a user to only edit certain
-taxonomies, or he may wish to Deny a user's permission to edit any terms
+taxonomies, or he may wish to **Deny** a user's permission to edit any terms
 within the system. Follow the instructions below for information on how to
 edit user :term:`access privileges <access privilege>` in AtoM.
 
@@ -1182,7 +1171,7 @@ edit user :term:`access privileges <access privilege>` in AtoM.
 6. On loading, the :term:`edit page` will display the :ref:`Actions
    <taxonomy-default-actions>` and :ref:`Permissions
    <default-permissions-by-role>`  for that user for *All term* belonging to
-   your repository. *Permissions* can be edited (i.e. Grant or Deny) as
+   your repository. *Permissions* can be edited (i.e. **Grant** or **Deny**) as
    required.
 
    If you wish to **only** edit the user's permissions for *All term*,
@@ -1232,9 +1221,10 @@ Edit term and taxonomy permissions by group
 
 The section belows includes instructions on how to edit :term:`access
 privileges <access privilege>` for user groups. An :term:`administrator`
-may wish to Grant a group the permission to Update one specific
-taxonomy, or Deny another group the permission to Delete any of the terms in its
-system. See below for instructions on how to edit access privileges for groups.
+may wish to **Grant** a group the permission to Update one specific
+taxonomy, or **Deny** another group the permission to Delete any of the terms in
+its system. See below for instructions on how to edit access privileges for
+groups.
 
 1. Navigate to an existing group in AtoM. You can do this by clicking the
    |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
@@ -1249,7 +1239,7 @@ system. See below for instructions on how to edit access privileges for groups.
    you to the group's :term:`edit page` for this :term:`access privilege`.
 5. On loading, the :term:`edit page` will display the default *Actions*
    and *Permissions* for that group for *All term* belonging to your repository.
-   *Permissions* can be edited (i.e. Grant or Deny) as required.
+   *Permissions* can be edited (i.e. **Grant** or **Deny**) as required.
 
    If you wish to **only** edit the group's permissions for *All term*,
    please skip steps 6 through 8 and **proceed to step 9**.
@@ -1309,7 +1299,7 @@ permission.
 .. IMPORTANT:
 
 Only an authenticated (i.e. logged-in) :term:`administrator` can modify a user's
-or a group's :term:`access privileges <access privilege>` or "Permissions".
+or a group's :term:`access privileges <access privilege>` or *Permissions*.
 After the desired changes have been made, the administrator can log out and log
 back in as that specific user in order to verify the results of the
 modifications.
@@ -1333,9 +1323,9 @@ Edit archival institution permissions by user
 
 An :term:`administrator` may want to edit a specific user's :term:`access
 privileges <access privilege>` with regards to different :term:`archival
-institutions <archival institution>: for example, you may wish
-to Grant a specific user the permission to only Update your archival
-institutions; or you may want to Deny a user's permission to Read a specific
+institutions <archival institution>`: for example, you may wish
+to **Grant** a specific user the permission to only Update your archival
+institutions; or you may want to **Deny** a user's permission to Read a specific
 archival instituion. This section provides instructions on how to edit
 archival institution permissions by user.
 
@@ -1364,7 +1354,7 @@ archival institution permissions by user.
    :ref:`Actions <institution-default-actions>` and :ref:`Permissions
    <default-permissions-by-role>` for that user for *All
    archival institution* belonging to your repository. *Permissions* can be
-   edited (i.e. Grant or Deny) as required.
+   edited (i.e. **Grant** or **Deny**) as required.
 
    If you wish to **only** edit the user's permissions for *All archival
    institution*, please skip steps 7 through 9 and **proceed to step 10**.
@@ -1413,7 +1403,7 @@ Edit archival institution permissions by group
 
 As an :term:`administrator`, you may want to edit a specific group's
 :term:`access privileges <access privilege>` with regards to different
-:term:`archival institutions <archival institution> within your repository: for
+:term:`archival institutions <archival institution>` within your repository: for
 example, you may only wish for a specific user group to have viewing permissions
 for one archival institution, but full edit permissions for another. Follow the
 instructions below to learn how to edit archival institution permissions by user
@@ -1433,18 +1423,19 @@ group.
    you to the group's :term:`edit page` for this :term:`access privilege`.
 5. On loading, the :term:`edit page` will display the default *Actions*
    and *Permissions* for that group for *All archival institution* in your
-   repository. *Permissions* can be edited (i.e. Grant or Deny) as required.
+   repository. *Permissions* can be edited (i.e. **Grant** or **Deny**) as
+   required.
 
    If you wish to **only** edit the group's permissions for *All archival
    institution*, please skip steps 6 through 8 and **proceed to step 9**.
 
 .. NOTE::
 
-   Changes made in the "Edit permissions"
-   :term:`information area` will be applied to *all* :term:`archival
-   institutions <archival institution>` in your repository. Follow **steps 6
-   through 8** below if you wish to edit a group's :term:`access privileges
-   <access privilege>` based on a specific archival institution.
+   Changes made in the "Edit permissions" :term:`information area` will be
+   applied to *all* :term:`archival institutions <archival institution>` in
+   your repository. Follow **steps 6 through 8** below if you wish to edit a
+   group's :term:`access privileges <access privilege>` based on a specific
+   archival institution.
 
 6. A group's :term:`access privileges <access privilege>` can also be edited
    according to a specific *archival institution*. To do this, click on the "Add
