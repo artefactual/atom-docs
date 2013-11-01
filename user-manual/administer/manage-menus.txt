@@ -21,7 +21,7 @@ the :term:`drop-down menu`.
 
 .. image:: images/site-menu-list.*
    :align: center
-   :width: 50%
+   :width: 70%
    :alt: An image of menus list in AtoM
 
 Below, you will find instructions on how to:
@@ -58,14 +58,16 @@ For more information on edit privileges and user roles see: :ref:`User roles
    <information area>`.
 4. Enter data in the blank :term:`field <field>` located below the information
    area headings.
-   * In the "Name" :term:`field`, enter a name for the menu.
-   * In the "Label" :term:`field`, enter a label (this does not need to be
-     the same as the "Name").
-   * In the "Parent" :term:`field`, select a parent menu from the
-     :term:`drop-down menu`.
-   * In the "Path" :term:`field`, enter the URL for the menu.
-   * In the "Description" :term:`field`, enter descriptive information about
-     the menu if desired.
+
+      * In the "Name" :term:`field`, enter a name for the menu.
+      * In the "Label" :term:`field`, enter a label (this does not need to be
+        the same as the "Name").
+      * In the "Parent" :term:`field`, select a parent menu from the
+        :term:`drop-down menu`.
+      * In the "Path" :term:`field`, enter the URL for the menu.
+      * In the "Description" :term:`field`, enter descriptive information about
+        the menu if desired.
+
 5. You can quit the creation process at any time by clicking the "Cancel"
    button in the :term:`button block`; any data already entered will not be
    saved, and no new menu will be created. Note that simply navigating away
@@ -117,7 +119,9 @@ AtoM will direct you to the "Site menu list" :term:`view page`.
 
 From here you can either:
 
-1. Click on the up or down arrow located to the left of each menu link; or
+1. Click on the up or down arrow located to the left of each menu link;
+
+   **or**
 
 2. Click on the blue menu name you wish to edit to be directed to that menu's
    :term:`edit page` where you can change the "Parent" :term:`field` to select a
@@ -143,7 +147,7 @@ To delete an existing menu:
 3. Scroll to the bottom of the :term:`edit page` and click the :term:`delete
    button` in the :term:`button block`.
 4. AtoM will provide a warning and prompts you to confirm that you really wish
-   to delete the institution. To delete the record, click the :term:`Delete
+   to delete the institution. To delete the record, click the :term:`delete
    button`.
 5. AtoM will delete the record and opens the menu list page.
 
