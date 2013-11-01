@@ -750,7 +750,7 @@ redirected to a browse page where all the holdings that have been linked to that
 institution will be listed. The results can be  sorted by "Most recent" or
 "Alphabetical"; hover above the visible option next to the :ref:`"Sort button"
 <recurring-sort- button>`, on the right-hand corner above the results, to select
-the alternative from a drop-down menu. For more information, see:
+the alternative from a :term:`drop-down menu`. For more information, see:
 :ref:`Facet filters <recurring-facet-filters>`.
 
 :ref:`Back to top <archival-institutions>`
@@ -836,10 +836,13 @@ Follow the instructions below to delete an archival institution in AtoM:
     button`.
 4.  AtoM deletes the record and opens the :term:`archival institution` browse
     results page.
-5.  Deleting the :term:`archival institution` record removes the :term:`archival
-    institution` from the repository :term:`field` in linked :term:`archival
-    descriptions <archival description>` but does not remove the archival
-    descriptions themselves.
+
+.. NOTE::
+
+   Deleting the :term:`archival institution` record removes the :term:`archival
+   institution` from the repository :term:`field` in linked :term:`archival
+   descriptions <archival description>` but does not remove the archival
+   descriptions themselves.
 
 :ref:`Back to top <archival-institutions>`
 
