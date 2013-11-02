@@ -20,6 +20,7 @@ links to each chapter's main sections.
    add-edit-content/archival-institutions
    add-edit-content/deaccessions
    add-edit-content/donors
+   add-edit-content/functions
    access-content/search-atom
    access-content/navigate
    administer/manage-user-accounts

@@ -63,7 +63,7 @@ This section describes how to add, edit, and delete content in AtoM.
 * :ref:`Archival institutions <archival-institutions>`
 * :ref:`Deaccession records <deaccessions>`
 * :ref:`Donors <donors>`
-* Functions
+* :ref:`Functions <functions>`
 * Rights
 * Control area
 * Terms
