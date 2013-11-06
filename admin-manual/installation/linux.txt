@@ -264,13 +264,20 @@ called :file:`/etc/php5/fpm/pool.d/atom.conf`:
    # debug frontend or ATOM_READ_ONLY if you want AtoM to prevent
    # authenticated users
    env[ATOM_DEBUG_IP] = "10.10.10.10,127.0.0.1"
-   env[ATOM_READ_ONLY] = off
+   env[ATOM_READ_ONLY] = "off"
 
 The process manager has to be restarted:
 
 .. code-block:: bash
 
    sudo service php5-fpm restart
+
+If the service fails to start, make sure that the configuration file has been
+has been pasted properly. You can also check the syntax by running:
+
+.. code-block:: bash
+
+   sudo php5-fpm --test
 
 If you are not planning to use the default PHP pool (``www``), feel free to
 remove it:
