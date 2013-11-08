@@ -1169,7 +1169,7 @@ edit user :term:`access privileges <access privilege>` in AtoM.
    you to the user's :term:`edit page` for this :term:`access privilege`.
 6. On loading, the :term:`edit page` will display the :ref:`Actions
    <taxonomy-default-actions>` and :ref:`Permissions
-   <default-permissions-by-role>`  for that user for *All term* belonging to
+   <default-permissions-by-role>` for that user for *All term* belonging to
    your repository. *Permissions* can be edited (i.e. **Grant** or **Deny**) as
    required.
 
@@ -1314,6 +1314,7 @@ For more information on archival institutions, see
 
    In order to fully test the scenarios in this section, you should have two or
    more archival institutions in your system.
+
 
 .. _user-institution-permissions:
 
