@@ -12,7 +12,7 @@ Glossary
     The about page provides general information on AtoM. It can be reached
     via the :term:`header bar` at the top of all pages. The content of the
     about page can be edited by  :term:`administrators <administrator>`
-    (see :doc:`Manage static pages <../administer/manage-static-pages>`).
+    (see :ref:`Manage static pages <manage-static-pages>`).
 
   Accession record
     The accession record is an administrative and descriptive document that
@@ -537,7 +537,7 @@ Glossary
     institution>`, :term:`functions <function>`, :term:`terms <term>`, and
     :term:`accession records <accession record>`. They are also used to carry
     out administrative functions such as changing :term:`user profiles <user
-    profile>` and editing   :term:`static pages <static page>`.
+    profile>` and editing :term:`static pages <static page>`.
 
   Entity
     An entity is an object about which an information system collects
@@ -736,8 +736,8 @@ Glossary
     The home page is the first page the user sees when opening the AtoM
     application. It can also be accessed by clicking the site logo. The
     content of the home page can be edited by :term:`administrators
-    <administrator>` (see :doc:`Manage static pages
-    <..administer/manage-static-pages>`).
+    <administrator>` (see :ref:`Manage static pages
+    <manage-static-pages>`).
 
   Information area
     Information areas appear on :term:`edit pages <edit page>` and group
@@ -1054,7 +1054,7 @@ Glossary
     :term:`edit pages <edit page>`. AtoM has two static pages, the
     :term:`home page` and the :term:`about page`. Static pages can be
     edited by an :term:`administrator`, and new static pages can be created.
-    (see :doc:`Manage static pages <../administer/manage-static-pages>`; see
+    (see :ref:`Manage static pages <manage-static-pages>`; see
     also: :ref:`quick-links-menu`).
 
   Subject
