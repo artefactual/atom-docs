@@ -144,7 +144,7 @@ and types of users in AtoM see: :ref:`User roles <user-roles>`.
 
 .. NOTE::
 
-   The edit page that appears will depend on the :ref:`default template
+   The :term:`edit page` that appears will depend on the :ref:`default template
    <default-template>` set in the application. When first installed, the
    default template in AtoM is the :ref:`ISAD(G) <isad-template>` (General
    International Standard for Archival Description) template. Administrators
@@ -259,10 +259,10 @@ include:
 Method 2: Adding a full child description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Full :term:`child descriptions <child record>` can be added to an archival
-description at any time (by users with sufficient edit privileges) by
-navigating to the description to which you would like to add a child (the
-:term:`parent description <parent record>`).
+Full :term:`child descriptions <child record>` can be added to an
+:term:`archival description` at any time (by users with sufficient :ref:`edit
+privileges <edit-user-permissions>`) by navigating to the description to which
+you would like to add a child (the :term:`parent description <parent record>`).
 
 First, navigate to the :term:`parent archival description <parent record>` to
 which you wish to add a child description. You can do this by :doc:`browsing
