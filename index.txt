@@ -138,7 +138,7 @@ or for a network.
 * :ref:`Manage user accounts and user groups <manage-user-accounts>`
 * Manage digital object storage
 * :ref:`Edit user permissions <edit-user-permissions>`
-* Manage static pages
+* :ref:`Manage static pages <manage-static-pages>`
 * :ref:`Manage menus <manage-menus>`
 * Manage plugins
 * Settings
