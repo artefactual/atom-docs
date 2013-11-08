@@ -331,15 +331,17 @@ types of users and edit permissions, see :ref:`User roles <user-roles>`.
     :doc:`searching <../access-content/search-atom>` for the archival
     institution - see :ref:`Access content <access-content>` for more
     information on navigation in AtoM.
-2.  Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit" button
-    in the :term:`button block`, or by clicking on one of the :term:`information
-    area` headings; this takes you to the record’s :term:`edit page`.
+2.  Switch from :term:`view mode` to :term:`edit mode` by clicking :term:`"Edit"
+    button <edit button>` in the :term:`button block`, or by clicking on one of
+    the :term:`information area` headings; this takes you to the record’s
+    :term:`edit page`.
 3.  To create a link to an archival institution, follow the steps above for
-    "adding a new archival institution" - however, instead of entering a new
-    name, begin typing the name of the archival institution to which you would
-    like to create a link. The name :term:`field` is an auto-complete - as you
-    type, matching results will load in a :term:`drop-down menu` below the
-    field. When you see the archival institution you would like to link, click
+    :ref:`"adding a new archival institution" <add-institution-main>` - however,
+    instead of entering a new name, begin typing the name of the :term:`archival
+    institution` to which you would like to create a link. The name
+    :term:`field` is an auto-complete - as you type, matching results will load
+    in a :term:`drop-down menu` below the field. When you see the
+    :term:`archival institution` you would like to link, click
     on it to select it.
 
 .. IMPORTANT::
