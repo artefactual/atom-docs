@@ -1,0 +1,172 @@
+.. _manage-static-pages:
+
+===================
+Manage static pages
+===================
+
+In AtoM, :term:`static pages <static page>` are pages that are designed to look
+the same each time they are accessed; this is in contrast to dynamic pages,
+which can vary according to your network or institution and according to the
+content that is uploaded into AtoM. Examples of dynamic pages include:
+:ref:`search results pages <search-results>`; :term:`view pages <view page>`;
+and :term:`edit pages <edit page>`.
+
+By default, AtoM has two :term:`static pages <static page>`: the
+:term:`Home page` and the :term:`About page`. A default welcome message appears
+on the :term:`Home page` when first logging into AtoM.
+
+.. image:: images/welcome-page.*
+   :align: center
+   :width: 70%
+   :alt: An image of the Home page
+
+The :term:`About page` provides additional information about the application and
+the project. To access the :term:`About page`, click on the |info|:ref:`Quick
+links menu <quick-links-menu>` in the :term:`main menu` located in the
+:term:`header bar`. and select "About".
+
+.. image:: images/about-page.*
+   :align: center
+   :width: 80%
+   :alt: An image of the About page
+
+.. |info| image:: images/info-sign.png
+   :height: 18
+   :width: 18
+
+For more information on navigating in AtoM, see :ref:`access content
+<access-content>`
+
+**Below are instructions on how to edit and add :term:`static
+pages <static page>` in AtoM:**
+
+  * :ref:`Edit and existing static page <edit-static-page>`
+     * :ref:`Edit the "Home page" <edit-home-page>`
+     * :ref:`Edit the "About page" <edit-about-page>`
+  * :ref:`Add a new static page <add-static-page>`
+  * :ref:`Add links to a new static page <add-links-static>`
+  * :ref:`Styling static pages <styling-static-page>`
+
+.. NOTE::
+
+   :term:`Static pages <static page>` can only be edited and added by an
+   authenticated (i.e. logged-in) :term:`administrator` or :term:`editor`.
+   For more information on user permissions, see :ref:`edit-user-permissions`.
+
+
+.. _edit-static-page:
+
+Edit an existing static page
+============================
+
+.. |gears| image:: images/gears.png
+   :height: 18
+   :width: 18
+
+In AtoM, :term:`static pages <static page>`, that is both the :term:`Home page`
+and the :term:`About page` can be edited by authenticated (i.e. logged-in)
+:term:`aministrators <administrator>` or :term:`editors <editor>` to reflect
+your own institution's or network's requirements.
+
+This section contains instructions on how to edit :term:`static
+pages <static page>` in AtoM. There are two ways to edit :term:`static pages
+<static page>` - doing so via the |info|:ref:`Quick links menu
+<quick-links-menu>` in the :term:`main menu` and selecting either "Home" or
+"About" from the :term:`drop-down menu` is the easiest, but to accommodate
+different workflows, these :term:`static pages <static page>` can also
+be edited by clicking the the |gears|:ref:`Admin <main-menu-admin> and selecting
+"Static pages" from the :term:`drop-down menu`. This second option will route
+you to a "List" page, where all :term:`static pages <static page>` in the
+application will be listed. Navigate to the :term:`static page` you wish to edit
+by clicking on the blue menu name. Below are instructions to edit to specific
+:term:`static pages <static page>`
+
+    * :ref:`Edit the "Home page" <edit-home-page>`
+    * :ref:`Edit the "About page" <edit-about-page>`
+
+.. _edit-home-page:
+
+Edit the "Home page"
+--------------------
+
+1. Navigate to the :term:`Home page`; There are two methods of moving you can do
+   this by either clicking on the AtoM :term:`site logo` located in the top,
+   left corner of the AtoM
+   :term:`header bar`, **or** by clicking on the |info|:ref:`Quick links menu
+   <quick-links-menu>` in the :term:`main menu` located in the
+   :term:`header bar` and selecting "Home", or .
+2. To switch from the main page view to :term:`edit mode`, click on the
+   :term:`edit button` in the :term:`button block`.
+3. On loading, the `edit page` will display a "Name" :term:`field`, a "Slug"
+   :term:`field` and a "Content" :term:`field`.
+
+.. IMPORTANT::
+
+   The "Slug" :term:`field` is a hard-coded page title referenced by AtoM code
+   to manage URLs; it **cannot be changed** for the :term:`Home page` or the
+   :term:`About page`. However, it can be edited in any static pages that you
+   :ref:`add yourself.
+
+4. Add and/or revise data as required.
+
+.. NOTE::
+
+   Users must include `HTML <https://en.wikipedia.org/wiki/Html>`__ and inline
+   `CSS <https://en.wikipedia.org/wiki/CSS>`__ code to the "Content"
+   :term:`field` to include any links and special styling. See :ref:`below
+   <styling-static-page>` for information on how to style :term:`static pages
+   <static page>`.
+
+5. You can quit the edit process at any time by clicking the "Cancel" button
+   in the :term:`button block`; any data already entered will not be saved. Note
+   that simply navigating awa from the page by any other means, **without first
+   clicking "Create"** will also result in no edits being saved.
+6. To save the changes made to the :term:`Home page`, click the
+   :term:`"Create" button <create button>` located in the :term:`button block`
+   at the bottom of the record.
+
+
+.. _edit-about-page:
+
+Edit from About page
+--------------------
+
+To edit the :term:`About page` in AtoM:
+
+1. Navigate to the :term:`About page` by clicking on the |info|:ref:`Quick
+   links menu <quick-links-menu>` in the :term:`main menu` located in the AtoM
+   :term:`header bar` and selecting "About".
+
+.. _edit-about-admin-menu:
+
+Edit the "About page" from the Admin menu
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+:ref:`Back to top <manage-static-pages>`
+
+.. _add-static-page:
+
+Add a new static page
+=====================
+
+
+:ref:`Back to top <manage-static-pages>`
+
+.. _add-links-static:
+
+Add links to a new static page
+==============================
+
+
+
+:ref:`Back to top <manage-static-pages>`
+
+
+
+.. _styling-static-page:
+
+Styling static pages
+====================
+
+
