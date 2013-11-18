@@ -6,7 +6,7 @@ Search
 
 Overview
 
-.. SEE ALSO::
+.. SEEALSO::
 
    * :ref:`Advanced search <advanced-search>`
    * :ref:`navigate`
