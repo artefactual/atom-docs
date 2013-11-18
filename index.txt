@@ -64,7 +64,7 @@ This section describes how to add, edit, and delete content in AtoM.
 * :ref:`Deaccession records <deaccessions>`
 * :ref:`Donors <donors>`
 * :ref:`Functions <functions>`
-* Rights
+* :ref:`Rights <rights>`
 * Control area
 * Terms
 * Physical storage
