@@ -15,9 +15,9 @@ In AtoM, "menus" and "menu labels" refer to ...
    :height: 18
    :width: 18
 
-To view a list of menus, click the |gears|:ref:`Admin <main-menu-admin>` menu in
-the :term:`main menu` located in the :term:`header bar` and select "Menus" from
-the :term:`drop-down menu`.
+To view a list of menus, click the |gears| :ref:`Admin <main-menu-admin>` menu
+in the :term:`main menu` located in the :term:`header bar` and select "Menus"
+from the :term:`drop-down menu`.
 
 .. image:: images/site-menu-list.*
    :align: center
@@ -47,7 +47,7 @@ For more information on edit privileges and user roles see: :ref:`User roles
 
 **To add a menu in AtoM:**
 
-1. Navigate to the menu list: click on the |gears|:ref:`Admin
+1. Navigate to the menu list: click on the |gears| :ref:`Admin
    <main-menu-admin>` menu in the :term:`main menu` located in the
    :term:`header bar` and select "Menus" from the :term:`drop-down menu`.
    AtoM will direct you to the "Site menu list" :term:`view page`.
@@ -59,14 +59,14 @@ For more information on edit privileges and user roles see: :ref:`User roles
 4. Enter data in the blank :term:`field <field>` located below the information
    area headings.
 
-      * In the "Name" :term:`field`, enter a name for the menu.
-      * In the "Label" :term:`field`, enter a label (this does not need to be
-        the same as the "Name").
-      * In the "Parent" :term:`field`, select a parent menu from the
-        :term:`drop-down menu`.
-      * In the "Path" :term:`field`, enter the URL for the menu.
-      * In the "Description" :term:`field`, enter descriptive information about
-        the menu if desired.
+* In the "Name" :term:`field`, enter a name for the menu.
+* In the "Label" :term:`field`, enter a label (this does not need to be
+  the same as the "Name").
+* In the "Parent" :term:`field`, select a parent menu from the
+  :term:`drop-down menu`.
+* In the "Path" :term:`field`, enter the URL for the menu.
+* In the "Description" :term:`field`, enter descriptive information about
+  the menu if desired.
 
 5. You can quit the creation process at any time by clicking the "Cancel"
    button in the :term:`button block`; any data already entered will not be
@@ -86,7 +86,7 @@ Edit an existing menu
 
 To edit an existing menu in AtoM:
 
-1. Navigate to the menu list: click on the |gears|:ref:`Admin
+1. Navigate to the menu list: click on the |gears| :ref:`Admin
    <main-menu-admin>` menu in the :term:`main menu` located in the
    :term:`header bar` and select "Menus" from the :term:`drop-down menu`.
    AtoM will direct you to the "Site menu list" :term:`view page`.
@@ -112,7 +112,7 @@ Move an existing menu
 =====================
 
 There are two ways to move an existing menu in AtoM. Start by navigating to the
-menu list page. You can do this by clicking on the |gears|:ref:`Admin
+menu list page. You can do this by clicking on the |gears| :ref:`Admin
 <main-menu-admin>` menu in the :term:`main menu` located in the
 :term:`header bar` and select "Menus" from the :term:`drop-down menu`.
 AtoM will direct you to the "Site menu list" :term:`view page`.
@@ -138,7 +138,7 @@ Delete an existing menu
 
 To delete an existing menu:
 
-1. Navigate to the menu list by clicking on the |gears|:ref:`Admin
+1. Navigate to the menu list by clicking on the |gears| :ref:`Admin
    <main-menu-admin>` menu in the :term:`main menu` located in the
    :term:`header bar` and selecting "Menus" from the :term:`drop-down menu`.
    AtoM will direct you to the "Site menu list" :term:`view page`.
