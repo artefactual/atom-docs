@@ -9,11 +9,11 @@ the same each time they are accessed; this is in contrast to dynamic pages,
 which can vary according to your network or institution and according to the
 content that is uploaded into AtoM. Examples of dynamic pages include:
 search results pages; :term:`view pages <view page>`;
-and :term:`edit pages <edit page>`.
+and :term:`edit pages <edit page>`. By default, AtoM has two :term:`static pages
+<static page>`: the :term:`Home page` and the :term:`About page`.
 
-By default, AtoM has two :term:`static pages <static page>`: the
-:term:`Home page` and the :term:`About page`. A default welcome message appears
-on the :term:`Home page` when first logging into AtoM.
+A default welcome message appears on the :term:`Home page` when first logging
+into AtoM.
 
 .. image:: images/welcome-page.*
    :align: center
@@ -21,7 +21,7 @@ on the :term:`Home page` when first logging into AtoM.
    :alt: An image of the Home page
 
 The :term:`About page` provides additional information about the application and
-the project. To access the :term:`About page`, click on the |info|:ref:`Quick
+the project. To access the :term:`About page`, click on the |info| :ref:`Quick
 links menu <quick-links-menu>` in the :term:`main menu` located in the
 :term:`header bar` and select "About".
 
@@ -35,16 +35,18 @@ links menu <quick-links-menu>` in the :term:`main menu` located in the
    :width: 18
 
 For more information on navigating in AtoM, see :ref:`access content
-<access-content>`
+<access-content>`.
 
 **Below are instructions on how to edit and add static pages in AtoM:**
 
-  * :ref:`Edit and existing static page <edit-static-page>`
-     * :ref:`Edit the "Home page" <edit-home-page>`
-     * :ref:`Edit the "About page" <edit-about-page>`
-  * :ref:`Add a new static page <add-static-page>`
-  * :ref:`Add links to a new static page <add-links-static>`
-  * :ref:`Styling static pages <styling-static-page>`
+* :ref:`Edit and existing static page <edit-static-page>`
+
+  * :ref:`Edit the "Home page" <edit-home-page>`
+  * :ref:`Edit the "About page" <edit-about-page>`
+
+* :ref:`Add a new static page <add-static-page>`
+* :ref:`Add links to a new static page <add-links-static>`
+* :ref:`Styling static pages <styling-static-page>`
 
 .. NOTE::
 
@@ -69,11 +71,11 @@ your own institution's or network's requirements.
 
 This section contains instructions on how to edit :term:`static
 pages <static page>` in AtoM. There are two ways to edit :term:`static pages
-<static page>` - doing so via the |info|:ref:`Quick links menu
+<static page>` - doing so via the |info| :ref:`Quick links menu
 <quick-links-menu>` in the :term:`main menu` and selecting either "Home" or
 "About" from the :term:`drop-down menu` is the easiest, but to accommodate
 different workflows, these :term:`static pages <static page>` can also
-be edited by clicking the the |gears|:ref:`Admin <main-menu-admin>` and
+be edited by clicking the the |gears| :ref:`Admin <main-menu-admin>` and
 selecting "Static pages" from the :term:`drop-down menu`. This second option
 will route you to a "List" page, where all :term:`static pages <static page>`
 in the application will be listed. Navigate to the :term:`static page` you wish
@@ -93,56 +95,55 @@ To edit the "Home page" in AtoM:
 
 1. Start by navigating to the :term:`Home page`. Do this by either:
 
-   *  Clicking on the AtoM :term:`site logo` located in the top-left corner of
-      the AtoM :term:`header bar`;
-   *  Clicking the |info|:ref:`Quick links menu <quick-links-menu>` in the
-      :term:`main menu` of the :term:`header bar` and selecting  "Home" from the
-      :term:`drop-down menu`; **or**
-   *  Clicking the |gears|:ref:`Admin <main-menu-admin>` of the
-      :term:`header bar` and selecting "Static pages" from the
-      :term:`drop-down menu`. Once you are directed to the "List page" for
-      :term:`static pages <static page>`, click on the "Welcome" blue menu.
+* Clicking on the AtoM :term:`site logo` located in the top-left corner of
+  the AtoM :term:`header bar`;
+* Clicking the |info| :ref:`Quick links menu <quick-links-menu>` in the
+  :term:`main menu` of the :term:`header bar` and selecting  "Home" from the
+  :term:`drop-down menu`; **or**
+* Clicking the |gears| :ref:`Admin <main-menu-admin>` of the
+  :term:`header bar` and selecting "Static pages" from the
+  :term:`drop-down menu`. Once you are directed to the "List page" for
+  :term:`static pages <static page>`, click on the "Welcome" blue menu.
 
-   All three options will direct you to the :term:`Home page` :term:`view page`.
+All three options will direct you to the :term:`Home page` :term:`view page`.
 
-  .. NOTE::
+.. NOTE::
 
-     Editing the "Title" :term:`field` of the :term:`Home page` will edit the
-     blue menu that you will select in the :term:`static page` "List page" (i.e.
-     if you change "Welcome" to say "Bienvenue", the blue menu in the "List
-     page", as well as the main header of the :term:`Home page` will change to
-     "Bienvenue").
+   Editing the "Title" :term:`field` of the :term:`Home page` will edit the
+   blue menu that you will select in the :term:`static page` "List page" (i.e.
+   if you change "Welcome" to say "Bienvenue", the blue menu in the "List
+   page", as well as the main header of the :term:`Home page` will change to
+   "Bienvenue").
 
 2. To switch from the main :term:`view page` to :term:`edit mode`, click on the
    :term:`edit button` in the :term:`button block`.
-3. On loading, the `edit page` will display a "Name" :term:`field`, a "Slug"
-   :term:`field` and a "Content" :term:`field`.
+3. On loading, the `edit page` will display a "Title" :term:`field`, a
+  :term:`Slug` :term:`field` and a "Content" :term:`field`.
 
-  .. IMPORTANT::
+.. IMPORTANT::
 
-     The "Slug" :term:`field` is a hard-coded page title referenced by AtoM code
-     to manage URLs; it **cannot be changed** for the :term:`Home page` or the
-     :term:`About page`. However, it can be edited in any static pages that you
-     :ref:`add yourself <add-static-page>`.
+   The :term:`Slug` :term:`field` is a hard-coded page title referenced by AtoM
+   code to manage URLs; it **cannot be changed** for the :term:`Home page` or
+   the :term:`About page`. However, it can be edited in any static pages that
+   you :ref:`add yourself <add-static-page>`.
 
 4. Add and/or revise data as required.
 
-  .. TIP::
+.. TIP::
 
-     Users must include `HTML <https://en.wikipedia.org/wiki/Html>`__ and inline
-     `CSS <https://en.wikipedia.org/wiki/CSS>`__ code to the "Content"
-     :term:`field` to include any links and special styling. See :ref:`below
-     <styling-static-page>` for information on how to style :term:`static
-     pages <static page>`.
+   Users must include `HTML <https://en.wikipedia.org/wiki/Html>`__ and inline
+   `CSS <https://en.wikipedia.org/wiki/CSS>`__ code to the "Content"
+   :term:`field` to include any links and special styling. See :ref:`below
+   <styling-static-page>` for information on how to style :term:`static
+   pages <static page>`.
 
 5. You can quit the edit process at any time by clicking the "Cancel" button
    in the :term:`button block`; any data already entered will not be saved. Note
-   that simply navigating awa from the page by any other means, **without first
+   that simply navigating away from the page by any other means, **without first
    clicking "Create"** will also result in no edits being saved.
 6. To save the changes made to the :term:`Home page`, click the
    :term:`"Create" button <create button>` located in the :term:`button block`
    at the bottom of the record.
-
 
 .. _edit-about-page:
 
@@ -153,49 +154,49 @@ To edit the :term:`About page` in AtoM:
 
 1. Navigating to the :term:`About page`. You can do this by either:
 
-   *  Clicking the |info|:ref:`Quick links menu <quick-links-menu>` in the
-      :term:`main menu` of the :term:`header bar` and selecting  "About" from the
-      :term:`drop-down menu`; **or**
-   *  Clicking the |gears|:ref:`Admin <main-menu-admin>` of the
-      :term:`header bar` and selecting "Static pages" from the
-      :term:`drop-down menu`. Once you are directed to the "List page" for
-      :term:`static pages <static page>`, click on the "About" blue menu.
+* Clicking the |info| :ref:`Quick links menu <quick-links-menu>` in the
+  :term:`main menu` of the :term:`header bar` and selecting  "About" from the
+  :term:`drop-down menu`; **or**
+* Clicking the |gears| :ref:`Admin <main-menu-admin>` of the
+  :term:`header bar` and selecting "Static pages" from the
+  :term:`drop-down menu`. Once you are directed to the "List page" for
+  :term:`static pages <static page>`, click on the "About" blue menu.
 
-    Both options will direct you to the :term:`About page` :term:`view page`.
+Both options will direct you to the :term:`About page` :term:`view page`.
 
-  .. NOTE::
+.. NOTE::
 
-     Editing the "Title" :term:`field` of the :term:`About page` will edit the
-     blue menu that you will select in the :term:`static page` "List page" (i.e.
-     if you change "Welcome" to say "Bienvenue", the blue menu in the "List
-     page", as well as the main header of the :term:`About page` will change to
-     "Bienvenue").
+   Editing the "Title" :term:`field` of the :term:`About page` will edit the
+   blue menu that you will select in the :term:`static page` "List page" (i.e.
+   if you change "Welcome" to say "Bienvenue", the blue menu in the "List
+   page", as well as the main header of the :term:`About page` will change to
+   "Bienvenue").
 
 2. To switch from the main :term:`view page` to :term:`edit mode`, click on the
    :term:`edit button` in the :term:`button block`.
-3. On loading, the `edit page` will display a "Name" :term:`field`, a "Slug"
-   :term:`field` and a "Content" :term:`field`.
+3. On loading, the `edit page` will display a "Title" :term:`field`, a
+   :term:`Slug` :term:`field` and a "Content" :term:`field`.
 
-  .. IMPORTANT::
+.. IMPORTANT::
 
-     The "Slug" :term:`field` is a hard-coded page title referenced by AtoM code
-     to manage URLs; it **cannot be changed** for the :term:`Home page` or the
-     :term:`About page`. However, it can be edited in any static pages that you
-     :ref:`add yourself <add-static-page>`.
+   The "Slug" :term:`field` is a hard-coded page title referenced by AtoM code
+   to manage URLs; it **cannot be changed** for the :term:`Home page` or the
+   :term:`About page`. However, it can be edited in any static pages that you
+   :ref:`add yourself <add-static-page>`.
 
 4. Add and/or revise data as required.
 
-  .. TIP::
+.. TIP::
 
-     Users must include `HTML <https://en.wikipedia.org/wiki/Html>`__ and inline
-     `CSS <https://en.wikipedia.org/wiki/CSS>`__ code to the "Content"
-     :term:`field` to include any links and special styling. See :ref:`below
-     <styling-static-page>` for information on how to style :term:`static
-     pages <static page>`.
+   Users must include `HTML <https://en.wikipedia.org/wiki/Html>`__ and inline
+   `CSS <https://en.wikipedia.org/wiki/CSS>`__ code to the "Content"
+   :term:`field` to include any links and special styling. See :ref:`below
+   <styling-static-page>` for information on how to style :term:`static
+   pages <static page>`.
 
 5. You can quit the edit process at any time by clicking the "Cancel" button
    in the :term:`button block`; any data already entered will not be saved. Note
-   that simply navigating awa from the page by any other means, **without first
+   that simply navigating away from the page by any other means, **without first
    clicking "Create"** will also result in no edits being saved.
 6. To save the changes made to the :term:`Home page`, click the
    :term:`"Create" button <create button>` located in the :term:`button block`
@@ -208,6 +209,67 @@ To edit the :term:`About page` in AtoM:
 Add a new static page
 =====================
 
+In AtoM, new :term:`static pages <static page>` can be added at any time by any
+authenticated (i.e. logged-in) :term:`administrator`. Similar to both the
+:term:`Home page` and the :term:`About page`, you may wish to add a new static
+page in order to include permanent, or "timeless" content to your webpage.
+:term:`Static pages <static page>` may be customized to offers users
+instructions or help in navigating the site (i.e. a "Help" page),
+provide contact information (i.e. a "Contact Us" page), or feature website
+content, categories, and/or contributors.
+
+To add a new static page in AtoM:
+
+1. Click the the |gears| :ref:`Admin <main-menu-admin>` in the
+   :term:`header bar` and select "Static pages" from the :term:`drop-down menu`.
+2. You will be directed to a "List pages" page, where all :term:`static pages
+   <static page>`, including the :term:`Home page` and the :term:`About page`
+   will be listed.
+3. Click on the :term:`Add new button` in the :term:`button block` to be
+   directed to the :term:`edit page` for your new static page.
+4. On loading, the `edit page` will display blank "Title", :term:`Slug` and
+   "Content" :term:`fields <field>`. Add data as required.
+
+..TIP::
+
+  The :term:`slug` indicates the word, or sequence of words that will be visible
+  to users in the URL link when they are navigating on a specific :term:`static
+  page` (e.g.: the slug in the URL *www.artefactual.com/help* is */help*). The
+  slug should be indicative of the content of that specific static page.
+
+  When creating a new :term:`static page`, the :term:`slug` :term:`field` can
+  either be customized or left blank. If you choose to customize the
+  :term:`slug`, make the slug all lowercase, keep it short, and avoid accented
+  characters (e.g.: "é"; "ñ"; "û") and punctuation (e.g.: "!"; ";"; "..."). If
+  you leave the :term:`field` blank, AtoM will automatically generate a slug
+  based on the "Title" you have indicated for your page (e.g.: If your "Title"
+  is *About Us*, the slug for that static page will automatically be generated
+  as *.../about-us*). Note that AtoM will automatically replace all accented
+  characters with letters from the English alphabet and punctuation will either
+  be removed or replaced by a dash "-" or percent-encoding (e.g.: If your
+  "Title" is *Instructions & More*, the slug for that static page will
+  automatically be generated as *.../instructions%26more* or
+  *.../instructions-more*, unless otherwise indicated). The :term:`slug` will
+  also appear in the once blank "Slug" :term:`field` and can be viewed when
+  switching from the :term:`view page` to the :term:`edit page` of that
+  :term:`static page`.
+
+5. When you are finished, click
+
+.. WARNING::
+
+   A :term:`slug` cannot be duplicated once it has been generated in AtoM.
+   If you duplicate a slug, AtoM will automatically generate a "-2 (or the next
+   subsequent number) at the end of the slug to distinguish it from the other
+   one in the same name (e.g.: Two slugs titled *information* will result in the
+   second of the two becoming *information-2*). If you remove an AtoM
+   automatically generated :term:`slug` from the slug :term:`field` of a
+   :term:`static page` you've created, AtoM will not re-generate the original
+   slug, regardless of whether or not the "Title" of your page has changed;
+   rather, it will generate a new slug in the form of a series of letters and
+   numbers. **This should be avoided**, as it creates confusion because it does
+   not accurately indicate the content of that :term:`static page`. To avoid
+   this, simply enter a custom :term:`slug`.
 
 :ref:`Back to top <manage-static-pages>`
 
