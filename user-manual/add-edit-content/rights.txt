@@ -1,0 +1,9 @@
+.. _rights:
+
+======
+Rights
+======
+
+add some content here
+
+:ref:`Back to top <rights>`
