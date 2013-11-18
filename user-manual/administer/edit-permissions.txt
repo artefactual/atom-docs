@@ -18,30 +18,34 @@ drafted in a way that reflects these options.
 **Below you'll find instructions on how to:**
 
 * :ref:`Default user permissions settings in AtoM <default-user-permissions>`
-    * :ref:`Default access privileges <default-access-privileges>`
-    * :ref:`Default user role <default-permissions-by-role>`
+
+  * :ref:`Default access privileges <default-access-privileges>`
+  * :ref:`Default user role <default-permissions-by-role>`
 
 * :ref:`Setting permissions by archival description <description-permissions>`
-    * :ref:`For a user <user-info-object-permissions>`
-    * :ref:`For a group <group-description-permissions>`
+
+  * :ref:`For a user <user-info-object-permissions>`
+  * :ref:`For a group <group-description-permissions>`
 
 * :ref:`Setting permissions by authority record <authority-record-permissions>`
-    * :ref:`For a user <user-actor-permissions>`
-    * :ref:`For a group <group-authority-record-permissions>`
+
+  * :ref:`For a user <user-actor-permissions>`
+  * :ref:`For a group <group-authority-record-permissions>`
 
 * :ref:`Setting permissions by term and taxonomy <taxonomy-permissions>`
-    * :ref:`For a user <user-taxonomy-permissions>`
-    * :ref:`For a group <group-taxonomy-permissions>`
+
+  * :ref:`For a user <user-taxonomy-permissions>`
+  * :ref:`For a group <group-taxonomy-permissions>`
 
 * :ref:`Setting permissions by archival institution <institution-permissions>`
-    * :ref:`For a user <user-institution-permissions>`
-    * :ref:`For a group <group-institution-permissions>`
+
+  * :ref:`For a user <user-institution-permissions>`
+  * :ref:`For a group <group-institution-permissions>`
 
 .. seealso::
 
    * :ref:`manage-user-accounts`
    * :ref:`user-roles`
-
 
 .. _default-user-permissions:
 
@@ -50,15 +54,16 @@ Default user permissions settings in AtoM
 
 When a new user or user group is created in AtoM, they are automatically
 assigned default user permission settings. These permissions will affect the way
-they can view, edit, and interact with different :doc:`Entity types <../overview
-/entity-types>` in the system: for example, by default, a :term:`researcher` or
-public user of the system can only Read archival descriptions, authority
-records, archival institutions and terms. In AtoM, default user permissions
-consist of both default :ref:`access privileges <default-access-privileges>` and
-default :ref:`permissions based on user roles <default-permissions-by-role>`: in
-the previous example, "Read" is the access privilege and the "Researcher" is the
-user role. These permissions can only be edited (i.e. Granted or Denied) by an
-authenticated (i.e. logged-in) :term:`administrator`.
+they can view, edit, and interact with different :doc:`Entity types
+<../overview/entity-types>` in the system: for example, by default, a
+:term:`researcher` or public user of the system can only Read archival
+descriptions, authority records, archival institutions and terms. In AtoM,
+default user permissions consist of both default :ref:`access privileges
+<default-access-privileges>` and default :ref:`permissions based on user roles
+<default-permissions-by-role>`: in the previous example, "Read" is the access
+privilege and the "Researcher" is the user role. These permissions can only be
+edited (i.e. Granted or Denied) by an authenticated (i.e. logged-in)
+:term:`administrator`.
 
 .. _default-access-privileges:
 
@@ -111,7 +116,7 @@ display the specific :term:`access privileges <access privilege>` that can be
 maintained for users interacting with an :term:`archival institution's <archival
 institution>` :term:`archival descriptions <archival description>`. Specific
 privileges can be set with regards to reading, creating, updating, deleting,
-viewing drafts, publishing, acccessing master copies and/or accessing reference
+viewing drafts, publishing, accessing master copies and/or accessing reference
 copies of either *all* archival descriptions, specific archival descriptions, or
 *all* archival descriptions of a specific institution.
 
@@ -123,7 +128,7 @@ copies of either *all* archival descriptions, specific archival descriptions, or
    you should have two or more archival institutions in your system, with
    several hierarchical descriptions attached and some digital objects uploaded.
 
-A authenticated (i.e.logged-in) :term:`administrator` can **Grant** or **Deny**
+A authenticated (i.e. logged-in) :term:`administrator` can **Grant** or **Deny**
 a user's access privileges to a specific *Action*, or administrators can rely on
 the default permissions as they are established by AtoM by selecting a default
 user "Group". For more information on default access settings, see:
@@ -346,7 +351,7 @@ and browsing descriptions.
 +-------------------+---------------+
 
 Creating a user group of "Researchers" will automatically assign the above
-default :term:`access privieleges <access privilege>` to that group. However,
+default :term:`access privileges <access privilege>` to that group. However,
 the access privileges of individual users in that user group can still be
 edited without it altering the overall privileges of that group as a whole.
 
@@ -435,7 +440,7 @@ for almost all access privileges.
 +-------------------+---------------+
 
 Creating a user group of "Administrators" will automatically assign the above
-default :term:`access privieleges <access privilege>` to that group. However,
+default :term:`access privileges <access privilege>` to that group. However,
 the access privileges of individual users in that user group can still be
 edited without it altering the overall privileges of that group as a whole.
 
@@ -520,7 +525,7 @@ privilege>` in AtoM are very similar to those of an :term:`administrator`.
 +-------------------+---------------+
 
 Creating a user group of "Editors" will automatically assign the above
-default :term:`access privieleges <access privilege>` to that group. However,
+default :term:`access privileges <access privilege>` to that group. However,
 the access privileges of individual users in that user group can still be
 edited without it altering the overall privileges of that group as a whole.
 
@@ -606,7 +611,7 @@ update content as needed.
 +-------------------+---------------+
 
 Creating a user group of "Editors" will automatically assign the above
-default :term:`access privieleges <access privilege>` to that group. However,
+default :term:`access privileges <access privilege>` to that group. However,
 the access privileges of individual users in that user group can still be
 edited without it altering the overall privileges of that group as a whole.
 
@@ -692,7 +697,7 @@ privilege>`, however, are limited to translating and viewing records.
 +-------------------+---------------+
 
 Creating a user group of "Translators" will automatically assign the above
-default :term:`access privieleges <access privilege>` to that group. However,
+default :term:`access privileges <access privilege>` to that group. However,
 the access privileges of individual users in that user group can still be
 edited without it altering the overall privileges of that group as a whole.
 
@@ -748,7 +753,7 @@ to edit user permissions by archival description.
    :width: 18
 
 1. First, navigate to an existing user in AtoM. You can do this by clicking the
-   |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
+   |gears| :ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
    in the :term:`header bar` and selecting "Users" from the
    :term:`drop-down menu`. This will take you to a list of
    current users accounts (i.e. the "List users" page).
@@ -759,7 +764,7 @@ to edit user permissions by archival description.
 3. You can find the user you wish to edit by using the "Search users" box
    located at the top of the "List users" page, or by navigating through the
    list by scrolling to the bottom of the page and clicking through the page
-   numbers. Click on the user's usernameto be redirected to that
+   numbers. Click on the user's user name to be redirected to that
    :term:`user's profile <user profile>` :term:`view page`.
 4. By clicking on the "Information object permissions" :term:`information area`,
    you will be directed to the :term:`permissions tab` :term:`view page` where
@@ -796,7 +801,7 @@ to edit user permissions by archival description.
    To specify a user's access privileges for one or
    more specific :term:`archival institutions <archival institution>`, click on
    "Add archival institution".
-8. A seperate window will appear. An :term:`archival description` can be added
+8. A separate window will appear. An :term:`archival description` can be added
    via a :term:`value list` that appears in a :term:`drop-down menu` - as you
    type, the value list will narrow its options to present related suggestions.
 
@@ -840,7 +845,7 @@ one specific archival institution. Follow the instructions below to edit group
 permissions by archival description.
 
 1. Navigate to an existing group in AtoM. You can do this by clicking the
-   |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
+   |gears| :ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
    in the :term:`header bar` and selecting "Groups" from the
    :term:`drop-down menu`. This will take you to a list of current user groups.
 2. Select a group from the list that appears on the page by clicking on the
@@ -880,7 +885,7 @@ permissions by archival description.
    To specify a user's access privileges for one or
    more specific :term:`archival institutions <archival institution>`, click on
    "Add archival institution".
-8. A seperate window will appear. An :term:`archival description` can be added
+8. A separate window will appear. An :term:`archival description` can be added
    via a :term:`value list` that appears in a :term:`drop-down menu` - as you
    type, the value list will narrow its options to present related suggestions.
 
@@ -921,7 +926,7 @@ Setting permissions by authority record
 In AtoM, :term:`authority records <authority record>` are collections of
 information about actors - corporate bodies, persons, or families - who interact
 with archival materials. By default, only an authenticated (i.e. logged-in)
-:term:`administrator` or :term:`editor` can fully edit authroity records.
+:term:`administrator` or :term:`editor` can fully edit authority records.
 :term:`Access privileges <access privilege>` for other users or groups with
 regards to authority records, such as reading, creating, updating and
 deleting authority records, can be edited according to both users and
@@ -952,7 +957,7 @@ You may want to edit a specific user's :term:`access privileges <access
 privilege>` with regards to :term:`authority records <authority record>`: for
 example, you may wish to remove a user's ability to Create authority records for
 your institution; or you may want to enable a user to create, update, edit,
-delete only *one* authroity record belonging to the archival institution. Follow
+delete only *one* authority record belonging to the archival institution. Follow
 the instructions below to edit user permissions by authority record.
 
 .. NOTE::
@@ -963,7 +968,7 @@ the instructions below to edit user permissions by authority record.
    :term:`edit mode`.
 
 1. First, navigate to an existing user in AtoM. Do this by clicking the
-   |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
+   |gears| :ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
    in the :term:`header bar`. Select "Users" from the
    :term:`drop-down menu`. This will take you to a list of
    current users accounts (i.e. the "List users" page).
@@ -1000,15 +1005,15 @@ the instructions below to edit user permissions by authority record.
 
 7. A user's :term:`access privileges <access privilege>` can also be edited
    according to a specific *authority record*. To do this, click on "Add
-   authority record" under the "Add permissions by authroity record"
+   authority record" under the "Add permissions by authority record"
    :term:`information area`.
-8. A seperate window will appear. One or more :term:`authority records
+8. A separate window will appear. One or more :term:`authority records
    <authority record>` can be added via a
    :term:`value list` that appears in a :term:`drop-down menu` - as you type,
    the value list will narrow its options to present related suggestions.
 9. Once you've added an authority record, the page will load the default
    *Actions* and *Permissions* (i.e. "Inherit") for that user with regards to
-   the authroity record you have selected. *Permissions* can be edited as
+   the authority record you have selected. *Permissions* can be edited as
    required.
 
 .. NOTE::
@@ -1040,7 +1045,7 @@ authority records in your repository; or you may want to enable a group of
 Follow the instructions below to edit user permissions by authority record.
 
 1. Navigate to an existing group in AtoM. You can do this by clicking the
-   |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
+   |gears| :ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
    in the :term:`header bar` and selecting "Groups" from the
    :term:`drop-down menu`. This will take you to a list of current user groups.
 2. Select a group from the list that appears on the page by clicking on the
@@ -1069,15 +1074,15 @@ Follow the instructions below to edit user permissions by authority record.
 
 6. A group's :term:`access privileges <access privilege>` can also be edited
    according to a specific *authority record*. To do this, click on "Add
-   authority record" under the "Add permissions by authroity record"
+   authority record" under the "Add permissions by authority record"
    :term:`information area`.
-7. A seperate window will appear. One or more :term:`authority records
+7. A separate window will appear. One or more :term:`authority records
    <authority record>` can be added via a
    :term:`value list` that appears in a :term:`drop-down menu` - as you type,
    the value list will narrow its options to present related suggestions.
 8. Once you've added an authority record, the page will load the default
    *Actions* and *Permissions* (i.e. "Inherit") for that user with regards to
-   the authroity record you have selected. *Permissions* can be edited as
+   the authority record you have selected. *Permissions* can be edited as
    required.
 
 .. NOTE::
@@ -1119,8 +1124,8 @@ back in as that specific user in order to verify the results of the
 modifications.
 
 For more information, jump to the following sections:
-  * :ref:`Edit permissions for a user <user-taxonomy-permissions>`
-  * :ref:`Edit permissions for a group <group-taxonomy-permissions>`
+* :ref:`Edit permissions for a user <user-taxonomy-permissions>`
+* :ref:`Edit permissions for a group <group-taxonomy-permissions>`
 
 Terms can also be added by clicking the |plus|:ref:`"Add" <main-menu-add>`
 button in the :term:`main menu` located in the :term:`header bar`. Taxonomies
@@ -1148,7 +1153,7 @@ within the system. Follow the instructions below for information on how to
 edit user :term:`access privileges <access privilege>` in AtoM.
 
 1. First, navigate to an existing user in AtoM. Click on the
-   |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
+   |gears| :ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
    in the :term:`header bar` and select "Users" from the
    :term:`drop-down menu`. This will take you to a list of
    current users accounts (i.e. the "List users" page).
@@ -1188,7 +1193,7 @@ edit user :term:`access privileges <access privilege>` in AtoM.
    according to a specific *taxonomy*. To do this, click on the "Permissions by
    taxonomy" :term:`information area` to view the :term:`field` below it. Click
    on "Add taxonomy".
-8. A seperate window will appear. One or more specific :term:`taxonomies
+8. A separate window will appear. One or more specific :term:`taxonomies
    <taxonomy>` can be added via a :term:`value list` that appears in a :term
    :`drop-down menu` - as you type, the value list will narrow its options to
    present related suggestions.
@@ -1218,7 +1223,7 @@ you can review your work.
 Edit term and taxonomy permissions by group
 -------------------------------------------
 
-The section belows includes instructions on how to edit :term:`access
+The section below includes instructions on how to edit :term:`access
 privileges <access privilege>` for user groups. An :term:`administrator`
 may wish to **Grant** a group the permission to Update one specific
 taxonomy, or **Deny** another group the permission to Delete any of the terms in
@@ -1226,7 +1231,7 @@ its system. See below for instructions on how to edit access privileges for
 groups.
 
 1. Navigate to an existing group in AtoM. You can do this by clicking the
-   |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
+   |gears| :ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
    in the :term:`header bar` and selecting "Groups" from the
    :term:`drop-down menu`. This will take you to a list of current user groups.
 2. Select a group from the list that appears on the page by clicking on the
@@ -1245,17 +1250,16 @@ groups.
 
 .. NOTE::
 
-   Changes made in the "Permissions for all term"
-   :term:`information area` will be applied to *all* terms and taxonomies
-   for your repository. Follow **steps 7 through 9** below if you wish
-   to edit a group's :term:`access privileges <access privilege>` based on a
-   specific :term:`taxonomy`.
+   Changes made in the "Permissions for all term" :term:`information area` will
+   be applied to *all* terms and taxonomies for your repository. Follow
+   **steps 7 through 9** below if you wish to edit a group's :term:`access
+   privileges <access privilege>` based on a specific :term:`taxonomy`.
 
 6. A group's :term:`access privileges <access privilege>` can also be edited
    according to a specific *taxonomy*. To do this, click on the "Permissions by
    taxonomy" :term:`information area` to view the :term:`field` below it. Click
    on "Add taxonomy".
-7. A seperate window will appear. One or more specific :term:`taxonomies
+7. A separate window will appear. One or more specific :term:`taxonomies
    <taxonomy>` can be added via a :term:`value list` that appears in a :term
    :`drop-down menu` - as you type, the value list will narrow its options to
    present related suggestions.
@@ -1297,11 +1301,11 @@ permission.
 
 .. IMPORTANT:
 
-Only an authenticated (i.e. logged-in) :term:`administrator` can modify a user's
-or a group's :term:`access privileges <access privilege>` or *Permissions*.
-After the desired changes have been made, the administrator can log out and log
-back in as that specific user in order to verify the results of the
-modifications.
+   Only an authenticated (i.e. logged-in) :term:`administrator` can modify a
+   user's or a group's :term:`access privileges <access privilege>` or
+   *Permissions*. After the desired changes have been made, the administrator
+   can log out and log back in as that specific user in order to verify the
+   results of the modifications.
 
 For more information, jump to the following sections:
   * :ref:`Edit permissions for a user <user-institution-permissions>`
@@ -1326,11 +1330,11 @@ privileges <access privilege>` with regards to different :term:`archival
 institutions <archival institution>`: for example, you may wish
 to **Grant** a specific user the permission to only Update your archival
 institutions; or you may want to **Deny** a user's permission to Read a specific
-archival instituion. This section provides instructions on how to edit
+archival institution. This section provides instructions on how to edit
 archival institution permissions by user.
 
 1. First, navigate to an existing user in AtoM. Click the
-   |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
+   |gears| :ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
    in the :term:`header bar` and select "Users" from the
    :term:`drop-down menu`. This will take you to a list of
    current users accounts (i.e. the "List users" page).
@@ -1345,7 +1349,7 @@ archival institution permissions by user.
    to edit to be directed to that :term:`user's profile <user profile>`
    :term:`view page`.
 4. Click on the "Archival institution permissions" :term:`information area`.
-   AtoM will direct you to the "Archival instiution permissions" :term:`view
+   AtoM will direct you to the "Archival institution permissions" :term:`view
    page`.
 5. To switch from :term:`view mode` to :term:`edit mode`, click the
    :term:`"Edit" button <Edit button>` in the :term:`button block`; this takes
@@ -1371,7 +1375,7 @@ archival institution permissions by user.
    according to a specific *archival institution*. To do this, click on the "Add
    archival institution" :term:`field` located under the "Add permissions by
    archival institution" :term:`information area`.
-8. A seperate window will appear. One or more specific :term:`archival
+8. A separate window will appear. One or more specific :term:`archival
    institutions <archival institution>` can be added via a :term:`value list`
    that appears in a :term:`drop-down menu` - as you type, the value list will
    narrow its options to present related suggestions.
@@ -1410,13 +1414,13 @@ instructions below to learn how to edit archival institution permissions by user
 group.
 
 1. Navigate to an existing group in AtoM. You can do this by clicking the
-   |gears|:ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
+   |gears| :ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
    in the :term:`header bar` and selecting "Groups" from the
    :term:`drop-down menu`. This will take you to a list of current user groups.
 2. Select a group from the list that appears on the page by clicking on the
    group name. AtoM will direct you to that user group's :term:`view page`.
 3. Click on the "Archival institution permissions" :term:`information area`.
-   AtoM will direct you to the "Archival instiution permissions" :term:`view
+   AtoM will direct you to the "Archival institution permissions" :term:`view
    page`.
 4. To switch from :term:`view mode` to :term:`edit mode`, click the
    :term:`"Edit" button <Edit button>` in the :term:`button block`; this takes
@@ -1441,7 +1445,7 @@ group.
    according to a specific *archival institution*. To do this, click on the "Add
    archival institution: :term:`field` located under the "Add permissions by
    archival institution" :term:`information area`.
-7. A seperate window will appear. One or more specific :term:`archival
+7. A separate window will appear. One or more specific :term:`archival
    institutions <archival institution>` can be added via a :term:`value list`
    that appears in a :term:`drop-down menu` - as you type, the value list
    will narrow its options to present related suggestions.
