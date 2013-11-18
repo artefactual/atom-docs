@@ -124,7 +124,7 @@ First, change the current directory:
 
 .. code-block:: bash
 
-   $ cd /var/www/icaatom-1.3.0
+   $ cd /usr/share/nginx/atom
 
 Now, run the upgrade-sql task:
 
