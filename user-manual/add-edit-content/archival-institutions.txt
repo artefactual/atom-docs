@@ -70,8 +70,8 @@ to:**
   * :ref:`Add/edit a banner <add-institution-banner>`
 
 * :ref:`Browse the holdings of an archival institution <browse-holdings>`
-* :ref:`Set a digital object upload limit for an archival institution <upload-
-  limit>`
+* :ref:`Set a digital object upload limit for an archival institution
+  <upload-limit>`
 * :ref:`Delete an archival institution <delete-archival-institution>`
 
 For information on working with specific fields with AtoM's archival
@@ -243,7 +243,7 @@ button` in the :term:`button block`. To do so:
 
 1.  Navigate to an existing :term:`archival institution` in AtoM. You can do
     this by :doc:`browsing <../access-content/browse>` or by :doc:`searching
-    <../access-content/search-atom>`for a specific archival institution - see
+    <../access-content/search-atom>` for a specific archival institution - see
     :ref:`Access content <access-content>` for more information on navigation in
     AtoM.
 2.  At the bottom of the archival institution :term:`view page`, you will see
@@ -363,7 +363,7 @@ types of users and edit permissions, see :ref:`User roles <user-roles>`.
     archival description. Follow the link to ensure you have linked to the
     proper :term:`archival institution`. The linked archival description will
     also appear in the "Holdings" section of the :ref:`Context menu
-    <context-menu>` of the archival institution’s :term:`view page`.
+    <recurring-context-menu>` of the archival institution’s :term:`view page`.
 
 :ref:`Back to top <archival-institutions>`
 
@@ -474,7 +474,7 @@ Add a logo for an archival institution
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1.  First, navigate to the :term:`archival institution` you wish to edit. You
-    can do this by :doc:`browsing <../access-content/browse>`or
+    can do this by :doc:`browsing <../access-content/browse>` or
     :doc:`searching <../access-content/search-atom>` for the archival
     institution - see :ref:`Access content <access-content>` for more
     information on navigation in AtoM.
@@ -513,8 +513,8 @@ Add a logo for an archival institution
     repeat step 2 through 4 until you are happy with the selection.
 
 Once uploaded, the logo will appear above the "Upload limit" section of the
-:ref:`Context menu <context-menu>`, in the top left-hand corner of the archival
-institution’s :term:`view page`. This logo will also appear when
+:ref:`Context menu <recurring-context-menu>`, in the top left-hand corner of
+the archival institution’s :term:`view page`. This logo will also appear when
 :doc:`browsing <../access-content/browse>` archival institutions in AtoM,
 appearing above the name of the archival institution, as well as on any
 :term:`archival description` page linked to the archival institution.
@@ -527,7 +527,7 @@ Edit/remove an exisiting logo for an archival institution
 **To edit an exisiting logo:**
 
 1.  Navigate to the :term:`archival institution` you wish to edit. You can do
-    this by :doc:`browsing <../access-content/browse>`or
+    this by :doc:`browsing <../access-content/browse>` or
     :doc:`searching <../access-content/search-atom>` for the archival
     institution - see :ref:`Access content <access-content>` for more
     information on navigation in AtoM.
@@ -560,7 +560,7 @@ Edit/remove an exisiting logo for an archival institution
 **To remove an existing logo:**
 
 1.  Navigate to the :term:`archival institution` you wish to edit. You can do
-    this by :doc:`browsing <../access-content/browse>`or
+    this by :doc:`browsing <../access-content/browse>` or
     :doc:`searching <../access-content/search-atom>` for the archival
     institution - see :ref:`Access content <access-content>` for more
     information on navigation in AtoM.
@@ -648,7 +648,7 @@ Edit/remove an existing banner for an archival institution
 **To edit an existing banner:**
 
 1.  Navigate to the :term:`archival institution` you wish to edit. You can do
-    this by :doc:`browsing <../access-content/browse>`or
+    this by :doc:`browsing <../access-content/browse>` or
     :doc:`searching <../access-content/search-atom>` for the archival institution -
     see :ref:`Access content <access-content>` for more information on
     navigation in AtoM.
@@ -681,7 +681,7 @@ Edit/remove an existing banner for an archival institution
 **To remove an existing banner:**
 
 1.  Navigate to the :term:`archival institution` you wish to edit. You can do
-    this by :doc:`browsing <../access-content/browse>`or
+    this by :doc:`browsing <../access-content/browse>` or
     :doc:`searching <../access-content/search-atom>` for the archival institution -
     see :ref:`Access content <access-content>` for more information on
     navigation in AtoM.
@@ -731,11 +731,11 @@ Browse the holdings of an archival institution
 ==============================================
 
 When viewing an :term:`archival institution` in AtoM, a list of :term:`holdings`
-is displayed in the :ref:`context menu` on the the left-hand side of the
-institution's :term:`view pages <view page>`. The list that appears will be of
-holdings, or :term:`archival descriptions <archival description>` that have been
-linked to that institution. If you click on a holding, you will be redirected
-to that description's page.
+is displayed in the :ref:`context menu <recurring-context-menu>` on the the
+left-hand side of the institution's :term:`view pages <view page>`. The list
+that appears will be of holdings, or :term:`archival descriptions
+<archival description>` that have been linked to that institution. If you click
+on a holding, you will be redirected to that description's page.
 
 .. NOTE::
 
@@ -751,7 +751,7 @@ place of "##") linked to that archival institution. Click on the link to be
 redirected to a browse page where all the holdings that have been linked to that
 institution will be listed. The results can be  sorted by "Most recent" or
 "Alphabetical"; hover above the visible option next to the :ref:`"Sort button"
-<recurring-sort- button>`, on the right-hand corner above the results, to select
+<recurring-sort-button>`, on the right-hand corner above the results, to select
 the alternative from a :term:`drop-down menu`. For more information, see:
 :ref:`Facet filters <recurring-facet-filters>`.
 
@@ -763,8 +763,8 @@ Set digital object upload limit for an archival institution
 ===========================================================
 
 When viewing an :term:`archival institution` in AtoM, an "Upload limit" bar
-is displayed in the :ref:`context menu` on the the left-hand side of the
-institution's page.
+is displayed in the :ref:`context menu <recurring-context-menu>` on the the
+left-hand side of the institution's page.
 
 .. NOTE::
 
@@ -777,7 +777,7 @@ institution's page.
 **To set the digital object upload limit for an archival institution:**
 
 1. Navigate to the :term:`archival institution` you wish to edit. You can do
-   this by :doc:`browsing <../access-content/browse>`or
+   this by :doc:`browsing <../access-content/browse>` or
    :doc:`searching <../access-content/search-atom>` for the archival
    institution - see :ref:`Access content <access-content>` for more
    information on navigation in AtoM.
