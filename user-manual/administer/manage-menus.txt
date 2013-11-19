@@ -73,7 +73,7 @@ For more information on edit privileges and user roles see: :ref:`User roles
    saved, and no new menu will be created. Note that simply navigating away
    from the page by any other means, **without first clicking "Create"** will
    also result in no new record being created.
-6. To save the new menu, click the "Save" in the :term:`button block`.
+6. To save the new menu, click the "Save" button in the :term:`button block`.
 7. AtoM will redirect you to the main page. The new menu should be visible and
    should link to your static page or external URL.
 
