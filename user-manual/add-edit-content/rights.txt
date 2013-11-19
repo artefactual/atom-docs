@@ -4,6 +4,9 @@
 Rights
 ======
 
-add some content here
+This section describes how to add a new :term:`rights record` by using the
+rights dialog. A :term:`rights record` can be linked to :term:`accession
+records <accession record>`, :term:`archival descriptions <archival
+description>` and :term:`digital objects <digital object>`.
 
 :ref:`Back to top <rights>`
