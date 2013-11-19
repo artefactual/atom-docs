@@ -4,13 +4,50 @@
 Search
 ======
 
-Overview
+To help users locate and manage content, AtoM includes powerful search
+support, available anywhere in the application through the :term:`search box`
+located in the AtoM :term:`header bar`, or through one of the many dedicated
+search boxes for specific :term:`entities <entity>` or record types. As of
+release 2.0.0, AtoM now uses `Elasticsearch <http://www.elasticsearch.org/>`__
+to power its search functionality - Elasticsearch is an open source
+distributed search server based on Apache Lucene, which acts as AtoM's new
+search and analytic engine.
+
+This section of the User Manual will cover the features available in the
+:term:`search box` (including faceted typeahead results, institutional search box
+delimiters, and filter tags), and it will walk users through how to search
+for archival descriptions. Additionally, an outline of each of the dedicated
+search bars available throughout the application is provided, with
+instructions on how to search for different record types in each.
+
+**Below you will find an overview of:**
+
+* :ref:`atom-search-box`
+
+  * :ref:`search-typeahead`
+  * :ref:`search-box-delimiters`
+  * :ref:`search-results-facets`
+
+* :ref:`search-archival-descriptions`
+* :ref:`dedicated-search`
+
+  * :ref:`dedicated-search-authority`
+  * :ref:`dedicated-search-accessions`
+  * :ref:`dedicated-search-places`
+  * :ref:`dedicated-search-subjects`
+  * :ref:`dedicated-search-donors`
+  * :ref:`dedicated-search-rights`
+  * :ref:`dedicated-search-functions`
+  * :ref:`dedicated-search-users`
+
+**REMEMBER: Users, places, subjects, functions? in 2.0.1, not 2.0.0!**
 
 .. SEEALSO::
 
    * :ref:`Advanced search <advanced-search>`
    * :ref:`navigate`
 
+.. _atom-search-box:
 
 The AtoM Search box |searchbox|
 ===============================
@@ -223,6 +260,7 @@ through results and find specific records.
 
 :ref:`Back to top <search-atom>`
 
+.. _search-archival-descriptions:
 
 Search for archival descriptions
 =================================
@@ -261,6 +299,22 @@ Accession records
 
 content
 
+.. _dedicated-search-places:
+
+Place terms
+-----------
+
+content
+
+.. _dedicated-search-subjects:
+
+Subject terms
+-------------
+
+content
+
+
+
 .. _dedicated-search-donors:
 
 Donors
@@ -274,5 +328,20 @@ Rights holders
 --------------
 
 content
+
+.. _dedicated-search-functions:
+
+Functions
+---------
+
+content
+
+.. _dedicated-search-users:
+
+Users
+-----
+
+content
+
 
 :ref:`Back to top <search-atom>`
