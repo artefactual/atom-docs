@@ -717,13 +717,13 @@ on the default (i.e."Inherit") setting as set by AtoM. Specific permissions can
 be set for *all* archival descriptions, or edited based on specific archival
 descriptions and/or archival institutions.
 
-.. IMPORTANT:
+.. IMPORTANT::
 
-Only an authenticated (i.e. logged-in) :term:`administrator` can modify a user's
-or a group's :term:`access privileges <access privilege>` or *Permissions*.
-After the desired changes have been made, the administrator can log out and log
-back in as that specific user in order to verify the results of the
-modifications.
+   Only an authenticated (i.e. logged-in) :term:`administrator` can modify a
+   user's or a group's :term:`access privileges <access privilege>` or
+   *Permissions*. After the desired changes have been made, the administrator
+   can log out and log back in as that specific user in order to verify the
+   results of the modifications.
 
 For more information, jump to the following sections:
   * :ref:`Edit permissions for a user <user-info-object-permissions>`
@@ -934,13 +934,13 @@ groups; they can be granted, denied, or administrators can choose to rely on
 the default (i.e."Inherit") setting as set by AtoM. Specific permissions can be
 set for *all* authority records, or edited based on a specific authority record.
 
-.. IMPORTANT:
+.. IMPORTANT::
 
-Only an authenticated (i.e. logged-in) :term:`administrator` can modify a user's
-or a group's :term:`access privileges <access privilege>` or *Permissions*.
-After the desired changes have been made, the administrator can log out and log
-back in as that specific user in order to verify the results of the
-modifications.
+   Only an authenticated (i.e. logged-in) :term:`administrator` can modify a
+   user's or a group's :term:`access privileges <access privilege>` or
+   *Permissions*. After the desired changes have been made, the administrator
+   can log out and log back in as that specific user in order to verify the
+   results of the modifications.
 
 For more information, jump to the following sections:
   * :ref:`Edit permissions for a user <user-actor-permissions>`
@@ -1115,13 +1115,13 @@ taxonomies within their repository. Terms are the values that make up
 grouped into :term:`taxonomies <taxonomy>` that can also be added, edited,
 and deleted.
 
-.. IMPORTANT:
+.. IMPORTANT::
 
-Only an authenticated (i.e. logged-in) :term:`administrator` can modify a user's
-or a group's :term:`access privileges <access privilege>` or *Permissions*.
-After the desired changes have been made, the administrator can log out and log
-back in as that specific user in order to verify the results of the
-modifications.
+   Only an authenticated (i.e. logged-in) :term:`administrator` can modify a
+   user's or a group's :term:`access privileges <access privilege>` or
+   *Permissions*. After the desired changes have been made, the administrator
+   can log out and log back in as that specific user in order to verify the
+   results of the modifications.
 
 For more information, jump to the following sections:
 * :ref:`Edit permissions for a user <user-taxonomy-permissions>`
@@ -1299,7 +1299,7 @@ other cultural heritage items and artifacts. Users and user groups can Read and
 potentially Create, Update and Delete archival institutions when given
 permission.
 
-.. IMPORTANT:
+.. IMPORTANT::
 
    Only an authenticated (i.e. logged-in) :term:`administrator` can modify a
    user's or a group's :term:`access privileges <access privilege>` or
