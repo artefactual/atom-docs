@@ -118,7 +118,7 @@ All three options will direct you to the :term:`Home page` :term:`view page`.
 2. To switch from the main :term:`view page` to :term:`edit mode`, click on the
    :term:`edit button` in the :term:`button block`.
 3. On loading, the `edit page` will display a "Title" :term:`field`, a
-  :term:`Slug` :term:`field` and a "Content" :term:`field`.
+   :term:`Slug` :term:`field` and a "Content" :term:`field`.
 
 .. IMPORTANT::
 
@@ -131,7 +131,7 @@ All three options will direct you to the :term:`Home page` :term:`view page`.
 
 .. TIP::
 
-   Users must include `HTML <https://en.wikipedia.org/wiki/Html>`__ and inline
+   Users can include `HTML <https://en.wikipedia.org/wiki/Html>`__ and inline
    `CSS <https://en.wikipedia.org/wiki/CSS>`__ code to the "Content"
    :term:`field` to include any links and special styling. See :ref:`below
    <styling-static-page>` for information on how to style :term:`static
@@ -188,7 +188,7 @@ Both options will direct you to the :term:`About page` :term:`view page`.
 
 .. TIP::
 
-   Users must include `HTML <https://en.wikipedia.org/wiki/Html>`__ and inline
+   Users can include `HTML <https://en.wikipedia.org/wiki/Html>`__ and inline
    `CSS <https://en.wikipedia.org/wiki/CSS>`__ code to the "Content"
    :term:`field` to include any links and special styling. See :ref:`below
    <styling-static-page>` for information on how to style :term:`static
@@ -230,31 +230,30 @@ To add a new static page in AtoM:
 4. On loading, the `edit page` will display blank "Title", :term:`Slug` and
    "Content" :term:`fields <field>`. Add data as required.
 
-..TIP::
+.. TIP::
 
-  The :term:`slug` indicates the word, or sequence of words that will be visible
-  to users in the URL link when they are navigating on a specific :term:`static
-  page` (e.g.: the slug in the URL *www.artefactual.com/help* is */help*). The
-  slug should be indicative of the content of that specific static page.
+   The :term:`slug` indicates the word, or sequence of words that will be
+   visible to users in the URL link when they are navigating on a specific
+   :term:`static page` (e.g.: the slug in the URL *www.artefactual.com/help* is
+   */help*). The slug should be indicative of the content of that specific
+   static page.
 
-  When creating a new :term:`static page`, the :term:`slug` :term:`field` can
-  either be customized or left blank. If you choose to customize the
-  :term:`slug`, make the slug all lowercase, keep it short, and avoid accented
-  characters (e.g.: "é"; "ñ"; "û") and punctuation (e.g.: "!"; ";"; "..."). If
-  you leave the :term:`field` blank, AtoM will automatically generate a slug
-  based on the "Title" you have indicated for your page (e.g.: If your "Title"
-  is *About Us*, the slug for that static page will automatically be generated
-  as *.../about-us*). Note that AtoM will automatically replace all accented
-  characters with letters from the English alphabet and punctuation will either
-  be removed or replaced by a dash "-" or percent-encoding (e.g.: If your
-  "Title" is *Instructions & More*, the slug for that static page will
-  automatically be generated as *.../instructions%26more* or
-  *.../instructions-more*, unless otherwise indicated). The :term:`slug` will
-  also appear in the once blank "Slug" :term:`field` and can be viewed when
-  switching from the :term:`view page` to the :term:`edit page` of that
-  :term:`static page`.
-
-5. When you are finished, click
+   When creating a new :term:`static page`, the :term:`slug` :term:`field` can
+   either be customized or left blank. If you choose to customize the
+   :term:`slug`, make the slug all lowercase, keep it short, and avoid accented
+   characters (e.g.: "é"; "ñ"; "û") and punctuation (e.g.: "!"; ";"; "..."). If
+   you leave the :term:`field` blank, AtoM will automatically generate a slug
+   based on the "Title" you have indicated for your page (e.g.: If your "Title"
+   is *About Us*, the slug for that static page will automatically be generated
+   as *.../about-us*). Note that AtoM will automatically replace all accented
+   characters with letters from the English alphabet and punctuation will either
+   be removed or replaced by a dash "-" or percent-encoding (e.g.: If your
+   "Title" is *Instructions & More*, the slug for that static page will
+   automatically be generated as *.../instructions%26more* or
+   *.../instructions-more*, unless otherwise indicated). The :term:`slug` will
+   also appear in the once blank "Slug" :term:`field` and can be viewed when
+   switching from the :term:`view page` to the :term:`edit page` of that
+   :term:`static page`.
 
 .. WARNING::
 
@@ -271,6 +270,18 @@ To add a new static page in AtoM:
    not accurately indicate the content of that :term:`static page`. To avoid
    this, simply enter a custom :term:`slug`.
 
+5. You can quit the creation process at any time by clicking the "Cancel" button
+   in the :term:`button block`; any changes made will not be saved. Note that
+   simply navigating away from the page by any other means, **without first
+   clicking "Save"** will also result in no new :term:`static page` being
+   created.
+6. When you are finished creating your new :term:`static page`, click the "Save"
+   button in the :term:`button block`.
+
+You will be directed to the :term:`view page` of the new :term:`static page`
+where you can view your changes. The page can be :ref:`edited
+<edit-static-page>` again at any time.
+
 :ref:`Back to top <manage-static-pages>`
 
 .. _add-links-static:
@@ -278,16 +289,76 @@ To add a new static page in AtoM:
 Add links to a new static page
 ==============================
 
+Once a new :term:`static page` has been created, a new link must also be
+created in order to allow users to navigate to the new static page. You can do
+this by either creating a link within one of the default :term:`static pages
+<static page>` or by clicking Admin > Menus and clicking the
+:term:`Add new button` in the :term:`button block` or by linking the new
+:term:`static page` to an existing menu.
 
+This example shows a newly created "Contact Us" :term:`static page` that has
+been added as a menu under the |info| :ref:`Quick links <quick-links-menu>`
+parent menu:
+
+.. image:: images/add-new-menu.*
+   :align: center
+   :width: 70%
+   :alt: An image of Contact Us menu linked under Quick Links menu
+
+Here is the result of the above:
+
+.. image:: images/new-contact-us.*
+   :align: center
+   :width: 70%
+   :alt: An image of new Contact Us menu
+
+For more information on managing menus in AtoM, see: :ref:`manage-menus`.
 
 :ref:`Back to top <manage-static-pages>`
-
-
 
 .. _styling-static-page:
 
 Styling static pages
 ====================
+
+Basic styling of :term:`static pages <static page>` can be achieved by including
+`HTML <https://en.wikipedia.org/wiki/Html>`__ and inline
+`CSS <https://en.wikipedia.org/wiki/CSS>`__ code
+to the "Content" :term:`field`. There are plenty of wonderful online tutorials
+and resources out there for instruction on HTML and inline CSS use, but a few
+basic examples commonly employed by AtoM users have been included here as an
+example.
+
+See below for instructions on how to create and edit:
+
+* :ref:`Headers and subtitles <static-headers-subtitles>`
+* :ref:`Hyperlinks <static-hyperlinks>`
+* :ref:`Images <static-image>`
+* :ref:`Boxes and dividers <static-boxes-dividers>`
+
+.. _static-headers-subtitles:
+
+Headers and subtitles
+---------------------
+
+
+.. _static-hyperlinks:
+
+Hyperlinks
+----------
+
+
+.. _static-image:
+
+Images
+------
+
+
+.. _static-boxes-dividers:
+
+Boxes and dividers
+------------------
+
 
 
 :ref:`Back to top <manage-static-pages>`
