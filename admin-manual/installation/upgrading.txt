@@ -146,6 +146,26 @@ Migrate translations
    migration process has been optimized and tested. Thank you in advance for
    your patience.
 
+.. _upgrading-regen-digital-objects:
+
+Regenerate the digital object reference and thumbnail images (optional)
+=======================================================================
+
+If you are upgrading from version 1.3.1 or earlier, you may want to regenerate
+the :term:`digital object` :term:`reference <reference display copy>` and
+:term:`thumbnail` images. The thumbnail size was smaller in 1.x, so those
+images will often appear fuzzy in the redesigned digital object browse. A
+directory naming convention has also been added to make the location of the
+:term:`master digital object` more secure.
+
+First, make sure you have not changed the directory (/usr/share/nginx/atom).
+
+Now, run the regen-derivatives task:
+
+.. code-block:: bash
+
+   $ php symfony digitalobject:regen-derivatives
+
 .. _upgrading-rebuild-index-cc:
 
 Rebuild search index and clear cache
