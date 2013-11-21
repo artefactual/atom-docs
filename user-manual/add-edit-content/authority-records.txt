@@ -411,8 +411,8 @@ From the authority record
    relationship.
 5. The first :term:`field` in the pop-up dialog, "Title of the related
    resource," is an `auto-complete <https://en.wikipedia.org/wiki /Auto-
-   complete>`__ field: as you type, matching results will load in a :term
-   :`drop-down menu` below the field. When you see the
+   complete>`__ field: as you type, matching results will load in a 
+   :term:`drop-down menu` below the field. When you see the
    :term:`archival description` you would like to link, click on it to select
    it.
 6. Add additional details in the subsequent fields to qualify the
@@ -461,8 +461,8 @@ Create a relationship between two authority records
    relationship.
 5. The first :term:`field` in the pop-up dialog, "Title of the related
    resource," is an `auto-complete <https://en.wikipedia.org/wiki /Auto-
-   complete>`__ field: as you type, matching results will load in a :term
-   :`drop-down menu` below the field. When you see the
+   complete>`__ field: as you type, matching results will load in a 
+   :term:`drop-down menu` below the field. When you see the
    :term:`authority record` you would like to link, click on it to select
    it.
 
@@ -526,8 +526,8 @@ relationship between an existing authority record and an existing function:
    relationship.
 5. The first :term:`field` in the pop-up dialog, "Title of the related
    resource," is an `auto-complete <https://en.wikipedia.org/wiki /Auto-
-   complete>`__ field: as you type, matching results will load in a :term
-   :`drop-down menu` below the field. When you see the
+   complete>`__ field: as you type, matching results will load in a 
+   :term:`drop-down menu` below the field. When you see the
    :term:`authority record` you would like to link, click on it to select
    it.
 
