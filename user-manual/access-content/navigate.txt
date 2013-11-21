@@ -231,8 +231,7 @@ Manage, Import, Admin) in the :term:`main menu`.
 * For information on managing User accounts see: :doc:`Manage user accounts
   <../administer/manage-user-accounts>`.
 * For information on changing the permissions associated with an account or a
-  group, see: :doc:`Edit user permissions
-  <../administer/edit-user-permissions>`
+  group, see: :ref:`edit-user-permissions`
 
 .. TIP::
 
@@ -330,9 +329,8 @@ The import menu allows authenticated (i.e. logged in) users with sufficient
 :term:`access privileges <access privilege>` to import records into the
 application. By default, only :term:`administrators <administrator>` have
 access to the import menu - however, administrators can also change user
-and group permissions (see: :doc:`Edit permissions
-<edit-user-permissions>` and :doc:`Manage user accounts
-<../administer/manage-user-accounts>`).
+and group permissions (see: :ref:`edit-user-permissions` and 
+:ref`manage-user-accounts`.
 
 Two options are offered in the dropdown menu - XML (short for `eXtensible
 Markup Language <https://en.wikipedia.org/wiki/Xml>`__) and CSV (short for
