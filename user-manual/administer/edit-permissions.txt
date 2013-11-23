@@ -801,6 +801,13 @@ to edit user permissions by archival description.
    To specify a user's access privileges for one or
    more specific :term:`archival institutions <archival institution>`, click on
    "Add archival institution".
+
+.. IMPORTANT::
+
+   To limit a user's access privileges to one or more specific archival institutions,
+   the user must **not** be in one of the predefined user groups (i.e. editor or contributor).
+   Instead, ensure that the user's group is listed as *authenticated*.
+
 8. A separate window will appear. An :term:`archival description` can be added
    via a :term:`value list` that appears in a :term:`drop-down menu` - as you
    type, the value list will narrow its options to present related suggestions.
@@ -878,11 +885,18 @@ permissions by archival description.
    do this, click on either the "Permissions by archival description"
    or the "Permisisons by archival institution" :term:`information area` to
    access the :term:`fields <field>` under them.
+
+.. IMPORTANT::
+
+   To limit a group's access privileges to one or more specific archival institutions,
+   you need to create a **new group** (or edit an exisiting custom group), rather than
+   edit one of the default user groups (e.g. editor or contributor). See: :ref:`add-a-new-group`
+
 7. To specify a group's access privileges for one or
    more specific :term:`archival descriptions <archival description>`, click on
    "Add archival description".
 
-   To specify a user's access privileges for one or
+   To specify a group's access privileges for one or
    more specific :term:`archival institutions <archival institution>`, click on
    "Add archival institution".
 8. A separate window will appear. An :term:`archival description` can be added
