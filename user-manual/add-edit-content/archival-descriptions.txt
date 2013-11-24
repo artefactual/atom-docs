@@ -360,6 +360,12 @@ AtoM are automatically saved as :term:`draft records <draft record>`. This
 means that users who are not authenticated (i.e. logged in) cannot view these
 records.
 
+.. NOTE::
+
+   Administrators can change the default publication status, via **Admin >
+   Settings**. For more information, see: :doc:`Settings
+   <../administer/settings>`.
+
 Publication status is inherited from the highest :term:`level of description`,
 meaning that changes to the publication status of the :term:`parent record`
 will affect the publication status of all :term:`child records <child
@@ -370,7 +376,7 @@ are automatically changed as well.
 If a :term:`contributor` (i.e. a logged in user **without** permission to
 publish descriptions - see: :ref:`User roles <user-roles>`) edits a
 :term:`published record`, the record's status is **automatically changed back
-to draft**
+to draft**, unless the default publication status has been changed to *published*.
 
 Changing a record's status to published allows unauthenticated users such as
 :term:`researchers <researcher>` the ability to see the record, i.e. read
