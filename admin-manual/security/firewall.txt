@@ -17,6 +17,12 @@ here. Let's make sure that ufw is installed:
 
    sudo apt-get install ufw
 
+Activate Firewall
+
+.. code-block:: bash
+
+   sudo ufw enable
+
 Accept connections to HTTP, HTTPS (SSL):
 
 .. code-block:: bash
