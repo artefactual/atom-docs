@@ -34,7 +34,7 @@ Allow access to your SSH server:
    # From a specific IP, e.g. 1.2.3.4
    sudo ufw allow from 1.2.3.4 to any port 22 proto tcp
 
-You are ready to go!
+You are ready to go. Now we'll activate the firewall:
 
 .. code-block:: bash
 
