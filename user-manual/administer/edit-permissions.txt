@@ -890,7 +890,7 @@ permissions by archival description.
 
    To limit a group's access privileges to one or more specific archival institutions,
    you need to create a **new group** (or edit an exisiting custom group), rather than
-   edit one of the default user groups (e.g. editor or contributor). See: :ref:`add-a-new-group`
+   edit one of the default user groups (e.g. editor or contributor). See: :ref:`add-group`
 
 7. To specify a group's access privileges for one or
    more specific :term:`archival descriptions <archival description>`, click on
