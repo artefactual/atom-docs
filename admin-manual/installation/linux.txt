@@ -24,9 +24,12 @@ and *universe*.
    Please make sure you have reviewed the :ref:`requirements
    <installation-requirements>` before proceeding.
 
+.. _linux-install-dependencies:
 
 Install the dependencies
 ========================
+
+.. _linux-dependency-mysql:
 
 MySQL
 -----
@@ -45,6 +48,8 @@ Let's install MySQL using :command:`apt-get`:
 During the installation, you will be prompted to set a password for the default
 administrator user (root). If you are setting one, please note it down as you
 are going to need it :ref:`later <create-the-database-linux>`.
+
+.. _linux-dependency-elasticsearch:
 
 Elasticsearch
 -------------
@@ -79,6 +84,8 @@ Make sure that the service has been started:
 .. code-block:: bash
 
    sudo /etc/init.d/elasticsearch start
+
+.. _linux-dependency-nginx:
 
 Nginx
 -----
@@ -187,6 +194,9 @@ Now you need to restart Nginx:
 
    sudo service nginx restart
 
+
+.. _linux-dependency-php:
+
 PHP
 ---
 
@@ -286,19 +296,25 @@ remove it:
 
    sudo rm /etc/php5/fpm/pool.d/www.conf
 
+.. _linux-other-packages:
+
 Other packages
 --------------
 
 If you want AtoM to be able to process :term:`digital objects <digital object>`
 in formats like JPEG or to extract the text from your PDF documents, there are
 certain packages that you need to install. They are not mandatory but if they
-are found in the system, AtoM will usee them to produce digital object
-derivatives from your :term:`master objects <master digital object>`.
+are found in the system, AtoM will use them to produce digital object
+derivatives from your :term:`master objects <master digital object>`. for
+more information on each, see: :ref:`Requirements: other dependencies
+<other-dependencies>`. The following will install all the recommended
+dependencies at once:
 
 .. code-block:: bash
 
    sudo apt-get install imagemagick ghostscript ffmpeg poppler-utils libavcodec-extra-53
 
+.. _linux-install-atom:
 
 Download AtoM
 =============
@@ -313,6 +329,8 @@ experienced users may prefer to check out the code from our `public repository
 The following instructions assume that we are installing AtoM under
 :file:`/usr/share/nginx` and that you are using AtoM |release|.
 
+.. _linux-install-tarball:
+
 Option 1: Download the tarball
 ------------------------------
 
@@ -322,6 +340,8 @@ Option 1: Download the tarball
    sudo mkdir /usr/share/nginx/atom
    sudo tar xzf atom-2.0.0.tar.gz -C /usr/share/nginx/atom --strip 1
 
+
+.. _linux-checkout-git:
 
 Option 2: Check out the code from our git repository
 ----------------------------------------------------
@@ -346,6 +366,20 @@ also truncate it to a specific number of revisions, e.g.: just one revision
 
    git clone --depth 1 git@git.artefactual.com:atom.git /usr/share/nginx/atom
 
+Once you've cloned the code from our git repository, you'll need to compile
+the CSS files:
+
+.. code-block:: bash
+
+   sudo add-apt-repository ppa:chris-lea/node.js
+   sudo apt-get update
+   sudo apt-get install nodejs
+   sudo npm install -g less@1.3.3
+   cd /usr/share/nginx/atom/plugins/arDominionPlugin/
+   sudo -u www-data make
+
+
+.. _linux-filesystem-permissions:
 
 Filesystem permissions
 ======================
@@ -392,6 +426,8 @@ password ``12345`` and the permissions needed for the database created above.
 
    mysql -h localhost -u root -pYOURSECRETPASSWORD -e "GRANT INDEX, CREATE, SELECT, INSERT, UPDATE, DELETE, ALTER, LOCK TABLES ON atom.* TO 'atom'@'localhost' IDENTIFIED BY '12345';"
 
+
+.. _linux-run-installer:
 
 Run the web installer
 =====================
