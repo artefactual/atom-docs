@@ -4,6 +4,14 @@
 Search
 ======
 
+.. |desc| image:: images/descriptions-icon.png
+   :height: 24
+   :width: 24
+
+.. |desc2| image:: images/descriptions-icon.png
+   :height: 18
+   :width: 18
+
 To help users locate and manage content, AtoM includes powerful search
 support, available anywhere in the application through the :term:`search box`
 located in the AtoM :term:`header bar`, or through one of the many dedicated
@@ -262,17 +270,243 @@ through results and find specific records.
 
 .. _search-archival-descriptions:
 
-Search for archival descriptions
-=================================
+|desc| Search for archival descriptions
+=======================================
 
-content
+Searching for archival descriptions is accomplished using the :term:`search
+box` located in the AtoM :term`header bar`, available anywhere in the
+application. Though other kinds of record results can be found using the
+:term:`typeahead` features of the general search box (see: :ref:`Typeahead
+<search-typeahead>`, above), when a user enters a search term and presses
+enter, by default the search box will return results for archival
+descriptions. The following will outline some of the steps involved in
+searching for :term:`archival descriptions <archival description>`.
+
+.. IMPORTANT::
+
+   Only authenticated (i.e. logged in) users with :term:`access privileges
+   <access privilege>` to view drafts will be able to see draft descriptions
+   in search and browse results. For more information on draft vs. published,
+   and changing the publication status of an :term:`archival description`,
+   see: :ref:`publish-archival-description`.
+
+.. TIP::
+
+   Trying to find a specific record inside a :term:`fonds`,
+   :term:`collection`, or series? Check out the section below on our
+   :ref:`treeview-search`.
+
+**To search for archival descriptions in AtoM:**
+
+1. Place your cursor in the :term:`search box` located in the :term:`header
+   bar` at the top of the page.
+2. A :term:`drop-down menu` will appear. If you were viewing an :term:`archival
+   institution`, or an :term:`archival description` linked to an archival
+   institution when you placed your cursor in the :term:`search box`, the
+   :ref:`search box delimiter <search-box-delimiters>` will be set for the
+   current related institution (otherwise, the only option will be "Global
+   search"). If you wish to search **only** within the selected institution,
+   leave the :term:`radio button` set to search the current institution. If
+   you wish to search **all records** in AtoM (i.e. globally, across
+   institutions), click the "Global search" radio button.
+
+.. image:: images/search-box-dropdown.*
+   :align: center
+   :width: 70%
+   :alt: An image of the search box delimiters
+
+3. Begin to enter your search term. As you type, :term:`typeahead` results
+   will begin to appear in the search box dropdown. For more information on
+   typeahead in search, see above - :ref:`search-typeahead`. The results that
+   appear as you type will be faceted by :term:`entity` - those with the
+   |desc2| description icon next to them are :term:`archival descriptions
+   <archival description>`.
+
+.. image:: images/typeahead-desc.*
+   :align: center
+   :width: 70%
+   :alt: An image typeahead results as a user types in the search box
+
+4. If you see the record you are looking for in the faceted results provided
+   by the :term:`typeahead`, click the title in the search box :term:`drop-
+   down <drop-down menu>` to navigate to it. If you don't, or would like to
+   see more results, finish entering your search term and press enter.
+5. If you have pressed enter, AtoM will redirect you to a search results page.
+   The following image has been annotated with numbers (in orange circles) to
+   outline some of the features of the results page that will help you
+   navigate, and narrow your search:
+
+.. image:: images/search-results.*
+   :align: center
+   :width: 80%
+   :alt: An image of an example search results page
+
+* **A**: The search term you have entered will be shown at the top of a search
+  results page in black, for context. In this example, the search term
+  "anderson" has been entered.
+* **B**: Next to the search term, a count of the number of total matching
+  results returned is shown in grey. In this example, there are 117 archival
+  descriptions returned for the search "anderson"
+* **C**: Results appear in the main column of the page - click on a result
+  and AtoM will take you to a :term:`view page` for the related
+  :term:`archival description`. Additionally, the results include helpful
+  contextual information, including:
+
+  * *Level of description* - i.e. fonds, series, file, item, etc.
+  * *Publication status* - if a description's publication status is "draft"
+    (i.e. it is not visible to public users), the draft status will be
+    indicated in the stub record. In this screenshot, the first 2 results
+    (Anderson, A. and Anderson, Joseph) are draft records.
+  * *Description* - if a scope and content note has been included in the
+    archival description, its first 2 lines will be visible here for greater
+    context. In the example screenshot, the S. Boyd Anderson fonds and the
+    results below it are displaying scope and content summaries.
+  * *Identifier* - if a reference code or other identifier has been added to
+    the record, the results will display this in orange. In the example
+    screenshot, this is visible on the Elizabeth Anderson fonds.
+  * *Creator name* - if a creator's :term:`authority record` has been linked
+    to an archival description, the results stub will display the creator
+    name below the scope and content summary. In the example screenshot, this
+    is shown in the Anderson Department Store fonds and the Elizabeth
+    Anderson fonds.
+
+* **D**: Search result pages include :term:`facet filters <facet filter>` to
+  help you narrow your search further. For more information on facet filters
+  and using them in AtoM, see :ref:`recurring-facet-filters`. Facets
+  available on archival description search/browse pages include:
+
+  * **Language:** Filters for content in a different available language (i.e.,
+    if the content has been tranlsated into more than one language)
+  * **Archival institution:** Limits results to only the holdings of the
+    selected institution
+  * **Creator:** Limits results to only those where the :term:`name` matches
+    that of the :term:`creator` associated with the :term:`archival description`
+  * **Name:** Limits results to those with a matching :term:`name` added as a
+    name :term:`access point` to an :term:`archival description`
+  * **Place:** Limits results to those with a matching :term:`place` added as a
+    place :term:`access point` to an :term:`archival description`
+  * **Subject:** Limits results to those with a matching :term:`subject` added
+    as a subject :term:`access point` to an :term:`archival description`
+  * **Level of description:** Limits results to those that match the selected
+    :term:`level of description` (e.g. fonds, collection, series, file, item,
+    etc.)
+  * **Media type:** Limits results to those with a :term:`digital object`
+    attached that matches the selected media type (image, audio, text, video,
+    or other)
+
+* **E**: A count of the number of results with :term:`digital objects <digital
+  object>` (i.e. an image, video, PDF, or other kind of attachment) is
+  included at the top of the search results for context, and to help you sift
+  through the results quickly. If you are searching for a description with a
+  :term:`digital object`, you can limit the results to show only those with
+  digital objects with this filter. Click the "Show results with digital
+  objects" link in the results header, and AtoM will reload the page.
+  Results with digital objects include a :term:`thumbnail` in the results
+  stub for context. A :term:`filter tag` (reading "Only digital objects") is
+  included for context - you can click the **X** on the filter tag to remove it
+  and return to all results (see :ref:`above <search-delimiter-filter-tag>`
+  for more on filter tags):
+
+.. image:: images/search-results-objects.*
+   :align: center
+   :width: 80%
+   :alt: An image of an example search results page limited to digital
+         objects
+
+.. TIP::
+
+   You can limit the digital object to a specific type of digital object
+   (Image, Audio, Video, Text, or Other) using the Media Type
+   :term:`facet filter` available on the left-hand column of the search
+   results page. For more information on Facet filters in AtoM, see:
+   :ref:`recurring-facet-filters`.
+
+6. When you have found the :term:`archival description` you are looking for,
+   click on its title, and AtoM will take you to the description's
+   :term:`view page`.
+7. If you do not see the record you are looking for, you can use the pager
+   included at the bottom of the page to keep browsing the results. **NOTE:**
+   whether or not there is a pager included will depend on the number of results
+   returned, and the "Results per page" setting in **Admin > Settings >
+   Global > Results per page**. If it is set at the default 10 results per
+   page, and your search has returned more than 10 results, you will see a
+   pager at the bottom of the page like so:
+
+.. image:: images/results-pager.*
+   :align: center
+   :width: 50%
+   :alt: An image of a pager at the bottom of a search results page
+
+8. If you still have not found the description you are searching for, you can
+   try using the Advanced search interface. For more information, see:
+   :ref:`advanced-search`.
 
 .. _treeview-search:
 
 Treeview quick search
 ----------------------
 
-content here.
+.. image:: images/quicksearch-tab.*
+   :align: right
+   :width: 25%
+   :alt: An image of the treeview quick search tab on an archival description
+
+In addition to AtoM's general search, the :term:`treeview` included in the
+:term:`context menu` of an archival description :term:`view page` also
+includes a "Quick search" tab, to help users quickly locate specific
+descriptions in a deep hierarchy. This is especially useful when using AtoM for
+archival arrangement and description over several sessions, to quickly return
+to a specific record when a :term:`fonds` or :term:`collection` includes many
+lower levels of description.
+
+The Quick search is **NOT** a full-featured search - it will search for any
+matches on the **title** or **identifier** (i.e. reference code) of
+descriptions within the current collection hierarchy. As such, a user will
+need to know at least part of the title or identifier of the desired record.
+The treeview quick search can be accessed by navigating to an :term:`archival
+description`, and clicking the "Quick search" tab above the :term:`treeview`
+in the left-hand :term:`context menu` of the description's :term:`view page`.
+
+**TO USE THE TREEVIEW QUICK SEARCH:**
+
+1. Navigate to a top-level :term:`archival description` (i.e. a :term:`fonds`,
+   :term:`collection`, series, etc.) with many :term:`child records <child
+   record>` (lower levels of description). You can do so by :ref:`searching
+   <search-archival-descriptions>` or :ref:`browsing <browse>` - see
+   :ref:`access-content` for more information on navigation in AtoM.
+
+.. image:: images/quicksearch.*
+   :align: right
+   :width: 25%
+   :alt: An image of the treeview quick search
+
+2. Once you've arrived at an :term:`archival description`, locate the
+   :term:`treeview` in the left-hand :term:`context menu` of the description's
+   :term:`view page`. Click the "Quick search" tab.
+3. The treeview will disappear, and a search box will be shown in its place
+   (note: you can return to the treeview at any time by clicking the
+   "Holdings" tab).
+
+.. image:: images/quicksearch-results.*
+   :align: right
+   :width: 25%
+   :alt: An image of the treeview quick search returning results
+
+4. Type a search term and press enter. AtoM will look for matches in the
+   titles and identifiers (reference codes) of descriptions in the collection.
+5. Matching results will be returned as blue hyperlinks. Click a results title
+   to navigate to the related description - AtoM will redirect you to a
+   :term:`view page` for the searched archival description.
+
+.. image:: images/quicksearch-results-wildcard.*
+   :align: right
+   :width: 25%
+   :alt: An image of the treeview quick search returning results
+
+6. Note that you can use special characters such as the ***** wildcard symbol
+   to improve your search results. For more information on available special
+   characters and boolean searching in AtoM, see: :ref:`advanced-search`.
+
 
 :ref:`Back to top <search-atom>`
 
