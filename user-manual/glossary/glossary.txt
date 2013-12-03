@@ -371,6 +371,15 @@ Glossary
     deaccession record that is kept. See: :ref:`Deaccession records
     <deaccession-records>`.
 
+  Dedicated search box
+    A search box, generally provided on a :ref:`Browse page
+    <page-type-browse>`, that will search only one :term:`entity` or record
+    type, giving users a means to search for particular content within that
+    type. In AtoM, dedicated search bars are provided for: Accessions, Archival
+    institutions, authority records, Place terms, Subject terms, Donors,
+    Rights holders, Functions, and Users. For more information, see:
+    :ref:`dedicated-search`.
+
   Default content
     Default content is any :term:`database content` that is included by
     default when AtoM is installed. This includes things like the default
@@ -408,8 +417,7 @@ Glossary
     Digital objects are computer files that can be uploaded into and
     displayed by AtoM. They include scanned images, digital photographs,
     sound and moving image files, and other scanned or born-digital items.
-    See :doc:`Upload digital objects <../import-export/upload-digital-
-    object>` and :ref:`File formats <file-formats>`.
+    See :ref:`upload-digital-objects` and :ref:`File formats <file-formats>`.
 
   Display standard
     The display standard indicates which archival description standard is
@@ -614,12 +622,12 @@ Glossary
     the "Show results with digital objects" option provided at the top of
     :term:`archival description` search/browse pages, the page will reload
     with a filter tag in place reading, "Only digital objects." **2)** When a
-    user performs a search in the :term:`search box` using the :ref:`search-
-    box-delimiters`, a search results page with a filter tag for that
-    institution will appear (limiting results to the :term:`holdings` of the
-    related :term:`repository`). **3)** When a user visits an :term:`archival
-    institution` page, and clicks the "Browse # holdings" option below the
-    list of the institution's :term:`holdings` in the left-hand
+    user performs a search in the :term:`search box` using the
+    :ref:`search-box-delimiters`, a search results page with a filter tag for
+    that institution will appear (limiting results to the :term:`holdings` of
+    the related :term:`repository`). **3)** When a user visits an
+    :term:`archival institution` page, and clicks the "Browse # holdings"
+    option below the list of the institution's :term:`holdings` in the left-hand
     :term:`context menu`, a browse results page with a filter tag for that
     institution will appear. **4)** When a user performs a :ref:`quick search
     <treeview-search>` on an :term:`archival description` using the
