@@ -897,6 +897,8 @@ If "All" is the only option available beneath a facet heading, it means that
 there are no relevant filters in the facet that apply to the current records
 being displayed in the search/browse results page.
 
+.. _facets-by-record-type:
+
 Facets available by record type in AtoM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1013,6 +1015,8 @@ For more information on uploading and managing digital objects, see:
    installation, there will be not matched filter options under the "Places"
    facet filter. The richer your descriptive data, the more useful the facet
    filters will be.
+
+.. _using-facet-filters:
 
 Using facet filters in AtoM:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^

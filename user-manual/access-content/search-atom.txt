@@ -264,7 +264,9 @@ through results and find specific records.
 
 **For more information on using the facet filters in AtoM, see:**
 
-* :ref:`recurring-facet-filters`
+* :ref:`Facet filters in AtoM (overview) <recurring-facet-filters>`
+* :ref:`facets-by-record-type`
+* :ref:`using-facet-filters`
 
 :ref:`Back to top <search-atom>`
 
@@ -421,10 +423,18 @@ searching for :term:`archival descriptions <archival description>`.
    results page. For more information on Facet filters in AtoM, see:
    :ref:`recurring-facet-filters`.
 
-6. When you have found the :term:`archival description` you are looking for,
+6. If you are searching within the holdings of a particular :term:`archival
+   institution`, consult the section above for guidance and tips on using the
+   institutional search box delimiters: :ref:`search-using-delimiters`.
+7. When you have found the :term:`archival description` you are looking for,
    click on its title, and AtoM will take you to the description's
    :term:`view page`.
-7. If you do not see the record you are looking for, you can use the pager
+8. Note that you can use :term:`Boolean search` operators such as AND, OR, or
+   NOT, as well as Boolean special characters such as the ***** wildcard
+   symbol to improve your search results. For more information on available
+   special characters and boolean searching in AtoM, see:
+   :ref:`advanced-search`.
+9. If you do not see the record you are looking for, you can use the pager
    included at the bottom of the page to keep browsing the results. **NOTE:**
    whether or not there is a pager included will depend on the number of results
    returned, and the "Results per page" setting in **Admin > Settings >
@@ -437,9 +447,9 @@ searching for :term:`archival descriptions <archival description>`.
    :width: 50%
    :alt: An image of a pager at the bottom of a search results page
 
-8. If you still have not found the description you are searching for, you can
-   try using the Advanced search interface. For more information, see:
-   :ref:`advanced-search`.
+10. If you still have not found the description you are searching for, you can
+    try using the Advanced search interface. For more information, see:
+    :ref:`advanced-search`.
 
 .. _treeview-search:
 
@@ -459,10 +469,14 @@ archival arrangement and description over several sessions, to quickly return
 to a specific record when a :term:`fonds` or :term:`collection` includes many
 lower levels of description.
 
-The Quick search is **NOT** a full-featured search - it will search for any
-matches on the **title** or **identifier** (i.e. reference code) of
-descriptions within the current collection hierarchy. As such, a user will
-need to know at least part of the title or identifier of the desired record.
+.. IMPORTANT::
+
+   The Quick search is **NOT** a full-featured search - it will search for any
+   matches on the **title** or **identifier** (i.e. reference code) of
+   descriptions within the current collection hierarchy. As such, a user will
+   need to know at least part of the title or identifier of the desired
+   record.
+
 The treeview quick search can be accessed by navigating to an :term:`archival
 description`, and clicking the "Quick search" tab above the :term:`treeview`
 in the left-hand :term:`context menu` of the description's :term:`view page`.
@@ -494,19 +508,34 @@ in the left-hand :term:`context menu` of the description's :term:`view page`.
 
 4. Type a search term and press enter. AtoM will look for matches in the
    titles and identifiers (reference codes) of descriptions in the collection.
-5. Matching results will be returned as blue hyperlinks. Click a results title
-   to navigate to the related description - AtoM will redirect you to a
-   :term:`view page` for the searched archival description.
+5. Note that you can use :term:`Boolean search` operators such as AND, OR, or
+   NOT, as well as Boolean special characters such as the ***** wildcard
+   symbol to improve your search results. For more information on available
+   special characters and boolean searching in AtoM, see:
+   :ref:`advanced-search`.
 
 .. image:: images/quicksearch-results-wildcard.*
    :align: right
    :width: 25%
    :alt: An image of the treeview quick search returning results
 
-6. Note that you can use special characters such as the ***** wildcard symbol
-   to improve your search results. For more information on available special
-   characters and boolean searching in AtoM, see: :ref:`advanced-search`.
+6. Matching results will be returned as blue hyperlinks. Click a results title
+   to navigate to the related description - AtoM will redirect you to a
+   :term:`view page` for the selected archival description.
+7. If you are unable to find a description you are searching for, you can also
+   try using the Advanced search interface, which includes filters to be able
+   to limit by :term:`archival institution` and top-level description (e.g. by
+   a particular :term:`fonds`, :term:`collection`, series, etc.). For more
+   information, see: :ref:`advanced-search`.
 
+.. TIP::
+
+   If you'd like to view all the descriptive levels in a hierarchy in a
+   :ref:`browse page <page-type-browse>`, click the "Browse all descriptions"
+   button at the bottom of the Quick search results. AtoM will redirect you
+   to a browse page, where you can use features such as the browse page's
+   :ref:`sort button <recurring-sort-button>` and :ref:`facet filters
+   <recurring-facet-filters>` to navigate the descriptions.
 
 :ref:`Back to top <search-atom>`
 
@@ -515,16 +544,101 @@ in the left-hand :term:`context menu` of the description's :term:`view page`.
 Dedicated search boxes
 ======================
 
-Content
+In addition to the faceted results presented in the general search box (see
+:ref:`above <search-typeahead>`), AtoM also includes several dedicated search
+boxes for searching a specific :term:`entity` or record type. In general these
+are included on the :ref:`browse pages <page-type-browse>` for the related
+entity. Basic instructions for each are included below.
 
-Fact that some only return titles for now
+**Dedicated search boxes available in AtoM:**
+
+* :ref:`dedicated-search-authority`
+* :ref:`dedicated-search-accessions`
+* :ref:`dedicated-search-places`
+* :ref:`dedicated-search-subjects`
+* :ref:`dedicated-search-donors`
+* :ref:`dedicated-search-rights`
+* :ref:`dedicated-search-functions`
+* :ref:`dedicated-search-users`
+
 
 .. _dedicated-search-authority:
 
 Authority records
 -----------------
 
-content
+.. |searchbutton| image:: images/search-button.png
+   :height: 19
+
+.. |searchreset| image:: images/search-resetbutton.png
+   :height: 19
+
+**To search for authority records in AtoM:**
+
+1. Using the :term:`browse menu` (available as a :term:`drop-down menu` next
+   to the :term:`search box` in the AtoM :term:`header bar` at the top of the
+   page), navigate to **Browse > Authority records**
+
+.. TIP::
+
+   Depending on the default label and menu settings in your installation, the
+   :term:`authority records <authority record>` in your browse menu may
+   appear under a different name (such as "People & Organizations" or another
+   more user-friendly name). :term:`Administrators <administrator>` can
+   change the default labels via **Admin > Settings > User interface label**,
+   and the default menu labels can be changed via **Admin > Menus**. See the
+   :ref:`administer` section for more details.
+
+.. image:: images/authority-browse.*
+   :align: center
+   :width: 70%
+   :alt: An image of the authority record browse page
+
+2. Place your cursor in the :term:`authority record` search box at the top of
+   the browse page. Type a search term and press enter, or use your mouse to
+   click the |searchbutton| search button (represented by the magnifying
+   glass icon to the right of the search box).
+
+.. image:: images/authority-searchbox.*
+   :align: center
+   :width: 70%
+   :alt: An image of the authority record dedicated search box
+
+3. AtoM will reload the page with results. If there are more than 10 results,
+   a pager will be included at the bottom of the results page.
+
+.. NOTE::
+
+   The Authority record dedicated search box will search ALL fields in an
+   authority record. In release 2.0.0, results have not been weighted to
+   favor title matches.
+
+.. image:: images/authority-searchresults.*
+   :align: center
+   :width: 70%
+   :alt: An image of the authority record search results
+
+4. The results page includes a :term:`sort button` (allowing you to sort
+   results to show them in alphabetic order, or most recently created/updated)
+   and a set of :term:`facet filters <facet filter>` to help you sift through
+   results. For more information on these elements, see
+   :ref:`recurring-sort-button` and :ref:`recurring-facet-filters`.
+
+.. TIP::
+
+   You can use :term:`Boolean search` operators such as AND, OR, or
+   NOT, as well as Boolean special characters such as the ***** wildcard
+   symbol to improve your search results. For more information on available
+   special characters and boolean searching in AtoM, see:
+   :ref:`advanced-search`.
+
+5. You can click the |searchreset| button next to your search term in the
+   dedicated search bar to clear the field and begin a new search.
+   Alternately, simply place the cursor in the search box and enter a new
+   search term.
+6. When you have found the record you are searching for, click on its title in
+   the results, and AtoM will redirect you to the select authority record's
+   :term:`view page`.
 
 .. _dedicated-search-accessions:
 
