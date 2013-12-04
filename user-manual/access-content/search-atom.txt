@@ -168,8 +168,9 @@ the :term:`holdings` of that institution.
    :term:`archival institution` record, the :term:`search box` delimiter will
    **default to search within that institution**. If you would like to
    perform a global search (i.e. across all records in the application),
-   switch the radio button to *Global search* before proceeding. See below
-   for further instructions on using the search box delimiters.
+   switch the radio button to *Global search* before proceeding. See
+   :ref:`below <search-using-delimiters>` for further instructions on using
+   the search box delimiters.
 
 When the delimiter is set to limit search results to a specific
 :term:`archival institution`, :term:`typeahead` search results for
@@ -229,29 +230,31 @@ Using the Institutional search box delimiters
 5. If you see the result you are looking for appear in the :ref:`typeahead
    <search-typeahead>`, you can click it to go straight to the record - AtoM
    will redirect you to the selected description's :term:`view page`.
-6. When you have entered your search term(s), press enter to submit and begin
+6. You can use "quotations", :term:`Boolean operators <boolean search>` such
+   as AND, OR, and NOT, or special characters such as the ***** wildcard, to
+   broaden or narrow your search. For more information, see:
+   :ref:`advanced-search`
+7. When you have entered your search term(s), press enter to submit and begin
    your search. AtoM will redirect you to a :ref:`search results
    <page-type-search>` page with descriptions that contain data that match
    your search query.
-7. If you have used the institutional search box delimiter, a :term:`filter
+8. If you have used the institutional search box delimiter, a :term:`filter
    tag` will appear at the top of your search results, indicating that these
    results have been limited to the current :term:`repository`. If you wish
    to broaden the search results to all records in AtoM (i.e., if you did not
    intend to use the institutional search delimiter), you can click the
    "**X**" on the :term:`filter tag` to remove it; AtoM will reload global
    search results.
-8. The search results page includes a number :term:`facet filters <facet
+9. The search results page includes a number :term:`facet filters <facet
    filter>`, to help you sort through the results and find the content you are
    looking for. For more information on working with facet filters, see:
    :ref:`recurring-facet-filters`.
-9. Search results can be sorted either alphabetically, or by most-recently
-   updated, using the :term:`sort button` available at the top-left side of
-   the search results. For more information, see:
-   :ref:`recurring-sort-button`.
-
+10. Search results can be sorted either alphabetically, or by most-recently
+    updated, using the :term:`sort button` available at the top-left side of
+    the search results. For more information, see:
+    :ref:`recurring-sort-button`.
 
 :ref:`Back to top <search-atom>`
-
 
 .. _search-results-facets:
 
@@ -275,14 +278,15 @@ through results and find specific records.
 |desc| Search for archival descriptions
 =======================================
 
-Searching for archival descriptions is accomplished using the :term:`search
-box` located in the AtoM :term`header bar`, available anywhere in the
-application. Though other kinds of record results can be found using the
-:term:`typeahead` features of the general search box (see: :ref:`Typeahead
-<search-typeahead>`, above), when a user enters a search term and presses
-enter, by default the search box will return results for archival
-descriptions. The following will outline some of the steps involved in
-searching for :term:`archival descriptions <archival description>`.
+Searching for :term:`archival descriptions <archival description>` is
+accomplished using the :term:`search box` located in the AtoM :term:`header
+bar`, available anywhere in the application. Though other kinds of record
+results can be found using the :term:`typeahead` features of the general
+search box (see: :ref:`Typeahead <search-typeahead>`, above), when a user
+enters a search term and presses enter, by default the search box will return
+results for archival descriptions. The following will outline some of the
+steps involved in searching for
+:term:`archival descriptions <archival description>`.
 
 .. IMPORTANT::
 
@@ -300,8 +304,8 @@ searching for :term:`archival descriptions <archival description>`.
 
 **To search for archival descriptions in AtoM:**
 
-1. Place your cursor in the :term:`search box` located in the :term:`header
-   bar` at the top of the page.
+1. Place your cursor in the :term:`search box` located in the
+   :term:`header bar` at the top of the page.
 2. A :term:`drop-down menu` will appear. If you were viewing an :term:`archival
    institution`, or an :term:`archival description` linked to an archival
    institution when you placed your cursor in the :term:`search box`, the
@@ -310,12 +314,26 @@ searching for :term:`archival descriptions <archival description>`.
    search"). If you wish to search **only** within the selected institution,
    leave the :term:`radio button` set to search the current institution. If
    you wish to search **all records** in AtoM (i.e. globally, across
-   institutions), click the "Global search" radio button.
+   institutions), click the "Global search" radio button. The examples in
+   these instructions will illustrate how to perform a global search - see
+   :ref:`above <search-using-delimiters>` for further instructions on using the
+   search box delimiters to search within a single institution in a
+   :term:`multi-repository system`.
 
 .. image:: images/search-box-dropdown.*
    :align: center
    :width: 70%
    :alt: An image of the search box delimiters
+
+.. NOTE::
+
+   When a user views a linked :term:`archival description` or an
+   :term:`archival institution` record, the :term:`search box` delimiter will
+   **default to search within that institution**. If you would like to
+   perform a global search (i.e. across all records in the application),
+   switch the radio button to **Global search** before proceeding. See
+   :ref:`above <search-using-delimiters>` for further instructions on using the
+   search box delimiters.
 
 3. Begin to enter your search term. As you type, :term:`typeahead` results
    will begin to appear in the search box dropdown. For more information on
@@ -330,12 +348,13 @@ searching for :term:`archival descriptions <archival description>`.
    :alt: An image typeahead results as a user types in the search box
 
 4. If you see the record you are looking for in the faceted results provided
-   by the :term:`typeahead`, click the title in the search box :term:`drop-
-   down <drop-down menu>` to navigate to it. If you don't, or would like to
-   see more results, finish entering your search term and press enter.
+   by the :term:`typeahead`, click the title in the search box
+   :term:`drop-down <drop-down menu>` to navigate to it. If you don't, or
+   would like to see more results, finish entering your search term and press
+   enter.
 5. If you have pressed enter, AtoM will redirect you to a search results page.
-   The following image has been annotated with numbers (in orange circles) to
-   outline some of the features of the results page that will help you
+   The following image has been annotated with letters (A-E in orange circles)
+   to outline some of the features of the results page that will help you
    navigate, and narrow your search:
 
 .. image:: images/search-results.*
@@ -561,6 +580,18 @@ entity. Basic instructions for each are included below.
 * :ref:`dedicated-search-functions`
 * :ref:`dedicated-search-users`
 
+.. IMPORTANT::
+
+   Some of these searches will return results from all (or most) data entry
+   :term:`fields <field>` in the related records (i.e. full-text search), while
+   others are currently only configured to return title matches. Details on
+   each are included below. Dedicated search boxes that return more than just
+   title matches currently include: :term:`authority records <authority record>`
+   and :term:`archival institutions <archival institution>`. Note that in 2.0.0,
+   these full-text search results have **not** been `weighted
+   <http://dictionary.reference.com/browse/weighted+search>`__ to favor title
+   matches, etc. If you see results without matches in the title (or name), it
+   means the search term(s) appears somewhere in the body of the record.
 
 .. _dedicated-search-authority:
 
@@ -572,6 +603,30 @@ Authority records
 
 .. |searchreset| image:: images/search-resetbutton.png
    :height: 19
+
+A dedicated search box for :term:`authority records <authority record>` has
+been provided on the authority record :ref:`browse page <page-type-browse>`.
+In AtoM 2.0.0, this search box will search the following fields of an
+authority record:
+
+* **Authorized form of name** in the Identity area
+* **All fields** in the Description area (Dates of existence, History, Places,
+  Legal status, Functions occupations and activities, Mandates/sources of
+  authority, General context)
+* **Dates of creation, revision, and deletion** and **Sources** in the Control
+  area
+
+.. NOTE::
+
+   Other name fields in the Identity area (Parallel forms of name;
+   Standardized names according to other rules; Other forms of name) have
+   **not** been indexed in AtoM 2.0.0. We hope to add this in a future
+   release.
+
+For more information on working with :term:`authority records <authority
+record>` in AtoM, see: :ref:`authority-records`. For information on working
+with particular fields in the authority record edit template, see:
+:ref:`isaar-template`.
 
 **To search for authority records in AtoM:**
 
@@ -609,9 +664,11 @@ Authority records
 
 .. NOTE::
 
-   The Authority record dedicated search box will search ALL fields in an
-   authority record. In release 2.0.0, results have not been weighted to
-   favor title matches.
+   See :ref:`above <dedicated-search-authority>` for a list of :term:`fields
+   <field>` that AtoM will search in an authority record. In release 2.0.0,
+   results have not been weighted to favor title matches. If you see results
+   without matches in the title (i.e. the authorized form of name), it means
+   the search term(s) appears somewhere in the body of the record.
 
 .. image:: images/authority-searchresults.*
    :align: center
@@ -633,11 +690,11 @@ Authority records
    :ref:`advanced-search`.
 
 5. You can click the |searchreset| button next to your search term in the
-   dedicated search bar to clear the field and begin a new search.
+   dedicated search box to clear the field and begin a new search.
    Alternately, simply place the cursor in the search box and enter a new
    search term.
 6. When you have found the record you are searching for, click on its title in
-   the results, and AtoM will redirect you to the select authority record's
+   the results, and AtoM will redirect you to the selected authority record's
    :term:`view page`.
 
 .. _dedicated-search-accessions:
@@ -645,7 +702,99 @@ Authority records
 Accession records
 -----------------
 
-content
+.. |edit| image:: images/edit-sign.png
+   :height: 18
+
+
+A dedicated search box for :term:`accession records <accession record>` has
+been provided on the accessions :ref:`browse page <page-type-browse>`.
+In AtoM 2.0.0, this search box will **only return title (i.e. accession number)
+matches** However, since accessions are by default named using an
+ISO-formated date (YYYY-MM-DD), users can quickly sift through a number of
+results by searching for matches on year and month and day. See the
+instructions below for an example.
+
+For more information on working with accession records in AtoM, see:
+:ref:`accession-records`. See also: :ref:`deaccessions`.
+
+.. NOTE::
+
+   To view and search for :term:`accession records <accession record>` in
+   AtoM you must be :ref:`logged in <log-in>` to a user account with sufficient
+   :term:`access privileges <access privilege>`, such as an :term:`editor` or
+   an :term:`administrator`. For more information on user roles, see:
+   :ref:`user-roles`. For information on default permissions for user roles,
+   see: :ref:`default-permissions-by-role`. For information on changing edit
+   permissions, see: :ref:`edit-user-permissions`. See also:
+   :ref:`manage-user-accounts`.
+
+**To search for accession records in AtoM:**
+
+.. image:: images/manage-accessions.*
+   :align: right
+   :width: 15%
+   :alt: An image of a user selecting Accessions in the Manage menu
+
+1. Navigate to the accession record :ref:`browse page <page-type-browse>` by
+   clicking on the |edit| :ref:`Manage menu <main-menu-manage>` (located in the
+   :term:`main menu` for logged-in users, in the top-right of the AtoM
+   :term:`header bar`) and choosing "Accessions" - i.e., **Manage >
+   Accessions**.
+2.  AtoM will redirect you to the :term:`accessions <accession record>` browse
+    page. A list of your accessions will appear; if there are more than 10
+    results, a pager will be included. To begin searching for an accession,
+    place your cursor in the the :term:`dedicated search box` at the top of
+    the Accessions browse page.
+
+.. image:: images/browse-accessions.*
+   :align: center
+   :width: 70%
+   :alt: An image of the Accessions browse page
+
+.. TIP::
+
+   An :term:`administrator` can change the number of results per page for
+   browse and search result pages throughout AtoM via **Admin > Settings >
+   Global > Results per page**. By default, the number is set to 10. For more
+   information, see :ref:`settings`.
+
+3. Type a search term into the :term:`dedicated search box` and press enter,
+   or use your mouse to click the |searchbutton| search button (represented by
+   the magnifying glass icon to the right of the search box).
+
+.. image:: images/accessions-searchbox.*
+   :align: center
+   :width: 70%
+   :alt: An image of the accession record dedicated search box
+
+.. TIP::
+
+   In 2.0.0, AtoM will **only** search on the name (i.e. identifier) of the
+   accession, but it will provide fuzzy matching - that is, instead of
+   requiring an exact match on a title, it will return partial matches as well
+   - so a search for 2013 would return all accessions starting with 2013,
+   instead of failing to return any. Since accessions identifiers are by
+   default named with an ISO-formatted date (YYYY-MM-DD), this makes quick
+   searching for an accession relatively easy.
+
+4. AtoM will reload the page with results. If there are more than 10 results,
+   a pager will be included at the bottom of the results page. The results page
+   also includes a :term:`sort button` (allowing you to sort results to show
+   them in alphabetic order, or most recently created/updated).For more
+   information, see :ref:`recurring-sort-button`.
+
+.. image:: images/accessions-results.*
+   :align: center
+   :width: 70%
+   :alt: An image of the accession record search results
+
+5. You can click the |searchreset| button next to your search term in the
+   dedicated search box to clear the field and begin a new search.
+   Alternately, simply place the cursor in the search box and enter a new
+   search term.
+6. When you have found the record you are searching for, click on its title in
+   the results, and AtoM will redirect you to the selected accession record's
+   :term:`view page`.
 
 .. _dedicated-search-places:
 
