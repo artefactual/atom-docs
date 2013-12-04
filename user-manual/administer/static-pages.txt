@@ -342,22 +342,25 @@ Headers and subtitles
 ---------------------
 
 To increase the size of a heading or subtitle, wrap the relevant text in
-<code><nowiki><h3></h3></nowiki></code>
-tags, like so: <h3>For more information, please contact</h3>. This will produce
-the following results:
+**<h3> </h3>** tags, like so:
+
+.. epigraph::
+
+   <h3>For more information, please contact</h3>.
+
+This will produce the following results:
 
 .. image:: images/larger-headings.*
    :align: center
-   :width: 70%
+   :width: 80%
    :alt: An image of a larger heading
 
 For larger headings, use smaller numbers, such as <h2> or <h1>. Similarly, for
 smaller headers, use <h4> or <h5>. To bold, italicize or underline headers and
 subtitles, simply wrap the relevant text in
-<code><nowiki><b></b></nowiki></code> for **bold**,
-<code><nowiki><i></i></nowiki></code> for *italics*, or
-<code><nowiki><u></u></nowiki></code> for underline. Typing <b>Artefactual
-Systems Inc.</b> will produce the following results:
+**<b></b>** for **bold**, **<i> </i>** for *italics*, or **<u> </u>** for
+underline. Typing **<b>Artefactual Systems Inc.</b>** will produce the following
+results:
 
 .. image:: images/headings-subtitles.*
    :align: center
@@ -370,23 +373,24 @@ Hyperlinks
 ----------
 
 To create external links on an AtoM static page, wrap the text you would like to
-act as a link in a hyperlink <code> <a> </a> </code> tag, and include the web
-address to which you would like the link to point, using the
-<code> href=" " </code>
+act as a link in a hyperlink **<a> </a>** tag, and include the web
+address to which you would like the link to point, using the **href=" "**
 attribute - the http address would go in the quotations. Remember to close the
 element after the text you want to link.
 
 For example, to include a link in the "Contact Us" page, the code would
 appear as such:
 
-<code> Website: <a href="https://www.accesstomemory.org/en/">AtoM : Open Source
-Archival Description Software</a> </code>
+.. epigraph::
+
+   Website: <a href="https://www.accesstomemory.org/en/">AtoM : Open Source
+   Archival Description Software</a>
 
 The above code would appear like this on the static page:
 
 .. image:: images/hyperlinks.*
    :align: center
-   :width: 70%
+   :width: 80%
    :alt: An image of a hyperlink
 
 .. _static-image:
@@ -397,62 +401,69 @@ Images
 If you have access to the server on which your AtoM instance is located (i.e.,
 if you are hosting it yourself, or can ask the host provider to include a file
 for you), you can place images in a directory on the host server, and use a
-local URL to point to them. Images can then be used via the HTML <code> <img>
-</code> image element, where the <code> src=" " </code> attribute points to the
+local URL to point to them. Images can then be used via the HTML **<img>**
+image element, where the **src=" "** attribute points to the
 path of the image, similar to how the hyperlinks are used above. For example, if
 you wanted an image of email, named "contact-image.jpg" included on your static
-"Contact Us" page, the code might look like this: <code>
-<img src=".../path/to/contact-image.jpg"> </code>, where "/path/to" represents
-the internal URL path to the location of contact-image.jpg on your host server.
+"Contact Us" page, the code might look like this:
 
-To center the image, you can wrap the <code> <img> </code> image element in
-<code><nowiki><center></nowiki></code> tags, like this:
+.. epigraph::
 
-<code><nowiki><center><img src=".../path/to/contact-image.jpg">
-</center></nowiki></code>
+   <img src=".../path/to/contact-image.jpg">, where "/path/to" represents the
+   internal URL path to the location of contact-image.jpg on your host server.
+
+To center the image, you can wrap the **<img>** image element in **<center>**
+tags, like this:
+
+.. epigraph::
+
+   <center><img src=".../path/to/contact-image.jpg"></center>
 
 .. _static-boxes-dividers:
 
 Boxes and dividers
 ------------------
 
-You can add styled boxes around text by wrapping content in the HTML <code>
-<nowiki><div></nowiki> </code> element, and then using inline CSS to modify the
+You can add styled boxes around text by wrapping content in the HTML **<div>**
+element, and then using inline CSS to modify the
 appearance of the box. For colors, use the HTML or RGB values for the color you
 would like to use, rather than generic names such as "red," "blue," etc. - most
 browsers support a limited pallette of colors using names such as this, and the
 results may be inconsistent across browsers. There are many free HTML color
 wheels available that allow you to choose a color and copy its HTML# or RGB
-values; for example: <http://www.colorpicker.com/>`__
+values; for example: http://www.colorpicker.com/
 
 For a small centered box with a green color, you might use code such as
 this:
 
-<code><nowiki> <div style="width:600px; margin-left:right; margin-right:right;
-padding: 5px; background-color:#39BF34; border:none;">Here is a list of ways
-that we can be contacted with any questions or concerns you may have:</div>
-</nowiki></code>
+.. epigraph::
+
+   <div style="width:600px; margin-left:right; margin-right:right; padding: 5px;
+   background-color:#39BF34; border:none;">Here is a list of ways that we can be
+   contacted with any questions or concerns you may have:</div>
 
 This is how the box will appear:
 
 .. image:: images/boxes.*
    :align: center
-   :width: 70%
+   :width: 80%
    :alt: An image of a box
 
 Another example of this is the light yellow box that appears on AtoM's "Welcome"
 static page warning users that the data will reset every hour.
 
-<code><nowiki> <div style="padding: 8px; border-style: solid; border-width: 1px;
-background- color: #fdf5d9; border-color: #eedc94 #eedc94 #e4c652; border-color:
-rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);">Welcome message
-appears here</div> </nowiki> </code>
+.. epigraph::
+
+   <div style="padding: 8px; border-style: solid; border-width: 1px; background-
+   color: #fdf5d9; border-color: #eedc94 #eedc94 #e4c652; border-color: rgba(0,
+   0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);">Welcome message appears
+   here</div>
 
 And here is the result:
 
 .. image:: images/welcome-box.*
    :align: center
-   :width: 70%
+   :width: 80%
    :alt: An image of a box
 
 :ref:`Back to top <manage-static-pages>`
