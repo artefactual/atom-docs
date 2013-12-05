@@ -24,6 +24,7 @@ links to each chapter's main sections.
    add-edit-content/rights
    add-edit-content/exit-edit-mode
    access-content/search-atom
+   access-content/advanced-search
    access-content/navigate
    administer/manage-user-accounts
    administer/edit-permissions

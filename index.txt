@@ -82,7 +82,7 @@ some navigation features (e.g. edit mode), are only available to users with
 edit :term:`access privileges <access privilege>`.
 
 * :ref:`Search <search-atom>`
-* Advanced search
+* :ref:`Advanced search <advanced-search>`
 * Browse
 * :ref:`Navigate <navigate>`
 * Context menu

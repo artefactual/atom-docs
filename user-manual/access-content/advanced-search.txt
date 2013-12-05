@@ -1,0 +1,64 @@
+.. _advanced-search:
+
+===============
+Advanced search
+===============
+
+In addition to AtoM's general :term:`search box` (located in the AtoM
+:term:`header bar`), AtoM also includes a robust Advanced search interface
+that allows user to build complex queries via the :term:`user interface`.
+A number of filters have been included to narrow the search parameters, while
+complex :term:`boolean search` queries using AND, OR, and NOT statements can
+be built with the addition of search :term:`fields <field>`. The Adanced search
+interface is available to all users - i.e. you do not have to be logged in to
+the application to access it.
+
+This section will instruct you how to use AtoM's Advanced search interface;
+additionally, it will outline methods that are available in the general
+:term:`search box` to perform advanced searches, using :term:`boolean search`
+operators and special characters.
+
+.. IMPORTANT::
+
+   The advanced search options described here apply only to searches for
+   :term:`archival descriptions <archival description>` - the advanced search
+   interface returns archival description results by default, and using the
+   boolean operators for advanced searching in the search box requires a user
+   to press enter, which by default returns archival description results in
+   AtoM. To search for other :term:`entity` or record types, see the sections
+   on :ref:`search-typeahead` and on the :ref:`dedicated-search` available in
+   the :ref:`search-atom` section.
+
+.. SEEALSO::
+
+   * :ref:`search-atom`
+   * :ref:`browse`
+   * :ref:`navigate`
+   * :ref:`archival-descriptions`
+
+.. _advanced-search-interface:
+
+The Advanced Search Interface
+=============================
+
+content
+
+:ref:`Back to top <advanced-search>`
+
+.. _advanced-search-via-searchbox:
+
+Advanced search using the AtoM Search box
+==========================================
+
+content
+
+describe what boolean search is
+
+.. _advanced-search-operators:
+
+Boolean operators
+------------------
+
+content
+
+:ref:`Back to top <advanced-search>`
