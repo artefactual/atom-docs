@@ -68,8 +68,6 @@ instructions on how to search for different record types in each.
   * :ref:`dedicated-search-functions`
   * :ref:`dedicated-search-users`
 
-**REMEMBER: Users, places, subjects, functions? in 2.0.1, not 2.0.0!**
-
 .. SEEALSO::
 
    * :ref:`Advanced search <advanced-search>`
@@ -1121,14 +1119,14 @@ functions edit template, see: :ref:`isdf-template`.
 Users
 -----
 
-A :term:`dedicated search box` for managing Users and user accounts has been
-provided on the user :ref:`browse page <page-type-browse>`. In AtoM 2.0.0,
-this search box will **only return user name and email matches** However, the
-search box is configured to return partial matches, so for example, a search
-for "ca" would return Names such as Cameron, Cal, and also Bianca, as well as
-returning any user with an email that ends with ".ca".  This allows the
-dedicated search box to be used as a navigational aid, allowing an
-:term:`administrator` to quickly locate a specific user when there are many
+In AtoM 2.0.1, a :term:`dedicated search box` for managing Users and user
+accounts has been added to the user :ref:`browse page <page-type-browse>`.
+In AtoM 2.0.1, this search box will **only return user name and email
+matches** However, the search box is configured to return partial matches, so
+for example, a search for "ca" would return Names such as Cameron, Cal, and
+also Bianca, as well as returning any user with an email that ends with ".ca".
+This allows the dedicated search box to be used as a navigational aid, allowing
+an :term:`administrator` to quickly locate a specific user when there are many
 user accounts saved in the system (particularly in a :term:`multi-repository
 system` such as a :term:`network` or portal site).
 
@@ -1137,6 +1135,7 @@ For more information on working with User accounts in AtoM, see:
 
 .. IMPORTANT::
 
+   **This feature is included in AtoM 2.0.1, not 2.0.0**.
    To view and search for user account records in AtoM you must be
    :ref:`logged in <log-in>` as an :term:`administrator`. For more information
    on user roles, see: :ref:`user-roles`. For information on default permissions
