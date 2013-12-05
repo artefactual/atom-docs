@@ -19,6 +19,18 @@ Search
 .. |gears| image:: images/gears.png
    :height: 18
 
+.. |functicon| image:: images/functions-icon.png
+   :height: 24
+   :width: 24
+
+.. |placeicon| image:: images/subjects-icon.png
+   :height: 24
+   :width: 24
+
+.. |subjecticon| image:: images/places-icon.png
+   :height: 24
+   :width: 24
+
 
 To help users locate and manage content, AtoM includes powerful search
 support, available anywhere in the application through the :term:`search box`
@@ -809,8 +821,8 @@ For more information on working with accession records in AtoM, see:
 
 .. _dedicated-search-places:
 
-Place terms
------------
+|placeicon| Place terms
+-----------------------
 
 content
 
@@ -818,8 +830,8 @@ content
 
 .. _dedicated-search-subjects:
 
-Subject terms
--------------
+|subjecticon| Subject terms
+---------------------------
 
 content
 
@@ -1020,8 +1032,8 @@ see: :ref:`rights`.
 
 .. _dedicated-search-functions:
 
-Functions
----------
+|functicon| Functions
+---------------------
 
 A dedicated search box for :term:`functions <function>` has
 been provided on the functions :ref:`browse page <page-type-browse>`.
