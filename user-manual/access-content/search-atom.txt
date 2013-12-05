@@ -31,6 +31,9 @@ Search
    :height: 24
    :width: 24
 
+.. |repoicon| image:: images/repo-icon.png
+   :height: 24
+   :width: 24
 
 To help users locate and manage content, AtoM includes powerful search
 support, available anywhere in the application through the :term:`search box`
@@ -61,6 +64,7 @@ instructions on how to search for different record types in each.
 
   * :ref:`dedicated-search-authority`
   * :ref:`dedicated-search-accessions`
+  * :ref:`dedicated-search-institutions`
   * :ref:`dedicated-search-places`
   * :ref:`dedicated-search-subjects`
   * :ref:`dedicated-search-donors`
@@ -591,6 +595,7 @@ entity. Basic instructions for each are included below.
 
 * :ref:`dedicated-search-authority`
 * :ref:`dedicated-search-accessions`
+* :ref:`dedicated-search-institutions`
 * :ref:`dedicated-search-places`
 * :ref:`dedicated-search-subjects`
 * :ref:`dedicated-search-donors`
@@ -814,6 +819,104 @@ For more information on working with accession records in AtoM, see:
 6. When you have found the record you are searching for, click on its title in
    the results, and AtoM will redirect you to the selected accession record's
    :term:`view page`.
+
+:ref:`Back to top <search-atom>`
+
+.. _dedicated-search-institutions:
+
+|repoicon| Archival institutions
+--------------------------------
+
+A dedicated search box for :term:`archival institutions <archival institution>`
+has been provided on the archival institution
+:ref:`browse page <page-type-browse>`. In AtoM 2.0.0, this search box will
+search the following fields of an archival institution record:
+
+* **Authorized form of name** in the Identity area
+* **All fields** in the Description area, Access area, and Service area
+  (**except** Finding aids, guides, and publications in the Description Area)
+* **Dates of creation, revision, and deletion**, **Sources**, and **Maintenance
+  notes** in the Control area
+
+.. NOTE::
+
+   Other name fields in the Identity area (Parallel forms of name; Other forms
+   of name) and the Finding aids field in the Description area have **not**
+   been indexed in AtoM 2.0.0. We hope to add this in a future release.
+
+For more information on working with :term:`archival institutions <archival
+institution>` in AtoM, see: :ref:`archival-institutions`. For information on
+working with particular fields in the archival institution record edit
+template, see: :ref:`isdiah-template`.
+
+**To search for archival institutions in AtoM:**
+
+1. Using the :term:`browse menu` (available as a :term:`drop-down menu` next
+   to the :term:`search box` in the AtoM :term:`header bar` at the top of the
+   page), navigate to **Browse > Archival institutions**
+
+.. TIP::
+
+   Depending on the default label and menu settings in your installation, the
+   :term:`archival institution` label in your :term:`browse menu` may
+   appear under a different name (such as "Repositories," "Archives," or another
+   more user-friendly name). :term:`Administrators <administrator>` can
+   change the default labels via **Admin > Settings > User interface label**,
+   and the default menu labels can be changed via **Admin > Menus**. See the
+   :ref:`administer` section for more details.
+
+.. image:: images/repository-browse.*
+   :align: center
+   :width: 70%
+   :alt: An image of the archival institution browse page
+
+2. Place your cursor in the :term:`dedicated search box` at the top of
+   the :term:`archival institution` browse page. Type a search term and press
+   enter, or use your mouse to click the |searchbutton| search button
+   (represented by the magnifying glass icon to the right of the search box).
+
+.. image:: images/repository-searchbox.*
+   :align: center
+   :width: 70%
+   :alt: An image of the archival institution dedicated search box
+
+3. AtoM will reload the page with results. If there are more than 10 results,
+   a pager will be included at the bottom of the results page.
+
+.. NOTE::
+
+   See :ref:`above <dedicated-search-institutions>` for a list of :term:`fields
+   <field>` that AtoM will search in an archival institution record. In release
+   2.0.0, results have not been weighted to favor title matches. If you see results
+   without matches in the title (i.e. the authorized form of name), it means
+   the search term(s) appears somewhere in the body of the record.
+
+.. image:: images/repository-searchresults.*
+   :align: center
+   :width: 70%
+   :alt: An image of the archival institution search results
+
+4. The results page includes a :term:`sort button` (allowing you to sort
+   results to show them in alphabetic order, or most recently created/updated)
+   and a set of :term:`facet filters <facet filter>` to help you sift through
+   results. For more information on these elements, see
+   :ref:`recurring-sort-button` and :ref:`recurring-facet-filters`.
+
+.. TIP::
+
+   You can use :term:`Boolean search` operators such as AND, OR, or NOT, as
+   well as Boolean special characters such as "quotations" or the *****
+   wildcard symbol to improve your search results. For more information on
+   available special characters and boolean searching in AtoM, see:
+   :ref:`advanced-search`.
+
+5. You can click the |searchreset| button next to your search term in the
+   dedicated search box to clear the field and begin a new search.
+   Alternately, simply place the cursor in the search box and enter a new
+   search term.
+6. When you have found the record you are searching for, click on its title in
+   the results, and AtoM will redirect you to the selected archival
+   institution's :term:`view page`.
 
 :ref:`Back to top <search-atom>`
 
