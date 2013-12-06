@@ -26,7 +26,6 @@ main page types a user will encounter, and how to switch languages.
    * :ref:`Browse <browse>`
    * :ref:`Context menu <context-menu>`
 
-
 .. _home-page:
 
 Home page
@@ -113,6 +112,8 @@ Like all pages in AtoM the :term:`home page` also includes the AtoM
 #. For logging in, see :ref:`log in <log-in>`.
 #. For adding and editing, see :ref:`Add/edit content <add-edit-content>`.
 
+:ref:`Back to top <getting-started-all>`
+
 .. _log-in:
 
 Log in
@@ -159,6 +160,7 @@ you to the :term:`home page` (view-only access).
 .. note:: AtoM automatically logs you out after thirty minutes of inactivity.
    To resume editing, you will have to log back in
 
+:ref:`Back to top <getting-started-all>`
 
 .. _user-roles:
 
@@ -231,6 +233,7 @@ for that role, and then assign or unassign users from the new role. For
 more information on creating a new user role, see :ref:`Add a new group
 <add-group>`.
 
+:ref:`Back to top <getting-started-all>`
 
 .. _page-types:
 
@@ -252,7 +255,6 @@ main page types are:
 
    * :ref:`navigate`
    * :ref:`Search <search-atom>`
-
 
 .. _page-type-home:
 
@@ -304,12 +306,10 @@ understand what they are viewing.
 .. |expand| image:: images/expand.png
    :height: 23
 
-
 .. _page-type-edit:
 
 Edit
 ----
-
 
 * Displays an individual record in :term:`edit mode` for data entry.
 * Shows all :term:`fields <field>`, including the :term:`administration area`.
@@ -388,6 +388,7 @@ The following are typical types of :term:`error messages <error message>`:
 * **Blank page:** indicates a fairly major system-wide problem, or problem
   with data corruption; report to administrator and to AtoM support team.
 
+:ref:`Back to top <getting-started-all>`
 
 .. _choose-language:
 
@@ -413,6 +414,8 @@ switches the :term:`user interface` to the preferred language, and:
 
 For more information on the language menu, see: :ref:`language-menu`
 
+:ref:`Back to top <getting-started-all>`
+
 .. _change-password:
 
 Change password
@@ -437,3 +440,4 @@ time you log in to the application.
 
    * :ref:`log-in-button`
 
+:ref:`Back to top <getting-started-all>`
