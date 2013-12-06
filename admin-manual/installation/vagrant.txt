@@ -28,23 +28,17 @@ Install Vagrant and VirtualBox
 #. Install Vagrant from http://www.vagrantup.com/ (or use your package manager).
 
 
-.. _vagrant-setup-linux-mac:
+.. _vagrant-setup:
 
-Spin it up (Linux and Mac users)
-================================
+Spin it up
+==========
 
-.. NOTE::
-
-   We've added a section with more explicit instructions for Windows users at
-   the bottom of this document. If you are using Windows, follow the
-   instructions for this section :ref:`below <vagrant-windows-setup>` and then
-   continue with the :ref:`vagrant-connect-atom` and
-   :ref:`vagrant-connect-terminal` instructions. Remember, the AtoM Vagrant
-   virtual machine is NOT intended for use in production!
-
+Linux and Mac users
+-------------------
 
 #. Create a new directory and open it. The location doesn't matter, but
-   you'll need to return to it later.
+   you'll need to return to it later - all further command line operations
+   should be run from inside the directory.
 
    .. code-block:: bash
 
@@ -70,51 +64,16 @@ Spin it up (Linux and Mac users)
    on the speed of your connection, as the box is considerably big (approx 1GB
    in size).
 
-.. _vagrant-connect-atom:
-
-Connect to AtoM
-===============
-
-Now you should be able to connect to AtoM from your local browser.
-
-#. Use http://10.10.10.10:8001 if you want to try AtoM 1.x.
-#. Use http://10.10.10.10:8002 if you want to try AtoM 2.x.
-
-For both sites, the default login details are:
-
-* Username: ``demo@example.com``
-* Password: ``demo``
-
-
-.. _vagrant-connect-terminal:
-
-Connect to the terminal
-=======================
-
-Run ``vagrant ssh`` from the same directory as where you ran ``vagrant up``.
-Vagrant will connect you to the correct virtual machine.
-
-.. code-block:: bash
-
-   vagrant ssh
-
-The login details are:
-
-* Username: ``vagrant``
-* Password: ``vagrant``
-
-If you are using Windows, the preferred SSH client is
-`PuTTY <http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>`_.
-
-
-
+#. Skip over the Windows instructions below and continue following the
+   instructions in :ref:`vagrant-connect-atom` and
+   :ref:`vagrant-connect-terminal`
 
 .. _vagrant-windows-setup:
 
-Spin it up (Windows instructions)
-=================================
+Windows users
+-------------
 
-We'ved added more detailed steps for Windows Users who wish to set up the AtoM
+We'ved added more detailed steps for Windows users who wish to set up the AtoM
 Vagrant box through the Windows user interface. Note that this will still
 require some typing in the command line, but most steps can be done through
 the Windows Explorer.
@@ -195,6 +154,45 @@ the Windows Explorer.
 8. This will begin the process! Vagrant will download our custom box and boot
    it in VirtualBox. The download can take anywhere from a few minutes to an
    hour or more, depending on the speed of your connection, as the box is
-   considerably big  (approx. 1 GB in size).
-9. Return to the instructions above and follow the steps outlined in
-   :ref:`vagrant-connect-atom` and :ref:`vagrant-connect-terminal`.
+   considerably big  (approx. 1 GB in size). When it's complete, continue
+   following the instructions below.
+
+.. _vagrant-connect-atom:
+
+Connect to AtoM
+===============
+
+Now you should be able to connect to AtoM from your local browser.
+
+#. Use http://10.10.10.10:8001 if you want to try AtoM 1.x.
+#. Use http://10.10.10.10:8002 if you want to try AtoM 2.x.
+
+For both sites, the default login details are:
+
+* Username: ``demo@example.com``
+* Password: ``demo``
+
+
+.. _vagrant-connect-terminal:
+
+Connect to the terminal
+=======================
+
+Run ``vagrant ssh`` from the same directory as where you ran ``vagrant up``.
+Vagrant will connect you to the correct virtual machine.
+
+.. code-block:: bash
+
+   vagrant ssh
+
+The login details are:
+
+* Username: ``vagrant``
+* Password: ``vagrant``
+
+If you are using Windows, the preferred SSH client is
+`PuTTY <http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>`_.
+
+
+
+
