@@ -18,44 +18,62 @@ spare you should be good.
    installations explained under this manual.
 
 
+.. _vagrant-install-dependencies:
+
 Install Vagrant and VirtualBox
-------------------------------
+==============================
 
 #. Install VirtualBox from https://www.virtualbox.org/ (or use your package
    manager).
 #. Install Vagrant from http://www.vagrantup.com/ (or use your package manager).
 
 
-Spin it up
-----------
+.. _vagrant-setup-linux-mac:
 
-#. Create a new directory and open it.
+Spin it up (Linux and Mac users)
+================================
+
+.. NOTE::
+
+   We've added a section with more explicit instructions for Windows users at
+   the bottom of this document. If you are using Windows, follow the
+   instructions for this section :ref:`below <vagrant-windows-setup>` and then
+   continue with the :ref:`vagrant-connect-atom` and
+   :ref:`vagrant-connect-terminal` instructions. Remember, the AtoM Vagrant
+   virtual machine is NOT intended for use in production!
+
+
+#. Create a new directory and open it. The location doesn't matter, but
+   you'll need to return to it later.
 
    .. code-block:: bash
 
       mkdir atom-vagrant && cd atom-vagrant
 
-#. Download the configuration file (Vagrantfile). If you are using Windows, just
-   paste the URL in the address bar of your browser and you'll be able to
-   download the file and save it in :file:`atom-vagrant/` via the file explorer.
-   Otherwise, type the following into your command-line interface:
+#. Download the configuration file (Vagrantfile) and save it to the new
+   ``atom-vagrant`` directory. Type the following into your command-line
+   interface:
 
    .. code-block:: bash
 
       wget http://storage.accesstomemory.org/Vagrantfile
 
-#. Run Vagrant.
+#. Run Vagrant (again, from the same directory where you saved the
+   Vagrantfile).
 
    .. code-block:: bash
 
       vagrant up
 
-   Vagrant will download our custom box and boot it in VirtualBox. The download
-   can take a few minutes as the box is considerably big.
+   Vagrant will download our custom box and boot it in VirtualBox. The
+   download can take anywhere from a few minutes to an hour or more, depending
+   on the speed of your connection, as the box is considerably big (approx 1GB
+   in size).
 
+.. _vagrant-connect-atom:
 
 Connect to AtoM
----------------
+===============
 
 Now you should be able to connect to AtoM from your local browser.
 
@@ -68,8 +86,10 @@ For both sites, the default login details are:
 * Password: ``demo``
 
 
+.. _vagrant-connect-terminal:
+
 Connect to the terminal
------------------------
+=======================
 
 Run ``vagrant ssh`` from the same directory as where you ran ``vagrant up``.
 Vagrant will connect you to the correct virtual machine.
@@ -85,3 +105,96 @@ The login details are:
 
 If you are using Windows, the preferred SSH client is
 `PuTTY <http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>`_.
+
+
+
+
+.. _vagrant-windows-setup:
+
+Spin it up (Windows instructions)
+=================================
+
+We'ved added more detailed steps for Windows Users who wish to set up the AtoM
+Vagrant box through the Windows user interface. Note that this will still
+require some typing in the command line, but most steps can be done through
+the Windows Explorer.
+
+1. First we'll create a new directory (i.e folder) called ``atom-vagrant``. If
+   you are using windows, you can use the Windows Explorer for this step -
+   navigate to where you want the new directory, right-click and select **New
+   > Folder**. Name it "atom-vagrant". You can create this directory wherever
+   you like - just note that during the installation process, you'll have to
+   be able to navigate back there via the command line (or Command prompt in
+   windows).
+
+2. paste the following URL into your browser and press enter:
+   https://storage.accesstomemory.org/Vagrantfile
+
+3. You'll be redirected to a page like the following:
+
+.. image:: images/storage-vagrant.*
+   :align: center
+   :width: 60%
+   :alt: An image of what a user will see at the above hyperlink
+
+4. We want to save this page in our new ``atom-vagrant`` directory -
+   right-click and select "Save as" (or "Save page as," etc. depending on your
+   browser). Save this **without a file extension** - if you save the page as
+   a .txt file, or as an .html file, it won't work. In Windows, make sure to
+   erase the extension from the file name, AND change the "Save as type" field
+   to "All files".
+
+.. image:: images/vagrant-windows-save.*
+   :align: center
+   :width: 60%
+   :alt: An image of how to save the Vagrantfile in Windows without an extension
+
+.. IMPORTANT::
+
+   Some browsers will add code to the Vagrant configuration file when  saving
+   it this way - and if they do, your installation won't work. The best way to
+   double-check this is to open the ``Vagrantfile`` in a text-editor, and
+   compare it against what you see at
+   https://storage.accesstomemory.org/Vagrantfile. Remove any code that is not
+   visible in the original, save it, and close it.
+
+.. image:: images/saving-vagrantfile-windows.*
+   :align: center
+   :width: 80%
+   :alt: Editing the saved file to ensure it's the same as the original
+
+5. Now we will switch to using Windows' Command Prompt. If you don't know
+   where to locate it on your computer, hit the Windows key and start typing
+   "Command Prompt" - Windows should find the location and open a terminal for
+   you.
+6. The command prompt will show your current location - i.e., it will read
+   something like:  ``C:/Users/[your windows username]>``. We now need to
+   change directories (i.e., ``cd``) to the "atom-vagrant" folder where you
+   have saved the Vagrantfile. Here's an example of what to type (though
+   you'll have to input your own location, for wherever you saved the file):
+
+   .. code-block:: bash
+
+      cd Documents/Artefactual/atom-vagrant
+
+   If you are successful, the command prompt will now reflect your new
+   location.
+
+.. TIP::
+
+   If you are unsure of the location, but can find the file via Windows
+   Explorer, and then place your cursor in the location bar - Windows will
+   show you the directory location.
+
+7. In the command prompt, type:
+
+   .. code-block:: bash
+
+      vagrant up
+
+8. This will begin the process! Vagrant will download our custom box and boot
+   it in VirtualBox. The download can take anywhere from a few minutes to an
+   hour or more, depending on the speed of your connection, as the box is
+   considerably big  (approx. 1 GB in size).
+9. Return to the instructions above and follow the steps outlined in
+   :ref:`vagrant-connect-atom` and :ref:`vagrant-connect-terminal`.
