@@ -16,10 +16,10 @@ Glossary
 
   Accession record
     The accession record is an administrative and descriptive document that
-    summarizes standard information about the process of transferring
-    materials to a repository, including information about the provenance,
-    contents and legal and physical transfer of the records such as, rights
-    and restrictions. See :doc:`Entity types <../overview/entity-types>` and
+    summarizes standard information about the process of transferring materials
+    to a :term:`repository`, including information about the provenance,
+    contents and legal and physical transfer of the records such as, rights and
+    restrictions. See :doc:`Entity types <../overview/entity-types>` and
     :ref:`Accessions <accession-records>`.
 
   Access point
@@ -365,7 +365,7 @@ Glossary
     page` content, and :term:`user profile` information.
 
   Deaccession record
-    The deaccession record is used to indicate that a repository has
+    The deaccession record is used to indicate that a :term:`repository` has
     removed an accession, in part or whole, from the collection. Instead
     of deleting an :term:`accession record`, the repository will create a
     deaccession record that is kept. See: :ref:`Deaccession records
@@ -736,7 +736,7 @@ Glossary
     :term:`context menu` on :term:`archival institution` :term:`view pages
     <view page>`. The list is generated from the titles of :term:`archival
     descriptions <archival description>` that have the :term:`archival
-    institution` selected as a repository (see Context area).  See
+    institution` selected as a :term:`repository` (see Context area). See
     :doc:`Context menu <../access-content/context-menu>` and :ref:`Context
     area <context-area>`.
 
@@ -817,7 +817,7 @@ Glossary
   Multi-repository system
     A multi-repository system exists when a single instance of AtoM is
     used by a :term:`network` of :term:`archival institutions <archival
-    institution>` or other types of repositories.
+    institution>` or other types of :term:`repositories <repository>`.
 
   Multi-value field
     A multi-value field is a :term:`field` that is structured to contain
@@ -978,7 +978,7 @@ Glossary
     In AtoM, the term is sometimes used as a more generic term for
     :term:`archival institution` that includes all cultural heritage
     organizations. For instructions on working with repositories in AtoM,
-    see: :ref:`archival-institutions`
+    see: :ref:`archival-institutions`.
 
   Researcher
     A researcher is a type of user who is limited to searching and
@@ -1261,6 +1261,6 @@ Glossary
     fields can be hidden from view, select ISAD template, RAD template,
     Digital object metadata area, and/or Physical Storage. The
     :term:`administrator` can click on the checkboxes to reveal the field,
-    while an unchecked box hides the field. See :doc:`Visible elements
-    <../administer/visible-elements>`.
+    while an unchecked box hides the field. See :ref:`Visible elements
+    <visible-elements>`.
 
