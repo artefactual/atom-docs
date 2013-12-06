@@ -142,14 +142,14 @@ or for a :term:`network`.
 * :ref:`Manage static pages <manage-static-pages>`
 * :ref:`Manage menus <manage-menus>`
 * Manage plugins
-* Settings
+* :ref:`Settings <settings>`
 * Themes and theming
 * Default language
 * Site logo
 * Back up
 * Search for updates
 * Global search and replace
-* Visible elements
+* :ref:`Visible elements <visible-elements>`
 
 .. _data-entry:
 
