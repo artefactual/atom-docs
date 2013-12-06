@@ -5,29 +5,22 @@ Advanced search
 ===============
 
 In addition to AtoM's general :term:`search box` (located in the AtoM
-:term:`header bar`), AtoM also includes a robust Advanced search interface
+:term:`header bar`), AtoM also includes a robust advanced search interface
 that allows user to build complex queries via the :term:`user interface`.
 A number of filters have been included to narrow the search parameters, while
 complex :term:`boolean search` queries using AND, OR, and NOT statements can
-be built with the addition of search :term:`fields <field>`. The Adanced search
+be built with the addition of search :term:`fields <field>`. The advanced search
 interface is available to all users - i.e. you do not have to be logged in to
-the application to access it.
+the application to access it. Note that it is designed to be used to search
+for :term:`archival descriptions <archival description>` - please see the
+sections on AtoM's :ref:`dedicated search boxes <dedicated-search>` and
+:ref:`search-typeahead` for information on searching for different
+:term:`entity` or record types.
 
-This section will instruct you how to use AtoM's Advanced search interface;
+This section will instruct you how to use AtoM's advanced search interface;
 additionally, it will outline methods that are available in the general
 :term:`search box` to perform advanced searches, using :term:`boolean search`
 operators and special characters.
-
-.. IMPORTANT::
-
-   The advanced search options described here apply only to searches for
-   :term:`archival descriptions <archival description>` - the advanced search
-   interface returns archival description results by default, and using the
-   boolean operators for advanced searching in the search box requires a user
-   to press enter, which by default returns archival description results in
-   AtoM. To search for other :term:`entity` or record types, see the sections
-   on :ref:`search-typeahead` and on the :ref:`dedicated-search` available in
-   the :ref:`search-atom` section.
 
 .. SEEALSO::
 
@@ -38,10 +31,116 @@ operators and special characters.
 
 .. _advanced-search-interface:
 
-The Advanced Search Interface
+The Advanced search interface
 =============================
 
-content
+This section will outline how to use AtoM's advanced search interface. The
+advanced search interface is used to find descriptions in AtoM that contain text
+matching a search query. The advanced search hyperlink can be accessed in the
+:term:`drop-down menu` that appears when a user places the cursor in the
+:term:`search box` located in the AtoM :term:`header bar`. In the advanced
+search page, a user can select "and, or, not" operators, and search specific
+:term:`archival description` fields, to create a powerful search query. The
+option to apply filters to limit or narrow the search are also provided in a
+friendly :term:`user interface`.
+
+**To search for archival descriptions using the advanced search interface:**
+
+1. Place your cursor in the :term:`search box` located in the AtoM
+   :term:`header bar`. A :term:`drop-down menu` will appear below the search
+   box - to access the advanced search interface, click on the "Advanced
+   search" link in the drop-down menu.
+
+.. image:: images/searchbox-dropdown.*
+   :align: center
+   :width: 70%
+   :alt: An image of the drop-down beneath the search box
+
+.. IMPORTANT::
+
+   The advanced search options described here apply **only** to searches for
+   :term:`archival descriptions <archival description>` - the advanced search
+   interface returns archival description results by default. To search for
+   other :term:`entity` or record types, see the sections on
+   :ref:`search-typeahead` and on the :ref:`dedicated-search` available in the
+   :ref:`search-atom` section.
+
+2. AtoM will redirect you to the advanced search screen:
+
+.. image:: images/advanced-search.*
+   :align: center
+   :width: 70%
+   :alt: An image of the advanced search interface
+
+3. To begin searching, enter a search term into the search field in the
+central column of the page
+
+.. image:: images/advancedsearch-start.*
+   :align: center
+   :width: 70%
+   :alt: An image of a user entering data in the main search field of the
+         advanced search interface
+
+4. Use the drop-down menu to limit your search query to a specific
+   :term:`field` in the :term:`archival description` templates. The default
+   setting is to search any field. Options include:
+
+* Title
+* Archival history
+* Scope and content
+* Extent and medium
+* Subject access points
+* Name access points
+* Place access points
+* Identifier
+
+.. image:: images/advancedsearch-fields.*
+   :align: center
+   :width: 70%
+   :alt: An image of a user limiting a search term to the scope and content
+         field using the advanced search interface
+
+.. NOTE::
+
+   The labels in the field :term:`drop-down menu` available in the advanced
+   search interface are based on the labels used in the International Council
+   on Archives (`ICA <http://www.ica.org/>`__) ISAD(G) standard. For more
+   information on ISAD(G), see: :ref:`isad-template`. In other edit templates,
+   label may appear differently - for example, "Archival history" is known as
+   "Custodial history" in the :ref:`RAD <rad-template>` edit template, while
+   "Extent and medium" is simply called "Extent" in the
+   :ref:`DACS <dacs-template>`. However, search results for each field will be
+   returned regardless of the template used for display.
+
+5. Use the "Add new criteria" button to build multi-part queries with
+   :term:`boolean search` operators via the :term:`user interface` - using
+   these operators you can narrow your search, combine terms, or exclude
+   terms. AtoM will add a new set of fields below, into which you can enter your
+   terms - repeat steps 3-5 as necessary.
+
+.. image:: images/advancedsearch-andornot.*
+   :align: center
+   :width: 70%
+   :alt: An image of a user adding search fields using the "Add new criteria"
+         button in the Advanced search interface
+
+* Use AND to combine search terms to narrow your search: e.g. search
+  *vancouver* AND *"city hall"* to return only descriptions that contain both
+  search terms
+* Use OR to to combine search terms to broaden your search: e.g. search
+  *vancouver* OR *"city hall"* to return descriptions that contain either
+  search term
+* Use AND NOT to exclude terms: e.g. search *vancouver* NOT *"city hall"* to
+  return descriptions that include vancouver but do not contain the phrase
+  "*city hall*"
+
+.. image:: images/advancedsearch-newfields.*
+   :align: center
+   :width: 70%
+   :alt: An image of a user adding search fields using the "Add new criteria"
+         button in the Advanced search interface
+
+6.
 
 :ref:`Back to top <advanced-search>`
 
