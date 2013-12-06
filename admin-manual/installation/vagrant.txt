@@ -73,7 +73,10 @@ Linux and Mac users
 Windows users
 -------------
 
-We'ved added more detailed steps for Windows users who wish to set up the AtoM
+.. |win| image:: images/windows.png
+   :height: 18
+
+We've added more detailed steps for Windows users who wish to set up the AtoM
 Vagrant box through the Windows user interface. Note that this will still
 require some typing in the command line, but most steps can be done through
 the Windows Explorer.
@@ -86,7 +89,7 @@ the Windows Explorer.
    be able to navigate back there via the command line (or Command prompt in
    windows).
 
-2. paste the following URL into your browser and press enter:
+2. Paste the following URL into your browser and press enter:
    https://storage.accesstomemory.org/Vagrantfile
 
 3. You'll be redirected to a page like the following:
@@ -123,9 +126,9 @@ the Windows Explorer.
    :alt: Editing the saved file to ensure it's the same as the original
 
 5. Now we will switch to using Windows' Command Prompt. If you don't know
-   where to locate it on your computer, hit the Windows key and start typing
-   "Command Prompt" - Windows should find the location and open a terminal for
-   you.
+   where to locate it on your computer, hit the |win| Windows key and start
+   typing "Command Prompt" - Windows should find the location and open a
+   terminal for you.
 6. The command prompt will show your current location - i.e., it will read
    something like:  ``C:/Users/[your windows username]>``. We now need to
    change directories (i.e., ``cd``) to the "atom-vagrant" folder where you
