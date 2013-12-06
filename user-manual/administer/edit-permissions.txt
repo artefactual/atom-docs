@@ -274,9 +274,11 @@ For more information on user roles, see: :ref:`user-roles`.
 Default settings: Researcher
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In AtoM, "Researchers" refer to unauthenticated (i.e. non-logged in) users
-and/or public users. By default, these types of users are limited to searching
-and browsing descriptions.
+A :term:`researcher` is any user who is not logged-in (or an
+unauthenticated user) and therefore has view-only access to the application. A
+researcher can search and browse descriptions (published :term:`archival
+descriptions <archival description>`, :term:`authority records <authority
+record>`, :term:`archival institutions <archival institution>`).
 
 *Archival descriptions*
 
@@ -360,12 +362,17 @@ edited without it altering the overall privileges of that group as a whole.
 Default settings: Administrator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-An :term:`administrator` is a type of user who has :term:`access privileges
-<access privilege>` to install or uninstall AtoM, customize AtoM to
-institution-specific requirements or themes, and manage :term:`user
-accounts <user account>` and :term:`user profiles <user profile>` for both
-groups and individual users. By default, administrators are granted permission
-for almost all access privileges.
+An :term:`administrator` is a type of user who has a wide range of :term:`access
+privileges <access privilege>` in AtoM; by default, they are also granted
+permission for almost all access privileges. They can install or uninstall AtoM,
+and import, export, create, read, update, publish, and delete any record in the
+system. Administrators can customize AtoM to institution-specific requirements
+or themes (e.g.: change or edit the theme for a :term:`repository`), set upload
+limits, and can manage :term:`user accounts <user account>` and :term:`profiles
+<user profile>` for both groups and individual users. They can also create new
+user roles, set granular permissions for that role, and then assign or unassign
+users from the new role. For more information on creating a new user role, see
+:ref:`Add a new group <add-group>`.
 
 *Archival descriptions*
 
@@ -449,8 +456,12 @@ edited without it altering the overall privileges of that group as a whole.
 Default settings: Editor
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-An :term:`editor's <editor>` default :term:`access privileges <access
-privilege>` in AtoM are very similar to those of an :term:`administrator`.
+By default an editor can search, browse, create, edit/update, view draft, delete
+and export descriptions and edit :term:`controlled vocabulary`
+:term:`terms <term>`. However, editors do not have access to the administror
+tab. An editor can change the :term:`publication status` of an
+:term:`information object`. An editor can access the :term:`reference
+<reference display copy>` and :term:`master digital object`.
 
 *Archival descriptions*
 
@@ -534,9 +545,13 @@ edited without it altering the overall privileges of that group as a whole.
 Default settings: Contributor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In AtoM, a :term:`contributor` is a type of user who has limited edit
-privileges by default but is nevertheless granted the permission to modify and
-update content as needed.
+By default a :term:`contributor` can search, browse, create, edit/update, view
+draft and export descriptions (published :term:`archival descriptions
+<archival description>`, :term:`authority records <authority record>`,
+:term:`archival institutions <archival institution>`). The contributor
+cannot change the :term:`publication status` of an :term:`information object`. A
+contributor can access the :term:`reference <reference display copy>` and
+:term:`master digital object`.
 
 *Archival descriptions*
 
@@ -622,7 +637,13 @@ Default settings: Translator
 
 Unlike other user types, a translator is a type of user who has permission to
 edit the content in your AtoM system. Their :term:`access privileges <access
-privilege>`, however, are limited to translating and viewing records.
+privilege>`, however, are limited to translating and viewing records. A
+translator can search and browse :term:`published <published record>`
+descriptions and can translate :term:`user interface` elements and
+:term:`database content`.
+
+A translator should be able to view :term:`draft descriptions <draft record>`,
+but not edit them.
 
 *Archival descriptions*
 
@@ -804,9 +825,10 @@ to edit user permissions by archival description.
 
 .. IMPORTANT::
 
-   To limit a user's access privileges to one or more specific archival institutions,
-   the user must **not** be in one of the predefined user groups (i.e. editor or contributor).
-   Instead, ensure that the user's group is listed as *authenticated*.
+   To limit a user's access privileges to one or more specific archival
+   institutions, the user must **not** be in one of the predefined user groups
+   (i.e. editor or contributor). Instead, ensure that the user's group is listed
+   as *authenticated*.
 
 8. A separate window will appear. An :term:`archival description` can be added
    via a :term:`value list` that appears in a :term:`drop-down menu` - as you
@@ -888,9 +910,10 @@ permissions by archival description.
 
 .. IMPORTANT::
 
-   To limit a group's access privileges to one or more specific archival institutions,
-   you need to create a **new group** (or edit an exisiting custom group), rather than
-   edit one of the default user groups (e.g. editor or contributor). See: :ref:`add-group`
+   To limit a group's access privileges to one or more specific archival
+   institutions, you need to create a **new group** (or edit an exisiting custom
+   group), rather than edit one of the default user groups (e.g. editor or
+   contributor). See: :ref:`add-group`
 
 7. To specify a group's access privileges for one or
    more specific :term:`archival descriptions <archival description>`, click on
