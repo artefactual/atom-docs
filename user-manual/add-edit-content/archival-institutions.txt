@@ -420,12 +420,35 @@ description` pages linked to that specific institution.
    information on navigation in AtoM.
 2. Click on the "Edit theme" button in the :term:`button block` at the bottom
    of the archival institution's :term:`edit page`.
+
+.. image:: images/edit-theme-button.*
+   :align: center
+   :width: 70%
+   :alt: An image of the edit theme button in the button block
+
 3. AtoM will reload load the institutions theme :term:`edit page`. From here,
    authenticated users can change the background color, upload a logo
    and/or banner, and add custom content.
+
+.. image:: images/edit-theme-overview.*
+   :align: center
+   :width: 70%
+   :alt: An image of the theme edit page in AtoM
+
 4. In the "Style" area, click on the Background color (you can click on the
    title, the color swatch, or text box showing the :term:`hex color code`).
    A :term:`color picker` will appear as a :term:`drop-down menu`.
+
+.. image:: images/theme-colorpicker.*
+   :align: center
+   :width: 70%
+   :alt: An image of the color picker in the Edit Theme page
+
+.. image:: images/theme-colorpicker2.*
+   :align: right
+   :width: 25%
+   :alt: An closeup of the color picker in the Edit Theme page
+
 5. Select the color that you would like to use as the background for your
    :term:`archival institution` record. This color will appear as the
    background for all related :term:`archival descriptions
@@ -448,6 +471,11 @@ description` pages linked to that specific institution.
    :term:`archival institution` in :term:`view mode`, where you can review how
    the new color looks. If needed, you can repeat steps 2-6 until you are
    happy with the selection.
+
+.. image:: images/repository-theme-color.*
+   :align: center
+   :width: 70%
+   :alt: An image of an archival institution with a custom color
 
 .. IMPORTANT::
 
