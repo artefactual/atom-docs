@@ -27,7 +27,7 @@ links menu <quick-links-menu>` in the :term:`main menu` located in the
 
 .. image:: images/about-page.*
    :align: center
-   :width: 80%
+   :width: 70%
    :alt: An image of the About page
 
 .. |info| image:: images/info-sign.png
@@ -93,55 +93,55 @@ Edit the "Home page"
 
 To edit the "Home page" in AtoM:
 
-1. Start by navigating to the :term:`Home page`. Do this by either:
+#. Start by navigating to the :term:`Home page`. Do this by either:
 
-* Clicking on the AtoM :term:`site logo` located in the top-left corner of
-  the AtoM :term:`header bar`;
-* Clicking the |info| :ref:`Quick links menu <quick-links-menu>` in the
-  :term:`main menu` of the :term:`header bar` and selecting  "Home" from the
-  :term:`drop-down menu`; **or**
-* Clicking the |gears| :ref:`Admin <main-menu-admin>` of the
-  :term:`header bar` and selecting "Static pages" from the
-  :term:`drop-down menu`. Once you are directed to the "List page" for
-  :term:`static pages <static page>`, click on the "Welcome" blue menu.
+   * Clicking on the AtoM :term:`site logo` located in the top-left corner of
+     the AtoM :term:`header bar`;
+   * Clicking the |info| :ref:`Quick links menu <quick-links-menu>` in the
+     :term:`main menu` of the :term:`header bar` and selecting  "Home" from the
+     :term:`drop-down menu`; **or**
+   * Clicking the |gears| :ref:`Admin <main-menu-admin>` of the
+     :term:`header bar` and selecting "Static pages" from the
+     :term:`drop-down menu`. Once you are directed to the "List page" for
+     :term:`static pages <static page>`, click on the "Welcome" blue menu.
 
-All three options will direct you to the :term:`Home page` :term:`view page`.
+   All three options will direct you to the :term:`Home page` :term:`view page`.
 
-.. NOTE::
+   .. NOTE::
 
-   Editing the "Title" :term:`field` of the :term:`Home page` will edit the
-   blue menu that you will select in the :term:`static page` "List page" (i.e.
-   if you change "Welcome" to say "Bienvenue", the blue menu in the "List
-   page", as well as the main header of the :term:`Home page` will change to
-   "Bienvenue").
+      Editing the "Title" :term:`field` of the :term:`Home page` will edit the
+      blue menu that you will select in the :term:`static page` "List page"
+      (i.e. if you change "Welcome" to say "Bienvenue", the blue menu in the
+      "List page", as well as the main header of the :term:`Home page` will
+      change to "Bienvenue").
 
-2. To switch from the main :term:`view page` to :term:`edit mode`, click on the
+#. To switch from the main :term:`view page` to :term:`edit mode`, click on the
    :term:`edit button` in the :term:`button block`.
-3. On loading, the `edit page` will display a "Title" :term:`field`, a
+#. On loading, the `edit page` will display a "Title" :term:`field`, a
    :term:`Slug` :term:`field` and a "Content" :term:`field`.
 
-.. IMPORTANT::
+   .. IMPORTANT::
 
-   The :term:`Slug` :term:`field` is a page title referenced by AtoM
-   code to manage URLs; it **cannot be changed** for the :term:`Home page` or
-   the :term:`About page`. However, it can be edited in any static pages that
-   you :ref:`add yourself <add-static-page>`.
+      The :term:`Slug` :term:`field` is a page title referenced by AtoM
+      code to manage URLs; it **cannot be changed** for the :term:`Home page` or
+      the :term:`About page`. However, it can be edited in any static pages that
+      you :ref:`add yourself <add-static-page>`.
 
-4. Add and/or revise data as required.
+#. Add and/or revise data as required.
 
-.. TIP::
+   .. TIP::
 
-   Users can include `HTML <https://en.wikipedia.org/wiki/Html>`__ and inline
-   `CSS <https://en.wikipedia.org/wiki/CSS>`__ code to the "Content"
-   :term:`field` to include any links and special styling. See :ref:`below
-   <styling-static-page>` for information on how to style :term:`static
-   pages <static page>`.
+      Users can include `HTML <https://en.wikipedia.org/wiki/Html>`__ and inline
+      `CSS <https://en.wikipedia.org/wiki/CSS>`__ code to the "Content"
+      :term:`field` to include any links and special styling. See :ref:`below
+      <styling-static-page>` for information on how to style :term:`static
+      pages <static page>`.
 
-5. You can quit the edit process at any time by clicking the "Cancel" button
+#. You can quit the edit process at any time by clicking the "Cancel" button
    in the :term:`button block`; any data already entered will not be saved. Note
    that simply navigating away from the page by any other means, **without first
    clicking "Create"** will also result in no edits being saved.
-6. To save the changes made to the :term:`Home page`, click the
+#. To save the changes made to the :term:`Home page`, click the
    :term:`"Create" button <create button>` located in the :term:`button block`
    at the bottom of the record.
 
@@ -152,53 +152,53 @@ Edit from About page
 
 To edit the :term:`About page` in AtoM:
 
-1. Navigating to the :term:`About page`. You can do this by either:
+#. Navigating to the :term:`About page`. You can do this by either:
 
-* Clicking the |info| :ref:`Quick links menu <quick-links-menu>` in the
-  :term:`main menu` of the :term:`header bar` and selecting  "About" from the
-  :term:`drop-down menu`; **or**
-* Clicking the |gears| :ref:`Admin <main-menu-admin>` of the
-  :term:`header bar` and selecting "Static pages" from the
-  :term:`drop-down menu`. Once you are directed to the "List page" for
-  :term:`static pages <static page>`, click on the "About" blue menu.
+   * Clicking the |info| :ref:`Quick links menu <quick-links-menu>` in the
+     :term:`main menu` of the :term:`header bar` and selecting  "About" from the
+     :term:`drop-down menu`; **or**
+   * Clicking the |gears| :ref:`Admin <main-menu-admin>` of the
+     :term:`header bar` and selecting "Static pages" from the
+     :term:`drop-down menu`. Once you are directed to the "List page" for
+     :term:`static pages <static page>`, click on the "About" blue menu.
 
-Both options will direct you to the :term:`About page` :term:`view page`.
+   Both options will direct you to the :term:`About page` :term:`view page`.
 
-.. NOTE::
+   .. NOTE::
 
-   Editing the "Title" :term:`field` of the :term:`About page` will edit the
-   blue menu that you will select in the :term:`static page` "List page" (i.e.
-   if you change "Welcome" to say "Bienvenue", the blue menu in the "List
-   page", as well as the main header of the :term:`About page` will change to
-   "Bienvenue").
+      Editing the "Title" :term:`field` of the :term:`About page` will edit the
+      blue menu that you will select in the :term:`static page` "List page"
+      (i.e. if you change "Welcome" to say "Bienvenue", the blue menu in the
+      "List page", as well as the main header of the :term:`About page` will
+      change to "Bienvenue").
 
-2. To switch from the main :term:`view page` to :term:`edit mode`, click on the
+#. To switch from the main :term:`view page` to :term:`edit mode`, click on the
    :term:`edit button` in the :term:`button block`.
-3. On loading, the `edit page` will display a "Title" :term:`field`, a
+#. On loading, the `edit page` will display a "Title" :term:`field`, a
    :term:`Slug` :term:`field` and a "Content" :term:`field`.
 
-.. IMPORTANT::
+   .. IMPORTANT::
 
-   The "Slug" :term:`field` is a page title referenced by AtoM code
-   to manage URLs; it **cannot be changed** for the :term:`Home page` or the
-   :term:`About page`. However, it can be edited in any static pages that you
-   :ref:`add yourself <add-static-page>`.
+      The "Slug" :term:`field` is a page title referenced by AtoM code
+      to manage URLs; it **cannot be changed** for the :term:`Home page` or the
+      :term:`About page`. However, it can be edited in any static pages that you
+      :ref:`add yourself <add-static-page>`.
 
-4. Add and/or revise data as required.
+#. Add and/or revise data as required.
 
-.. TIP::
+   .. TIP::
 
-   Users can include `HTML <https://en.wikipedia.org/wiki/Html>`__ and inline
-   `CSS <https://en.wikipedia.org/wiki/CSS>`__ code to the "Content"
-   :term:`field` to include any links and special styling. See :ref:`below
-   <styling-static-page>` for information on how to style :term:`static
-   pages <static page>`.
+      Users can include `HTML <https://en.wikipedia.org/wiki/Html>`__ and
+      inline `CSS <https://en.wikipedia.org/wiki/CSS>`__ code to the "Content"
+      :term:`field` to include any links and special styling. See :ref:`below
+      <styling-static-page>` for information on how to style :term:`static
+      pages <static page>`.
 
-5. You can quit the edit process at any time by clicking the "Cancel" button
+#. You can quit the edit process at any time by clicking the "Cancel" button
    in the :term:`button block`; any data already entered will not be saved. Note
    that simply navigating away from the page by any other means, **without first
    clicking "Create"** will also result in no edits being saved.
-6. To save the changes made to the :term:`Home page`, click the
+#. To save the changes made to the :term:`Home page`, click the
    :term:`"Create" button <create button>` located in the :term:`button block`
    at the bottom of the record.
 
@@ -220,23 +220,23 @@ content, categories, and/or contributors.
 
 To add a new static page in AtoM:
 
-1. Click the the |gears| :ref:`Admin <main-menu-admin>` in the
+#. Click the the |gears| :ref:`Admin <main-menu-admin>` in the
    :term:`header bar` and select "Static pages" from the :term:`drop-down menu`.
-2. You will be directed to a "List pages" page, where all :term:`static pages
+#. You will be directed to a "List pages" page, where all :term:`static pages
    <static page>`, including the :term:`Home page` and the :term:`About page`
    will be listed.
-3. Click on the :term:`Add new button` in the :term:`button block` to be
+#. Click on the :term:`Add new button` in the :term:`button block` to be
    directed to the :term:`edit page` for your new static page.
-4. On loading, the `edit page` will display blank "Title", :term:`Slug` and
+#. On loading, the `edit page` will display blank "Title", :term:`Slug` and
    "Content" :term:`fields <field>`. Add data as required.
 
-.. TIP::
+   .. TIP::
 
-   The :term:`slug` indicates the word, or sequence of words that will be
-   visible to users in the URL link when they are navigating on a specific
-   :term:`static page` (e.g.: the slug in the URL *www.artefactual.com/help* is
-   */help*). The slug should be indicative of the content of that specific
-   static page.
+      The :term:`slug` indicates the word, or sequence of words that will be
+      visible to users in the URL link when they are navigating on a specific
+      :term:`static page` (e.g.: the slug in the URL *www.artefactual.com/help*
+      is */help*). The slug should be indicative of the content of that
+      specific static page.
 
    When creating a new :term:`static page`, the :term:`slug` :term:`field` can
    either be customized or left blank. If you choose to customize the
@@ -255,27 +255,27 @@ To add a new static page in AtoM:
    switching from the :term:`view page` to the :term:`edit page` of that
    :term:`static page`.
 
-.. WARNING::
+   .. WARNING::
 
-   A :term:`slug` cannot be duplicated once it has been generated in AtoM.
-   If you duplicate a slug, AtoM will automatically generate a "-2 (or the next
-   subsequent number) at the end of the slug to distinguish it from the other
-   one in the same name (e.g.: Two slugs titled *information* will result in the
-   second of the two becoming *information-2*). If you remove an AtoM
-   automatically generated :term:`slug` from the slug :term:`field` of a
-   :term:`static page` you've created, AtoM will not re-generate the original
-   slug, regardless of whether or not the "Title" of your page has changed;
-   rather, it will generate a new slug in the form of a series of letters and
-   numbers. **This should be avoided**, as it creates confusion because it does
-   not accurately indicate the content of that :term:`static page`. To avoid
-   this, simply enter a custom :term:`slug`.
+      A :term:`slug` cannot be duplicated once it has been generated in AtoM. If
+      you duplicate a slug, AtoM will automatically generate a "-2 (or the next
+      subsequent number) at the end of the slug to distinguish it from the other
+      one in the same name (e.g.: Two slugs titled *information* will result in
+      the second of the two becoming *information-2*). If you remove an AtoM
+      automatically generated :term:`slug` from the slug :term:`field` of a
+      :term:`static page` you've created, AtoM will not re-generate the original
+      slug, regardless of whether or not the "Title" of your page has
+      changed; rather, it will generate a new slug in the form of a series
+      of letters and numbers. **This should be avoided**, as it creates
+      confusion because it does not accurately indicate the content of that
+      :term:`static page`. To avoid this, simply enter a custom :term:`slug`.
 
-5. You can quit the creation process at any time by clicking the "Cancel" button
+#. You can quit the creation process at any time by clicking the "Cancel" button
    in the :term:`button block`; any changes made will not be saved. Note that
    simply navigating away from the page by any other means, **without first
    clicking "Save"** will also result in no new :term:`static page` being
    created.
-6. When you are finished creating your new :term:`static page`, click the "Save"
+#. When you are finished creating your new :term:`static page`, click the "Save"
    button in the :term:`button block`.
 
 You will be directed to the :term:`view page` of the new :term:`static page`
@@ -342,9 +342,9 @@ Headers and subtitles
 ---------------------
 
 To increase the size of a heading or subtitle, wrap the relevant text in
-**<h3> </h3>** tags, like so:
+``<h3> </h3>`` tags, like so:
 
-.. epigraph::
+.. code-block:: bash
 
    <h3>For more information, please contact</h3>.
 
@@ -352,14 +352,14 @@ This will produce the following results:
 
 .. image:: images/larger-headings.*
    :align: center
-   :width: 80%
+   :width: 70%
    :alt: An image of a larger heading
 
 For larger headings, use smaller numbers, such as <h2> or <h1>. Similarly, for
-smaller headers, use <h4> or <h5>. To bold, italicize or underline headers and
-subtitles, simply wrap the relevant text in
-**<b></b>** for **bold**, **<i> </i>** for *italics*, or **<u> </u>** for
-underline. Typing **<b>Artefactual Systems Inc.</b>** will produce the following
+smaller headers, use ``<h4>`` or ``<h5>``. To bold, italicize or underline
+headers and subtitles, simply wrap the relevant text in
+``<b></b>`` for **bold**, ``<i> </i>`` for *italics*, or ``<u> </u>`` for
+underline. Typing ``<b>Artefactual Systems Inc.</b>`` will produce the following
 results:
 
 .. image:: images/headings-subtitles.*
@@ -373,15 +373,15 @@ Hyperlinks
 ----------
 
 To create external links on an AtoM static page, wrap the text you would like to
-act as a link in a hyperlink **<a> </a>** tag, and include the web
-address to which you would like the link to point, using the **href=" "**
+act as a link in a hyperlink ``<a> </a>`` tag, and include the web
+address to which you would like the link to point, using the ``href=" "``
 attribute - the http address would go in the quotations. Remember to close the
 element after the text you want to link.
 
 For example, to include a link in the "Contact Us" page, the code would
 appear as such:
 
-.. epigraph::
+.. code-block:: bash
 
    Website: <a href="https://www.accesstomemory.org/en/">AtoM : Open Source
    Archival Description Software</a>
@@ -390,7 +390,7 @@ The above code would appear like this on the static page:
 
 .. image:: images/hyperlinks.*
    :align: center
-   :width: 80%
+   :width: 70%
    :alt: An image of a hyperlink
 
 .. _static-image:
@@ -401,21 +401,22 @@ Images
 If you have access to the server on which your AtoM instance is located (i.e.,
 if you are hosting it yourself, or can ask the host provider to include a file
 for you), you can place images in a directory on the host server, and use a
-local URL to point to them. Images can then be used via the HTML **<img>**
-image element, where the **src=" "** attribute points to the
+local URL to point to them. Images can then be used via the HTML ``<img>``
+image element, where the ``src=" "`` attribute points to the
 path of the image, similar to how the hyperlinks are used above. For example, if
 you wanted an image of email, named "contact-image.jpg" included on your static
 "Contact Us" page, the code might look like this:
 
-.. epigraph::
+.. code-block:: bash
 
-   <img src=".../path/to/contact-image.jpg">, where "/path/to" represents the
-   internal URL path to the location of contact-image.jpg on your host server.
+   ``<img src=".../path/to/contact-image.jpg">``, where "/path/to" represents
+   the internal URL path to the location of contact-image.jpg on your host
+   server.
 
-To center the image, you can wrap the **<img>** image element in **<center>**
+To center the image, you can wrap the ``<img>`` image element in ``<center>``
 tags, like this:
 
-.. epigraph::
+.. code-block:: bash
 
    <center><img src=".../path/to/contact-image.jpg"></center>
 
@@ -424,7 +425,7 @@ tags, like this:
 Boxes and dividers
 ------------------
 
-You can add styled boxes around text by wrapping content in the HTML **<div>**
+You can add styled boxes around text by wrapping content in the HTML ``<div>``
 element, and then using inline CSS to modify the
 appearance of the box. For colors, use the HTML or RGB values for the color you
 would like to use, rather than generic names such as "red," "blue," etc. - most
@@ -436,7 +437,7 @@ values; for example: http://www.colorpicker.com/
 For a small centered box with a green color, you might use code such as
 this:
 
-.. epigraph::
+.. code-block:: bash
 
    <div style="width:600px; margin-left:right; margin-right:right; padding: 5px;
    background-color:#39BF34; border:none;">Here is a list of ways that we can be
@@ -446,13 +447,13 @@ This is how the box will appear:
 
 .. image:: images/boxes.*
    :align: center
-   :width: 80%
+   :width: 70%
    :alt: An image of a box
 
 Another example of this is the light yellow box that appears on AtoM's "Welcome"
 static page warning users that the data will reset every hour.
 
-.. epigraph::
+.. code-block:: bash
 
    <div style="padding: 8px; border-style: solid; border-width: 1px; background-
    color: #fdf5d9; border-color: #eedc94 #eedc94 #e4c652; border-color: rgba(0,
@@ -463,7 +464,7 @@ And here is the result:
 
 .. image:: images/welcome-box.*
    :align: center
-   :width: 80%
+   :width: 70%
    :alt: An image of a box
 
 :ref:`Back to top <manage-static-pages>`
