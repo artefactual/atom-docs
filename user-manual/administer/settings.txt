@@ -7,7 +7,8 @@ Settings
 This section describes how to customize your AtoM application to the
 specific requirements of your own institution or network.
 
-Below, you will find instructions on how to:
+Below, you will find information on the following :term:`information areas
+<information area>`:
 
 * :ref:`Global settings <global-settings>`
 * :ref:`Site information <site-information>`
@@ -41,7 +42,7 @@ If closed, simply click on the "Global" blue menu to open the area and view the
 
 .. image:: images/global-settings.*
    :align: right
-   :width: 100%
+   :width: 70%
    :alt: An image of the Global settings in AtoM
 
 This section will describe each :term:`field` in the "Global"
@@ -164,7 +165,7 @@ counter total value.
 Reference code separator
 ------------------------
 
-The reference code separator is the character seperating hierarchal elements in
+The reference code separator is the character separating hierarchal elements in
 a reference code. By default, the reference code separator appears as a dash "-"
 in AtoM.
 
@@ -313,7 +314,8 @@ SWORD deposit directory
 In 1.3 release, the SWORD deposit directory is being used to support packages
 deposited by Archivematica into AtoM. (In future releases we will use this
 protocol to interact with other systems.) Developers interested learning more
-about Sword can visit : [insert link].
+about SWORD can click `here
+<https://www.qubit-toolkit.org/wiki/SWORD#Packaging_formats_supported>`__.
 
 :ref:`Back to top <settings>`
 
@@ -323,15 +325,34 @@ about Sword can visit : [insert link].
 Site information
 ================
 
+In this section, :term:`administrators <administrator>` can change the site
+title and site description. To save any modifications, be sure to click "Save"
+button located below the "Site Description" field.
+
+.. image:: images/site-information.*
+   :align: right
+   :width: 70%
+   :alt: An image of the Site information menu in AtoM
 
 :ref:`Back to top <settings>`
-
 
 .. _default-page-elements:
 
 Default page elements
 =====================
 
+This section allows :term:`administrators <administrator>` to enable or disable
+certain page elements. Unless they have been overridden by a specific theme,
+these settings will be used site-wide.
+
+.. image:: images/default-page-elements.*
+   :align: right
+   :width: 70%
+   :alt: An image of the Default page elements menu in AtoM
+
+Simply check or uncheck boxes to modify the current settings of your site.
+
+For more information on page elements, see `Themes & Theming <themes-theming>`.
 
 :ref:`Back to top <settings>`
 
@@ -340,12 +361,100 @@ Default page elements
 Default templates
 =================
 
+AtoM ships with default page layouts ("templates") for viewing and editing
+:term:`archival descriptions <archival description>`, :term:`authority records
+<authority record>`, and :term:`archival institutions <archival
+institution>`. For more information on the standards on which these
+templates are based, see :ref:`descriptive-standards`.
+
+.. image:: images/default-template.*
+   :align: right
+   :width: 70%
+   :alt: An image of the Default template menu in AtoM
+
+The "Name" column shows the types of :term:`entities <entity>` that are
+described in AtoM: "Archival descriptions", "Authority records" and "Repository
+records". :term:`Drop-down menus <drop-down menu>` of descriptive standards for
+each are provided under the "Value" column. These drop-down menus
+term:`Administrators <administrator>` may select one for each entity.
+
+Once changes have been saved, records on the site will be able to be viewed in
+the templates that have been selected.
+
 :ref:`Back to top <settings>`
 
 .. _user-interface-labels:
 
 User interface labels
 =====================
+
+Users of AtoM interact with six main :term:`entities <entity>`: :term:`accession
+records <authority record>`, :term:`archival descriptions <archival
+description>`, :term:`authority records <authority record>`, :term:`archival
+institutions <archival institution>`, :term:`functions <function>` and
+:term:`terms <term>`.
+
+.. seealso::
+
+   * :ref:`entity-types`
+   * :ref:`recurring-facet-filters`
+
+AtoM is flexible enough to support descriptions of other types of cultural
+materials in addition to library holdings (such as archival, museum, and art
+gallery materials). The code, therefore, uses generic terms for entities.
+:term:`Administrators <administrator>` can specify how they want these
+:term:`terms <term>` to appear in the :term:`user interface` labels. The default
+labels that ship with AtoM represent an archives-specific "theming" of the
+labels.
+
+Changes made here:
+
+.. image:: images/user-interface-label.*
+   :align: right
+   :width: 70%
+   :alt: An image of the User interface labels menu in AtoM
+
+will alter the titles that appear here:
+
+.. image:: images/facet-filters-archdesc.*
+   :align: right
+   :width: 70%
+   :alt: Facet filters available on an archival description browse page
+
+The "Name" column shows the generic entity name and the "Value" column
+shows AtoM's default user interface labels. The following is a list of the
+generic terms and their AtoM user interface labels. Click on each label below to
+see glossary definitions and descriptions of how the terms are used in AtoM.
+
+* informationobject: :term:`archival description`
+* actor: :term:`Authority record`
+* creator: :term:`Creator`
+* repository: :term:`Archival institution`
+* function: :term:`Function`
+* term: :term:`Term`
+* subject: :term:`Subject`
+* collection: :term:`Fonds`
+* holdings: :term:`Holdings`
+* place: :term:`Place`
+* name: :term:`Name`
+* digitalobject: :term:`Digital object`
+* physicalobject: :term:`Physical storage`
+* mediatype: :term:`Media type`
+* materialtype: Material type (general material designations used in the
+  :ref:`Canadian Rules for Archival Description <rad-template>`).
+* facetstitle: :term:`facets title`
+
+:term:`User interface <user interface>` labels can be changed by
+:term:`administrators <administrator>` by entering a new label(s) into the
+:term:`field(s) <field>` under the "Value" column. Changes will only be
+saved once the "Save" button is clicked.
+
+.. NOTE::
+
+   Changing the user interface labels will *not* automatically change the
+   corresponding labels in the navigation menus. To change these menus, go to
+   **Admin > Menus**. See the :ref:`Manage menus <manage-menus>` page for more
+   information.
 
 :ref:`Back to top <settings>`
 
@@ -354,6 +463,76 @@ User interface labels
 Add/Remove languages
 ====================
 
+As of the 2.0.0 release of AtoM, Artefactual has begun using Transifex to
+manage the translations of its English content in various other languages.
+Transifex is a version-control system and repository that allows Artefactual to
+manage translation quality without havint to worry about spreadsheets, emails
+and FTP servers. It also allows for extended collaboration with AtoM users and
+contributors; all translations of the original AtoM website are completed by
+volunteers outside the organization. For more information on Transifex, visit
+their `website <https://www.transifex.com/>`__. The latest update of translated
+strings in AtoM is available
+`here <https://www.transifex.com/projects/p/atom/r/2/>`__
+
+.. image:: images/add-remove-languages.*
+   :align: right
+   :width: 70%
+   :alt: An image of the add/remove languages menu in AtoM
+
+The language menu will display the languages that are currently available in
+your AtoM application; the current (active) language is underlined.
+
+.. |delete| image:: images/xdelete.png
+   :height: 18
+   :width: 18
+
+.. |globe| image:: images/globe.png
+   :height: 18
+   :width: 18
+
+**To add a language:**
+
+#. Select a language from the :term:`drop-down menu` located under "Language
+   code".
+#. Click the "Add" button.
+#. AtoM adds the language and refreshes the page; the added language will now
+   appear in the "Add/remove languageA section in "Settings", as well as in the
+   :term:`drop-down menu` of the |globe| :term:`language navigation menu
+   <language menu>` located at the top right corner of the :term:`header bar`.
+
+.. NOTE::
+
+   It is possible that some languages will be supported in AtoM (i.e. they will
+   appear when added to the "Add/remove language" section in "Settings"), but
+   not all of the English content will have been translated in its entirety
+   (i.e. if the language is selected from the **Language menu** in the
+   :term:`header bar`, content that has not yet been translated will remain in
+   English).
+
+To continue adding languages, repeat these steps as required.
+
+.. NOTE::
+
+   If a user selects a language that is not currently supported (i.e., where
+   the content has not yet been translated through Transifex), AtoM will
+   refresh the settings screen without implementing any changes.
+
+**To remove a language:**
+
+#. Click the delete |delete| located in the third (blank) column next to the
+   language.
+#. AtoM will delete the language and refresh the page; the deleted language will
+   no longer appear in the "Add/remove language" section in "Settings", nor in
+   the :term:`drop-down menu` of the |globe| :term:`language navigation menu
+   <language menu>` located at the top right corner of the :term:`header bar`.
+
+To continue removing languages, repeat these steps as required.
+
+.. seealso:
+
+   * :ref:`choose-language`
+   * :ref:`default-language`
+   * :ref:`language-menu`
 
 :ref:`Back to top <settings>`
 
@@ -363,6 +542,71 @@ Add/Remove languages
 OAI repository
 ==============
 
+OAI (or Open Archives Initiative) is a protocol for metadata harvesting that
+allows for the automatic data harvesting and crawling within other systems that
+support OAI harvesters. For more information on OAI, visit the `OAI-PMH wiki
+<https://www.qubit-toolkit.org/wiki/OAI-PMH>`__.
+
+.. image:: images/oai-repository.*
+   :align: right
+   :width: 70%
+   :alt: An image of the OAI repository menu in AtoM
+
+Below, you will find information on the following :term:`information areas
+<information area>`:
+
+* :ref:`Enable OAI <enable-oai>`
+* :ref:`OAI repository code <oai-repository-code>`
+* :ref:`OAI repository identifier <oai-repository-identifier>`
+* :ref:`Sample OAI identifier <sample-oai-identifier>`
+* :ref:`Resumption token limit <resumption-token-limit>`
+
+.. WARNING::
+
+   This feature was developped for earlier versions of AtoM and has not been
+   tested in AtoM 2.x. We hope to improve OAI features in future version
+   releases of AtoM.
+
+.. _enable-oai:
+
+Enable OAI
+----------
+
+Select "yes" if you want the system to act as an OAI repository and respond to
+OAI harvesting requests.
+
+.. _oai-repository-code:
+
+OAI repository code
+-------------------
+
+An alpha-numeric code can be added in the value field to uniquely identify this
+particular OAI repository within its network domain to create a unqiue, OAI
+compliant identifier.
+
+.. _oai-repository-identifier:
+
+OAI repository identifier
+-------------------------
+
+This is an auto-generated setting that produces an OAI compliant repository
+identifier, which includes OAI repository code value if it is set.
+
+.. _sample-oai-identifier:
+
+Sample OAI identifier
+---------------------
+
+This is an example of the auto-generated, OAI compliant identifier which is
+created for each item in this particular OAI repository.
+
+.. _resumption-token-limit:
+
+Resumption token limit
+----------------------
+
+This relates to the number of :term:`entities <entity>` to include in a single
+OAI response list before inserting a resumption token.
 
 :ref:`Back to top <settings>`
 
@@ -372,6 +616,20 @@ OAI repository
 Job scheduling
 ==============
 
+In Release 1.3, job scheduling was introduced, using `Gearman
+<http://gearman.org/>`__, to make AtoM capable of running applications in the
+background. At present, the only process that makes use of this feature is
+SWORD.
+
+.. image:: images/job-scheduling.*
+   :align: right
+   :width: 70%
+   :alt: An image of the Job scheduling menu in AtoM
+
+In future releases, we plan to extend the capabilities of job scheduling to
+allow :term:`administrators <administrator>` to upload digital objects (e.g.,
+large video files) and close their browser while continuing to run the upload
+process.
 
 :ref:`Back to top <settings>`
 
@@ -380,5 +638,35 @@ Job scheduling
 Security panel
 ==============
 
+The "Security panel" was a new Security feature provided in the 1.3 Release of
+AtoM.
+
+The application ships with default values of "no", but an :term:`administrator`
+can select "yes" and increase security.
+
+.. image:: images/security-panel.*
+   :align: right
+   :width: 70%
+   :alt: An image of the add/remove languages menu in AtoM
+
+Below is a an brief explanation of each :term:`information area`:
+
+* "Limit adminsitrator functionality to one or more IP addresses, separated by
+  semicolons": limits incoming requests for all administrator functionality to
+  an IP address or an IP range. Two examples:
+
+  * 192.168.0.1
+  * 192.168.0.1;192.168.0.255
+
+* "Require SSL for all administrator functionality": see `TLS
+  <https://www.qubit-toolkit.org/wiki/TLS>`__ for more details
+* "Require strong passwords": enhance login validation to force use of strong
+  passwords. At least 8 characters long, containing characters from 3 of the
+  following classes:
+
+  #. Upper case letters
+  #. Lower case letters
+  #. Numbers
+  #. Special characters
 
 :ref:`Back to top <settings>`
