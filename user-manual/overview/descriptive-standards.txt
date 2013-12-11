@@ -1,3 +1,5 @@
+.. _descriptive-standards:
+
 =====================
 Descriptive standards
 =====================
