@@ -41,7 +41,7 @@ If closed, simply click on the "Global" blue menu to open the area and view the
 :term:`fields <field>`.
 
 .. image:: images/global-settings.*
-   :align: right
+   :align: center
    :width: 70%
    :alt: An image of the Global settings in AtoM
 
@@ -330,7 +330,7 @@ title and site description. To save any modifications, be sure to click "Save"
 button located below the "Site Description" field.
 
 .. image:: images/site-information.*
-   :align: right
+   :align: center
    :width: 70%
    :alt: An image of the Site information menu in AtoM
 
@@ -346,7 +346,7 @@ certain page elements. Unless they have been overridden by a specific theme,
 these settings will be used site-wide.
 
 .. image:: images/default-page-elements.*
-   :align: right
+   :align: center
    :width: 70%
    :alt: An image of the Default page elements menu in AtoM
 
@@ -368,7 +368,7 @@ institution>`. For more information on the standards on which these
 templates are based, see :ref:`descriptive-standards`.
 
 .. image:: images/default-template.*
-   :align: right
+   :align: center
    :width: 70%
    :alt: An image of the Default template menu in AtoM
 
@@ -410,14 +410,14 @@ labels.
 Changes made here:
 
 .. image:: images/user-interface-label.*
-   :align: right
+   :align: center
    :width: 70%
    :alt: An image of the User interface labels menu in AtoM
 
 will alter the titles that appear here:
 
-.. image:: images/facet-filters-archdesc.*
-   :align: right
+.. image:: images/facet-filters.*
+   :align: center
    :width: 70%
    :alt: Facet filters available on an archival description browse page
 
@@ -475,7 +475,7 @@ strings in AtoM is available
 `here <https://www.transifex.com/projects/p/atom/r/2/>`__
 
 .. image:: images/add-remove-languages.*
-   :align: right
+   :align: center
    :width: 70%
    :alt: An image of the add/remove languages menu in AtoM
 
@@ -548,7 +548,7 @@ support OAI harvesters. For more information on OAI, visit the `OAI-PMH wiki
 <https://www.qubit-toolkit.org/wiki/OAI-PMH>`__.
 
 .. image:: images/oai-repository.*
-   :align: right
+   :align: center
    :width: 70%
    :alt: An image of the OAI repository menu in AtoM
 
@@ -622,7 +622,7 @@ background. At present, the only process that makes use of this feature is
 SWORD.
 
 .. image:: images/job-scheduling.*
-   :align: right
+   :align: center
    :width: 70%
    :alt: An image of the Job scheduling menu in AtoM
 
@@ -645,7 +645,7 @@ The application ships with default values of "no", but an :term:`administrator`
 can select "yes" and increase security.
 
 .. image:: images/security-panel.*
-   :align: right
+   :align: center
    :width: 70%
    :alt: An image of the add/remove languages menu in AtoM
 
