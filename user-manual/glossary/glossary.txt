@@ -586,12 +586,20 @@ Glossary
     as filters, facets allow a user to access and order query (search or
     browse) results in multiple ways dynamically.
 
-    In AtoM facet filters are available to users on search and browse pages as
+    In AtoM, facet filters are available to users on search and browse pages as
     a means of grouping and narrowing results. They are drawn from available
     :term:`fields <field>` within the :ref:`entity type <entity-types>` being
     browsed or searched. For further information and usage, see:
-    :ref:`recurring-facet-filters`. See also: :ref:`Browse <browse>`,
-    :ref:`search-atom`, and :ref:`Navigate <navigate>`.
+    :ref:`recurring-facet-filters` and :ref:`settings`. See also:
+    :ref:`Browse <browse>`, :ref:`search-atom`, and :ref:`Navigate <navigate>`.
+
+  Facets title
+
+    The facets title is the text that appear above the list of
+    :term:`facet filter` headings and results. By default, the text appears as
+    "Narrow your results by:". For further information and usage, see:
+    :ref:`recurring-facet-filters` and :ref:`settings`. See also:
+    :ref:`Browse <browse>`, :ref:`search-atom`, and :ref:`Navigate <navigate>`.
 
   Field
     A field is a container for a :term:`data element`. Content is added to
