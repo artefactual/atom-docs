@@ -508,8 +508,20 @@ Add a logo for an archival institution
     information on navigation in AtoM.
 2.  Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit theme"
     button in the :term:`button block`.
+
+.. image:: images/edit-theme-button.*
+   :align: center
+   :width: 70%
+   :alt: An image of the edit theme button in the button block
+
 3.  From here, authenticated users can upload a logo. In the "Style" area, under
-    the "Logo" :term:`field`, click the "Choose file" button.
+    the "Logo" :term:`field`, click the "Browse" button.
+
+.. image:: images/upload-logo-area.*
+   :align: center
+   :width: 70%
+   :alt: An image of the logo upload in the Style area
+
 4.  A separate window will open; select the image on your computer that you'd
     like to add as the logo for the institution. Note that AtoM supports only
     specific sizing requirements with regards to the logo images (:ref:`See
@@ -522,10 +534,10 @@ Add a logo for an archival institution
    AtoM requires that the image uploaded as the institution logo be in **PNG
    format**. The image cannot exceed **256k in size**. If the image selected for
    upload does not meet these requirements, you will receive an error message
-   reading *"Invalid mime type"* will appear below the "Logo" :term:`field`
-   after clicking the "Save" button.
+   below the "Logo" :term:`field` after clicking the "Save" button, and your
+   upload will **not** be saved.
 
-   Ideally, the image size should be between a **200x200** and **270x270 pixels
+   Ideally, the image size should be between **200x200** and **270x270 pixels
    square**. If the image you upload does not meet these sizing specifications,
    it will be automatically cropped by :ref:`ImageMagick <other-dependencies>`
    to meet the requirements listed above.
@@ -540,12 +552,22 @@ Add a logo for an archival institution
     in :term:`view mode`, where you can review the logo. If needed, you can
     repeat step 2 through 4 until you are happy with the selection.
 
+.. image:: images/upload-logo.*
+   :align: center
+   :width: 70%
+   :alt: An image of a user uploading a logo
+
 Once uploaded, the logo will appear above the "Upload limit" section of the
 :ref:`Context menu <recurring-context-menu>`, in the top left-hand corner of
 the archival institution’s :term:`view page`. This logo will also appear when
 :doc:`browsing <../access-content/browse>` archival institutions in AtoM,
 appearing above the name of the archival institution, as well as on any
 :term:`archival description` page linked to the archival institution.
+
+.. image:: images/logo-uploaded.*
+   :align: center
+   :width: 70%
+   :alt: An image of an archival institution with an uploaded logo
 
 .. _edit-logo:
 
@@ -559,10 +581,28 @@ Edit/remove an exisiting logo for an archival institution
     :doc:`searching <../access-content/search-atom>` for the archival
     institution - see :ref:`Access content <access-content>` for more
     information on navigation in AtoM.
+
+.. image:: images/edit-logo-bell.*
+   :align: center
+   :width: 70%
+   :alt: An image of an archival institution with an uploaded logo
+
 2.  Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit theme"
     button in the :term:`button block`.
+
+.. image:: images/edit-theme-button.*
+   :align: center
+   :width: 70%
+   :alt: An image of the edit theme button in the button block
+
 3.  From here, navigate to the "Style" area, under the "Logo" :term:`field`,
-    click the "Choose file" button under the exisiting logo.
+    click the "Browse" button under the exisiting logo.
+
+.. image:: images/upload-new-logo.*
+   :align: center
+   :width: 70%
+   :alt: Selecting the "Browse" button to upload a new logo
+
 4.  A separate window will open; select the image on your computer that you'd
     like to replace the existing logo with. See the :ref:`previous section
     <logo-size-requirements>` for direction on AtoM **sizing requirements** for
@@ -576,6 +616,11 @@ Edit/remove an exisiting logo for an archival institution
     current file", located below the existing logo, and click "Save" in
     the :term:`button block` at the bottom of the page. AtoM will reload the
     :term:`archival institution` in :term:`view mode`.
+
+.. image:: images/edit-theme-button.*
+   :align: center
+   :width: 70%
+   :alt: A image of the institution after a successful logo change
 
 .. IMPORTANT::
 
