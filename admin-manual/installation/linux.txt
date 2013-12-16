@@ -75,9 +75,9 @@ After successfully installing Java, proceed to install Elasticsearch:
 
 .. code-block:: bash
 
-   wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.5.deb
-   sudo dpkg -i elasticsearch-0.90.5.deb
-   sudo rm elasticsearch-0.90.5.deb
+   wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.7.deb
+   sudo dpkg -i elasticsearch-0.90.7.deb
+   sudo rm elasticsearch-0.90.7.deb
 
 Make sure that the service has been started:
 
