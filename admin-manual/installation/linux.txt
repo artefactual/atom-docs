@@ -336,9 +336,9 @@ Option 1: Download the tarball
 
 .. code-block:: bash
 
-   wget http://storage.accesstomemory.org/releases/atom-2.0.0.tar.gz
+   wget http://storage.accesstomemory.org/releases/atom-2.0.1.tar.gz
    sudo mkdir /usr/share/nginx/atom
-   sudo tar xzf atom-2.0.0.tar.gz -C /usr/share/nginx/atom --strip 1
+   sudo tar xzf atom-2.0.1.tar.gz -C /usr/share/nginx/atom --strip 1
 
 
 .. _linux-checkout-git:
@@ -357,7 +357,7 @@ Install git:
    sudo mkdir /usr/share/nginx/atom
    sudo git clone http://github.com/artefactual/atom.git /usr/share/nginx/atom
    cd /usr/share/nginx/atom
-   sudo git checkout tags/v2.0.0
+   sudo git checkout tags/v2.0.1
 
 If you are not interested in downloading all the history from git, you could
 also truncate it to a specific number of revisions, e.g.: just one revision
