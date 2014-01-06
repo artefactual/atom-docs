@@ -91,7 +91,7 @@ Add rights to a new Accession record
 Add rights to a new Archival description
 ----------------------------------------
 
-.. figure:: images/archdescription-rights.png
+.. figure:: images/archdescription-rights.*
    :align: right
    :figwidth: 50%
    :width: 100%
