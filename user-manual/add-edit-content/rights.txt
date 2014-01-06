@@ -37,7 +37,8 @@ rights dialog provided through the add/edit template.
 
 Add rights to a new Accession record
 ------------------------------------
-.. figure:: images/accession-rights.*
+
+.. figure:: images/accession-rights.png
    :align: right
    :figwidth: 50%
    :width: 100%
@@ -48,19 +49,19 @@ Add rights to a new Accession record
 
 
 1. Navigate to the :term:`main menu` located in the :term:`header bar`, click
-the "Add" menu and select :term:`accession record` from the
-:term:`drop-down menu`.
+   the "Add" menu and select :term:`accession record` from the
+   :term:`drop-down menu`.
 
 2. AtoM takes you to a blank :term:`edit page` for data entry for an
-:term:`accession record`.
+   :term:`accession record`.
 
 3. On loading, the :term:`edit page` displays the accession record with the
-first :term:`information area` open, Basic info. You can begin entering
-information about your new accession.
+   first :term:`information area` open, Basic info. You can begin entering
+   information about your new accession.
 
 4. To enter Rights information, scroll down the page until you see the
-:term:`information area` titled, Rights area, click on it to access the
-:term:`rights record` dialogue.
+   :term:`information area` titled, Rights area, click on it to access the
+   :term:`rights record` dialogue.
 
 5. Click on the "Add new" button and the default :term:`rights record`
 dialogue box will pop up.
@@ -88,6 +89,7 @@ are editing the rights information, you will click on the blue Save button.
 
 Add rights to a new Archival description
 ----------------------------------------
+
 .. figure:: images/archdescription-rights.png
    :align: right
    :figwidth: 50%
