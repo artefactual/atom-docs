@@ -143,4 +143,18 @@ Add rights to a new Archival description
     description, and you are editing the rights information, you will click
     on the blue Save button.
 
+
+  .. figure:: images/recordrights.*
+   :align: right
+   :figwidth: 50%
+   :width: 100%
+   :alt: View rights added to archival description
+
+   View rights added to archival description.
+
+
+12. In the example provided on the right, you are viewing the completed
+    archival description and can see that a rights record (copyright) has
+    been added.
+
 :ref:`Back to top <rights>`
