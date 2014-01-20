@@ -17,7 +17,7 @@ primary database, especially after operations that affect many records, e.g.
   :term:`archival institution`
 * Doing any bulk search and replace operation
 
-Popluating the search index requires running a symfony command line task,
+Populating the search index requires running a symfony command line task,
 which is located in the root directory of the application.
 
 .. code-block:: bash
