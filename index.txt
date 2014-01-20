@@ -216,6 +216,7 @@ Maintenance
 * :ref:`maintenance-web-analytics`
 * :ref:`maintenance-logging`
 * :ref:`maintenance-monitoring`
+* :ref:`maintenance-populate-search-index`
 * :ref:`maintenance-tuning`
 * :ref:`maintenance-troubleshooting`
 

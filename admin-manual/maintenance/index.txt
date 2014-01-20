@@ -12,5 +12,6 @@ Maintenance
    web-analytics
    logging
    monitoring
+   populate-search-index
    tuning
    troubleshooting
