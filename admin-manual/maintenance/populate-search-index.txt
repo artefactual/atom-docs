@@ -15,7 +15,7 @@ primary database, especially after operations that affect many records, e.g.
 * Moving a large series to a new :term:`parent record`
 * Moving a :term:`Fonds` or :term:`Collection` to a different
   :term:`archival institution`
-* Doing any bulk search a replace in the database
+* Doing any bulk search and replace operation
 
 Popluating the search index requires running a symfony command line task,
 which is located in the root directory of the application.
