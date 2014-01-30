@@ -267,7 +267,7 @@ called :file:`/etc/php5/fpm/pool.d/atom.conf`:
    php_admin_value[apc.shm_size] = 64M
    php_admin_value[apc.num_files_hint] = 5000
    php_admin_value[apc.stat] = 0
-   php_admin_value[session.use-only-cookies] = 1
+   php_admin_value[session.use_only_cookies] = 0
 
    # This is a good place to define some environment variables, e.g. use
    # ATOM_DEBUG_IP to define a list of IP addresses with full access to the
