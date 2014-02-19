@@ -79,6 +79,10 @@ After successfully installing Java, proceed to install Elasticsearch:
    sudo dpkg -i elasticsearch-0.90.11.deb
    sudo rm elasticsearch-0.90.11.deb
 
+.. IMPORTANT::
+
+   AtoM 2.0 doesn't support Elasticsearch 1.0 or newer. Use 0.90.11 instead.
+
 Make sure that the service has been started:
 
 .. code-block:: bash
