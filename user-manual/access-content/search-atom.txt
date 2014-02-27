@@ -732,7 +732,7 @@ Accession records
 
 A dedicated search box for :term:`accession records <accession record>` has
 been provided on the accessions :ref:`browse page <page-type-browse>`.
-In AtoM 2.0.0, this search box will **only return title (i.e. accession number)
+In AtoM 2.0.0, this search box will **only return name (i.e. accession number)
 matches** However, since accessions are by default named using an
 ISO-formated date (YYYY-MM-DD), users can quickly sift through a number of
 results by searching for matches on year and month and day. See the
