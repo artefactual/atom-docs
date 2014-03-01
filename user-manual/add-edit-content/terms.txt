@@ -301,7 +301,7 @@ term through the taxonomies list (see below, :ref:`hierarchical-taxonomies`).
    your :term:`place` or :term:`subject` access point into the relevant
    :term:`field`. Wait a moment and do not press enter immediately - the access
    point fields will auto-complete any matching terms in a :term:`drop-down
-   menu`, allowing you to see if your access point alreadyy exists.
+   menu`, allowing you to see if your access point already exists.
 
 .. figure:: images/access-points-places.*
    :align: center
@@ -328,7 +328,7 @@ term through the taxonomies list (see below, :ref:`hierarchical-taxonomies`).
 
 5. If a matching term does *not* exist, press the Tab key to exit the field,
    or use your cursor. A new term will be created in the related
-   :term:`taxonomy` (e.g. places or subjects).
+   :term:`taxonomy` (e.g. places or subjects) when the description is saved.
 6. You can add multiple terms at a time - when you exit the :term:`field` with
    your cursor, AtoM will provide a new blank field. Repeat steps 4-5 as
    necessary. If you need to **edit** or **remove** a term you have just
@@ -501,7 +501,7 @@ you would like to alter, and entering :term:`edit mode`:
 
 2. Click on the :term:`taxonomy` you want to edit to expand it and view the
    :term:`terms <term>` associated with the taxonomy. You can use the
-   dedidcated search bar on the terms page to search for your term by name,
+   dedicated search bar on the terms page to search for your term by name,
    or you can browse the terms listed in the taxonomy. When you have found
    the term you would like to edit, click on it to navigate to the term's
    :term:`view page`.
@@ -579,7 +579,7 @@ Add/edit a narrower term
    :align: right
    :figwidth: 40%
    :width: 100%
-   :alt: An example of adding new narrower terms to a a place term
+   :alt: An example of adding new narrower terms to a place term
 
    An example of adding new narrower terms to a a place term. In this
    example, cities are being added as narrower terms to "Alberta" (A Canadian
@@ -642,7 +642,47 @@ in viewing.
 
 **To add a related term to an existing term in AtoM:**
 
-TO DO
+1. In the Relationships area of the term's edit page, begin typing the name
+   of the related term into the "Related term" :term:`field`.
+2. As you type, atom will search available term records (those that are part
+   of the same :term:`taxonomy`) and populate the field's :term:`drop-down menu`
+   with matching terms.
+
+.. figure:: images/terms-add-related.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An example of adding a related term to a place term
+
+   An example of adding a related term to an existing term in the subjects
+   taxonomy - "Buildings and structures" is being related to "Architecture"
+
+3. When you see the term you would like to add as a related term, click on it
+   - it will be added to the field. Remeber, you cannot create new terms from
+   this field - they must already exist in AtoM to be added as related terms.
+   For instructions on creating a new term, see :ref:`above <add-term>`.
+4. Once you have selected the related :term:`term` from the
+   :term:`drop-down menu`,  AtoM will provide a new input field below so you can
+   add further related terms. Continue inputting related terms as needed.
+5. If you need to **edit** or **remove** a related term you have just  added,
+   place your cursor to the left of the term - an **X** icon will  appear in
+   place of the bullet next to the term. You can click the **X** to
+   remove the term.
+
+.. figure:: images/remove-related-term.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An image of removing a related term
+
+   Place your cursor to the left of a term to see the option to remove it -
+   the bullet icon will change to an **X** icon. Click to remove the term.
+
+6. When you are finished, click the "Save" button in the :term:`button block`
+   at the bottom of the term's :term:`edit page`. AtoM will redirect you to
+   the term's :term:`view page`, where you can review your changes. You can
+   click the "Edit" button in the button block to make further changes if
+   needed.
 
 :ref:`Back to top <terms>`
 
@@ -651,7 +691,118 @@ TO DO
 Edit an existing term
 =====================
 
-content
+In AtoM, an :term:`administrator` can edit terms in AtoM's taxonomies at any
+time. This can be useful for customizing the values of a
+:term:`controlled vocabulary` to match local descriptive standards, adding
+supplemental information, managing relationships between terms, and more.
+
+.. NOTE::
+
+   AtoM ships with a fixed number of :term:`taxonomies <taxonomy>` containing
+   default values (:term:`terms <term>`). Some terms are locked, i.e. cannot
+   be edited or deleted, because they are used by the application's underlying
+   code. Most terms, however, can be edited or deleted, and all taxonomies can
+   be assigned new terms in addition to any locked values.
+
+**To edit an existing term in AtoM:**
+
+1. In the :term:`main menu` located in the AtoM :term:`header bar`, click the
+   |manage| :ref:`"Manage" <main-menu-manage>` menu and select "Taxonomies"
+   from the :term:`drop-down menu`. AtoM will redirect you to a list of the
+   the :term:`taxonomies <taxonomy>` available in AtoM.
+
+.. image:: images/list-taxonomies.*
+   :width: 80%
+   :align: center
+   :alt: An image of the list taxonomies page
+
+2. Click on the :term:`taxonomy` you want to edit to expand it and view the
+   :term:`terms <term>` associated with the taxonomy. You can use the
+   dedicated search bar on the terms page to search for your term by name,
+   or you can browse the terms listed in the taxonomy. When you have found
+   the term you would like to edit, click on it to navigate to the term's
+   :term:`view page`.
+
+.. figure:: images/repository-types-taxonomy.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An example taxonomy page - the Repository types taxonomy
+
+   An example taxonomy page - the Repository types taxonomy
+
+3. Click on the "Edit" button located in the :term:`button block` at the
+   bottom of the term page to enter :term:`edit mode`. AtoM will redirect you
+   to the term's :term:`edit page`.
+4. See the :ref:`term-data-entry` section for guidance on working with
+   particular fields in the :term:`term` edit template.
+5. See the sections above for instructions on working with the fields in the
+   Relationships area, for :ref:`broader terms <add-broader-term>`,
+   :ref:`related terms <add-related-term>`, and
+   :ref:`narrower terms <add-narrower-term>`.
+6. Make changes to your record as needed. You can cancel the editing process at
+   any time by clicking the "Cancel" button in the :term:`button block` at
+   the bottom of the term :term:`edit page`; no changes will be saved, and
+   you will be redirected to the term's :term:`view page`. Note that
+   navigating away from the edit page **without first clicking Save** will
+   also result in no changes to the term record being saved.
+7. When you are finished with your edits, click the "Save" button in the
+   :term:`button block` at the bottom of the page. AtoM will save your
+   changes and redirect you to the term's :term:`view page` where you can
+   review your work. You can repeat the process as needed by clicking "Edit"
+   again.
+
+.. _edit-subject-place-terms:
+
+Subject and Place terms - an alternate workflow
+-----------------------------------------------
+
+The :term:`Subject` and :term:`Place` terms are often those most frequently
+accessed by AtoM users, as they can be linked to archival descriptions as as
+:term:`access points <access point>`, and are therefore visible to public
+users. To simplify the workflow for authenticated users, two shortcuts to
+access the related taxonomies and terms have been added. The following example
+will use the Subjects Taxonomy, but the instructions are the same in AtoM 2.0
+for the Places Taxonomy.
+
+1. Using the :term:`browse menu` located in the AtoM :term:`header bar`,
+   navigate to **Browse > Subjects**. AtoM will redirect you to the Subjects
+   browse page. For more information on the Browse menu, see: :ref:`browse-menu`.
+   For general information on browsing in AtoM, see :ref:`browse`
+2. The AtoM browse page includes a list of :term:`subjects <subject>` linked
+   to :term:`archival descriptions <archival description>`. At the top-right of
+   the page, you will see a button titled "Manage taxonomy." Clicking this will
+   take you directly to the Subjects taxonomy - i.e. the same as navigating
+   via **Manage > Taxonomies > Subjects**.
+
+.. figure:: images/manage-taxonomy-button.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An image of the manage taxonomy button in the Subjects browse page
+
+   The Manage taxonomy button is a shortcut available to authenticated users
+   on the browse pages of Subjects and Places.
+
+3. Alternately, instead of clicking the Manage taxonomy button in step 2,
+   select a term from the browse page. AtoM will redirect you to a page
+   listing descriptions in which the chosen term has been added as an access
+   point. At the top-right of the page, you will see a button titled "Manage
+   term." Clicking this button will take you directly to the selected term's
+   view page - i.e. the same as navigating via **Manage > Taxonomies >
+   Subjects** and choosing a subject term.
+
+.. figure:: images/manage-term-button.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An image of the manage term button in the Subjects browse page
+
+   The Manage term button is a shortcut available to authenticated users when
+   viewing a specific term via the Subject or Places browse page.
+
+4. From here, you can follow steps 2-7 :ref:`above <edit-term>` as needed to
+   edit your terms.
 
 :ref:`Back to top <terms>`
 
