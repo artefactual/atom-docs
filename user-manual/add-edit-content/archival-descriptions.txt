@@ -101,6 +101,7 @@ see the sections below for more specific instructions on the use of
 
 .. seealso::
 
+   * :ref:`add-term-fly`
    * :ref:`Physical storage <physical-storage>`
    * :ref:`Upload digital objects <upload-digital-objects>`
    * :ref:`Create an archival description from an accession record
@@ -548,7 +549,7 @@ Method 2: Move a description to a different level
 -------------------------------------------------
 
 An authenticated (i.e. logged in) user with the proper permissions (see:
-:ref:`User roles <user-roles>` and :ref:`Edit permissions <edit-permissions>`)
+:ref:`User roles <user-roles>` and :ref:`edit-user-permissions`)
 can also move a description from one level to another, or even from one
 :term:`fonds` or :term:`collection` (or other top-level description), by
 using the "Move" button located in the :term:`button block` of an
@@ -618,7 +619,7 @@ Delete an archival description
 ==============================
 
 An authenticated (i.e. logged in) user with the proper permissions (see:
-:ref:`User roles <user-roles>` and :ref:`Edit permissions <edit-permissions>`)
+:ref:`User roles <user-roles>` and :ref:`edit-user-permissions`)
 can delete an :term:`archival description` at any time, by navigating to the
 description and using the :term:`Delete button` located in the
 :term:`button block`.
