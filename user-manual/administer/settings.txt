@@ -5,7 +5,7 @@ Settings
 ========
 
 This section describes how to customize your AtoM application to the
-specific requirements of your own institution or network.
+specific requirements of your own institution or :term:`network`.
 
 Below, you will find information on the following :term:`information areas
 <information area>`:
