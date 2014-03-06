@@ -145,9 +145,9 @@ or for a :term:`network`.
 * :ref:`Settings <settings>`
 * Themes and theming
 * Default language
-* Site logo
+* :ref:`Site logo <site-logo>`
 * Back up
-* Search for updates
+* :ref:`Search for updates <search-updates>`
 * Global search and replace
 * :ref:`Visible elements <visible-elements>`
 
