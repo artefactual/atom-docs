@@ -1018,8 +1018,8 @@ Glossary
     The site description is a brief description of the site's purpose or
     its contents, that can be optionally included by an
     :term:`administrator` when configuring the :term:`settings <setting>`
-    of an AtoM installation. When made visible via AtoM's :doc:`Settings
-    <../administer/settings>`, the site title appears at the top of the
+    of an AtoM installation. When made visible via AtoM's :ref:`Settings
+    <settings>`, the site title appears at the top of the
     page directly under the :term:`header bar`. It is a configurable
     element - the text can be changed or removed. See
     :ref:`Site information <site-information>` and :ref:`Default page
@@ -1080,7 +1080,7 @@ Glossary
     order is set to "Alphabetic," results are organized A-Z. When results are
     ordered by "Most recent" the most recently added and/or edited records in
     the results will appear at the top of the list, allowing users to discover
-    new or recently updated content. See: :ref:`recurring-sort-button`
+    new or recently updated content. See: :ref:`recurring-sort-button`.
 
   Static page
     Static pages are pages that are designed to look the same each time
