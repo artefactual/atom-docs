@@ -19,7 +19,7 @@ To access the visible elements menu, click on the |gears| :ref:`Admin
 
 .. image:: images/visible-elements.*
    :align: center
-   :width: 70%
+   :width: 90%
    :alt: An image of the Visible elements menu in AtoM
 
 An authenticated (i.e. logged-in) :term:`administrator` can click on the

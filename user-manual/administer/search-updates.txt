@@ -23,6 +23,27 @@ an authenticated (i.e. logged-in) :term:`administrator` can search updates.
    * Select *Creation* for new records
    * Select *Revision* for updated records, or
    * Select *Both* for both.
-#. If searching for *Archival description*, set "Publication status" to search
-   for either *published* or *draft* records, or both (i.e. *All*).
+#. If searching for *Archival description*, set "Publication status" to either
+   *published* or *draft* records, or both (i.e. *All*).
 #. Click the "Search" button.
+
+.. image:: images/search-updates.*
+   :align: center
+   :width: 70%
+   :alt: An image of the Browse newest editions menu in AtoM
+
+Results will display in the right-hand panel. They can be browsed individually
+by clicking on the blue title. :term:`Administrators <administrator>` can then
+Edit, Delete, Add new, Duplicate, or Move descriptions, records, institutions,
+terms or functions by referring to the :term:`button block` at the bottom of the
+page.
+
+.. seealso::
+
+* :ref:`archival-descriptions`
+* :ref:`authority-records`
+* :ref:`archival-institutions`
+* :ref:`terms`
+* :ref:`functions`
+
+:ref:`Back to top <search-updates>`
