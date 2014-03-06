@@ -1,0 +1,33 @@
+.. _site-logo:
+
+=========
+Site logo
+=========
+
+In AtoM, the site logo is the graphic that appears at the top of all pages in
+the left-hand corner of the :term:`header bar`. Clicking on
+the logo will take the user to the :term:`home page`. AtoM ships with
+a default logo that can only be replaced by authenticated (i.e. logged-in)
+:term:`administrators <administrator>` to theme the application to
+their own institution or :term:`network` if desired.
+
+.. seealso::
+
+   * :ref:`navigate`
+   * :ref:`settings`
+   * :ref:`theme-theming`
+
+.. |gears| image:: images/gears.png
+   :height: 18
+   :width: 18
+
+.. TIP::
+
+   Users who do **not** wish to have a logo can remove it by clicking on the
+   |gears| :ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
+   in the :term:`header bar` and selecting "Settings" from the
+   :term:`drop-down menu`. Scroll down to the "Default page elements" and
+   unselect the "Logo" value. This will remove the AtoM logo (or your own logo)
+   from the AtoM header bar. For more information, see :ref:`Settings`.
+
+:ref:`Back to top <site-logo>`
