@@ -5,7 +5,7 @@ Search for updates
 ==================
 
 This section describes how to search for new and updated records in AtoM. Only
-an authenticated (i.e. logged-in) :term:`administrator` can search updates.
+an authenticated (i.e. logged-in) :term:`administrator` can search for updates.
 
 .. |gears| image:: images/gears.png
    :height: 18
