@@ -922,8 +922,8 @@ template, see: :ref:`isdiah-template`.
 
 .. _dedicated-search-places:
 
-|placeicon| Place terms
------------------------
+|subjecticon| Place terms
+-------------------------
 
 A dedicated search box for :term:`Places <Place>` has been provided on the
 authority record :ref:`browse page <page-type-browse>`. A place is a geographic
@@ -995,8 +995,8 @@ In AtoM 2.0.0, this search box will search the following fields of a place:
 
 .. _dedicated-search-subjects:
 
-|subjecticon| Subject terms
----------------------------
+|placeicon| Subject terms
+-------------------------
 
 content
 
