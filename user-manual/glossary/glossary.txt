@@ -159,7 +159,7 @@ Glossary
     <../add-edit-content/authority-records>`.
 
   Boolean search
-    Boolean searching is a particular application of what is known as boolean
+    Boolean searching is a particular application of what is known as Boolean
     logic, a subset of algebra used for creating true/false statements
     originally developed by George Boole, a 19th century English
     mathematician. Since computers operate in binary (using ones and zeroes),
@@ -167,7 +167,7 @@ Glossary
     Boolean expressions use a number of operators, the most common of which
     are AND, OR, and NOT - using Boolean operators in terms of search queries
     (Boolean search) allows a user to limit, widen, or otherwise define a
-    searc in granular terms. Most modern web search engines support boolean
+    search in granular terms. Most modern web search engines support Boolean
     search statements,allowing complex queries to be expressed in human-
     readable form - for example, searching "fonds OR collection" would widen a
     search to include results that have either term in their title. In AtoM,
