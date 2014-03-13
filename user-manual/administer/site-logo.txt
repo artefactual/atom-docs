@@ -12,7 +12,7 @@ AtoM ships with a default logo that can only be replaced by a System
 Administrator (i.e. someone who has access to the the AtoM application files on
 your web server): to do this, replace the file **images/logo.png** in the AtoM
 root directory with the logo for you site. The logo file must be in "Portable
-Network Graphics" (`ICA
+Network Graphics" (`PNG
 <http://en.wikipedia.org/wiki/Portable_Network_Graphics>`__) format and it must
 be called "logo.png".
 
