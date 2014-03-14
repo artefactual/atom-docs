@@ -388,36 +388,36 @@ as a name :term:`access point` in the Access points :term:`information area` of
 the :term:`archival description`. Doing so conforms to the recommendations
 found in :ref:`ISAAR-CPF <isaar-template>` 1.5 and 1.6, and 1.8:
 
-    **1.5** *There are many reasons why separate capture and maintenance of
-    this type of contextual information is a vital component of archival
-    description. The practice enables the linking of descriptions of records
-    creators and contextual information to descriptions of records from the
-    same creator(s) that may be held by more than one repository and to
-    descriptions of other resources such as library and museum materials that
-    relate to the entity in question. Such links improve records management
-    practices and facilitate research.*
+      **1.5** *There are many reasons why separate capture and maintenance of
+      this type of contextual information is a vital component of archival
+      description. The practice enables the linking of descriptions of records
+      creators and contextual information to descriptions of records from the
+      same creator(s) that may be held by more than one repository and to
+      descriptions of other resources such as library and museum materials
+      that relate to the entity in question. Such links improve records
+      management practices and facilitate research.*
 
-    **1.6** *Where a number of repositories hold records from a given source
-    they can more easily share or link contextual information about this
-    source if it has been maintained in a standardized manner. Such
-    standardization is of particular international benefit when the sharing or
-    linking of contextual information is likely to cross national boundaries.
-    The multinational character of past and present record keeping creates the
-    incentive for international standardization which will support the
-    exchange of contextual information. For example, processes such as
-    colonialization, immigration and trade have contributed to the
-    multinational character of recordkeeping.*
+      **1.6** *Where a number of repositories hold records from a given source
+      they can more easily share or link contextual information about this
+      source if it has been maintained in a standardized manner. Such
+      standardization is of particular international benefit when the sharing
+      or linking of contextual information is likely to cross national
+      boundaries. The multinational character of past and present record
+      keeping creates the incentive for international standardization which
+      will support the exchange of contextual information. For example,
+      processes such as colonialization, immigration and trade have
+      contributed to the multinational character of recordkeeping.*
 
-    **1.8** *Archival authority records are similar to library authority
-    records in as much as both forms of authority record need to support the
-    creation of standardized access points in descriptions. The name of the
-    creator of the unit of description is one of the most important of such
-    access points. Access points may rely on the use of qualifiers that are
-    deemed essential to clarify the identity of the entity thus named, so that
-    accurate distinctions may be made between different entities that have the
-    same or very similar names.*
+      **1.8** *Archival authority records are similar to library authority
+      records in as much as both forms of authority record need to support the
+      creation of standardized access points in descriptions. The name of the
+      creator of the unit of description is one of the most important of such
+      access points. Access points may rely on the use of qualifiers that are
+      deemed essential to clarify the identity of the entity thus named, so
+      that accurate distinctions may be made between different entities that
+      have the same or very similar names.*
 
-By generating a :term:`creator` name :term`access point` from an
+By generating a :term:`creator` name :term:`access point` from an
 :term:`authority record`, AtoM thereby supports the linking of :term:`archival
 descriptions <archival description>` related by creator by using a
 standardized name (as access point) drawn from the authority record. Clicking
