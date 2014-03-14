@@ -124,15 +124,15 @@ friendly :term:`user interface`.
    :alt: An image of a user adding search fields using the "Add new criteria"
          button in the Advanced search interface
 
-   * Use AND to combine search terms to narrow your search: e.g. search
-     *vancouver* AND *"city hall"* to return only descriptions that contain both
-     search terms
-   * Use OR to to combine search terms to broaden your search: e.g. search
-     *vancouver* OR *"city hall"* to return descriptions that contain either
-     search term
-   * Use AND NOT to exclude terms: e.g. search *vancouver* NOT *"city hall"* to
-     return descriptions that include vancouver but do not contain the phrase
-     "*city hall*"
+* Use **AND** to combine search terms to narrow your search: e.g. search
+  *vancouver* AND *"city hall"* to return only descriptions that contain both
+  search terms
+* Use **OR** to to combine search terms to broaden your search: e.g. search
+  *vancouver* OR *"city hall"* to return descriptions that contain either
+  search term
+* Use **AND NOT** to exclude terms: e.g. search *vancouver* NOT *"city hall"* to
+  return descriptions that include vancouver but do not contain the phrase
+  "*city hall*"
 
 .. image:: images/advancedsearch-newfields.*
    :align: center
@@ -140,17 +140,68 @@ friendly :term:`user interface`.
    :alt: An image of a user adding search fields using the "Add new criteria"
          button in the Advanced search interface
 
-6. Click "Search" in the :term:`button block` to view the results of your search
+.. image:: images/advanced-search-filters.*
+   :align: right
+   :width: 40%
+   :alt: An image of the advanced search filters
+
+6. You can also add filters to your search to limit the results returned to
+   specific parameters. The functions of each search filter are outlined
+   below:
+
+* **Repository**: Limit the search to the :term:`holdings` of a specific
+  :term:`archival institution`. The :term:`drop-down menu` will be populated
+  by all of the archival institution records in AtoM.
+* **Top-level descriptions**: This is an auto-complete field that will
+  populate with all of the top-level descriptions held in AtoM (generally,
+  :term:`fonds` and :term:`collections <collection>`, but if a series or
+  another level is set as the top level of a descriptive hierarchy, it will
+  be available in the list). Begin typing the title of a top-level
+  description, and the auto-complete will populate the :term:`drop-down menu`
+  with matching selections. Click on one to select it - search results will
+  be limited to :term:`archival descriptions <archival description>` found
+  within the chosen top-level description's descendants - i.e.
+  :term:`children <child record>`.
+* **General material designation**: This is a filter that is particular to a
+  controlled field found within the :term:`RAD template <rad-template>` for
+  archival descriptions - it is a controlled vocabulary drawn directly from
+  the Canadian Rules for Archival Description, and managed in one of AtoM's
+  :term:`taxnomies <taxonomy>` and used to define the type of material found
+  within an :term:`archival unit`. Select a GMD term from the
+  :term:`drop-down menu` to limit search results to descriptions that have
+  been been marked with the matching GMD value.
+* **Media type**: Used to search for a particular type of
+  :term:`digital object`. Values include: Audio, Image, Other, Text, or
+  Video. Selecting a Media type term from the :term:`drop-down menu` to limit
+  search results to include only those descriptions with linked digital
+  objects that match the selected media type.
+* **Digital object available**: Use this filter to determine if a the search
+  results returned include :term:`digital objects <digital object>` (e.g.
+  images, audio or video files, text documents, etc.), or by selecting "No",
+  include only results without digital objects.
+* **Level of description**: This filter will limit the returned search
+  results to a specific :term:`level of description`.
+* **Copyright status**: AtoM :term:`archival description` templates include a
+  "Rights" :term:`information area` that is drawn from elements of the
+  `PREMIS <http://www.loc.gov/standards/premis/>`__
+  (Preservation Medata: Impmlementation Strategies) metadata standard
+  maintained by the U.S. Library of Congress. Through this module, a user can
+  add a copyright status to an archival description (with values including
+  Public Domain, Under copyright, or Unknown). This filter will limit search
+  results to those descriptions where a PREMIS Rights copyright status has
+  been added matching the selection in the filter's :term:`drop-down menu`.
+
+7. Click "Search" in the :term:`button block` to view the results of your search
    query. Results will appear in order of relevance below the button block. If
    there are more than 10 results, a pager will be included at the bottom of the
    results page.
 
-7. Click on the blue titles to navigate to that result's specific page.
+8. Click on the blue titles to navigate to that result's specific page.
    Navigating back will bring you back to your original list of results;
    however, navigating to the "Advanced search" page from the :term:`search
    box` will require you to restart your search from the beginning
 
-8. Your search can be modified at any time and the results refrehsed accordingly
+9. Your search can be modified at any time and the results refrehsed accordingly
    by simply changing the required search :term:`terms <term>` and :term:`fields
    <field>` and clicking "Search" once again. You can also restart your search
    at any time; simply click the "Reset" button in the :term:`button block`.
