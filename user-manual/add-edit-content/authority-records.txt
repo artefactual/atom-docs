@@ -187,6 +187,7 @@ overall) in the application, AtoM behaves in several specific ways:
    * :ref:`term-name-vs-subject`
 
 
+
 .. _create-authority-record:
 
 Create a new authority record
@@ -372,6 +373,10 @@ description, but not its :term:`creator`. Type a new name into a Name
 description` record, AtoM creates a new :term:`authority record` for the
 name.
 
+.. seealso::
+
+   * :ref:`term-name-vs-subject`
+
 .. _add-authority-view-page:
 
 Add a new authority record from an authority record view page
@@ -545,10 +550,9 @@ From the authority record
    of the authority record's :term:`edit page` to save your changes and exit
    :term:`edit mode`.
 9. AtoM will reload the :term:`authority record` in :term:`view mode`.
-   :ref:`Back to top <authority-records>`. The relationship link will appear
-   in the :term:`context menu` on the left-hand side of the page. You can
-   click on the related description's title to navigate to the related
-   :term:`archival description`.
+   The relationship link will appear in the :term:`context menu` on the
+   left-hand side of the page. You can click on the related description's title
+   to navigate to the related :term:`archival description`.
 
 :ref:`Back to top <authority-records>`
 
@@ -574,8 +578,8 @@ Create a relationship between two authority records
    relationship.
 5. The first :term:`field` in the pop-up dialog, "Title of the related
    resource," is an `auto-complete <https://en.wikipedia.org/wiki /Auto-
-   complete>`__ field: as you type, matching results will load in a :term
-   :`drop-down menu` below the field. When you see the
+   complete>`__ field: as you type, matching results will load in a
+   :term:`drop-down menu` below the field. When you see the
    :term:`authority record` you would like to link, click on it to select
    it.
 
