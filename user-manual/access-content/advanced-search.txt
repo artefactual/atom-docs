@@ -230,9 +230,9 @@ interacts with through a
 `REST <https://en.wikipedia.org/wiki/Representational_State_Transfer>`__ ful
 `API <https://en.wikipedia.org/wiki/API>`__.
 
- This provides a number of options for advanced searching from within the
- :term:`search box`. What follows is a list of the most commonly used tools
- available in the AtoM :term:`search box`.
+This provides a number of options for advanced searching from within the
+:term:`search box`. What follows is a list of the most commonly used tools
+available in the AtoM :term:`search box`.
 
 .. _advanced-search-phrases:
 
@@ -342,9 +342,9 @@ search interface.
 |        | containing only the word "paranoid", and will sort them closer to |
 |        | the start of the search results.                                  |
 +--------+-------------------------------------------------------------------+
-|  ` \ ` | Escapes the immediately following character, so that it is        |
+| ``\``  | Escapes the immediately following character, so that it is        |
 |        | treated as text, rather than as a special character. For example, |
-|        | to search for "(1+1):2", use the following: \(1\+1\)\:2           |
+|        | to search for "(1+1):2", use the following: ``\(1\+1\)\:2``       |
 +--------+-------------------------------------------------------------------+
 |  `( )` | Used to group search clauses. This can be useful if you want to   |
 |        | control the precedence of boolean operators for a query, e.g.     |
