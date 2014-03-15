@@ -26,7 +26,7 @@ operators and special characters.
 
    At this time, the Advanced search interface can only be used to search for
    :term:`archival descriptions <archival description>`. To search for other
-   :term:`entity ` types in AtoM (e.g.
+   :term:`entity` types in AtoM (e.g.
    :term:`authority records <authority record>`, etc.), please use the
    Dedicated search boxes provided in the relevant page - for more
    information, see: :ref:`dedicated-search`.
