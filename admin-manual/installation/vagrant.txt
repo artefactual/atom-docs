@@ -196,6 +196,12 @@ The login details are:
 If you are using Windows, the preferred SSH client is
 `PuTTY <http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>`_.
 
+.. TIP::
 
+   If you are a developer who requires access to the MySQL database in AtoM's
+   Vagrant box, here are the credentials:
+
+   * **Username**: ``root``
+   * **Password**: ``root``
 
 
