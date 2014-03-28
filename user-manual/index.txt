@@ -27,6 +27,7 @@ links to each chapter's main sections.
    access-content/search-atom
    access-content/advanced-search
    access-content/navigate
+   import-export/csv-import
    administer/manage-user-accounts
    administer/edit-permissions
    administer/static-pages

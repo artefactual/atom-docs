@@ -345,6 +345,30 @@ Glossary
     can accommodate multiple creators at all levels of description. See
     :ref:`Context area <context-area>`.
 
+  CSV
+    Most often understood as an acronym for "comma-separated values" (though
+    sometimes called "character-separated values" because the separator
+    character does not have to be a comma), CSV is a file format that stores
+    tabular data in plain-text form. Information with common properties that
+    can be expressed as a sequence of fields sharing a common header can be
+    stored in plain-text using the CSV format, making it application agnostic
+    and highly transportable.
+
+    A CSV file consists of a number of records (rows), that have identical
+    fields, separated by commas (or in some cases, another separator). Often a
+    header column (i.e. the cell values in first or top row of a CSV file) is
+    included, naming each column and indicating what kind of data the column
+    contains. Data is then entered using a separator or delimitor (such as a
+    comma) to indicate a separation of fields (or cells), and a line break or
+    carriage return to indicate rows (i.e. different records). Most
+    spreadsheet applications (such as OpenOffice Calc or MS Excel) can open
+    CSV files and express them as a spreadsheet. See
+    `Wikipedia <http://en.wikipedia.org/wiki/Comma-separated_values>`__ for more
+    information on CSV. In AtoM, CSV templates conforming to content standards
+    templates such as :ref:`ISAD(G) <isad-template>` and
+    :ref:`RAD <rad-template>` can be used to migrate large datasets into the
+    application. For more information, see: :ref:`csv-import`.
+
   Current language
     Refers to the language in which the :term:`user interface` elements
     and :term:`database content` are displayed. Users can switch between

@@ -126,6 +126,7 @@ application.
 * Upload digital objects
 * Import descriptions and terms
 * Export descriptions and terms
+* :ref:`CSV import <csv-import>`
 
 .. _administer:
 
