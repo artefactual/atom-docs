@@ -1,0 +1,210 @@
+.. _installation-upgrading:
+
+=========
+Upgrading
+=========
+
+This guide explains how to upgrade from an earlier AtoM release (including
+ICA-AtoM versions 1.1 to 1.3.1 or newer) to |version|.
+
+.. IMPORTANT::
+
+   If you are on an earlier release of ICA-AtoM (older than 1.1), please
+   upgrade to the latest ICA-AtoM release before following these instructions.
+
+While we have tried to make this document usable by readers with a broad range
+of technical knowledge, it may be too complex if you have no previous
+experience with installing web applications or using the Linux command line.
+
+Additionally, consider disabling your web site during the upgrade. Redirect
+your users to a "Down for maintenance" page temporary using your web server
+redirection capabilities, or you can put your site in read-only mode while
+performing the upgrade.
+
+.. _upgrading-requirements:
+
+Check minimum requirements
+==========================
+
+Please refer to the :ref:`Minimum requirements <installation-requirements>`
+page to make sure that your system meets all the requirements. This is
+especially important if you are going to be upgrading from an older version
+of ICA-AtoM (1.1 - 1.3.1 or later), as there will be some new dependencies
+that we will install as part of the upgrade process.
+
+.. _upgrading-release-notes:
+
+Read the release notes
+======================
+
+This is the opportunity to find out what has been changed in the new release,
+and if there are new features, enhancements and bug fixes that may be of
+interest to you and your organization.
+
+As a major release with hundreds of issue tickets closed, made public during a
+time when AtoM is in the process of rewriting its documentation and migrating
+wiki content, the AtoM 2.0.0 release notes were made in a more general form in
+our User forum,
+`here <https://groups.google.com/d/msg/ica-atom-users/_zgOnNxM1mE/ODGTv_Bxox4J>`__.
+
+In the future, we will update these instructions with a consistent place on
+our new wiki (coming soon), where you can always find release notes for the
+latest version of AtoM, as well as those from previous releases.
+
+.. _upgrading-install-atom:
+
+Install the latest version of AtoM
+==================================
+
+Follow the instructions available in our documentation on :ref:`installation`
+- our most comprehensive installation notes are included in the
+:ref:`Linux <installation-linux>` section, with additional information for
+different operating systems and server configurations.
+
+.. IMPORTANT::
+
+   Remember to create a **new** database for this installation. When you run
+   the web installer, it will erase your previous data if you are using the
+   same database!
+
+.. _upgrading-copy-data:
+
+Copy your old data
+==================
+
+At this point, you should have an |version| functional installation using a
+fresh database. Now we are going to copy the contents of the old uploads
+directory as well as the database:
+
+1. `rsync <https://rsync.samba.org/>`__ is a robust directory sync solution
+   that we can use to copy the contents of your old uploads directory to the
+   new one, even when both directories are in the same machine. Using the
+   command-line, enter the following command:
+
+.. code-block:: bash
+
+   $ rsync -av /var/www/icaatom_old/uploads /usr/share/nginx/atom/uploads
+
+Where "icaatom_old" is the name of your old installation. The path included
+for the new installation in this example (/usr/share/nginx/atom) is the path
+we recommend in our installation documentation.
+
+Alternatively, you can just use `cp <https://en.wikipedia.org/wiki/Cp_%28Unix%29>`__:
+
+.. code-block:: bash
+
+   $ cp -r /var/www/icaatom_old/uploads /usr/share/nginx/atom/uploads
+
+2. Dump the contents of your old database to a temporary file:
+
+.. code-block:: bash
+
+   $ mysqldump -u username -p old_database > /tmp/database.sql
+
+3. Now, load the contents into the new database:
+
+.. code-block:: bash
+
+   $ mysql -u username -p new_database < /tmp/database.sql
+
+.. _upgrading-run-upgrade-task:
+
+Run the upgrade task
+====================
+
+This is perhaps the most critical step in the upgrade process. If you
+encounter any errors, please consult our main
+`FAQ <https://www.accesstomemory.org/docs/faq/>`__, search in our `User Forum
+<https://groups.google.com/forum/#!forum/ica-atom-users>`__, or if you don't
+find a solution, feel free to post a question there yourself. We will be
+trying to add to our FAQ as we receive feedback, to help users troubleshoot
+any upgrading issues encountered.
+
+First, change the current directory:
+
+.. code-block:: bash
+
+   $ cd /usr/share/nginx/atom
+
+Now, run the upgrade-sql task:
+
+.. code-block:: bash
+
+   $ php symfony tools:upgrade-sql
+
+.. _upgrading-migrate-translations:
+
+Migrate translations
+====================
+
+.. WARNING::
+
+   At this time, we are troubleshooting challenges in translation migration
+   process from older releases to |version|. Please see issue
+   `#5505 <https://projects.artefactual.com/issues/5505>`__ for progress - we
+   will update this documentation with instructions when the tranlsation
+   migration process has been optimized and tested. Thank you in advance for
+   your patience.
+
+.. _upgrading-regen-digital-objects:
+
+Regenerate the digital object reference and thumbnail images (optional)
+=======================================================================
+
+If you are upgrading from version 1.3.1 or earlier, you may want to regenerate
+the :term:`digital object` :term:`reference <reference display copy>` and
+:term:`thumbnail` images. The thumbnail size was smaller in 1.x, so those
+images will often appear fuzzy in the redesigned digital object browse. A
+directory naming convention has also been added to make the location of the
+:term:`master digital object` more secure.
+
+First, make sure you have not changed the directory (/usr/share/nginx/atom).
+
+Now, run the regen-derivatives task:
+
+.. code-block:: bash
+
+   $ php symfony digitalobject:regen-derivatives
+
+.. _upgrading-rebuild-index-cc:
+
+Rebuild search index and clear cache
+====================================
+
+To make all these changes take effect, you will need to re-index the files
+you've imported into your database, and clear the cache.
+
+First, rebuild the search index:
+
+.. code-block:: bash
+
+   php symfony search:populate
+
+Then, clear your `cache <http://symfony.com/legacy/doc/book/1_0/en/12-Caching>`__
+to remove any out-of-date data from the application:
+
+.. code-block:: bash
+
+   $ php symfony cc
+
+See :ref:`maintenance-clear-cache` for more detailed instructions.
+
+.. _upgrading-use-software:
+
+Start using the software!
+=========================
+
+Congratulations! If you are reading this, it means that you have upgraded your
+data successfully. Now please check that everything is working fine.
+
+.. IMPORTANT::
+
+   Before you put your site in production again, please take a look at your
+   data and check that everything looks good and the data has imported
+   correctly. We will continue to refine this documentation over time to make
+   the upgrade process as smooth as possible, but we still think it is always
+   important to double-check your work. Let us know if you encounter any
+   problems!
+
+
+:ref:`Back to top <installation-upgrading>`

@@ -1,0 +1,43 @@
+.. _security-firewall:
+
+========
+Firewall
+========
+
+It's not in the scope of this document to cover a complex firewall configuration
+for your network. Instead, we are just going to show the easiest way to setup
+a basic firewall for your web server in order to accept HTTP traffic and to
+block any other incoming traffic.
+
+Ubuntu provides a simple firewall configuration tool called
+`ufw <https://wiki.ubuntu.com/UncomplicatedFirewall>`_ which we are going to use
+here. Let's make sure that ufw is installed:
+
+.. code-block:: bash
+
+   sudo apt-get install ufw
+
+Accept connections to HTTP, HTTPS (SSL):
+
+.. code-block:: bash
+
+   sudo ufw allow 80/tcp
+   sudo ufw allow 443/tcp
+
+Allow access to your SSH server:
+
+.. code-block:: bash
+
+   # From any IP
+   sudo ufw allow 22/tcp
+
+   # From a specific IP, e.g. 1.2.3.4
+   sudo ufw allow from 1.2.3.4 to any port 22 proto tcp
+
+You are ready to go. Now we'll activate the firewall:
+
+.. code-block:: bash
+
+   sudo ufw enable
+
+Any change will persist even if you restart the machine.

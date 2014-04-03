@@ -1,0 +1,38 @@
+.. _installation-virtual-appliance:
+
+=================
+Virtual appliance
+=================
+
+You can also run AtoM as a
+`virtual appliance <https://en.wikipedia.org/wiki/Virtual_appliance>`__
+on any operating system. This option allows you to try AtoM on your personal
+computer - if you don't have access to your own server - or on your
+virtualization infrastructure.
+
+A virtual appliance is one file containing a minimal operating system and server
+software. You can "play" this file with a free virtual machine player. When you
+play the virtual appliance, it starts the second operating system and server
+software inside the player, on top of your existing operating system. There is
+no need to reboot or install anything except the player. You can then connect to
+the web server running inside the virtual machine player with your regular web
+browser.
+
+Minimum hardware requirements
+=============================
+
+* Processor: Pentium IV or higher
+* Memory (RAM): 256 MB of unallocated memory
+* Hard drive space: a minimum of 1GB to test the system on a small scale
+
+
+VirtualBox (OVF)
+================
+
+Our virtual appliance uses the industry-standard
+`OVF <https://en.wikipedia.org/wiki/Open_Virtualization_Format>`__
+(Open Virtualization Format) format and it's designed for VirtualBox, although
+other virtualization solutions may be able to import the file successfully. We
+hope to provide appliances for other platforms in the future.
+
+TODO.
