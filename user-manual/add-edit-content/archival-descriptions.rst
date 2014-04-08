@@ -71,6 +71,11 @@ reflect these changes.
    :term:`accession record` - see :ref:`Create an archival description from an
    accession record <create-accession-description>` for more information.
 
+.. image:: images/arch-desc.*
+   :align: center
+   :width: 80%
+   :alt: Example of an archival description in AtoM
+
 **Below are instructions for using the Archival description module in AtoM
 to:**
 
