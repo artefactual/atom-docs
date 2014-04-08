@@ -11,7 +11,7 @@ which is located in the root directory of this project.
 
 .. code-block:: bash
 
-   php symfony clear:cache
+   php symfony cache:clear
 
 Additionally, if :ref:`apc.stat <maintenance-tuning-apc-stat>` is not activated
 in your PHP configuration, you'll also have to clear the opcode cache
