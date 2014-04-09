@@ -67,7 +67,7 @@ This section describes how to add, edit, and delete content in AtoM.
 * :ref:`Rights <rights>`
 * :ref:`Control area <control-area>`
 * :ref:`Terms <terms>`
-* Physical storage
+* :ref:`Physical storage <physical-storage>`
 * :ref:`Exit edit mode <exit-edit-mode>`
 
 .. _access-content:
