@@ -70,8 +70,8 @@ draft, finalized and/or revised...." ISDIAH 5.6.4; ISAAR 5.4.4, ISDF 5.4.4
 
 AtoM has a :term:`drop-down menu` using values drawn from the description
 statuses :term:`taxonomy`; :term:`administrators <administrator>` and
- :term:`editors <editor>` can customize the taxonomy to match institutional
- standards if desired.
+:term:`editors <editor>` can customize the taxonomy to match institutional
+standards if desired.
 
 Level of detail
 ===============
