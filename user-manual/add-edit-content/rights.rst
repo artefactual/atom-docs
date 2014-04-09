@@ -181,6 +181,8 @@ Add rights to a Digital object
    :width: 100%
    :alt: View rights record dialogue box in Edit digital object page
 
+   View rights record dialogue box in Edit digital object page.
+
 
 4. In the example provided on the right, you are viewing the rights dialogue
    for the reference representation of a digital image.
