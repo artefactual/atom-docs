@@ -157,4 +157,56 @@ Add rights to a new Archival description
     archival description and can see that a rights record (copyright) has
     been added.
 
+Add rights to a Digital object
+------------------------------
+
+1. If you have a digital object (e.g., JPEG, PDF, MP3 etc.) associated with
+   an archival description, you can apply Rights information to a single
+   digital object and / or its master, representation and thumbnail versions.
+
+2. After you have imported or linked a digital object to an archival description
+   click on the digital object metadata area to edit (note: do not click on
+   the edit button in the button block).
+
+3. AtoM will open the Edit digital object page and present the Master,
+   Reference and Thumbnail versions of the digital object. Each version has
+   its own Rights records module. To access the :term:`rights record` for each
+   version, you must click on the "Add new" button and the :term:`rights
+   record` dialogue box will pop up.
+
+
+  .. figure:: images/.digitalobject-rights*
+   :align: right
+   :figwidth: 50%
+   :width: 100%
+   :alt: View rights record dialogue box in Edit digital object page
+
+
+4. In the example provided on the right, you are viewing the rights dialogue
+   for the reference representation of a digital image.
+
+5. The "Act" data entry field is a drop-down list. You can select: Delete,
+   Discover, Display, Disseminate, Migrate, Modify, and Replicate.
+
+6. The "Restriction" data entry field provides two choices: Allow or
+   Disallow.
+
+7. You can add a Rights holder name, or select an existing one using the
+   auto-complete action provided by AtoM.
+
+8. You can add a Rights note, describing any additional information about the
+   Rights holder that might not already exist in their Rights holder record.
+
+9. The "Basis" data entry field is a drop-down list. You can select:
+   Copyright, License, Statute, Policy, or Donor. Depending upon your
+   selection, the AtoM Right record dialogue provides additonal data entry
+   fields.
+
+10. Once you complete adding information to the rights record, click on the
+    blue Submit button. You will see that a rights record has been added to
+    the reference representation. Click on the save button at the bottom of
+    the page. AtoM will take you to the archival description page and you can
+    see that a Digital object (Reference) rights area has been added below the
+    Digital object metadata section.
+
 :ref:`Back to top <rights>`
