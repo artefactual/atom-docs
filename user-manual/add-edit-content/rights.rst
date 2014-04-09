@@ -175,7 +175,7 @@ Add rights to a Digital object
    record` dialogue box will pop up.
 
 
-  .. figure:: images/digitalobject-rights*
+  .. figure:: images/digitalobject-rights.*
    :align: right
    :figwidth: 50%
    :width: 100%
