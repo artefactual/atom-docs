@@ -58,7 +58,7 @@ the Manage menu:
 
 .. image:: images/manage-phys-storage.*
    :align: center
-   :width: 80%
+   :width: 40%
    :alt: Accessing physical storage in Manage menu
 
 Once in Browse Physical storage, users have the option of sorting the storage
