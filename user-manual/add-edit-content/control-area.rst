@@ -4,6 +4,11 @@
 Control area
 ============
 
+.. image:: images/control-area.*
+   :align: right
+   :width: 60%
+   :alt: Control area in an archival description
+
 The control area is similar for
 :ref:`archival descriptions <archival-descriptions>` (ISAD and RAD templates
 only), :ref:`authority records <authority-records>`,
@@ -21,12 +26,6 @@ The notes are organized by field, with links to the applicable section(s) of
 the standards. Where there is a one-to-one correspondence between a data element
 in the standard and an AtoM field, the note simply gives the standard rule
 verbatim.
-
-.. image:: images/control-area.*
-   :align: right
-   :width: 60%
-   :alt: Control area in an archival description
-
 
 Description identifier
 ======================
@@ -47,11 +46,32 @@ creating, modifying or disseminating the description or, alternatively,
 record a code for the agency in accordance with the national or international
 agency code standard." ISDIAH 5.6.2, ISAAR 5.4.2, ISDF 5.4.2
 
+.. image:: images/control-area-institution-id.*
+   :align: center
+   :width: 80%
+   :alt: Institution identifier field in the Description control area
+
+.. TIP::
+
+   If you are using the reference-code inheritance option available in **Admin
+   > Settings > Global** (learn more :ref:`here <inherit-reference-code>`),
+   the Institution identifier you have entered on the
+   :ref:`ISDIAH <isdiah-template>` :term:`archival institution` record will
+   appear as part of your inherited reference code. If you are not using the
+   reference code inheritance, this field offers users a way to record the
+   related :term:`repository` identifier with an associated
+   :term:`archival description`.
+
 Rules or conventions
 ====================
 
 "Record the international, national and/or local rules or conventions followed
 in preparing the description." ISAD 3.7.2
+
+.. image:: images/control-area-rules.*
+   :align: center
+   :width: 80%
+   :alt: Rules or conventions field in the Description control area
 
 "Record the names, and where useful the editions or publication dates, of the
 conventions or rules applied. Specify separately which rules have been
@@ -68,10 +88,26 @@ Status
 "Record the current status of the description, indicating whether it is a
 draft, finalized and/or revised...." ISDIAH 5.6.4; ISAAR 5.4.4, ISDF 5.4.4
 
+.. image:: images/control-area-status.*
+   :align: center
+   :width: 80%
+   :alt: Status field in the Description control area
+
 AtoM has a :term:`drop-down menu` using values drawn from the description
-statuses :term:`taxonomy`; :term:`administrators <administrator>` and
-:term:`editors <editor>` can customize the taxonomy to match institutional
-standards if desired.
+statuses :term:`taxonomy`; by default in AtoM this drop-down is populated
+with the following terms:
+
+* Final
+* Revised
+* Draft
+
+.. TIP::
+
+   :term:`Administrators <administrator>` and :term:`editors <editor>` can
+   customize the taxonomy to match institutional standards if desired, adding
+   new terms, or changing/deleting the default terms. For more information, see:
+   :ref:`terms`.
+
 
 Level of detail
 ===============
@@ -80,10 +116,25 @@ Level of detail
 of detail in accordance with relevant international and/or national
 guidelines and/or rules..." ISDIAH 5.6.5, ISAAR 5.4.5, ISDF 5.4.5
 
+.. image:: images/control-area-detail.*
+   :align: center
+   :width: 80%
+   :alt: Level of detail field in the Description control area
+
 AtoM has a :term:`drop-down menu` using values drawn from the description
-detail levels :term:`taxonomy`; :term:`administrators <administrator>`
-and :term:`editors <editor>` can customize the taxonomy to match institutional
-standards if desired.
+detail levels :term:`taxonomy`; by default in AtoM this drop-down is populated
+with the following terms:
+
+* Full
+* Partial
+* Minimal
+
+.. TIP::
+
+   :term:`Administrators <administrator>` and :term:`editors <editor>` can
+   customize the taxonomy to match institutional standards if desired, adding
+   new terms, or changing/deleting the default terms. For more information, see:
+   :ref:`terms`.
 
 Dates of creation, revision and deletion
 ========================================
@@ -92,6 +143,11 @@ Dates of creation, revision and deletion
 
 "Record the date the description was created and the dates of any revisions to
 the description." ISDIAH 5.6.6, ISAAR 5.4.6, ISDF 5.4.6
+
+.. image:: images/control-area-dates.*
+   :align: center
+   :width: 80%
+   :alt: Dates of creation, revision, and deletion in the Control area
 
 Language(s) and Script(s)
 =========================
@@ -135,8 +191,8 @@ ISDF 5.4.9
 This element appears in the templates for
 :ref:`authority records <authority-records>`,
 :ref:`archival institutions <archival-institutions>` and
-:ref:`functions <functions>`.
-For :term:`archival descriptions <archival-description>` see Archivist's
+:ref:`functions <functions>`. For
+:term:`archival descriptions <archival description>` see Archivist's
 notes, below.
 
 This is a text field; AtoM does not structure the data in any predetermined way.
