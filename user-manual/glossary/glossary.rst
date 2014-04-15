@@ -905,7 +905,7 @@ Glossary
     and cabinets. In AtoM, users can create and edit information about
     physical objects by clicking on the "Link physical storage" button in
     the :term:`button block` of an :term:`archival description`. See
-    :doc:`Physical storage <../add-edit-content/physical-storage>`.
+    :ref:`Physical storage <physical-storage>`.
 
   Place
     In AtoM, a place is a geographic location registered in a

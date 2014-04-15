@@ -5,20 +5,97 @@ Physical storage
 ================
 
 AtoM allows archival institutions to create realtionships between
-:term:`archival descriptions <archival-description>` and their physical storage
+:term:`archival descriptions <archival description>` and their physical storage
 locations.
+
+Manage physical object types
+============================
+
+Institutions can change and manage the terms used to describe physical object
+containers and locations by using the Physical Object Type :term:`taxonomy`:
+
+Click on the Manage menu, then on Taxonomies. From the list, click on
+Physical Object Type.
+
+.. image:: images/physical-object-taxonomy.*
+   :align: center
+   :width: 80%
+   :alt: Physical Object Type taxonomy
+
+By clicking on an object type, you can view the object type in its taxonomy,
+displaying hierarhcical terms if applicable:
+
+.. image:: images/physical-object-hierarchy.*
+   :align: center
+   :width: 80%
+   :alt: Physical object taxonomy showing hierarchy
+
+Edit storage types
+------------------
+
+Add storage types
+-----------------
 
 Link physical storage
 =====================
 
-Add container links
--------------------
+Linking :term:`archival descriptions <archival description>` to physical
+locations is performed in the archival description for the resource.
+
+Add/change container links
+--------------------------
 
 Create new container
 --------------------
 
+New containers can also be created from the Browse physical storage area.
+
 Browse physical storage
 =======================
+
+Physical storage can be browsed by authenticated (logged in) users through
+the Manage menu:
+
+.. image:: images/manage-phys-storage.*
+   :align: center
+   :width: 80%
+   :alt: Accessing physical storage in Manage menu
+
+Once in Browse Physical storage, users have the option of sorting the storage
+entries by Name (of container) or Location by clicking in the first row of the
+Physical storage table:
+
+.. image:: images/physical-storage-table.*
+   :align: center
+   :width: 80%
+   :alt: Physical storage table with sorting
+
+When a user clicks on a container name, AtoM displays a list of the resources
+associated with that name:
+
+.. image:: images/view-storage-name.*
+   :align: center
+   :width: 80%
+   :alt: Viewing a storage name with related resources listed
+
+.. TIP::
+
+   If you click "edit" while viewing a container name, you can edit the
+   information associated with the container, including the name, location and
+   type. To change the resources associated with that container name, you must
+   do so from the :term:`archival description` for each resource.
+
+By clicking the :term:`print icon` users can produce a report for the storage
+container which includes the Reference code, Title, Dates, Part of (fonds or
+collection name) and Conditions governing access.
+
+.. image:: images/storage-print-report.*
+   :align: center
+   :width: 80%
+   :alt: Storage print report
+
+Click "close" to return to the container storage view.
+
 
 Visibility
 ==========
