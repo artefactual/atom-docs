@@ -403,14 +403,15 @@ Create the database
 ===================
 
 Assuming that you are running `MySQL <https://www.mysql.com/>`__ in localhost,
-please create the database by running the following command:
+please create the database by running the following command using the
+password you created :ref:`earlier <linux-dependency-mysql>`:
 
 .. code-block:: bash
 
    mysql -h localhost -u root -pYOURSECRETPASSWORD -e "CREATE DATABASE atom CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
 
 Notice that the database has been called **atom**. Feel free to change its name.
-Also, If you left the root password blank during the installation of
+If you left the root password blank during the installation of
 mysql-server-5.5, you don't need to add the ``-pYOURSECRETPASSWORD`` option shown
 above.
 
