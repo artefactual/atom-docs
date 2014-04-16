@@ -8,8 +8,8 @@ AtoM allows archival institutions to create realtionships between
 :term:`archival descriptions <archival description>` and their physical storage
 locations.
 
-Manage physical object types
-============================
+Manage physical storage types
+=============================
 
 Institutions can change and manage the terms used to describe physical object
 containers and locations by using the Physical Object Type :term:`taxonomy`:
@@ -22,19 +22,84 @@ Physical Object Type.
    :width: 80%
    :alt: Physical Object Type taxonomy
 
-By clicking on an object type, you can view the object type in its taxonomy,
-displaying hierarhcical terms if applicable:
+By clicking on an object type, you can view the object type in the taxonomy,
+displaying hierarhcical terms if applicable.
 
 .. image:: images/physical-object-hierarchy.*
    :align: center
    :width: 80%
    :alt: Physical object taxonomy showing hierarchy
 
+The default hierarchy in the Physical Object type taxonomy in AtoM is as
+follows:
+
+* Artefact
+* Container
+
+   * Box
+
+      * Cardboard box
+      * Hollinger box
+
+   * Filing cabinet
+   * Folder
+   * Map cabinet
+   * Shelf
+
+* Location
+
+The intended use is for "Containers" to include specific storage containers,
+such as box numbers, cabinet drawers, etc., and for "Locations" to include
+more general storage locations, such as "Cold storage," "Vault," etc.
+However, the storage types and uses can be customized to meet institutional
+practices.
+
 Edit storage types
 ------------------
 
+All storage :term:`terms <term>` except "Artefact", "Container" and "Location"
+can be edited or deleted by authenticated users (for more information
+about locked terms, see :ref:`Terms <terms>`).
+
+Click on the name of a Physical Object Type, then click on edit:
+
+.. image:: images/physical-object-edit.*
+   :align: center
+   :width: 80%
+   :alt: Editing a physical object type
+
+From here, the name of the physical object type can be changed, and internal
+notes, codes and uses can be added.
+
+By clicking on the Relationships area, the term's placement in the hierarchy
+can be altered and new narrow terms can be added:
+
+.. image:: images/physical-object-relationships.*
+   :align: center
+   :width: 80%
+   :alt: Editing a physical object type's relationships
+
+Click on save to save your changes.
+
 Add storage types
 -----------------
+
+New physical storage types can be created by clicking "Add new" on the
+Physical Object Type taxonomy:
+
+.. image:: images/physical-object-add-new.*
+   :align: center
+   :width: 80%
+   :alt: Add new physical object type
+
+Another method of adding a new storage type is to click "add new" when
+viewing an existing Physical Object type. This will automatically nest the
+new term as a child of the existing term.
+
+.. image:: images/physical-object-add-child.*
+   :align: center
+   :width: 80%
+   :alt: Add new physical object type as a child
 
 Link physical storage
 =====================
@@ -45,10 +110,51 @@ locations is performed in the archival description for the resource.
 Add/change container links
 --------------------------
 
+Physical storage can be linked at any :term:`level of description`. When
+viewing a description as a logged-in user, click on More, and then on Link
+physical storage:
+
+.. image:: images/physical-storage-link.*
+   :align: center
+   :width: 80%
+   :alt: Linking an archival description to physical storage
+
+If a link to a physical storage container or location already exists, it can
+be edited by clicking the pencil icon, or deleted by clicking the x.
+
+.. image:: images/physical-storage-edit.*
+   :align: center
+   :width: 80%
+   :alt: Editing or adding a physical storage link
+
+.. IMPORTANT::
+
+   This edits the information associated with the Physical storage container
+   and location. If you change this information the change will apply across
+   all descriptions associated with the container.
+
+.. image:: images/physical-storage-edit-2.*
+   :align: center
+   :width: 80%
+   :alt: Editing a physical storage cnntainer
+
+To create a link with a different storage container, begin to type the
+container name in the Container field. AtoM will auto-suggest existing
+containers as you type.
+
 Create new container
 --------------------
 
-New containers can also be created from the Browse physical storage area.
+To link the :term:`archival description` with a container that does not yet
+exist in AtoM, enter a container name, location and type and click save.
+
+.. image:: images/physical-storage-new.*
+   :align: center
+   :width: 80%
+   :alt: Creating a new container
+
+New containers can also be created from the Browse physical storage area, by
+clicking Add new (see below).
 
 Browse physical storage
 =======================
@@ -58,7 +164,6 @@ the Manage menu:
 
 .. image:: images/manage-phys-storage.*
    :align: center
-   :width: 40%
    :alt: Accessing physical storage in Manage menu
 
 Once in Browse Physical storage, users have the option of sorting the storage
@@ -67,7 +172,7 @@ Physical storage table:
 
 .. image:: images/physical-storage-table.*
    :align: center
-   :width: 80%
+   :width: 100%
    :alt: Physical storage table with sorting
 
 When a user clicks on a container name, AtoM displays a list of the resources
