@@ -100,7 +100,7 @@ see the sections below for more specific instructions on the use of
   <isad-template>`
 * Describing Archives: A Content Standard (U.S.A): :ref:`DACS <dacs-template>`
 * Dublin Core Metadata Element Set, Version 1.1: :ref:`Dublin Core
-  <dublin-core-template>`
+  <dc-template>`
 * Metadata Object Description Schema: :ref:`MODS <mods-template>`
 * Rules for Archival Description (Canada): :ref:`RAD <rad-template>`
 
@@ -156,7 +156,7 @@ and types of users in AtoM see: :ref:`User roles <user-roles>`.
    International Standard for Archival Description) template. Administrators
    can change the default template to any of the other 4 supported standards
    (:ref:`RAD <rad-template>`, :ref:`DACS <dacs-template>`, :ref:`Dublin Core
-   <dublin-core-template>`, or :ref:`MODS <mods-template>` via **Admin >
+   <dc-template>`, or :ref:`MODS <mods-template>` via **Admin >
    Settings > Default template**. For more information, see: :doc:`Settings
    <../administer/settings>`.
 
@@ -236,7 +236,7 @@ This area is located in:
 * The **Statement of responsibility** :term:`area <information area>` of the
   :ref:`RAD <rad-template>` template
 * The **Elements** :term:`area <information area>` of the :ref:`Dublin Core
-  <dublin-core-template>`  and :ref:`MODS <mods-template>` templates
+  <dc-template>`  and :ref:`MODS <mods-template>` templates
 
 Note that this method is not meant to replace more granular description - it
 allows a user to create a sort of skeleton structure to the whole of the
