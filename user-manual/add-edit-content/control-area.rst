@@ -9,17 +9,17 @@ Control area
    :width: 60%
    :alt: Control area in an archival description
 
-The control area is similar for
-:ref:`archival descriptions <archival-descriptions>` (ISAD and RAD templates
-only), :ref:`authority records <authority-records>`,
+The control area is similar, with some variations, for
+:ref:`archival descriptions <archival-descriptions>` (ISAD, DACS, and RAD
+templates only), :ref:`authority records <authority-records>`,
 :ref:`archival institutions <archival-institutions>` and
 :ref:`functions <functions>`. It contains fields that uniquely identify the
 description itself and records how, when, and by which archival institution the
 description was created and maintained.
 
 The following notes aim primarily to clarify AtoM procedures; for
-guidelines on what information to record in particular fields, consult ISAD,
-ISAAR, or ISDIAH or ISDF as the content standard. Users may note that the AtoM
+guidelines on what information to record in particular fields, consult the
+relevant content standard. Users may note that the AtoM
 templates offer more fields than exist in the content standards, which
 originated from an effort to harmonize the templates with all four standards.
 The notes are organized by field, with links to the applicable section(s) of
@@ -66,7 +66,7 @@ Rules or conventions
 ====================
 
 "Record the international, national and/or local rules or conventions followed
-in preparing the description." ISAD 3.7.2
+in preparing the description." ISAD 3.7.2, DACS 8.1.4
 
 .. image:: images/control-area-rules.*
    :align: center
@@ -155,6 +155,11 @@ Language(s) and Script(s)
 "Record the language(s) and/or script(s) of the description... ISDIAH 5.6.7,
 "ISAAR 5.4.7, ISDF 5.4.7
 
+.. image:: images/control-area-language-script.*
+   :align: center
+   :width: 80%
+   :alt: Languages and scripts fields in the Control area
+
 AtoM implements this data element as two separate
 :term:`multi-value fields <multi-value field>`.  The
 :term:`value lists <value list>` are based on the ISO standards and cannot be
@@ -165,14 +170,53 @@ AtoM will auto-suggest as you type. When the correct name appears in the
 field, click on it to add. There is no limit to the number of languages or
 scripts you can add.
 
+.. image:: images/control-area-language-select.*
+   :align: center
+   :width: 80%
+   :alt: Using the language autocomplete field to select a language
+
+.. image:: images/control-area-remove-language.*
+   :align: right
+   :width: 20%
+   :alt: removing a language
+
+To remove a language or script already added, hover your cursor over the
+bullet next to the language/script. The bullet will change into an **X** - if
+you click the **X**, the language or script will be removed.
+
 To record a narrative note relating to either :term:`field`, use the
-:ref:`Maintenance Notes <maintenance-notes>` area.
+:ref:`Maintenance Notes <maintenance-notes>` area (this field is not
+available in the :term:`archival description` edit templates).
+
+.. IMPORTANT::
+
+   These fields are intended to capture information about the language of the
+   *description*, rather than the language of the *materials* themselves. For
+   :term:`archival descriptions <archival description>`, there are already
+   fields available in the :term:`edit page` to capture information about the
+   language of the materials being described - in the
+   :ref:`ISAD(G) template <isad-template>`, these fields are found in the
+   *Conditions of access and use* :term:`information area`; in the
+   :ref:`RAD template <rad-template>`, these fields are found in the *Notes*
+   :term:`information area`; in the :ref:`DACS template <dacs-template>`,
+   these are in the *Conditions of access and use elements*. For further
+   information, see the section on :ref:`Data entry <data-entry>` for each
+   specific edit template.
 
 Sources
 =======
 
 "Record the sources consulted in establishing the description." ISDIAH 5.6.8,
 ISAAR 5.4.8, ISDF 5.4.8
+
+"Record relevant information about sources conslulted in establishing or
+revising the description." DACS 8.1.3. **Note** that this field is labeled
+"Sources used" in the :ref:`DACS template <dacs-template>`.
+
+.. image:: images/control-area-sources.*
+   :align: center
+   :width: 80%
+   :alt: The sources field in the Control area
 
 This is a text field; AtoM does not structure the data in any predetermined way.
 
@@ -187,6 +231,11 @@ the description may be recorded here." ISDIAH 5.6.9, ISAAR 5.4.9
 
 "Record notes pertinent to the creation and maintenance of the description."
 ISDF 5.4.9
+
+.. image:: images/control-area-maintenance.*
+   :align: center
+   :width: 80%
+   :alt: The Maintenance notes field in the Control area
 
 This element appears in the templates for
 :ref:`authority records <authority-records>`,
@@ -203,7 +252,18 @@ Archivist's notes
 "Record notes on sources consulted in preparing the description and who
 prepared it." ISAD 3.7.1
 
-This element appears in the  :term:`archival description` template. This is a
+"Record the name(s) of the person(s) who created or revised the description,
+as well as the creation or revision date." DACS 8.1.5. **Note** that this
+field is labeled "Archivist and date" in the
+:ref:`DACS template <dacs-template>`.
+
+.. image:: images/control-area-archivists-notes.*
+   :align: center
+   :width: 80%
+   :alt: The Archivist's notes field in the Control area
+
+This element appears only in the :ref:`ISAD(G) <isad-template>` and
+:ref:`DACS <dacs-template>` :term:`archival description` templates. This is a
 text field; AtoM does not structure the data in any predetermined way. There
 is no limit to the number of notes you can add.
 
