@@ -101,7 +101,7 @@ located.
 
 .. code-block:: bash
 
-   ./symfony csv:check-import lib/task/import/example/rad/example_information_objects_rad.csv
+   php symfony csv:check-import lib/task/import/example/rad/example_information_objects_rad.csv
 
 .. _csv-column-mapping:
 
@@ -115,7 +115,7 @@ the description templates in AtoM correspond to a recognized content or
 metadata exchange standard, and many of the fields in our underlying database
 model are also inspired by ICA standards. For your data to import
 successfully into AtoM, you will first need to map it to one of our existing
-cSV templates, which are derived from the various standards-based templates
+CSV templates, which are derived from the various standards-based templates
 available in AtoM for description.
 
 Mapping your data to the supplied CSV templates below implies a familiarity
@@ -163,6 +163,48 @@ each column to the correct AtoM fields.
    spreadsheet column (including, for example, the text "(A)" for data in
    spreadsheet column A) makes it easy to quickly determine if a field is
    showing up on the AtoM side after import.
+
+.. _csv-encoding-newline:
+
+Verify character encoding and line endings
+------------------------------------------
+
+For your CSV files to import properly, you will need to ensure two things
+prior to importing: that the
+`character encoding <http://en.wikipedia.org/wiki/Character_encoding>`__ of
+your CSV file is set to `UTF-8 <http://en.wikipedia.org/wiki/UTF-8>`__, and
+that the end-of-line characters used in your CSV conform to the Unix/Linux
+style of newline character.
+
+For the **character encoding**:  if you have used a Windows or Mac spreadsheet
+application (such as Excel, for example), it's possible that the default
+character encoding will **not** be UTF-8. For example, Excel uses  machine-
+specific ANSI encoding as its defaults during install, so an EN-US
+installation might use Windows-1252 encoding by default, rather than something
+more universal such as UTF-8 (the default encoding in AtoM). This can cause
+problems on import into AtoM with special characters and diacritics. Make sure
+that if you are using Excel or another spreadsheet application, you are
+setting the character encoding to UTF-8. Many open source spreadsheet
+programs, such as LibreOffice Calc, use UTF-8 by default.
+
+For the **line endings**: "In computing, a newline, also known as a line
+ending, end of line (EOL), or line break, is a special character or sequence
+of characters signifying the end of a line of text. The actual codes
+representing a newline vary across operating systems, which can be a problem
+when exchanging text files between systems with different newline
+representations." (`Wikipedia <http://en.wikipedia.org/wiki/Newline>`__)
+
+Here are some of the differences:
+
+* Unix / Linux / FreeBSD / OS X use LF (line feed, ``\n``, 0x0A)
+* Macs prior to OS X use CR (carriage return, ``\r``, 0x0D)
+* Windows / DOS use CR+LF (carriage return followed by line feed, ``\r\n``,
+  0x0D0A)
+
+AtoM's CSV import will expect Unix-style line breaks ( ``\n`` ). If you have
+been using a spreadsheet application on a Mac or Windows, you may encounter
+import issues. There are many command-line utilities and free software
+options out there to convert newline characters.
 
 .. _csv-data-transformation:
 
@@ -223,7 +265,11 @@ Open Hosting, Amazon EC2, or Rackspace Cloud.
 Testing your import
 -------------------
 
-content
+Once you've worked out an import, you may want to clone your AtoM site and
+test your import on the clone before importing to your production AtoM
+installation. This prevents you from having to delete any improperly imported
+data. During import testing if you want to delete all imported data you can
+use the command-line purge tool.
 
 :ref:`Back to top <csv-import>`
 
