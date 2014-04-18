@@ -83,7 +83,7 @@ edit :term:`access privileges <access privilege>`.
 
 * :ref:`Search <search-atom>`
 * :ref:`Advanced search <advanced-search>`
-* Browse
+* :ref:`Browse <browse>`
 * :ref:`Navigate <navigate>`
 * Context menu
 
