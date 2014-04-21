@@ -32,6 +32,7 @@ links to each chapter's main sections.
    access-content/navigate
    import-export/csv-import
    administer/manage-user-accounts
+   administer/manage-digital-object-storage
    administer/edit-permissions
    administer/static-pages
    administer/manage-menus

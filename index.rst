@@ -138,7 +138,7 @@ or for a :term:`network`.
 
 * Install
 * :ref:`Manage user accounts and user groups <manage-user-accounts>`
-* Manage digital object storage
+* :ref:`Manage digital object storage <manage-digital-object-storage>`
 * :ref:`Edit user permissions <edit-user-permissions>`
 * :ref:`Manage static pages <manage-static-pages>`
 * :ref:`Manage menus <manage-menus>`
