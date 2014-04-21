@@ -20,7 +20,7 @@ Browsing for all users
 
 From any page in AtoM in the default theme, the :term:`Dominion theme`, the
 following browse options are available from the drop-down :term:`browse menu`
-beside the :term:`search box` in the :term:`header bar.`
+beside the :term:`search box` in the :term:`header bar`.
 
 .. image:: images/search-box.*
    :align: left
@@ -56,7 +56,8 @@ located at the top-right of the page above the results.
 Users can narrow the results list using the available
 :term:`facet filters <facet filter>` on the left-hand side of the screen. For
 more information on using the facet filters in AtoM, see:
-:ref:`recurring-facet-filters`; especially :ref:`using-facet-filters`.
+:ref:`recurring-facet-filters`; especially
+:ref:`Using facet filters in AtoM <using-facet-filters>`.
 
 
 At the top of the :term:`archival description` browse page's list of results,
