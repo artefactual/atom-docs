@@ -856,19 +856,25 @@ left-hand side of the institution's page.
    information on navigation in AtoM.
 2. Click the "Edit" link located below the "Upload limit" bar on the left-hand
    side of the page.
-3. A seperate window will appear; AtoM will prompt you to edit the upload limit.
-   From here, you can either "Disable uploads", "Allow unlimited uploads", or
-   "Limit uploads to ## GB", where administrators can specify the GB limit.
+3. A dialogue box will apear that will allow for 1 of 3 options:
+
+   * **Disable uploads** will prevent users from uploading any
+     :term:`digital objects <digital object>`.
+   * **Limit uploads to _____ GB** will allow an administrator to set a specific
+     upload limit per :term:`archival institution`.
+   * **Allow unlimited uploads** is the default setting in AtoM that places no
+     restrictions on an authenticated user's digital object uploads.
+
 4. You can quit the process at any time by clicking the "Cancel" button, or the
    exiting (i.e. clicking "X") the window. Any changes made will not be saved.
 5. When you've made your selection, click the "Save" button. The :term:`archival
    institution's <archival institution>` :term:`view page` will display your
    changes made according to :
 
-   * If you selected "Disable uploads", the Upload limit bar will automatically
-     be removed and the Upload limit section will indicate that the uploads have
-     been disabled.
-   * If you selected "Allow unlimited uploads", the Upload limit bar will
+   * If you selected **Disable uploads**, the Upload limit bar will
+     automatically be removed and the Upload limit section will indicate that
+     the uploads have been disabled.
+   * If you selected **Allow unlimited uploads**, the Upload limit bar will
      automatically be removed and the Upload limit section will indicate the
      institution's current uploaded amount, as well as the limit, which will be
      *Unlimited* (e.g. "2.65 GB of *Unlimited*").
