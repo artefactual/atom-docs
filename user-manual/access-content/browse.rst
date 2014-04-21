@@ -40,14 +40,43 @@ Click the Browse menu, then click on Archival descriptions.
    :width: 80%
    :alt: View of browsing archival descriptions
 
-This browse screen shows all :term:`archival descriptions <archival description>`
-regardless of the :term:`level of description`. The automatic sort is
-alphabetic, but users can change the sort to most recently updated.
+This browse screen shows all :term:`archival descriptions <archival
+description>` regardless of the :term:`level of description`. The automatic
+sort is alphabetic by default for public users, but users can change the sort
+to most recently updated, using the :ref:`sort button <recurring-sort-button>`
+located at the top-right of the page above the results.
+
+.. TIP::
+
+   :term:`Administrators <administrator>` can change the default sort order
+   on search/browse pages for both public and authenticated (i.e. logged in)
+   users, in **Admin > Settings > Global**. For more information, see:
+   :ref:`sort-browser-users` and :ref:`sort-browser-anonymous`.
 
 Users can narrow the results list using the available
-:term:`facet filters <facet filter>` on the left-hand side of the screen. At
-the top of the results list, the number of descriptions with digital objects
-is available and the user can click to see only results with digital objects.
+:term:`facet filters <facet filter>` on the left-hand side of the screen. For
+more information on using the facet filters in AtoM, see:
+:ref:`recurring-facet-filters`; especially :ref:`using-facet-filters`.
+
+
+At the top of the :term:`archival description` browse page's list of results,
+the number of descriptions with :term:`digital objects <digital object>` is
+available and the user can click to see only results with digital objects.
+
+.. image:: images/browse-descriptions-pager.*
+   :align: right
+   :width: 30%
+   :alt: Image of the pager provided on browse pages with more than 10
+         results
+
+By default, AtoM will display 10 results per page; if there are more than 10
+descriptions, a pager will be provided at the bottom of the results.
+
+.. TIP::
+
+   :term:`Administrators <administrator>` can change the default number of
+   results returned per page in **Admin > Settings > Global**. For more
+   information, see: :ref:`results-page`.
 
 Browse people, families and organizations
 -----------------------------------------
