@@ -70,11 +70,11 @@ To link a single :term:`digital object`:
    the digital object field, above the other fields linked to that
    :term:`archival description`.
 
-   ..Note::
+   .. NOTE::
 
-     Users can view or play the :term:`reference display copy` (depending on the
-     type of digital object). Authenticated (i.e. logged-in) users can also
-     download the :term:`master digital object`.
+      Users can view or play the :term:`reference display copy` (depending on
+      the type of digital object). Authenticated (i.e. logged-in) users can also
+      download the :term:`master digital object`.
 
 #. Objects with multiple pages, such as multi-page TIFFs or PDF files, will by
    default be displayed with single-page reference display copies. To have them
@@ -185,7 +185,7 @@ Any :term:`digital object` that has been uploaded and linked to an
    select the "Add new" button that appears at the end of each representation
    section, below the "Rights records" table:
 
-   .. image:: images/object-rights.*
+.. image:: images/object-rights.*
    :align: center
    :width: 70%
    :alt: A image of the permission rights of digital objects
@@ -199,6 +199,7 @@ Any :term:`digital object` that has been uploaded and linked to an
    * Include **Rights note(s)** as needed.
    * Select a **Basis** for the permission (i.e. Copyright, License, Statute,
      Policy or Donor)
+
 5. When the permission has been created and all fields filled, click "Submit".
    The new entry will appear in the Rights records table.
 6. Permissions can be edited by clicking the |pencil| pencil at the end of the
