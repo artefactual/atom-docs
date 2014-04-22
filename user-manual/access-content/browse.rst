@@ -102,8 +102,55 @@ entity type (Person, Family or Corporate body).
 Browse archival institutions
 ----------------------------
 
+In :term:`multi-repository installations <multi-repository system>` users can
+browse a list of archival institutions represented in the database.
+
+Click the Browse menu, then click Archival Institutions.
+
+.. image:: images/browse-institutions.*
+   :align: center
+   :width: 80%
+   :alt: View of browsing archival institutions
+
+If the institution has uploaded a logo as part of their institution record,
+the logo will be displayed in the browse display (see:
+:ref:` Add/edit a logo to an existing archival institution <add-edit-a-logo-to-an-existing-archival-institution>`.
+If not, text will be displayed instead.
+
+The automatic sort is alphabetic which can be changed by the user to Most
+recent. Users can narrow the results list using the available :term:`facet
+filters <facet filter>` on the left-hand side of the screen. For more
+information on using the facet filters in AtoM, see: :ref:`recurring-facet-
+filters`; especially :ref:`Using facet filters in AtoM <using-facet-filters>`.
+
+
 Browse subjects
 ---------------
+
+Click the Browse menu, then click Subjects.
+
+.. image:: images/browse-subjects.*
+   :align: center
+   :width: 80%
+   :alt: View of browsing subjects
+
+AtoM will display a list of all subjects used in
+:term:`archival descriptions <archival description>` as well as the number
+of descriptions the subject term appears in. By clicking on a subject term,
+the user can see in a new browse screen the archival descriptions with that
+subject term applied.
+
+.. image:: images/browse-subjects-descriptions.*
+   :align: center
+   :width: 80%
+   :alt: View of browsing list of archival descriptions by subject.
+
+.. TIP::
+
+   In this browse screen, AtoM will also display an alphabetical list of
+   subjects in the left-hand side of the screen to allow for easy navigation
+   between subjects.
+
 
 Browse places
 -------------
