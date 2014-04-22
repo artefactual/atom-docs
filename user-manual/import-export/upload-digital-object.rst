@@ -171,6 +171,11 @@ Any :term:`digital object` that has been uploaded and linked to an
    :height: 18
    :width: 18
 
+.. image:: images/object-rights.*
+   :align: center
+   :width: 70%
+   :alt: A image of the permission rights of digital objects
+
 1. Navigate to the :term:`view page` of an existing :term:`archival
    description` that has an existing :term:`digital object`.
 2. Click on the "More" button in the :term:`button block`; from the menu that
@@ -184,11 +189,6 @@ Any :term:`digital object` that has been uploaded and linked to an
    permitted or restrictted (i.e. added or removed) as needed. To do this,
    select the "Add new" button that appears at the end of each representation
    section, below the "Rights records" table:
-
-.. image:: images/object-rights.*
-   :align: center
-   :width: 70%
-   :alt: A image of the permission rights of digital objects
 
    * Select the **Act** (i.e. Delete, Discover, Display, Disseminate, Migrate,
      Modify, or Replicate).
