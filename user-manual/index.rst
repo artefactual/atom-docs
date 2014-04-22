@@ -30,6 +30,9 @@ links to each chapter's main sections.
    access-content/advanced-search
    access-content/browse
    access-content/navigate
+   access-content/context-menu
+   reports-printing/create-file-list-report-print
+   reports-printing/create-item-list-report-print
    import/upload-digital-object
    import-export/csv-import
    administer/manage-user-accounts

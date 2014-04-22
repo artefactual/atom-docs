@@ -85,7 +85,7 @@ edit :term:`access privileges <access privilege>`.
 * :ref:`Advanced search <advanced-search>`
 * :ref:`Browse <browse>`
 * :ref:`Navigate <navigate>`
-* Context menu
+* :ref:`Context menu <context-menu>`
 
 .. _translate:
 
@@ -109,8 +109,8 @@ Reports/printing
 This section describes how to create and print different types of reports using
 AtoM:
 
-* Create file list report & print
-* Create item list report & print
+* :ref:`Create file list report & print <create-file-list-report-print>`
+* :ref:`Create item list report & print <create-item-list-report-print>`
 * Create physical storage locations report & print
 * Print search results
 * Print finding aid
