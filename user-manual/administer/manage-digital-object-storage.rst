@@ -12,8 +12,7 @@ Digital objects can only be edited and added by an authenticated (i.e. logged-
 in) :term:`administrator`.
 
 For more information on :term:`digital objects <digital object>`, see
-:ref:`upload-digital-objects>` or :ref:`Upload digital objects
-<upload-digital-objects>`
+:ref:`upload-digital-objects` or :ref:`upload-limit`.
 
 Manage digital object storage per institution
 =============================================
