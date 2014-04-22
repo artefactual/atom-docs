@@ -226,13 +226,13 @@ Glossary
     :term:`digital objects <digital object>` and allows the user to scroll
     through the thumbnails using a mouse or keyboard scroll arrows. It is
     similar to the `cover flow <http://en.wikipedia.org/wiki/Cover_flow>`_
-    used in "the Macintosh Finder and other Apple Inc. products for
+    used in "the Macintosh Finder" and other Apple Inc. products for
     visually flipping through snapshots of documents, website bookmarks,
-    album artwork, or photographs. In AtoM a carousel viewer appears at
+    album artwork, or photographs. In AtoM, a carousel viewer appears at
     the top of :term:`archival descriptions <archival description>`
     whenever there are associated lower-level descriptions that have
     digital objects attached. See: :ref:`recurring-carousel`; see also:
-    :ref:`upload-digital-objects`.
+    :ref:`upload-digital-object`.
 
   Child record
     Child record refers to a description of the :term:`archival unit` that
@@ -441,7 +441,7 @@ Glossary
     Digital objects are computer files that can be uploaded into and
     displayed by AtoM. They include scanned images, digital photographs,
     sound and moving image files, and other scanned or born-digital items.
-    See :ref:`upload-digital-objects` and :ref:`File formats <file-formats>`.
+    See :ref:`upload-digital-object` and :ref:`File formats <file-formats>`.
 
   Display standard
     The display standard indicates which archival description standard is
@@ -824,8 +824,7 @@ Glossary
     object` that has been uploaded to AtoM. AtoM automatically generates a
     :term:`thumbnail` and a :term:`reference display copy` of the object.
     Only authenticated users may view master digital objects. See
-    :doc:`Upload digital objects
-    <../import-export/upload-digital-object>`.
+    :doc:`Upload digital objects <../import-export/upload-digital-object>`.
 
   Media type
     Media type refers to the format of uploaded :term:`digital objects
@@ -1144,9 +1143,9 @@ Glossary
     A thumbnail is a small, low-resolution version of a :term:`master
     digital object` generated automatically by AtoM on upload. Thumbnails
     are displayed in search and browse results and in :term:`carousel`
-    views at higher levels of description. See :doc:`Upload digital objects
-    <../import-export/upload-digital-object>` and :ref:`File formats
-    <file-formats>`.
+    views at higher :term:`levels of description <level of description>`.
+    See :doc:`Upload digital objects <../import-export/upload-digital-object>`
+    and :ref:`File formats <file-formats>`.
 
   Title bar
     The :term:`title bar` is a contextual element that appears throughout AtoM
