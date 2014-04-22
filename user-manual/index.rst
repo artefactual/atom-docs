@@ -30,6 +30,7 @@ links to each chapter's main sections.
    access-content/advanced-search
    access-content/browse
    access-content/navigate
+   import/upload-digital-object
    import-export/csv-import
    administer/manage-user-accounts
    administer/manage-digital-object-storage

@@ -123,7 +123,7 @@ Import/export
 This section describes automated methods for getting data in and out of an AtoM
 application.
 
-* Upload digital objects
+* :ref:`Upload digital objects <upload-digital-object>`
 * Import descriptions and terms
 * Export descriptions and terms
 * :ref:`CSV import <csv-import>`
