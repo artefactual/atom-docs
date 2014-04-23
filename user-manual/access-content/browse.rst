@@ -114,14 +114,15 @@ Click the Browse menu, then click Archival Institutions.
 
 If the institution has uploaded a logo as part of their institution record,
 the logo will be displayed in the browse display (see:
-:ref:` Add/edit a logo to an existing archival institution <add-edit-a-logo-to-an-existing-archival-institution>`.
+:ref:`Add/edit a logo to an existing archival institution <add-institution-logo>`.
 If not, text will be displayed instead.
 
 The automatic sort is alphabetic which can be changed by the user to Most
-recent. Users can narrow the results list using the available :term:`facet
-filters <facet filter>` on the left-hand side of the screen. For more
-information on using the facet filters in AtoM, see: :ref:`recurring-facet-
-filters`; especially :ref:`Using facet filters in AtoM <using-facet-filters>`.
+recent. Users can narrow the results list using the available
+:term:`facet filters <facet filter>` on the left-hand side of the screen.
+For more information on using the facet filters in AtoM, see:
+:ref:`recurring-facet-filters`; especially
+:ref:`Using facet filters in AtoM <using-facet-filters>`.
 
 
 Browse subjects
@@ -155,25 +156,140 @@ subject term applied.
 Browse places
 -------------
 
+Click the Browse menu, then click Places.
+
+.. image:: images/browse-places.*
+   :align: center
+   :width: 80%
+   :alt: View of browsing places
+
+AtoM will display a list of all places used in the place field in
+:term:`archival descriptions <archival description>` as well as the number
+of descriptions the place term appears in. By clicking on a place term,
+the user can see in a new browse screen the archival descriptions with that
+place term applied.
+
+.. image:: images/browse-places-descriptions.*
+   :align: center
+   :width: 80%
+   :alt: View of browsing list of archival descriptions by places.
+
+.. TIP::
+
+   In this browse screen, AtoM will also display an alphabetical list of
+   places in the left-hand side of the screen to allow for easy navigation
+   between places.
+
 Browse digital objects
 ----------------------
 
+Click the Browse menu, then click Digital Objects.
+
+.. image:: images/browse-digital-objects.*
+   :align: center
+   :width: 80%
+   :alt: View of browsing all digital objects.
+
+AtoM will display all of the digital objects in the database. The layout will
+change according to the screen size, as shown in the screenshot of the same
+digital object browse as above, but in a smaller screen:
+
+.. image:: images/browse-digital-smaller.*
+   :align: center
+   :width: 80%
+   :alt: View of browsing all digital objects in a smaller screen size.
+
+By default, AtoM will display 30 results per page; if there are more than 30
+digital objects, a pager will be provided at the bottom of the results.
+
+.. TIP::
+
+   :term:`Administrators <administrator>` can change the default number of
+   results returned per page in **Admin > Settings > Global**. For more
+   information, see: :ref:`results-page`.
+
+Users can filter the results by :term:`media type` by clicking the facet filter
+buttons at the top of the search results.
+
+.. image:: images/digital-object-browse-button.*
+   :align: right
+   :alt: Facet filter buttons when viewing digital objects browse results.
+
 Browse functions
 ----------------
+
+Click the Browse menu, then click Functions.
+
+.. image:: images/browse-functions-all.*
+   :align: center
+   :width: 80%
+   :alt: View of browsing all functions.
+
+AtoM will display a list of the functions used in the database with the
+function types.
+
+.. TIP::
+
+   :term:`Administrators <administrator>` can manage and edit the types of
+   functions in **Manage > Taxonomies > ISDF Function Types.** See
+   :ref:`Functions` and :ref:`Terms` for more information.
+
+When a user clicks on a function, the record for that function will display,
+including related functions and related resources.
+
+.. image:: images/view-function.*
+   :align: center
+   :width: 80%
+   :alt: Viewing a function record.
 
 Browsing for authenticated users
 ================================
 
 Authenticated (logged-in) users have access to browsing lists of donors and
-accession records:
+accession records.
 
 Browse accession records
 ------------------------
 
+Click on Manage, then on Accessions.
+
+.. image:: images/browse-accessions-all.*
+   :align: center
+   :width: 80%
+   :alt: Browsing all accession records.
+
+AtoM will display a list of all accessions by accession number as well as
+when the :term:`accession record` was updated.
+
+.. TIP::
+
+   From this screen, users can also search accession records by name in
+   the search box at the top of the results list. For more information on
+   accession functionality, see :ref:`Accessions <accessions>`.
+
+When an accession record is clicked, the full record is displayed.
+
 Browse donors
 -------------
 
+Click on Manage, then on Donors.
 
+.. image:: images/browse-donors-all.*
+   :align: center
+   :width: 80%
+   :alt: Browsing all donor records.
+
+AtoM will display a list of all donors by name as well as
+when the donor record was updated.
+
+.. TIP::
+
+   From this screen, users can also search donors by name in
+   the search box at the top of the results list. For more information on
+   donor record functionality, see :ref:`Donors <donors>`.
+
+When an donor record is clicked, the full record is displayed, including any
+related :term:`accessions <accession record>` and resources.
 
 
 :ref:`Back to top <browse>`
