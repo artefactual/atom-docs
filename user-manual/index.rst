@@ -33,7 +33,7 @@ links to each chapter's main sections.
    access-content/context-menu
    reports-printing/create-file-list-report-print
    reports-printing/create-item-list-report-print
-   import/upload-digital-object
+   import-export/upload-digital-object
    import-export/csv-import
    administer/manage-user-accounts
    administer/manage-digital-object-storage
