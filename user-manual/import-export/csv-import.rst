@@ -176,23 +176,47 @@ your CSV file is set to `UTF-8 <http://en.wikipedia.org/wiki/UTF-8>`__, and
 that the end-of-line characters used in your CSV conform to the Unix/Linux
 style of newline character.
 
-For the **character encoding**:  if you have used a Windows or Mac spreadsheet
-application (such as Excel, for example), it's possible that the default
-character encoding will **not** be UTF-8. For example, Excel uses  machine-
-specific ANSI encoding as its defaults during install, so an EN-US
-installation might use Windows-1252 encoding by default, rather than something
-more universal such as UTF-8 (the default encoding in AtoM). This can cause
-problems on import into AtoM with special characters and diacritics. Make sure
-that if you are using Excel or another spreadsheet application, you are
-setting the character encoding to UTF-8. Many open source spreadsheet
-programs, such as LibreOffice Calc, use UTF-8 by default.
+.. IMPORTANT::
 
-For the **line endings**: "In computing, a newline, also known as a line
-ending, end of line (EOL), or line break, is a special character or sequence
-of characters signifying the end of a line of text. The actual codes
-representing a newline vary across operating systems, which can be a problem
-when exchanging text files between systems with different newline
-representations." (`Wikipedia <http://en.wikipedia.org/wiki/Newline>`__)
+   Your import will likely **fail** if you don't ensure these two things are
+   are correctly set prior to import! Please review the sub-sections below
+   for further details.
+
+.. _csv-utf8-encoding:
+
+Character encoding (UTF-8)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For a CSV file to upload properly into AtoM (and display any special
+characters such as accents contained in the data), your CSV file must use a
+`UTF-8 <http://en.wikipedia.org/wiki/UTF-8>`__ character encoding. If you have
+used a Windows or Mac spreadsheet application (such as Excel, for example),
+it's possible that the default character encoding will **not** be UTF-8. For
+example, Excel uses  machine-specific ANSI encoding as its defaults during
+install, so an EN-US installation might use Windows-1252 encoding by default,
+rather than something more universal such as UTF-8 (the default encoding in
+AtoM). This can cause problems on import into AtoM with special characters and
+diacritics. Make sure that if you are using Excel or another spreadsheet
+application, you are setting the character encoding to UTF-8. Many open source
+spreadsheet programs, such as LibreOffice Calc, use UTF-8 by default, and
+include an easy means for users to change the default encoding.
+
+.. TIP::
+
+   For Excel users, here is an eHow guide on converting CSV files to UTF-8:
+   http://www.ehow.com/how_8387439_save-csv-utf8.html
+
+.. _csv-line-endings:
+
+Line endings
+^^^^^^^^^^^^
+
+"In computing, a newline, also known as a line ending, end of line (EOL), or
+line break, is a special character or sequence of characters signifying the
+end of a line of text. The actual codes representing a newline vary across
+operating systems, which can be a problem when exchanging text files between
+systems with different newline representations." (`Wikipedia
+<http://en.wikipedia.org/wiki/Newline>`__)
 
 Here are some of the differences:
 
@@ -202,9 +226,11 @@ Here are some of the differences:
   0x0D0A)
 
 AtoM's CSV import will expect Unix-style line breaks ( ``\n`` ). If you have
-been using a spreadsheet application on a Mac or Windows, you may encounter
-import issues. There are many command-line utilities and free software
-options out there to convert newline characters.
+been using a spreadsheet application (such as Excel) on a Mac or Windows, you
+may encounter import issues. There are many command-line utilities and free
+software options out there to convert newline characters. Please ensure that
+your spreadsheet is using the correct line endings prior to upload, otherwise
+the upload will fail.
 
 .. _csv-data-transformation:
 
@@ -279,14 +305,132 @@ use the command-line purge tool.
 Legacy ID mapping: dealing with hierarchical data in a CSV
 ==========================================================
 
-content
+The *legacyId* column in imports is used to associate specific legacy data to
+AtoM data using ID columns. Why would you need to associate this data? Let's
+say you're importing a CSV file of description data you've exported from a
+non-AtoM system. If the imported descriptions are in any way hierarchical --
+with a fond containing items for example -- a column in a child description
+will have to specify the legacy ID of its parent. The parent's legacy ID can
+then be used to look up the AtoM ID of the parent that was imported earlier.
+With the AtoM ID discovered, the parent/child relationship can then be
+created. In addition to hierarchical description data, supplementary data such
+as events must specify a legacy parent ID when imported.
+
+.. figure:: images/keymap-table.*
+   :align: right
+   :figwidth: 20%
+   :width: 100%
+   :alt: Image of the the keymap table in AtoM's database
+
+   A representation of the keymap table in AtoM, from an Entity Relationship
+   Diagram of AtoM's MySQL database.
+
+When CSV data is imported into AtoM, values in the *legacyID* column are
+stored in AtoM's keymap table, in a column named *source_id*. A system
+administrator or :term:`developer` can access this information, either via
+the command-line, or by using a graphical application such as
+`phpMyAdmin <http://www.phpmyadmin.net>`__ to look up exising legacy ID values
+in the *source_id* column of the MySQL keymap table.
+
+In cases where data is being imported from multiple sources, legacy IDs may
+conflict. Two datasets, for example, may have objects with an ID of 3. When
+importing, you can use the command-line option ``--source-name`` to only record
+or reference mappings for a specific data source. This will look for a
+matching value in the *source_name* column of AtoM's keymap table.
+
+The following example shows an import of information objects that records a
+specific source name when mapping legacy IDs to AtoM IDs:
+
+.. code-block:: bash
+
+    php symfony csv:import information_objects_rad.csv --source-name=collection_name
+
+Given the above example, the subsequent import of
+:ref:`events <csv-import-events>` using the following command would make sure
+that they get associated with information objects from a specific source:
+
+.. code-block:: bash
+
+  php symfony csv:event-import events.csv --source-name=collection_name
 
 .. _csv-import-descriptions:
 
 Import archival descriptions via CSV
 ====================================
 
-content
+The information object import tool allows you to map CSV columns to AtoM data.
+Example RAD and ISAD CSV template files are available in AtoM source code
+(``lib/task/import/example/rad/example_information_objects_rad.csv``` and
+``lib/task/import/example/isad/example_information_objects_isad.csv``) or you
+can download the files here:
+
+* RAD archival description CSV template [zip archive]
+* ISAD(G) archival description CSV template [zip archive]
+
+Hierarchical relationships
+--------------------------
+
+Information objects often have parent-child relationships - for example, a
+series is a child of the fonds to which it belongs; it has a parent fonds. If
+you want to import a :term:`fonds` or :term:`collection` into AtoM along with
+its lower levels of description (i.e. its children - series, files, items,
+etc.), you will need a way to specify which rows in your CSV file belong to
+which parent description.
+
+There are two basic ways to specify which information object is the parent of
+an information object being imported in your CSV - either through the use of
+the *legacyID* and *parentID* columns (generally used for new descriptions being
+imported, or from descriptions being migrated from another access system), or
+by using the *qubitParentSlug* column to import new child descriptions to an
+existing description in AtoM.
+
+.. WARNING::
+
+   Note that setting both the *parentId* and *qubitParentSlug* in a single row
+   will create an error during import. Only one type of parent specification
+   should be used for a single imported information object.
+
+You **can** use a mix of *legacyId/parentId* and *qubitParentSlug* in the
+same CSV, just not in the same row. So, for example, if you wanted to import
+a series description as a child of a description already in AtoM, as well as
+several files as children of the series description, you could set a *legacyID*
+for the series, use the *qubitParentSlug* to point to the parent fonds or
+collection already in AtoM, and then use the *parentID* column for all your
+lower-level file descriptions. However, using both *parentID* and
+*qubitParentSlug* in the same row will cause an error.
+
+Both methods of establishing hierarchical relationships is described below.
+
+LegacyID and parentID
+^^^^^^^^^^^^^^^^^^^^^
+
+One way  to establish hierarchical relationships during a CSV import involves
+the use of the *parentId* column to specify a legacy ID (referencing the
+*legacyId* column of a previously imported information object). Note that
+parent information objects should be specified before any information objects
+that refer to them with parentId/qubitParentSlug in the CSV.
+
+This way is most often used for migrations from other access systems. The
+other way enables you to specify an information object that doesn't have a
+legacy ID (one, for example, that has been manually created using the AtoM web
+interface). This way can be used to import content into an existing AtoM
+installation.
+
+
+qubitParentSlug
+^^^^^^^^^^^^^^^
+
+To specify a parent that exists in AtoM, you must first take note of the
+parent information object's "slug". The "slug" is a textual identifier that is
+included in the URL used to view the parent information object. If the URL,
+for example, is "http://myarchive.com/AtoM/index.php/example-fonds;isad" then
+the slug will be "example-fonds". This slug value would then be included in
+your import in the "qubitParentSlug" column in the rows of children of the
+parent information object. Alternately, you can use the --parent-slug option
+in the command-line to indicate all descriptions imported should be given a
+specific parent. The use of --parent-slug will override parent specification
+using the "parentId" or "qubitParentSlug" columns.
+
 
 .. _csv-import-descriptions-gui:
 
@@ -300,7 +444,24 @@ content
 Using the command-line interface (CLI)
 --------------------------------------
 
-content
+For larger CSV imports (e.g. those with 1,000 or more rows), we recommend
+using the Command-line interface to import your descriptions.
+
+Example use (with the RAD CSV template):
+
+.. code-block:: bash
+
+   php symfony csv:import lib/task/import/example/rad/example_information_objects_rad.csv
+
+Use the ``source-name`` option (described :ref:`above <csv-legacy-id-mapping>`
+to specify a source when importing information objects from multiple sources
+(with possibly conflicting legacy IDs).
+
+If you'd like to import all rows in a CSV file to a given legacy ID, you can
+use the ``--legacy-parent-id`` command-line option to specify the desired ID,
+rather than including this ID in each row's *parentId* column. Note that this
+will affect ALL rows in a CSV - so use this **only** if you are importing all
+descriptions to a single parent!
 
 :ref:`Back to top <csv-import>`
 
