@@ -23,13 +23,13 @@ right-hand corner of the Archival description view page.
 1. Click on the Reports hyperlink.
 2. The Reports page is loaded for public users.
 
-.. image:: images/file-list.*
+.. image:: images/file-list.png
    :align: center
    :width: 80%
    :alt: Reports view to the public user.
 
 
-.. image:: images/file-list-loggedin.*
+.. image:: images/file-list-loggedin.png
    :align: center
    :width: 80%
    :alt: Reports view to the logged-in user with Admin privileges
@@ -37,13 +37,13 @@ right-hand corner of the Archival description view page.
 3. Select the Continue button, and AtoM presents a report criteria page.
 
 
-.. image:: images/file-report-criteria-loggedin.*
+.. image:: images/file-report-criteria-loggedin.png
    :align: center
    :width: 80%
    :alt: Report criteria view to the logged-in user with Admin privileges.
 
 
-.. image:: images/file-report-criteria.*
+.. image:: images/file-report-criteria.png
    :align: center
    :width: 80%
    :alt: Report criteria view to the public user.
@@ -53,13 +53,13 @@ right-hand corner of the Archival description view page.
 5. Select the Continue button and AtoM loads the print preview page.
 
 
-.. image:: images/file-report-preview.*
+.. image:: images/file-report-preview.png
    :align: center
    :width: 80%
    :alt: Print preview to the public user.
 
 
-.. image:: images/file-report-preview-admin.*
+.. image:: images/file-report-preview-admin.png
    :align: center
    :width: 80%
    :alt: Print preview to the logged-in user with Admin privileges.
