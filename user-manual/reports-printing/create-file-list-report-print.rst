@@ -15,9 +15,13 @@ right-hand corner of the Archival description view page.
    Before you click on Reports, make sure that the archival description you
    are viewing has children levels that correspond to files and items. If the
    the archival description does not have any information at the file-level,
-   you will not be successful printing a file list. If the archival
-   description does not have any information at the item-level, you will not
-   be successful printing an item list.
+   you will not be successful at printing a file list.
+
+
+.. image:: images/reportslink.png
+   :align: left
+   :width: 10%
+   :alt: Reports hyperlink
 
 
 1. Click on the Reports hyperlink.
@@ -31,6 +35,7 @@ right-hand corner of the Archival description view page.
 
 3. Alternatively, if you are logged-in as Admin, AtoM will load the page with
    the additional options: physical storage locations and box label CSV.
+
 
 .. image:: images/file-list-loggedin.png
    :align: center
@@ -53,6 +58,7 @@ right-hand corner of the Archival description view page.
    report criteria page, which provides the following sort options: reference
    code, title, date (based on start date) AND retrieval information.
 
+
 .. image:: images/file-report-criteria-loggedin.png
    :align: center
    :width: 80%
@@ -71,9 +77,11 @@ right-hand corner of the Archival description view page.
    :width: 80%
    :alt: Print preview to the public user.
 
+
 9. The example below shows the file list report for a logged-in user. Notice
    the extra column with retrieval information, which is the physical storage
    location.
+
 
 .. image:: images/file-report-preview-admin.png
    :align: center
