@@ -21,7 +21,7 @@ right-hand corner of the Archival description view page.
 
 
 1. Click on the Reports hyperlink.
-2. The Reports page is loaded for public users.
+2. The Reports page is loaded for public users:
 
 .. image:: images/file-list.png
    :align: center
@@ -29,18 +29,18 @@ right-hand corner of the Archival description view page.
    :alt: Reports view to the public user.
 
 
+3. Alternatively, if you are logged-in as Admin, AtoM will load the page with
+   the additional options: physical storage locations and box label CSV.
+
 .. image:: images/file-list-loggedin.png
    :align: center
    :width: 80%
    :alt: Reports view to the logged-in user with Admin privileges
 
-3. Select the Continue button, and AtoM presents a report criteria page.
 
-
-.. image:: images/file-report-criteria-loggedin.png
-   :align: center
-   :width: 80%
-   :alt: Report criteria view to the logged-in user with Admin privileges.
+4. Select the Continue button, and AtoM presents a report criteria page for
+   the public user, which provides the following sort options: reference
+   code, title and date (based on start date).
 
 
 .. image:: images/file-report-criteria.png
@@ -49,8 +49,21 @@ right-hand corner of the Archival description view page.
    :alt: Report criteria view to the public user.
 
 
-4. Choose your preference for sorting the list and click on the radial button.
-5. Select the Continue button and AtoM loads the print preview page.
+5. If you are logged-in, selection of the Continue button will take you to a
+   report criteria page, which provides the following sort options: reference
+   code, title, date (based on start date) AND retrieval information.
+
+.. image:: images/file-report-criteria-loggedin.png
+   :align: center
+   :width: 80%
+   :alt: Report criteria view to the logged-in user with Admin privileges.
+
+
+6. Choose your preference for sorting the list by clicking on the
+   appropriate radial button.
+7. Select the Continue button and AtoM will load the print preview page for
+   the file list report.
+8. The example below shows the file list report for a public user:
 
 
 .. image:: images/file-report-preview.png
@@ -58,6 +71,9 @@ right-hand corner of the Archival description view page.
    :width: 80%
    :alt: Print preview to the public user.
 
+9. The example below shows the file list report for a logged-in user. Notice
+   the extra column with retrieval information, which is the physical storage
+   location.
 
 .. image:: images/file-report-preview-admin.png
    :align: center
