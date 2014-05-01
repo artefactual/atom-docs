@@ -111,7 +111,7 @@ AtoM:
 
 * :ref:`Create file list report & print <create-file-list-report-print>`
 * :ref:`Create item list report & print <create-item-list-report-print>`
-* Create physical storage locations report & print
+* :ref:`Create physical storage locations report & print <create-physical-storage-report>`
 * Print search results
 * Print finding aid
 
