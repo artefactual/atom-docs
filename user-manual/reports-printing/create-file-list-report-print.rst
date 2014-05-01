@@ -17,8 +17,8 @@ right-hand corner of the :term:`Archival description` view page.
 .. TIP::
 
    Before you click on Reports, make sure that the
-   :term:`archival description`  you are viewing has
-   :term:`child records <Child record>`that correspond to files and items. If
+   :term:`archival description` you are viewing has
+   :term:`child records <Child record>` that correspond to files and items. If
    the the archival description does not have any information at the file-level,
    you will not be successful at printing a file list.
 
