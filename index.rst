@@ -112,7 +112,7 @@ AtoM:
 * :ref:`Create file list report & print <create-file-list-report-print>`
 * :ref:`Create item list report & print <create-item-list-report-print>`
 * :ref:`Create physical storage locations report & print <create-physical-storage-report>`
-* Print finding aid
+* :ref:`Print finding aids <print-finding-aid>`
 
 .. _import-export:
 
