@@ -78,7 +78,7 @@ Create physical storage report from Manage menu
 Click on the "Manage" menu and Select "Physical storage" from the drop-down list.
 
 .. image:: images/navigate-physical-storage.*
-   :align: right
+   :align: center
    :width: 30%
    :alt: Using the manage menu to navigate to Physical Storage.
 
