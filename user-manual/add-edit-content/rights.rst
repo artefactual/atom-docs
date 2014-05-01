@@ -174,7 +174,6 @@ Add rights to a Digital object
    version, you must click on the "Add new" button and the :term:`rights
    record` dialogue box will pop up.
 
-
   .. figure:: images/digitalobject-rights.*
    :align: right
    :figwidth: 50%

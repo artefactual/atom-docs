@@ -171,11 +171,6 @@ Any :term:`digital object` that has been uploaded and linked to an
    :height: 18
    :width: 18
 
-.. image:: images/object-rights.*
-   :align: center
-   :width: 70%
-   :alt: A image of the permission rights of digital objects
-
 1. Navigate to the :term:`view page` of an existing :term:`archival
    description` that has an existing :term:`digital object`.
 2. Click on the "More" button in the :term:`button block`; from the menu that
@@ -185,6 +180,15 @@ Any :term:`digital object` that has been uploaded and linked to an
    representation, :term:`reference <reference display copy>` representation and
    :term:`thumbnail` representation) of the :term:`digital object` will be
    listed, along with information on their Filename, Filesize and Media Type.
+
+Edit digital object rights
+--------------------------
+
+.. image:: images/object-rights.*
+   :align: center
+   :width: 70%
+   :alt: A image of the permission rights of digital objects
+
 4. The rights permissions for all versions can be edited. Actions can be
    permitted or restrictted (i.e. added or removed) as needed. To do this,
    select the "Add new" button that appears at the end of each representation
@@ -204,14 +208,43 @@ Any :term:`digital object` that has been uploaded and linked to an
    The new entry will appear in the Rights records table.
 6. Permissions can be edited by clicking the |pencil| pencil at the end of the
    entry. They can be deleted by clicking the "X" next to the pencil.
-7. You can quit the edit process at any time by clicking the "Cancel" button in
+
+Edit reference and thumbnail representations
+--------------------------------------------
+
+7. If you wish to use a different image as the :term:`thumbnail` or
+   :term:`reference <reference display copy>` version this is also performed
+   from the Edit digital object screen. First click delete in Reference
+   representation or Thumbnail area.
+
+.. image:: images/edit-thumbnail.*
+   :align: center
+   :width: 70%
+   :alt: Deleting a thumbnail or reference image
+
+8. AtoM will ask the user to confirm that they would like to delete the
+   thumbnail/reference image. After confirming, the Edit digital object
+   screen will allow the user to upload a new reference representation by
+   clicking Browse and selecting a file from their computer, or auto-generate a
+   new representation from the master image.
+
+.. image:: images/upload-thumbnail.*
+   :align: center
+   :width: 70%
+   :alt: Upload or create a new thumbnail or reference image.
+
+Save changes
+------------
+
+9. You can quit the edit process at any time by clicking the "Cancel" button in
    the :term:`button block`; any edits made to digital objects will not be
    saved. Note that simply navigating away from the page by any other means,
    **without first clicking "Save"** will also result in no new digital objects
    being uploaded.
-8. Once all your changes have been made, click the "Save" button in the
-   :term:`button block`. You will be redirected back to the :term:`archival
-   description's <archival description>` :term:`view page`.
+
+10. Once all your changes have been made, click the "Save" button in the
+   :term:`button block`. You will be redirected back to the
+   :term:`archival description's <archival description>` :term:`view page`.
 
 All changes made can be edited once again, at any time, by following the steps
 outlined above.
