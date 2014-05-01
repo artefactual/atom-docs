@@ -242,7 +242,7 @@ Save changes
    **without first clicking "Save"** will also result in no new digital objects
    being uploaded.
 
-10. Once all your changes have been made, click the "Save" button in the
+#. Once all your changes have been made, click the "Save" button in the
    :term:`button block`. You will be redirected back to the
    :term:`archival description's <archival description>` :term:`view page`.
 
