@@ -4,7 +4,7 @@
 Rights
 ======
 
-As discussed in the section on entity types,
+As discussed in the section on :ref:`entity types <entity-types>`,
 :term:`Rights records <rights record>` provide rights related restrictions
 that can be linked to :term:`accession records <accession record>`,
 :term:`archival descriptions <archival description>` and
@@ -27,40 +27,78 @@ Add a new rights record
 =======================
 
 This section describes how to add a new :term:`rights record` by using the
-rights dialog provided through the add/edit template.
+rights dialog provided through the add/edit template. You can add rights to
+an existing record, or create a new record and add rights as you proceed. The
+following instructions will cover both scenarios.
 
 .. NOTE::
-   You must be logged in and have the appropriate privileges, such as
-   :term:`editors` and :term:`administrators` to be able to add/edit content
-   in AtoM, which includes creating a :term:`rights record`.
-   See: :ref:`Log in <log-in>`.
 
-Add rights to a new Accession record
-------------------------------------
+   You must be logged in and have the appropriate privileges, such as
+   :term:`editors <editor>` and :term:`administrators <administrator>` to be
+   able to add/edit content in AtoM, which includes creating a
+   :term:`rights record`. See: :ref:`Log in <log-in>`.
+
+.. _add-rights-accession:
+
+Add rights to an Accession record
+---------------------------------
 
 .. figure:: images/accession-rights.png
    :align: right
-   :figwidth: 50%
+   :figwidth: 40%
    :width: 100%
    :alt: Rights record dialogue box in edit accession record page
 
    Rights record dialogue box in edit accession record page.
 
+.. |plus| image:: images/plus-sign.png
+   :height: 18
+   :width: 18
+
+**IF YOU ARE ADDING RIGHTS TO A NEW ACCESSION RECORD**
 
 1. Navigate to the :term:`main menu` located in the :term:`header bar`, click
-   the "Add" menu and select :term:`accession record` from the
-   :term:`drop-down menu`.
+   the |plus| :ref:`"Add" <main-menu-add>` menu and select
+   :term:`accession record` from the :term:`drop-down menu`. AtoM takes you to
+   a blank :term:`edit page` for data entry for an :term:`accession record`.
 
-2. AtoM takes you to a blank :term:`edit page` for data entry for an
-   :term:`accession record`.
 
-3. On loading, the :term:`edit page` displays the accession record with the
-   first :term:`information area` open, Basic info. You can begin entering
-   information about your new accession.
+2. On loading, the :term:`edit page` displays the accession record with the
+   first :term:`information area` open, Basic info.
+
+3. You can begin entering information about your new accession. For more
+   information on working with :term:`accession records <accession record>` in
+   AtoM, see: :ref:`accession-records` When you are ready to add a related
+   rights record to your new accession, proceed to **step 4**, below.
+
+-------
+
+**IF YOU ARE ADDING RIGHTS TO AN EXISTING ACCESSION RECORD**
+
+1. Navigate to the :term:`accession record` you want to edit. You can do this
+   via the :term:`main menu` in the AtoM :term:`header bar`, by clicking on
+   **Manage > Accessions**. For more information on navigation in AtoM,
+   see: :ref:`Access content <access-content>`.
+
+2. AtoM will redirect you to the accession record :ref:`browse page
+   <page-type-browse>`. Select the record you want by clicking on the
+   hyperlink Identifier. You can also search for an :term:`accession record`
+   with the accession records :term:`search box` located at the bottom of the
+   browse page. For more information on searching for :term:`accession records
+   <accession record>` in AtoM, see: :ref:`Searching for accession records
+   <dedicated-search-accessions>`.
+
+3. When you have arrived at the record to which you wish to add rights, Click
+   on the "Edit" button located in the :term:`button block` located at the
+   bottom of the page to enter :term:`edit mode`; alternately, you can click
+   on on of the :term:`information area` headers to open the :term:`edit page`
+   directly in that section. Proceed to **step 4** below.
+
+-------
 
 4. To enter Rights information, scroll down the page until you see the
-   :term:`information area` titled, Rights area, click on it to access the
-   :term:`rights record` dialogue.
+   :term:`information area` titled, "Rights area". If the section is collapsed,
+   click on area header to expand and access the :term:`rights record` dialogue.
 
 5. Click on the "Add new" button and the default :term:`rights record`
    dialogue box will pop up.
@@ -78,9 +116,13 @@ Add rights to a new Accession record
    Rights holder that might not already exist in their Rights holder record.
 
 10. The "Basis" data entry field is a drop-down list. You can select:
-    Copyright, License, Statute, Policy, or Donor. Depending upon your
-    selection, the AtoM Right record dialogue provides additonal data entry
-    fields.
+    Copyright, License, Statute, Policy, or Donor.
+
+.. TIP::
+
+   Depending upon your selection, the AtoM Right record dialogue may provide
+   additonal data entry fields. Be sure you scroll down in the dialogue to
+   see all of the available fields!
 
 11. Once you complete adding information to the rights record, click on the
     blue Submit button and then click on the blue Create button to save the
@@ -88,21 +130,22 @@ Add rights to a new Accession record
     and you are editing the rights information, you will click on the blue
     Save button.
 
-Add rights to a new Archival description
-----------------------------------------
+Add rights to an Archival description
+-------------------------------------
 
 .. figure:: images/archdescription-rights.*
    :align: right
-   :figwidth: 50%
+   :figwidth: 40%
    :width: 100%
    :alt: Rights record dialogue box in edit archival description page
 
    Rights record dialogue box in edit archival description page.
 
+**TO ADD RIGHTS TO A NEW ARCHIVAL DESCRIPTION:**
 
 1. Navigate to the :term:`main menu` located in the :term:`header bar`,
-   click the "Add" menu and select :term:`archival description` from the
-   :term:`drop-down menu`.
+   click the |plus| :ref:`"Add" <main-menu-add>` menu and select
+   :term:`archival description` from the :term:`drop-down menu`.
 
 2. AtoM takes you to a blank :term:`edit page` for data entry for an
    :term:`archival description`.
@@ -111,7 +154,34 @@ Add rights to a new Archival description
    all the :term:`information areas <information area>`, closed. The name of
    the first :term:`information area` will vary according to the archival
    content standard you are using. In the example shows, ISAD(G) is shown.
-   You can begin entering information about your archival description.
+   You can begin entering information about your archival description. For
+   more information on working with archival descriptions in AtoM, see:
+   :ref:`archival-descriptions`. When you are ready to add rights to your new
+   :term:`archival description`, proceed to **step 4** below.
+
+-------
+
+**TO ADD RIGHTS TO AN EXISTING ARCHIVAL DESCRIPTION:**
+
+1. First, navigate to the :term:`archival description` you wish to edit. You
+   can do this by :doc:`browsing <../access-content/browse>` or
+   :doc:`searching <../access-content/search-atom>` for the
+   :term:`archival description` - see :ref:`Access content <access-content>`
+   for more information on navigation in AtoM.
+
+2. Switch from :term:`view mode` to :term:`edit mode` by clicking the
+   :term:`"Edit" button <Edit button>` in the :term:`button block`, or by
+   clicking on one of the :term:`information area` headings; this takes you
+   to the record's :term:`edit page`.
+
+3. On loading, the :term:`edit page` displays the record with all
+   :term:`information areas <information area>` closed; click on an
+   information area to access the :term:`fields <field>` grouped under it.
+   You can edit any data as required; when you are ready to add a new rights
+   statement to your :term:`archival description`, proceed to **step 4**
+   below.
+
+-------
 
 4. To enter Rights information, scroll down the page until you see the
    :term:`information area` titled, Rights area, click on it to access the
@@ -133,9 +203,13 @@ Add rights to a new Archival description
    Rights holder that might not already exist in their Rights holder record.
 
 10. The "Basis" data entry field is a drop-down list. You can select:
-    Copyright, License, Statute, Policy, or Donor. Depending upon your
-    selection, the AtoM Right record dialogue provides additonal data entry
-    fields.
+    Copyright, License, Statute, Policy, or Donor.
+
+.. TIP::
+
+   Depending upon your selection, the AtoM Right record dialogue may provide
+   additonal data entry fields. Be sure you scroll down in the dialogue to
+   see all of the available fields!
 
 11. Once you complete adding information to the rights record, click on the
     blue Submit button and then click on the blue Create button to save the
@@ -146,7 +220,7 @@ Add rights to a new Archival description
 
   .. figure:: images/recordrights.*
    :align: right
-   :figwidth: 50%
+   :figwidth: 40%
    :width: 100%
    :alt: View rights added to archival description
 
@@ -160,23 +234,27 @@ Add rights to a new Archival description
 Add rights to a Digital object
 ------------------------------
 
-1. If you have a digital object (e.g., JPEG, PDF, MP3 etc.) associated with
-   an archival description, you can apply Rights information to a single
-   digital object and / or its master, representation and thumbnail versions.
+1. If you have a :term:`digital object` (e.g., JPEG, PDF, MP3 etc.) associated
+   with an :term:`archival description`, you can apply Rights information to a
+   single digital object and / or its master, representation and thumbnail
+   versions. For more information on adding digital objects to archival
+   descriptions, see: :ref:`upload-digital-object`.
 
-2. After you have imported or linked a digital object to an archival description
-   click on the digital object metadata area to edit (note: do not click on
+2. After you have imported or linked a :term:`digital object` to an
+   :term:`archival description`, click on the digital object metadata
+   :term:`information area` header to edit (note: do not click on
    the edit button in the button block).
 
-3. AtoM will open the Edit digital object page and present the Master,
-   Reference and Thumbnail versions of the digital object. Each version has
-   its own Rights records module. To access the :term:`rights record` for each
-   version, you must click on the "Add new" button and the :term:`rights
-   record` dialogue box will pop up.
+3. AtoM will open the digital object :term:`edit page` and present the
+   :term:`Master <master digital object>`,
+   :term:`Reference <reference display copy>` and :term:`Thumbnail` versions of
+   the :term:`digital object`. Each version has its own Rights records module.
+   To access the :term:`rights record` for each version, you must click on the
+   "Add new" button and the :term:`rights record` dialogue box will pop up.
 
   .. figure:: images/digitalobject-rights.*
    :align: right
-   :figwidth: 50%
+   :figwidth: 40%
    :width: 100%
    :alt: View rights record dialogue box in Edit digital object page
 
@@ -184,10 +262,12 @@ Add rights to a Digital object
 
 
 4. In the example provided on the right, you are viewing the rights dialogue
-   for the reference representation of a digital image.
+   for the :term:`reference representation <reference display copy>` of a
+   digital image.
 
-5. The "Act" data entry field is a drop-down list. You can select: Delete,
-   Discover, Display, Disseminate, Migrate, Modify, and Replicate.
+5. The "Act" data entry field is a :term:`drop-down <drop-down menu>` list.
+   You can select: Delete, Discover, Display, Disseminate, Migrate, Modify,
+   and Replicate.
 
 6. The "Restriction" data entry field provides two choices: Allow or
    Disallow.
@@ -206,8 +286,8 @@ Add rights to a Digital object
 10. Once you complete adding information to the rights record, click on the
     blue Submit button. You will see that a rights record has been added to
     the reference representation. Click on the save button at the bottom of
-    the page. AtoM will take you to the archival description page and you can
-    see that a Digital object (Reference) rights area has been added below the
-    Digital object metadata section.
+    the page. AtoM will take you to the archival description :term:`view page`
+    and you can  see that a Digital object (Reference) rights area has been
+    added below the Digital object metadata section.
 
 :ref:`Back to top <rights>`
