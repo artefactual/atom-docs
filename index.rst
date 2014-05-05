@@ -125,7 +125,7 @@ application.
 
 * :ref:`Upload digital objects <upload-digital-object>`
 * :ref:`Import descriptions and terms <import-descriptions-terms>`
-* Export descriptions and terms
+* :ref:`Export descriptions and terms <export-descriptions-terms>`
 * :ref:`CSV import <csv-import>`
 
 .. _administer:
