@@ -4,10 +4,13 @@
 Export descriptions and terms
 =============================
 
-AtoM provides an export functionality that can be used to export archival
-descriptions, authority records, archival institutions and terms. Exported
-descriptions and taxonomies will be displayed in your web browser window. To
-save the XML export file, use your browser's "Save page as" functionality.
+AtoM provides an export functionality that can be used to export
+:term:`archival descriptions <archival description>`,
+:term:`authority records <authority record>`,
+:term:`archival institutions <archival institution>` and
+:term:`terms <term>`. Exported descriptions and :term:`taxonomies <taxonomy>`
+will be displayed in your web browser window. To save the XML export file, use
+your browser's "Save page as" functionality.
 
 .. TIP::
 
