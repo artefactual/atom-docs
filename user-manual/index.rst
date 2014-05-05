@@ -36,6 +36,7 @@ links to each chapter's main sections.
    reports-printing/create-physical-storage-report
    reports-printing/print-finding-aid
    import-export/upload-digital-object
+   import-export/import-descriptions-terms
    import-export/csv-import
    administer/manage-user-accounts
    administer/manage-digital-object-storage

@@ -124,7 +124,7 @@ This section describes automated methods for getting data in and out of an AtoM
 application.
 
 * :ref:`Upload digital objects <upload-digital-object>`
-* Import descriptions and terms
+* :ref:`Import descriptions and terms <import-descriptions-terms>`
 * Export descriptions and terms
 * :ref:`CSV import <csv-import>`
 
