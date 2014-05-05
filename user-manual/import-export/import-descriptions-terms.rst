@@ -23,8 +23,8 @@ Import XML file
 1. Click on the import menu menu, then click on XML.
 
 .. image:: images/import-menu.*
-   :align: right
-   :width: 15%
+   :align: center
+   :width: 20%
    :alt: The import menu
 
 2. Click on Browse, and navigate to an XML file saved to your computer. Click
@@ -62,7 +62,7 @@ Import SKOS file
 
 1. Click on the import menu, then click on XML.
 
-2. CLick on the link to the SKOS import page.
+2. Click on the link to the SKOS import page.
 
 .. image:: images/import-menu-skos.*
    :align: center
