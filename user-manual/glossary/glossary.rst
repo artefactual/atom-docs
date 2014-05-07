@@ -482,7 +482,7 @@ Glossary
      AtoM has been designed so that other themes can be added to the
      application as plugins, after which an :term:`administrator` can change
      the application theme via the :term:`user interface` by navigating to
-     **Admin > Themes**. See :ref:`Themes and theming <themes-theming>`.
+     **Admin > Themes**. See :ref:`Themes and theming <themes>`.
 
   Donor dialog
     The dialog that opens when adding donor contact information to the

@@ -45,6 +45,7 @@ links to each chapter's main sections.
    administer/static-pages
    administer/manage-menus
    administer/settings
+   administer/themes
    administer/site-logo
    administer/search-updates
    administer/visible-elements
