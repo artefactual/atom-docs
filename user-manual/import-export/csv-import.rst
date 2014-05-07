@@ -275,7 +275,7 @@ Estimating import duration
 --------------------------
 
 Once you've mapped the columns names in your CSV export to the corresponding
-AtoM-compatible CSV column names you can perform a test import.
+AtoM-compatible CSV column names you may wish to perform a test import.
 
 A test import gives you an idea how long the import will take to complete on
 your hardware. To estimate how long it will take to import 20,000 rows of CSV
@@ -291,7 +291,7 @@ Open Hosting, Amazon EC2, or Rackspace Cloud.
 Testing your import
 -------------------
 
-Once you've worked out an import, you may want to clone your AtoM site and
+Once you've prepared your import, you may want to clone your AtoM site and
 test your import on the clone before importing to your production AtoM
 installation. This prevents you from having to delete any improperly imported
 data. During import testing if you want to delete all imported data you can
@@ -406,31 +406,121 @@ LegacyID and parentID
 
 One way  to establish hierarchical relationships during a CSV import involves
 the use of the *parentId* column to specify a legacy ID (referencing the
-*legacyId* column of a previously imported information object). Note that
-parent information objects should be specified before any information objects
-that refer to them with parentId/qubitParentSlug in the CSV.
+*legacyId* column of a previously imported information object). This way is
+most often used for migrations from other access systems. Using this method,
+:term:`parent <parent record>` descriptions (e.g. :term:`fonds`,
+:term:`collections <collection>`, etc) must appear **first** (i.e. above) in
+your CSV and must include a legacyID - while  :term:`child records <child
+record>` must appear **after** (i.e. below) their parent records in your CSV,
+and must include the legacyID of the parent record in the *parentID* column.
 
-This way is most often used for migrations from other access systems. The
-other way enables you to specify an information object that doesn't have a
-legacy ID (one, for example, that has been manually created using the AtoM web
-interface). This way can be used to import content into an existing AtoM
-installation.
+Here is an example of the first three columns of a CSV file (shown in a
+spreadsheet application), importing a **Fonds > Series > Item** hierarchy:
 
+.. image:: images/csv-parentID-example.*
+   :align: center
+   :width: 80%
+   :alt: example CSV parentID rows
+
+
+.. IMPORTANT::
+
+   When the CSV is imported, it progresses row by row - meaning, if your CSV
+   is not properly ordered with parent records appearing **before** their
+   children, your import will fail!
 
 qubitParentSlug
 ^^^^^^^^^^^^^^^
 
-To specify a parent that exists in AtoM, you must first take note of the
-parent information object's "slug". The "slug" is a textual identifier that is
-included in the URL used to view the parent information object. If the URL,
-for example, is "http://myarchive.com/AtoM/index.php/example-fonds;isad" then
-the slug will be "example-fonds". This slug value would then be included in
-your import in the "qubitParentSlug" column in the rows of children of the
-parent information object. Alternately, you can use the --parent-slug option
-in the command-line to indicate all descriptions imported should be given a
-specific parent. The use of --parent-slug will override parent specification
-using the "parentId" or "qubitParentSlug" columns.
+The other method of importing hierarchical data into AtoM enables you to
+specify an existing :term:`archival description` that doesn't have a legacyID
+(one, for example, that has been manually created using the AtoM web
+interface), and import descriptions as children of the target description(s).
 
+To specify a parent that exists in AtoM, you must first take note of the
+parent information object's :term:`slug`. The "slug" is a textual identifier
+that is included in the URL used to view the parent description. If the URL,
+for example, is `http://myarchive.com/AtoM/index.php/example-fonds` then
+the slug will be `example-fonds`. This slug value would then be included in
+your import in the *qubitParentSlug* column in the rows of children of the
+parent description.
+
+Alternately, if you are using the command-line to perform your import, you can
+use the `--parent-slug` option in the command-line to indicate **all**
+descriptions imported should be given a specific parent. The use of `
+--parent-slug` will override parent specification using the *parentId* or
+*qubitParentSlug* columns.
+
+Here is an example of the first few columns of a CSV file (shown in a
+spreadsheet application), importing a new series to an existing
+:term:`fonds`, and importing two new file-level descriptions to an existing
+series:
+
+.. image:: images/csv-qubitParentSlug-example.*
+   :align: center
+   :width: 85%
+   :alt: example CSV qubitParentSlug rows
+
+If desired, you can mix the use of the *qubitParentSlug* column with the use
+of the *parentID* column in the same CSV - for example, you could attach a
+new series to an existing fonds by giving it a *legacyID* and the slug for the
+existing fonds in the *qubitParentSlug* column, and then including
+lower-level files attached to the new series by adding the *legacyID* of the
+new series to the *parentID* column of the new files.
+
+.. IMPORTANT::
+
+   You **cannot** add a *parentID* and a *qubitParentSlug* to the **same row**,
+   or your import will fail. Each row must have **only** one or the other -
+   either a parent slug, or a parent ID.
+
+Creator-related import columns
+------------------------------
+
+The *creators*, *creatorHistories*, *creatorDates*, *creatorDatesStart*, and
+*creatorDatesEnd* columns are related to the creation of creators. If multiple
+creators exist for an information object, the values in these fields should be
+pipe-separated (e.g. using the ` | ` separator between values).
+
+.. image:: images/csv-creatorDates.*
+   :align: center
+   :width: 85%
+   :alt: example CSV creatorDates rows
+
+Note that *creatorDates*, *creatorDatesStart*, and *creatorDatesEnd* fields
+relate to **dates of creation** for the related description, and **not** to
+the dates of existence for the related creators. The *creatorDates* field
+will map to the free-text date field in AtoM, where users can use special
+characters to express approximation, uncertainty, etc. (e.g. [190-?]; [ca.
+1885]), while *creatorDatesStart* and *creatorDatesEnd* should include
+ISO-formatted date values (YYYY-MM-DD, YYYY-MM, or YYYY).
+
+*creatorHistories* is equivalent to ISAD(G) 3.2.2, RAD 1.7B, and/or DACS 2.7 -
+Administrative/Biographical history.
+
+.. NOTE::
+
+   Upon import, AtoM will create a new :term:`authority record` for any creator
+   who does not already exist in AtoM, and will map the *creatorHistories* data
+   for each creator to the "History" field in the related authority record. This
+   information will be linked and visible in the related archival description.
+   For more information on how AtoM handles authority records, see
+   :ref:`authority-records`.
+
+Physical object-related import columns
+--------------------------------------
+
+The *physicalObjectName*, *physicalObjectLocation*, and *physicalObjectType*
+columns are related to the creation of physical objects and physical storage
+locations related to an :term:`archival description`.
+
+.. image:: images/csv-physical-object.*
+   :align: center
+   :width: 85%
+   :alt: example CSV physicalObject rows
+
+For more information on working with physical storage in AtoM, see:
+:ref:`physical-storage`.
 
 .. _csv-import-descriptions-gui:
 
