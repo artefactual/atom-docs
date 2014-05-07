@@ -4,7 +4,17 @@
 Physical storage
 ================
 
-AtoM allows archival institutions to create realtionships between
+.. |plus| image:: images/plus-sign.png
+   :height: 18
+   :width: 18
+.. |pencil| image:: images/edit-sign.png
+   :height: 18
+   :width: 18
+.. |gears| image:: images/gears.png
+   :height: 18
+   :width: 18
+
+AtoM allows archival institutions to create relationships between
 :term:`archival descriptions <archival description>` and their physical storage
 locations.
 
@@ -14,8 +24,8 @@ Manage physical storage types
 Institutions can change and manage the terms used to describe physical object
 containers and locations by using the Physical Object Type :term:`taxonomy`:
 
-Click on the Manage menu, then on Taxonomies. From the list, click on
-Physical Object Type.
+Click on the |pencil| :ref:`Manage <main-menu-manage>` menu, then on
+Taxonomies. From the list, click on Physical Object Type.
 
 .. image:: images/physical-object-taxonomy.*
    :align: center
@@ -23,14 +33,14 @@ Physical Object Type.
    :alt: Physical Object Type taxonomy
 
 By clicking on an object type, you can view the object type in the taxonomy,
-displaying hierarhcical terms if applicable.
+displaying hierarchical terms if applicable.
 
 .. image:: images/physical-object-hierarchy.*
    :align: center
    :width: 80%
    :alt: Physical object taxonomy showing hierarchy
 
-The default hierarchy in the Physical Object type taxonomy in AtoM is as
+The default hierarchy in the Physical Object type :term:`taxonomy` in AtoM is as
 follows:
 
 * Artefact
@@ -53,6 +63,9 @@ such as box numbers, cabinet drawers, etc., and for "Locations" to include
 more general storage locations, such as "Cold storage," "Vault," etc.
 However, the storage types and uses can be customized to meet institutional
 practices.
+
+For more information on working with terms and taxonomies in AtoM, see:
+ref:`terms`.
 
 Edit storage types
 ------------------
@@ -84,17 +97,18 @@ Click on save to save your changes.
 Add storage types
 -----------------
 
-New physical storage types can be created by clicking "Add new" on the
-Physical Object Type taxonomy:
+New physical storage types can be created by clicking "Add new" in the
+:term:`button block` located on the Physical Object Type taxonomy
+:term:`view page`:
 
 .. image:: images/physical-object-add-new.*
    :align: center
    :width: 80%
    :alt: Add new physical object type
 
-Another method of adding a new storage type is to click "add new" when
+Another method of adding a new storage type is to click "Add new" when
 viewing an existing Physical Object type. This will automatically nest the
-new term as a child of the existing term.
+new term as a :term:`child <child record>` of the existing term.
 
 .. image:: images/physical-object-add-child.*
    :align: center
@@ -105,14 +119,15 @@ Link physical storage
 =====================
 
 Linking :term:`archival descriptions <archival description>` to physical
-locations is performed in the archival description for the resource.
+locations is performed from the :term:`view page` of the related archival
+description.
 
 Add/change container links
 --------------------------
 
 Physical storage can be linked at any :term:`level of description`. When
-viewing a description as a logged-in user, click on More, and then on Link
-physical storage:
+viewing a description as a logged-in user, click on the "More" button in the
+:term:`button block`, and then on "Link physical storage":
 
 .. image:: images/physical-storage-link.*
    :align: center
@@ -120,7 +135,7 @@ physical storage:
    :alt: Linking an archival description to physical storage
 
 If a link to a physical storage container or location already exists, it can
-be edited by clicking the pencil icon, or deleted by clicking the x.
+be edited by clicking the pencil icon, or deleted by clicking the **X**.
 
 .. image:: images/physical-storage-edit.*
    :align: center
@@ -131,7 +146,7 @@ be edited by clicking the pencil icon, or deleted by clicking the x.
 
    This edits the information associated with the Physical storage container
    and location. If you change this information the change will apply across
-   all descriptions associated with the container.
+   all :term:`descriptions <archival description>` associated with the container.
 
 .. image:: images/physical-storage-edit-2.*
    :align: center
@@ -160,7 +175,7 @@ Browse physical storage
 =======================
 
 Physical storage can be browsed by authenticated (logged in) users through
-the Manage menu:
+the |pencil| :ref:`Manage <main-menu-manage>` menu:
 
 .. image:: images/manage-phys-storage.*
    :align: center
@@ -213,10 +228,6 @@ available to unauthenicated (not logged-in) users or not through the
    :align: center
    :width: 80%
    :alt: Visible elements showing physical storage
-
-.. |gears| image:: images/gears.png
-   :height: 18
-   :width: 18
 
 To access the visible elements menu, click on the |gears|
 :ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located in the
