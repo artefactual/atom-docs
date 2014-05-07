@@ -141,7 +141,7 @@ or for a :term:`network`.
 * :ref:`Edit user permissions <edit-user-permissions>`
 * :ref:`Manage static pages <manage-static-pages>`
 * :ref:`Manage menus <manage-menus>`
-* Manage plugins
+* :ref:`Manage plugins <manage-plugins>`
 * :ref:`Settings <settings>`
 * :ref:`Themes and theming <themes>`
 * :ref:`Default language <default-language>`
