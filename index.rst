@@ -136,7 +136,6 @@ Administer
 This section describes how to administer AtoM, whether for a single institution
 or for a :term:`network`.
 
-* Install
 * :ref:`Manage user accounts and user groups <manage-user-accounts>`
 * :ref:`Manage digital object storage <manage-digital-object-storage>`
 * :ref:`Edit user permissions <edit-user-permissions>`
@@ -147,9 +146,7 @@ or for a :term:`network`.
 * :ref:`Themes and theming <themes>`
 * Default language
 * :ref:`Site logo <site-logo>`
-* Back up
 * :ref:`Search for updates <search-updates>`
-* Global search and replace
 * :ref:`Visible elements <visible-elements>`
 
 .. _data-entry:
@@ -218,6 +215,7 @@ Maintenance
 * :ref:`maintenance-logging`
 * :ref:`maintenance-monitoring`
 * :ref:`maintenance-populate-search-index`
+* Data backup
 * :ref:`maintenance-tuning`
 * :ref:`maintenance-troubleshooting`
 
