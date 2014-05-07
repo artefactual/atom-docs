@@ -69,8 +69,8 @@ sfIsdiahPlugin International Standard for Describing Institutions with
 Name          Purpose
 ============= ===============================================================
 qtSwordPlugin `SWORD <http://swordapp.org/>`_ plugin. Necessary for DIP
-              upload from Archivematica. :term:`Administrator` will also need
-              to enable job scheduler in :ref:`Settings.`
+              upload from Archivematica. An :term:`Administrator` will also
+              need to enable job scheduler in :ref:`Settings <settings>`.
 sfSkosPlugin  Data transform plugin. Enables XML import and export of
               :term:`Simple Knowledge Organization System <skos>` (SKOS) data.
 arOaiPlugin   `OAI <http://www.openarchives.org/>`_ plugin. Allows AtoM
