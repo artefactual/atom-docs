@@ -31,6 +31,7 @@ white with the ArchivesCanada logo).
 .. figure:: images/archives-canada-theme.*
    :align: center
    :figwidth: 60%
+   :width: 100%
    :alt: Archives Canada theme homepage
 
    Archives Canada theme homepage
