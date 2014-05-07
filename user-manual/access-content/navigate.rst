@@ -388,7 +388,7 @@ menu.
 * :ref:`Manage static pages <manage-static-pages>`
 * :ref:`Manage menus <manage-menus>`
 * :ref:`Manage plugins <manage-plugins>`
-* :ref:`Themes and theming <themes-theming>`
+* :ref:`Themes and theming <themes>`
 * :ref:`Settings <settings>`
 * :ref:`Default language <default-language>`
 * :ref:`Site logo <site-logo>`
