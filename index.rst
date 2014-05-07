@@ -144,7 +144,7 @@ or for a :term:`network`.
 * Manage plugins
 * :ref:`Settings <settings>`
 * :ref:`Themes and theming <themes>`
-* Default language
+* :ref:`Default language <default-language>`
 * :ref:`Site logo <site-logo>`
 * :ref:`Search for updates <search-updates>`
 * :ref:`Visible elements <visible-elements>`
