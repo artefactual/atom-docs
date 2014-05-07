@@ -43,20 +43,10 @@ displaying hierarchical terms if applicable.
 The default hierarchy in the Physical Object type :term:`taxonomy` in AtoM is as
 follows:
 
-* Artefact
-* Container
-
-   * Box
-
-      * Cardboard box
-      * Hollinger box
-
-   * Filing cabinet
-   * Folder
-   * Map cabinet
-   * Shelf
-
-* Location
+.. image:: images/object-type-terms.*
+   :align: center
+   :height: 380px
+   :alt: Physical object taxonomy showing hierarchy
 
 The intended use is for "Containers" to include specific storage containers,
 such as box numbers, cabinet drawers, etc., and for "Locations" to include
@@ -65,7 +55,7 @@ However, the storage types and uses can be customized to meet institutional
 practices.
 
 For more information on working with terms and taxonomies in AtoM, see:
-ref:`terms`.
+:ref:`terms`.
 
 Edit storage types
 ------------------
