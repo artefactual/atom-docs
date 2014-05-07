@@ -28,7 +28,7 @@ To enable or disable a plugin:
 
 .. NOTE::
 
-   Plugins based on `ICA <http://www.ica.org/>`_ standards are permanently
+   Most plugins based on `ICA <http://www.ica.org/>`_ standards are permanently
    enabled in AtoM. These include the  International Standard Archival
    Authority Record for Corporate Bodies, Persons and Families (ISAAR (CPF)),
    the  International Standard Archival Description (ISAD) and the
@@ -68,10 +68,14 @@ sfIsdiahPlugin International Standard for Describing Institutions with
 ============= ===============================================================
 Name          Purpose
 ============= ===============================================================
-qtSwordPlugin SWORD plugin.
-sfSkosPlugin  Data transform plugin. Enables XML import and export of Simple
-              Knowledge Organization System (SKOS) data.
-arOaiPlugin   OAI plugin.
+qtSwordPlugin `SWORD <http://swordapp.org/>`_ plugin. Necessary for DIP
+              upload from Archivematica. :term:`Administrator` will also need
+              to enable job scheduler in :ref:`Settings.`
+sfSkosPlugin  Data transform plugin. Enables XML import and export of
+              :term:`Simple Knowledge Organization System <skos>` (SKOS) data.
+arOaiPlugin   `OAI <http://www.openarchives.org/>`_ plugin. Allows AtoM
+              database to be enabled as an OAI repository. See also
+              :ref:`OAI repository settings <oai-repository>`.
 ============= ===============================================================
 
 :ref:`Back to the top <manage-plugins>`
