@@ -1,4 +1,4 @@
-.._multilingual-design-principles:
+.. _multilingual-design-principles:
 
 --------------------------------------
 Multilingual design principles in AtoM
@@ -42,7 +42,7 @@ principles:
 * When installing AtoM, the :term:`administrator` specifies the
   :term:`default language`. Any user can switch the :term:`current language`
   to display the :term:`user interface` and :term:`database content` in any
-  of the other :term:`supported languages`.
+  of the other supported languages.
 
 
 .. WARNING::
@@ -51,7 +51,7 @@ principles:
    translations of the content and the :term:`user interface` with the tools
    provided through the AtoM translation interface.
 
-.. TIP:
+.. TIP::
    For information about how to translate the AtoM application into your
    language, or improve an existing translation of the AtoM application ,
    please visit our `Transifex instructions.<https://docs.google.com/document/d/146wc1rmnqwouSFBAxaZEiL8aVWuNwOgRlrHq26oIIbk/edit>`__
