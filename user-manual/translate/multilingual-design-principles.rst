@@ -9,6 +9,7 @@ principles:
 
 * Both the :term:`user interface` and the :term:`database content` should
   exist in multiple languages.
+
 * Users should be able to switch the :term:`user interface` to their
   preferred language by navigating to the |globe2|
   :ref:`language menu <language-menu>` in the :term:`header bar` and select
