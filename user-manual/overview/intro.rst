@@ -131,8 +131,7 @@ multiple languages. AtoM comes with several translations installed, all of
 which are generously provided by volunteer translators from the
 AtoM User Community.
 
-Want to help us translate AtoM into your language, or improve an existing
-translation? Find more information on how to contribute
+Want to help us translate the AtoM application into your language, or improve an existing translation? Find more information on how to contribute
 `here <https://www.accesstomemory.org/community/translate>`__.
 
 Multi-repository
