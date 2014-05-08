@@ -4,6 +4,13 @@
 CSV import
 ===========
 
+.. |import| image:: images/download-alt.png
+   :height: 18
+   :width: 18
+.. |gears| image:: images/gears.png
+   :height: 18
+   :width: 18
+
 Most often understood as an acronym for "comma-separated values" (though
 sometimes called "character-separated values" because the separator character
 does not have to be a comma), CSV is a file format that stores tabular data in
@@ -335,8 +342,9 @@ in the *source_id* column of the MySQL keymap table.
 In cases where data is being imported from multiple sources, legacy IDs may
 conflict. Two datasets, for example, may have objects with an ID of 3. When
 importing, you can use the command-line option ``--source-name`` to only record
-or reference mappings for a specific data source. This will look for a
-matching value in the *source_name* column of AtoM's keymap table.
+or reference mappings for a specific data source. This will add a value in
+the *source_name* column of AtoM's keymap table, which can then be used for
+mapping subsequent imports.
 
 The following example shows an import of information objects that records a
 specific source name when mapping legacy IDs to AtoM IDs:
@@ -345,13 +353,31 @@ specific source name when mapping legacy IDs to AtoM IDs:
 
     php symfony csv:import information_objects_rad.csv --source-name=collection_name
 
-Given the above example, the subsequent import of
-:ref:`events <csv-import-events>` using the following command would make sure
-that they get associated with information objects from a specific source:
+In the above example, `collection_name` represents the value added by the user
+during import - now `collection_name` will be added to the *source_name* column
+of the keymap table for all records imported. Given the above example, the
+subsequent import of :ref:`events <csv-import-events>` using the following
+command would make sure that they get associated with information objects from
+the specific source identified as `collection_name`:
 
 .. code-block:: bash
 
   php symfony csv:event-import events.csv --source-name=collection_name
+
+.. TIP::
+
+   If you use the ``--source-name`` command-line option during your CSV
+   import and you want to use spaces in the source name you add, you will
+   need to enclose it in quotation marks. For example, both of the following
+   are valid:
+
+   `php symfony csv:import information_objects_rad.csv --source-name=collection_name`
+
+   or:
+
+   `php symfony csv:import information_objects_rad.csv --source-name="collection name"`
+
+
 
 .. _csv-import-descriptions:
 
@@ -480,7 +506,7 @@ Creator-related import columns
 The *creators*, *creatorHistories*, *creatorDates*, *creatorDatesStart*, and
 *creatorDatesEnd* columns are related to the creation of creators. If multiple
 creators exist for an information object, the values in these fields should be
-pipe-separated (e.g. using the ` | ` separator between values).
+pipe-separated (e.g. using the | pipe separator between values).
 
 .. image:: images/csv-creatorDates.*
    :align: center
@@ -516,7 +542,7 @@ locations related to an :term:`archival description`.
 
 .. image:: images/csv-physical-object.*
    :align: center
-   :width: 85%
+   :width: 75%
    :alt: example CSV physicalObject rows
 
 For more information on working with physical storage in AtoM, see:
@@ -527,7 +553,72 @@ For more information on working with physical storage in AtoM, see:
 Using the user interface
 ------------------------
 
-content
+For small imports (i.e. CSV files with less than 1,000 rows), imports can be
+performed via the user interface.
+
+.. IMPORTANT::
+
+   Before proceeding, make sure that you have reviewed the instructions
+   above, to ensure that your CSV import will work. Here is a basic checklist
+   of things to check for importing a CSV of archival descriptions via the
+   user interface:
+
+   * CSV file is saved with UTF-8 encodings
+   * CSV file uses Linux/Unix style end-of-line characters (``/n``)
+   * CSV file is less than 1,000 rows
+   * All :term:`parent <parent record>` descriptions appear in rows **above**
+     their children
+   * All new parent records have a *legacyID* value, and all
+     :term:`children <child record>` include the parent's *legacyID* value in
+     their *parentID* column
+   * No row uses both *parentID* and *qubitParentSlug* (only one may be used)
+   * Any records to be imported as children of an existing record in AtoM use
+     the proper *qubitParentSlug* of the existing parent record
+
+If you have double-checked the above, you should be ready to import your
+descriptions.
+
+**To import a CSV file via the user interface:**
+
+1. Click on the |import| :ref:`Import <main-menu-import>` menu, located in
+   the AtoM :ref:`header bar <atom-header-bar>`, and select "CSV".
+
+.. image:: images/import-menu-csv.*
+   :align: center
+   :width: 30%
+   :alt: The import menu
+
+2. AtoM will redirect you to the CSV import page. Make sure that the "Type"
+   :term:`drop-down menu` is set to "Archival description".
+
+.. image:: images/csv-import-page.*
+   :align: center
+   :width: 85%
+   :alt: The CSV import page in AtoM
+
+3. Click the "Browse" button to open a window on your local computer. Select
+   the CSV file that you would like to import.
+
+.. image:: images/csv-import-browse.*
+   :align: center
+   :width: 25%
+   :alt: Clicking the "Browse" button in the CSV import page
+
+4. When you have selected the file from your device, its name will appear
+   next to the "Browse" button. Click the "Import" button located in the
+   :term:`button block` to begin your import.
+
+.. image:: images/csv-import-start.*
+   :align: center
+   :width: 85%
+   :alt: Starting a CSV import in AtoM
+
+.. NOTE::
+
+   Depending on the size of your CSV import, this can take some time to
+   complete. Be patient! Remember, uploads performed via the user interface
+   are limited by the browser's timeout limits - this is one of the reasons
+   we recommend importing only smaller CSV files via the user interface.
 
 .. _csv-import-descriptions-cli:
 
