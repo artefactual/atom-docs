@@ -179,8 +179,21 @@ Inherit reference code (information object)
 
 When this is set to "yes", the reference code string will be built using the
 archival description identifier plus the identifier of all its ancestors
-(:term:`parent records <parent record>`). For more information about how the
-reference code works, see :ref:`search-archival-descriptions`.
+(:term:`parent records <parent record>`), as well as the repository identifier
+and country code if they have been entered. The string will appear in this
+order with the applicable elements:
+
+* Country code
+* Repository identifier
+* Fonds/Collection level identifier
+* Series identifier
+* Subseries identifier
+* File identifier
+* Item identifier
+
+.. SEEALSO::
+
+   * :ref:`Control area <control-area>`
 
 .. _sort-treeview:
 
@@ -192,10 +205,21 @@ description>` are sorted in an :term:`archival description's <archival
 description>` :term:`context menu`.
 
 * Selecting "manual" means the descriptions will appear in the order in which
-  they were entered into AtoM.
+  they were entered into AtoM. If manual sort is selected, editors can also
+  drag and drop descriptions within the :term:`treeview` to re-order.
 * Selecting "title" sorts the descriptions by title.
 * Selecting "identifier - title" sorts the descriptions by identifier, then by
   title.
+
+.. TIP::
+
+   AtoM's search index is based on Elasticsearch, which sorts characters based
+   on the order of the in the `ASCII <https://en.wikipedia.org/wiki/Ascii>`_
+   character encoding scheme. This can result in seemingly wrong orders when
+   sorting by identifier- for example, 1-1 will be followed by 1-10 instead of
+   1-2. The solution is to use **leading zeroes** when forumulating
+   identifiers that you wish to sort in a human- readable order, e.g. 1-01,
+   1-02, etc.
 
 For more information, see :ref:`treeview-search`.
 
