@@ -74,9 +74,12 @@ to:**
 
   * :ref:`Add/edit a banner <add-institution-banner>`
 
+  * :ref:`Add/edit a custom description of the institution <add-institution-custom-content>`
+
+  * :ref:`Add a Google map <add-map>`
+
 * :ref:`Browse the holdings of an archival institution <browse-holdings>`
-* :ref:`Set a digital object upload limit for an archival institution
-  <upload-limit>`
+* :ref:`Set a digital object upload limit for an archival institution <upload-limit>`
 * :ref:`Delete an archival institution <delete-archival-institution>`
 
 For information on working with specific fields with AtoM's archival
@@ -469,6 +472,7 @@ comprised of four main elements:
 * :ref:`Add/edit a logo <add-institution-logo>`
 * :ref:`Add/edit a banner <add-institution-banner>`
 * :ref:`Add/edit a custom description <add-institution-custom-content>`
+* :ref:`Add a Google map <add-map>`
 
 :ref:`Back to top <archival-institutions>`
 
@@ -978,6 +982,59 @@ more.
    :align: center
    :width: 70%
    :alt: An example of custom content added to a repository view page
+
+
+.. _add-map:
+
+Add a Google map to an archival institution
+-------------------------------------------
+
+.. figure:: images/institution-map.*
+   :align: right
+   :figwidth: 30%
+   :width: 100%
+   :alt: Institution view page with Google map
+
+   Institution view page with Google map
+
+Users can add a Google map to the :term:`view page` for an archival
+institution showing the location of the institution. These instructions do
+require a systems administrator who can edit AtoM's files from the server.
+
+
+1. First, you will need to set up a
+   `Google account <https://wwww.accounts.google.com>`_ if you do not already
+   have one.
+
+2. Next, request an
+   `API key <https://developers.google.com/maps/documentation/javascript/tutorial#api_key>`_
+   from Google.
+
+3. Add the API key to AtoM's code in the :file:`apps.yml` file (view code on
+   Github `here <https://github.com/artefactual/atom/blob/2.x/config/app.yml>`_).
+   Uncomment the :file:`google_maps_api_key` value and add the API key.
+
+4. Save the changes to :file:`apps.yml` and
+   :ref:`clear the cache <maintenance-clear-cache>`.
+
+5. The map will appear on an institution page only if the latitude and
+   longitude coordinates are added to the Contact information for the
+   repository. See
+   :ref:`Edit an existing archival institution <edit-archival-institution>`.
+
+6. When the institution record is saved the map will appear at the top of the
+   view page.
+
+To populate the latitude and longitude values to all institutions in a
+:term:`multi-repository installation <multi-repository system>` run in the
+command line:
+
+.. code-block:: bash
+
+   tools:find-repository-latlng
+
+This command will use Google to find the latitude and longitude based on the
+institutions' addresses as found in the Contact information.
 
 :ref:`Back to top <archival-institutions>`
 
