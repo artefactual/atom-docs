@@ -4,6 +4,11 @@
 Multilingual design principles in AtoM
 --------------------------------------
 
+.. |globe2| image:: images/globe.png
+   :height: 18
+   :width: 18
+
+
 AtoM is a multilingual application, which incorporates the following design
 principles:
 
