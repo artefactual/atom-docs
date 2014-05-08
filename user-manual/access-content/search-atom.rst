@@ -65,8 +65,6 @@ instructions on how to search for different record types in each.
   * :ref:`dedicated-search-authority`
   * :ref:`dedicated-search-accessions`
   * :ref:`dedicated-search-institutions`
-  * :ref:`dedicated-search-places`
-  * :ref:`dedicated-search-subjects`
   * :ref:`dedicated-search-donors`
   * :ref:`dedicated-search-rights`
   * :ref:`dedicated-search-functions`
@@ -253,7 +251,7 @@ Using the Institutional search box delimiters
    <search-typeahead>`, you can click it to go straight to the record - AtoM
    will redirect you to the selected description's :term:`view page`.
 6. You can use "quotations", :term:`Boolean operators <boolean search>` such
-   as AND, OR, and NOT, or special characters such as the ***** wildcard, to
+   as AND, OR, and NOT, or special characters such as the ** * ** wildcard, to
    broaden or narrow your search. For more information, see:
    :ref:`advanced-search`
 7. When you have entered your search term(s), press enter to submit and begin
@@ -596,8 +594,6 @@ entity. Basic instructions for each are included below.
 * :ref:`dedicated-search-authority`
 * :ref:`dedicated-search-accessions`
 * :ref:`dedicated-search-institutions`
-* :ref:`dedicated-search-places`
-* :ref:`dedicated-search-subjects`
 * :ref:`dedicated-search-donors`
 * :ref:`dedicated-search-rights`
 * :ref:`dedicated-search-functions`
@@ -920,88 +916,6 @@ template, see: :ref:`isdiah-template`.
 
 :ref:`Back to top <search-atom>`
 
-.. _dedicated-search-places:
-
-|subjecticon| Place terms
--------------------------
-
-A dedicated search box for :term:`Places <Place>` has been provided on the
-authority record :ref:`browse page <page-type-browse>`. A place is a geographic
-location registered in a :term:`taxonomy` and used as an :term:`access point` in
-:term:`archival descriptions <archival description>`, :term:`authority records
-<authority record>`, and :term:`archival institutions <archival institution>`.
-In AtoM 2.0.0, this search box will search the following fields of a place:
-
-* example
-* example
-
-**To search for archival institutions in AtoM:**
-
-1. Using the :term:`browse menu` (available as a :term:`drop-down menu` next
-   to the :term:`search box` in the AtoM :term:`header bar` at the top of the
-   page), navigate to **Browse > Places**
-
-2. AtoM will redirect you to the Donors browse page. A list of your donor
-   records will appear; if there are more than 10 results, a pager will be
-   included.
-
-.. image:: images/places.*
-   :align: center
-   :width: 70%
-   :alt: An image of the places main page
-
-3. Place your cursor in the :term:`dedicated search box` at the top of
-   the :term:`Places <place>` browse page. Type a search term and press
-   enter, or use your mouse to click the |searchbutton| search button
-   (represented by the magnifying glass icon to the right of the search box).
-
-.. image:: images/places-searchbox.*
-   :align: center
-   :width: 70%
-   :alt: An image of the places dedicated search box
-
-4. AtoM will reload the page with results. If there are more than 10 results,
-   a pager will be included at the bottom of the results page.
-
-.. image:: images/places-searchresults.*
-   :align: center
-   :width: 70%
-   :alt: An image of the places search results
-
-5. The results page includes a :term:`sort button` (allowing you to sort
-   results to show them in alphabetic order, or most recently created/updated)
-   and a set of :term:`facet filters <facet filter>` to help you sift through
-   results. For more information on these elements, see
-   :ref:`recurring-sort-button` and :ref:`recurring-facet-filters`.
-
-.. TIP::
-
-   You can use :term:`Boolean search` operators such as AND, OR, or NOT, as
-   well as Boolean special characters such as "quotations" or the *****
-   wildcard symbol to improve your search results. For more information on
-   available special characters and boolean searching in AtoM, see:
-   :ref:`advanced-search`.
-
-6. You can click the |searchreset| button next to your search term in the
-   dedicated search box to clear the field and begin a new search.
-   Alternately, simply place the cursor in the search box and enter a new
-   search term.
-
-7. When you have found the record you are searching for, click on its title in
-   the results, and AtoM will redirect you to the selected place's
-   :term:`view page`.
-
-:ref:`Back to top <search-atom>`
-
-.. _dedicated-search-subjects:
-
-|placeicon| Subject terms
--------------------------
-
-content
-
-:ref:`Back to top <search-atom>`
-
 .. _dedicated-search-donors:
 
 Donors
@@ -1009,7 +923,7 @@ Donors
 
 A :term:`dedicated search box` for donor records has
 been provided on the Donors :ref:`browse page <page-type-browse>`.
-In AtoM 2.0.0, this search box will **only return title (i.e. Authorized form
+In AtoM 2.0, this search box will **only return title (i.e. Authorized form
 of name) matches** However, the search box is configured to return partial
 matches, so for example, a search for "ju" would return names such as Jules,
 Julie, June, Jude, etc. This allows the dedicated search box to be used as a
@@ -1356,7 +1270,7 @@ For more information on working with User accounts in AtoM, see:
 
 .. TIP::
 
-   In 2.0.0, AtoM will **only** search on the title (i.e. authorized form of
+   In 2.0.1, AtoM will **only** search on the title (i.e. authorized form of
    name) of the rights holder record, but it will return partial matches -
    for example, a search for "way" would return donor names
    such as Wayson, Wayne, and even Galloway, instead of failing to return any
