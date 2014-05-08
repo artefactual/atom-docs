@@ -95,10 +95,10 @@ Translate
 This section describes how to translate both database content and
 :term:`user interface` elements in AtoM.
 
-* Multilingual design principles in AtoM
+* :ref:`multilingual-design-principles`
 * :ref:`Translate content <translate-content>`
-* Translate interface
-* Translate static pages
+* :ref:`Translate interface <translate-interface>`
+* :ref:`translate-static-pages`
 
 
 .. _reports-printing:
