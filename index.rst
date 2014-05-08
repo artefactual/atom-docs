@@ -215,7 +215,7 @@ Maintenance
 * :ref:`maintenance-logging`
 * :ref:`maintenance-monitoring`
 * :ref:`maintenance-populate-search-index`
-* Data backup
+* :ref:`maintenance-data-backup`
 * :ref:`maintenance-tuning`
 * :ref:`maintenance-troubleshooting`
 
