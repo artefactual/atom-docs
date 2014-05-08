@@ -1,13 +1,12 @@
 .. _multilingual-design-principles:
 
---------------------------------------
+======================================
 Multilingual design principles in AtoM
---------------------------------------
+======================================
 
 .. |globe2| image:: images/globe.png
    :height: 18
    :width: 18
-
 
 AtoM is a multilingual application, which incorporates the following design
 principles:
@@ -17,11 +16,11 @@ principles:
 
 * Users should be able to switch the :term:`user interface` to their
   preferred language by navigating to the |globe2|
-  :ref:`language menu <language-menu>` in the :term:`header bar` and select
-  the language you wish to translate your content into.
+  :ref:`language menu <language-menu>` in the :term:`header bar` and
+  selecting the language they  wish to translate content into.
 
 * When switching the :term:`user interface` to a preferred language,
-  :term:`database content` should also switch, if a transaction is available;
+  :term:`database content` should also switch, if a translation is available;
   if not, the content remains in the original source language.
 
 * Users with :term:`translator` :term:`access privilege` should be able to
@@ -46,15 +45,30 @@ principles:
 
 
 .. WARNING::
-   AtoM does not automaticaly generate translations of content from one
+
+   AtoM does not automatically generate translations of content from one
    language to another. It is up to the individual translators to create the
    translations of the content and the :term:`user interface` with the tools
    provided through the AtoM translation interface.
 
 .. TIP::
+
    For information about how to translate the AtoM application into your
-   language, or improve an existing translation of the AtoM application ,
-   please visit our  `Transifex instructions <https://www.accesstomemory.org/community/translate/>`__.
+   language, or improve an existing translation of the AtoM application and
+   submit it to Artefactual for inclusion in our next major release,
+   please visit our
+   `Transifex instructions <https://www.accesstomemory.org/community/translate/>`__.
+
+**For more information, see the following sections in our User Manual:**
+
+* :ref:`default-language`
+* :ref:`The language menu <language-menu>`
+* :ref:`Add/Remove languages <add-remove-languages>`
+* :ref:`User roles: Translator <user-translator>`
+* :ref:`Manage users and groups <manage-user-accounts>`
+* :ref:`translate-content`
+* :ref:`translate-interface`
+* :ref:`translate-static-pages`
 
 :ref:`Back to top <multilingual-design-principles>`
 

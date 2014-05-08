@@ -31,6 +31,10 @@ links to each chapter's main sections.
    access-content/browse
    access-content/navigate
    access-content/context-menu
+   translate/multilingual-design-principles
+   translate/translate-content
+   translate/translate-interface
+   translate/translate-static-pages
    reports-printing/create-file-list-report-print
    reports-printing/create-item-list-report-print
    reports-printing/create-physical-storage-report
@@ -52,8 +56,5 @@ links to each chapter's main sections.
    administer/search-updates
    administer/visible-elements
    glossary/glossary
-   translate/multilingual-design-principles
-   translate/translate-content
-   translate/translate-interface
-   translate/translate-static-pages
+
 
