@@ -10,15 +10,9 @@ principles:
 * Both the :term:`user interface` and the :term:`database content` should
   exist in multiple languages.
 * Users should be able to switch the :term:`user interface` to their
-  preferred language using the language drop-down from the main menu in the
-  header bar.
-
-
-.. image:: images/languageIcon.png
-   :align: center
-   :width: 80%
-   :alt: Language icon in header bar.
-
+  preferred language by navigating to the |globe2|
+  :ref:`language menu <language-menu>` in the :term:`header bar` and select
+  the language you wish to translate your content into.
 
 * When switching the :term:`user interface` to a preferred language,
   :term:`database content` should also switch, if a transaction is available;
@@ -54,7 +48,7 @@ principles:
 .. TIP::
    For information about how to translate the AtoM application into your
    language, or improve an existing translation of the AtoM application ,
-   please visit our `Transifex instructions.<https://docs.google.com/document/d/146wc1rmnqwouSFBAxaZEiL8aVWuNwOgRlrHq26oIIbk/edit>`__
+   please visit our  `Transifex instructions <https://www.accesstomemory.org/community/translate/>`__.
 
 :ref:`Back to top <multilingual-design-principles>`
 
