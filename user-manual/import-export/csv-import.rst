@@ -620,6 +620,47 @@ descriptions.
    are limited by the browser's timeout limits - this is one of the reasons
    we recommend importing only smaller CSV files via the user interface.
 
+5. After your import is complete, AtoM will list the amount of time the
+   import took, and provide a link to the :term:`archival description` browse
+   page. Unlike the XML import, a link directly to your import is not
+   provided, because a CSV upload may contain multiple descriptions; instead,
+   a link to the browse page is given, so users can locate their
+   descriptions.
+
+.. image:: images/csv-import-completed.*
+   :align: center
+   :width: 85%
+   :alt: Starting a CSV import in AtoM
+
+.. TIP::
+
+   Use the :ref:`sort button <recurring-sort-button>` located in the
+   top-right hand side of the browse page to change the results display to be
+   ordered by "Most recent" if it is not already - that way, the most
+   recently added or edited descriptions will appear at the top of the
+   results. If you have come directly here after importing your descriptions,
+   they should appear at the top of the results.
+
+   .. image:: images/csv-import-browse-page.*
+      :align: center
+      :width: 85%
+      :alt: The browse page following a CSV import
+
+6. If any warnings or errors are encountered, AtoM will also display them on
+   the import page. Some warnings will cause an import to fail (and some will
+   not - they will alert the user, but the import will still complete), while
+   all error messages mean that the import has failed, and a link to the
+   :term:`archival description` browse page will not be provided. - instead,
+   the CSV upload page will reappear below the error message. Errors can
+   occur for many reasons - please review the checklist
+   :ref:`above <csv-import-descriptions-gui>` for suggestions on resolving
+   the most common reasons that CSV imports fail.
+
+.. image:: images/csv-import-error.*
+  :align: center
+  :width: 85%
+  :alt: An error message from a failed CSV import
+
 .. _csv-import-descriptions-cli:
 
 Using the command-line interface (CLI)
