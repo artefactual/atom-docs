@@ -55,6 +55,7 @@ links to each chapter's main sections.
    administer/site-logo
    administer/search-updates
    administer/visible-elements
+   data-templates/rad-template
    glossary/glossary
 
 
