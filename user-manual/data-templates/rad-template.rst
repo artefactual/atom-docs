@@ -10,7 +10,13 @@ On this page you will find:
   `Rules for Archival Description <http://www.cdncouncilarchives.ca/archdesrules.html>`_
 * Description of fields used when importing
   :term:`archival descriptions <archival description>` using Rules for Archival
-  Description in a :term:`CSV` file.
+  Description in a :term:`CSV` file or entering the data manually.
+
+.. seealso::
+
+   * :ref:`archival-descriptions`
+   * :ref:`csv-testing-import`
+
 
 RAD CSV template
 ================
@@ -28,47 +34,19 @@ http://www.cdncouncilarchives.ca/archdesrules.html.
 Information below includes:
 
 * **Column** refers to the title of the column in the CSV template
-* **AtoM field** refers to the default label for that field in AtoM
+* **Template field** refers to the default label for that field in AtoM
 * **Rule** refers to the rule from the applicable standard
 * **EAD** refers to the field mapping to EAD
 * **Notes** includes any other information needed for a successful CSV
   import.
 
-legacyId
---------
 
-**Column** legacyId
-
-**Notes** Used to map hierarchical relationships in AtoM. See
-:ref:`LegacyID mapping <legacy-id-mapping-dealing-with-hierarchical-data-in-a-csv>`
-
-:ref:`Back to the top <rad-template>`
-
-parentId
---------
-
-**Column** parentId
-
-**Notes** Used to map hierarchical relationships in AtoM. See
-:ref:`legacy-id-mapping-dealing-with-hierarchical-data-in-a-csv`
-
-:ref:`Back to the top <rad-template>`
-
-qubitParentSlug
----------------
-
-**Column** qubitParentSlug
-
-**Notes**
-
-:ref:`Back to the top <rad-template>`
-
-title
------
+Title proper
+------------
 
 **Column** title
 
-**AtoM field** Title proper
+**Template field** Title proper
 
 **Rule** Enter the title proper, either transcribed or supplied (RAD 1.1B)
 
@@ -78,12 +56,12 @@ title
 
 :ref:`Back to the top <rad-template>`
 
-radGeneralMaterialDesignation
------------------------------
+General material designation
+----------------------------
 
 **Column** radGeneralMaterialDesignation
 
-**AtoM field** General material designation
+**Template field** General material designation
 
 **Rule** Select the General Material Designation at the highest level of
 description If there are more than three, select "multiple media." (RAD 1.1C)
@@ -94,12 +72,12 @@ description If there are more than three, select "multiple media." (RAD 1.1C)
 
 :ref:`Back to the top <rad-template>`
 
-alternateTitle
+Parallel title
 --------------
 
 **Column** alternateTitle
 
-**AtoM field** Parallel title
+**Template field** Parallel title
 
 **Rule** [W]hen applicable, transcribe parallel titles that appear in
 conjunction with the formal title proper...(RAD 1.1D)
@@ -110,13 +88,13 @@ conjunction with the formal title proper...(RAD 1.1D)
 
 :ref:`Back to the top <rad-template>`
 
-radOtherTitleInformation
-------------------------
+Other title information
+-----------------------
 
 **Column** radOtherTitleInformation
 
 
-**AtoM field** Other title information
+**Template field** Other title information
 
 **Rule** Transcribe other title information that appears in conjunction with
 the formal title proper. (RAD 1.1E)
@@ -127,12 +105,12 @@ the formal title proper. (RAD 1.1E)
 
 :ref:`Back to the top <rad-template>`
 
-radTitleStatementOfResponsibility
----------------------------------
+Title statements of responsibility
+----------------------------------
 
 **Column** radTitleStatementOfResponsibility
 
-**AtoM field** Title statements of responsibility
+**Template field** Title statements of responsibility
 
 **Rule** "At the item level of description, transcribe explicit statements of
 responsibility appearing in conjunction with the formal title proper in or on
@@ -144,12 +122,12 @@ the chief source of information..." (RAD 1.1F)
 
 :ref:`Back to the top <rad-template>`
 
-radTitleStatementOfResponsibilityNote
--------------------------------------
+Title notes- Statements of responsibility
+-----------------------------------------
 
 **Column** radTitleStatementOfResponsibilityNote
 
-**AtoM field** Title notes- Statements of responsibility
+**Template field** Title notes- Statements of responsibility
 
 **Rule** Select a note type from the drop-down menu and enter note text in
 accordance with RAD 1.8B1 through 1.8B6.
@@ -160,12 +138,12 @@ accordance with RAD 1.8B1 through 1.8B6.
 
 :ref:`Back to the top <rad-template>`
 
-radTitleAttributionsAndConjectures
-----------------------------------
+Title notes- Attributions and conjectures
+-----------------------------------------
 
 **Column** radTitleAttributionsAndConjectures
 
-**AtoM field** Title notes- Attributions and conjectures
+**Template field** Title notes- Attributions and conjectures
 
 **Rule** Select a note type from the drop-down menu and enter note text in
 accordance with RAD 1.8B1 through 1.8B6.
@@ -176,12 +154,12 @@ accordance with RAD 1.8B1 through 1.8B6.
 
 :ref:`Back to the top <rad-template>`
 
-radTitleContinues
------------------
+Title notes- Continuation of title
+----------------------------------
 
 **Column** radTitleContinues
 
-**AtoM field** Title notes- Continuation of title
+**Template field** Title notes- Continuation of title
 
 **Rule** Select a note type from the drop-down menu and enter note text in
 accordance with RAD 1.8B1 through 1.8B6.
@@ -192,12 +170,12 @@ accordance with RAD 1.8B1 through 1.8B6.
 
 :ref:`Back to the top <rad-template>`
 
-radTitleSourceOfTitleProper
+Title notes- Source of title proper
 ---------------------------
 
 **Column** radTitleSourceOfTitleProper
 
-**AtoM field** Title notes- Source of title proper
+**Template field** Title notes- Source of title proper
 
 **Rule** Select a note type from the drop-down menu and enter note text in
 accordance with RAD 1.8B1 through 1.8B6.
@@ -208,13 +186,12 @@ accordance with RAD 1.8B1 through 1.8B6.
 
 :ref:`Back to the top <rad-template>`
 
-radTitleVariationsInTitle
--------------------------
+Title notes- Variations in title
+--------------------------------
 
 **Column** radTitleVariationsInTitle
 
-
-**AtoM field** Title notes- Variations in title
+**Template field** Title notes- Variations in title
 
 **Rule** Select a note type from the drop-down menu and enter note text in
 accordance with RAD 1.8B1 through 1.8B6.
@@ -225,13 +202,13 @@ accordance with RAD 1.8B1 through 1.8B6.
 
 :ref:`Back to the top <rad-template>`
 
-radTitleParallelTitles
-----------------------
+Title notes- Parallel titles and other title information
+--------------------------------------------------------
 
 **Column** radTitleParallelTitles
 
 
-**AtoM field** Title notes- Parallel titles and other title information
+**Template field** Title notes- Parallel titles and other title information
 
 **Rule** Select a note type from the drop-down menu and enter note text in
 accordance with RAD 1.8B1 through 1.8B6.
@@ -242,12 +219,12 @@ accordance with RAD 1.8B1 through 1.8B6.
 
 :ref:`Back to the top <rad-template>`
 
-levelOfDescription
-------------------
+Level of description
+--------------------
 
 **Column** levelOfDescription
 
-**AtoM field** Level of description
+**Template field** Level of description
 
 **Rule** Select a level of description from the drop-down menu. See RAD 1.0A for
 rules and conventions on selecting levels of description.
@@ -258,12 +235,12 @@ rules and conventions on selecting levels of description.
 
 :ref:`Back to the top <rad-template>`
 
-repository
+Repository
 ----------
 
 **Column** repository
 
-**AtoM field** Repository
+**Template field** Repository
 
 **Rule** Select the repository that has custody and
 control of the archival material. The values in this field are drawn from the
@@ -277,12 +254,12 @@ type a new name to create and link to a new archival institution.
 
 :ref:`Back to the top <rad-template>`
 
-identifier
-----------
+Reference code
+--------------
 
 **Column** identifier
 
-**AtoM field** Reference code
+**Template field** Reference code
 
 **Rule** Enter an unambiguous code used to uniquely identify the description.
 
@@ -292,12 +269,12 @@ identifier
 
 :ref:`Back to the top <rad-template>`
 
-radEdition
-----------
+Edition statement
+-----------------
 
 **Column** radEdition
 
-**AtoM field** Edition statement
+**Template field** Edition statement
 
 **Rule** "Transcribe the edition statement relating to the item being
 described." (RAD 1.2B1) "If the item being described lacks an edition
@@ -311,12 +288,12 @@ proper and enclose it in square brackets." (RAD 1.2B3)
 
 :ref:`Back to the top <rad-template>`
 
-radEditionStatementOfResponsibility
+Edition statement of responsibility
 -----------------------------------
 
 **Column** radEditionStatementOfResponsibility
 
-**AtoM field** Edition statement of responsibility
+**Template field** Edition statement of responsibility
 
 **Rule** "Transcribe a statement of responsibility relating to one or more
 editions, but not to all editions, of the item being described following the
@@ -330,12 +307,12 @@ responsibility area." (RAD 1.2C2)
 
 :ref:`Back to the top <rad-template>`
 
-radStatementOfScaleCartographic
--------------------------------
+Statement of scale (cartographic)
+---------------------------------
 
 **Column** radStatementOfScaleCartographic
 
-**AtoM field** Statement of scale (cartographic)
+**Template field** Statement of scale (cartographic)
 
 **Rule** "Give the scale of the unit being described...as a representative
 fraction (RF) expressed as a ratio (1: ). Precede the ratio by Scale. Give the
@@ -348,12 +325,12 @@ title information." (RAD 5.3B1)
 
 :ref:`Back to the top <rad-template>`
 
-radStatementOfProjection
-------------------------
+Statement of projection (cartographic)
+--------------------------------------
 
 **Column** radStatementOfProjection
 
-**AtoM field** Statement of projection (cartographic)
+**Template field** Statement of projection (cartographic)
 
 **Rule** "Give the statement of projection if it is found on the prescribed
 source(s) of information." (RAD 5.3C1)
@@ -364,12 +341,12 @@ source(s) of information." (RAD 5.3C1)
 
 :ref:`Back to the top <rad-template>`
 
-radStatementOfCoordinates
--------------------------
+Statement of coordinates (cartographic)
+---------------------------------------
 
 **Column** radStatementOfCoordinates
 
-**AtoM field** Statement of coordinates (cartographic)
+**Template field** Statement of coordinates (cartographic)
 
 **Rule** "At the fonds, series or file levels, record coordinates for the
 maximum coverage provided by the materials in the unit, as long as they are
@@ -381,12 +358,12 @@ reasonably contiguous." (RAD 5.3D)
 
 :ref:`Back to the top <rad-template>`
 
-radStatementOfScaleArchitectural
---------------------------------
+Statement of scale (architectural)
+----------------------------------
 
 **Column** radStatementOfScaleArchitectural
 
-**AtoM field** Statement of scale (architectural)
+**Template field** Statement of scale (architectural)
 
 **Rule** "Give in English the scale in the units of measure found on the unit
 being described. If there is no English equivalent for the name of the unit
@@ -399,12 +376,12 @@ being described." (RAD 6.3B)
 
 :ref:`Back to the top <rad-template>`
 
-radIssuingJurisdiction
-----------------------
+Issuing jurisdiction and denomination (philatelic)
+--------------------------------------------------
 
 **Column** radIssuingJurisdiction
 
-**AtoM field** Issuing jurisdiction and denomination (philatelic)
+**Template field** Issuing jurisdiction and denomination (philatelic)
 
 **Rule** "Give the name of the jurisdiction (e.g., government) responsible for
 issuing the philatelic records." (RAD 12.3B1) "For all units possessing a
@@ -420,12 +397,12 @@ the title proper or other title information." (RAD 12.3C1)
 
 :ref:`Back to the top <rad-template>`
 
-creators
---------
+Creator
+-------
 
 **Column** creators
 
-**AtoM field** Creator
+**Template field** Creator
 
 **Rule** Use the Actor name field to link an authority record to this
 description. Search for an existing name in the authority records by typing
@@ -438,12 +415,12 @@ create and link to a new authority record.
 
 :ref:`Back to the top <rad-template>`
 
-creatorHistories
-----------------
+Biographical history
+--------------------
 
 **Column** creatorHistories
 
-**AtoM field** Biographical history
+**Template field** Biographical history
 
 **Rule** "Record in narrative form or as a chronology the main life events,
 activities, achievements and/or roles of the entity being described. This may
@@ -461,12 +438,12 @@ users would need to
 
 :ref:`Back to the top <rad-template>`
 
-creatorDates
-------------
+Date(s)
+-------
 
 **Column** creatorDates
 
-**AtoM field** Date(s)
+**Template field** Date(s)
 
 **Rule** "Give the date(s) of creation of the unit being described either as a
 single date, or range of dates (for inclusive dates and/or predominant dates).
@@ -482,12 +459,12 @@ the active/living dates of the creator.
 
 :ref:`Back to the top <rad-template>`
 
-creatorDatesStart
------------------
+Dates of creation- Start
+------------------------
 
 **Column** creatorDatesStart
 
-**AtoM field** Dates of creation- Start
+**Template field** Dates of creation- Start
 
 **Rule** Enter the start year. Do not use any qualifiers or typographical
 symbols to express uncertainty.
@@ -498,12 +475,12 @@ symbols to express uncertainty.
 
 :ref:`Back to the top <rad-template>`
 
-creatorDatesEnd
----------------
+Dates of creation- End
+----------------------
 
 **Column** creatorDatesEnd
 
-**AtoM field** Dates of creation- End
+**Template field** Dates of creation- End
 
 **Rule** Enter the end year. Do not use any qualifiers or typographical symbols
 to express uncertainty. If the start and end years are the same, enter data
@@ -515,12 +492,12 @@ only in the "Date" field and leave the "End date" blank.
 
 :ref:`Back to the top <rad-template>`
 
-creatorDateNotes
-----------------
+Dates of creation- Note
+-----------------------
 
 **Column** creatorDatesNotes
 
-**AtoM field** Dates of creation- Note
+**Template field** Dates of creation- Note
 
 **Rule** "Make notes on dates and any details pertaining to the dates of
 creation, publication, or distribution, of the unit being described that are
@@ -535,12 +512,12 @@ on the date(s) of accumulation or collection of the unit being described." RAD
 
 :ref:`Back to the top <rad-template>`
 
-extentAndMedium
----------------
+Physical description
+--------------------
 
 **Column** extentAndMedium
 
-**AtoM field** Physical description
+**Template field** Physical description
 
 **Rule** "At all levels record the extent of the unit being described by
 giving the number of physical units in arabic numerals and the specific
@@ -556,12 +533,12 @@ carriage return (i.e. press the Enter key on your keyboard).
 
 :ref:`Back to the top <rad-template>`
 
-radTitleProperOfPublishersSeries
---------------------------------
+Title proper of publisher's series
+----------------------------------
 
 **Column** radTitleProperOfPublishersSeries
 
-**AtoM field** Title proper of publisher's series
+**Template field** Title proper of publisher's series
 
 **Rule** "At the item level of description, transcribe a title proper of the
 publisher's series as instructed in 1.1B1." (RAD 1.6B)
@@ -572,12 +549,12 @@ publisher's series as instructed in 1.1B1." (RAD 1.6B)
 
 :ref:`Back to the top <rad-template>`
 
-radParallelTitlesOfPublishersSeries
------------------------------------
+Parallel titles of publisher's series
+-------------------------------------
 
 **Column** radParallelTitlesOfPublishersSeries
 
-**AtoM field** Parallel titles of publisher's series
+**Template field** Parallel titles of publisher's series
 
 **Rule** "Transcribe parallel titles of a publisher's series as instructed in
 1.1D." (RAD 1.6C1)
@@ -588,12 +565,12 @@ radParallelTitlesOfPublishersSeries
 
 :ref:`Back to the top <rad-template>`
 
-radOtherTitleInformationOfPublishersSeries
-------------------------------------------
+Other title information of publisher's series
+---------------------------------------------
 
 **Column** radOtherTitleInformationOfPublishersSeries
 
-**AtoM field** Other title information of publisher's series
+**Template field** Other title information of publisher's series
 
 **Rule** "Transcribe other title information of a publisher's series as
 instructed in 1.1E and only if considered necessary for identifying the
@@ -605,12 +582,12 @@ publisher's series." (RAD 1.6D1)
 
 :ref:`Back to the top <rad-template>`
 
-radStatementOfResponsibilityRelatingToPublishersSeries
-------------------------------------------------------
+Statement of responsibility relating to publisher's series
+----------------------------------------------------------
 
 **Column** radStatementOfResponsibilityRelatingToPublishersSeries
 
-**AtoM field** Statement of responsibility relating to publisher's series
+**Template field** Statement of responsibility relating to publisher's series
 
 **Rule** "Transcribe explicit statements of responsibility appearing in
 conjunction with a formal title proper of a publisher's series as instructed
@@ -623,12 +600,12 @@ series." (RAD 1.6E1)
 
 :ref:`Back to the top <rad-template>`
 
-radNumberingWithinPublishersSeries
-----------------------------------
+Numbering within publisher's series
+-----------------------------------
 
 **Column** radNumberingWithinPublishersSeries
 
-**AtoM field** Numbering within publisher's series
+**Template field** Numbering within publisher's series
 
 **Rule** "Give the numbering of the item within a publisher's series in the
 terms given in the item." (RAD 1.6F1)
@@ -639,12 +616,12 @@ terms given in the item." (RAD 1.6F1)
 
 :ref:`Back to the top <rad-template>`
 
-radPublishersSeriesNote
------------------------
+Note on publisher's series
+--------------------------
 
 **Column** radPublishersSeriesNote
 
-**AtoM field** Note on publisher's series
+**Template field** Note on publisher's series
 
 **Rule** "Make notes on important details of publisher's series that are not
 included in the Publisher's series area, including variant series titles,
@@ -658,12 +635,12 @@ radNoteOnPublishersSeries. Both notes refer to RAD 1.8B10.
 
 :ref:`Back to the top <rad-template>`
 
-radNoteOnPublishersSeries
--------------------------
+Publisher's series
+------------------
 
 **Column** radNoteOnPublishersSeries
 
-**AtoM field** Publisher's series
+**Template field** Publisher's series
 
 **Rule** Select a note type from the drop-down menu and enter note text in
 accordance with the following sections in RAD: 1.5E (Accompanying material);
@@ -677,12 +654,12 @@ radPublishersSeriesNote. Both notes refer to RAD 1.8B10.
 
 :ref:`Back to the top <rad-template>`
 
-archivalHistory
----------------
+Custodial history
+-----------------
 
 **Column** archivalHistory
 
-**AtoM field** Custodial history
+**Template field** Custodial history
 
 **Rule** "Give the history of the custody of the unit being described, i.e., the
 successive transfers of ownership and custody or control of the material,
@@ -694,12 +671,12 @@ along with the dates thereof, insofar as it can be ascertained." (RAD 1.7C)
 
 :ref:`Back to the top <rad-template>`
 
-scopeAndContent
----------------
+Scope and content
+-----------------
 
 **Column** scopeAndContent
 
-**AtoM field** Scope and content
+**Template field** Scope and content
 
 **Rule** "At the fonds, series, and collection levels of description, and when
 necessary at the file and the item levels of description, indicate the level
@@ -720,12 +697,12 @@ speeches)." (RAD 1.7D1)
 
 :ref:`Back to the top <rad-template>`
 
-physicalCharacteristics
------------------------
+Physical condition
+------------------
 
 **Column** physicalCharacteristics
 
-**AtoM field** Physical condition
+**Template field** Physical condition
 
 **Rule** "Make notes on the physical condition of the unit being described if
 that condition materially affects the clarity or legibility of the records."
@@ -737,12 +714,12 @@ that condition materially affects the clarity or legibility of the records."
 
 :ref:`Back to the top <rad-template>`
 
-acquisition
------------
+Immediate source of acquisition
+-------------------------------
 
 **Column** acquisition
 
-**AtoM field** Immediate source of acquisition
+**Template field** Immediate source of acquisition
 
 **Rule** "Record the donor or source (i.e., the immediate prior custodian) from
 whom the unit being described was acquired, and the date and method of
@@ -756,12 +733,12 @@ unknown, record that information." (RAD 1.8B12)
 
 :ref:`Back to the top <rad-template>`
 
-arrangement
+Arrangement
 -----------
 
 **Column** arrangement
 
-**AtoM field** Arrangement
+**Template field** Arrangement
 
 **Rule** "Make notes on the arrangement of the unit being described which
 contribute significantly to its understanding but cannot be put in the Scope
@@ -775,12 +752,12 @@ reconstitution of original order." (RAD 1.8B13)
 
 :ref:`Back to the top <rad-template>`
 
-language
---------
+Language of material
+--------------------
 
 **Column** language
 
-**AtoM field** Language of material
+**Template field** Language of material
 
 **Rule** "Record the language or languages of the unit being described, unless
 they are noted elsewhere or are apparent from other elements of the
@@ -793,12 +770,12 @@ description." RAD (1.8.B14).
 
 :ref:`Back to the top <rad-template>`
 
-script
-------
+Script of material
+------------------
 
 **Column** script
 
-**AtoM field** Script of material
+**Template field** Script of material
 
 **Rule** "[N]ote any distinctive alphabets or symbol systems employed."
 RAD (1.8.B14)
@@ -811,12 +788,12 @@ RAD (1.8.B14)
 :ref:`Back to the top <rad-template>`
 
 
-languageNote
-------------
+Language and script note
+------------------------
 
 **Column** languageNote
 
-**AtoM field** Language and script note
+**Template field** Language and script note
 
 **Rule** "Record the language or languages of the unit being described, unless
 they are noted elsewhere or are apparent from other elements of the
@@ -830,12 +807,12 @@ RAD (1.8.B14).
 :ref:`Back to the top <rad-template>`
 
 
-locationOfOriginals
--------------------
+Location of originals
+---------------------
 
 **Column** locationOfOriginals
 
-**AtoM field** Location of originals
+**Template field** Location of originals
 
 **Rule** "If the unit being described is a reproduction and the location of the
 original material is known, give that location. Give, in addition, any
@@ -850,12 +827,12 @@ information." (RAD 1.8B15a)
 :ref:`Back to the top <rad-template>`
 
 
-locationOfCopies
-----------------
+Availability of other formats
+-----------------------------
 
 **Column** locationOfCopies
 
-**AtoM field** Availability of other formats
+**Template field** Availability of other formats
 
 **Rule** "If all or part of the unit being described is available (either in the
 institution or elsewhere) in another format(s), e.g., if the text being
@@ -872,12 +849,12 @@ format(s), indicate which parts." (RAD 1.8B15b)
 :ref:`Back to the top <rad-template>`
 
 
-accessConditions
-----------------
+Restrictions on access
+----------------------
 
 **Column** accessConditions
 
-**AtoM field** Restrictions on access
+**Template field** Restrictions on access
 
 **Rule** "Give information about any restrictions placed on access to the unit
 (or parts of the unit) being described." (RAD 1.8B16a)
@@ -888,12 +865,12 @@ accessConditions
 
 :ref:`Back to the top <rad-template>`
 
-reproductionConditions
-----------------------
+Terms governing use, reproduction, and publication
+--------------------------------------------------
 
 **Column** reproductionConditions
 
-**AtoM field** Terms governing use, reproduction, and publication
+**Template field** Terms governing use, reproduction, and publication
 
 **Rule** "Give information on legal or donor restrictions that may affect use or
 reproduction of the material." (RAD 1.8B16c)
@@ -905,12 +882,12 @@ reproduction of the material." (RAD 1.8B16c)
 :ref:`Back to the top <rad-template>`
 
 
-findingAids
------------
+Finding aids
+------------
 
 **Column** findingAids
 
-**AtoM field** Finding aids
+**Template field** Finding aids
 
 **Rule** "Give information regarding the existence of any finding aids. Include
 appropriate administrative and/or intellectual control tools over the
@@ -924,12 +901,12 @@ catalogues, box lists, series lists, inventories, indexes, etc." (RAD
 
 :ref:`Back to the top <rad-template>`
 
-relatedUnitsOfDescription
--------------------------
+Associated materials
+--------------------
 
 **Column** relatedUnitsOfDescription
 
-**AtoM field** Associated materials
+**Template field** Associated materials
 
 **Rule** For associated material, "If records in another institution are
 associated with the unit being described by virtue of the fact that they
@@ -947,12 +924,12 @@ external to the unit being described." (RAD 1.8B20)
 :ref:`Back to the top <rad-template>`
 
 
-accruals
+Accruals
 --------
 
 **Column** accruals
 
-**AtoM field** Accruals
+**Template field** Accruals
 
 **Rule** "When the unit being described is not yet complete, e.g., an open fonds
 or series, make a note explaining that further accruals are expected... If
@@ -967,12 +944,12 @@ closed." (RAD 1.8B19)
 
 
 
-radNoteAccompanyingMaterial
----------------------------
+Other notes- Accompanying material
+----------------------------------
 
 **Column** radNoteAccompanyingMaterial
 
-**AtoM field** Other notes- Accompanying material
+**Template field** Other notes- Accompanying material
 
 **Rule** RAD: 1.5E (Accompanying material)
 
@@ -984,12 +961,12 @@ radNoteAccompanyingMaterial
 
 
 
-radNoteAlphaNumericDesignation
-------------------------------
+Other notes- Alpha-numeric designations
+---------------------------------------
 
 **Column** radNoteAlphaNumericDesignation
 
-**AtoM field** Other notes- Alpha-numeric designations
+**Template field** Other notes- Alpha-numeric designations
 
 **Rule** 1.8 B11
 
@@ -1000,12 +977,12 @@ radNoteAlphaNumericDesignation
 :ref:`Back to the top <rad-template>`
 
 
-radNoteConservation
--------------------
+Other notes- Conservation
+-------------------------
 
 **Column** radNoteConservation
 
-**AtoM field** Other notes- Conservation
+**Template field** Other notes- Conservation
 
 **Rule** 1.8B9b
 
@@ -1016,12 +993,12 @@ radNoteConservation
 :ref:`Back to the top <rad-template>`
 
 
-radNoteEdition
---------------
+Other notes- Edition
+--------------------
 
 **Column** radNoteEdition
 
-**AtoM field** Other notes- Edition
+**Template field** Other notes- Edition
 
 **Rule** 1.8B7
 
@@ -1032,12 +1009,12 @@ radNoteEdition
 :ref:`Back to the top <rad-template>`
 
 
-radNotePhysicalDescription
---------------------------
+Other notes- Physical description
+---------------------------------
 
 **Column** radNotePhysicalDescription
 
-**AtoM field** Other notes- Physical description
+**Template field** Other notes- Physical description
 
 **Rule** 1.8B9
 
@@ -1048,12 +1025,12 @@ radNotePhysicalDescription
 :ref:`Back to the top <rad-template>`
 
 
-radNotePublishersSeries
------------------------
+Other notes- Publisher's series
+-------------------------------
 
 **Column** radNotePublishersSeries
 
-**AtoM field** Other notes- Publisher's series
+**Template field** Other notes- Publisher's series
 
 **Rule**
 
@@ -1064,12 +1041,12 @@ radNotePublishersSeries
 :ref:`Back to the top <rad-template>`
 
 
-radNoteRights
--------------
+Other notes- Rights
+-------------------
 
 **Column** radNoteRights
 
-**AtoM field** Other notes- Rights
+**Template field** Other notes- Rights
 
 **Rule**  1.8B16b
 
@@ -1080,12 +1057,12 @@ radNoteRights
 :ref:`Back to the top <rad-template>`
 
 
-radNoteGeneral
---------------
+Other notes- General note
+-------------------------
 
 **Column** radNoteGeneral
 
-**AtoM field** Other notes- General note
+**Template field** Other notes- General note
 
 **Rule** 1.8B21
 
@@ -1096,12 +1073,12 @@ radNoteGeneral
 :ref:`Back to the top <rad-template>`
 
 
-radStandardNumber
------------------
+Standard number
+---------------
 
 **Column** radStandardNumber
 
-**AtoM field** Standard number
+**Template field** Standard number
 
 **Rule** "Give the International Standard Book Number (ISBN), International
 Standard Serial Number (ISSN), or any other internationally agreed standard
@@ -1115,12 +1092,12 @@ abbreviation and with the standard spacing or hyphenation." (RAD 1.9B1)
 :ref:`Back to the top <rad-template>`
 
 
-subjectAccessPoints
--------------------
+Subject access points
+---------------------
 
 **Column** subjectAccessPoints
 
-**AtoM field** Subject access points
+**Template field** Subject access points
 
 **Rule**
 
@@ -1132,12 +1109,12 @@ subjects :term:`taxonomy` where those do not already exist.
 :ref:`Back to the top <rad-template>`
 
 
-placeAccessPoints
------------------
+Place access points
+-------------------
 
 **Column** placeAccessPoints
 
-**AtoM field** Place access points
+**Template field** Place access points
 
 **Rule**
 
@@ -1149,12 +1126,12 @@ places :term:`taxonomy` where those do not already exist.
 :ref:`Back to the top <rad-template>`
 
 
-nameAccessPoints
-----------------
+Name access points
+------------------
 
 **Column** nameAccessPoints
 
-**AtoM field** Name access points
+**Template field** Name access points
 
 **Rule** "Choose provenance, author and other non-subject access points from the
 archival description, as appropriate. All access points must be apparent
@@ -1168,12 +1145,12 @@ from the archival description to which they relate." (RAD 21.0B)
 :ref:`Back to the top <rad-template>`
 
 
-descriptionIdentifier
----------------------
+Description record identifier
+-----------------------------
 
 **Column** descriptionIdentifier
 
-**AtoM field** Description record identifier
+**Template field** Description record identifier
 
 **Rule**
 
@@ -1184,12 +1161,12 @@ descriptionIdentifier
 :ref:`Back to the top <rad-template>`
 
 
-institutionIdentifier
----------------------
+Institution identifier
+----------------------
 
 **Column** institutionIdentifier
 
-**AtoM field** Institution identifier
+**Template field** Institution identifier
 
 **Rule**
 
@@ -1200,12 +1177,12 @@ institutionIdentifier
 :ref:`Back to the top <rad-template>`
 
 
-rules
------
+Rules or conventions
+--------------------
 
 **Column** rules
 
-**AtoM field** Rules or conventions
+**Template field** Rules or conventions
 
 **Rule**
 
@@ -1216,12 +1193,12 @@ rules
 :ref:`Back to the top <rad-template>`
 
 
-descriptionStatus
------------------
+Status
+------
 
 **Column** descriptionStatus
 
-**AtoM field** Status
+**Template field** Status
 
 **Rule**
 
@@ -1232,12 +1209,12 @@ descriptionStatus
 :ref:`Back to the top <rad-template>`
 
 
-levelOfDetail
--------------
+Level of detail
+---------------
 
 **Column** levelOfDetail
 
-**AtoM field** Level of detail
+**Template field** Level of detail
 
 **Rule**
 
@@ -1248,12 +1225,12 @@ levelOfDetail
 :ref:`Back to the top <rad-template>`
 
 
-revisionHistory
----------------
+Dates of creation, revision and deletion
+----------------------------------------
 
 **Column** revisionHistory
 
-**AtoM field** Dates of creation, revision and deletion
+**Template field** Dates of creation, revision and deletion
 
 **Rule**
 
@@ -1264,12 +1241,12 @@ revisionHistory
 :ref:`Back to the top <rad-template>`
 
 
-languageOfDescription
----------------------
+Language of description
+-----------------------
 
 **Column** languageOfDescription
 
-**AtoM field** Language of description
+**Template field** Language of description
 
 **Rule**
 
@@ -1280,12 +1257,12 @@ languageOfDescription
 :ref:`Back to the top <rad-template>`
 
 
-scriptOfDescription
--------------------
+Script of description
+---------------------
 
 **Column** scriptOfDescription
 
-**AtoM field** Script of description
+**Template field** Script of description
 
 **Rule**
 
@@ -1297,12 +1274,12 @@ scriptOfDescription
 :ref:`Back to the top <rad-template>`
 
 
-sources
+Sources
 -------
 
 **Column** sources
 
-**AtoM field** Sources
+**Template field** Sources
 
 **Rule**
 
@@ -1314,12 +1291,12 @@ sources
 :ref:`Back to the top <rad-template>`
 
 
-publicationStatus
------------------
+Publication status
+------------------
 
 **Column** publicationStatus
 
-**AtoM field** Publication status
+**Template field** Publication status
 
 **Rule**
 
@@ -1330,12 +1307,12 @@ publicationStatus
 :ref:`Back to the top <rad-template>`
 
 
-appraisal
+Appraisal
 ---------
 
-**Column** appraisal
+**Column** Appraisal
 
-**AtoM field**
+**Template field**
 
 **Rule**
 
@@ -1347,66 +1324,3 @@ contents of this column are contained in the EAD file.
 
 :ref:`Back to the top <rad-template>`
 
-
-physicalObjectName
-------------------
-
-**Column** physicalObjectName
-
-**AtoM field**
-
-**Rule**
-
-**EAD**
-
-**Notes**
-
-:ref:`Back to the top <rad-template>`
-
-
-physicalObjectLocation
-----------------------
-
-**Column** physicalObjectLocation
-
-**AtoM field**
-
-**Rule**
-
-**EAD**
-
-**Notes**
-
-:ref:`Back to the top <rad-template>`
-
-
-physicalObjectType
-------------------
-
-**Column** physicalObjectType
-
-**AtoM field**
-
-**Rule**
-
-**EAD**
-
-**Notes**
-
-
-:ref:`Back to the top <rad-template>`
-
-culture
--------
-
-**Column** culture
-
-**AtoM field**
-
-**Rule**
-
-**EAD**
-
-**Notes**
-
-:ref:`Back to the top <rad-template>`
