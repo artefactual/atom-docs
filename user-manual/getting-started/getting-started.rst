@@ -4,6 +4,15 @@
 Getting Started
 ===============
 
+.. |globe| image:: images/globe.png
+   :height: 18
+   :width: 18
+.. |info| image:: images/info-sign.png
+   :height: 18
+   :width: 18
+.. |login| image:: images/login-button.png
+   :height: 23
+
 This section describes how to start using AtoM once it has been installed. It
 provides a quick orientation to the :ref:`home page <home-page>`, how to log
 in and log out, the various :ref:`user roles <user-roles>` in the system, the
@@ -81,19 +90,19 @@ By default, the :term:`home page` includes:
 Like all pages in AtoM the :term:`home page` also includes the AtoM
 :term:`header bar`, providing access to a :ref:`search box <search-box>`,
 :ref:`browse menu <browse-menu>`, :ref:`log-in button <log-in-button>`,
-:ref:`language menu <language-menu>`, and :ref:`quick links menu
-<quick-links-menu>`. For more information on using the header bar in AtoM, see:
-:ref:`atom-header-bar`.
+|globe| :ref:`language menu <language-menu>`, and |info|
+:ref:`quick links menu <quick-links-menu>`. For more information on using the
+header bar in AtoM, see: :ref:`atom-header-bar`.
 
 **USING THE HOME PAGE IN AtoM:**
 
 #. Open your web browser and enter the URL of the web server hosting your AtoM
    application. This takes you to your application's :term:`home page`.
 #. On opening, AtoM displays the home page in the configured :term:`default
-   language`. In the language menu (top right-hand corner of your page, the
-   globe icon in the :term:`header bar`), a user can change the display
-   language. For choosing languages, see :ref:`Choose language
-   <choose-language>`.
+   language`. In the |globe| :ref:`language menu <language-menu>` (top
+   right-hand corner of your page, the  globe icon in the :term:`header bar`),
+   a user can change the display language. For choosing languages, see
+   :ref:`Choose language <choose-language>`.
 #. On opening, AtoM provides view-only access, so that any user can
    immediately begin searching or browsing the contents of the application,
    using the :term:`search box` or :term:`browse menu`, both located in the
@@ -101,7 +110,7 @@ Like all pages in AtoM the :term:`home page` also includes the AtoM
    For searching and browsing, see :ref:`Access content <access-content>`.
 #. The home page provides a welcome message that can be customized by the
    :term:`administrator`. For customizing the welcome message, see
-   :doc:`Manage static pages <../administer/manage-static-pages>`.
+   :ref:`manage-static-pages`.
 #. The home page also provides users with an additional :term:`browse menu`
    and a list of the most popular recently visited records in the application.
 #. Once a user logs in via the log-in button in the right-hand corner of the
@@ -116,8 +125,8 @@ Like all pages in AtoM the :term:`home page` also includes the AtoM
 
 .. _log-in:
 
-Log in
-======
+|login| Log in
+==============
 
 To add or edit content and access the :term:`main menu` in AtoM, you need to
 log in:
@@ -251,7 +260,7 @@ main page types are:
 * :ref:`Browse results <page-type-browse>`
 * :ref:`Error <page-type-error>`
 
-.. SEE ALSO::
+.. SEEALSO::
 
    * :ref:`navigate`
    * :ref:`Search <search-atom>`
@@ -287,6 +296,14 @@ For further information on the features of the :term:`home page`, see the
 View
 ----
 
+.. figure:: images/view-page.*
+   :align: right
+   :figwidth: 30%
+   :width: 100%
+   :alt: Example of an archival description view page
+
+   An example of a view page for an archival description
+
 A :term:`view page` displays an individual :term:`record` in full in
 :term:`view mode`, showing only those :term:`fields <field>` that contain
 data. Logged in users can toggle between :term:`edit mode` and :term:`view
@@ -311,6 +328,14 @@ understand what they are viewing.
 Edit
 ----
 
+.. figure:: images/edit-page.*
+   :align: right
+   :figwidth: 30%
+   :width: 100%
+   :alt: Example of an authority record edit page
+
+   An example of an edit page for an authority record
+
 * Displays an individual record in :term:`edit mode` for data entry.
 * Shows all :term:`fields <field>`, including the :term:`administration area`.
 * Groups :term:`fields <field>` by collapsible :term:`information areas
@@ -328,6 +353,16 @@ Edit
 Edit digital object
 -------------------
 
+.. figure:: images/edit-digital-object.*
+   :align: right
+   :figwidth: 30%
+   :width: 100%
+   :alt: Example of the edit digital object page
+
+   An example of the edit page for a digital object. Access this page
+   throught the "More" button in the :term:`button block` of the related
+   description.
+
 The Edit digital object page allows the authorized (i.e. logged in) User with
 edit privileges to control the rights applied to the :term:`master digital
 object`, the :term:`reference display copy`, and the :term:`thumbnail`
@@ -336,10 +371,24 @@ gallery, :term:`carousel` etc.), as well as upload a new :term:`reference
 display copy` or :term:`thumbnail` associated with a :term:`master digital
 object`.
 
+.. SEEALSO::
+
+   * :ref:`upload-digital-object`
+
+
 .. _page-type-search:
 
 Search results
 --------------
+
+.. figure:: images/search-results-objects.*
+   :align: right
+   :figwidth: 30%
+   :width: 100%
+   :alt: Example of a search results page
+
+   An example of an :term:`archival description` search results page, limited
+   to only show results with :term:`digital objects <digital object>`.
 
 A search results page displays set of records that match search criteria,
 based on a user's query entered into the :term:`search box` or the
@@ -352,6 +401,14 @@ information on search in AtoM, see: :ref:`search-atom`.
 Browse results
 --------------
 
+.. figure:: images/browse-digital-smaller.*
+   :align: right
+   :figwidth: 30%
+   :width: 100%
+   :alt: Example of a browse page for digital objects
+
+   An example of the browse page for :term:`digital objects <digital object>`.
+
 Browse results show lists of descriptions retrieved by clicking on an item in
 the :term:`browse menu`. By default when the application is installed, results
 for :term:`archival descriptions <archival description>`, :term:`authority
@@ -363,7 +420,7 @@ logged in users such as :term:`researchers <researcher>`; however, a
 change the sort order. Additionally, an :term:`administrator` can change the
 default sort order for both types of users via the Settings menu (see:
 :ref:`Settings <settings>`). Users can also browse by :term:`subject`,
-:term:`place`, and :term:`digital object` type. For mroe information on
+:term:`place`, and :term:`digital object` type. For more information on
 browsing in AtoM, see: :ref:`browse <browse>`.
 
 .. _page-type-error:
@@ -376,15 +433,31 @@ The following are typical types of :term:`error messages <error message>`:
 
 * **Page not found:** usually implies a broken link; report to system
   :term:`administrator` and to AtoM support team.
+
+.. image:: images/page-not-found.*
+   :align: center
+   :width: 70%
+   :alt: An image of a Page Not Found message
+
 * **No access permission:** your user account does not give you access
   privileges to the requested page.
-* **Locked term:** the :term:`term` cannot be edited because it is referenced
-  in the underlying AtoM application code
+
+.. image:: images/no-permission.*
+   :align: center
+   :width: 70%
+   :alt: An image of a No access permission message
+
 * **No translation permission:** you do not have :term:`translator` access in
   the current language, or to the specific description
 * **System error (500 internal server error):** indicates a fairly major
   system-wide problem, or problem with data corruption; report to
   :term:`administrator`.
+
+.. image:: images/500-error.*
+   :align: center
+   :width: 70%
+   :alt: An image of a 500 error message
+
 * **Blank page:** indicates a fairly major system-wide problem, or problem
   with data corruption; report to administrator and to AtoM support team.
 
@@ -397,8 +470,9 @@ Choose language
 
 Any user can change the :term:`current language` to one of AtoM's
 :term:`supported languages <supported language>` by clicking on a language in
-the :term:`language menu`, located in the AtoM :term:`header bar`. AtoM
-switches the :term:`user interface` to the preferred language, and:
+the |globe| :ref:`Language menu <language-menu>`, located in the AtoM
+:term:`header bar`. AtoM switches the :term:`user interface` to the preferred
+language, and:
 
 * if a translation of the database content into the preferred language exists,
   AtoM switches to the translation;
@@ -407,10 +481,10 @@ switches the :term:`user interface` to the preferred language, and:
 
 .. note::
 
-   :ref:`Add/remove languages <add-remove-languages>` for
+   See :ref:`Add/remove languages <add-remove-languages>` for
    information on how an :term:`administrator` can remove or restore languages
-   in the :term:`language menu`, and :ref:`Translate <translate-all>` for how
-   to translate in AtoM
+   in the :term:`language menu`, and :ref:`Translate <translate>` for how
+   to translate content and :term:`user interface` elements in AtoM.
 
 For more information on the language menu, see: :ref:`language-menu`
 
