@@ -101,7 +101,20 @@ Check for updates
 
 If yes is selected, an :term:`administrator` will automatically receive a
 notification if a newer version of the AtoM software has been released and can
-be installed.
+be installed. This notification will appear in the browser for authenticated
+(i.e. logged in) users, as an orange bar across the top of the application
+alerting users to the newest release available.
+
+.. figure:: images/cva-theme.*
+   :align: center
+   :width: 100%
+   :figwidth: 75%
+   :alt: An image of a themed AtoM instance showing an update notification
+
+   This image shows a themed AtoM installation at the
+   `City of Vancouver Archives <http://searcharchives.vancouver.ca/>`__,
+   showing an update notification in orange at the top of the screen. Only
+   authenticated users will see this notification.
 
 For more information on updates, see:
 
@@ -141,14 +154,25 @@ increase or decrease this default number.
 For more information on navigating in AtoM, see :ref:`Searching in AtoM
 <search-atom>` and :ref:`Navigating in AtoM <navigate>`.
 
+.. NOTE::
+
+   Editing this number to display a large number of results per page may
+   affect page load times.
+
 .. _accession-mask:
 
 Accession mask
 --------------
 
 By default, AtoM creates the :term:`accession record` identifier as a unique
-number compiled from YEAR-MONTH-DAY-Incremental#. This can be changed by
-administrators to suit institutional needs.
+number compiled from YEAR-MONTH-DAY-Incremental#, expressed as ``%Y-%m-%d/#i``.
+This mask, or default counter, can be changed by
+:term:`administrators <administrator>` to suit institutional needs.
+
+.. image:: images/accession-mask.*
+   :align: center
+   :width: 75%
+   :alt: an image of the accession mask
 
 For more information on accession records, see :ref:`accession-records`.
 
@@ -183,13 +207,30 @@ archival description identifier plus the identifier of all its ancestors
 and country code if they have been entered. The string will appear in this
 order with the applicable elements:
 
-* Country code
-* Repository identifier
+* Country code (derived from the country code of the country entered into the
+  contact information of the related :term:`archival institution`)
+* Repository identifier (derived from the identifier field on the related
+  :term:`archival institution`)
 * Fonds/Collection level identifier
 * Series identifier
 * Subseries identifier
 * File identifier
 * Item identifier
+
+.. image:: images/refcode-inherit.*
+   :align: center
+   :width: 75%
+   :alt: an example of reference code inheritance
+
+When reference code inheritance is enabled, AtoM will also display the full
+reference code in the edit page for
+:term:`archival descriptions <archival description>`, as contextual
+information to help orient the user.
+
+.. image:: images/reference-edit-mode.*
+   :align: center
+   :width: 45%
+   :alt: an example of the reference code display in edit mode
 
 .. SEEALSO::
 
@@ -230,6 +271,9 @@ Sort browser (users)
 
 :term:`Administrators <administrator>` can configure default sort order for the
 browse display as either "alphabetic" or "last updated" for logged-in users.
+"Last updated" will display records most recently added or edited at the top
+of the results, allowing users to explore what has changed. By default, the
+sort order is set to "Last updated" for authenticated users.
 
 .. seealso::
 
@@ -241,9 +285,12 @@ browse display as either "alphabetic" or "last updated" for logged-in users.
 Sort browser (anonymous)
 ------------------------
 
-:term:`Administrators <administrator>` can configure default sort order for the
-browse display as either, "alphabetic" or "last updated" for public users
-(e.g., not logged-in).
+:term:`Administrators <administrator>` can configure default sort order for
+the browse display as either, "alphabetic" or "last updated" for public users
+(e.g., not logged-in). "Last updated" will display records most recently added
+or edited at the top of the results, allowing users to explore what has
+changed. By default, the sort order is set to "Alphabetic" for anonymous
+(i.e. public) users.
 
 .. seealso::
 
@@ -285,6 +332,13 @@ authenticated (i.e. logged-in) :term:`administrator`.
 A value of "0" (zero) disables file upload.
 
 For more information, see :ref:`upload-digital-object`.
+
+.. TIP::
+
+   While this setting is global, an upload limit can also be set by an
+   :term:`administrator` on a per-repository basis, from the
+   :term:`archival institution` page. For more information, see:
+   :ref:`upload-limit`.
 
 .. _total-upload-space:
 
@@ -343,9 +397,9 @@ SWORD deposit directory
 -----------------------
 
 The SWORD deposit directory is currently being used to support packages
-deposited by Archivematica into AtoM. If you do not know the name of your
-deposit directory, consult with your systems administrator. The default is
-/tmp.
+deposited by `Archivematica <https://www.archivematica.org/>`__ into AtoM.
+If you do not know the name of your deposit directory, consult with your
+systems administrator. The default is ``/tmp``.
 
 :ref:`Back to top <settings>`
 
@@ -364,6 +418,9 @@ click the "Save" button located below the "Site Description" field.
    :width: 70%
    :alt: An image of the Site information menu in AtoM
 
+Note that the visibility of these elements can also be controlled via the
+"Default page elements" settings, described below.
+
 :ref:`Back to top <settings>`
 
 .. _default-page-elements:
@@ -381,7 +438,13 @@ these settings will be used site-wide.
    :alt: An image of the Default page elements menu in AtoM
 
 Checked boxes will display the corresponding element and unchecked boxes will
-hide the element.
+hide the element. The logo, site title, and site description all appear as
+part of the AtoM :term:`header bar`:
+
+.. image:: images/headerBar_admin.*
+   :align: center
+   :width: 70%
+   :alt: An image of the AtoM header bar elements for an Administrator
 
 For more information on page elements, see :ref:`Themes & Theming <themes>`.
 
@@ -412,6 +475,11 @@ the drop-down menus.
 
 Once changes have been saved, records on the site will be able to be edited and
 viewed in the templates that have been selected.
+
+.. SEEALSO::
+
+   * :ref:`data-entry`
+   * :ref:`descriptive-standards`
 
 :ref:`Back to top <settings>`
 
