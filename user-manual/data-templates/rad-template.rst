@@ -1,8 +1,8 @@
 .. _rad-template:
 
-=================================================
-Rules for Archival Description (RAD) CSV template
-=================================================
+================================================================
+Rules for Archival Description (RAD) data entry and CSV template
+================================================================
 
 On this page you will find:
 
@@ -63,6 +63,16 @@ Information below includes:
 Title and statement of responsibility area
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. figure:: images/title-area.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: An image of the data entry fields for the Title and statement of
+         responsibility area
+
+   The data entry fields for Title proper, GMD, Parallel titles, Other title
+   information, and Statement of responsibility
+
 Title proper
 ------------
 
@@ -93,6 +103,8 @@ description. If there are more than three, select "multiple media." (RAD 1.1C)
 **Notes** Although the RAD standard specifies set values for General Material
 Designations, in AtoM these can be edited in the Material type
 :term:`taxonomy` (see: :ref:`Add a new term <add-term>`).
+If you try to import a CSV file using a different :term:`term` from the
+taxonomy, the import will fail.
 
 :ref:`Back to the top <rad-template>`
 
@@ -144,6 +156,15 @@ the chief source of information..." (RAD 1.1F)
 **Notes**
 
 :ref:`Back to the top <rad-template>`
+
+.. figure:: images/title-notes.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: An image of the data entry fields for the Title notes area
+
+   The data entry fields for Title notes. Multiple title notes can be added
+   by clicking "Add new."
 
 Title notes- Statements of responsibility
 -----------------------------------------
@@ -246,6 +267,16 @@ considered to be important." (RAD 1.8B3)
 
 :ref:`Back to the top <rad-template>`
 
+.. figure:: images/title-area-2.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: An image of the data entry fields for the Level of description, new
+         child levels, Repository and Identifier.
+
+   The data entry fields for Level of description, child levels, Repository
+   and Identifier. Multiple child levels can be added by clicking "Add new."
+
 Level of description
 --------------------
 
@@ -260,6 +291,8 @@ rules and conventions on selecting levels of description.
 
 **Notes** An :term:`administrator` can edit the values in the Levels of
 description :term:`taxonomy` (see: :ref:`Add a new term <add-term>`).
+If you try to import a CSV file using a different :term:`term` from the
+taxonomy, the import will fail.
 
 :ref:`Back to the top <rad-template>`
 
@@ -317,20 +350,6 @@ While editing the record, the full reference code including any identifiers
 :ref:`inherited <inherit-reference-code>` from higher levels will appear
 below the Identifier field.
 
-.. image:: images/identifier.*
-   :align: center
-   :width: 60%
-   :alt: Entering an identifier to an archival description.
-
-Users can also enter alternative identifier(s) by clicking the link below the
-identifier field. This allows the user to give a label to the alternative
-identifier indicating its purpose and usage as well as the alternative
-identifier.
-
-.. image:: images/identifier-alternative.*
-   :align: center
-   :width: 60%
-   :alt: Entering an identifier with the alternative identifier area open.
 
 :ref:`Back to the top <rad-template>`
 
@@ -338,6 +357,13 @@ identifier.
 
 Edition area
 ^^^^^^^^^^^^
+.. figure:: images/edition-area.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: An image of the data entry fields for the Edition area.
+
+   The data entry fields for the Edition area.
 
 Edition statement
 -----------------
@@ -381,6 +407,16 @@ responsibility area." (RAD 1.2C2)
 
 Class of materials specific details area
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: images/class-area.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: An image of the data entry fields for the Class of materials specific
+         details area.
+
+   The data entry fields for the Class of materials specific details area.
+
 
 RAD: "1.3A. Preliminary rule: 1.3A1. Scope: For instructions regarding this
 area, refer to the chapters dealing with the class(es) of material that use
@@ -501,7 +537,7 @@ create and link to a new authority record.
 **EAD** <origination> <name>
 
 **Notes** When entering the description manually, the Creator field is found
-within the Dates of creation area.
+within the Dates of creation area, labeled as "Actor name."
 
 :ref:`Back to the top <rad-template>`
 
@@ -546,17 +582,39 @@ new" in the dates of creation area.
 
 .. figure:: images/event-entry.*
    :align: right
-   :figwidth: 20%
+   :figwidth: 35%
    :width: 100%
    :alt: An image of the data entry fields for the Dates of Creation area
 
    The data entry fields for the Dates of Creation area
 
+Entering an actor's name will automatically insert the actor's
+biographical sketch or administrative history from the
+:term:`authority record`.
+
+When entering data manually, users can choose an event type from a
+:term:`drop-down menu`. The event types can be edited by an
+:term:`administrator` in the Event types :term:`taxonomy` (see:
+:ref:`Add a new term <add-term>`). When importing descriptions via CSV, the
+event type defaults to Creation.
+
 Place
 -----
 
+**Template field** Place
 
+**CSV Column** N/A
 
+**Rule** "For an item, transcribe the place of publication, distribution,
+etc., in the form and grammatical case in which it appears." (RAD 1.4C1).
+Search for an existing term in the places taxonomy by typing the first few
+characters of the term name. Alternatively, type a new term to create and
+link to a new place term.
+
+**EAD** N/A
+
+**Notes** This field does not map to EAD due to its relation to a specific
+event.
 
 Date(s)
 -------
@@ -576,16 +634,6 @@ and uncertain dates in square brackets, using the conventions described in RAD
 
 **Notes** This field will display the date as intended by the editor of the
 archival description, in the language of the standard being used.
-
-Entering an actor's name will automatically insert the actor's
-biographical sketch or administrative history from the
-:term:`authority record`.
-
-When entering data manually, users can choose an event type from a
-:term:`drop-down menu`. The event types can be edited by an
-:term:`administrator` in the Event types :term:`taxonomy` (see:
-:ref:`Add a new term <add-term>`). When importing descriptions via CSV, the
-event type defaults to Creation.
 
 :ref:`Back to the top <rad-template>`
 
@@ -639,7 +687,7 @@ creation, publication, or distribution, of the unit being described that are
 not included in the Date(s) of creation, including publication, distribution,
 etc., area and that are considered to be important. " (RAD 1.8B8) "Make notes
 on the date(s) of accumulation or collection of the unit being described." RAD
-1.8B8a)Dates of creation-
+1.8B8a)
 
 **EAD** <event> <note type="eventNote">
 
@@ -651,6 +699,15 @@ on the date(s) of accumulation or collection of the unit being described." RAD
 
 Physical description area
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: images/physical-area.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: An image of the data entry fields for the Physical description area.
+
+   The data entry fields for the Physical description area.
+
 
 Physical description
 --------------------
@@ -677,6 +734,14 @@ carriage return (i.e. press the Enter key on your keyboard).
 
 Publisher's series area
 ^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: images/publishers-area.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: An image of the data entry fields for the Publisher's series area.
+
+   The data entry fields for the Publisher's series area.
 
 Title proper of publisher's series
 ----------------------------------
@@ -726,6 +791,7 @@ publisher's series." (RAD 1.6D1)
 **Notes**
 
 :ref:`Back to the top <rad-template>`
+
 
 Statement of responsibility relating to publisher's series
 ----------------------------------------------------------
@@ -785,6 +851,14 @@ Other notes- Publisher's Series. Both notes refer to RAD 1.8B10.
 Archival description area
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. figure:: images/archival-area.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: An image of the data entry fields for the Archival description area.
+
+   The data entry fields for the Archival description area.
+
 Custodial history
 -----------------
 
@@ -813,7 +887,9 @@ Scope and content
 necessary at the file and the item levels of description, indicate the level
 being described and give information about the scope and the internal
 structure of or arrangement of the records, and about their contents." (RAD
-1.7D) "For the scope of the unit being described, give information about the
+1.7D)
+
+"For the scope of the unit being described, give information about the
 functions and/or kinds of activities generating the records, the period of
 time, the subject matter, and the geographical area to which they pertain.
 For the content of the unit being described, give information about its
@@ -832,6 +908,15 @@ speeches)." (RAD 1.7D1)
 
 Notes area
 ^^^^^^^^^^
+
+.. figure:: images/notes-area.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: An image of the data entry fields for the notes area.
+
+   The data entry fields for the Notes area. More notes fields continue below
+   the screen shown.
 
 Physical condition
 ------------------
@@ -1048,10 +1133,12 @@ Associated materials
 associated with the unit being described by virtue of the fact that they
 share the same provenance, make a citation to the associated material at the
 fonds, series or collection level, or for discrete items, indicating its
-location if known." (RAD 1.8B18). For related material, "Indicate groups of
-records having some significant relationship by reason of shared
-responsibility or shared sphere of activity in one or more units of material
-external to the unit being described." (RAD 1.8B20)
+location if known." (RAD 1.8B18).
+
+For related material, "Indicate groups of records having some significant
+relationship by reason of shared responsibility or shared sphere of activity
+in one or more units of material external to the unit being described." (RAD
+1.8B20).
 
 **EAD** <relatedmaterial>
 
@@ -1078,7 +1165,14 @@ closed." (RAD 1.8B19)
 
 :ref:`Back to the top <rad-template>`
 
+.. figure:: images/notes-other.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: An image of the data entry fields for the other notes fields.
 
+   The data entry fields for Other notes. Multiple notes can be added by
+   clicking "Add new"
 
 Other notes- Accompanying material
 ----------------------------------
@@ -1227,6 +1321,14 @@ considered important but not falling within the definitions of the other notes.
 Standard number area
 ^^^^^^^^^^^^^^^^^^^^
 
+.. figure:: images/standard-area.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: An image of the data entry fields for the Standard number area.
+
+   The data entry fields for the Standard number area.
+
 Standard number
 ---------------
 
@@ -1249,6 +1351,14 @@ abbreviation and with the standard spacing or hyphenation." (RAD 1.9B1)
 
 Access points
 ^^^^^^^^^^^^^
+
+.. figure:: images/access-points.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: An image of the data entry fields for Access points.
+
+   The data entry fields for Access points.
 
 Subject access points
 ---------------------
@@ -1314,6 +1424,15 @@ record.
 
 Control area
 ^^^^^^^^^^^^
+
+.. figure:: images/control-area.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: An image of the data entry fields for the Control area.
+
+   The data entry fields for the Control area. More fields continue below the
+   screen shown.
 
 For more information on the use of fields in the control area, see
 :ref:`control area <control-area>`.
@@ -1498,6 +1617,15 @@ sketch or administrative history, record these in the sources field for the
 Rights area
 ^^^^^^^^^^^
 
+.. figure:: images/rights-area.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: An image of the data entry fields for the rights area.
+
+   The data entry area for the Rights area. Multiple rights records can be
+   added by clicking "Add new."
+
 This area of the description allows users to enter a :term:`rights record`
 compliant with `PREMIS <http://www.loc.gov/standards/premis/>`_. These fields
 are separate from the RAD rights notes, above, and editing one area does not
@@ -1510,6 +1638,14 @@ For more information, see
 
 Administration area
 ^^^^^^^^^^^^^^^^^^^
+
+.. figure:: images/admin-area.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: An image of the data entry fields for the Administration area.
+
+   The data entry fields for the Administration area.
 
 Publication status
 ------------------
