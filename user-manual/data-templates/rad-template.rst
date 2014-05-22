@@ -35,11 +35,33 @@ Information below includes:
 
 * **Template field** refers to the default label for that field in AtoM
 * **CSV Column** refers to the title of the column in the CSV template
-* **Rule** refers to the rule from the applicable standard
+* **Rule** refers to the rule from the applicable standard and/or the
+  instructions provided by AtoM.
 * **EAD** refers to the field mapping to EAD
-* **Notes** includes any other information needed for a successful CSV
-  import.
+* **Notes** includes any other information needed for successful data entry or
+  CSV import.
 
+**Skip to**:
+
+* :ref:`Title and statement of responsibility area <template-title>`
+* :ref:`Edition area <template-edition>`
+* :ref:`Class of material specific details area <template-class>`
+* :ref:`Authority record fields <template-authority>`
+* :ref:`Dates of creation area <template-dates>`
+* :ref:`Physical description area <template-physical>`
+* :ref:`Publisher's series area <template-publishers>`
+* :ref:`Archival description area <template-description>`
+* :ref:`Notes area <template-notes>`
+* :ref:`Standard number area <template-standard-number>`
+* :ref:`Access points <template-access>`
+* :ref:`Control area <template-control>`
+* :ref:`Rights area <template-rights>`
+* :ref:`Administration area <template-admin>`
+
+.. _template-title:
+
+Title and statement of responsibility area
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Title proper
 ------------
@@ -64,11 +86,13 @@ General material designation
 **CSV Column** radGeneralMaterialDesignation
 
 **Rule** Select the General Material Designation at the highest level of
-description If there are more than three, select "multiple media." (RAD 1.1C)
+description. If there are more than three, select "multiple media." (RAD 1.1C)
 
 **EAD** <genreform>
 
-**Notes**
+**Notes** Although the RAD standard specifies set values for General Material
+Designations, in AtoM these can be edited in the Material type
+:term:`taxonomy` (see: :ref:`Add a new term <add-term>`).
 
 :ref:`Back to the top <rad-template>`
 
@@ -128,8 +152,11 @@ Title notes- Statements of responsibility
 
 **CSV Column** radTitleStatementOfResponsibilityNote
 
-**Rule** Select a note type from the drop-down menu and enter note text in
-accordance with RAD 1.8B1 through 1.8B6.
+**Rule** "Make notes on any statement(s) of
+responsibility that appear outside the chief source of information or that appear on the
+chief source, but not in conjunction with a formal title proper. Record statements of
+responsibility that appear on the chief source of information for a file or series, if
+applicable." (RAD 1.8B5)
 
 **EAD** <odd type="titleStatRep">
 
@@ -144,8 +171,8 @@ Title notes- Attributions and conjectures
 
 **CSV Column** radTitleAttributionsAndConjectures
 
-**Rule** Select a note type from the drop-down menu and enter note text in
-accordance with RAD 1.8B1 through 1.8B6.
+**Rule** "Make notes on authors to whom the unit being
+described has been attributed, and cite sources, if appropriate." (RAD 1.8B6)
 
 **EAD** <odd type="titleAttributions">
 
@@ -160,8 +187,8 @@ Title notes- Continuation of title
 
 **CSV Column** radTitleContinues
 
-**Rule** Select a note type from the drop-down menu and enter note text in
-accordance with RAD 1.8B1 through 1.8B6.
+**Rule** "Complete the transcription if the formal title proper and/or
+other title information was abridged in the description." (RAD 1.8B4)
 
 **EAD** <odd type="titleContinuation">
 
@@ -176,8 +203,8 @@ Title notes- Source of title proper
 
 **CSV Column** radTitleSourceOfTitleProper
 
-**Rule** Select a note type from the drop-down menu and enter note text in
-accordance with RAD 1.8B1 through 1.8B6.
+**Rule** "Indicate the source of a title proper, when appropriate." (RAD
+1.8B2)
 
 **EAD** <odd type="titleSource">
 
@@ -192,8 +219,9 @@ Title notes- Variations in title
 
 **CSV Column** radTitleVariationsInTitle
 
-**Rule** Select a note type from the drop-down menu and enter note text in
-accordance with RAD 1.8B1 through 1.8B6.
+**Rule** "Make notes on variant titles appearing outside the prescribed
+source of information. Make notes on titles by which the unit being described has been
+traditionally known other than the title proper." (RAD 1.8B1)
 
 **EAD** <odd type="titleVariation">
 
@@ -208,8 +236,9 @@ Title notes- Parallel titles and other title information
 
 **CSV Column** radTitleParallelTitles
 
-**Rule** Select a note type from the drop-down menu and enter note text in
-accordance with RAD 1.8B1 through 1.8B6.
+**Rule** "Make notes on parallel titles and other title information not
+recorded in the Title and statement of responsibility area if they are
+considered to be important." (RAD 1.8B3)
 
 **EAD** <odd type="titleParallel">
 
@@ -227,11 +256,31 @@ Level of description
 **Rule** Select a level of description from the drop-down menu. See RAD 1.0A for
 rules and conventions on selecting levels of description.
 
-**EAD** <archdesc level="[level of descriptio]">
+**EAD** <archdesc level="[level of description]">
 
-**Notes**
+**Notes** An :term:`administrator` can edit the values in the Levels of
+description :term:`taxonomy` (see: :ref:`Add a new term <add-term>`).
 
 :ref:`Back to the top <rad-template>`
+
+Add new child levels
+--------------------
+
+**Template field** Identifier, Level, Title, Date
+
+**CSV Column** See notes below
+
+**Rule** *Indentifier* Enter an unambiguous code used to uniquely identify the
+description. *Level* Select a level of description from the drop-down menu.
+See RAD 1.0A for rules and conventions on selecting levels of description.
+*Title* Enter the title proper, either transcribed or supplied (RAD 1.1B).
+
+**EAD** N/A
+
+**Notes** When entering descriptions manually, users can add new
+:term:`child records <child record>` in this area while adding a parent record.
+In CSV import, this can be achieved using the legacyID and parentID columns. See
+:ref:`Dealing with hierarchical data in CSV <csv-legacy-id-mapping>`.
 
 Repository
 ----------
@@ -255,7 +304,7 @@ type a new name to create and link to a new archival institution.
 Reference code
 --------------
 
-**Template field** Reference code
+**Template field** Identifier
 
 **CSV Column** identifier
 
@@ -263,9 +312,32 @@ Reference code
 
 **EAD** <unitid>
 
-**Notes**
+**Notes** This field displays to non-logged in users as "Reference code."
+While editing the record, the full reference code including any identifiers
+:ref:`inherited <inherit-reference-code>` from higher levels will appear
+below the Identifier field.
+
+.. image:: images/identifier.*
+   :align: center
+   :width: 60%
+   :alt: Entering an identifier to an archival description.
+
+Users can also enter alternative identifier(s) by clicking the link below the
+identifier field. This allows the user to give a label to the alternative
+identifier indicating its purpose and usage as well as the alternative
+identifier.
+
+.. image:: images/identifier-alternative.*
+   :align: center
+   :width: 60%
+   :alt: Entering an identifier with the alternative identifier area open.
 
 :ref:`Back to the top <rad-template>`
+
+.. _template-edition:
+
+Edition area
+^^^^^^^^^^^^
 
 Edition statement
 -----------------
@@ -304,6 +376,16 @@ responsibility area." (RAD 1.2C2)
 **Notes**
 
 :ref:`Back to the top <rad-template>`
+
+.. _template-class:
+
+Class of materials specific details area
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+RAD: "1.3A. Preliminary rule: 1.3A1. Scope: For instructions regarding this
+area, refer to the chapters dealing with the class(es) of material that use
+it."
+
 
 Statement of scale (cartographic)
 ---------------------------------
@@ -395,6 +477,15 @@ the title proper or other title information." (RAD 12.3C1)
 
 :ref:`Back to the top <rad-template>`
 
+.. _template-authority:
+
+Authority record fields
+^^^^^^^^^^^^^^^^^^^^^^^
+
+These fields are found in the CSV template but when entering descriptions
+manually are found in the :term:`authority record`. However, the description can be
+linked to the authority record while entering the data manually.
+
 Creator
 -------
 
@@ -409,7 +500,8 @@ create and link to a new authority record.
 
 **EAD** <origination> <name>
 
-**Notes**
+**Notes** When entering the description manually, the Creator field is found
+within the Dates of creation area.
 
 :ref:`Back to the top <rad-template>`
 
@@ -426,15 +518,45 @@ include information on gender, nationality, family and religious or political
 affiliations. Wherever possible, supply dates as an integral component of the
 narrative description." (ISAAR 5.2.2)
 
+See also RAD section 1.7B1.
+
 **EAD** <bioghist> <note>
 
-**Notes** By default this column will create a Biographical history in the
-:term:`authority record`, regardless of whether the creator is a person,
-family, or organization. To specify the entity type when importing creators,
-users would need to
+**Notes** When entering data manually, this field needs to be written in the
+:term:`authority record`. If an authority record does not already exist, AtoM
+will create one when a new creator is entered, above. The user can then
+navigate to the authority record to enter the Biographical or Administrative
+history (see: :ref:`Authority records <authority-records>`).
+
+When importing descriptions by CSV, by default this column will
+create a Biographical history in the :term:`authority record`, regardless of
+whether the creator is a person, family, or organization. To specify the
+entity type when importing creators, users would need to
 :ref:`import authority records <csv-import-authority-records>`.
 
 :ref:`Back to the top <rad-template>`
+
+.. _template-dates:
+
+Dates of creation area
+^^^^^^^^^^^^^^^^^^^^^^
+
+When entering data manually, the fields below are accessed by clicking "Add
+new" in the dates of creation area.
+
+.. figure:: images/event-entry.*
+   :align: right
+   :figwidth: 20%
+   :width: 100%
+   :alt: An image of the data entry fields for the Dates of Creation area
+
+   The data entry fields for the Dates of Creation area
+
+Place
+-----
+
+
+
 
 Date(s)
 -------
@@ -450,10 +572,20 @@ them as such, preceded by the word predominant..." (1.4B2). Record probable
 and uncertain dates in square brackets, using the conventions described in RAD
 1.4B5.
 
-**EAD** <bioghist> <date type ="creation>
+**EAD** <bioghist> <date type ="creation">
 
-**Notes** This column refers to the dates of creation of the material, not
-the active/living dates of the creator.
+**Notes** This field will display the date as intended by the editor of the
+archival description, in the language of the standard being used.
+
+Entering an actor's name will automatically insert the actor's
+biographical sketch or administrative history from the
+:term:`authority record`.
+
+When entering data manually, users can choose an event type from a
+:term:`drop-down menu`. The event types can be edited by an
+:term:`administrator` in the Event types :term:`taxonomy` (see:
+:ref:`Add a new term <add-term>`). When importing descriptions via CSV, the
+event type defaults to Creation.
 
 :ref:`Back to the top <rad-template>`
 
@@ -465,11 +597,14 @@ Dates of creation- Start
 **CSV Column** creatorDatesStart
 
 **Rule** Enter the start year. Do not use any qualifiers or typographical
-symbols to express uncertainty.
+symbols to express uncertainty. Acceptable date formats: YYYYMMDD,
+YYYY-MM-DD, YYYY-MM, YYYY.
 
 **EAD** <unitdate>
 
-**Notes** This field only displays while editing the description.
+**Notes** This field only displays while editing the description. If AtoM is
+able to interpret the start date from the Date(s) field, above, it will
+autopopulate upon entering.
 
 :ref:`Back to the top <rad-template>`
 
@@ -481,12 +616,14 @@ Dates of creation- End
 **CSV Column** creatorDatesEnd
 
 **Rule** Enter the end year. Do not use any qualifiers or typographical symbols
-to express uncertainty. If the start and end years are the same, enter data
-only in the "Date" field and leave the "End date" blank.
+to express uncertainty. Acceptable date formats: YYYYMMDD,
+YYYY-MM-DD, YYYY-MM, YYYY.
 
 **EAD** <unitdate>
 
-**Notes** This field only displays while editing the description.
+**Notes** This field only displays while editing the description. If AtoM is
+able to interpret the start date from the Date(s) field, above, it will
+autopopulate upon entering.
 
 :ref:`Back to the top <rad-template>`
 
@@ -502,13 +639,18 @@ creation, publication, or distribution, of the unit being described that are
 not included in the Date(s) of creation, including publication, distribution,
 etc., area and that are considered to be important. " (RAD 1.8B8) "Make notes
 on the date(s) of accumulation or collection of the unit being described." RAD
-1.8B8a)
+1.8B8a)Dates of creation-
 
 **EAD** <event> <note type="eventNote">
 
-**Notes**
+**Notes** This appears while editing as "Event note."
 
 :ref:`Back to the top <rad-template>`
+
+.. _template-physical:
+
+Physical description area
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Physical description
 --------------------
@@ -530,6 +672,11 @@ carriage return (i.e. press the Enter key on your keyboard).
 **Notes**
 
 :ref:`Back to the top <rad-template>`
+
+.. _template-publishers:
+
+Publisher's series area
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Title proper of publisher's series
 ----------------------------------
@@ -592,7 +739,7 @@ conjunction with a formal title proper of a publisher's series as instructed
 in 1.1F and only if considered necessary for identifying the publisher's
 series." (RAD 1.6E1)
 
-**EAD** <bibseries> <<title type="statRep">
+**EAD** <bibseries> <title type="statRep">
 
 **Notes**
 
@@ -628,29 +775,15 @@ incomplete series, and of numbers or letters that imply a series." (RAD
 
 **EAD** <odd type="bibSeries">
 
-**Notes** This column maps to the same EAD field as the column below,
-radNoteOnPublishersSeries. Both notes refer to RAD 1.8B10.
+**Notes** This field maps to the same EAD field as the field in Notes area below,
+Other notes- Publisher's Series. Both notes refer to RAD 1.8B10.
 
 :ref:`Back to the top <rad-template>`
 
-Publisher's series
-------------------
+.. _template-description:
 
-**Template field** Publisher's series
-
-**CSV Column** radNoteOnPublishersSeries
-
-**Rule** Select a note type from the drop-down menu and enter note text in
-accordance with the following sections in RAD: 1.5E (Accompanying material);
-1.8 B11 (Alpha-numeric designations); 1.8B9b (Conservation); 1.8B7 (Edition);
-1.8B9 (Physical Description); 1.8B16b (Rights); 1.8B21 (General note).
-
-**EAD** <odd type="bibSeries">
-
-**Notes** This column maps to the same EAD field as the column above,
-radPublishersSeriesNote. Both notes refer to RAD 1.8B10.
-
-:ref:`Back to the top <rad-template>`
+Archival description area
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Custodial history
 -----------------
@@ -694,6 +827,8 @@ speeches)." (RAD 1.7D1)
 **Notes**
 
 :ref:`Back to the top <rad-template>`
+
+.. _template-notes:
 
 Notes area
 ^^^^^^^^^^
@@ -952,7 +1087,8 @@ Other notes- Accompanying material
 
 **CSV Column** radNoteAccompanyingMaterial
 
-**Rule** RAD: 1.5E (Accompanying material)
+**Rule** "Give details of accompanying material not mentioned
+in the Physical description area (see 1.5E)." (RAD 1.8B9c)
 
 **EAD** <odd type="material">
 
@@ -969,7 +1105,9 @@ Other notes- Alpha-numeric designations
 
 **CSV Column** radNoteAlphaNumericDesignation
 
-**Rule** 1.8 B11
+**Rule** "If desirable, make a note of any important
+numbers borne by the unit being described other than publisher's series numbers (see
+1.6F) or standard numbers (see 1.9)." (RAD 1.8 B11)
 
 **EAD** <odd type="alphanumericDesignation">
 
@@ -985,7 +1123,9 @@ Other notes- Conservation
 
 **CSV Column** radNoteConservation
 
-**Rule** 1.8B9b
+**Rule** "If the unit being described has received any specific
+conservation treatment, e.g., if repair work has been done on it, briefly indicate the
+nature of the work." (RAD 1.8B9b)
 
 **EAD** <odd type="conservation">
 
@@ -1001,7 +1141,8 @@ Other notes- Edition
 
 **CSV Column** radNoteEdition
 
-**Rule** 1.8B7
+**Rule** "Make notes relating to the edition being described or of the relationship
+of the unit being described to other editions." (RAD 1.8B7)
 
 **EAD** <odd type="edition">
 
@@ -1017,7 +1158,8 @@ Other notes- Physical description
 
 **CSV Column** radNotePhysicalDescription
 
-**Rule** 1.8B9
+**Rule** "Make notes relating to the physical description of the unit
+being described." (RAD 1.8B9)
 
 **EAD** <odd type="physDesc">
 
@@ -1350,6 +1492,19 @@ sketch or administrative history, record these in the sources field for the
 
 
 :ref:`Back to the top <rad-template>`
+
+.. _template-rights:
+
+Rights area
+^^^^^^^^^^^
+
+This area of the description allows users to enter a :term:`rights record`
+compliant with `PREMIS <http://www.loc.gov/standards/premis/>`_. These fields
+are separate from the RAD rights notes, above, and editing one area does not
+effect the other. Rights records cannot be imported with descriptions via CSV.
+
+For more information, see
+:ref:`Add rights to an archival description <rights-archival-description>`.
 
 .. _template-admin:
 

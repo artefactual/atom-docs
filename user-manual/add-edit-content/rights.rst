@@ -130,6 +130,8 @@ Add rights to an Accession record
     and you are editing the rights information, you will click on the blue
     Save button.
 
+.. _rights-archival-description:
+
 Add rights to an Archival description
 -------------------------------------
 
