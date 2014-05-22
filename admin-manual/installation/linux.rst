@@ -379,7 +379,7 @@ the CSS files:
    sudo add-apt-repository ppa:chris-lea/node.js
    sudo apt-get update
    sudo apt-get install nodejs
-   sudo npm install -g less
+   sudo npm install -g less@1.3.3
    cd /usr/share/nginx/atom/plugins/arDominionPlugin/
    sudo -u www-data make
 
