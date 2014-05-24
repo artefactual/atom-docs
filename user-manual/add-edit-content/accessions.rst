@@ -60,6 +60,9 @@ materials have been arranged.
    * :ref:`Add a new deaccession record <add-deaccession-record>`
    * :ref:`Edit an existing deaccession record <edit-deaccession-record>`
    * :ref:`Delete a deaccession record <delete-deaccession-record>`
+   * :ref:`archival-descriptions`
+   * :ref:`settings`
+   * :ref:`donors`
 
 .. _add-new-accession:
 
@@ -73,16 +76,34 @@ Add a new accession record
 1. In the :term:`main menu` located in the :term:`header bar`, click the |plus|
    :ref:`"Add" <main-menu-add>` menu and select "Accession records" from the
    :term:`drop-down menu`.
+
+.. image:: images/add-accession.*
+   :align: center
+   :width: 30%
+   :alt: An image of of the Add menu in AtoM
+
 2. AtoM takes you to an accession record :term:`edit page` screen for data
    entry. The Accession number field is automatically assigned a Unique ID, this
    number cannot be altered.
+
+.. image:: images/new-accession-edit.*
+   :align: center
+   :width: 70%
+   :alt: An image of the accessions edit page
 
 .. TIP::
 
    :term:`Administrators <administrator>` can alter the default accession mask
    and counter (from which the accession number is generated) by navigating to
    **Admin > Settings > Accession mask**. For more information, see:
-   :doc:`Settings</administer/settings>`
+   :ref:`accession-mask` in :ref:`settings` - see also the example provided
+   in the section on altering the accessions mask for legacy accessions,
+   :ref:`below <alter-accession-mask>`.
+
+   .. image:: images/accession-mask.*
+      :align: center
+      :width: 70%
+      :alt: An image of the accessions mask in Global settings
 
 3. The accession record edit template provides a variety of field types for
    data entry (e.g., calendar, free-text, pop-up dialogs and :term:`drop-downs
@@ -103,6 +124,11 @@ In the Edit accession record screen, under the Donor/Transferring body area
 you can enter the names and contact information for related donors using the
 :term:`donor dialog`.
 
+.. image:: images/accession-donor-dialog.*
+   :align: center
+   :width: 70%
+   :alt: An image of the donor dialog in the accession edit template
+
 Fields available in the :term:`donor dialog` include:
 
 * Name
@@ -122,7 +148,7 @@ navigating to **Manage > Donors**.
 
    Donor records can be created and managed separately from :term:`accession
    records <accession record>`. For a full explanation of donors, go to the
-   :doc:`Donors </add-edit-content/donors>` page
+   :ref:`donors` page
 
 .. _add-accession-rights:
 
@@ -132,7 +158,13 @@ Add rights to an accession record
 In the Edit accession record screen, under the Rights :term:`information
 area`, you can enter one or more rights restrictions related to the accession
 using the rights record. For a full explanation of rights, go to the
-:doc:`Rights </add-edit-content/rights>` page
+:ref:`rights` page.
+
+.. image:: images/accession-rights-dialog.*
+   :align: center
+   :width: 70%
+   :alt: An image of the rights dialog in the accessions edit page
+
 
 .. _link-accession-description:
 
@@ -142,12 +174,24 @@ Link an accession record to an archival description
 Users have the option of linking a new :term:`accession record` with an
 existing :term:`archival description` in the AtoM database. The  Archival
 description :term:`information area` is located at the bottom of the accession
-record :term:`edit page`. Placing the cursor in the data :term:`field` will
-activate a drop-down list of all archival descriptions entered into the
-database. The User selects the appropriate :term:`archival description` by
-moving through the list (a blue highlight will indicate which record you are
-selecting). Then Save the record by clicking "Save" in the :term:`button
-block` at the bottom of the accession :term:`edit page`.
+record :term:`edit page`.
+
+.. image:: images/accession-link-description.*
+   :align: center
+   :width: 70%
+   :alt: The link archival description area in the accession template
+
+Placing the cursor in the data :term:`field` will activate a drop-down list of
+all archival descriptions entered into the database. The User selects the
+appropriate :term:`archival description` by moving through the list (a blue
+highlight will indicate which record you are selecting). Then Save the record
+by clicking "Save" in the :term:`button block` at the bottom of the accession
+:term:`edit page`.
+
+.. image:: images/accession-link-description2.*
+   :align: center
+   :width: 70%
+   :alt: The link archival description area in the accession template
 
 .. TIP::
 
@@ -168,8 +212,15 @@ data entered will be lost), you can review the data in the accession record
 :term:`view page`.
 
 Notice that the linked :term:`archival description` is now presented as a
-hyperlink in the :term:`accession record`. In the :term:`button block` at the
-bottom of the screen you have the option(s) to:
+hyperlink in the :term:`accession record`.
+
+.. image:: images/accession-description-link.*
+   :align: center
+   :width: 70%
+   :alt: A link to a description generated from an accession
+
+In the :term:`button block` at the bottom of the screen you have the option(s)
+to:
 
 * :ref:`Edit the accession record <edit-accession-record>`
 * :ref:`Add an accrual to the accession <add-accession-accrual>`
@@ -177,6 +228,10 @@ bottom of the screen you have the option(s) to:
   <create-accession-description>`
 * :ref:`Delete an accession record <delete-accession-record>`
 
+.. image:: images/accession-button-block.*
+   :align: center
+   :width: 70%
+   :alt: The button block on an accession view page
 
 .. TIP::
 
@@ -207,7 +262,12 @@ time by a logged-in user with edit privileges.
    with the accession records :term:`search box` located at the bottom of the
    browse page. For more information on searching for :term:`accession records
    <accession record>` in AtoM, see: :ref:`Searching for accession records
-   <dedicated-search-accessions>`
+   <dedicated-search-accessions>`.
+
+.. image:: images/accession-browse.*
+   :align: center
+   :width: 70%
+   :alt: The accession record browse page
 
 .. TIP::
 
@@ -215,12 +275,19 @@ time by a logged-in user with edit privileges.
    an :term:`accession record` will have a hyperlink to their related
    accession record. The hyperlink is located in the "Accession"
    :term:`information area` at the bottom of the archival description
-   :term:`view page`. Logged-in users with permissions can select the
-   hyperlink accession record identifier and AtoM will take them to the
-   related accession record :term:`view page`. Unauthenticated users (i.e.
-   those who are not logged in) will not be able to see the Accessions
-   area; logged-in Users without permissions can see the hyperlink but
-   cannot access the :term:`accession record`.
+   :term:`view page`.
+
+   .. image:: images/accession-area.*
+      :align: center
+      :width: 70%
+      :alt: A link to a related accession in an archival description
+
+   Logged-in users with permissions can select the hyperlink accession record
+   identifier and AtoM will take them to the related accession record
+   :term:`view page`. Unauthenticated users (i.e. those who are not logged in)
+   will not be able to see the Accessions area; logged-in Users without
+   permissions can see the hyperlink but cannot access the :term:`accession
+   record`.
 
 3. Once you have selected an :term:`accession record`, you will be redirected
    to the selected record's :term:`view page`. To enter edit mode, you can
@@ -228,6 +295,11 @@ time by a logged-in user with edit privileges.
    the :term:`view page`, or click on any of the :term:`information area`
    headings in the accession record. The accession record will reload in edit
    mode.
+
+.. image:: images/accession-button-block.*
+   :align: center
+   :width: 70%
+   :alt: The button block on an accession view page
 
 4. On loading, the :term:`edit page` displays the record with all
    :term:`information areas <information area>` closed; click on an
@@ -242,10 +314,7 @@ time by a logged-in user with edit privileges.
    block`. AtoM will reload the page in view mode, with all changes saved, so
    you can review your work.
 
-
-
 :ref:`Back to top <accession-records>`
-
 
 .. _add-accession-accrual:
 
@@ -265,10 +334,20 @@ so:
    of the :term:`view page` and click the "Add accrual" button in the
    :term:`button block`.
 
+.. image:: images/accession-button-block.*
+   :align: center
+   :width: 70%
+   :alt: The button block on an accession view page
+
 3. You will be redirected to an accession record :term:`edit page`, but but at
    the top of the edit template a message will read: **"You are creating an
    accrual of the accession YYY-MM-DD/#."** (where YYYY-MM-DD/# represents the
    Accession number to which you are adding an accrual)
+
+.. image:: images/add-accrual-message.*
+   :align: center
+   :width: 70%
+   :alt: The message at the top of a new accrual record
 
 4. The edit template provided for the :term:`accrual` is the same as that of a
    new :term:`accession record`. Add data as required. See :ref:`Add a new
@@ -286,10 +365,19 @@ so:
    hyperlink that can be clicked to navigate to the original :term:`accession
    record`.
 
+.. image:: images/accession-accrual-to.*
+   :align: center
+   :width: 70%
+   :alt: A link to the original accession on an accrual
+
 7. Alternatively, if a User views the original :term:`accession record`, in
    the Administrative area an "Accruals" data field shows the related
    :term:`accrual`.
 
+.. image:: images/accession-accruals.*
+   :align: center
+   :width: 70%
+   :alt: A link to related accruals on an accession
 
 .. NOTE::
 
@@ -318,13 +406,15 @@ Method 1: CSV Import
 AtoM offers :term:`administrators <administrator>` the ability to import data
 in multiple formats including CSV (comma separated value) import. Accession
 records can be imported via CSV using the Accession record CSV template
-provided for users on the AtoM wiki; further instructions are included in the
-AtoM Administrator's Manual under CSV Import. The accessions CSV import
-method has no restrictions on the accession number formatting - consequently,
+provided for users on the AtoM wiki; further instructions are included on the
+:ref:`CSV import <csv-import>` page. The accessions CSV import method has no
+restrictions on the accession number formatting - consequently,
 users can import multiple legacy accession records at once using this method.
 
 * For more information on importing descriptions and terms via CSV in this
   manual, see: :ref:`CSV import <csv-import>`
+
+.. _alter-accession-mask:
 
 Method 2: Altering the Accessions mask
 --------------------------------------
@@ -334,6 +424,11 @@ accession number associated with it via the AtoM :term:`user interface`, can
 do so by first editing the  Accessions mask in the **Admin > Settings >
 Global** area, and then creating a :ref:`new accession record
 <add-new-accession>`.
+
+.. image:: images/accession-mask.*
+   :align: center
+   :width: 70%
+   :alt: An image of the accessions mask in Global settings
 
 By default, AtoM creates the accession record identifier as a unique number
 compiled from [**YEAR MONTH DAY Incremental#**] - this is denoted in the
@@ -402,6 +497,12 @@ When you navigate to the :term:`accession record` you want to work with:
 1. Scroll to the bottom of the accession record's :term:`view page`.
 2. Click the "Create archival description" button located in the
    :term:`button block`.
+
+.. image:: images/accession-button-block.*
+   :align: center
+   :width: 70%
+   :alt: The button block on an accession view page
+
 3. AtoM will generate an :term:`archival description` using the fields listed
    above, and then will take you to the new description's :term:`view page`.
    You can see that the data you entered into the accession record fields:
@@ -414,13 +515,17 @@ When you navigate to the :term:`accession record` you want to work with:
 5. The :term:`archival description` can now be edited by clicking on the
    "Edit" button in the :term:`button block` at the bottom of the
    description's :term:`view page`. For more information on editing an
-   archival description, see: :ref:`Edit an existing archival description
-   <edit-archival-description>`.
+   archival description, see: :ref:`edit-archival-description`.
 6. A link to the original :term:`accession record` is maintained in the
    Accession :term:`information area` in the archival description. Similarly,
    a link to the archival description is added to the related :term:`accession
    record`. These are hyperlinks; clicking them in either record will take the
    user to the related record.
+
+.. image:: images/accession-area.*
+   :align: center
+   :width: 70%
+   :alt: A link to the related accession on an archival description
 
 .. NOTE::
 
@@ -450,6 +555,12 @@ To delete an :term:`accession record` in AtoM:
    existing accession record <edit-accession-record>` section above.
 2. Scroll to the bottom of the selected accession record's :term:`view page`,
    where the :term:`button block` is located.
+
+.. image:: images/accession-button-block.*
+   :align: center
+   :width: 70%
+   :alt: The button block on an accession view page
+
 3. If you click on the "Delete" button, AtoM will offer a warning. If the
    accession has accruals associated with it this will be noted in the warning
    message - accruals will not be deleted with an accession, and must be
