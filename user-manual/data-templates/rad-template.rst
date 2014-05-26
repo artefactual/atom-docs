@@ -84,6 +84,7 @@ Title proper
 
 **EAD**
 
+At a parent level:
 
 .. code:: bash
 
@@ -91,7 +92,15 @@ Title proper
       <did>
          <unittitle encodinganalog="1.1B">
 
-**Notes** The EAD tag ``<titleproper encodinganalog="title">`` refers to the
+At a child level:
+
+.. code:: bash
+
+   <c level="[name of level]>
+      <did>
+         <unittitle encodinganalog="1.1B">
+
+**Notes** The EAD tag ``<titleproper encodinganalog="title">``refers to the
 title of the finding aid, not the archival description.
 
 :ref:`Back to the top <rad-template>`
@@ -106,7 +115,12 @@ General material designation
 **Rule** Select the General Material Designation at the highest level of
 description. If there are more than three, select "multiple media." (RAD 1.1C)
 
-**EAD** <genreform>
+**EAD**
+
+.. code:: bash
+
+   <controlaccess>
+      <genreform encodinganalog="1.1C">
 
 **Notes** Although the RAD standard specifies set values for General Material
 Designations, in AtoM these can be edited in the Material type
@@ -126,7 +140,13 @@ Parallel title
 **Rule** [W]hen applicable, transcribe parallel titles that appear in
 conjunction with the formal title proper...(RAD 1.1D)
 
-**EAD** <unittitle type="parallel">
+**EAD**
+
+.. code:: bash
+
+   <archdesc level="[name of level]" relatedencoding="RAD">
+      <did>
+         <unittitle type="parallel" encodinganalog="1.1D">
 
 **Notes**
 
@@ -142,7 +162,9 @@ Other title information
 **Rule** Transcribe other title information that appears in conjunction with
 the formal title proper. (RAD 1.1E)
 
-**EAD** <unittitle type="otherInfo">
+**EAD**
+
+<unittitle type="otherInfo" encodinganalog="1.1E">
 
 **Notes**
 
