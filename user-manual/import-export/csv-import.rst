@@ -425,7 +425,7 @@ collection already in AtoM, and then use the *parentID* column for all your
 lower-level file descriptions. However, using both *parentID* and
 *qubitParentSlug* in the same row will cause an error.
 
-Both methods of establishing hierarchical relationships is described below.
+Both methods of establishing hierarchical relationships are described below.
 
 LegacyID and parentID
 ^^^^^^^^^^^^^^^^^^^^^
@@ -547,6 +547,22 @@ locations related to an :term:`archival description`.
 
 For more information on working with physical storage in AtoM, see:
 :ref:`physical-storage`.
+
+.. IMPORTANT::
+
+   .. image:: images/object-type-terms.*
+      :align: right
+      :width: 15%
+      :alt: terms in the physical object type taxonomy
+
+   We have discovered a bug in AtoM 2.0 related to the `physicalObjectType`
+   column in our CSV import - if physical location data is included in your CSV,
+   values in this field **must** conform to the default AtoM values for the
+   import to succeed. We have included a diagram of the default terms (shown
+   at right) for reference. We hope to fix this bug in a future release of
+   AtoM, and have filed an issue
+   (`#6755 <https://projects.artefactual.com/issues/6755>`__) to track work
+   done to resolve the issue.
 
 .. _csv-import-descriptions-gui:
 
