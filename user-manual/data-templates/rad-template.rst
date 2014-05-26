@@ -82,9 +82,17 @@ Title proper
 
 **Rule** Enter the title proper, either transcribed or supplied (RAD 1.1B)
 
-**EAD** <titleproper>
+**EAD**
 
-**Notes**
+
+.. code:: bash
+
+   <archdesc level="[name of level]">
+      <did>
+         <unittitle encodinganalog="1.1B">
+
+**Notes** The EAD tag ``<titleproper encodinganalog="title">`` refers to the
+title of the finding aid, not the archival description.
 
 :ref:`Back to the top <rad-template>`
 
