@@ -552,15 +552,17 @@ For more information on working with physical storage in AtoM, see:
 
    .. image:: images/object-type-terms.*
       :align: right
-      :width: 15%
+      :width: 10%
       :alt: terms in the physical object type taxonomy
 
    We have discovered a bug in AtoM 2.0 related to the `physicalObjectType`
    column in our CSV import - if physical location data is included in your CSV,
    values in this field **must** conform to the default AtoM values for the
    import to succeed. We have included a diagram of the default terms (shown
-   at right) for reference. We hope to fix this bug in a future release of
-   AtoM, and have filed an issue
+   at right - click to enlarge) for reference. You can also view more
+   information about the default terms on our :ref:`physical-storage` page.
+
+   We hope to fix this bug in a future release of AtoM, and have filed an issue
    (`#6755 <https://projects.artefactual.com/issues/6755>`__) to track work
    done to resolve the issue.
 
