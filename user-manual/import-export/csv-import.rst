@@ -552,7 +552,7 @@ For more information on working with physical storage in AtoM, see:
 
    .. image:: images/object-type-terms.*
       :align: right
-      :width: 10%
+      :width: 13%
       :alt: terms in the physical object type taxonomy
 
    We have discovered a bug in AtoM 2.0 related to the `physicalObjectType`
@@ -565,6 +565,26 @@ For more information on working with physical storage in AtoM, see:
    We hope to fix this bug in a future release of AtoM, and have filed an issue
    (`#6755 <https://projects.artefactual.com/issues/6755>`__) to track work
    done to resolve the issue.
+
+   Note that a similar bug currently affects a few other taxonomy-based
+   fields in the CSV import template - namely *levelOfDetail*
+   (`#6756 <https://projects.artefactual.com/issues/6756>`__ ),
+   *radGeneralMaterialDesignation*
+   (`#6757 <https://projects.artefactual.com/issues/6757>`__), and
+   *descriptionStatus* (`#6758 <https://projects.artefactual.com/issues/6758>`__).
+
+Standards related fields
+-------------------------
+
+Most fields in the CSV template have been named in a fairly obvious way,
+translating a simplified version of the field name in our data entry
+templates into a condensed `camelCase <http://en.wikipedia.org/wiki/CamelCase>`__.
+For example, the Rules for Archival description's General Material
+Designation is rendered in the CSV header as *radGeneralMaterialDesignation*.
+In both the RAD and ISAD templates, the Scope and Content field is marked by
+the CSV header *scopeAndContent*. However, for users seeking a full mapping
+of fields, consult the :ref:`RAD template <rad-template>` and
+:ref:`ISAD template <isad-template>` pages for further details.
 
 .. _csv-import-descriptions-gui:
 
@@ -693,15 +713,39 @@ Example use (with the RAD CSV template):
 
    php symfony csv:import lib/task/import/example/rad/example_information_objects_rad.csv
 
-Use the ``source-name`` option (described :ref:`above <csv-legacy-id-mapping>`
+.. _csv-cli-options:
+
+Command-line options
+^^^^^^^^^^^^^^^^^^^^
+
+.. image:: images/cliopts.*
+  :align: center
+  :width: 85%
+  :alt: An image of the command-line options for CSV import
+
+
+Use the ``--source-name`` option (described :ref:`above <csv-legacy-id-mapping>`
 to specify a source when importing information objects from multiple sources
-(with possibly conflicting legacy IDs).
+(with possibly conflicting legacy IDs). This will ensure that multiple related
+CSV files will remain related - so, for example, if you import an
+:term:`archival description` CSV, and then supplement the
+:term:`authority records <authority record>` created (from the *creators* field
+in the description CSV templates) with an authority record CSV import, using the
+``--source-name`` option will make sure that matching names are linked and
+related, instead of duplicate authority records being created. You can also
+use this option to relate a large import that is broken up into multiple
+CSV files.
 
 If you'd like to import all rows in a CSV file to a given legacy ID, you can
-use the ``--legacy-parent-id`` command-line option to specify the desired ID,
+use the ``--default-legacy-parent-id`` command-line option to specify the desired ID,
 rather than including this ID in each row's *parentId* column. Note that this
 will affect ALL rows in a CSV - so use this **only** if you are importing all
 descriptions to a single parent!
+
+If you are importing all rows in a CSV file to a description already in AtoM,
+you can use the ``--default-parent-slug`` option to specify a target
+:term:`slug`. Note that this will affect ALL rows in a CSV - so use this
+**only** if you are importing all descriptions to a single parent!
 
 :ref:`Back to top <csv-import>`
 
