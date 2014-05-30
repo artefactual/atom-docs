@@ -60,8 +60,7 @@ probably the biggest change introduced in AtoM |version| and we are pleased
 with the results.
 
 Ubuntu doesn't provide a package but you can download it directly from the
-`Elasticsearch site <http://www.elasticsearch.org/download/>`_. It's always a
-good idea to use the latest stable version available.
+`Elasticsearch site <http://www.elasticsearch.org/download/>`_ if you are unable to download it using the method that follows.
 
 First, make sure that `Java <https://www.java.com/en/>`__ is installed.
 Elasticsearch is compatible with both Java 6 and Java 7 and both can be found
