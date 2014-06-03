@@ -102,7 +102,7 @@ displays the following:
 
 You will need access to the command-line of the server on which AtoM is
 installed, and you will need to know the file path where your CSV is currently
-located.
+located. Run the command from the root directory of your AtoM install.
 
 **Example use:**
 
@@ -707,7 +707,7 @@ Using the command-line interface (CLI)
 For larger CSV imports (e.g. those with 1,000 or more rows), we recommend
 using the Command-line interface to import your descriptions.
 
-Example use (with the RAD CSV template):
+Example use (with the RAD CSV template) - run from AtoM's root directory:
 
 .. code-block:: bash
 
@@ -723,6 +723,35 @@ Command-line options
   :width: 85%
   :alt: An image of the command-line options for CSV import
 
+By typing ``php symfony csv:import`` into the command-line from your root
+directory, without specifying the location of a CSV, you will able able to
+see the CSV import options available (pictured above). A brief explanation of
+each is included below.
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the import.
+
+The ``--rows-until-update`` option can be used for a simple visual
+representatio of progress in the command-line. Enter a whole integer, to
+represent the number of rows should be imported from the CSV before the
+command-line prints a period (e.g. `` . `` ) in the console, as a sort of
+crude progress bar. For example, entering ``--rows-until-update=5`` would
+mean that the import progresses, another period will be printed every 5 rows.
+This is a simple way to allow the command-line to provide a visual output of
+progress.
+
+You can use the ``--skip-rows`` option to skip **X** amount of rows in the CSV
+before beginning the import. This can be useful if you have interrupted the
+import, and wish to re-run it without duplicating the records already
+imported. ``--skip-rows=10`` would skip the first 10 rows in the CSV file,
+for example. Note that this count does **not** inlcude the header column, so
+in fact, the above example would skip the header column, and rows 2-11 in
+your CSV file.
+
+The ``--error-log`` option can be used to specify a directory where errors
+should be logged. **Note that this option has not been tested by Artefactual
+developers**.
 
 Use the ``--source-name`` option (described :ref:`above <csv-legacy-id-mapping>`
 to specify a source when importing information objects from multiple sources
@@ -734,18 +763,68 @@ in the description CSV templates) with an authority record CSV import, using the
 ``--source-name`` option will make sure that matching names are linked and
 related, instead of duplicate authority records being created. You can also
 use this option to relate a large import that is broken up into multiple
-CSV files.
+CSV files. See the :ref:`csv-legacy-id-mapping` section above for further
+tips and details on the uses of this option.
 
-If you'd like to import all rows in a CSV file to a given legacy ID, you can
-use the ``--default-legacy-parent-id`` command-line option to specify the desired ID,
-rather than including this ID in each row's *parentId* column. Note that this
-will affect ALL rows in a CSV - so use this **only** if you are importing all
-descriptions to a single parent!
+The ``--default-legacy-parent-id`` option will allow the user to set a default
+*parentID* value - for any row in the CSV where no *parentID* value is
+included and no *qubitParentSlug* is present, this default value will be
+inserted as the *parentID*.
 
-If you are importing all rows in a CSV file to a description already in AtoM,
-you can use the ``--default-parent-slug`` option to specify a target
-:term:`slug`. Note that this will affect ALL rows in a CSV - so use this
-**only** if you are importing all descriptions to a single parent!
+Similarly, the ``--default-parent-slug`` option allows a user to set a
+default *qubitParentSlug* value - wherever no slug value or *parentID* /
+*legacyID*  is included, AtoM will populate the *qubitParentSlug* with the
+default value. If you are importing **all** rows in a CSV file to one parent
+description already in AtoM, you could use the ``--default-parent-slug`` option
+to specify the target :term:`slug` of the parent, and then leave the *legacyID*,
+*parentID*, and *qubitParentSlug* columns blank in your CSV. **Note** that this
+example will affect ALL rows in a CSV - so use this **only** if you are
+importing all descriptions to a single parent!
+
+By default, AtoM will build the
+`nested set <http://en.wikipedia.org/wiki/Nested_set_model>`__ after an import
+task. The nested set is a way to manage hierarchical data stored in the flat
+tables of a relational database. However, as Wikipedia notes, "Nested sets are
+very slow for inserts because it requires updating left and right domain values
+for all records in the table after the insert. This can cause a lot of database
+thrash as many rows are rewritten and indexes rebuilt." When performing a large
+import, it can therefore sometimes be desirable to disable the building of the
+nested set during the import process, and then run it as a separate command-line
+task following the completion of the import. To achieve this, the
+``--skip-nested-set-build`` option can be used to disable the default behavior.
+
+**NOTE** that the nested set WILL need to be built for AtoM to behave as
+expected. You can use the following command-line task, from the AtoM root
+directory, to rebuild the nested set if you have disabled during import:
+
+.. code-block:: bash
+
+   php symfony propel:build-nested-set
+
+.. TIP::
+
+   Want to learn more about why and how nested sets are used? Here are a few
+   great resources:
+
+   * Mike Hyllier's article on
+     `Managing Hierarchical data in MySQL <http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/>`__
+   * Evan Petersen's discussion of `nested sets <http://www.evanpetersen.com/item/nested-sets.html>`__
+   * Wikipedia's `Nested set model <http://en.wikipedia.org/wiki/Nested_set_model>`__
+
+Similarly, when using the :ref:`user interface <csv-import-descriptions-gui>`
+to perform an import, the import is indexed automatically - but when running
+an import via the command-line interface, indexing is disabled by default.
+This is because indexing during import can be incredibly slow, and the
+command-line is generally used for larger imports. Generally, we recommend a
+user simply clear the cache and rebuild the search index following an import -
+from AtoM's root directory, run:
+
+.. code-block:: bash
+
+   php symfony cc & php symfony search:populate
+
+However, if a user would like to index the import as it progresses, the
+``--index`` option can be used to enable this.
 
 :ref:`Back to top <csv-import>`
 
