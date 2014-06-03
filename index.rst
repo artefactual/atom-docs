@@ -218,6 +218,7 @@ Maintenance
 * :ref:`maintenance-data-backup`
 * :ref:`maintenance-tuning`
 * :ref:`maintenance-troubleshooting`
+* :ref:`debug-mode`
 
 Customization
 -------------
