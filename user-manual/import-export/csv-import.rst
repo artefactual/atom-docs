@@ -377,7 +377,11 @@ the specific source identified as `collection_name`:
 
    `php symfony csv:import information_objects_rad.csv --source-name="collection name"`
 
-
+The ``--source-name`` option can also be used to keep larger imports that
+have been broken into multiple CSV files related. Adding the ``--source-name``
+option to each CSV import, with a common name added for each, will prevent
+AtoM from duplicating import data, such as :term:`terms <term>` and actors
+(:term:`authority records <authority record>`) during import.
 
 .. _csv-import-descriptions:
 
@@ -472,10 +476,10 @@ your import in the *qubitParentSlug* column in the rows of children of the
 parent description.
 
 Alternately, if you are using the command-line to perform your import, you can
-use the `--parent-slug` option in the command-line to indicate **all**
-descriptions imported should be given a specific parent. The use of `
---parent-slug` will override parent specification using the *parentId* or
-*qubitParentSlug* columns.
+use the ``--default-parent-slug`` option in the command-line to set a default
+slug value, that will be used when no *qubitParentSlug* or *parentID* values
+have been included for the row. For more information, see the details in the
+:ref:`csv-cli-options` section below.
 
 Here is an example of the first few columns of a CSV file (shown in a
 spreadsheet application), importing a new series to an existing
@@ -833,21 +837,116 @@ However, if a user would like to index the import as it progresses, the
 Import events via CSV
 =====================
 
-content
+The information object (e.g., :term:`archival description`) import tool allows
+you to import creation events, but doesn't accommodate other types of events,
+such as accumulation, broadcasting, etc).
+
+For this the event import tool is better suited and should be ran after you
+import your information objects.
+
+The event import processes 3 CSV columns: *legacyId*, *eventActorName*, and
+*eventType*. The *legacyId* should be the legacy ID of the information object the
+event will be associated with. The *eventActorName* and *eventType* specify the
+name of the actor involved in the event and the type of event. An example CSV
+template file is available in the AtoM source code
+(``lib/task/import/example_events.csv``) or can be downloaded here:
+
+* (link forthcoming - see the
+  `qubit-toolkit wiki <https://www.qubit-toolkit.org/wiki/CSV_import#Importing_events>`__
+  for now)
 
 .. _csv-import-events-gui:
 
 Using the user interface
 ------------------------
 
-content
+For small imports (i.e. CSV files with less than 1,000 rows), imports can be
+performed via the user interface.
+
+.. IMPORTANT::
+
+   Before proceeding, make sure that you have reviewed the instructions
+   above, to ensure that your CSV import will work. Here is a basic checklist
+   of things to check for importing a CSV of events via the user interface:
+
+   * CSV file is saved with UTF-8 encodings
+   * CSV file uses Linux/Unix style end-of-line characters (``/n``)
+   * CSV file is less than 1,000 rows
+   * All *legacyID* values entered correspond to the *legacyID* values of
+     their corresponding archival descriptions
+   * If you are referencing existing
+     :term:`authority records <authority record>` already in AtoM, make sure
+     that the name used in the *actorName* column matches the authorized form
+     of name in the authority record exactly.
+
+If you have double-checked the above, you should be ready to import your
+events.
+
+**To import an events CSV file via the user interface:**
+
+1. Click on the |import| :ref:`Import <main-menu-import>` menu, located in
+   the AtoM :ref:`header bar <atom-header-bar>`, and select "CSV".
+
+.. image:: images/import-menu-csv.*
+   :align: center
+   :width: 30%
+   :alt: The import menu
+
+2. AtoM will redirect you to the CSV import page. Make sure that the "Type"
+   :term:`drop-down menu` is set to "Event".
+
+.. image:: images/csv-import-page.*
+   :align: center
+   :width: 85%
+   :alt: The CSV import page in AtoM
+
+3. Click the "Browse" button to open a window on your local computer. Select
+   the vents CSV file that you would like to import.
+
+.. image:: images/csv-import-browse.*
+   :align: center
+   :width: 25%
+   :alt: Clicking the "Browse" button in the CSV import page
+
+4. When you have selected the file from your device, its name will appear
+   next to the "Browse" button. Click the "Import" button located in the
+   :term:`button block` to begin your import.
+
+.. image:: images/csv-import-start.*
+   :align: center
+   :width: 85%
+   :alt: Starting a CSV import in AtoM
+
+.. NOTE::
+
+   Depending on the size of your CSV import, this can take some time to
+   complete. Be patient! Remember, uploads performed via the user interface
+   are limited by the browser's timeout limits - this is one of the reasons
+   we recommend importing only smaller CSV files via the user interface.
 
 .. _csv-import-events-cli:
 
 Using the command-line interface (CLI)
 --------------------------------------
 
-content
+For larger CSV imports (e.g. those with 1,000 or more rows), we recommend
+using the Command-line interface to import your descriptions.
+
+Example use - run from AtoM's root directory:
+
+.. code-block:: bash
+
+   php symfony csv:event-import lib/task/import/example/example_events.csv
+
+There are various command-line options that can be used  - review the section
+above: :ref:`csv-cli-options`.
+
+Use the ``--source-name`` to specify a source importing to a AtoM installation
+in which information objects from multiple sources have been imported, and/or
+to associate it explicitly with a previously-imported CSV file that used the
+same ``--source-name`` value. An example is provided
+:ref:`above <csv-legacy-id-mapping>` in the section on legacy ID mapping.
+
 
 :ref:`Back to top <csv-import>`
 
@@ -855,13 +954,6 @@ content
 
 Import archival institutions via CSV
 ====================================
-
-content
-
-.. _csv-import-repositories-gui:
-
-Using the user interface
-------------------------
 
 content
 
