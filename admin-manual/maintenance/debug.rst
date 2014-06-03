@@ -30,13 +30,13 @@ instance:
 
 .. code:: bash
 
-   http://www.example.com/atom/index.php/;informationobject/list
+   http://www.example.com/atom/informationobject/browse
 
 becomes
 
 .. code:: bash
 
-   http://www.example.com/ica-atom/qubit_dev.php/;informationobject/list
+   http://www.example.com/atom/qubit_dev.php/informationobject/browse
 
 
 .. important::

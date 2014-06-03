@@ -16,4 +16,4 @@ Maintenance
    populate-search-index
    tuning
    troubleshooting
-   debug-mode
+   debug
