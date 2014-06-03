@@ -13,7 +13,7 @@ On this page you will also find information on
 :ref:`server migration <server-migration>`.
 
 Database backup
----------------
+===============
 
 We recommend following the instructions linked below provided by Wordpress
 for backing up AtoM data:
@@ -27,14 +27,14 @@ You can follow these instructions using either the `mysql command line tool
 
 
 Digital Objects backup
-----------------------
+======================
 
 If your database includes digital objects, you will also need to backup the
 files in ``/uploads`` on a regular basis. See instructions in Server
 migration, below.
 
 Translations backup
--------------------
+===================
 
 If you are actively translating the application interface, you will also need
 to backup the translation files in the ``/apps/qubit/i18n`` directory.
@@ -42,13 +42,13 @@ to backup the translation files in the ``/apps/qubit/i18n`` directory.
 .. _server-migration:
 
 Server migration
-================
+----------------
 
 When migrating your AtoM database from server to server, you'll need to copy
 over a number of types of data.
 
 MySQL database
---------------
+==============
 
 Make a dump of your Qubit database using ``mysqldump``:
 
@@ -58,7 +58,7 @@ Make a dump of your Qubit database using ``mysqldump``:
 
 
 Search index data
------------------
+=================
 
 Create an archive of your search index data:
 
@@ -71,7 +71,7 @@ Create an archive of your search index data:
 
 
 Digital objects
----------------
+===============
 
 If you've imported digital objects into AtoM, you'll have to create an backup
 of those as well.
