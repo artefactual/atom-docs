@@ -590,6 +590,12 @@ the CSV header *scopeAndContent*. However, for users seeking a full mapping
 of fields, consult the :ref:`RAD template <rad-template>` and
 :ref:`ISAD template <isad-template>` pages for further details.
 
+The *culture* column indicates to AtoM the language of the descriptions
+being uploaded. This column expects two-letter ISO 639-1 language code
+values - for example, "en" for English; "fr" for French, "it" for Italian,
+etc. See `Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
+for a full list of ISO 639-1 language codes.
+
 .. _csv-import-descriptions-gui:
 
 Using the user interface
@@ -855,14 +861,6 @@ template file is available in the AtoM source code
   `qubit-toolkit wiki <https://www.qubit-toolkit.org/wiki/CSV_import#Importing_events>`__
   for now)
 
-.. _csv-import-events-gui:
-
-Using the user interface
-------------------------
-
-For small imports (i.e. CSV files with less than 1,000 rows), imports can be
-performed via the user interface.
-
 .. IMPORTANT::
 
    Before proceeding, make sure that you have reviewed the instructions
@@ -871,7 +869,7 @@ performed via the user interface.
 
    * CSV file is saved with UTF-8 encodings
    * CSV file uses Linux/Unix style end-of-line characters (``/n``)
-   * CSV file is less than 1,000 rows
+   * CSV file is less than 1,000 rows if importing via the :term:`user interface`
    * All *legacyID* values entered correspond to the *legacyID* values of
      their corresponding archival descriptions
    * If you are referencing existing
@@ -881,6 +879,14 @@ performed via the user interface.
 
 If you have double-checked the above, you should be ready to import your
 events.
+
+.. _csv-import-events-gui:
+
+Using the user interface
+------------------------
+
+For small imports (i.e. CSV files with less than 1,000 rows), imports can be
+performed via the user interface.
 
 **To import an events CSV file via the user interface:**
 
@@ -938,8 +944,26 @@ Example use - run from AtoM's root directory:
 
    php symfony csv:event-import lib/task/import/example/example_events.csv
 
-There are various command-line options that can be used  - review the section
-above: :ref:`csv-cli-options`.
+There are also various command-line options that can be used, as illustrated in
+the options depicted in the image below:
+
+.. image:: images/csv-event-options.*
+   :align: center
+   :width: 85%
+   :alt: An image of the command-line options for events imports
+
+By typing ``php symfony csv:event-import`` into the command-line from your root
+directory, without specifying the location of a CSV, you will able able to
+see the CSV import options available (pictured above). A brief explanation of
+each is included below.
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the import.
+
+The ``--rows-until-update``, ``--skip-rows``, and ``--error-log`` options can
+be used the same was as described in the section :ref:`above <csv-cli-options>`
+on importing descriptions.
 
 Use the ``--source-name`` to specify a source importing to a AtoM installation
 in which information objects from multiple sources have been imported, and/or
@@ -947,6 +971,7 @@ to associate it explicitly with a previously-imported CSV file that used the
 same ``--source-name`` value. An example is provided
 :ref:`above <csv-legacy-id-mapping>` in the section on legacy ID mapping.
 
+The ``--event-types`` option is deprecated, and no longer supported in AtoM.
 
 :ref:`Back to top <csv-import>`
 
@@ -955,14 +980,88 @@ same ``--source-name`` value. An example is provided
 Import archival institutions via CSV
 ====================================
 
-content
+You can import repositories (i.e. :term:`archival institutions <archival institution>`
+into AtoM as well. At this time, there is no support for importing a
+repository CSV via the :term:`user interface` - however, the command-line
+may be used.
 
-.. _csv-import-repositories-cli:
+CSV columns
+-----------
 
-Using the command-line interface (CLI)
---------------------------------------
+* The *uploadLimit* column allows a user to set a default upload limit for a
+  repository at the time of import. This value should be a number,
+  representing Gigabytes. For more information on the use of respository
+  upload limits in AtoM, see: :ref:`upload-limit`.
+* Almost all other fields are drawn directly from the archival institution
+  edit template in AtoM, which is based upon the International Council on
+  Archives' International Standard for Describing Institutions with Archival
+  Holdings (`ISDIAH <http://www.ica.org/10198/standards/isdiah-international-standard-for-describing-institutions-with-archival-holdings.html>`__).
+  For more information on the use of each field, see: :ref:`isdiah-template`.
 
-content
+    * Most fields in the CSV template have been named in a fairly obvious way,
+      translating a simplified version of the field name in our data entry
+      templates into a condensed `camelCase <http://en.wikipedia.org/wiki/CamelCase>`__.
+      For example, ISDIAH 5.3.2, Geographical and cultural context (in the
+      Description :term:`Area <information area>`) becomes
+      *geoCulturalContext* in the CSV template. Consult the
+      :ref:`ISDIAH <isdiah-template>` for further help with fields.
+
+* The *culture* column indicates to AtoM the language of the descriptions
+  being uploaded. This column expects two-letter ISO 639-1 language code
+  values - for example, "en" for English; "fr" for French, "it" for Italian,
+  etc. See `Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
+  for a full list of ISO 639-1 language codes.
+
+.. IMPORTANT::
+
+   Before proceeding, make sure that you have reviewed the "Before you import"
+   instructions above, to ensure that your CSV import will work. Most
+   importantly, make sure your:
+
+   * CSV file is saved with UTF-8 encodings
+   * CSV file uses Linux/Unix style end-of-line characters (``/n``)
+
+Using the command-line
+----------------------
+
+Example use - run from AtoM's root directory:
+
+.. code-block:: bash
+
+   php symfony csv:repository-import lib/task/import/example/example_repositories.csv
+
+There are also various command-line options that can be used, as illustrated in
+the options depicted in the image below:
+
+.. image:: images/csv-repo-options.*
+   :align: center
+   :width: 85%
+   :alt: An image of the command-line options for repository imports
+
+By typing ``php symfony csv:repository-import`` into the command-line from your root
+directory, without specifying the location of a CSV, you will able able to
+see the CSV import options available (pictured above). A brief explanation of
+each is included below.
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the import.
+
+The ``--rows-until-update``, ``--skip-rows``, and ``--error-log`` options can
+be used the same was as described in the section :ref:`above <csv-cli-options>`
+on importing descriptions.
+
+The ``--merge-existing`` option may be used to avoid the creation of
+duplicate repositories. That is - if, during import, any rows in the CSV
+contain the same authorized form of name as a repository already in the
+database, those rows will be ignored (i.e. not imported).
+
+You can use the ``--upload-limit`` option to specify the default upload limit for
+repositories which don't specify their *uploadLimit* in the CSV file. That is,
+if for example you performed a CSV import with the command-line option of
+``--upload-limit=5``, then for every repository in the CSV that does NOT have
+a value in the *uploadLimit* column, the default value of 5 GBs will be
+assigned.
 
 :ref:`Back to top <csv-import>`
 
@@ -971,9 +1070,117 @@ content
 Import authority records via CSV
 ================================
 
-content
+The authority record import tool allows you to import data about organizations
+and individuals. In addition to importing data detailing these entities, the
+tool also allows the simultaneous import of supplementary data (in separate CSV
+files) on how these entities relate to each other and alternate names these
+entities are known by.
 
-content
+You can view the example CSV files for authority records via our Github
+repository, `here <https://github.com/artefactual/atom/tree/2.x/lib/task/import/example/authority_records>`__.
+
+CSV Columns
+-----------
+
+A brief explanation of the main fields in each CSV template is included
+below.
+
+Authority records CSV
+^^^^^^^^^^^^^^^^^^^^^
+
+* The *culture* column indicates to AtoM the language of the descriptions
+  being uploaded. This column expects two-letter ISO 639-1 language code
+  values - for example, "en" for English; "fr" for French, "it" for Italian,
+  etc. See `Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
+  for a full list of ISO 639-1 language codes.
+* the *typeOfEntity* column maps to the entity type terms recommended in
+  ISAAR 5.1.1 Type of Entity, and maintained in AtoM in the *Actor Entity
+  Types* :term:`taxonomy`. This column expects one of three recommended
+  values - Person, Corporate body, or Family.
+* Almost all other fields are drawn directly from the :term:`authority record`
+  edit template in AtoM, which is based upon the International Council on
+  Archives' International Standard Archival Authority Record for Corporate
+  Bodies, Persons and Famillies (`ISAAR-CPF <http://www.ica.org/10203/standards/isaar-cpf-international-standard-archival-authority-record-for-corporate-bodies-persons-and-families-2nd-edition.html>`__).
+  For more information on the use of each field, see: :ref:`isaar-template`.
+
+    * Most fields in the CSV template have been named in a fairly obvious way,
+      translating a simplified version of the field name in our data entry
+      templates into a condensed `camelCase <http://en.wikipedia.org/wiki/CamelCase>`__.
+      For example, ISAAR 5.2.1, Dates of Existence (in the ISAAR
+      Description :term:`Area <information area>`) becomes
+      *datesOfExistence* in the CSV template. Consult the
+      :ref:`ISDIAH <isaar-template>` for further help with fields.
+    * The *history* column, which conforms to ISAAR 5.2.2, will appear as the
+      Administrative or Biographical history in any
+      :term:`archival description` that the :term:`authority record` is
+      linked to. For more information on how AtoM manages authority records,
+      see: :ref:`authority-records`
+
+Alternate names CSV
+^^^^^^^^^^^^^^^^^^^
+
+* The *parentAuthorizedFormOfName* should match exactly a target name in the
+  related authority record CSV being imported. The aliases (or alternate
+  names) included in the Aliases CSV will be associated with that actor's
+  :term:`authority record` following import.
+* The *alternateForm* should include the alternate name or alias you wish to import.
+* The *formType* column contains data about what kind of alternate is being
+  created. Each alias can be one of three forms: a parallel form, a standardized
+  form according to other descriptive practices, or an "other" form. Enter
+  either "parallel", "standardized", or "other" as a value in this the cells
+  of this column. For more information on the distinction between these three
+  types of alternate names, please consult
+  `ISAAR-CPF <http://www.ica.org/10203/standards/isaar-cpf-international-standard-archival-authority-record-for-corporate-bodies-persons-and-families-2nd-edition.html>`__
+  5.1.3 - 5.1.5
+* The *culture* column indicates to AtoM the language of the descriptions
+  being uploaded. This column expects two-letter ISO 639-1 language code
+  values - for example, "en" for English; "fr" for French, "it" for Italian,
+  etc. See `Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
+  for a full list of ISO 639-1 language codes.
+
+Relationships CSV
+^^^^^^^^^^^^^^^^^
+
+* The *sourceAuthorizedFormOfName* is used to specify one of the actors
+  included in the Authority record CSV upload. This field should match
+  exactly one of the actors listed in the *authorizedFormOfName* column of
+  the Authority record CSV.
+* The *targetAuthorizedFormOfName* is also used to specify one of the actors
+  in the Authority record CSV upload - the actor with which you intend to
+  create a relationship. The values entered int this column should match
+  exactly one of the actors listed in the *authorizedFormOfName* column of
+  the Authority record CSV.
+* The *category* column contains data about the type of relationship you are
+  creating, and maps to ISAAR 5.3.2 Category of Relationship. The terms
+  recommended in the ISAAR standard are maintained in the Actor Relation Type
+  :term:`taxonomy` in AtoM. Values entered should be either "associative",
+  "family", "hierarchical", or "temporal". For more information on the
+  distinction between these terms, please consult
+  `ISAAR-CPF <http://www.ica.org/10203/standards/isaar-cpf-international-standard-archival-authority-record-for-corporate-bodies-persons-and-families-2nd-edition.html>`__
+  5.3.2.
+* The *date* field is a free-text string field that will allow a user to enter
+  a date or date range for the relationship. It allows the use of special
+  characters and typographical marks to indicate approximation (e.g. [ca.
+  1900]) and/or uncertainty (e.g. [199-?]). Use the *startDate* and *endDate*
+  fields to enter ISO-formated date values (e.g. YYYY-MM-DD, YYYY-MM, or
+  YYYY) that correspond to the free-text *date* field. Public users in the
+  interface will see the *date* field values when viewing relationships; the
+  *startDate* and *endDate* values are not visible, and are used for date
+  range searching in the application.
+* The *culture* column indicates to AtoM the language of the descriptions
+  being uploaded. This column expects two-letter ISO 639-1 language code
+  values - for example, "en" for English; "fr" for French, "it" for Italian,
+  etc. See `Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
+  for a full list of ISO 639-1 language codes.
+
+.. IMPORTANT::
+
+   Before proceeding, make sure that you have reviewed the "Before you import"
+   instructions above, to ensure that your CSV import will work. Most
+   importantly, make sure your:
+
+   * CSV file is saved with UTF-8 encodings
+   * CSV file uses Linux/Unix style end-of-line characters (``/n``)
 
 .. _csv-import-authority-records-gui:
 
@@ -987,7 +1194,34 @@ content
 Using the command-line interface (CLI)
 --------------------------------------
 
-content
+Example use - run from AtoM's root directory:
+
+.. code-block:: bash
+
+   php symfony csv:authority-import lib/task/import/example/authority_records/example_authority_records.csv
+
+There are also various command-line options that can be used, as illustrated in
+the options depicted in the image below:
+
+.. image:: images/csv-authority-options.*
+   :align: center
+   :width: 85%
+   :alt: An image of the command-line options for authority record imports
+
+By typing ``php symfony csv:authority-import`` into the command-line from your
+root directory, **without** specifying the location of a CSV, you will able
+able to see the CSV import options available (pictured above). A brief
+explanation of each is included below.
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the import.
+
+The ``--rows-until-update``, ``--skip-rows``, and ``--error-log`` options can
+be used the same was as described in the section :ref:`above <csv-cli-options>`
+on importing descriptions.
+
+more content...
 
 .. _csv-import-aliases-cli:
 
