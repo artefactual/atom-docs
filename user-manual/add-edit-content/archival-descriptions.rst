@@ -108,7 +108,7 @@ see the sections below for more specific instructions on the use of
 
    * :ref:`add-term-fly`
    * :ref:`Physical storage <physical-storage>`
-   * :ref:`Upload digital objects <upload-digital-objects>`
+   * :ref:`Upload digital objects <upload-digital-object>`
    * :ref:`Create an archival description from an accession record
      <create-accession-description>`
    * :ref:`Link an accession record to an archival description
@@ -151,7 +151,7 @@ and types of users in AtoM see: :ref:`User roles <user-roles>`.
 .. NOTE::
 
    The :term:`edit page` that appears will depend on the :ref:`default template
-   <default-template>` set in the application. When first installed, the
+   <default-templates>` set in the application. When first installed, the
    default template in AtoM is the :ref:`ISAD(G) <isad-template>` (General
    International Standard for Archival Description) template. Administrators
    can change the default template to any of the other 4 supported standards
