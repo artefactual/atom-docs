@@ -130,7 +130,7 @@ top-right corner of the page, allows users to navigate to :term:`static pages
 
 By default, several static pages are included in AtoM and available through
 the quick links menu - the :term:`home page` and the :term:`about page`.
-:term:`Administrators <administator>` can customize the content on these pages
+:term:`Administrators <administrator>` can customize the content on these pages
 via the :term:`user interface` and/or create new static pages (see:
 :ref:`manage-static-pages`). Additionally, external links can be added to the
 quick links menu (or any menu) via **Admin > Menus** - often an administrator
@@ -227,19 +227,16 @@ and :ref:`Manage <main-menu-manage>` menus, but not the :ref:`Import
 :term:`adminstrators <administrator>` will see all 4 sub-menus (Add,
 Manage, Import, Admin) in the :term:`main menu`.
 
-* For information on user roles, see: :ref:`User roles <user-roles>`
-* For information on managing User accounts see: :doc:`Manage user accounts
-  <../administer/manage-user-accounts>`.
+* For information on user roles, see: :ref:`User roles <user-roles>`.
+* For information on managing User accounts see: :ref:`manage-user-accounts`.
 * For information on changing the permissions associated with an account or a
-  group, see: :doc:`Edit user permissions
-  <../administer/edit-user-permissions>`
+  group, see: :ref:`edit-user-permissions`.
 
 .. TIP::
 
    :term:`Administrators <administrator>` can add and remove options in the
    sub-menus (Add, Manage, Import, Admin) of the main menu via **Admin >
-   Menus**. For more information, see :doc:`Manage menus
-   <../administer/manage-menus>`
+   Menus**. For more information, see :ref:`manage-menus`
 
   .. _main-menu-add:
 
@@ -330,9 +327,8 @@ The import menu allows authenticated (i.e. logged in) users with sufficient
 :term:`access privileges <access privilege>` to import records into the
 application. By default, only :term:`administrators <administrator>` have
 access to the import menu - however, administrators can also change user
-and group permissions (see: :doc:`Edit permissions
-<edit-user-permissions>` and :doc:`Manage user accounts
-<../administer/manage-user-accounts>`).
+and group permissions (see: :ref:`edit-user-permissions` and
+:ref:`manage-user-accounts`).
 
 Two options are offered in the dropdown menu - XML (short for `eXtensible
 Markup Language <https://en.wikipedia.org/wiki/Xml>`__) and CSV (short for
@@ -349,7 +345,7 @@ AtoM.
 
 .. seealso::
 
-   * :ref:`Upload digital objects <upload-digital-objects>`
+   * :ref:`Upload digital objects <upload-digital-object>`
 
 .. _main-menu-admin:
 
@@ -662,18 +658,18 @@ and a list of holdings on the left-hand side, with contact information for the
 information is drawn from the information added to the "Contact"
 :term:`area <information area>` of the :term:`archival institution` record.
 
-On :ref:`Browse <browse>` and :doc:`Search <../access-content/search-atom>`
-pages, the context menu includes :term:`facet filters <facet filter>` that
-allow the user to iteratively narrow the results presented. If the browse page
-is for a :term:`term` that can be organized hierarchically in a :term:`taxonomy`
-(such as a :term:`place` or :term:`subject` term), a version of the
-:term:`treeview` is also presented, showing users the terms position in the
-hierarchy as well as related "sibling" (i.e. on the same level) terms.
+On :ref:`Browse <browse>` and :ref:`Search <search-atom>` pages, the context
+menu includes :term:`facet filters <facet filter>` that allow the user to
+iteratively narrow the results presented. If the browse page is for a
+:term:`term` that can be organized hierarchically in a :term:`taxonomy` (such
+as a :term:`place` or :term:`subject` term), a version of the :term:`treeview`
+is also presented, showing users the terms position in the hierarchy as well
+as related "sibling" (i.e. on the same level) terms.
 
 **Find more information on using the Context menu:**
 
 * :ref:`Context menu <context-menu>`
-* :ref:`Treeview <treeview>`
+* :ref:`Treeview <context-menu-treeview>`
 
 .. seealso::
 
@@ -998,7 +994,7 @@ digital object to change its type if desired.
 
 For more information on uploading and managing digital objects, see:
 
-* :ref:`Upload digital objects <upload-digital-objects>`
+* :ref:`Upload digital objects <upload-digital-object>`
 
 .. seealso::
 
@@ -1176,8 +1172,7 @@ descriptions).
 * |more-button| **More**: Only available on :term:`archival descriptions
   <archival description>`. Reveals three further options: Link physical
   storage, link digital object, and Import digital objects. See:
-  :ref:`Physical storage <phsyical-storage>` and :ref:`Upload digital objects
-  <upload-digital-objects>`.
+  :ref:`physical-storage` and :ref:`upload-digital-object`.
 * |edittheme-button| **Edit theme**: Only available on :term:`archival
   institutions <archival institution>`. Opens an edit page where an
   :term:`administrator` can customize the theme of a repository by changing
