@@ -34,6 +34,6 @@ page layout, unless a developer has altered the theme of the page.
    from the AtoM header bar. For more information, see :ref:`Settings`.
 
 For more information on themes and general page settings, see :ref:`navigate`,
-:ref:`settings`, :ref:`theme-theming`, or :ref:`archival-descriptions`.
+:ref:`settings`, :ref:`themes`, or :ref:`archival-descriptions`.
 
 :ref:`Back to top <site-logo>`
