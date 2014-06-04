@@ -43,7 +43,7 @@ reasons behind the deaccssion. Fields include:
 .. seealso::
 
    * :ref:`Accessions <accession-records>`
-   * :ref:`Searching for accession records <search-accession-records>`
+   * :ref:`Searching for accession records <dedicated-search-accessions>`
 
 .. NOTE::
 
