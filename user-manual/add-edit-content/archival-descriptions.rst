@@ -410,7 +410,7 @@ The archival description, and any lower :term:`levels of description <level of
 description>` associated with it, will now be published - public users who are
 not logged will now be granted read access to view (but not edit) the
 record(s). The record(s) will also be discoverable to public users via
-:ref:`browse <../access-content/browse>` or :ref:`search-atom`
+:ref:`browse` or :ref:`search-atom`
 
 
 
