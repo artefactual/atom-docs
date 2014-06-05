@@ -74,10 +74,8 @@ By default, the :term:`home page` includes:
   a dedicated browse page for archival descriptions with linked digital
   objects). For more information on the browse menu, see: :ref:`browse-menu`.
 * A "Popular this week" listing of the most visited (i.e. most number of page
-  views) resources in the past week. Resources listed in the "Popular this
-  week" menu include: :term:`archival descriptions
-  <archival description>`, :term:`authority records <authority record>`, and
-  :term:`archival institutions <archival institution>`.
+  views) resources in the past week. See :ref:`popular-this-week` below for
+  more information.
 
 .. TIP::
 
@@ -120,6 +118,42 @@ header bar in AtoM, see: :ref:`atom-header-bar`.
 #. To add or edit content, you must have a :term:`user account` and log in.
 #. For logging in, see :ref:`log in <log-in>`.
 #. For adding and editing, see :ref:`Add/edit content <add-edit-content>`.
+
+.. _popular-this-week:
+
+Popular this week listing
+-------------------------
+
+.. image:: images/popular-this-week.*
+   :align: right
+   :width: 20%
+   :alt: An image of the Popular this week listing
+
+The "Popular this week" listing, found on the left-hand side of the AtoM
+homepage, includes a list of links to the 10 most visited resources available
+to public users in the last 7 days. Resources listed in the "Popular this
+week" menu include: :term:`archival descriptions <archival description>`,
+:term:`authority records <authority record>`, and
+:term:`archival institutions <archival institution>`.
+
+There is no specific week-based start date to the aggregation of these
+statistics - they are calculated based on the last 7 days of activity.
+Similarly, the statistics are calculated only on a count of page views -
+meaning that a single user returning to a resource twice in the same
+visit will be counted as 2 views.
+
+Currently there is no way to configure the Popular this week settings.
+Administrators who are interested in more granular analytics information are
+encouraged to use a third-party analytics tool - for more information, see:
+:ref:`maintenance-web-analytics` in the Administrator's Manual.
+
+.. TIP::
+
+   A :term:`developer` who wishes to hide the Popular this week menu from
+   view can do so by commenting out Line 25 in
+   ``/apps/qubit/modules/staticpage/templates/homeSuccess.php``. For more
+   information, see `this <https://groups.google.com/d/msg/ica-atom-users/rfI2Mt01ULk/vcf-0I04T_AJ>`__
+   post in our User Forum.
 
 :ref:`Back to top <getting-started-all>`
 
@@ -188,11 +222,15 @@ add and edit - see :ref:`manage-user-accounts` and
 Researcher
 ----------
 
-A researcher is any user who is not logged in (sometimes called an
+A researcher is any public user who is not logged in (sometimes called an
 unauthenticated user) and therefore has view-only access to the application. A
 researcher can search and browse descriptions (published :term:`archival
 descriptions <archival description>`, :term:`authority records <authority
 record>`, :term:`archival institutions <archival institution>`)
+
+.. seealso::
+
+   * :ref:`researcher-default`
 
 .. _user-contributor:
 
@@ -203,6 +241,10 @@ By default a contributor can search, browse, create, edit/update, view draft
 and export descriptions. The contributor cannot change the :term:`publication
 status` of an :term:`information object`. A contributor can access the
 :term:`reference <reference display copy>` and :term:`master digital object`.
+
+.. seealso::
+
+   * :ref:`contributor-default`
 
 .. _user-editor:
 
@@ -215,6 +257,10 @@ delete and export descriptions and edit :term:`controlled vocabulary`
 of an :term:`information object`. An editor can access the :term:`reference
 <reference display copy>` and :term:`master digital object`.
 
+.. seealso::
+
+   * :ref:`editor-default`
+
 .. _user-translator:
 
 Translator
@@ -226,6 +272,10 @@ descriptions and can translate :term:`user interface` elements and
 
 A translator should be able to view :term:`draft descriptions <draft record>`,
 but not edit them.
+
+.. seealso::
+
+   * :ref:`translator-default`
 
 .. _user-administrator:
 
@@ -241,6 +291,10 @@ Administrators can also create new user roles , set granular permissions
 for that role, and then assign or unassign users from the new role. For
 more information on creating a new user role, see :ref:`Add a new group
 <add-group>`.
+
+.. seealso::
+
+   * :ref:`administrator-default`
 
 :ref:`Back to top <getting-started-all>`
 
@@ -479,6 +533,11 @@ language, and:
 * if **no** translated version exists, AtoM displays the description in its
   original source version.
 
+.. image:: images/choose-language.*
+   :align: center
+   :width: 85%
+   :alt: An image of a user choosing a language via the language menu
+
 .. note::
 
    See :ref:`Add/remove languages <add-remove-languages>` for
@@ -497,21 +556,61 @@ Change password
 
 Users can change their own :term:`passwords <password>`. If a user forgets his
 or her :term:`password`, the system :term:`administrator` must reset it (see
-:doc:`Manage user accounts <../administer/manage-user-accounts>`).
+:ref:`manage-user-accounts`).
 
-#. Click your :term:`username` in the :term:`header bar`, at the upper
+1. Click your :term:`username` in the :term:`header bar`, at the upper
    right-hand corner of the page
-#. A :term:`drop-down menu` will appear with the option to log out, or
+2. A :term:`drop-down menu` will appear with the option to log out, or
    navigate to your :term:`user profile` - click on "Profile"
-#. Enter your new :term:`password` under "Change password" and enter it again
-   under "Confirm password".
-#. Click the "Save" button
 
-Your password has now been updated. The new password will be in effect next
-time you log in to the application.
+.. image:: images/click-profile.*
+   :align: center
+   :width: 85%
+   :alt: An image of a user clicking on the Profile option
+
+
+3. You will be redirected to your user profile :term:`view page`. To change
+   your password, click the "Edit" button in the :term:`button block` at the
+   bottom of the page.
+
+.. image:: images/profile-view.*
+   :align: center
+   :width: 85%
+   :alt: An image of a user's profile page in view mode
+
+4. Enter your new :term:`password` under "Change password" and enter it again
+   under "Confirm password". The green bar on the right will offer you an
+   indication of your password strength - use a mixture of upper and lower
+   case letters, numbers, and special characters (e.g. ! $ % & # etc) to
+   create a stronger password.
+
+.. image:: images/profile-edit.*
+   :align: center
+   :width: 85%
+   :alt: An image of a user's profile page in edit mode
+
+5. If the two passwords entered in "Change password" and "Confirm password"
+   do not match, AtoM will indicate so below the "Confirm password" field. If
+   you try to save the page with with mismatched password entries, AtoM will
+   clear both fields, and reload the page with an error message. You can now
+   re-enter your password - make sure it's the same in both fields!
+
+.. image:: images/no-pass-match.*
+   :align: center
+   :width: 85%
+   :alt: An image of the profile edit page reloaded after a password mismatch
+
+6. When you have updated your password, click the "Save" button in the
+   :term:`button block` at the bottom of the profile :term:`edit page`.
+
+Your password has now been updated. You will be redirected to the profile
+:term:`view page`, and the new password will be in effect next time you
+:ref:`log in <log-in>` to the application.
 
 .. seealso::
 
    * :ref:`log-in-button`
+   * :ref:`navigate`
+   * :ref:`manage-user-accounts`
 
 :ref:`Back to top <getting-started-all>`
