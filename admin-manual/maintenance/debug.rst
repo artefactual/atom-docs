@@ -46,8 +46,20 @@ becomes
     running a web-browser on the actual server that is hosting the AtoM
     application. If this is not the case you will see an error message:
 
-    You are not allowed to access this file. Check qubit_dev.php for more
-    information.
+    **You are not allowed to access this file. Check qubit_dev.php for more
+    information.**
+
+A :term:`developer` can edit the PHP configuration file (located at
+``/etc/php5/fpm/pool.d/atom.conf`` if you followed our
+:ref:`Linux installation instructions <linux-dependency-php>` exactly) to add
+further IP addresses to the ``ATOM_DEBUG_IP`` variable - this is called by
+``qubit_dev.php`` and checked for allowed IP addresses. Doing so will allow
+you to access Debug mode from a different IP address than that of the server.
+
+.. image:: images/debug-ip.*
+   :align: center
+   :width: 85%
+   :alt: an image of the ATOM_DEBUG_IP variable in the php configuration file
 
 Editing the index.php file
 --------------------------
