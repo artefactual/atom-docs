@@ -390,7 +390,7 @@ Import archival descriptions via CSV
 
 The information object import tool allows you to map CSV columns to AtoM data.
 Example RAD and ISAD CSV template files are available in AtoM source code
-(``lib/task/import/example/rad/example_information_objects_rad.csv``` and
+(``lib/task/import/example/rad/example_information_objects_rad.csv`` and
 ``lib/task/import/example/isad/example_information_objects_isad.csv``) or you
 can download the files here:
 
@@ -401,11 +401,11 @@ Hierarchical relationships
 --------------------------
 
 Information objects often have parent-child relationships - for example, a
-series is a child of the fonds to which it belongs; it has a parent fonds. If
-you want to import a :term:`fonds` or :term:`collection` into AtoM along with
-its lower levels of description (i.e. its children - series, files, items,
-etc.), you will need a way to specify which rows in your CSV file belong to
-which parent description.
+series is a :term:`child <child record>` of the fonds to which it belongs; it
+has a :term:`parent <parent record>` fonds. If you want to import a
+:term:`fonds` or :term:`collection` into AtoM along with its lower levels of
+description (i.e. its children - series, files, items, etc.), you will need a
+way to specify which rows in your CSV file belong to which parent description.
 
 There are two basic ways to specify which information object is the parent of
 an information object being imported in your CSV - either through the use of
@@ -590,11 +590,26 @@ the CSV header *scopeAndContent*. However, for users seeking a full mapping
 of fields, consult the :ref:`RAD template <rad-template>` and
 :ref:`ISAD template <isad-template>` pages for further details.
 
-The *culture* column indicates to AtoM the language of the descriptions
+The *culture* column indicates to AtoM the default language of the descriptions
 being uploaded. This column expects two-letter ISO 639-1 language code
 values - for example, "en" for English; "fr" for French, "it" for Italian,
 etc. See `Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
 for a full list of ISO 639-1 language codes.
+
+Other data entry notes
+----------------------
+
+* *language* and *languageOfDescription*, like *culture*, expect two-letter
+  ISO 639-1 language code values - for example, "en" for English; "fr" for French,
+  "it" for Italian, etc. See `Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
+  for a full list of ISO 639-1 language codes. Unlike the *culture* column,
+  however, these two fields will accept multiple values separated by a pipe
+  character - for example, ``en|fr|it``.
+* The *script* and *scriptOfDescription* columns expect four-letter ISO 15924
+  script code values - for example, "Latn" for Latin-based scripts, "Cyrl"
+  for Cyrillic scripts, etc. See `Unicode <www.unicode.org/iso15924/codelists.html>`__
+  for a full list of ISO 15924 script codes.
+*
 
 .. _csv-import-descriptions-gui:
 
@@ -907,7 +922,7 @@ performed via the user interface.
    :alt: The CSV import page in AtoM
 
 3. Click the "Browse" button to open a window on your local computer. Select
-   the vents CSV file that you would like to import.
+   the events CSV file that you would like to import.
 
 .. image:: images/csv-import-browse.*
    :align: center
@@ -998,13 +1013,13 @@ CSV columns
   Holdings (`ISDIAH <http://www.ica.org/10198/standards/isdiah-international-standard-for-describing-institutions-with-archival-holdings.html>`__).
   For more information on the use of each field, see: :ref:`isdiah-template`.
 
-    * Most fields in the CSV template have been named in a fairly obvious way,
-      translating a simplified version of the field name in our data entry
-      templates into a condensed `camelCase <http://en.wikipedia.org/wiki/CamelCase>`__.
-      For example, ISDIAH 5.3.2, Geographical and cultural context (in the
-      Description :term:`Area <information area>`) becomes
-      *geoCulturalContext* in the CSV template. Consult the
-      :ref:`ISDIAH <isdiah-template>` for further help with fields.
+  * Most fields in the CSV template have been named in a fairly obvious way,
+    translating a simplified version of the field name in our data entry
+    templates into a condensed `camelCase <http://en.wikipedia.org/wiki/CamelCase>`__.
+    For example, ISDIAH 5.3.2, Geographical and cultural context (in the
+    Description :term:`Area <information area>`) becomes *geoCulturalContext*
+    in the CSV template. Consult the :ref:`ISDIAH <isdiah-template>` for further
+    help with fields.
 
 * The *culture* column indicates to AtoM the language of the descriptions
   being uploaded. This column expects two-letter ISO 639-1 language code
@@ -1078,6 +1093,13 @@ entities are known by.
 
 You can view the example CSV files for authority records via our Github
 repository, `here <https://github.com/artefactual/atom/tree/2.x/lib/task/import/example/authority_records>`__.
+Examples can also be found in the AtoM code (at
+``lib/task/import/example/authority_records/``) or can be downloaded directly
+here:
+
+* (Links forthcoming - see the
+  `qubit-toolkit wiki <https://www.qubit-toolkit.org/wiki/CSV_import#Column_mapping>`__
+  for now)
 
 CSV Columns
 -----------
@@ -1103,18 +1125,19 @@ Authority records CSV
   Bodies, Persons and Famillies (`ISAAR-CPF <http://www.ica.org/10203/standards/isaar-cpf-international-standard-archival-authority-record-for-corporate-bodies-persons-and-families-2nd-edition.html>`__).
   For more information on the use of each field, see: :ref:`isaar-template`.
 
-    * Most fields in the CSV template have been named in a fairly obvious way,
-      translating a simplified version of the field name in our data entry
-      templates into a condensed `camelCase <http://en.wikipedia.org/wiki/CamelCase>`__.
-      For example, ISAAR 5.2.1, Dates of Existence (in the ISAAR
-      Description :term:`Area <information area>`) becomes
-      *datesOfExistence* in the CSV template. Consult the
-      :ref:`ISDIAH <isaar-template>` for further help with fields.
-    * The *history* column, which conforms to ISAAR 5.2.2, will appear as the
-      Administrative or Biographical history in any
-      :term:`archival description` that the :term:`authority record` is
-      linked to. For more information on how AtoM manages authority records,
-      see: :ref:`authority-records`
+  * Most fields in the CSV template have been named in a fairly obvious way,
+    translating a simplified version of the field name in our data entry
+    templates into a condensed `camelCase <http://en.wikipedia.org/wiki/CamelCase>`__.
+    For example, ISAAR 5.2.1, Dates of Existence (in the ISAAR
+    Description :term:`Area <information area>`) becomes
+    *datesOfExistence* in the CSV template. Consult the
+    :ref:`ISDIAH <isaar-template>` for further help with fields.
+  * The *history* column, which conforms to ISAAR 5.2.2, will appear as the
+    Administrative or Biographical history in any  :term:`archival description`
+    that the :term:`authority record` is linked to. For more information on how
+    AtoM manages authority records, see: :ref:`authority-records`.
+
+.. _csv-authority-alternate-names:
 
 Alternate names CSV
 ^^^^^^^^^^^^^^^^^^^
@@ -1137,6 +1160,8 @@ Alternate names CSV
   values - for example, "en" for English; "fr" for French, "it" for Italian,
   etc. See `Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
   for a full list of ISO 639-1 language codes.
+
+.. _csv-authority-relationships:
 
 Relationships CSV
 ^^^^^^^^^^^^^^^^^
@@ -1187,7 +1212,55 @@ Relationships CSV
 Using the user interface
 ------------------------
 
-content
+.. NOTE::
+
+   Only the basic Authoriy record CSV can be imported via the
+   :term:`user interface`. If you wish to import authority relationships and
+   aliases as well, you will need to use the
+   :ref:`command-line <csv-import-authority-records-cli>`.
+
+**To import authority records via the user interface:**
+
+1. Click on the |import| :ref:`Import <main-menu-import>` menu, located in
+   the AtoM :ref:`header bar <atom-header-bar>`, and select "CSV".
+
+.. image:: images/import-menu-csv.*
+   :align: center
+   :width: 30%
+   :alt: The import menu
+
+2. AtoM will redirect you to the CSV import page. Make sure that the "Type"
+   :term:`drop-down menu` is set to "Authority record".
+
+.. image:: images/csv-import-page.*
+   :align: center
+   :width: 85%
+   :alt: The CSV import page in AtoM
+
+3. Click the "Browse" button to open a window on your local computer. Select
+   the :term:`authority record` CSV file that you would like to import.
+
+.. image:: images/csv-import-browse.*
+   :align: center
+   :width: 25%
+   :alt: Clicking the "Browse" button in the CSV import page
+
+4. When you have selected the file from your device, its name will appear
+   next to the "Browse" button. Click the "Import" button located in the
+   :term:`button block` to begin your import.
+
+.. image:: images/csv-import-start.*
+   :align: center
+   :width: 85%
+   :alt: Starting a CSV import in AtoM
+
+.. NOTE::
+
+   Depending on the size of your CSV import, this can take some time to
+   complete. Be patient! Remember, uploads performed via the user interface
+   are limited by the browser's timeout limits - this is one of the reasons
+   we recommend importing only smaller CSV files via the user interface.
+
 
 .. _csv-import-authority-records-cli:
 
@@ -1217,25 +1290,77 @@ The ``--application``, ``--env``, and ``connection`` options **should not be
 used** - AtoM requires the uses of the pre-set defaults for symfony to be
 able to execute the import.
 
-The ``--rows-until-update``, ``--skip-rows``, and ``--error-log`` options can
-be used the same was as described in the section :ref:`above <csv-cli-options>`
-on importing descriptions.
+The ``--rows-until-update``, ``--skip-rows``, ``--error-log``, and ``--index``
+options can be used the same was as described in the section
+:ref:`above <csv-cli-options>` on importing descriptions.
 
-more content...
+The ``--alias-file`` and ``--relation-file`` options are used to import
+accompanying alternate name (aka Alias data) and relationship CSV files at
+the same time as the authority record CSV import. An example of each will be
+given below, though they can be used together.
 
 .. _csv-import-aliases-cli:
 
 Importing alternate names (Alias data)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-content
+Alternate names are defined in a separate CSV file. Each alias can be one of
+three forms: a parallel form, a standardized form, or "other" form. See the
+section on data entry :ref:`above <csv-authority-alternate-names>` for further
+guidance.
+
+An example CSV template file of supplementary alias data is available in the
+AtoM source code ( at ``lib/task/import/example/authority_records/example_authority_
+record_aliases.csv``) or can be downloaded here:
+
+* (link forthcoming - see the
+  `qubit-toolkit wiki <https://www.qubit-toolkit.org/wiki/CSV_import#Alias_data>`__
+  for now)
+
+The Alternate names CSV file must be imported at the same time as its related
+Authority record CSV file. The ``--alias-file`` command-line option is used
+to specify a separate path to the Alternate names CSV, with a back slash
+( ``\`` ) used to separate it from the path of the original authority record
+CSV, as shown below.
+
+**Example import of authority records and corresponding aliases:**
+
+.. code-block:: bash
+
+   php symfony csv:authority-import lib/task/import/example/authority_records/example_authority_records.csv \
+   --alias-file=lib/task/import/example/authority_records/example_authority_record_aliases.csv
+
 
 .. _csv-import-relations-cli:
 
 Importing related corporate bodies, persons, or families
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-content
+Relations between authority records are also defined in a separate CSV file.
+Each relationship can be either hierarchical, temporal, family, or
+associative. See the section on data entry
+:ref:`above <csv-authority-relationships>` for further guidance.
+
+An example CSV template file of relation data is available in the AtoM source
+code ( at ``lib/task/import/example/authority_records/example_authority_record_relat
+ionships.csv``) or can be downloaded here:
+
+* (link forthcoming - see the
+  `qubit-toolkit wiki <https://www.qubit-toolkit.org/wiki/CSV_import#Related_corporate_bodies.2C_persons_or_families>`__
+  for now)
+
+The Relationships CSV file must be imported at the same time as its related
+Authority record CSV file. The ``--relation-file`` command-line option is used
+to specify a separate path to the Relationships names CSV, with a back slash
+( ``\`` ) used to separate it from the path of the original authority record
+CSV, as shown below.
+
+**Example import of authority records and corresponding relationships:**
+
+.. code-block:: bash
+
+   php symfony csv:authority-import lib/task/import/example/authority_records/example_authority_records.csv \
+   --relation-file=lib/task/import/example/authority_records/example_authority_record_relationships.csv
 
 :ref:`Back to top <csv-import>`
 
@@ -1244,7 +1369,11 @@ content
 Import accessions via CSV
 =========================
 
-content
+When importing information objects (aka :term:`archival descriptions
+<archival description>`, you can specify an associated accession using the
+*accessionNumber* column. After importing your information objects you can
+then run the accession import tool to import details about each accession from
+a CSV file.
 
 .. _csv-import-accessions-gui:
 
