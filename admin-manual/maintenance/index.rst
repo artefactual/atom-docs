@@ -17,3 +17,4 @@ Maintenance
    tuning
    troubleshooting
    debug
+   elastic-search
