@@ -51,8 +51,10 @@ follows:
 The intended use is for "Containers" to include specific storage containers,
 such as box numbers, cabinet drawers, etc., and for "Locations" to include
 more general storage locations, such as "Cold storage," "Vault," etc.
-However, the storage types and uses can be customized to meet institutional
-practices.
+Storage types and uses can be customized to meet institutional
+practices, however in order to :ref:`link <link-physical-storage>` a custom
+storage container to a new or existing :term:`archival description` you must
+nest the storage container under "Container."
 
 For more information on working with terms and taxonomies in AtoM, see:
 :ref:`terms`.
@@ -100,10 +102,18 @@ Another method of adding a new storage type is to click "Add new" when
 viewing an existing Physical Object type. This will automatically nest the
 new term as a :term:`child <child record>` of the existing term.
 
+.. note::
+
+   This is the method to use is you wish to add a storage container to link to
+   :term:`archival descriptions <archival description>`. Find "Container," and
+   click "Add new."
+
 .. image:: images/physical-object-add-child.*
    :align: center
    :width: 80%
    :alt: Add new physical object type as a child
+
+.. _link-physical-storage:
 
 Link physical storage
 =====================
