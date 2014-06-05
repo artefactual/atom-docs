@@ -32,7 +32,7 @@ user's point of view there are seven main types with which they will interact:
    * :ref:`Page types <page-types>`
    * :ref:`Navigation in AtoM <navigate>`
    * :ref:`Search <search-atom>`
-   * :ref:`Browse <browse>`
+   * :ref:`browse`
 
 
 .. _entity-accession-record:
@@ -69,6 +69,12 @@ rights). Once created, Donor records and Rights can be managed separately.
 
 **For information on creating and managing accession records, see:**
 :ref:`accession-records`.
+
+.. seealso::
+
+   * :ref:`deaccessions`
+   * :ref:`Add an accrual <add-accession-accrual>`
+   * :ref:`donors`
 
 .. _entity-archival-description:
 
@@ -230,5 +236,9 @@ description>`.
 
 **For information on creating and managing terms, see:**
 :ref:`terms`.
+
+.. seealso::
+
+   * :ref:`term-name-vs-subject`
 
 :ref:`Back to top <entity-types>`
