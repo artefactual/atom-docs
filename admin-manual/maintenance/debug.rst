@@ -61,6 +61,14 @@ you to access Debug mode from a different IP address than that of the server.
    :width: 85%
    :alt: an image of the ATOM_DEBUG_IP variable in the php configuration file
 
+After making changes to the ``ATOM_DEBUG_IP`` variable in ``atom.conf``, you
+will need to restart PHP5-FPM:
+
+.. code:: bash
+
+   sudo service php5-fpm restart
+
+
 Editing the index.php file
 --------------------------
 
