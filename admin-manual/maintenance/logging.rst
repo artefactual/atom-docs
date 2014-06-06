@@ -56,25 +56,25 @@ Here are the default settings for the ``debug`` factory in ``factories.yml``:
 .. code:: bash
 
    dev:
-    mailer:
-      param:
-        delivery_strategy: none
+     mailer:
+       param:
+         delivery_strategy: none
 
-    storage:
-      class: QubitSessionStorage
-      param:
-        session_name: symfony
+     storage:
+       class: QubitSessionStorage
+       param:
+         session_name: symfony
 
-    logger:
-      class: sfAggregateLogger
-      param:
-        level: debug
-        loggers:
-          sf_file_debug:
-            class: sfFileLogger
-            param:
-              level: warning
-              file: %SF_LOG_DIR%/%SF_APP%_%SF_ENVIRONMENT%.log
+     logger:
+       class: sfAggregateLogger
+       param:
+         level: debug
+         loggers:
+           sf_file_debug:
+             class: sfFileLogger
+             param:
+               level: warning
+               file: %SF_LOG_DIR%/%SF_APP%_%SF_ENVIRONMENT%.log
 
 Note the ``logger`` settings parameter nested under the ``dev`` factory -
 these can be altered to change the logging behavior when in :ref:`debug-mode`.
@@ -126,25 +126,11 @@ define how we log information to ``qubit_cli.log``. Add the following to the
 .. code:: bash
 
    cli:
-    mailer:
-      param:
-        delivery_strategy: none
-
-    storage:
-      class: QubitSessionStorage
-      param:
-        session_name: symfony
-
-    logger:
-      class: sfFileLogger
-      param:
-        level: info
-        loggers:
-          sf_file_debug:
-            class: sfFileLogger
-            param:
-              level: info
-              file: %SF_LOG_DIR%/qubit_cli.log
+     logger:
+       class: sfFileLogger
+       param:
+         level: info
+         file: %SF_LOG_DIR%/qubit_cli.log
 
 After you save your changes to the ``factories.yml`` file, you will need to
 clear the application cache:
@@ -215,30 +201,25 @@ Below is an example of how you could configure the ``prod`` factory in
 By default, the ``class`` option in the ``logger`` parameter is set to
 *sfNoLogger* for production - that is, nothing is being logged by default.
 Below is an example of how you might change these parameters to log
-high-level errors and warnings in the ``qubit_cli.log`` file:
+high-level errors and warnings in a new ``qubit_prod.log`` file:
 
 .. code:: bash
 
    cli:
-    logger:
-      class: sfFileLogger
-      param:
-        level: warning
-        loggers:
-          sf_file_debug:
-            class: sfFileLogger
-            param:
-              level: warning
-              file: %SF_LOG_DIR%/qubit_cli.log
+     logger:
+       class: sfFileLogger
+       param:
+         level: warning
+         file: %SF_LOG_DIR%/qubit_prod.log
 
-    storage:
-      class: QubitSessionStorage
-      param:
-        session_name: symfony
+     storage:
+       class: QubitSessionStorage
+       param:
+         session_name: symfony
 
 Remember to :ref:`clear the cache <maintenance-clear-cache>`, and clear your
 browser cache, after saving your changes to the ``factories.yml`` file. See
-also the notes above about clearing and rotating logs.
+also the notes above  in Example 1 about clearing and rotating logs.
 
 ===============
 Web server logs
