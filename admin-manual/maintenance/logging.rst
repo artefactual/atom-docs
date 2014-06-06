@@ -205,7 +205,7 @@ high-level errors and warnings in a new ``qubit_prod.log`` file:
 
 .. code:: bash
 
-   cli:
+   prod:
      logger:
        class: sfFileLogger
        param:
