@@ -89,6 +89,7 @@ to:**
 
 * :ref:`Duplicate an existing archival description
   <duplicate-archival-description>`
+* :ref:`change-display-standard`
 * :ref:`Move an archival description <move-archival-description>`
 * :ref:`Delete an archival description <delete-archival-description>`
 
@@ -107,13 +108,19 @@ see the sections below for more specific instructions on the use of
 .. seealso::
 
    * :ref:`add-term-fly`
-   * :ref:`Physical storage <physical-storage>`
+   * :ref:`Physical storage <link-physical-storage>`
    * :ref:`Upload digital objects <upload-digital-object>`
    * :ref:`Create an archival description from an accession record
      <create-accession-description>`
    * :ref:`Link an accession record to an archival description
      <link-accession-description>`
    * :ref:`Exit edit mode <exit-edit-mode>`
+   * :ref:`link-function-description`
+   * :ref:`link-authority-to-description`
+   * :ref:`upload-digital-object`
+   * :ref:`rights-archival-description`
+   * :ref:`import-descriptions-terms`
+   * :ref:`csv-import`
 
 
 .. _add-archival-description:
@@ -429,6 +436,11 @@ AtoM includes the ability to generate a duplicate record from an existing
 :term:`archival description`, and then edit it to make necessary changes.
 This can allow a user to avoid unnecessarily repeating data entry.
 
+.. note::
+
+   When duplicating a parent record, lower (child) levels of description will
+   NOT be duplicated.
+
 **To duplicate an existing archival description:**
 
 1. First, navigate to the :term:`archival description` you wish to edit. You
@@ -470,6 +482,25 @@ This can allow a user to avoid unnecessarily repeating data entry.
 
 :ref:`Back to top <archival-descriptions>`
 
+.. _change-display-standard:
+
+Change the display standard
+===========================
+
+You can change the :term:`display standard` for an individual archival
+description in the adminstration area while editing an archival description.
+
+.. image:: images/change-display.*
+   :align: center
+   :width: 80%
+   :alt: Option to change the display standard while editing an archival
+         description
+
+This allows you to choose a different description template per archival
+description than the template you have chosen in your AtoM
+:ref:`settings <default-templates>`. You can also click on the box below the
+template drop-down box to have all :term:`child records <child record>` display
+in the chosen standard.
 
 .. _move-archival-description:
 
