@@ -122,7 +122,7 @@ To link a single :term:`digital object`:
    **Admin > Settings > Global > Upload multi-page files as multiple
    descriptions** and select "Yes"; this will also cause all pages of a multi-
    page object to appear individually as child records of the description to
-   which the object was uploaded.
+   which the object was uploaded. (See: :ref:`settings <upload-multi-files>`).
 
 .. TIP::
 
@@ -231,6 +231,10 @@ results will refer users to the PDF that contains the search term(s), but will
 not reveal the location of the term(s) within the PDF.
 
 Currently, AtoM 2.0 truncates PDF text after the first 65,535 bytes.
+
+As mentioned above, it is possible to upload multi-page TIFFs or PDF files to
+be displayed with a page viewer and to upload each page as a child object of
+the parent. To enable this feature, see :ref:`settings <upload-multi-files>`.
 
 
 :ref:`Back to top <upload-digital-object>`
