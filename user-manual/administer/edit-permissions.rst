@@ -42,6 +42,8 @@ drafted in a way that reflects these options.
   * :ref:`For a user <user-institution-permissions>`
   * :ref:`For a group <group-institution-permissions>`
 
+* :ref:`Remove specific user or group permissions <remove-user-group-permissions>`
+
 .. seealso::
 
    * :ref:`manage-user-accounts`
@@ -1507,5 +1509,40 @@ group.
 You will be redirected to the :term:`view page` for the edited group where
 you can review your work.
 
-:ref:`Back to top <edit-user-permissions>`
+.. _remove-user-group-permissions:
 
+Remove specific user or group permissions
+-----------------------------------------
+
+If you have used the instructions above to grant specific permissions to a
+user or group for an archival description, authority record, taxonomy, or
+archival institution, you can remove those permissions using these steps:
+
+1. Navigate to an existing group or user in AtoM as per the instructions
+   above.
+
+2. Click on the permissions area that you wish to edit (actor permissions,
+   taxonomy permissions, etc).
+
+3. Click on the specific permission you wish to edit, listed below the
+   general settings.
+
+4. Change the permissions you wish to remove to "inherit" or "deny" instead of
+   grant and click save.
+
+5. To add back a removed permission later, follow the steps above for the
+   applicable permission area.
+
+.. figure:: images/permission-example.*
+   :align: center
+   :width: 100%
+   :figwidth: 75%
+   :alt: Example of how to remove permissions in a taxonomy.
+
+   In this example, a user has been given permission to create new taxonomy
+   terms. In order to remoke this permission, an administrator would change
+   the permission to deny, or to revert to the default for that user's group,
+   change the permission to inherit.
+
+
+:ref:`Back to top <edit-user-permissions>`
