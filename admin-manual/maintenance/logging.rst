@@ -139,8 +139,8 @@ clear the application cache:
 
    php symfony cc
 
-You may want to clear your browser's cache as well. Now all events with a
-level of INFO or higher will be logged in ``log/qubit_cli.log``.
+Now all events with a level of INFO or higher will be logged in
+``log/qubit_cli.log``.
 
 These log files can grow quickly! Depending on your logging settings and your
 site traffic, Symfony warns that "these files have the strange habit of growing
@@ -217,9 +217,9 @@ high-level errors and warnings in a new ``qubit_prod.log`` file:
        param:
          session_name: symfony
 
-Remember to :ref:`clear the cache <maintenance-clear-cache>`, and clear your
-browser cache, after saving your changes to the ``factories.yml`` file. See
-also the notes above  in Example 1 about clearing and rotating logs.
+Remember to :ref:`clear the cache <maintenance-clear-cache>` after saving your
+changes to the ``factories.yml`` file. See also the notes above in Example 1
+about clearing and rotating logs.
 
 ===============
 Web server logs
