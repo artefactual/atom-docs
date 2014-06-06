@@ -59,8 +59,7 @@ object type taxonomy:
 
 .. code:: bash
 
-   php symfony taxonomy:normalize --culture="fr" --taxonomy-name="Physical
-   object type"
+   php symfony taxonomy:normalize --culture="fr" "Physical object type"
 
 You might also run this command on English terms in the Places taxonomy like
 so:
@@ -68,6 +67,27 @@ so:
 .. code:: bash
 
    php symfony taxonomy:normalize Places
+
+.. _cli-delete-description:
+
+Delete a description
+====================
+
+You can delete a description from the command-line if you know the
+description's :term:`slug`. A slug is a word or sequence of words which make
+up a part of a URL that  identifies a page in AtoM. It is the part of the URL
+located at the end of the URL path and often is indicative of the name or
+title of the page (e.g.: in  *www.youratom.com/this-description*, the slug
+is */this-description*). When a new information object is created in AtoM,
+the slug for that page is generated based on the title, with spaces,
+stopwords, and special characters stripped out.
+
+If you know the slug of a description you'd like to delete, use the following
+command to delete it from the command-line:
+
+.. code:: bash
+
+   php symfony tools:delete-description <slug>
 
 .. _cli-purge-data:
 
