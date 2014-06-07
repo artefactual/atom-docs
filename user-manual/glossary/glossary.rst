@@ -187,7 +187,7 @@ Glossary
     to facilitate navigation in several places. On :term:`archival
     descriptions <archival description>`, the breadcrumb trail is located at
     the top of record's :term:`view page` when viewing a :term:`child
-    decription <child record>` to provide information about where in the
+    description <child record>` to provide information about where in the
     hierarchy the current description appears. When moving archival
     descriptions (see: :ref:`move-archival-description`), A breadcrumb trail
     is used to indicate where in a hierarchy the Move browse results are
@@ -280,7 +280,7 @@ Glossary
     <recurring-column-headers>` for screenshots.
 
   Context menu
-    The context menu appears on all :term:`view <view page>` and some
+    The context menu appears on all :term:`view pages <view page>` and some
     :term:`edit pages <edit page>` to provide greater contextual information
     about the record currently being viewed. On :term:`archival description`
     :term:`view pages <view page>`, this includes the name and/or logo of the
@@ -342,8 +342,10 @@ Glossary
     :term:`archival description`, usually at the highest :term:`level of
     description` only. Lower levels inherit the creator from the
     :term:`parent record`, unless a different creator is specified. AtoM
-    can accommodate multiple creators at all levels of description. See
-    :ref:`Context area <context-area>`.
+    can accommodate multiple creators at all levels of description.
+    Information about the creator is entered into the ref:`Context
+    area <context-area>` in the archival description :term:`edit page <edit
+    page>`.
 
   CSV
     Most often understood as an acronym for "comma-separated values" (though
@@ -392,8 +394,8 @@ Glossary
     The deaccession record is used to indicate that a :term:`repository` has
     removed an accession, in part or whole, from the collection. Instead
     of deleting an :term:`accession record`, the repository will create a
-    deaccession record that is kept. See: :ref:`Deaccession records
-    <deaccession-records>`.
+    deaccession record that is kept. See: :doc:`Deaccession records
+    <../add-edit-content/deaccessions>`.
 
   Dedicated search box
     A search box, generally provided on a :ref:`Browse page
@@ -416,8 +418,8 @@ Glossary
     specified when the application is installed. Users can switch to other
     :term:`supported languages <supported language>` and
     :term:`translators <translator>` can translate :term:`database
-    content` and :term:`user interface` elements. See :doc:`Choose
-    language <../getting-started/choose-language>` and :ref:`Translate
+    content` and :term:`user interface` elements. See :ref:`Choose
+    language <choose-language>` and :ref:`Translate
     <translate>`.
 
   Delete button
@@ -577,7 +579,7 @@ Glossary
     entities: :term:`archival descriptions <archival description>`,
     :term:`authority records <authority record>`, :term:`archival
     institutions <archival institution>`, :term:`functions <function>`,
-    :term:`rights records <rights record>`, and <:term:`terms <term>`. See
+    :term:`rights records <rights record>`, and :term:`terms <term>`. See
     :doc:`Entity types <../overview/entity-types>`.
 
   Error message
@@ -740,7 +742,7 @@ Glossary
     AtoM. It includes the :term:`search box`, :term:`browse menu`, and
     :term:`site logo` for all users, and the
     :term:`main menu` for authenticated (i.e. logged in) users. See:
-    :ref:`atom-header-bar`
+    :ref:`atom-header-bar`.
 
   Hex color code
     A hexidecimal color code is a method of expressing web based colors using
@@ -803,7 +805,7 @@ Glossary
     The language menu, located in the top-right corner of the page, allows
     the user to switch to any of the :term:`supported languages <supported
     language>` in AtoM. See :ref:`Choose language <choose-language>`; see also
-    :doc:`Default language <../administer/default-language>` and
+    :ref:`Default language <default-language>` and
     :ref:`Add/remove languages <add-remove-languages>` .
 
   Level of description
@@ -1046,7 +1048,8 @@ Glossary
     page directly under the :term:`header bar`. It is a configurable
     element - the text can be changed or removed. See
     :ref:`Site information <site-information>` and :ref:`Default page
-    elements <default-page-elements>`. See also:`recurring-page-elements`
+    elements <default-page-elements>`. See also :ref:`Recurring page elements
+    <recurring-page-elements>`.
 
   Site logo
     The site logo is the graphic that appears at the top of all pages in
@@ -1074,8 +1077,8 @@ Glossary
     types of controlled vocabulary." (`W3C SKOS Primer, 18 August 2009
     <http://www.w3.org/TR/2009/NOTE-skos-primer-20090818/>`_). It is used
     in AtoM to import and export hierarchical :term:`taxonomies
-    <taxonomy>`. See: :doc:`Export descriptions and terms
-    <../import-export/export-descriptions-and-terms>`.
+    <taxonomy>`. See: :ref:`Export descriptions and terms
+    <export-descriptions-terms>`.
 
   Slug
     A slug is a word or sequence of words which make up a part of a URL that
@@ -1107,7 +1110,7 @@ Glossary
 
   Static page
     Static pages are pages that are designed to look the same each time
-    they are accessed, in contrast to dynamic pages such as :ref:`search
+    they are accessed, in contrast to dynamic pages such as, :ref:`search
     results <search-results>`, :term:`view pages <view page>`, or
     :term:`edit pages <edit page>`. AtoM has two static pages, the
     :term:`home page` and the :term:`about page`. Static pages can be
@@ -1124,7 +1127,8 @@ Glossary
   Supported language
     In AtoM, a supported language is one into which both :term:`data
     elements <data element>` and :term:`user interface` elements can be
-    translated. See: :ref:`default-language`; see also: :ref:`translate`.
+    translated. See: :ref:`Default language <default-language>`;
+    see also: :ref:`translate`.
 
   Taxonomy
     A taxonomy is a grouping of :term:`controlled-vocabulary <controlled
