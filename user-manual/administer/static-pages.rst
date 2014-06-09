@@ -312,6 +312,20 @@ Here is the result of the above:
    :width: 70%
    :alt: An image of new Contact Us menu
 
+The information which will be needed when linking a new static page:
+
+1. Name: an internal name which is not visible to users.
+
+2. Label: how you wish the name of the page to appear in the menu.
+
+3. Parent: which menu you wish the page to be linked from.
+
+4. Path: in the format ``staticpage/index?slug=yourSlug``. yourSlug is the
+   slug you either created or had AtoM generate automatically for you when the
+   page was created.
+
+5. Description: an optional area to describe the purpose of the page.
+
 For more information on managing menus in AtoM, see: :ref:`manage-menus`.
 
 :ref:`Back to top <manage-static-pages>`
