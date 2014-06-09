@@ -21,6 +21,7 @@ have a user account, and only an authenticated (i.e. logged-in)
 * :ref:`Mark a user "Inactive" <mark-user-inactive>`
 * :ref:`Delete a user <delete-user>`
 * :ref:`Delete a group <delete-group>`
+* :ref:`Change login security <login-security>`
 
 .. seealso::
 
@@ -530,5 +531,16 @@ Follow the instructions below to delete a user group in AtoM:
 4. AtoM prompts you to confirm the delete request: click "Delete" to proceed
    (or you can click "Cancel" to return to the group's :term:`view page`).
 5. AtoM will delete the user and redirect you to the "List groups" page.
+
+.. _login-security:
+
+Login security features
+=======================
+
+:term:`Administrators <administrator>` have the ability require logged-in
+users to have strong passwords, as well as limit administrator functionality
+by IP address or require SSL for all administrator functionality. These
+settings are found in Admin -> Settings -> Security.
+See :ref:`Security panel <security-panel>` for more information.
 
 :ref:`Back to top <manage-user-accounts>`
