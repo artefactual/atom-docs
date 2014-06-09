@@ -93,6 +93,7 @@ institution :term:`edit page`, see:
    * :ref:`Archival descriptions <archival-descriptions>`
    * :ref:`Authority records <authority-records>`
    * :ref:`Access content <access-content>`
+   * :ref:`Browse holdings of an archival institution <browse-holdings>`
    * :ref:`User roles <user-roles>`
    * :ref:`Entity types <entity-types>`
    * :ref:`Log in <log-in>`
