@@ -137,7 +137,7 @@ Glossary
     <function>`, and other records. When an authenticated (i.e., logged in)
     user with edit privileges clicks on the heading of an :term:`information
     area` when in :term:`view mode`, the page reloads in :term:`edit mode` so
-    the user can edit content. See: `recurring-information-areas`.
+    the user can edit content. See: :ref:`recurring-information-areas`.
 
   Arrangement
     The International Council on Archives (`ICA <http://www.ica.org/>`__)
@@ -282,24 +282,22 @@ Glossary
   Context menu
     The context menu appears on all :term:`view pages <view page>` and some
     :term:`edit pages <edit page>` to provide greater contextual information
-    about the record currently being viewed. On :term:`archival description`
-    :term:`view pages <view page>`, this includes the name and/or logo of the
-    :term:`archival institution` or :term:`repository` who holds the
-    :term:`archival unit` the current record describes (which links to the
-    repository's :term:`authority record`) and the :term:`treeview`, which
-    shows the current record's relationships to other records, with links, on
-    the left-hand side of the screen. The right-hand side of the screen
-    includes related people (i.e., :term:`authority records
-    <authority record>`), :term:`subjects <subject>`, and :term:`places
-    <place>`, as well as available formats for export. When viewing an ISAAR-
-    CPF :term:`authority record` for a person, family, or :term:`corporate
-    body`, the left-hand side of the screen will show any relationships with
-    :term:`archival descriptions <archival description>` or other authority
-    records. When viewing an ISDIAH :term:`authority record` for an
-    :term:`archival institution`, the context menu displays a list of
-    holdings on the left-hand side, with contact information for the
-    :term:`repository` provided on the right-hand side of the record. See
-    :doc:`Context menu <../access-content/context-menu>`. See also:
+    about the record currently being viewed.
+
+    AtoM's :term:`view pages <view page>` and :term:`edit pages <edit page>`
+    are generally displayed in the :term:`user interface` in either a 2 or 3
+    column  layout - the current record’s display data is presented in the
+    central part of  the page, while the side column(s) are generally used to
+    provide additional options and further contextual information to enhance
+    user orientation and navigation. These side columns make up the context
+    menu.
+
+    The information provided in the context menu varies by the
+    :term:`entity` type (i.e. :term:`archival description`
+    :term:`view pages <view page>`,
+    :term:`authority records <authority record>` or
+    :term:`archival institution`) or display. For more information and
+    screenshots, see: :doc:`Context menu <../access-content/context-menu>` and
     :ref:`recurring-page-elements`.
 
   Contributor
@@ -782,19 +780,19 @@ Glossary
     <manage-static-pages>`).
 
   Information area
-    Information areas appear on :term:`edit pages <edit page>` and group
-    related :term:`fields <field>` based on the organization of elements of
-    description in `ICA <http://www.ica.org/>`__ (or other supported)
-    descriptive standards. They are comprised of a number of :term:`fields
-    <field>` in the body of the information area, and an :term:`area header`,
-    whose name is drawn from the related area or section of the standard upon
-    which the descriptive template is based. Clicking on the :term:`area
-    header` of an information area toggles it between closed (all fields in
-    that area hidden) and open (all fields visible) when in :term:`edit mode`;
-    in :term:`view mode`, clicking on an :term:`area header` will result in
-    opening the related information area in :term:`edit mode` (if the user is
-    logged in and has sufficient :term:`access privileges <access privilege>`
-    to edit a record). See: `recurring-information-areas`
+    Information areas appear on :term:`view pages <view page>` and
+    :term:`edit pages <edit page>` of any standards-based description
+    template in AtoM, and group related :term:`fields <field>` based on the organization of elements of description in `ICA <http://www.ica.org/>`__
+    (or other supported) descriptive standards. They are comprised of a
+    number of :term:`fields <field>` in the body of the information area, and
+    an :term:`area header`, whose name is drawn from the related area or
+    section of the standard upon which the descriptive template is based.
+
+    Clicking on the :term:`area header` of an information area toggles it
+    between closed (all fields in that area hidden) and open (all fields
+    visible) when in :term:`edit mode`; in :term:`view mode`, clicking on an :term:`area header` will result in opening the related information area in :term:`edit mode` (if the user is logged in and has sufficient
+    :term:`access privileges <access privilege>` to edit a record). For more information and a screenshot, see:
+    :ref:`recurring-information-areas`.
 
   Information object
     An information object is another term for an :term:`archival
@@ -862,7 +860,7 @@ Glossary
     families who interact with archival materials as e.g. :term:`creators
     <creator>`, custodians and publishers. Names can be applied as
     :term:`access points <access point>` to :term:`archival descriptions
-    <archival description>`. See :ref:`Access points <access-points>`.
+    <archival description>`. See :doc:`Terms <../add-edit-content/terms>`.
 
   Network
     A network is an aggregation of institutions using one instance of AtoM
@@ -1109,8 +1107,8 @@ Glossary
 
   Static page
     Static pages are pages that are designed to look the same each time
-    they are accessed, in contrast to dynamic pages such as, :ref:`search
-    results <search-results>`, :term:`view pages <view page>`, or
+    they are accessed, in contrast to dynamic pages such as,
+    :ref:`search results <search>`, :term:`view pages <view page>`, or
     :term:`edit pages <edit page>`. AtoM has two static pages, the
     :term:`home page` and the :term:`about page`. Static pages can be
     edited by an :term:`administrator`, and new static pages can be created.
