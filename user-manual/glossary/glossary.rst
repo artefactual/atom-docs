@@ -1048,8 +1048,7 @@ Glossary
     page directly under the :term:`header bar`. It is a configurable
     element - the text can be changed or removed. See
     :ref:`Site information <site-information>` and :ref:`Default page
-    elements <default-page-elements>`. See also :ref:`Recurring page elements
-    <recurring-page-elements>`.
+    elements <default-page-elements>`. See also :ref:`recurring-page-elements`
 
   Site logo
     The site logo is the graphic that appears at the top of all pages in
@@ -1057,7 +1056,7 @@ Glossary
     the logo will take the user to the :term:`home page`. AtoM ships with
     a default logo that can be replaced by
     :term:`administrators <administrator>` to theme the application to
-    their own institution or :term:`network` if desired: see :ref:`Site logo
+    their own institution or :term:`network` if desired. See :ref:`Site logo
     <site-logo>`.
 
   Site title
