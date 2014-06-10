@@ -1108,10 +1108,11 @@ Glossary
   Static page
     Static pages are pages that are designed to look the same each time
     they are accessed, in contrast to dynamic pages such as,
-    :ref:`search results <search>`, :term:`view pages <view page>`, or
-    :term:`edit pages <edit page>`. AtoM has two static pages, the
-    :term:`home page` and the :term:`about page`. Static pages can be
-    edited by an :term:`administrator`, and new static pages can be created.
+    :doc:`search pages <../access-content/search-atom>`,
+    :term:`view pages <view page>`, or :term:`edit pages <edit page>`.
+    AtoM has two static pages, the :term:`home page` and the
+    :term:`about page`. Static pages can be edited by an
+    :term:`administrator`, and new static pages can be created.
     (see :ref:`Manage static pages <manage-static-pages>`; see
     also: :ref:`quick-links-menu`).
 
