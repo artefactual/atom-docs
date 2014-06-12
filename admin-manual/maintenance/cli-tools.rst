@@ -596,7 +596,7 @@ database (replacing *your-slug-here* with the slug you'd like to delete):
 
 .. code:: bash
 
-   DELETE FROM slug WHERE slug="your-slug-here"
+   DELETE FROM slug WHERE slug='your-slug-here';
 
 .. IMPORTANT::
 
@@ -613,7 +613,7 @@ so with the following query:
 
 .. code:: bash
 
-   DELETE FROM slug
+   DELETE FROM slug;
 
 .. WARNING::
 
