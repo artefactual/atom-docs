@@ -17,6 +17,8 @@ can be imported:
 
 To import using a CSV file, please see the :ref:`CSV import page <csv-import>`.
 
+.. _import-xml:
+
 Import XML file
 ===============
 
@@ -56,6 +58,8 @@ Import XML file
    :align: center
    :width: 80%
    :alt: Screen showing completed import with errors.
+
+.. _import-skos:
 
 Import SKOS file
 ================
