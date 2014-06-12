@@ -19,15 +19,14 @@ Glossary
     summarizes standard information about the process of transferring materials
     to a :term:`repository`, including information about the provenance,
     contents and legal and physical transfer of the records such as, rights and
-    restrictions. See :doc:`Entity types <../overview/entity-types>` and
-    :ref:`Accessions <accession-records>`.
+    restrictions. See :ref:`entity-types` and :ref:`accession-records`.
 
   Access point
     An access point is "A name, term, keyword, phrase or code that may be
     used to search, identify and locate an archival description." (ISAD
     glossary). In AtoM, access points are derived from :term:`authority
     records <authority record>` and :term:`taxonomies <taxonomy>` created
-    and customized by users. See :doc:`Terms <../add-edit-content/terms>`.
+    and customized by users. See :ref:`terms`.
 
   Access privilege
     Access privileges control the ways a user is able to interact with
@@ -63,7 +62,8 @@ Glossary
     access to customize AtoM to meet institution-specific requirements and
     to manage :term:`user accounts <user account>` and :term:`user
     profiles <user profile>`. The admin menu is only visible to users with
-    administrator privileges. See :ref:`Administer <administer>`.
+    administrator privileges. See :ref:`Administer <administer>` and
+    :ref:`main-menu-admin`.
 
   Administration area
     The Administration area is part of the resource description edit
@@ -107,9 +107,8 @@ Glossary
 
     In AtoM the :term:`data elements <data element>` used for describing
     archival records are derived from the ICA's *General International
-    Standard Archival Description* (ISAD). See :doc:`Entity types
-    <../overview/entity-types>` and :ref:`Archival descriptions
-    <archival-descriptions>`.
+    Standard Archival Description* (ISAD). See :ref:`entity-types` and
+    :ref:`archival-descriptions`.
 
   Archival institution
     An archival institution is "An organization which keeps and preserves
@@ -117,8 +116,7 @@ Glossary
     glossary). In AtoM the :term:`data elements <data element>` used to
     describe such institutions are based on the ICA's *International Standard
     for Describing Institutions with Archival Holdings* (ISDIAH). See
-    :doc:`Entity types <../overview/entity-types>` and :ref:`Archival
-    institutions <archival-institutions>`.
+    :ref:`entity-types` and :ref:`Archival institutions <archival-institutions>`.
 
   Archival unit
     Archival unit is a generic term for an aggregation of archival
@@ -154,9 +152,8 @@ Glossary
     Corporate Bodies, Persons and Families* (ISAAR). ISAAR defines
     authority record as "The authorized form of name combined with other
     information elements that identify and describe the named entity and
-    may also point to other related authority records." See :doc:`Entity
-    types <../overview/entity-types>` and :doc:`Authority records
-    <../add-edit-content/authority-records>`.
+    may also point to other related authority records." See :ref:`entity-types`
+    and :ref:`authority-records`.
 
   Boolean search
     Boolean searching is a particular application of what is known as Boolean
@@ -260,9 +257,8 @@ Glossary
     displayed, a slider (on the right-hand side of the drop-down) where a user
     can select a hue, and a pallette (main part of drop-down) where a user can
     select a tint. In AtoM a color picker is used when choosing the background
-    color of an :term:`archival institution` - see: :ref:`Change the
-    background color of an archival institution
-    <change-institution-background>`.
+    color of an :term:`archival institution` - see:
+    :ref:`change-institution-background`.
 
   Column header
     :term:`Column headers <column header>` appear at the top of the lists on
@@ -297,19 +293,19 @@ Glossary
     :term:`view pages <view page>`,
     :term:`authority records <authority record>` or
     :term:`archival institution`) or display. For more information and
-    screenshots, see: :doc:`Context menu <../access-content/context-menu>` and
-    :ref:`recurring-page-elements`.
+    screenshots, see: :ref:`context-menu` and :ref:`recurring-page-elements`.
 
   Contributor
     A contributor is a type of user who can search, browse, create, and
-    edit descriptions. See :ref:`User roles <user-roles>`.
+    edit descriptions. See :ref:`User roles <user-roles>`; see also
+    :ref:`contributor-default`.
 
   Controlled vocabulary
     A controlled vocabulary is a set of pre-defined, authorized
     :term:`terms <term>` grouped into :term:`taxonomies <taxonomy>` or
     entered into :term:`authority records <authority record>` and used for
     generating :term:`value lists <value list>` and :term:`access points
-    <access point>`. See :doc:`Terms <../add-edit-content/terms>`.
+    <access point>`. See :ref:`terms`.
 
   Corporate body
     The International Council on Archives (`ICA <http://www.ica.org/>`__)
@@ -392,8 +388,7 @@ Glossary
     The deaccession record is used to indicate that a :term:`repository` has
     removed an accession, in part or whole, from the collection. Instead
     of deleting an :term:`accession record`, the repository will create a
-    deaccession record that is kept. See: :doc:`Deaccession records
-    <../add-edit-content/deaccessions>`.
+    deaccession record that is kept. See: :ref:`deaccessions`.
 
   Dedicated search box
     A search box, generally provided on a :ref:`Browse page
@@ -414,11 +409,10 @@ Glossary
     The default language is the language in which all :term:`user
     interface` elements are displayed when AtoM is opened. The language is
     specified when the application is installed. Users can switch to other
-    :term:`supported languages <supported language>` and
-    :term:`translators <translator>` can translate :term:`database
-    content` and :term:`user interface` elements. See :ref:`Choose
-    language <choose-language>` and :ref:`Translate
-    <translate>`.
+    :term:`supported languages <supported language>` (see: :ref:`language-menu`)
+    and :term:`translators <translator>` can translate :term:`database content`
+    and :term:`user interface` elements. See :ref:`choose-language` and
+    :ref:`Translate <translate>`.
 
   Delete button
     The delete button appears in the :term:`button block`. Clicking on the
@@ -448,7 +442,7 @@ Glossary
     used to display and edit the :term:`archival unit`. The default
     display standard for the application can be set by an
     :term:`Administrator <administrator>` in the Default template area of
-    the Settings menu. See :doc:`Settings <../administer/settings>`.
+    the Settings menu. See :ref:`settings`.
 
     AtoM also allows an authenticated user with the appropriate
     permissions to set which :term:`archival description` standards
@@ -462,10 +456,8 @@ Glossary
     different archival standards templates, or even if different
     :term:`levels of description <level of description>` in the same
     :term:`fonds` or :term:`collection` are displayed with different
-    standards templates. See :doc:`Entity types
-    <../overview/entity-types>`, :doc:`Descriptive standards
-    <../overview/descriptive-standards>`, and :doc:`Archival descriptions
-    <../add-edit-content/archival-descriptions>`.
+    standards templates. See :ref:`entity-types`, :ref:`descriptive-standards`,
+    and :ref:`archival-descriptions`.
 
   Document
     The International Council on Archives (`ICA <http://www.ica.org>`__),
@@ -476,20 +468,20 @@ Glossary
   Dominion theme
      The Dominion theme is the default theme that ships with AtoM 2.0. It has
      been built using `Twitter Bootstrap <http://getbootstrap.com/>`__ 2.3,
-     with some added `JavaScript
-     <https://en.wikipedia.org/wiki/Javascript>`__ elements, and features a
-     black :term:`header bar` and a light grey application background color.
-     AtoM has been designed so that other themes can be added to the
-     application as plugins, after which an :term:`administrator` can change
-     the application theme via the :term:`user interface` by navigating to
-     **Admin > Themes**. See :ref:`Themes and theming <themes>`.
+     with some added `JavaScript <https://en.wikipedia.org/wiki/Javascript>`__
+     elements, and features a black :term:`header bar` and a light grey
+     application background color.  AtoM has been designed so that other themes
+     can be added to the application as plugins, after which an
+     :term:`administrator` can change the application theme via the
+     :term:`user interface` by navigating to **Admin > Themes**. See
+     :ref:`Themes and theming <themes>`.
 
   Donor dialog
     The dialog that opens when adding donor contact information to the
     :term:`accession record` or when selecting to edit an existing donor
     record. Donor records are located under the "Manage" tab in the menu.
     Donor records are only available to logged-in users with permissions.
-    See: :doc:`Donors <../add-edit-content/donors>`.
+    See: :ref:`donors`.
 
   Draft record
     A draft record is an :term:`archival description` that has not been
@@ -578,7 +570,7 @@ Glossary
     :term:`authority records <authority record>`, :term:`archival
     institutions <archival institution>`, :term:`functions <function>`,
     :term:`rights records <rights record>`, and :term:`terms <term>`. See
-    :doc:`Entity types <../overview/entity-types>`.
+    :ref:`entity-types`.
 
   Error message
     An error message will display when AtoM is unable to execute an
@@ -593,8 +585,7 @@ Glossary
     start and end dates in the context area of the :term:`archival
     description`, which links the :term:`creator` or other actor to the
     records for the period of time delimited by the dates. See
-    :doc:`Entity types <../overview/entity-types>` and :ref:`Context area
-    <context-area>`.
+    :ref:`entity-types` and :ref:`context-menu`.
 
   Facet filter
     In information science, a facet is a clearly defined component (based on a
@@ -636,7 +627,7 @@ Glossary
     <view page>` and :term:`edit pages <edit page>`. In AtoM, the
     :term:`Administrator <administrator>` can select certain field labels
     and hide them from public (unauthorized Users) views. See
-    :doc:`Visible elements <../administer/visible-elements>`.
+    :ref:`visible-elements`.
 
   Filter tag
     A filter tag appears at the top of a search or browse results page when a
@@ -715,7 +706,7 @@ Glossary
     functions. In AtoM the :term:`fields <field>` for describing functions
     are taken from the ICA's International Standard for Describing
     Functions (ISDF). See :doc:`Entity types <../overview/entity-types>`
-    and :doc:`Functions <../add-edit-content/functions>`.
+    and :ref:`functions`.
 
   Global search/replace
     Global search and replace allows :term:`administrators
@@ -733,7 +724,7 @@ Glossary
     :term:`Editor`; :term:`Contributor`; and :term:`Translator`
     (see: :ref:`user-roles`). Additional Group profiles can also be created and
     maintained by authenticated (i.e. logged-in) :term:`administrators
-    <administrator>`. See: :ref:`Manage user accounts <manage-user-accounts>`.
+    <administrator>`. See: :ref:`manage-user-accounts`.
 
   Header bar
     The header bar is the navigational tool at the top of all pages in
@@ -758,8 +749,8 @@ Glossary
     is represented as FF FF FF or `#ffffff`. Hex color codes are often used in
     HTML, CSS, SVG, and other computing applications to represent web colors.
     In AtoM, a user can enter a hex color code when choosing a background
-    color for an :term:`archival institution`. See: :ref:`Change the background
-    color of an archival institution <change-institution-background>`.
+    color for an :term:`archival institution`. See:
+    :ref:`change-institution-background`.
 
   Holdings
     Holdings is a generic term referring to the :term:`records <record>`
@@ -768,31 +759,32 @@ Glossary
     :term:`context menu` on :term:`archival institution` :term:`view pages
     <view page>`. The list is generated from the titles of :term:`archival
     descriptions <archival description>` that have the :term:`archival
-    institution` selected as a :term:`repository` (see Context area). See
-    :doc:`Context menu <../access-content/context-menu>` and :ref:`Context
-    area <context-area>`.
+    institution` selected as a :term:`repository`. See :ref:`context-menu`,
+    :ref:`archival-institutions` and :ref:`browse-holdings`.
 
   Home page
     The home page is the first page the user sees when opening the AtoM
     application. It can also be accessed by clicking the site logo. The
     content of the home page can be edited by :term:`administrators
-    <administrator>` (see :ref:`Manage static pages
-    <manage-static-pages>`).
+    <administrator>` (see :ref:`home-page` and :ref:`manage-static-pages`).
 
   Information area
-    Information areas appear on :term:`view pages <view page>` and
-    :term:`edit pages <edit page>` of any standards-based description
-    template in AtoM, and group related :term:`fields <field>` based on the organization of elements of description in `ICA <http://www.ica.org/>`__
-    (or other supported) descriptive standards. They are comprised of a
-    number of :term:`fields <field>` in the body of the information area, and
-    an :term:`area header`, whose name is drawn from the related area or
-    section of the standard upon which the descriptive template is based.
+    Information areas appear on :term:`view pages <view page>`
+    and :term:`edit pages <edit page>` of any standards-based description
+    template in AtoM, and group related :term:`fields <field>` based on the
+    organization of elements of description in `ICA <http://www.ica.org/>`__ (or
+    other supported) descriptive standards. They are comprised of a number of
+    :term:`fields <field>` in the body of the information area, and an
+    :term:`area header`, whose name is drawn from the related area or section of
+    the standard upon which the descriptive template is based.
 
     Clicking on the :term:`area header` of an information area toggles it
     between closed (all fields in that area hidden) and open (all fields
-    visible) when in :term:`edit mode`; in :term:`view mode`, clicking on an :term:`area header` will result in opening the related information area in :term:`edit mode` (if the user is logged in and has sufficient
-    :term:`access privileges <access privilege>` to edit a record). For more information and a screenshot, see:
-    :ref:`recurring-information-areas`.
+    visible) when in :term:`edit mode`; in :term:`view mode`, clicking on an
+    :term:`area header` will result in opening the related information area in
+    :term:`edit mode` (if the user is logged in and has sufficient
+    :term:`access privileges <access privilege>` to edit a record). For more
+    information and a screenshot, see: :ref:`recurring-information-areas`.
 
   Information object
     An information object is another term for an :term:`archival
@@ -824,15 +816,14 @@ Glossary
     object` that has been uploaded to AtoM. AtoM automatically generates a
     :term:`thumbnail` and a :term:`reference display copy` of the object.
     Only authenticated users may view master digital objects. See
-    :doc:`Upload digital objects <../import-export/upload-digital-object>`.
+    :ref:`upload-digital-object`.
 
   Media type
     Media type refers to the format of uploaded :term:`digital objects
     <digital object>`. The media type is selected automatically by AtoM
     when a :term:`digital object` is uploaded and the :term:`thumbnail`
     and :term:`reference display copies <reference display copy>` of the
-    object are generated. See :doc:`Upload digital objects
-    <../import-export/upload-digital-object>`.
+    object are generated. See :ref:`upload-digital-object`.
 
     .. NOTE::
 
@@ -860,7 +851,8 @@ Glossary
     families who interact with archival materials as e.g. :term:`creators
     <creator>`, custodians and publishers. Names can be applied as
     :term:`access points <access point>` to :term:`archival descriptions
-    <archival description>`. See :doc:`Terms <../add-edit-content/terms>`.
+    <archival description>`. See :ref:`terms`; see also
+    :ref:`authority-records` and :ref:`term-name-vs-subject`.
 
   Network
     A network is an aggregation of institutions using one instance of AtoM
@@ -881,9 +873,10 @@ Glossary
     secure means of logging into the AtoM application. Passwords are
     required by every user of the system who needs to be able to add,
     edit, delete, or translate content. The initial passwords are set by
-    the system :term:`administrator` (see :doc:`Manage user accounts
-    <../administer/manage-user-accounts>`) and can subsequently be changed
-    by the user (see :ref:`Change password <change-password>`).
+    the system :term:`administrator` (see :ref:`manage-user-accounts`) and
+    can subsequently be changed by the user (see :ref:`change-password`).
+    System administrators can also change user passwords via the command-line
+    - see: :ref:`cli-change-password`.
 
   Permissions tab
     In AtoM, permissions tabs can be viewed by navigating through :term:`user
@@ -911,7 +904,7 @@ Glossary
     :term:`taxonomy` and used as an :term:`access point` in
     :term:`archival descriptions <archival description>`, :term:`authority
     records <authority record>`, and :term:`archival institutions
-    <archival institution>`.
+    <archival institution>`. See: :ref:`terms` and :ref:`add-term-fly`.
 
   Print icon
     An icon of a printer is located in the :term:`title bar` of the View
@@ -926,14 +919,13 @@ Glossary
     or not the associated description is visible to unauthenticated (i.e., not
     logged in) users, such as :term:`researchers <researcher>`. It can be
     changed in the :term:`administration area` of a description's :term:`edit
-    page` by a user with edit permissions. See :ref:`Publish an archival
-    description <publish-archival-description>`
+    page` by a user with edit permissions. See: :ref:`publish-archival-description`.
 
   Published record
     A published record is an :term:`archival description` that has had its
     status changed from draft to published in the :term:`Administration
     area <administration area>` at the bottom of the :term:`archival
-    description` :term:`edit page`.
+    description` :term:`edit page`. See: :ref:`publish-archival-description`.
 
     .. NOTE::
 
@@ -942,8 +934,7 @@ Glossary
        from draft to published, all :term:`child records <child record>`
        within the fonds are automatically changed as well. Once archival
        descriptions have been published, users who are not logged in can
-       view them. See :ref:`Publish an archival description
-       <publish-archival-description>`
+       view them. See :ref:`publish-archival-description`.
 
   Quick links menu
     The quick links menu, located in the :term:`header bar` in the top-right
@@ -976,7 +967,7 @@ Glossary
 
     In AtoM, an :term:`archival description` is used to provide contextual
     information about and intellectual control over archival materials,
-    which include records.
+    which include records. See: :ref:`archival-descriptions`.
 
   Reference display copy
     A reference display copy is a low-resolution version of a
@@ -985,8 +976,7 @@ Glossary
     :term:`view page` when the user clicks on a :term:`thumbnail`, on
     :term:`archival descriptions <archival description>` that have linked
     digital objects, and in the digital object area of :term:`edit pages
-    <edit page>`. See See :doc:`Upload digital objects
-    <../import-export/upload-digital-object>`.
+    <edit page>`. See See :ref:`upload-digital-object`.
 
   Report icon
     In AtoM a report icon can be found in the right hand :term:`context
@@ -1013,7 +1003,8 @@ Glossary
 
   Researcher
     A researcher is a type of user who is limited to searching and
-    browsing descriptions. See :ref:`User roles <user-roles>`.
+    browsing descriptions. See :ref:`User roles <user-roles>` and
+    :ref:`researcher-default`.
 
   Rights record
     In AtoM, Rights records can be linked to :term:`accession records
@@ -1022,7 +1013,7 @@ Glossary
     Rights metadata elements use `PREMIS rights elements
     <http://www.loc.gov/standards/premis/>`_. In AtoM restrictions can be
     based on Copyright(s), License, Statute(s) and Policy. For a full
-    explanation see :doc:`Rights <../add-edit-content/rights>`.
+    explanation see :ref:`rights`.
 
   Search box
     The search box is used to find descriptions in AtoM that contain text
@@ -1034,8 +1025,7 @@ Glossary
     Settings is a broad term used to describe the properties that affect
     the way a program looks and functions. In AtoM, certain settings can
     be changed by an :term:`administrator` in order to customize AtoM to
-    institution-specific requirements. See :doc:`Settings
-    <../administer/settings>`.
+    institution-specific requirements. See :ref:`settings`.
 
   Site description
     The site description is a brief description of the site's purpose or
@@ -1046,7 +1036,8 @@ Glossary
     page directly under the :term:`header bar`. It is a configurable
     element - the text can be changed or removed. See
     :ref:`Site information <site-information>` and :ref:`Default page
-    elements <default-page-elements>`. See also :ref:`recurring-page-elements`
+    elements <default-page-elements>`. See also :ref:`atom-header-bar` and
+    :ref:`recurring-page-elements`.
 
   Site logo
     The site logo is the graphic that appears at the top of all pages in
@@ -1055,15 +1046,16 @@ Glossary
     a default logo that can be replaced by
     :term:`administrators <administrator>` to theme the application to
     their own institution or :term:`network` if desired. See :ref:`Site logo
-    <site-logo>`.
+    <site-logo>`; see also: :ref:`atom-header-bar`. An :term:`administrator`
+    can also control via the :ref:`settings` whether or not the logo is
+    displayed in the AtoM :term:`header bar` - see: :ref:`default-page-elements`.
 
   Site title
     The site title is a configurable element in AtoM that can be managed
     by an :term:`administrator` through the application :term:`settings
-    <setting>`. In AtoM 2.0, the site title does not appear in the
-    application itself, but will be present in the title bar of a user's
-    web browser when accessing AtoM. See :ref:`Site information
-    <site-information>`; see also: :ref:`navigate`
+    <setting>`. In AtoM 2.0, the site title will appear in the AtoM
+    :term:`header bar`. See :ref:`site-information`; see also:
+    :ref:`default-page-elements` and :ref:`atom-header-bar`.
 
   SKOS
     Simple Knowledge Organization System (SKOS) is a data standard model
@@ -1074,15 +1066,20 @@ Glossary
     types of controlled vocabulary." (`W3C SKOS Primer, 18 August 2009
     <http://www.w3.org/TR/2009/NOTE-skos-primer-20090818/>`_). It is used
     in AtoM to import and export hierarchical :term:`taxonomies
-    <taxonomy>`. See: :ref:`Export descriptions and terms
-    <export-descriptions-terms>`.
+    <taxonomy>`. See: :ref:`export-descriptions-terms`. See also:
+    :ref:`terms` and :ref:`import-skos`.
 
   Slug
     A slug is a word or sequence of words which make up a part of a URL that
     identifies a page in AtoM. It is the part of the URL located at the end of
     the URL and often is indicative of the name or title of the page (e.g.: in
-    *www.yourwebpage.com/About*, the slug is */About*). They are meant to be
+    *www.yourwebpage.com/about*, the slug is *about*). They are meant to be
     used with permalinks as they help describe the content of the URL. In AtoM,
+    all pages based on user data (such as :term:`archival descriptions
+    <archival description>`, :term:`archival institutions <archival
+    institution>`, :term:`authority records <authority record>`, :term:`terms
+    <term>`, etc.) are automatically assigned a slug based on the title
+    (or authorized form of name) of the resource. As well,
     :term:`static pages <static page>`, or permanent links, include a slug
     :term:`field` option, but only slugs for new static pages can be edited by
     users; the slugs for the default :term:`Home page` and :term:`About
@@ -1132,22 +1129,20 @@ Glossary
     A taxonomy is a grouping of :term:`controlled-vocabulary <controlled
     vocabulary>` :term:`terms <term>` used to generate :term:`value lists
     <value list>` and :term:`access points <access point>`. See
-    :doc:`Terms <../add-edit-content/terms>`.
+    :ref:`terms`.
 
   Term
     Terms are the values that make up :term:`controlled vocabularies
     <controlled vocabulary>`. In AtoM, terms are grouped into
     :term:`taxonomies <taxonomy>` that can be added, edited, and deleted
-    through the "Term" item of the add menu. See
-    :doc:`Terms <../add-edit-content/terms>`.
+    through the "Term" item of the add menu. See :ref:`terms`.
 
   Thumbnail
     A thumbnail is a small, low-resolution version of a :term:`master
     digital object` generated automatically by AtoM on upload. Thumbnails
     are displayed in search and browse results and in :term:`carousel`
     views at higher :term:`levels of description <level of description>`.
-    See :doc:`Upload digital objects <../import-export/upload-digital-object>`
-    and :ref:`File formats <file-formats>`.
+    See :ref:`upload-digital-object` and :ref:`File formats <file-formats>`.
 
   Title bar
     The :term:`title bar` is a contextual element that appears throughout AtoM
@@ -1189,13 +1184,12 @@ Glossary
   Translation panel
     The translation panel is used by :term:`translators <translator>` to edit
     :term:`user interface` elements and is accessed via the
-    :term:`translation bar`. See :ref:`Translate interface
-    <translate-interface>`.
+    :term:`translation bar`. See :ref:`translate-interface`.
 
   Translator
     A translator is a type of user who can translate :term:`data elements
-    <data element>` and :term:`user interface` elements. See :ref:`User roles
-    <user-roles>`
+    <data element>` and :term:`user interface` elements. See :ref:`user-roles`;
+    see also: :ref:`translator-default` and :ref:`translate`.
 
   Treeview
     The treeview is a contextual and navigation element located in the
@@ -1220,8 +1214,7 @@ Glossary
     :term:`archival description`, :term:`authority record`, :term:`archival
     institution`, :term:`subject`, and :term:`place`. It appears as a
     :term:`drop-down <drop-down menu>` below the :term:`search box` as a user
-    enters text. See: :doc:`Search <../access-content/search-atom>` and
-    :ref:`The search box <search-box>`.
+    enters text. See: :ref:`search-atom` and :ref:`search-box`.
 
   User account
     User accounts are established in order to manage :term:`access
@@ -1252,11 +1245,10 @@ Glossary
   User profile
     A user profile is information about a user managed in a :term:`user
     account`. User profiles are created and maintained by
-    :term:`administrators  <administrator>` (see :doc:`Manage user accounts
-    <../administer/manage-user-accounts>`), although authenticated (i.e.,
-    logged in) users can view their own profiles (and change their
-    :term:`passwords <password>`) by going through the :term:`header bar`
-    (see: :ref:`Change password <change-password>`). See:
+    :term:`administrators  <administrator>` (see :ref:`manage-user-accounts`),
+    although authenticated (i.e., logged in) users can view their own profiles
+    (and change their :term:`passwords <password>`) by going through the
+    :term:`header bar` (see: :ref:`Change password <change-password>`). See:
     :ref:`manage-user-accounts`.
 
   User role
