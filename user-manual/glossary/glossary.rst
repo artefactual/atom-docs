@@ -1070,11 +1070,11 @@ Glossary
     :ref:`terms` and :ref:`import-skos`.
 
   Slug
-    A slug is a word or sequence of words which make up a part of a URL that
-    identifies a page in AtoM. It is the part of the URL located at the end of
-    the URL and often is indicative of the name or title of the page (e.g.: in
-    *www.yourwebpage.com/about*, the slug is *about*). They are meant to be
-    used with permalinks as they help describe the content of the URL. In AtoM,
+    A :term:`slug` is a word or sequence of words which make up the last part
+    of a URL in AtoM. It is the part of the URL that uniquely identifies the
+    resource and often is indicative of the name or title of the page (e.g.: in
+    *www.yourwebpage.com/about*, the slug is *about*). The slug is meant to
+    provide a unique, human-readable, permanent link to a resource. In AtoM,
     all pages based on user data (such as :term:`archival descriptions
     <archival description>`, :term:`archival institutions <archival
     institution>`, :term:`authority records <authority record>`, :term:`terms

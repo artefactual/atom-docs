@@ -146,6 +146,10 @@ nested set can become corrupted - especially if the server times out during an
 operation that reaches the execution limit settings. The following task will
 rebuild all nested sets in AtoM:
 
+.. code:: bash
+
+   php symfony propel:build-nested-set
+
 .. _cli-generate-slugs:
 
 Generate slugs
@@ -186,11 +190,11 @@ section on :ref:`common-atom-queries` - particularly, :ref:`sql-delete-slugs`.
 Notes on slugs in AtoM
 ----------------------
 
-A :term:`slug` is a word or sequence of words which make up a part of a URL that
-identifies a page in AtoM. It is the part of the URL located at the end of the
-URL and often is indicative of the name or title of the page (e.g.: in
-*www.yourwebpage.com/about*, the slug is *about*). They are meant to be used
-with permalinks as they help describe the content of the URL.
+A :term:`slug` is a word or sequence of words which make up the last part of a
+URL in AtoM. It is the part of the URL that uniquely identifies the resource
+and often is indicative of the name or title of the page (e.g.: in
+*www.yourwebpage.com/about*, the slug is *about*). The slug is meant to
+provide a unique, human-readable, permanent link to a resource.
 
 In AtoM, all pages based on user data (such as :term:`archival descriptions
 <archival description>`, :term:`archival institutions <archival institution>`,
@@ -207,14 +211,14 @@ Accession            Identifier (accession number)
 Other entities       Name
 ==================== =============================
 
-Generated slugs will only allow digits, letters, and dashes. English stop-
-words (such as "the," "a," "an," etc) are removed, and any other sequences of
-unaccepted characters (non-latin characters, accented or special characters,
-etc.)  are replaced with dashes. This conforms to general practice around slug
-creation - for example, it is "common practice to make the slug all lowercase,
-accented characters are usually replaced by letters from  the English
-alphabet, punctuation marks are generally removed, and long page  titles
-should also be truncated to keep the final URL to a reasonable length"
+Generated slugs will only allow digits, letters, and dashes. English articles
+(such as "the," "a," "an," etc) are removed, and any other sequences of
+unaccepted characters (e.g. accented or special characters, etc.) are replaced
+with dashes. This conforms to general practice around slug creation - for example,
+it is "common practice to make the slug all lowercase, accented characters are
+usually replaced by letters from the English alphabet, punctuation marks are
+generally removed, and long page titles should also be truncated to keep the
+final URL to a reasonable length"
 (`Wikipedia <http://en.wikipedia.org/wiki/Clean_URL#Slug>`__). In AtoM, slugs
 are truncated to a maximum of 250 characters.
 
@@ -239,11 +243,10 @@ will automatically generate a slug that is based on the "Title" you have
 indicated for the new static page. For more information on static pages in
 AtoM, see: :ref:`manage-static-pages`.
 
+.. TIP::
 
-.. code:: bash
-
-   php symfony propel:build-nested-set
-
+   For developers interested in seeing the code where slugs are handled in
+   AtoM, see ``/lib/model/QubitSlug.php``
 
 .. _cli-normalize-taxonomy:
 
