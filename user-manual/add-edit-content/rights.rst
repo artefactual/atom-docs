@@ -292,4 +292,55 @@ Add rights to a Digital object
     and you can  see that a Digital object (Reference) rights area has been
     added below the Digital object metadata section.
 
+    Manage Rights holders record
+    ============================
+
+1. Users with editor and admin access permissions, can navigate to
+  the :term:`main menu` located in the AtoM :term:`header bar` and
+   click on the manage menu, then select Rights holders from the
+   drop-down list. AtoM will take you to a browse page for Rights holders.
+
+.. TIP::
+
+   For general information on navigation in AtoM, see:
+   :ref:`Access content <access-content>`. For general information on browse
+   menus in AtoM, see: :ref:`browse`.
+
+2. When you have arrived at the Rights holders records browse page, on the
+   left -side of the screen AtoM provides a dedicated search bar for searching
+   existing rights holders in the system. The list of rights holders can be
+   browsed by "most recent" or "alphabetic".
+
+3. If you click on the hyper-link name of a rights holder, AtoM takes you to
+   the View rights holder page.
+
+4. The View rights holder page lets the authorized user edit and delete the
+   existing rights holder record, or add a new rights holder.
+
+5. If you click on the edit button, AtoM takes you to the Edit rights holder
+   template. There are two areas: the Identity area and the Contact area. In
+   the Identity area there is one data entry field, authorized form of name.
+   In the Contact area there is add new button, which allows you to add a new contact person. If you click on the add new button, AtoM opens a contact information dialogue with three tabs, Main, Physical location and Other details. Add as much information into the Related contact information dialgue and click on the Submit button.
+
+6. Remember to click on the Save button at the bottom of the rights holder
+   page to save all the new information you have added to the rights holder
+   record.
+
+7. If you click on the :term:`Delete button` located at the bottom of the
+   record. AtoM will ask you to confirm that you want to delete the Rights
+   holder record. Click the "Delete" button to delete, or the "Cancel" button to return to Rights holder record :term:`view page`. If you click "Delete," the Rights holder record will be permanently deleted.
+
+
+click on
+   the
+   :term:`Delete button` located in the :term:`button block` located at the
+   bottom of the record.
+3. AtoM will ask you to conform that you want to delete the Donor record.
+   Click the "Delete" button to delete, or the "Cancel" button to return to
+   the Donor record :term:`view page`. If you click "Delete," the Donor
+   record will be permanently deleted.
+
+
+
+
 :ref:`Back to top <rights>`

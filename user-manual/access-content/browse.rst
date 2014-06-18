@@ -291,5 +291,25 @@ when the donor record was updated.
 When an donor record is clicked, the full record is displayed, including any
 related :term:`accessions <accession record>` and resources.
 
+Browse Rights holders
+-------------
+
+Click on Manage, then on Rights holders.
+
+.. image:: images/browse-rightsholders-all.*
+   :align: center
+   :width: 80%
+   :alt: Browsing all rights holders records.
+
+AtoM will display a list of all rights holders by name as well as
+when the rights holders record was updated.
+
+.. TIP::
+
+   From this screen, users can also search rights holders by name in
+   the search box at the top of the results list. For more information on
+   rights holders record functionality, see :ref:`Rights <rights>`.
+
+When a rights holders record is clicked, the full record is displayed.
 
 :ref:`Back to top <browse>`
