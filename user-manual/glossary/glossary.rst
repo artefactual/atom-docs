@@ -337,9 +337,8 @@ Glossary
     description` only. Lower levels inherit the creator from the
     :term:`parent record`, unless a different creator is specified. AtoM
     can accommodate multiple creators at all levels of description.
-    Information about the creator is entered into the ref:`Context
-    area <context-area>` in the archival description :term:`edit page <edit
-    page>`.
+    Information about the creator is entered into the context area in the archival description :term:`edit page <edit
+    page>` (ISAD-G template).
 
   CSV
     Most often understood as an acronym for "comma-separated values" (though
@@ -583,8 +582,7 @@ Glossary
     and may establish a relationship between the actor and other actors or
     :term:`entities <entity>`. This is accomplished through the use of
     start and end dates in the context area of the :term:`archival
-    description`, which links the :term:`creator` or other actor to the
-    records for the period of time delimited by the dates. See
+    description` (ISAD-G template), which links the :term:`creator` or other actor to the records for the period of time delimited by the dates. See
     :ref:`entity-types` and :ref:`context-menu`.
 
   Facet filter
