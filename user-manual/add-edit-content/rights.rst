@@ -292,8 +292,8 @@ Add rights to a Digital object
     and you can  see that a Digital object (Reference) rights area has been
     added below the Digital object metadata section.
 
-    Manage Rights holders record
-    ============================
+Manage Rights holders records
+-----------------------------
 
 1. Users with editor and admin access permissions, can navigate to
   the :term:`main menu` located in the AtoM :term:`header bar` and
@@ -329,18 +329,5 @@ Add rights to a Digital object
 7. If you click on the :term:`Delete button` located at the bottom of the
    record. AtoM will ask you to confirm that you want to delete the Rights
    holder record. Click the "Delete" button to delete, or the "Cancel" button to return to Rights holder record :term:`view page`. If you click "Delete," the Rights holder record will be permanently deleted.
-
-
-click on
-   the
-   :term:`Delete button` located in the :term:`button block` located at the
-   bottom of the record.
-3. AtoM will ask you to conform that you want to delete the Donor record.
-   Click the "Delete" button to delete, or the "Cancel" button to return to
-   the Donor record :term:`view page`. If you click "Delete," the Donor
-   record will be permanently deleted.
-
-
-
 
 :ref:`Back to top <rights>`
