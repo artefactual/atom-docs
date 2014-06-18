@@ -907,9 +907,8 @@ Glossary
   Print icon
     An icon of a printer is located in the :term:`title bar` of the View
     Physical storage and Search/Advanced Search results screen. Clicking
-    the icon will allow the user to print out a report - the page display
-    will be rendered in a simple black and white for easier printing. See
-    :ref:`Reports/printing <reports-printing>`.
+    the icon will take the user to a print preview page (simple black and
+    white). Go to the browser tabs and select file, from the drop-down list select print. See :ref:`Reports/printing <reports-printing>`.
 
   Publication status
     The publication status of a record, which can be set to either :term:`draft
@@ -983,7 +982,10 @@ Glossary
     of printing 3 different reports: File list, Item list, :term:`Physical
     storage <physical storage>` locations, or a set of Box labels,
     formatted as a `CSV <https://en.wikipedia.org/wiki/Comma-
-    separated_values>`_. See :ref:`Reports/printing <reports-printing>`.
+    separated_values>`_. See :ref:`Reports/printing <reports-printing>`. Once
+    the user has finalized their report selection and is ready to print,
+    go to the browser tabs and select file, from the drop-down list select
+    print.
 
   Repository
     The Society of American Archivists `Glossary
