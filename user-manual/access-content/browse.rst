@@ -4,6 +4,37 @@
 Browse
 ======
 
+.. |edit| image:: images/edit-sign.png
+   :height: 18
+   :width: 18
+
+.. |desc| image:: images/descriptions-icon.png
+   :height: 24
+   :width: 24
+
+.. |authicon| image:: images/authority-icon.png
+   :height: 24
+   :width: 24
+
+.. |repoicon| image:: images/repo-icon.png
+   :height: 24
+
+.. |placeicon| image:: images/subjects-icon.png
+   :height: 24
+   :width: 24
+
+.. |subjecticon| image:: images/places-icon.png
+   :height: 24
+   :width: 24
+
+.. |functicon| image:: images/functions-icon.png
+   :height: 24
+   :width: 24
+
+.. |digicon| image:: images/digi-object-icon.png
+   :height: 24
+   :width: 24
+
 The Browse menus in AtoM allow users to browse complete lists of
 :term:`archival descriptions <archival description>`, as well as digital objects,
 :term:`authority records <authority record>` (for people and organizations),
@@ -30,8 +61,8 @@ The browse options listed below are in their default order, however,
 adminstrative users can change the order, or remove browse options, through
 the Admin-Menus menu (see: :ref:`Manage menus <manage-menus>`).
 
-Browse archival descriptions
-----------------------------
+|desc| Browse archival descriptions
+-----------------------------------
 
 Click the Browse menu, then click on Archival descriptions.
 
@@ -79,8 +110,8 @@ descriptions, a pager will be provided at the bottom of the results.
    results returned per page in **Admin > Settings > Global**. For more
    information, see: :ref:`results-page`.
 
-Browse people, families and organizations
------------------------------------------
+|authicon| Browse people, families and organizations
+----------------------------------------------------
 
 In AtoM, people, families and organizations (also referred to as
 :term:`corporate bodies <corporate body>`) are :term:`entities <entity>` which
@@ -99,8 +130,13 @@ Users can narrow the results list using the available
 which for :term:`authority records <authority record>` includes language and
 entity type (Person, Family or Corporate body).
 
-Browse archival institutions
-----------------------------
+The authority record browse page also includes a dedicated search box - for
+more information on searching for authority records in AtoM, see:
+:ref:`Authority record search <dedicated-search-authority>`. For general
+information on working with authority records, see: :ref:`authority-records`.
+
+|repoicon| Browse archival institutions
+---------------------------------------
 
 In :term:`multi-repository installations <multi-repository system>` users can
 browse a list of archival institutions represented in the database.
@@ -118,15 +154,21 @@ the logo will be displayed in the browse display (see:
 If not, text will be displayed instead.
 
 The automatic sort is alphabetic which can be changed by the user to Most
-recent. Users can narrow the results list using the available
+recent via the :ref:`recurring-sort-button` at the top right of the page.
+Users can narrow the results list using the available
 :term:`facet filters <facet filter>` on the left-hand side of the screen.
 For more information on using the facet filters in AtoM, see:
 :ref:`recurring-facet-filters`; especially
 :ref:`Using facet filters in AtoM <using-facet-filters>`.
 
+The archival institution browse page also includes a
+:term:`dedicated search box`. For more information on searching for archival
+institutions in AtoM, see: :ref:`Archival institution search
+<dedicated-search-institutions>`. For general information on working with
+:term:`archival institution` records, see: :ref:`archival-institutions`.
 
-Browse subjects
----------------
+|subjecticon| Browse subjects
+-----------------------------
 
 Click the Browse menu, then click Subjects.
 
@@ -153,8 +195,8 @@ subject term applied.
    between subjects.
 
 
-Browse places
--------------
+|placeicon| Browse places
+-------------------------
 
 Click the Browse menu, then click Places.
 
@@ -180,8 +222,8 @@ place term applied.
    places in the left-hand side of the screen to allow for easy navigation
    between places.
 
-Browse digital objects
-----------------------
+|digicon| Browse digital objects
+--------------------------------
 
 Click the Browse menu, then click Digital Objects.
 
@@ -215,8 +257,8 @@ buttons at the top of the search results.
    :align: right
    :alt: Facet filter buttons when viewing digital objects browse results.
 
-Browse functions
-----------------
+|functicon| Browse functions
+----------------------------
 
 Click the Browse menu, then click Functions.
 
@@ -242,6 +284,11 @@ including related functions and related resources.
    :width: 80%
    :alt: Viewing a function record.
 
+The functions browse page also includes a :term:`dedicated search box` to help
+you locate records. For more information on its use, see:
+:ref:`dedicated-search-functions`.
+
+
 Browsing for authenticated users
 ================================
 
@@ -251,7 +298,7 @@ accession records.
 Browse accession records
 ------------------------
 
-Click on Manage, then on Accessions.
+Click on the |edit| :ref:`Manage <main-menu-manage>` menu, then on Accessions.
 
 .. image:: images/browse-accessions-all.*
    :align: center
@@ -265,14 +312,16 @@ when the :term:`accession record` was updated.
 
    From this screen, users can also search accession records by name in
    the search box at the top of the results list. For more information on
-   accession functionality, see :ref:`Accessions <accessions>`.
+   accession functionality, see :ref:`Accessions <accession-records>`. For
+   information on using the Accessions search box, see:
+   :ref:`dedicated-search-accessions`
 
 When an accession record is clicked, the full record is displayed.
 
 Browse donors
 -------------
 
-Click on Manage, then on Donors.
+Click on the |edit| :ref:`Manage <main-menu-manage>` menu, then on Donors.
 
 .. image:: images/browse-donors-all.*
    :align: center
@@ -286,15 +335,17 @@ when the donor record was updated.
 
    From this screen, users can also search donors by name in
    the search box at the top of the results list. For more information on
-   donor record functionality, see :ref:`Donors <donors>`.
+   donor record functionality, see :ref:`Donors <donors>`. For information on
+   searching for Donor records in AtoM, see:
+   :ref:`Donor search <dedicated-search-donors>`.
 
 When an donor record is clicked, the full record is displayed, including any
 related :term:`accessions <accession record>` and resources.
 
 Browse Rights holders
--------------
+---------------------
 
-Click on Manage, then on Rights holders.
+Click on the |edit| :ref:`Manage <main-menu-manage>` menu, then on Rights holders.
 
 .. image:: images/browse-rightsholders-all.*
    :align: center
@@ -308,7 +359,9 @@ when the rights holders record was updated.
 
    From this screen, users can also search rights holders by name in
    the search box at the top of the results list. For more information on
-   rights holders record functionality, see :ref:`Rights <rights>`.
+   rights holders record functionality, see :ref:`Rights <rights>`. For more
+   information on using the rights holder search box, see:
+   :ref:`Rights holder search <dedicated-search-rights>`.
 
 When a rights holders record is clicked, the full record is displayed.
 
