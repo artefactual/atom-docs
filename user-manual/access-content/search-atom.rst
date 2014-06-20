@@ -1058,7 +1058,7 @@ see: :ref:`rights`.
    place your cursor in the the :term:`dedicated search box` at the top of the
    Rights holder browse page.
 
-.. image:: images/browse-rightsholders.*
+.. image:: images/browse-rightsholders-all.*
    :align: center
    :width: 70%
    :alt: An image of the Rights holders browse page
