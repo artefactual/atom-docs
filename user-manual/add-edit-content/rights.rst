@@ -4,6 +4,14 @@
 Rights
 ======
 
+.. |edit| image:: images/edit-sign.png
+   :height: 18
+   :width: 18
+
+.. |plus| image:: images/plus-sign.png
+   :height: 18
+   :width: 18
+
 As discussed in the section on :ref:`entity types <entity-types>`,
 :term:`Rights records <rights record>` provide rights related restrictions
 that can be linked to :term:`accession records <accession record>`,
@@ -50,10 +58,6 @@ Add rights to an Accession record
    :alt: Rights record dialogue box in edit accession record page
 
    Rights record dialogue box in edit accession record page.
-
-.. |plus| image:: images/plus-sign.png
-   :height: 18
-   :width: 18
 
 **IF YOU ARE ADDING RIGHTS TO A NEW ACCESSION RECORD**
 
@@ -221,13 +225,12 @@ Add rights to an Archival description
 
 
   .. figure:: images/recordrights.*
-   :align: right
-   :figwidth: 40%
-   :width: 100%
-   :alt: View rights added to archival description
+     :align: right
+     :figwidth: 40%
+     :width: 100%
+     :alt: View rights added to archival description
 
-   View rights added to archival description.
-
+     View rights added to archival description.
 
 12. In the example provided on the right, you are viewing the completed
     archival description and can see that a rights record (copyright) has
@@ -255,13 +258,12 @@ Add rights to a Digital object
    "Add new" button and the :term:`rights record` dialogue box will pop up.
 
   .. figure:: images/digitalobject-rights.*
-   :align: right
-   :figwidth: 40%
-   :width: 100%
-   :alt: View rights record dialogue box in Edit digital object page
+     :align: right
+     :figwidth: 40%
+     :width: 100%
+     :alt: View rights record dialogue box in Edit digital object page
 
-   View rights record dialogue box in Edit digital object page.
-
+     View rights record dialogue box in Edit digital object page.
 
 4. In the example provided on the right, you are viewing the rights dialogue
    for the :term:`reference representation <reference display copy>` of a
@@ -295,10 +297,11 @@ Add rights to a Digital object
 Manage Rights holders records
 -----------------------------
 
-1. Users with editor and admin access permissions, can navigate to
-  the :term:`main menu` located in the AtoM :term:`header bar` and
-   click on the manage menu, then select Rights holders from the
-   drop-down list. AtoM will take you to a browse page for Rights holders.
+1. Users with :term:`editor` and :term:`administrator` access permissions can
+   navigate to the :term:`main menu` located in the AtoM :term:`header bar` and
+   click on the |edit| :ref:`Manage <main-menu-manage>` menu, then select
+   Rights holders from the drop-down list. AtoM will take you to a browse page
+   for Rights holders.
 
 .. TIP::
 
@@ -306,10 +309,16 @@ Manage Rights holders records
    :ref:`Access content <access-content>`. For general information on browse
    menus in AtoM, see: :ref:`browse`.
 
+   An :term:`administrator` can also customize the elements that appear in
+   the :ref:`main-menu` via **Admin > Menus**. For more information, see:
+   :ref:`manage-menus`.
+
 2. When you have arrived at the Rights holders records browse page, on the
-   left -side of the screen AtoM provides a dedicated search bar for searching
-   existing rights holders in the system. The list of rights holders can be
-   browsed by "most recent" or "alphabetic".
+   left -side of the screen AtoM provides a dedicated search box for searching
+   existing rights holders in the system. For more information on using the
+   Rights holders dedicated search box, see: :ref:`dedicated-search-rights`.
+   The list of rights holders can be browsed by "most recent" or "alphabetic"
+   via the :ref:`recurring-sort-button` on the page.
 
 3. If you click on the hyper-link name of a rights holder, AtoM takes you to
    the View rights holder page.
@@ -320,7 +329,11 @@ Manage Rights holders records
 5. If you click on the edit button, AtoM takes you to the Edit rights holder
    template. There are two areas: the Identity area and the Contact area. In
    the Identity area there is one data entry field, authorized form of name.
-   In the Contact area there is add new button, which allows you to add a new contact person. If you click on the add new button, AtoM opens a contact information dialogue with three tabs, Main, Physical location and Other details. Add as much information into the Related contact information dialgue and click on the Submit button.
+   In the Contact area there is add new button, which allows you to add a new
+   contact person. If you click on the add new button, AtoM opens a contact
+   information dialogue with three tabs, Main, Physical location and Other
+   details. Add as much information into the Related contact information
+   dialogue and click on the Submit button.
 
 6. Remember to click on the Save button at the bottom of the rights holder
    page to save all the new information you have added to the rights holder
@@ -328,6 +341,8 @@ Manage Rights holders records
 
 7. If you click on the :term:`Delete button` located at the bottom of the
    record. AtoM will ask you to confirm that you want to delete the Rights
-   holder record. Click the "Delete" button to delete, or the "Cancel" button to return to Rights holder record :term:`view page`. If you click "Delete," the Rights holder record will be permanently deleted.
+   holder record. Click the "Delete" button to delete, or the "Cancel" button
+   to return to Rights holder record :term:`view page`. If you click
+   "Delete," the Rights holder record will be permanently deleted.
 
 :ref:`Back to top <rights>`
