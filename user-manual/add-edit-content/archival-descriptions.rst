@@ -4,10 +4,13 @@
 Archival Descriptions
 =====================
 
-Archival descriptions are one of the core :doc:`entity types
-<../overview/entity-types>` in AtoM and provide users with invaluable
-contextual infomation about the resources held by an :term:`archival
-institution`.
+.. |plus| image:: images/plus-sign.png
+   :height: 18
+   :width: 18
+
+Archival descriptions are one of the core :ref:`entity-types` in AtoM and
+provide users with invaluable contextual infomation about the resources held
+by an :term:`archival institution`.
 
 In AtoM, an archival description is a body of information about an archival
 record or records. The descriptions provide contextual information about the
@@ -151,9 +154,16 @@ and types of users in AtoM see: :ref:`User roles <user-roles>`.
 
 **To create a new archival description:**
 
-#. In the :term:`main menu` located in the :term:`header bar`, click the "Add"
-   menu and select "Archival description" from the :term:`drop-down menu`.
-#. AtoM takes you to a blank :term:`edit page` for data entry.
+1. In the :term:`main menu` located in the :term:`header bar`, click the
+   |plus| ":ref:`Add <main-menu-add>`" menu and select "Archival description"
+   from the :term:`drop-down menu`.
+
+.. image:: images/add-description.*
+   :align: center
+   :width: 30%
+   :alt: An image of the Add menu in AtoM
+
+2. AtoM takes you to a blank :term:`edit page` for data entry.
 
 .. NOTE::
 
@@ -171,11 +181,23 @@ and types of users in AtoM see: :ref:`User roles <user-roles>`.
    :term:`information areas <information area>` closed; click on an
    :term:`information area` to access the :term:`fields <field>` grouped under
    it. Enter data as required.
+
+.. image:: images/description-collapsed.*
+   :align: center
+   :width: 85%
+   :alt: An archival description with all information areas closed
+
 4. Note that new lower :term:`levels of description <level of description>`
    (i.e. :term:`children <child record>`) can be created on the fly without
    leaving the top-level or :term:`parent <parent record>` description you are
    currently creating. For more information, see below, :ref:`Add a new child
    description <method-1-child-description>`.
+
+.. image:: images/description-add-children.*
+   :align: center
+   :width: 85%
+   :alt: An image of the add new children feature in an edit template
+
 5. You can quit the create process at any time by clicking the "Cancel" button
    in the :term:`button block`; any data already entered will not be saved,
    and no new record will be created. Note that simply navigating away from
@@ -183,6 +205,11 @@ and types of users in AtoM see: :ref:`User roles <user-roles>`.
    result in no new record being created.
 6. To save the new record, click the :term:`"Create" button <create button>`
    located in the :term:`button block` at the bottom of the record.
+
+.. image:: images/button-block-create.*
+   :align: center
+   :width: 85%
+   :alt: An image of the create button on a new archival description
 
 .. NOTE::
 
@@ -251,6 +278,11 @@ description (such as a :term:`fonds` or :term:`collection`), which can
 improve supplement an archival :term:`arrangement` workflow - the :term:`child
 <child record>` descriptions can then be supplemented later.
 
+.. image:: images/description-add-children.*
+   :align: center
+   :width: 85%
+   :alt: An image of the add new children feature in an edit template
+
 :term:`Fields <field>` provided for creating lower levels of description "on
 the fly" via the :term:`parent description's <parent record>` :term:`edit page`
 include:
@@ -278,22 +310,35 @@ privileges <edit-user-permissions>`) by navigating to the description to which
 you would like to add a child (the :term:`parent description <parent record>`).
 
 First, navigate to the :term:`parent archival description <parent record>` to
-which you wish to add a child description. You can do this by :doc:`browsing
-<../access-content/browse>` or :doc:`searching <../access-content/search-atom>`
-for the :term:`archival description` - see
-:ref:`Access content <access-content>` for more information on navigation in
-AtoM.
+which you wish to add a child description. You can do this by
+:ref:`browsing <browse>` or :ref:`searching <search-atom>` for the
+:term:`archival description` - see :ref:`Access content <access-content>`
+for more information on navigation in AtoM.
 
 .. NOTE::
 
    You must be logged in to be able to create a new :term:`archival
    description` in AtoM. See: :ref:`Log in <log-in>`.
 
-#. In the :term:`view page` of the parent :term:`archival description`, scoll
+1. In the :term:`view page` of the parent :term:`archival description`, scoll
    to the bottom of the record to the :term:`button block` and click the "Add
    new" button.
-#. You will be redirected to a new :term:`archival description` :term:`edit
-   page`.
+
+.. image:: images/button-block-description.*
+   :align: center
+   :width: 85%
+   :alt: An image of the button block on an archival description view page
+
+2. You will be redirected to a new :term:`archival description` :term:`edit page`.
+   On loading, the :term:`edit page` displays the record with all
+   :term:`information areas <information area>` closed; click on an
+   :term:`information area` to access the :term:`fields <field>` grouped under
+   it. Enter data as required.
+
+.. image:: images/description-collapsed.*
+   :align: center
+   :width: 85%
+   :alt: An archival description with all information areas closed
 
 .. IMPORTANT::
 
@@ -309,6 +354,12 @@ AtoM.
 4. Note that you can add further :term:`children <child record>` to this lower
    level of description as you work, via The :ref:`"On the fly"
    <method-1-child-description>` method described above.
+
+.. image:: images/description-add-children.*
+   :align: center
+   :width: 85%
+   :alt: An image of the add new children feature in an edit template
+
 5. You can quit the create process at any time by clicking the "Cancel" button
    in the :term:`button block`; any data already entered will not be saved,
    and no new child record will be created. Note that simply navigating away
@@ -317,12 +368,16 @@ AtoM.
 6. To save the new child record, click the :term:`"Create" button <create
    button>` located in the :term:`button block` at the bottom of the record.
 
+.. image:: images/button-block-create.*
+   :align: center
+   :width: 85%
+   :alt: An image of the create button on a new archival description
+
 After clicking "Save" you will be redirected to the :term:`view page` for the
 new child description. You can see the relationship to the parent record
-expressed in the :term:`context menu`.
-
-
-
+expressed in the :term:`context menu`. For more information on the Context
+menu and the treeview in AtoM, see: :ref:`context-menu`, and specifically,
+:ref:`context-menu-treeview`. See also: :ref:`treeview-search`.
 
 :ref:`Back to top <archival-descriptions>`
 
@@ -339,9 +394,8 @@ on logging in, see: :ref:`Log in <log-in>`.
 **To edit an existing archival description:**
 
 1. First, navigate to the :term:`archival description` you wish to edit. You
-   can do this by :doc:`browsing <../access-content/browse>` or
-   :doc:`searching <../access-content/search-atom>` for the :term:`archival
-   description` - see :ref:`Access content <access-content>` for more
+   can do this by :ref:`browsing <browse>` or :ref:`searching <search-atom>`
+   for the :term:`archival description` - see :ref:`access-content` for more
    information on navigation in AtoM.
 2. Switch from :term:`view mode` to :term:`edit mode` by clicking the
    :term:`"Edit" button <Edit button>` in the :term:`button block`, or by
@@ -349,7 +403,15 @@ on logging in, see: :ref:`Log in <log-in>`.
    to the record's :term:`edit page`.
 3. On loading, the :term:`edit page` displays the record with all
    :term:`information areas <information area>` closed; click on an
-   information area to access the :term:`fields <field>` grouped under it
+   information area to access the :term:`fields <field>` grouped under it. If
+   you've clicked on an an :term:`area header` directly, the edit page will
+   load with that area open.
+
+.. image:: images/description-collapsed.*
+   :align: center
+   :width: 85%
+   :alt: An archival description with all information areas closed
+
 4. Add and/or revise data as required.
 5. You can quit the create process at any time by clicking the "Cancel" button
    in the :term:`button block`; any changes made will not be saved. Note that
@@ -358,6 +420,11 @@ on logging in, see: :ref:`Log in <log-in>`.
    archival description.
 6. To save your edits, click the "Save" button located in the :term:`button
    block` at the bottom of the record.
+
+.. image:: images/button-block-save.*
+   :align: center
+   :width: 85%
+   :alt: An image of the button block
 
 You will be redirected to the :term:`view page` for the edited
 :term:`archival description`, where you can review your work.
@@ -376,8 +443,7 @@ records.
 .. NOTE::
 
    Administrators can change the default publication status, via **Admin >
-   Settings**. For more information, see: :doc:`Settings
-   <../administer/settings>`.
+   Settings**. For more information, see: :ref:`Settings <settings>`.
 
 Publication status is inherited from the highest :term:`level of description`,
 meaning that changes to the publication status of the :term:`parent record`
@@ -405,22 +471,42 @@ unauthenticated users (i.e. those not logged in).
    button in the :term:`button block`, or by clicking on one of the
    :term:`information area` headings; this takes you to the record's
    :term:`edit page`.
+
+.. image:: images/button-block-description.*
+   :align: center
+   :width: 85%
+   :alt: An image of the button block on an archival description view page
+
 3. On loading, the :term:`edit page` displays the record with all
    :term:`information areas <information area>` closed; click on the
    :term:`Administration area` heading to expand it and make changes.
+
+.. image:: images/description-collapsed.*
+   :align: center
+   :width: 85%
+   :alt: An archival description with all information areas closed
+
 4. In the :term:`drop-down menu` underneath the subheading "Publication
-   status", select "published"
+   status", select "published".
+
+.. image:: images/description-admin-area.*
+   :align: center
+   :width: 85%
+   :alt: The Administration area in an archival description
+
 5. Scroll down to the :term:`button block` at the bottom of the :term:`edit
-   page` and click the "Save" button
+   page` and click the "Save" button.
+
+.. image:: images/button-block-save.*
+   :align: center
+   :width: 85%
+   :alt: An image of the button block
 
 The archival description, and any lower :term:`levels of description <level of
 description>` associated with it, will now be published - public users who are
 not logged will now be granted read access to view (but not edit) the
 record(s). The record(s) will also be discoverable to public users via
 :ref:`browse` or :ref:`search-atom`
-
-
-
 
 :ref:`Back to top <archival-descriptions>`
 
@@ -444,16 +530,27 @@ This can allow a user to avoid unnecessarily repeating data entry.
 **To duplicate an existing archival description:**
 
 1. First, navigate to the :term:`archival description` you wish to edit. You
-   can do this by :doc:`browsing <../access-content/browse>` or
-   :doc:`searching <../access-content/search-atom>` for the :term:`archival
-   description` - see :ref:`Access content <access-content>` for more
+   can do this by :ref:`browsing <browse>` or :ref:`searching <search-atom>`
+   for the :term:`archival description` - see :ref:`access-content` for more
    information on navigation in AtoM.
 2. At the bottom of the archival description, click the "Duplicate" button
    located in the :term:`button block`.
+
+.. image:: images/button-block-description.*
+   :align: center
+   :width: 85%
+   :alt: An image of the button block on an archival description view page
+
 3. You will be redirected to a new screen with an :term:`edit page` of an
    :term:`archival description` open.
 4. The new edit page provides a warning at the top to indicate that it is a
    duplicated record.
+
+.. image:: images/description-duplicate-warning.*
+   :align: center
+   :width: 85%
+   :alt: An image of a duplicated archival description
+
 5. On loading, the :term:`edit page` displays the record with all
    :term:`information areas <information area>` closed; click on an
    information area to access the :term:`fields <field>` grouped under it.
@@ -466,6 +563,11 @@ This can allow a user to avoid unnecessarily repeating data entry.
    clicking "Create"** will also result in no new record being created.
 7. To save the duplicate as a new record, click the "Save" button located in
    the :term:`button block` at the bottom of the record.
+
+.. image:: images/button-block-save.*
+   :align: center
+   :width: 85%
+   :alt: An image of the button block
 
 .. IMPORTANT::
 
@@ -487,8 +589,55 @@ This can allow a user to avoid unnecessarily repeating data entry.
 Change the display standard
 ===========================
 
+AtoM's :term:`archival description` edit templates are based on known standards
+used within the cultural heritage community. For more information on
+standards used in AtoM, see: :ref:`descriptive-standards`.
+
 You can change the :term:`display standard` for an individual archival
 description in the adminstration area while editing an archival description.
+This allows you to choose a different description template per archival
+description than the template you have chosen in your AtoM
+:ref:`settings <default-templates>`. This includes at different levels of the
+same :term:`archival unit` - so for example, if you have an image collection,
+you could create a :term:`fonds`-level description using the
+:ref:`ISAD <isad-template>` template, and then display all of the item-level
+image descriptions using the :ref:`Dublin core <dc-template>` template.
+
+You can also choose to have the newly selected display standard be inherited
+by all :term:`child records <child record>` (for example, all the file-level
+children beneath a series) if desired, or you can simply change the current
+description. Instructions are included below.
+
+**To change the display template of a description in AtoM:**
+
+1. First, navigate to the :term:`archival description` you wish to edit. You
+   can do this by :ref:`browsing <browse>` or :ref:`searching <search-atom>`
+   for the :term:`archival description` - see :ref:`access-content` for more
+   information on navigation in AtoM.
+2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
+   button in the :term:`button block`, or by clicking on one of the
+   :term:`information area` headings; this takes you to the record's
+   :term:`edit page`.
+
+.. image:: images/button-block-description.*
+   :align: center
+   :width: 85%
+   :alt: An image of the button block on an archival description view page
+
+3. On loading, the :term:`edit page` displays the record with all
+   :term:`information areas <information area>` closed; click on the
+   :term:`Administration area` heading to expand it and make changes.
+
+.. image:: images/description-collapsed.*
+   :align: center
+   :width: 85%
+   :alt: An archival description with all information areas closed
+
+4. In the :term:`Administration area`, click the :term:`drop-down menu`
+   labelled "Display standard". You will see a list of all display standards
+   for archival descriptions available in AtoM. For more information on standards
+   available in AtoM, see: :ref:`descriptive-standards`. For specific
+   information on each standard, see: :ref:`data-entry`.
 
 .. image:: images/change-display.*
    :align: center
@@ -496,11 +645,25 @@ description in the adminstration area while editing an archival description.
    :alt: Option to change the display standard while editing an archival
          description
 
-This allows you to choose a different description template per archival
-description than the template you have chosen in your AtoM
-:ref:`settings <default-templates>`. You can also click on the box below the
-template drop-down box to have all :term:`child records <child record>` display
-in the chosen standard.
+5. If you are currently using the default display template (see:
+   :ref:`settings <default-templates>`), the field will be blank until you
+   select a different template. Select the display standard you would like to
+   use from the :term:`drop-down menu`.
+6. If you would like all lower levels of description (e.g.
+   :term:`child records <child record>`) to adopt the new display standard as
+   well, click on the check-box below the template drop-down.
+7. You can quit the create process at any time by clicking the "Cancel" button
+   in the :term:`button block`; no new record will be created. Note that
+   simply navigating away from the page by any other means, **without first
+   clicking "Create"** will also result in no new record being created.
+8. To save the record and display it with the new standards template, click
+   the "Save" button located in the :term:`button block` at the bottom of
+   the record.
+
+.. image:: images/button-block-save.*
+   :align: center
+   :width: 85%
+   :alt: An image of the button block
 
 .. _move-archival-description:
 
@@ -539,18 +702,19 @@ the intellectual :term:`arrangement` of an :term:`archival unit`.
    change the "Sort treeview" settings (located in **Admin > Settings >
    Global > Sort treeview**) to "Manual". Otherwise the drag and drop
    capabilities of the :term:`treeview` are disabled. For more information,
-   see :doc:`Settings <../administer/settings>`.
+   see :ref:`Settings <settings>`.
 
 **To change the sort order of sibling descriptions in the treeview:**
 
 1. Navigate to the :term:`child description <child record>` whose sort order
-   you wish to change. You can do this by :doc:`browsing
-   <../access-content/browse>` or :ref:`searching <search-atom>`
-   for the :term:`archival description` - see :ref:`Access content
-   <access-content>` for more information on navigation in AtoM.
+   you wish to change. You can do this by :ref:`browsing <browse>` or
+   :ref:`searching <search-atom>` for the :term:`archival description` - see
+   :ref:`Access content <access-content>` for more information on navigation
+   in AtoM.
 2. In the :term:`treeview` located in the :term:`context menu` on the left-
    hand side of the record's :term:`view page`, the current record being
    displayed in the :term:`view page` will be highlighted by a dark grey bar.
+   For more information on the treeview, see: :ref:`context-menu-treeview`.
 3. In the :term:`treeview`, hover your cursor over the sibling record you wish
    to move - it can be any record on the same :term:`level of description` as
    the one currently being viewed.
@@ -562,7 +726,7 @@ the intellectual :term:`arrangement` of an :term:`archival unit`.
 5. Click on the record in the treeview and hold, and then drag it to the new
    position you would like it to have in the treeview. Remember, you can move
    it to another position within the same :term:`level of description`, but
-   the record will not be moved if you attempt to drag it from a lower to a
+   the record will **not be moved** if you attempt to drag it from a lower to a
    higher level (e.g., from an item level to a file level, from a file level
    to a series or fonds level, etc.)
 6. The record in the treeview will drop into its new location. No changes will
@@ -610,12 +774,18 @@ lower level of description can also be moved so that it becomes a new
 **To move an archival description:**
 
 1. Navigate to the :term:`child description <child record>` that you wish to
-   move. You can do this by :doc:`browsing <../access-content/browse>` or
-   :doc:`searching <../access-content/search-atom>` for the
-   :term:`archival description` - see :ref:`Access content <access-content>`
-   for more information on navigation in AtoM.
+   move. You can do this by :ref:`browsing <browse>` or
+   :ref:`searching <search-atom>` for the :term:`archival description` - see
+   :ref:`Access content <access-content>` for more information on navigation
+   in AtoM.
 2. At the bottom of the description's :term:`view page`, press the "Move"
    button, located in the :term:`button block`.
+
+.. image:: images/button-block-description.*
+   :align: center
+   :width: 85%
+   :alt: An image of the button block on an archival description view page
+
 3. You will be redirected to the Move page, which lists all top-level (i.e.
    :term:`parent <parent record>`) descriptions, and provides a search bar.
 4. To find your move location more quickly ou can use the Move search bar to
@@ -679,17 +849,28 @@ description and using the :term:`Delete button` located in the
 **To delete an archival description:**
 
 1. Navigate to the :term:`archival description` that you would like to
-   permanently delete. You can do this by :doc:`browsing
-   <../access-content/browse>` or :ref:`searching <search-atom>`
-   for the :term:`archival description` - see :ref:`Access content
-   <access-content>` for more information on navigation in AtoM.
+   permanently delete. You can do this by :ref:`browsing <browse>` or
+   :ref:`searching <search-atom>` for the :term:`archival description` - see
+   :ref:`Access content  <access-content>` for more information on navigation
+   in AtoM.
 2. Scroll to the bottom of the description's :term:`view page`, and click the
    :term:`Delete button` located in the :term:`button block`.
+
+.. image:: images/button-block-description.*
+   :align: center
+   :width: 85%
+   :alt: An image of the button block on an archival description view page
+
 3. AtoM will provide a warning and prompts you to confirm that you really wish
    to delete the description. If :term:`child descriptions <child record>`
    will be deleted as well,the warning will list them. If you are sure you
    want to delete the record and all of its descendants/children, click
    "Delete".
+
+.. image:: images/description-delete-warning.*
+   :align: center
+   :width: 85%
+   :alt: An image of a description delete warning
 
 .. WARNING::
 
