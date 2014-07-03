@@ -709,11 +709,13 @@ Security panel
 **Limit administrator functionality by IP address**
 
 This feature allows :term:`administrators <administrator>` to limit
-adminsitrator functionality to one or more IP addresses or IP ranges. Separate
-multiple IP address or ranges by semicolons. For example:
+administrator functionality to one or more IP addresses or IP ranges. Separate
+multiple IP address or ranges by semicolons, and use a dash to indicate an IP
+range. For example:
 
-  * 192.168.0.1 or
-  * 192.168.0.1;192.168.0.255
+  * 192.168.0.1 (single IP address)
+  * 192.168.0.1;192.168.0.255 (multiple unique IP addresses)
+  * 192.168.0.1-192.168.0.255 (IP range)
 
 **Require SSL for all administrator functionality**
 
