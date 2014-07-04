@@ -222,7 +222,7 @@ Level of description
 
 .. code:: bash
 
-   <archdesc level="[level of description]">
+   <archdesc level="[level of description]" relatedencoding="ISAD(G)v2">
 
 .. note::
 
@@ -301,6 +301,8 @@ a new name to create and link to a new authority record. (ISAD 3.2.1)
 
 **EAD**
 
+Personal or family name:
+
 .. code:: bash
 
    <archdesc>
@@ -311,6 +313,20 @@ a new name to create and link to a new authority record. (ISAD 3.2.1)
                   <event>
                      <origination encodinganalog="3.2.1">
                         <name>
+
+Corporate name:
+
+.. code:: bash
+
+   <archdesc>
+      <bioghist>
+         <chronlist>
+            <chronitem>
+               <eventgrp>
+                  <event>
+                     <origination encodinganalog="3.2.1">
+                        <corpname>
+
 
 :ref:`Back to the top <isad-template>`
 
@@ -444,7 +460,7 @@ description. (ISAD 3.3.1)"
 .. code:: bash
 
    <archdesc>
-      <scopecontent>
+      <scopecontent encodinganalog="3.3.1">
 
 
 :ref:`Back to the top <isad-template>`
