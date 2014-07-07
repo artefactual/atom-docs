@@ -121,8 +121,9 @@ description. If there are more than three, select "multiple media." (RAD 1.1C)
 
 .. code:: bash
 
-   <controlaccess>
-      <genreform encodinganalog="1.1C">
+   <archdesc>
+      <controlaccess>
+         <genreform encodinganalog="1.1C">
 
 .. note::
 
@@ -130,7 +131,9 @@ description. If there are more than three, select "multiple media." (RAD 1.1C)
    Designations, in AtoM these can be edited in the Material type
    :term:`taxonomy` (see: :ref:`Add a new term <add-term>`). If you try to
    import a CSV file using a different :term:`term` from the taxonomy, the
-   import will fail.
+   import will fail. See
+   `Bug 6567 <https://projects.artefactual.com/issues/6757>`_ .
+
 
 :ref:`Back to the top <rad-template>`
 
@@ -175,10 +178,10 @@ the formal title proper. (RAD 1.1E)
 
 :ref:`Back to the top <rad-template>`
 
-Title statements of responsibility
-----------------------------------
+Title statement of responsibility
+---------------------------------
 
-**Template field** Title statements of responsibility
+**Template field** Statements of responsibility
 
 **CSV Column** radTitleStatementOfResponsibility
 
@@ -190,7 +193,9 @@ the chief source of information..." (RAD 1.1F)
 
 .. code:: bash
 
-<unittitle type="statRep">
+   <archdesc>
+      <did>
+         <unittitle type="statRep">
 
 :ref:`Back to the top <rad-template>`
 
@@ -216,7 +221,12 @@ chief source, but not in conjunction with a formal title proper. Record statemen
 responsibility that appear on the chief source of information for a file or series, if
 applicable." (RAD 1.8B5)
 
-**EAD** <odd type="titleStatRep">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="titleStatRep">
 
 :ref:`Back to the top <rad-template>`
 
@@ -230,7 +240,12 @@ Title notes- Attributions and conjectures
 **RAD Rule** "Make notes on authors to whom the unit being
 described has been attributed, and cite sources, if appropriate." (RAD 1.8B6)
 
-**EAD** <odd type="titleAttributions">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="titleAttributions">
 
 :ref:`Back to the top <rad-template>`
 
@@ -244,7 +259,12 @@ Title notes- Continuation of title
 **RAD Rule** "Complete the transcription if the formal title proper and/or
 other title information was abridged in the description." (RAD 1.8B4)
 
-**EAD** <odd type="titleContinuation">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="titleContinuation">
 
 :ref:`Back to the top <rad-template>`
 
@@ -258,7 +278,12 @@ Title notes- Source of title proper
 **RAD Rule** "Indicate the source of a title proper, when appropriate." (RAD
 1.8B2)
 
-**EAD** <odd type="titleSource">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="titleSource">
 
 :ref:`Back to the top <rad-template>`
 
@@ -273,7 +298,12 @@ Title notes- Variations in title
 source of information. Make notes on titles by which the unit being described has been
 traditionally known other than the title proper." (RAD 1.8B1)
 
-**EAD** <odd type="titleVariation">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="titleVariation">
 
 :ref:`Back to the top <rad-template>`
 
@@ -288,7 +318,12 @@ Title notes- Parallel titles and other title information
 recorded in the Title and statement of responsibility area if they are
 considered to be important." (RAD 1.8B3)
 
-**EAD** <odd type="titleParallel">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="titleParallel">
 
 :ref:`Back to the top <rad-template>`
 
@@ -312,14 +347,29 @@ Level of description
 **RAD Rule** Select a level of description from the drop-down menu. See RAD 1.0A for
 rules and conventions on selecting levels of description.
 
-**EAD** <archdesc level="[level of description]">
+**EAD**
+
+
+At the parent level:
+
+.. code:: bash
+
+   <archdesc level="fonds" relatedencoding="RAD">
+
+
+At the child level:
+
+.. code:: bash
+
+   <dsc type="combined>
+      <c level="[name of level]">
 
 .. note::
 
    An :term:`administrator` can edit the values in the Levels of
-   description :term:`taxonomy` (see: :ref:`Add a new term <add-term>`).
-   If you try to import a CSV file using a different :term:`term` from the
-   taxonomy, the import will fail.
+   description :term:`taxonomy` (see: :ref:`Add a new term <add-term>`). In
+   CSV import, if a term is used that is not already in the taxonomy, it will
+   be added to the Levels of description taxonomy.
 
 :ref:`Back to the top <rad-template>`
 
@@ -357,7 +407,14 @@ Authorized form of name field in archival institution records. Search for an
 existing name by typing the first few characters of the name. Alternatively,
 type a new name to create and link to a new archival institution.
 
-**EAD** <repository> <corpname>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <did>
+         <repository>
+            <corpname>
 
 :ref:`Back to the top <rad-template>`
 
@@ -370,7 +427,13 @@ Reference code
 
 **RAD Rule** Enter an unambiguous code used to uniquely identify the description.
 
-**EAD** <unitid>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <did>
+         <unitid encodinganalog="1.8B11">
 
 .. note::
 
@@ -407,7 +470,19 @@ statement but is known to contain significant changes from other editions,
 supply a suitable brief statement in the language and script of the title
 proper and enclose it in square brackets." (RAD 1.2B3)
 
-**EAD** <edition>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <did>
+         <unittitle encodinganalog="1.2B1">
+            <edition>
+
+.. note::
+
+   This field also maps to the ``<editionstmt><edition>`` tag in
+   ``<eadheader><filedesc>``.
 
 :ref:`Back to the top <rad-template>`
 
@@ -424,7 +499,14 @@ edition statement if there is one." (RAD 1.2.C1) "When describing the first
 edition, give all statements of responsibility in the Title and statement of
 responsibility area." (RAD 1.2C2)
 
-**EAD** <unittitle type="statRep"> <edition>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <did>
+         <unittitle type="statRep" encodinganalog="1.2C">
+            <edition>
 
 :ref:`Back to the top <rad-template>`
 
@@ -460,7 +542,13 @@ fraction (RF) expressed as a ratio (1: ). Precede the ratio by Scale. Give the
 scale even if it is already recorded as part of the title proper or other
 title information." (RAD 5.3B1)
 
-**EAD** <materialspec type="cartographic">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <did>
+         <materialspec type="cartographic" encodinganalog="5.3B1">
 
 :ref:`Back to the top <rad-template>`
 
@@ -474,7 +562,13 @@ Statement of projection (cartographic)
 **RAD Rule** "Give the statement of projection if it is found on the prescribed
 source(s) of information." (RAD 5.3C1)
 
-**EAD** <materialspec type="projection">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <did>
+         <materialspec type="projection" encodinganalog="5.3C1">
 
 :ref:`Back to the top <rad-template>`
 
@@ -489,8 +583,13 @@ Statement of coordinates (cartographic)
 maximum coverage provided by the materials in the unit, as long as they are
 reasonably contiguous." (RAD 5.3D)
 
-**EAD** <materialspec type="coordinates">
+**EAD**
 
+.. code:: bash
+
+   <archdesc>
+      <did>
+         <materialspec type="coordinates" encodinganalog="5.3D">
 
 :ref:`Back to the top <rad-template>`
 
@@ -506,8 +605,13 @@ being described. If there is no English equivalent for the name of the unit
 of measure, give the name, within quotation marks, as found on the unit
 being described." (RAD 6.3B)
 
-**EAD** <materialspec type="architectural">
+**EAD**
 
+.. code:: bash
+
+   <archdesc>
+      <did>
+         <materialspec type="architectural" encodinganalog="6.3B">
 
 :ref:`Back to the top <rad-template>`
 
@@ -526,7 +630,13 @@ number in arabic numerals followed by the name of the currency unit. Include a
 denomination statement even if the denomination is already recorded as part of
 the title proper or other title information." (RAD 12.3C1)
 
-**EAD** <materialspec type="philatelic">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <did>
+         <materialspec type="philatelic" encodinganalog="12.3B1">
 
 :ref:`Back to the top <rad-template>`
 
@@ -551,7 +661,34 @@ description. Search for an existing name in the authority records by typing
 the first few characters of the name. Alternatively, type a new name to
 create and link to a new authority record.
 
-**EAD** <origination> <name>
+**EAD**
+
+For a person or family:
+
+.. code:: bash
+
+   <archdesc>
+      <bioghist encodinganalog="1.7B">
+         <chronlist>
+            <chronitem>
+               <eventgrp>
+                  <event>
+                     <origination encodinganalog="1.7C">
+                        <name>
+
+
+For a corporation or organization:
+
+.. code:: bash
+
+   <archdesc>
+      <bioghist encodinganalog="1.7B">
+         <chronlist>
+            <chronitem>
+               <eventgrp>
+                  <event>
+                     <origination encodinganalog="1.7C">
+                        <corpname>
 
 .. note::
 
@@ -575,7 +712,18 @@ narrative description." (ISAAR 5.2.2)
 
 See also RAD section 1.7B1.
 
-**EAD** <bioghist> <note>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <bioghist encodinganalog="1.7B">
+         <chronlist>
+            <chronitem>
+               <eventgrp>
+                  <event>
+                     <note>
+
 
 .. note:: When entering data manually, this field needs to be written in the
 :term:`authority record`. If an authority record does not already exist, AtoM
@@ -651,7 +799,15 @@ them as such, preceded by the word predominant..." (1.4B2). Record probable
 and uncertain dates in square brackets, using the conventions described in RAD
 1.4B5.
 
-**EAD** <bioghist> <date type ="creation">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <bioghist encodinganalog="1.7B">
+         <chronlist>
+            <chronitem>
+               <date type="creation">
 
 .. note::
 
@@ -671,7 +827,15 @@ Dates of creation- Start
 symbols to express uncertainty. Acceptable date formats: YYYYMMDD,
 YYYY-MM-DD, YYYY-MM, YYYY.
 
-**EAD** <unitdate>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <bioghist encodinganalog="1.7B">
+         <chronlist>
+            <chronitem>
+               <date type="creation" normal="[start/end]">
 
 .. note::
 
@@ -692,8 +856,15 @@ Dates of creation- End
 to express uncertainty. Acceptable date formats: YYYYMMDD,
 YYYY-MM-DD, YYYY-MM, YYYY.
 
-**EAD** <unitdate>
+**EAD**
 
+.. code:: bash
+
+   <archdesc>
+      <bioghist encodinganalog="1.7B">
+         <chronlist>
+            <chronitem>
+               <date type="creation" normal="[start/end]">
 .. note::
 
    This field only displays while editing the description. If AtoM is
@@ -716,7 +887,17 @@ etc., area and that are considered to be important. " (RAD 1.8B8) "Make notes
 on the date(s) of accumulation or collection of the unit being described." RAD
 1.8B8a)
 
-**EAD** <event> <note type="eventNote">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <bioghist encodinganalog="1.7B">
+         <chronlist>
+            <chronitem>
+               <eventgrp>
+                  <event>
+                     <note type="eventNote">
 
 .. note::
 
@@ -753,7 +934,14 @@ belongs." (RAD 1.5B1) Include other physical details and dimensions as
 specified in RAD 1.5C and 1.5D. Separate multiple entries in this field with a
 carriage return (i.e. press the Enter key on your keyboard).
 
-**EAD** <physdesc> <extent>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <did>
+         <physdesc>
+            <extent encodinganalog="1.5B1">
 
 
 :ref:`Back to the top <rad-template>`
@@ -781,7 +969,16 @@ Title proper of publisher's series
 **RAD Rule** "At the item level of description, transcribe a title proper of the
 publisher's series as instructed in 1.1B1." (RAD 1.6B)
 
-**EAD** <bibseries> <title>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <did>
+         <unittitle>
+            <bibseries>
+               <title encodinganalog="1.6B1">
+
 
 :ref:`Back to the top <rad-template>`
 
@@ -795,7 +992,16 @@ Parallel titles of publisher's series
 **RAD Rule** "Transcribe parallel titles of a publisher's series as instructed in
 1.1D." (RAD 1.6C1)
 
-**EAD** <bibseries> <title type="parallel">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <did>
+         <unittitle>
+            <bibseries>
+               <title type="parallel" encodinganalog="1.6C1">
+
 
 :ref:`Back to the top <rad-template>`
 
@@ -810,7 +1016,15 @@ Other title information of publisher's series
 instructed in 1.1E and only if considered necessary for identifying the
 publisher's series." (RAD 1.6D1)
 
-**EAD** <bibseries> <title type="otherInfo">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <did>
+         <unittitle>
+            <bibseries>
+               <title type="otherInfo" encodinganalog="1.6D1">
 
 
 :ref:`Back to the top <rad-template>`
@@ -828,9 +1042,18 @@ conjunction with a formal title proper of a publisher's series as instructed
 in 1.1F and only if considered necessary for identifying the publisher's
 series." (RAD 1.6E1)
 
-**EAD** <bibseries> <title type="statRep">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <did>
+         <unittitle>
+            <bibseries>
+               <title type="statRep" encodinganalog="1.6E1">
 
 :ref:`Back to the top <rad-template>`
+
 
 Numbering within publisher's series
 -----------------------------------
@@ -842,7 +1065,15 @@ Numbering within publisher's series
 **RAD Rule** "Give the numbering of the item within a publisher's series in the
 terms given in the item." (RAD 1.6F1)
 
-**EAD** <bibseries> <num>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <did>
+         <unittitle>
+            <bibseries>
+               <num encodinganalog="1.6F">
 
 
 :ref:`Back to the top <rad-template>`
@@ -859,7 +1090,12 @@ included in the Publisher's series area, including variant series titles,
 incomplete series, and of numbers or letters that imply a series." (RAD
 1.8B10)
 
-**EAD** <odd type="bibSeries">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="bibSeries">
 
 .. note::
 
@@ -892,7 +1128,12 @@ Custodial history
 successive transfers of ownership and custody or control of the material,
 along with the dates thereof, insofar as it can be ascertained." (RAD 1.7C)
 
-**EAD** <custodhist>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <custodhist encodinganalog="1.7C">
 
 
 :ref:`Back to the top <rad-template>`
@@ -919,7 +1160,12 @@ enumerating its next lowest level of description. Summarize the principal
 documentary forms (e.g., reports, minutes, correspondence, drawings,
 speeches)." (RAD 1.7D1)
 
-**EAD** <scopecontent>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <scopecontent encodinganalog="1.7D">
 
 
 :ref:`Back to the top <rad-template>`
@@ -949,7 +1195,12 @@ Physical condition
 that condition materially affects the clarity or legibility of the records."
 (RAD 1.8B9a)
 
-**EAD** <phystech>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <phystech encodinganalog="1.8B9a">
 
 :ref:`Back to the top <rad-template>`
 
@@ -966,7 +1217,12 @@ acquisition, as well as the source/donor's relationship to the material, if
 any or all of this information is not confidential. If the source/donor is
 unknown, record that information." (RAD 1.8B12)
 
-**EAD**  <acqinfo>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <acqinfo encodinganalog="1.8B12">
 
 :ref:`Back to the top <rad-template>`
 
@@ -983,7 +1239,12 @@ and content (see 1.7D), e.g., about reorganisation(s) by the creator,
 arrangement by the archivist, changes in the classification scheme, or
 reconstitution of original order." (RAD 1.8B13)
 
-**EAD** <arrangement>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <arrangement encodinganalog="1.8B13">
 
 :ref:`Back to the top <rad-template>`
 
@@ -998,12 +1259,20 @@ Language of material
 they are noted elsewhere or are apparent from other elements of the
 description." RAD (1.8.B14).
 
-**EAD** <langmaterial> <language langcode>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <did>
+         <langmaterial encodinganalog="1.8B9a">
+            <language langcode="___">
 
 .. note::
 
    Use a three-letter language code from
-   `ISO 639-2 <http://www.loc.gov/standards/iso639-2/php/code_list.php>`_
+   `ISO 639-2 <http://www.loc.gov/standards/iso639-2/php/code_list.php>`_ when
+   importing from CSV.
 
 :ref:`Back to the top <rad-template>`
 
@@ -1019,10 +1288,18 @@ RAD (1.8.B14)
 
 **EAD** <langmaterial> <language scriptcode>
 
+.. code:: bash
+
+   <archdesc>
+      <did>
+         <langmaterial encodinganalog="1.8B9a">
+            <language scriptcode="___">
+
 .. note::
 
-   Use a four-letter script code from
-   `ISO 1924 <http://www.unicode.org/iso15924/iso15924-codes.html>`_
+   Use a three-letter language code from
+   `ISO 639-2 <http://www.loc.gov/standards/iso639-2/php/code_list.php>`_ when
+   importing from CSV.
 
 :ref:`Back to the top <rad-template>`
 
@@ -1039,7 +1316,13 @@ they are noted elsewhere or are apparent from other elements of the
 description. Also note any distinctive alphabets or symbol systems employed."
 RAD (1.8.B14).
 
-**EAD** <langmaterial>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <did>
+         <langmaterial encodinganalog="1.8B9a">
 
 .. note::
 
@@ -1061,7 +1344,12 @@ identifying numbers that may help in locating the original material in the
 cited location. If the originals are known to be no longer extant, give that
 information." (RAD 1.8B15a)
 
-**EAD** <originalsloc>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <originalsloc encodinganalog="1.8B15a">
 
 :ref:`Back to the top <rad-template>`
 
@@ -1081,7 +1369,12 @@ being described is available and its location, if that information is known.
 If only a part of the unit being described is available in another
 format(s), indicate which parts." (RAD 1.8B15b)
 
-**EAD** <altformavail>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <altformavail encodinganalog="1.8B15b">
 
 :ref:`Back to the top <rad-template>`
 
@@ -1096,7 +1389,12 @@ Restrictions on access
 **RAD Rule** "Give information about any restrictions placed on access to the unit
 (or parts of the unit) being described." (RAD 1.8B16a)
 
-**EAD** <accessrestrict>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <accessrestrict encodinganalog="1.8B16a">
 
 
 :ref:`Back to the top <rad-template>`
@@ -1111,7 +1409,12 @@ Terms governing use, reproduction, and publication
 **RAD Rule** "Give information on legal or donor restrictions that may affect use or
 reproduction of the material." (RAD 1.8B16c)
 
-**EAD** <userestrict>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <userestrict encodinganalog="1.8B16c">
 
 :ref:`Back to the top <rad-template>`
 
@@ -1129,7 +1432,12 @@ material in existence at the time the unit is described, such as card
 catalogues, box lists, series lists, inventories, indexes, etc." (RAD
 1.8B17)
 
-**EAD** <otherfindaid>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <otherfindaid encodinganalog="1.8B17">
 
 :ref:`Back to the top <rad-template>`
 
@@ -1151,7 +1459,12 @@ relationship by reason of shared responsibility or shared sphere of activity
 in one or more units of material external to the unit being described." (RAD
 1.8B20).
 
-**EAD** <relatedmaterial>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <relatedmaterial encodinganalog="1.8B18">
 
 :ref:`Back to the top <rad-template>`
 
@@ -1168,7 +1481,12 @@ or series, make a note explaining that further accruals are expected... If
 no further accruals are expected, indicate that the unit is considered
 closed." (RAD 1.8B19)
 
-**EAD** <accruals>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <accruals encodinganalog="1.8B19">
 
 :ref:`Back to the top <rad-template>`
 
@@ -1191,7 +1509,12 @@ Other notes- Accompanying material
 **RAD Rule** "Give details of accompanying material not mentioned
 in the Physical description area (see 1.5E)." (RAD 1.8B9c)
 
-**EAD** <odd type="material">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="material" encodinganalog="1.5E">
 
 :ref:`Back to the top <rad-template>`
 
@@ -1208,7 +1531,12 @@ Other notes- Alpha-numeric designations
 numbers borne by the unit being described other than publisher's series numbers (see
 1.6F) or standard numbers (see 1.9)." (RAD 1.8 B11)
 
-**EAD** <odd type="alphanumericDesignation">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="alphanumericDesignation">
 
 :ref:`Back to the top <rad-template>`
 
@@ -1224,7 +1552,12 @@ Other notes- Conservation
 conservation treatment, e.g., if repair work has been done on it, briefly indicate the
 nature of the work." (RAD 1.8B9b)
 
-**EAD** <odd type="conservation">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="conservation" encodinganalog="1.8B9b">
 
 :ref:`Back to the top <rad-template>`
 
@@ -1239,7 +1572,12 @@ Other notes- Edition
 **RAD Rule** "Make notes relating to the edition being described or of the relationship
 of the unit being described to other editions." (RAD 1.8B7)
 
-**EAD** <odd type="edition">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="edition" encodinganalog="1.8B7">
 
 :ref:`Back to the top <rad-template>`
 
@@ -1254,7 +1592,12 @@ Other notes- Physical description
 **RAD Rule** "Make notes relating to the physical description of the unit
 being described." (RAD 1.8B9)
 
-**EAD** <odd type="physDesc">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="physDesc">
 
 :ref:`Back to the top <rad-template>`
 
@@ -1271,7 +1614,12 @@ included in the Publisher's series area, including variant series titles,
 incomplete series, and of numbers or letters that imply a series." (RAD
 1.8B10)
 
-**EAD** <odd type="bibSeries">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="bibSeries">
 
 .. note::
 
@@ -1291,7 +1639,12 @@ Other notes- Rights
 **RAD Rule** "Indicate the copyright status, literary rights, patents or any
 other rights pertaining to the unit being described." (RAD 1.8B16b)
 
-**EAD** <odd type="rights">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="rights" encodinganalog="1.8B16b">
 
 :ref:`Back to the top <rad-template>`
 
@@ -1307,7 +1660,12 @@ Other notes- General note
 considered important but not falling within the definitions of the other notes.
 (RAD 1.8B21).
 
-**EAD** <odd type="general">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="general" encodinganalog="1.8B21">
 
 :ref:`Back to the top <rad-template>`
 
@@ -1336,7 +1694,13 @@ Standard Serial Number (ISSN), or any other internationally agreed standard
 number for the item being described. Give such numbers with the agreed
 abbreviation and with the standard spacing or hyphenation." (RAD 1.9B1)
 
-**EAD** <unitid type="standard">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <did>
+         <unitid type="standard" encodinganalog="1.9B1">
 
 :ref:`Back to the top <rad-template>`
 
@@ -1364,7 +1728,13 @@ Subject access points
 first few characters of the term. Alternatively, type a new term to create and
 link to a new subject term."
 
-**EAD** <subject>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <controlaccess>
+         <subject>
 
 .. note::
 
@@ -1386,7 +1756,13 @@ Place access points
 first few characters of the term name. Alternatively, type a new term to
 create and link to a new place term."
 
-**EAD** <geogname>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <controlaccess>
+         <geogname>
 
 .. note::
 
@@ -1411,8 +1787,24 @@ records. Search for an existing name by typing the first few characters of the
 name. Alternatively, type a new name to create and link to a new authority
 record.
 
-**EAD** <name role="subject">
+**EAD**
 
+For a personal name or family:
+
+.. code:: bash
+
+   <archdesc>
+      <controlaccess>
+         <name role="subject">
+
+
+For a corporate/organizational name:
+
+.. code:: bash
+
+   <archdesc>
+      <controlaccess>
+         <corpname role="subject">
 .. note::
 
    The values in this column/field will create
@@ -1453,7 +1845,12 @@ representation of names of countries. Where the creator of the description is
 an international organisation, give the organisational identifier in place of
 the country code."
 
-**EAD** <odd type="descriptionIdentifier">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="descriptionIdentifier">
 
 :ref:`Back to the top <rad-template>`
 
@@ -1470,7 +1867,12 @@ responsible for creating, modifying, or disseminating the description, or,
 alternatively, record a code for the agency in accordance with the national
 or international agency code standard."
 
-**EAD** <odd type="institutionIdentifier">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="institutionIdentifier">
 
 :ref:`Back to the top <rad-template>`
 
@@ -1485,7 +1887,13 @@ Rules or conventions
 **RAD Rule** "Record the international, national, and/or local rules or
 conventions followed in preparing the description."
 
-**EAD** <descrules>
+**EAD**
+
+.. code:: bash
+
+   <eadheader>
+      <profiledesc>
+         <descrules encodinganalog="3.7.2">
 
 :ref:`Back to the top <rad-template>`
 
@@ -1500,14 +1908,20 @@ Status
 **RAD Rule** "Record the current status of the description, indicating whether it
 is a draft, finalized, and/or revised or deleted."
 
-**EAD** <odd type="statusDescription">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="statusDescription">
 
 .. note::
 
    AtoM uses a :term:`taxonomy` to determine the value of this field.
    If you try to import a CSV file using a different :term:`term` from the
-   taxonomy, the import will fail. The default terms are Final, Revised and
-   Draft, but can be edited through the
+   taxonomy, the import will succeed, but a null value will be entered for
+   Status (see `Bug 6758 <https://projects.artefactual.com/issues/6758>`_ . The
+   default terms are Final, Revised and Draft, but can be edited through the
    :ref:`Manage taxonomy screen <add-term-taxonomy>`.
 
 :ref:`Back to the top <rad-template>`
@@ -1524,14 +1938,20 @@ Level of detail
 full level of detail in accordance with relevant international and/or
 national guidelines and/or rules."
 
-**EAD** <odd type="levelOfDetail">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="levelOfDetail">
 
 .. note::
 
    AtoM uses a :term:`taxonomy` to determine the value of this field.
    If you try to import a CSV file using a different :term:`term` from the
-   taxonomy, the import will fail. The default terms are Full, Partial and
-   Minimal, but can be edited through the
+   taxonomy, the import will fail (see
+   `Bug 6756 <https://projects.artefactual.com/issues/6756>`_. The default terms
+   are Full, Partial and Minimal, but can be edited through the
    :ref:`Manage taxonomy screen <add-term-taxonomy>`.
 
 :ref:`Back to the top <rad-template>`
@@ -1546,7 +1966,14 @@ Dates of creation, revision and deletion
 
 **RAD Rule** "Record the date(s) the entry was prepared and/or revised."
 
-**EAD** <processinfo> <date>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <processinfo>
+         <date>
+
 
 .. note::
 
@@ -1566,12 +1993,22 @@ Language of description
 **RAD Rule** "Indicate the language(s) used to create the description of the
 archival material."
 
-**EAD** <langusage><language langcode=>
+**EAD**
+
+.. code:: bash
+
+   <eadheader>
+      <profiledesc>
+         <language>
+            <language langcode="___">
 
 .. note::
 
-   Use a three-letter language code from
+   In CSV import, use a three-letter language code from
    `ISO 639-2 <http://www.loc.gov/standards/iso639-2/php/code_list.php>`_ .
+   When entering data manually, AtoM will offer an autocomplete drop-down
+   list as you type, which will be generated as a three-letter language code
+   in the EAD.
 
 :ref:`Back to the top <rad-template>`
 
@@ -1586,12 +2023,22 @@ Script of description
 **RAD Rule** "Indicate the script(s) used to create the description of the
 archival material."
 
-**EAD** <langusage><language scriptcode=>
+**EAD**
+
+.. code:: bash
+
+   <eadheader>
+      <profiledesc>
+         <language>
+            <language scriptcode="____">
 
 .. note::
 
-   Use a four-letter script code from
-   `ISO 1924 <http://www.unicode.org/iso15924/iso15924-codes.html>`_
+   In CSV import, use a four-letter script code from
+   `ISO 1924 <http://www.unicode.org/iso15924/iso15924-codes.html>`_. When
+   entering data manually, AtoM will offer an autocomplete drop-down
+   list as you type, which will be generated as a four-letter script code
+   in the EAD.
 
 :ref:`Back to the top <rad-template>`
 
@@ -1607,7 +2054,13 @@ Sources
 description (such as the Scope and Content, Custodial History, or Notes
 fields)."
 
-**EAD** <note type="sourcesDescription">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <did>
+         <note type="sourcesDescription">
 
 .. note::
 
@@ -1662,7 +2115,12 @@ Publication status
 
 **RAD Rule** N/A
 
-**EAD** <odd type="publicationStatus">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="publicationStatus">
 
 .. note::
 
