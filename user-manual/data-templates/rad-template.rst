@@ -2161,7 +2161,12 @@ Appraisal
 
 **RAD Rule** N/A
 
-**EAD** <appraisal>
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <appraisal encodinganalog="3.3.2">
 
 .. note::
 
