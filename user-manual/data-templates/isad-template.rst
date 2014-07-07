@@ -1328,7 +1328,12 @@ Publication status
 
 **RAD Rule** N/A
 
-**EAD** <odd type="publicationStatus">
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="publicationStatus">
 
 .. note::
 
