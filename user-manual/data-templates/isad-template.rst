@@ -51,12 +51,24 @@ Information below includes:
 * :ref:`Notes area <template-isad-notes>`
 * :ref:`Access points <template-isad-access>`
 * :ref:`Description control area <template-isad-desc-control>`
+* :ref:`Rights area <template-isad-rights>`
+* :ref:`Administration area <template-isad-administration>`
 
 
 .. _template-isad-identity:
 
 Identity area
 ^^^^^^^^^^^^^
+
+.. figure:: images/isad-identity.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: An image of the data entry fields in the Identity area.
+
+   The data entry fields for the Identity area using the ISAD(G) template,
+   including Identifier, Title, Dates, Level of description, Add new child
+   levels and extent and medium.
 
 Reference code
 --------------
@@ -220,14 +232,26 @@ Level of description
 
 **EAD**
 
+At the parent level:
+
 .. code:: bash
 
    <archdesc level="[level of description]" relatedencoding="ISAD(G)v2">
 
+
+At the child level:
+
+.. code:: bash
+
+   <dsc type="combined>
+      <c level="[name of level]">
+
 .. note::
 
    An :term:`administrator` can edit the values in the Levels of
-   description :term:`taxonomy` (see: :ref:`Add a new term <add-term>`).
+   description :term:`taxonomy` (see: :ref:`Add a new term <add-term>`). In
+   CSV import, if a term is used that is not already in the taxonomy, it will
+   be added to the Levels of description taxonomy.
 
 
 :ref:`Back to the top <isad-template>`
@@ -285,6 +309,17 @@ multiple extents with a linebreak. (ISAD 3.1.5)"
 
 Context area
 ^^^^^^^^^^^^
+
+.. figure:: images/isad-context.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: An image of the data entry fields in the Context area.
+
+   The data entry fields for the Context area using the ISAD(G) template,
+   including Name of creator(s), Repository, Archival history and Immediate
+   source of acquisition or transfer.
+
 
 Name of creator(s)
 ------------------
@@ -443,6 +478,16 @@ Optionally, add accession numbers or codes. (ISAD 3.2.4)
 Content and structure area
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. figure:: images/isad-content.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: An image of the data entry fields in the Content and structure area.
+
+   The data entry fields for the Content and structure area using the ISAD(G)
+   template, including Scope and content, Appraisal, destruction and
+   scheduling, Accruals, and System of arrangement.
+
 Scope and content
 -----------------
 
@@ -533,6 +578,19 @@ system design. (ISAD 3.3.4)
 
 Conditions of access and use area
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: images/isad-conditions.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: An image of the data entry fields in the Conditions of access and use
+   area.
+
+   The data entry fields for the Conditions of access and use area in the
+   ISAD(G) template, including Conditions governing access, Conditions governing
+   reproduction, Language of material, Script of material, Lanuage and script
+   notes, Physical characteristics and technical requirements, and Finding
+   aids.
 
 Conditions governing access
 ---------------------------
@@ -710,6 +768,103 @@ on where to obtain a copy. (ISAD 3.4.5)
 Allied materials area
 ^^^^^^^^^^^^^^^^^^^^^
 
+.. figure:: images/isad-allied.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: An image of the data entry fields in the Allied materials area
+
+   The data entry fields for the Allied materials area in the
+   ISAD(G) template, including Existence and location of originals, Existence
+   and location of copies, Related units of description, and Publication
+   notes.
+
+Existence and location of originals
+-----------------------------------
+
+**Template field** Existence and location of originals
+
+**CSV Column** locationOfOriginals
+
+**ISAD Rule** "If the original of the unit of description is available (either
+in the institution or elsewhere) record its location, together with any
+significant control numbers. If the originals no longer exist, or their
+location is unknown, give that information. (ISAD 3.5.1)"
+
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <originalsloc encodinganalog="3.5.1">
+
+:ref:`Back to the top <isad-template>`
+
+
+Existence and location of copies
+--------------------------------
+
+**Template field** Existence and location of copies
+
+**CSV Column** locationOfCopies
+
+**ISAD Rule** "If the copy of the unit of description is available (either in
+the institution or elsewhere) record its location, together with any
+significant control numbers. (ISAD 3.5.2)"
+
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <altformavail encodinganalog="3.5.2">
+
+:ref:`Back to the top <isad-template>`
+
+Related units of description
+----------------------------
+
+**Template field** Related units of description
+
+**CSV Column** relatedUnitsOfDescription
+
+**ISAD Rule** "Record information about units of description in the same
+repository or elsewhere that are related by provenance or other
+association(s). Use appropriate introductory wording and explain the nature
+of the relationship . If the related unit of description is a finding aid,
+use the finding aids element of description (3.4.5) to make the reference to
+it. (ISAD 3.5.3)"
+
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <relatedmaterial encodinganalog="3.5.3">
+
+:ref:`Back to the top <isad-template>`
+
+
+Publication notes
+-----------------
+
+**Template field** Publication notes
+
+**CSV Column** publicationNote
+
+**ISAD Rule** Record a citation to, and/or information about a publication
+that is about or based on the use, study, or analysis of the unit of
+description. Include references to published facsimiles or transcriptions.
+(ISAD 3.5.4)"
+
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <bibliography encodinganalog="3.5.4">
+
+:ref:`Back to the top <isad-template>`
 
 
 .. _template-isad-notes:
@@ -717,7 +872,33 @@ Allied materials area
 Notes area
 ^^^^^^^^^^
 
+.. figure:: images/isad-notes.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: An image of the data entry fields in the Notes area
 
+   The data entry fields for the Notes area in the ISAD(G) template.
+
+Notes
+-----
+
+**Template field** Notes
+
+**CSV Column** generalNote
+
+**ISAD Rule** Record specialized or other important information not
+accommodated by any of the defined elements of description. (ISAD 3.6.1)"
+
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <did>
+         <note type="general note">
+
+:ref:`Back to the top <isad-template>`
 
 
 .. _template-isad-access:
@@ -725,15 +906,379 @@ Notes area
 Access points
 ^^^^^^^^^^^^^
 
+.. figure:: images/isad-access.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: An image of the data entry fields in the Access points area
+
+   The data entry fields for the Access points area in the ISAD(G) template,
+   including Subject access points, Place access points, and Name access
+   points (subjects).
+
+Subject access points
+---------------------
+
+**Template field** Subject access points
+
+**CSV Column** subjectAccessPoints
+
+**ISAD Rule** N/A
+
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <controlaccess>
+         <subject>
+
+.. note::
+
+   The values in this column/field will create
+   :term:`terms <term>` in the subjects :term:`taxonomy` where those do not
+   already exist.
+
+:ref:`Back to the top <isad-template>`
+
+Place access points
+-------------------
+
+**Template field** Place access points
+
+**CSV Column** placeAccessPoints
+
+**ISAD Rule** N/A
+
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <controlacccess>
+         <geogname>
+
+.. note::
+
+   The values in this column/field will create :term:`terms <term>` in the
+   places :term:`taxonomy` where those do not already exist.
+
+:ref:`Back to the top <isad-template>`
+
+Name access points (subjects)
+-----------------------------
+
+**Template field** Name access points
+
+**CSV Column** nameAccessPoints
+
+**ISAD Rule** N/A
+
+**EAD**
+
+For a personal name or family:
+
+.. code:: bash
+
+   <archdesc>
+      <controlaccess>
+         <name role="subject">
+
+
+For a corporate/organizational name:
+
+.. code:: bash
+
+   <archdesc>
+      <controlaccess>
+         <corpname role="subject">
+
+.. note::
+
+   The values in this column/field will create
+   :term:`authority records <authority record>` where those do not already exist.
+
+:ref:`Back to the top <isad-template>`
+
 
 .. _template-isad-desc-control:
 
 Description control area
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. figure:: images/isad-control.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: An image of the data entry fields in the Description control area
+
+   The data entry fields for the Description control are in the ISAD(G) template,
+   including Description identifier, Institution identidier, Rules or
+   conventions, Status, Level of detail, Dates of creation, revision and
+   deletion, Language(s), Script(s), Sources and Archivist's notes.
+
+Description identifier
+----------------------
+
+**Template field** Description identifier
+
+**CSV Column** descriptionIdentifier
+
+**ISAD Rule** "Record a unique description identifier in accordance with local
+and/or national conventions. If the description is to be used
+internationally, record the code of the country in which the description was
+created in accordance with the latest version of ISO 3166- Codes for the
+representation of names of countries. Where the creator of the description is
+an international organisation, give the organisational identifier in place of
+the country code."
+
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="descriptionIdentifier">
+
+:ref:`Back to the top <isad-template>`
 
 
+Institution identifier
+----------------------
 
+**Template field** Institution identifier
+
+**CSV Column** institutionIdentifier
+
+**ISAD Rule** "Record the full, authorised form of name(s) of the agency(ies)
+responsible for creating, modifying, or disseminating the description, or,
+alternatively, record a code for the agency in accordance with the national
+or international agency code standard."
+
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="institutionIdentifier">
+
+:ref:`Back to the top <isad-template>`
+
+
+Rules or conventions
+--------------------
+
+**Template field** Rules or conventions
+
+**CSV Column** rules
+
+**ISAD Rule** "Record the international, national and/or local rules or
+conventions followed in preparing the description. (ISAD 3.7.2)"
+
+**EAD**
+
+.. code:: bash
+
+   <eadheader>
+      <profiledesc>
+         <descrules encodinganalog="3.7.2">
+
+:ref:`Back to the top <isad-template>`
+
+
+Status
+------
+
+**Template field** Status
+
+**CSV Column** descriptionStatus
+
+**ISAD Rule** "Record the current status of the description, indicating whether it
+is a draft, finalized, and/or revised or deleted."
+
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="statusDescription">
+
+.. note::
+
+   AtoM uses a :term:`taxonomy` to determine the value of this field.
+   If you try to import a CSV file using a different :term:`term` from the
+   taxonomy, the import will succeed, but a null value will be entered for
+   Status (see `Bug 6758 <https://projects.artefactual.com/issues/6758>`_ . The
+   default terms are Final, Revised and Draft, but can be edited through the
+   :ref:`Manage taxonomy screen <add-term-taxonomy>`.
+
+:ref:`Back to the top <isad-template>`
+
+
+Level of detail
+---------------
+
+**Template field** Level of detail
+
+**CSV Column** levelOfDetail
+
+**ISAD Rule** "Record whether the description consists of a minimal, partial, or
+full level of detail in accordance with relevant international and/or
+national guidelines and/or rules."
+
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <odd type="levelOfDetail">
+
+.. note::
+
+   AtoM uses a :term:`taxonomy` to determine the value of this field.
+   If you try to import a CSV file using a different :term:`term` from the
+   taxonomy, the import will fail (see
+   `Bug 6756 <https://projects.artefactual.com/issues/6756>`_. The default terms
+   are Full, Partial and Minimal, but can be edited through the
+   :ref:`Manage taxonomy screen <add-term-taxonomy>`.
+
+
+:ref:`Back to the top <isad-template>`
+
+
+Dates of creation, revision and deletion
+----------------------------------------
+
+**Template field** Dates of creation, revision and deletion
+
+**CSV Column** revisionHistory
+
+**ISAD Rule** "Record the date(s) the entry was prepared and/or revised."
+
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <processinfo>
+         <date>
+
+.. note::
+
+   This is a free text field, allowing users to also write narrative
+   notes about the revision history of the description.
+
+:ref:`Back to the top <isad-template>`
+
+
+Language of description
+-----------------------
+
+**Template field** Language of description
+
+**CSV Column** languageOfDescription
+
+**ISAD Rule** "Indicate the language(s) used to create the description of the
+archival material."
+
+**EAD**
+
+.. code:: bash
+
+   <eadheader>
+      <profiledesc>
+         <language>
+            <language langcode="___">
+
+.. note::
+
+   In CSV import, use a three-letter language code from
+   `ISO 639-2 <http://www.loc.gov/standards/iso639-2/php/code_list.php>`_ .
+   When entering data manually, AtoM will offer an autocomplete drop-down
+   list as you type, which will be generated as a three-letter language code
+   in the EAD.
+
+:ref:`Back to the top <isad-template>`
+
+
+Script of description
+---------------------
+
+**Template field** Script of description
+
+**CSV Column** scriptOfDescription
+
+**ISAD Rule** "Indicate the script(s) used to create the description of the
+archival material."
+
+**EAD**
+
+.. code:: bash
+
+   <eadheader>
+      <profiledesc>
+         <language>
+            <language scriptcode="____">
+
+.. note::
+
+   In CSV import, use a four-letter script code from
+   `ISO 1924 <http://www.unicode.org/iso15924/iso15924-codes.html>`_. When
+   entering data manually, AtoM will offer an autocomplete drop-down
+   list as you type, which will be generated as a four-letter script code
+   in the EAD.
+
+:ref:`Back to the top <isad-template>`
+
+
+Sources
+-------
+
+**Template field** Sources
+
+**CSV Column** sources
+
+**ISAD Rule** "Record citations for any external sources used in the archival
+description (such as the Scope and Content, Custodial History, or Notes
+fields)."
+
+**EAD**
+
+.. code:: bash
+
+   <archdesc>
+      <did>
+         <note type="sourcesDescription">
+
+.. note::
+
+   If there are sources to cite used used in a biographical
+   sketch or administrative history, record these in the sources field for the
+   :term:`authority record`.
+
+
+:ref:`Back to the top <isad-template>`
+
+
+Archivist's notes
+-----------------
+
+**Template field** Archivist's notes
+
+**CSV Column** archivistNote
+
+**ISAD Rule** Record notes on sources consulted in preparing the description
+and who prepared it. (ISAD 3.7.1)
+
+**EAD**
+
+.. code:: bash
+
+   <eadheader>
+      <filedesc>
+         <titlestmt>
+            <author encodinganalog="creator">
+
+:ref:`Back to the top <isad-template>`
 
 .. _template-isad-rights:
 
@@ -751,8 +1296,9 @@ Rights area
 
 This area of the description allows users to enter a :term:`rights record`
 compliant with `PREMIS <http://www.loc.gov/standards/premis/>`_. These fields
-are separate from the RAD rights notes, above, and editing one area does not
-effect the other. Rights records cannot be imported with descriptions via CSV.
+are separate from the ISAD Conditions and access of use area, above, and editing
+one area does not effect the other. Rights records cannot be imported with
+descriptions via CSV.
 
 For more information, see
 :ref:`Add rights to an archival description <rights-archival-description>`.
@@ -810,9 +1356,6 @@ Display standard
    from the :ref:`default template <default-templates>`
    for the shown archival description only, with the option to also change the
    display standard for all existing children of the description.
-
-
-
 
 
 :ref:`Back to the top <isad-template>`
