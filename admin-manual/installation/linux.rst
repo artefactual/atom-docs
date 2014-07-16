@@ -244,6 +244,9 @@ called :file:`/etc/php5/fpm/pool.d/atom.conf`:
 
    # Use UNIX sockets if Nginx and PHP-FPM are running in the same machine
    listen = /var/run/php5-fpm.atom.sock
+   listen.owner = www-data
+   listen.group = www-data
+   listen.mode = 0600
 
    # The following directives should be tweaked based in your hardware resources
    pm = dynamic
