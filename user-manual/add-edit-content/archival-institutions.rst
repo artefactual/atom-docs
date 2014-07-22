@@ -1004,7 +1004,7 @@ require a systems administrator who can edit AtoM's files from the server.
 
 
 1. First, you will need to set up a
-   `Google account <https://wwww.accounts.google.com>`_ if you do not already
+   `Google account <https://accounts.google.com>`_ if you do not already
    have one.
 
 2. Next, request an
