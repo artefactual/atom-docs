@@ -12,7 +12,8 @@ document apply to any modern Linux environment, however some of them will
 apply only to Ubuntu and likely to any Ubuntu-based distribution.
 
 To be specific, this document is based in
-`Ubuntu 12.04 LTS (Precise Pangolin) <http://releases.ubuntu.com/precise/>`_.
+`Ubuntu 12.04 LTS (Precise Pangolin) <http://releases.ubuntu.com/precise/>`_
+and `Ubuntu 14.04 LTS (Trusty Tahr) <http://releases.ubuntu.com/trusty/>`_.
 Once you have installed it, you should be able to follow the instructions
 described below. In particular, we are going to use Ubuntu packages that can
 be found under the
