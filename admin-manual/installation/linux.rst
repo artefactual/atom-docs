@@ -147,7 +147,7 @@ one. We are going to you show you how to do the latter:
 
    sudo touch /etc/nginx/sites-available/atom
    sudo ln -sf /etc/nginx/sites-available/atom /etc/nginx/sites-enabled/atom
-   sudo rm /etc/nginx/sites-available/default
+   sudo rm /etc/nginx/sites-enabled/default
 
 We have now created the configuration file and linked it from sites-enabled/, which
 is the directory that Nginx will look for. This means that you could
