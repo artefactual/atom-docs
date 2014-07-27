@@ -64,24 +64,40 @@ Ubuntu doesn't provide a package but you can download it directly from the
 good idea to use the latest stable version available.
 
 First, make sure that `Java <https://www.java.com/en/>`__ is installed.
-Elasticsearch is compatible with both Java 6 and Java 7 and both can be found
-in Ubuntu 12.04. In the command-line, enter:
+Elasticsearch is compatible with OpenJDK (package openjdk-7-jre-headless) but
+we are going to use Oracle's JVM distributed by
+`Web Upd8 <http://www.webupd8.org/>`_.
 
 .. code-block:: bash
 
-   sudo apt-get install -y openjdk-7-jre-headless
+   sudo add-apt-repository ppa:webupd8team/java
+   sudo apt-get update
+   sudo apt-get install oracle-java8-installer
 
-After successfully installing Java, proceed to install Elasticsearch:
+After successfully installing Java, proceed to install Elasticsearch. Download
+and install the public signing key used in their repository:
 
 .. code-block:: bash
 
-   wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.11.deb
-   sudo dpkg -i elasticsearch-0.90.11.deb
-   sudo rm elasticsearch-0.90.11.deb
+   wget -qO - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add -
+
+Add the following to your /etc/apt/sources.list to enable the repository:
+
+.. code-block:: bash
+
+   deb http://packages.elasticsearch.org/elasticsearch/0.90/debian stable main
+
+Ready to be installed. Run:
+
+.. code-block:: bash
+
+   sudo apt-get update
+   sudo apt-get install elasticsearch
 
 .. IMPORTANT::
 
-   AtoM 2.0 doesn't support Elasticsearch 1.0 or newer. Use 0.90.11 instead.
+   AtoM 2.0 doesn't support Elasticsearch 1.0 or newer. Use 0.90.x until we
+   update our code.
 
 Make sure that the service has been started:
 
