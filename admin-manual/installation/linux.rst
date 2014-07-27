@@ -232,24 +232,7 @@ following command will install it along with the rest of PHP extensions
 
 .. code-block:: bash
 
-    sudo apt-get install php5-cli php5-fpm php5-curl php5-mysql php5-xsl php-apc
-
-.. TIP::
-
-   If you are using Ubuntu 12.04 but you still want to try PHP 5.4 or PHP 5.5,
-   there is a PPA channel supported by Ondřej Surý. This is probably not the
-   safest way to go as his channel is not backed by the official Ubuntu team,
-   but thus far he is being very responsive, pushing new releases as soon
-   as they come out. If you are interested, please visit one of the following
-   links:
-
-   * PHP 5.4 channel: https://launchpad.net/~ondrej/+archive/php5-oldstable
-   * PHP 5.5 channel: https://launchpad.net/~ondrej/+archive/php5
-
-Note that in PHP 5.5, php-apc was removed and its replacement for the user-space
-caching capabilities is emulated by php5-apcu. Additionally, the JSON extension
-is not included anymore as part of the PHP core, so you will have to install the
-php5-json extension too.
+    sudo apt-get install php5-cli php5-fpm php5-curl php5-mysql php5-xsl php5-json php5-ldap php-apc
 
 Let's add a new PHP pool for AtoM by adding the following contents in a new file
 called :file:`/etc/php5/fpm/pool.d/atom.conf`:
@@ -270,11 +253,11 @@ called :file:`/etc/php5/fpm/pool.d/atom.conf`:
 
    # The following directives should be tweaked based in your hardware resources
    pm = dynamic
-   pm.max_children = 100
+   pm.max_children = 30
    pm.start_servers = 10
    pm.min_spare_servers = 10
-   pm.max_spare_servers = 50
-   pm.max_requests = 500
+   pm.max_spare_servers = 10
+   pm.max_requests = 200
 
    chdir = /
 
@@ -291,11 +274,25 @@ called :file:`/etc/php5/fpm/pool.d/atom.conf`:
    php_admin_value[display_errors] = off
    php_admin_value[display_startup_errors] = off
    php_admin_value[html_errors] = off
+   php_admin_value[session.use_only_cookies] = 0
+
+   # APC, which is still used in PHP 5.5 for userland memory cache unless you
+   # are switching to something like sfMemcacheCache
    php_admin_value[apc.enabled] = 1
    php_admin_value[apc.shm_size] = 64M
    php_admin_value[apc.num_files_hint] = 5000
    php_admin_value[apc.stat] = 0
-   php_admin_value[session.use_only_cookies] = 0
+
+   # Zend OPcache
+   # Only in Ubuntu 14.04 (PHP 5.5).
+   # Don't use this in Ubuntu 12.04, it won't work.
+   php_admin_value[opcache.enable] = 1
+   php_admin_value[opcache.enable_cli] = 0
+   php_admin_value[opcache.memory_consumption] = 192
+   php_admin_value[opcache.interned_strings_buffer] = 16
+   php_admin_value[opcache.max_accelerated_files] = 4000
+   php_admin_value[opcache.validate_timestamps] = 0
+   php_admin_value[opcache.fast_shutdown] = 1
 
    # This is a good place to define some environment variables, e.g. use
    # ATOM_DEBUG_IP to define a list of IP addresses with full access to the
@@ -303,6 +300,9 @@ called :file:`/etc/php5/fpm/pool.d/atom.conf`:
    # authenticated users
    env[ATOM_DEBUG_IP] = "10.10.10.10,127.0.0.1"
    env[ATOM_READ_ONLY] = "off"
+
+Note that the section "Zend OPcache" won't work in Ubuntu 12.04. Comment it out
+or remove it unless you are using Ubuntu 14.04.
 
 The process manager has to be restarted:
 
@@ -323,6 +323,7 @@ remove it:
 .. code-block:: bash
 
    sudo rm /etc/php5/fpm/pool.d/www.conf
+   sudo service php5-fpm restart
 
 .. _linux-other-packages:
 
