@@ -219,7 +219,7 @@ Maintenance
 * :ref:`maintenance-tuning`
 * :ref:`maintenance-troubleshooting`
 * :ref:`debug-mode`
-* :ref:`maintenance-elastic-search`
+* :ref:`maintenance-elasticsearch`
 
 Customization
 -------------

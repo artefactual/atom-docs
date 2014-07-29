@@ -1,8 +1,8 @@
-.. _maintenance-elastic-search:
+.. _maintenance-elasticsearch:
 
-==============
-Elastic Search
-==============
+=============
+Elasticsearch
+=============
 
 `Elasticsearch <http://www.elasticsearch.org/>`_ (0.90.11), a distributed search
 server based on Apache Lucene, which acts as the application’s search and
@@ -83,4 +83,4 @@ number of replicas on an existing index, you can use:
       } }
    '
 
-:ref:`Back to the top <maintenance-elastic-search>`
+:ref:`Back to the top <maintenance-elasticsearch>`
