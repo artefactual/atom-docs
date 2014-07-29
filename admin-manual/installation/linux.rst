@@ -344,12 +344,12 @@ dependencies at once:
 
    sudo apt-get install imagemagick ghostscript poppler-utils
 
-Install ffmpeg from Jon Severinsson's FFmpeg PPA, which is available for both
-Ubuntu 12.04 (precise) and Ubuntu 14.04 (trusty).
+Install ffmpeg from Archivematica's PPA, that works for both Ubuntu 12.04
+(precise) and Ubuntu 14.04 (trusty).
 
 .. code-block:: bash
 
-   sudo add-apt-repository ppa:jon-severinsson/ffmpeg
+   sudo add-apt-repository ppa:archivematica/externals-dev
    sudo apt-get update
    sudo apt-get install ffmpeg
 
