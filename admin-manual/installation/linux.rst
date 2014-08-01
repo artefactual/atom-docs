@@ -506,3 +506,17 @@ The rest of the fields can be filled as you need:
 * Username
 * E-mail address
 * Password
+
+.. _linux-security-considerations:
+
+Security considerations
+=======================
+
+Now that AtoM is installed, please take a moment to read our
+:ref:`security section <../security/index>` where we will show you how to
+configure the firewall in Ubuntu and back up AtoM.
+
+We strongly encourage our users to configure a firewall because some of the
+services configured should not be exposed in the wild, e.g. Elasticsearch was
+not designed to be accessible from untrusted networks and it's a common attack
+vector.
