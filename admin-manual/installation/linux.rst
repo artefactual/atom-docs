@@ -513,7 +513,7 @@ Security considerations
 =======================
 
 Now that AtoM is installed, please take a moment to read our
-:ref:`security section <../security/index>` where we will show you how to
+:ref:`security section <security>` where we will show you how to
 configure the firewall in Ubuntu and back up AtoM.
 
 We strongly encourage our users to configure a firewall because some of the
