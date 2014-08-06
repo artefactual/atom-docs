@@ -396,7 +396,7 @@ Install git:
    sudo mkdir /usr/share/nginx/atom
    sudo git clone http://github.com/artefactual/atom.git /usr/share/nginx/atom
    cd /usr/share/nginx/atom
-   sudo git checkout tags/v2.0.1
+   sudo git checkout stable/2.0.x
 
 If you are not interested in downloading all the history from git, you could
 also truncate it to a specific number of revisions, e.g.: just one revision
@@ -413,9 +413,15 @@ the CSS files:
    sudo add-apt-repository ppa:chris-lea/node.js
    sudo apt-get update
    sudo apt-get install nodejs
-   sudo npm install -g less@1.3.3
+   sudo npm install -g less
    cd /usr/share/nginx/atom/plugins/arDominionPlugin/
-   sudo -u www-data make
+   sudo make # At this point the files still belong to root
+
+.. IMPORTANT::
+
+   AtoM 2.0.1 was only compatible with less@1.3.3. However, we solved that
+   problem in stable/2.0.x so you can install the latest version of the less
+   compiler.
 
 
 .. _linux-filesystem-permissions:
