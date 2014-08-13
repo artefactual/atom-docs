@@ -4,9 +4,9 @@
 Asynchronous jobs and worker management
 =======================================
 
-AtoM relies on Gearman in order to execute certain long-running tasks
-asynchronously to guarantee that web requests are handled promptly and work
-loads can be distributed across multiple machines.
+AtoM relies on `Gearman <http://gearman.org>` in order to execute certain
+long-running tasks asynchronously to guarantee that web requests are handled
+promptly and work loads can be distributed across multiple machines.
 
 You'll need a good understanding of all the components involved to find out what
 the best configuration and arrangement of services will be for you. You could
@@ -15,7 +15,7 @@ machines across the network. You can always start small in a single-node
 environment and add more hardware later.
 
 
-Gaerman Job Server
+Gearman Job Server
 ==================
 
 The first thing that you need to do is to install the job server (Gearman Job
