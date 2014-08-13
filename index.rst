@@ -205,6 +205,7 @@ Installation
 * :ref:`installation-multi-node`
 * :ref:`installation-upgrading`
 * :ref:`installation-execution-limits`
+* :ref:`installation-asynchronous-jobs`
 
 Maintenance
 -----------

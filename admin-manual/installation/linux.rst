@@ -513,6 +513,15 @@ The rest of the fields can be filled as you need:
 * E-mail address
 * Password
 
+.. _linux-workers:
+
+Deployment of workers
+=====================
+
+If you... check out this page for further installation details.
+
+:ref:`foobar <installation-asynchronous-jobs>`
+
 .. _linux-security-considerations:
 
 Security considerations
