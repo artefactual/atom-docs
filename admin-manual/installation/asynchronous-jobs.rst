@@ -4,7 +4,7 @@
 Asynchronous jobs and worker management
 =======================================
 
-AtoM relies on `Gearman <http://gearman.org>` in order to execute certain
+AtoM relies on `Gearman <http://gearman.org>`__ in order to execute certain
 long-running tasks asynchronously to guarantee that web requests are handled
 promptly and work loads can be distributed across multiple machines.
 
@@ -36,7 +36,7 @@ latter, make sure that you update :file:`/etc/defaults/gearman` accordingly:
 .. note::
 
    By default, Gearman's job queues are stored in
-   `memcache <http://memcached.org/>`. In Ubuntu, the memcache package is
+   `memcache <http://memcached.org/>`__. In Ubuntu, the memcache package is
    installed locally as a dependency when you install gearman-job-server.
    However you are free to deploy the queue storage in a different machine or
    replace it with a durable solution like MySQL or SQLite3.
@@ -98,8 +98,8 @@ You can control the service execution status with the following commands:
    sudo status atom-worker  # Obtain current running status
 
 :command:`initctl` is the primary command used to interact with Upstart and its
-services. Check out its man page (:command:`man initctl`) or the following link:
-http://upstart.ubuntu.com/cookbook/#initctl.
+services. Check out its man page (:command:`man initctl`) or the following
+link for more instructions: http://upstart.ubuntu.com/cookbook/#initctl.
 
 An AtoM worker needs to know where the job server is running, which is defined
 in an application setting called :guilabel:`gearman_job_server` under
