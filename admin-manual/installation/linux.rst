@@ -518,9 +518,9 @@ The rest of the fields can be filled as you need:
 Deployment of workers
 =====================
 
-If you... check out this page for further installation details.
-
-:ref:`foobar <installation-asynchronous-jobs>`
+Optionally, you can use Gearman to add support for asynchronous tasks like
+SWORD deposits. Check out the following page for further installation details:
+:ref:`asynchronous jobs and worker management <installation-asynchronous-jobs>`.
 
 .. _linux-security-considerations:
 
