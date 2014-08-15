@@ -1403,7 +1403,151 @@ content
 Load digital objects via the command line
 =========================================
 
-content
+Known as the **Digital object load task**, this command-line tool will allow a
+user to bulk attach digital objects to existing information objects (e.g. :
+:term:`archival descriptions <archival description>`) through the use of a
+simple CSV file.
+
+This task will take a CSV file as input, which contains two columns: `filename` and
+`information_object_id`; the script will fail if these column headers are not
+present in the first row of the CSV file.
+
+The `filename` column contains the full (current) path to the digital asset
+(file). The `information_object_id` identifies the linked information object.
+AtoM does not allow more than one digital object per information object (with
+the exception of derivatives), and each digital object must have a
+corresponding information object to describe it, so this one-to-one
+relationship must be respected in the CSV import file.
+
+Finding the information_object_id
+---------------------------------
+
+The information_object_id is not a value that is accessible via the :term:`
+user interface` - it is a unique value used in AtoM's database. You can,
+however, use SQL in the command line to determine the ID of an information
+object. The following example will show you how to use a SQL query to find the
+`information_object_id`, if you know the :term:`slug` of the description:
+
+1. First, you will need to access mysqlCLI to be able to input a SQL query. To
+   do this, you will need to know the database name, user name, and password you
+   used when creating your database during installation. If your database is
+   on a different server (e.g. if you are trying to SSH in to access your
+   database server), you will also need to know the hostname - that is, the IP
+   address or domain name of the server where your database is located.
+2. The following is an example of the CLI command to enter to access mysqlCLI:
+
+   .. code-block:: bash
+
+      mysql -u root -pMYSECRETPASSWORD atom
+
+   * ``-u`` = user. If you followed our :ref:`installation instructions
+     <installation-linux>`, this will be ``root``
+   * ``-p`` = password. Enter the password you used during installation right
+     after the ``-p``. If you did not enter a password, include the ``-p``
+     on its own. If you are prompted later for a password and didn't use one,
+     just press enter.
+   * ``-h`` = hostname. If your database is on a different server, supply either
+     an IP address, or the domain name, where it is located.
+   * ``atom`` = your database name. If you followed our
+     :ref:`installation instructions <installation-linux>`, this will be
+     ``atom``; otherwise enter the database name you used when installing AtoM.
+
+3. You may be prompted for your password again. If so, enter it. If you did
+   not use a password during installation, simply press enter.
+4. Your command prompt should now say something like `mysql>`. You can now
+   enter a SQL query directly.
+5. The following example SQL command will return the information_object_id for
+   a desription, when the information object's :term:`slug` is known:
+
+   .. code-block:: bash
+
+      SELECT object_id FROM slug WHERE slug='your-slug-here';
+
+6. The query should return the object_id for the description:
+
+.. image:: images/digi-object-load-mysql-select.*
+   :align: center
+   :width: 70%
+   :alt: An image of a successful SELECT statement in mysqlCLI
+
+7. Enter `quit` to exit mysqlCLI.
+
+Using the digital object load task
+----------------------------------
+
+Before using this task, you will need to prepare:
+
+* A CSV file with 2 columns - ``information_object_id`` and ``filename``
+* A directory with your digital objects inside of it
+
+You can see the options available on the CLI task by typing in the following
+command:
+
+.. code-block:: bash
+
+   php symfony help digitalobject:load
+
+
+.. image:: images/digital-object-load-options.*
+   :align: center
+   :width: 85%
+   :alt: An image of the command-line options for digitalobject:load
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the import.
+
+By default, the digital object load task will **not index** the collection as
+it runs. This means that normally, you will need to manually repopulate the
+search index after running the task. Running without indexing allows the task
+to complete much more quickly - however, if you're only uploading a small set
+of digital objects, you can choose to have the task index the collection as it
+progresses, using the ``--index`` (or ``-i``) option
+
+The ``--path`` option ...
+
+**TO RUN THE DIGITAL OBJECT LOAD TASK**
+
+.. code-block:: bash
+
+   php symfony digitalobject:load /path/to/your/loadfile.csv
+
+**NOTES ON USE**
+
+* If an information object already has a :term:`digital object` attached to it,
+  it will be skipped during the import
+* Remember to repopulate the search index afterwards if you haven't used the
+  ``--index`` option!
+
+  .. code-block:: bash
+
+     php symfony search:populate
+
+
+Regenerating derivatives
+------------------------
+
+Sometimes the ``digitalobject:load`` task won't generate the :term:`thumbnail`
+and :term:`reference <reference display copy>` images properly for digital
+objects that were loaded (e.g. due to a crash or absence of convert installed,
+etc.). In this case, you can regenerate these thumbsnail/reference images using
+the following command:
+
+.. code-block:: bash
+
+   php symfony digitalobject:regen-derivatives
+
+.. WARNING::
+
+   All of your current derivatives will be deleted! They will be replaced
+   with new derivatives after the task has finished running. If you have
+   manually changed the :term:`thumbnail` or :term:`reference display copy`
+   of a digital object via the user interface (see:
+   :ref:`edit-digital-object`), these two will be replaced with digital
+   object derivatives created from the :term:`master digital object`.
+
+For more information on this task and the options available, see:
+:ref:`cli-regenerate-derivatives`.
 
 :ref:`Back to top <csv-import>`
 
@@ -1412,6 +1556,11 @@ content
 Index your content after an upload
 ==================================
 
-content
+After an import, you'll want to index your content so it can be searched by
+users. To do so, enter the following into the command-line:
+
+.. code-block:: bash
+
+   php symfony search:populate
 
 :ref:`Back to top <csv-import>`
