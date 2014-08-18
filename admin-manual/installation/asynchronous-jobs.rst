@@ -63,8 +63,6 @@ could look like:
 
 .. code-block:: upstart
 
-   php symfony tools:gearman-worker
-
    description "AtoM worker (gearmand) upstart service"
    
    start on (started mysql)
@@ -74,7 +72,7 @@ could look like:
    respawn limit 5 10
    
    env LOCATION=/usr/share/nginx/atom
-   env LOGFILE=/usr/share/nginx/log/atom-worker.log
+   env LOGFILE=/usr/share/nginx/atom/log/atom-worker.log
    
    setuid www-data
    setgid www-data
