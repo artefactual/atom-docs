@@ -1408,12 +1408,12 @@ user to bulk attach digital objects to existing information objects (e.g. :
 :term:`archival descriptions <archival description>`) through the use of a
 simple CSV file.
 
-This task will take a CSV file as input, which contains two columns: `filename` and
-`information_object_id`; the script will fail if these column headers are not
+This task will take a CSV file as input, which contains two columns: ``filename`` and
+``information_object_id``; the script will fail if these column headers are not
 present in the first row of the CSV file.
 
-The `filename` column contains the full (current) path to the digital asset
-(file). The `information_object_id` identifies the linked information object.
+The ``filename`` column contains the full (current) path to the digital asset
+(file). The ``information_object_id`` identifies the linked information object.
 AtoM does not allow more than one digital object per information object (with
 the exception of derivatives), and each digital object must have a
 corresponding information object to describe it, so this one-to-one
@@ -1422,11 +1422,11 @@ relationship must be respected in the CSV import file.
 Finding the information_object_id
 ---------------------------------
 
-The information_object_id is not a value that is accessible via the :term:`
-user interface` - it is a unique value used in AtoM's database. You can,
-however, use SQL in the command line to determine the ID of an information
+The information_object_id is not a value that is accessible via the
+:term:`user interface` - it is a unique value used in AtoM's database. You can,
+however, use SQL in the command-line to determine the ID of an information
 object. The following example will show you how to use a SQL query to find the
-`information_object_id`, if you know the :term:`slug` of the description:
+``information_object_id``, if you know the :term:`slug` of the description:
 
 1. First, you will need to access mysqlCLI to be able to input a SQL query. To
    do this, you will need to know the database name, user name, and password you
@@ -1454,7 +1454,7 @@ object. The following example will show you how to use a SQL query to find the
 
 3. You may be prompted for your password again. If so, enter it. If you did
    not use a password during installation, simply press enter.
-4. Your command prompt should now say something like `mysql>`. You can now
+4. Your command prompt should now say something like ``mysql>``. You can now
    enter a SQL query directly.
 5. The following example SQL command will return the information_object_id for
    a desription, when the information object's :term:`slug` is known:
@@ -1463,14 +1463,15 @@ object. The following example will show you how to use a SQL query to find the
 
       SELECT object_id FROM slug WHERE slug='your-slug-here';
 
-6. The query should return the object_id for the description:
+6. The query should return the object_id for the description. Here is an
+   example:
 
 .. image:: images/digi-object-load-mysql-select.*
    :align: center
    :width: 70%
    :alt: An image of a successful SELECT statement in mysqlCLI
 
-7. Enter `quit` to exit mysqlCLI.
+7. Enter ``quit`` to exit mysqlCLI.
 
 Using the digital object load task
 ----------------------------------
@@ -1504,7 +1505,29 @@ to complete much more quickly - however, if you're only uploading a small set
 of digital objects, you can choose to have the task index the collection as it
 progresses, using the ``--index`` (or ``-i``) option
 
-The ``--path`` option ...
+The ``--path`` option will allow you to simplify the ``filename`` column in
+your CSV, to avoid repetition. If all the digital objects you intend to upload
+are stored in the same folder, then adding /path/to/my/folder/ to each object
+filename seems tedious - your ``filename`` column will need to look something
+like this:
+
+.. code-block:: bash
+
+   filename
+   /path/to/my/folder/image1.png
+   /path/to/my/folder/image2.jpg
+   /path/to/my/folder/text1.pdf
+   etc...
+
+To avoid this when all digital objects are in the same directory, you can use
+the ``--path`` option to pre-supply the path to the digital objects - for each
+filename, the path supplied will be appended. **Note** that you will need to
+use a trailing slash to finish your path prefix - e.g.:
+
+.. code-block:: bash
+
+   php symfony digitalobject:load --path="/path/to/my/folder/" /path/to/my/spreadsheet.csv
+
 
 **TO RUN THE DIGITAL OBJECT LOAD TASK**
 
@@ -1518,6 +1541,7 @@ The ``--path`` option ...
   it will be skipped during the import
 * Remember to repopulate the search index afterwards if you haven't used the
   ``--index`` option!
+
 
   .. code-block:: bash
 
