@@ -61,7 +61,7 @@ A better way to run a worker is to use a process supervisor like upstart
 (included in Ubuntu). An upstart service (:file:`/etc/init/atom-worker.conf`)
 could look like:
 
-.. code-block:: upstart
+.. code-block:: none
 
    description "AtoM worker (gearmand) upstart service"
    
