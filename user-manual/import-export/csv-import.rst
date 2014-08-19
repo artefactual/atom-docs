@@ -758,13 +758,15 @@ used** - AtoM requires the uses of the pre-set defaults for symfony to be
 able to execute the import.
 
 The ``--rows-until-update`` option can be used for a simple visual
-representatio of progress in the command-line. Enter a whole integer, to
+representation of progress in the command-line. Enter a whole integer, to
 represent the number of rows should be imported from the CSV before the
 command-line prints a period (e.g. `` . `` ) in the console, as a sort of
 crude progress bar. For example, entering ``--rows-until-update=5`` would
 mean that the import progresses, another period will be printed every 5 rows.
 This is a simple way to allow the command-line to provide a visual output of
-progress.
+progress. For further information on the ``--rows-until-update`` option and an
+example of the command-line option in use, see also the section below,
+:ref:`csv-import-progress`.
 
 You can use the ``--skip-rows`` option to skip **X** amount of rows in the CSV
 before beginning the import. This can be useful if you have interrupted the
@@ -978,7 +980,8 @@ able to execute the import.
 
 The ``--rows-until-update``, ``--skip-rows``, and ``--error-log`` options can
 be used the same was as described in the section :ref:`above <csv-cli-options>`
-on importing descriptions.
+on importing descriptions. For more information on the ``--rows-until-update``
+option, see also the section below, :ref:`csv-import-progress`.
 
 Use the ``--source-name`` to specify a source importing to a AtoM installation
 in which information objects from multiple sources have been imported, and/or
@@ -1064,7 +1067,8 @@ able to execute the import.
 
 The ``--rows-until-update``, ``--skip-rows``, and ``--error-log`` options can
 be used the same was as described in the section :ref:`above <csv-cli-options>`
-on importing descriptions.
+on importing descriptions. For more information on the ``--rows-until-update``
+option, see also the section below, :ref:`csv-import-progress`.
 
 The ``--merge-existing`` option may be used to avoid the creation of
 duplicate repositories. That is - if, during import, any rows in the CSV
@@ -1292,7 +1296,9 @@ able to execute the import.
 
 The ``--rows-until-update``, ``--skip-rows``, ``--error-log``, and ``--index``
 options can be used the same was as described in the section
-:ref:`above <csv-cli-options>` on importing descriptions.
+:ref:`above <csv-cli-options>` on importing descriptions. For more information
+on the ``--rows-until-update`` option, see also the section below,
+:ref:`csv-import-progress`.
 
 The ``--alias-file`` and ``--relation-file`` options are used to import
 accompanying alternate name (aka Alias data) and relationship CSV files at
@@ -1472,7 +1478,9 @@ file that used the same ``--source-name`` value. An example is provided
 
 The ``--rows-until-update``, ``--skip-rows``, ``--error-log``, and ``--index``
 options can be used the same was as described in the section
-:ref:`above <csv-cli-options>` on importing descriptions.
+:ref:`above <csv-cli-options>` on importing descriptions. For more information
+on the ``--rows-until-update`` option, see also the section below,
+:ref:`csv-import-progress`.
 
 
 :ref:`Back to top <csv-import>`
