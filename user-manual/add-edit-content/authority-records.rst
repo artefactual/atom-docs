@@ -237,7 +237,7 @@ Add a new authority record from the main menu
 
 .. image:: images/add-authority-record.*
    :align: center
-   :width: 40%
+   :width: 30%
    :alt: An image of the Add menu's options
 
 2. On loading, the :term:`edit page` displays the record with all
@@ -248,7 +248,7 @@ Add a new authority record from the main menu
 .. image:: images/new-authority-record.*
    :align: center
    :width: 80%
-   :alt: An image of the Add menu's options
+   :alt: An image of a new authority record
 
 3. Enter data as required. The authority record edit template is based on the
    `ICA's <http://www.ica.org/>`__ *International Standard Archival Authority
@@ -333,6 +333,19 @@ new :term:`authority record` for that name will be generated when the
 different labels for the field to add a new creator, template specific
 instructions have been included below.
 
+.. IMPORTANT::
+
+   The creator name :term:`fields <field>` in AtoM are auto-complete fields -
+   as you type AtoM will look for matches in the existing
+   :term:`authority records <authority record>`. If you type a name quickly
+   and press enter or move away from the field, AtoM will create a **new**
+   authority record instead of linking to an existing one, even if you have
+   entered the name identically to an existing one. If you are intending to
+   link to an existing authority record instead of creating a new one, be sure
+   that you wait for the autocomplete and select the matching record from the
+   :term:`drop-down menu`! For more information on linking to an existing
+   authority record, see below: :ref:`link-authority-to-description`
+
 **ISAD(G) edit template**
 
 * In the "Context :term:`area <information area>`" of the :ref:`ISAD(G)
@@ -340,6 +353,11 @@ instructions have been included below.
   of creator(s)."
 * The name will be saved as a new :term:`authority record` when you save the
   :term:`archival description`.
+
+.. image:: images/add-creator-isad.*
+   :align: center
+   :width: 75%
+   :alt: An image of adding a new creator in the ISAD template
 
 **Rules for Archival Description (RAD) edit template**
 
@@ -352,12 +370,22 @@ instructions have been included below.
   click "Submit". The name will be saved as a new :term:`authority record`
   when you save the :term:`archival description`.
 
+.. image:: images/add-creator-rad.*
+   :align: center
+   :width: 60%
+   :alt: An image of adding a new creator in the RAD template
+
 **Describing Archives: A Content Standard (DACS) edit template**
 
 * In the "Identity elements" :term:`information area` of the :ref:`DACS
   template <dacs-template>`, navigate to the "Name of creator(s)" section, and
   enter a new name. The name will be saved as a new :term:`authority record`
   when you save the :term:`archival description`.
+
+.. image:: images/add-creator-dacs.*
+   :align: center
+   :width: 75%
+   :alt: An image of adding a new creator in the DACS template
 
 **Dublin Core Version 1.1 (DC) edit template**
 
@@ -369,13 +397,30 @@ instructions have been included below.
 * The name will be saved as a new :term:`authority record` when you save the
   :term:`archival description`.
 
+.. image:: images/add-creator-dc.*
+   :align: center
+   :width: 75%
+   :alt: An image of adding a new creator in the DC template
+
 **Metadata Object Description Schema (MODS) edit template**
 
 * In the :ref:`MODS template <mods-template>`, there is only one main
   :term:`information area`, in which a section called "Names and origin info"
   appears, close to the top of the record's :term:`edit page`.
+
+.. image:: images/add-creator-mods1.*
+   :align: center
+   :width: 75%
+   :alt: An image of adding a new creator in the MODS template
+
 * Navigate to the "Names" and origin info section, and click the "Add new"
   button that appears under the heading, "Add new name and/or date(s)."
+
+.. image:: images/add-creator-mods.*
+   :align: center
+   :width: 60%
+   :alt: An image of adding a new creator in the MODS template
+
 * Enter a new name in the "Actor name" field of the pop-up dialog, and then
   click "Submit". The name will be saved as a new :term:`authority record`
   when you save the :term:`archival description`.
@@ -515,6 +560,16 @@ create a link between an authority record and an archival description:
 From the archival description
 -----------------------------
 
+.. NOTE::
+
+   If you are linking an authority record as a :term:`creator`, contributor,
+   or other role other than as a name access point, the exact instructions
+   will be particular to which standards-based description template you are
+   using (e.g. ISAD, RAD, DACS, Dublin Core, MODS). Specific details on the
+   location of the relevant field in each template have been included in the
+   section above - when you reach step 3, see:
+   :ref:`authority-record-creator-names` for further guidance if necessary.
+
 1. First, navigate to the :term:`archival description` you wish to edit. You
    can do this by :ref:`browsing <browse>` or :ref:`searching <search-atom>`
    for the :term:`archival description` - see :ref:`access-content` for more
@@ -529,13 +584,40 @@ From the archival description
    :width: 75%
    :alt: An image of the button block on an archival description
 
-3. To create a link to an authority record for a creator, follow the steps
+3. To create a link to an authority record for a **creator**, follow the steps
    above for :ref:`adding a new creator <authority-record-creator-names>` -
    however, instead of entering a new name, begin typing the name of the
    authority record to which you would like to create a link. The name
    :term:`field` is an auto-complete - as you type, matching results will
    load in a :term:`drop-down menu` below the field. When you see the
    authority record you would like to link, click on it to select it.
+
+.. figure:: images/add-creator-isad.*
+   :align: center
+   :figwidth: 85%
+   :width: 100%
+   :alt: An image of linking an authority record in ISAD
+
+   This image shows an example of linking an authority record as a creator in
+   the ISAD(G) template. For template specific instructions, see the section
+   above, :ref:`authority-record-creator-names`
+
+.. IMPORTANT::
+
+   This method makes use of  an `auto-complete <https://en.wikipedia.org/wiki
+   /Auto-complete>`__ field to find the related :term:`authority record` as
+   you begin to type its name/title. **Be sure** to pick the record from the
+   :term:`drop-down <drop-down menu>` when it appears - if you type the full
+   name and press enter, a new :term:`authority record` will be generated
+   instead of a link being created to an existing one!
+
+4. To create a link to an authority record as a **name access point**, scroll
+   down to the "Access points" :term:`information area` and in the Name access
+   points field, begin typing the name of the authority record to which you
+   would like to create a link. The name :term:`field` is an auto-complete -
+   as you type, matching results will load in a :term:`drop-down menu` below
+   the field. When you see the authority record you would like to link, click
+   on it to select it.
 
 .. image:: images/link-authority-record.*
    :align: center
@@ -551,17 +633,20 @@ From the archival description
    name and press enter, a new :term:`authority record` will be generated
    instead of a link being created to an existing one!
 
-4. To create links to multiple authority records, you can repeat this process
-   as needed. When you are done editing the record, save the :term:`archival
-   description` by scrolling down and pressing "Save" in the :term:`button
-   block`.
+5. To create links to multiple authority records, you can repeat this process
+   as needed - both the creator fields, and the name access point fields in
+   AtoM will allow for multiple entries.
+
+6. When you are done editing the record, save the
+   :term:`archival description` by scrolling down and pressing "Save" in the
+   :term:`button block`.
 
 .. image:: images/button-block-save.*
    :align: center
    :width: 75%
    :alt: An image of the button block when editing an archival description
 
-5. The :term:`archival description` will reload in :term:`view mode`. You
+7. The :term:`archival description` will reload in :term:`view mode`. You
    should be able to see the creator name as a hyperlink on the archival
    description. Follow the link to ensure you have linked to the proper
    :term:`authority record`. The linked archival description will also appear
