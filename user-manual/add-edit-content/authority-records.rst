@@ -51,6 +51,11 @@ Persons and Families* (`ISAAR <http://www.ica.org/10203/standards/isaar-cpf-
 international-standard-archival-authority-record-for-corporate-bodies-persons-
 and-families-2nd-edition.html>`__).
 
+.. image:: images/authority-record-example.*
+   :align: center
+   :width: 75%
+   :alt: An image of an Authority record in AtoM
+
 AtoM, Authority records, Biographical histories, and Name access points
 =======================================================================
 
@@ -229,10 +234,22 @@ Add a new authority record from the main menu
    Alternatively, navigate to an authority record view page and click the
    :term:`"Add new" button <add new button>` in the :term:`button block`. AtoM
    takes you to a blank edit page for data entry.
+
+.. image:: images/add-authority-record.*
+   :align: center
+   :width: 40%
+   :alt: An image of the Add menu's options
+
 2. On loading, the :term:`edit page` displays the record with all
    :term:`information areas <information area>` closed; click on an
    :term:`information area` to access the :term:`fields <field>` grouped under
    it.
+
+.. image:: images/new-authority-record.*
+   :align: center
+   :width: 80%
+   :alt: An image of the Add menu's options
+
 3. Enter data as required. The authority record edit template is based on the
    `ICA's <http://www.ica.org/>`__ *International Standard Archival Authority
    Record for Corporate Bodies, Persons and Families* (`ISAAR
@@ -248,6 +265,11 @@ Add a new authority record from the main menu
    also result in no new record being created.
 5. To save the new record, click the :term:`"Create" button <create button>`
    located in the :term:`button block` at the bottom of the record.
+
+.. image:: images/button-block-create.*
+   :align: center
+   :width: 75%
+   :alt: An image of the create button on a new authority record
 
 Once the new :term:`authority record` is saved, you will be redirected to the
 record's :term:`view page`, where you can review your work. Clicking "Edit"
@@ -280,6 +302,10 @@ already exists, however, new names can be added "on the fly" in these fields:
 * :ref:`Creator names <authority-record-creator-names>`
 * :ref:`Name access points <authority-record-name-access>`
 
+.. image:: images/add-authority-fly.*
+   :align: center
+   :width: 85%
+   :alt: An image of creating a new authority record on the fly
 .. TIP::
 
    When you are finished creating or editing your :term:`archival
@@ -387,13 +413,18 @@ page` of any other authority record via the "Add new" button in the
 :term:`button block`. To do so:
 
 1. Navigate to an existing :term:`authority record` in AtoM. You can do this
-   by :doc:`browsing <../access-content/browse>` or by
-   :doc:`searching <../access-content/search-atom>` for  a specific
-   :term:`authority record` - see :ref:`Access content <access-content>` for
-   more information on navigation in AtoM.
+   by :ref:`browsing <browse>` or by :ref:`searching <search-atom>` for a
+   specific :term:`authority record` - see :ref:`access-content` for more
+   information on navigation in AtoM.
 2. At the bottom of the authority record's :term:`view page`, you will see the
    :term:`button block` with several options (Edit, Delete, and Add new).
    Click "Add new".
+
+.. image:: images/authority-add-from.*
+   :align: center
+   :width: 85%
+   :alt: An image of the Add new button on an existing authority record
+
 3. Enter data as required. The authority record edit template is based on the
    `ICA's <http://www.ica.org/>`__ *International Standard Archival Authority
    Record for Corporate Bodies, Persons and Families* (`ISAAR
@@ -410,11 +441,15 @@ page` of any other authority record via the "Add new" button in the
 5. To save the new record, click the :term:`"Create" button <create button>`
    located in the :term:`button block` at the bottom of the record.
 
+.. image:: images/button-block-create.*
+   :align: center
+   :width: 75%
+   :alt: An image of the create button on a new authority record
+
 Once the new :term:`authority record` is saved, you will be redirected to the
 record's :term:`view page`, where you can review your work. Clicking "Edit"
 in the :term:`button block` at the bottom of the record will re-open the
 authority record in :term:`edit mode`.
-
 
 :ref:`Back to top <authority-records>`
 
@@ -423,10 +458,9 @@ authority record in :term:`edit mode`.
 Edit an existing authority record
 =================================
 
-1. First, navigate to the :term:`authority record` you wish to edit. You
-   can do this by :doc:`browsing <../access-content/browse>` or
-   :doc:`searching <../access-content/search-atom>` for the :term:`archival
-   description` - see :ref:`Access content <access-content>` for more
+1. First, navigate to an existing :term:`authority record` in AtoM. You can do
+   this by :ref:`browsing <browse>` or by :ref:`searching <search-atom>` for a
+   specific :term:`authority record` - see :ref:`access-content` for more
    information on navigation in AtoM. See :ref:`ISAAR-CPF <isaar-template>`
    for more information on specific fields in the authority record edit
    template.
@@ -434,6 +468,12 @@ Edit an existing authority record
    button in the :term:`button block`, or by clicking on one of the
    :term:`information area` headings; this takes you to the record's
    :term:`edit page`.
+
+.. image:: images/button-block-authority.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block on an authority record
+
 3. On loading, the :term:`edit page` displays the record with all
    :term:`information areas <information area>` closed; click on an
    information area to access the :term:`fields <field>` grouped under it
@@ -445,6 +485,11 @@ Edit an existing authority record
    authority record.
 6. To save your edits, click the "Save" button located in the :term:`button
    block` at the bottom of the record.
+
+.. image:: images/button-block-save.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block when editing an authority record
 
 You will be redirected to the :term:`view page` for the edited
 :term:`authority record`, where you can review your work.
@@ -471,14 +516,19 @@ From the archival description
 -----------------------------
 
 1. First, navigate to the :term:`archival description` you wish to edit. You
-   can do this by :doc:`browsing <../access-content/browse>` or
-   :doc:`searching <../access-content/search-atom>` for the :term:`archival
-   description` - see :ref:`Access content <access-content>` for more
+   can do this by :ref:`browsing <browse>` or :ref:`searching <search-atom>`
+   for the :term:`archival description` - see :ref:`access-content` for more
    information on navigation in AtoM.
 2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
    button in the :term:`button block`, or by clicking on one of the
    :term:`information area` headings; this takes you to the record's
    :term:`edit page`.
+
+.. image:: images/button-block-description.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block on an archival description
+
 3. To create a link to an authority record for a creator, follow the steps
    above for :ref:`adding a new creator <authority-record-creator-names>` -
    however, instead of entering a new name, begin typing the name of the
@@ -486,6 +536,11 @@ From the archival description
    :term:`field` is an auto-complete - as you type, matching results will
    load in a :term:`drop-down menu` below the field. When you see the
    authority record you would like to link, click on it to select it.
+
+.. image:: images/link-authority-record.*
+   :align: center
+   :width: 85%
+   :alt: An image of linking an authority record
 
 .. IMPORTANT::
 
@@ -500,6 +555,12 @@ From the archival description
    as needed. When you are done editing the record, save the :term:`archival
    description` by scrolling down and pressing "Save" in the :term:`button
    block`.
+
+.. image:: images/button-block-save.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block when editing an archival description
+
 5. The :term:`archival description` will reload in :term:`view mode`. You
    should be able to see the creator name as a hyperlink on the archival
    description. Follow the link to ensure you have linked to the proper
@@ -507,23 +568,33 @@ From the archival description
    in the "Relationships" :term:`information area` of the :term:`authority
    record`.
 
-
 .. _authority-link-from-authority:
 
 From the authority record
 -------------------------
 
 1. First, navigate to the :term:`authority record` you wish to edit. You
-   can do this by :doc:`browsing <../access-content/browse>` or
-   :doc:`searching <../access-content/search-atom>` for the
-   :term:`authority record` - see :ref:`Access content <access-content>` for
-   more information on navigation in AtoM.
+   can do this by :ref:`browsing <browse>` or :ref:`searching <search-atom>`
+   for the :term:`archival description` - see :ref:`access-content` for more
+   information on navigation in AtoM.
 2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
    button in the :term:`button block`, or by clicking on one of the
    :term:`information area` headings; this takes you to the record's
    :term:`edit page`.
+
+.. image:: images/button-block-authority.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block on an authority record
+
 3. In the "Relationships" :term:`information area` of the authority record's
    :term:`edit page`, click the "Add new" button under "Related resources".
+
+.. image:: images/authority-add-relation-description.*
+   :align: center
+   :width: 85%
+   :alt: An image of the Relationships area in an authority record
+
 4. AtoM will open a pop-up dialog where you can select the related
    :term:`archival description` and define the nature and time frame of the
    relationship.
@@ -533,12 +604,17 @@ From the authority record
    :`drop-down menu` below the field. When you see the
    :term:`archival description` you would like to link, click on it to select
    it.
+
+.. image:: images/authority-relation-dialog-description.*
+   :align: center
+   :width: 55%
+   :alt: An image of the Relationships dialog in AtoM
+
 6. Add additional details in the subsequent fields to qualify the
    relationship: the "Nature of relationship" field is a :term:`drop-down
    menu` whose values are pulled from the Event types :term:`taxonomy` (see
-   :doc:`Terms <../add-edit-content/terms>` for more information on working
-   with taxonomies); start, end, and display dates can be added as well. When
-   you are finished, click "Submit".
+   :ref:`terms` for more information on working  with taxonomies); start, end,
+   and display dates can be added as well. When you are finished, click "Submit".
 7. The related :term:`archival description` will now appear in the Related
    resources table of the Relationships area. Click the pencil icon to re-open
    the pop-up dialog and edit the relationship, or click the **X** icon to
@@ -549,6 +625,12 @@ From the authority record
 8. When you are finished, click "Save" in the :term:`button block` at the bottom
    of the authority record's :term:`edit page` to save your changes and exit
    :term:`edit mode`.
+
+.. image:: images/button-block-save.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block when editing an archival description
+
 9. AtoM will reload the :term:`authority record` in :term:`view mode`.
    The relationship link will appear in the :term:`context menu` on the
    left-hand side of the page. You can click on the related description's title
@@ -562,17 +644,28 @@ Create a relationship between two authority records
 ===================================================
 
 1. First, navigate to the :term:`authority record` you wish to edit. You
-   can do this by :doc:`browsing <../access-content/browse>` or
-   :doc:`searching <../access-content/search-atom>` for the
-   :term:`authority record` - see :ref:`Access content <access-content>` for
-   more information on navigation in AtoM.
+   can do this by :ref:`browsing <browse>` or :ref:`searching <search-atom>`
+   for the :term:`archival description` - see :ref:`access-content` for more
+   information on navigation in AtoM.
 2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
    button in the :term:`button block`, or by clicking on one of the
    :term:`information area` headings; this takes you to the record's
    :term:`edit page`.
+
+.. image:: images/button-block-authority.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block on an authority record
+
 3. In the "Relationships" :term:`information area` of the authority record's
    :term:`edit page`, click the "Add new" button under "Related  corporate
    bodies, persons, or families".
+
+.. image:: images/authority-add-relation-authority.*
+   :align: center
+   :width: 85%
+   :alt: An image of the Relationships area in an authority record
+
 4. AtoM will open a pop-up dialog where you can select the related
    :term:`authority record` and define the nature and time frame of the
    relationship.
