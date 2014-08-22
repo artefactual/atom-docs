@@ -488,7 +488,80 @@ XML files, or large files (typically larger than 1 MB) through the command line.
 
 .. code:: bash
 
-   php symfony import:bulk /NAME-OF-FOLDER
+   php symfony import:bulk /path/to/my/xmlFolder
+
+Using the import:bulk command
+-----------------------------
+
+.. image:: images/bulk-import-cli-options.*
+   :align: center
+   :width: 85%
+   :alt: An image of the options available in the import:bulk command
+
+By typing ``php symfony help import:bulk`` into the command-line without
+specifying the path to a directory of XML files, you can see the options
+available on the ``import:bulk`` command, as pictured above.
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the import.
+
+The ``--index`` option is used to enable the rebuilding of the search index as
+part of the import task. When using the :ref:`user interface <import-xml>` to
+import XML files, the import is indexed automatically - but when running
+an import via the command-line interface, indexing is **disabled** by default.
+This is because indexing during import can be incredibly slow, and the
+command-line is generally used for larger imports. Generally, we recommend a
+user simply clear the cache and rebuild the search index following an import -
+from AtoM's root directory, run:
+
+.. code-block:: bash
+
+   php symfony cc & php symfony search:populate
+
+However, if you would like to index the import as it progresses, the
+``--index`` option can be used to enable this.
+
+The ``--taxonomy`` option is only available in AtoM 2.1 and later releases. It
+is used to assist in the import of SKOS xml files, such as
+:term:`places <place>` and :term:`subjects <subject>`, ensuring that the
+:term:`terms <term>` are imported to the correct :term:`taxonomy`. As input, the
+``--taxonomy`` option takes a taxonomy ID - these are permanent identifiers
+used internally in AtoM to manage the various taxonomies, which can be found
+in AtoM in ``/lib/model/QubitTaxonomy.php`` (see on GitHub
+`here <https://github.com/artefactual/atom/blob/qa/2.1.x/lib/model/QubitTaxonomy.php#L20>`__).
+
+**Example use:** Importing terms to the Places taxonomy
+
+.. code-block:: bash
+
+   php symfony import:bulk --taxonomy="42" /path/to/mySKOSfiles
+
+**Example use:** Importing terms to the Subjects taxonomy
+
+.. code-block:: bash
+
+   php symfony import:bulk --taxonomy="35" /path/to/mySKOSfiles
+
+The ``--schema`` option is deprecated in AtoM, and not currently in use. Note
+that while the ``import:bulk`` task *can* be used to import CSV files as well
+as XML, this is strongly discouraged, as the specific ``csv:import`` tasks
+have more options suited to CSV import. For more information on CSV import via
+the command-line in AtoM, see: :ref:`csv-import`.
+
+The ``--output`` option will generate a simple CSV file containing details of
+the import process, including the time elapsed and memory used during each
+import. To use the option, you mush specify both a path and a filename for the
+CSV file to output. For example:
+
+.. code-block:: bash
+
+   php symfony import:bulk --output="/path/to/output-results.csv" /path/to/my/xmlFolder
+
+The CSV contains 3 columns. The first will simply list a progressive import
+number (e.g. 1, 2, 3...). The second indicates the time elapsed during the
+import of that XML file, in seconds, while the third column indicates the
+memory used during the XML import, in bytes.
 
 .. _common-atom-queries:
 
