@@ -663,8 +663,6 @@ create and link to a new authority record.
 
 **EAD**
 
-For a person or family:
-
 .. code:: bash
 
    <archdesc>
@@ -676,24 +674,25 @@ For a person or family:
                      <origination encodinganalog="1.7C">
                         <name>
 
+.. NOTE::
 
-For a corporation or organization:
+   This is the default export EAD when an Entity type has not been set for the
+   actor on the related :term:`authority record`. The final EAD element can be
+   more precise, if the user has entered an Entity type on the related
+   :term:`authority record`. When the Entity type is set to **Person**, the EAD
+   will export using ``<persname>`` instead of  ``<name>``; when set to
+   **Family**, the EAD will export using ``<famname>``  instead of ``<name>``;
+   and when set to **Organization**, the EAD will export using ``<corpname>``
+   instead of ``<name>``. The ``<name>`` element is the default when no
+   entity type is set. For more information on authority records and the ISAAR
+   standard upon which the authority record template is based, see:
+   :ref:`authority-records` and :ref:`isaar-template`.
 
-.. code:: bash
+.. TIP::
 
-   <archdesc>
-      <bioghist encodinganalog="1.7B">
-         <chronlist>
-            <chronitem>
-               <eventgrp>
-                  <event>
-                     <origination encodinganalog="1.7C">
-                        <corpname>
-
-.. note::
-
-   When entering the description manually, the Creator field is found
-   within the Dates of creation area, labeled as "Actor name."
+   When entering the description manually, the Creator field is found in the
+   RAD template  within the Dates of creation :term:` information area`,
+   labeled as "Actor name."
 
 :ref:`Back to the top <rad-template>`
 
@@ -725,11 +724,13 @@ See also RAD section 1.7B1.
                      <note>
 
 
-.. note:: When entering data manually, this field needs to be written in the
-:term:`authority record`. If an authority record does not already exist, AtoM
-will create one when a new creator is entered, above. The user can then
-navigate to the authority record to enter the Biographical or Administrative
-history (see: :ref:`Authority records <authority-records>`).
+.. note::
+
+   When entering data manually, this field needs to be written in the
+   :term:`authority record`. If an authority record does not already exist, AtoM
+   will create one when a new creator is entered, above. The user can then
+   navigate to the authority record to enter the Biographical or Administrative
+   history (see: :ref:`Authority records <authority-records>`).
 
 When importing descriptions by CSV, by default this column will
 create a Biographical history in the :term:`authority record`, regardless of
