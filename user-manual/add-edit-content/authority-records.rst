@@ -180,7 +180,7 @@ overall) in the application, AtoM behaves in several specific ways:
   <link-authority-record-function>`
 * :ref:`Delete an authority record <delete-authority-record>`
 
-.. NOTE::
+.. TIP::
    For more information on using the specific :term:`fields <field>` within
    the Authority record template, see: :ref:`ISAAR template <isaar-template>`
 
@@ -302,10 +302,6 @@ already exists, however, new names can be added "on the fly" in these fields:
 * :ref:`Creator names <authority-record-creator-names>`
 * :ref:`Name access points <authority-record-name-access>`
 
-.. image:: images/add-authority-fly.*
-   :align: center
-   :width: 85%
-   :alt: An image of creating a new authority record on the fly
 .. TIP::
 
    When you are finished creating or editing your :term:`archival
@@ -443,6 +439,11 @@ description, but not its :term:`creator`. Type a new name into a Name
 :term:`access point` :term:`field`. When you save the :term:`archival
 description` record, AtoM creates a new :term:`authority record` for the
 name.
+
+.. image:: images/add-authority-fly.*
+   :align: center
+   :width: 85%
+   :alt: An image of creating a new authority record on the fly
 
 .. seealso::
 
@@ -761,6 +762,11 @@ Create a relationship between two authority records
    :term:`authority record` you would like to link, click on it to select
    it.
 
+.. image:: images/relationship-dialogue.*
+   :align: center
+   :width: 55%
+   :alt: An image of the Relationships dialog in an authority record
+
 .. NOTE::
 
    You cannot create a new authority record from this dialog by entering a
@@ -771,6 +777,12 @@ Create a relationship between two authority records
 
 6. Add additional details in the subsequent fields to qualify the
    relationship. When you are finished, click "Submit".
+
+.. image:: images/donor-dialog-submit.*
+   :align: center
+   :width: 65%
+   :alt: An image of the submit button in the Relationships dialog
+
 7. The related :term:`authority record` will now appear in the *Related
    corporate bodies, persons, or families* table of the Relationships area.
    Click the pencil icon to re-open the pop-up dialog and edit the
@@ -778,9 +790,16 @@ Create a relationship between two authority records
    can also repeat this process to add multiple links by clicking the "Add
    new" button below the *Related corporate bodies, persons, or families*
    again - AtoM will open a new pop-up dialog. Repeat steps 3-6 as needed.
+
 8. When you are finished, click "Save" in the :term:`button block` at the bottom
    of the authority record's :term:`edit page` to save your changes and exit
    :term:`edit mode`.
+
+.. image:: images/button-block-save.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block when in Edit mode
+
 9. AtoM will reload the :term:`authority record` in :term:`view mode`.
    :ref:`Back to top <authority-records>`. The relationship is expressed in
    the "Relationships" :term:`information area` of the authority record's
@@ -807,12 +826,24 @@ relationship between an existing authority record and an existing function:
    list, or using the dedicated Functions search bar on the Browse functions
    page to find the related function. Click on the related function to
    navigate to its :term:`view page`. For more information on browsing and
-   searching in AtoM, see: :doc:`Browse <../access-content/browse>` or
-   :doc:`Search <../access-content/search-atom>`.
+   searching in AtoM, see: :ref:`Browse <browse>` or
+   :ref:`Search <search-atom>`.
+
+.. image:: images/browse-functions.*
+   :align: center
+   :width: 40%
+   :alt: An image of the Browse menu
+
 2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
    button in the :term:`button block`, or by clicking on one of the
    :term:`information area` headings; this takes you to the record's
    :term:`edit page`.
+
+.. image:: images/button-block-function.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block on a function record
+
 3. In the "Relationships" :term:`information area` of the function's
    :term:`edit page`, click the "Add new" button under "Related  authority
    records".
@@ -826,6 +857,11 @@ relationship between an existing authority record and an existing function:
    :term:`authority record` you would like to link, click on it to select
    it.
 
+.. image:: images/function-relationship-dialogue.*
+   :align: center
+   :width: 65%
+   :alt: An image of the Functions relationship dialog
+
 .. NOTE::
 
    You cannot create a new authority record from this dialog by entering a
@@ -836,6 +872,12 @@ relationship between an existing authority record and an existing function:
 
 6. Add additional details in the subsequent fields to qualify the
    relationship. When you are finished, click "Submit".
+
+.. image:: images/donor-dialog-submit.*
+   :align: center
+   :width: 65%
+   :alt: An image of the submit button in the Functions relationship dialog
+
 7. The related :term:`authority record` will now appear in the *Related
    authority records* table of the Relationships area. Click the pencil icon
    to re-open the pop-up dialog and edit the relationship, or click the **X**
@@ -843,9 +885,21 @@ relationship between an existing authority record and an existing function:
    add multiple links by clicking the "Add new" button below the *Related
    authority records* again - AtoM will open a new pop-up dialog. Repeat steps
    3-6 as needed.
+
+.. image:: images/function-relationship-populated.*
+   :align: center
+   :width: 85%
+   :alt: An image of the Relationships area in a function record
+
 8. When you are finished, click "Save" in the :term:`button block` at the
    bottom of the function's :term:`edit page` to save your changes and exit
    :term:`edit mode`.
+
+.. image:: images/button-block-save.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block when in Edit mode
+
 9. AtoM will reload the :term:`function` in :term:`view mode`.
    :ref:`Back to top <authority-records>`. The relationship is expressed in
    the "Relationships" :term:`information area` of the function's
@@ -860,14 +914,25 @@ Delete an authority record
 ==========================
 
 1. Navigate to the :term:`authority record` you wish to edit. You can do this
-   by :doc:`browsing <../access-content/browse>` or :doc:`searching
-   <../access-content/search-atom>` for the :term:`authority record` - see
-   :ref:`Access content <access-content>` for more information on navigation
-   in AtoM.
+   by :ref:`browsing <browse>` or :ref:`searching <search-atom>` for the
+   :term:`authority record` - see :ref:`access-content` for more information on
+   navigation in AtoM.
 2. Click the :term:`Delete button` in the :term:`button block`.
+
+.. image:: images/button-block-authority.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block on an authority record
+
 3. AtoM prompts you to confirm the delete request: click "Delete" to proceed
    (or you can click "Cancel" to return to the authority record's
    :term:`view page`).
+
+.. image:: images/delete-authority-warning.*
+   :align: center
+   :width: 75%
+   :alt: An image of the warning when Delete is selected on an authority
+
 4. AtoM deletes the record and opens the :term:`authority record` browse
    results page.
 
