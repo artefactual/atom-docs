@@ -9,6 +9,11 @@ various AtoM problems.
 
 See below for :ref:`common-atom-queries`.
 
+.. SEEALSO::
+
+   * :ref:`digital-object-load-task`
+   * :ref:`csv-import`
+
 .. _cli-get-version:
 
 Find out what version of AtoM you're running
@@ -522,32 +527,7 @@ from AtoM's root directory, run:
 However, if you would like to index the import as it progresses, the
 ``--index`` option can be used to enable this.
 
-The ``--taxonomy`` option is only available in AtoM 2.1 and later releases. It
-is used to assist in the import of SKOS xml files, such as
-:term:`places <place>` and :term:`subjects <subject>`, ensuring that the
-:term:`terms <term>` are imported to the correct :term:`taxonomy`. As input, the
-``--taxonomy`` option takes a taxonomy ID - these are permanent identifiers
-used internally in AtoM to manage the various taxonomies, which can be found
-in AtoM in ``/lib/model/QubitTaxonomy.php`` (see on GitHub
-`here <https://github.com/artefactual/atom/blob/qa/2.1.x/lib/model/QubitTaxonomy.php#L20>`__).
-
-**Example use:** Importing terms to the Places taxonomy
-
-.. code-block:: bash
-
-   php symfony import:bulk --taxonomy="42" /path/to/mySKOSfiles
-
-**Example use:** Importing terms to the Subjects taxonomy
-
-.. code-block:: bash
-
-   php symfony import:bulk --taxonomy="35" /path/to/mySKOSfiles
-
-The ``--schema`` option is deprecated in AtoM, and not currently in use. Note
-that while the ``import:bulk`` task *can* be used to import CSV files as well
-as XML, this is strongly discouraged, as the specific ``csv:import`` tasks
-have more options suited to CSV import. For more information on CSV import via
-the command-line in AtoM, see: :ref:`csv-import`.
+The ``--taxonomy`` option is only available in AtoM 2.1 and later releases.
 
 The ``--output`` option will generate a simple CSV file containing details of
 the import process, including the time elapsed and memory used during each
@@ -562,6 +542,54 @@ The CSV contains 3 columns. The first will simply list a progressive import
 number (e.g. 1, 2, 3...). The second indicates the time elapsed during the
 import of that XML file, in seconds, while the third column indicates the
 memory used during the XML import, in bytes.
+
+The ``--v`` option will return a more verbose output as each import is
+completed. Normally, after the import completes, a summary of the number of
+files imported, the time elapsed, and the memory used:
+
+.. code-block:: bash
+
+   Successfully imported [x] XML/CSV files in [y] s. [z] bytes used."
+
+... where [x] is the number of files imported, [y] is a count of the time
+elapsed in seconds, and [z] is the memory used in bytes.
+
+.. image:: images/import-bulk-summary-msg.*
+   :align: center
+   :width: 80%
+   :alt: an example of the summary output after an import
+
+If the ``--v`` command-line option is used (or just ``-v`` for short),
+the task will output summary information for each XML file imported, rather
+than a total summary. The summary information per file includes file name,
+time elapsed during import ( in seconds), and its position in the total count
+of documents to import. For example:
+
+.. code-block:: bash
+
+   [filename] imported.  [x]s  [y]/[z] total
+
+... where [x] is the time elapsed in seconds, [y] is the current file's
+number and [z] is the total number of files to be imported.
+
+.. image:: images/import-bulk-verbose-output.*
+   :align: center
+   :width: 80%
+   :alt: an example of the verbose output after an import via the CLI
+
+.. IMPORTANT::
+
+   In 2.0.1 and earlier releases, the verbose option requires a parameter. We
+   suggest simply entering 1 as the parameter as this has been tested - e.g.
+   ``--v=1``, as in the following example:
+
+   .. code-block:: bash
+
+      php symfony import:bulk --v=1 /path/to/my/importFolder
+
+   Note that in 2.1 and later this has been corrected - you can use the flag
+   without a parameter as either ``--verbose`` or ``-v`` for short. The 2.1
+   documentation will be updated to reflect this.
 
 .. _common-atom-queries:
 
