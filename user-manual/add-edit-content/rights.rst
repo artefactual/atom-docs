@@ -302,6 +302,8 @@ Add rights to an Archival description
 
    Disseminate rights added to an archival description.
 
+.. _rights-digital-object:
+
 Add rights to a Digital object
 ------------------------------
 

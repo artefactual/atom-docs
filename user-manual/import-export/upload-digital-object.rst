@@ -291,6 +291,10 @@ Edit digital object rights
 6. Permissions can be edited by clicking the |pencil| pencil at the end of the
    entry. They can be deleted by clicking the "X" next to the pencil.
 
+.. SEEALSO::
+
+   * :ref:`rights-digital-object`
+
 Edit reference and thumbnail representations
 --------------------------------------------
 
