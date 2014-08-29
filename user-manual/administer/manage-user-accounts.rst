@@ -41,6 +41,10 @@ Add a new user
    :height: 18
    :width: 18
 
+.. |Inactive| image:: images/Inactive.png
+   :height: 22
+   :width: 65
+
 This section contains instructions on how to Add a new user in AtoM. There are
 two ways to add a new user in AtoM - doing so via the |gears| :ref:`Admin
 <main-menu-admin>` menu is the easiest, but to accommodate different
@@ -72,16 +76,41 @@ application, via the :term:`main menu`.
    :term:`drop-down menu`. This will take you to a list of current user
    accounts.
 
+.. image:: images/admin-users.*
+   :align: center
+   :width: 30%
+   :alt: An image of the Admin menu
+
+2. AtoM will redirect you to the List users page, where you can find, edit,
+   and delete existing users, as well as add new users.
+
+.. image:: images/browse-users.*
+   :align: center
+   :width: 80%
+   :alt: An image of the List users page
+
 .. NOTE::
 
-   The "List users" page has two presentation options: "Show Active only" and
+   The List users page has two presentation options: "Show Active only" and
    "Show Inactive only" which allow the :term:`administrator` to view active
-   users and inactive users in the system.
+   users and inactive users in the system. For more information on inactive
+   users, see below, :ref:`mark-user-inactive`.
 
-2. Scroll to the bottom of the "List users" page and click the "Add new" button
+   .. image:: images/users-active-inactive.*
+      :align: center
+      :width: 50%
+      :alt: An image of Active/Inactive tabs in the Browse users page
+
+3. Scroll to the bottom of the "List users" page and click the "Add new" button
    in the :term:`button block`. AtoM will direct you to a blank User :term:`edit
    page`.
-3. In the "Basic info" :term:`information area`, enter the following data:
+
+.. image:: images/add-new-user-blank.*
+   :align: center
+   :width: 80%
+   :alt: An image of a new User page in edit mode
+
+4. In the "Basic info" :term:`information area`, enter the following data:
 
 * In :term:`"Username" <Username>`, enter the user's name;
 * In "Email", enter the user's email address. The email address (rather than
@@ -100,7 +129,7 @@ application, via the :term:`main menu`.
    :term:`header bar`. For more information, see: :ref:`Change password
    <change-password>`.
 
-4. In the "Access control" information area, type the appropriate "User groups".
+5. In the "Access control" information area, type the appropriate "User groups".
    As you type, matching results will load in a :term:`drop-down menu` below the
    field. See :ref:`below <add-group>` for more information on user groups.
 
@@ -111,10 +140,11 @@ application, via the :term:`main menu`.
    interact with AtoM. The user role of a specific user can be changed at any
    time by an authenticated (i.e. logged-in) :term:`administrator`. For more
    information on user roles, see: :ref:`User roles <user-roles>`. For more
-   information on editing user :term:`access privileges <access privilege>`,
-   see :ref:`Edit user permissions <edit-user-permissions>`.
+   information on editing user :term:`access privileges <access privilege>`
+   and a list of the default permissions per group, see
+   :ref:`Edit user permissions <edit-user-permissions>`.
 
-5. Under the "Allowed languages for translation" section, type the appropriate
+6. Under the "Allowed languages for translation" section, type the appropriate
    "language" for translation. As you type, matching results will load in a
    :term:`drop-down menu` below the field. For more information on
    adding/removing languages, see: :ref:`Add/Remove languages
@@ -135,37 +165,57 @@ application, via the :term:`main menu`.
    be applied to the "Allowed languages for translation" :term:`information
    area`.
 
-6. You can quit the creation process at any time by clicking the "Cancel"
+7. You can quit the creation process at any time by clicking the "Cancel"
    button, or exiting (i.e. clicking "**X**") the window. Any changes made will
    not be saved.
-7. When you have complete, click the :term:`"Create" button <Create button>` in
-   the :term:`button block`.
+8. When you have completed entering all information for your new user, click
+   the :term:`"Create" button <Create button>` in the :term:`button block`.
 
-Once the new user has been saved, AtoM will direct you to the :term:`user's
-profile <user profile>` :term:`view page`, where you can review your work.
-Clicking "Edit" in the :term:`button block` at the bottom of the user profile
-will re-open the user's profile in :term:`edit mode`.
+.. image:: images/button-block-create.*
+   :align: center
+   :width: 60%
+   :alt: An image of the button block on an edit page
 
-The user profile will also display the following permission :term:`information
-areas <information area>`: "Information object permissions", "Actor
-permissions", "Taxonomy permissions", and "Archival institution permissions".
-You can navigate through these sections to customize the user's :term:`access
-privileges <access privilege>` if you are not satisfied with those established
-by the user group, or if a user group was not selected. For more information on
-user permissions, see :ref:`Edit user permissions <edit-user-permissions>`.
+9. Once the new user has been saved, AtoM will direct you to the
+   :term:`user's profile <user profile>` :term:`view page`, where you can
+   review your work. Clicking "Edit" in the :term:`button block` at the bottom
+   of the user profile will re-open the user's profile in :term:`edit mode`.
+
+.. image:: images/user-editor-view-page.*
+   :align: center
+   :width: 80%
+   :alt: An image of a User page in view mode
+
+10. The user profile will also display the following permission
+    :term:`information areas <information area>`: "Information object
+    permissions", "Actor permissions", "Taxonomy permissions", and "Archival
+    institution permissions". You can navigate through these sections to
+    customize the user's :term:`access privileges <access privilege>` if you
+    are not satisfied with those established by the user group, or if a user
+    group was not selected. For more information on user permissions, see
+    :ref:`Edit user permissions <edit-user-permissions>`.
+
+.. image:: images/permissions-tabs.*
+   :align: center
+   :width: 70%
+   :alt: An image of the permissions tabs on a user view page
 
 .. Note::
 
    By default, the user will be automatically *Active* once the new user account
-   has been created. You must un-check the box next to "Active" |Inactive| in
-   order to make a user "Inactive". For more information, see:
-   :ref:`mark-user-inactive`.
+   has been created. You must enter :term:`edit mode` and un-check the box
+   next to "Active" |Inactive| in order to make a user "Inactive". For more
+   information, see: :ref:`mark-user-inactive`.
 
-For more on user roles, see :ref:`user roles <user-roles>`.
+   .. image:: images/user-active-inactive.*
+      :align: center
+      :width: 60%
+      :alt: An image of the Active checkbox on a user page in edit mode
 
-.. |Inactive| image:: images/Inactive.png
-   :height: 22
-   :width: 65
+For more on user roles, see :ref:`user roles <user-roles>`. For more
+information on user role (e.g. group) default permissions and how to customize
+user :term:`access privleges <access privilege>`, see:
+:ref:`edit-user-permissions`.
 
 .. _add-user-view:
 
@@ -176,31 +226,87 @@ A new user can also be added to AtoM from the :term:`view page` of any other
 :term:`user's profile <user profile>` :term:`view page` via the
 :term:`Add new button` in the :term:`button block`. To do so:
 
-1. Navigate to an existing user in AtoM. You can do this by click the
-   |gears| :ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
-   in the :term:`header bar` and selecting "Users" from the
+1. In the :term:`main menu` located in the :term:`header bar`, click the
+   |gears| :ref:`Admin <main-menu-admin>` menu and select "Users" from the
    :term:`drop-down menu`. This will take you to a list of current user
    accounts.
-2. Select a user from the list that appears on the page by clicking on the
+
+.. image:: images/admin-users.*
+   :align: center
+   :width: 30%
+   :alt: An image of the Admin menu
+
+2. AtoM will redirect you to the List users page, where you can find, edit,
+   and delete existing users, as well as add new users.
+
+.. image:: images/browse-users.*
+   :align: center
+   :width: 80%
+   :alt: An image of the List users page
+
+3. Select a user from the list that appears on the page by clicking on the
    :term:`username`. AtoM will direct you to that :term:`user's profile <user
    profile>` :term:`view page`.
-3. At the bottom of the user's profile :term:`view page`, you will see the
+
+.. image:: images/user-editor-view-page.*
+   :align: center
+   :width: 80%
+   :alt: An image of a User page in view mode
+
+4. At the bottom of the user's profile :term:`view page`, you will see the
    :term:`button block` with several options (Edit, Delete, and Add new). Click
    the :term:`Add new button`.
-4. AtoM takes you to a blank :term:`edit page` for data entry. Enter data as
-   required.
-5. You can quit the creation process at any time by clicking the “Cancel” button
+
+.. image:: images/button-block-user.*
+   :align: center
+   :width: 60%
+   :alt: An image of the button block on a user page
+
+5. AtoM takes you to a blank :term:`edit page` for data entry. Enter data as
+   required. For further guidance on specific fields, see steps 4-6 in the
+   section :ref:`above <add-user-main>`.
+
+.. image:: images/add-new-user.*
+   :align: center
+   :width: 80%
+   :alt: An image of a new User page in edit mode
+
+6. You can quit the creation process at any time by clicking the “Cancel” button
    in the :term:`button block`; any data already entered will not be saved, and
    no new user record will be created. Note that simply navigating away from the
    page by any other means, **without first clicking "Create"** will also result
    in no new record being created.
-6. To save the new user record, click the :term:`"Create" button <Create
+7. To save the new user record, click the :term:`"Create" button <Create
    button>` located in the :term:`button block` at the bottom of the record.
 
-Once the new user has been saved, AtoM will direct you to the :term:`user's
-profile <user profile>` :term:`view page`, where you can review your work.
-Clicking "Edit" in the :term:`button block` at the bottom of the user profile
-will re-open the user in :term:`edit mode`.
+.. image:: images/button-block-create.*
+   :align: center
+   :width: 60%
+   :alt: An image of the button block on an edit page
+
+8. Once the new user has been saved, AtoM will direct you to the
+   :term:`user's profile <user profile>` :term:`view page`, where you can
+   review your work. Clicking "Edit" in the :term:`button block` at the bottom
+   of the user profile will re-open the user's profile in :term:`edit mode`.
+
+.. image:: images/user-editor-view-page.*
+   :align: center
+   :width: 80%
+   :alt: An image of a User page in view mode
+
+9. The user profile will also display the following permission
+   :term:`information areas <information area>`: "Information object
+   permissions", "Actor permissions", "Taxonomy permissions", and "Archival
+   institution permissions". You can navigate through these sections to
+   customize the user's :term:`access privileges <access privilege>` if you
+   are not satisfied with those established by the user group, or if a user
+   group was not selected. For more information on user permissions, see
+   :ref:`Edit user permissions <edit-user-permissions>`.
+
+.. image:: images/permissions-tabs.*
+   :align: center
+   :width: 70%
+   :alt: An image of the permissions tabs on a user view page
 
 :ref:`Back to top <manage-user-accounts>`
 
@@ -213,6 +319,7 @@ This section contains instructions on how to edit an existing user, after they
 have been :ref:`created <add-user>`.
 
 .. NOTE::
+
    Only an authenticated (i.e. logged in) :term:`administrator` user can edit or
    update a user. For more information on edit privileges and
    user roles see: :ref:`user-roles`.
@@ -225,24 +332,56 @@ A user can be edited at any time by an authenticated administrator.
    |gears| :ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
    in the :term:`header bar` and selecting "Users" from the
    :term:`drop-down menu`. This will take you to a list of current user groups.
+
+.. image:: images/admin-users.*
+   :align: center
+   :width: 30%
+   :alt: An image of the Admin menu
+
 2. Select the user you wish to edit from the list of users that appears on the
-   page. You can navigate through the list of users by scrolling to the bottom
-   of the "List users" page and clicking through the page numbers. By clicking
-   on the :term:`username` of the user you wish to edit, AtoM will direct you to
-   that :term:`user's profile <user profile>` :term:`view page`.
-3. Switch from :term:`view mode` to :term:`edit mode` by clicking the
+   page. If you have many users, AtoM may limit the results per page; you can
+   navigate through the list of users by scrolling to the bottom of the "List
+   users" page and clicking through the page numbers.
+
+.. image:: images/browse-users.*
+   :align: center
+   :width: 80%
+   :alt: An image of the List users page
+
+.. NOTE::
+
+   The List users page has two presentation options: "Show Active only" and
+   "Show Inactive only" which allow the :term:`administrator` to view active
+   users and inactive users in the system. For more information on inactive
+   users, see below, :ref:`mark-user-inactive`.
+
+   .. image:: images/users-active-inactive.*
+      :align: center
+      :width: 50%
+      :alt: An image of Active/Inactive tabs in the Browse users page
+
+3. By clicking on the :term:`username` of the user you wish to edit, AtoM will
+   direct you to that :term:`user's profile <user profile>` :term:`view page`.
+
+.. image:: images/user-contrib-view-page.*
+   :align: center
+   :width: 80%
+   :alt: An image of a User page in view mode
+
+4. Switch from :term:`view mode` to :term:`edit mode` by clicking the
    :term:`"Edit" button <Edit button>` in the :term:`button block`, or by
    clicking on the "User details" heading; this takes you to the user's
    :term:`edit page`.
-4. On loading, the :term:`edit page` displays the :term:`user profile`
+
+5. On loading, the :term:`edit page` displays the :term:`user profile`
    :term:`information areas <information area>`; add and/or revise data as
    required.
-5. You can quit the process at any time by clicking the "Cancel" button
+6. You can quit the process at any time by clicking the "Cancel" button
    in the :term:`button block`; any changes made will not be saved. Note that
    simply navigating away from the page by any other means, **without first
    clicking "Save"** will also result in no changes being saved to the user
    profile.
-6. To save your edits, click the "Save" button located in the :term:`button
+7. To save your edits, click the "Save" button located in the :term:`button
    block`.
 
 You will be redirected to the :term:`view page` for the edited user where
