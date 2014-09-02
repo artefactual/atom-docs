@@ -584,7 +584,7 @@ Conditions of access and use area
    :figwidth: 50%
    :width: 100%
    :alt: An image of the data entry fields in the Conditions of access and use
-   area.
+         area.
 
    The data entry fields for the Conditions of access and use area in the
    ISAD(G) template, including Conditions governing access, Conditions governing

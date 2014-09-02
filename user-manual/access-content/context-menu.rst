@@ -1,5 +1,9 @@
 .. _context-menu:
 
+.. |caret| image:: images/caret-down-grey.png
+   :height: 17
+   :width: 17
+
 ============
 Context menu
 ============
@@ -71,25 +75,39 @@ as well as serving as a navigational tool.
 
 In the figure to the right, the record for a file is highlighted, showing the
 placement of the file in a hierarchy, e.g. what series and fonds does it
-belong to.
+belong to. In this example, the user is viewing File 994058-001 in a Series
+called "Personal records, in a fonds titled the "John Honsberger fonds." The
+treeview allows the user to see the current record's position in the
+collection hierarchy, and by clicking on the blue hyperlinked titles of other
+records, the user can navigate easily from one record to another contained in
+the same :term:`fonds` or :term:`collection`
 
 To navigate the fonds or series users can do the following:
 
-1. Click on a different file title to see that file level description.
+1. Click on a different file title to see that file level description. The
+   main archival description :term:`view page` will reload to display the
+   selected file-level record, which will now be highlighted in the treeview.
 
 2. Click on the ellipses to expand more file descriptions not currently in
    view.
 
-3. Click on the title of the series to read the series level descripton
+3. Click on the title of the series to read the series level descripton.
+   Again, the main archival description :term:`view page` will reload to display
+   the selected series-level record, which will now be highlighted in the
+   treeview.
 
-4. Click on the "carrot" beside a description with children (e.g. the series
-   description in this example) to expand or collapse all the children titles.
+4. Click on the |caret| "caret" beside a description with children (e.g. the
+   series description in this example) to expand or collapse all the children
+   titles.
 
-4. Click on the title of the fonds to read the fonds level description
+5. Click on the title of the :term:`fonds` to read the fonds-level description,
+   which will also reload the :term:`view page` to display the selected fonds-
+   level description.
 
 As shown in this image, users can also click on the "Quick search" tab at
 the top of the treeview to search for titles and identifiers within the fonds
-or collection.
+or collection. For more information on using the Treeview quick search, see:
+:ref:`treeview-search`.
 
 .. image:: images/treeview-quicksearch.*
    :align: center
@@ -97,8 +115,8 @@ or collection.
    :alt: The quick search box, located at the top of the treeview.
 
 :term:`Administrators <administrator>` can decide how they would like
-descriptions in the treeview to display throughout their AtoM installation.
-See :ref:`sort-treeview`.
+descriptions in the treeview to sort and display throughout their AtoM
+installation. See :ref:`sort-treeview`.
 
 In addition to displaying in the context menu for archival descriptions, the
 treeview is also used for hierarchical :term:`taxonomies <taxonomy>` such as

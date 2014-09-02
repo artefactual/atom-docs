@@ -69,14 +69,38 @@ record:
    do this via the :term:`main menu` in the AtoM :term:`header bar`, by
    clicking on **Manage > Accessions**. For more information on navigation in
    AtoM, see: :ref:`Access content <access-content>`.
+
+.. image:: images/accession-search-wildcard.*
+   :align: center
+   :width: 75%
+   :alt: An image of searching for an accession record
+
 2. Click on the "Deaccession" button located in the :term:`button block` at
    the bottom of the accession record's :term:`view page`.
+
+.. image:: images/accession-button-block.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block on an accession record
+
 3. AtoM takes you to the empty deaccession edit template, open and ready for
    data entry. Note that the Deaccession number will be added to the original
    Accession record ID (shown at the top of the :term:`edit page`).
+
+.. image:: images/new-deaccession.*
+   :align: center
+   :width: 75%
+   :alt: An image of a new deaccession record
+
 4. Add data as required. The *Scope* area is a :term:`drop-down menu`: "Whole"
    or "Part," so you can deaccession all or some of the records in the
    original accession.
+
+.. image:: images/deaccession-scope-field.*
+   :align: center
+   :width: 75%
+   :alt: An image of the Scope field on a deaccession record
+
 5. You can quit the creation process at any time by clicking the "Cancel"
    button in the :term:`button block`; any data already entered will not be
    saved, and no new record will be created. Note that simply navigating away
@@ -84,6 +108,12 @@ record:
    also result in no new record being created.
 6. To save the new record, click the :term:`"Create" button <create button>`
    located in the :term:`button block` at the bottom of the record.
+
+.. image:: images/button-block-create.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block when creating a new record
+
 7. AtoM takes you to the view accession record screen. At the bottom of the
    :term:`accession record`, there is a new "Deaccession" :term:`information
    area`. The :term:`deaccession record` has been added as a hyperlink to the
@@ -101,13 +131,37 @@ Edit an existing deaccession record
    :term:`main menu` in the AtoM :term:`header bar`, by clicking on **Manage >
    Accessions**. For more information on navigation in AtoM, see: :ref:`Access
    content <access-content>`.
+
+.. image:: images/manage-accessions.*
+   :align: center
+   :width: 45%
+   :alt: An image of the Manage menu
+
 2. At the bottom of the related :term:`accession record`, in the "Deaccession"
    :term:`information area`, click on the hyperlink deaccession number.
+
+.. image:: images/accession-deaccession-area.*
+   :align: center
+   :width: 75%
+   :alt: An image of the Deaccession area on an accession record
+
 3. AtoM takes you to the related deaccession record's :term:`view page`.
+
+.. image:: images/deaccession-view-mode.*
+   :align: center
+   :width: 75%
+   :alt: An image of a deaccession record
+
 4. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
    button in the :term:`button block`; this takes you to the record's
    :term:`edit page`.
-5. add, remove, or edit data as required.
+
+.. image:: images/button-block-deaccession.*
+   :align: center
+   :width: 65%
+   :alt: An image of the button block on a deaccession record
+
+5. Add, remove, or edit data as required.
 6. You can quit the create process at any time by clicking the "Cancel" button
    in the :term:`button block`; any changes made will not be saved. Note that
    simply navigating away from the page by any other means, **without first
@@ -115,6 +169,12 @@ Edit an existing deaccession record
    authority record.
 7. To save your edits, click the "Save" button located in the :term:`button
    block` at the bottom of the record.
+
+.. image:: images/button-block-save.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block in edit mode
+
 8. Upon saving the record, AtoM will reload the :term:`accession record` view
    page - you can click on the deaccession record hyperlink in the
    "Deaccession" area to return to the :term:`deaccession record` to review
@@ -132,12 +192,36 @@ Delete a deaccession record
    :term:`main menu` in the AtoM :term:`header bar`, by clicking on **Manage >
    Accessions**. For more information on navigation in AtoM, see: :ref:`Access
    content <access-content>`.
+
+.. image:: images/manage-accessions.*
+   :align: center
+   :width: 45%
+   :alt: An image of the Manage menu
+
 2. At the bottom of the related :term:`accession record`, in the "Deaccession"
    :term:`information area`, click on the hyperlink deaccession number.
+
+.. image:: images/accession-deaccession-area.*
+   :align: center
+   :width: 75%
+   :alt: An image of the Deaccession area on an accession record
+
 3. AtoM takes you to the related deaccession record's :term:`view page`.
 4. To delete the deaccession record, click on the "Delete" button in the
    :term:`button block`.
+
+.. image:: images/button-block-deaccession.*
+   :align: center
+   :width: 65%
+   :alt: An image of the button block on a deaccession record
+
 5. AtoM will take you to a warning page and ask you to confirm.
+
+.. image:: images/deaccession-delete.*
+   :align: center
+   :width: 75%
+   :alt: An image of the delete warning screen on a deaccession record
+
 6. Click on the "Delete" button to permanently delete the deaccession record.
    Alternately, you can click on the "Cancel" button, and AtoM will return you
    to the deaccession record's :term:`view page`.

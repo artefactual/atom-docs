@@ -9,6 +9,11 @@ various AtoM problems.
 
 See below for :ref:`common-atom-queries`.
 
+.. SEEALSO::
+
+   * :ref:`digital-object-load-task`
+   * :ref:`csv-import`
+
 .. _cli-get-version:
 
 Find out what version of AtoM you're running
@@ -488,7 +493,103 @@ XML files, or large files (typically larger than 1 MB) through the command line.
 
 .. code:: bash
 
-   php symfony import:bulk /NAME-OF-FOLDER
+   php symfony import:bulk /path/to/my/xmlFolder
+
+Using the import:bulk command
+-----------------------------
+
+.. image:: images/bulk-import-cli-options.*
+   :align: center
+   :width: 85%
+   :alt: An image of the options available in the import:bulk command
+
+By typing ``php symfony help import:bulk`` into the command-line without
+specifying the path to a directory of XML files, you can see the options
+available on the ``import:bulk`` command, as pictured above.
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the import.
+
+The ``--index`` option is used to enable the rebuilding of the search index as
+part of the import task. When using the :ref:`user interface <import-xml>` to
+import XML files, the import is indexed automatically - but when running
+an import via the command-line interface, indexing is **disabled** by default.
+This is because indexing during import can be incredibly slow, and the
+command-line is generally used for larger imports. Generally, we recommend a
+user simply clear the cache and rebuild the search index following an import -
+from AtoM's root directory, run:
+
+.. code-block:: bash
+
+   php symfony cc & php symfony search:populate
+
+However, if you would like to index the import as it progresses, the
+``--index`` option can be used to enable this.
+
+The ``--taxonomy`` option is only available in AtoM 2.1 and later releases.
+
+The ``--output`` option will generate a simple CSV file containing details of
+the import process, including the time elapsed and memory used during each
+import. To use the option, you mush specify both a path and a filename for the
+CSV file to output. For example:
+
+.. code-block:: bash
+
+   php symfony import:bulk --output="/path/to/output-results.csv" /path/to/my/xmlFolder
+
+The CSV contains 3 columns. The first will simply list a progressive import
+number (e.g. 1, 2, 3...). The second indicates the time elapsed during the
+import of that XML file, in seconds, while the third column indicates the
+memory used during the XML import, in bytes.
+
+The ``--v`` option will return a more verbose output as each import is
+completed. Normally, after the import completes, a summary of the number of
+files imported, the time elapsed, and the memory used:
+
+.. code-block:: bash
+
+   Successfully imported [x] XML/CSV files in [y] s. [z] bytes used."
+
+... where [x] is the number of files imported, [y] is a count of the time
+elapsed in seconds, and [z] is the memory used in bytes.
+
+.. image:: images/import-bulk-summary-msg.*
+   :align: center
+   :width: 80%
+   :alt: an example of the summary output after an import
+
+If the ``--v`` command-line option is used (or just ``-v`` for short),
+the task will output summary information for each XML file imported, rather
+than a total summary. The summary information per file includes file name,
+time elapsed during import ( in seconds), and its position in the total count
+of documents to import. For example:
+
+.. code-block:: bash
+
+   [filename] imported.  [x]s  [y]/[z] total
+
+... where [x] is the time elapsed in seconds, [y] is the current file's
+number and [z] is the total number of files to be imported.
+
+.. image:: images/import-bulk-verbose-output.*
+   :align: center
+   :width: 80%
+   :alt: an example of the verbose output after an import via the CLI
+
+.. IMPORTANT::
+
+   In 2.0.1 and earlier releases, the verbose option requires a parameter. We
+   suggest simply entering 1 as the parameter as this has been tested - e.g.
+   ``--v=1``, as in the following example:
+
+   .. code-block:: bash
+
+      php symfony import:bulk --v=1 /path/to/my/importFolder
+
+   Note that in 2.1 and later this has been corrected - you can use the flag
+   without a parameter as either ``--verbose`` or ``-v`` for short. The 2.1
+   documentation will be updated to reflect this.
 
 .. _common-atom-queries:
 

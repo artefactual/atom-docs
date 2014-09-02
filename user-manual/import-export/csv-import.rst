@@ -748,7 +748,7 @@ Command-line options
   :width: 85%
   :alt: An image of the command-line options for CSV import
 
-By typing ``php symfony csv:import`` into the command-line from your root
+By typing ``php symfony help csv:import`` into the command-line from your root
 directory, without specifying the location of a CSV, you will able able to
 see the CSV import options available (pictured above). A brief explanation of
 each is included below.
@@ -758,13 +758,15 @@ used** - AtoM requires the uses of the pre-set defaults for symfony to be
 able to execute the import.
 
 The ``--rows-until-update`` option can be used for a simple visual
-representatio of progress in the command-line. Enter a whole integer, to
+representation of progress in the command-line. Enter a whole integer, to
 represent the number of rows should be imported from the CSV before the
 command-line prints a period (e.g. `` . `` ) in the console, as a sort of
 crude progress bar. For example, entering ``--rows-until-update=5`` would
 mean that the import progresses, another period will be printed every 5 rows.
 This is a simple way to allow the command-line to provide a visual output of
-progress.
+progress. For further information on the ``--rows-until-update`` option and an
+example of the command-line option in use, see also the section below,
+:ref:`csv-import-progress`.
 
 You can use the ``--skip-rows`` option to skip **X** amount of rows in the CSV
 before beginning the import. This can be useful if you have interrupted the
@@ -967,8 +969,8 @@ the options depicted in the image below:
    :width: 85%
    :alt: An image of the command-line options for events imports
 
-By typing ``php symfony csv:event-import`` into the command-line from your root
-directory, without specifying the location of a CSV, you will able able to
+By typing ``php symfony help csv:event-import`` into the command-line from your
+root directory, without specifying the location of a CSV, you will able able to
 see the CSV import options available (pictured above). A brief explanation of
 each is included below.
 
@@ -978,7 +980,8 @@ able to execute the import.
 
 The ``--rows-until-update``, ``--skip-rows``, and ``--error-log`` options can
 be used the same was as described in the section :ref:`above <csv-cli-options>`
-on importing descriptions.
+on importing descriptions. For more information on the ``--rows-until-update``
+option, see also the section below, :ref:`csv-import-progress`.
 
 Use the ``--source-name`` to specify a source importing to a AtoM installation
 in which information objects from multiple sources have been imported, and/or
@@ -1053,10 +1056,10 @@ the options depicted in the image below:
    :width: 85%
    :alt: An image of the command-line options for repository imports
 
-By typing ``php symfony csv:repository-import`` into the command-line from your root
-directory, without specifying the location of a CSV, you will able able to
-see the CSV import options available (pictured above). A brief explanation of
-each is included below.
+By typing ``php symfony help csv:repository-import`` into the command-line from
+your root directory, without specifying the location of a CSV, you will able
+able to see the CSV import options available (pictured above). A brief
+explanation of each is included below.
 
 The ``--application``, ``--env``, and ``connection`` options **should not be
 used** - AtoM requires the uses of the pre-set defaults for symfony to be
@@ -1064,7 +1067,8 @@ able to execute the import.
 
 The ``--rows-until-update``, ``--skip-rows``, and ``--error-log`` options can
 be used the same was as described in the section :ref:`above <csv-cli-options>`
-on importing descriptions.
+on importing descriptions. For more information on the ``--rows-until-update``
+option, see also the section below, :ref:`csv-import-progress`.
 
 The ``--merge-existing`` option may be used to avoid the creation of
 duplicate repositories. That is - if, during import, any rows in the CSV
@@ -1281,9 +1285,9 @@ the options depicted in the image below:
    :width: 85%
    :alt: An image of the command-line options for authority record imports
 
-By typing ``php symfony csv:authority-import`` into the command-line from your
-root directory, **without** specifying the location of a CSV, you will able
-able to see the CSV import options available (pictured above). A brief
+By typing ``php symfony help csv:authority-import`` into the command-line from
+your root directory, **without** specifying the location of a CSV, you will
+able able to see the CSV import options available (pictured above). A brief
 explanation of each is included below.
 
 The ``--application``, ``--env``, and ``connection`` options **should not be
@@ -1292,7 +1296,9 @@ able to execute the import.
 
 The ``--rows-until-update``, ``--skip-rows``, ``--error-log``, and ``--index``
 options can be used the same was as described in the section
-:ref:`above <csv-cli-options>` on importing descriptions.
+:ref:`above <csv-cli-options>` on importing descriptions. For more information
+on the ``--rows-until-update`` option, see also the section below,
+:ref:`csv-import-progress`.
 
 The ``--alias-file`` and ``--relation-file`` options are used to import
 accompanying alternate name (aka Alias data) and relationship CSV files at
@@ -1369,25 +1375,113 @@ CSV, as shown below.
 Import accessions via CSV
 =========================
 
-When importing information objects (aka :term:`archival descriptions
-<archival description>`, you can specify an associated accession using the
-*accessionNumber* column. After importing your information objects you can
-then run the accession import tool to import details about each accession from
-a CSV file.
+When importing information objects (e.g.
+:term:`archival descriptions <archival description>`, you can specify an
+associated :term:`accession record` using an ``accessionNumber`` column in the
+CSV. After importing your information objects you can then run the accession
+import tool to import details about each accession from a CSV file.
+
+An example CSV template file is available in the
+``lib/task/import/example/example_accessions.csv`` directory of AtoM, or it
+can be downloaded here:
+
+* (link forthcoming - see the
+  `qubit-toolkit wiki <https://www.qubit-toolkit.org/wiki/CSV_import#Importing_accessions>`__
+  for now)
 
 .. _csv-import-accessions-gui:
 
 Using the user interface
 ------------------------
 
-content
+For small imports (i.e. CSV files with less than 1,000 rows), accession record
+imports can be performed via the user interface.
+
+**To import an accessions CSV file via the user interface:**
+
+1. Click on the |import| :ref:`Import <main-menu-import>` menu, located in
+   the AtoM :ref:`header bar <atom-header-bar>`, and select "CSV".
+
+.. image:: images/import-menu-csv.*
+   :align: center
+   :width: 30%
+   :alt: The import menu
+
+2. AtoM will redirect you to the CSV import page. Make sure that the "Type"
+   :term:`drop-down menu` is set to "Accession".
+
+.. image:: images/import-accession-gui.*
+   :align: center
+   :width: 85%
+   :alt: The CSV import page in AtoM
+
+3. Click the "Browse" button to open a window on your local computer. Select
+   the :term:`authority record` CSV file that you would like to import.
+
+.. image:: images/csv-import-browse.*
+   :align: center
+   :width: 25%
+   :alt: Clicking the "Browse" button in the CSV import page
+
+4. When you have selected the file from your device, its name will appear
+   next to the "Browse" button. Click the "Import" button located in the
+   :term:`button block` to begin your import.
+
+.. image:: images/import-accession-2.*
+   :align: center
+   :width: 85%
+   :alt: Starting a CSV import in AtoM
+
+.. NOTE::
+
+   Depending on the size of your CSV import, this can take some time to
+   complete. Be patient! Remember, uploads performed via the user interface
+   are limited by the browser's timeout limits - this is one of the reasons
+   we recommend importing only smaller CSV files via the user interface.
+
 
 .. _csv-import-accessions-cli:
 
 Using the command-line interface (CLI)
 --------------------------------------
 
-content
+For larger :term:`accession record` imports (e.g. those with 1,000 or more
+rows), we recommend using the command-line task to import your CSV file.
+
+**Example use** - run from AtoM's root directory:
+
+.. code-block:: bash
+
+   php symfony csv:accession-import /path/to/my/example_accessions.csv
+
+There are also a number of options available with this command-line task.
+
+.. image:: images/csv-accession-options.*
+   :align: center
+   :width: 85%
+   :alt: An image of the command-line options for accession record imports
+
+By typing ``php symfony help csv:accession-import`` into the command-line from
+your root directory, **without** specifying the location of a CSV, you will
+able able to see the CSV import options available (pictured above). A brief
+explanation of each is included below.
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the import.
+
+Use the ``--source-name`` to specify a source importing to a AtoM installation
+in which accessions and information objects from multiple sources have been
+imported, and/or to associate it explicitly with a previously-imported CSV
+file that used the same ``--source-name`` value. An example is provided
+:ref:`above <csv-legacy-id-mapping>` in the section on legacy ID mapping.
+
+The ``--rows-until-update``, ``--skip-rows``, ``--error-log``, and ``--index``
+options can be used the same was as described in the section
+:ref:`above <csv-cli-options>` on importing descriptions. For more information
+on the ``--rows-until-update`` option, see also the section below,
+:ref:`csv-import-progress`.
+
 
 :ref:`Back to top <csv-import>`
 
@@ -1396,14 +1490,210 @@ content
 Display the progress of an upload via the command-line interface (CLI)
 ======================================================================
 
-content
+The various CSV import tools allow the use of the ``--rows-until-update``
+command-line option to display the current row of CSV data being imported.
+This is an extremely simplified way to indicate progress graphically via the
+command-line - the user sets a numerical value for the number of rows the task
+will progress before an update, and then the task will output a dot (or period
+) in the command-line every time the indicated number of rows has been
+processed in the current CSV.
+
+Example use reporting progress every 5 rows:
+
+.. code-block:: bash
+
+   php symfony csv:import lib/task/import/example/rad/example_information_objects_rad.csv --rows-until-update=5
+
+This can be useful for large imports, to ensure the import is still progressing,
+and to try to roughly determine how far the task has progressed and how long
+it will take to complete.
+
+:ref:`Back to top <csv-import>`
 
 .. _digital-object-load-task:
 
 Load digital objects via the command line
 =========================================
 
-content
+Known as the **Digital object load task**, this command-line tool will allow a
+user to bulk attach digital objects to existing information objects (e.g. :
+:term:`archival descriptions <archival description>`) through the use of a
+simple CSV file.
+
+This task will take a CSV file as input, which contains two columns: ``filename`` and
+``information_object_id``; the script will fail if these column headers are not
+present in the first row of the CSV file.
+
+The ``filename`` column contains the full (current) path to the digital asset
+(file). The ``information_object_id`` identifies the linked information object.
+AtoM does not allow more than one digital object per information object (with
+the exception of derivatives), and each digital object must have a
+corresponding information object to describe it, so this one-to-one
+relationship must be respected in the CSV import file.
+
+Finding the information_object_id
+---------------------------------
+
+The information_object_id is not a value that is accessible via the
+:term:`user interface` - it is a unique value used in AtoM's database. You can,
+however, use SQL in the command-line to determine the ID of an information
+object. The following example will show you how to use a SQL query to find the
+``information_object_id``, if you know the :term:`slug` of the description:
+
+1. First, you will need to access mysqlCLI to be able to input a SQL query. To
+   do this, you will need to know the database name, user name, and password you
+   used when creating your database during installation. If your database is
+   on a different server (e.g. if you are trying to SSH in to access your
+   database server), you will also need to know the hostname - that is, the IP
+   address or domain name of the server where your database is located.
+2. The following is an example of the CLI command to enter to access mysqlCLI:
+
+   .. code-block:: bash
+
+      mysql -u root -pMYSECRETPASSWORD atom
+
+   * ``-u`` = user. If you followed our :ref:`installation instructions
+     <installation-linux>`, this will be ``root``
+   * ``-p`` = password. Enter the password you used during installation right
+     after the ``-p``. If you did not enter a password, include the ``-p``
+     on its own. If you are prompted later for a password and didn't use one,
+     just press enter.
+   * ``-h`` = hostname. If your database is on a different server, supply either
+     an IP address, or the domain name, where it is located.
+   * ``atom`` = your database name. If you followed our
+     :ref:`installation instructions <installation-linux>`, this will be
+     ``atom``; otherwise enter the database name you used when installing AtoM.
+
+3. You may be prompted for your password again. If so, enter it. If you did
+   not use a password during installation, simply press enter.
+4. Your command prompt should now say something like ``mysql>``. You can now
+   enter a SQL query directly.
+5. The following example SQL command will return the information_object_id for
+   a desription, when the information object's :term:`slug` is known:
+
+   .. code-block:: bash
+
+      SELECT object_id FROM slug WHERE slug='your-slug-here';
+
+6. The query should return the object_id for the description. Here is an
+   example:
+
+.. image:: images/digi-object-load-mysql-select.*
+   :align: center
+   :width: 70%
+   :alt: An image of a successful SELECT statement in mysqlCLI
+
+7. Enter ``quit`` to exit mysqlCLI.
+
+Using the digital object load task
+----------------------------------
+
+Before using this task, you will need to prepare:
+
+* A CSV file with 2 columns - ``information_object_id`` and ``filename``
+* A directory with your digital objects inside of it
+
+.. IMPORTANT::
+
+   Before proceeding, make sure that you have reviewed the instructions
+   :ref:`above <csv-encoding-newline>`, to ensure that your CSV will work when
+   used with the ``digitalobject:load`` task. The key point when creating a
+   CSV is to ensure the following:
+
+   * CSV file is saved with UTF-8 encodings
+   * CSV file uses Linux/Unix style end-of-line characters (``/n``)
+
+You can see the options available on the CLI task by typing in the following
+command:
+
+.. code-block:: bash
+
+   php symfony help digitalobject:load
+
+
+.. image:: images/digital-object-load-options.*
+   :align: center
+   :width: 85%
+   :alt: An image of the command-line options for digitalobject:load
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the import.
+
+By default, the digital object load task will **not index** the collection as
+it runs. This means that normally, you will need to manually repopulate the
+search index after running the task. Running without indexing allows the task
+to complete much more quickly - however, if you're only uploading a small set
+of digital objects, you can choose to have the task index the collection as it
+progresses, using the ``--index`` (or ``-i``) option
+
+The ``--path`` option will allow you to simplify the ``filename`` column in
+your CSV, to avoid repetition. If all the digital objects you intend to upload
+are stored in the same folder, then adding /path/to/my/folder/ to each object
+filename seems tedious - your ``filename`` column will need to look something
+like this:
+
+.. code-block:: bash
+
+   filename
+   /path/to/my/folder/image1.png
+   /path/to/my/folder/image2.jpg
+   /path/to/my/folder/text1.pdf
+   etc...
+
+To avoid this when all digital objects are in the same directory, you can use
+the ``--path`` option to pre-supply the path to the digital objects - for each
+filename, the path supplied will be appended. **Note** that you will need to
+use a trailing slash to finish your path prefix - e.g.:
+
+.. code-block:: bash
+
+   php symfony digitalobject:load --path="/path/to/my/folder/" /path/to/my/spreadsheet.csv
+
+
+**TO RUN THE DIGITAL OBJECT LOAD TASK**
+
+.. code-block:: bash
+
+   php symfony digitalobject:load /path/to/your/loadfile.csv
+
+**NOTES ON USE**
+
+* If an information object already has a :term:`digital object` attached to it,
+  it will be skipped during the import
+* Remember to repopulate the search index afterwards if you haven't used the
+  ``--index`` option!
+
+
+  .. code-block:: bash
+
+     php symfony search:populate
+
+
+Regenerating derivatives
+------------------------
+
+Sometimes the ``digitalobject:load`` task won't generate the :term:`thumbnail`
+and :term:`reference <reference display copy>` images properly for digital
+objects that were loaded (e.g. due to a crash or absence of convert installed,
+etc.). In this case, you can regenerate these thumbsnail/reference images using
+the following command:
+
+.. code-block:: bash
+
+   php symfony digitalobject:regen-derivatives
+
+.. WARNING::
+
+   All of your current derivatives will be deleted! They will be replaced
+   with new derivatives after the task has finished running. If you have
+   manually changed the :term:`thumbnail` or :term:`reference display copy`
+   of a digital object via the user interface (see:
+   :ref:`edit-digital-object`), these two will be replaced with digital
+   object derivatives created from the :term:`master digital object`.
+
+For more information on this task and the options available, see:
+:ref:`cli-regenerate-derivatives`.
 
 :ref:`Back to top <csv-import>`
 
@@ -1412,6 +1702,11 @@ content
 Index your content after an upload
 ==================================
 
-content
+After an import, you'll want to index your content so it can be searched by
+users. To do so, enter the following into the command-line:
+
+.. code-block:: bash
+
+   php symfony search:populate
 
 :ref:`Back to top <csv-import>`
