@@ -86,7 +86,7 @@ Add the following to your /etc/apt/sources.list to enable the repository:
 
 .. code-block:: bash
 
-   deb http://packages.elasticsearch.org/elasticsearch/0.90/debian stable main
+   deb http://packages.elasticsearch.org/elasticsearch/1.3/debian stable main
 
 Ready to be installed. Run:
 
@@ -94,11 +94,6 @@ Ready to be installed. Run:
 
    sudo apt-get update
    sudo apt-get install elasticsearch
-
-.. IMPORTANT::
-
-   AtoM 2.0 doesn't support Elasticsearch 1.0 or newer. Use 0.90.x until we
-   update our code.
 
 Make sure that the service has been started:
 

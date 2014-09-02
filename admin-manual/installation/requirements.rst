@@ -32,7 +32,7 @@ of each component.
 * A webserver like `Apache <https://httpd.apache.org/>`__ or
   `Nginx <http://nginx.com/>`__; Artefactual prefers the latter in
   development
-* `Elasticsearch <http://www.elasticsearch.org/>`__ 0.90.11 (1.0 not supported yet)
+* `Elasticsearch <http://www.elasticsearch.org/>`__ 1.3.0 or newer
 * `MySQL <https://www.mysql.com/>`__ 5.1 or newer
 * `PHP <http://php.net/>`__ 5.3.10 or newer (PHP 5.4 works too, PHP 5.5 hasn't
   been fully tested yet).
