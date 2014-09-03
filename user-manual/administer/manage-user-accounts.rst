@@ -384,6 +384,11 @@ A user can be edited at any time by an authenticated administrator.
 7. To save your edits, click the "Save" button located in the :term:`button
    block`.
 
+.. image:: images/button-block-save.*
+   :align: center
+   :width: 60%
+   :alt: An image of the button block on an edit page
+
 You will be redirected to the :term:`view page` for the edited user where
 you can review your work. Follow steps 3 through 6 if you are not satisfied
 with your changes.
