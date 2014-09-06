@@ -231,6 +231,7 @@ Customization
 Security
 --------
 
+* :ref:`security-application`
 * :ref:`security-firewall`
 * :ref:`security-backups`
 
