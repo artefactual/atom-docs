@@ -34,8 +34,7 @@ of each component.
   development
 * `Elasticsearch <http://www.elasticsearch.org/>`__ 0.90.11 (1.0 not supported yet)
 * `MySQL <https://www.mysql.com/>`__ 5.1 or newer
-* `PHP <http://php.net/>`__ 5.3.10 or newer (PHP 5.4 works too, PHP 5.5 hasn't
-  been fully tested yet).
+* `PHP <http://php.net/>`__ 5.3.10 or newer (PHP 5.4 and PHP 5.5 work too)
 
 Additionally, the following PHP extensions are mandatory:
 
@@ -44,14 +43,15 @@ Additionally, the following PHP extensions are mandatory:
 * APC (php-apc, or php5-apcu in PHP 5.5)
 * PDO and PDO-MySQL (php5-mysql)
 * XSL (php5-xsl)
+* JSON (php5-json)
 
 .. note::
 
    All these dependencies can run in a number of different operative systems,
    including :ref:`installation-windows`, :ref:`installation-macosx`, Solaris,
    FreeBSD or :ref:`installation-linux`. This documentation is based in
-   **Ubuntu Linux 12.04 LTS** as it seems to be one of the most widely used
-   Linux distributions. However, it should serve as a reference for other
+   **Ubuntu Linux 12.04/14.04 LTS** as it seems to be one of the most widely
+   used Linux distributions. However, it should serve as a reference for other
    environments and distro flavours - we've also written specific guides for
    other operating systems such as :ref:`installation-windows` and :ref
    :`installation-macosx`.
