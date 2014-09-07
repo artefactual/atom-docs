@@ -4,6 +4,8 @@
 Troubleshooting
 ===============
 
+.. _phpinfo:
+
 PHP configuration
 -----------------
 

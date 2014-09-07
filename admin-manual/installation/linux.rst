@@ -260,7 +260,7 @@ called :file:`/etc/php5/fpm/pool.d/atom.conf`:
    # Some defaults for your PHP production environment
    # A full list here: http://www.php.net/manual/en/ini.list.php
    php_admin_value[expose_php] = off
-   php_admin_value[allow_url_fopen] = off
+   php_admin_value[allow_url_fopen] = on
    php_admin_value[memory_limit] = 512M
    php_admin_value[max_execution_time] = 120
    php_admin_value[post_max_size] = 72M
