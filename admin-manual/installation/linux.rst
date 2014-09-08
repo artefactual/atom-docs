@@ -412,12 +412,6 @@ the CSS files:
    cd /usr/share/nginx/atom/plugins/arDominionPlugin/
    sudo make # At this point the files still belong to root
 
-.. IMPORTANT::
-
-   AtoM 2.0.1 was only compatible with less@1.3.3. However, we solved that
-   problem in stable/2.0.x so you can install the latest version of the less
-   compiler.
-
 
 .. _linux-filesystem-permissions:
 
