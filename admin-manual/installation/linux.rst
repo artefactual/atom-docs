@@ -412,7 +412,7 @@ the CSS files:
 
    sudo add-apt-repository ppa:chris-lea/node.js
    sudo apt-get update
-   sudo apt-get install nodejs
+   sudo apt-get install nodejs make
    sudo npm install -g less@1.3.3
    cd /usr/share/nginx/atom/plugins/arDominionPlugin/
    sudo make # At this point the files still belong to root
