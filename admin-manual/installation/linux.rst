@@ -232,6 +232,10 @@ following command will install it along with the rest of PHP extensions
 
 If you are using Ubuntu 14.04, the package php5-readline is also required.
 
+.. code-block:: bash
+
+    sudo apt-get install php5-readline
+
 Let's add a new PHP pool for AtoM by adding the following contents in a new file
 called :file:`/etc/php5/fpm/pool.d/atom.conf`:
 
