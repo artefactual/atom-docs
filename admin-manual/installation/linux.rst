@@ -230,6 +230,8 @@ following command will install it along with the rest of PHP extensions
 
     sudo apt-get install php5-cli php5-fpm php5-curl php5-mysql php5-xsl php5-json php5-ldap php-apc
 
+If you are using Ubuntu 14.04, the package php5-readline is also required.
+
 Let's add a new PHP pool for AtoM by adding the following contents in a new file
 called :file:`/etc/php5/fpm/pool.d/atom.conf`:
 
