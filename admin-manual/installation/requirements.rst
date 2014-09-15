@@ -43,7 +43,6 @@ Additionally, the following PHP extensions are mandatory:
 * APC (php-apc, or php5-apcu in PHP 5.5)
 * PDO and PDO-MySQL (php5-mysql)
 * XSL (php5-xsl)
-* JSON (php5-json)
 
 .. note::
 
