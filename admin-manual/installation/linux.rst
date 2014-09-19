@@ -349,7 +349,7 @@ Install ffmpeg from Archivematica's PPA, which works for both Ubuntu 12.04
 
 .. code-block:: bash
 
-   sudo add-apt-repository ppa:archivematica/externals-dev
+   sudo add-apt-repository ppa:archivematica/externals
    sudo apt-get update
    sudo apt-get install ffmpeg
 
