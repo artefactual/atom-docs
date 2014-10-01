@@ -13,7 +13,10 @@
 
 from __future__ import unicode_literals
 
-import sys, os
+import sys
+import os
+import urllib2
+import json
 
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
@@ -32,7 +35,15 @@ if not on_rtd:
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = [
     'sphinx.ext.extlinks',
+    'sphinx.ext.intersphinx',
 ]
+
+# Obtain intersphinx_mapping
+inventory = 'https://gist.githubusercontent.com/qubot/2dd2f7f96e51121061d4/raw/sphinxdoc-inventory.json'
+response = urllib2.urlopen(inventory)
+intersphinx_mapping = json.load(response)
+for item in intersphinx_mapping:
+    intersphinx_mapping[item] = tuple(intersphinx_mapping[item])
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
