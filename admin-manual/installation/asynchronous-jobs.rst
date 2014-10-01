@@ -8,6 +8,9 @@ AtoM relies on `Gearman <http://gearman.org>`__ in order to execute certain
 long-running tasks asynchronously to guarantee that web requests are handled
 promptly and work loads can be distributed across multiple machines.
 
+For example, the ingest of Archivematica DIPs is processed asynchronously. See
+:ref:`Upload DIP <archivematica:upload-atom>` for more details.
+
 You'll need a good understanding of all the components involved to find out what
 the best configuration and arrangement of services will be for you. You could
 configure it so every service runs in the same machine, or scale up to many
