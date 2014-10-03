@@ -594,6 +594,7 @@ entity. Basic instructions for each are included below.
 * :ref:`dedicated-search-authority`
 * :ref:`dedicated-search-accessions`
 * :ref:`dedicated-search-institutions`
+* :ref:`dedicated-search-terms`
 * :ref:`dedicated-search-donors`
 * :ref:`dedicated-search-rights`
 * :ref:`dedicated-search-functions`
@@ -915,6 +916,123 @@ template, see: :ref:`isdiah-template`.
    institution's :term:`view page`.
 
 :ref:`Back to top <search-atom>`
+
+.. _dedicated-search-terms:
+
+Terms
+-----
+
+.. |pencil| image:: images/edit-sign.png
+   :height: 18
+   :width: 18
+
+As of AtoM 2.1, a  dedicated search box for :term:`terms <term>` has been provided
+on the :ref:`browse page <page-type-browse>` for each :term:`taxonomy`. In
+AtoM 2.1, the public interface for browsing :term:`places <place>` and
+:term:`subjects <subject>` was redesigned to make useful elements of the
+taxonomy and term management pages available to unauthenticated (i.e. public)
+users - for more information, see: :ref:`terms`.
+
+In the following example, the :term:`Place` taxonomy has been used to
+demonstrate the search functionality, because it is one of the modules (along
+with Subjects) where the search box is available to both authenticated and
+public users. However, the same search box has been included on all
+:term:`taxonomy` pages (available to authenticated users with the proper
+permissions via |pencil| :ref:`Manage <main-menu-manage>` **> Taxonomies**,
+and then selecting a taxonomy).
+
+.. TIP::
+
+  A place is a geographic location registered in a :term:`taxonomy` and used as
+  an :term:`access point` in :term:`archival descriptions <archival description>`.
+  For more information on managing places in AtoM, see: :ref:`terms`. For
+  information on adding access points to an :term:`archival description`,
+  see: :ref:`add-term-fly`.
+
+**To search for terms in AtoM:**
+
+1. First, navigate to the relevant taxonomy. For **Places** and **Subjects**,
+   use the :term:`browse menu` (available as a :term:`drop-down menu` next
+   to the :term:`search box` in the AtoM :term:`header bar` at the top of the
+   page), navigate to **Browse > Places** or **Browse > Subjects**. For all
+   other taxonomies (available only to authenticated (i.e. logged in) users
+   with the proper :term:`access privleges <access privilege>`), open the
+   |pencil| :ref:`Manage <main-menu-manage>` menu located in the AtoM
+   :term:`header bar`, select "Taxonomies", and then choose the taxonomy you
+   would like to search.
+
+2. AtoM will redirect you to the related terms browse page. A list of your
+   :term:`terms <term>` will appear; if there are more than 10 results,
+   a pager will be  included.
+
+.. image:: images/places.*
+   :align: center
+   :width: 70%
+   :alt: An image of the places main page
+
+3. If desired, you can search either only for the preferred label (e.g. the
+   formal name of the :term:`term` entered into the "Name" :term:`field` on
+   the term :term:`edit page`), or for only the "Use for" (e.g. alternate,
+   non-preferred names) labels associated with the term, using the
+   :term:`drop-down menu` located on the left of the
+   :term:`dedicated search box`. By default, AtoM will search All labels
+   (e.g. both the preferred and 'Use for' labels) associated with a term.
+
+.. NOTE::
+
+   At the moment, only the labels associated with a term (e.g. its name, and any
+   "Use for" names added) are searchable. Content in other fields (e.g. scope
+   note, source note, etc) will not return results.
+
+.. image:: images/search-term-label-dropdown.*
+   :align: center
+   :width: 70%
+   :alt: An image of the dropdown available on the terms search box
+
+4. Place your cursor in the :term:`dedicated search box` at the top of
+   the browse page. Type a search term and press enter, or use your mouse to
+   click the |searchbutton| search button (represented by the magnifying glass
+   icon to the right of the search box).
+
+.. image:: images/places-searchbox.*
+   :align: center
+   :width: 70%
+   :alt: An image of the places dedicated search box
+
+5. AtoM will reload the page with results. If there are more than 10 results,
+   a pager will be included at the bottom of the results page.
+
+.. image:: images/places-searchresults.*
+   :align: center
+   :width: 70%
+   :alt: An image of the places search results
+
+6. The results page includes a :term:`sort button` (allowing you to sort
+   results to show them in alphabetic order, or most recently created/updated)
+   and a set of :term:`facet filters <facet filter>` to help you sift through
+   results. For more information on these elements, see
+   :ref:`recurring-sort-button` and :ref:`recurring-facet-filters`.
+
+.. TIP::
+
+   You can use :term:`Boolean search` operators such as AND, OR, or NOT, as
+   well as Boolean special characters such as "quotations" or the ** * **
+   wildcard symbol to improve your search results. For more information on
+   available special characters and boolean searching in AtoM, see:
+   :ref:`advanced-search`.
+
+7. You can click the |searchreset| button next to your search term in the
+   dedicated search box to clear the field and begin a new search.
+   Alternately, simply place the cursor in the search box and enter a new
+   search term.
+
+8. When you have found the record you are searching for, click on its title in
+   the results, and AtoM will redirect you to the selected term's
+   :term:`view page`.
+
+:ref:`Back to top <search-atom>`
+
+.. _dedicated-search-subjects:
 
 .. _dedicated-search-donors:
 
