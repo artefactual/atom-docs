@@ -375,7 +375,7 @@ for more information on navigation in AtoM.
 
 After clicking "Save" you will be redirected to the :term:`view page` for the
 new child description. You can see the relationship to the parent record
-expressed in the :term:`context menu`. For more information on the Context
+expressed in the :ref:`context menu`. For more information on the Context
 menu and the treeview in AtoM, see: :ref:`context-menu`, and specifically,
 :ref:`context-menu-treeview`. See also: :ref:`treeview-search`.
 
@@ -794,6 +794,12 @@ lower level of description can also be moved so that it becomes a new
    :term:`fonds` or :term:`collection`, you could search for the top-level
    description and then use the Move browser (below) to navigate to the
    correct level of description.
+
+.. image:: images/move-description.*
+   :align: center
+   :width: 85%
+   :alt: An image of the move page
+
 5. The blue hyperlinks allow Users to drill down into the hierarchy of the
    :term:`archival description` selected.  Clicking on a top-level description
    in the Move page will display the description's lower levels of description
@@ -804,14 +810,36 @@ lower level of description can also be moved so that it becomes a new
    :term:`archival unit's <archival unit>` you are currently located -
    this is intented to help Users understand if they are moving the record to
    a sous-fonds, series, sub-series, or a file.
-6. When you have reached the right level where you want to move the record,
+
+.. image:: images/move-breadcrumb.*
+   :align: center
+   :width: 85%
+   :alt: An image of the breadcrumb trail on a move page
+
+6. If there are no more lower-level descriptions beneath the current level you
+   are exploring in the move browser, then the move browser will be empty, as
+   you can no longer drill down any lower in the hierarchy.
+
+.. image:: images/move-no-lower.*
+   :align: center
+   :width: 85%
+   :alt: An image of the move browser, showing a lowest level of description
+
+7. When you have reached the right level where you want to move the record,
    the new :term:`parent description<parent record>` should be the last
    breadcrumb in the :term:`breadcrumb trail`, while the new siblings will be
-   listed as hyperlinks below. Click "Move here" to move the record.
-7. To make a child-level description a top-level description (e.g. to turn a
+   listed as hyperlinks below. Click "Move here" in the :term:`button block`
+   to move the record.
+
+.. image:: images/button-block-move.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block on a move page
+
+8. To make a child-level description a top-level description (e.g. to turn a
    series into a :term:`fonds`), click "Move here" **without** selecting one
    of the blue links.
-8. You will be redirected to the moved record's :term:`view page`. If you look
+9. You will be redirected to the moved record's :term:`view page`. If you look
    at the :term:`treeview` located in the :term:`context menu` on the left-
    hand side of the description's view page, you will see that your
    description has been moved to a new location.
