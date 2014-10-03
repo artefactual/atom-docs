@@ -65,6 +65,7 @@ instructions on how to search for different record types in each.
   * :ref:`dedicated-search-authority`
   * :ref:`dedicated-search-accessions`
   * :ref:`dedicated-search-institutions`
+  * :ref:`dedicated-search-terms`
   * :ref:`dedicated-search-donors`
   * :ref:`dedicated-search-rights`
   * :ref:`dedicated-search-functions`
@@ -469,7 +470,7 @@ steps involved in searching for
    click on its title, and AtoM will take you to the description's
    :term:`view page`.
 8. Note that you can use :term:`Boolean search` operators such as AND, OR, or
-   NOT, as well as Boolean special characters such as the ***** wildcard
+   NOT, as well as Boolean special characters such as the ``*`` wildcard
    symbol to improve your search results. For more information on available
    special characters and boolean searching in AtoM, see:
    :ref:`advanced-search`.
@@ -548,7 +549,7 @@ in the left-hand :term:`context menu` of the description's :term:`view page`.
 4. Type a search term and press enter. AtoM will look for matches in the
    titles and identifiers (reference codes) of descriptions in the collection.
 5. Note that you can use :term:`Boolean search` operators such as AND, OR, or
-   NOT, as well as Boolean special characters such as the ***** wildcard
+   NOT, as well as Boolean special characters such as the ``*`` wildcard
    symbol to improve your search results. For more information on available
    special characters and boolean searching in AtoM, see:
    :ref:`advanced-search`.
@@ -729,11 +730,27 @@ Accession records
 
 A dedicated search box for :term:`accession records <accession record>` has
 been provided on the accessions :ref:`browse page <page-type-browse>`.
-In AtoM 2.0.0, this search box will **only return name (i.e. accession number)
-matches** However, since accessions are by default named using an
-ISO-formated date (YYYY-MM-DD), users can quickly sift through a number of
-results by searching for matches on year and month and day. See the
-instructions below for an example.
+In AtoM 2.1 and later, full-text searching has been returned to the accession
+module, and for frequently-searched fields, weighting has been added to
+increase the relevance of matching results. Below is a list of indexed fields
+and their weighting:
+
+====================================== ===========
+Field name                             Weight
+====================================== ===========
+Accession number                       x10
+Donor name                             x10
+Title                                  x10
+Scope and content                      x10
+Location information                   x5
+Processing notes                       x5
+Immediate source of acquisition        x5
+Archival/custodial history             x5
+Appraisal, desctruction and scheduling
+Physical condition
+Primary contact name
+Received extent units
+====================================== ===========
 
 For more information on working with accession records in AtoM, see:
 :ref:`accession-records`. See also: :ref:`deaccessions`.
@@ -787,16 +804,6 @@ For more information on working with accession records in AtoM, see:
    :align: center
    :width: 70%
    :alt: An image of the accession record dedicated search box
-
-.. TIP::
-
-   In 2.0.0, AtoM will **only** search on the name (i.e. identifier) of the
-   accession, but it will provide fuzzy matching - that is, instead of
-   requiring an exact match on a title, it will return partial matches as well
-   - so a search for 2013 would return all accessions starting with 2013,
-   instead of failing to return any. Since accessions identifiers are by
-   default named with an ISO-formatted date (YYYY-MM-DD), this makes quick
-   searching for an accession relatively easy.
 
 4. AtoM will reload the page with results. If there are more than 10 results,
    a pager will be included at the bottom of the results page. The results page
@@ -1016,7 +1023,7 @@ and then selecting a taxonomy).
 .. TIP::
 
    You can use :term:`Boolean search` operators such as AND, OR, or NOT, as
-   well as Boolean special characters such as "quotations" or the ** * **
+   well as Boolean special characters such as "quotations" or the ``*``
    wildcard symbol to improve your search results. For more information on
    available special characters and boolean searching in AtoM, see:
    :ref:`advanced-search`.
@@ -1031,8 +1038,6 @@ and then selecting a taxonomy).
    :term:`view page`.
 
 :ref:`Back to top <search-atom>`
-
-.. _dedicated-search-subjects:
 
 .. _dedicated-search-donors:
 
