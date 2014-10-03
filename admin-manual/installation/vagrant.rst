@@ -25,7 +25,9 @@ Install Vagrant and VirtualBox
 
 #. Install VirtualBox from https://www.virtualbox.org/ (or use your package
    manager).
+   VirtualBox 4.3 or newer is required.
 #. Install Vagrant from http://www.vagrantup.com/ (or use your package manager).
+   Vagrant 1.6 or newer is required.
 
 
 .. _vagrant-setup:
@@ -44,13 +46,11 @@ Linux and Mac users
 
       mkdir atom-vagrant && cd atom-vagrant
 
-#. Download the configuration file (Vagrantfile) and save it to the new
-   ``atom-vagrant`` directory. Type the following into your command-line
-   interface:
+#. Initialize the current directory to be a Vagrant environment. 
 
    .. code-block:: bash
 
-      wget http://storage.accesstomemory.org/Vagrantfile
+      vagrant init artefactual/atom
 
 #. Run Vagrant (again, from the same directory where you saved the
    Vagrantfile).
@@ -61,8 +61,8 @@ Linux and Mac users
 
    Vagrant will download our custom box and boot it in VirtualBox. The
    download can take anywhere from a few minutes to an hour or more, depending
-   on the speed of your connection, as the box is considerably big (approx 1GB
-   in size).
+   on the speed of your connection, as the box is considerably big (approx
+   1.4 GB in size).
 
 #. Skip over the Windows instructions below and continue following the
    instructions in :ref:`vagrant-connect-atom` and
@@ -70,8 +70,8 @@ Linux and Mac users
 
 .. _vagrant-windows-setup:
 
-Windows users
--------------
+Windows users (it needs to be updated)
+--------------------------------------
 
 .. |win| image:: images/windows.png
    :height: 18
@@ -159,6 +159,7 @@ the Windows Explorer.
    hour or more, depending on the speed of your connection, as the box is
    considerably big  (approx. 1 GB in size). When it's complete, continue
    following the instructions below.
+
 
 .. _vagrant-connect-atom:
 
