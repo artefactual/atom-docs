@@ -527,7 +527,40 @@ from AtoM's root directory, run:
 However, if you would like to index the import as it progresses, the
 ``--index`` option can be used to enable this.
 
-The ``--taxonomy`` option is only available in AtoM 2.1 and later releases.
+The ``--taxonomy`` option is used to assist in the import of SKOS xml files,
+such as :term:`places <place>` and :term:`subjects <subject>`, ensuring that
+the :term:`terms <term>` are imported to the correct :term:`taxonomy`. As
+input, the ``--taxonomy`` option takes a taxonomy ID - these are permanent
+identifiers used internally in AtoM to manage the various taxonomies, which
+can be found in AtoM in ``/lib/model/QubitTaxonomy.php`` (see on GitHub
+:at-gh:`here <lib/model/QubitTaxonomy.php#L20>`).
+
+**Example use:** Importing terms to the Places taxonomy
+
+.. code-block:: bash
+
+   php symfony import:bulk --taxonomy="42" /path/to/mySKOSfiles
+
+**Example use:** Importing terms to the Subjects taxonomy
+
+.. code-block:: bash
+
+   php symfony import:bulk --taxonomy="35" /path/to/mySKOSfiles
+
+Below is a list of some of the more commonly used taxonomies in AtoM, and
+their IDs. This list is NOT comprehensive - to see the full list, navigate to
+``/lib/model/QubitTaxonomy.php``, or visit the Github link above.
+
+=================================== ===
+Taxonomy name                       ID
+=================================== ===
+ Places                             42
+ Subjects                           35
+ Level of description               34
+ Actor entity type (ISAAR)          32
+ Thematic area (repository)         72
+ Geographic subregion (repository)  73
+=================================== ===
 
 The ``--output`` option will generate a simple CSV file containing details of
 the import process, including the time elapsed and memory used during each
@@ -538,12 +571,20 @@ CSV file to output. For example:
 
    php symfony import:bulk --output="/path/to/output-results.csv" /path/to/my/xmlFolder
 
-The CSV contains 3 columns. The first will simply list a progressive import
-number (e.g. 1, 2, 3...). The second indicates the time elapsed during the
-import of that XML file, in seconds, while the third column indicates the
-memory used during the XML import, in bytes.
+The CSV contains 3 columns. The first (titled "File" in the first row) will
+list the path and filename of each imported file. The second column (titled
+"Time elapsed (secs)" in the first row) indicates the time elapsed during the
+import of that XML file, in seconds, while the third column (titled "Memory
+used") indicates the memory used during the XML import of that file, in bytes.
+Also included, at the bottom of the CSV, are two summary rows: Total time
+elapsed (in seconds), and Peak memory usage (in megabytes).
 
-The ``--v`` option will return a more verbose output as each import is
+.. image:: images/bulk-import-output-example.*
+   :align: center
+   :width: 60%
+   :alt: an example of the CSV output after an import using the output option
+
+The ``--verbose`` option will return a more verbose output as each import is
 completed. Normally, after the import completes, a summary of the number of
 files imported, the time elapsed, and the memory used:
 
@@ -559,7 +600,7 @@ elapsed in seconds, and [z] is the memory used in bytes.
    :width: 80%
    :alt: an example of the summary output after an import
 
-If the ``--v`` command-line option is used (or just ``-v`` for short),
+If the ``--verbose`` command-line option is used (or just ``-v`` for short),
 the task will output summary information for each XML file imported, rather
 than a total summary. The summary information per file includes file name,
 time elapsed during import ( in seconds), and its position in the total count
@@ -576,20 +617,6 @@ number and [z] is the total number of files to be imported.
    :align: center
    :width: 80%
    :alt: an example of the verbose output after an import via the CLI
-
-.. IMPORTANT::
-
-   In 2.0.1 and earlier releases, the verbose option requires a parameter. We
-   suggest simply entering 1 as the parameter as this has been tested - e.g.
-   ``--v=1``, as in the following example:
-
-   .. code-block:: bash
-
-      php symfony import:bulk --v=1 /path/to/my/importFolder
-
-   Note that in 2.1 and later this has been corrected - you can use the flag
-   without a parameter as either ``--verbose`` or ``-v`` for short. The 2.1
-   documentation will be updated to reflect this.
 
 .. _common-atom-queries:
 
