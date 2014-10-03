@@ -220,5 +220,5 @@ environments. If a Vagrant environment is already running, you'll have to
 destroy and recreate it to acquire the new updates in the box. The update
 command just downloads these updates locally.
 
-You can find more help at the `Box Versioning <https://docs.vagrantup.com/v2/boxes/versioning.html>`
+You can find more help at the `Box Versioning <https://docs.vagrantup.com/v2/boxes/versioning.html>`_
 page.
