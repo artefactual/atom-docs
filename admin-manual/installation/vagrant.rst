@@ -7,7 +7,7 @@ Using Vagrant
 This guide will setup a new Oracle `VirtualBox
 <https://www.virtualbox.org/>`__ virtual machine with AtoM installed on your
 computer. It works works on most operating systems, including MacOX, Linux,
-FreeBSD and others. If you can install these and have at least 1024Mb RAM to
+FreeBSD and others. If you can install these and have at least 2048Mb RAM to
 spare you should be good.
 
 .. warning::
@@ -168,10 +168,9 @@ Connect to AtoM
 
 Now you should be able to connect to AtoM from your local browser.
 
-#. Use http://10.10.10.10:8001 if you want to try AtoM 1.x.
-#. Use http://10.10.10.10:8002 if you want to try AtoM 2.x.
+Open http://10.10.10.10.
 
-For both sites, the default login details are:
+The default login details are:
 
 * Username: ``demo@example.com``
 * Password: ``demo``
@@ -206,3 +205,20 @@ If you are using Windows, the preferred SSH client is
    * **Password**: ``root``
 
 
+.. _vagrant-updates:
+
+Keeping the environment up to date
+==================================
+
+You can check if the box you're using is outdated with ``vagrant box outdated``.
+This can check if the box in your current Vagrant environment is outdated as
+well as any other box installed on the system.
+
+Finally, you can update boxes with ``vagrant box update``. This will download
+and install the new box. This will not magically update running Vagrant
+environments. If a Vagrant environment is already running, you'll have to
+destroy and recreate it to acquire the new updates in the box. The update
+command just downloads these updates locally.
+
+You can find more help at the `Box Versioning <https://docs.vagrantup.com/v2/boxes/versioning.html>`
+page.
