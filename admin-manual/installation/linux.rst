@@ -100,10 +100,11 @@ Ready to be installed. Run:
    AtoM 2.0 doesn't support Elasticsearch 1.0 or newer. Use 0.90.x until we
    update our code.
 
-Make sure that the service has been started:
+Start the service and configure it to start when the system is booted.
 
 .. code-block:: bash
 
+   sudo update-rc.d elasticsearch defaults 95 10
    sudo /etc/init.d/elasticsearch start
 
 .. _linux-dependency-nginx:
