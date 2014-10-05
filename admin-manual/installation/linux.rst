@@ -95,10 +95,11 @@ Ready to be installed. Run:
    sudo apt-get update
    sudo apt-get install elasticsearch
 
-Make sure that the service has been started:
+Start the service and configure it to start when the system is booted.
 
 .. code-block:: bash
 
+   sudo update-rc.d elasticsearch defaults 95 10
    sudo /etc/init.d/elasticsearch start
 
 .. _linux-dependency-nginx:
