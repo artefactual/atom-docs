@@ -121,5 +121,12 @@ environments. If a Vagrant environment is already running, you'll have to
 destroy and recreate it to acquire the new updates in the box. The update
 command just downloads these updates locally.
 
+.. WARNING::
+
+   Running the ``vagrant box update`` command will destroy your old vagrant
+   box, and replace it with an updated one. This means that **any data you
+   have will be lost**. If you want to keep your data, it's better to create a
+   new box for the update in a new directory.
+
 You can find more help at the `Box Versioning <https://docs.vagrantup.com/v2/boxes/versioning.html>`_
 page.
