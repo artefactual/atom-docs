@@ -85,10 +85,6 @@ Connect to the terminal
 Run ``vagrant ssh`` from the same directory as where you ran ``vagrant up``.
 Vagrant will connect you to the correct virtual machine.
 
-.. code-block:: bash
-
-   vagrant ssh
-
 The login details are:
 
 * Username: ``vagrant``
@@ -128,7 +124,7 @@ planning to use git and submit code to a repository.
 4. Create a new SSH keys to authenticate against a git server like Github.
    Optionally you can forward your local SSH agent using `ForwardAgent`, e.g.
    run ``vagrant ssh -- -A`` or ``vagrant ssh -- -o ForwardAgent=yes`` instead
-   of just `vagrant ssh`. Alternatively, you can set ``config.ssh.forward_agent``
+   of just ``vagrant ssh``. Alternatively, you can set ``config.ssh.forward_agent``
    to ``true`` in the local Vagrantfile or the global ``~/.vagrant.d/Vagrantfile``.
 
 
