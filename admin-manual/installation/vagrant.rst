@@ -106,6 +106,60 @@ If you are using Windows, the preferred SSH client is
    * **Password**: ``root``
 
 
+.. _vagrant-customize:
+
+Customize the environment
+=========================
+
+There are a number of configuration changes that you may want to make if you are
+planning to use git and submit code to a repository.
+
+1. Locales customize programs to your language and country. We use `en_ES.UTF8`
+   but you can change it. The process is explained in the `Locale page <https://help.ubuntu.com/community/Locale>`_
+   of the official Ubuntu wiki.
+
+2. Ideally, you will also update the system to use your current timezone. See
+   `how to change the timezone from the command line in Ubuntu <https://help.ubuntu.com/community/UbuntuTime#Using_the_Command_Line_.28terminal.29>_`.
+
+3. Set up your `username <https://help.github.com/articles/setting-your-username-in-git/>`_
+   and `email <https://help.github.com/articles/setting-your-email-in-git/>`_ in
+   Git.
+
+4. Create a new SSH keys to authenticate against a git server like Github.
+   Optionally you can forward your local SSH agent using `ForwardAgent`, e.g.
+   run `vagrant ssh -- -A` or `vagrant ssh -- -o ForwardAgent=yes` instead of
+   just `vagrant ssh`. Alternatively, you can set `config.ssh.forward_agent` to
+   `true` in the local Vagrantfile or the global `~/.vagrant.d/Vagrantfile`.
+
+
+.. _vagrant-network-share:
+
+Access the code from your host
+==============================
+
+We have configured a Samba server in the Vagrant box in order to allow you to
+access the AtoM directory inside the box.
+
+From your host, you could mount the samba share either using `mount.cifs` or
+by adding the following entry in :file:`/etc/fstab`:
+
+.. code-block:: shell
+ 
+   //10.10.10.10/vagrant /home/user/Desktop/atom cifs user=vagrant,passwd=vagrant,iocharset=utf8,sec=ntlm,uid=user,gid=user,noauto,user 0 0
+
+Note that the above example is mounting the network share into :file:`/home/user/Desktop/atom`,
+feel free to modify this according to your environment.
+
+.. NOTE::
+
+   There are alternative ways to share files between your host and the virtual
+   box, e.g. Vagrant offers a smart detection system that internally uses NFS,
+   vboxsf or rsync to achieve this. However, we've found that the most
+   convenient method for our specific case is to share the files via Samba. We
+   may reconsider this in the future. For further reading about this you may
+   want to visit `Comparing Filesystem Performance in Virtual Machines <http://mitchellh.com/comparing-filesystem-performance-in-virtual-machines>`_ by Mitchell Hashimoto, the creator of Vagrant.
+
+
 .. _vagrant-updates:
 
 Keeping the environment up to date
