@@ -6,13 +6,15 @@ Using Vagrant
 
 This guide will setup a new Oracle `VirtualBox
 <https://www.virtualbox.org/>`__ virtual machine with AtoM installed on your
-computer. It works works on most operating systems, including MacOX, Linux,
-FreeBSD and others. If you can install these and have at least 2048Mb RAM to
-spare you should be good.
+computer. It works works on most operating systems, including MacOS X, Linux,
+Windows, FreeBSD and others. If you can install these and have at least
+2048Mb RAM to spare you should be good.
+
+**Minimum system requirements**: 2GB RAM; 8GB disk space
 
 .. warning::
 
-   This virtual machine is not intended to be used in production. It targets
+   This virtual machine is **not** intended to be used in production. It targets
    developers or experienced users willing to try out AtoM using Vagrant. If you
    want to start using AtoM in production, please refer to the other methods of
    installations explained under this manual.
@@ -24,8 +26,7 @@ Install Vagrant and VirtualBox
 ==============================
 
 #. Install VirtualBox from https://www.virtualbox.org/ (or use your package
-   manager).
-   VirtualBox 4.3 or newer is required.
+   manager). VirtualBox 4.3 or newer is required.
 #. Install Vagrant from http://www.vagrantup.com/ (or use your package manager).
    Vagrant 1.6 or newer is required.
 
@@ -35,18 +36,15 @@ Install Vagrant and VirtualBox
 Spin it up
 ==========
 
-Linux and Mac users
--------------------
-
-#. Create a new directory and open it. The location doesn't matter, but
-   you'll need to return to it later - all further command line operations
-   should be run from inside the directory.
+#. using your computer's command-line interface, create a new directory and
+   open it. The location doesn't matter, but you'll need to return to it later
+   - all further command line operations should be run from inside the directory.
 
    .. code-block:: bash
 
       mkdir atom-vagrant && cd atom-vagrant
 
-#. Initialize the current directory to be a Vagrant environment. 
+#. Initialize the current directory to be a Vagrant environment.
 
    .. code-block:: bash
 
@@ -63,103 +61,6 @@ Linux and Mac users
    download can take anywhere from a few minutes to an hour or more, depending
    on the speed of your connection, as the box is considerably big (approx
    1.4 GB in size).
-
-#. Skip over the Windows instructions below and continue following the
-   instructions in :ref:`vagrant-connect-atom` and
-   :ref:`vagrant-connect-terminal`
-
-.. _vagrant-windows-setup:
-
-Windows users (it needs to be updated)
---------------------------------------
-
-.. |win| image:: images/windows.png
-   :height: 18
-
-We've added more detailed steps for Windows users who wish to set up the AtoM
-Vagrant box through the Windows user interface. Note that this will still
-require some typing in the command line, but most steps can be done through
-the Windows Explorer.
-
-1. First we'll create a new directory (i.e folder) called ``atom-vagrant``. If
-   you are using windows, you can use the Windows Explorer for this step -
-   navigate to where you want the new directory, right-click and select **New
-   > Folder**. Name it "atom-vagrant". You can create this directory wherever
-   you like - just note that during the installation process, you'll have to
-   be able to navigate back there via the command line (or Command prompt in
-   windows).
-
-2. Paste the following URL into your browser and press enter:
-   https://storage.accesstomemory.org/Vagrantfile
-
-3. You'll be redirected to a page like the following:
-
-.. image:: images/storage-vagrant.*
-   :align: center
-   :width: 60%
-   :alt: An image of what a user will see at the above hyperlink
-
-4. We want to save this page in our new ``atom-vagrant`` directory -
-   right-click and select "Save as" (or "Save page as," etc. depending on your
-   browser). Save this **without a file extension** - if you save the page as
-   a .txt file, or as an .html file, it won't work. In Windows, make sure to
-   erase the extension from the file name, AND change the "Save as type" field
-   to "All files".
-
-.. image:: images/vagrant-windows-save.*
-   :align: center
-   :width: 60%
-   :alt: An image of how to save the Vagrantfile in Windows without an extension
-
-.. IMPORTANT::
-
-   Some browsers will add code to the Vagrant configuration file when  saving
-   it this way - and if they do, your installation won't work. The best way to
-   double-check this is to open the ``Vagrantfile`` in a text-editor, and
-   compare it against what you see at
-   https://storage.accesstomemory.org/Vagrantfile. Remove any code that is not
-   visible in the original, save it, and close it.
-
-.. image:: images/saving-vagrantfile-windows.*
-   :align: center
-   :width: 80%
-   :alt: Editing the saved file to ensure it's the same as the original
-
-5. Now we will switch to using Windows' Command Prompt. If you don't know
-   where to locate it on your computer, hit the |win| Windows key and start
-   typing "Command Prompt" - Windows should find the location and open a
-   terminal for you.
-6. The command prompt will show your current location - i.e., it will read
-   something like:  ``C:/Users/[your windows username]>``. We now need to
-   change directories (i.e., ``cd``) to the "atom-vagrant" folder where you
-   have saved the Vagrantfile. Here's an example of what to type (though
-   you'll have to input your own location, for wherever you saved the file):
-
-   .. code-block:: bash
-
-      cd Documents/Artefactual/atom-vagrant
-
-   If you are successful, the command prompt will now reflect your new
-   location.
-
-.. TIP::
-
-   If you are unsure of the location, but can find the file via Windows
-   Explorer, and then place your cursor in the location bar - Windows will
-   show you the directory location.
-
-7. In the command prompt, type:
-
-   .. code-block:: bash
-
-      vagrant up
-
-8. This will begin the process! Vagrant will download our custom box and boot
-   it in VirtualBox. The download can take anywhere from a few minutes to an
-   hour or more, depending on the speed of your connection, as the box is
-   considerably big  (approx. 1 GB in size). When it's complete, continue
-   following the instructions below.
-
 
 .. _vagrant-connect-atom:
 
