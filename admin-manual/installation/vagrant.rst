@@ -95,7 +95,7 @@ The login details are:
 * Password: ``vagrant``
 
 If you are using Windows, the preferred SSH client is
-`PuTTY <http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>`_.
+`PuTTY <http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>`__.
 
 .. TIP::
 
@@ -115,21 +115,21 @@ There are a number of configuration changes that you may want to make if you are
 planning to use git and submit code to a repository.
 
 1. Locales customize programs to your language and country. We use `en_ES.UTF8`
-   but you can change it. The process is explained in the `Locale page <https://help.ubuntu.com/community/Locale>`_
+   but you can change it. The process is explained in the `Locale page <https://help.ubuntu.com/community/Locale>`__
    of the official Ubuntu wiki.
 
 2. Ideally, you will also update the system to use your current timezone. See
-   `how to change the timezone from the command line in Ubuntu <https://help.ubuntu.com/community/UbuntuTime#Using_the_Command_Line_.28terminal.29>_`.
+   `how to change the timezone from the command line in Ubuntu <https://help.ubuntu.com/community/UbuntuTime#Using_the_Command_Line_.28terminal.29>`__.
 
-3. Set up your `username <https://help.github.com/articles/setting-your-username-in-git/>`_
-   and `email <https://help.github.com/articles/setting-your-email-in-git/>`_ in
+3. Set up your `username <https://help.github.com/articles/setting-your-username-in-git/>`__
+   and `email <https://help.github.com/articles/setting-your-email-in-git/>`__ in
    Git.
 
 4. Create a new SSH keys to authenticate against a git server like Github.
    Optionally you can forward your local SSH agent using `ForwardAgent`, e.g.
-   run `vagrant ssh -- -A` or `vagrant ssh -- -o ForwardAgent=yes` instead of
-   just `vagrant ssh`. Alternatively, you can set `config.ssh.forward_agent` to
-   `true` in the local Vagrantfile or the global `~/.vagrant.d/Vagrantfile`.
+   run ``vagrant ssh -- -A`` or ``vagrant ssh -- -o ForwardAgent=yes`` instead
+   of just `vagrant ssh`. Alternatively, you can set ``config.ssh.forward_agent``
+   to ``true`` in the local Vagrantfile or the global ``~/.vagrant.d/Vagrantfile``.
 
 
 .. _vagrant-network-share:
@@ -157,7 +157,7 @@ feel free to modify this according to your environment.
    vboxsf or rsync to achieve this. However, we've found that the most
    convenient method for our specific case is to share the files via Samba. We
    may reconsider this in the future. For further reading about this you may
-   want to visit `Comparing Filesystem Performance in Virtual Machines <http://mitchellh.com/comparing-filesystem-performance-in-virtual-machines>`_ by Mitchell Hashimoto, the creator of Vagrant.
+   want to visit `Comparing Filesystem Performance in Virtual Machines <http://mitchellh.com/comparing-filesystem-performance-in-virtual-machines>`__ by Mitchell Hashimoto, the creator of Vagrant.
 
 
 .. _vagrant-updates:
@@ -182,5 +182,5 @@ command just downloads these updates locally.
    have will be lost**. If you want to keep your data, it's better to create a
    new box for the update in a new directory.
 
-You can find more help at the `Box Versioning <https://docs.vagrantup.com/v2/boxes/versioning.html>`_
+You can find more help at the `Box Versioning <https://docs.vagrantup.com/v2/boxes/versioning.html>`__
 page.
