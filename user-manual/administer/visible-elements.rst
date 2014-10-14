@@ -23,6 +23,14 @@ To access the visible elements menu, click on the |gears| :ref:`Admin
    :width: 80%
    :alt: An image of the Visible elements menu in AtoM
 
+Hide or show Area Headers
+=========================
+
+TO DO
+
+:ref:`Back to top <visible-elements>`
+
+
 Hide or show metadata fields
 ============================
 
