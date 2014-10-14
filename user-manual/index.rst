@@ -57,6 +57,7 @@ links to each chapter's main sections.
    administer/visible-elements
    data-templates/isad-template
    data-templates/rad-template
+   data-templates/dc-template
    glossary/glossary
 
 
