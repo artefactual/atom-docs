@@ -12,7 +12,6 @@ Installation
    linux
    windows
    macosx
-   virtual-appliance
    vagrant
    multi-node
    upgrading
