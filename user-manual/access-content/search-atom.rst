@@ -35,6 +35,9 @@ Search
    :height: 24
    :width: 24
 
+.. |manage| image:: images/edit-sign.png
+   :height: 18
+
 To help users locate and manage content, AtoM includes powerful search
 support, available anywhere in the application through the :term:`search box`
 located in the AtoM :term:`header bar`, or through one of the many dedicated
@@ -70,6 +73,7 @@ instructions on how to search for different record types in each.
   * :ref:`dedicated-search-rights`
   * :ref:`dedicated-search-functions`
   * :ref:`dedicated-search-users`
+  * :ref:`dedicated-search-storage`
 
 .. SEEALSO::
 
@@ -600,6 +604,7 @@ entity. Basic instructions for each are included below.
 * :ref:`dedicated-search-rights`
 * :ref:`dedicated-search-functions`
 * :ref:`dedicated-search-users`
+* :ref:`dedicated-search-storage`
 
 .. IMPORTANT::
 
@@ -1325,7 +1330,7 @@ Users
 
 In AtoM 2.0.1, a :term:`dedicated search box` for managing Users and user
 accounts has been added to the user :ref:`browse page <page-type-browse>`.
-In AtoM 2.0.1, this search box will **only return user name and email
+This search box will **only return user name and email
 matches** However, the search box is configured to return partial matches, so
 for example, a search for "ca" would return Names such as Cameron, Cal, and
 also Bianca, as well as returning any user with an email that ends with ".ca".
@@ -1336,15 +1341,6 @@ system` such as a :term:`network` or portal site).
 
 For more information on working with User accounts in AtoM, see:
 :ref:`manage-user-accounts`. See also: :ref:`edit-user-permissions`.
-
-.. IMPORTANT::
-
-   **This feature is included in AtoM 2.0.1, not 2.0.0**.
-   To view and search for user account records in AtoM you must be
-   :ref:`logged in <log-in>` as an :term:`administrator`. For more information
-   on user roles, see: :ref:`user-roles`. For information on default permissions
-   for user roles, see: :ref:`default-permissions-by-role`. For information on
-   changing edit permissions, see: :ref:`edit-user-permissions`.
 
 **To search for user account records in AtoM:**
 
@@ -1416,5 +1412,72 @@ For more information on working with User accounts in AtoM, see:
 6. When you have found the user record you are searching for, click on its
    title (i.e. user name) in the results, and AtoM will redirect you to the
    selected user's :term:`profile <user profile>`.
+
+:ref:`Back to top <search-atom>`
+
+.. _dedicated-search-storage:
+
+Physical storage
+----------------
+
+As of AtoM 2.1, a **basic** search of physical storage containers has been
+added to the physical storage module's :ref:`browse page <page-type-browse>`.
+This search box will **only return user container name matches**. Note as well
+that special characters for :ref:`Boolean search` (e.g. the ``*`` wildcard or
+``~`` fuzzy search characters) are **not** supported in this search box.
+However, the  search box is configured to return partial matches, so for
+example, a search for  "Box 1" would return container names such as Box 10,
+Box 11, and Box 100, etc. This allows the dedicated search box to be used as a
+navigational aid, allowing an :term:`administrator` to quickly locate a
+specific container when there are  many containers saved in the system.
+
+For more information on working with the Physical storage module in AtoM, see:
+:ref:`physical-storage`.
+
+**To search for physical storage containers in AtoM:**
+
+.. image:: images/manage-menu.*
+   :align: right
+   :width: 15%
+   :alt: An image of the Manage menu in the AtoM header bar
+
+1. Navigate to the Physical storage :ref:`browse page <page-type-browse>` by
+   clicking on the |manage| :ref:`Manage menu <main-menu-manage>` (located in the
+   :term:`main menu` for logged-in :term:`administrators <administrator>`, in
+   the top-right of the AtoM :term:`header bar`) and choosing "Physical
+   storage" - i.e., **Manage > Physical storage**.
+2. AtoM will redirect you to the Physical storage browse page. A list of the
+   containers you have created in your AtoM installation will appear;  if there
+   are more than 10 results, a pager will be included. To begin searching for
+   a specific container, place your cursor in the the
+   :term:`dedicated search box` at the top of the page.
+
+.. TIP::
+
+   An :term:`administrator` can change the number of results per page for
+   browse and search result pages throughout AtoM via **Admin > Settings >
+   Global > Results per page**. By default, the number is set to 10. For more
+   information, see :ref:`settings`.
+
+3. Type a search term (i.e. a whole or partial container name) into the
+   :term:`dedicated search box` and press enter, or use your mouse to click the
+   |searchbutton| search button (represented by the magnifying glass icon to
+   the right of the search box).
+
+4. AtoM will reload the page with results. If there are more than 10 results,
+   a pager will be included at the bottom of the results page.
+
+.. image:: images/search-storage.*
+   :align: center
+   :width: 70%
+   :alt: An image of search results being returned in Physical storage.
+
+5. You can click the |searchreset| button next to your search term in the
+   dedicated search box to clear the field and begin a new search.
+   Alternately, simply place the cursor in the search box and enter a new
+   search term.
+6. When you have found the user record you are searching for, click on its
+   title (i.e. user name) in the results, and AtoM will redirect you to the
+   selected container's :term:`view page`.
 
 :ref:`Back to top <search-atom>`
