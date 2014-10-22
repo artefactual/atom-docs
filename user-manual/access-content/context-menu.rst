@@ -1,12 +1,12 @@
 .. _context-menu:
 
-.. |caret| image:: images/caret-down-grey.png
-   :height: 17
-   :width: 17
-
 ============
 Context menu
 ============
+
+.. |caret| image:: images/caret-down-grey.png
+   :height: 17
+   :width: 17
 
 The context menu appears on all :term:`view <view page>` and some
 :term:`edit <edit page>` pages to provide greater contextual information about
