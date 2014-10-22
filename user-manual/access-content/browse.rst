@@ -74,8 +74,9 @@ Click the Browse menu, then click on Archival descriptions.
 This browse screen shows all :term:`archival descriptions <archival
 description>` regardless of the :term:`level of description`. The automatic
 sort is alphabetic by default for public users, but users can change the sort
-to most recently updated, using the :ref:`sort button <recurring-sort-button>`
-located at the top-right of the page above the results.
+to most recently updated, or by reference code, using the
+:ref:`sort button <recurring-sort-button>` located at the top-right of the
+page above the results.
 
 .. TIP::
 
@@ -125,6 +126,17 @@ menu, then click on People and organizations.
    :width: 80%
    :alt: View of browsing people and organizations
 
+The automatic sort is alphabetic for unauthenticated (e.g. not logged in)
+users, which can be changed by the user to Most recent or identifier via the
+:ref:`recurring-sort-button` at the top right of the page.
+
+.. TIP::
+
+   :term:`Administrators <administrator>` can change the default sort order
+   on search/browse pages for both public and authenticated (i.e. logged in)
+   users, in **Admin > Settings > Global**. For more information, see:
+   :ref:`sort-browser-users` and :ref:`sort-browser-anonymous`.
+
 Users can narrow the results list using the available
 :term:`facet filters <facet filter>` on the left-hand side of the screen,
 which for :term:`authority records <authority record>` includes language and
@@ -153,11 +165,20 @@ the logo will be displayed in the browse display (see:
 :ref:`Add/edit a logo to an existing archival institution <add-institution-logo>`.
 If not, text will be displayed instead.
 
-The automatic sort is alphabetic which can be changed by the user to Most
-recent via the :ref:`recurring-sort-button` at the top right of the page.
+The automatic sort is alphabetic for unauthenticated (e.g. not logged in)
+users, which can be changed by the user to Most recent or identifier via the
+:ref:`recurring-sort-button` at the top right of the page.
+
+.. TIP::
+
+   :term:`Administrators <administrator>` can change the default sort order
+   on search/browse pages for both public and authenticated (i.e. logged in)
+   users, in **Admin > Settings > Global**. For more information, see:
+   :ref:`sort-browser-users` and :ref:`sort-browser-anonymous`.
+
 Users can narrow the results list using the available
-:term:`facet filters <facet filter>` on the left-hand side of the screen.
-For more information on using the facet filters in AtoM, see:
+:term:`facet filters <facet filter>` on the left-hand side of the screen. For
+more information on using the facet filters in AtoM, see:
 :ref:`recurring-facet-filters`; especially
 :ref:`Using facet filters in AtoM <using-facet-filters>`.
 
@@ -256,6 +277,17 @@ buttons at the top of the search results.
 .. image:: images/digital-object-browse-button.*
    :align: right
    :alt: Facet filter buttons when viewing digital objects browse results.
+
+The automatic sort is alphabetic (title) for unauthenticated (e.g. not logged in)
+users, which can be changed by the user to Most recent or alphabetic (identifier)
+via the :ref:`recurring-sort-button` at the top right of the page.
+
+.. TIP::
+
+   :term:`Administrators <administrator>` can change the default sort order
+   on search/browse pages for both public and authenticated (i.e. logged in)
+   users, in **Admin > Settings > Global**. For more information, see:
+   :ref:`sort-browser-users` and :ref:`sort-browser-anonymous`.
 
 |functicon| Browse functions
 ----------------------------
