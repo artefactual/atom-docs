@@ -416,9 +416,10 @@ existing description in AtoM.
 
 .. WARNING::
 
-   Note that setting both the *parentId* and *qubitParentSlug* in a single row
-   will create an error during import. Only one type of parent specification
-   should be used for a single imported information object.
+   Note that if you set both the *parentId* and *qubitParentSlug* in a single row,
+   the import will default to using the *qubitParentSlug*. In general, only one
+   type of parent specification should be used for each imported information
+   object (i.e. each row in your CSV).
 
 You **can** use a mix of *legacyId/parentId* and *qubitParentSlug* in the
 same CSV, just not in the same row. So, for example, if you wanted to import
@@ -427,7 +428,8 @@ several files as children of the series description, you could set a *legacyID*
 for the series, use the *qubitParentSlug* to point to the parent fonds or
 collection already in AtoM, and then use the *parentID* column for all your
 lower-level file descriptions. However, using both *parentID* and
-*qubitParentSlug* in the same row will cause an error.
+*qubitParentSlug* in the same row will cause a conflict, and AtoM will prefer
+the *qubitParentSlug* so the import does not fail.
 
 Both methods of establishing hierarchical relationships are described below.
 
@@ -500,9 +502,11 @@ new series to the *parentID* column of the new files.
 
 .. IMPORTANT::
 
-   You **cannot** add a *parentID* and a *qubitParentSlug* to the **same row**,
-   or your import will fail. Each row must have **only** one or the other -
-   either a parent slug, or a parent ID.
+   You should not add both a *parentID* and a *qubitParentSlug* to the **same
+   row** - AtoM expects one or the other. When the import encounters both
+   columns populated in a single row, AtoM will default to use the
+   *qubitParentSlug* value. In general, each row must have **only** one or the
+   other - either a parent slug, or a parent ID.
 
 Creator-related import columns
 ------------------------------
@@ -634,7 +638,8 @@ performed via the user interface.
    * All new parent records have a *legacyID* value, and all
      :term:`children <child record>` include the parent's *legacyID* value in
      their *parentID* column
-   * No row uses both *parentID* and *qubitParentSlug* (only one may be used)
+   * No row uses both *parentID* and *qubitParentSlug* (only one should be used
+     - if both are present AtoM will default to using the *qubitParentSlug*)
    * Any records to be imported as children of an existing record in AtoM use
      the proper *qubitParentSlug* of the existing parent record
 
