@@ -94,6 +94,7 @@ to:**
   <duplicate-archival-description>`
 * :ref:`link-related-descriptions`
 * :ref:`change-display-standard`
+* :ref:`add-alternative-id`
 * :ref:`Move an archival description <move-archival-description>`
 * :ref:`Delete an archival description <delete-archival-description>`
 
@@ -175,8 +176,7 @@ and types of users in AtoM see: :ref:`User roles <user-roles>`.
    can change the default template to any of the other 4 supported standards
    (:ref:`RAD <rad-template>`, :ref:`DACS <dacs-template>`, :ref:`Dublin Core
    <dc-template>`, or :ref:`MODS <mods-template>` via **Admin >
-   Settings > Default template**. For more information, see: :doc:`Settings
-   <../administer/settings>`.
+   Settings > Default template**. For more information, see: :ref:`settings`.
 
 3. On loading, the :term:`edit page` displays the record with all
    :term:`information areas <information area>` closed; click on an
@@ -807,6 +807,119 @@ description. Instructions are included below.
    :align: center
    :width: 85%
    :alt: An image of the button block
+
+:ref:`Back to top <archival-descriptions>`
+
+.. _add-alternative-id:
+
+Add alternative identifiers to an archival description
+======================================================
+
+As of AtoM 2.1, users can now add alternative identifiers to descriptions
+using the :ref:`ISAD(G) <isad-template>`, :ref:`RAD <rad-template>`, or
+:ref:`DACS <dacs-template>` standards-based description templates. This can be
+useful for keeping track of legacy identifiers or other relevant alphanumeric
+strings associated with the identification of your records, such as a bar
+code. To learn more about the description standards templates available in
+AtoM, see the following:
+
+* :ref:`descriptive-standards`
+* :ref:`change-display-standard`
+* :ref:`data-entry`
+* :ref:`default-templates`
+
+**To add an alternative identifer to your archival description:**
+
+1. First, navigate to the :term:`archival description` you wish to edit. You
+   can do this by :ref:`browsing <browse>` or :ref:`searching <search-atom>`
+   for the :term:`archival description` - see :ref:`access-content` for more
+   information on navigation in AtoM.
+2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
+   button in the :term:`button block`, or by clicking on one of the
+   :term:`information area` headings; this takes you to the record's
+   :term:`edit page`.
+
+.. image:: images/button-block-description.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block on an archival description view page
+
+3. On loading, the :term:`edit page` displays the record with all
+   :term:`information areas <information area>` closed; click on the
+   :term:`Administration area` heading to expand it and make changes.
+
+.. image:: images/description-collapsed.*
+   :align: center
+   :width: 80%
+   :alt: An archival description with all information areas closed
+
+4. You will a link to reveal the Alternative identifiers field below the
+   Identifier field, whose location depends on which display standard you are
+   using (ISAD, RAD, or DACS). In general, it will be found in the first
+   :term:`information area` of the description template.
+
++------------------+------------------------------+
+| Content standard | Information area             |
++==================+==============================+
+| ISAD             | Identity area                |
++------------------+------------------------------+
+| RAD              | Title and statement of       |
+|                  | responsibility area          |
++------------------+------------------------------+
+| DACS             | Identity elements            |
++------------------+------------------------------+
+
+.. figure:: images/alt-id-link.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An image of the alternative identifier field in ISAD
+
+   In this example, the link to reveal the Alternative identifier fields is
+   found under the Identifier :term:`fields <field>` in the Identity
+   :term:`information area` of the ISAD(G) template.
+
+5. Click on the link to reveal the Alternative identifier fields below. Users
+   can add a custom label (to describe the purpose or origin of the
+   alternative identifier), and a value.
+
+.. image:: images/alt-id-fields.*
+   :align: center
+   :width: 80%
+   :alt: Fields revealed when the alternative identifier link is clicked
+
+6. You can add multiple alternative identifiers at the same time, and you can
+   return in :term:`edit mode` at any point in the future to edit, remove, or
+   add new identifiers. To **add** another row, click the "Add new" link
+   beneath the fields. To **remove** an alternative identifier, click the
+   **X** to the right of the field row.
+
+.. image:: images/alt-id-multiple.*
+   :align: center
+   :width: 80%
+   :alt: Adding multiple alternative identifiers
+
+7. When you are done adding, editing, or removing your alternative
+   identifiers, click "Save" in the :term:`button block` located at the bottom
+   of the :term:`edit page`. If you click "Cancel" or navigate away from the
+   page without clicking "Save," you changes will not be saved.
+
+.. image:: images/button-block-save.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block
+
+8. AtoM will redirect you to the :term:`view page` for your
+   :term:`archival description`. The alternative identifiers will be displayed
+   with their custom labels in the Notes :term:`area <information area>` of
+   your descriptive template.
+
+.. image:: images/alt-id-view-page.*
+   :align: center
+   :width: 80%
+   :alt: Alternative IDs as displayed in the view page of a description
+
+:ref:`Back to top <archival-descriptions>`
 
 .. _move-archival-description:
 
