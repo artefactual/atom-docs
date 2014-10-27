@@ -1525,21 +1525,38 @@ user to bulk attach digital objects to existing information objects (e.g. :
 :term:`archival descriptions <archival description>`) through the use of a
 simple CSV file.
 
-This task will take a CSV file as input, which contains two columns: ``filename`` and
-``information_object_id``; the script will fail if these column headers are not
-present in the first row of the CSV file.
+This task will take a CSV file as input, which contains two columns: ``filename``
+and **EITHER** ``information_object_id`` **OR** ``identifier`` as the second
+column; the script will fail if these column headers are not
+present in the first row of the CSV file, and it will fail if there are more
+than 2 columns - you must choose which variable you prefer to work with for
+the second column. Each will be explained below.
 
 The ``filename`` column contains the full (current) path to the digital asset
-(file). The ``information_object_id`` identifies the linked information object.
-AtoM does not allow more than one digital object per information object (with
-the exception of derivatives), and each digital object must have a
-corresponding information object to describe it, so this one-to-one
-relationship must be respected in the CSV import file.
+(file). The ``information_object_id`` or ``identifier`` column identifies the
+linked information object. AtoM does not allow more than one digital object
+per information object (with the exception of derivatives), and each digital
+object must have a corresponding information object to describe it, so this
+one-to-one relationship must be respected in the CSV import file.
+
+The ``information_object_id`` is a unique internal value assigned to each
+:term:`information object` in AtoM's database - it is not visible via the
+:term:`user interface` and you will have to perform a SQL query to find it out
+- a sample SQL query with basic instructions has been included below.
+
+The ``identifier`` can be used instead if preferred. A
+:term:`description's <archival description>` identifier is visible in the
+:term:`user interface`, which can make it less difficult to discover. **
+However,**, if the target description's identifier is not unique throughout
+your AtoM instance, the digital object may not be attached to the correct
+description - AtoM will attach it to the first matching identifier it finds.
+
+.. _digital-object-load-sql-object-id:
 
 Finding the information_object_id
 ---------------------------------
 
-The information_object_id is not a value that is accessible via the
+The ``information_object_id`` is not a value that is accessible via the
 :term:`user interface` - it is a unique value used in AtoM's database. You can,
 however, use SQL in the command-line to determine the ID of an information
 object. The following example will show you how to use a SQL query to find the
@@ -1595,10 +1612,26 @@ Using the digital object load task
 
 Before using this task, you will need to prepare:
 
-* A CSV file with 2 columns - ``information_object_id`` and ``filename``
+* A CSV file with 2 columns -  **EITHER** ``information_object_id`` and
+  ``filename``, **OR** ``identifier`` and ``filename``
 * A directory with your digital objects inside of it
 
 .. IMPORTANT::
+
+   You cannot use both ``information_object_id`` and ``identifier`` in the
+   same CSV - it must be one or the other. If you use the ``identifier``, make
+   sure your target description identifiers are **unique** in AtoM - otherwise
+   your digital objects may not upload to the right description!
+
+Here is a sample image of what the CSV looks like when the identifier is used,
+and the CSV is prepared in a spreadsheet application:
+
+.. image:: images/digital-object-load-identifier.*
+   :align: center
+   :width: 60%
+   :alt: Example CSV for digitalobject:load task using identifier
+
+.. TIP::
 
    Before proceeding, make sure that you have reviewed the instructions
    :ref:`above <csv-encoding-newline>`, to ensure that your CSV will work when
