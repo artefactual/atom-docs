@@ -56,6 +56,8 @@ and-families-2nd-edition.html>`__).
    :width: 75%
    :alt: An image of an Authority record in AtoM
 
+.. _authority-bioghist-access:
+
 AtoM, Authority records, Biographical histories, and Name access points
 =======================================================================
 
