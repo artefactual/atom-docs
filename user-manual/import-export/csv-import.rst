@@ -538,8 +538,60 @@ Administrative/Biographical history.
    who does not already exist in AtoM, and will map the *creatorHistories* data
    for each creator to the "History" field in the related authority record. This
    information will be linked and visible in the related archival description.
-   For more information on how AtoM handles authority records, see
-   :ref:`authority-records`.
+   For more information on how AtoM handles authority records, see:
+
+   * :ref:`authority-bioghist-access`
+   * :ref:`term-name-vs-subject`
+
+.. _csv-import-descriptions-digital-object:
+
+Digital object-related import columns
+-------------------------------------
+
+As of AtoM 2.1, two new columns have been added to the
+:ref:`ISAD <isad-template>` and :ref:`RAD <rad-template>` CSV import
+templates: ``digitalObjectPath`` and ``digitalObjectURI``. These columns will
+allow you to link or upload a :term:`digital object` and attach it to the new
+:term:`information object` being created in that row of the CSV.
+
+In AtoM, a 1:1 relationship is maintained between information objects and
+digital objects - meaning that for every :term:`archival description`, you can
+only attach one :term:`digital object`. If you wish, you can create new
+:term:`child records <child record>` - a number of item descriptions as
+children of a file-level description; a number of part descriptions as
+children of an item (for multiple views of a single object, for example, or
+individual pages of a single book uploaded separately, etc), and so on.
+
+In the CSV templates, the ``digitalObjectPath`` and ``digitalObjectURI``
+columns are positioned *after* the ``publicationStatus`` column, and *before*
+the physical object-related import columns.
+
+.. image:: images/csv-digital-object-columns-location.*
+   :align: center
+   :width: 85%
+   :alt: example CSV digitalObject rows
+
+The ``digitalObjectPath`` column can be used to upload local digital objects -
+simply provide a complete path and filename to the digital object.
+
+The ``digitalObjectURI`` column can be used to link to externally hosted,
+publicly available digital objects, such as those available at a specific URL
+on the web. You must have a path directly to the digital object which includes
+a file extension, and not just to a web page with a digital object located on
+it somewhere - it is often the equivalent of right-clicking on a digital
+object in your browser and selecting "View image".
+
+You can use a mixture of the ``digitalObjectPath`` and ``digitalObjectURI``
+columns throughout your CSV (linking some information object rows to locally
+uploaded digital objects, and others to web-based resources), but you cannot
+use both columns in the same row. If AtoM encounters a CSV row where both the
+``digitalObjectPath`` and ``digitalObjectURI`` columns are populated, it will
+favor the ``digitalObjectURI`` value, and ignore the ``digitalObjectPath``
+value.
+
+.. SEEALSO::
+
+   * :ref:`upload-digital-object`
 
 Physical object-related import columns
 --------------------------------------
@@ -555,31 +607,6 @@ locations related to an :term:`archival description`.
 
 For more information on working with physical storage in AtoM, see:
 :ref:`physical-storage`.
-
-.. IMPORTANT::
-
-   .. image:: images/object-type-terms.*
-      :align: right
-      :width: 13%
-      :alt: terms in the physical object type taxonomy
-
-   We have discovered a bug in AtoM 2.0 related to the `physicalObjectType`
-   column in our CSV import - if physical location data is included in your CSV,
-   values in this field **must** conform to the default AtoM values for the
-   import to succeed. We have included a diagram of the default terms (shown
-   at right - click to enlarge) for reference. You can also view more
-   information about the default terms on our :ref:`physical-storage` page.
-
-   We hope to fix this bug in a future release of AtoM, and have filed an issue
-   (`#6755 <https://projects.artefactual.com/issues/6755>`__) to track work
-   done to resolve the issue.
-
-   Note that a similar bug currently affects a few other taxonomy-based
-   fields in the CSV import template - namely *levelOfDetail*
-   (`#6756 <https://projects.artefactual.com/issues/6756>`__ ),
-   *radGeneralMaterialDesignation*
-   (`#6757 <https://projects.artefactual.com/issues/6757>`__), and
-   *descriptionStatus* (`#6758 <https://projects.artefactual.com/issues/6758>`__).
 
 Standards related fields
 -------------------------
@@ -613,7 +640,22 @@ Other data entry notes
   script code values - for example, "Latn" for Latin-based scripts, "Cyrl"
   for Cyrillic scripts, etc. See `Unicode <www.unicode.org/iso15924/codelists.html>`__
   for a full list of ISO 15924 script codes.
-*
+
+.. IMPORTANT::
+
+   We have discovered a bug in AtoM 2.0/2.1 related to some of the columns in
+   our CSV import that map to terms managed in AtoM's taxonomies - including
+   ``levelOfDetail``, ``radGeneralMaterialDesignation``, and
+   ``descriptionStatus`` - if data for any of these columns is included in your CSV,
+   values in these fields **must** conform to the default AtoM values for the
+   import to succeed.
+
+   We hope to fix this bug in a future release of AtoM, and have filed issue
+   tickets to track work done to resolve these issues.
+
+   * *levelOfDetail* - `#6756 <https://projects.artefactual.com/issues/6756>`__
+   * *radGeneralMaterialDesignation* - `#6757 <https://projects.artefactual.com/issues/6757>`__
+   * *descriptionStatus* -- `#6758 <https://projects.artefactual.com/issues/6758>`__
 
 .. _csv-import-descriptions-gui:
 
@@ -1521,7 +1563,7 @@ Load digital objects via the command line
 =========================================
 
 Known as the **Digital object load task**, this command-line tool will allow a
-user to bulk attach digital objects to existing information objects (e.g. :
+user to bulk attach digital objects to existing information objects (e.g.
 :term:`archival descriptions <archival description>`) through the use of a
 simple CSV file.
 
@@ -1529,8 +1571,8 @@ This task will take a CSV file as input, which contains two columns: ``filename`
 and **EITHER** ``information_object_id`` **OR** ``identifier`` as the second
 column; the script will fail if these column headers are not
 present in the first row of the CSV file, and it will fail if there are more
-than 2 columns - you must choose which variable you prefer to work with for
-the second column. Each will be explained below.
+than 2 columns - you must choose which variable you prefer to work with (
+identifier or object ID) for the second column. Each will be explained below.
 
 The ``filename`` column contains the full (current) path to the digital asset
 (file). The ``information_object_id`` or ``identifier`` column identifies the
