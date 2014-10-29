@@ -504,6 +504,7 @@ The rest of the fields can be filled as you need:
 
 * Site title
 * Site description
+* Site base URL
 * Username
 * E-mail address
 * Password

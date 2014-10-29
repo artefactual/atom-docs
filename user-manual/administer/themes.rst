@@ -4,8 +4,8 @@
 Themes and theming
 ==================
 
-This section describes how to change the theme, :term:`site title` and
-:term:`site description` in your AtoM application.
+This section describes how to change the theme, :term:`site title`,
+:term:`site description`, and :term:`site base URL` in your AtoM application.
 
 .. NOTE::
 
@@ -71,16 +71,17 @@ To add or remove the :term:`site title`, :term:`site description`, and/or
    :alt: Settings for default page elements.
 
 
-Change site title and site description
-======================================
+Change site title, description, and base URL
+============================================
 
-To change the :term:`site title` and/or :term:`site description`:
+To change the :term:`site title`, :term:`site description`, and/or
+:term:`site base URL`:
 
 1. Click on the |gears| :ref:`Admin <main-menu-admin>` menu in the :term:`main
    menu` located in the :term:`header bar` and select Settings.
 
-2. Click on or scroll down to Site information. Update the text in Site title
-   and Site description as desired, and click Save.
+2. Click on or scroll down to Site information. Update the text in Site title,
+   Site description, and Site base URL as desired, and click Save.
 
 .. image:: images/change-site-info.*
    :align: center
