@@ -739,6 +739,36 @@ database (replacing *your-slug-here* with the slug you'd like to delete):
    slug (see :ref:`above <slugs-in-atom>` for more on how slugs are generated
    in AtoM), you will end up with another randomly generated slug!
 
+If you wanted to delete all slugs associated with descriptions (e.g.
+:term:`information objects <information object>`) and :term:`terms <term>`,
+you could use the following example SQL query to delete them:
+
+.. IMPORTANT::
+
+   Make sure you back up your data before proceeding! See:
+   :ref:`cli-backup-db`.
+
+.. code:: bash
+
+   DELETE
+   FROM slug
+   WHERE (object_id IN
+         (SELECT id
+          FROM term)
+       OR object_id IN
+         (SELECT id
+          FROM information_object))
+   AND object_id <> 1;
+
+You can then use the generate-slugs task to generate new slugs:
+
+.. code:: bash
+
+   php symfony propel:generate-slugs
+
+See :ref:`above <cli-generate-slugs>` for further documentation on this
+command-line tool.
+
 If you wanted to delete **all** slugs currently stored in AtoM, you could do
 so with the following query:
 
@@ -749,16 +779,12 @@ so with the following query:
 .. WARNING::
 
    This is an extreme action, and it will delete **ALL** slugs, including
-   custom slugs for your static pages. We strongly recommend backing up your
-   database before attempting this - see above, :ref:`cli-backup-db`.
-
-You can then use the generate-slugs task to generate new slugs:
-
-.. code:: bash
-
-   php symfony propel:generate-slugs
-
-See :ref:`above <cli-generate-slugs>` for further documentation on this
-command-line tool.
+   custom slugs for your static pages - and may break your application. The
+   :ref:`generate-slugs task <cli-generate-slugs>` will not replace fixtures
+   slugs - e.g. those that come installed with AtoM, such as for settings
+   pages, browse pages, menus, etc - or any static pages! We strongly recommend
+   backing up your database before attempting this - see above,
+   :ref:`cli-backup-db` - and we recommend using SQL queries to
+   *selectively* delete slugs!
 
 :ref:`Back to the top <maintenance-cli-tools>`
