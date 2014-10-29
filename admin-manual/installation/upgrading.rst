@@ -191,6 +191,21 @@ See :ref:`maintenance-clear-cache` for more detailed instructions.
 
 .. _upgrading-use-software:
 
+Set site base URL
+=================
+
+One final step is to set your site's base URL. This URL is used in XML exports
+to formulate absolute URLs referring to resources.
+
+To set the site base URL: 
+
+1. Click on the |gears| :ref:`Admin <main-menu-admin>` menu in the :term:`main
+   menu` located in the :term:`header bar` and select Settings.
+
+2. Click on or scroll down to Site information. Enter your site's base URL
+   into the site base URL field. If your domain is "townarchives.org", for
+   example, your base URL would normally be "http://townarchives.org".
+
 Start using the software!
 =========================
 

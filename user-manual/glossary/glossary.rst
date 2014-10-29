@@ -1043,7 +1043,7 @@ Glossary
     The site base URL is the absolute URL to your site's homepage. This
     URL will be included in MODS and EAD XML exports to formulate absolute
     links to AtoM resources. If your domain is "townarchives.org", for
-    example, your base URL might be "http://townarchives.org".
+    example, your base URL would normally be "http://townarchives.org".
 
   Site logo
     The site logo is the graphic that appears at the top of all pages in
