@@ -433,6 +433,8 @@ the *qubitParentSlug* so the import does not fail.
 
 Both methods of establishing hierarchical relationships are described below.
 
+.. _csv-description-legacy-id:
+
 LegacyID and parentID
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -460,6 +462,8 @@ spreadsheet application), importing a **Fonds > Series > Item** hierarchy:
    When the CSV is imported, it progresses row by row - meaning, if your CSV
    is not properly ordered with parent records appearing **before** their
    children, your import will fail!
+
+.. _csv-description-parent-slug:
 
 qubitParentSlug
 ^^^^^^^^^^^^^^^
@@ -1435,6 +1439,17 @@ can be downloaded here:
 * (link forthcoming - see the
   `qubit-toolkit wiki <https://www.qubit-toolkit.org/wiki/CSV_import#Importing_accessions>`__
   for now)
+
+As of AtoM 2.1, a new column, ``qubitParentSlug`` has been added. This column
+will behave similarly to the ``qubitParentSlug`` column in the
+:term:`archival description` CSV templates (described
+:ref:`above <csv-description-parent-slug>`) - it will allow you to link new
+CSV-imported accessions to existing descriptions in AtoM. To link an accession
+row in your CSV to an existing description in your AtoM instance, simply enter
+the :term:`slug` of the target description in the ``qubitParentSlug`` column.
+AtoM will located the matching description, and link the two during import,
+similar to how an accession created through the user interface can be linked
+to a description (see: :ref:`link-accession-description`).
 
 .. _csv-import-accessions-gui:
 
