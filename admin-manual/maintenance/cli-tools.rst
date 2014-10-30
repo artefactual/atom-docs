@@ -618,6 +618,124 @@ number and [z] is the total number of files to be imported.
    :width: 80%
    :alt: an example of the verbose output after an import via the CLI
 
+.. _cli-bulk-export:
+
+Bulk export of XML files
+========================
+
+While XML files can be exported individually via the :term:`user interface`
+(see: :ref:`export-descriptions-terms`), it may be desireable to export multiple
+XML files, or large files (typically larger than 1 MB) through the command line.
+This can avoid browser-timeout issues when trying to export large files, and
+it can be useful for extracting several descriptions at the same time. XML
+files will be exported to a directory; you must first create the target
+directory, and then you will specify the path to it when invoking the export
+command:
+
+.. code:: bash
+
+   php symfony export:bulk /path/to/my/xmlExportFolder
+
+Using the export:bulk command
+-----------------------------
+
+.. image:: images/export-bulk-cli-options.*
+   :align: center
+   :width: 85%
+   :alt: An image of the options available in the export:bulk command
+
+By typing ``php symfony help export:bulk`` into the command-line without
+specifying the path to the target directory of exported XML files, you can see
+the options available on the ``export:bulk`` command, as pictured above.
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the import.
+
+The ``--site-url`` option **should** be used to ensure that any links included
+in the resulting XML file are formed correctly. When using the
+:term:`user interface`, AtoM is able to receive routing information via the
+web server (e.g. Nginx, Apache), but in the command-line environment, AtoM has
+no way of knowing the URL to your assets. Because of this, links
+included in your XML files may be incorrect. The ``--site-url`` option allows
+you to specify the base URL of your site - for example, if your AtoM instance
+is hosted at ``http://www.example.com``, you can enter this as your base site
+url to ensure proper routing of links in the XML output:
+
+.. code:: bash
+
+   php symfony export:bulk --site-url="http://www.example.com" /path/to/my/xmlExportFolder
+
+The ``--items-until-update`` option can be used for a simple visual
+representation of progress in the command-line. Enter a whole integer, to
+represent the number of XML files that should be exported before the
+command-line prints a period (e.g. ``.`` ) in the console, as a sort of
+crude progress bar. For example, entering ``--items-until-update=5`` would
+mean that the import progresses, another period will be printed every 5 XML
+exports. This is a simple way to allow the command-line to provide a visual
+output of progress. For further information on the ``--items-until-update`` option and an
+example of the command-line option in use, see also the section below,
+:ref:`csv-import-progress`.
+
+Example use reporting progress every 5 rows:
+
+.. code-block:: bash
+
+   php symfony export:bulk --items-until-update=5 /path/to/my/exportFolder
+
+This can be useful for large bulk exports, to ensure the export is still
+progressing, and to try to roughly determine how far the task has progressed
+and how long it will take to complete.
+
+The ``--criteria`` option can be added if you would like to use raw SQL to
+target specific descriptions.
+
+**Example 1: exporting all draft descriptions**
+
+.. code-block:: bash
+
+   php symfony export:bulk --criteria="i.id IN (SELECT object_id FROM status WHERE status_id = 159 AND type_id = 158)" /path/to/my/exportFolder
+
+If you wanted to export all published descriptions instead, you could simply
+change the value of the ``status_id`` in the query from 159 (draft) to 160
+(published).
+
+**Example 2: exporting all descriptions from a specific repository**
+
+To export all descriptions associated with a particular
+:term:`archival institution`, you simply need to know the :term:`slug` of the
+institution's record in AtoM. In this example, the slug is
+"example-repo-slug":
+
+.. code-block:: bash
+
+   php symfony export:bulk --criteria="i.repository_id = (SELECT object_id FROM slug WHERE slug='example-repo-slug')" /path/to/my/exportFolder
+
+**Example 3: exporting specific descriptions by title**
+
+To export 3 fonds titled: "779 King Street, Fredericton deeds," "1991 Canada
+Winter Games fonds," and "A history of Kincardine," You can issue the
+following command:
+
+.. code-block:: bash
+
+   sudo php symfony export:bulk --criteria="i18n.title in ('779 King Street, Fredericton deeds', '1991 Canada Winter Games fonds', 'A history of Kincardine')" path/to/my/exportFolder
+
+You could add additional archival descriptions of any level of description into
+the query by adding a comma then another title in quotes within the ()s.
+
+The ``--current-level-only`` option can be used to prevent AtoM from exporting
+any :term:`children <child record>` associated with the target descriptions.
+If you are exporting :term:`fonds`, then only the fonds-level description
+would be exported, and no lower-level records such as series, sub-series,
+files, etc. This might be useful for bulk exports when the intent is to submit
+the exported descriptions to a union catalogue or regional portal that only
+accepts collection/fonds-level descriptions. If a lower-level description
+(e.g. a series, file, or item) is the target of the export, it's
+:term:`parents <parent record>` will not be exported either.
+
+:ref:`Back to the top <maintenance-cli-tools>`
+
 .. _common-atom-queries:
 
 ============================

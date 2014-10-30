@@ -32,6 +32,10 @@ The following file types can be exported:
 * EAC (authority records)
 * SKOS (hierarchical taxonomies)
 
+.. SEEALSO::
+
+   * :ref:`cli-bulk-export`
+
 EAD export
 ==========
 
