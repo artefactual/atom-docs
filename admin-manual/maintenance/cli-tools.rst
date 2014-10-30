@@ -673,9 +673,7 @@ command-line prints a period (e.g. ``.`` ) in the console, as a sort of
 crude progress bar. For example, entering ``--items-until-update=5`` would
 mean that the import progresses, another period will be printed every 5 XML
 exports. This is a simple way to allow the command-line to provide a visual
-output of progress. For further information on the ``--items-until-update`` option and an
-example of the command-line option in use, see also the section below,
-:ref:`csv-import-progress`.
+output of progress.
 
 Example use reporting progress every 5 rows:
 
@@ -733,6 +731,10 @@ the exported descriptions to a union catalogue or regional portal that only
 accepts collection/fonds-level descriptions. If a lower-level description
 (e.g. a series, file, or item) is the target of the export, it's
 :term:`parents <parent record>` will not be exported either.
+
+.. SEEALSO::
+
+   * :ref:`export-descriptions-terms`
 
 :ref:`Back to the top <maintenance-cli-tools>`
 
