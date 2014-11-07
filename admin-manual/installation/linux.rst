@@ -47,8 +47,8 @@ Let's install MySQL using :command:`apt-get`:
    sudo apt-get install mysql-server-5.5
 
 During the installation, you will be prompted to set a password for the default
-administrator user (root). If you are setting one, please note it down as you
-are going to need it :ref:`later <create-the-database-linux>`.
+administrator user (root). We strongly recommend you to use a strong password
+and please not it down as you are going to need it :ref:`later <create-the-database-linux>`.
 
 .. _linux-dependency-elasticsearch:
 
