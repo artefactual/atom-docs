@@ -447,9 +447,6 @@ password you created :ref:`earlier <linux-dependency-mysql>`:
 
 Notice that the database has been called **atom**. Feel free to change its name.
 
-If you left the root password blank during the installation of MySQL, you don't
-need to add the ``-p`` option shown above.
-
 In case your MySQL server is **not** the same as your web server, replace
 "localhost" with the address of your MySQL server.
 
