@@ -443,12 +443,12 @@ password you created :ref:`earlier <linux-dependency-mysql>`:
 
 .. code-block:: bash
 
-   mysql -h localhost -u root -pYOURSECRETPASSWORD -e "CREATE DATABASE atom CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
+   mysql -h localhost -u root -p -e "CREATE DATABASE atom CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
 
 Notice that the database has been called **atom**. Feel free to change its name.
-If you left the root password blank during the installation of
-mysql-server-5.5, you don't need to add the ``-pYOURSECRETPASSWORD`` option shown
-above.
+
+If you left the root password blank during the installation of MySQL, you don't
+need to add the ``-p`` option shown above.
 
 In case your MySQL server is **not** the same as your web server, replace
 "localhost" with the address of your MySQL server.
@@ -465,8 +465,12 @@ password ``12345`` and the permissions needed for the database created above.
 
 .. code-block:: bash
 
-   mysql -h localhost -u root -pYOURSECRETPASSWORD -e "GRANT INDEX, CREATE, SELECT, INSERT, UPDATE, DELETE, ALTER, LOCK TABLES ON atom.* TO 'atom'@'localhost' IDENTIFIED BY '12345';"
+   mysql -h localhost -u root -p -e "GRANT INDEX, CREATE, SELECT, INSERT, UPDATE, DELETE, ALTER, LOCK TABLES ON atom.* TO 'atom'@'localhost' IDENTIFIED BY '12345';"
 
+Note that the ``INDEX``, ``CREATE`` and ``ALTER`` privileges are only necessary
+during the installation process or when you are upgrading AtoM to a newer
+version. They can be removed from the user once you are finished with the
+installation or you can change the user used by AtoM in :ref:`config.php <config-config-php>`.
 
 .. _linux-run-installer:
 
