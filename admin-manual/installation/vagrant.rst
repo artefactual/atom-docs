@@ -139,8 +139,8 @@ access the AtoM directory inside the box.
 From your host, you could mount the samba share either using `mount.cifs` or
 by adding the following entry in :file:`/etc/fstab`:
 
-.. code-block:: shell
- 
+.. code-block:: bash
+
    //10.10.10.10/vagrant /home/user/Desktop/atom cifs user=vagrant,passwd=vagrant,iocharset=utf8,sec=ntlm,uid=user,gid=user,noauto,user 0 0
 
 Note that the above example is mounting the network share into :file:`/home/user/Desktop/atom`,
