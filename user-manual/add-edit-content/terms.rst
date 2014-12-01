@@ -764,46 +764,38 @@ Subject and Place terms - an alternate workflow
 The :term:`Subject` and :term:`Place` terms are often those most frequently
 accessed by AtoM users, as they can be linked to archival descriptions as as
 :term:`access points <access point>`, and are therefore visible to public
-users. To simplify the workflow for authenticated users, two shortcuts to
-access the related taxonomies and terms have been added. The following example
-will use the Subjects Taxonomy, but the instructions are the same in AtoM 2.0
-for the Places Taxonomy.
+users. To simplify the workflow for authenticated users, the :term:`button block`
+will be visible to logged-in users directly on the subject and place browse pages.
+The following example demonstrates this for the subjects browse - however the
+workflow will be the same for the places browse page.
 
 1. Using the :term:`browse menu` located in the AtoM :term:`header bar`,
    navigate to **Browse > Subjects**. AtoM will redirect you to the Subjects
    browse page. For more information on the Browse menu, see: :ref:`browse-menu`.
    For general information on browsing in AtoM, see :ref:`browse`
 2. The AtoM browse page includes a list of :term:`subjects <subject>` linked
-   to :term:`archival descriptions <archival description>`. At the top-right of
-   the page, you will see a button titled "Manage taxonomy." Clicking this will
-   take you directly to the Subjects taxonomy - i.e. the same as navigating
-   via **Manage > Taxonomies > Subjects**.
+   to :term:`archival descriptions <archival description>`. For more information
+   on browsing subjects and places, see: :ref:`browse`. When logged in, users
+   will see a :term:`button block` with an Add button directly on the subjects
+   (or places) browse page.
 
-.. figure:: images/manage-taxonomy-button.*
+.. figure:: images/browse-subjects-authenticated.*
    :align: center
    :figwidth: 80%
    :width: 100%
-   :alt: An image of the manage taxonomy button in the Subjects browse page
+   :alt: An image of the button block in the Subjects browse page
 
-   The Manage taxonomy button is a shortcut available to authenticated users
-   on the browse pages of Subjects and Places.
+3. You can also select a :term:`term` from the browse page. AtoM will redirect
+   you to a page listing descriptions in which the chosen term has been added
+   as an :term:`access point`. On the term page, the :term:`button block` will
+   also be visible so users can directly edit or delete the term (or add new
+   terms) without having to navigate to the Taxonomy via **Manage > Taxonomies**.
 
-3. Alternately, instead of clicking the Manage taxonomy button in step 2,
-   select a term from the browse page. AtoM will redirect you to a page
-   listing descriptions in which the chosen term has been added as an access
-   point. At the top-right of the page, you will see a button titled "Manage
-   term." Clicking this button will take you directly to the selected term's
-   view page - i.e. the same as navigating via **Manage > Taxonomies >
-   Subjects** and choosing a subject term.
-
-.. figure:: images/manage-term-button.*
+.. figure:: images/browse-subject-authenticated.*
    :align: center
    :figwidth: 80%
    :width: 100%
-   :alt: An image of the manage term button in the Subjects browse page
-
-   The Manage term button is a shortcut available to authenticated users when
-   viewing a specific term via the Subject or Places browse page.
+   :alt: An image of the button block on a Subject term browse page
 
 4. From here, you can follow steps 2-7 :ref:`above <edit-term>` as needed to
    edit your terms.
