@@ -58,7 +58,7 @@ The simplest way to run a worker is from your terminal:
 
 .. code-block:: bash
 
-   php symfony tools:gearman-worker
+   php symfony jobs:worker
 
 A better way to run a worker is to use a process supervisor like upstart
 (included in Ubuntu). An upstart service (:file:`/etc/init/atom-worker.conf`)
@@ -85,7 +85,7 @@ could look like:
      php \
        -d memory_limit=-1 \
        -d error_reporting="E_ALL" \
-         ${LOCATION}/symfony tools:gearman-worker >> ${LOGFILE} 2>&1
+         ${LOCATION}/symfony jobs:worker >> ${LOGFILE} 2>&1
    
    end script
 

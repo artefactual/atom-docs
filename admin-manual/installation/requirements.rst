@@ -35,6 +35,8 @@ of each component.
 * `Elasticsearch <http://www.elasticsearch.org/>`__ 0.90.11 (1.0 not supported yet)
 * `MySQL <https://www.mysql.com/>`__ 5.1 or newer
 * `PHP <http://php.net/>`__ 5.3.10 or newer (PHP 5.4 and PHP 5.5 work too)
+* `Memcached <http://memcached.org>`__
+* `Gearman job server <http://gearman.org>`__
 
 Additionally, the following PHP extensions are mandatory:
 

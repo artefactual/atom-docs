@@ -329,8 +329,21 @@ remove it:
 
 .. _linux-other-packages:
 
+Gearman job server
+------------------
+
+Gearman job server is required by AtoM as of version 2.2.
+
+.. code-block:: bash
+
+   sudo apt-get install gearman-job-server
+
 Other packages
 --------------
+
+In order to generate PDF finding aids, AtoM requires `Apache FOP 1.0 <https://archive.apache.org/dist/xmlgraphics/fop/binaries/fop-1.0-bin.tar.gz>`__.
+After downloading and extracting it, ensure you have the fop executable in your
+system's executable path.
 
 If you want AtoM to be able to process :term:`digital objects <digital object>`
 in formats like JPEG or to extract the text from your PDF documents, there are
