@@ -899,7 +899,7 @@ from AtoM's root directory, run:
 
 .. code-block:: bash
 
-   php symfony cc & php symfony search:populate
+   php symfony cc && php symfony search:populate
 
 However, if a user would like to index the import as it progresses, the
 ``--index`` option can be used to enable this.
