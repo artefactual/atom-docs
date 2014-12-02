@@ -19,11 +19,11 @@ Browse
 .. |repoicon| image:: images/repo-icon.png
    :height: 24
 
-.. |placeicon| image:: images/subjects-icon.png
+.. |placeicon| image:: images/places-icon.png
    :height: 24
    :width: 24
 
-.. |subjecticon| image:: images/places-icon.png
+.. |subjecticon| image:: images/subjects-icon.png
    :height: 24
    :width: 24
 
@@ -188,60 +188,80 @@ institutions in AtoM, see: :ref:`Archival institution search
 <dedicated-search-institutions>`. For general information on working with
 :term:`archival institution` records, see: :ref:`archival-institutions`.
 
-|subjecticon| Browse subjects
------------------------------
+.. _browse-subjects-places:
 
-Click the Browse menu, then click Subjects.
+|subjecticon| Browse subjects and places |placeicon|
+----------------------------------------------------
 
-.. image:: images/browse-subjects.*
+Subjects and Places are two different kinds of :term:`terms <term>`, which are
+managed via :term:`taxonomies <taxonomy>`. Subjects and Places, however, can also
+be used as :term:`access points <access point>` associated with
+:term:`archival descriptions <archival description>`, and public users can
+browse terms and view :term:`published <published record>` descriptions
+associated with those terms as access points. To do so, click the Browse menu,
+then click either Subjects or Places. The following images and instructions will
+use examples from the Place browse page - however, the page types are
+exactly the same for the Subjects browse. Once clicked, a user will be
+redirected to a browse page.
+
+.. image:: images/browse-places-2.*
    :align: center
    :width: 80%
-   :alt: View of browsing subjects
+   :alt: View of browsing places (annotated)
 
-AtoM will display a list of all subjects used in
-:term:`archival descriptions <archival description>` as well as the number
-of descriptions the subject term appears in. By clicking on a subject term,
-the user can see in a new browse screen the archival descriptions with that
-subject term applied.
+The above image, from the Places browse page, has been annotated with with an
+orange and white number corresponding to each of the major features of the Places
+browse page. Each is described below.
 
-.. image:: images/browse-subjects-descriptions.*
+1. A dedicated search box for :term:`terms <term>` has been included on the
+   browse page. The :term:`drop-down menu` on the left side of the dedicated
+   search box can be used to limit the search to the authorized form of name, the
+   'use for' label(s) (e.g. the alternate, non-preferred forms of name), or both.
+   For more information, see: :ref:`dedicated-search-terms`.
+2. The :term:`sort button` will allow users to sort the place or subject terms
+   either alphabetically by title, or by most recently updated (e.g. added or
+   edited). For more information, see: :ref:`recurring-sort-button`. An
+   :term:`administrator` can also configure application-wide defaults for public
+   and authenticated users via **Admin > Settings** - for more information, see:
+   :ref:`sort-browser-users` and :ref:`sort-browser-anonymous`.
+3. The number of descriptions associated with a particular term as an
+   :term:`access point` is listed in the "Results" column.
+4. If alternate, non-preferred names have been added to the term's "Use for"
+   :term:`field`, they will be displayed under the authorized form of name.
+5. If a term listed in the browse page has :term:`children <child record>` (e.g.
+   terms nested beneath it, to which it is the parent), a count of the direct
+   children will be included in parentheses after the authorized form of name.
+6. A :term:`treeview` is provided for browsing terms in the context of their
+   hierarchical relationships. When first arriving on the browse page, top-level
+   terms are displayed in the treeview. If a term has
+   :term:`children <child record>`, a caret (triangle icon) will appear next to
+   the term - click the caret to view lower-level child terms. For more
+   information on using the treeview in AtoM, see: :ref:`context-menu-treeview`.
+
+A count of total terms is provided at the top of the browse page. Terms appearing
+in the first column of the browse page's table are hyperlinks - click on a term
+to see further information about the term and related descriptions. AtoM will
+redirect you to a new browse page, described below.
+
+.. image:: images/browse-place-term2.*
    :align: center
    :width: 80%
-   :alt: View of browsing list of archival descriptions by subject.
+   :alt: View of browsing a place term (annotated)
 
-.. TIP::
+1. A :term:`breadcrumb trail` is included to indicate the hierarchical
+   relationships associated with a term - e.g. if it is the
+   :term:`child <child record>` of any other broader terms. Each breadcrumb is a
+   hyperlink - a user can click one to navigate to the broader term's browse page.
+   For more information on breadcrumbs in AtoM, see:
+   :ref:`recurring-breadcrumb-trail`.
+2. If the term description has been translated into other languages, a language
+   :term:`drop-down <drop-down menu>` will appear at the top of the term
+   description. Opening the drop-down and selecting another language will flip
+   the AtoM :term:`user interface` to the selected culture and display any
+   translated fields. For more information on multilingual use and design in
+   AtoM, see: :ref:`translate`.
+3. [COMING SOON]
 
-   In this browse screen, AtoM will also display an alphabetical list of
-   subjects in the left-hand side of the screen to allow for easy navigation
-   between subjects.
-
-
-|placeicon| Browse places
--------------------------
-
-Click the Browse menu, then click Places.
-
-.. image:: images/browse-places.*
-   :align: center
-   :width: 80%
-   :alt: View of browsing places
-
-AtoM will display a list of all places used in the place field in
-:term:`archival descriptions <archival description>` as well as the number
-of descriptions the place term appears in. By clicking on a place term,
-the user can see in a new browse screen the archival descriptions with that
-place term applied.
-
-.. image:: images/browse-places-descriptions.*
-   :align: center
-   :width: 80%
-   :alt: View of browsing list of archival descriptions by places.
-
-.. TIP::
-
-   In this browse screen, AtoM will also display an alphabetical list of
-   places in the left-hand side of the screen to allow for easy navigation
-   between places.
 
 |digicon| Browse digital objects
 --------------------------------
