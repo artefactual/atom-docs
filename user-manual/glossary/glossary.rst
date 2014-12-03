@@ -41,6 +41,12 @@ Glossary
     accrual can be added to an existing :term:`accession record`. See:
     :ref:`Accessions <accession-records>`.
 
+  Act
+    According to PREMIS, an act is "The action the preservation repository is
+    allowed to take." In AtoM, a set vocabulary of acts are used in PREMIS rights
+    records, which are then actionable upon digital objects. See:
+    :ref:`Rights <rights>`.
+
   Add menu
     The "Add" menu allows authorized users to add new :term:`archival
     descriptions <archival description>`, :term:`authority records

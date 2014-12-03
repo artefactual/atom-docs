@@ -15,21 +15,23 @@ Rights
 As discussed in the section on :ref:`entity types <entity-types>`,
 :term:`Rights records <rights record>` provide rights related restrictions
 that can be linked to :term:`accession records <accession record>`,
-:term:`archival descriptions <archival description>` and
+:term:`archival descriptions <archival description>` and their related
 :term:`digital objects <digital object>`. AtoM Rights metadata elements use
 `PREMIS rights elements <http://www.loc.gov/standards/premis/>`__. In AtoM
 restrictions can be based on Copyright(s), License, Statute(s) and Policy.
 You can also include rights restrictions based on guidelines set by the
-Donor of the records. Rights are inherited in AtoM, which means that rights
-added at a higher level (e.g., fonds level) are inherited by the lower levels
-(e.g., item level). If you add rights to an
-:term:`accession record`, all
+Donor of the records. Rights can be set to be inherited in AtoM, which means
+that rights added at a higher level (e.g., fonds level) can be inherited by the
+lower levels (e.g., item level). See
+:ref:`Manage rights inheritance <rights-inheritance>`, below.
+
+If you add rights to an :term:`accession record`, all
 :term:`archival descriptions <archival description>` created from that
-accession will inherit the same rights. If you add rights to an
-:term:`archival description` at the :term:`fonds` or
-:term:`collections <collection>` level, all lower levels (aka
-:term:`child records <child record>`) such as the file or item-level will
-inherit those rights.
+accession will inherit the same rights.
+
+AtoM also allows you to choose one PREMIS rights :term:`act` (such as Display,
+Disseminate, etc) to use as an action for your digital objects. See
+:ref:`Make rights actionable on Digital objects <rights-digital-object>`, below.
 
 Add a new rights record
 =======================
@@ -232,167 +234,115 @@ Add rights to an Archival description
 
 -------
 
-4. To enter Rights information, scroll down the page until you see the
-   :term:`information area` titled, Rights area, click on it to access the
-   :term:`rights record` dialogue.
+4. You can navigate to the Rights entry page in one of two ways:
 
-.. image:: images/rights-area.*
+a. In Edit mode, scroll down the page until you see the
+   :term:`information area` titled "Rights area". Click on it to expand and
+   click on the link "Create new rights":
+
+.. image:: images/rights-area-link.*
    :align: center
-   :width: 75%
-   :alt: An image of the Rights area in an archival description
+   :width: 75&
+   :alt: The link to the rights entry page from the Rights area in an
+   archival description
 
-5. Click on the "Add new" button and the default :term:`rights record`
-   dialogue box will pop up.
+b. In View mode, as a logged in user, you can also access the Rights entry page
+   in the :term:`button block`. Click on "More," then on "Create new rights".
 
-.. image:: images/rights-dialog.*
+5. The Rights entry page allows you to establish the basis for which rights are
+   granted or disallowed as well as describing the rights themselves.
+
+a. Rights basis:
+
+AtoM provides a drop-down menu to select the basis for the rights associated
+with the description. You can select: Copyright, License, Statute, Policy, or
+Donor.
+
+.. figure:: images/rights-entry-basis.*
    :align: center
-   :width: 55%
-   :alt: An image of the Rights dialog
+   :width: 100%
+   :figwidth: 80%
+   :alt: Rights entry page with copyright as the basis
 
-6. The "Act" data entry field is a drop-down list. You can select: Delete,
+   The Rights entry page with Copyright set as the basis.
+
+The fields below the rights basis will differ depending on the basis chosen.
+Compare for  example the figure above, showing Copyright as the basis, and the
+figure below,  showing Statute as the basis:
+
+.. figure:: images/rights-basis-statute.*
+   :align: center
+   :width: 100%
+   :figwidth: 80%
+   :alt: Rights entry page with statute as the basis
+
+   The Rights entry page with Statute set as the basis.
+
+As you complete the Rights basis fields, :term:`tooltips` will appear to explain
+the purpose of the field.
+
+When adding the Rights holder, can add a new Rights holder name, or select an
+existing one using the auto-complete action provided by AtoM.
+
+b. Act/Granted rights:
+
+Once you have established the basis for the rights you need to grant, fill in
+the Act/Granted rights fields:
+
+i. The "Act" data entry field is a drop-down list. You can select: Delete,
    Discover, Display, Disseminate, Migrate, Modify, and Replicate.
 
-7. The "Restriction" data entry field provides two choices: Allow or
-   Disallow.
+ii. The "Restriction" data entry field provides three choices: Allow,
+    Disallow or Conditional.
 
-8. You can add a new Rights holder name, or select an existing one using the
-   auto-complete action provided by AtoM.
+iii. Add Start and End dates for the right. Leave the end date blank if it is
+     unknown or open.
 
-9. You can add a Rights note, describing any additional information about the
-   Rights holder that might not already exist in their Rights holder record.
+iv. You can add notes related to the granted right.
 
-10. The "Basis" data entry field is a drop-down list. You can select:
-    Copyright, License, Statute, Policy, or Donor.
+If you are finished adding granted rights related to this basis, click Save. If
+you have more granted rights to add related to this basis, click Add granted
+right and fill in the fields again. Click Save when you are finished.
 
 .. TIP::
 
-   Depending upon your selection, the AtoM Right record dialogue may provide
-   additonal data entry fields. Be sure you scroll down in the dialogue to
-   see all of the available fields!
+   You may have granted rights to record that are related to more than one basis.
+   For example, you may want to record a granted right related to Copyright, and
+   another granted right related to Policy. After you click Save, you can return
+   to the archival description and add more rights related to another basis by
+   clicking More -> Create new rights again.
 
-   .. figure:: images/rights-dialog-more-fields.*
-      :align: center
-      :figwidth: 60%
-      :width: 100%
-      :alt: Rights record dialogue box in edit accession record page
+After rights are created for an archival description, they can be edited or
+deleted by logged in users with the correct permissions by clicking the links
+from the archival description in view mode:
 
-      In this example, a user has selected "Statute" as the Rights basis,
-      and more fields have appeared in the rights dialog.
-
-11. Once you complete adding information to the rights record, click on the
-    blue Submit button and then click on the blue Create button to save the
-    new archival description. If you have already created the archival
-    description, and you are editing the rights information, you will click
-    on the blue Save button. Save the archival description as well.
-
-.. image:: images/donor-dialog-submit.*
+.. image:: images/rights-edit-delete.*
    :align: center
-   :width: 65%
-   :alt: An image of the submit button in the Rights dialog
+   :width: 75%
+   :alt: Edit and delete links for rights records.
 
-12. In the example provided below, you are viewing the completed
-    archival description and can see that a rights record (copyright) has
-    been added.
+.. important::
 
-.. figure:: images/recordrights.*
-   :align: center
-   :figwidth: 80%
-   :width: 100%
-   :alt: Disseminate rights added to an archival description
+   When you click delete, AtoM deletes the rights record without asking for
+   confirmation, so be sure to click only when you are positive you wish to
+   delete them!
 
-   Disseminate rights added to an archival description.
+
+.. _rights-inheritance:
+
+Manage rights inheritance
+-------------------------
+
+
 
 .. _rights-digital-object:
 
-Add rights to a Digital object
-------------------------------
+Make rights actionable on Digital objects
+-----------------------------------------
 
-1. If you have a :term:`digital object` (e.g., JPEG, PDF, MP3 etc.) associated
-   with an :term:`archival description`, you can apply Rights information to a
-   single digital object and / or its :term:`master <master digital object>`,
-   :term:`reference copy <reference display copy>`, and :term:`thumbnail`
-   versions. For more information on adding digital objects to archival
-   descriptions, see: :ref:`upload-digital-object`.
 
-2. After you have imported or linked a :term:`digital object` to an
-   :term:`archival description`, click on the digital object metadata
-   :term:`information area` header to edit (note: do not click on
-   the edit button in the button block).
 
-.. image:: images/digital-object-metadata-area.*
-   :align: center
-   :width: 75%
-   :alt: An image of the digital object metadata area on a description
 
-3. AtoM will open the digital object :term:`edit page` and present the
-   :term:`Master <master digital object>`,
-   :term:`Reference <reference display copy>` and :term:`Thumbnail` versions of
-   the :term:`digital object`. Each version has its own Rights records module.
-   To access the :term:`rights record` for each version, you must click on the
-   "Add new" button and the :term:`rights record` dialogue box will pop up.
-
-.. figure:: images/digitalobject-rights.*
-   :align: center
-   :figwidth: 75%
-   :width: 100%
-   :alt: Rights record dialogue box in the Edit digital object page
-
-   Rights record dialogue box in the Edit digital object page.
-
-4. In the example provided above, you are viewing the rights dialogue
-   for the :term:`master <master digital object>` of a digital image.
-
-5. The "Act" data entry field is a :term:`drop-down <drop-down menu>` list.
-   You can select: Delete, Discover, Display, Disseminate, Migrate, Modify,
-   and Replicate.
-
-6. The "Restriction" data entry field provides two choices: Allow or
-   Disallow.
-
-7. You can add a Rights holder name, or select an existing one using the
-   auto-complete action provided by AtoM.
-
-8. You can add a Rights note, describing any additional information about the
-   Rights holder that might not already exist in their Rights holder record.
-
-9. The "Basis" data entry field is a drop-down list. You can select:
-   Copyright, License, Statute, Policy, or Donor. Depending upon your
-   selection, the AtoM Right record dialogue provides additonal data entry
-   fields.
-
-.. TIP::
-
-   Depending upon your selection, the AtoM Right record dialogue may provide
-   additonal data entry fields. Be sure you scroll down in the dialogue to
-   see all of the available fields!
-
-   .. figure:: images/rights-dialog-more-fields.*
-      :align: center
-      :figwidth: 60%
-      :width: 100%
-      :alt: Rights record dialogue box in edit accession record page
-
-      In this example, a user has selected "Statute" as the Rights basis,
-      and more fields have appeared in the rights dialog.
-
-10. Once you complete adding information to the rights record, click on the
-    blue Submit button. You will see that a rights record has been added to
-    the reference representation.
-
-.. image:: images/donor-dialog-submit.*
-   :align: center
-   :width: 65%
-   :alt: An image of the submit button in the Rights dialog
-
-11. Click on the save button at the bottom of the page. AtoM will take you to
-    the archival description :term:`view page` and you can  see that a
-    Digital object rights area has been added below the Digital object metadata
-    section.
-
-.. image:: images/digital-object-rights-view.*
-   :align: center
-   :width: 75%
-   :alt: An image of the digital object rights area
 
 Manage Rights holders records
 -----------------------------
