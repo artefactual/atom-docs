@@ -198,11 +198,12 @@ managed via :term:`taxonomies <taxonomy>`. Subjects and Places, however, can als
 be used as :term:`access points <access point>` associated with
 :term:`archival descriptions <archival description>`, and public users can
 browse terms and view :term:`published <published record>` descriptions
-associated with those terms as access points. To do so, click the Browse menu,
-then click either Subjects or Places. The following images and instructions will
-use examples from the Place browse page - however, the page types are
-exactly the same for the Subjects browse. Once clicked, a user will be
-redirected to a browse page.
+associated with those terms as access points.
+
+To do so, click the :term:`Browse menu`, then click either Subjects or Places.
+The following images and instructions will use examples from the Place browse
+page - however, the page types are exactly the same for the Subjects browse.
+Once clicked, a user will be redirected to a browse page.
 
 .. image:: images/browse-places-2.*
    :align: center
