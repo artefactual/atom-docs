@@ -1423,7 +1423,7 @@ Physical storage
 As of AtoM 2.1, a **basic** search of physical storage containers has been
 added to the physical storage module's :ref:`browse page <page-type-browse>`.
 This search box will **only return user container name matches**. Note as well
-that special characters for :ref:`Boolean search` (e.g. the ``*`` wildcard or
+that special characters for :term:`Boolean search` (e.g. the ``*`` wildcard or
 ``~`` fuzzy search characters) are **not** supported in this search box.
 However, the  search box is configured to return partial matches, so for
 example, a search for  "Box 1" would return container names such as Box 10,
