@@ -1,5 +1,9 @@
 .. _visible-elements:
 
+================
+Visible elements
+================
+
 .. |gears| image:: images/gears.png
    :height: 18
    :width: 18
@@ -7,10 +11,6 @@
 .. |check| image:: images/check.png
 
 .. |uncheck| image:: images/uncheck.png
-
-================
-Visible elements
-================
 
 .. image:: images/menu-visible-elements.*
    :align: right
