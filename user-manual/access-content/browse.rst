@@ -237,7 +237,9 @@ browse page. Each is described below.
    terms are displayed in the treeview. If a term has
    :term:`children <child record>`, a caret (triangle icon) will appear next to
    the term - click the caret to view lower-level child terms. For more
-   information on using the treeview in AtoM, see: :ref:`context-menu-treeview`.
+   information on using the treeview in AtoM, see:
+   :ref:`context-menu-treeview` and
+   :ref:`Terms treeview <context-menu-terms-treeview>`.
 
 A count of total terms is provided at the top of the browse page. Terms appearing
 in the first column of the browse page's table are hyperlinks - click on a term
@@ -261,7 +263,76 @@ redirect you to a new browse page, described below.
    the AtoM :term:`user interface` to the selected culture and display any
    translated fields. For more information on multilingual use and design in
    AtoM, see: :ref:`translate`.
-3. [COMING SOON]
+3. Additional contextual information is included in the :term:`context menu`.
+   For more detailed information on the elements of the context menu in this page,
+   see the :ref:`context-menu-terms` entry on the Context menu page.
+4. A :term:`treeview` for navigating hierarchically organized terms is included in
+   the left-hand context menu. Details on its features and uses are described
+   here: :ref:`Terms treeview <context-menu-terms-treeview>`.
+5. Information about the current term is displayed in the top portion of the
+   page's main column. This information is stored with the term in its taxonomy,
+   and can be edited by authenticated (i.e. logged in) users with edit rights. For
+   more information on the fields available and their uses, see:
+   :ref:`term-data-entry`.
+6. Below the :term:`treeview`, addtional :term:`facet filters <facet filter>` that
+   can be applied to the browse results are listed. For more information on using
+   facet filters in AtoM, see: :ref:`recurring-facet-filters`.
+7. If a user is authenticated (i.e. logged in) and has edit permissions, a
+   :term:`button block` will be visible on the page, allowing the user to edit,
+   delete, or add new terms. For more general information on working with terms
+   in AtoM, see: :ref:`terms`, and especially :ref:`term-data-entry`. Public
+   users who are not logged in will not see the button block.
+8. Below the term information, :term:`archival descriptions
+   <archival description>` that are linked to the current term as
+   :term:`access points <access point>` are displayed as results. Clicking on a
+   description result will redirect the user to the :term:`view page` for that
+   result.
+
+.. _browse-subjects-places-results:
+
+Hierarchical terms and browse results
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When terms are organized hierarchically in a taxonomy (e.g. nested within broader
+terms, with a :term:`parent <parent record>` to :term:`child <child record>`
+relationship), and a child term is added as an :term:`access point` to an
+archival description, AtoM includes the parent terms as well for context. This is
+expressed as a :term:`breadcrumb trail` on archival descriptions in the Access
+points :term:`information area`, as shown in the Places example below:
+
+.. image:: images/access-point-place.*
+   :align: center
+   :width: 70%
+   :alt: Example of hierarchical place access point
+
+In the above example, the user has added the term "Waterloo" to the description -
+but the term is organized hierarchically in the Places :term:`taxonomy`, and its
+:term:`parent <parent record>` terms are inherited. Because of this, when browsing
+results for the parent term "Waterloo, Regional Municipality of", the example
+description will appear, even though the term was not directly added.
+
+For users who would **only** like to see results where the current term has been
+directly added, a link is provided at the top of the results, with a count of
+directly related results:
+
+.. image:: images/terms-exclude-narrower-terms.*
+   :align: center
+   :width: 80%
+   :alt: View of the option to exclude narrower terms in Places browse
+
+Click the "Exclude narrower terms" button at the top of the results, and AtoM
+will reload the page, displaying only :term:`archival description` results where
+the term has been directly added (and not inherited from a narrower term).
+
+.. image:: images/terms-only-directly-related.*
+   :align: center
+   :width: 80%
+   :alt: View of the option to exclude narrower terms in Places browse
+
+A :term:`filter tag` appears at the top of the narrowed search results indicating
+that only directly-related results are being displayed. To return to the previous
+view of all results, click the **X** on the filter tag - AtoM will reload the page
+and return to displaying all related results.
 
 
 |digicon| Browse digital objects
