@@ -45,6 +45,14 @@ using the following command:
 
 The username should not have any spaces in it.
 
+If you'd like to quickly create a user for demonstration, diagnostic purposes,
+you can use the following command:
+
+   php symfony tools:add-superuser --demo
+
+This will create a superuser with username "demo", email "demo@example.com",
+and password "demo".
+
 .. _cli-change-password:
 
 Change a password
