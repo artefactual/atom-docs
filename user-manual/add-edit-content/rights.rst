@@ -35,7 +35,7 @@ accession will inherit the same rights.
 
 AtoM also allows you to choose one PREMIS rights :term:`act` (such as Display,
 Disseminate, etc) to use as an action for your digital objects. See
-:ref:`Make rights actionable on Digital objects <rights-digital-object>`, below.
+:ref:`Make rights actionable on digital objects <rights-digital-object>`, below.
 
 Add a new rights record
 =======================
@@ -366,6 +366,12 @@ rights with any existing rights in the child records (option 2).
 Click Apply. The child records will now reflect the rights inheritance from the
 parent record as you indicated.
 
+.. note::
+
+   AtoM will only allow you to manage rights inheritance from the top down- you
+   will not be able to modify the rights of a child record and have them
+   passed up to the parent record.
+
 .. _rights-digital-object:
 
 Make rights actionable on digital objects
@@ -387,6 +393,73 @@ select "Settings" from the :term:`drop-down menu`. Then click on "Permissions."
    :align: center
    :width: 80%
    :alt: Permission settings for digital objects based on granted rights.
+
+First, choose from the :term:`drop-down menu` the act/granted right you
+would like to apply to digital objects. You can choose from: Delete, Discover,
+Display, Disseminate, Migrate, Modify and Replicate. For many institutions,
+either Display or Disseminate will be the logical choice since this functionality
+relates to the display of digital objects.
+
+Next, use the drop-down menus to indicate whether viewing/downloading digital
+objects should be allowed or disallowed. You will set these permissions for
+each of the three possible restrictions (Allow, Conditional, and Disallow). For
+each restriction you will also indicate whether viewing and downloading
+:term:`masters <master digital object>`, :term:`reference representations
+<reference display copy>` and :term:`thumbnails <thumbnail>` are allowed or
+disallowed.
+
+You can only make rights actionable based on one act/granted right. Other
+acts and granted rights can be added to the archival description, but they
+will have no effect on the visibility of digital objects to your users.
+
+.. tip::
+
+   Here is an example use case:
+
+   Suppose an institution has determined that their digital objects fall into
+   3 categories: those that are in the public domain, those that are definitely
+   still under copyright, and those that have an unknown copyright status.
+   The institution does a risk assessment and determines that:
+
+   - Public domain digital objects can be accessed by anyone in any format
+   - Items under copyright can only be viewed online in their thumbnail version
+   - Items with unknown or uncertain copyright status can be viewed online, but
+     only in smaller resolution. It is determined to be too risky to allow online
+     access to the master copies.
+
+   The institution has created rights records for their archival descriptions
+   using the act "Display".
+
+   This institution would set their Permissions as such:
+
+   .. image:: images/example-rights.*
+      :align: center
+      :width: 70%
+      :alt: Example permissions settings
+
+   Example rights records in the related archival descriptions could look like
+   this:
+
+   Public domain items: Display - Allow
+
+   .. image:: images/example-allow.*
+      :align: center
+      :width: 60%
+      :alt: Example rights records when displayed is Allowed
+
+   Copyrighted items: Display - Disallow
+
+   .. image:: images/example-disallow.*
+      :align: center
+      :width: 60%
+      :alt: Example rights records when displayed is Disallowed
+
+   Uncertain copyright: Display - Conditional
+
+   .. image:: images/example-conditional.*
+      :align: center
+      :width: 60%
+      :alt: Example rights records when displayed is Conditional
 
 
 Manage Rights holders records
