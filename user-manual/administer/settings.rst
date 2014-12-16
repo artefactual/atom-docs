@@ -19,6 +19,7 @@ Below, you will find information on the following :term:`information areas
 * :ref:`OAI repository <oai-repository>`
 * :ref:`Job scheduling <job-scheduling>`
 * :ref:`Security panel <security-panel>`
+* :ref:`Permissions <permissions>`
 
 .. _global-settings:
 
@@ -748,5 +749,15 @@ classes:
 
 Choose "yes" to require authenticated (logged-in) users to have strong
 passwords.
+
+.. _permissions:
+
+Permissions
+===========
+
+Permissions settings are used by :term:`administrators <administrator>` to
+make PREMIS rights records in archival descriptions actionable on
+attached digital objects. For more instructions and examples, please see
+:ref:`Make rights actionable on digital objects <rights-digital-object>`.
 
 :ref:`Back to top <settings>`
