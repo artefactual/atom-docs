@@ -12,6 +12,10 @@ Rights
    :height: 18
    :width: 18
 
+.. |gears| image:: images/gears.png
+   :height: 18
+   :width: 18
+
 As discussed in the section on :ref:`entity types <entity-types>`,
 :term:`Rights records <rights record>` provide rights related restrictions
 that can be linked to :term:`accession records <accession record>`,
@@ -242,9 +246,8 @@ a. In Edit mode, scroll down the page until you see the
 
 .. image:: images/rights-area-link.*
    :align: center
-   :width: 75&
-   :alt: The link to the rights entry page from the Rights area in an
-   archival description
+   :width: 75%
+   :alt: The link to the rights entry page from the Rights area in an archival description
 
 b. In View mode, as a logged in user, you can also access the Rights entry page
    in the :term:`button block`. Click on "More," then on "Create new rights".
@@ -325,7 +328,7 @@ from the archival description in view mode:
 
    When you click delete, AtoM deletes the rights record without asking for
    confirmation, so be sure to click only when you are positive you wish to
-   delete them!
+   delete the rights information!
 
 
 .. _rights-inheritance:
@@ -333,15 +336,57 @@ from the archival description in view mode:
 Manage rights inheritance
 -------------------------
 
+AtoM will allow you to add a rights record to a :term:`parent record` and choose
+whether or not the same rights record should be applied to that parent's
+:term:`child records <child record>`.
 
+After creating a rights record at a parent-level, in edit mode click on "More"
+then "Manage rights inheritance" in the :term:`button block` of the parent record.
+
+.. image:: images/manage-rights-inheritance.*
+   :align: center
+   :width: 80%
+   :alt: Manage rights inheritance, available in the button block in edit mode.
+
+On the next screen, decide:
+
+1. If you want the rights record(s) inherited by all descendants (children) or
+only descendants with digital objects associated with them (see Make rights
+actionalable on digital objects, below) and,
+
+2. Whether you would like to delete any rights which pre-exist in the child
+records and replace with the parent rights (option 1) or combine the parent
+rights with any existing rights in the child records (option 2).
+
+.. image:: images/rights-inheritance-options.*
+   :align: center
+   :width: 80%
+   :alt: Rights inheritance options in AtoM.
+
+Click Apply. The child records will now reflect the rights inheritance from the
+parent record as you indicated.
 
 .. _rights-digital-object:
 
-Make rights actionable on Digital objects
+Make rights actionable on digital objects
 -----------------------------------------
 
+:term:`Administrators <administrator>` can choose an act/granted right for which
+digital object permissions are set. This means that digital object
+:term:`thumbnails <thumbnail>`,
+:term:`reference display copies <reference display copy>` and
+:term:`master digital objects <master digital object>` can be made visible or
+invisible to non-authenticated users by changing the rights record in
+conjunction with the appropriate administrative settings.
 
+To access the settings, click on the
+|gears| :ref:`Admin menu <main-menu-admin>` in the :term:`main menu` and
+select "Settings" from the :term:`drop-down menu`. Then click on "Permissions."
 
+.. image:: images/rights-digital-permissions.*
+   :align: center
+   :width: 80%
+   :alt: Permission settings for digital objects based on granted rights.
 
 
 Manage Rights holders records
