@@ -445,6 +445,34 @@ Reference code
 
 :ref:`Back to the top <rad-template>`
 
+Alternative identifier
+----------------------
+
+**Template field** Add alternative identifier(s) [link beneath identifier
+field]
+
+**CSV Column** Not currently available in AtoM CSV import
+
+**RAD Rule** N/A (see note below)
+
+**EAD**
+
+.. code:: bash
+
+   <archdesc level="[name of level]">
+      <did>
+         <unitid type="alternative" label="[user entered value]">
+
+.. note::
+
+   The use of the alternative identifier fields is documented in full here:
+
+   * :ref:`add-alternative-id`
+
+
+:ref:`Back to the top <rad-template>`
+
+
 .. _template-edition:
 
 Edition area

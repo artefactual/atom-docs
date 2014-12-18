@@ -233,6 +233,15 @@ information to help orient the user.
    :width: 45%
    :alt: an example of the reference code display in edit mode
 
+.. IMPORTANT::
+
+   Whether reference code inheritance is turned on or not, the
+   :ref:`sort button <recurring-sort-button>` option on the
+   :term:`archival description` browse page will still sort by full inherited
+   reference code, and **not** by identifier alone. This setting only affects
+   the display. For more information on sorting, see:
+   :ref:`recurring-sort-button`.
+
 .. SEEALSO::
 
    * :ref:`Control area <control-area>`
@@ -270,15 +279,19 @@ For more information, see :ref:`treeview-search`.
 Sort browser (users)
 --------------------
 
-:term:`Administrators <administrator>` can configure default sort order for the
-browse display as either "alphabetic" or "last updated" for logged-in users.
-"Last updated" will display records most recently added or edited at the top
-of the results, allowing users to explore what has changed. By default, the
-sort order is set to "Last updated" for authenticated users.
+:term:`Administrators <administrator>` can configure default sort order for
+the browse display as either "alphabetic", "last updated," or "identifier" for
+logged-in users. "Last updated" will display records most recently added or
+edited at the top of the results, allowing users to explore what has changed.
+By default, the sort order is set to "Last updated" for authenticated users.
+However, users have the option to reorder the page while browsing via the
+:ref:`sort button <recurring-sort-button>` located at the top of most browse
+pages.
 
 .. seealso::
 
    * :ref:`Browsing in AtoM <browse>`
+   * :ref:`recurring-sort-button`
    * :ref:`user-roles`
 
 .. _sort-browser-anonymous:
@@ -287,15 +300,18 @@ Sort browser (anonymous)
 ------------------------
 
 :term:`Administrators <administrator>` can configure default sort order for
-the browse display as either, "alphabetic" or "last updated" for public users
-(e.g., not logged-in). "Last updated" will display records most recently added
-or edited at the top of the results, allowing users to explore what has
-changed. By default, the sort order is set to "Alphabetic" for anonymous
-(i.e. public) users.
+the browse display as either "alphabetic," "last updated," or "identifier" for
+public users (e.g., not logged-in). "Last updated" will display records most
+recently added or edited at the top of the results, allowing users to explore
+what has changed. By default, the sort order is set to "Alphabetic" for
+anonymous (i.e. public) users. However, users have the option to reorder the
+page while browsing via the :ref:`sort button <recurring-sort-button>` located
+at the top of most browse pages.
 
 .. seealso::
 
    * :ref:`Browsing in AtoM <browse>`
+   * :ref:`recurring-sort-button`
    * :ref:`user-roles`
 
 .. _multiple-repositories:

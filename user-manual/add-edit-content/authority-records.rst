@@ -56,6 +56,8 @@ and-families-2nd-edition.html>`__).
    :width: 75%
    :alt: An image of an Authority record in AtoM
 
+.. _authority-bioghist-access:
+
 AtoM, Authority records, Biographical histories, and Name access points
 =======================================================================
 
@@ -775,7 +777,18 @@ Create a relationship between two authority records
    and then follow these steps from the new record to create the
    relationship.
 
-6. Add additional details in the subsequent fields to qualify the
+6. The "Type of relationship" field is pre-populated with default terms,
+   pictured in the image below. These terms can be edited and managed in the
+   Actor Relation Type :term:`taxonomy`, and new terms can be added as well.
+   For more information on managing terms, see: :ref:`terms`; see specifically
+   :ref:`add-converse-term`.
+
+.. image:: images/relationship-type-defaults.*
+   :align: center
+   :width: 85%
+   :alt: An image of the Relationship type default terms
+
+7. Add additional details in the subsequent fields to qualify the
    relationship. When you are finished, click "Submit".
 
 .. image:: images/donor-dialog-submit.*
@@ -783,7 +796,7 @@ Create a relationship between two authority records
    :width: 65%
    :alt: An image of the submit button in the Relationships dialog
 
-7. The related :term:`authority record` will now appear in the *Related
+8. The related :term:`authority record` will now appear in the *Related
    corporate bodies, persons, or families* table of the Relationships area.
    Click the pencil icon to re-open the pop-up dialog and edit the
    relationship, or click the **X** icon to remove the relationship link. You
@@ -791,7 +804,12 @@ Create a relationship between two authority records
    new" button below the *Related corporate bodies, persons, or families*
    again - AtoM will open a new pop-up dialog. Repeat steps 3-6 as needed.
 
-8. When you are finished, click "Save" in the :term:`button block` at the bottom
+.. image:: images/relationships-area-edit.*
+   :align: center
+   :width: 75%
+   :alt: An image of the relationships area in the edit template
+
+9. When you are finished, click "Save" in the :term:`button block` at the bottom
    of the authority record's :term:`edit page` to save your changes and exit
    :term:`edit mode`.
 
@@ -800,11 +818,34 @@ Create a relationship between two authority records
    :width: 75%
    :alt: An image of the button block when in Edit mode
 
-9. AtoM will reload the :term:`authority record` in :term:`view mode`.
-   :ref:`Back to top <authority-records>`. The relationship is expressed in
-   the "Relationships" :term:`information area` of the authority record's
-   :term:`view page`, and the related record's name will appear as a
-   hyperlink.
+10. AtoM will reload the :term:`authority record` in :term:`view mode`.
+    :ref:`Back to top <authority-records>`. The relationship is expressed in
+    the "Relationships" :term:`information area` of the authority record's
+    :term:`view page`, and the related record's name will appear as a
+    hyperlink.
+
+.. image:: images/relationships-area-view.*
+   :align: center
+   :width: 75%
+   :alt: An image of the relationships area in the view template
+
+11. Additionally, converse information will also be added to the related
+    authority record.
+
+.. image:: images/relationships-area-view-related.*
+   :align: center
+   :width: 75%
+   :alt: An image of the relationships area in the view template
+
+.. TIP::
+
+   Relationship types with opposites (such as *parent of* and *child of*) are
+   known in AtoM as **converse** terms. AtoM includes a number of default
+   relationship terms for use in the Relationship dialogue. These terms and
+   their relationships to each other can be edited and managed in the
+   Actor Relation Type :term:`taxonomy`, and new terms can be added as well.
+   For more information on managing terms, see: :ref:`terms`; see specifically
+   :ref:`add-converse-term`.
 
 :ref:`Back to top <authority-records>`
 

@@ -28,7 +28,8 @@ Install Vagrant and VirtualBox
 #. Install VirtualBox from https://www.virtualbox.org/ (or use your package
    manager). VirtualBox 4.3 or newer is required.
 #. Install Vagrant from http://www.vagrantup.com/ (or use your package manager).
-   Vagrant 1.6 or newer is required.
+   Vagrant 1.6 or newer is required. Be aware that Ubuntu 14.04 installs
+   Vagrant 1.4.3, which does not meet the requirements.
 
 
 .. _vagrant-setup:
@@ -139,8 +140,8 @@ access the AtoM directory inside the box.
 From your host, you could mount the samba share either using `mount.cifs` or
 by adding the following entry in :file:`/etc/fstab`:
 
-.. code-block:: shell
- 
+.. code-block:: bash
+
    //10.10.10.10/vagrant /home/user/Desktop/atom cifs user=vagrant,passwd=vagrant,iocharset=utf8,sec=ntlm,uid=user,gid=user,noauto,user 0 0
 
 Note that the above example is mounting the network share into :file:`/home/user/Desktop/atom`,
@@ -153,7 +154,8 @@ feel free to modify this according to your environment.
    vboxsf or rsync to achieve this. However, we've found that the most
    convenient method for our specific case is to share the files via Samba. We
    may reconsider this in the future. For further reading about this you may
-   want to visit `Comparing Filesystem Performance in Virtual Machines <http://mitchellh.com/comparing-filesystem-performance-in-virtual-machines>`__ by Mitchell Hashimoto, the creator of Vagrant.
+   want to visit `Comparing Filesystem Performance in Virtual Machines <http://mitchellh.com/comparing-filesystem-performance-in-virtual-machines>`__
+   by Mitchell Hashimoto, the creator of Vagrant.
 
 
 .. _vagrant-updates:

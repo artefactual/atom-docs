@@ -416,9 +416,10 @@ existing description in AtoM.
 
 .. WARNING::
 
-   Note that setting both the *parentId* and *qubitParentSlug* in a single row
-   will create an error during import. Only one type of parent specification
-   should be used for a single imported information object.
+   Note that if you set both the *parentId* and *qubitParentSlug* in a single row,
+   the import will default to using the *qubitParentSlug*. In general, only one
+   type of parent specification should be used for each imported information
+   object (i.e. each row in your CSV).
 
 You **can** use a mix of *legacyId/parentId* and *qubitParentSlug* in the
 same CSV, just not in the same row. So, for example, if you wanted to import
@@ -427,9 +428,12 @@ several files as children of the series description, you could set a *legacyID*
 for the series, use the *qubitParentSlug* to point to the parent fonds or
 collection already in AtoM, and then use the *parentID* column for all your
 lower-level file descriptions. However, using both *parentID* and
-*qubitParentSlug* in the same row will cause an error.
+*qubitParentSlug* in the same row will cause a conflict, and AtoM will prefer
+the *qubitParentSlug* so the import does not fail.
 
 Both methods of establishing hierarchical relationships are described below.
+
+.. _csv-description-legacy-id:
 
 LegacyID and parentID
 ^^^^^^^^^^^^^^^^^^^^^
@@ -458,6 +462,8 @@ spreadsheet application), importing a **Fonds > Series > Item** hierarchy:
    When the CSV is imported, it progresses row by row - meaning, if your CSV
    is not properly ordered with parent records appearing **before** their
    children, your import will fail!
+
+.. _csv-description-parent-slug:
 
 qubitParentSlug
 ^^^^^^^^^^^^^^^
@@ -500,9 +506,11 @@ new series to the *parentID* column of the new files.
 
 .. IMPORTANT::
 
-   You **cannot** add a *parentID* and a *qubitParentSlug* to the **same row**,
-   or your import will fail. Each row must have **only** one or the other -
-   either a parent slug, or a parent ID.
+   You should not add both a *parentID* and a *qubitParentSlug* to the **same
+   row** - AtoM expects one or the other. When the import encounters both
+   columns populated in a single row, AtoM will default to use the
+   *qubitParentSlug* value. In general, each row must have **only** one or the
+   other - either a parent slug, or a parent ID.
 
 Creator-related import columns
 ------------------------------
@@ -534,8 +542,60 @@ Administrative/Biographical history.
    who does not already exist in AtoM, and will map the *creatorHistories* data
    for each creator to the "History" field in the related authority record. This
    information will be linked and visible in the related archival description.
-   For more information on how AtoM handles authority records, see
-   :ref:`authority-records`.
+   For more information on how AtoM handles authority records, see:
+
+   * :ref:`authority-bioghist-access`
+   * :ref:`term-name-vs-subject`
+
+.. _csv-import-descriptions-digital-object:
+
+Digital object-related import columns
+-------------------------------------
+
+As of AtoM 2.1, two new columns have been added to the
+:ref:`ISAD <isad-template>` and :ref:`RAD <rad-template>` CSV import
+templates: ``digitalObjectPath`` and ``digitalObjectURI``. These columns will
+allow you to link or upload a :term:`digital object` and attach it to the new
+:term:`information object` being created in that row of the CSV.
+
+In AtoM, a 1:1 relationship is maintained between information objects and
+digital objects - meaning that for every :term:`archival description`, you can
+only attach one :term:`digital object`. If you wish, you can create new
+:term:`child records <child record>` - a number of item descriptions as
+children of a file-level description; a number of part descriptions as
+children of an item (for multiple views of a single object, for example, or
+individual pages of a single book uploaded separately, etc), and so on.
+
+In the CSV templates, the ``digitalObjectPath`` and ``digitalObjectURI``
+columns are positioned *after* the ``publicationStatus`` column, and *before*
+the physical object-related import columns.
+
+.. image:: images/csv-digital-object-columns-location.*
+   :align: center
+   :width: 85%
+   :alt: example CSV digitalObject rows
+
+The ``digitalObjectPath`` column can be used to upload local digital objects -
+simply provide a complete path and filename to the digital object.
+
+The ``digitalObjectURI`` column can be used to link to externally hosted,
+publicly available digital objects, such as those available at a specific URL
+on the web. You must have a path directly to the digital object which includes
+a file extension, and not just to a web page with a digital object located on
+it somewhere - it is often the equivalent of right-clicking on a digital
+object in your browser and selecting "View image".
+
+You can use a mixture of the ``digitalObjectPath`` and ``digitalObjectURI``
+columns throughout your CSV (linking some information object rows to locally
+uploaded digital objects, and others to web-based resources), but you cannot
+use both columns in the same row. If AtoM encounters a CSV row where both the
+``digitalObjectPath`` and ``digitalObjectURI`` columns are populated, it will
+favor the ``digitalObjectURI`` value, and ignore the ``digitalObjectPath``
+value.
+
+.. SEEALSO::
+
+   * :ref:`upload-digital-object`
 
 Physical object-related import columns
 --------------------------------------
@@ -551,31 +611,6 @@ locations related to an :term:`archival description`.
 
 For more information on working with physical storage in AtoM, see:
 :ref:`physical-storage`.
-
-.. IMPORTANT::
-
-   .. image:: images/object-type-terms.*
-      :align: right
-      :width: 13%
-      :alt: terms in the physical object type taxonomy
-
-   We have discovered a bug in AtoM 2.0 related to the `physicalObjectType`
-   column in our CSV import - if physical location data is included in your CSV,
-   values in this field **must** conform to the default AtoM values for the
-   import to succeed. We have included a diagram of the default terms (shown
-   at right - click to enlarge) for reference. You can also view more
-   information about the default terms on our :ref:`physical-storage` page.
-
-   We hope to fix this bug in a future release of AtoM, and have filed an issue
-   (`#6755 <https://projects.artefactual.com/issues/6755>`__) to track work
-   done to resolve the issue.
-
-   Note that a similar bug currently affects a few other taxonomy-based
-   fields in the CSV import template - namely *levelOfDetail*
-   (`#6756 <https://projects.artefactual.com/issues/6756>`__ ),
-   *radGeneralMaterialDesignation*
-   (`#6757 <https://projects.artefactual.com/issues/6757>`__), and
-   *descriptionStatus* (`#6758 <https://projects.artefactual.com/issues/6758>`__).
 
 Standards related fields
 -------------------------
@@ -609,7 +644,22 @@ Other data entry notes
   script code values - for example, "Latn" for Latin-based scripts, "Cyrl"
   for Cyrillic scripts, etc. See `Unicode <www.unicode.org/iso15924/codelists.html>`__
   for a full list of ISO 15924 script codes.
-*
+
+.. IMPORTANT::
+
+   We have discovered a bug in AtoM 2.0/2.1 related to some of the columns in
+   our CSV import that map to terms managed in AtoM's taxonomies - including
+   ``levelOfDetail``, ``radGeneralMaterialDesignation``, and
+   ``descriptionStatus`` - if data for any of these columns is included in your CSV,
+   values in these fields **must** conform to the default AtoM values for the
+   import to succeed.
+
+   We hope to fix this bug in a future release of AtoM, and have filed issue
+   tickets to track work done to resolve these issues.
+
+   * *levelOfDetail* - `#6756 <https://projects.artefactual.com/issues/6756>`__
+   * *radGeneralMaterialDesignation* - `#6757 <https://projects.artefactual.com/issues/6757>`__
+   * *descriptionStatus* -- `#6758 <https://projects.artefactual.com/issues/6758>`__
 
 .. _csv-import-descriptions-gui:
 
@@ -634,7 +684,8 @@ performed via the user interface.
    * All new parent records have a *legacyID* value, and all
      :term:`children <child record>` include the parent's *legacyID* value in
      their *parentID* column
-   * No row uses both *parentID* and *qubitParentSlug* (only one may be used)
+   * No row uses both *parentID* and *qubitParentSlug* (only one should be used
+     - if both are present AtoM will default to using the *qubitParentSlug*)
    * Any records to be imported as children of an existing record in AtoM use
      the proper *qubitParentSlug* of the existing parent record
 
@@ -848,7 +899,7 @@ from AtoM's root directory, run:
 
 .. code-block:: bash
 
-   php symfony cc & php symfony search:populate
+   php symfony cc && php symfony search:populate
 
 However, if a user would like to index the import as it progresses, the
 ``--index`` option can be used to enable this.
@@ -1389,6 +1440,17 @@ can be downloaded here:
   `qubit-toolkit wiki <https://www.qubit-toolkit.org/wiki/CSV_import#Importing_accessions>`__
   for now)
 
+As of AtoM 2.1, a new column, ``qubitParentSlug`` has been added. This column
+will behave similarly to the ``qubitParentSlug`` column in the
+:term:`archival description` CSV templates (described
+:ref:`above <csv-description-parent-slug>`) - it will allow you to link new
+CSV-imported accessions to existing descriptions in AtoM. To link an accession
+row in your CSV to an existing description in your AtoM instance, simply enter
+the :term:`slug` of the target description in the ``qubitParentSlug`` column.
+AtoM will located the matching description, and link the two during import,
+similar to how an accession created through the user interface can be linked
+to a description (see: :ref:`link-accession-description`).
+
 .. _csv-import-accessions-gui:
 
 Using the user interface
@@ -1516,25 +1578,42 @@ Load digital objects via the command line
 =========================================
 
 Known as the **Digital object load task**, this command-line tool will allow a
-user to bulk attach digital objects to existing information objects (e.g. :
+user to bulk attach digital objects to existing information objects (e.g.
 :term:`archival descriptions <archival description>`) through the use of a
 simple CSV file.
 
-This task will take a CSV file as input, which contains two columns: ``filename`` and
-``information_object_id``; the script will fail if these column headers are not
-present in the first row of the CSV file.
+This task will take a CSV file as input, which contains two columns: ``filename``
+and **EITHER** ``information_object_id`` **OR** ``identifier`` as the second
+column; the script will fail if these column headers are not
+present in the first row of the CSV file, and it will fail if there are more
+than 2 columns - you must choose which variable you prefer to work with (
+identifier or object ID) for the second column. Each will be explained below.
 
 The ``filename`` column contains the full (current) path to the digital asset
-(file). The ``information_object_id`` identifies the linked information object.
-AtoM does not allow more than one digital object per information object (with
-the exception of derivatives), and each digital object must have a
-corresponding information object to describe it, so this one-to-one
-relationship must be respected in the CSV import file.
+(file). The ``information_object_id`` or ``identifier`` column identifies the
+linked information object. AtoM does not allow more than one digital object
+per information object (with the exception of derivatives), and each digital
+object must have a corresponding information object to describe it, so this
+one-to-one relationship must be respected in the CSV import file.
+
+The ``information_object_id`` is a unique internal value assigned to each
+:term:`information object` in AtoM's database - it is not visible via the
+:term:`user interface` and you will have to perform a SQL query to find it out
+- a sample SQL query with basic instructions has been included below.
+
+The ``identifier`` can be used instead if preferred. A
+:term:`description's <archival description>` identifier is visible in the
+:term:`user interface`, which can make it less difficult to discover. **
+However,**, if the target description's identifier is not unique throughout
+your AtoM instance, the digital object may not be attached to the correct
+description - AtoM will attach it to the first matching identifier it finds.
+
+.. _digital-object-load-sql-object-id:
 
 Finding the information_object_id
 ---------------------------------
 
-The information_object_id is not a value that is accessible via the
+The ``information_object_id`` is not a value that is accessible via the
 :term:`user interface` - it is a unique value used in AtoM's database. You can,
 however, use SQL in the command-line to determine the ID of an information
 object. The following example will show you how to use a SQL query to find the
@@ -1590,10 +1669,26 @@ Using the digital object load task
 
 Before using this task, you will need to prepare:
 
-* A CSV file with 2 columns - ``information_object_id`` and ``filename``
+* A CSV file with 2 columns -  **EITHER** ``information_object_id`` and
+  ``filename``, **OR** ``identifier`` and ``filename``
 * A directory with your digital objects inside of it
 
 .. IMPORTANT::
+
+   You cannot use both ``information_object_id`` and ``identifier`` in the
+   same CSV - it must be one or the other. If you use the ``identifier``, make
+   sure your target description identifiers are **unique** in AtoM - otherwise
+   your digital objects may not upload to the right description!
+
+Here is a sample image of what the CSV looks like when the identifier is used,
+and the CSV is prepared in a spreadsheet application:
+
+.. image:: images/digital-object-load-identifier.*
+   :align: center
+   :width: 60%
+   :alt: Example CSV for digitalobject:load task using identifier
+
+.. TIP::
 
    Before proceeding, make sure that you have reviewed the instructions
    :ref:`above <csv-encoding-newline>`, to ensure that your CSV will work when

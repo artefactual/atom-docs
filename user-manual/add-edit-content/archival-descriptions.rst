@@ -92,7 +92,9 @@ to:**
 
 * :ref:`Duplicate an existing archival description
   <duplicate-archival-description>`
+* :ref:`link-related-descriptions`
 * :ref:`change-display-standard`
+* :ref:`add-alternative-id`
 * :ref:`Move an archival description <move-archival-description>`
 * :ref:`Delete an archival description <delete-archival-description>`
 
@@ -174,8 +176,7 @@ and types of users in AtoM see: :ref:`User roles <user-roles>`.
    can change the default template to any of the other 4 supported standards
    (:ref:`RAD <rad-template>`, :ref:`DACS <dacs-template>`, :ref:`Dublin Core
    <dc-template>`, or :ref:`MODS <mods-template>` via **Admin >
-   Settings > Default template**. For more information, see: :doc:`Settings
-   <../administer/settings>`.
+   Settings > Default template**. For more information, see: :ref:`settings`.
 
 3. On loading, the :term:`edit page` displays the record with all
    :term:`information areas <information area>` closed; click on an
@@ -375,9 +376,9 @@ for more information on navigation in AtoM.
 
 After clicking "Save" you will be redirected to the :term:`view page` for the
 new child description. You can see the relationship to the parent record
-expressed in the :term:`context menu`. For more information on the Context
-menu and the treeview in AtoM, see: :ref:`context-menu`, and specifically,
-:ref:`context-menu-treeview`. See also: :ref:`treeview-search`.
+expressed in the :ref:` context menu <context-menu>`. For more information on
+the Context menu and the treeview in AtoM, see: :ref:`context-menu`, and
+specifically, :ref:`context-menu-treeview`. See also: :ref:`treeview-search`.
 
 :ref:`Back to top <archival-descriptions>`
 
@@ -584,6 +585,148 @@ This can allow a user to avoid unnecessarily repeating data entry.
 
 :ref:`Back to top <archival-descriptions>`
 
+.. _link-related-descriptions:
+
+Link related archival descriptions in AtoM to each other
+========================================================
+
+Many AtoM descriptive templates include a free text field, derived from the
+related content standards (for more information, see:
+:ref:`descriptive-standards` and :ref:`data-entry`) that will allow users to
+describe allied or related materials:
+
++------------------+----------+------------------+------------------------------+
+| Content standard | Rule no. | AtoM field label | Information area             |
++==================+==========+==================+==============================+
+| ISAD             | 3.5.3    | Related units of | Allied materials area        |
+|                  |          | description      |                              |
++------------------+----------+------------------+------------------------------+
+| DACS             | 6.3      | Related archival | Related materials elements   |
+|                  |          | materials        |                              |
++------------------+----------+------------------+------------------------------+
+| RAD              | 1.8B20   | Associated       | Notes area                   |
+|                  |          | materials        |                              |
++------------------+----------+------------------+------------------------------+
+
+However, as of AtoM 2.1, a new auto-complete :term:`field` has been added to
+the :term:`edit page` of each of the above standards, that will allow users to
+link an :term:`archival description` to another related description held in
+AtoM. This linking is reciprocal - once it is added on one description, a link
+back to the first resource will also appear on the related description.
+Linking is managed via an auto-complete field: users begin to type the
+identifier or title of a resource, and as they type, the auto-complete
+:term:`drop-down <drop-down menu>` will display matching results.
+
+In each standards template, the linking field appears just below the free-text
+fields listed in the table above. It is labelled as "Related descriptions" in
+the :ref:`ISAD <isad-template>` and :ref:`DACS <dacs-template>` templates, and
+as "Related materials" in the :ref:`RAD <rad-template>` template.
+
+.. figure:: images/related-description-field.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An image of related description field in the ISAD template
+
+   In this example, the "Related description" linking field is shown below the
+   ISAD 3.5.3 Related units of description field in the ISAD template.
+
+**To link an archival description to another description in AtoM:**
+
+1. First, navigate to the :term:`archival description` where you wish to add a
+   link. You can do this by :ref:`browsing <browse>` or
+   :ref:`searching <search-atom>` for the :term:`archival description` - see
+   :ref:`access-content` for more information on navigation in AtoM.
+
+2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
+   button in the :term:`button block`, or by clicking on one of the
+   :term:`information area` headings; this takes you to the record's
+   :term:`edit page`.
+
+.. image:: images/button-block-description.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block on an archival description view page
+
+3. On loading, the :term:`edit page` displays the record with all
+   :term:`information areas <information area>` closed; click on an
+   :term:`area header` to expand it and make changes. Use the table above to
+   determine which information area will have the related descriptions field,
+   based on which descriptive template (ISAD, RAD, DACS) you are using. For
+   more information on working with content standards and descriptive
+   templates in AtoM, see:
+
+   * :ref:`descriptive-standards`
+   * :ref:`change-display-standard`
+   * :ref:`data-entry`
+   * :ref:`default-templates`
+
+.. image:: images/description-collapsed.*
+   :align: center
+   :width: 80%
+   :alt: An archival description with all information areas closed
+
+4. In the Related descriptions :term:`field`, begin typing either the
+   identifier, full reference code, or title of the
+   :term:`archival description` to which you would like to create a link. As
+   you type, the field's :term:`drop-down menu` will provide auto-complete
+   matching results. When you see the description to which you would like to
+   create a link, click on it in the drop-down menu.
+
+.. image:: images/add-related-description.*
+   :align: center
+   :width: 80%
+   :alt: Using the related descriptions field to find another description
+
+5. You can repeat this process to add multiple links to different descriptions
+   at the same time.
+
+.. image:: images/add-second-related-description.*
+   :align: center
+   :width: 80%
+   :alt: Using the related descriptions field to find a second description
+
+6. To **remove** a linked description, place your cursor over the bullet next
+   to the linked description - it will change into an **X**. Click the **X**
+   to remove the link to the related description.
+
+.. image:: images/remove-related-description.*
+   :align: center
+   :width: 80%
+   :alt: Removing a related description link
+
+7. When you are finished adding or editing your related descriptions, click
+   "Save" in the :term:`button block` at the bottom of the :term:`edit page`.
+   Alternately, if you click "Cancel" or navigate away from the page without
+   saving, none of your changes will be saved.
+
+.. image:: images/button-block-save.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block
+
+8. Upon saving, AtoM will redirect you to the :term:`view page` for your
+   :term:`archival description`. You will be able to see a link to the related
+   description in the relevant :term:`information area` of your display
+   template.
+
+.. image:: images/related-description-view.*
+   :align: center
+   :width: 80%
+   :alt: A related description link as seen in the view page
+
+9. Similarly, AtoM will automatically add a reciprocal link back to the
+   original description on the view and edit pages of the related resource.
+   You can edit or remove the link by entering :term:`edit mode` on either
+   description, and following instructions to remove a link in Step 6, above.
+
+.. image:: images/related-description-reciprocal.*
+   :align: center
+   :width: 80%
+   :alt: A related description link as seen in the view page
+
+:ref:`Back to top <archival-descriptions>`
+
 .. _change-display-standard:
 
 Change the display standard
@@ -664,6 +807,119 @@ description. Instructions are included below.
    :align: center
    :width: 85%
    :alt: An image of the button block
+
+:ref:`Back to top <archival-descriptions>`
+
+.. _add-alternative-id:
+
+Add alternative identifiers to an archival description
+======================================================
+
+As of AtoM 2.1, users can now add alternative identifiers to descriptions
+using the :ref:`ISAD(G) <isad-template>`, :ref:`RAD <rad-template>`, or
+:ref:`DACS <dacs-template>` standards-based description templates. This can be
+useful for keeping track of legacy identifiers or other relevant alphanumeric
+strings associated with the identification of your records, such as a bar
+code. To learn more about the description standards templates available in
+AtoM, see the following:
+
+* :ref:`descriptive-standards`
+* :ref:`change-display-standard`
+* :ref:`data-entry`
+* :ref:`default-templates`
+
+**To add an alternative identifer to your archival description:**
+
+1. First, navigate to the :term:`archival description` you wish to edit. You
+   can do this by :ref:`browsing <browse>` or :ref:`searching <search-atom>`
+   for the :term:`archival description` - see :ref:`access-content` for more
+   information on navigation in AtoM.
+2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
+   button in the :term:`button block`, or by clicking on one of the
+   :term:`information area` headings; this takes you to the record's
+   :term:`edit page`.
+
+.. image:: images/button-block-description.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block on an archival description view page
+
+3. On loading, the :term:`edit page` displays the record with all
+   :term:`information areas <information area>` closed; click on the
+   :term:`Administration area` heading to expand it and make changes.
+
+.. image:: images/description-collapsed.*
+   :align: center
+   :width: 80%
+   :alt: An archival description with all information areas closed
+
+4. You will a link to reveal the Alternative identifiers field below the
+   Identifier field, whose location depends on which display standard you are
+   using (ISAD, RAD, or DACS). In general, it will be found in the first
+   :term:`information area` of the description template.
+
++------------------+------------------------------+
+| Content standard | Information area             |
++==================+==============================+
+| ISAD             | Identity area                |
++------------------+------------------------------+
+| RAD              | Title and statement of       |
+|                  | responsibility area          |
++------------------+------------------------------+
+| DACS             | Identity elements            |
++------------------+------------------------------+
+
+.. figure:: images/alt-id-link.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An image of the alternative identifier field in ISAD
+
+   In this example, the link to reveal the Alternative identifier fields is
+   found under the Identifier :term:`fields <field>` in the Identity
+   :term:`information area` of the ISAD(G) template.
+
+5. Click on the link to reveal the Alternative identifier fields below. Users
+   can add a custom label (to describe the purpose or origin of the
+   alternative identifier), and a value.
+
+.. image:: images/alt-id-fields.*
+   :align: center
+   :width: 80%
+   :alt: Fields revealed when the alternative identifier link is clicked
+
+6. You can add multiple alternative identifiers at the same time, and you can
+   return in :term:`edit mode` at any point in the future to edit, remove, or
+   add new identifiers. To **add** another row, click the "Add new" link
+   beneath the fields. To **remove** an alternative identifier, click the
+   **X** to the right of the field row.
+
+.. image:: images/alt-id-multiple.*
+   :align: center
+   :width: 80%
+   :alt: Adding multiple alternative identifiers
+
+7. When you are done adding, editing, or removing your alternative
+   identifiers, click "Save" in the :term:`button block` located at the bottom
+   of the :term:`edit page`. If you click "Cancel" or navigate away from the
+   page without clicking "Save," you changes will not be saved.
+
+.. image:: images/button-block-save.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block
+
+8. AtoM will redirect you to the :term:`view page` for your
+   :term:`archival description`. The alternative identifiers will be displayed
+   with their custom labels in the Notes :term:`area <information area>` of
+   your descriptive template.
+
+.. image:: images/alt-id-view-page.*
+   :align: center
+   :width: 80%
+   :alt: Alternative IDs as displayed in the view page of a description
+
+:ref:`Back to top <archival-descriptions>`
 
 .. _move-archival-description:
 
@@ -794,6 +1050,12 @@ lower level of description can also be moved so that it becomes a new
    :term:`fonds` or :term:`collection`, you could search for the top-level
    description and then use the Move browser (below) to navigate to the
    correct level of description.
+
+.. image:: images/move-description.*
+   :align: center
+   :width: 85%
+   :alt: An image of the move page
+
 5. The blue hyperlinks allow Users to drill down into the hierarchy of the
    :term:`archival description` selected.  Clicking on a top-level description
    in the Move page will display the description's lower levels of description
@@ -804,14 +1066,36 @@ lower level of description can also be moved so that it becomes a new
    :term:`archival unit's <archival unit>` you are currently located -
    this is intented to help Users understand if they are moving the record to
    a sous-fonds, series, sub-series, or a file.
-6. When you have reached the right level where you want to move the record,
+
+.. image:: images/move-breadcrumb.*
+   :align: center
+   :width: 85%
+   :alt: An image of the breadcrumb trail on a move page
+
+6. If there are no more lower-level descriptions beneath the current level you
+   are exploring in the move browser, then the move browser will be empty, as
+   you can no longer drill down any lower in the hierarchy.
+
+.. image:: images/move-no-lower.*
+   :align: center
+   :width: 85%
+   :alt: An image of the move browser, showing a lowest level of description
+
+7. When you have reached the right level where you want to move the record,
    the new :term:`parent description<parent record>` should be the last
    breadcrumb in the :term:`breadcrumb trail`, while the new siblings will be
-   listed as hyperlinks below. Click "Move here" to move the record.
-7. To make a child-level description a top-level description (e.g. to turn a
+   listed as hyperlinks below. Click "Move here" in the :term:`button block`
+   to move the record.
+
+.. image:: images/button-block-move.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block on a move page
+
+8. To make a child-level description a top-level description (e.g. to turn a
    series into a :term:`fonds`), click "Move here" **without** selecting one
    of the blue links.
-8. You will be redirected to the moved record's :term:`view page`. If you look
+9. You will be redirected to the moved record's :term:`view page`. If you look
    at the :term:`treeview` located in the :term:`context menu` on the left-
    hand side of the description's view page, you will see that your
    description has been moved to a new location.

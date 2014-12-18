@@ -35,6 +35,9 @@ Search
    :height: 24
    :width: 24
 
+.. |manage| image:: images/edit-sign.png
+   :height: 18
+
 To help users locate and manage content, AtoM includes powerful search
 support, available anywhere in the application through the :term:`search box`
 located in the AtoM :term:`header bar`, or through one of the many dedicated
@@ -65,10 +68,12 @@ instructions on how to search for different record types in each.
   * :ref:`dedicated-search-authority`
   * :ref:`dedicated-search-accessions`
   * :ref:`dedicated-search-institutions`
+  * :ref:`dedicated-search-terms`
   * :ref:`dedicated-search-donors`
   * :ref:`dedicated-search-rights`
   * :ref:`dedicated-search-functions`
   * :ref:`dedicated-search-users`
+  * :ref:`dedicated-search-storage`
 
 .. SEEALSO::
 
@@ -469,7 +474,7 @@ steps involved in searching for
    click on its title, and AtoM will take you to the description's
    :term:`view page`.
 8. Note that you can use :term:`Boolean search` operators such as AND, OR, or
-   NOT, as well as Boolean special characters such as the ***** wildcard
+   NOT, as well as Boolean special characters such as the ``*`` wildcard
    symbol to improve your search results. For more information on available
    special characters and boolean searching in AtoM, see:
    :ref:`advanced-search`.
@@ -548,7 +553,7 @@ in the left-hand :term:`context menu` of the description's :term:`view page`.
 4. Type a search term and press enter. AtoM will look for matches in the
    titles and identifiers (reference codes) of descriptions in the collection.
 5. Note that you can use :term:`Boolean search` operators such as AND, OR, or
-   NOT, as well as Boolean special characters such as the ***** wildcard
+   NOT, as well as Boolean special characters such as the ``*`` wildcard
    symbol to improve your search results. For more information on available
    special characters and boolean searching in AtoM, see:
    :ref:`advanced-search`.
@@ -594,10 +599,12 @@ entity. Basic instructions for each are included below.
 * :ref:`dedicated-search-authority`
 * :ref:`dedicated-search-accessions`
 * :ref:`dedicated-search-institutions`
+* :ref:`dedicated-search-terms`
 * :ref:`dedicated-search-donors`
 * :ref:`dedicated-search-rights`
 * :ref:`dedicated-search-functions`
 * :ref:`dedicated-search-users`
+* :ref:`dedicated-search-storage`
 
 .. IMPORTANT::
 
@@ -728,11 +735,27 @@ Accession records
 
 A dedicated search box for :term:`accession records <accession record>` has
 been provided on the accessions :ref:`browse page <page-type-browse>`.
-In AtoM 2.0.0, this search box will **only return name (i.e. accession number)
-matches** However, since accessions are by default named using an
-ISO-formated date (YYYY-MM-DD), users can quickly sift through a number of
-results by searching for matches on year and month and day. See the
-instructions below for an example.
+In AtoM 2.1 and later, full-text searching has been returned to the accession
+module, and for frequently-searched fields, weighting has been added to
+increase the relevance of matching results. Below is a list of indexed fields
+and their weighting:
+
+====================================== ===========
+Field name                             Weight
+====================================== ===========
+Accession number                       x10
+Donor name                             x10
+Title                                  x10
+Scope and content                      x10
+Location information                   x5
+Processing notes                       x5
+Immediate source of acquisition        x5
+Archival/custodial history             x5
+Appraisal, desctruction and scheduling
+Physical condition
+Primary contact name
+Received extent units
+====================================== ===========
 
 For more information on working with accession records in AtoM, see:
 :ref:`accession-records`. See also: :ref:`deaccessions`.
@@ -786,16 +809,6 @@ For more information on working with accession records in AtoM, see:
    :align: center
    :width: 70%
    :alt: An image of the accession record dedicated search box
-
-.. TIP::
-
-   In 2.0.0, AtoM will **only** search on the name (i.e. identifier) of the
-   accession, but it will provide fuzzy matching - that is, instead of
-   requiring an exact match on a title, it will return partial matches as well
-   - so a search for 2013 would return all accessions starting with 2013,
-   instead of failing to return any. Since accessions identifiers are by
-   default named with an ISO-formatted date (YYYY-MM-DD), this makes quick
-   searching for an accession relatively easy.
 
 4. AtoM will reload the page with results. If there are more than 10 results,
    a pager will be included at the bottom of the results page. The results page
@@ -913,6 +926,121 @@ template, see: :ref:`isdiah-template`.
 6. When you have found the record you are searching for, click on its title in
    the results, and AtoM will redirect you to the selected archival
    institution's :term:`view page`.
+
+:ref:`Back to top <search-atom>`
+
+.. _dedicated-search-terms:
+
+Terms
+-----
+
+.. |pencil| image:: images/edit-sign.png
+   :height: 18
+   :width: 18
+
+As of AtoM 2.1, a  dedicated search box for :term:`terms <term>` has been provided
+on the :ref:`browse page <page-type-browse>` for each :term:`taxonomy`. In
+AtoM 2.1, the public interface for browsing :term:`places <place>` and
+:term:`subjects <subject>` was redesigned to make useful elements of the
+taxonomy and term management pages available to unauthenticated (i.e. public)
+users - for more information, see: :ref:`terms`.
+
+In the following example, the :term:`Place` taxonomy has been used to
+demonstrate the search functionality, because it is one of the modules (along
+with Subjects) where the search box is available to both authenticated and
+public users. However, the same search box has been included on all
+:term:`taxonomy` pages (available to authenticated users with the proper
+permissions via |pencil| :ref:`Manage <main-menu-manage>` **> Taxonomies**,
+and then selecting a taxonomy).
+
+.. TIP::
+
+  A place is a geographic location registered in a :term:`taxonomy` and used as
+  an :term:`access point` in :term:`archival descriptions <archival description>`.
+  For more information on managing places in AtoM, see: :ref:`terms`. For
+  information on adding access points to an :term:`archival description`,
+  see: :ref:`add-term-fly`.
+
+**To search for terms in AtoM:**
+
+1. First, navigate to the relevant taxonomy. For **Places** and **Subjects**,
+   use the :term:`browse menu` (available as a :term:`drop-down menu` next
+   to the :term:`search box` in the AtoM :term:`header bar` at the top of the
+   page), navigate to **Browse > Places** or **Browse > Subjects**. For all
+   other taxonomies (available only to authenticated (i.e. logged in) users
+   with the proper :term:`access privleges <access privilege>`), open the
+   |pencil| :ref:`Manage <main-menu-manage>` menu located in the AtoM
+   :term:`header bar`, select "Taxonomies", and then choose the taxonomy you
+   would like to search.
+
+2. AtoM will redirect you to the related terms browse page. A list of your
+   :term:`terms <term>` will appear; if there are more than 10 results,
+   a pager will be  included.
+
+.. image:: images/places.*
+   :align: center
+   :width: 70%
+   :alt: An image of the places main page
+
+3. If desired, you can search either only for the preferred label (e.g. the
+   formal name of the :term:`term` entered into the "Name" :term:`field` on
+   the term :term:`edit page`), or for only the "Use for" (e.g. alternate,
+   non-preferred names) labels associated with the term, using the
+   :term:`drop-down menu` located on the left of the
+   :term:`dedicated search box`. By default, AtoM will search All labels
+   (e.g. both the preferred and 'Use for' labels) associated with a term.
+
+.. NOTE::
+
+   At the moment, only the labels associated with a term (e.g. its name, and any
+   "Use for" names added) are searchable. Content in other fields (e.g. scope
+   note, source note, etc) will not return results.
+
+.. image:: images/search-term-label-dropdown.*
+   :align: center
+   :width: 70%
+   :alt: An image of the dropdown available on the terms search box
+
+4. Place your cursor in the :term:`dedicated search box` at the top of
+   the browse page. Type a search term and press enter, or use your mouse to
+   click the |searchbutton| search button (represented by the magnifying glass
+   icon to the right of the search box).
+
+.. image:: images/places-searchbox.*
+   :align: center
+   :width: 70%
+   :alt: An image of the places dedicated search box
+
+5. AtoM will reload the page with results. If there are more than 10 results,
+   a pager will be included at the bottom of the results page.
+
+.. image:: images/places-searchresults.*
+   :align: center
+   :width: 70%
+   :alt: An image of the places search results
+
+6. The results page includes a :term:`sort button` (allowing you to sort
+   results to show them in alphabetic order, or most recently created/updated)
+   and a set of :term:`facet filters <facet filter>` to help you sift through
+   results. For more information on these elements, see
+   :ref:`recurring-sort-button` and :ref:`recurring-facet-filters`.
+
+.. TIP::
+
+   You can use :term:`Boolean search` operators such as AND, OR, or NOT, as
+   well as Boolean special characters such as "quotations" or the ``*``
+   wildcard symbol to improve your search results. For more information on
+   available special characters and boolean searching in AtoM, see:
+   :ref:`advanced-search`.
+
+7. You can click the |searchreset| button next to your search term in the
+   dedicated search box to clear the field and begin a new search.
+   Alternately, simply place the cursor in the search box and enter a new
+   search term.
+
+8. When you have found the record you are searching for, click on its title in
+   the results, and AtoM will redirect you to the selected term's
+   :term:`view page`.
 
 :ref:`Back to top <search-atom>`
 
@@ -1202,7 +1330,7 @@ Users
 
 In AtoM 2.0.1, a :term:`dedicated search box` for managing Users and user
 accounts has been added to the user :ref:`browse page <page-type-browse>`.
-In AtoM 2.0.1, this search box will **only return user name and email
+This search box will **only return user name and email
 matches** However, the search box is configured to return partial matches, so
 for example, a search for "ca" would return Names such as Cameron, Cal, and
 also Bianca, as well as returning any user with an email that ends with ".ca".
@@ -1213,15 +1341,6 @@ system` such as a :term:`network` or portal site).
 
 For more information on working with User accounts in AtoM, see:
 :ref:`manage-user-accounts`. See also: :ref:`edit-user-permissions`.
-
-.. IMPORTANT::
-
-   **This feature is included in AtoM 2.0.1, not 2.0.0**.
-   To view and search for user account records in AtoM you must be
-   :ref:`logged in <log-in>` as an :term:`administrator`. For more information
-   on user roles, see: :ref:`user-roles`. For information on default permissions
-   for user roles, see: :ref:`default-permissions-by-role`. For information on
-   changing edit permissions, see: :ref:`edit-user-permissions`.
 
 **To search for user account records in AtoM:**
 
@@ -1293,5 +1412,72 @@ For more information on working with User accounts in AtoM, see:
 6. When you have found the user record you are searching for, click on its
    title (i.e. user name) in the results, and AtoM will redirect you to the
    selected user's :term:`profile <user profile>`.
+
+:ref:`Back to top <search-atom>`
+
+.. _dedicated-search-storage:
+
+Physical storage
+----------------
+
+As of AtoM 2.1, a **basic** search of physical storage containers has been
+added to the physical storage module's :ref:`browse page <page-type-browse>`.
+This search box will **only return user container name matches**. Note as well
+that special characters for :term:`Boolean search` (e.g. the ``*`` wildcard or
+``~`` fuzzy search characters) are **not** supported in this search box.
+However, the  search box is configured to return partial matches, so for
+example, a search for  "Box 1" would return container names such as Box 10,
+Box 11, and Box 100, etc. This allows the dedicated search box to be used as a
+navigational aid, allowing an :term:`administrator` to quickly locate a
+specific container when there are  many containers saved in the system.
+
+For more information on working with the Physical storage module in AtoM, see:
+:ref:`physical-storage`.
+
+**To search for physical storage containers in AtoM:**
+
+.. image:: images/manage-menu.*
+   :align: right
+   :width: 15%
+   :alt: An image of the Manage menu in the AtoM header bar
+
+1. Navigate to the Physical storage :ref:`browse page <page-type-browse>` by
+   clicking on the |manage| :ref:`Manage menu <main-menu-manage>` (located in the
+   :term:`main menu` for logged-in :term:`administrators <administrator>`, in
+   the top-right of the AtoM :term:`header bar`) and choosing "Physical
+   storage" - i.e., **Manage > Physical storage**.
+2. AtoM will redirect you to the Physical storage browse page. A list of the
+   containers you have created in your AtoM installation will appear;  if there
+   are more than 10 results, a pager will be included. To begin searching for
+   a specific container, place your cursor in the the
+   :term:`dedicated search box` at the top of the page.
+
+.. TIP::
+
+   An :term:`administrator` can change the number of results per page for
+   browse and search result pages throughout AtoM via **Admin > Settings >
+   Global > Results per page**. By default, the number is set to 10. For more
+   information, see :ref:`settings`.
+
+3. Type a search term (i.e. a whole or partial container name) into the
+   :term:`dedicated search box` and press enter, or use your mouse to click the
+   |searchbutton| search button (represented by the magnifying glass icon to
+   the right of the search box).
+
+4. AtoM will reload the page with results. If there are more than 10 results,
+   a pager will be included at the bottom of the results page.
+
+.. image:: images/search-storage.*
+   :align: center
+   :width: 70%
+   :alt: An image of search results being returned in Physical storage.
+
+5. You can click the |searchreset| button next to your search term in the
+   dedicated search box to clear the field and begin a new search.
+   Alternately, simply place the cursor in the search box and enter a new
+   search term.
+6. When you have found the user record you are searching for, click on its
+   title (i.e. user name) in the results, and AtoM will redirect you to the
+   selected container's :term:`view page`.
 
 :ref:`Back to top <search-atom>`

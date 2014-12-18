@@ -4,10 +4,9 @@
 Elasticsearch
 =============
 
-`Elasticsearch <http://www.elasticsearch.org/>`_ (0.90.11), a distributed search
-server based on Apache Lucene, which acts as the application’s search and
-analytic engine. Some solutions to common problems with Elasticsearch and
-AtoM are below.
+`Elasticsearch <http://www.elasticsearch.org/>`_ is a distributed search server
+based on Apache Lucene, which acts as the application’s search and analytic
+engine. Some solutions to common problems with Elasticsearch and AtoM are below.
 
 Disable auto-discovery
 ======================

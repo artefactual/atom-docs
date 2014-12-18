@@ -1281,7 +1281,7 @@ Sort button
 
 .. figure:: images/sort-button-archdesc.*
    :align: right
-   :figwidth: 70%
+   :figwidth: 55%
    :width: 100%
    :alt: An image of a sort button on an archival description browse page
 
@@ -1289,11 +1289,21 @@ Sort button
 
 The sort button is a navigational element that appears on some browse and
 search pages throughout AtoM. It allows a user to change the sort order of the
-results being displayed, from alphabetic to most recent. When the sort order
-is set to "Alphabetic," results are organized A-Z. When results are ordered by
-"Most recent" the most recently added and/or edited records in the results
-will appear at the top of the list, allowing users to discover new or
-recently updated content.
+results being displayed, as either alphabetic,, most recent, or by identifier
+(or reference code). When the sort order is set to "Alphabetic," results are
+organized A-Z. When results are ordered by "Most recent" the most recently
+added and/or edited records in the results will appear at the top of the list,
+allowing users to discover new or recently updated content.
+
+When the sort order is set to "Identifier," (or "Reference code" as it is
+labeled on the :term:`archival description` browse page), results are
+displayed by the identifier, based on an alphabetic **ASCII sort** (more
+information on ASCII sort is included in the IMPORTANT note below). On
+archival descriptions, the sort order is based on full inherited reference
+code, and NOT on the individual identifiers of each record, regardless of
+whether or not :ref:`reference code inheritance <inherit-reference-code>` is
+turned on in **Admin > Settings** or not. for more information on reference
+codes vs. identifiers and display options, see: :ref:`inherit-reference-code`.
 
 .. IMPORTANT::
 
@@ -1325,6 +1335,7 @@ or list pages:
 * Donors
 * :term:`Functions <function>`
 * Rights holders
+* Browse digital objects
 
 .. figure:: images/sort-button-tabs.*
    :align: right
@@ -1348,7 +1359,7 @@ option in the drop-down menu, and the page will reload in the new sort order
 On search and/or browse pages for rights holders and :term:`functions
 <function>`, the same sort options are presented as tabs the user can click
 to change the view - clicking the inactive tab will reload the page in the
-new sort order (alphabetic or most recent).
+new sort order (alphabetic, most recent, or identifier).
 
 .. _recurring-institution-logos:
 

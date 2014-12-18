@@ -30,32 +30,36 @@ assigned new terms in addition to any locked values.
 
 .. TIP::
 
-   **An example of a locked taxonomy: Material Type**
+   **An example of locked terms: Physical object type taxonomy**
 
-   Material type is a controlled vocabulary that supports our Canadian Rules
-   for Archival Description (RAD) template. A complete version of RAD is
-   available from the Canadian Council on Archives here:
-   http://www.cdncouncilarchives.ca/archdesrules.html
+   .. image:: images/object-type-terms.*
+      :align: right
+      :width: 20%
+      :alt: Physical object taxonomy showing hierarchy
 
-   Section 1.1C of RAD defines an optional addition to an
-   :term:`archival description`, the General Material Designation (GMD). The
-   list of approved terms for a GMD description is provided in 1.1C1 of RAD,
-   and conforms to the terms available in the AtoM Material Type
-   :term:`taxonomy`. As such, when a user sets the Default template in AtoM to
-   RAD instead of ISAD(G), the template provides different
-   :term:`fields <field>` (including different controlled :term:`drop-down
-   <drop-down menu>` lists) to support the differences between the two
-   descriptive standards. In the RAD description template, the General
-   Material Designation is a repeatable field with a controlled list of
-   drop-down terms – the list of these terms is maintained and managed in
-   the *Material Type* taxonomy.
+   The Physical object type taxonomy contains terms that are used by the
+   Physical storage module in AtoM - for more information on working with
+   physical storage, see: :ref:`physical-storage`. In the Physical object type
+   taxonomy, a set of default terms is included by default at installation.
+   While some of these terms can be edited or deleted by users, and new terms
+   can be added, key parent terms (Artefact, Container, and Location) are
+   locked terms, because they are used by AtoM's underlying code.
 
-   These terms, or this descriptive practice, are not formally recommended
-   within ISAD(G), and consequently, are not provided anywhere in the
-   descriptive template. In ISAD(G), this information is captured via
-   free-text in sections such as *3.1.5 Extent and Medium*, and possibly other
-   related fields (such as *3.4.4 Physical characteristics and technical
-   requirements*).
+   The intended use is for "Containers" to include specific storage containers,
+   such as box numbers, cabinet drawers, etc., and for "Locations" to include
+   more general storage locations, such as "Cold storage," "Vault," etc.
+   Storage types and uses can be customized to meet institutional
+   practices, however in order to :ref:`link <link-physical-storage>` a custom
+   storage container to a new or existing :term:`archival description` you
+   must nest the storage container under "Container." Similarly, new locations
+   can be created by users through the physical storage module's
+   :term:`user interface`, and they will automatically be added a children of
+   the locked term "Location."
+
+   Other default terms (such as Box, Filing cabinet, Folder, etc) can be
+   edited or delted by users - these are not locked terms, but are included by
+   default for convenience. New terms can be added by users - see
+   :ref:`add-term`, below, for more information.
 
 Terms are also used throughout the application as
 :term:`access points <access point>`, such as :term:`subject` and :term:`place`
@@ -388,34 +392,34 @@ as a name :term:`access point` in the Access points :term:`information area` of
 the :term:`archival description`. Doing so conforms to the recommendations
 found in :ref:`ISAAR-CPF <isaar-template>` 1.5 and 1.6, and 1.8:
 
-      **1.5** *There are many reasons why separate capture and maintenance of
-      this type of contextual information is a vital component of archival
-      description. The practice enables the linking of descriptions of records
-      creators and contextual information to descriptions of records from the
-      same creator(s) that may be held by more than one repository and to
-      descriptions of other resources such as library and museum materials
-      that relate to the entity in question. Such links improve records
-      management practices and facilitate research.*
+    **1.5** *There are many reasons why separate capture and maintenance of
+    this type of contextual information is a vital component of archival
+    description. The practice enables the linking of descriptions of records
+    creators and contextual information to descriptions of records from the
+    same creator(s) that may be held by more than one repository and to
+    descriptions of other resources such as library and museum materials
+    that relate to the entity in question. Such links improve records
+    management practices and facilitate research.*
 
-      **1.6** *Where a number of repositories hold records from a given source
-      they can more easily share or link contextual information about this
-      source if it has been maintained in a standardized manner. Such
-      standardization is of particular international benefit when the sharing
-      or linking of contextual information is likely to cross national
-      boundaries. The multinational character of past and present record
-      keeping creates the incentive for international standardization which
-      will support the exchange of contextual information. For example,
-      processes such as colonialization, immigration and trade have
-      contributed to the multinational character of recordkeeping.*
+    **1.6** *Where a number of repositories hold records from a given source
+    they can more easily share or link contextual information about this
+    source if it has been maintained in a standardized manner. Such
+    standardization is of particular international benefit when the sharing
+    or linking of contextual information is likely to cross national
+    boundaries. The multinational character of past and present record
+    keeping creates the incentive for international standardization which
+    will support the exchange of contextual information. For example,
+    processes such as colonialization, immigration and trade have
+    contributed to the multinational character of recordkeeping.*
 
-      **1.8** *Archival authority records are similar to library authority
-      records in as much as both forms of authority record need to support the
-      creation of standardized access points in descriptions. The name of the
-      creator of the unit of description is one of the most important of such
-      access points. Access points may rely on the use of qualifiers that are
-      deemed essential to clarify the identity of the entity thus named, so
-      that accurate distinctions may be made between different entities that
-      have the same or very similar names.*
+    **1.8** *Archival authority records are similar to library authority
+    records in as much as both forms of authority record need to support the
+    creation of standardized access points in descriptions. The name of the
+    creator of the unit of description is one of the most important of such
+    access points. Access points may rely on the use of qualifiers that are
+    deemed essential to clarify the identity of the entity thus named, so
+    that accurate distinctions may be made between different entities that
+    have the same or very similar names.*
 
 By generating a :term:`creator` name :term:`access point` from an
 :term:`authority record`, AtoM thereby supports the linking of :term:`archival
@@ -760,46 +764,38 @@ Subject and Place terms - an alternate workflow
 The :term:`Subject` and :term:`Place` terms are often those most frequently
 accessed by AtoM users, as they can be linked to archival descriptions as as
 :term:`access points <access point>`, and are therefore visible to public
-users. To simplify the workflow for authenticated users, two shortcuts to
-access the related taxonomies and terms have been added. The following example
-will use the Subjects Taxonomy, but the instructions are the same in AtoM 2.0
-for the Places Taxonomy.
+users. To simplify the workflow for authenticated users, the :term:`button block`
+will be visible to logged-in users directly on the subject and place browse pages.
+The following example demonstrates this for the subjects browse - however the
+workflow will be the same for the places browse page.
 
 1. Using the :term:`browse menu` located in the AtoM :term:`header bar`,
    navigate to **Browse > Subjects**. AtoM will redirect you to the Subjects
    browse page. For more information on the Browse menu, see: :ref:`browse-menu`.
    For general information on browsing in AtoM, see :ref:`browse`
 2. The AtoM browse page includes a list of :term:`subjects <subject>` linked
-   to :term:`archival descriptions <archival description>`. At the top-right of
-   the page, you will see a button titled "Manage taxonomy." Clicking this will
-   take you directly to the Subjects taxonomy - i.e. the same as navigating
-   via **Manage > Taxonomies > Subjects**.
+   to :term:`archival descriptions <archival description>`. For more information
+   on browsing subjects and places, see: :ref:`browse`. When logged in, users
+   will see a :term:`button block` with an Add button directly on the subjects
+   (or places) browse page.
 
-.. figure:: images/manage-taxonomy-button.*
+.. figure:: images/browse-subjects-authenticated.*
    :align: center
    :figwidth: 80%
    :width: 100%
-   :alt: An image of the manage taxonomy button in the Subjects browse page
+   :alt: An image of the button block in the Subjects browse page
 
-   The Manage taxonomy button is a shortcut available to authenticated users
-   on the browse pages of Subjects and Places.
+3. You can also select a :term:`term` from the browse page. AtoM will redirect
+   you to a page listing descriptions in which the chosen term has been added
+   as an :term:`access point`. On the term page, the :term:`button block` will
+   also be visible so users can directly edit or delete the term (or add new
+   terms) without having to navigate to the Taxonomy via **Manage > Taxonomies**.
 
-3. Alternately, instead of clicking the Manage taxonomy button in step 2,
-   select a term from the browse page. AtoM will redirect you to a page
-   listing descriptions in which the chosen term has been added as an access
-   point. At the top-right of the page, you will see a button titled "Manage
-   term." Clicking this button will take you directly to the selected term's
-   view page - i.e. the same as navigating via **Manage > Taxonomies >
-   Subjects** and choosing a subject term.
-
-.. figure:: images/manage-term-button.*
+.. figure:: images/browse-subject-authenticated.*
    :align: center
    :figwidth: 80%
    :width: 100%
-   :alt: An image of the manage term button in the Subjects browse page
-
-   The Manage term button is a shortcut available to authenticated users when
-   viewing a specific term via the Subject or Places browse page.
+   :alt: An image of the button block on a Subject term browse page
 
 4. From here, you can follow steps 2-7 :ref:`above <edit-term>` as needed to
    edit your terms.

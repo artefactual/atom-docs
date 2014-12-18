@@ -200,7 +200,6 @@ Installation
 * :ref:`installation-linux`
 * :ref:`installation-windows`
 * :ref:`installation-macosx`
-* :ref:`installation-virtual-appliance`
 * :ref:`installation-vagrant`
 * :ref:`installation-multi-node`
 * :ref:`installation-upgrading`
@@ -225,6 +224,7 @@ Maintenance
 Customization
 -------------
 
+* :ref:`customization-config-files`
 * :ref:`customization-theming`
 * :ref:`customization-localization`
 

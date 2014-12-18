@@ -1,12 +1,12 @@
 .. _context-menu:
 
-.. |caret| image:: images/caret-down-grey.png
-   :height: 17
-   :width: 17
-
 ============
 Context menu
 ============
+
+.. |caret| image:: images/caret-down-grey.png
+   :height: 17
+   :width: 17
 
 The context menu appears on all :term:`view <view page>` and some
 :term:`edit <edit page>` pages to provide greater contextual information about
@@ -21,6 +21,8 @@ orientation and navigation. These side columns make up the context menu.
 
 The information provided in the context menu varies by the :term:`entity`
 type or display. Each is described separately below.
+
+.. _context-menu-descriptions:
 
 Archival descriptions
 =====================
@@ -54,10 +56,10 @@ elements:
    storage information is visible to all users. See
    :ref:`Physical storage <physical-storage>` for further information.
 
-.. _context-menu-treeview:
+.. _context-menu-descriptions-treeview:
 
 Treeview
-^^^^^^^^
+--------
 
 The treeview is a contextual and navigation element located in the context
 menu for :term:`archival descriptions <archival description>`, places, and
@@ -120,13 +122,15 @@ installation. See :ref:`sort-treeview`.
 
 In addition to displaying in the context menu for archival descriptions, the
 treeview is also used for hierarchical :term:`taxonomies <taxonomy>` such as
-Subjects, to show parent-child relationships between :term:`terms <term>`.
+Subjects, to show parent-child relationships between :term:`terms <term>`. For
+more information, see:
 
-.. image:: images/treeview-subjects.*
-   :align: center
-   :width: 20%
-   :alt: The treeview being used in the Subjects taxonomy.
+* :ref:`context-menu-terms-treeview`
+* :ref:`context-menu-results`
 
+
+
+.. _context-menu-authorities:
 
 Authority records
 =================
@@ -153,6 +157,132 @@ elements:
    column) of the authority record's :term:`view page`, in the "Relationships"
    :term:`area <information area>` of the record.
 
+.. _context-menu-terms:
+
+Subject and Place browse pages
+==============================
+
+:term:`Subject` and :term:`Place` terms can be used in AtoM as
+:term:`access points <access point>`, and then browsed to explore the
+:term:`archival descriptions <archival description>` to which they are linked.
+For more information, see:
+:ref:`Browse subjects and places <browse-subjects-places>`.
+
+.. image:: images/place-context-menu.*
+   :align: center
+   :width: 80%
+   :alt: Context menu shown for term browse
+
+When a term has been selected from the Subject or Places browse page, the user is
+redirected to a term browse page, listing descriptions related to that term as
+an access point. The context menu on this term browse page appears on both the
+left and right-hand sides, and includes the following elements:
+
+1. A terms :term:`treeview` on the left side of the page, with a list view and a
+   term search included in separate tabs. The terms treeview is discussed in
+   greater detail below: :ref:`context-menu-terms-treeview`.
+
+2. Below the :term:`treeview`, addtional :term:`facet filters <facet filter>` that
+   can be applied to the browse results are listed. For more information on using
+   facet filters in AtoM, see: :ref:`recurring-facet-filters`.
+
+3. On the right side of the page, additional contextual information is provided.
+   This includes:
+
+   * A count of :term:`archival description` results that have been linked to
+     the term
+   * If the current term is part of a hierarchy, a link to the
+     :term:`parent record` is included under the heading *Broader term*.
+   * If the current term has :term:`children <child record>` in the taxonomy, a
+     count of child terms nested under the current selection is listed under the
+     heading *No. narrower terms*.
+
+.. SEEALSO::
+
+   * :ref:`Browse subjects and places <browse-subjects-places>`
+   * :ref:`terms`
+   * :ref:`Context menu - results pages <context-menu-results>`
+
+.. _context-menu-terms-treeview:
+
+Terms treeview
+--------------
+
+The treeview is a contextual and navigation element located in the context
+menu for :term:`archival descriptions <archival description>`,
+:term:`places <place>`, and :term:`subjects <subject>`. It serves the dual
+purpose of showing a record or :term:`term's <term>` relationships to other
+records or terms in a hierarchy, as well as serving as a navigational tool.
+
+.. image:: images/terms-tabs.*
+   :align: center
+   :width: 80%
+   :alt: Treeview tabs available on a subject or place term browse page
+
+The terms treeview, used on the browse page for a specific subject or place term,
+includes three tabs - the default treeview tab, which displays the record in the
+context of its hierarchical organization; the list tab, which displays terms of all
+levels ordered alphabetically, and the search tab. Each is described in greater
+detail below.
+
+Treeview tab
+^^^^^^^^^^^^
+
+The treeview tab is the default view for the terms treeview. It shows the terms
+belonging to the current :term:`taxonomy` (e.g. subjects or places) in hierarchical
+context, and allows to the user to browse these hierarchies by clicking on
+different nodes or titles in the treeview.
+
+To navigate using the terms treeview, users can do the following:
+
+1. Click on a different term title to see that term's description, and any
+   :term:`archival descriptions <archival description>` that have been linked to
+   it as an :term:`access point`. When a new term is clicked, the main term browse
+   :term:`view page` will reload to display the selected term, which will now
+   be highlighted in the treeview.
+
+2. When a term has :term:`children <child record>` (e.g. narrower terms that are
+   nested beneath it in the taxonomy), a |caret| "caret" icon appears next to
+   the term in the treeview. Click on the |caret| "caret" beside a term with
+   children to expand or collapse all the children titles.
+
+3. The treeview will only load a certain amount of records at a time. In large
+   :term:`taxonomy` with many terms, ellipses ( ... ) may sometimes appear,
+   indicating that there are more records available. Click on the ellipses
+   to expand more term descriptions not currently in view.
+
+See also the instructions on using the archival description treeview,
+:ref:`above <context-menu-descriptions-treeview>` for further details - the main
+actions are the same in both treeviews.
+
+This main view of the treeview is also used when browsing terms in a taxonomy.
+See below for more information: :ref:`context-menu-results`.
+
+List tab
+^^^^^^^^
+
+The list tab allows users to browse all terms in the current :term:`taxonomy`
+(e.g. subjects, or places), regardless of where they are positioned
+hierarchically. In a taxonomy where many terms are nested as narrower terms,
+it can be difficult to get a sense of all the terms available in the treeview
+tab or the main taxonomy browse pages. A total count of terms is included at
+bottom of the page. If there are more than 10 terms, "Next" and "Previous"
+buttons are included to navigate between pages.
+
+Search tab
+^^^^^^^^^^
+
+The search tab in the terms treeview operates the same as the dedicated search
+for terms included in the terms browse page. Users can click the gear icon to
+limit the search to the preferred term label (e.g. the authorized form of name),
+'Use for' labels (e.g. non-preferred, alternate forms of name), or both. The
+default setting is to search both.
+
+For more information on using the dedicated term search box, see:
+:ref:`Search for Terms <dedicated-search-terms>`.
+
+.. _context-menu-institutions:
+
 Archival institutions
 =====================
 
@@ -175,6 +305,8 @@ elements:
    from the information added to the “Contact” :term:`area <information area>` of
    the :term:`archival institution` record.
 
+.. _context-menu-results:
+
 Results pages
 =============
 
@@ -187,15 +319,20 @@ user to narrow down their search results.
    :width: 80%
    :alt: Context menu shown for information object search results.
 
+For more information on working with :term:`facet filters <facet filter>` in
+AtoM, see: :ref:`recurring-facet-filters`.
+
 When a user searches for a :term:`term` which is organized hierarchically in
 a :term:`taxonomy` the context menu will include a :term:`treeview` of that
-taxonomy. Terms which are organized in taxonomies include
-:term:`subjects <subject>`, :term:`places <place>` and
-:term:`functions <function>`.
+taxonomy.
 
 .. image:: images/context-search-tree.*
    :align: center
    :width: 80%
    :alt: Context menu shown for term search with treeview
+
+:term:`Place` and :term:`Subject` term browse pages have additional features
+available in tabs in the treeview provided in the context menu. For more
+information, see above, :ref:`context-menu-terms-treeview`.
 
 :ref:`Back to top <context-menu>`

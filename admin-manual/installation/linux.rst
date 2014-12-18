@@ -47,8 +47,8 @@ Let's install MySQL using :command:`apt-get`:
    sudo apt-get install mysql-server-5.5
 
 During the installation, you will be prompted to set a password for the default
-administrator user (root). If you are setting one, please note it down as you
-are going to need it :ref:`later <create-the-database-linux>`.
+administrator user (root). We strongly recommend that you use a strong password
+and please write it down as you are going to need it :ref:`later <create-the-database-linux>`.
 
 .. _linux-dependency-elasticsearch:
 
@@ -86,7 +86,7 @@ Add the following to your /etc/apt/sources.list to enable the repository:
 
 .. code-block:: bash
 
-   deb http://packages.elasticsearch.org/elasticsearch/0.90/debian stable main
+   deb http://packages.elasticsearch.org/elasticsearch/1.3/debian stable main
 
 Ready to be installed. Run:
 
@@ -94,11 +94,6 @@ Ready to be installed. Run:
 
    sudo apt-get update
    sudo apt-get install elasticsearch
-
-.. IMPORTANT::
-
-   AtoM 2.0 doesn't support Elasticsearch 1.0 or newer. Use 0.90.x until we
-   update our code.
 
 Start the service and configure it to start when the system is booted.
 
@@ -235,6 +230,12 @@ following command will install it along with the rest of PHP extensions
 .. code-block:: bash
 
     sudo apt-get install php5-cli php5-fpm php5-curl php5-mysql php5-xsl php5-json php5-ldap php-apc
+
+If you are using Ubuntu 14.04, the package php5-readline is also required.
+
+.. code-block:: bash
+
+    sudo apt-get install php5-readline
 
 Let's add a new PHP pool for AtoM by adding the following contents in a new file
 called :file:`/etc/php5/fpm/pool.d/atom.conf`:
@@ -389,9 +390,9 @@ Option 1: Download the tarball
 
 .. code-block:: bash
 
-   wget https://storage.accesstomemory.org/releases/atom-2.0.1.tar.gz
+   wget https://storage.accesstomemory.org/releases/atom-2.1.0.tar.gz
    sudo mkdir /usr/share/nginx/atom
-   sudo tar xzf atom-2.0.1.tar.gz -C /usr/share/nginx/atom --strip 1
+   sudo tar xzf atom-2.1.0.tar.gz -C /usr/share/nginx/atom --strip 1
 
 
 .. _linux-checkout-git:
@@ -408,9 +409,8 @@ Install git:
 .. code-block:: bash
 
    sudo mkdir /usr/share/nginx/atom
-   sudo git clone http://github.com/artefactual/atom.git /usr/share/nginx/atom
+   sudo git clone -b stable/2.1.x http://github.com/artefactual/atom.git /usr/share/nginx/atom
    cd /usr/share/nginx/atom
-   sudo git checkout stable/2.0.x
 
 If you are not interested in downloading all the history from git, you could
 also truncate it to a specific number of revisions, e.g.: just one revision
@@ -427,7 +427,7 @@ the CSS files:
    sudo add-apt-repository ppa:chris-lea/node.js
    sudo apt-get update
    sudo apt-get install nodejs make
-   sudo npm install -g less@1.3.3
+   sudo npm install -g less
    cd /usr/share/nginx/atom/plugins/arDominionPlugin/
    sudo make # At this point the files still belong to root
 
@@ -456,12 +456,9 @@ password you created :ref:`earlier <linux-dependency-mysql>`:
 
 .. code-block:: bash
 
-   mysql -h localhost -u root -pYOURSECRETPASSWORD -e "CREATE DATABASE atom CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
+   mysql -h localhost -u root -p -e "CREATE DATABASE atom CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
 
 Notice that the database has been called **atom**. Feel free to change its name.
-If you left the root password blank during the installation of
-mysql-server-5.5, you don't need to add the ``-pYOURSECRETPASSWORD`` option shown
-above.
 
 In case your MySQL server is **not** the same as your web server, replace
 "localhost" with the address of your MySQL server.
@@ -478,8 +475,12 @@ password ``12345`` and the permissions needed for the database created above.
 
 .. code-block:: bash
 
-   mysql -h localhost -u root -pYOURSECRETPASSWORD -e "GRANT INDEX, CREATE, SELECT, INSERT, UPDATE, DELETE, ALTER, LOCK TABLES ON atom.* TO 'atom'@'localhost' IDENTIFIED BY '12345';"
+   mysql -h localhost -u root -p -e "GRANT INDEX, CREATE, SELECT, INSERT, UPDATE, DELETE, ALTER, LOCK TABLES ON atom.* TO 'atom'@'localhost' IDENTIFIED BY '12345';"
 
+Note that the ``INDEX``, ``CREATE`` and ``ALTER`` privileges are only necessary
+during the installation process or when you are upgrading AtoM to a newer
+version. They can be removed from the user once you are finished with the
+installation or you can change the user used by AtoM in :ref:`config.php <config-config-php>`.
 
 .. _linux-run-installer:
 

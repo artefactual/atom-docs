@@ -32,7 +32,7 @@ of each component.
 * A webserver like `Apache <https://httpd.apache.org/>`__ or
   `Nginx <http://nginx.com/>`__; Artefactual prefers the latter in
   development
-* `Elasticsearch <http://www.elasticsearch.org/>`__ 0.90.11 (1.0 not supported yet)
+* `Elasticsearch <http://www.elasticsearch.org/>`__ 1.3.0 or newer
 * `MySQL <https://www.mysql.com/>`__ 5.1 or newer
 * `PHP <http://php.net/>`__ 5.3.10 or newer (PHP 5.4 and PHP 5.5 work too)
 * `Memcached <http://memcached.org>`__
@@ -45,7 +45,7 @@ Additionally, the following PHP extensions are mandatory:
 * APC (php-apc, or php5-apcu in PHP 5.5)
 * PDO and PDO-MySQL (php5-mysql)
 * XSL (php5-xsl)
-* JSON (php5-json)
+* Readline (php5-readline, required in 14.04 only)
 
 .. note::
 

@@ -241,7 +241,10 @@ Glossary
     Child record refers to a description of the :term:`archival unit` that
     is one :term:`level of description` lower than the current unit, e.g.
     if a series belongs to a :term:`fonds`, the series is the child record
-    of the fonds. See also: :term:`Parent record <parent record>`.
+    of the fonds. :term:`Terms <term>` can also be organized hierarchically
+    (with parent-child relationships) in a :term:`taxonomy`, and expressed as
+    broader or narrower terms. A narrower term would be a child of the parent
+    broader term. See also: :term:`Parent record`.
 
   Collection
     In ISAD, a collection is "[a]n artificial assemblage of documents
@@ -806,8 +809,11 @@ Glossary
     The level of description is "the position of the unit of description
     in the hierarchy of the :term:`fonds`" (ISAD glossary). In AtoM, the
     level of description is selected from a :term:`value list` in the
-    "Identity" area of an :term:`archival description`. See :ref:`Identity
-    area <identity-area>`.
+    :term:`edit page` of an :term:`archival description`. See: :ref:`data-entry`.
+    Level of description values are maintained as :term:`terms <term>` in a
+    :term:`taxonomy` - AtoM ships with a number of common archival default
+    values, but these can be edited or deleted, and new values can be added
+    by authorized users. See: :ref:`terms`.
 
   Main menu
     The main menu is the the navigational tool located at the top of all
@@ -868,7 +874,10 @@ Glossary
     unit` that is one :term:`level of description` higher than the current
     unit. For example, a :term:`fonds` may be the parent record of a
     series. A parent record may have multiple :term:`child records
-    <child record>`.
+    <child record>`. :term:`Terms <term>` can also be organized hierarchically
+    (with parent-child relationships) in a :term:`taxonomy`, and expressed as
+    broader or narrower terms. A broader term would be the parent of its
+    narrower child terms. See also: :term:`Child record`.
 
   Password
     A password is a case-sensitive, unspaced string of characters (alpha-
