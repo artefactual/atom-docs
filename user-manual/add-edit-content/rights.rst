@@ -41,9 +41,11 @@ Add a new rights record
 =======================
 
 This section describes how to add a new :term:`rights record` by using the
-rights dialog provided through the add/edit template. You can add rights to
-an existing record, or create a new record and add rights as you proceed. The
-following instructions will cover both scenarios.
+rights dialog provided through the add/edit template. You must add rights to
+an existing accession record or archival description. To create an accession
+record or archival description first, please see:
+:ref:`Add new accession record <add-new-accession>` or
+:ref:`Add new archival description <add-archival-description>`.
 
 .. NOTE::
 
@@ -56,29 +58,6 @@ following instructions will cover both scenarios.
 
 Add rights to an Accession record
 ---------------------------------
-
-**IF YOU ARE ADDING RIGHTS TO A NEW ACCESSION RECORD**
-
-1. Navigate to the :term:`main menu` located in the :term:`header bar`, click
-   the |plus| :ref:`"Add" <main-menu-add>` menu and select
-   :term:`accession record` from the :term:`drop-down menu`. AtoM takes you to
-   a blank :term:`edit page` for data entry for an :term:`accession record`.
-
-.. image:: images/manage-accessions.*
-   :align: center
-   :width: 30%
-   :alt: An image of the Manage menu
-
-2. On loading, the :term:`edit page` displays the accession record with the
-   first :term:`information area` open, Basic info.
-3. You can begin entering information about your new accession. For more
-   information on working with :term:`accession records <accession record>` in
-   AtoM, see: :ref:`accession-records` When you are ready to add a related
-   rights record to your new accession, proceed to **step 4**, below.
-
--------
-
-**IF YOU ARE ADDING RIGHTS TO AN EXISTING ACCESSION RECORD**
 
 1. Navigate to the :term:`accession record` you want to edit. You can do this
    via the :term:`main menu` in the AtoM :term:`header bar`, by clicking on
@@ -103,13 +82,13 @@ Add rights to an Accession record
    :width: 65%
    :alt: An image of searching for an accession
 
+TODO: Update this section to reflect new behaviour.
+
 3. When you have arrived at the record to which you wish to add rights, Click
    on the "Edit" button located in the :term:`button block` located at the
    bottom of the page to enter :term:`edit mode`; alternately, you can click
    on on of the :term:`information area` headers to open the :term:`edit page`
-   directly in that section. Proceed to **step 4** below.
-
--------
+   directly in that section.
 
 4. To enter Rights information, scroll down the page until you see the
    :term:`information area` titled, "Rights area". If the section is collapsed,
@@ -177,82 +156,14 @@ Add rights to an Accession record
 Add rights to an Archival description
 -------------------------------------
 
-**TO ADD RIGHTS TO A NEW ARCHIVAL DESCRIPTION:**
-
-1. Navigate to the :term:`main menu` located in the :term:`header bar`,
-   click the |plus| :ref:`"Add" <main-menu-add>` menu and select
-   :term:`archival description` from the :term:`drop-down menu`.
-
-.. image:: images/add-description.*
-   :align: center
-   :width: 30%
-   :alt: An image of the Add menu in the AtoM header bar
-
-2. AtoM takes you to a blank :term:`edit page` for data entry for an
-   :term:`archival description`.
-
-.. image:: images/description-collapsed.*
-   :align: center
-   :width: 75%
-   :alt: An image of a blank Archival description in the ISAD template
-
-3. On loading, the :term:`edit page` displays the archival description with
-   all the :term:`information areas <information area>`, closed. The name of
-   the first :term:`information area` will vary according to the archival
-   content standard you are using. In the example above, ISAD(G) is shown.
-   You can begin entering information about your archival description. For
-   more information on working with archival descriptions in AtoM, see:
-   :ref:`archival-descriptions`. When you are ready to add rights to your new
-   :term:`archival description`, proceed to **step 4** below.
-
--------
-
-**TO ADD RIGHTS TO AN EXISTING ARCHIVAL DESCRIPTION:**
-
 1. First, navigate to the :term:`archival description` you wish to edit. You
    can do this by :ref:`browsing <browse>` or :ref:`searching <search-atom>`
    for the :term:`archival description` - see :ref:`access-content` for more
    information on navigation in AtoM.
 
-2. Switch from :term:`view mode` to :term:`edit mode` by clicking the
-   :term:`"Edit" button <Edit button>` in the :term:`button block`, or by
-   clicking on one of the :term:`information area` headings; this takes you
-   to the record's :term:`edit page`.
+2. In the :term:`button block`, click on "More," then on "Create new rights".
 
-.. image:: images/button-block-description.*
-   :align: center
-   :width: 75%
-   :alt: An image of the button block on an archival description
-
-3. On loading, the :term:`edit page` displays the record with all
-   :term:`information areas <information area>` closed; click on an
-   information area to access the :term:`fields <field>` grouped under it.
-   You can edit any data as required; when you are ready to add a new rights
-   statement to your :term:`archival description`, proceed to **step 4**
-   below.
-
-.. image:: images/description-collapsed.*
-   :align: center
-   :width: 75%
-   :alt: An image of an Archival description in the ISAD template
-
--------
-
-4. You can navigate to the Rights entry page in one of two ways:
-
-a. In Edit mode, scroll down the page until you see the
-   :term:`information area` titled "Rights area". Click on it to expand and
-   click on the link "Create new rights":
-
-.. image:: images/rights-area-link.*
-   :align: center
-   :width: 75%
-   :alt: The link to the rights entry page from the Rights area in an archival description
-
-b. In View mode, as a logged in user, you can also access the Rights entry page
-   in the :term:`button block`. Click on "More," then on "Create new rights".
-
-5. The Rights entry page allows you to establish the basis for which rights are
+3. The Rights entry page allows you to establish the basis for which rights are
    granted or disallowed as well as describing the rights themselves.
 
 a. Rights basis:
