@@ -4,40 +4,46 @@
 Print finding aids
 ==================
 
-.. NOTE::
-   As of AtoM version 2.0, the ability to create and print
-   :term:`finding aids <finding aid>` is limited. We hope to include enhanced
-   functionality in future versions.
+AtoM allows logged-in users to generate printer-friendly finding aids in either
+PDF, RTF or TXT format. The format can be set by :term:`administrators <administrator>`
+in the :ref:`finding aid settings <finding-aid>`. Once the finding aid is
+generated, it can be downloaded from the fonds or collection level
+:term:`archival description` by any user.
 
-Print finding aid
-=================
+.. seealso::
 
-Navigate to the View :term:`archival description` screen and select the
-:term:`level of description` (e.g., fonds, series, file etc.) that you want to
-view. For general purposes the highest level will provide you with an overview
-of the materials in context and consolidate information about the :term:`fonds`
-including extent and medium, scope and content, admin/biographical history and
-rights.
+   :ref:`Create and print file reports <create-file-list-report-print>`
 
-.. image:: images/fonds-view.*
-   :align: center
-   :width: 80%
-   :alt: Navigating to a fonds level view for printing
+   :ref:`Create and print item reports <create-item-list-report-print>`.
 
-Select the print function from your browser. Your browser should allow the
-option to print "as is", see a preview of the print and save it as a pdf.
+Settings
+========
 
-.. |expand| image:: images/expand-button.png
+Administrators can choose in the :ref:`settings <finding-aid>` whether the
+finding aids will be generated as PDF, RTF or TXT. The characteristics of each
+are outlined below:
 
-.. IMPORTANT::
+**PDF finding aids**
 
-   Be sure to expand any long character fields by clicking the expand button
-   |expand| before printing.
+TODO
 
-You can add file and item lists to your print finding aids by following the
-instructions under
-:ref:`Create and print file reports <create-file-list-report-print>`
-and :ref:`Create and print item reports <create-item-list-report-print>`.
+**RTF finding aids**
 
+TODO
+
+**TXT finding aids**
+
+TODO
+
+Generate finding aid
+====================
+
+TODO
+
+
+Troubleshooting
+===============
+
+TODO
 
 :ref:`Back to top <print-finding-aids>`
