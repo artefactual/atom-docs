@@ -18,8 +18,21 @@ Below, you will find information on the following :term:`information areas
 * :ref:`Add/Remove languages <add-remove-languages>`
 * :ref:`OAI repository <oai-repository>`
 * :ref:`Job scheduling <job-scheduling>`
+* :ref:`Finding aid <finding-aid>`
 * :ref:`Security panel <security-panel>`
 * :ref:`Permissions <permissions>`
+
+Each of the settings areas listed above is accessible via a list of links on
+the left-hand side of the settings page. Click on the appropriate link, and
+click save after making your changes.
+
+.. figure:: images/settings-menu.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: Settings menu appears on left hand side
+
+   Choose the settings area you wish to view/edit by clicking a link in the menu on the left-hand side.
 
 .. _global-settings:
 
@@ -712,6 +725,21 @@ Click the :term:`radio button` beside "yes" to enable job scheduler.
    enable this feature.
 
 :ref:`Back to top <settings>`
+
+.. _finding-aid:
+
+Finding aid
+===========
+
+.. image:: images/finding-aid-settings.*
+   :align: center
+   :width: 80%
+   :alt: Finding aid settings
+
+Choose whether you would like :term:`finding aids <finding aid>` generated in
+PDF, RTF or TXT format. Note that PDF and RTF finding aids are generated with
+the same formatting in AtoM. For more information, see
+:ref:`Print finding aids <print-finding-aids>`.
 
 .. _security-panel:
 
