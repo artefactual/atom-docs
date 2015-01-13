@@ -527,6 +527,7 @@ you would like to alter, and entering :term:`edit mode`:
 * :ref:`Add/edit a broader term <add-broader-term>`
 * :ref:`Add/edit a narrower term <add-narrower-term>`
 * :ref:`Add/edit a related term <add-related-term>`
+* :ref:`Add/edit a converse term <add-converse-term>`
 
 .. _add-broader-term:
 
@@ -687,6 +688,140 @@ in viewing.
    the term's :term:`view page`, where you can review your changes. You can
    click the "Edit" button in the button block to make further changes if
    needed.
+
+:ref:`Back to top <terms>`
+
+.. _add-converse-term:
+
+Add/edit a converse term
+------------------------
+
+Relationship types and terms with opposites (such as "parent of" and its
+converse, "child of") are known in AtoM as **converse terms**. AtoM includes a
+number of default relationship terms for use in the :term:`authority record`
+Relationship dialogue (more information
+:ref:`here <link-two-authority-records>`). If a term has no opposite but itself
+(for example, "sibling of"), it can be marked as "self-reciprocal", meaning its
+converse term is itself.
+
+.. figure:: images/doe-smith.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: Example of converse terms
+
+   An example of converse terms on two related authority records
+
+.. IMPORTANT::
+
+   Though the field is available in all term :term:`edit pages <edit page>`,
+   the "Converse term" :term:`field` is currently only used in AtoM in the
+   Actor Relation Type taxonomy. This taxonomy is used to supply terms to the
+   Relationships dialogue, when two authority records are linked. For more
+   information on creating relationships between authority records in AtoM,
+   see: :ref:`link-two-authority-records`.
+
+These default terms and their relationships to each other can be edited and
+managed in the Actor Relation Type taxonomy, and new terms can be added as
+well. Below is an overview of the default terms included and their
+relationships, and instructions on how to add new converse relationships.
+
+Default Actor relation type terms in AtoM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+AtoM comes with several pre-loaded default terms in the Actor relation type
+:term:`taxonomy`. The parent terms (*associative*, *hierarchical*, *family*, and
+*temporal*) are all taken directly from the International Council on Archives'
+:ref:`ISAAR-CPF standard <isaar-template>` - the international standard for
+the creation of :term:`authority records <authority record>` upon which the
+AtoM authority record edit template is based.
+
+The child terms, nested under the 4 parent terms mentioned above, are taken
+from some of the examples used in the ISAAR-CPF standard when describing
+relationships. Here is a list of the default terms included in AtoM in this
+taxonomy:
+
+.. figure:: images/actor-relation-default-terms.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: default terms in the Actor relation type taxonomy
+
+   The default terms included in the Actor relation type taxonomy
+
+Some of these terms have a **converse** (e.g. opposite and reciprocal)
+relationhip to other sibling terms. Others are **self-reciprocal** (e.g. they
+act as their own converse term as well). For example:
+
+* Under the *family* term:
+
+  * *is the parent of* and *is the child of* are converse terms
+  * *is the sibling of* is a self-reciprocal term
+
+Below is an image outlining all the default relationships between terms in the
+Actor relation type taxonomy:
+
+.. figure:: images/actor-relation-default-term-relationships.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: default terms in Actor relation type and their relationship
+
+   The default terms included in the Actor relation type taxonomy, and their
+   relationships (as either converse to another sibling term, or self-reciprocal)
+
+Add a new converse relationship
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**To create a new converse relationship between terms in AtoM:**
+
+1. In the Relationships area of the term's edit page, begin typing the name
+   of the related term into the "Converse term" :term:`field`.
+2. As you type, atom will search available term records (those that are part
+   of the same :term:`taxonomy`) and populate the field's :term:`drop-down menu`
+   with matching terms.
+3. When you see the term you would like to add as a related term, click on it
+   - it will be added to the field.
+4. You can also create a new converse term directly from the converse term
+   :term:`field`. If the term you have entered in the converse term field does
+   not yet exist, AtoM will create it when saving your edits.
+
+.. image:: images/actor-relation-converse.*
+   :align: center
+   :width: 80%
+   :alt: An image of a new converse term being created
+
+5. If the term is **self-reciprocal**, simply check the checkbox next to the
+   converse term field. AtoM will grey-out the field:
+
+.. image:: images/actor-relation-self-reciprocal.*
+   :align: center
+   :width: 80%
+   :alt: An image of the self-reciprocal checkbox in a Terms edit page
+
+6. If you need to **edit** or **remove** a related term you have just  added,
+   place your cursor back in the field, and make your changes directly.
+7. When you are finished, click the "Save" button in the :term:`button block`
+   at the bottom of the term's :term:`edit page`. AtoM will redirect you to
+   the term's :term:`view page`, where you can review your changes. You can
+   click the "Edit" button in the button block to make further changes if
+   needed.
+
+.. figure:: images/actor-relation-converse-view.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An example of a converse term's view page
+
+   An example of a converse term's view page
+
+.. figure:: images/actor-relation-self-reciprocal-view.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An example of a self-reciprocal term's view page
+
+   An example of a self-reciprocal term's view page
 
 :ref:`Back to top <terms>`
 
