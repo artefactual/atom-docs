@@ -696,13 +696,17 @@ in viewing.
 Add/edit a converse term
 ------------------------
 
-Relationship types and terms with opposites (such as "parent of" and its
-converse, "child of") are known in AtoM as **converse terms**. AtoM includes a
-number of default relationship terms for use in the :term:`authority record`
-Relationship dialogue (more information
-:ref:`here <link-two-authority-records>`). If a term has no opposite but itself
-(for example, "sibling of"), it can be marked as "self-reciprocal", meaning its
-converse term is itself.
+In AtoM, terms with matching or related opposite terms (such as "parent of" and its
+converse, "child of") used to describe relationships are known as **converse
+terms**. If a term has no opposite but itself (for example, "sibling of"), it
+can be marked as "self-reciprocal", meaning its converse term is itself. AtoM
+includes a number of default relationship terms for use in the
+:term:`authority record` Relationship dialogue (more information
+:ref:`here <link-two-authority-records>`). These default terms have been given
+converse or self-reciprocal relationships to support their use in the
+:ref:`ISAAR <isaar-template>`-based authority record template, but the default
+terms, and their relationships, can be edited users with the appropriate edit
+permissions.
 
 .. figure:: images/doe-smith.*
    :align: center
@@ -722,8 +726,8 @@ converse term is itself.
    see: :ref:`link-two-authority-records`.
 
 These default terms and their relationships to each other can be edited and
-managed in the Actor Relation Type taxonomy, and new terms can be added as
-well. Below is an overview of the default terms included and their
+managed in the Actor Relation Type :term:`taxonomy`, and new terms can be added
+as well. Below is an overview of the default terms included and their
 relationships, and instructions on how to add new converse relationships.
 
 Default Actor relation type terms in AtoM
