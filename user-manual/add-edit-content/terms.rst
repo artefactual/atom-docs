@@ -843,6 +843,14 @@ supplemental information, managing relationships between terms, and more.
    code. Most terms, however, can be edited or deleted, and all taxonomies can
    be assigned new terms in addition to any locked values.
 
+.. WARNING::
+
+   AtoM's file and item list reports are hard-coded to use the "File" and "Item"
+   level of description :term:`terms` in the "Levels of description"
+   :term:`taxonomy`. If you edit or remove these terms from the taxonomy, you may
+   break the reports feature. For more information on file and item-level reports
+   in AtoM, see: :ref:`reports-printing`.
+
 **To edit an existing term in AtoM:**
 
 1. In the :term:`main menu` located in the AtoM :term:`header bar`, click the

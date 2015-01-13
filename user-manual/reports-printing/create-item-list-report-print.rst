@@ -20,7 +20,13 @@ top, right-hand corner of the :term:`Archival description` view page.
    :term:`archival description`  you are viewing has
    :term:`child records <Child record>` that correspond to files and items. If
    the the archival description does not have any information at the file-level,
-   you will not be successful at printing a file list.
+   you will not be successful at printing an item list.
+
+.. WARNING::
+
+   AtoM's item list report is hard-coded to use the "Item" level of description
+   :term:`term` in the "Levels of description" :term:`taxonomy`. If you have
+   edited or removed the "Item" term from the taxonomy, the report will not work!
 
 .. |report| image:: images/reportslink.png
    :height: 18
