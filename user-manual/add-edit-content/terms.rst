@@ -850,7 +850,7 @@ supplemental information, managing relationships between terms, and more.
 .. WARNING::
 
    AtoM's file and item list reports are hard-coded to use the "File" and "Item"
-   level of description :term:`terms` in the "Levels of description"
+   level of description :term:`terms <term>` in the "Levels of description"
    :term:`taxonomy`. If you edit or remove these terms from the taxonomy, you may
    break the reports feature. For more information on file and item-level reports
    in AtoM, see: :ref:`reports-printing`.
