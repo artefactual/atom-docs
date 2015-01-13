@@ -156,25 +156,27 @@ overall) in the application, AtoM behaves in several specific ways:
   description `EAD <http://www.loc.gov/ead/>`__ import (i.e. data contained in
   the ``<bioghist>`` EAD element) will be mapped to the "History"
   :term:`field` (ISAAR-CPF 5.2.2) in the related :term:`authority record`,
-  (generated from the data contained in the ``creator`` element of the EAD)
+  (generated from the data contained in the ``<origination>`` element of the EAD)
   and then is presented in AtoM in any related descriptions where the entity
   is listed as a creator.
 * Where multiple creator names and histories are included in an import,
-  ``<creator>`` and ``<bioghist>`` elements are matched 1:1 in the  order they
+  ``<origination>`` and ``<bioghist>`` elements are matched 1:1 in the  order they
   appear in the EAD.
-* If a ``<bioghist>`` element is included in an EAD import, but no ``<creator>``
+* If a ``<bioghist>`` element is included in an EAD import, but no creator
   name is included, AtoM will still automatically generate a stub
   :term:`authority record` and map the ``<bioghist>`` data to the "History"
   :term:`field` (ISAAR-CPF 5.2.2) - the authority record will be left
   untitled, until the user manually adds the appropriate :term:`name` to the
   authority record. Similarly, if there are more ``<bioghist>`` elements
-  included in an import than ``<creator>`` names, the final
-  biographical/administrative history will be mapped to an untitled authority
-  record.
+  included in an import than creator names included in ``<origination>``
+  elements, the final biographical/administrative history will be mapped to an
+  untitled authority record.
 
 .. SEEALSO::
 
    * :ref:`term-name-vs-subject`
+   * :ref:`ead-actors-import`
+   * :ref:`csv-actors-import`
 
 
 **Below are instructions for using the AtoM Authority records module to:**
