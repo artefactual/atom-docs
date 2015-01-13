@@ -376,23 +376,43 @@ At the child level:
 Add new child levels
 --------------------
 
+.. image:: images/add-new-child-widget.*
+   :align: center
+   :width: 80%
+   :alt: Add new child widget in RAD
+
 **Template field** Identifier, Level, Title, Date
 
 **CSV Column** See notes below
 
-**RAD Rule** *Indentifier* Enter an unambiguous code used to uniquely identify the
-description. *Level* Select a level of description from the drop-down menu.
+**RAD Rule** *Identifier*: Enter an unambiguous code used to uniquely identify the
+description.
+
+*Level*: Select a level of description from the drop-down menu.
 See RAD 1.0A for rules and conventions on selecting levels of description.
-*Title* Enter the title proper, either transcribed or supplied (RAD 1.1B).
+
+*Title*: Enter the title proper, either transcribed or supplied (RAD 1.1B).
+
+*Date*: (Works similarly to the display date field when adding a date of
+creation; see :ref:` below <template-dates>` for more information in RAD)
 
 **EAD** N/A
 
 .. note::
 
-   When entering descriptions manually, users can add new
-   :term:`child records <child record>` in this area while adding a parent record.
-   In CSV import, this can be achieved using the legacyID and parentID columns. See
-   :ref:`Dealing with hierarchical data in CSV <csv-legacy-id-mapping>`.
+   This widget has been added to help improve workflows when creating new
+   descriptions via the :term:`user interface`.  When entering descriptions
+   manually, users can add new :term:`child records <child record>` in this area
+   while creating a parent record.
+
+   The *dates* field corresponds to a date of creation - if you would like a
+   different kind of date, you will have to either navigate to the child
+   description after saving the new :term:`parent record`, and change the date
+   type, or simply ignore the date field in the widget, and add the correct
+   date type manually to the child record after saving the new parent record.
+
+   In CSV import, adding child records can be achieved using the *legacyID* and
+   *parentID* columns. See :ref:`csv-legacy-id-mapping`.
 
 Repository
 ----------

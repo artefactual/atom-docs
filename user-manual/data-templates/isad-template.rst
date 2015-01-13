@@ -127,6 +127,7 @@ field)
 
 :ref:`Back to the top <isad-template>`
 
+.. _isad-title:
 
 Title
 -----
@@ -164,6 +165,8 @@ At a child level:
 
 :ref:`Back to the top <isad-template>`
 
+.. _isad-dates:
+
 Date(s)
 -------
 
@@ -194,6 +197,8 @@ approximation, uncertainty, or qualification.
 
 :ref:`Back to the top <isad-template>`
 
+.. _isad-date-start:
+
 Dates of creation- Start
 ------------------------
 
@@ -221,6 +226,8 @@ date formats: YYYYMMDD, YYYY-MM-DD, YYYY-MM, YYYY.
 
 :ref:`Back to the top <isad-template>`
 
+.. _isad-date-end:
+
 Dates of creation- End
 ----------------------
 
@@ -247,6 +254,8 @@ date formats: YYYYMMDD, YYYY-MM-DD, YYYY-MM, YYYY.
    autopopulate upon entering.
 
 :ref:`Back to the top <isad-template>`
+
+.. _isad-lod:
 
 Level of description
 --------------------
@@ -283,29 +292,48 @@ At the child level:
 
 :ref:`Back to the top <isad-template>`
 
+.. _isad-add-child-widget:
+
 Add new child levels
 --------------------
 
+.. image:: images/add-new-child-widget.*
+   :align: center
+   :width: 80%
+   :alt: Add new child widget in ISAD
+
 **Template field** Identifier, Level, Title, Date
 
-**CSV Column** See notes below
+**CSV Column** N/A - See notes below
 
-**ISAD Rule** `Identifier` Provide a specific local reference code, control
+**ISAD Rule** *Identifier*: Provide a specific local reference code, control
 number, or other unique identifier.
 
-`Level of description` Record the level of this unit of description.
+*Level of description*: Record the level of this unit of description.
 
-`Title` Provide either a formal title or a concise supplied title in accordance
+*Title*: Provide either a formal title or a concise supplied title in accordance
 with the rules of multilevel description and national conventions.
+
+*Date*: (Works similarly to the display date field for a date of creation; see
+:ref:`above <isad-dates>` for more information.)
 
 **EAD** N/A
 
 .. note::
 
-   When entering descriptions manually, users can add new
-   :term:`child records <child record>` in this area while adding a parent record.
-   In CSV import, this can be achieved using the legacyID and parentID columns. See
-   :ref:`Dealing with hierarchical data in CSV <csv-legacy-id-mapping>`.
+   This widget has been added to help improve workflows when creating new
+   descriptions via the :term:`user interface`.  When entering descriptions
+   manually, users can add new :term:`child records <child record>` in this area
+   while creating a parent record.
+
+   The *dates* field corresponds to a date of creation - if you would like a
+   different kind of date, you will have to either navigate to the child
+   description after saving the new :term:`parent record`, and change the date
+   type, or simply ignore the date field in the widget, and add the correct
+   date type manually to the child record after saving the new parent record.
+
+   In CSV import, adding child records can be achieved using the *legacyID* and
+   *parentID* columns. See :ref:`csv-legacy-id-mapping`.
 
 
 Extent and medium
