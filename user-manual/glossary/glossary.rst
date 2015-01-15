@@ -310,6 +310,22 @@ Glossary
     generating :term:`value lists <value list>` and :term:`access points
     <access point>`. See :ref:`terms`.
 
+  Converse term
+    A :term:`term` that has an inverse reciprocal relationship to another
+    term in the same :term:`taxonomy`. Converse term relationships can be
+    managed via a term's :term:`edit page`; currently converse relationships
+    are only used in the Actor relations taxonomy, though the field is available
+    in all term edit pages. Examples of default converse terms include: *is the
+    parent of* and *is the child of*, or *is the employer of* and *is the
+    employee of*. Actor relation terms are used in the ISAAR Relationships
+    dialogue to establish relationshps between
+    :term:`authority records <authority record>`. When one term is added as a
+    relationship qualifier to an authority record, its converse term will
+    automatically appear on the related authority record. A term whose converse
+    is itself (e.g. *is the sibling of*) is known as a
+    :term:`self-reciprocal term`. For more information, see:
+    :ref:`add-converse-term` and :ref:`link-two-authority-records`.
+
   Corporate body
     The International Council on Archives (`ICA <http://www.ica.org/>`__)
     defines a corporate body as "An organization or group of persons that
@@ -1029,6 +1045,25 @@ Glossary
     matching a search query. The search box is located in the
     :term:`header bar` on all AtoM pages, including the home page. See
     :ref:`Access content <access-content>` and :ref:`search-atom`
+
+  Self-reciprocal term
+    A :term:`term` that has an inverse reciprocal relationship to another
+    term in the same :term:`taxonomy` is known as a :term:`converse term`. A
+    self-reciprocal term, in contrast, is one whose inverse reciprocal term is
+    itself. Converse  and self-reciprocal term relationships can be managed
+    via the term's :term:`edit page`; currently converse and self-reciprocal
+    relationships  are only used in the Actor relations taxonomy, though the
+    field is available in all term edit pages. Examples of default converse
+    terms include: *is the parent of* and *is the child of*, or *is the employer
+    of* and *is the employee of*, while examples of a default self-reciprocal
+    terms include *is the sibling of* and *is the associate of*. Actor relation
+    :term:`terms <term>` are used in the ISAAR Relationships dialogue to
+    establish relationshps between :term:`authority records <authority record>`.
+    When one term is added as a relationship qualifier to an authority record,
+    its converse term will automatically appear on the related authority record.
+    Terms marked as self-reciprocal will automatically appear similarly on
+    *both* related authority records. For more information, see:
+    :ref:`add-converse-term` and :ref:`link-two-authority-records`.
 
   Setting
     Settings is a broad term used to describe the properties that affect

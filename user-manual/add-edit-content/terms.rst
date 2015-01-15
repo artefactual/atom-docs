@@ -703,10 +703,10 @@ can be marked as "self-reciprocal", meaning its converse term is itself. AtoM
 includes a number of default relationship terms for use in the
 :term:`authority record` Relationship dialogue (more information
 :ref:`here <link-two-authority-records>`). These default terms have been given
-converse or self-reciprocal relationships to support their use in the
-:ref:`ISAAR <isaar-template>`-based authority record template, but the default
-terms, and their relationships, can be edited users with the appropriate edit
-permissions.
+:term:`converse <converse term>` or :term:`self-reciprocal <self-reciprocal term>`
+relationships to support their use in the :ref:`ISAAR <isaar-template>`-based
+authority record template, but the default terms, and their relationships,
+can be edited users with the appropriate edit permissions.
 
 .. figure:: images/doe-smith.*
    :align: center
@@ -720,8 +720,8 @@ permissions.
 
    Though the field is available in all term :term:`edit pages <edit page>`,
    the "Converse term" :term:`field` is currently only used in AtoM in the
-   Actor Relation Type taxonomy. This taxonomy is used to supply terms to the
-   Relationships dialogue, when two authority records are linked. For more
+   Actor Relation Type taxonomy. This :term:`taxonomy` is used to supply terms
+   to the Relationships dialogue, when two authority records are linked. For more
    information on creating relationships between authority records in AtoM,
    see: :ref:`link-two-authority-records`.
 
@@ -759,8 +759,8 @@ act as their own converse term as well). For example:
 
 * Under the *family* term:
 
-  * *is the parent of* and *is the child of* are converse terms
-  * *is the sibling of* is a self-reciprocal term
+  * *is the parent of* and *is the child of* are :term:`converse <converse term>` terms
+  * *is the sibling of* is a :term:`self-reciprocal <self-reciprocal term>` term
 
 Below is an image outlining all the default relationships between terms in the
 Actor relation type taxonomy:
@@ -786,7 +786,7 @@ Add a new converse relationship
    with matching terms.
 3. When you see the term you would like to add as a related term, click on it
    - it will be added to the field.
-4. You can also create a new converse term directly from the converse term
+4. You can also create a new :term:`converse term` directly from the converse term
    :term:`field`. If the term you have entered in the converse term field does
    not yet exist, AtoM will create it when saving your edits.
 

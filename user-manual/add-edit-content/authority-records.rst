@@ -883,8 +883,8 @@ Create a relationship between two authority records
    :width: 75%
    :alt: An image of the relationships area in the view template
 
-11. Additionally, converse information will also be added to the related
-    authority record.
+11. Additionally, :term:`converse <converse term>` information will also be
+    added to the related authority record.
 
 .. image:: images/relationships-area-view-related.*
    :align: center
