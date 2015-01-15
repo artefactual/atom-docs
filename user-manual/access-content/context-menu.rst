@@ -56,7 +56,7 @@ elements:
    storage information is visible to all users. See
    :ref:`Physical storage <physical-storage>` for further information.
 
-.. _context-menu-descriptions-treeview:
+.. _context-menu-treeview:
 
 Treeview
 --------
