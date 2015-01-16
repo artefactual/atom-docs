@@ -393,7 +393,7 @@ archival institution:
 * **Archive type:** Limits results to those with a type matching data in the
   "Type" :term:`field` in the Identity :term:`area <information area>` of the
   :ref:`ISDIAH <isdiah-template>` archival institution edit template
-* **Region:** Limits results to those matching data entered into the
+* **Geographic region:** Limits results to those matching data entered into the
   "Region/province" :term:`field` in the physical location tab of the contact
   dialogue (available in the "Contact" :term:`area <information area>` of the
   :ref:`ISDIAH <isdiah-template>` archival institution edit template)
@@ -402,7 +402,7 @@ archival institution:
   :term:`field` in the Access points :term:`area <information area>` of the
   :ref:`ISDIAH <isdiah-template>` archival institution record
 * **Locality:** Limits results to those matching data entered into the
-  "Locality" (e.g. city, town, etc) :term:`field` in the physical location tab
+  "City" (e.g. city, town, etc) :term:`field` in the physical location tab
   of the contact dialogue (available in the "Contact"
   :term:`area <information area>` of the :ref:`ISDIAH <isdiah-template>`
   archival institution edit template)
@@ -416,12 +416,17 @@ archival institution:
    * :ref:`browse`
    * :ref:`recurring-facet-filters`
 
-The **Region** and **Locality** facets are automatically populated based on data
-entered into the contact information fields available in the Contact
-:term:`area <information area>` of the archival institiution :term:`edit page`,
-and the **Archive type** facet is similarly automatically populated based on
-data entered into the "Type" :term:`field` in the Identity
+The **Geographic region** and **Locality** facets are automatically populated
+based on data entered into the contact information fields available in the
+Contact :term:`area <information area>` of the archival institiution
+:term:`edit page`, and the **Archive type** facet is similarly automatically
+populated based on data entered into the "Type" :term:`field` in the Identity
 :term:`area <information area>`.
+
+.. image:: images/repo-contact-facets.*
+   :align: center
+   :width: 40%
+   :alt: An image of the Contact information fields that will populate facets
 
 The **Geographic subregion** and **Thematic area** facets are managed as
 :term:`access points <access point>`, and must be manually added in the

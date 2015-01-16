@@ -949,7 +949,7 @@ standards-based data-entry template, see: :ref:`data-entry`.
 * **Archive type:** Limits results to those with a type matching data in the
   "Type" :term:`field` in the Identity :term:`area <information area>` of the
   :ref:`ISDIAH <isdiah-template>` archival institution edit template
-* **Region:** Limits results to those matching data entered into the
+* **Geographic region:** Limits results to those matching data entered into the
   "Region/province" :term:`field` in the physical location tab of the contact
   dialogue (available in the "Contact" :term:`area <information area>` of the
   :ref:`ISDIAH <isdiah-template>` archival institution edit template)
@@ -958,7 +958,7 @@ standards-based data-entry template, see: :ref:`data-entry`.
   :term:`field` in the Access points :term:`area <information area>` of the
   :ref:`ISDIAH <isdiah-template>` archival institution record
 * **Locality:** Limits results to those matching data entered into the
-  "Locality" (e.g. city, town, etc) :term:`field` in the physical location tab
+  "City" (e.g. city, town, etc) :term:`field` in the physical location tab
   of the contact dialogue (available in the "Contact"
   :term:`area <information area>` of the :ref:`ISDIAH <isdiah-template>`
   archival institution edit template)
