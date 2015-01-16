@@ -1589,6 +1589,25 @@ numbers borne by the unit being described other than publisher's series numbers 
 
 :ref:`Back to the top <rad-template>`
 
+Other notes- Cast note
+----------------------
+
+**Template field** Other notes- Cast note
+
+**CSV Column** radNoteCast
+
+**RAD Rule** "List featured players, performers, presenters or other on-screen
+personnel." (Moving images - RAD 7.8B5b)
+
+**EAD**
+
+.. NOTE::
+
+   At this time, the RAD Cast note field in AtoM has not been mapped to the EAD
+   import/export.
+
+:ref:`Back to the top <rad-template>`
+
 
 Other notes- Conservation
 -------------------------
@@ -1610,6 +1629,26 @@ nature of the work." (RAD 1.8B9b)
 
 :ref:`Back to the top <rad-template>`
 
+Other notes- Credits note
+-------------------------
+
+**Template field** Other notes- Credits note
+
+**CSV Column** radNoteCredits
+
+**RAD Rule** "List persons (other than the cast) who have contributed to the
+artistic and/or technical production of a moving image document. Preface each
+name or group of names with a statement of function." (Moving images - RAD
+7.8B5a)
+
+**EAD**
+
+.. NOTE::
+
+   At this time, the RAD Credits note field in AtoM has not been mapped to the
+   EAD import/export.
+
+:ref:`Back to the top <rad-template>`
 
 Other notes- Edition
 --------------------
@@ -1697,6 +1736,29 @@ other rights pertaining to the unit being described." (RAD 1.8B16b)
 
 :ref:`Back to the top <rad-template>`
 
+Other notes- Signatures note
+----------------------------
+
+**Template field** Other notes- Signatures note
+
+**CSV Column** radNoteSignatures
+
+**RAD Rule** "Make notes on signatures, inscriptions, or monograms, etc.,
+which appear on the unit being described. Indicate where such signatures and
+inscriptions appear."(RAD 3.8B6)
+
+*See also*: RAD 4.8B7 (Graphic materials); RAD 5.8B6 (Cartographic materials);
+RAD 6.8B6 (Architecture and technical drawings); RAD 11.8B7 (Objects); and
+RAD 12.8B7 (Philatelic records).
+
+**EAD**
+
+.. NOTE::
+
+   At this time, the RAD Signatures note field in AtoM has not been mapped to
+   the EAD import/export.
+
+:ref:`Back to the top <rad-template>`
 
 Other notes- General note
 -------------------------
