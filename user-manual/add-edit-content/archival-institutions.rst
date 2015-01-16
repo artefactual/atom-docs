@@ -423,7 +423,7 @@ Contact :term:`area <information area>` of the archival institiution
 populated based on data entered into the "Type" :term:`field` in the Identity
 :term:`area <information area>`.
 
-.. image:: images/repo-contact-facets.*
+.. image:: images/repo-contact-facets.png
    :align: center
    :width: 40%
    :alt: An image of the Contact information fields that will populate facets
