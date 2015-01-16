@@ -391,8 +391,6 @@ a new name to create and link to a new authority record. (ISAD 3.2.1)
 
 **EAD**
 
-Personal or family name:
-
 .. code:: bash
 
    <archdesc>
@@ -404,19 +402,19 @@ Personal or family name:
                      <origination encodinganalog="3.2.1">
                         <name>
 
-Corporate name:
+.. NOTE::
 
-.. code:: bash
-
-   <archdesc>
-      <bioghist>
-         <chronlist>
-            <chronitem>
-               <eventgrp>
-                  <event>
-                     <origination encodinganalog="3.2.1">
-                        <corpname>
-
+   This is the default export EAD when an Entity type has not been set for the
+   actor on the related :term:`authority record`. The final EAD element can be
+   more precise, if the user has entered an Entity type on the related
+   :term:`authority record`. When the Entity type is set to **Person**, the EAD
+   will export using ``<persname>`` instead of  ``<name>``; when set to
+   **Family**, the EAD will export using ``<famname>``  instead of ``<name>``;
+   and when set to **Organization**, the EAD will export using ``<corpname>``
+   instead of ``<name>``. The ``<name>`` element is the default when no
+   entity type is set. For more information on authority records and the ISAAR
+   standard upon which the authority record template is based, see:
+   :ref:`authority-records` and :ref:`isaar-template`.
 
 :ref:`Back to the top <isad-template>`
 
@@ -1031,7 +1029,10 @@ Name access points (subjects)
 
 **EAD**
 
-For a personal name or family:
+**EAD**
+
+If the entity type of the actor is not defined as either a person, family, or
+corporate body:
 
 .. code:: bash
 
@@ -1039,8 +1040,23 @@ For a personal name or family:
       <controlaccess>
          <name role="subject">
 
+For a personal name:
 
-For a corporate/organizational name:
+.. code:: bash
+
+   <archdesc>
+      <controlaccess>
+         <persname role="subject">
+
+For a family name:
+
+.. code:: bash
+
+   <archdesc>
+      <controlaccess>
+         <famname role="subject">
+
+For a corporate body or organizational name:
 
 .. code:: bash
 

@@ -1900,7 +1900,8 @@ record.
 
 **EAD**
 
-For a personal name or family:
+If the entity type of the actor is not defined as either a person, family, or
+corporate body:
 
 .. code:: bash
 
@@ -1908,8 +1909,23 @@ For a personal name or family:
       <controlaccess>
          <name role="subject">
 
+For a personal name:
 
-For a corporate/organizational name:
+.. code:: bash
+
+   <archdesc>
+      <controlaccess>
+         <persname role="subject">
+
+For a family name:
+
+.. code:: bash
+
+   <archdesc>
+      <controlaccess>
+         <famname role="subject">
+
+For a corporate body or organizational name:
 
 .. code:: bash
 
