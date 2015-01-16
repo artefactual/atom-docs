@@ -953,11 +953,25 @@ standards-based data-entry template, see: :ref:`data-entry`.
   "Region/province" :term:`field` in the physical location tab of the contact
   dialogue (available in the "Contact" :term:`area <information area>` of the
   :ref:`ISDIAH <isdiah-template>` archival institution edit template)
+* **Geographic subregion:** Limits results to those institutions with a
+  matching :term:`access point` added to the "Geographic subregion"
+  :term:`field` in the Access points :term:`area <information area>` of the
+  :ref:`ISDIAH <isdiah-template>` archival institution record
+* **Locality:** Limits results to those matching data entered into the
+  "Locality" (e.g. city, town, etc) :term:`field` in the physical location tab
+  of the contact dialogue (available in the "Contact"
+  :term:`area <information area>` of the :ref:`ISDIAH <isdiah-template>`
+  archival institution edit template)
+* **Thematic area:** Limits results to those institutions with a
+  matching :term:`access point` added to the "Thematic area" :term:`field` in the
+  Access points :term:`area <information area>` of the
+  :ref:`ISDIAH <isdiah-template>` archival institution record
 
 For more information on working with :term:`archival institutions <archival
 institution>`, see: :ref:`archival-institutions`. For help with specific
 fields in the archival institution edit template, see: :ref:`ISDIAH template
-<isdiah-template>`.
+<isdiah-template>`. For specific instructions on working with archival
+institution access points, see: :ref:`institution-access-points`.
 
 **Authority records (People & organizations)**
 
