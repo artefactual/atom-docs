@@ -58,6 +58,7 @@ links to each chapter's main sections.
    data-templates/isad-template
    data-templates/rad-template
    data-templates/dc-template
+   data-templates/isaar-template
    glossary/glossary
 
 
