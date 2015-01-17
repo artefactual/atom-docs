@@ -46,7 +46,7 @@ In **AtoM**, :term:`archival descriptions <archival description>` can be linked
 to :term:`archival institutions <archival institution>` and the holdings of an
 institution can be browsed even when AtoM is used as a :term:`multi-repository
 system`. On all related :term:`archival description` :term:`view pages <view
-page>`, the institition's name and logo will appear as hyperlinks to the
+page>`, the institution's name and logo will appear as hyperlinks to the
 :term:`archival institution` record; similarly, an archival institution's page
 will list its holdings as hyperlinks to related archival descriptions.
 Institutions can also be themed in AtoM - when a background color is added to
@@ -418,7 +418,7 @@ archival institution:
 
 The **Geographic region** and **Locality** facets are automatically populated
 based on data entered into the contact information fields available in the
-Contact :term:`area <information area>` of the archival institiution
+Contact :term:`area <information area>` of the archival institution
 :term:`edit page`, and the **Archive type** facet is similarly automatically
 populated based on data entered into the "Type" :term:`field` in the Identity
 :term:`area <information area>`.
@@ -453,8 +453,8 @@ The **Thematic area** access point is intended to assist users in identifying
 major collecting areas of an archival institution by offering them a sense of
 the subject matter addressed in the :term:`holdings` of the institution. AtoM
 includes a number of default terms (included in both French and English) in
-the Thematic area :term:`taxonomy`, derived from the terms formerly used in
-the Canadian Council on Archives' Directory of Archives:
+the Thematic area :term:`taxonomy`, derived from the terms used in the
+Canadian Council of Archives' Directory of Archives:
 
 .. figure:: images/CCA-Directory-Archives-terms.*
    :align: center
