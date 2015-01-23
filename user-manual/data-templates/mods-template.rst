@@ -81,10 +81,9 @@ MODS Elements area
    :align: center
    :figwidth: 50%
    :width: 100%
-   :alt: An image of the data entry fields in the DACS Identity elements.
+   :alt: An image of the data entry fields in the MODS template.
 
-   The data entry fields for the Identity elements of the DACS archival
-   description edit template.
+   The data entry fields for the MODS archival description edit template.
 
 TO DO
 
