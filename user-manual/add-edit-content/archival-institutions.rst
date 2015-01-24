@@ -64,8 +64,8 @@ to:**
 
 * :ref:`Add a new archival institution <add-archival-institution>`
 * :ref:`Edit an existing archival institution <edit-archival-institution>`
-* :ref:`Link an archival description to an archival institution
-  <link-archival-institution>`
+* :ref:`institution-access-points`
+* :ref:`link-archival-institution`
 * :ref:`Edit the theme of an archival institution page <edit-institution-theme>`
 
   * :ref:`Change the background color <change-institution-background>`
@@ -93,7 +93,6 @@ institution :term:`edit page`, see:
    * :ref:`Archival descriptions <archival-descriptions>`
    * :ref:`Authority records <authority-records>`
    * :ref:`Access content <access-content>`
-   * :ref:`Browse holdings of an archival institution <browse-holdings>`
    * :ref:`User roles <user-roles>`
    * :ref:`Entity types <entity-types>`
    * :ref:`Log in <log-in>`
