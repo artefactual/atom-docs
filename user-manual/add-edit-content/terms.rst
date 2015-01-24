@@ -392,7 +392,7 @@ as a name :term:`access point` in the Access points :term:`information area` of
 the :term:`archival description`. Doing so conforms to the recommendations
 found in :ref:`ISAAR-CPF <isaar-template>` 1.5 and 1.6, and 1.8:
 
-    **1.5** *There are many reasons why separate capture and maintenance of
+    *1.5 - There are many reasons why separate capture and maintenance of
     this type of contextual information is a vital component of archival
     description. The practice enables the linking of descriptions of records
     creators and contextual information to descriptions of records from the
@@ -401,7 +401,7 @@ found in :ref:`ISAAR-CPF <isaar-template>` 1.5 and 1.6, and 1.8:
     that relate to the entity in question. Such links improve records
     management practices and facilitate research.*
 
-    **1.6** *Where a number of repositories hold records from a given source
+    *1.6 - Where a number of repositories hold records from a given source
     they can more easily share or link contextual information about this
     source if it has been maintained in a standardized manner. Such
     standardization is of particular international benefit when the sharing
@@ -412,7 +412,7 @@ found in :ref:`ISAAR-CPF <isaar-template>` 1.5 and 1.6, and 1.8:
     processes such as colonialization, immigration and trade have
     contributed to the multinational character of recordkeeping.*
 
-    **1.8** *Archival authority records are similar to library authority
+    *1.8 - Archival authority records are similar to library authority
     records in as much as both forms of authority record need to support the
     creation of standardized access points in descriptions. The name of the
     creator of the unit of description is one of the most important of such
