@@ -102,11 +102,10 @@ AtoM also includes standards-based templates for describing resources. Please
 see the sections below for more specific instructions on the use of
 :term:`fields  <field>` within each template:
 
-* General International Standard Archival Description: :ref:`ISAD(G)
-  <isad-template>`
+* General International Standard Archival Description:
+  :ref:`ISAD(G) <isad-template>`
 * Describing Archives: A Content Standard (U.S.A): :ref:`DACS <dacs-template>`
-* Dublin Core Metadata Element Set, Version 1.1: :ref:`Dublin Core
-  <dc-template>`
+* Dublin Core Metadata Element Set, Version 1.1: :ref:`Dublin Core <dc-template>`
 * Metadata Object Description Schema: :ref:`MODS <mods-template>`
 * Rules for Archival Description (Canada): :ref:`RAD <rad-template>`
 
