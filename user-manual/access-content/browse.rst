@@ -237,9 +237,8 @@ browse page. Each is described below.
    terms are displayed in the treeview. If a term has
    :term:`children <child record>`, a caret (triangle icon) will appear next to
    the term - click the caret to view lower-level child terms. For more
-   information on using the treeview in AtoM, see:
-   :ref:`context-menu-descriptions-treeview` and
-   :ref:`Terms treeview <context-menu-terms-treeview>`.
+   information on using the treeview in AtoM, see: :ref:`context-menu-treeview`
+   and :ref:`context-menu-terms-treeview`.
 
 A count of total terms is provided at the top of the browse page. Terms appearing
 in the first column of the browse page's table are hyperlinks - click on a term
