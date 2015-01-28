@@ -62,6 +62,7 @@ links to each chapter's main sections.
    data-templates/mods-template
    data-templates/isaar-template
    data-templates/isdiah-template
+   data-templates/isdf-template
    glossary/glossary
 
 
