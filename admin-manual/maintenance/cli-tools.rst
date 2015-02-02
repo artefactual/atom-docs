@@ -352,6 +352,20 @@ terms and will delete the others.
 
    php symfony taxonomy:normalize [--culture=<culture>] <taxonomy name>
 
+**Task options**
+
+.. image:: images/cli-taxonomy-normalize.*
+   :align: center
+   :width: 70%
+   :alt: An image of the CLI options when invoking the taxonomy:normalize command
+
+By entering ``php symfony help taxonomy:normalize`` into the command-line, you
+see the options and descriptions available on this tool, as pictured above.
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the import.
+
 The ``--culture`` option on this command-line tool is optional - the default
 value, if none is entered is *en* (English). The value you
 enter for <culture> should be the default culture of the terms you wish to
@@ -430,6 +444,18 @@ Published          160
    php symfony tools:update-publication-status 160 example-description
 
 **Task options:**
+
+.. image:: images/cli-pub-status.*
+   :align: center
+   :width: 70%
+   :alt: The CLI options when invoking the publication status command
+
+By entering ``php symfony help tools:update-publication-status`` into the
+command-line, you see the options available on this tool, as pictured above.
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the import.
 
 In general and as in the user interface, if a parent description is updated,
 it will also update the publication status of its children. In some rare
