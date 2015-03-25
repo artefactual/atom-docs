@@ -755,6 +755,17 @@ command:
 
    php symfony export:bulk /path/to/my/xmlExportFolder
 
+.. NOTE::
+
+   There is also a separate bulk export command for EAC-CPF XML files (e.g. for
+   exporting :term:`authority records <authority record>` via the command-line.
+   It uses the same CLI options as the EAD XML export task. See
+   :ref:`below <cli-bulk-export-eac>` below for syntax; see the EAD
+   :ref:`usage <cli-bulk-export-usage>` guidelines for how to use the available
+   options.
+
+.. _cli-bulk-export-usage:
+
 Using the export:bulk command
 -----------------------------
 
@@ -854,6 +865,60 @@ accepts collection/fonds-level descriptions. If a lower-level description
 .. SEEALSO::
 
    * :ref:`export-descriptions-terms`
+
+.. _cli-bulk-export-eac:
+
+Exporting EAC-CPF XML for authority records
+-------------------------------------------
+
+In addition to the bulk export CLI tool for archival descriptions described above,
+AtoM also has a separate command-line task for the bulk export of
+:term:`authority records <authority record>` in EAC-CPF XML format.
+
+The EAC-CPF XML standard is prepared and maintained by the Technical Subcommittee
+for Encoded Archival Context of the Society of American Archivists and the
+Staatsbibliothek zu Berlin, and a version of the Tag Library is available at:
+
+* http://eac.staatsbibliothek-berlin.de/fileadmin/user_upload/schema/cpfTagLibrary.html
+
+When using the task, EAC-CPF XML files will be exported to a directory; you must
+first create the target directory, and then you will specify the path to it when
+invoking the export command:
+
+.. code:: bash
+
+   php symfony export:auth-recs /path/to/my/xmlExportFolder
+
+The authority record bulk export task has the same options available as the
+archival description export task described :ref:`above <cli-bulk-export-usage>`.
+Some of these options will not be relevant to EAC-CPF exports (e.g. the
+``--current-level-only`` option, as authority records are not hierarchical; and
+the ``--public`` option, as currently authority records do not have a publication
+status), but otherwise they can be used with this task in the same way as
+described for the archival description export options
+:ref:`above <cli-bulk-export-usage>`. Please refer there for more detailed usage
+notes. Below is an example application, using the ``--criteria`` option:
+
+**Example: using the --criteria option to select only authority records linked
+to descriptions from one repository**
+
+First, you will need to know the repository ID of the target
+:term:`archival institution`. See the section :ref:`below <common-atom-queries>`
+for basic instructions on how to access MySQL from the command-line, so you can
+enter the following SQL query. You will first need to know the :term:`slug` of
+the archival institution whose ID you would like to know:
+
+.. code:: bash
+
+   SELECT object_id FROM slug WHERE slug=`your-institution-slug`;
+
+Now with the repository ID, you can use the ``--criteria`` option to export only
+authority records that have been linked to descriptions related to the target
+archival institution, like so (assuming the repository ID returned is ``12345``):
+
+.. code:: bash
+
+   php symfony export:auth-recs --criteria='i.repository_id=12345' path/to/my/export-folder
 
 :ref:`Back to the top <maintenance-cli-tools>`
 
