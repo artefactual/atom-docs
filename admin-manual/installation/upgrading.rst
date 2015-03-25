@@ -199,6 +199,10 @@ to formulate absolute URLs referring to resources.
 
 To set the site base URL: 
 
+.. |gears| image:: ../../images/gears.png
+   :height: 18
+   :width: 18
+
 1. Click on the |gears| :ref:`Admin <main-menu-admin>` menu in the :term:`main
    menu` located in the :term:`header bar` and select Settings.
 
