@@ -417,7 +417,7 @@ also truncate it to a specific number of revisions, e.g.: just one revision
 
 .. code-block:: bash
 
-   git clone --depth 1 git@git.artefactual.com:atom.git /usr/share/nginx/atom
+   git clone --depth 1 http://github.com/artefactual/atom.git /usr/share/nginx/atom
 
 Once you've cloned the code from our git repository, you'll need to compile
 the CSS files:
@@ -427,7 +427,7 @@ the CSS files:
    sudo add-apt-repository ppa:chris-lea/node.js
    sudo apt-get update
    sudo apt-get install nodejs make
-   sudo npm install -g less
+   sudo npm install -g "less@<2.0.0"
    cd /usr/share/nginx/atom/plugins/arDominionPlugin/
    sudo make # At this point the files still belong to root
 

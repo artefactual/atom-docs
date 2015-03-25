@@ -175,6 +175,10 @@ in AtoM, and more.
 
   * :ref:`ISDIAH template <isdiah-template>`
 
+* **Archival function templates**
+
+  * :ref:`ISDF template <isdf-template>`
+
 Glossary
 --------
 

@@ -137,6 +137,13 @@ overall) in the application, AtoM behaves in several specific ways:
 * When a :term:`creator` name is added to an :term:`archival description`, the
   name is also automatically added as a name :term:`access point` - there is
   no need to add the creator as a name (subject) access point manually.
+* When a :term:`creator` name is added to an :term:`archival description`, the
+  biographical/administrative history for that creator will appear at the level
+  of description where the name has been added, but will not repeat at lower
+  levels. The creator name **will** be inherited by lower levels however, unless
+  a different name is explicitly added at a lower level. By inheriting the name,
+  AtoM supports the recommended practice of not repeating information
+  unnecessarily at lower levels of description.
 * If a user navigates to the related :term:`creator's <creator>`
   :term:`authority record` and edits it, adding data to the "History"
   :term:`field` (ISAAR-CPF 5.2.2), that data will appear in the related
@@ -149,25 +156,27 @@ overall) in the application, AtoM behaves in several specific ways:
   description `EAD <http://www.loc.gov/ead/>`__ import (i.e. data contained in
   the ``<bioghist>`` EAD element) will be mapped to the "History"
   :term:`field` (ISAAR-CPF 5.2.2) in the related :term:`authority record`,
-  (generated from the data contained in the ``creator`` element of the EAD)
+  (generated from the data contained in the ``<origination>`` element of the EAD)
   and then is presented in AtoM in any related descriptions where the entity
   is listed as a creator.
 * Where multiple creator names and histories are included in an import,
-  ``<creator>`` and ``<bioghist>`` elements are matched 1:1 in the  order they
+  ``<origination>`` and ``<bioghist>`` elements are matched 1:1 in the  order they
   appear in the EAD.
-* If a ``<bioghist>`` element is included in an EAD import, but no ``<creator>``
+* If a ``<bioghist>`` element is included in an EAD import, but no creator
   name is included, AtoM will still automatically generate a stub
   :term:`authority record` and map the ``<bioghist>`` data to the "History"
   :term:`field` (ISAAR-CPF 5.2.2) - the authority record will be left
   untitled, until the user manually adds the appropriate :term:`name` to the
   authority record. Similarly, if there are more ``<bioghist>`` elements
-  included in an import than ``<creator>`` names, the final
-  biographical/administrative history will be mapped to an untitled authority
-  record.
+  included in an import than creator names included in ``<origination>``
+  elements, the final biographical/administrative history will be mapped to an
+  untitled authority record.
 
 .. SEEALSO::
 
    * :ref:`term-name-vs-subject`
+   * :ref:`ead-actors-import`
+   * :ref:`csv-actors-import`
 
 
 **Below are instructions for using the AtoM Authority records module to:**
@@ -330,6 +339,21 @@ new :term:`authority record` for that name will be generated when the
 :term:`archival description` is saved. Because each edit template uses
 different labels for the field to add a new creator, template specific
 instructions have been included below.
+
+.. TIP::
+
+   **Creators added will inherit to lower-levels of description.** In an effort
+   simplify the description workflow, lower-levels of description in AtoM will
+   automatically inherit the :term:`creator` name(s) added at higher levels. So
+   for example, if you add a creator to a :term:`fonds`-level description, you
+   do not need to add the same name to all of the series, files, and items below -
+   the name will automatically appear in the :term:`view page` of the lower-level
+   descriptions, unless a different creator name is explicitly added in the
+   :term:`edit page`. This behavior conforms with the principles outlined in
+   :ref:`ISAD <isad-template>` 2.4, which states: "*At the hightest appropriate
+   level, give information that is common to the component parts. Do not repeat
+   information at a lower level of description that has already been given at a
+   higher level.*"
 
 .. IMPORTANT::
 
@@ -656,6 +680,21 @@ From the archival description
    in the "Relationships" :term:`information area` of the :term:`authority
    record`.
 
+.. TIP::
+
+   **Creators added will inherit to lower-levels of description.** In an effort
+   simplify the description workflow, lower-levels of description in AtoM will
+   automatically inherit the :term:`creator` name(s) added at higher levels. So
+   for example, if you add a creator to a :term:`fonds`-level description, you
+   do not need to add the same name to all of the series, files, and items below -
+   the name will automatically appear in the :term:`view page` of the lower-level
+   descriptions, unless a different creator name is explicitly added in the
+   :term:`edit page`. This behavior conforms with the principles outlined in
+   :ref:`ISAD <isad-template>` 2.4, which states: "*At the hightest appropriate
+   level, give information that is common to the component parts. Do not repeat
+   information at a lower level of description that has already been given at a
+   higher level.*"
+
 .. _authority-link-from-authority:
 
 From the authority record
@@ -723,6 +762,21 @@ From the authority record
    The relationship link will appear in the :term:`context menu` on the
    left-hand side of the page. You can click on the related description's title
    to navigate to the related :term:`archival description`.
+
+.. TIP::
+
+   **Creators added will inherit to lower-levels of description.** In an effort
+   simplify the description workflow, lower-levels of description in AtoM will
+   automatically inherit the :term:`creator` name(s) added at higher levels. So
+   for example, if you add a creator to a :term:`fonds`-level description, you
+   do not need to add the same name to all of the series, files, and items below -
+   the name will automatically appear in the :term:`view page` of the lower-level
+   descriptions, unless a different creator name is explicitly added in the
+   :term:`edit page`. This behavior conforms with the principles outlined in
+   :ref:`ISAD <isad-template>` 2.4, which states: "*At the hightest appropriate
+   level, give information that is common to the component parts. Do not repeat
+   information at a lower level of description that has already been given at a
+   higher level.*"
 
 :ref:`Back to top <authority-records>`
 
@@ -829,8 +883,8 @@ Create a relationship between two authority records
    :width: 75%
    :alt: An image of the relationships area in the view template
 
-11. Additionally, converse information will also be added to the related
-    authority record.
+11. Additionally, :term:`converse <converse term>` information will also be
+    added to the related authority record.
 
 .. image:: images/relationships-area-view-related.*
    :align: center

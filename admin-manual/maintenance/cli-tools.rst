@@ -115,9 +115,94 @@ these thumbsnail/reference images using the following command:
 
    php symfony digitalobject:regen-derivatives
 
+By typing ``php symfony help digitalobject:regen-derivatives`` into the
+command-line, you can see the options available for this task:
+
+.. image:: images/cli-regen-derivs.*
+   :align: center
+   :width: 85%
+   :alt: An image of the options available in the regen-derivatives command
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the import.
+
+The ``--index`` option is used to enable the rebuilding of the search index as
+part of the regeneration task. When running this task via the command-line
+interface, indexing is **disabled** by default to allow the task to progress
+more quickly - generally, we recommend manually clearing the cache and
+rebuilding the search index following the use of this task - to do so,
+from AtoM's root directory, run:
+
+.. code-block:: bash
+
+   php symfony cc && php symfony search:populate
+
+However, if you would like to re-index as the derivative regeneration progresses,
+the ``--index`` option can be used to enable this.
+
+The ``--slug`` option can be used to target specific derivatives associated with
+a description, using the description's :term:`slug` as criteria. Any
+:term:`digital object` attached or linked to the description whose slug is
+provided as criteria will have its derivatives regenerated. Example use:
+
+.. code:: bash
+
+   php symfony digitalobject:regen-derivatives --slug="the-jane-doe-fonds"
+
+The ``--force`` or ``-f`` option can be used to skip the warning normally
+delivered by the task when the command is entered. Because the task will delete
+ALL previous derivatives - including those manually altered by editing the
+:term:`thumbnail` or :term:`reference display copy` of a digital object via the
+user interface (see: :ref:`edit-digital-object` for more information) - the task
+will normally ask for confirmation when invoked:
+
+.. image:: images/cli-regen-derivs-warning.*
+   :align: center
+   :width: 70%
+   :alt: An image of the CLI warning when invoking the regen-derivatives command
+
+However, experienced developers and system administrators can skip having to
+manually confirm the procedure by using the ``--force`` (or ``-f`` for short)
+option as part of the command.
+
+The ``--only-externals`` (or ``-o`` for short) option can be used if you would
+only like to attempt to regenerate the local derivatives for linked digital
+objects - that is, those that have been linked via an external URI, rather than
+by uploading a :term:`master digital object`. For more information on linking
+digital objects, see: :ref:`link-digital-object`.
+
+The ``--json`` or ``-j`` option is for advanced users who would like to target
+only a specific subset of digital objects for regeneration. With this option, a
+user can supply the path to a JSON file that lists the internal
+digital_object ID's associated with the digital objects targeted and stored in
+AtoM's database. These digital_object ID's will first need to be determined
+by crafting an SQL query designed to meet your specific criteria. Help crafting
+these queries is not covered here (though you can see below,
+:ref:`common-atom-queries`, for a BASIC introduction to SQL queries in AtoM) - in
+general, we only recommend this task be used by experienced administators.
+
+Once you have determined the IDs of the digital objects you would like to target
+with the task, you can place them in square brackets in a JSON file, separated by
+commas, like so:
+
+.. code:: bash
+
+   [372, 366, 423, 117]
+
+*(etc)*
+
+The criteria for the ``--json`` option then becomes the path to your JSON file:
+
+.. code:: bash
+
+   php symfony digitalobject:regen-derivatives --json="path/to/my.json"
+
 .. WARNING::
 
-   All of your current derivatives will be deleted! They will be replaced
+   When running the ``regen-derivatives`` task, **all** of your current derivatives
+   for the targeted digital objects will be deleted - meaning ALL of them if you
+   provide no criteria such as a slug or a JSON file. They will be replaced
    with new derivatives after the task has finished running. If you have
    manually changed the :term:`thumbnail` or :term:`reference display copy`
    of a digital object via the user interface (see:
@@ -275,6 +360,20 @@ terms and will delete the others.
 
    php symfony taxonomy:normalize [--culture=<culture>] <taxonomy name>
 
+**Task options**
+
+.. image:: images/cli-taxonomy-normalize.*
+   :align: center
+   :width: 70%
+   :alt: An image of the CLI options when invoking the taxonomy:normalize command
+
+By entering ``php symfony help taxonomy:normalize`` into the command-line, you
+see the options and descriptions available on this tool, as pictured above.
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the import.
+
 The ``--culture`` option on this command-line tool is optional - the default
 value, if none is entered is *en* (English). The value you
 enter for <culture> should be the default culture of the terms you wish to
@@ -353,6 +452,18 @@ Published          160
    php symfony tools:update-publication-status 160 example-description
 
 **Task options:**
+
+.. image:: images/cli-pub-status.*
+   :align: center
+   :width: 70%
+   :alt: The CLI options when invoking the publication status command
+
+By entering ``php symfony help tools:update-publication-status`` into the
+command-line, you see the options available on this tool, as pictured above.
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the import.
 
 In general and as in the user interface, if a parent description is updated,
 it will also update the publication status of its children. In some rare

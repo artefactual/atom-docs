@@ -47,17 +47,71 @@ Import XML file
    :width: 80%
    :alt: Screen showing completed import.
 
-.. WARNING::
+.. _ead-actors-import:
 
-   There is a known bug in AtoM 2.0.1 which will cause the following error to
-   display after importing some EAD files. Do not panic! Your description has
-   been imported in spite of the errors. Click on View Archival Description to
-   double check if you wish.
+On Authority records and EAD imports
+------------------------------------
 
-.. image:: images/import-error.*
-   :align: center
-   :width: 80%
-   :alt: Screen showing completed import with errors.
+AtoM tries to support the reusability of actor information through the
+maintenance of :term:`authority records <authority record>` that can be linked
+to :term:`archival descriptions <archival description>` and other entities. This,
+and the rationale for this, is outlined in greater detail in the following
+sections:
+
+* :ref:`authority-bioghist-access`
+* :ref:`term-name-vs-subject`
+
+This also affects how actor names are handled during an EAD XML import. Some of
+the key behaviors are outlined below:
+
+**Creating new actor records on import**
+
+* AtoM looks for creator names in the ``<origination>`` EAD element, and
+  :term:`access point` names (used as subjects) in ``<controlaccess>`` during an
+  EAD import.
+* Similarly, any Administrative / biographical history data in an archival
+  description `EAD <http://www.loc.gov/ead/>`__ import (i.e. data contained in
+  the ``<bioghist>`` EAD element) will be mapped to the "History"
+  :term:`field` (ISAAR-CPF 5.2.2) in the related :term:`authority record`,
+  (generated from the data contained in the ``<origination>`` element of the EAD)
+  and then is presented in AtoM in any related descriptions where the entity
+  is listed as a creator.
+* Where multiple creator names and histories are included in an import,
+  ``<origination>`` and ``<bioghist>`` elements are matched 1:1 in the  order they
+  appear in the EAD.
+* If a ``<bioghist>`` element is included in an EAD import, but no creator
+  name is included, AtoM will still automatically generate a stub
+  :term:`authority record` and map the ``<bioghist>`` data to the "History"
+  :term:`field` (ISAAR-CPF 5.2.2) - the authority record will be left
+  untitled, until the user manually adds the appropriate :term:`name` to the
+  authority record. Similarly, if there are more ``<bioghist>`` elements
+  included in an import than  creator names included in ``<origination>``
+  elements, the final biographical/administrative history will be mapped to an
+  untitled authority record.
+
+**Attempting to match to existing authority records**
+
+* AtoM will attempt to find matches for current authority records. However, to
+  avoid collisions, or situations in which multiple imports overwrite the same
+  authority record in a :term:`multi-repository system`, the approach is
+  conservative - for a match to be made and a link to an existing record added
+  instead of a new record being created, the authorized form of name,
+  biographical/administrative history (contained in ``<bioghist>``), and the
+  :term:`archival institution` associated with the :term:`archival description`
+  must *all* match.
+* If one of these elements (actor name, repository, or ``<bioghist>``) do **not**
+  match, then AtoM will create a new actor record. Since AtoM does not currently
+  have the capacity to suspend the import and ask the user whether to update an
+  existing authority record or ignore it and create a new one, this method was
+  chosen as the least destructive. However, this means that administrative or
+  biographical histories CANNOT be updated via an import.
+* This also means that **users should be careful to double check authority
+  linking behaviors in AtoM following an import**, and manually perform any
+  desired adjustments where needed.
+
+.. SEEALSO::
+
+   * :ref:`csv-actors-import`
 
 .. _import-skos:
 

@@ -46,7 +46,7 @@ In **AtoM**, :term:`archival descriptions <archival description>` can be linked
 to :term:`archival institutions <archival institution>` and the holdings of an
 institution can be browsed even when AtoM is used as a :term:`multi-repository
 system`. On all related :term:`archival description` :term:`view pages <view
-page>`, the institition's name and logo will appear as hyperlinks to the
+page>`, the institution's name and logo will appear as hyperlinks to the
 :term:`archival institution` record; similarly, an archival institution's page
 will list its holdings as hyperlinks to related archival descriptions.
 Institutions can also be themed in AtoM - when a background color is added to
@@ -64,8 +64,8 @@ to:**
 
 * :ref:`Add a new archival institution <add-archival-institution>`
 * :ref:`Edit an existing archival institution <edit-archival-institution>`
-* :ref:`Link an archival description to an archival institution
-  <link-archival-institution>`
+* :ref:`institution-access-points`
+* :ref:`link-archival-institution`
 * :ref:`Edit the theme of an archival institution page <edit-institution-theme>`
 
   * :ref:`Change the background color <change-institution-background>`
@@ -93,7 +93,6 @@ institution :term:`edit page`, see:
    * :ref:`Archival descriptions <archival-descriptions>`
    * :ref:`Authority records <authority-records>`
    * :ref:`Access content <access-content>`
-   * :ref:`Browse holdings of an archival institution <browse-holdings>`
    * :ref:`User roles <user-roles>`
    * :ref:`Entity types <entity-types>`
    * :ref:`Log in <log-in>`
@@ -139,6 +138,10 @@ Add a new archival institution from the main menu
 -------------------------------------------------
 
 .. |plus| image:: images/plus-sign.png
+   :height: 18
+   :width: 18
+
+.. |pencil| image:: images/edit-sign.png
    :height: 18
    :width: 18
 
@@ -330,10 +333,10 @@ An archival institution's description can be edited at any time.
 **To edit an existing archival institution:**
 
 1. First, navigate to the :term:`archival institution` you wish to edit. You can
-   do this by :doc:`browsing <../access-content/browse>` or :doc:`searching
-   <../access-content/search-atom>` for the :term:`archival institution`
-   by name. See :ref:`access content <access-content>` for more information
-   on navigation in AtoM.
+   do this by :ref:`browsing <browse>` or :ref:`searching <search-atom>` for the
+   :term:`archival institution` by name. See
+   :ref:`access content <access-content>` for more information on navigation in
+   AtoM.
 2. Switch from :term:`view mode` to :term:`edit mode` by clicking the
    :term:`"Edit" button <Edit button>` in the :term:`button block` located at
    the bottom of the record, or by clicking on one of the :term:`information
@@ -372,6 +375,195 @@ You will be redirected to the :term:`view page` for the edited :term:`archival
 institution`, where you can review your work.
 
 :ref:`Back to top <archival-institutions>`
+
+.. _institution-access-points:
+
+Add access points to your archival institution
+==============================================
+
+To improve browsing in a :term:`multi-repository system` and to enhance the
+information available to end-users about your institution, you can add custom
+:term:`access points <access point>` to your :term:`archival institution` via
+the :term:`edit page` of your repository.
+
+AtoM includes 5 :term:`facets <facet filter>` drawn from data added to your
+archival institution:
+
+* **Archive type:** Limits results to those with a type matching data in the
+  "Type" :term:`field` in the Identity :term:`area <information area>` of the
+  :ref:`ISDIAH <isdiah-template>` archival institution edit template
+* **Geographic region:** Limits results to those matching data entered into the
+  "Region/province" :term:`field` in the physical location tab of the contact
+  dialogue (available in the "Contact" :term:`area <information area>` of the
+  :ref:`ISDIAH <isdiah-template>` archival institution edit template)
+* **Geographic subregion:** Limits results to those institutions with a
+  matching :term:`access point` added to the "Geographic subregion"
+  :term:`field` in the Access points :term:`area <information area>` of the
+  :ref:`ISDIAH <isdiah-template>` archival institution record
+* **Locality:** Limits results to those matching data entered into the
+  "City" (e.g. city, town, etc) :term:`field` in the physical location tab
+  of the contact dialogue (available in the "Contact"
+  :term:`area <information area>` of the :ref:`ISDIAH <isdiah-template>`
+  archival institution edit template)
+* **Thematic area:** Limits results to those institutions with a
+  matching :term:`access point` added to the "Thematic area" :term:`field` in the
+  Access points :term:`area <information area>` of the
+  :ref:`ISDIAH <isdiah-template>` archival institution record
+
+.. SEEALSO::
+
+   * :ref:`browse`
+   * :ref:`recurring-facet-filters`
+
+The **Geographic region** and **Locality** facets are automatically populated
+based on data entered into the contact information fields available in the
+Contact :term:`area <information area>` of the archival institution
+:term:`edit page`, and the **Archive type** facet is similarly automatically
+populated based on data entered into the "Type" :term:`field` in the Identity
+:term:`area <information area>`.
+
+.. image:: images/repo-contact-facets.png
+   :align: center
+   :width: 40%
+   :alt: An image of the Contact information fields that will populate facets
+
+The **Geographic subregion** and **Thematic area** facets are managed as
+:term:`access points <access point>`, and must be manually added in the
+Access points :term:`area <information area>` of the archival institiution
+:term:`edit page`. Similar to the :term:`place` and :term:`subject` access point
+fields available on :term:`archival descriptions <archival description>`, all
+access points included by default or added by users are managed as
+:term:`terms <term>` in a :term:`taxonomy`, which users can manage directly via
+|pencil| **Manage > Taxonomies**. For more information on working with terms and
+taxonomies in AtoM, see: :ref:`terms`.
+
+The **Geographic subregion** access point is intended to support better regional
+browsing in a :term:`multi-repository system`, especially in state, regional,
+or provincial union catalogues or :term:`networks <network>` where Region is
+not specific  enough. For example, *Southern Alberta*, *Northern Alberta*, and
+*Central Alberta* might be terms used in a province-wide union catalogue for
+Alberta, a province in Canada. AtoM does not include any default terms in
+this taxonomy. Users can add new terms directly to the taxonomy (see:
+:ref:`add-term-taxonomy`), or by entering new terms to the Geographic
+subregion field in the archival institution edit template (instructions on how
+to do this below).
+
+The **Thematic area** access point is intended to assist users in identifying
+major collecting areas of an archival institution by offering them a sense of
+the subject matter addressed in the :term:`holdings` of the institution. AtoM
+includes a number of default terms (included in both French and English) in
+the Thematic area :term:`taxonomy`, derived from the terms used in the
+Canadian Council of Archives' Directory of Archives:
+
+.. figure:: images/CCA-Directory-Archives-terms.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An image of CCA's Directory of Archives
+
+   An image of the CCA's Directory of Archives, showing the Theme terms that
+   were used to create the default terms in AtoM's Thematic area taxonomy.
+
+All default *Thematic area* terms can be edited or deleted by users with the
+appropriate edit permissions, and new terms can be added directly to the
+taxonomy (see: :ref:`add-term-taxonomy`), or by entering new terms to the
+Thematic area field in the archival institution edit template (instructions on how
+to do this below).
+
+**To add new Geographic subregion or Thematic area access points:**
+
+1. Navigate to the :term:`archival institution` to which you would like to add
+   a new :term:`access point`. You can do this either by
+   :ref:`searching <search-atom>` or :ref:`browsing <browse>` - for more
+   information on navigation in AtoM, see :ref:`access-content`.
+2. At the bottom of the archival institution's :term:`view page`, you will see
+   the :term:`button block` with several options. Click the "Edit" button, or
+   click on any of the information area :term:`headers <area header>`, to enter
+   :term:`edit mode`.
+
+.. figure:: images/button-block-institution.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An image of the button block on an archival institution
+
+   The button block available on an archival institution
+
+3. Navigate to the Access points :term:`information area` at the bottom of the
+   :term:`edit page`, and begin typing  your :term:`access point` into the
+   relevant :term:`field`. Wait a moment and do not press enter immediately -
+   the access point fields will auto-complete any matching terms in a
+   :term:`drop-down menu`, allowing you to see if your access point already
+   exists.
+
+.. figure:: images/repo-facet-add.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An image of adding an access point to an archival institution
+
+   When you begin typing in an access point field, the drop-down will provide
+   matching suggestions - select from the list to use an existing term, or
+   enter a new term. Be careful: if you type the full name of an existing
+   term and press enter (instead of selecting from the list), you could
+   accidentally create a duplicate term!
+
+4. If a matching term *DOES* exist, select from the drop-down list and save
+   the :term:`archival institution` by using the "save" button in the
+   :term:`button block` at the bottom of the :term:`edit page`.
+
+.. IMPORTANT::
+
+   If you are not careful, it is easy to accidentally create duplicate terms!
+   To avoid duplication, matching terms **must** be selected from the
+   auto-complete :term:`drop-down <drop-down menu>` - otherwise, even exact
+   matches will create duplicates when the user presses enter.
+
+5. If a matching term does *not* exist, press the Tab key to exit the field,
+   or use your cursor. A new term will be created in the related
+   :term:`taxonomy` (e.g. Geographic subregion or Thematic area) when the
+   archival institution is saved.
+6. You can add multiple terms at a time - when you exit the :term:`field` with
+   your cursor, AtoM will provide a new blank field. Repeat steps 4-5 as
+   necessary. If you need to **edit** or **remove** a term you have just
+   added, place your cursor to the left of the term - an **X** icon will
+   appear in place of the bullet next to the term. You can click the **X** to
+   remove the term.
+
+.. figure:: images/repo-facet-remove.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An image of removing an access point
+
+   Place your cursor to the left of a term to see the option to remove it -
+   the bullet icon will change to an **X** icon. Click to remove the term.
+
+7. At the bottom of the institution's :term:`edit page`, click the "Save"
+   button in the :term:`button block` when you are done editing. AtoM will
+   reload the :term:`archival institution` in :term:`view mode`, and your new
+   access point(s) will appear in the Access points :term:`information area`.
+
+.. figure:: images/repo-facet-view.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An image of access points on an institution view page
+
+   An image of access points on an archival institution's view page, after
+   saving. Note how each is qualified with the related taxonomy in parentheses
+   after the term.
+
+8. Your access points can now be used as :term:`facet filters <facet filter>` on
+   the archival institution browse page. For more information see:
+
+   * :ref:`browse`
+   * :ref:`recurring-facet-filters`
+
+.. image:: images/repo-facets.*
+   :align: center
+   :width: 20%
+   :alt: An image of the Geographic subregion and Thematic area facets
 
 .. _link-archival-institution:
 

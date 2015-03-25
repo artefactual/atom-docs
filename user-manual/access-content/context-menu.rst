@@ -56,7 +56,7 @@ elements:
    storage information is visible to all users. See
    :ref:`Physical storage <physical-storage>` for further information.
 
-.. _context-menu-descriptions-treeview:
+.. _context-menu-treeview:
 
 Treeview
 --------
@@ -252,8 +252,8 @@ To navigate using the terms treeview, users can do the following:
    to expand more term descriptions not currently in view.
 
 See also the instructions on using the archival description treeview,
-:ref:`above <context-menu-descriptions-treeview>` for further details - the main
-actions are the same in both treeviews.
+:ref:`above <context-menu-treeview>` for further details - the main actions are
+the same in both treeviews.
 
 This main view of the treeview is also used when browsing terms in a taxonomy.
 See below for more information: :ref:`context-menu-results`.

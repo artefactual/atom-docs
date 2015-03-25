@@ -392,7 +392,7 @@ as a name :term:`access point` in the Access points :term:`information area` of
 the :term:`archival description`. Doing so conforms to the recommendations
 found in :ref:`ISAAR-CPF <isaar-template>` 1.5 and 1.6, and 1.8:
 
-    **1.5** *There are many reasons why separate capture and maintenance of
+    *1.5 - There are many reasons why separate capture and maintenance of
     this type of contextual information is a vital component of archival
     description. The practice enables the linking of descriptions of records
     creators and contextual information to descriptions of records from the
@@ -401,7 +401,7 @@ found in :ref:`ISAAR-CPF <isaar-template>` 1.5 and 1.6, and 1.8:
     that relate to the entity in question. Such links improve records
     management practices and facilitate research.*
 
-    **1.6** *Where a number of repositories hold records from a given source
+    *1.6 - Where a number of repositories hold records from a given source
     they can more easily share or link contextual information about this
     source if it has been maintained in a standardized manner. Such
     standardization is of particular international benefit when the sharing
@@ -412,7 +412,7 @@ found in :ref:`ISAAR-CPF <isaar-template>` 1.5 and 1.6, and 1.8:
     processes such as colonialization, immigration and trade have
     contributed to the multinational character of recordkeeping.*
 
-    **1.8** *Archival authority records are similar to library authority
+    *1.8 - Archival authority records are similar to library authority
     records in as much as both forms of authority record need to support the
     creation of standardized access points in descriptions. The name of the
     creator of the unit of description is one of the most important of such
@@ -527,6 +527,7 @@ you would like to alter, and entering :term:`edit mode`:
 * :ref:`Add/edit a broader term <add-broader-term>`
 * :ref:`Add/edit a narrower term <add-narrower-term>`
 * :ref:`Add/edit a related term <add-related-term>`
+* :ref:`Add/edit a converse term <add-converse-term>`
 
 .. _add-broader-term:
 
@@ -690,6 +691,144 @@ in viewing.
 
 :ref:`Back to top <terms>`
 
+.. _add-converse-term:
+
+Add/edit a converse term
+------------------------
+
+In AtoM, terms with matching or related opposite terms (such as "parent of" and its
+converse, "child of") used to describe relationships are known as **converse
+terms**. If a term has no opposite but itself (for example, "sibling of"), it
+can be marked as "self-reciprocal", meaning its converse term is itself. AtoM
+includes a number of default relationship terms for use in the
+:term:`authority record` Relationship dialogue (more information
+:ref:`here <link-two-authority-records>`). These default terms have been given
+:term:`converse <converse term>` or :term:`self-reciprocal <self-reciprocal term>`
+relationships to support their use in the :ref:`ISAAR <isaar-template>`-based
+authority record template, but the default terms, and their relationships,
+can be edited users with the appropriate edit permissions.
+
+.. figure:: images/doe-smith.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: Example of converse terms
+
+   An example of converse terms on two related authority records
+
+.. IMPORTANT::
+
+   Though the field is available in all term :term:`edit pages <edit page>`,
+   the "Converse term" :term:`field` is currently only used in AtoM in the
+   Actor Relation Type taxonomy. This :term:`taxonomy` is used to supply terms
+   to the Relationships dialogue, when two authority records are linked. For more
+   information on creating relationships between authority records in AtoM,
+   see: :ref:`link-two-authority-records`.
+
+These default terms and their relationships to each other can be edited and
+managed in the Actor Relation Type :term:`taxonomy`, and new terms can be added
+as well. Below is an overview of the default terms included and their
+relationships, and instructions on how to add new converse relationships.
+
+Default Actor relation type terms in AtoM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+AtoM comes with several pre-loaded default terms in the Actor relation type
+:term:`taxonomy`. The parent terms (*associative*, *hierarchical*, *family*, and
+*temporal*) are all taken directly from the International Council on Archives'
+:ref:`ISAAR-CPF standard <isaar-template>` - the international standard for
+the creation of :term:`authority records <authority record>` upon which the
+AtoM authority record edit template is based.
+
+The child terms, nested under the 4 parent terms mentioned above, are taken
+from some of the examples used in the ISAAR-CPF standard when describing
+relationships. Here is a list of the default terms included in AtoM in this
+taxonomy:
+
+.. figure:: images/actor-relation-default-terms.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: default terms in the Actor relation type taxonomy
+
+   The default terms included in the Actor relation type taxonomy
+
+Some of these terms have a **converse** (e.g. opposite and reciprocal)
+relationhip to other sibling terms. Others are **self-reciprocal** (e.g. they
+act as their own converse term as well). For example:
+
+* Under the *family* term:
+
+  * *is the parent of* and *is the child of* are :term:`converse <converse term>` terms
+  * *is the sibling of* is a :term:`self-reciprocal <self-reciprocal term>` term
+
+Below is an image outlining all the default relationships between terms in the
+Actor relation type taxonomy:
+
+.. figure:: images/actor-relation-default-term-relationships.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: default terms in Actor relation type and their relationship
+
+   The default terms included in the Actor relation type taxonomy, and their
+   relationships (as either converse to another sibling term, or self-reciprocal)
+
+Add a new converse relationship
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**To create a new converse relationship between terms in AtoM:**
+
+1. In the Relationships area of the term's edit page, begin typing the name
+   of the related term into the "Converse term" :term:`field`.
+2. As you type, atom will search available term records (those that are part
+   of the same :term:`taxonomy`) and populate the field's :term:`drop-down menu`
+   with matching terms.
+3. When you see the term you would like to add as a related term, click on it
+   - it will be added to the field.
+4. You can also create a new :term:`converse term` directly from the converse term
+   :term:`field`. If the term you have entered in the converse term field does
+   not yet exist, AtoM will create it when saving your edits.
+
+.. image:: images/actor-relation-converse.*
+   :align: center
+   :width: 80%
+   :alt: An image of a new converse term being created
+
+5. If the term is **self-reciprocal**, simply check the checkbox next to the
+   converse term field. AtoM will grey-out the field:
+
+.. image:: images/actor-relation-self-reciprocal.*
+   :align: center
+   :width: 80%
+   :alt: An image of the self-reciprocal checkbox in a Terms edit page
+
+6. If you need to **edit** or **remove** a related term you have just  added,
+   place your cursor back in the field, and make your changes directly.
+7. When you are finished, click the "Save" button in the :term:`button block`
+   at the bottom of the term's :term:`edit page`. AtoM will redirect you to
+   the term's :term:`view page`, where you can review your changes. You can
+   click the "Edit" button in the button block to make further changes if
+   needed.
+
+.. figure:: images/actor-relation-converse-view.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An example of a converse term's view page
+
+   An example of a converse term's view page
+
+.. figure:: images/actor-relation-self-reciprocal-view.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An example of a self-reciprocal term's view page
+
+   An example of a self-reciprocal term's view page
+
+:ref:`Back to top <terms>`
+
 .. _edit-term:
 
 Edit an existing term
@@ -707,6 +846,14 @@ supplemental information, managing relationships between terms, and more.
    be edited or deleted, because they are used by the application's underlying
    code. Most terms, however, can be edited or deleted, and all taxonomies can
    be assigned new terms in addition to any locked values.
+
+.. WARNING::
+
+   AtoM's file and item list reports are hard-coded to use the "File" and "Item"
+   level of description :term:`terms <term>` in the "Levels of description"
+   :term:`taxonomy`. If you edit or remove these terms from the taxonomy, you may
+   break the reports feature. For more information on file and item-level reports
+   in AtoM, see: :ref:`reports-printing`.
 
 **To edit an existing term in AtoM:**
 

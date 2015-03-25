@@ -376,23 +376,43 @@ At the child level:
 Add new child levels
 --------------------
 
+.. image:: images/add-new-child-widget.*
+   :align: center
+   :width: 80%
+   :alt: Add new child widget in RAD
+
 **Template field** Identifier, Level, Title, Date
 
 **CSV Column** See notes below
 
-**RAD Rule** *Indentifier* Enter an unambiguous code used to uniquely identify the
-description. *Level* Select a level of description from the drop-down menu.
+**RAD Rule** *Identifier*: Enter an unambiguous code used to uniquely identify the
+description.
+
+*Level*: Select a level of description from the drop-down menu.
 See RAD 1.0A for rules and conventions on selecting levels of description.
-*Title* Enter the title proper, either transcribed or supplied (RAD 1.1B).
+
+*Title*: Enter the title proper, either transcribed or supplied (RAD 1.1B).
+
+*Date*: (Works similarly to the display date field when adding a date of
+creation; see :ref:` below <template-dates>` for more information in RAD)
 
 **EAD** N/A
 
 .. note::
 
-   When entering descriptions manually, users can add new
-   :term:`child records <child record>` in this area while adding a parent record.
-   In CSV import, this can be achieved using the legacyID and parentID columns. See
-   :ref:`Dealing with hierarchical data in CSV <csv-legacy-id-mapping>`.
+   This widget has been added to help improve workflows when creating new
+   descriptions via the :term:`user interface`.  When entering descriptions
+   manually, users can add new :term:`child records <child record>` in this area
+   while creating a parent record.
+
+   The *dates* field corresponds to a date of creation - if you would like a
+   different kind of date, you will have to either navigate to the child
+   description after saving the new :term:`parent record`, and change the date
+   type, or simply ignore the date field in the widget, and add the correct
+   date type manually to the child record after saving the new parent record.
+
+   In CSV import, adding child records can be achieved using the *legacyID* and
+   *parentID* columns. See :ref:`csv-legacy-id-mapping`.
 
 Repository
 ----------
@@ -1569,6 +1589,25 @@ numbers borne by the unit being described other than publisher's series numbers 
 
 :ref:`Back to the top <rad-template>`
 
+Other notes- Cast note
+----------------------
+
+**Template field** Other notes- Cast note
+
+**CSV Column** radNoteCast
+
+**RAD Rule** "List featured players, performers, presenters or other on-screen
+personnel." (Moving images - RAD 7.8B5b)
+
+**EAD**
+
+.. NOTE::
+
+   At this time, the RAD Cast note field in AtoM has not been mapped to the EAD
+   import/export.
+
+:ref:`Back to the top <rad-template>`
+
 
 Other notes- Conservation
 -------------------------
@@ -1590,6 +1629,26 @@ nature of the work." (RAD 1.8B9b)
 
 :ref:`Back to the top <rad-template>`
 
+Other notes- Credits note
+-------------------------
+
+**Template field** Other notes- Credits note
+
+**CSV Column** radNoteCredits
+
+**RAD Rule** "List persons (other than the cast) who have contributed to the
+artistic and/or technical production of a moving image document. Preface each
+name or group of names with a statement of function." (Moving images - RAD
+7.8B5a)
+
+**EAD**
+
+.. NOTE::
+
+   At this time, the RAD Credits note field in AtoM has not been mapped to the
+   EAD import/export.
+
+:ref:`Back to the top <rad-template>`
 
 Other notes- Edition
 --------------------
@@ -1677,6 +1736,29 @@ other rights pertaining to the unit being described." (RAD 1.8B16b)
 
 :ref:`Back to the top <rad-template>`
 
+Other notes- Signatures note
+----------------------------
+
+**Template field** Other notes- Signatures note
+
+**CSV Column** radNoteSignatures
+
+**RAD Rule** "Make notes on signatures, inscriptions, or monograms, etc.,
+which appear on the unit being described. Indicate where such signatures and
+inscriptions appear."(RAD 3.8B6)
+
+*See also*: RAD 4.8B7 (Graphic materials); RAD 5.8B6 (Cartographic materials);
+RAD 6.8B6 (Architecture and technical drawings); RAD 11.8B7 (Objects); and
+RAD 12.8B7 (Philatelic records).
+
+**EAD**
+
+.. NOTE::
+
+   At this time, the RAD Signatures note field in AtoM has not been mapped to
+   the EAD import/export.
+
+:ref:`Back to the top <rad-template>`
 
 Other notes- General note
 -------------------------
@@ -1818,7 +1900,8 @@ record.
 
 **EAD**
 
-For a personal name or family:
+If the entity type of the actor is not defined as either a person, family, or
+corporate body:
 
 .. code:: bash
 
@@ -1826,8 +1909,23 @@ For a personal name or family:
       <controlaccess>
          <name role="subject">
 
+For a personal name:
 
-For a corporate/organizational name:
+.. code:: bash
+
+   <archdesc>
+      <controlaccess>
+         <persname role="subject">
+
+For a family name:
+
+.. code:: bash
+
+   <archdesc>
+      <controlaccess>
+         <famname role="subject">
+
+For a corporate body or organizational name:
 
 .. code:: bash
 
