@@ -576,6 +576,33 @@ for details needed to create a new admin user. If a ``.gitconfig`` file is prese
 in your home directory purge will use your name and email, from that file, to
 provide default values.
 
+If you are a developer or system administrator using this task for testing purposes,
+there is also a ``--demo`` option available:
+
+.. code:: bash
+
+   php symfony tools:purge --demo
+
+.. IMPORTANT::
+
+   Using the ``--demo`` option with the purge task will have the following
+   consequences:
+
+   * The task will NOT ask for confirmation before purging all data (the warning is skipped)
+   * It will repopulate the database with a default demo user
+
+      * Username: demo
+      * Email: demo@example.com
+      * Pass: demo
+
+   * It will add a site title to the installation - "Demo site".
+
+   See :ref:`manage-user-accounts` for information on how to edit or delete the
+   demo user account via the :term:`user interface`. See: :ref:`site-information`
+   for instructions on how to edit the site title via the user interface.
+
+:ref:`Back to top <maintenance-cli-tools>`
+
 .. _cli-backup-db:
 
 Backing up the database
