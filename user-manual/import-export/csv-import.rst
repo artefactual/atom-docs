@@ -702,22 +702,6 @@ Other data entry notes
   for Cyrillic scripts, etc. See `Unicode <www.unicode.org/iso15924/codelists.html>`__
   for a full list of ISO 15924 script codes.
 
-.. IMPORTANT::
-
-   We have discovered a bug in AtoM 2.0/2.1 related to some of the columns in
-   our CSV import that map to terms managed in AtoM's taxonomies - including
-   ``levelOfDetail``, ``radGeneralMaterialDesignation``, and
-   ``descriptionStatus`` - if data for any of these columns is included in your CSV,
-   values in these fields **must** conform to the default AtoM values for the
-   import to succeed.
-
-   We hope to fix this bug in a future release of AtoM, and have filed issue
-   tickets to track work done to resolve these issues.
-
-   * *levelOfDetail* - `#6756 <https://projects.artefactual.com/issues/6756>`__
-   * *radGeneralMaterialDesignation* - `#6757 <https://projects.artefactual.com/issues/6757>`__
-   * *descriptionStatus* -- `#6758 <https://projects.artefactual.com/issues/6758>`__
-
 .. _csv-import-descriptions-gui:
 
 Using the user interface
