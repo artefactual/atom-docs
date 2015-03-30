@@ -27,6 +27,7 @@ have a user account, and only an authenticated (i.e. logged-in)
 
    * :ref:`Edit user permissions <edit-user-permissions>`
    * :ref:`User roles <user-roles>`
+   * :ref:`oai-pmh-api-key`
 
 .. _add-user:
 
@@ -143,6 +144,12 @@ application, via the :term:`main menu`.
    information on editing user :term:`access privileges <access privilege>`
    and a list of the default permissions per group, see
    :ref:`Edit user permissions <edit-user-permissions>`.
+
+.. SEEALSO::
+
+   If you are using the :ref:`OAI repository <oai-pmh>` functionality in AtoM,
+   you can also generate an API key per user account in this "Access control"
+   area. For more information, see: :ref:`oai-pmh-api-key`.
 
 6. Under the "Allowed languages for translation" section, type the appropriate
    "language" for translation. As you type, matching results will load in a
@@ -392,6 +399,12 @@ A user can be edited at any time by an authenticated administrator.
 You will be redirected to the :term:`view page` for the edited user where
 you can review your work. Follow steps 3 through 6 if you are not satisfied
 with your changes.
+
+.. SEEALSO::
+
+   If you are using the :ref:`OAI repository <oai-pmh>` functionality in AtoM,
+   you can also generate an API key per user account in this "Access control"
+   area. For more information, see: :ref:`oai-pmh-api-key`.
 
 :ref:`Back to top <manage-user-accounts>`
 

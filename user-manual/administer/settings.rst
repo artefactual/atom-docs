@@ -667,37 +667,18 @@ and crawling within other systems that support OAI harvesters.
    :width: 70%
    :alt: An image of the OAI repository menu in AtoM
 
-.. WARNING::
+Comprehensive documentation on each field in the OAI repository settings is
+included in the :ref:`OAI repository <oai-pmh>` documentation, here:
 
-   This feature was developed for earlier versions of AtoM and has not been
-   tested in AtoM 2.x. We hope to improve OAI features in future version
-   releases of AtoM.
+* :ref:`oai-pmh-settings`
 
-**Enable OAI**
+.. TIP::
 
-Select "yes" if you want the system to act as an OAI repository and respond to
-OAI harvesting requests.
+   To use the OAI repository functionality in AtoM, you must first make sure
+   that the arOAIPlugin is turned on. For more information, see:
 
-**OAI repository code**
-
-An alpha-numeric code can be added in the value field to uniquely identify this
-particular OAI repository within its network domain to create a unqiue, OAI
-compliant identifier.
-
-**OAI repository identifier**
-
-This is an auto-generated setting that produces an OAI compliant repository
-identifier, which includes OAI repository code value if it is set.
-
-**Sample OAI identifier**
-
-This is an example of the auto-generated, OAI compliant identifier which is
-created for each item in this particular OAI repository.
-
-**Resumption token limit**
-
-This relates to the number of :term:`entities <entity>` to include in a single
-OAI response list before inserting a resumption token.
+   * :ref:`oai-pmh-plugin`
+   * :ref:`manage-plugins`
 
 :ref:`Back to top <settings>`
 
