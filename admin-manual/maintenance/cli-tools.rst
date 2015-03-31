@@ -53,6 +53,46 @@ you can use the following command:
 This will create a superuser with username "demo", email "demo@example.com",
 and password "demo".
 
+.. _cli-promote-user-admin:
+
+Promote a user to an administrator
+==================================
+
+If you'd like to promote a user account in AtoM to have full
+:term:`administrator` access privileges via the command-line, you can use the
+following task. You will need to know the user name of the account.
+
+.. code:: bash
+
+   php symfony tools:promote-user-to-admin <username>
+
+If the user doesn't exist you'll see the following error:
+
+.. code:: bash
+
+   Unknown user.
+
+If the user is already an administrator:
+
+.. code:: bash
+
+   The given user is already an administrator.
+
+If the operation succeeds:
+
+.. code:: bash
+
+   The user <username> is now an administrator.
+
+.. SEEALSO::
+
+   For more information on user permissions, user roles, and how to manage them,
+   see:
+
+   * :ref:`user-roles`
+   * :ref:`manage-user-accounts`
+   * :ref:`edit-user-permissions`
+
 .. _cli-change-password:
 
 Change a password
