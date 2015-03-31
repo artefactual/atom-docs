@@ -580,6 +580,11 @@ See the :ref:`oai-list-identifiers` examples above for guidance on using some
 of the additional arguments, such as ``from``, ``until``, and the
 ``resumptionToken``.
 
+.. NOTE::
+
+   See the :ref:`oai-get-record` response for examples of how AtoM can pass
+   URLs to linked digital objects via OAI.
+
 .. _oai-get-record:
 
 Get record
@@ -609,7 +614,7 @@ requested and the format of the metadata that should be included in the record.
 
 **Example response**
 
-.. code: bash
+.. code:: bash
 
    <?xml version="1.0" encoding="utf-8" ?>
     <OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/"
@@ -646,6 +651,67 @@ requested and the format of the metadata that should be included in the record.
       </record>
     </GetRecord>
    </OAI-PMH>
+
+If the resource has a :term:`digital object` attached, AtoM will include a
+link to the  digital object in the OAI response, using
+`Atom <http://tools.ietf.org/html/rfc4287>`__ Syndication format XML:
+
+.. code:: bash
+
+   <?xml version="1.0" encoding="utf-8"?>
+    <OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/
+    http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+    <responseDate>2015-03-26T19:24:30Z</responseDate>
+    <request verb="GetRecord" metadataPrefix="oai_dc" identifier="testeion_16508">http://example-site.com/;oai</request>
+    <GetRecord>
+        <record>
+            <header>
+                <identifier>oai:example-site.com:repoid_16508</identifier>
+                <datestamp>2012-12-05T22:34:43Z</datestamp>
+                <setSpec>oai:example-site.com:repoid_16508</setSpec>
+            </header>
+            <metadata>
+                <oai_dc:dc xmlns="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+                <title>Ray Houser fonds</title>
+                <creator>Houser, Ray, 1897-1981</creator>
+                <subject>Education</subject>
+                <description>The fonds consists Waterloo Lutheran Seminary fundraising information, and sermons by Ray Houser. Fonds is comprised of the following series: Waterloo Lutheran Seminary fund raising; Sermons</description>
+                <date>1960-1963</date>
+                <type>image</type>
+                <format>image/jpeg</format>
+                <format>20 cm of textual records</format>
+                <identifier>http://example-site.com/ray-houser-fonds</identifier>
+                <identifier>S735</identifier>
+                <source/>
+                <relation>http://example-site.com/wilfrid-laurier-university-archives</relation>
+                <relation>Wilfrid Laurier University Archives</relation>
+                <rights>Open</rights>
+            </oai_dc:dc>
+        </metadata>
+        <about>
+            <feed xmlns="http://www.w3.org/2005/Atom">
+            <entry>
+                <id>066344-jpg</id>
+                <title>066344.jpg</title>
+                <link href="http://images.ourontario.ca/Partners/WLU/066344.jpg" rel="self"/>
+                <category term="external" label="External"/>
+            </entry>
+            <entry>
+                <id>066344-142-jpg</id>
+                <title>066344_142.jpg</title>
+                <link href="http://example-site.com/uploads/r/wilfrid-laurier-university-archives/7/2/720756250b79382b87fef68ef4d0cc6bc796d08e7b937eefc64b3dcae6f39e46/066344_142.jpg" rel="self"/>
+                <category term="thumbnail" label="Thumbnail"/>
+            </entry>
+        </feed>
+    </about>
+    </record>
+    </GetRecord>
+    </OAI-PMH>
+
+
+
 
 .. _oai-list-sets:
 
