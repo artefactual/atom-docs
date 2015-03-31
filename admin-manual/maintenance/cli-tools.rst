@@ -427,29 +427,30 @@ whose publication status you wish to update:
 
 .. code:: bash
 
-   php symfony tools:update-publication-status [-f|--force] [-i|--ignore-descendants] [-y|--no-confirm] [-r|--repo] publicationStatusId slug
+   php symfony tools:update-publication-status [--application[="..."]] [--env="..."] [--connection="..."] [-f|--force] [-i|--ignore-descendants] [-y|--no-confirm] [-r|--repo] publicationStatus slug
 
 Notes on use
 ------------
 
-To update a record to Draft or Published, you must supply a
-publicationStatusID - that is, a fixed ID value in AtoM that represents
-either Draft or Published. Entering the terms "draft" or "published" will not
-work. Instead use the following values for the publicationStatusID:
+AtoM requires two parameters to be able to execute the task: the publication
+status you wish to use, and the :term:`slug` of a resource on which to perform
+the task. For the publication status, you can use any term you have added to the
+Publication status :term:`taxonomy` in AtoM - the default terms are Draft, and
+Published. You **cannot** create a new publication status :term:`term` by using
+this task - the term must already exist in AtoM, or the task will fail.
 
-================== ========
-Publication status statusID
-================== ========
-Draft              159
-Published          160
-================== ========
+For more information on slugs in AtoM, see above, :ref:`slugs-in-atom`. Note that
+even when updating all the descriptions associated with a :term:`archival institution` using
+the ``--repository`` option described below, you **still must provide a slug**
+as a parameter for the task to execute. It can be any slug when using the
+``--repository`` option.
 
 **Example use (no options)** - update a description with a slug of
 "example-description" to published:
 
 .. code:: bash
 
-   php symfony tools:update-publication-status 160 example-description
+   php symfony tools:update-publication-status published example-description
 
 **Task options:**
 
@@ -497,7 +498,7 @@ still provide a description slug ("my-description") for it to execute:
 
 .. code:: bash
 
-   php symfony tools:update-publication-status --force --repo="my-archival-institution" 160 my-description
+   php symfony tools:update-publication-status --force --repo="my-archival-institution" published my-description
 
 .. WARNING::
 
