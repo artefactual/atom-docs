@@ -47,6 +47,7 @@ links to each chapter's main sections.
    administer/manage-user-accounts
    administer/manage-digital-object-storage
    administer/edit-permissions
+   administer/manage-jobs
    administer/static-pages
    administer/manage-menus
    administer/manage-plugins

@@ -362,8 +362,8 @@ Glossary
     description` only. Lower levels inherit the creator from the
     :term:`parent record`, unless a different creator is specified. AtoM
     can accommodate multiple creators at all levels of description.
-    Information about the creator is entered into the context area in the archival description :term:`edit page <edit
-    page>` (ISAD-G template).
+    Information about the creator is entered into the context area in the
+    archival description :term:`edit page` (ISAD-G template).
 
   CSV
     Most often understood as an acronym for "comma-separated values" (though
@@ -813,6 +813,19 @@ Glossary
     An information object is another term for an :term:`archival
     description` that can be more broadly applied to any description of a
     resource, not necessarily archival in origin.
+
+  Job
+    In AtoM, a job refers to a set of operations requested by a user that are
+    performed asynchronously in the background, rather than via the web browser,
+    to guarantee that web requests are handled promptly and work loads can be
+    distributed across multiple machines. This ensures time and/or
+    resource-intensive tasks do not timeout when running via the web browser.
+    Example asynchronous jobs in AtoM include generating finding aids, managing
+    PREMIS rights inheritance, and uploading DIPs from
+    `Archivematica <https://www.archivematica.org>`__. Jobs in AtoM are handled
+    by `Gearman <http://gearman.org>`__, and the status of AtoM jobs can be seen
+    in the :term:`user interface` via the **Manage > Jobs** page. For more
+    information, see: :ref:`manage-jobs` and :ref:`installation-asynchronous-jobs`.
 
   Language menu
     The language menu, located in the top-right corner of the page, allows

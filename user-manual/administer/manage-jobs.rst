@@ -1,0 +1,181 @@
+.. _manage-jobs:
+
+===========
+Manage jobs
+===========
+
+.. |edit| image:: images/edit-sign.png
+   :height: 18
+   :width: 18
+
+.. |gears| image:: images/gears.png
+   :height: 18
+   :width: 18
+
+AtoM relies on `Gearman <http://gearman.org>`__ in order to execute certain
+long-running tasks asynchronously to guarantee that web requests are handled
+promptly and work loads can be distributed across multiple machines. This ensures
+time and/or resource-intensive tasks do not timeout when running via the web
+browser.
+
+.. IMPORTANT::
+
+   You must have the necessary dependencies installed and configured to be able
+   manage asynchronous jobs in AtoM. See: :ref:`installation-asynchronous-jobs`.
+
+Prior to AtoM 2.2, only the ingest of `Archivematica <https://www.archivematica.org>`__
+DIPs was processed asynchronously. See
+:ref:`Upload DIP <archivematica:upload-atom>` for more details.
+
+As of AtoM 2.2, the ability to generate PDF or RTF
+:term:`finding aids <finding aid>` from
+:term:`archival descriptions <archival description>`, and the ability to manage
+:ref:`PREMIS <premis-template>` rights inheritance, are now also handled as
+asynchronous :term:`jobs <job>` in AtoM.
+
+.. SEEALSO::
+
+   * :ref:`print-finding-aids`
+   * :ref:`rights-inheritance`
+
+Users can see the status of job requests by navigating to |edit| **Manage > Jobs**.
+
+.. image:: images/manage-jobs-tab.*
+   :align: center
+   :width: 30%
+   :alt: An image of the Manage menu
+
+.. _using-jobs-page:
+
+Using the Jobs page
+===================
+
+When first arriving on the page, users will see a table showing the status of any
+ongoing jobs, as well as any previous jobs that have not been cleared by another
+user. See :ref:`below <jobs-permissions>` for more information on permissions and
+the Manage jobs page.
+
+.. image:: images/manage-jobs.*
+   :align: center
+   :width: 80%
+   :alt: An image of the Jobs page
+
+**Start date**: When the job was first requested.
+
+**End date**: When the job completed. A status of "N/A" implies that the job is
+still executing.
+
+**Job name**: Indicates the type of job being performed.
+
+* *arGenerateFindingAid* - Generate a :term:`finding aid` in either PDF or RTF
+  format from an :term:`archival description`. See: :ref:`print-finding-aids`.
+* *Inherit rights* - Allow :term:`child <child record>` descriptions to inherit
+  the :ref:`PREMIS <premis-template>` rights applied to a parent. See:
+  :ref:`rights-inheritance`.
+
+**Job status**: Jobs can have 1 of 3 statuses:
+
+* *Running* - The job is currently being executed. Refresh the page for an
+  updated status.
+* *Completed* - The job completed successfully.
+* *Error* - The job failed to complete as requested. If there is any further
+  information, it will be included in the "Info" column of the Jobs table.
+
+**Info**: Provides any available additional information about the status of a
+job.
+
+**User**: The :term:`username` of the AtoM user who initiated the job.
+
+.. image:: images/manage-jobs-active-tab.*
+   :align: right
+   :width: 20%
+   :alt: An image of the Jobs page tab
+
+The Jobs page also includes a tab that allows users to view only those jobs that
+are currently still being executed (e.g., a status of "Running"). This can be
+useful when a large number of jobs are being executed simultaneously, and/or the
+list of jobs has not been cleared in some time. Click on the blue hyperlink to
+switch the view from "All jobs" to "Active jobs". AtoM will refresh the page and
+the table will be limited to the selected view.
+
+.. _jobs-button-block:
+
+Jobs page button block options
+------------------------------
+
+.. image:: images/button-block-jobs.*
+   :align: center
+   :width: 60%
+   :alt: An image of the Jobs page button block
+
+**Refresh and Auto refresh**
+
+The jobs page will **not** automatically update when there is a change in a
+job's  status - to see an updated status, such as whether or not a running job
+has completed  successfully or failed, the user must refresh the page. This
+can be done either  by manually refreshing the browser, or using the "Refresh"
+button in the  :term:`button block` at the bottom of the jobs page.
+
+.. image:: images/auto-refresh.*
+   :align: right
+   :width: 13%
+   :alt: An image of the Jobs page auto-refresh option when engaged
+
+In cases where a lot of jobs are running or a constant and automated status update
+is desirable, users can click the **Auto refresh** button. Doing so will cause
+the browser to automatically refresh every 5 seconds, until the auto-refresh
+option is disengaged. When engaged, the Auto refresh button will show a checkmark
+inside the circle on the button.
+
+**Export history CSV**
+
+In case users would like to clear completed jobs but keep a record outside of AtoM
+of previous jobs performed, a :term:`CSV` export of the Jobs table is available.
+Like the display table in the :term:`user interface`, the output contains columns
+for startDate, endDate, jobName, jobStatus, jobInfo, and jobUser.
+
+.. image:: images/jobs-csv-output.*
+   :align: center
+   :width: 80%
+   :alt: An example image of the Jobs page CSV export
+
+**Clear inactive jobs**
+
+Clicking this button will remove any inactive jobs regardless of status (i.e.
+completed or failed jobs) created by you from the Jobs page. Any jobs still
+processing, or jobs created by another user, will not be affected.
+
+.. NOTE::
+
+   You can **only** clear jobs that you have initiated.
+
+If all inactive jobs have been cleared and there are no current jobs running,
+AtoM will indicate this in the jobs page with a message.
+
+.. image:: images/jobs-cleared.*
+   :align: center
+   :width: 80%
+   :alt: An example image of the Jobs page when there are no jobs
+
+.. SEEALSO::
+
+   The Administrator's manual has an installation page for setting up
+   `Gearman <http://gearman.org>`__ and asynchronous job support in AtoM. The
+   page also includes some examples of how to manage workers and jobs from the
+   command-line - see: :ref:`installation-gearman-job-worker`.
+
+.. _jobs-permissions:
+
+Jobs and user permissions
+=========================
+
+Access to the Jobs page functionality is dependent on your :term:`user role`.
+See :ref:`User roles <user-roles>`, :ref:`manage-user-accounts`, and
+:ref:`edit-user-permissions` for more information on managing user roles in AtoM.
+
+All authenticated (e.g. logged in) users can access the Jobs page. However, most
+users will only see jobs and be able to clear jobs which they have started. Only
+an :term:`administrator` can see the status of all jobs - however, like all users,
+administrators can only clear jobs that belong to them.
+
+:ref:`Back to top <manage-jobs>`

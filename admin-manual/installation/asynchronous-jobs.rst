@@ -17,6 +17,7 @@ configure it so every service runs in the same machine, or scale up to many
 machines across the network. You can always start small in a single-node
 environment and add more hardware later.
 
+.. _installation-gearman-job-server:
 
 Gearman Job Server
 ==================
@@ -46,6 +47,7 @@ latter, make sure that you update :file:`/etc/defaults/gearman` accordingly:
    For more configuration options available, visit:
    http://gearman.org/manual/job_server/.
 
+.. _installation-gearman-job-worker:
 
 Gearman Job Worker
 ==================
@@ -67,26 +69,26 @@ could look like:
 .. code-block:: none
 
    description "AtoM worker (gearmand) upstart service"
-   
+
    start on (started mysql)
    stop on runlevel [016]
-   
+
    respawn
    respawn limit 5 10
-   
+
    env LOCATION=/usr/share/nginx/atom
    env LOGFILE=/usr/share/nginx/atom/log/atom-worker.log
-   
+
    setuid www-data
    setgid www-data
-   
+
    script
-   
+
      php \
        -d memory_limit=-1 \
        -d error_reporting="E_ALL" \
          ${LOCATION}/symfony jobs:worker >> ${LOGFILE} 2>&1
-   
+
    end script
 
 You can control the service execution status with the following commands:

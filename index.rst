@@ -140,6 +140,7 @@ or for a :term:`network`.
 * :ref:`Manage user accounts and user groups <manage-user-accounts>`
 * :ref:`Manage digital object storage <manage-digital-object-storage>`
 * :ref:`Edit user permissions <edit-user-permissions>`
+* :ref:`manage-jobs`
 * :ref:`Manage static pages <manage-static-pages>`
 * :ref:`Manage menus <manage-menus>`
 * :ref:`Manage plugins <manage-plugins>`
