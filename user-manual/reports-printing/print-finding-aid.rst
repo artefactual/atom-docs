@@ -43,6 +43,17 @@ Additional information about the status of any Finding aid generation :term:`job
 can also be seen via |edit| **Manage > Jobs** - for more information on the Job
 management page in AtoM, see: :ref:`manage-jobs`.
 
+.. IMPORTANT::
+
+   At this time, the finding aids being generated have only been formatted to use
+   the Canadian Rules for Archival Description (RAD) template. If you are using
+   another template, you can still generate finding aids - but they will be
+   formatted according to the RAD standard. We hope to be able to add further
+   options in the future. For more information on the RAD standard, see:
+   :ref:`Rules for Archival Description <rad-template>`. For an overview of all
+   data entry templates in AtoM, see: :ref:`data-entry` and
+   :ref:`descriptive-standards`.
+
 Below you'll find information on how to configure the finding aid settings,
 generate a finding aid, view information on the status of your finding aid
 generation request, and how users can view the finding aid after it has been
@@ -52,6 +63,7 @@ successfully generated.
 
 * :ref:`print-finding-aid-settings`
 * :ref:`generate-finding-aid`
+* :ref:`finding-aid-layout`
 * :ref:`finding-aid-troubleshoot`
 
 .. _print-finding-aid-settings:
@@ -75,7 +87,7 @@ like :term:`finding aids <finding aid>` generated in PDF or RTF - essentially, i
 you would like users to have the ability to easily edit your finding aids locally
 after download, choose RTF, and users should be able to open the finding aid with
 any common document editor such as LibreOffice or Microsoft Word. If you prefer
-That the finding aids remain static and cannot be as easily edited  by users, PDF
+that the finding aids remain static and cannot be as easily edited by users, PDF
 will be a better choice. Note that most modern browsers include a PDF reader
 (meaning that once a user clicks the download button for a PDF-formatted finding
 aid, the finding aid will usually open in a new tab and be visible immediately to
@@ -238,7 +250,7 @@ for more information on managing :term:`jobs <job>` in AtoM, see:
    :ref:`below <finding-aid-troubleshoot>` for suggestions on how to resolve
    errors.
 
-6. IF the finding aid has generated successfully, you will see a Download link
+6. If the finding aid has generated successfully, you will see a Download link
    when you refresh the page. Click on this link to view your finding aid. Public
    users will now be able to see this Download link as well.
 
@@ -249,6 +261,60 @@ for more information on managing :term:`jobs <job>` in AtoM, see:
 
 :ref:`Back to top <print-finding-aids>`
 
+.. _finding-aid-layout:
+
+Finding aid layout
+==================
+
+AtoM's finding aid generation includes a simple cover page, a table of contents,
+and some basic styling to separate areas of the finding aid.
+
+The **cover page** includes the name of the :term:`archival institution` linked
+to the description, the title of the archival unit (e.g.title of the
+:term:`fonds`, :term:`collection`, etc), The date the finding aid was generated,
+the language of the description, the address of the archival institution, and the
+URL from which the source description originates in AtoM. An example cover is
+pictured below:
+
+.. image:: images/finding-aid-cover.*
+   :align: center
+   :width: 50%
+   :alt: An image of a sample finding aid cover
+
+The **table of contents** will be automatically generated, and includes hyperlinks
+to the related section. In a PDF, this means that bookmarks to each main section
+of the finding aid are included by default.
+
+.. NOTE::
+
+   The numbering of the table of contents has been known to display occasional
+   problems when generated in RTF and then viewed in Microsoft Word. This is a
+   problem with Word's display of RTF rather than a problem with the file. The
+   table of contents displays in other document viewers correctly, such as
+   OpenOffice and LibreOffice.
+
+Each page includes a simple **header** and **footer**. The header includes the
+title of the archival unit, and the identifier. The footer includes the name
+of the related :term:`archival institution`, and a page number.
+
+At present, AtoM has two primary layout options for the printable finding aids:
+"Full details," and "Inventory summary." These options are managed via the Finding
+aid settings - see: :ref:`print-finding-aid-settings`.
+
+The **Inventory summary** option is best used when there has been minimal description
+added to lower levels, such as file and item-level records. AtoM will display these
+lower levels in a summary table beneath each parent series (or sub-series, etc).
+The **Full details** will treat each lower-level record similar to the
+higher-level ones, and all fields will be displayed. A sample first few pages of
+each, minus the cover page, has been included in an image below for comparison.
+
+.. image:: images/finding-aid-comparison-4.*
+   :align: center
+   :width: 90%
+   :alt: An image of the two different finding aid layouts, side by side
+
+:ref:`Back to top <print-finding-aids>`
+
 .. _finding-aid-troubleshoot:
 
 Troubleshooting finding aid issues
@@ -256,6 +322,26 @@ Troubleshooting finding aid issues
 
 Below are a few common questions and problems users might encounter in generating
 finding aids, and some suggestions on how to address them.
+
+Before proceeding, make sure that you have followed all the installation
+requirements for job scheduling in AtoM - for more information, see:
+:ref:`installation-asynchronous-jobs`.
+
+The AtoM Jobs page can possibly supply you with more information on any errors
+encountered, as finding aid generation is a :term:`job` handled asynchronously
+in AtoM. For more information on the Jobs page, see: :ref:`manage-jobs`.
+
+**Jump to:**
+
+* :ref:`fa-trouble-storage-excluded`
+* :ref:`fa-trouble-storage-included`
+* :ref:`fa-trouble-drafts-included`
+* :ref:`fa-trouble-no-generate-link`
+* :ref:`fa-trouble-file-missing`
+* :ref:`fa-trouble-fields-excluded`
+* :ref:`fa-trouble-ead-export-failed`
+
+.. _fa-trouble-storage-excluded:
 
 Physical storage information is not included in my finding aid
 --------------------------------------------------------------
@@ -280,6 +366,8 @@ Now you can re-generate your finding aids, following the steps above,
    * :ref:`visible-elements`
    * :ref:`physical-storage`
    * :ref:`print-finding-aid-settings`
+
+.. _fa-trouble-storage-included:
 
 I don't want to display physical storage information in my finding aid
 -----------------------------------------------------------------------
@@ -311,6 +399,8 @@ Now you can re-generate your finding aids, following the steps above,
    * :ref:`physical-storage`
    * :ref:`print-finding-aid-settings`
 
+.. _fa-trouble-drafts-included:
+
 Draft descriptions are being shown in my finding aid
 ----------------------------------------------------
 
@@ -331,6 +421,8 @@ Now you can re-generate your finding aids, following the steps above,
    * :ref:`print-finding-aid-settings`
    * :ref:`publish-archival-description`
 
+.. _fa-trouble-no-generate-link:
+
 There's no option in the context menu to generate a finding aid
 ---------------------------------------------------------------
 
@@ -343,10 +435,21 @@ the option to generate a finding aid will **not appear** on any
 :term:`draft <draft record>` descriptions in AtoM. You will have to publish
 the description before you can generate a finding aid, or change the setting.
 
+The finding aid generation in AtoM has **not** been tied to the
+:term:`permissions <access privilege>` module at all - the module that allows
+an :term:`administrator` to limit access for users and groups (see:
+:ref:`edit-user-permissions` for more information). However, by hiding the
+link on draft descriptions, an administrator can therefore restrict finding aid
+generation for drafts to only those users who have publish privileges, as the
+description must be published before the link will reappear.
+
 .. SEEALSO::
 
    * :ref:`print-finding-aid-settings`
    * :ref:`publish-archival-description`
+   * :ref:`edit-user-permissions`
+
+.. _fa-trouble-file-missing:
 
 My finding aid link says "Status: File missing"
 -----------------------------------------------
@@ -379,6 +482,8 @@ format will be available again via the Download link.
    * :ref:`print-finding-aid-settings`
    * :ref:`generate-finding-aid`
 
+.. _fa-trouble-fields-excluded:
+
 My scope and content is not included for file and item level descriptions
 -------------------------------------------------------------------------
 
@@ -406,6 +511,8 @@ Now you can re-generate your finding aids, following the steps above,
 
    * :ref:`print-finding-aid-settings`
 
+.. _fa-trouble-ead-export-failed:
+
 Finding aid generation error; the jobs page says that "Exporting EAD has failed"
 --------------------------------------------------------------------------------
 
@@ -420,8 +527,8 @@ it must first be valid `XML <https://en.wikipedia.org/wiki/XML>`__.
 This means your EAD may fail to export properly if:
 
 * You've used unescaped special characters, such as ampersands ``&``
-* You've used inline HTML elements to style the display of some fields in AtoM,
-  such as using ``<em>`` or ``<i>`` elements for emphasis or italics, for example.
+* You've used inline HTML elements to style the display of some fields in AtoM -
+  for example, using ``<em>`` or ``<i>`` elements for emphasis or italics.
 * You've cut and pasted non UTF-8 encoded characters into AtoM - a common example
   would be the curvy quotation marks used in many word processing applications like
   Microsoft Word, instead of the standard `UTF-8 <https://en.wikipedia.org/wiki/UTF-8>`__
