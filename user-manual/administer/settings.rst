@@ -682,45 +682,20 @@ included in the :ref:`OAI repository <oai-pmh>` documentation, here:
 
 :ref:`Back to top <settings>`
 
-
-.. _job-scheduling:
-
-Job scheduling
-==============
-
-In Release 1.3, job scheduling was introduced, using `Gearman
-<http://gearman.org/>`__, to make AtoM capable of running applications in the
-background. At present, the only process that makes use of this feature is
-SWORD.
-
-.. image:: images/job-scheduling.*
-   :align: center
-   :width: 70%
-   :alt: An image of the Job scheduling menu in AtoM
-
-Click the :term:`radio button` beside "yes" to enable job scheduler.
-
-.. NOTE::
-
-   Users who have DIP uploads configured from Archivematica will need to
-   enable this feature.
-
-:ref:`Back to top <settings>`
-
 .. _finding-aid:
 
 Finding aid
 ===========
 
+These settings configure how AtoM generates :term:`finding aids <finding aid>`
+from :term:`archival descriptions <archival description>`. For more information,
+see :ref:`Print finding aids <print-finding-aids>`; specifically,
+:ref:`print-finding-aid-settings` includes a description of each settings field.
+
 .. image:: images/finding-aid-settings.*
    :align: center
    :width: 80%
    :alt: Finding aid settings
-
-Choose whether you would like :term:`finding aids <finding aid>` generated in
-PDF, RTF or TXT format. Note that PDF and RTF finding aids are generated with
-the same formatting in AtoM. For more information, see
-:ref:`Print finding aids <print-finding-aids>`.
 
 .. _security-panel:
 
