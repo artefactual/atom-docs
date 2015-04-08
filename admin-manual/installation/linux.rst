@@ -438,12 +438,20 @@ Filesystem permissions
 ======================
 
 By default, Nginx runs as the www-data user. There are a few directories under
-AtoM that must be writable by the web server. The easiest was to ensure this is
-to update the owner of the full directory and its contents by running:
+AtoM that must be writable by the web server. The easiest way to ensure this is
+to update the owner of the AtoM directory and its contents by running:
 
 .. code-block:: bash
 
    sudo chown -R www-data:www-data /usr/share/nginx/atom
+
+If you are deploying AtoM in a shared environment we recommend you to pay
+attention to the permissions assigned to **others**. The following is an
+example on how to clear all mode bits for others:
+
+.. code-block:: bash
+
+   sudo chmod o= /usr/share/nginx/atom
 
 .. _create-the-database-linux:
 
