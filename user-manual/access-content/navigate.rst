@@ -292,14 +292,16 @@ browse lists for key :ref:`entity types <entity-types>` in AtoM -
 :term:`rights holders <rights record>`, and :term:`taxonomies <taxonomy>`.
 When selecting from the Manage menu's :term:`drop-down <drop-down menu>`, the
 user is redirected to a browse page for the selected :term:`entity` or record
-type.
+type. Users can also access the :term:`Jobs <job>` page for managing
+asynchrononous jobs run in the background - for more information, see:
+:ref:`manage-jobs`
 
 The Manage menu is distinct from the :term:`Browse menu` (available next to
 the :term:`search box` in the :term:`header bar`), in that it offers users
 direct access to browse pages that are not available to unauthenticated (i.e.
 not logged in) users - public users who are not logged in cannot view
 accessions, donor records, physical storage locations, rights records, or
-access the full taxonomies list.
+access the full taxonomies list and the jobs page.
 
 **Find more information on working with:**
 
@@ -308,6 +310,7 @@ access the full taxonomies list.
 * :ref:`Physical storage <physical-storage>`
 * :ref:`Rights <rights>`
 * :ref:`Taxononmy terms <terms>`
+* :ref:`Jobs <manage-jobs>`
 
 .. _main-menu-import:
 
@@ -346,6 +349,8 @@ AtoM.
 .. seealso::
 
    * :ref:`Upload digital objects <upload-digital-object>`
+   * :ref:`cli-bulk-import-xml`
+   * :ref:`cli-bulk-export`
 
 .. _main-menu-admin:
 
@@ -464,6 +469,8 @@ search box :term:`typeahead` results are organized into record-type categories
 * :term:`Archival description`
 * :term:`Authority record`
 * :term:`Archival institution`
+* :term:`Subjects <subject>`
+* :term:`Places <place>`
 
 When multiple results for a record type exist, the :term:`typeahead`
 drop-down includes an option to view all records for a particular record
@@ -476,8 +483,8 @@ button>` that allow the user limit the search results to the holdings of the
 most recently viewed :term:`archival institution`, or to search globally
 (i.e., across all records in the application).
 
-**For more information on searching in AtoM, see:** :doc:`Search
-<../access-content/search-atom>`. **See also:** :ref:`advanced-search`.
+**For more information on searching in AtoM, see:** :ref:`search-atom`.
+**See also:** :ref:`advanced-search`.
 
 :ref:`Back to top <navigate>`
 
@@ -573,17 +580,17 @@ displays a message indicating whether the record is in :term:`view <view mode>`
 or :term:`edit <edit mode>` mode, with the record's name/title display below
 (as a sub-title).
 
-On :ref:`Browse <browse>` and :doc:`Search <../access-content/search-atom>`
-pages, the :term:`title bar` displays the number of results returned for the
-current query. Elsewhere in the application, the title bar gives context to
-the user about the :ref:`page type <page-types>` currently being viewed.
+On :ref:`Browse <browse>` and :ref:`Search <search-atom>` pages, the
+:term:`title bar` displays the number of results returned for the current
+query. Elsewhere in the application, the title bar gives context to the user
+about the :ref:`page type <page-types>` currently being viewed.
 
 .. _recurring-text-links:
 
 Text links
 ----------
 
-Blue text always represents a link to a related entity (for example,  from an
+Blue text always represents a link to a related entity (for example, from an
 :term:`archival description` to the :term:`authority record` of the record's
 :term:`creator`). When you hover your cursor over a link, the text darkens in
 color. Text links behave similarly to internet `hyperlinks
@@ -687,7 +694,7 @@ Column headers
    :align: right
    :figwidth: 40%
    :width: 100%
-   :alt: Name and Updated column headers in the Browse Rights holders page
+   :alt: Sortable column headers in the Browse physical storage page
 
    Name and Updated column headers in the Browse Rights holders page
 
@@ -931,9 +938,13 @@ being pulled from.
   place :term:`access point` to an :term:`archival description`
 * **Subject:** Limits results to those with a matching :term:`subject` added
   as a subject :term:`access point` to an :term:`archival description`
+* **Genre:** Limits results to those with a matching genre :term:`term` added
+  as an :term:`access point` to an :term:`archival description`.
 * **Level of description:** Limits results to those that match the selected
   :term:`level of description` (e.g. fonds, collection, series, file, item,
-  etc.)
+  etc). Includes a top-level description filter, that allows users to limit
+  results to those that are :term:`parents <parent record>` - e.g. the top
+  hierarchical record in a multi-level descriptive :term:`archival unit`.
 * **Media type:** Limits results to those with a :term:`digital object`
   attached that matches the selected media type (image, audio, text, video,
   or other)
@@ -1071,7 +1082,7 @@ Using facet filters in AtoM:
 .. seealso::
 
    * :ref:`Browse <browse>`
-   * :doc:`Search <../access-content/search-atom>`
+   * :ref:`Search <search-atom>`
 
 
 .. _recurring-button-block:
@@ -1343,13 +1354,14 @@ codes vs. identifiers and display options, see: :ref:`inherit-reference-code`.
 Sort buttons appear for the following records when on search, browse,
 or list pages:
 
+* :term:`Accession <accession record>`
 * :term:`Archival descriptions <archival description>`
 * :term:`Archival institututions <archival institution>`
 * :term:`Authority records <authority record>`
 * Donors
 * :term:`Functions <function>`
 * Rights holders
-* Browse digital objects
+* Browse :term:`digital objects <digital object>`
 
 .. figure:: images/sort-button-tabs.*
    :align: right
