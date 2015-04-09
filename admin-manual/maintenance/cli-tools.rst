@@ -263,6 +263,29 @@ searchable in AtoM without having to re-import them completely. This task
 will go through each existing PDF imported into AtoM and re-index their
 contents for searches.
 
+For linked :term:`digital objects <digital object>` (e.g. PDFs that are linked
+from a publicly accessible URI, instead of uploaded locally - see for example:
+:ref:`link-digital-object`), this task will re-fetch a version of the external
+PDF and store it in a temporary file, re-index the contents, and then purge the
+local :term:`master <master digital object>` after the indexing is complete.
+
+.. TIP::
+
+      .. image:: images/app-yml-settings.*
+         :align: right
+         :width: 20%
+         :alt: An image of the app.yml file in AtoM
+
+   Large PDFs may cause 500 errors if you do not first adjust the download
+   timeout limit. You can do this by changing the value in the ``app.yml`` file
+   located in ``/config/app.yml``. The default timeout value in AtoM is 10s. You
+   should also clear the cache after making changes to the ``app.yml`` file:
+
+   .. code:: bash
+
+      php symfony cc
+
+
 .. _cli-rebuild-nested-set:
 
 Rebuild the nested set
