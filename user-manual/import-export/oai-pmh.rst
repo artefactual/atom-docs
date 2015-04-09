@@ -198,9 +198,41 @@ request that continues where the previous one terminated.
    time out during the response to a request. We recommend keeping this value
    at 100 or lower.
 
-.. SEEALSO::
+**Enable additional OAI sets**
 
-   * :ref:`settings`
+This setting allows AtoM to expose "virtual sets." Currently in AtoM, each
+:term:`archival unit` (e.g. a description and all its
+:term:`children <child record>`, such as a :term:`fonds`, :term:`collection`,
+etc) is considered a set and is given a ``<setSpec>`` value when responding to
+requests such as :ref:`oai-list-sets` or :ref:`oai-list-records`.
+
+However, thanks to the flexible nature of OAI-PMH, AtoM can also expose virtual
+sets, representing different groupings of records or different criteria for
+exposure. At present, the only supported additional or "virtual" set in AtoM
+is a virtual set that will only expose top-level descriptions (i.e. no children
+will be included in the response). We hope to add further additional sets in
+future versions of AtoM.
+
+**Available additional sets**
+
+=============================== ============================= ============
+Set name                        Set Spec                      AtoM version
+=============================== ============================= ============
+Top-level collection record set oai:virtual:top-level-records 2.2.0
+=============================== ============================= ============
+
+When this setting is set to "Yes," the virtual sets available can be used by
+harvesters as criteria when issuing requests - for example, to issue a Get Records
+request limited to top-level records:
+
+.. code:: bash
+
+   http://example-site.com/;oai?verb=ListRecords&metadataPrefix=oai_dc&set=oai:virtual:top-level-records
+
+The virtual sets available in AtoM can also be seen as part of the response to a
+:ref:`oai-list-sets` request.
+
+See the :ref:`oai-pmh-verbs` section below for further examples.
 
 :ref:`Back to top <oai-pmh>`
 
@@ -304,8 +336,8 @@ OAI-PMH verbs in AtoM
 =====================
 
 Below you will find a few examples of available OAI request verbs that AtoM
-will support, along with some example responses. For more details, see the OAI
--PMH 2.0 documentation, available at:
+will support, along with some example responses. For more details, see the
+OAI-PMH 2.0 documentation, available at:
 
 * http://www.openarchives.org/OAI/2.0/openarchivesprotocol.htm
 
@@ -436,8 +468,7 @@ harvesting of headers based on set membership and/or datestamp. The
 
 **Example response:**
 
-Example is truncated for brevity. A resumption token is included in the
-example.
+A resumption token is included in the example.
 
 .. code:: bash
 
@@ -452,17 +483,17 @@ example.
         <header>
           <identifier>oai:example-site.com:yourrepocode_10267</identifier>
           <datestamp>2011-11-23T04:18:02Z</datestamp>
-          <setSpec>None</setSpec>
+          <setSpec>oai:example-site.com:yourrepocode_10267</setSpec>
         </header>
         <header>
           <identifier>oai:example-site.com:yourrepocode_10269</identifier>
           <datestamp>2011-11-23T04:18:03Z</datestamp>
-          <setSpec>None</setSpec>
+          <setSpec>oai:example-site.com:yourrepocode_10269</setSpec>
         </header>
         <header>
           <identifier>example-site.com:yourrepocode_10272</identifier>
           <datestamp>2011-11-23T04:18:04Z</datestamp>
-          <setSpec>None</setSpec>
+          <setSpec>example-site.com:yourrepocode_10272</setSpec>
         </header>
         <resumptionToken>from=&until=&cursor=100</resumptionToken>
       </ListIdentifiers>
@@ -536,9 +567,6 @@ selective harvesting of records based on set membership and/or datestamp. The
 
 **Example response:**
 
-Example has been truncated to one record for brevity. Normally each record
-would appear contained within the ``<record>`` element.
-
 .. code:: bash
 
    <?xml version="1.0" encoding="utf-8" ?>
@@ -553,7 +581,7 @@ would appear contained within the ``<record>`` element.
              <header>
                <identifier>oai:example-site.com:repocode_666</identifier>
                <datestamp>2010-06-14T05:25:50Z</datestamp>
-               <setSpec>oai:oai:example-site.com:repocode_111</setSpec>
+               <setSpec>oai:oai:example-site.com:repocode_666</setSpec>
              </header>
              <metadata>
                <oai_dc:dc xmlns="http://purl.org/dc/elements/1.1/"
@@ -575,6 +603,16 @@ would appear contained within the ``<record>`` element.
            <resumptionToken>from=&until=&cursor=100</resumptionToken>
          </ListRecords>
      </OAI-PMH>
+
+If you have enabled the "Additional sets" setting, (see above
+:ref:`oai-pmh-settings`), a virtual set parameter could also be used.
+
+**Example request, limited to top-level records (virtual set)**
+
+.. code:: bash
+
+   http://example-site.com/;oai?verb=ListRecords&metadataPrefix=oai_dc&set=oai:virtual:top-level-records
+
 
 See the :ref:`oai-list-identifiers` examples above for guidance on using some
 of the additional arguments, such as ``from``, ``until``, and the
@@ -628,7 +666,7 @@ requested and the format of the metadata that should be included in the record.
         <header>
           <identifier>oai:example-site.com:repoid_10555</identifier>
           <datestamp>2011-11-23T04:18:02Z</datestamp>
-          <setSpec>None</setSpec>
+          <setSpec>oai:example-site.com:repoid_10555</setSpec>
         </header>
         <metadata>
           <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
@@ -710,9 +748,6 @@ link to the  digital object in the OAI response, using
     </GetRecord>
     </OAI-PMH>
 
-
-
-
 .. _oai-list-sets:
 
 List sets
@@ -723,6 +758,13 @@ selective harvesting. For a long request (e.g. a repository with many sets), a
 resumption token may be supplied - the ``resumptionToken`` is the only
 parameter supported by this verb.
 
+.. TIP::
+
+   Note that available virtual sets, including the setName and setSpec, will
+   also be included in a List sets response. The example response below includes
+   a virtual set example. For more information, see the :ref:`oai-pmh-settings`
+   section above.
+
 **Example request**
 
 .. code:: bash
@@ -730,15 +772,6 @@ parameter supported by this verb.
    http://example-site.com/;oai?verb=ListSets
 
 **Example response**
-
-The response has been truncated to just a few examples for brevity.
-
-.. IMPORTANT::
-
-   At the moment, the ``setSpec`` is not being populated in AtoM as part of
-   this response. This is a known bug we hope to fix in a future release; see
-   `#6436 <https://projects.artefactual.com/issues/6436>`__ for further
-   details.
 
 .. code:: bash
 
@@ -751,36 +784,40 @@ The response has been truncated to just a few examples for brevity.
       <request verb="ListSets">http://example-site.com/;oai</request>
       <ListSets>
           <set>
-            <setSpec></setSpec>
+            <setSpec>oai:example-site.com:repocode_16490</setSpec>
             <setName>Fonds S720 - Canadian Water Resources Association fonds</setName>
           </set>
           <set>
-            <setSpec></setSpec>
+            <setSpec>oai:example-site.com:repocode_16496</setSpec>
             <setName>Fonds S714 - Clara Bernhardt fonds</setName>
           </set>
           <set>
-            <setSpec></setSpec>
+            <setSpec>oai:example-site.com:repocode_16502</setSpec>
             <setName>Fonds U250 - Herman Overgaard fonds</setName>
           </set>
           <set>
-            <setSpec></setSpec>
+            <setSpec>oai:example-site.com:repocode_16503</setSpec>
             <setName>Fonds C61 - Emily Stowe and Augusta Stowe Gullen collection</setName>
           </set>
           <set>
-            <setSpec></setSpec>
+            <setSpec>oai:example-site.com:repocode_16510</setSpec>
             <setName>Fonds U121 - Nils Willison fonds</setName>
           </set>
           <set>
-            <setSpec></setSpec>
+            <setSpec>oai:example-site.com:repocode_16512</setSpec>
             <setName>Fonds S735 - Ray Houser fonds</setName>
           </set>
           <set>
-            <setSpec></setSpec>
+            <setSpec>oai:example-site.com:repocode_16513</setSpec>
             <setName>Fonds U129 - Robert Langen fonds</setName>
           </set>
           <set>
-            <setSpec></setSpec>
+            <setSpec>oai:example-site.com:repocode_16518</setSpec>
             <setName>Fonds U251 - Seminette Club fonds</setName>
+          </set>
+          <set>
+            <setSpec>oai:virtual:top-level-records</setSpec>
+            <setName>Top-level collection record set</setName>
           </set>
         </ListSets>
       </OAI-PMH>
