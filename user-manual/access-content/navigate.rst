@@ -36,7 +36,7 @@ things unrelated to the current entity.
 
    * :ref:`Entity types <entity-types>`
    * :ref:`Page types <page-types>`
-   * :doc:`Search <../access-content/search-atom>`
+   * :ref:`Search <search-atom>`
    * :ref:`Browse <browse>`
    * :ref:`Context menu <context-menu>`
    * :ref:`Manage menus <manage-menus>`
@@ -751,7 +751,7 @@ will result in opening the related information area in :term:`edit mode`
 
 **For more information, on supported standards, see:**
 
-* :doc:`Descriptive standards <../overview/descriptive-standards>`
+* :ref:`Descriptive standards <descriptive-standards>`
 * :ref:`Data entry / templates <data-entry>`
 
 .. _recurring-carousel:
@@ -1314,11 +1314,16 @@ Sort button
 
 The sort button is a navigational element that appears on some browse and
 search pages throughout AtoM. It allows a user to change the sort order of the
-results being displayed, as either alphabetic,, most recent, or by identifier
+results being displayed, as either alphabetic, most recent, or by identifier
 (or reference code). When the sort order is set to "Alphabetic," results are
 organized A-Z. When results are ordered by "Most recent" the most recently
 added and/or edited records in the results will appear at the top of the list,
 allowing users to discover new or recently updated content.
+
+On search and/or browse pages, the Sort button appears as a small
+:term:`drop-down menu` at the top right of the results. Hovering over the button
+reveals the option currently not selected - a user can click this option in the
+drop-down menu, and the page will reload in the new sort order.
 
 When the sort order is set to "Identifier," (or "Reference code" as it is
 labeled on the :term:`archival description` browse page), results are
@@ -1363,29 +1368,14 @@ or list pages:
 * Rights holders
 * Browse :term:`digital objects <digital object>`
 
-.. figure:: images/sort-button-tabs.*
-   :align: right
-   :figwidth: 40%
-   :width: 100%
-   :alt: An image of the sort button tabs on a rights holder browse page
+On the browse page for :term:`accessions <accession record>`, the sort button
+has been customized to offer sorting options specific to accession records,
+including:
 
-   An example of the sort button tabs on a rights holder browse page
-
-The sort button appears in two different forms throughout the application,
-depending on whether or not a search or browse page contains result details,
-or simply a list.
-
-On search and/or browse pages for archival descriptions, archival
-institutions, authority records, and donors, the Sort button appears as a
-small :term:`drop-down menu` at the top right of the results. Hovering over
-the button reveals the option currently not selected - a user can click this
-option in the drop-down menu, and the page will reload in the new sort order
-(alphabetic or most recent).
-
-On search and/or browse pages for rights holders and :term:`functions
-<function>`, the same sort options are presented as tabs the user can click
-to change the view - clicking the inactive tab will reload the page in the
-new sort order (alphabetic, most recent, or identifier).
+* Accession number
+* Most recent (created or updated)
+* Title
+* Acquisition date
 
 .. _recurring-institution-logos:
 
