@@ -531,14 +531,23 @@ The rest of the fields can be filled as you need:
 * E-mail address
 * Password
 
+.. TIP::
+
+   You can always change the :term:`site title`, :term:`site description`, and
+   :term:`Base URL` later via **Admin > Settings > Site information**. See:
+   :ref:`site-information` for more information. The Username, email, and
+   password can also be changed by an :term:`administrator` after installation
+   via the :term:`user interface` - see: :ref:`edit-user`.
+
 .. _linux-workers:
 
 Deployment of workers
 =====================
 
 Optionally, you can use Gearman to add support for asynchronous tasks like
-SWORD deposits. Check out the following page for further installation details:
-:ref:`asynchronous jobs and worker management <installation-asynchronous-jobs>`.
+SWORD deposits, managing rights inheritance, and generating finding aids. Check
+out the following page for further installation details:
+:ref:`installation-asynchronous-jobs`.
 
 .. _linux-security-considerations:
 

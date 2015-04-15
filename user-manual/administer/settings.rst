@@ -440,16 +440,32 @@ Site information
 ================
 
 In this section, :term:`administrators <administrator>` can change the
-:term:`site title` and :term:`site description`. To save any modifications,
-click the "Save" button located below the "Site Description" field.
+:term:`site title` and :term:`site description`, and set a :term:`Base URL` for
+the application.
 
 .. image:: images/site-information.*
    :align: center
    :width: 70%
    :alt: An image of the Site information menu in AtoM
 
-Note that the visibility of these elements can also be controlled via the
-"Default page elements" settings, described below.
+The site title and description will appear in the AtoM header bar, if they
+are included in the default page elements. See
+:ref:`below <default-page-elements>` for an image of where the Title and
+description appear, and more about setting the visibility of default page
+elements.
+
+The base URL is used to create absolute URLs included in XML exports (e.g.
+MODS and EAD exports). For example, your AtoM site is made up a series of web
+pages. Each page has a full Uniform Resource Locator (URL) something like
+``http://www.your-atom-site.com/your-description``. The Base URL is the part of
+this URL that does not change - in this example, ``http://www.your-atom-site.com``.
+
+Setting this value will ensure that links included in your XML exports will be
+properly formed. Do not include a slash ``/`` at the end of your base URL -
+AtoM will automatically add this when building the absolute URLs.
+
+To save any modifications, click the "Save" button located below the
+"Site Description" field.
 
 :ref:`Back to top <settings>`
 

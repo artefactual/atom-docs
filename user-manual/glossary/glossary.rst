@@ -161,6 +161,18 @@ Glossary
     may also point to other related authority records." See :ref:`entity-types`
     and :ref:`authority-records`.
 
+  Base URL
+    The base URL is used to create absolute URLs included in XML exports (e.g.
+    MODS and EAD exports). For example, your AtoM site is made up a series of
+    web pages. Each page has a full Uniform Resource Locator (URL) something
+    like ``http://www.your-atom-site.com/your-description``. The Base URL is the
+    part of this URL that does not change - in this example,
+    ``http://www.your-atom-site.com``.
+
+    Setting this value will ensure that links included in your XML exports will
+    be properly formed. The Base URL value can be set in AtoM via **Admin >
+    Settings > Site information**. See: :ref:`site-information`.
+
   Boolean search
     Boolean searching is a particular application of what is known as Boolean
     logic, a subset of algebra used for creating true/false statements
@@ -1122,9 +1134,10 @@ Glossary
   Site title
     The site title is a configurable element in AtoM that can be managed
     by an :term:`administrator` through the application :term:`settings
-    <setting>`. In AtoM 2.0, the site title will appear in the AtoM
-    :term:`header bar`. See :ref:`site-information`; see also:
-    :ref:`default-page-elements` and :ref:`atom-header-bar`.
+    <setting>`. The site title will appear in the AtoM :term:`header bar` if it
+    is made visible via the Default page elements settings. See
+    :ref:`site-information`; see also: :ref:`default-page-elements` and
+    :ref:`atom-header-bar`.
 
   SKOS
     Simple Knowledge Organization System (SKOS) is a data standard model
