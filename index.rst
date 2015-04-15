@@ -212,6 +212,8 @@ Installation
 * :ref:`installation-execution-limits`
 * :ref:`installation-asynchronous-jobs`
 
+.. _admin-maintenance:
+
 Maintenance
 -----------
 
@@ -227,12 +229,16 @@ Maintenance
 * :ref:`debug-mode`
 * :ref:`maintenance-elasticsearch`
 
+.. _admin-customization:
+
 Customization
 -------------
 
 * :ref:`customization-config-files`
 * :ref:`customization-theming`
 * :ref:`customization-localization`
+
+.. _admin-security:
 
 Security
 --------
