@@ -20,6 +20,10 @@ into AtoM.
    :width: 70%
    :alt: An image of the Home page
 
+.. SEEALSO::
+
+   * :ref:`Home page <home-page>`
+
 The :term:`About page` provides additional information about the application and
 the project. To access the :term:`About page`, click on the |info| :ref:`Quick
 links menu <quick-links-menu>` in the :term:`main menu` located in the
@@ -34,11 +38,16 @@ links menu <quick-links-menu>` in the :term:`main menu` located in the
    :height: 18
    :width: 18
 
-For more information on navigating in AtoM, see :ref:`access content
-<access-content>`.
+For more information on navigating in AtoM, see :ref:`access-content`.
+
+All static pages in AtoM, including the two default static pages described above,
+can be customized by logged-in users via the :term:`user interface`. New static
+pages can also be created, and all static pages (except the home page) can be
+deleted from the application.
 
 **Below are instructions on how to edit and add static pages in AtoM:**
 
+* :ref:`security-static-pages`
 * :ref:`Edit and existing static page <edit-static-page>`
 
   * :ref:`Edit the "Home page" <edit-home-page>`
@@ -54,6 +63,67 @@ For more information on navigating in AtoM, see :ref:`access content
    authenticated (i.e. logged-in) :term:`administrator` or :term:`editor`.
    For more information on user permissions, see :ref:`edit-user-permissions`.
 
+.. _security-static-pages:
+
+Static pages and security configuration
+=======================================
+
+.. _htmlpurifier: http://htmlpurifier.org/
+
+As of version 2.2, AtoM now has advanced configuration settings that will allow
+a system administrator to enable htmlpurifier_ on static pages. htmlpurifier is:
+
+      *...a standards-compliant HTML filter library written in PHP. HTML Purifier
+      will not only remove all malicious code (better known as XSS) with a
+      thoroughly audited, secure yet permissive whitelist, it will also make
+      sure your documents are standards compliant, something only achievable
+      with a comprehensive knowledge of W3C's specifications.*
+
+By default, htmlpurifier is **not** turned on in AtoM, to allow a broad use of
+HTML and inline CSS on static pages. System administrators interested in enabling
+all possible security settings and mitigating the risk of XSS-based attack vectors
+can enable the library by altering the ``config/app.yml`` file. For more
+information, see:
+
+* :ref:`config-apps-yml`
+* :ref:`admin-security`
+
+When the configuration is set to ``true``, htmlpurifier_ will limit the available
+html elements to the following:
+
+**Tags allowed**
+
+.. code:: bash
+
+   'div', 'span', 'p',
+   'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+   'strong', 'em',
+   'abbr[title]', 'acronym', 'address',
+   'blockquote', 'cite', 'code',
+   'pre', 'br',
+   'a[href]', 'img[src]',
+   'ul', 'ol', 'li',
+   'dl', 'dt', 'dd',
+   'table', 'tr', 'td', 'th',
+   'tbody', 'thead', 'tfoot',
+   'col', 'colgroup', 'caption',
+   'b', 'i', 'tt',
+   'sub', 'sup', 'big', 'small', 'hr'
+
+**Attributes allowed**
+
+.. code:: bash
+
+   'class', 'title', 'src', 'href'
+
+.. IMPORTANT::
+
+   Any elements used that do not match these parameters when htmlpurifier is
+   engaged will not render in the browser, meaning they will not be visible in
+   your  static page. Make sure you review the content you have added to your
+   static pages before engaging this security setting!
+
+:ref:`Back to top <manage-static-pages>`
 
 .. _edit-static-page:
 
@@ -66,7 +136,7 @@ Edit an existing static page
 
 In AtoM, :term:`static pages <static page>`, that is both the :term:`Home page`
 and the :term:`About page` can be edited by authenticated (i.e. logged-in)
-:term:`aministrators <administrator>` or :term:`editors <editor>` to reflect
+:term:`administrators <administrator>` or :term:`editors <editor>` to reflect
 your own institution's or :term:`network's <network>` requirements.
 
 This section contains instructions on how to edit :term:`static
@@ -369,12 +439,12 @@ This will produce the following results:
    :width: 70%
    :alt: An image of a larger heading
 
-For larger headings, use smaller numbers, such as <h2> or <h1>. Similarly, for
-smaller headers, use ``<h4>`` or ``<h5>``. To bold, italicize or underline
-headers and subtitles, simply wrap the relevant text in
-``<b></b>`` for **bold**, ``<i> </i>`` for *italics*, or ``<u> </u>`` for
-underline. Typing ``<b>Artefactual Systems Inc.</b>`` will produce the following
-results:
+For larger headings, use smaller numbers, such as ``<h2>`` or ``<h1>``.
+Similarly, for smaller headers, use ``<h4>`` or ``<h5>``. To bold, italicize or
+underline headers and subtitles, simply wrap the relevant text in
+``<strong></strong>`` for **bold**, ``<em> </em>`` for *italics*, or ``<u> </u>``
+for underline. Typing ``<strong>Artefactual Systems Inc.</strong>`` will produce
+the following results:
 
 .. image:: images/headings-subtitles.*
    :align: center
@@ -423,16 +493,65 @@ you wanted an image of email, named "contact-image.jpg" included on your static
 
 .. code-block:: bash
 
-   ``<img src=".../path/to/contact-image.jpg">``, where "/path/to" represents
-   the internal URL path to the location of contact-image.jpg on your host
-   server.
+   ``<img src=".../path/to/contact-image.jpg">``
 
-To center the image, you can wrap the ``<img>`` image element in ``<center>``
-tags, like this:
+...where ``/path/to`` represents the internal URL path to the location of
+``contact-image.jpg`` on your host server, or the path to a web-accessible image.
+
+To center the image, you can wrap the ``<img>`` image element in a ``<div>``
+element, with a ``text-center"`` class, like this:
 
 .. code-block:: bash
 
-   <center><img src=".../path/to/contact-image.jpg"></center>
+   <div class="text-center"><img src=".../path/to/contact-image.jpg"></div>
+
+You can also reuse some of the existing image classes from Bootstrap, to further
+style your images. For example, you can round the corners with the ``img-rounded``
+class:
+
+.. code-block:: bash
+
+   <img class="img-rounded" src="../path/to/my-bunny-image.jpg">
+
+Produces:
+
+.. image:: images/img-rounded.*
+   :align: center
+   :width: 40%
+   :alt: An image of a picture using the rounded class
+
+Make an image circular using the ``img-circle`` bootstrap class:
+
+.. code-block:: bash
+
+   <img class="img-circle" src="../path/to/my-bunny-image.jpg">
+
+Produces:
+
+.. image:: images/img-circle.*
+   :align: center
+   :width: 40%
+   :alt: An image of a picture using the circle class
+
+Or give your images a frame, like on our digital object browse page, using the
+``img-polaroid`` class:
+
+.. code-block:: bash
+
+   <img class="img-polaroid" src="../path/to/my-bunny-image.jpg">
+
+Produces:
+
+.. image:: images/img-polaroid.*
+   :align: center
+   :width: 40%
+   :alt: An image of a picture using the polaroid class
+
+.. TIP::
+
+   Resuing existing Bootstrap CSS classes is a good way to style elements when
+   you have the htmlpurifier_ setting engaged - see above,
+   :ref:`security-static-pages` for more information.
 
 .. _static-boxes-dividers:
 
@@ -464,15 +583,22 @@ This is how the box will appear:
    :width: 70%
    :alt: An image of a box
 
-Another example of this is the light yellow box that appears on AtoM's "Welcome"
-static page warning users that the data will reset every hour.
+.. NOTE::
+
+   The above example will **not** work if you have htmlpurifier_ engaged in AtoM.
+   For more information, see the section above, :ref:`security-static-pages`
+   for more information. The examples below, reusing existing Bootstrap classes,
+   **will** work even when htmlpurifier is engaged.
+
+Another example of this is the light yellow box that appears on the AtoM demo's
+"Welcome" static page warning users that the data will reset every hour. This
+yellow box is reusing an existing style class from the Bootstrap CSS framework
+that AtoM uses - you can make use of existing Bootstrap classes to help with
+styling, like so:
 
 .. code-block:: bash
 
-   <div style="padding: 8px; border-style: solid; border-width: 1px; background-
-   color: #fdf5d9; border-color: #eedc94 #eedc94 #e4c652; border-color: rgba(0,
-   0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);">Welcome message appears
-   here</div>
+   <div style="alert">Welcome message appears here</div>
 
 And here is the result:
 
@@ -480,5 +606,13 @@ And here is the result:
    :align: center
    :width: 70%
    :alt: An image of a box
+
+Other Bootstrap alert classes that can be used to style containers include
+``alert-success``, ``alert-info``, and ``alert-danger``:
+
+.. image:: images/div-alert-classes.*
+   :align: center
+   :width: 70%
+   :alt: An image of various boxes styled with Bootstrap classes
 
 :ref:`Back to top <manage-static-pages>`
