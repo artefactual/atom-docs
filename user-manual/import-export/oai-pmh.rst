@@ -495,7 +495,7 @@ A resumption token is included in the example.
           <datestamp>2011-11-23T04:18:04Z</datestamp>
           <setSpec>example-site.com:yourrepocode_10272</setSpec>
         </header>
-        <resumptionToken>from=&until=&cursor=100</resumptionToken>
+        <resumptionToken>eyJmcm9tIjoiIiwidW50aWwiOiIiLCJjdXJzb3IiOjE2MDAsIm1ldGFkYXRhUHJlZml4Ijoib2FpX2RjIiwic2V0Ijoib2FpOnZpcnR1YWw6dG9wLWxldmVsLXJlY29yZHMifQ==</resumptionToken>
       </ListIdentifiers>
     </OAI-PMH>
 
@@ -503,16 +503,8 @@ A resumption token is included in the example.
 
 .. code:: bash
 
-   http://example-site.com/;oai?verb=ListIdentifiers&metadataPrefix=oai_dc&resumptionToken=cursor%3D100
+   http://example-site.com/;oai?verb=ListIdentifiers&metadataPrefix=oai_dc&resumptionToken=eyJmcm9tIjoiIiwidW50aWwiOiIiLCJjdXJzb3IiOjE2MDAsIm1ldGFkYXRhUHJlZml4Ijoib2FpX2RjIiwic2V0Ijoib2FpOnZpcnR1YWw6dG9wLWxldmVsLXJlY29yZHMifQ==
 
-.. WARNING::
-
-   AtoM's resumption token currently contains symbol characters that are not URL
-   encoded - meaning putting it directly into a browser will fail. The above
-   example shows how the symbol characters can be encoded for use. This *may*
-   prevent a harvester from continuing a truncated request. See
-   issue `8158 <https://projects.artefactual.com/issues/8158>`__ in our ticket
-   tracking system for how we hope to improve this in the future.
 
 **Example requests with** ``from`` **and** ``until`` **parameters**
 
