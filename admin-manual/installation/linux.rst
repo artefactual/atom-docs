@@ -193,6 +193,33 @@ in :file:`/etc/nginx/sites-enabled/atom`.
        return 404;
      }
 
+     location ~* /uploads/r/(.*)/conf/ {
+
+     }
+
+     # Route any requests for the usual file uploads to index.php/digitalobject/view
+     #
+     # SCRIPT_FILENAME: /usr/share/nginx/atom/index.php
+     # SCRIPT_NAME: /index.php
+     #
+     location ~* ^/uploads/r/(.*)$ {
+       include /etc/nginx/fastcgi_params;
+       set $index /index.php;
+       fastcgi_param SCRIPT_FILENAME $document_root$index;
+       fastcgi_param SCRIPT_NAME $index;
+       fastcgi_pass atom;
+     }
+
+     #
+     # Allow AtoM to make internal requests to /private and avoid
+     # being blocked by nginx when attempting to access uploads/ URLs
+     # directly
+     #
+     location ~ /private/ {
+       internal;
+       root /usr/share/nginx;
+     }
+
      # This is the most important part, as here we are redirecting some specific
      # requests to PHP-FPM so PHP can do its job passing data to and from the
      # web server.
@@ -207,8 +234,13 @@ in :file:`/etc/nginx/sites-enabled/atom`.
        deny all;
        return 404;
      }
-
    }
+
+Create the symbolic link to /private:
+
+.. code-block:: bash
+
+   sudo ln -s /usr/share/nginx/atom /usr/share/nginx/private
 
 Now you need to restart Nginx:
 
