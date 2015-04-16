@@ -231,8 +231,8 @@ display global search results. This offers two advantages to the user:
    :alt: Example of a filter tag on a search results page
 
    An example of a search results page with a filter tag visible - in this
-   instance, the user has performed a search for "allan" delimited to the
-   holdings of the Desoronto Archives
+   instance, the user has performed a search for "cash" delimited to the
+   holdings of the City of Greater Sudbury Archives
 
 .. _search-using-delimiters:
 
@@ -389,32 +389,40 @@ steps involved in searching for
 
 * **A**: The search term you have entered will be shown at the top of a search
   results page in black, for context. In this example, the search term
-  "anderson" has been entered.
+  "brown" has been entered.
 * **B**: Next to the search term, a count of the number of total matching
-  results returned is shown in grey. In this example, there are 117 archival
-  descriptions returned for the search "anderson"
+  results returned is shown in grey. In this example, there are 6 archival
+  descriptions returned for the search "brown"
 * **C**: Results appear in the main column of the page - click on a result
   and AtoM will take you to a :term:`view page` for the related
   :term:`archival description`. Additionally, the results include helpful
   contextual information, including:
 
-  * *Level of description* - i.e. fonds, series, file, item, etc.
-  * *Publication status* - if a description's publication status is "draft"
-    (i.e. it is not visible to public users), the draft status will be
-    indicated in the stub record. In this screenshot, the first 2 results
-    (Anderson, A. and Anderson, Joseph) are draft records.
+  * *Level of description* - i.e. fonds, series, file, item, etc. The
+    :term:`level of description` will be diplayed next to the orange identifier,
+    below the title of the record.
+  * *Publication status* - if a description's :term:`publication status` is
+    "draft" (i.e. it is not visible to public users), the draft status will be
+    indicated in the stub record.
   * *Description* - if a scope and content note has been included in the
-    archival description, its first 2 lines will be visible here for greater
-    context. In the example screenshot, the S. Boyd Anderson fonds and the
-    results below it are displaying scope and content summaries.
+    archival description, its first 2-3 lines will be visible here for greater
+    context.
   * *Identifier* - if a reference code or other identifier has been added to
-    the record, the results will display this in orange. In the example
-    screenshot, this is visible on the Elizabeth Anderson fonds.
+    the record, the results will display this in orange, beneath the title.
+  * *Creation dates* - if dates of creation have been added to the record, these
+    will display on the same line as the identifier and level of description.
+  * *Part of* - if the record is the :term:`child <child record>` of a
+    hierarchical :term:`archival unit` (e.g. a file in a fonds, etc), the title
+    of the :term:`parent record` will be displayed as a hyperlink beneath the
+    identifier, level of description, and creation dates.
   * *Creator name* - if a creator's :term:`authority record` has been linked
     to an archival description, the results stub will display the creator
-    name below the scope and content summary. In the example screenshot, this
-    is shown in the Anderson Department Store fonds and the Elizabeth
-    Anderson fonds.
+    name below the scope and content summary.
+
+.. image:: images/search-result-stub.*
+   :align: center
+   :width: 70%
+   :alt: An image of a search results stub
 
 * **D**: Search result pages include :term:`facet filters <facet filter>` to
   help you narrow your search further. For more information on facet filters
@@ -435,7 +443,10 @@ steps involved in searching for
     as a subject :term:`access point` to an :term:`archival description`
   * **Level of description:** Limits results to those that match the selected
     :term:`level of description` (e.g. fonds, collection, series, file, item,
-    etc.)
+    etc.). Also includes a top-level description filter, that will limit to
+    all :term:`parent <parent record>` records regardless of level of description.
+  * **Genre:** Limits results to those with a matching genre/documentary form
+    term added as an :term:`access point` to an :term:`archival description`
   * **Media type:** Limits results to those with a :term:`digital object`
     attached that matches the selected media type (image, audio, text, video,
     or other)
@@ -512,14 +523,6 @@ descriptions in a deep hierarchy. This is especially useful when using AtoM for
 archival arrangement and description over several sessions, to quickly return
 to a specific record when a :term:`fonds` or :term:`collection` includes many
 lower levels of description.
-
-.. IMPORTANT::
-
-   The Quick search is **NOT** a full-featured search - it will search for any
-   matches on the **title** or **identifier** (i.e. reference code) of
-   descriptions within the current collection hierarchy. As such, a user will
-   need to know at least part of the title or identifier of the desired
-   record.
 
 The treeview quick search can be accessed by navigating to an :term:`archival
 description`, and clicking the "Quick search" tab above the :term:`treeview`
@@ -613,11 +616,12 @@ entity. Basic instructions for each are included below.
    others are currently only configured to return title matches. Details on
    each are included below. Dedicated search boxes that return more than just
    title matches currently include: :term:`authority records <authority record>`
-   and :term:`archival institutions <archival institution>`. Note that in 2.0.0,
+   and :term:`archival institutions <archival institution>`. Note that in 2.2
    these full-text search results have **not** been `weighted
    <http://dictionary.reference.com/browse/weighted+search>`__ to favor title
-   matches, etc. If you see results without matches in the title (or name), it
-   means the search term(s) appears somewhere in the body of the record.
+   matches, etc **except for accessions**. If you see results without matches
+   in the title (or name), it means the search term(s) appears somewhere in
+   the body of the record.
 
 .. _dedicated-search-authority:
 
@@ -646,7 +650,7 @@ authority record:
 
    Other name fields in the Identity area (Parallel forms of name;
    Standardized names according to other rules; Other forms of name) have
-   **not** been indexed in AtoM 2.0.0. We hope to add this in a future
+   **not** been indexed in AtoM 2.2. We hope to add this in a future
    release.
 
 For more information on working with :term:`authority records <authority
@@ -894,11 +898,12 @@ template, see: :ref:`isdiah-template`.
 
 .. NOTE::
 
-   See :ref:`above <dedicated-search-institutions>` for a list of :term:`fields
-   <field>` that AtoM will search in an archival institution record. In release
-   2.0.0, results have not been weighted to favor title matches. If you see
-   results without matches in the title (i.e. the authorized form of name), it
-   means the search term(s) appears somewhere in the body of the record.
+   See :ref:`above <dedicated-search-institutions>` for a list of
+   :term:`fields <field>` that AtoM will search in an archival institution
+   record. In the  current release, results have not been weighted to favor
+   title matches. If you see results without matches in the title (i.e. the
+   authorized form of name), it means the search term(s) appears somewhere in
+   the body of the record.
 
 .. image:: images/repository-searchresults.*
    :align: center
