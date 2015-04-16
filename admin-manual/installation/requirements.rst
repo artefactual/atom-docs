@@ -114,3 +114,11 @@ including creating a flash reference video derivative for in-browser viewing.
 pdftotext is used in AtoM to extract PDF text to make it searchable via
 AtoM's :term:`user interface`.
 
+**Apache FOP**
+
+    *Apache™ FOP (Formatting Objects Processor) is a print formatter driven by
+    XSL formatting objects (XSL-FO) and an output independent formatter. It is
+    a Java application that reads a formatting object (FO) tree and renders the
+    resulting pages to a specified output.*
+
+`Apache FOP <https://xmlgraphics.apache.org/fop/>`__ is used in AtoM to create PDF finding aids.
