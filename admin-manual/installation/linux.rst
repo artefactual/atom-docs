@@ -193,9 +193,23 @@ in :file:`/etc/nginx/sites-enabled/atom`.
        return 404;
      }
 
-     # This is the most important part, as here we are redirecting some specific
-     # requests to PHP-FPM so PHP can do its job passing data to and from the
-     # web server.
+     location ~* /uploads/r/(.*)/conf/ {
+
+     }
+
+     location ~* ^/uploads/r/(.*)$ {
+       include /etc/nginx/fastcgi_params;
+       set $index /index.php;
+       fastcgi_param SCRIPT_FILENAME $document_root$index;
+       fastcgi_param SCRIPT_NAME $index;
+       fastcgi_pass atom;
+     }
+
+     location ~ ^/private/(.*)$ {
+       internal;
+       alias /usr/share/nginx/atom/$1;
+     }
+
      location ~ ^/(index|qubit_dev)\.php(/|$) {
        include /etc/nginx/fastcgi_params;
        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
