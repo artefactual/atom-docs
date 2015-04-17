@@ -34,6 +34,8 @@ Important files:
 config/apps.yml
 ---------------
 
+.. _htmlpurifier: http://htmlpurifier.org/
+
 This is the primary file where AtoM-specific settings that cannot be managed
 via the :term:`user interface` are maintained. This file includes settings
 such as:
@@ -44,12 +46,15 @@ such as:
   seconds) - default value is 10s
 * Which cache engine you want to use (can use Memcached for a distributed
   cache, for example) - default is sfAPCCache
-* Set IP address where the gearman job server is found (for asynchronous
-  jobs)
+* Enable read-only mode, if you want to remove the login button and prevent
+  users from logging into the application.
 * Set a Google Maps API key (for use in the Archival institution template,
   to generate dynamic Google Maps)
 * Set a Google Analytics API key, for basic installation-wide analytics via
   Google
+* Enable htmlpurifier_ - limits HTML on static pages to a white-list of approved
+  elements and attributes, to prevent XSS - see: :ref:`security-static-pages`
+  for more information.
 
 .. image:: images/app-yml-settings.*
    :align: center
