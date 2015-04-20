@@ -772,6 +772,17 @@ Taxonomy name                       ID
  Geographic subregion (repository)  73
 =================================== ===
 
+The ``--completed-dir`` option is used to automatically move files (e.g. XML
+files during an import) into a completed directory after they have imported. This
+can be useful during troubleshooting, to determine which files have imported and
+which have failed. The option takes a file path to the chosen directory as its
+parameter. You must manually create the directory first - the task will not
+automatically generate one at the specified location. Example use:
+
+.. code-block:: bash
+
+   php symfony import:bulk --completed-dir="/path/to/my/completed-directory" /path/to/my/importFolder
+
 The ``--output`` option will generate a simple CSV file containing details of
 the import process, including the time elapsed and memory used during each
 import. To use the option, you mush specify both a path and a filename for the
@@ -779,7 +790,7 @@ CSV file to output. For example:
 
 .. code-block:: bash
 
-   php symfony import:bulk --output="/path/to/output-results.csv" /path/to/my/xmlFolder
+   php symfony import:bulk --output="/path/to/output-results.csv" /path/to/my/importFolder
 
 The CSV contains 3 columns. The first (titled "File" in the first row) will
 list the path and filename of each imported file. The second column (titled
