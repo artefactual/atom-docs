@@ -884,20 +884,6 @@ The ``--application``, ``--env``, and ``connection`` options **should not be
 used** - AtoM requires the uses of the pre-set defaults for symfony to be
 able to execute the import.
 
-The ``--site-url`` option **should** be used to ensure that any links included
-in the resulting XML file are formed correctly. When using the
-:term:`user interface`, AtoM is able to receive routing information via the
-web server (e.g. Nginx, Apache), but in the command-line environment, AtoM has
-no way of knowing the URL to your assets. Because of this, links
-included in your XML files may be incorrect. The ``--site-url`` option allows
-you to specify the base URL of your site - for example, if your AtoM instance
-is hosted at ``http://www.example.com``, you can enter this as your base site
-url to ensure proper routing of links in the XML output:
-
-.. code:: bash
-
-   php symfony export:bulk --site-url="http://www.example.com" /path/to/my/xmlExportFolder
-
 The ``--items-until-update`` option can be used for a simple visual
 representation of progress in the command-line. Enter a whole integer, to
 represent the number of XML files that should be exported before the
@@ -916,6 +902,13 @@ Example use reporting progress every 5 rows:
 This can be useful for large bulk exports, to ensure the export is still
 progressing, and to try to roughly determine how far the task has progressed
 and how long it will take to complete.
+
+The ``--format`` option will determine whether the target export uses EAD XML,
+or MODS XML. When not set, the default is to export using EAD. Example use:
+
+.. code-block:: bash
+
+   php symfony export:bulk --format="mods" /path/to/my/exportFolder
 
 The ``--criteria`` option can be added if you would like to use raw SQL to
 target specific descriptions.
@@ -963,6 +956,18 @@ the exported descriptions to a union catalogue or regional portal that only
 accepts collection/fonds-level descriptions. If a lower-level description
 (e.g. a series, file, or item) is the target of the export, it's
 :term:`parents <parent record>` will not be exported either.
+
+The ``--single-id`` option can be used to to target a single :term:`archival unit`
+(e.g. fonds, collection, etc) for export, if you know the internal ID of the
+target description.
+
+The  ``--public`` option is useful for excluding draft records from an export.
+Normally, all records in a hierarchical tree will be exported regardless of
+:term:`publication status`. Note that if a published record is the child of a
+draft record, it will **not** be included when this option is used - when the
+parent is skipped (as a draft record), the children are also skipped, so as not
+to break the established hierarchy.
+
 
 .. SEEALSO::
 
