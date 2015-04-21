@@ -577,6 +577,17 @@ types of users and edit permissions, see :ref:`User roles <user-roles>`. You
 will need to create the link from the :term:`archival description` you wish
 to link.
 
+.. TIP::
+
+   When linking a repository to an archival description, link only at the top
+   level of description (e.g. :term:`fonds`, :term:`collection`, etc)- AtoM will
+   automatically inherit the repository to lower levels of description (e.g.
+   :term:`children <child record>`). If you link at all levels, it can not only
+   impact performance, but it will also mean that each lower-level description
+   will appear in the :term:`holdings` list, instead of just the
+   :term:`parent <parent record>` description. For more on the holdings list,
+   see: :ref:`browse-institution-holdings`.
+
 **To link an archival description to an archival institution:**
 
 1. First, navigate to the :term:`archival description` you wish to edit. You
