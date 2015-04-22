@@ -534,11 +534,6 @@ viewed in the templates that have been selected.
 User interface labels
 =====================
 
-.. image:: images/user-interface-label.*
-   :align: right
-   :width: 35%
-   :alt: User interface label settings
-
 Users of AtoM interact with six main :term:`entities <entity>`: :term:`accession
 records <accession record>`, :term:`archival descriptions <archival
 description>`, :term:`authority records <authority record>`, :term:`archival
@@ -557,6 +552,11 @@ The code, therefore, uses generic terms for entities.
 :term:`terms <term>` to appear in the :term:`user interface` labels to suit the
 institution's collections. The default labels that ship with AtoM are terms
 typically used by archival institutions.
+
+.. image:: images/user-interface-label.*
+   :align: center
+   :width: 65%
+   :alt: User interface label settings
 
 The "Name" column shows the generic entity name and the "Value" column
 shows AtoM's default user interface labels. The following is a list of the
@@ -580,6 +580,18 @@ see glossary definitions and descriptions of how the terms are used in AtoM.
 * materialtype: Material type (general material designations used in the
   :ref:`Canadian Rules for Archival Description <rad-template>`).
 * facetstitle: :term:`facets title`
+* access_disallow_warning: Used for customizable access restriction statements
+  when access to a :term:`digital object` is disallowed via an associated
+  PREMIS rights statement. See: :ref:`rights`, specifically
+  :ref:`rights-digital-object` for more information.
+* access_conditional_warning: Used for customizable access restriction statements
+  when access to a :term:`digital object` is set to conditional via an associated
+  PREMIS rights statement. See: :ref:`rights`, specifically
+  :ref:`rights-digital-object` for more information.
+* genre: Term for the Genre access point taxonomy, currently only available on
+  the :ref:`RAD template <rad-template>`. It appears as a :term:`facet filter`
+  in the :term:`archival description` browse and search pages - this label will
+  change the display in the facet headers.
 
 :term:`User interface <user interface>` labels can be changed by
 :term:`administrators <administrator>` by entering a new label(s) into the
