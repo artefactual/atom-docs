@@ -78,7 +78,6 @@ to:**
 
   * :ref:`Add a Google map <add-map>`
 
-* :ref:`Browse the holdings of an archival institution <browse-holdings>`
 * :ref:`Set a digital object upload limit for an archival institution <upload-limit>`
 * :ref:`Delete an archival institution <delete-archival-institution>`
 
@@ -90,6 +89,8 @@ institution :term:`edit page`, see:
 
 .. seealso::
 
+   * :ref:`browse-institutions`
+   * :ref:`browse-holdings`
    * :ref:`Archival descriptions <archival-descriptions>`
    * :ref:`Authority records <authority-records>`
    * :ref:`Access content <access-content>`
@@ -586,7 +587,7 @@ to link.
    impact performance, but it will also mean that each lower-level description
    will appear in the :term:`holdings` list, instead of just the
    :term:`parent <parent record>` description. For more on the holdings list,
-   see: :ref:`browse-institution-holdings`.
+   see: :ref:`browse-holdings`.
 
 **To link an archival description to an archival institution:**
 
@@ -1140,9 +1141,8 @@ more.
 **To add a custom description to an archival institution**
 
 1.  Navigate to the :term:`archival institution` you wish to edit. You can do
-    this by :doc:`browsing <../access-content/browse>` or
-    :doc:`searching <../access-content/search-atom>` for the archival
-    institution - see :ref:`Access content <access-content>` for more
+    this by :ref:`browsing <browse>` or :ref:`searching <search-atom>` for the
+    archival institution - see :ref:`Access content <access-content>` for more
     information on navigation in AtoM.
 2.  Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit theme"
     button in the :term:`button block`.
@@ -1214,9 +1214,9 @@ require a systems administrator who can edit AtoM's files from the server.
    `API key <https://developers.google.com/maps/documentation/javascript/tutorial#api_key>`_
    from Google.
 
-3. Add the API key to AtoM's code in the :file:`apps.yml` file (view code on
-   Github `here <https://github.com/artefactual/atom/blob/2.x/config/app.yml>`_).
-   Uncomment the :file:`google_maps_api_key` value and add the API key.
+3. Add the API key to AtoM's code in the :file:`config/apps.yml` file .
+   Uncomment the :file:`google_maps_api_key` value and add the API key. For
+   more information see: :ref:`config-apps-yml`.
 
 4. Save the changes to :file:`apps.yml` and
    :ref:`clear the cache <maintenance-clear-cache>`.
@@ -1239,52 +1239,6 @@ command line:
 
 This command will use Google to find the latitude and longitude based on the
 institutions' addresses as found in the Contact information.
-
-:ref:`Back to top <archival-institutions>`
-
-.. _browse-holdings:
-
-Browse the holdings of an archival institution
-==============================================
-
-When viewing an :term:`archival institution` in AtoM, a list of :term:`holdings`
-is displayed in the :ref:`context menu <recurring-context-menu>` on the the
-left-hand side of the institution's :term:`view pages <view page>`. The list
-that appears will be of holdings, or :term:`archival descriptions
-<archival description>` that have been linked to that institution. If you click
-on a holding, you will be redirected to that description's :term:`view page`.
-
-.. figure:: images/institution-holdings-list.*
-   :align: center
-   :figwidth: 70%
-   :width: 100%
-   :alt: An example of an institution's holdings list
-
-   In this example, the holdings list for the Regional Municipality of
-   Waterloo has been outlined in red
-
-
-.. TIP::
-
-   For more information on linking an :term:`archival description` to an :
-   term:`archival institution`, see :ref:`link-archival-institution`.
-
-Only a maximum of 10 :term:`archival descriptions <archival description>` will
-appear at once; they will be listed alphabetically. If the archival institution
-has more than 10 holdings linked to its repository, a "Browse ## holdings" link
-will appear below the list, indicating the total number of :term:`holdings` (in
-place of "##") linked to that archival institution. Click on the link to be
-redirected to a browse page where all the holdings that have been linked to that
-institution will be listed. The results can be  sorted by "Most recent" or
-"Alphabetical"; hover above the visible option next to the :ref:`"Sort button"
-<recurring-sort-button>`, on the right-hand corner above the results, to select
-the alternative from a :term:`drop-down menu`. For more information, see:
-:ref:`Facet filters <recurring-facet-filters>`.
-
-.. image:: images/browse-holdings-page.*
-   :align: center
-   :width: 70%
-   :alt: An example of an institution's holdings browse page
 
 :ref:`Back to top <archival-institutions>`
 

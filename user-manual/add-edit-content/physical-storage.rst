@@ -171,6 +171,8 @@ exist in AtoM, enter a container name, location and type and click save.
 New containers can also be created from the Browse physical storage area, by
 clicking Add new (see below).
 
+.. _browse-physical-storage:
+
 Browse physical storage
 =======================
 

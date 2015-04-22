@@ -63,6 +63,23 @@ The browse options listed below are in their default order, however,
 adminstrative users can change the order, or remove browse options, through
 the Admin-Menus menu (see: :ref:`Manage menus <manage-menus>`).
 
+**Jump to:**
+
+* :ref:`browse-descriptions`
+* :ref:`browse-authority-records`
+* :ref:`browse-institutions`
+
+  * :ref:`browse-holdings`
+
+* :ref:`browse-subjects-places`
+
+  * :ref:`browse-subjects-places-results`
+
+* :ref:`browse-digital-objects`
+* :ref:`browse-functions`
+
+**Or, jump to** :ref:`browse-authenticated`
+
 .. _browse-descriptions:
 
 |desc| Browse archival descriptions
@@ -149,7 +166,10 @@ Additionally, the results include helpful contextual information, including:
 
    * :ref:`search-archival-descriptions`
    * :ref:`recurring-page-elements`
+   * :ref:`recurring-facet-filters`
    * :ref:`archival-descriptions`
+
+.. _browse-authority-records:
 
 |authicon| Browse people, families and organizations
 ----------------------------------------------------
@@ -186,6 +206,12 @@ The authority record browse page also includes a dedicated search box - for
 more information on searching for authority records in AtoM, see:
 :ref:`Authority record search <dedicated-search-authority>`. For general
 information on working with authority records, see: :ref:`authority-records`.
+
+.. SEEALSO::
+
+   * :ref:`authority-records`
+   * :ref:`dedicated-search-authority`
+   * :ref:`recurring-facet-filters`
 
 .. _browse-institutions:
 
@@ -230,7 +256,7 @@ institutions in AtoM, see: :ref:`Archival institution search
 <dedicated-search-institutions>`. For general information on working with
 :term:`archival institution` records, see: :ref:`archival-institutions`.
 
-.. _browse-institution-holdings:
+.. _browse-holdings:
 
 Browse the holdings of an institution
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -301,6 +327,13 @@ current page number box - the holdings list will jump to the appropriate page.
 Any invalid numbers (e.g. entering 1000 when there are only 10 pages) will be
 ignored, and after a moment, AtoM will replace the value with the current page
 number.
+
+.. SEEALSO::
+
+   * :ref:`browse-descriptions`
+   * :ref:`search-archival-descriptions`
+   * :ref:`recurring-facet-filters`
+   * :ref:`archival-institutions`
 
 :ref:`Back to top <browse>`
 
@@ -449,6 +482,14 @@ that only directly-related results are being displayed. To return to the previou
 view of all results, click the **X** on the filter tag - AtoM will reload the page
 and return to displaying all related results.
 
+.. SEEALSO::
+
+   * :ref:`terms`
+   * :ref:`recurring-page-elements`
+   * :ref:`recurring-facet-filters`
+   * :ref:`Searching for terms <dedicated-search-terms>`
+
+.. _browse-digital-objects:
 
 |digicon| Browse digital objects
 --------------------------------
@@ -496,6 +537,12 @@ via the :ref:`recurring-sort-button` at the top right of the page.
    users, in **Admin > Settings > Global**. For more information, see:
    :ref:`sort-browser-users` and :ref:`sort-browser-anonymous`.
 
+.. SEEALSO::
+
+   * :ref:`upload-digital-object`
+
+.. _browse-functions:
+
 |functicon| Browse functions
 ----------------------------
 
@@ -527,12 +574,31 @@ The functions browse page also includes a :term:`dedicated search box` to help
 you locate records. For more information on its use, see:
 :ref:`dedicated-search-functions`.
 
+.. SEEALSO::
+
+   * :ref:`functions`
+   * :ref:`dedicated-search-functions`
+   * :ref:`recurring-sort-button`
+
+.. _browse-authenticated:
 
 Browsing for authenticated users
 ================================
 
-Authenticated (logged-in) users have access to browsing lists of donors and
-accession records.
+Authenticated (logged-in) users have access to browsing lists of accession
+records, donors, rights holders, and physical storage locations.
+
+For information on physical storage, see: :ref:`browse-physical-storage`.
+
+**Jump to:**
+
+* :ref:`browse-accessions`
+* :ref:`browse-donors`
+* :ref:`browse-rights-holders`
+
+:ref:`Back to top <browse>`
+
+.. _browse-accessions:
 
 Browse accession records
 ------------------------
@@ -557,6 +623,8 @@ when the :term:`accession record` was updated.
 
 When an accession record is clicked, the full record is displayed.
 
+.. _browse-donors:
+
 Browse donors
 -------------
 
@@ -580,6 +648,8 @@ when the donor record was updated.
 
 When an donor record is clicked, the full record is displayed, including any
 related :term:`accessions <accession record>` and resources.
+
+.. _browse-rights-holders:
 
 Browse Rights holders
 ---------------------
