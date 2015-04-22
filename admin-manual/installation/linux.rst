@@ -377,9 +377,9 @@ Option 1: Download the tarball
 
 .. code-block:: bash
 
-   wget https://storage.accesstomemory.org/releases/atom-2.1.0.tar.gz
+   wget https://storage.accesstomemory.org/releases/atom-2.1.2.tar.gz
    sudo mkdir /usr/share/nginx/atom
-   sudo tar xzf atom-2.1.0.tar.gz -C /usr/share/nginx/atom --strip 1
+   sudo tar xzf atom-2.1.2.tar.gz -C /usr/share/nginx/atom --strip 1
 
 
 .. _linux-checkout-git:
