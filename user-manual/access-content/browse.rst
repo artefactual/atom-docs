@@ -51,15 +51,19 @@ Browsing for all users
 
 From any page in AtoM in the default theme, the :term:`Dominion theme`, the
 following browse options are available from the drop-down :term:`browse menu`
-beside the :term:`search box` in the :term:`header bar`.
+beside the :term:`search box` in the :term:`header bar`. There are also browse
+links included on the :term:`home page` - see :ref:`home-page` for more
+information.
 
-.. image:: images/search-box.*
+.. image:: images/search-box-browse-button.*
    :align: left
    :alt: Search box with browse menu
 
 The browse options listed below are in their default order, however,
 adminstrative users can change the order, or remove browse options, through
 the Admin-Menus menu (see: :ref:`Manage menus <manage-menus>`).
+
+.. _browse-descriptions:
 
 |desc| Browse archival descriptions
 -----------------------------------
@@ -111,6 +115,42 @@ descriptions, a pager will be provided at the bottom of the results.
    results returned per page in **Admin > Settings > Global**. For more
    information, see: :ref:`results-page`.
 
+Results appear in the main column of the page - click on a result and AtoM will
+take you to a :term:`view page` for the related :term:`archival description`.
+Additionally, the results include helpful contextual information, including:
+
+.. image:: images/search-result-stub.*
+   :align: center
+   :width: 70%
+   :alt: An image of a search results stub
+
+* *Level of description* - i.e. fonds, series, file, item, etc. The
+  :term:`level of description` will be diplayed next to the orange identifier,
+  below the title of the record.
+* *Publication status* - if a description's :term:`publication status` is
+  "draft" (i.e. it is not visible to public users), the draft status will be
+  indicated in the stub record.
+* *Description* - if a scope and content note has been included in the
+  archival description, its first 2-3 lines will be visible here for greater
+  context.
+* *Identifier* - if a reference code or other identifier has been added to
+  the record, the results will display this in orange, beneath the title.
+* *Creation dates* - if dates of creation have been added to the record, these
+  will display on the same line as the identifier and level of description.
+* *Part of* - if the record is the :term:`child <child record>` of a
+  hierarchical :term:`archival unit` (e.g. a file in a fonds, etc), the title
+  of the :term:`parent record` will be displayed as a hyperlink beneath the
+  identifier, level of description, and creation dates.
+* *Creator name* - if a creator's :term:`authority record` has been linked
+  to an archival description, the results stub will display the creator
+  name below the scope and content summary.
+
+.. SEEALSO::
+
+   * :ref:`search-archival-descriptions`
+   * :ref:`recurring-page-elements`
+   * :ref:`archival-descriptions`
+
 |authicon| Browse people, families and organizations
 ----------------------------------------------------
 
@@ -146,6 +186,8 @@ The authority record browse page also includes a dedicated search box - for
 more information on searching for authority records in AtoM, see:
 :ref:`Authority record search <dedicated-search-authority>`. For general
 information on working with authority records, see: :ref:`authority-records`.
+
+.. _browse-institutions:
 
 |repoicon| Browse archival institutions
 ---------------------------------------
@@ -187,6 +229,80 @@ The archival institution browse page also includes a
 institutions in AtoM, see: :ref:`Archival institution search
 <dedicated-search-institutions>`. For general information on working with
 :term:`archival institution` records, see: :ref:`archival-institutions`.
+
+.. _browse-institution-holdings:
+
+Browse the holdings of an institution
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+When a user clicks on a result in the :term:`archival institution` browse page,
+they are taken to the :term:`view page` for the selected repository.
+
+This view page includes a list of :term:`holdings` - :term:`archival descriptions
+<archival description>` that have been linked to the current repository. For
+more information on linking a description to an archival institution, see:
+:ref:`link-archival-institution`.
+
+.. TIP::
+
+   When linking a repository to an archival description, link only at the top
+   level of description - AtoM will automatically inherit the repository to
+   lower levels of description (e.g. :term:`children <child record>`). If you
+   link at all levels, it can not only impact performance, but it will also mean
+   that each lower-level description will appear in the holdings list, instead
+   of just the :term:`parent <parent record>` description.
+
+.. image:: images/holdings-list.*
+   :align: center
+   :width: 35%
+   :alt: An image of the archival institution holdings list
+
+The holdings list can be used to browse the :term:`holdings` of a particular
+:term:`archival institution`, which can be especially useful in a multi-repository
+AtoM instance, such as a union catalogue, portal site, or network. It appears
+in the left-hand :term:`context menu` of the :term:`view page` for an archival
+institution, beneath the logo.
+
+The **search box** on the holdings list will search all indexed fields in all
+descriptions related to the archival institution. When used, it will take the
+user to a full search results page, limited to the current institution (as
+indicated by the :term:`filter tag` at the top of the search results).
+
+.. image:: images/holdings-search-result.*
+   :align: center
+   :width: 80%
+   :alt: An example of a results page from a search using the holdings search box
+
+See :ref:`search-archival-descriptions` for more information on using the search
+results page.
+
+Below the search box, is a **holdings browse link**, that lists the total number
+of holdings (e.g. top-level descriptions linked to the repository). Clicking on
+this link will take a user to a browse page limited to the current repository,
+and filtered to display only top-level descriptions. Users can remove these
+filters by clicking the **X** next to the :term:`filter tag` to broaden the
+results.  See :ref:`browse-descriptions` above for more information on browsing
+:term:`archival descriptions <archival description>` in AtoM.
+
+Below the search box and holdings browse link, an alphabetized **holdings list**
+appears. The list consists of hyperlinks - clicking on one will take the user
+to the related description. The number of results in this list per page is
+controlled by the "results per page" setting found in **Admin > Settings > Global**.
+See: :ref:`results-page` for information on changing this value. The default value
+in AtoM is 10 results per page.
+
+A **holdings count** appears under the holdings list, which includes the number
+of results per page, and the total - e.g. *Results 1 to 10 of 45,* etc.
+
+If there are more holdings than the number of results per page, a **pager**
+will be included below. Click the **<-** back and forward **->** arrows to move
+through the pages. The current page number is listed between the navigation
+arrows. For large results sets, you can also manually enter a number into the
+current page number box - the holdings list will jump to the appropriate page.
+Any invalid numbers (e.g. entering 1000 when there are only 10 pages) will be
+ignored, and after a moment, AtoM will replace the value with the current page
+number.
+
+:ref:`Back to top <browse>`
 
 .. _browse-subjects-places:
 
