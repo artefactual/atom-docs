@@ -21,7 +21,7 @@ On this page you will find:
 RAD CSV template
 ================
 
-To download the Rules for Archival Description CSV template for AtoM 2.0,
+To download the Rules for Archival Description CSV template for AtoM 2.2,
 please visit our wiki page (link to come).
 
 Field descriptions
@@ -86,17 +86,18 @@ Title proper
 
 At a parent level:
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc level="[name of level]">
       <did>
          <unittitle encodinganalog="1.1B">
 
+
 At a child level:
 
-.. code:: bash
+.. code-block:: xml
 
-   <c level="[name of level]>
+   <c level="[name of level]">
       <did>
          <unittitle encodinganalog="1.1B">
 
@@ -119,20 +120,20 @@ description. If there are more than three, select "multiple media." (RAD 1.1C)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <controlaccess>
-         <genreform encodinganalog="1.1C">
+         <genreform source="rad" encodinganalog="1.1C">
 
 .. note::
 
    Although the RAD standard specifies set values for General Material
    Designations, in AtoM these can be edited in the Material type
-   :term:`taxonomy` (see: :ref:`Add a new term <add-term>`). If you try to
-   import a CSV file using a different :term:`term` from the taxonomy, the
-   import will fail. See
-   `Bug 6567 <https://projects.artefactual.com/issues/6757>`_ .
+   :term:`taxonomy` (see: :ref:`Add a new term <add-term>`). As of 2.2, the RAD
+   template also has a separate Genre taxonomy, which uses the ``<genreform>``
+   EAD element as well, but without the ``@source`` and ``@encodinganalog``
+   attributes.
 
 
 :ref:`Back to the top <rad-template>`
@@ -149,11 +150,10 @@ conjunction with the formal title proper...(RAD 1.1D)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
-   <archdesc level="[name of level]" relatedencoding="RAD">
-      <did>
-         <unittitle type="parallel" encodinganalog="1.1D">
+   <did>
+      <unittitle type="parallel" encodinganalog="1.1D">
 
 
 :ref:`Back to the top <rad-template>`
@@ -170,11 +170,10 @@ the formal title proper. (RAD 1.1E)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
-   <archdesc>
-      <did>
-         <unittitle type="otherInfo" encodinganalog="1.1E">
+   <did>
+      <unittitle type="otherInfo" encodinganalog="1.1E">
 
 :ref:`Back to the top <rad-template>`
 
@@ -191,11 +190,10 @@ the chief source of information..." (RAD 1.1F)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
-   <archdesc>
-      <did>
-         <unittitle type="statRep">
+   <did>
+      <unittitle type="statRep" encodinganalog="1.1F">
 
 :ref:`Back to the top <rad-template>`
 
@@ -223,10 +221,9 @@ applicable." (RAD 1.8B5)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
-   <archdesc>
-      <odd type="titleStatRep">
+   <odd type="titleStatRep" encodinganalog="1.8B5"><p>
 
 :ref:`Back to the top <rad-template>`
 
@@ -242,10 +239,9 @@ described has been attributed, and cite sources, if appropriate." (RAD 1.8B6)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
-   <archdesc>
-      <odd type="titleAttributions">
+   <odd type="titleAttributions" encodinganalog="1.8B6><p>
 
 :ref:`Back to the top <rad-template>`
 
@@ -261,10 +257,9 @@ other title information was abridged in the description." (RAD 1.8B4)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
-   <archdesc>
-      <odd type="titleContinuation">
+   <odd type="titleContinuation" encodinganalog="1.8B4><p>
 
 :ref:`Back to the top <rad-template>`
 
@@ -280,10 +275,9 @@ Title notes- Source of title proper
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
-   <archdesc>
-      <odd type="titleSource">
+   <odd type="titleSource" encodinganalog="1.8B2"><p>
 
 :ref:`Back to the top <rad-template>`
 
@@ -300,10 +294,9 @@ traditionally known other than the title proper." (RAD 1.8B1)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
-   <archdesc>
-      <odd type="titleVariation">
+   <odd type="titleVariation" encodinganalog="1.8B1"><p>
 
 :ref:`Back to the top <rad-template>`
 
@@ -320,10 +313,9 @@ considered to be important." (RAD 1.8B3)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
-   <archdesc>
-      <odd type="titleParallel">
+   <odd type="titleParallel" encodinganalog="1.8B3"><p>
 
 :ref:`Back to the top <rad-template>`
 
@@ -352,16 +344,16 @@ rules and conventions on selecting levels of description.
 
 At the parent level:
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc level="fonds" relatedencoding="RAD">
 
 
 At the child level:
 
-.. code:: bash
+.. code-block:: xml
 
-   <dsc type="combined>
+   <dsc type="combined">
       <c level="[name of level]">
 
 .. note::
@@ -394,9 +386,9 @@ See RAD 1.0A for rules and conventions on selecting levels of description.
 *Title*: Enter the title proper, either transcribed or supplied (RAD 1.1B).
 
 *Date*: (Works similarly to the display date field when adding a date of
-creation; see :ref:` below <template-dates>` for more information in RAD)
+creation; see :ref:`below <template-dates>` for more information in RAD)
 
-**EAD** N/A
+**EAD** N/A (see the related fields elsewhere in this page)
 
 .. note::
 
@@ -421,7 +413,7 @@ Repository
 
 **CSV Column** repository
 
-**RAD Rule** Select the repository that has custody and
+**RAD Rule** Select the :term:`repository` that has custody and
 control of the archival material. The values in this field are drawn from the
 Authorized form of name field in archival institution records. Search for an
 existing name by typing the first few characters of the name. Alternatively,
@@ -429,12 +421,47 @@ type a new name to create and link to a new archival institution.
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <did>
          <repository>
             <corpname>
+
+.. NOTE::
+
+   When an address is included in the related :term:`archival institution` (i.e.
+   added to the Contact area of the linked repository record), the address will
+   also appear in the EAD at the parent level. Because EAD does not include
+   attributes for the ``<addressline>`` element, these will not roundtrip properly
+   when exported from one AtoM instance and into another - all the information
+   will appear in one field of the Contact area upon re-import. Below is an
+   example of the EAD with an address included:
+
+.. code-block:: xml
+
+   <repository>
+      <corpname>Artefactual Archives</corpname>
+      <address>
+         <addressline>Suite 201 – 301 6th Street</addressline>
+         <addressline>New Westminster</addressline>
+         <addressline>British Columbia</addressline>
+         <addressline>Canada</addressline>
+         <addressline>Telephone: (604)527-2056</addressline>
+         <addressline>Email: info@artefactual.com</addressline>
+         <addressline>http://www.artefactual.com</addressline>
+      </address>
+   </repository>
+
+.. IMPORTANT::
+
+   When linking an :term:`archival institution` to an :term:`archival description`,
+   You should only link at the highest level of description. AtoM will
+   automatically inherit the repository name at lower levels. This conforms to
+   RAD's General Rule 1.0A2d *Non-repetition of information*: "Do not repeat
+   information at a lower level of description that has already been given at a
+   higher level...." Linking a repository at all levels of description (instead
+   of just at the parent level) in a large hierarchy can also impact performance.
 
 :ref:`Back to the top <rad-template>`
 
@@ -449,18 +476,19 @@ Reference code
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <did>
-         <unitid encodinganalog="1.8B11">
+         <unitid encodinganalog="1.8B11" countrycode="[2 letter country code]">
 
 .. note::
 
    This field displays to non-logged in users as "Reference code."
    While editing the record, the full reference code including any identifiers
    :ref:`inherited <inherit-reference-code>` from higher levels will appear
-   below the Identifier field.
+   below the Identifier field. The ``@countrycode`` value is taken from the
+   Country value entered into the Contact area of the related :term:`repository`.
 
 
 :ref:`Back to the top <rad-template>`
@@ -471,13 +499,13 @@ Alternative identifier
 **Template field** Add alternative identifier(s) [link beneath identifier
 field]
 
-**CSV Column** Not currently available in AtoM CSV import
+**CSV Columns** alternativeIdentifiers and alternativeIdentifierLabels
 
 **RAD Rule** N/A (see note below)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc level="[name of level]">
       <did>
@@ -489,9 +517,11 @@ field]
 
    * :ref:`add-alternative-id`
 
+   In the CSV templates, the columns can accept multiple values, separated by a
+   pipe ``|`` character. The label values will be matched 1:1 with the
+   identifiers.
 
 :ref:`Back to the top <rad-template>`
-
 
 .. _template-edition:
 
@@ -520,12 +550,11 @@ proper and enclose it in square brackets." (RAD 1.2B3)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
-   <archdesc>
-      <did>
-         <unittitle encodinganalog="1.2B1">
-            <edition>
+   <did>
+      <unittitle type="editionStat" encodinganalog="1.2B1">
+         <edition>
 
 .. note::
 
@@ -549,12 +578,11 @@ responsibility area." (RAD 1.2C2)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
-   <archdesc>
-      <did>
-         <unittitle type="statRep" encodinganalog="1.2C">
-            <edition>
+   <did>
+      <unittitle type="statRep" encodinganalog="1.2C">
+         <edition>
 
 :ref:`Back to the top <rad-template>`
 
@@ -592,11 +620,10 @@ title information." (RAD 5.3B1)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
-   <archdesc>
-      <did>
-         <materialspec type="cartographic" encodinganalog="5.3B1">
+   <did>
+      <materialspec type="cartographic" encodinganalog="5.3B1">
 
 :ref:`Back to the top <rad-template>`
 
@@ -612,11 +639,10 @@ source(s) of information." (RAD 5.3C1)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
-   <archdesc>
-      <did>
-         <materialspec type="projection" encodinganalog="5.3C1">
+   <did>
+      <materialspec type="projection" encodinganalog="5.3C1">
 
 :ref:`Back to the top <rad-template>`
 
@@ -633,11 +659,10 @@ reasonably contiguous." (RAD 5.3D)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
-   <archdesc>
-      <did>
-         <materialspec type="coordinates" encodinganalog="5.3D">
+   <did>
+      <materialspec type="coordinates" encodinganalog="5.3D">
 
 :ref:`Back to the top <rad-template>`
 
@@ -655,11 +680,10 @@ being described." (RAD 6.3B)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
-   <archdesc>
-      <did>
-         <materialspec type="architectural" encodinganalog="6.3B">
+   <did>
+      <materialspec type="architectural" encodinganalog="6.3B">
 
 :ref:`Back to the top <rad-template>`
 
@@ -680,11 +704,10 @@ the title proper or other title information." (RAD 12.3C1)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
-   <archdesc>
-      <did>
-         <materialspec type="philatelic" encodinganalog="12.3B1">
+   <did>
+      <materialspec type="philatelic" encodinganalog="12.3B1">
 
 :ref:`Back to the top <rad-template>`
 
@@ -711,16 +734,10 @@ create and link to a new authority record.
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
-   <archdesc>
-      <bioghist encodinganalog="1.7B">
-         <chronlist>
-            <chronitem>
-               <eventgrp>
-                  <event>
-                     <origination encodinganalog="1.7C">
-                        <name>
+   <origination encodinganalog="1.4D">
+      <name>
 
 .. NOTE::
 
@@ -761,15 +778,11 @@ See also RAD section 1.7B1.
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
-   <archdesc>
-      <bioghist encodinganalog="1.7B">
-         <chronlist>
-            <chronitem>
-               <eventgrp>
-                  <event>
-                     <note>
+   <bioghist id="[md5 hash]" encodinganalog="1.7B">
+      <note>
+         <p>
 
 
 .. note::
@@ -779,6 +792,15 @@ See also RAD section 1.7B1.
    will create one when a new creator is entered, above. The user can then
    navigate to the authority record to enter the Biographical or Administrative
    history (see: :ref:`Authority records <authority-records>`).
+
+   When roundtripping descriptions from one AtoM instance to another, creator
+   names in the ``<origination>`` element are matched 1:1 in order with
+   administrative or biographical histories included in ``<bioghist>``. It is
+   therefore important that if some creators do not have related histories, they
+   appear in the EAD **after** those that do, so the 1:1 mapping can work as
+   expected. If an extra ``<bioghist>`` element is included that does not have
+   a corresponding creator name, a stub :term:`authority record` will be created
+   to hold the ``<bioghist>`` data.
 
 When importing descriptions by CSV, by default this column will
 create a Biographical history in the :term:`authority record`, regardless of
@@ -827,19 +849,34 @@ Search for an existing term in the places taxonomy by typing the first few
 characters of the term name. Alternatively, type a new term to create and
 link to a new place term.
 
-**EAD** N/A
+**EAD**
+
+.. code-block:: xml
+
+   <controlaccess>
+      <geogname role="Creator" encodinganalog="1.4C" id="atom_200823_place">
 
 .. note::
 
-   This field does not map to EAD due to its relation to a specific
-   event.
+   The above example assumes that the place was linked to a creator, as opposed
+   to a publisher, broadcaster, or other role - the ``@role`` attribute value
+   will depend on the type of event entered. An example ``@id`` is included
+   in this example as well - atom will generate and use these to maintain the
+   relationship between a creator name, date, and place when roundtripping.
 
 Date(s)
 -------
 
 **Template field** Date(s)
 
-**CSV Column** creatorDates
+**CSV Column** creationDates
+
+.. NOTE::
+
+   The CSV column in earlier versions prior to 2.2 was named "creatorDates" -
+   it has been updated to clarify its relation to the creation event - not to
+   the dates of existence of the creator. However, we have added fallback
+   code, so if the old name is used, the import will still succeed.
 
 **RAD Rule** "Give the date(s) of creation of the unit being described either as a
 single date, or range of dates (for inclusive dates and/or predominant dates).
@@ -848,20 +885,29 @@ them as such, preceded by the word predominant..." (1.4B2). Record probable
 and uncertain dates in square brackets, using the conventions described in RAD
 1.4B5.
 
-**EAD**
+**EAD** (creator example)
 
-.. code:: bash
+.. code-block:: xml
 
-   <archdesc>
-      <bioghist encodinganalog="1.7B">
-         <chronlist>
-            <chronitem>
-               <date type="creation">
+   <did>
+      <unitdate id="[atom-generated-value]" normal="[start date/end date]" encodinganalog="1.4B2">
 
 .. note::
 
    This field will display the date as intended by the editor of the
-   archival description, in the language of the standard being used.
+   archival description, in the language of the standard being used. The start
+   and end date values, which must be ISO-formatted (YYYY-MM-DD), will populate
+   the ``@normal`` attribute. AtoM will also generate an ID to be able to link
+   the creator name, place, and event date again when roundtripping from one
+   AtoM instance to another.
+
+AtoM will also add a ``@datechar`` attribute for different types of events. Here
+is an example for a broadcasting event date:
+
+.. code-block:: xml
+
+   <did>
+      <unitdate id="[atom-generated-value]" datechar="broadcasting" normal="[start date/end date]" encodinganalog="1.4F">
 
 :ref:`Back to the top <rad-template>`
 
@@ -870,7 +916,15 @@ Dates of creation- Start
 
 **Template field** Dates of creation- Start
 
-**CSV Column** creatorDatesStart
+**CSV Column** creationDatesStart
+
+.. NOTE::
+
+   The CSV column in earlier versions prior to 2.2 was named
+   "creatorDatesStart" - it has been updated to clarify its relation to the
+   creation event - not to the dates of existence of the creator. However, we
+   have added fallback code, so if the old name is used, the import will still
+   succeed.
 
 **RAD Rule** Enter the start year. Do not use any qualifiers or typographical
 symbols to express uncertainty. Acceptable date formats: YYYYMMDD,
@@ -878,19 +932,17 @@ YYYY-MM-DD, YYYY-MM, YYYY.
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
-   <archdesc>
-      <bioghist encodinganalog="1.7B">
-         <chronlist>
-            <chronitem>
-               <date type="creation" normal="[start/end]">
+   <did>
+      <unitdate id="[atom-generated-value]" normal="[start date/end date]" encodinganalog="1.4B2">
 
 .. note::
 
    This field only displays while editing the description. If AtoM is
    able to interpret the start date from the Date(s) field, above, it will
-   autopopulate upon entering.
+   autopopulate upon entering. In the EAD, the start and end date values are added
+   to the ``@normal`` attribute of the corresponding ``<unitdate>`` element.
 
 :ref:`Back to the top <rad-template>`
 
@@ -899,7 +951,15 @@ Dates of creation- End
 
 **Template field** Dates of creation- End
 
-**CSV Column** creatorDatesEnd
+**CSV Column** creationDatesEnd
+
+.. NOTE::
+
+   The CSV column in earlier versions prior to 2.2 was named
+   "creatorDatesEnd" - it has been updated to clarify its relation to the
+   creation event - not to the dates of existence of the creator. However, we
+   have added fallback code, so if the old name is used, the import will still
+   succeed.
 
 **RAD Rule** Enter the end year. Do not use any qualifiers or typographical symbols
 to express uncertainty. Acceptable date formats: YYYYMMDD,
@@ -907,18 +967,17 @@ YYYY-MM-DD, YYYY-MM, YYYY.
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
-   <archdesc>
-      <bioghist encodinganalog="1.7B">
-         <chronlist>
-            <chronitem>
-               <date type="creation" normal="[start/end]">
+   <did>
+      <unitdate id="[atom-generated-value]" normal="[start date/end date]" encodinganalog="1.4B2">
+
 .. note::
 
    This field only displays while editing the description. If AtoM is
    able to interpret the start date from the Date(s) field, above, it will
-   autopopulate upon entering.
+   autopopulate upon entering.In the EAD, the start and end date values are added
+   to the ``@normal`` attribute of the corresponding ``<unitdate>`` element.
 
 :ref:`Back to the top <rad-template>`
 
@@ -936,21 +995,11 @@ etc., area and that are considered to be important. " (RAD 1.8B8) "Make notes
 on the date(s) of accumulation or collection of the unit being described." RAD
 1.8B8a)
 
-**EAD**
-
-.. code:: bash
-
-   <archdesc>
-      <bioghist encodinganalog="1.7B">
-         <chronlist>
-            <chronitem>
-               <eventgrp>
-                  <event>
-                     <note type="eventNote">
-
 .. note::
 
-   This appears while editing as "Event note."
+   This field appears while editing as "Event note."
+
+**EAD** N/A
 
 :ref:`Back to the top <rad-template>`
 
@@ -985,12 +1034,23 @@ carriage return (i.e. press the Enter key on your keyboard).
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
-   <archdesc>
-      <did>
-         <physdesc>
-            <extent encodinganalog="1.5B1">
+   <did>
+     <physdesc encodinganalog="1.5B1">
+
+.. NOTE::
+
+   AtoM will allow users to add additional EAD subelements to :term:`field` in
+   the :term:`edit page`, to accommodate all the possibilities in EAD for more
+   granularity, such as ``<extent>``, ``<dimensions>``, ``<physfacet>``, and
+   ``<genreform>``. In the :term:`view page` the EAD tags will be hidden, but
+   preserved during export and re-import.
+
+.. image:: images/physdesc-ead-rad.*
+   :align: center
+   :width: 75%
+   :alt: A comparison of the edit and view pages for physical description
 
 
 :ref:`Back to the top <rad-template>`
@@ -1020,7 +1080,7 @@ publisher's series as instructed in 1.1B1." (RAD 1.6B)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <did>
@@ -1043,7 +1103,7 @@ Parallel titles of publisher's series
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <did>
@@ -1067,7 +1127,7 @@ publisher's series." (RAD 1.6D1)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <did>
@@ -1093,7 +1153,7 @@ series." (RAD 1.6E1)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <did>
@@ -1116,7 +1176,7 @@ terms given in the item." (RAD 1.6F1)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <did>
@@ -1141,7 +1201,7 @@ incomplete series, and of numbers or letters that imply a series." (RAD
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <odd type="bibSeries">
@@ -1179,7 +1239,7 @@ along with the dates thereof, insofar as it can be ascertained." (RAD 1.7C)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <custodhist encodinganalog="1.7C">
@@ -1211,7 +1271,7 @@ speeches)." (RAD 1.7D1)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <scopecontent encodinganalog="1.7D">
@@ -1246,7 +1306,7 @@ that condition materially affects the clarity or legibility of the records."
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <phystech encodinganalog="1.8B9a">
@@ -1268,7 +1328,7 @@ unknown, record that information." (RAD 1.8B12)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <acqinfo encodinganalog="1.8B12">
@@ -1290,7 +1350,7 @@ reconstitution of original order." (RAD 1.8B13)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <arrangement encodinganalog="1.8B13">
@@ -1310,7 +1370,7 @@ description." RAD (1.8.B14).
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <did>
@@ -1337,7 +1397,7 @@ RAD (1.8.B14)
 
 **EAD** <langmaterial> <language scriptcode>
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <did>
@@ -1367,7 +1427,7 @@ RAD (1.8.B14).
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <did>
@@ -1395,7 +1455,7 @@ information." (RAD 1.8B15a)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <originalsloc encodinganalog="1.8B15a">
@@ -1420,7 +1480,7 @@ format(s), indicate which parts." (RAD 1.8B15b)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <altformavail encodinganalog="1.8B15b">
@@ -1440,7 +1500,7 @@ Restrictions on access
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <accessrestrict encodinganalog="1.8B16a">
@@ -1460,7 +1520,7 @@ reproduction of the material." (RAD 1.8B16c)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <userestrict encodinganalog="1.8B16c">
@@ -1483,7 +1543,7 @@ catalogues, box lists, series lists, inventories, indexes, etc." (RAD
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <otherfindaid encodinganalog="1.8B17">
@@ -1510,7 +1570,7 @@ in one or more units of material external to the unit being described." (RAD
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <relatedmaterial encodinganalog="1.8B18">
@@ -1532,7 +1592,7 @@ closed." (RAD 1.8B19)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <accruals encodinganalog="1.8B19">
@@ -1560,7 +1620,7 @@ in the Physical description area (see 1.5E)." (RAD 1.8B9c)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <odd type="material" encodinganalog="1.5E">
@@ -1582,7 +1642,7 @@ numbers borne by the unit being described other than publisher's series numbers 
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <odd type="alphanumericDesignation">
@@ -1622,7 +1682,7 @@ nature of the work." (RAD 1.8B9b)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <odd type="conservation" encodinganalog="1.8B9b">
@@ -1662,7 +1722,7 @@ of the unit being described to other editions." (RAD 1.8B7)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <odd type="edition" encodinganalog="1.8B7">
@@ -1682,7 +1742,7 @@ being described." (RAD 1.8B9)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <odd type="physDesc">
@@ -1704,7 +1764,7 @@ incomplete series, and of numbers or letters that imply a series." (RAD
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <odd type="bibSeries">
@@ -1729,7 +1789,7 @@ other rights pertaining to the unit being described." (RAD 1.8B16b)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <odd type="rights" encodinganalog="1.8B16b">
@@ -1773,7 +1833,7 @@ considered important but not falling within the definitions of the other notes.
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <odd type="general" encodinganalog="1.8B21">
@@ -1807,7 +1867,7 @@ abbreviation and with the standard spacing or hyphenation." (RAD 1.9B1)
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <did>
@@ -1841,7 +1901,7 @@ link to a new subject term."
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <controlaccess>
@@ -1869,7 +1929,7 @@ create and link to a new place term."
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <controlaccess>
@@ -1903,7 +1963,7 @@ record.
 If the entity type of the actor is not defined as either a person, family, or
 corporate body:
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <controlaccess>
@@ -1911,7 +1971,7 @@ corporate body:
 
 For a personal name:
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <controlaccess>
@@ -1919,7 +1979,7 @@ For a personal name:
 
 For a family name:
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <controlaccess>
@@ -1927,7 +1987,7 @@ For a family name:
 
 For a corporate body or organizational name:
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <controlaccess>
@@ -1974,7 +2034,7 @@ the country code."
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <odd type="descriptionIdentifier">
@@ -1996,7 +2056,7 @@ or international agency code standard."
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <odd type="institutionIdentifier">
@@ -2016,7 +2076,7 @@ conventions followed in preparing the description."
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <eadheader>
       <profiledesc>
@@ -2037,7 +2097,7 @@ is a draft, finalized, and/or revised or deleted."
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <odd type="statusDescription">
@@ -2067,7 +2127,7 @@ national guidelines and/or rules."
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <odd type="levelOfDetail">
@@ -2095,7 +2155,7 @@ Dates of creation, revision and deletion
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <processinfo>
@@ -2122,7 +2182,7 @@ archival material."
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <eadheader>
       <profiledesc>
@@ -2152,7 +2212,7 @@ archival material."
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <eadheader>
       <profiledesc>
@@ -2183,7 +2243,7 @@ fields)."
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <did>
@@ -2244,7 +2304,7 @@ Publication status
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <odd type="publicationStatus">
@@ -2290,7 +2350,7 @@ Appraisal
 
 **EAD**
 
-.. code:: bash
+.. code-block:: xml
 
    <archdesc>
       <appraisal encodinganalog="3.3.2">
