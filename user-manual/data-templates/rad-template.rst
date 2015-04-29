@@ -15,13 +15,14 @@ On this page you will find:
 .. seealso::
 
    * :ref:`archival-descriptions`
-   * :ref:`csv-testing-import`
-
+   * :ref:`csv-import`
+   * :ref:`cli-bulk-import-xml`
+   * :ref:`cli-bulk-export`
 
 RAD CSV template
 ================
 
-To download the Rules for Archival Description CSV template for AtoM 2.2,
+To download the Rules for Archival Description CSV template for AtoM,
 please visit our wiki page (link to come).
 
 Field descriptions
@@ -199,7 +200,7 @@ the chief source of information..." (RAD 1.1F)
 
 .. figure:: images/title-notes.*
    :align: center
-   :figwidth: 50%
+   :figwidth: 80%
    :width: 100%
    :alt: An image of the data entry fields for the Title notes area
 
@@ -321,7 +322,7 @@ considered to be important." (RAD 1.8B3)
 
 .. figure:: images/title-area-2.*
    :align: center
-   :figwidth: 50%
+   :figwidth: 80%
    :width: 100%
    :alt: An image of the data entry fields for the Level of description, new
          child levels, Repository and Identifier.
@@ -478,9 +479,8 @@ Reference code
 
 .. code-block:: xml
 
-   <archdesc>
-      <did>
-         <unitid encodinganalog="1.8B11" countrycode="[2 letter country code]">
+   <did>
+      <unitid encodinganalog="1.8B11" countrycode="[2 letter country code]">
 
 .. note::
 
@@ -507,9 +507,8 @@ field]
 
 .. code-block:: xml
 
-   <archdesc level="[name of level]">
-      <did>
-         <unitid type="alternative" label="[user entered value]">
+   <did>
+      <unitid type="alternative" label="[user entered value]">
 
 .. note::
 
@@ -529,7 +528,7 @@ Edition area
 ^^^^^^^^^^^^
 .. figure:: images/edition-area.*
    :align: center
-   :figwidth: 50%
+   :figwidth: 70%
    :width: 100%
    :alt: An image of the data entry fields for the Edition area.
 
@@ -593,7 +592,7 @@ Class of materials specific details area
 
 .. figure:: images/class-area.*
    :align: center
-   :figwidth: 50%
+   :figwidth: 80%
    :width: 100%
    :alt: An image of the data entry fields for the Class of materials specific
          details area.
@@ -759,6 +758,13 @@ create and link to a new authority record.
    RAD template  within the Dates of creation :term:` information area`,
    labeled as "Actor name."
 
+.. IMPORTANT::
+
+   The creator(s) should only be added at the highest relevant level. AtoM
+   will automatically inherit the creator name(s) at lower levels, unless a
+   different creator is intentionally introduced. Adding the creator at all levels
+   unnecessarily can affect the performance of the application.
+
 :ref:`Back to the top <rad-template>`
 
 Biographical history
@@ -806,7 +812,8 @@ When importing descriptions by CSV, by default this column will
 create a Biographical history in the :term:`authority record`, regardless of
 whether the creator is a person, family, or organization. To specify the
 entity type when importing creators, users would need to
-:ref:`import authority records <csv-import-authority-records>`.
+:ref:`import authority records <csv-import-authority-records>` or manually edit
+the authority record.
 
 :ref:`Back to the top <rad-template>`
 
@@ -869,7 +876,7 @@ Date(s)
 
 **Template field** Date(s)
 
-**CSV Column** creationDates
+**CSV Column** creationDates and creationDatesType
 
 .. NOTE::
 
@@ -901,8 +908,23 @@ and uncertain dates in square brackets, using the conventions described in RAD
    the creator name, place, and event date again when roundtripping from one
    AtoM instance to another.
 
+Users can also set the type of event, using the "Event type"
+:term:`drop-down menu`. In the RAD :term:`edit page`, the default terms in the
+drop-down menu for "Event type" are:
+
+* Creation
+* Custody
+* Publication
+* Contribution
+* Collection
+* Accumulation
+* Reproduction
+* Distribution
+* Broadcasting
+* Manufacturing
+
 AtoM will also add a ``@datechar`` attribute for different types of events. Here
-is an example for a broadcasting event date:
+is an example for a broadcasting event date in EAD XML:
 
 .. code-block:: xml
 
@@ -986,7 +1008,15 @@ Dates of creation- Note
 
 **Template field** Dates of creation- Note
 
-**CSV Column** creatorDatesNotes
+**CSV Column** creationDatesNotes
+
+.. NOTE::
+
+   The CSV column in earlier versions prior to 2.2 was named
+   "creatorDatesNotes" - it has been updated to clarify its relation to the
+   creation event - not to the dates of existence of the creator. However, we
+   have added fallback code, so if the old name is used, the import will still
+   succeed.
 
 **RAD Rule** "Make notes on dates and any details pertaining to the dates of
 creation, publication, or distribution, of the unit being described that are
@@ -995,7 +1025,7 @@ etc., area and that are considered to be important. " (RAD 1.8B8) "Make notes
 on the date(s) of accumulation or collection of the unit being described." RAD
 1.8B8a)
 
-.. note::
+.. NOTE::
 
    This field appears while editing as "Event note."
 
@@ -1010,7 +1040,7 @@ Physical description area
 
 .. figure:: images/physical-area.*
    :align: center
-   :figwidth: 50%
+   :figwidth: 80%
    :width: 100%
    :alt: An image of the data entry fields for the Physical description area.
 
@@ -1062,7 +1092,7 @@ Publisher's series area
 
 .. figure:: images/publishers-area.*
    :align: center
-   :figwidth: 50%
+   :figwidth: 80%
    :width: 100%
    :alt: An image of the data entry fields for the Publisher's series area.
 
@@ -1082,11 +1112,10 @@ publisher's series as instructed in 1.1B1." (RAD 1.6B)
 
 .. code-block:: xml
 
-   <archdesc>
-      <did>
-         <unittitle>
-            <bibseries>
-               <title encodinganalog="1.6B1">
+   <did>
+      <unittitle>
+         <bibseries>
+            <title encodinganalog="1.6B1">
 
 
 :ref:`Back to the top <rad-template>`
@@ -1105,11 +1134,10 @@ Parallel titles of publisher's series
 
 .. code-block:: xml
 
-   <archdesc>
-      <did>
-         <unittitle>
-            <bibseries>
-               <title type="parallel" encodinganalog="1.6C1">
+   <did>
+      <unittitle>
+         <bibseries>
+            <title type="parallel" encodinganalog="1.6C1">
 
 
 :ref:`Back to the top <rad-template>`
@@ -1129,11 +1157,10 @@ publisher's series." (RAD 1.6D1)
 
 .. code-block:: xml
 
-   <archdesc>
-      <did>
-         <unittitle>
-            <bibseries>
-               <title type="otherInfo" encodinganalog="1.6D1">
+   <did>
+      <unittitle>
+         <bibseries>
+            <title type="otherInfo" encodinganalog="1.6D1">
 
 
 :ref:`Back to the top <rad-template>`
@@ -1155,11 +1182,10 @@ series." (RAD 1.6E1)
 
 .. code-block:: xml
 
-   <archdesc>
-      <did>
-         <unittitle>
-            <bibseries>
-               <title type="statRep" encodinganalog="1.6E1">
+   <did>
+      <unittitle>
+         <bibseries>
+            <title type="statRep" encodinganalog="1.6E1">
 
 :ref:`Back to the top <rad-template>`
 
@@ -1178,11 +1204,10 @@ terms given in the item." (RAD 1.6F1)
 
 .. code-block:: xml
 
-   <archdesc>
-      <did>
-         <unittitle>
-            <bibseries>
-               <num encodinganalog="1.6F">
+   <did>
+      <unittitle>
+         <bibseries>
+            <num encodinganalog="1.6F">
 
 
 :ref:`Back to the top <rad-template>`
@@ -1203,8 +1228,7 @@ incomplete series, and of numbers or letters that imply a series." (RAD
 
 .. code-block:: xml
 
-   <archdesc>
-      <odd type="bibSeries">
+   <odd type="bibSeries" encodinganalog="1.8B10">
 
 .. note::
 
@@ -1220,7 +1244,7 @@ Archival description area
 
 .. figure:: images/archival-area.*
    :align: center
-   :figwidth: 50%
+   :figwidth: 80%
    :width: 100%
    :alt: An image of the data entry fields for the Archival description area.
 
@@ -1241,9 +1265,8 @@ along with the dates thereof, insofar as it can be ascertained." (RAD 1.7C)
 
 .. code-block:: xml
 
-   <archdesc>
-      <custodhist encodinganalog="1.7C">
-
+   <custodhist encodinganalog="1.7C">
+      <p>
 
 :ref:`Back to the top <rad-template>`
 
@@ -1273,8 +1296,8 @@ speeches)." (RAD 1.7D1)
 
 .. code-block:: xml
 
-   <archdesc>
-      <scopecontent encodinganalog="1.7D">
+   <scopecontent encodinganalog="1.7D">
+      <p>
 
 
 :ref:`Back to the top <rad-template>`
@@ -1286,7 +1309,7 @@ Notes area
 
 .. figure:: images/notes-area.*
    :align: center
-   :figwidth: 50%
+   :figwidth: 80%
    :width: 100%
    :alt: An image of the data entry fields for the notes area.
 
@@ -1308,8 +1331,8 @@ that condition materially affects the clarity or legibility of the records."
 
 .. code-block:: xml
 
-   <archdesc>
-      <phystech encodinganalog="1.8B9a">
+   <phystech encodinganalog="1.8B9a">
+      <p>
 
 :ref:`Back to the top <rad-template>`
 
@@ -1330,8 +1353,8 @@ unknown, record that information." (RAD 1.8B12)
 
 .. code-block:: xml
 
-   <archdesc>
-      <acqinfo encodinganalog="1.8B12">
+   <acqinfo encodinganalog="1.8B12">
+      <p>
 
 :ref:`Back to the top <rad-template>`
 
@@ -1352,8 +1375,8 @@ reconstitution of original order." (RAD 1.8B13)
 
 .. code-block:: xml
 
-   <archdesc>
-      <arrangement encodinganalog="1.8B13">
+   <arrangement encodinganalog="1.8B13">
+      <p>
 
 :ref:`Back to the top <rad-template>`
 
@@ -1372,10 +1395,9 @@ description." RAD (1.8.B14).
 
 .. code-block:: xml
 
-   <archdesc>
       <did>
          <langmaterial encodinganalog="1.8B9a">
-            <language langcode="___">
+            <language langcode="[ISO code]">
 
 .. note::
 
@@ -1395,14 +1417,14 @@ Script of material
 **RAD Rule** "[N]ote any distinctive alphabets or symbol systems employed."
 RAD (1.8.B14)
 
-**EAD** <langmaterial> <language scriptcode>
+**EAD**
 
 .. code-block:: xml
 
    <archdesc>
       <did>
          <langmaterial encodinganalog="1.8B9a">
-            <language scriptcode="___">
+            <language scriptcode="[ISO code]">
 
 .. note::
 
@@ -1429,9 +1451,8 @@ RAD (1.8.B14).
 
 .. code-block:: xml
 
-   <archdesc>
-      <did>
-         <langmaterial encodinganalog="1.8B9a">
+   <did>
+      <langmaterial encodinganalog="1.8B9a">
 
 .. note::
 
@@ -1457,8 +1478,8 @@ information." (RAD 1.8B15a)
 
 .. code-block:: xml
 
-   <archdesc>
-      <originalsloc encodinganalog="1.8B15a">
+   <originalsloc encodinganalog="1.8B15a">
+      <p>
 
 :ref:`Back to the top <rad-template>`
 
@@ -1482,11 +1503,10 @@ format(s), indicate which parts." (RAD 1.8B15b)
 
 .. code-block:: xml
 
-   <archdesc>
-      <altformavail encodinganalog="1.8B15b">
+   <altformavail encodinganalog="1.8B15b">
+      <p>
 
 :ref:`Back to the top <rad-template>`
-
 
 Restrictions on access
 ----------------------
@@ -1502,8 +1522,13 @@ Restrictions on access
 
 .. code-block:: xml
 
-   <archdesc>
-      <accessrestrict encodinganalog="1.8B16a">
+   <accessrestrict encodinganalog="1.8B16a">
+      <p>
+
+.. SEEALSO::
+
+   * :ref:`rights`, especially :ref:`rights-digital-object` and
+     :ref:`rights-archival-description`.
 
 
 :ref:`Back to the top <rad-template>`
@@ -1522,8 +1547,8 @@ reproduction of the material." (RAD 1.8B16c)
 
 .. code-block:: xml
 
-   <archdesc>
-      <userestrict encodinganalog="1.8B16c">
+   <userestrict encodinganalog="1.8B16c">
+      <p>
 
 :ref:`Back to the top <rad-template>`
 
@@ -1545,8 +1570,12 @@ catalogues, box lists, series lists, inventories, indexes, etc." (RAD
 
 .. code-block:: xml
 
-   <archdesc>
-      <otherfindaid encodinganalog="1.8B17">
+   <otherfindaid encodinganalog="1.8B17">
+      <p>
+
+.. SEEALSO::
+
+   * :ref:`print-finding-aids`
 
 :ref:`Back to the top <rad-template>`
 
@@ -1572,11 +1601,14 @@ in one or more units of material external to the unit being described." (RAD
 
 .. code-block:: xml
 
-   <archdesc>
       <relatedmaterial encodinganalog="1.8B18">
+         <p>
+
+.. SEEALSO::
+
+   * :ref:`link-related-descriptions`
 
 :ref:`Back to the top <rad-template>`
-
 
 Accruals
 --------
@@ -1594,14 +1626,14 @@ closed." (RAD 1.8B19)
 
 .. code-block:: xml
 
-   <archdesc>
-      <accruals encodinganalog="1.8B19">
+   <accruals encodinganalog="1.8B19">
+      <p>
 
 :ref:`Back to the top <rad-template>`
 
 .. figure:: images/notes-other.*
    :align: center
-   :figwidth: 50%
+   :figwidth: 80%
    :width: 100%
    :alt: An image of the data entry fields for the other notes fields.
 
@@ -1622,12 +1654,10 @@ in the Physical description area (see 1.5E)." (RAD 1.8B9c)
 
 .. code-block:: xml
 
-   <archdesc>
-      <odd type="material" encodinganalog="1.5E">
+   <odd type="material" encodinganalog="1.5E">
+      <p>
 
 :ref:`Back to the top <rad-template>`
-
-
 
 Other notes- Alpha-numeric designations
 ---------------------------------------
@@ -1644,8 +1674,8 @@ numbers borne by the unit being described other than publisher's series numbers 
 
 .. code-block:: xml
 
-   <archdesc>
-      <odd type="alphanumericDesignation">
+   <odd type="alphanumericDesignation" encodinganalog="1.8B11">
+      <p>
 
 :ref:`Back to the top <rad-template>`
 
@@ -1684,8 +1714,8 @@ nature of the work." (RAD 1.8B9b)
 
 .. code-block:: xml
 
-   <archdesc>
-      <odd type="conservation" encodinganalog="1.8B9b">
+   <odd type="conservation" encodinganalog="1.8B9b">
+      <p>
 
 :ref:`Back to the top <rad-template>`
 
@@ -1724,11 +1754,10 @@ of the unit being described to other editions." (RAD 1.8B7)
 
 .. code-block:: xml
 
-   <archdesc>
-      <odd type="edition" encodinganalog="1.8B7">
+   <odd type="edition" encodinganalog="1.8B7">
+      <p>
 
 :ref:`Back to the top <rad-template>`
-
 
 Other notes- Physical description
 ---------------------------------
@@ -1744,11 +1773,10 @@ being described." (RAD 1.8B9)
 
 .. code-block:: xml
 
-   <archdesc>
-      <odd type="physDesc">
+   <odd type="physDesc" encodinganalog="1.8B9">
+      <p>
 
 :ref:`Back to the top <rad-template>`
-
 
 Other notes- Publisher's series
 -------------------------------
@@ -1766,8 +1794,8 @@ incomplete series, and of numbers or letters that imply a series." (RAD
 
 .. code-block:: xml
 
-   <archdesc>
-      <odd type="bibSeries">
+   <odd type="bibSeries" encodinganalog="1.8B10">
+      <p>
 
 .. note::
 
@@ -1791,8 +1819,8 @@ other rights pertaining to the unit being described." (RAD 1.8B16b)
 
 .. code-block:: xml
 
-   <archdesc>
-      <odd type="rights" encodinganalog="1.8B16b">
+   <odd type="rights" encodinganalog="1.8B16b">
+      <p>
 
 :ref:`Back to the top <rad-template>`
 
@@ -1835,8 +1863,8 @@ considered important but not falling within the definitions of the other notes.
 
 .. code-block:: xml
 
-   <archdesc>
-      <odd type="general" encodinganalog="1.8B21">
+   <odd type="general" encodinganalog="1.8B21">
+      <p>
 
 :ref:`Back to the top <rad-template>`
 
@@ -1847,7 +1875,7 @@ Standard number area
 
 .. figure:: images/standard-area.*
    :align: center
-   :figwidth: 50%
+   :figwidth: 80%
    :width: 100%
    :alt: An image of the data entry fields for the Standard number area.
 
@@ -1869,9 +1897,8 @@ abbreviation and with the standard spacing or hyphenation." (RAD 1.9B1)
 
 .. code-block:: xml
 
-   <archdesc>
-      <did>
-         <unitid type="standard" encodinganalog="1.9B1">
+   <did>
+      <unitid type="standard" encodinganalog="1.9B1">
 
 :ref:`Back to the top <rad-template>`
 
@@ -1880,9 +1907,9 @@ abbreviation and with the standard spacing or hyphenation." (RAD 1.9B1)
 Access points
 ^^^^^^^^^^^^^
 
-.. figure:: images/access-points.*
+.. figure:: images/access-points-rad.*
    :align: center
-   :figwidth: 50%
+   :figwidth: 80%
    :width: 100%
    :alt: An image of the data entry fields for Access points.
 
@@ -1903,9 +1930,8 @@ link to a new subject term."
 
 .. code-block:: xml
 
-   <archdesc>
-      <controlaccess>
-         <subject>
+   <controlaccess>
+      <subject>
 
 .. note::
 
@@ -1931,9 +1957,8 @@ create and link to a new place term."
 
 .. code-block:: xml
 
-   <archdesc>
-      <controlaccess>
-         <geogname>
+   <controlaccess>
+      <geogname>
 
 .. note::
 
@@ -1941,6 +1966,48 @@ create and link to a new place term."
    places :term:`taxonomy` where those do not already exist.
 
 :ref:`Back to the top <rad-template>`
+
+Genre access points
+-------------------
+
+**Template field** Genre access points
+
+**CSV Column** N/A
+
+.. NOTE::
+
+   The Genre taxonomy access points were added to AtoM in version 2.2. Currently
+   the access point field is only available on the RAD template, though we hope
+   to make it available on the :ref:`ISAD <isad-template>` and
+   :ref:`DACS <dacs-template>` in the future. At this time, it has not been added
+   to the CSV import templates.
+
+**RAD Rule** N/A
+
+**EAD**
+
+.. code-block:: xml
+
+   <controlaccess>
+      <genreform>
+
+.. NOTE::
+
+   The Genre taxonomy comes pre-populated in AtoM with genre/documentary form
+   terms. All 45 terms included have been taken from the US Library of
+   Congress' "Basic Genre Terms for Cultural Heritage Materials," available
+   at: http://memory.loc.gov/ammem/techdocs/genre.html. All terms can be edited
+   or deleted by users, and new ones can be added. When using the Genre access
+   point field in the RAD template, new values added in this field will create
+   :term:`terms <term>` in the Genre :term:`taxonomy` where those do not
+   already exist.
+
+.. TIP::
+
+   The Genre terms can be used as a facet in the :ref:`browse` and
+   :ref:`search <search-atom>` pages. The label on the facet can be customized
+   by an :term:`administrator` via **Admin > Settings > User interface labels**.
+   See: :ref:`user-interface-labels`.
 
 
 Name access points
@@ -1965,37 +2032,27 @@ corporate body:
 
 .. code-block:: xml
 
-   <archdesc>
-      <controlaccess>
-         <name role="subject">
+   <controlaccess>
+      <name role="subject">
 
-For a personal name:
+.. NOTE::
 
-.. code-block:: xml
+   This is the default export EAD when an Entity type has not been set for the
+   actor on the related :term:`authority record`. The final EAD element can be
+   more precise, if the user has entered an Entity type on the related
+   :term:`authority record`. When the Entity type is set to **Person**, the EAD
+   will export using ``<persname>`` instead of  ``<name>``; when set to
+   **Family**, the EAD will export using ``<famname>``  instead of ``<name>``;
+   and when set to **Organization**, the EAD will export using ``<corpname>``
+   instead of ``<name>``. The ``<name>`` element is the default when no
+   entity type is set. For more information on authority records and the ISAAR
+   standard upon which the authority record template is based, see:
+   :ref:`authority-records` and :ref:`isaar-template`.
 
-   <archdesc>
-      <controlaccess>
-         <persname role="subject">
-
-For a family name:
-
-.. code-block:: xml
-
-   <archdesc>
-      <controlaccess>
-         <famname role="subject">
-
-For a corporate body or organizational name:
-
-.. code-block:: xml
-
-   <archdesc>
-      <controlaccess>
-         <corpname role="subject">
-.. note::
-
-   The values in this column/field will create
-   :term:`authority records <authority record>` where those do not already exist.
+   This field is an auto-complete - the :term:`drop-down <drop-down menu>` will
+   suggest existing authority records as you type. Values in this column/field
+   that are entered instead of selected from the drop-down will create new
+   :term:`authority records <authority record>`.
 
 :ref:`Back to the top <rad-template>`
 
@@ -2006,7 +2063,7 @@ Control area
 
 .. figure:: images/control-area.*
    :align: center
-   :figwidth: 50%
+   :figwidth: 80%
    :width: 100%
    :alt: An image of the data entry fields for the Control area.
 
@@ -2036,8 +2093,8 @@ the country code."
 
 .. code-block:: xml
 
-   <archdesc>
-      <odd type="descriptionIdentifier">
+   <odd type="descriptionIdentifier">
+      <p>
 
 :ref:`Back to the top <rad-template>`
 
@@ -2058,8 +2115,8 @@ or international agency code standard."
 
 .. code-block:: xml
 
-   <archdesc>
-      <odd type="institutionIdentifier">
+   <odd type="institutionIdentifier">
+      <p>
 
 :ref:`Back to the top <rad-template>`
 
@@ -2084,7 +2141,6 @@ conventions followed in preparing the description."
 
 :ref:`Back to the top <rad-template>`
 
-
 Status
 ------
 
@@ -2099,15 +2155,12 @@ is a draft, finalized, and/or revised or deleted."
 
 .. code-block:: xml
 
-   <archdesc>
-      <odd type="statusDescription">
+   <odd type="statusDescription">
+      <p>
 
-.. note::
+.. NOTE::
 
-   AtoM uses a :term:`taxonomy` to determine the value of this field.
-   If you try to import a CSV file using a different :term:`term` from the
-   taxonomy, the import will succeed, but a null value will be entered for
-   Status (see `Bug 6758 <https://projects.artefactual.com/issues/6758>`_ . The
+   AtoM uses a :term:`taxonomy` to determine the value of this field. The
    default terms are Final, Revised and Draft, but can be edited through the
    :ref:`Manage taxonomy screen <add-term-taxonomy>`.
 
@@ -2129,16 +2182,13 @@ national guidelines and/or rules."
 
 .. code-block:: xml
 
-   <archdesc>
-      <odd type="levelOfDetail">
+   <odd type="levelOfDetail">
+      <p>
 
 .. note::
 
-   AtoM uses a :term:`taxonomy` to determine the value of this field.
-   If you try to import a CSV file using a different :term:`term` from the
-   taxonomy, the import will fail (see
-   `Bug 6756 <https://projects.artefactual.com/issues/6756>`_. The default terms
-   are Full, Partial and Minimal, but can be edited through the
+   AtoM uses a :term:`taxonomy` to determine the value of this field. The
+   default terms are Full, Partial and Minimal, but can be edited through the
    :ref:`Manage taxonomy screen <add-term-taxonomy>`.
 
 :ref:`Back to the top <rad-template>`
@@ -2157,8 +2207,7 @@ Dates of creation, revision and deletion
 
 .. code-block:: xml
 
-   <archdesc>
-      <processinfo>
+   <processinfo>
          <date>
 
 
@@ -2187,7 +2236,7 @@ archival material."
    <eadheader>
       <profiledesc>
          <language>
-            <language langcode="___">
+            <language langcode="[ISO code]">
 
 .. note::
 
@@ -2217,7 +2266,7 @@ archival material."
    <eadheader>
       <profiledesc>
          <language>
-            <language scriptcode="____">
+            <language scriptcode="[ISO code]">
 
 .. note::
 
@@ -2245,9 +2294,9 @@ fields)."
 
 .. code-block:: xml
 
-   <archdesc>
-      <did>
-         <note type="sourcesDescription">
+   <did>
+      <note type="sourcesDescription">
+         <p>
 
 .. note::
 
@@ -2263,22 +2312,16 @@ fields)."
 Rights area
 ^^^^^^^^^^^
 
-.. figure:: images/rights-area.*
-   :align: center
-   :figwidth: 50%
-   :width: 100%
-   :alt: An image of the data entry fields for the rights area.
-
-   The data entry area for the Rights area. Multiple rights records can be
-   added by clicking "Add new."
-
 This area of the description allows users to enter a :term:`rights record`
 compliant with `PREMIS <http://www.loc.gov/standards/premis/>`_. These fields
 are separate from the RAD rights notes, above, and editing one area does not
 effect the other. Rights records cannot be imported with descriptions via CSV.
 
-For more information, see
-:ref:`Add rights to an archival description <rights-archival-description>`.
+At present, the PREMIS rights added to a record are only visible to authenticated
+(i.e. logged in) users.
+
+For more information, see :ref:`rights`, especially
+:ref:`rights-archival-description`, and :ref:`premis-template`.
 
 .. _template-admin:
 
@@ -2306,10 +2349,15 @@ Publication status
 
 .. code-block:: xml
 
-   <archdesc>
-      <odd type="publicationStatus">
+   <odd type="publicationStatus">
+      <p>
 
 .. note::
+
+   The :term:`publication status` refers to the public visibility of a
+   description for unauthenticated (e.g. not logged in) users. The default
+   terms available are "Published" (i.e. visible to public users), and "Draft"
+   (e.g. not visible to public users). See: :ref:`publish-archival-description`.
 
    In the :ref:`Global Site Settings <global-settings>`, if the default
    publication status is set to draft, all imported descriptions will be set to
@@ -2334,33 +2382,8 @@ Display standard
    This fields allows the user to choose a different display standard
    from the :ref:`default template <default-templates>`
    for the shown archival description only, with the option to also change the
-   display standard for all existing children of the description.
+   display standard for all existing children of the description. See:
+   :ref:`change-display-standard`.
 
 
 :ref:`Back to the top <rad-template>`
-
-Appraisal
----------
-
-**Template field** N/A
-
-**CSV Column** Appraisal
-
-**RAD Rule** N/A
-
-**EAD**
-
-.. code-block:: xml
-
-   <archdesc>
-      <appraisal encodinganalog="3.3.2">
-
-.. note::
-
-   There is no appraisal field in Rules for Archival Description and
-   therefore this field does not display in the AtoM RAD template. However,
-   contents of this column are contained in the EAD file and can be
-   exported/imported.
-
-:ref:`Back to the top <rad-template>`
-
