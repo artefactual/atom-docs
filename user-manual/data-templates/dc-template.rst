@@ -4,11 +4,6 @@
 Dublin Core Metadata Element Set, Version 1.1 (DC)
 ==================================================
 
-.. note::
-
-   A more fulsome description of AtoM's Dublin Core template including EAD and
-   CSV import mappings will be made available soon.
-
 On this page you will find:
 
 * Link to downloadable CSV template using
@@ -30,11 +25,10 @@ Dublin Core and the ISAD CSV template
 =====================================
 
 At present, there is no DC-based CSV template for importing descriptions
-into  AtoM. However, because is based on the `International Council
-on Archives <http://www.ica.org/>`_ ' ISAD(G) standard (see:
-:ref:`ISAD <isad-template>`), the ISAD CSV template
-can be used for import, as all templates have been crosswalked in AtoM where
-possible.
+into  AtoM. However, because AtoM was originally based on the
+`ICA's <http://www.ica.org/>`_  ISAD(G) standard (see: :ref:`ISAD <isad-template>`),
+the ISAD CSV template can be used for import, as all templates have been
+crosswalked in AtoM where possible.
 
 To test this, we recommend creating a full DC description in AtoM, and then
 changing the display template to DC, to determine where field in DC map to
@@ -67,10 +61,6 @@ Information below includes:
 * **Notes** includes any other information needed for successful data entry or
   CSV import.
 
-**Skip to**:
-
-* :ref:`dc-elements-area`
-
 .. _dc-elements-area:
 
 DC Elements area
@@ -84,20 +74,60 @@ DC Elements area
 
    The data entry fields for the Dublin Core archival description edit template.
 
+.. _dc-identifier:
+
 Identifier
 ----------
 
-In Dublin Core, an identifier is "an unambiguous reference to the resource
-within a given context. Recommended best practice is to identify the resource
-by means of a string conforming to a formal identification system."
+**Template field**: Identifier
 
+**CSV Column**: ``identifier``
+
+**DC Rule**: In Dublin Core, an identifier is "an unambiguous reference to the
+resource within a given context. Recommended best practice is to identify the
+resource by means of a string conforming to a formal identification system."
+
+**DC XML**
+
+.. code-block:: xml
+
+   <identifier>
+
+.. NOTE::
+
+   An administrator can set the reference code to inherit from higher levels
+   of description via **Admin > Settings** - see: :ref:`inherit-reference-code`
+   for more information. However, since DC simple records are not designed for
+   hierarchical information, engaging this setting will **not** change how the
+   identifier is handled during export - only the identifier for the current
+   :term:`level of description` will be exported.
+
+
+.. _dc-title:
 
 Title
 -----
 
-"A name given to the resource. Typically, a Title will be a name by which the
-resource is formally known."
+**Template field**: Title
 
+**CSV column**: ``title``
+
+**DC Rule**: "A name given to the resource. Typically, a Title will be a name
+by which the resource is formally known."
+
+**DC XML**:
+
+.. code-block:: xml
+
+   <title>
+
+.. TIP::
+
+   AtoM will use the title of a :term:`description <archival description>` to
+   generate a :term:`slug` used in the permanent URL for the resource. For more
+   information, see: :ref:`slugs-in-atom`.
+
+.. _dc-names-dates:
 
 Names and dates
 ---------------
@@ -105,10 +135,41 @@ Names and dates
 Name(s)
 ^^^^^^^
 
+.. image:: images/dc-names-edit.*
+   :align: center
+   :width: 80%
+   :alt: An image of the data entry fields in the DC name elements
+
+**Template field**: "Name(s)" in the :term:`view page`; "Creator" in the
+:term:`view page`
+
+**CSV Columns**:
+
+* ``creators`` - Creator name(s) - multiple names can be entered,
+  and separated by the ``|`` pipe character.
+* ``creationDatesType`` - creation event type. (creation, contribution, or publication)
+
+**DC Rule**:
+
+* *Creator:* "An entity primarily responsible for making the resource.
+  Examples of a Creator include a person, an organization, or a service."
+* *Contributor:* "An entity responsible for making contributions to the resource.
+  Examples of a Contributor include a person, an organization, or a service."
+* *Publisher:* "An entity responsible for making the resource available.
+  Examples of a Publisher include a person, an organization, or a service."
+
+**DC XML**:
+
+* Creator: ``<creator>``
+* Contributor: ``<contributor>``
+* Publisher: ``<publisher>``
+
+**Notes**:
+
 In the "Actor name" field enter the first few letters of the the actor's name.
 A list of names will appear in the drop-down menu (generated from the names of
 existing authority records). If the name does not appear in the menu, type the
-name and a new authority record will be created.
+name and a new :term:`authority record` will be created.
 
 You can leave the "Actor name" field blank. Lower levels inherit creator
 information from higher levels: use only if the creator is different at the
@@ -116,15 +177,48 @@ lower and higher levels. At the highest level of description, you should
 always include the creator.
 
 Select the type of event from the drop-down menu: creation, contribution or
-publication. The value list is drawn from the event types taxonomy and can be
-edited by system administrators and editors.
+publication. The value list is drawn from the event types :term:`taxonomy` and
+can be edited by an :term:`administrator` or :term:`editor`. For more information,
+see: :ref:`terms`.
 
 Date(s)
 ^^^^^^^
 
-In Dublin Core 1.1, The date field corresponds to a "date associated with an
-event in the life cycle of the resource. Typically, Date will be associated
-with the creation or availability of the resource."
+.. image:: images/dc-dates-edit.*
+   :align: center
+   :width: 80%
+   :alt: An image of the data entry fields in the DC dates elements
+
+**Template field**: Date(s)
+
+**CSV Columns**:
+
+* ``creationDates`` - display date for creation events (what the public users
+  will see in the :term:`view page`).
+* ``creationDatesStart`` - start date - ISO-formatted (YYYY-MM-DD). Not visible
+  to public users.
+* ``creationDatesEnd`` - end date - ISO-formatted (YYYY-MM-DD). Not visible
+  to public users.
+
+.. NOTE::
+
+   The CSV columns in earlier versions prior to 2.2 was named
+   ``creatorDates``, ``creatorDatesStart``, and ``creatorDatesEnd`` - they
+   have been updated to clarify the relation to the creation event - not to
+   the dates of existence of the creator. However, we have added fallback
+   code, so if the old names are used, the import will still succeed.
+
+**DC Rule**: In Dublin Core 1.1, The date field corresponds to a "date
+associated with an event in the life cycle of the resource. Typically, Date
+will be associated with the creation or availability of the resource."
+
+**DC XML**:
+
+.. code-block:: xml
+
+   <date>
+
+**Notes**:
 
 If desired, enter the date range as you want it to appear in view mode in "Date".
 Add any additional text to qualify date range (e.g. "ca. 1940-1980" or
@@ -133,7 +227,15 @@ Add any additional text to qualify date range (e.g. "ca. 1940-1980" or
 Enter the Start and End dates. Do not use any qualifiers here
 (e.g. "ca.") or typographical symbols (e.g. "[194?]") to express uncertainty.
 If the start and end years are the same, enter data only in the "Start" field and
-leave the "End date" blank.
+leave the "End date" blank. These values should be ISO-formatted - acceptable
+formats include: YYYY, YYYY-MM, YYYY-MM-DD, or YYYYMMDD.
+
+.. TIP::
+
+   These fields only display while editing the description. If AtoM is
+   able to interpret the start and end date from the value entered into the
+   Date field, it will autopopulate upon entering - but you can still edit the
+   auto-populated values as needed.
 
 Complete at lower levels of description even if you are leaving the creator
 name field blank (e.g. when describing a series, you do not need to repeat the
@@ -141,17 +243,34 @@ creator name from the fonds description, but you do need to enter the date
 range of the series).
 
 Whereas "Start" and "End" are used internally for database searching and
-sorting purposes, this field is for display purposes. However, if you do not
-enter anything into "Date" the "Start" and "End date" will appear as a
+sorting purposes, the "Date" field is for display purposes. However, if you do
+not enter anything into "Date" the "Start" and "End date" will appear as a
 date range when the record is saved.
+
+You can add multiple dates as needed. Click the "Add new" hyperlink to add
+another date row.
+
+.. _dc-subject:
 
 Subject
 --------
 
-"The topic of the resource. Typically, the subject will be represented using
-keywords, key phrases, or classification codes. Recommended best practice is
-to use a controlled vocabulary. To describe the spatial or temporal topic of
-the resource, use the Coverage element."
+**Template field**: Subject
+
+**CSV Column**: ``subjectAccessPoints``
+
+**DC Rule**: "The topic of the resource. Typically, the subject will be
+represented using keywords, key phrases, or classification codes. Recommended
+best practice is to use a controlled vocabulary. To describe the spatial or
+temporal topic of the resource, use the Coverage element."
+
+**DC XML**:
+
+.. code-block:: xml
+
+   <subject>
+
+**Notes**:
 
 Click on the "Subject" field and enter the first few letters of the term.
 If the subject term does not appear on the list, type it in and a new subject
@@ -174,31 +293,69 @@ an "**X**". You can click the **X** to remove the term.
    * :ref:`terms`
    * :ref:`add-term-fly`
 
+.. _dc-description:
+
 Description
 -----------
 
-"An account of the resource. Description may include but is not limited to: an
-abstract, a table of contents, a graphical representation, or a free-text
-account of the resource."
+**Template field**: Description
 
-.. NOTE::
+**CSV Column**: ``scopeAndContent``
+
+**DC Rule**: "An account of the resource. Description may include but is not
+limited to: an abstract, a table of contents, a graphical representation, or a
+free-text account of the resource."
+
+**DC XML**:
+
+.. code-block:: xml
+
+   <description>
+
+**Notes**: You can click and drag the bottom of the :term:`field` to expand it,
+in case you are writing a long description and require more room.
+
+.. TIP::
 
    This element will map to Scope and Content in equivalent archival standards
    such as :ref:`RAD <rad-template>`, :ref:`DACS <dacs-template>`, and
    :ref:`ISAD(G) <isad-template>`.
 
+.. _dc-type:
+
 Type
 ----
 
-The nature or genre of the resource. Recommended best practice is to use a
-controlled vocabulary such as the DCMI Type Vocabulary [DCMITYPE]. To
-describe the file format, physical medium, or dimensions of the resource, use
-the Format element." For more information on the Dublin Core type taxonomy,
-see http://dublincore.org/documents/dcmi-type-vocabulary/.
+**Template field**: Type
 
-Select a value from the drop-down menu. The values are drawn from the "Dublin
-Core Types" :term:`taxonomy`. AtoM comes with the DCMI TYPE terms prepopulated
-in the taxonomy.
+**CSV Column**: N/A
+
+**DC Rule**: "The nature or genre of the resource. Recommended best practice
+is to use a controlled vocabulary such as the DCMI Type Vocabulary [DCMITYPE].
+To describe the file format, physical medium, or dimensions of the resource,
+use the Format element." For more information on the Dublin Core type
+taxonomy, see http://dublincore.org/documents/dcmi-type-vocabulary/.
+
+**DC XML**:
+
+.. code-block:: xml
+
+   <type>
+
+**Notes**:
+
+Select a value from the :term:`drop-down menu`. The values are drawn from the
+"Dublin Core Types" :term:`taxonomy`. AtoM comes with the DCMI TYPE terms
+prepopulated in the taxonomy. Users with the proper edit
+:term:`permissions <access privilege>` can edit or delete :term:`terms <term>`,
+or add new ones - however, to remain compliant, we recommend using the supplied
+values.
+
+You can add multiple values as needed - they will appear above the drop-down
+menu as you select them. To remove a value, simply click on it - AtoM will remove
+the term.
+
+.. _dc-child-levels:
 
 Child levels
 ------------
@@ -212,14 +369,36 @@ child-level resource.
 
 **Title:** The name given to the child-level resource.
 
+See :ref:`dc-identifier` and :ref:`dc-title`, above, for more information on the
+use of each field.
+
+.. TIP::
+
+   Dublin Core simple XML is not designed for hierarchical description. Exporting
+   DC XML in AtoM from the :term:`parent record` (or top level of description,
+   such as a collection with many items), will **not** include child descriptions
+   in the DC XML generated as you would normally find in the EAD XML, for example.
+
+   If you require hierarchical XML, consider using either the EAD XML, or flip
+   the template to :ref:`MODS <mods-template>` and use the MODS XML export - in
+   MODS, each record is exported individually, but the XML will contain links
+   referencing parent and/or child descriptions. To change the display template,
+   see: :ref:`change-display-standard`.
+
+.. _dc-format:
+
 Format
 ------
 
-"The file format, physical medium, or dimensions of the resource. Examples of
-dimensions include size and duration. Format may be used to determine the
-software, hardware or other equipment needed to display or operate the
-resource.Recommended best practice is to use a controlled vocabulary such as
-the list of Internet Media Types [MIME]."
+**Template field**: Format
+
+**CSV Column**: ``extentAndMedium``
+
+**DC Rule**: "The file format, physical medium, or dimensions of the resource.
+Examples of dimensions include size and duration. Format may be used to
+determine the software, hardware or other equipment needed to display or
+operate the resource.Recommended best practice is to use a controlled
+vocabulary such as the list of Internet Media Types [MIME]."
 
 .. IMPORTANT::
 
@@ -227,31 +406,98 @@ the list of Internet Media Types [MIME]."
    a digital object, the Internet Media Types (MIME) will be added automatically
    upon output. It is recommended that you avoid duplicating those values here.
 
+**DC XML**:
+
+.. code-block:: bash
+
+   <format>
+
+**Notes**: This field crosswalks from Extent and medium in the
+:ref:`ISAD <isad-template>` template, Extent in the :ref:`DACS <dacs-template>`,
+and Physical description in the :ref:`RAD <rad-template>` template.
+
+.. _dc-source:
+
 Source
 ------
 
-"A related resource from which the described resource is derived. The
-described resource may be derived from the related resource in whole or in
-part." Recommended best practice is to identify the related resource by means
-of a string conforming to a formal identification system.
+**Template field**: Source
+
+**CSV Column**: ``locationOfOriginals``
+
+**DC Rule**: "A related resource from which the described resource is derived.
+The described resource may be derived from the related resource in whole or in
+part. Recommended best practice is to identify the related resource by means
+of a string conforming to a formal identification system."
+
+**DC XML**:
+
+.. code-block:: xml
+
+   <source>
+
+**Notes**: This field crosswalks from Existence and location of originals in the
+:ref:`ISAD <isad-template>` and :ref:`DACS <dacs-template>` templates,
+and Locations of originals in the :ref:`RAD <rad-template>` template.
+
+.. _dc-language:
 
 Language
 --------
 
-"A language of the resource. Recommended best practice is to use a controlled
-vocabulary such as RFC 4646."
+**Template field**: Language
 
-Click on the field and the first few letters of the language. You can do this
-as many times as you like to enter multiple languages.
+**CSV Column**: ``language``
 
+.. TIP::
+
+   Use a three-letter language code from
+   `ISO 639-2 <http://www.loc.gov/standards/iso639-2/php/code_list.php>`_ when
+   importing from CSV.
+
+**DC Rule**: "A language of the resource. Recommended best practice is to use
+a controlled vocabulary such as RFC 4646."
+
+**DC XML**:
+
+.. code-block:: xml
+
+   <language xsi:type="dcterms:ISO639-3">
+
+**Notes**:
+
+Click on the field and begin to enter the first few letters of the target
+language. A :term:`drop-down menu` will appear with matching results from a
+controlled list of ISO languages (pre-loaded in AtoM) as you type. When you see
+the matching language in the drop-down, click on it - AtoM will add the selection
+above the drop-down menu. You can do this as many times as you like to enter
+multiple languages. To remove a selection, hover your cursor over the :term:`term`
+- the bullet next to the language will change into an **X**. Click on the term
+to remove it.
+
+.. _dc-relation:
 
 Relation (isLocatedAt)
 ----------------------
 
-This field is used for indicating which :term:`archival institution` holds the
-record(s) being described. Select an archival institution only at the highest
-:term:`level of description`; leave this field blank at the lower levels if
-they are all held by the same institution.
+**Template field**: Relation (isLocatedAt)
+
+**CSV Column**: ``repository``
+
+**DC Rule**: N/A
+
+**DC XML**:
+
+.. code-block:: xml
+
+   <relation>
+
+**Notes**:
+
+This field is used for indicating which :term:`archival institution`
+(i.e. :term:`repository`) holds the record(s) being described. Select an
+archival institution only at the highest :term:`level of description`; leave this
+field blank at the lower levels if they are all held by the same institution.
 
 .. TIP::
 
@@ -278,26 +524,135 @@ archival institution record will be created.
    * :ref:`archival-institutions`
    * :ref:`link-archival-institution`
 
+.. _dc-coverage:
+
 Coverage
 --------
 
-"The spatial or temporal topic of the resource, the spatial applicability of
-the resource, or the jurisdiction under which the resource is relevant."
+**Template field**: Coverage (spatial)
+
+**CSV Column**: ``placeAccessPoints``
+
+**DC Rule**: "The spatial or temporal topic of the resource, the spatial
+applicability of the resource, or the jurisdiction under which the resource is
+relevant."
+
+**DC XML**:
+
+.. code-block:: xml
+
+   <coverage>
+
+**Notes**:
 
 Click on the "Coverage (spatial)" field and type the first few letters of the
 place. If the place term does not appear on the list, type it in and a new
 place term will be created (note that this works only if you have taxonomy
 edit permission).
 
+.. TIP::
+
+   This field is an auto-complete - as you type, AtoM will suggest matches with
+   :term:`terms <term>` already in the related :term:`taxonomy`. If you do not
+   explicitly pick a value from the :term:`drop-down menu` that appears, AtoM
+   will create a new term in the taxonomy. **Warning**: this means if you are
+   not careful, it is easy to accidentally create duplicate terms (e.g. by
+   pressing enter instead of selecting the match from the drop-down).
+
+.. SEEALSO::
+
+   * :ref:`terms`
+   * :ref:`add-term-fly`
+
 Rights
 ------
 
-"Information about rights held in and over the resource. Typically, rights
-information includes a statement about various property rights associated
-with the resource, including intellectual property rights."
+**Template field**: Rights
 
-For more information on using the fields contained in this dialog, see
-:ref:`Add/edit rights <rights>`.
+**CSV Column**: ``accessConditions``
 
+**DC Rule**: "Information about rights held in and over the resource.
+Typically, rights information includes a statement about various property
+rights associated with the resource, including intellectual property rights."
+
+**DC XML**:
+
+.. code-block:: xml
+
+   <rights>
+
+**Notes**:
+
+This field maps to "Conditions governing access" in the
+:ref:`ISAD <isad-template>` and :ref:`DACS <dacs-template>` templates,
+"Restrictions on access" in the :ref:`RAD <rad-template>` template, and "Access
+condition" in the :ref:`MODS <mods-template>` template.
+
+.. SEEALSO::
+
+   * :ref:`rights`, especially :ref:`rights-digital-object` and
+     :ref:`rights-archival-description`.
+
+:ref:`Back to the top <dc-template>`
+
+.. _dc-admin-area:
+
+Administration area
+===================
+
+.. figure:: images/admin-area.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An image of the data entry fields for the Administration area.
+
+   The data entry fields for the Administration area.
+
+.. _dc-admin-pubstatus:
+
+Publication status
+------------------
+
+**Template field**: Publication status
+
+**CSV column**: ``publicationsStatus``
+
+**DC Rule**: N/A
+
+**DC XML**: N/A
+
+.. NOTE::
+
+   The :term:`publication status` refers to the public visibility of a
+   description for unauthenticated (e.g. not logged in) users. The default
+   terms available are "Published" (i.e. visible to public users), and "Draft"
+   (e.g. not visible to public users). See: :ref:`publish-archival-description`.
+
+   In the :ref:`Global Site Settings <global-settings>`, if the default
+   publication status is set to draft, all imported descriptions will be set to
+   draft.
+
+:ref:`Back to the top <dc-template>`
+
+.. _dc-admin-displaystatus:
+
+Display standard
+----------------
+
+**Template field**: Display standard
+
+**CSV column**: N/A
+
+**DC Rule**: N/A
+
+**DC XML**: N/A
+
+.. NOTE::
+
+   This fields allows the user to choose a different display standard
+   from the :ref:`default template <default-templates>`
+   for the shown archival description only, with the option to also change the
+   display standard for all existing children of the description. See:
+   :ref:`change-display-standard`.
 
 :ref:`Back to the top <dc-template>`
