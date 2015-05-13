@@ -102,10 +102,10 @@ Start the service and configure it to start when the system is booted.
    sudo update-rc.d elasticsearch defaults 95 10
    sudo /etc/init.d/elasticsearch start
 
-.. _linux-dependency-nginx:
+.. _linux-dependency-httpd:
 
-Nginx
------
+Web server
+----------
 
 There are many web servers out there capable of working well with
 `PHP <http://php.net/>`__. `Apache <https://httpd.apache.org/>`__ is probably
@@ -113,9 +113,14 @@ the most popular and we like it, but we've found that
 `Nginx <http://nginx.com/>`__ adapts itself much better to limited resource
 environments while it also scales better and more predictably under high loads.
 You are welcome to try other solutions, but the following documentation will
-focus upon Nginx, our preferred web server solution.
+focus upon Nginx and Apache, our preferred web server solutions.
 
-The installation in Ubuntu is simple:
+.. _linux-dependency-httpd-nginx:
+
+Nginx
+`````
+
+In Ubuntu, the installation of Nginx is simple:
 
 .. code-block:: bash
 
@@ -230,6 +235,43 @@ Now you need to restart Nginx:
 
    sudo service nginx restart
 
+.. _linux-dependency-httpd-apache:
+
+Apache
+``````
+.. warning::
+
+   Remember that our preferred choice is :ref:`linux-dependency-nginx` but it
+   is perfectly possible to use Apache and we have verified that it works.
+
+Install the necessary packages:
+
+.. code-block:: bash
+
+   sudo apt-get install apache2 libapache2-mod-xsendfile
+
+Enable the required modules:
+
+.. code-block:: bash
+
+   sudo a2enmod rewrite xsendfile
+
+The configuration of your virtual server shoud look like the following:
+
+.. code-block:: apache
+
+    <VirtualHost *:90>
+      DocumentRoot /usr/share/nginx/atom
+      RewriteEngine On
+      RewriteRule ^/uploads/r/([^/]*)/conf/(.*)$ /usr/share/nginx/atom/uploads/r/$1/conf/$2 [L]
+      RewriteRule ^/uploads/(.*)$ /usr/share/nginx/atom/uploads/r/uploads/$1 [L]
+      <LocationMatch ^/uploads>
+        XSendFile On
+        XSendFilePath /usr/share/nginx/atom/uploads
+        SetEnv ATOM_XSENDFILE 1
+      </LocationMatch>
+    </VirtualHost>
+
 
 .. _linux-dependency-php:
 
@@ -250,6 +292,12 @@ If you are using Ubuntu 14.04, the package php5-readline is also recommended.
 .. code-block:: bash
 
     sudo apt-get install php5-readline
+
+If you are using Apache, you will also need to install mod_php:
+
+.. code-block:: bash
+
+    sudo apt-get install libapache2-mod-php5
 
 Let's add a new PHP pool for AtoM by adding the following contents in a new file
 called :file:`/etc/php5/fpm/pool.d/atom.conf`:
