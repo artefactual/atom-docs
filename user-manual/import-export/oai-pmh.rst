@@ -365,7 +365,7 @@ This verb is used to retrieve information about a repository.
 
 **Example response**
 
-.. code:: bash
+.. code-block:: xml
 
    <?xml version="1.0" encoding="utf-8" ?>
     <OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/"
@@ -421,7 +421,7 @@ of an XML Schema describing the format should be given. The support of these
 formats at the repository-level does not imply support of each format for each
 item of the repository.
 
-.. code:: bash
+.. code-block:: xml
 
    <?xml version="1.0" encoding="utf-8" ?>
     <OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/"
@@ -470,7 +470,7 @@ harvesting of headers based on set membership and/or datestamp. The
 
 A resumption token is included in the example.
 
-.. code:: bash
+.. code-block:: xml
 
    <?xml version="1.0" encoding="utf-8" ?>
     <OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/"
@@ -559,9 +559,9 @@ selective harvesting of records based on set membership and/or datestamp. The
 
 **Example response:**
 
-.. code:: bash
+.. code-block:: xml
 
-   <?xml version="1.0" encoding="utf-8" ?>
+    <?xml version="1.0" encoding="utf-8" ?>
     <OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/
@@ -579,22 +579,23 @@ selective harvesting of records based on set membership and/or datestamp. The
                <oai_dc:dc xmlns="http://purl.org/dc/elements/1.1/"
               xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-              xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-                 <title>Syllabus of lectures on &#039;Cities in Evolution&#039;</title>
-                 <description>An introductory course of general sociology. University of Bombay.</description>
-                 <date>1919</date>
-                 <format>1 item</format>
-                 <identifier>http://example-site.com/syllabus-of-lectures-on-cities-in-evolution</identifier>
-                 <identifier>5</identifier>
-                 <source></source>
-                 <language xsi:type="dcterms:ISO639-3">eng</language>
-                 <rights>Open</rights>
+              xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/
+              http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+                 <dc:title>Syllabus of lectures on &#039;Cities in Evolution&#039;</dc:title>
+                 <dc:description>An introductory course of general sociology. University of Bombay.</dc:description>
+                 <dc:date>1919</dc:date>
+                 <dc:format>1 item</dc:format>
+                 <dc:identifier>http://example-site.com/syllabus-of-lectures-on-cities-in-evolution</dc:identifier>
+                 <dc:identifier>5</dc:identifier>
+                 <dc:source></dc:source>
+                 <dc:language xsi:type="dcterms:ISO639-3">eng</dc:language>
+                 <dc:rights>Open</dc:rights>
                </oai_dc:dc>
              </metadata>
            </record>
            <resumptionToken>from=&until=&cursor=100</resumptionToken>
          </ListRecords>
-     </OAI-PMH>
+      </OAI-PMH>
 
 If you have enabled the "Additional sets" setting, (see above
 :ref:`oai-pmh-settings`), a virtual set parameter could also be used.
@@ -644,7 +645,7 @@ requested and the format of the metadata that should be included in the record.
 
 **Example response**
 
-.. code:: bash
+.. code-block:: xml
 
    <?xml version="1.0" encoding="utf-8" ?>
     <OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/"
@@ -661,21 +662,25 @@ requested and the format of the metadata that should be included in the record.
           <setSpec>oai:example-site.com:repoid_10555</setSpec>
         </header>
         <metadata>
-          <oai_dc:dc xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-            <title>Bob Ross fonds</title>
-            <creator>Ross, Robert (Bob) Norman, 1942-1995</creator>
-            <description>The fonds consists of sketches and preparatory works of art from throughout
+            <oai_dc:dc xmlns="http://purl.org/dc/elements/1.1/"
+            xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/
+            http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+            <dc:title>Bob Ross fonds</title>
+            <dc:creator>Ross, Robert (Bob) Norman, 1942-1995</dc:creator>
+            <dc:description>The fonds consists of sketches and preparatory works of art from throughout
             Bob Ross' television artist career, personal correspondence, poetry by
             Ross, photographs of the artist and his work, journals and record books, press clippings and
-            studio recordings.</description>
-            <date>1926-2000</date>
-            <format>126 cm of textual material; 330 drawings; 194 photographs; 7 posters; 99 Betacam videotapes</format>
-            <identifier>http://example-site.com/bob-ross-fonds</identifier>
-            <identifier>12345<identifier/>
-            <source><source/>
-            <relation>http://example-site.com/artefactual-art-gallery-research-library-and-archives</relation>
-            <relation>Artefactual Art Gallery Research Library and Archives</relation>
-            <rights>Open</rights>
+            studio recordings.</dc:description>
+            <dc:date>1926-2000</date>
+            <dc:format>126 cm of textual material; 330 drawings; 194 photographs; 7 posters; 99 Betacam videotapes</dc:format>
+            <dc:identifier>http://example-site.com/bob-ross-fonds</dc:identifier>
+            <dc:identifier>12345<dc:identifier/>
+            <dc:source><dc:source/>
+            <dc:relation>http://example-site.com/artefactual-art-gallery-research-library-and-archives</dc:relation>
+            <dc:relation>Artefactual Art Gallery Research Library and Archives</dc:relation>
+            <dc:rights>Open</dc:rights>
           </oai_dc:dc>
         </metadata>
       </record>
@@ -686,7 +691,7 @@ If the resource has a :term:`digital object` attached, AtoM will include a
 link to the  digital object in the OAI response, using
 `Atom <http://tools.ietf.org/html/rfc4287>`__ Syndication format XML:
 
-.. code:: bash
+.. code-block:: xml
 
    <?xml version="1.0" encoding="utf-8"?>
     <OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/"
@@ -703,21 +708,27 @@ link to the  digital object in the OAI response, using
                 <setSpec>oai:example-site.com:repoid_16508</setSpec>
             </header>
             <metadata>
-                <oai_dc:dc xmlns="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-                <title>Ray Houser fonds</title>
-                <creator>Houser, Ray, 1897-1981</creator>
-                <subject>Education</subject>
-                <description>The fonds consists Waterloo Lutheran Seminary fundraising information, and sermons by Ray Houser. Fonds is comprised of the following series: Waterloo Lutheran Seminary fund raising; Sermons</description>
-                <date>1960-1963</date>
-                <type>image</type>
-                <format>image/jpeg</format>
-                <format>20 cm of textual records</format>
-                <identifier>http://example-site.com/ray-houser-fonds</identifier>
-                <identifier>S735</identifier>
-                <source/>
-                <relation>http://example-site.com/wilfrid-laurier-university-archives</relation>
-                <relation>Wilfrid Laurier University Archives</relation>
-                <rights>Open</rights>
+                <oai_dc:dc xmlns="http://purl.org/dc/elements/1.1/"
+                xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/
+                http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+                <dc:title>Ray Houser fonds</dc:title>
+                <dc:creator>Houser, Ray, 1897-1981</dc:creator>
+                <dc:subject>Education</dc:subject>
+                <dc:description>The fonds consists Waterloo Lutheran Seminary fundraising information,
+                and sermons by Ray Houser. Fonds is comprised of the following series:
+                Waterloo Lutheran Seminary fund raising; Sermons</dc:description>
+                <dc:date>1960-1963</dc:date>
+                <dc:type>image</dc:type>
+                <dc:format>image/jpeg</dc:format>
+                <dc:format>20 cm of textual records</dc:format>
+                <dc:identifier>http://example-site.com/ray-houser-fonds</dc:identifier>
+                <dc:identifier>S735</dc:identifier>
+                <dc:source></dc:source>
+                <dc:relation>http://example-site.com/wilfrid-laurier-university-archives</dc:relation>
+                <dc:relation>Wilfrid Laurier University Archives</dc:relation>
+                <dc:rights>Open</dc:rights>
             </oai_dc:dc>
         </metadata>
         <about>
@@ -765,7 +776,7 @@ parameter supported by this verb.
 
 **Example response**
 
-.. code:: bash
+.. code-block:: xml
 
    <?xml version="1.0" encoding="utf-8" ?>
     <OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/"

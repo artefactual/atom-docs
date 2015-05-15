@@ -91,7 +91,7 @@ resource by means of a string conforming to a formal identification system."
 
 .. code-block:: xml
 
-   <identifier>
+   <dc:identifier>
 
 .. NOTE::
 
@@ -119,7 +119,7 @@ by which the resource is formally known."
 
 .. code-block:: xml
 
-   <title>
+   <dc:title>
 
 .. TIP::
 
@@ -160,9 +160,9 @@ Name(s)
 
 **DC XML**:
 
-* Creator: ``<creator>``
-* Contributor: ``<contributor>``
-* Publisher: ``<publisher>``
+* Creator: ``<dc:creator>``
+* Contributor: ``<dc:contributor>``
+* Publisher: ``<dc:publisher>``
 
 **Notes**:
 
@@ -216,7 +216,7 @@ will be associated with the creation or availability of the resource."
 
 .. code-block:: xml
 
-   <date>
+   <dc:date>
 
 **Notes**:
 
@@ -268,7 +268,7 @@ temporal topic of the resource, use the Coverage element."
 
 .. code-block:: xml
 
-   <subject>
+   <dc:subject>
 
 **Notes**:
 
@@ -310,7 +310,7 @@ free-text account of the resource."
 
 .. code-block:: xml
 
-   <description>
+   <dc:description>
 
 **Notes**: You can click and drag the bottom of the :term:`field` to expand it,
 in case you are writing a long description and require more room.
@@ -340,7 +340,7 @@ taxonomy, see http://dublincore.org/documents/dcmi-type-vocabulary/.
 
 .. code-block:: xml
 
-   <type>
+   <dc:type>
 
 **Notes**:
 
@@ -408,9 +408,9 @@ vocabulary such as the list of Internet Media Types [MIME]."
 
 **DC XML**:
 
-.. code-block:: bash
+.. code-block:: xml
 
-   <format>
+   <dc:format>
 
 **Notes**: This field crosswalks from Extent and medium in the
 :ref:`ISAD <isad-template>` template, Extent in the :ref:`DACS <dacs-template>`,
@@ -434,7 +434,7 @@ of a string conforming to a formal identification system."
 
 .. code-block:: xml
 
-   <source>
+   <dc:source>
 
 **Notes**: This field crosswalks from Existence and location of originals in the
 :ref:`ISAD <isad-template>` and :ref:`DACS <dacs-template>` templates,
@@ -462,7 +462,7 @@ a controlled vocabulary such as RFC 4646."
 
 .. code-block:: xml
 
-   <language xsi:type="dcterms:ISO639-3">
+   <dc:language xsi:type="dcterms:ISO639-3">
 
 **Notes**:
 
@@ -490,7 +490,7 @@ Relation (isLocatedAt)
 
 .. code-block:: xml
 
-   <relation>
+   <dc:relation>
 
 **Notes**:
 
@@ -541,7 +541,7 @@ relevant."
 
 .. code-block:: xml
 
-   <coverage>
+   <dc:coverage>
 
 **Notes**:
 
@@ -579,7 +579,7 @@ rights associated with the resource, including intellectual property rights."
 
 .. code-block:: xml
 
-   <rights>
+   <dc:rights>
 
 **Notes**:
 
