@@ -82,82 +82,103 @@ Add rights to an Accession record
    :width: 65%
    :alt: An image of searching for an accession
 
-TODO: Update this section to reflect new behaviour.
+3. When you have arrived at the record to which you wish to add rights, click
+   on "Create new rights" in the :term:`button bar`. The PREMIS rights entry form
+   will appear.
 
-3. When you have arrived at the record to which you wish to add rights, Click
-   on the "Edit" button located in the :term:`button block` located at the
-   bottom of the page to enter :term:`edit mode`; alternately, you can click
-   on on of the :term:`information area` headers to open the :term:`edit page`
-   directly in that section.
-
-4. To enter Rights information, scroll down the page until you see the
-   :term:`information area` titled, "Rights area". If the section is collapsed,
-   click on area header to expand and access the :term:`rights record` dialogue.
-
-.. image:: images/rights-area.*
+.. image:: images/rights-button-block.*
    :align: center
-   :width: 75%
-   :alt: An image of the Rights area in an accession record
+   :width: 70%
+   :alt: Access Create New Rights link through the button block
 
-5. Click on the "Add new" button and the default :term:`rights record`
-   dialogue box will pop up.
+4. The Rights entry page allows you to establish the basis for which rights are
+   granted or disallowed as well as describing the rights themselves.
 
-.. figure:: images/accession-rights.png
+a. Rights basis:
+
+AtoM provides a drop-down menu to select the basis for the rights associated
+with the description. You can select: Copyright, License, Statute, Policy, or
+Donor.
+
+.. figure:: images/rights-entry-basis.*
    :align: center
-   :figwidth: 80%
    :width: 100%
-   :alt: Rights record dialogue box in edit accession record page
+   :figwidth: 80%
+   :alt: Rights entry page with copyright as the basis
 
-   Rights record dialogue box in edit accession record page.
+   The Rights entry page with Copyright set as the basis.
 
-6. The "Act" data entry field is a drop-down list. You can select: Delete,
+The fields below the rights basis will differ depending on the basis chosen.
+Compare for  example the figure above, showing Copyright as the basis, and the
+figure below,  showing Statute as the basis:
+
+.. figure:: images/rights-basis-statute.*
+   :align: center
+   :width: 100%
+   :figwidth: 80%
+   :alt: Rights entry page with statute as the basis
+
+   The Rights entry page with Statute set as the basis.
+
+As you complete the Rights basis fields, :term:`tooltips` will appear to explain
+the purpose of the field.
+
+When adding the Rights holder, can add a new Rights holder name, or select an
+existing one using the auto-complete action provided by AtoM.
+
+b. Act/Granted rights:
+
+Once you have established the basis for the rights you need to grant, fill in
+the Act/Granted rights fields:
+
+i. The "Act" data entry field is a drop-down list. You can select: Delete,
    Discover, Display, Disseminate, Migrate, Modify, and Replicate.
 
-7. The "Restriction" data entry field provides two choices: Allow or
-   Disallow.
+ii. The "Restriction" data entry field provides three choices: Allow,
+    Disallow or Conditional.
 
-8. You can add a Rights holder name, or select an existing one using the
-   auto-complete action provided by AtoM.
+iii. Add Start and End dates for the right. Leave the end date blank if it is
+     unknown or open.
 
-9. You can add a Rights note, describing any additional information about the
-   Rights holder that might not already exist in their Rights holder record.
+iv. You can add notes related to the granted right.
 
-10. The "Basis" data entry field is a drop-down list. You can select:
-    Copyright, License, Statute, Policy, or Donor.
+If you are finished adding granted rights related to this basis, click Save. If
+you have more granted rights to add related to this basis, click Add granted
+right and fill in the fields again. Click Save when you are finished.
 
 .. TIP::
 
-   Depending upon your selection, the AtoM Right record dialogue may provide
-   additonal data entry fields. Be sure you scroll down in the dialogue to
-   see all of the available fields!
+   You may have granted rights to record that are related to more than one basis.
+   For example, you may want to record a granted right related to Copyright, and
+   another granted right related to Policy. After you click Save, you can return
+   to the accession and add more rights related to another basis by
+   clicking More -> Create new rights again.
 
-   .. figure:: images/rights-dialog-more-fields.*
-      :align: center
-      :figwidth: 60%
-      :width: 100%
-      :alt: Rights record dialogue box in edit accession record page
+After rights are created for an accession, they can be edited or
+deleted by logged in users with the correct permissions by clicking the links
+from the archival description in view mode:
 
-      In this example, a user has selected "Statute" as the Rights basis,
-      and more fields have appeared in the rights dialog.
-
-11. Once you complete adding information to the rights record, click on the
-    blue Submit button and then click on the blue Create button to save the
-    new accession record. If you have already created the accession record,
-    and you are editing the rights information, you will click on the blue
-    Save button.
-
-.. image:: images/donor-dialog-submit.*
+.. image:: images/rights-edit-delete.*
    :align: center
-   :width: 65%
-   :alt: An image of the submit button in the Rights dialog
+   :width: 75%
+   :alt: Edit and delete links for rights records.
+
+.. important::
+
+   When you click delete, AtoM deletes the rights record without asking for
+   confirmation, so be sure to click only when you are positive you wish to
+   delete the rights information!
+
+5. Once you complete adding information to the rights record, click on the
+   click Save.
 
 .. _rights-archival-description:
 
 Add rights to an Archival description
 -------------------------------------
 
-1. First, navigate to the :term:`archival description` you wish to edit. You
-   can do this by :ref:`browsing <browse>` or :ref:`searching <search-atom>`
+1. First, navigate to the :term:`archival description` you wish to add rights to.
+   You can do this by :ref:`browsing <browse>` or :ref:`searching <search-atom>`
    for the :term:`archival description` - see :ref:`access-content` for more
    information on navigation in AtoM.
 
