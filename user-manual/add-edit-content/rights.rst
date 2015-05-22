@@ -304,6 +304,13 @@ parent record as you indicated.
    will not be able to modify the rights of a child record and have them
    passed up to the parent record.
 
+.. note::
+
+   Rights inheritance is a task that AtoM performs asynchronously, via the Jobs
+   Scheduler. If the parent description has many children, it may take some time
+   for all of the children to inherit the rights. See :ref:`Manage Jobs <manage-jobs>`
+   for more information.
+
 .. _rights-digital-object:
 
 Make rights actionable on digital objects
@@ -392,6 +399,8 @@ will have no effect on the visibility of digital objects to your users.
       :align: center
       :width: 60%
       :alt: Example rights records when displayed is Conditional
+
+TODO: Images showing results of examples above.
 
 
 Manage Rights holders records
