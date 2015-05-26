@@ -83,7 +83,7 @@ Add rights to an Accession record
    :alt: An image of searching for an accession
 
 3. When you have arrived at the record to which you wish to add rights, click
-   on "Create new rights" in the :term:`button bar`. The PREMIS rights entry form
+   on "Create new rights" in the :term:`button block`. The PREMIS rights entry form
    will appear.
 
 .. image:: images/rights-button-block.*
@@ -386,12 +386,29 @@ will have no effect on the visibility of digital objects to your users.
       :width: 60%
       :alt: Example rights records when displayed is Allowed
 
+
+   The digital object would display, and would also be "clickable" to access
+   the master copy:
+
+   .. image:: images/image-allowed.*
+      :align: center
+      :width: 60%
+      :alt: Example of digital object for which display is allowed.
+
    Copyrighted items: Display - Disallow
 
    .. image:: images/example-disallow.*
       :align: center
       :width: 60%
       :alt: Example rights records when displayed is Disallowed
+
+   The digital object would not display, and is replaced by a statement
+   explaining why it is not visible:
+
+   .. image:: images/image-disallow.*
+      :align: center
+      :width: 60%
+      :alt: Example of digital object for which display is disallowed.
 
    Uncertain copyright: Display - Conditional
 
@@ -400,7 +417,24 @@ will have no effect on the visibility of digital objects to your users.
       :width: 60%
       :alt: Example rights records when displayed is Conditional
 
-TODO: Images showing results of examples above.
+   The image will display in its reference representation, but will not be
+   "clickable", preventing the user from using the master image:
+
+   .. image:: images/image-conditional.*
+      :align: center
+      :width: 60%
+      :alt: Example of digital object for which display is conditional.
+
+
+.. _disallow-statements:
+
+Disallowed and Conditional statements
+-------------------------------------
+
+To alter the statement displayed for either Disallowed or Conditional digital
+object views, :term:`administrators <administrator>` can do so
+on the :ref:`Settings <settings>` page under
+:ref:`User Interface Labels <user-interface-labels>`.
 
 
 Manage Rights holders records
