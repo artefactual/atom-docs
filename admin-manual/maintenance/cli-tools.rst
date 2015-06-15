@@ -103,7 +103,7 @@ do so via the command-line.
 
 .. code:: bash
 
-   php symfony tools:reset-passwordsymfony tools:reset-password [--activate] username [password]
+   php symfony tools:reset-password [--activate] username [password]
 
 The :term:`username` is a required value, while the password is optional - if
 no password is entered, AtoM will generate an 8-character temporary password
