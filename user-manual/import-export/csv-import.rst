@@ -1513,6 +1513,16 @@ AtoM will located the matching description, and link the two during import,
 similar to how an accession created through the user interface can be linked
 to a description (see: :ref:`link-accession-description`).
 
+As of AtoM 2.2, creation events columns have been added as well. The
+``creationDates``, ``creationDatesStart``, and ``creationDatesEnd`` columns can be
+used similarly to those in the archival description CSV templates - The
+``creationDates`` field will map to the free-text date field in AtoM, where users
+can use special characters to express approximation, uncertainty, etc. (e.g.
+[190-?]; [ca. 1885]), while ``creationDatesStart`` and ``creationDatesEnd``
+should include ISO-formatted date values (YYYY-MM-DD, YYYY-MM, or YYYY). The
+``creationDatesType`` column will accept two values - either *creation* or
+*accumulation* .
+
 .. _csv-import-accessions-gui:
 
 Using the user interface
