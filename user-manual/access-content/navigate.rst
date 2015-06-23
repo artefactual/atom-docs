@@ -942,8 +942,8 @@ being pulled from.
   as an :term:`access point` to an :term:`archival description`.
 * **Level of description:** Limits results to those that match the selected
   :term:`level of description` (e.g. fonds, collection, series, file, item,
-  etc). Includes a top-level description filter, that allows users to limit
-  results to those that are :term:`parents <parent record>` - e.g. the top
+  etc). Includes a :term:`top-level description filter`, that allows users to
+  limit results to those that are :term:`parents <parent record>` - e.g. the top
   hierarchical record in a multi-level descriptive :term:`archival unit`.
 * **Media type:** Limits results to those with a :term:`digital object`
   attached that matches the selected media type (image, audio, text, video,

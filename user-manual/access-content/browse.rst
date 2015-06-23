@@ -92,10 +92,17 @@ Click the Browse menu, then click on Archival descriptions.
    :width: 80%
    :alt: View of browsing archival descriptions
 
-This browse screen shows all :term:`archival descriptions <archival
-description>` regardless of the :term:`level of description`. The automatic
-sort is alphabetic by default for public users, but users can change the sort
-to most recently updated, or by reference code, using the
+When arriving on the :term:`archival description` browse page, a
+:term:`top-level description filter` is engaged by default, meaning that all
+results shown are :term:`parents <parent record>` with or without children, but
+without any higher levels of description above them in the hierarchy. Users
+can disengage this filter by either clicking the **X** on the "Only top-level
+descriptions" :term:`filter tag` at the top of the results, or by changing the
+:term:`radio button` settings on the top-level description filter in the left-hand
+:term:`facet filter` sidebar, above the levels of description facet.
+
+The automatic sort is alphabetic by default for public users, but users can also
+change the sort to most recently updated, or by reference code, using the
 :ref:`sort button <recurring-sort-button>` located at the top-right of the
 page above the results.
 

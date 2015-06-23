@@ -1252,6 +1252,18 @@ Glossary
     <administrator>` can turn tooltips on or off. See :ref:`Global settings
     <global-settings>`.
 
+  Top-level description filter
+    The top-level description filter appears on the search and browse pages for
+    :term:`archival descriptions <archival description>`. It limits the returned
+    results to those descriptions without any :term:`parents <parent record>` -
+    that is, those that are not part of a hierarchy with any records higher than
+    them in the hierarchy. By default, the filter is engaged on the browse page
+    for archival descriptions, and disengaged by default on the search results
+    page - but users can manually set the filter setting via the
+    :term:`radio button` above the Levels of description :term:`facet filter`.
+    See: :ref:`browse-descriptions`
+
+
   Translation bar
     The translation bar appears at the bottom of the page when users with
     :term:`translator` :term:`access privileges <access privilege>` select
