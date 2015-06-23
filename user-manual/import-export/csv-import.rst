@@ -35,12 +35,12 @@ spreadsheet, or another database (so long as the export from the database is
 in CSV format). Artefactual has created a number of
 :ref:`CSV templates <csv-column-mapping>` that can be used to import
 
-For **small data imports** (i.e. CSV files with less than 1,000 rows), CSV files
+For **small data imports** (i.e. CSV files with less than 100 records), CSV files
 that have been mapped to the sample templates provided
 (:ref:`below <csv-column-mapping>`) can be imported via the :term:`user
 interface`.
 
-For **large data imports** (i.e. CSV files with 1,000 or more rows), the
+For **large data imports** (i.e. CSV files with 100 or more records), the
 import will need to be performed using the Command-line interface (CLI) -
 meaning you will need access to your installation environment and some basic
 familiarity with using the command line.
@@ -57,6 +57,10 @@ familiarity with using the command line.
 * :ref:`Display progress during a command-line import <csv-import-progress>`
 * :ref:`Load digital objects via the command line <digital-object-load-task>`
 * :ref:`Index your content after an upload <csv-search-indexing>`
+
+.. SEEALSO::
+
+   * `CSV import templates <https://wiki.accesstomemory.org/Resources/CSV_templates>`__
 
 .. _csv-before-you-import:
 
@@ -154,6 +158,13 @@ Available example files are:
 
 * Accessions CSV template
 * Events CSV template
+
+All CSV templates can be found on the AtoM wiki:
+
+* https://wiki.accesstomemory.org/Resources/CSV_templates
+
+You can also find all example CSV import templates included in your AtoM
+installation, in: ``lib/task/import/example``.
 
 The order of the columns in the example CSV files is the same as the order in
 the AtoM interface, and should be maintained. Having the correct names in the
@@ -269,7 +280,7 @@ application, or by use of a CSV transformation script.
 We have included some guidelines for creating custom CSV transformation
 scripts. See:
 
-* :ref:`csv-transformation`
+* https://wiki.accesstomemory.org/Resources/CSV_transformation
 
 .. NOTE::
 
@@ -394,8 +405,7 @@ Example RAD and ISAD CSV template files are available in AtoM source code
 ``lib/task/import/example/isad/example_information_objects_isad.csv``) or you
 can download the files here:
 
-* RAD archival description CSV template [zip archive]
-* ISAD(G) archival description CSV template [zip archive]
+* https://wiki.accesstomemory.org/Resources/CSV_templates#Archival_descriptions
 
 Hierarchical relationships
 --------------------------
@@ -723,7 +733,7 @@ Other data entry notes
 Using the user interface
 ------------------------
 
-For small imports (i.e. CSV files with less than 1,000 rows), imports can be
+For small imports (i.e. CSV files with less than 100 records), imports can be
 performed via the user interface.
 
 .. IMPORTANT::
@@ -735,7 +745,7 @@ performed via the user interface.
 
    * CSV file is saved with UTF-8 encodings
    * CSV file uses Linux/Unix style end-of-line characters (``/n``)
-   * CSV file is less than 1,000 rows
+   * CSV file is less than 100 records
    * All :term:`parent <parent record>` descriptions appear in rows **above**
      their children
    * All new parent records have a *legacyID* value, and all
@@ -837,7 +847,7 @@ descriptions.
 Using the command-line interface (CLI)
 --------------------------------------
 
-For larger CSV imports (e.g. those with 1,000 or more rows), we recommend
+For larger CSV imports (e.g. those with 100 or more records), we recommend
 using the Command-line interface to import your descriptions.
 
 Example use (with the RAD CSV template) - run from AtoM's root directory:
@@ -982,9 +992,7 @@ name of the actor involved in the event and the type of event. An example CSV
 template file is available in the AtoM source code
 (``lib/task/import/example_events.csv``) or can be downloaded here:
 
-* (link forthcoming - see the
-  `qubit-toolkit wiki <https://www.qubit-toolkit.org/wiki/CSV_import#Importing_events>`__
-  for now)
+* https://wiki.accesstomemory.org/Resources/CSV_templates#Other_CSV_templates
 
 .. IMPORTANT::
 
@@ -994,7 +1002,7 @@ template file is available in the AtoM source code
 
    * CSV file is saved with UTF-8 encodings
    * CSV file uses Linux/Unix style end-of-line characters (``/n``)
-   * CSV file is less than 1,000 rows if importing via the :term:`user interface`
+   * CSV file is less than 100 records if importing via the :term:`user interface`
    * All *legacyID* values entered correspond to the *legacyID* values of
      their corresponding archival descriptions
    * If you are referencing existing
@@ -1010,7 +1018,7 @@ events.
 Using the user interface
 ------------------------
 
-For small imports (i.e. CSV files with less than 1,000 rows), imports can be
+For small imports (i.e. CSV files with less than 100 records), imports can be
 performed via the user interface.
 
 **To import an events CSV file via the user interface:**
@@ -1060,7 +1068,7 @@ performed via the user interface.
 Using the command-line interface (CLI)
 --------------------------------------
 
-For larger CSV imports (e.g. those with 1,000 or more rows), we recommend
+For larger CSV imports (e.g. those with 100 or more records), we recommend
 using the Command-line interface to import your descriptions.
 
 Example use - run from AtoM's root directory:
@@ -1110,6 +1118,10 @@ You can import repositories (i.e. :term:`archival institutions <archival institu
 into AtoM as well. At this time, there is no support for importing a
 repository CSV via the :term:`user interface` - however, the command-line
 may be used.
+
+Find the example CSV import template here:
+
+* https://wiki.accesstomemory.org/Resources/CSV_templates#Other_CSV_templates
 
 CSV columns
 -----------
@@ -1203,15 +1215,11 @@ tool also allows the simultaneous import of supplementary data (in separate CSV
 files) on how these entities relate to each other and alternate names these
 entities are known by.
 
-You can view the example CSV files for authority records via our Github
-repository, `here <https://github.com/artefactual/atom/tree/2.x/lib/task/import/example/authority_records>`__.
-Examples can also be found in the AtoM code (at
-``lib/task/import/example/authority_records/``) or can be downloaded directly
+You can view the example CSV files for authority records in the AtoM code (at
+``lib/task/import/example/authority_records/``) or they can be downloaded directly
 here:
 
-* (Links forthcoming - see the
-  `qubit-toolkit wiki <https://www.qubit-toolkit.org/wiki/CSV_import#Column_mapping>`__
-  for now)
+* https://wiki.accesstomemory.org/Resources/CSV_templates#Other_CSV_templates
 
 CSV Columns
 -----------
@@ -1329,7 +1337,9 @@ Using the user interface
    Only the basic Authoriy record CSV can be imported via the
    :term:`user interface`. If you wish to import authority relationships and
    aliases as well, you will need to use the
-   :ref:`command-line <csv-import-authority-records-cli>`.
+   :ref:`command-line <csv-import-authority-records-cli>`. Imports conducted via
+   the user interface should include no more than 100 records - otherwise we
+   strongly recommend you use the command-line!
 
 **To import authority records via the user interface:**
 
@@ -1427,9 +1437,7 @@ An example CSV template file of supplementary alias data is available in the
 AtoM source code ( at ``lib/task/import/example/authority_records/example_authority_
 record_aliases.csv``) or can be downloaded here:
 
-* (link forthcoming - see the
-  `qubit-toolkit wiki <https://www.qubit-toolkit.org/wiki/CSV_import#Alias_data>`__
-  for now)
+* https://wiki.accesstomemory.org/Resources/CSV_templates#Other_CSV_templates
 
 The Alternate names CSV file must be imported at the same time as its related
 Authority record CSV file. The ``--alias-file`` command-line option is used
@@ -1459,9 +1467,7 @@ An example CSV template file of relation data is available in the AtoM source
 code ( at ``lib/task/import/example/authority_records/example_authority_record_relat
 ionships.csv``) or can be downloaded here:
 
-* (link forthcoming - see the
-  `qubit-toolkit wiki <https://www.qubit-toolkit.org/wiki/CSV_import#Related_corporate_bodies.2C_persons_or_families>`__
-  for now)
+* https://wiki.accesstomemory.org/Resources/CSV_templates#Other_CSV_templates
 
 The Relationships CSV file must be imported at the same time as its related
 Authority record CSV file. The ``--relation-file`` command-line option is used
@@ -1493,9 +1499,7 @@ An example CSV template file is available in the
 ``lib/task/import/example/example_accessions.csv`` directory of AtoM, or it
 can be downloaded here:
 
-* (link forthcoming - see the
-  `qubit-toolkit wiki <https://www.qubit-toolkit.org/wiki/CSV_import#Importing_accessions>`__
-  for now)
+* https://wiki.accesstomemory.org/Resources/CSV_templates#Other_CSV_templates
 
 As of AtoM 2.1, a new column, ``qubitParentSlug`` has been added. This column
 will behave similarly to the ``qubitParentSlug`` column in the
@@ -1513,7 +1517,7 @@ to a description (see: :ref:`link-accession-description`).
 Using the user interface
 ------------------------
 
-For small imports (i.e. CSV files with less than 1,000 rows), accession record
+For small imports (i.e. CSV files with less than 100 records), accession record
 imports can be performed via the user interface.
 
 **To import an accessions CSV file via the user interface:**
@@ -1564,8 +1568,8 @@ imports can be performed via the user interface.
 Using the command-line interface (CLI)
 --------------------------------------
 
-For larger :term:`accession record` imports (e.g. those with 1,000 or more
-rows), we recommend using the command-line task to import your CSV file.
+For larger :term:`accession record` imports (e.g. those with 100 or more
+records), we recommend using the command-line task to import your CSV file.
 
 **Example use** - run from AtoM's root directory:
 
