@@ -525,23 +525,30 @@ new series to the *parentID* column of the new files.
 Creator-related import columns
 ------------------------------
 
-The *creators*, *creatorHistories*, *creatorDates*, *creatorDatesStart*, and
-*creatorDatesEnd* columns are related to the creation of creators. If multiple
-creators exist for an information object, the values in these fields should be
-pipe-separated (e.g. using the | pipe separator between values).
+The *creators*, *creatorHistories*, *creationDates*, *creationDatesStart*, and
+*creationDatesEnd* columns are related to the creation of creators, and creation
+dates. If multiple creators exist for an information object, the values in these
+fields should be pipe-separated (e.g. using the | pipe separator between values).
 
 .. image:: images/csv-creatorDates.*
    :align: center
    :width: 85%
    :alt: example CSV creatorDates rows
 
-Note that *creatorDates*, *creatorDatesStart*, and *creatorDatesEnd* fields
+Note that *creationDates*, *creationDatesStart*, and *creationDatesEnd* fields
 relate to **dates of creation** for the related description, and **not** to
-the dates of existence for the related creators. The *creatorDates* field
+the dates of existence for the related creators. The *creationDates* field
 will map to the free-text date field in AtoM, where users can use special
 characters to express approximation, uncertainty, etc. (e.g. [190-?]; [ca.
-1885]), while *creatorDatesStart* and *creatorDatesEnd* should include
+1885]), while *creationDatesStart* and *creationDatesEnd* should include
 ISO-formatted date values (YYYY-MM-DD, YYYY-MM, or YYYY).
+
+.. TIP::
+
+   In previous versions of AtoM (2.1 and earlier), these fields were labelled as
+   *creatorDates*, *creatorDatesStart*, and *creatorDatesEnd*. They were renamed
+   in 2.2 to clarify that they relate to creation events - but we've included
+   fall-back logic, so if the old names are accidentally used, they will still work!
 
 *creatorHistories* is equivalent to ISAD(G) 3.2.2, RAD 1.7B, and/or DACS 2.7 -
 Administrative/Biographical history.
@@ -711,6 +718,16 @@ Other data entry notes
   script code values - for example, "Latn" for Latin-based scripts, "Cyrl"
   for Cyrillic scripts, etc. See `Unicode <www.unicode.org/iso15924/codelists.html>`__
   for a full list of ISO 15924 script codes.
+* Alternative identifiers and their display labels can be imported using the
+  *alternativeIdentifiers* and *alternativeIdentifierLabels* columns. Use pipe
+  (``|``) separators to add multiple values. There should be a 1:1 relationship
+  between the number of identifier values in the *alternativeIdentifiers* column
+  and corresponding labels in the *alternativeIdentifierLabels* column.
+* An *accessionNumber* column can be added to create a link between an existing
+  accession record and an archival description being imported via CSV. See the
+  section on Accession CSV import :ref:`below <csv-import-accessions>` for more
+  information.
+
 
 .. _csv-import-descriptions-gui:
 
