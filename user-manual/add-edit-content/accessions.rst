@@ -155,15 +155,21 @@ navigating to **Manage > Donors**.
 Add rights to an accession record
 ---------------------------------
 
-In the Edit accession record screen, under the Rights :term:`information
-area`, you can enter one or more rights restrictions related to the accession
-using the rights record. For a full explanation of rights, go to the
-:ref:`rights` page.
+After an accession record is created, you may add a rights record to it by clicking
+"More" then "Create new rights in the :term:`button block`.
+
+.. image:: images/accessions-rights-add.*
+   :align: center
+   :width: 70%
+   :alt: Rights entry form accessed in the button block
+
+The rights entry page will appear. Multiple rights basis and granted rights can
+be added. For a full explanation of rights, go to the :ref:`rights` page.
 
 .. image:: images/accession-rights-dialog.*
    :align: center
    :width: 70%
-   :alt: An image of the rights dialog in the accessions edit page
+   :alt: An image of the rights entry page accessed from the accessions edit page
 
 
 .. _link-accession-description:
