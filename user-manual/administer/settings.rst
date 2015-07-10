@@ -17,7 +17,6 @@ Below, you will find information on the following :term:`information areas
 * :ref:`User interface labels <user-interface-labels>`
 * :ref:`Add/Remove languages <add-remove-languages>`
 * :ref:`OAI repository <oai-repository>`
-* :ref:`Job scheduling <job-scheduling>`
 * :ref:`Finding aid <finding-aid>`
 * :ref:`Security panel <security-panel>`
 * :ref:`Permissions <permissions>`
