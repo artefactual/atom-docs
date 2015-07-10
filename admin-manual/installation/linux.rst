@@ -406,7 +406,19 @@ Other packages
 
 In order to generate PDF finding aids, AtoM requires `Apache FOP 1.0 <https://archive.apache.org/dist/xmlgraphics/fop/binaries/fop-1.0-bin.tar.gz>`__.
 After downloading and extracting it, ensure you have the fop executable in your
-system's executable path.
+system's executable path. Additionally, you may need to set the environmental
+variable FOP_HOME to the folder path you extracted Apache FOP to, for example:
+
+.. code-block:: bash
+
+   sudo -s
+   wget https://archive.apache.org/dist/xmlgraphics/fop/binaries/fop-1.0-bin.tar.gz
+   tar -zxvf fop-1.0-bin.tar.gz
+   rm fop-1.0-bin.tar.gz
+   mv fop-1.0 /usr/share
+   ln -s /usr/share/fop-1.0/fop /usr/bin/fop
+   echo 'FOP_HOME="/usr/share/fop-1.0"' >> /etc/environment
+   exit
 
 If you want AtoM to be able to process :term:`digital objects <digital object>`
 in formats like JPEG or to extract the text from your PDF documents, there are
