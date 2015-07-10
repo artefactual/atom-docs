@@ -33,6 +33,7 @@ of each component.
   `Nginx <http://nginx.com/>`__; Artefactual prefers the latter in
   development
 * `Elasticsearch <http://www.elasticsearch.org/>`__ 1.3.0 or newer
+* Oracle `Java <https://www.java.com/en/>`__ 8 or newer (required for Elasticsearch)
 * `MySQL <https://www.mysql.com/>`__ 5.1 or newer
 * `PHP <http://php.net/>`__ 5.3.10 or newer (PHP 5.4 and PHP 5.5 work too)
 * `Memcached <http://memcached.org>`__
@@ -58,8 +59,8 @@ Optionally:
    **Ubuntu Linux 12.04/14.04 LTS** as it seems to be one of the most widely
    used Linux distributions. However, it should serve as a reference for other
    environments and distro flavours - we've also written specific guides for
-   other operating systems such as :ref:`installation-windows` and :ref
-   :`installation-macosx`.
+   other operating systems such as :ref:`installation-windows` and
+   :ref:`installation-macosx`.
 
 .. _other-dependencies:
 

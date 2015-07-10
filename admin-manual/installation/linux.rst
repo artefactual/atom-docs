@@ -61,7 +61,7 @@ probably the biggest change introduced in AtoM |version| and we are pleased
 with the results.
 
 Ubuntu doesn't provide a package but you can download it directly from the
-`Elasticsearch site <http://www.elasticsearch.org/download/>`_ if you are
+`Elasticsearch site <https://www.elastic.co/downloads/elasticsearch>`_ if you are
 unable to download it using the method that follows.
 
 First, make sure that `Java <https://www.java.com/en/>`__ is installed.
