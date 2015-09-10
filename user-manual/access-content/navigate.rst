@@ -928,6 +928,8 @@ being pulled from.
 
 * **Language:** Filters for content in a different available language (i.e.,
   if the content has been tranlsated into more than one language)
+* **Part of:** Allows users to limit results to
+  :term:`children <child record>` of the selected top-level description
 * **Archival institution:** Limits results to only the holdings of the
   selected institution
 * **Creator:** Limits results to only those where the :term:`name` matches
@@ -939,12 +941,12 @@ being pulled from.
 * **Subject:** Limits results to those with a matching :term:`subject` added
   as a subject :term:`access point` to an :term:`archival description`
 * **Genre:** Limits results to those with a matching genre :term:`term` added
-  as an :term:`access point` to an :term:`archival description`.
+  as an :term:`access point` to an :term:`archival description`
 * **Level of description:** Limits results to those that match the selected
   :term:`level of description` (e.g. fonds, collection, series, file, item,
   etc). Includes a :term:`top-level description filter`, that allows users to
   limit results to those that are :term:`parents <parent record>` - e.g. the top
-  hierarchical record in a multi-level descriptive :term:`archival unit`.
+  hierarchical record in a multi-level descriptive :term:`archival unit`
 * **Media type:** Limits results to those with a :term:`digital object`
   attached that matches the selected media type (image, audio, text, video,
   or other)
