@@ -617,6 +617,73 @@ The task will ask you to confirm the operation:
 
 Enter "y" if you are certain you would like to delete all draft records.
 
+.. _cli-scrub-html:
+
+Remove HTML content from archival description fields
+====================================================
+
+As of the 2.2 release, HTML added to atom's descriptive templates will be
+automatically escaped for security purposes. This means that if you were
+previously using HTML to style content added to an edit template, it may no
+longer display correctly:
+
+.. image:: images/escaped-content.*
+   :align: center
+   :width: 85%
+   :alt: An image of how escaped HTML content will appear when saved in AtoM
+
+To assist legacy users who have added HTML to
+:term:`archival descriptions <archival description>`, a command-line task to
+strip the HTML from descriptions has been added. At present, it will only
+remove HTML from archival descriptions - other :term:`entity` types (such as
+archival institution records, accessions, authority records, etc) will not be
+affected.
+
+**To run the HTML scrub task:**
+
+From the root directory of your AtoM installation, run the following command:
+
+.. code-block:: bash
+
+   php symfony i18n:remove-html-tags
+
+The command-line interface will output information on how many fields within
+each :term:`information object` were scrubbed, as well as a summary when the
+task terminates:
+
+.. image:: images/scrub-html-changes.*
+   :align: center
+   :width: 85%
+   :alt: An image of the command-line output after executing the remove html
+         tags task
+
+The task will have the following effects on HTML elements:
+
+* Links will be separated from HTML anchor tags and display text - for
+  example,  ``<a href="http://example.org/foo">Foo</a>`` will become
+  ``Foo [http://example.org/foo]``
+* Email mailto: links will be similarly separated - so for example,
+  ``<a href="mailto:janedoe@example.org">email Jane Doe</a>`` will become
+  ``email Jane Does [janedoe@example.org]``
+* Styling elements, such as ``<em>``, ``<b>``, ``<strong>``, ``<i>``, etc.
+  will be removed with no substitutions (the text they wrap will be
+  preserved).
+* List elements (``<li>``) will be replaced with an asterix and a space -
+  AtoM's edit templates already include a helper that will transform asterixes
+  used this way into bullets. So, ``<ul><li>This item</li></ul>`` will become
+  ``* This item``
+* Definition list elements such as ``<dd>``, ``<dt>``, etc (which were briefly
+  used in earlier versions of AtoM to structure physical description EAD
+  import data) will be removed (the text they wrap will be preserved).
+* Paragraph tags (``<p>``) will be removed, and substituted with 2 line breaks
+  to preserve spacing (i.e. ``/n/n``)
+
+.. image:: images/scrub-html-example.*
+   :align: center
+   :width: 85%
+   :alt: An example of HTML in a form, before and after running the script
+
+
 .. _cli-purge-data:
 
 Purging all data
