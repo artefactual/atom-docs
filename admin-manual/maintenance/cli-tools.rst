@@ -957,9 +957,25 @@ accepts collection/fonds-level descriptions. If a lower-level description
 (e.g. a series, file, or item) is the target of the export, it's
 :term:`parents <parent record>` will not be exported either.
 
-The ``--single-id`` option can be used to to target a single :term:`archival unit`
-(e.g. fonds, collection, etc) for export, if you know the internal ID of the
+The ``--single-slug`` option can be used to to target a single :term:`archival unit`
+(e.g. fonds, collection, etc) for export, if you know the :term:`slug` of the
 target description.
+
+**Example use**
+
+.. code-block:: bash
+
+   php symfony export:bulk --single-slug="test-export" /path/to/my/directory/test-export.xml
+
+.. IMPORTANT::
+
+   For the export task to succeed when using the ``--single-slug`` option, you
+   **must** specify not just a target output directory, but a target output file
+   name. Exporting to ``path/to/my/directory/`` will result in nothing being
+   exported (though the command will appear to complete successfully) - while
+   exporting to ``path/to/my/directory/some-filename.xml`` will succeed. For
+   further information see issue
+   `#8905 <https://projects.artefactual.com/issues/8905>`__.
 
 The  ``--public`` option is useful for excluding draft records from an export.
 Normally, all records in a hierarchical tree will be exported regardless of
