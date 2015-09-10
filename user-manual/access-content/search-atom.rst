@@ -431,6 +431,8 @@ steps involved in searching for
 
   * **Language:** Filters for content in a different available language (i.e.,
     if the content has been tranlsated into more than one language)
+  * **Part of:** Allows users to limit results to
+    :term:`children <child record>` of the selected top-level description
   * **Archival institution:** Limits results to only the holdings of the
     selected institution
   * **Creator:** Limits results to only those where the :term:`name` matches
