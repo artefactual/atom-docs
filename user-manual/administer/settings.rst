@@ -573,15 +573,37 @@ these settings will be used site-wide.
    :alt: An image of the Default page elements menu in AtoM
 
 Checked boxes will display the corresponding element and unchecked boxes will
-hide the element. The logo, site title, and site description all appear as
-part of the AtoM :term:`header bar`:
+hide the element. The logo, site title, site description, and language menu
+all appear as part of the AtoM :term:`header bar`:
 
 .. image:: images/headerBar_admin.*
    :align: center
    :width: 70%
    :alt: An image of the AtoM header bar elements for an Administrator
 
-For more information on page elements, see :ref:`Themes & Theming <themes>`.
+The digital object :term:`carousel` appears when there are multiple
+:term:`digital objects <digital object>` attached to lower-level
+:term:`descriptions <archival description>`:
+
+.. image:: images/carousel-example.*
+   :align: center
+   :width: 80%
+   :alt: An image of the carousel shown at the top of a description
+
+When unchecked, these elements will be hidden from display after you save the
+default page element settings. This can be useful for customization - for
+example, if you are not translating the content of your website and do not
+need the language menu, unchecking it here will remove it from the AtoM
+:term:`header bar`.
+
+.. SEEALSO::
+
+   * :ref:`Theming - Add or remove elements <themes-add-remove-elements>`
+   * :ref:`Carousel <recurring-carousel>`
+   * :ref:`The language menu <language-menu>`
+   * :ref:`The AtoM header bar <atom-header-bar>`
+   * :ref:`default-page-elements`
+
 
 :ref:`Back to top <settings>`
 

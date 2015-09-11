@@ -170,6 +170,12 @@ edit templates, :term:`tooltips`, labels, help text, etc.) will appear in the
 selected language, and will remain in the selected language until the user
 changes the language again.
 
+.. TIP::
+
+   If the language menu is not needed for your site, it can be disabled and
+   hidden via |gears| **Admin > Settings > Default page elements**. For more
+   information, see: :ref:`default-page-elements`.
+
 .. |globe| image:: images/globe.png
    :height: 18
    :width: 18
@@ -177,7 +183,7 @@ changes the language again.
 * For more information on changing the language, see: :ref:`Choose language
   <choose-language>`
 
-.. seealso::
+.. SEEALSO::
 
    * :doc:`Default language <../administer/default-language>`
    * :ref:`Add/remove languages <add-remove-languages>`
@@ -818,6 +824,12 @@ all.
   view them all in a tile-based browse page. Click on a thumbnail in the
   browse page to navigate to the related :term:`archival description` and a
   larger version of the :term:`digital object` that the thumbnail depicts.
+
+.. TIP::
+
+   The carousel can be disabled and hidden if it is not desired, via |gears|
+   **Admin > Settings > Default page elements**. For more information, see:
+   :ref:`default-page-elements`.
 
 .. _recurring-facet-filters:
 
