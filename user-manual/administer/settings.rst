@@ -17,7 +17,6 @@ Below, you will find information on the following :term:`information areas
 * :ref:`User interface labels <user-interface-labels>`
 * :ref:`Add/Remove languages <add-remove-languages>`
 * :ref:`OAI repository <oai-repository>`
-* :ref:`Job scheduling <job-scheduling>`
 * :ref:`Finding aid <finding-aid>`
 * :ref:`Security panel <security-panel>`
 * :ref:`Permissions <permissions>`
@@ -70,14 +69,17 @@ This section will describe each :term:`field` in the "Global"
 * :ref:`Accession counter <accession-counter>`
 * :ref:`Reference code separator <reference-code-separator>`
 * :ref:`Inherit reference code (Information object) <inherit-reference-code>`
+* :ref:`Treeview type <treeview-type>`
 * :ref:`Sort treeview (information object) <sort-treeview>`
 * :ref:`Sort browser (users) <sort-browser-users>`
 * :ref:`Sort browser (anonymous) <sort-browser-anonymous>`
+* :ref:`Default repository browse view <default-repo-view>`
 * :ref:`Multiple repositories <multiple-repositories>`
 * :ref:`Default archival institution upload limit <default-institution-upload>`
 * :ref:`Total space available for uploads <total-upload-space>`
 * :ref:`Upload multi-page files as multiple descriptions <upload-multi-files>`
 * :ref:`Show tooltips <tooltips>`
+* :ref:`Generate description permalinks from <description-permalinks>`
 * :ref:`Default publication status <default-publication-status>`
 * :ref:`SWORD deposit directory <sword-directory>`
 
@@ -259,6 +261,58 @@ information to help orient the user.
 
    * :ref:`Control area <control-area>`
 
+.. _treeview-type:
+
+Treeview type
+-------------
+
+This setting allows administrators to choose between two different display
+formats for the :term:`treeview`. For more information about the treeview in
+AtoM, see: :ref:`context-menu-treeview`.
+
+The **Sidebar** setting refers to the classic treeview that appears in the
+left-hand :term:`context menu` of an :term:`archival description`. The **Full
+width** treeview, introduced in the AtoM 2.3 release, will display below the
+description title, and above the first :term:`information area` of the
+description. The display space of the full-width treeview can be expanded by
+users by gripping and dragging the bottom bar of the treeview downwards to
+expand the viewing area.
+
+Other differences include:
+
+* The sidebar version does not indent lower-levels, while indentation is used
+  in the full width treeview
+* The Identifier is included in the sidebar treeview nodes, while no
+  identifier is included in those of the full width version
+* The results in the sidebar treeview are truncated - the first 5-6 nodes in
+  the hierarchy are displayed by default, after which an approximate count of
+  remaining nodes in the current level is provided, with the option to expand
+  the results to display more. All nodes are shown in the full width treeview.
+
+Below are screenshots of the same :term:`fonds`, shown with each version of
+the treeview enabled, for comparison.
+
+**Sidebar treeview**
+
+.. image:: images/treeview-sidebar-example.*
+   :align: center
+   :width: 75%
+   :alt: an example a description displayed with the sidebar treeview
+
+
+**Full width treeview**
+
+.. image:: images/treeview-fullwidth-example.*
+   :align: center
+   :width: 75%
+   :alt: an example a description displayed with the full width treeview
+
+.. SEEALSO::
+
+   * :ref:`context-menu-treeview`
+   * :ref:`context-menu`
+   * :ref:`archival-descriptions`
+
 .. _sort-treeview:
 
 Sort treeview (information object)
@@ -326,6 +380,13 @@ at the top of most browse pages.
    * :ref:`Browsing in AtoM <browse>`
    * :ref:`recurring-sort-button`
    * :ref:`user-roles`
+
+.. _default-repo-view:
+
+Default repository browse view
+------------------------------
+
+TO DO
 
 .. _multiple-repositories:
 
@@ -409,6 +470,34 @@ edit templates are based (e.g. RAD, ISAD, etc).
 :term:`Administrators <administrator>` can select "yes" to to have tooltips
 appear in :term:`edit pages <edit page>` as the user enters data. Selecting "no"
 will disable tooltips.
+
+.. _description-permalinks:
+
+Generate description permalinks from
+------------------------------------
+
+This setting allows an :term:`administrator` to determine if the :term:`slug`
+(or permalink) generated from an :term:`archival description` when it is saved
+is derived from the title, or from the reference code of the description (for
+more information on how reference codes are constructed in AtoM, see above:
+:ref:`inherit-reference-code`). By default, AtoM will derive the slug from the
+title of a description - the title will be sanitized by removing
+capitalization, spaces, and special characters; it will also be truncated if
+it exceeds a certain length. Administrators can now choose, via this setting,
+if they prefer that the slug is derived from the reference code instead.
+
+Note that this setting does not apply retro-actively to descriptions already
+created. It will only apply to new descriptions created after changing the
+setting.
+
+For further context on slugs in AtoM, see: :ref:`slugs-in-atom`
+
+.. TIP::
+
+   This setting will also be respected by the command-line task to generate
+   slugs - see: :ref:`cli-generate-slugs`. So it would be possible to update
+   legacy descriptions in AtoM by deleting their slugs, and then generating
+   new ones after changing this setting.
 
 .. _default-publication-status:
 
