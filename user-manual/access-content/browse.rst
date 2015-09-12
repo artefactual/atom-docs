@@ -35,6 +35,9 @@ Browse
    :height: 24
    :width: 24
 
+.. |gears| image:: images/gears.png
+   :height: 18
+
 The Browse menus in AtoM allow users to browse complete lists of
 :term:`archival descriptions <archival description>`, as well as digital objects,
 :term:`authority records <authority record>` (for people and organizations),
@@ -233,7 +236,34 @@ Click the Browse menu, then click Archival Institutions.
 .. image:: images/browse-institutions.*
    :align: center
    :width: 80%
-   :alt: View of browsing archival institutions
+   :alt: View of browsing archival institutions, card view
+
+There are 2 ways of viewing the browse page for institutions - the "card"
+view, pictured above, or the "table" view:
+
+.. image:: images/browse-institutions-table.*
+   :align: center
+   :width: 80%
+   :alt: View of browsing archival institutions, table view
+
+In the table view, the columns that appear as blue hyperlinks (the Name,
+Region, and Locality columnns) can be clicked to sort the results
+alphabetically by that column. Click the column header once to sort in
+descending (A-Z) order; click again to sort in ascending (Z-A) order.
+
+Users can flip between the table and card views while browsing, using the
+view toggle button that appears to the right of the archival institution search box:
+
+.. image:: images/view-toggle-repository.*
+   :align: center
+   :width: 80%
+   :alt: An image of the view toggle button on the repository browse page
+
+.. TIP::
+
+   An :term:`administrator` can set the default view for the archival
+   institution browse page, in |gears| **Admin > Settings > Global**. For more
+   information, see: :ref:`default-repo-view`.
 
 If the institution has uploaded a logo as part of their institution record,
 the logo will be displayed in the browse display (see:
@@ -248,7 +278,7 @@ users, which can be changed by the user to Most recent or identifier via the
 
    :term:`Administrators <administrator>` can change the default sort order
    on search/browse pages for both public and authenticated (i.e. logged in)
-   users, in **Admin > Settings > Global**. For more information, see:
+   users, in |gears| **Admin > Settings > Global**. For more information, see:
    :ref:`sort-browser-users` and :ref:`sort-browser-anonymous`.
 
 Users can narrow the results list using the available
@@ -258,8 +288,9 @@ more information on using the facet filters in AtoM, see:
 :ref:`Using facet filters in AtoM <using-facet-filters>`.
 
 The archival institution browse page also includes a
-:term:`dedicated search box`. For more information on searching for archival
-institutions in AtoM, see: :ref:`Archival institution search
+:term:`dedicated search box`, and further filters available under the
+"Advanced" button that appears below the search box. For more information on
+searching for archival institutions in AtoM, see: :ref:`Archival institution search
 <dedicated-search-institutions>`. For general information on working with
 :term:`archival institution` records, see: :ref:`archival-institutions`.
 

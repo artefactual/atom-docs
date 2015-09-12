@@ -844,31 +844,40 @@ For more information on working with accession records in AtoM, see:
 
 A dedicated search box for :term:`archival institutions <archival institution>`
 has been provided on the archival institution
-:ref:`browse page <page-type-browse>`. In AtoM 2.0.0, this search box will
-search the following fields of an archival institution record:
+:ref:`browse page <page-type-browse>`. All fields are indexed, but as of AtoM
+2.3 and earlier, no weighting has been added to specific fields.
 
-* **Authorized form of name** in the Identity area
-* **All fields** in the Description area, Access area, and Service area
-  (**except** Finding aids, guides, and publications in the Description Area)
-* **Dates of creation, revision, and deletion**, **Sources**, and **Maintenance
-  notes** in the Control area
+The archival institution browse page has 2 different views - a "card" based
+view, and a table view. Users can switch quickly between these two views via
+the view toggle button located next to the archival institution
+:term:`dedicated search box`:
 
-.. NOTE::
+.. image:: images/view-toggle-repository.*
+   :align: center
+   :width: 80%
+   :alt: An image of the view toggle button on the repository browse page
 
-   Other name fields in the Identity area (Parallel forms of name; Other forms
-   of name) and the Finding aids field in the Description area have **not**
-   been indexed in AtoM 2.0.0. We hope to add this in a future release.
+For more information on navigating the archival institution browse page, see:
+:ref:`Browse archival institutions <browse-institutions>`.
 
-For more information on working with :term:`archival institutions <archival
-institution>` in AtoM, see: :ref:`archival-institutions`. For information on
-working with particular fields in the archival institution record edit
-template, see: :ref:`isdiah-template`.
+For more information on working with :term:`archival institution` records in
+AtoM, see: :ref:`archival-institutions`. For information on working with
+particular fields in the archival institution record edit template, see:
+:ref:`isdiah-template`.
 
 **To search for archival institutions in AtoM:**
 
 1. Using the :term:`browse menu` (available as a :term:`drop-down menu` next
    to the :term:`search box` in the AtoM :term:`header bar` at the top of the
-   page), navigate to **Browse > Archival institutions**
+   page), navigate to **Browse > Archival institutions**. The way the page
+   will appear may depend on the default view set by an :term:`administrator`
+   - there is a table view, and a card view, and users can toggle between the
+   two:
+
+.. image:: images/repo-views.*
+   :align: center
+   :width: 70%
+   :alt: An comparison of the card and table views of the repository browse page
 
 .. TIP::
 
@@ -879,11 +888,6 @@ template, see: :ref:`isdiah-template`.
    change the default labels via **Admin > Settings > User interface label**,
    and the default menu labels can be changed via **Admin > Menus**. See the
    :ref:`administer` section for more details.
-
-.. image:: images/repository-browse.*
-   :align: center
-   :width: 70%
-   :alt: An image of the archival institution browse page
 
 2. Place your cursor in the :term:`dedicated search box` at the top of
    the :term:`archival institution` browse page. Type a search term and press
@@ -900,10 +904,8 @@ template, see: :ref:`isdiah-template`.
 
 .. NOTE::
 
-   See :ref:`above <dedicated-search-institutions>` for a list of
-   :term:`fields <field>` that AtoM will search in an archival institution
-   record. In the  current release, results have not been weighted to favor
-   title matches. If you see results without matches in the title (i.e. the
+   In the current release, results have not been weighted to favor title
+   matches. If you see results without matches in the title (i.e. the
    authorized form of name), it means the search term(s) appears somewhere in
    the body of the record.
 
