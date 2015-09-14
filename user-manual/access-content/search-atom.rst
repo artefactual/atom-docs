@@ -899,6 +899,14 @@ particular fields in the archival institution record edit template, see:
    :width: 70%
    :alt: An image of the archival institution dedicated search box
 
+.. TIP::
+
+   You can use :term:`Boolean search` operators such as AND, OR, or NOT, as
+   well as Boolean special characters such as "quotations" or the *****
+   wildcard symbol to improve your search results. For more information on
+   available special characters and boolean searching in AtoM, see:
+   :ref:`advanced-search`.
+
 3. AtoM will reload the page with results. If there are more than 10 results,
    a pager will be included at the bottom of the results page.
 
@@ -912,27 +920,55 @@ particular fields in the archival institution record edit template, see:
 .. image:: images/repository-searchresults.*
    :align: center
    :width: 70%
-   :alt: An image of the archival institution search results
+   :alt: An image of the archival institution search results, card view
 
-4. The results page includes a :term:`sort button` (allowing you to sort
-   results to show them in alphabetic order, or most recently created/updated)
-   and a set of :term:`facet filters <facet filter>` to help you sift through
-   results. For more information on these elements, see
+4. Users can toggle between the table view and card view at any time during
+   the search process, using the view toggle button to the right of the search
+   box:
+
+.. image:: images/repository-searchresults-table.*
+   :align: center
+   :width: 70%
+   :alt: An image of the archival institution search results, table view
+
+5. You can further refine your search with the advanced filters - click the
+   "Advanced" button below the search box to display the advanced filters.
+   Select the desired filters from the
+   :term:`drop-down menus <drop-down menu>`, then click the "Set filters"
+   button to refine the results:
+
+.. image:: images/repository-searchfilters.*
+   :align: center
+   :width: 70%
+   :alt: An image of the archival institution search filters
+
+6. AtoM will reload the page, with the results refined based on the Advanced
+   search filters.
+
+.. image:: images/repository-searchfilters-results.*
+   :align: center
+   :width: 70%
+   :alt: An image of the archival institution results after a search with
+         filters
+
+.. NOTE::
+
+   After a search, the advanced search filters will reset. You will have to
+   re-apply them to perform the same search again.
+
+7. Results in the table view can be sorted based on column - click on the
+   column header to sort the results; click again to reverse the sort order.
+   The results page also includes a :term:`sort button` (allowing you to sort
+   results to show them in alphabetic order, by identifier, or by most
+   recently created/updated), and a set of :term:`facet filters <facet filter>`
+   to help you sift through results. For more information on these elements, see
    :ref:`recurring-sort-button` and :ref:`recurring-facet-filters`.
 
-.. TIP::
-
-   You can use :term:`Boolean search` operators such as AND, OR, or NOT, as
-   well as Boolean special characters such as "quotations" or the *****
-   wildcard symbol to improve your search results. For more information on
-   available special characters and boolean searching in AtoM, see:
-   :ref:`advanced-search`.
-
-5. You can click the |searchreset| button next to your search term in the
+8. You can click the |searchreset| button next to your search term in the
    dedicated search box to clear the field and begin a new search.
    Alternately, simply place the cursor in the search box and enter a new
    search term.
-6. When you have found the record you are searching for, click on its title in
+9. When you have found the record you are searching for, click on its title in
    the results, and AtoM will redirect you to the selected archival
    institution's :term:`view page`.
 
