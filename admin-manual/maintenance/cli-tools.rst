@@ -212,6 +212,29 @@ objects - that is, those that have been linked via an external URI, rather than
 by uploading a :term:`master digital object`. For more information on linking
 digital objects, see: :ref:`link-digital-object`.
 
+The ``--skip-to`` option is useful when the task is interrupted, such as when
+an error is encountered mid-process that ends the task. As the task
+progresses during normal execution, it will output information about the
+current digital object filename it is working on. If the task interrupts
+(for example, trying to fetch a large external digital object, the task might
+time out), a system administrator can use this option to resume the task
+where it interrupts. Example:
+
+.. code-block:: bash
+
+   $ php symfony digitalobject:regen-derivatives
+
+   Regenerating derivatives for file1.jpg...
+   Regenerating derivatives for file2.jpg...
+   Regenerating derivatives for file3.jpg...
+
+   <timeout error occurs>
+
+   $ php symfony digitalobject:regen-derivatives --skip-to='file3.jpg'
+
+   Regenerating derivatives for file3.jpg...
+   <task continues where it left off>
+
 The ``--json`` or ``-j`` option is for advanced users who would like to target
 only a specific subset of digital objects for regeneration. With this option, a
 user can supply the path to a JSON file that lists the internal
