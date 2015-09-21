@@ -599,6 +599,17 @@ the key behaviors are outlined below:
 
 **Attempting to match to existing authority records**
 
+.. IMPORTANT::
+
+   If you are attempting to import both an :term:`archival description` CSV
+   and an :term:`authority record` CSV to supplement the actor data that is
+   linked to your descriptions, **you must import the authority record CSV
+   first**. On import, the description CSV code will look for exact matches to
+   which it can link - but the authority record CSV import code does not
+   currently have similar logic. If you import your authority record CSV
+   template after the description CSV, you might end up creating duplicate
+   authority records!
+
 * AtoM will attempt to find matches for current authority records. However, to
   avoid collisions, or situations in which multiple imports overwrite the same
   authority record in a :term:`multi-repository system`, the approach is
@@ -1230,6 +1241,18 @@ below.
 
 Authority records CSV
 ^^^^^^^^^^^^^^^^^^^^^
+
+.. IMPORTANT::
+
+   If you are attempting to import both an :term:`archival description` CSV
+   and an :term:`authority record` CSV to supplement the actor data that is
+   linked to your descriptions, **you must import the authority record CSV
+   first**. On import, the description CSV code will look for exact matches to
+   which it can link - but the authority record CSV import code does not
+   currently have similar logic. If you import your authority record CSV
+   template after the description CSV, you might end up creating duplicate
+   authority records!
+
 
 * The *culture* column indicates to AtoM the language of the descriptions
   being uploaded. This column expects two-letter ISO 639-1 language code
