@@ -386,7 +386,33 @@ at the top of most browse pages.
 Default repository browse view
 ------------------------------
 
-TO DO
+This setting will determine if the "card view" or the "table view" is the
+default view for the :term:`archival institution` browse page, when users
+first arrive on the page.
+
+.. image:: images/repo-views.*
+   :align: center
+   :width: 70%
+   :alt: An comparison of the card and table views of the repository browse page
+
+.. TIP::
+
+   Regardless of which setting you choose, any user can easily toggle between
+   the card view and the table view on the :term:`archival institution` browse
+   page, using the view toggle button that appears to the right of the archival
+   institution search box:
+
+   .. image:: images/view-toggle-repository.*
+      :align: center
+      :width: 80%
+      :alt: An image of the view toggle button on the repository browse page
+
+For more information on working with archival institutions, see:
+
+* :ref:`Browse archival institutions <browse-institutions>`
+* :ref:`Search archival institutions <dedicated-search-institutions>`
+* :ref:`archival-institutions`
+
 
 .. _multiple-repositories:
 
@@ -691,14 +717,6 @@ see glossary definitions and descriptions of how the terms are used in AtoM.
 * materialtype: Material type (general material designations used in the
   :ref:`Canadian Rules for Archival Description <rad-template>`).
 * facetstitle: :term:`facets title`
-* access_disallow_warning: Used for customizable access restriction statements
-  when access to a :term:`digital object` is disallowed via an associated
-  PREMIS rights statement. See: :ref:`rights`, specifically
-  :ref:`rights-digital-object` for more information.
-* access_conditional_warning: Used for customizable access restriction statements
-  when access to a :term:`digital object` is set to conditional via an associated
-  PREMIS rights statement. See: :ref:`rights`, specifically
-  :ref:`rights-digital-object` for more information.
 * genre: Term for the Genre access point taxonomy, currently only available on
   the :ref:`RAD template <rad-template>`. It appears as a :term:`facet filter`
   in the :term:`archival description` browse and search pages - this label will
@@ -729,7 +747,7 @@ AtoM relies on volunteer translators from the community to support new language
 options. The translations are managed using
 `Transifex <https://www.transifex.com/projects/p/atom/>`__ and community
 members can learn more about contibuting translations `here
-<https://www.accesstomemory.org/community/translate>`_.
+<https://wiki.accesstomemory.org/Resources/Translation>`_.
 
 .. image:: images/add-remove-languages.*
    :align: center
@@ -756,6 +774,20 @@ your AtoM application.
    appear in the "Add/remove language" section in "Settings", as well as in the
    :term:`drop-down menu` of the |globe| :term:`language navigation menu
    <language menu>` located at the top right corner of the :term:`header bar`.
+
+.. IMPORTANT::
+
+   If you are adding a new language to the AtoM user interface, you **must
+   re-index your site** for the new language to work as expected after adding
+   it via the settings page. Using the command-line, a system administrator
+   will need to run the following command from the root directory of your AtoM
+   installation:
+
+   .. code-block:: bash
+
+      php symfony search:populate
+
+   See: :ref:`maintenance-populate-search-index` for more information.
 
 .. NOTE::
 
@@ -818,6 +850,9 @@ included in the :ref:`OAI repository <oai-pmh>` documentation, here:
 
    * :ref:`oai-pmh-plugin`
    * :ref:`manage-plugins`
+
+   If the arOAIPlugin is **not** turned on, then you won't see the OAI
+   repository tab on the settings page menu!
 
 :ref:`Back to top <settings>`
 
@@ -895,8 +930,23 @@ Permissions
 ===========
 
 Permissions settings are used by :term:`administrators <administrator>` to
-make PREMIS rights records in archival descriptions actionable on
-attached digital objects. For more instructions and examples, please see
-:ref:`Make rights actionable on digital objects <rights-digital-object>`.
+make PREMIS rights records in
+:term:`archival descriptions <archival description>` actionable on
+attached :term:`digital objects <digital object>`. See :ref:`rights` for more
+information on working with rights in AtoM.
+
+The permissions settings page is divided into 3 sections - PREMIS access
+permissions, PREMIS access statements, and the Copyright statement.
+
+For information on configuring the PEMIS access permissions, see:
+:ref:`rights-digital-object>` (and for an example use case, see:
+:ref:`rights-digital-object-example`). For information on configuring the PREMIS
+access statements, see: :ref:`disallow-statements`. For information on
+configuring and using the Copyright statement, see: :ref:`copyright-pop-up`.
+
+.. image:: images/permissions-settings.*
+   :align: center
+   :width: 80%
+   :alt: Permissions settings in AtoM
 
 :ref:`Back to top <settings>`
