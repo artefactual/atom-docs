@@ -102,6 +102,7 @@ friendly :term:`user interface`.
    * Name access points
    * Place access points
    * Identifier
+   * Reference code
 
 .. image:: images/advancedsearch-fields.*
    :align: center
@@ -191,7 +192,7 @@ friendly :term:`user interface`.
 * **Level of description**: This filter will limit the returned search
   results to a specific :term:`level of description`.
 * **Copyright status**: AtoM :term:`archival description` templates include a
-  "Rights" :term:`information area` that is drawn from elements of the
+  the ability to add Rights statements, drawn from elements of the
   `PREMIS <http://www.loc.gov/standards/premis/>`__
   (Preservation Medata: Impmlementation Strategies) metadata standard
   maintained by the U.S. Library of Congress. Through this module, a user can
@@ -199,6 +200,9 @@ friendly :term:`user interface`.
   Public Domain, Under copyright, or Unknown). This filter will limit search
   results to those descriptions where a PREMIS Rights copyright status has
   been added matching the selection in the filter's :term:`drop-down menu`.
+  For more information, see: :ref:`rights`.
+* **Date range**: An inclusive date-range search. Its use is explained in
+  greater detail in the section below, :ref:`date-range-search`.
 
 7. Click "Search" in the :term:`button block` to view the results of your search
    query. Results will appear in order of relevance below the button block. If
@@ -214,6 +218,95 @@ friendly :term:`user interface`.
    by simply changing the required search :term:`terms <term>` and :term:`fields
    <field>` and clicking "Search" once again. You can also restart your search
    at any time; simply click the "Reset" button in the :term:`button block`.
+
+.. _date-range-search:
+
+Using the date range search filters
+-----------------------------------
+
+.. image:: images/date-range-search.*
+   :align: right
+   :width: 25%
+   :alt: An image of the date range search filters
+
+The date range search allows users to search for any records whose active
+dates (e.g. dates of creation, accumulation, etc.) overlap a selected range.
+It is a broadly inclusive search: any records whose dates overlap the user
+input range will be returned. For example, a search for a range from 1950-1970
+would return descriptions with the following dates:
+
+* 1945 - 1990
+* 1945 - 1950
+* 1970 - 1990
+* 1955 - 1965
+* 1955 - (no end date)
+* (no start date) 1980
+
+In the following image, results in green will be returned by the search query;
+results in red will be excluded from the results:
+
+.. image:: images/2.3-advanced-date-search-1.*
+   :align: center
+   :width: 90%
+   :alt: An example of results returned for a 1950-1970 query
+
+You can also input only a start date, or an end date, into the date range
+search if desired. If a user gives **just a start date**, it is interpreted to
+mean 'filter to records that were active after this date' - in other words,
+'end date of record **>** user supplied start date':
+
+.. image:: images/2.3-advanced-date-search-2-startDate.*
+   :align: center
+   :width: 90%
+   :alt: An example of results returned for a 1950 start date query
+
+If the user gives **just an end date**, it means 'filter to records that were
+active before this date' - in other words, 'start date of record **<** user
+supplied end date':
+
+.. image:: images/2.3-advanced-date-search-3-endDate.*
+   :align: center
+   :width: 90%
+   :alt: An example of results returned for a 1970 end date query
+
+**Using the date range search filters**
+
+When you place the cursor in the start date or end date fields of the date
+range search, a calendar :term:`drop-down menu` will appear. This "datepicker"
+offers a graphical user interface for selecting the date, if desired.
+
+.. image:: images/date-range-calendar.*
+   :align: center
+   :width: 30%
+   :alt: An example of calendar widget dropdown in the date range fields
+
+Click on a day in the calendar to select that as your start or end date. You
+can also navigate through the months using the black forward and back buttons.
+
+The month and year can also be adjusted via the two drop-down menus:
+
+.. image:: images/date-range-calendar-dropdown.*
+   :align: center
+   :width: 30%
+   :alt: An example of calendar widget dropdown menus in the date range fields
+
+You can also ignore the calendar widget, and simply enter a date directly into
+the text field. AtoM expects the dates to be formattedd as **YYYY** or
+**YYYY-MM-DD**. If you enter only the year, then AtoM will add -01-01 to start
+dates and -12-31 to end dates when the search query is submitted - for
+example, if you search for 1950 - 1970, AtoM will submit the query as 1950-01-01
+(January 01, 1950) to 1970-12-31 (December 31, 1970).
+
+If you attempt to enter a date manually, but do not use the correct format,
+(e.g. you enter ``YYYY-MM``, or ``YYYYMMDD`` without the separating dashes)
+AtoM will return a warning, which must be corrected before the query can be
+submitted:
+
+.. image:: images/date-range-error.*
+   :align: center
+   :width: 30%
+   :alt: An example of incorrectly formatted values in the date range fields
+
 
 :ref:`Back to top <advanced-search>`
 
@@ -322,8 +415,9 @@ search interface.
 |   `?`  | Single character wildcard. Example: p?per will find paper and     |
 |        | piper, but not pepper.                                            |
 +--------+-------------------------------------------------------------------+
-|   `*`  | Multiple character wildcard. Example: galax* will find galaxy and |
-|        | galaxies, but not galactic.                                       |
+|   `*`  | Multiple character wildcard. Example: `galax*` will find galaxy   |
+|        |  and galaxies, but not galactic.                                  |
+|        |                                                                   |
 +--------+-------------------------------------------------------------------+
 |   `~`  | Fuzzy search. Will return results with words similar to the term. |
 |        | Example: fjord~ will find fjord, fjords, ford, form, fonds, etc.  |
@@ -370,7 +464,8 @@ as Elasticsearch is built on the same Apache Lucene base as the Zend
 framework. Developers interested in fine-tuning these settings, or technical
 users interested in how Elasticsearch operates may wish to consult the
 `query string query
-<http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html>`__ Elasticsearch reference documentation for more information on Elasticsearch's
+<http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html>`__
+Elasticsearch reference documentation for more information on Elasticsearch's
 default behaviors, and possible configurations.
 
 :ref:`Back to top <advanced-search>`
