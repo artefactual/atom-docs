@@ -127,6 +127,7 @@ application.
 * :ref:`Import descriptions and terms <import-descriptions-terms>`
 * :ref:`Export descriptions and terms <export-descriptions-terms>`
 * :ref:`CSV import <csv-import>`
+* :ref:`csv-export`
 * :ref:`oai-pmh`
 
 .. _administer:
