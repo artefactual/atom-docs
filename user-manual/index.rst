@@ -43,6 +43,7 @@ links to each chapter's main sections.
    import-export/import-descriptions-terms
    import-export/export-descriptions-terms
    import-export/csv-import
+   import-export/csv-export
    import-export/oai-pmh
    administer/manage-user-accounts
    administer/manage-digital-object-storage
