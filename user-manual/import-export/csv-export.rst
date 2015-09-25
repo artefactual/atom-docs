@@ -10,6 +10,9 @@ CSV export
 .. |gears| image:: images/gears.png
    :height: 18
    :width: 18
+.. |pencil| image:: images/edit-sign.png
+   :height: 18
+   :width: 18
 
 Most often understood as an acronym for "comma-separated values" (though
 sometimes called "character-separated values" because the separator character
@@ -235,7 +238,34 @@ Export advanced search results in CSV format
 Export completed jobs in CSV format
 ===================================
 
+AtoM includes a job scheduler in order to execute certain long-running tasks
+asynchronously to guarantee that web requests are handled promptly and work
+loads can be distributed across multiple machines. This ensures time and/or
+resource-intensive tasks do not timeout when running via the web browser. For
+more information see, :ref:`manage-jobs`.
 
+In case users would like to clear completed jobs but keep a record outside of
+AtoM of previous jobs performed, a :term:`CSV` export of the Jobs table is
+available. Like the display table in the :term:`user interface`, the output
+contains columns for startDate, endDate, jobName, jobStatus, jobInfo, and
+jobUser.
+
+.. image:: images/jobs-csv-output.*
+   :align: center
+   :width: 80%
+   :alt: An example image of the Jobs page CSV export
+
+Simply navigate to the jobs page via |pencil| **Manage > Jobs**, and then
+click the "Export history CSV" button located in the :term:`button block` on
+the page. All jobs currently listed on the Jobs page will be included in the
+export.
+
+.. IMPORTANT::
+
+   Only an :term:`administrator` can see all jobs initiated by all users in
+   the system. Other users can only see jobs that they themselves have
+   initiated - and will only be able to export a CSV of their own jobs. See
+   the :ref:`manage-jobs` page for more information on using the Jobs page.
 
 :ref:`Back to top <csv-export>`
 
