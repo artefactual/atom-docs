@@ -31,12 +31,22 @@ operators and special characters.
    Dedicated search boxes provided in the relevant page - for more
    information, see: :ref:`dedicated-search`.
 
+**Jump to:**
+
+* :ref:`advanced-search-interface`
+
+  * :ref:`date-range-search`
+
+* :ref:`advanced-search-via-searchbox`
+* :ref:`csv-export-search-2`
+
 .. SEEALSO::
 
    * :ref:`search-atom`
    * :ref:`browse`
    * :ref:`navigate`
    * :ref:`archival-descriptions`
+   * :ref:`csv-export-search`
 
 .. _advanced-search-interface:
 
@@ -467,5 +477,29 @@ users interested in how Elasticsearch operates may wish to consult the
 <http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html>`__
 Elasticsearch reference documentation for more information on Elasticsearch's
 default behaviors, and possible configurations.
+
+.. _csv-export-search-2:
+
+Export advanced search results in CSV format
+============================================
+
+Any authenticated (i.e. logged in) user can generate a :term:`CSV` export of
+:term:`advanced search` results. The CSV export, after it is generated, is
+made available for download from the jobs page.
+
+When downloaded, the file will be compressed in a
+`ZIP <https://wikipedia.org/wiki/Zip_(file_format)>`__ archive - there are many
+free utilities (likely there is one already included on your computer) that
+will allow you to "unzip" a ZIP file.
+
+**For more information, see the CSV export documentation:**
+
+* :ref:`csv-export-search`.
+
+.. NOTE::
+
+   This functionality is currently only available to authenticated (i.e.
+   logged in) users. Public users will not be able to generate and download
+   CSV copies of their search results.
 
 :ref:`Back to top <advanced-search>`
