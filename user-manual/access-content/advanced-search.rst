@@ -279,6 +279,24 @@ supplied end date':
    :width: 90%
    :alt: An example of results returned for a 1970 end date query
 
+.. IMPORTANT::
+
+   When searching for a date range, AtoM searches against the values in
+   internal, `ISO-8601 <https://en.wikipedia.org/wiki/ISO_8601>`__ ``startDate``
+   and ``endDate`` fields - those hidden from users, and formatted as
+   YYYY-MM-DD, YYYY-MM, or YYYY. This is not to be confused with the **Display
+   date** field, which is shown to public users, and allows you to use
+   typographical marks to express approximation or uncertainty:
+
+   .. image:: images/date-range-search-fields-used.*
+      :align: center
+      :width: 90%
+      :alt: An illustration of the different date fields and their uses
+
+   This means, if you have NOT included internal start and end date values,
+   then your description(s) will not be returned when performing a date range
+   search!
+
 **Using the date range search filters**
 
 When you place the cursor in the start date or end date fields of the date
