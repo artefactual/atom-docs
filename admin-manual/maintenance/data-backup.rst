@@ -57,19 +57,6 @@ Make a dump of your Qubit database using ``mysqldump``:
    mysqldump -u <MySQL username> -p<MySQL password> -c <database name>
 
 
-Search index data
-=================
-
-Create an archive of your search index data:
-
-.. code:: bash
-
-   cd /path/to/qubit
-   cd data
-   tar cvf search_data.tar index/
-   gzip search_data.tar
-
-
 Digital objects
 ===============
 
