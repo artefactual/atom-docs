@@ -613,6 +613,11 @@ out the following page for further installation details:
 
 .. _linux-security-considerations:
 
+Configure AtoM via the command-line
+=======================
+
+There are various settings that can only be configured via the command-line. Depending on your local requirements, it may be preferable to configure some of these now. For more information on these settings see :ref:`customization config-files section <manage-atom-configuration-files>`.
+
 Security considerations
 =======================
 
