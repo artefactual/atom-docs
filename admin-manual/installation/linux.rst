@@ -611,6 +611,16 @@ SWORD deposits, managing rights inheritance, and generating finding aids. Check
 out the following page for further installation details:
 :ref:`installation-asynchronous-jobs`.
 
+.. _linux-configuration-files:
+
+Configure AtoM via the command-line
+=======================
+
+There are various settings that can only be configured via the command-line -
+for example, the default timezone of the application. Depending on your local
+requirements, it may be preferable to configure some of these now. For more
+information on these settings see: :ref:`manage-atom-configuration-files`.
+
 .. _linux-security-considerations:
 
 Security considerations
