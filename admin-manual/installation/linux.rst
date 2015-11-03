@@ -57,7 +57,7 @@ Elasticsearch
 
 A relatively new search server based on Apache Lucene and developed in Java that
 has brought AtoM a lot of advanced features, performance and scalability. This is
-probably the biggest change introduced in AtoM |version| and we are pleased
+probably the biggest change introduced in AtoM 2.x and we are pleased
 with the results.
 
 Ubuntu doesn't provide a package but you can download it directly from the
