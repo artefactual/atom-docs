@@ -241,8 +241,8 @@ Apache
 ``````
 .. warning::
 
-   Remember that our preferred choice is :ref:`linux-dependency-nginx` but it
-   is perfectly possible to use Apache and we have verified that it works.
+   Remember that our preferred choice is :ref:`linux-dependency-httpd-nginx` but
+   it is perfectly possible to use Apache and we have verified that it works.
 
 Install the necessary packages:
 
