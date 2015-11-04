@@ -34,7 +34,8 @@ of each component.
   development
 * `Elasticsearch <http://www.elasticsearch.org/>`__ 1.3.0 or newer
 * `MySQL <https://www.mysql.com/>`__ 5.1 or newer
-* `PHP <http://php.net/>`__ 5.3.10 or newer (PHP 5.4 and PHP 5.5 work too)
+* `PHP <http://php.net/>`__ 5.4 or newer (PHP 5.5 works too and is used by
+   Artefactual developers in development and production deployments)
 * `Memcached <http://memcached.org>`__
 * `Gearman job server <http://gearman.org>`__
 

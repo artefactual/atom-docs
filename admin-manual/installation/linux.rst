@@ -278,6 +278,10 @@ The configuration of your virtual server shoud look like the following:
 PHP
 ---
 
+You will need to ensure that you have at leat PHP 5.4 or higher installed - we
+use PHP 5.5 in development - in addition to a number of PHP extentions,
+described below.
+
 Our favorite way to deploy AtoM is using `PHP-FPM <http://php-fpm.org/>`__, a
 process manager that scales better than other solutions like FastCGI. The
 following command will install it along with the rest of PHP extensions
