@@ -530,6 +530,10 @@ The treeview quick search can be accessed by navigating to an :term:`archival
 description`, and clicking the "Quick search" tab above the :term:`treeview`
 in the left-hand :term:`context menu` of the description's :term:`view page`.
 
+.. SEEALSO::
+
+   * :ref:`browse-hierarchy`
+
 **TO USE THE TREEVIEW QUICK SEARCH:**
 
 1. Navigate to a top-level :term:`archival description` (i.e. a :term:`fonds`,
@@ -584,7 +588,8 @@ in the left-hand :term:`context menu` of the description's :term:`view page`.
    button at the bottom of the Quick search results. AtoM will redirect you
    to a browse page, where you can use features such as the browse page's
    :ref:`sort button <recurring-sort-button>` and :ref:`facet filters
-   <recurring-facet-filters>` to navigate the descriptions.
+   <recurring-facet-filters>` to navigate the descriptions. See:
+   :ref:`browse-hierarchy-quick-search`.
 
 :ref:`Back to top <search-atom>`
 

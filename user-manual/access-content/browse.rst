@@ -179,6 +179,8 @@ Additionally, the results include helpful contextual information, including:
    * :ref:`recurring-facet-filters`
    * :ref:`archival-descriptions`
 
+:ref:`Back to top <browse>`
+
 .. _browse-hierarchy:
 
 Browsing within an archival unit's hierarchy
@@ -283,6 +285,13 @@ may also be an option to view an inventory. This section will describe the
 :ref:`Browse inventory list <browse-hierarchy-inventory>` sections below for
 the other options in this part of the context menu.
 
+.. NOTE::
+
+   The "Browse as list" and the "Browse digital objects" links will appear in
+   the right-hand :term:`context menu` in all cases - even if there are no
+   lower-level descriptions or digital objects to browse. So, it is possible
+   that clicking on the link will lead to a results page with 0 results.
+
 **To use the Browse as list button:**
 
 1. Navigate to an :term:`archival description` that is part of the
@@ -344,6 +353,13 @@ The "Browse digital objects" button will allow you to explore the
 in the target :term:`archival unit`, on a dedicated browse page described in
 the :ref:`browse-digital-objects` section below, but limited to that specific
 descriptive hierarchy.
+
+.. NOTE::
+
+   The "Browse as list" and the "Browse digital objects" links will appear in
+   the right-hand :term:`context menu` in all cases - even if there are no
+   lower-level descriptions or digital objects to browse. So, it is possible
+   that clicking on the link will lead to a results page with 0 results.
 
 **To use the Browse digital objects button:**
 
@@ -461,14 +477,107 @@ would need to navigate to the series record to see the inventory link.
    using the :ref:`context-menu-treeview` for navigation, and information on the
    :ref:`treeview-search`.
 
-TO DO
+2. If the description includes :term:`children <child record>` that match the
+   inventory settings configured by the :term:`administrator` (see:
+   :ref:`inventory-settings`), then an "Inventory" link will appear in the
+   right-hand :term:`context menu`, in the *Explore* section:
+
+.. image:: images/inventory-link.*
+   :align: center
+   :width: 80%
+   :alt: An image of the Inventory link in the right-hand context menu of an
+         archival description.
+
+3. Click on the "Inventory" link. AtoM will redirect you to the inventory list
+   of lower-level records for the chosen description.
+
+.. image:: images/inventory-list-annotated.*
+   :align: center
+   :width: 80%
+   :alt: An image of the Inventory list for a series, with annotations
+
+4. The Inventory list page will include the title of the parent description,
+   as well as a :term:`breadcrumb trail` back to the top-level description for
+   the :term:`archival unit`. On the right-hand side of the page, a button to
+   return to the :term:`view page` of the parent :term:`archival description`
+   is also included.
+
+5. The column headers of the inventory list that appear in blue can be clicked
+   to sort the inventory list by that column. Clicking again will reverse the
+   sort order of the column (for example, from A-Z to Z-A). The only column
+   that cannot be sorted is the Digital objects column.
+
+6. The Digital object column will indicate whether or not there is a
+   :term:`digital object` associated with the :term:`archival description`
+   listed in the inventory list row. If there is, and the user has sufficient
+   :term:`permissions <access privilege>` to view the
+   :term:`master digital object`, then AtoM will provide a direct link to the
+   master digital object.
+
+.. NOTE::
+
+   By default, public users who are not logged into AtoM do not have
+   permission to access the :term:`master digital object` for locally uploaded
+   digital content. This can be changed by an :term:`administrator` via
+   **Admin > Groups** - edit the archival description permissions for the
+   "anonymous" group to grant permission to "View master." See:
+   :ref:`edit-user-permissions` and :ref:`manage-user-accounts`.
+
+   Note that the above means that there are many possible scenarios where a
+   digital object is attached to a description, but there is no indication of
+   this in the Inventory list - it will depend on the
+   :term:`access privileges <access privilege>` of the user viewing the
+   inventory list.
+
+7. If there are more than 10 results, a pager, with a count of the total
+   number of results above it, will be included at the bottom of the page.
+
+.. TIP::
+
+   10 results per page is just the default setting in AtoM, but this can be
+   adjusted by an :term:`administrator` via **Admin > Settings > Global**. For
+   more information, see: :ref:`results-page`. The number of results included
+   on a single page of the inventory list is controlled by this global
+   setting, which affects all paged-results in the application.
 
 .. _browse-hierarchy-quick-search:
 
 Using the Quick search bar's browse option
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-TO DO
+The :term:`view page` for an :term:`archival description` includes a feature
+known as the Treeview Quick search - it allows a user to quickly search an
+:term:`archival unit` for a specific lower-level description. Instructions on
+how to use it can be found at:
+
+* :ref:`treeview-search`
+
+However, whenever a search query is returned with at least 1 matching result,
+a link that allows a user to browse all descriptions in a dedicated
+search/browse page, limited to the current archival unit, is also included:
+
+.. image:: images/quicksearch-browse-link.*
+   :align: center
+   :width: 30%
+   :alt: An image of the browse descriptions link on the Quick search results page
+
+If you click the "Browse all descriptions" link included at the bottom of the
+Quick search results, AtoM will redirect you to a search/browse results page,
+limited to the current :term:`archival unit`.
+
+.. TIP::
+
+   The Quick search bar will accept Boolean operators (see
+   :ref:`advanced-search-operators` for more information), including the ** * **
+   wildcard character. If you just want to use the Quick search to access the
+   browse link, you can enter an asterix and press enter - AtoM will return
+   a subset of all results, and then provide the browse link.
+
+   Of course, an easier way to do this would be to use the "Browse as list"
+   button, described :ref:`above <browse-hierarchy-list>`
+
+
+:ref:`Back to top <browse>`
 
 .. _browse-authority-records:
 
