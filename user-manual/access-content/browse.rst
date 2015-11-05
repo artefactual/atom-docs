@@ -179,6 +179,297 @@ Additionally, the results include helpful contextual information, including:
    * :ref:`recurring-facet-filters`
    * :ref:`archival-descriptions`
 
+.. _browse-hierarchy:
+
+Browsing within an archival unit's hierarchy
+--------------------------------------------
+
+There are several ways to explore lower-level records (i.e. :term:`children
+<child record>`) within an :term:`archival unit` (such as a :term:`fonds`,
+:term:`collection`, or series). Each will be described below.
+
+**Jump to:**
+
+* :ref:`browse-hierarchy-facet`
+* :ref:`browse-hierarchy-top-filter`
+* :ref:`browse-hierarchy-list`
+* :ref:`browse-hierarchy-digi-objects`
+* :ref:`browse-hierarchy-inventory`
+* :ref:`browse-hierarchy-quick-search`
+
+The "Part of" facet and Top-level description filter options are performed
+from a Search/Browse page, while the remaining options are accessed from
+the :term:`view page` of an :term:`archival description`
+
+.. SEEALSO::
+
+   * :ref:`search-atom`
+   * :ref:`archival-descriptions`
+   * :ref:`navigate`
+
+
+.. _browse-hierarchy-facet:
+
+Using the "Part of" facet
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When arriving on a search or browse page, you can use the "Part of"
+:term:`facet filter` to limit results to :term:`children <child record>`
+contained within an :term:`archival unit` such as a :term:`fonds` or
+:term:`collection`. Note however that at present, the AtoM facet filters will
+only show the top 10 results for any facet - so this method will only work if
+your target archival unit is included in the facet's display (see the
+section below on :ref:`browse-hierarchy-top-filter` if your target archival
+unit is not included in the "Part of" facet filter).
+
+.. SEEALSO::
+
+   More information on using the search/browse pages and the facet filters
+   can be found in the sections listed below:
+
+   * :ref:`search-atom`
+   * :ref:`browse`
+   * :ref:`recurring-facet-filters`
+
+**To use the "Part of" facet for limiting results to a single archival unit:**
+
+1. Using the :ref:`browse-menu` located in the :ref:`atom-header-bar`, navigate
+   to **Browse > Archival descriptions**. For more information on navigation in
+   AtoM, see: :ref:`navigate`.
+2. Make sure that the top-level descriptions filter is turned off - by
+   default, AtoM will display only top-level :term:`parent <parent record>`
+   records when arriving on the Browse page. You can display all results by
+   clicking the **X** on the "top-level descriptions" :term:`filter tag`.
+3. In the left-hand column, locate the "Part of" facet filter. The facet will
+   display the top 10 results - e.g. those top-level records with the most
+   :term:`children <child record>`. For more information on using facet
+   filters in AtoM, see: :ref:`recurring-facet-filters`
+4. Click on the name of the :term:`archival unit` (e.g. fonds or collection)
+   whose lower-level records (:term:`children <child record>`) you would like
+   to explore.
+5. AtoM will reload the page with the results filtered to the chosen archival
+   unit. This will be indicated, and can be quickly removed, via the
+   :term:`filter tag` with the name of the unit at the top of the
+   search/browse results page. You can continue to apply further facets and
+   fliters as desired to narrow your results within the selected archival unit.
+
+.. _browse-hierarchy-top-filter:
+
+Using the top-level description filter
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+TO ADD AFTER SEARCH PAGE REDESIGN
+
+.. _browse-hierarchy-list:
+
+Using the "Browse as list" button
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you are already on the view page of an :term:`archival description` that
+includes a descriptive hierarchy (i.e. a top-level description such as a
+:term:`fonds`, :term:`collection`, or series that has lower-level
+:term:`children <child record>`), you can explore the descriptions contained
+in the :term:`archival unit` using the browse buttons included in the
+"Explore" section of the right-hand :term:`context menu`. For more information
+on context menu items in AtoM, see: :ref:`context-menu` and
+:ref:`recurring-page-elements`.
+
+There are two options for browsing within an archival unit included here - the
+"Browse as list" button, and the "Browse digital objects" button.
+Additionally, if it has been configured by an :term:`administrator`, there
+may also be an option to view an inventory. This section will describe the
+"Browse as list" button - see the
+:ref:`Browse digital objects button <browse-hierarchy-digi-objects>` and
+:ref:`Browse inventory list <browse-hierarchy-inventory>` sections below for
+the other options in this part of the context menu.
+
+**To use the Browse as list button:**
+
+1. Navigate to an :term:`archival description` that is part of the
+   :term:`archival unit` whose :term:`children <child record>` you wish to
+   explore - it does not have to be the top-level :term:`parent record`. For
+   more information on searching, browsing, and navigation in AtoM, see:
+   :ref:`access-content`.
+2. In the right-hand :term:`context menu`, locate the *Explore* section - you
+   will see browse options listed there, including the "Browse as list"
+   button.
+
+.. image:: images/browse-collection-options.*
+   :align: center
+   :width: 30%
+   :alt: An image of the Explore section of the right-hand context menu
+
+3. Click on the "Browse as list" link. AtoM will redirect you to a browse
+   page, limited to the current :term:`archival unit` - this will be indicated
+   by the :term:`filter tag` at the top of the browse page with the name of
+   the top-level description. If you click the **X** to remove the filter tag,
+   AtoM will reload all search/browse results (i.e. the page will no longer be
+   limited to the selected archival unit).
+
+.. NOTE::
+
+   The top-level record for the selected :term:`archival unit` (for example,
+   the :term:`fonds` or :term:`collection` description) will **not** be
+   included in the results. The "Browse as list" option will only return
+   results for :term:`children <child record>` of the top-level record.
+
+4. You can continue to apply further facets and fliters as desired to narrow
+   your results within the selected archival unit.
+
+.. _browse-hierarchy-digi-objects:
+
+Using the "Browse digital objects" button
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you are already on the view page of an :term:`archival description` that
+includes a descriptive hierarchy (i.e. a top-level description such as a
+:term:`fonds`, :term:`collection`, or series that has lower-level
+:term:`children <child record>`), you can explore the descriptions contained
+in the :term:`archival unit` using the browse buttons included in the
+"Explore" section of the right-hand :term:`context menu`. For more information
+on context menu items in AtoM, see: :ref:`context-menu` and
+:ref:`recurring-page-elements`.
+
+There are two options for browsing within an archival unit included here - the
+"Browse as list" button, and the "Browse digital objects" button.
+Additionally, if it has been configured by an :term:`administrator`, there
+may also be an option to view an inventory. This section will describe the
+"Browse digital objects" button - see the
+:ref:`Browse digital objects button <browse-hierarchy-list>` section above,
+and the :ref:`Browse inventory list <browse-hierarchy-inventory>` section below
+for the other options in this part of the context menu.
+
+The "Browse digital objects" button will allow you to explore the
+:term:`digital objects <digital object>` associated with descriptions included
+in the target :term:`archival unit`, on a dedicated browse page described in
+the :ref:`browse-digital-objects` section below, but limited to that specific
+descriptive hierarchy.
+
+**To use the Browse digital objects button:**
+
+1. Navigate to an :term:`archival description` that is part of the
+   :term:`archival unit` whose :term:`children <child record>` you wish to
+   explore - it does not have to be the top-level :term:`parent record`. For
+   more information on searching, browsing, and navigation in AtoM, see:
+   :ref:`access-content`.
+2. In the right-hand :term:`context menu`, locate the *Explore* section - you
+   will see browse options listed there, including the "Browse digital
+   objects" button.
+
+.. image:: images/browse-collection-options.*
+   :align: center
+   :width: 30%
+   :alt: An image of the Explore section of the right-hand context menu
+
+3. Click on the "Browse digital objects" link. AtoM will redirect you to a
+   digital object browse page, limited to the current :term:`archival unit` -
+   this will be indicated by the :term:`filter tag` at the top of the browse
+   page with the name of the top-level description. If you click the **X** to
+   remove the filter tag, AtoM will reload all digital object browse results
+   (i.e. the page will no longer be limited to the selected archival unit).
+
+.. image:: images/browse-digital-objects-button.*
+   :align: center
+   :width: 70%
+   :alt: An image of the Digital object browse page limited to a collection
+
+.. NOTE::
+
+   The top-level record for the selected :term:`archival unit` (for example,
+   the :term:`fonds` or :term:`collection` description) will **not** be
+   included in the results. The "Browse digital objects" option will only
+   return results for :term:`children <child record>` of the top-level record
+   - so if there is a digital object attached to the top-level record, it will
+   not appear in these results!
+
+4. You can use the :ref:`recurring-sort-button` and the media type filter
+   on the page to further sort or limit the results as desired.
+
+.. _browse-hierarchy-inventory:
+
+Using the Inventory list
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+The Inventory list allows an :term:`administrator` to make a page of lower-
+level descriptions contained within a :term:`parent record` available on a
+separate inventory page formatted as a table with sortable columns.
+
+.. IMPORTANT::
+
+   The Inventory list requires configuration by an :term:`administrator`
+   before it will appear in the AtoM user interface. For instructions on
+   configuring the Inventory, see the :ref:`settings` page;
+   specifically, :ref:`inventory-settings`.
+
+.. image:: images/inventory-list.*
+   :align: center
+   :width: 80%
+   :alt: An image of the Inventory list for a series
+
+If there are a lot of lower-level descriptions (for example, many files and
+items in a series), this can be a useful way to quickly browse the contents of
+the :term:`archival unit` - and the sortable columns can be used to sort and
+view the lower-level :term:`children <child record>` in a way that the
+:term:`treeview` does not allow. Columns in the inventory page include:
+
+* Identifier
+* Title
+* Level of description
+* Date
+* Digital object
+
+Only the :term:`digital object` column is not sortable - this column will
+provide an indication of whether or not there is a digital object attached to
+the description - if so, the row will have a hyperlink called "View" in the
+Digital object column. Clicking on the "View" link will take a user directly
+to the :term:`master digital object` - if a user does not have
+:term:`permission <access privilege>` to view the master, the column's value
+will be empty for that row.
+
+Whether or not the Inventory link appears on a particular description will
+depend on how it has been configured in the settings page - there, an
+:term:`administrator` determines which levels of description will be included
+(see: :ref:`inventory-settings` for more information). If the current
+:term:`archival description` you are viewing does **not** include lower-level
+:term:`child <child record>` descriptions matching the settings, no link will
+appear.
+
+Because it is configurable, an inventory list may not include *ALL* lower-level
+records available in a particular archival unit. For example, if you viewed
+the inventory page from a :term:`fonds`-level description that included
+sub-fonds, series, files, and items, but the administrator has configured the
+inventory settings to display only files and items, then at the fonds level,
+the inventory list will display all files and items (including those contained
+within lower-level subfonds and series), but the subfonds and series records
+themselves will not be included on the inventory page.
+
+Similarly, the Inventory link will only appear on :term:`parent <parent record>`
+records - for example, if you are viewing a file that is part of a series, you
+would need to navigate to the series record to see the inventory link.
+
+**To use the Inventory list:**
+
+1. Navigate to the :term:`archival description` whose
+   :term:`children <child record>` you would like to explore. For more
+   information on navigation in AtoM, see: :ref:`access-content`.
+
+.. TIP::
+
+   If you are looking for a particular record in an archival unit (such as a
+   series in a fonds), the other entries in this section might be useful to
+   you! See above and below, :ref:`browse-hierarchy`. See also: information on
+   using the :ref:`context-menu-treeview` for navigation, and information on the
+   :ref:`treeview-search`.
+
+TO DO
+
+.. _browse-hierarchy-quick-search:
+
+Using the Quick search bar's browse option
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+TO DO
+
 .. _browse-authority-records:
 
 |authicon| Browse people, families and organizations
