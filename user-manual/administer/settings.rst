@@ -958,7 +958,63 @@ configuring and using the Copyright statement, see: :ref:`copyright-pop-up`.
 Inventory
 =========
 
-TO DO
+The Inventory list allows an :term:`administrator` to make a page of lower-
+level descriptions contained within a :term:`parent record` available on a
+separate inventory page formatted as a table with sortable columns. For more
+information, screenshots, and instructions for end users, see:
+:ref:`browse-hierarchy-inventory`.
+
+.. image:: images/inventory-settings.*
+   :align: center
+   :width: 80%
+   :alt: Inventory settings in AtoM
+
+The selections an administrator makes in this section of the settings will
+determine what :term:`levels of description <level of description>` are
+included in the inventory list when accessed by users.
+
+To multi-select multiple levels of description for inclusion in the inventory
+list, hold down the CTRL key (or the Command key on a Mac) while clicking the
+target levels.
+
+.. image:: images/inventory-select.*
+   :align: center
+   :width: 70%
+   :alt: Selecting multiple levels of description in the inventory settings
+
+Any level not selected will not appear in the inventory list results when a
+user clicks the inventory link.
+
+Because level of description :term:`terms <term>` are included in a
+:term:`taxonomy` that can be configured by users with the appropriate
+:term:`permissions <access privilege>`, a hyperlink to the Levels of
+description taxonomy is also provided - an :term:`administrator` can customize
+available terms by adding new ones, removing unused ones, or editing existing
+terms (for more information, see: :ref:`terms`). Any new term added to the
+Levels of description taxonomy will show up in the Inventory settings page the
+next time an administrator returns to the settings page.
+
+When you have selected the levels of description you want included in the
+Inventory list, remember to click the "Save" button located in the
+:term:`button block` at the bottom of the page.
+
+.. IMPORTANT::
+
+   **Configuring the Inventory settings in a multilingual environment**
+
+   If you have multilingual content in your AtoM instance, or you expect users
+   to be browsing in different cultures (using the :ref:`language-menu`), you
+   will need to configure the Inventory settings for each target culture. For
+   example, to configure the settings for English, French, and Spanish:
+
+   1. Make sure the user interface is set to "English" using the
+      :term:`language menu` - see :ref:`language-menu` for more information.
+   2. Configure the inventory settings as described above for English, and
+      save.
+   3. Using the :term:`language menu`, flip the user interface to French.
+   4. Repeat steps 1-2.
+   5. Using the :term:`language menu`, flip the user interface to Spanish, and
+      repeat steps 1-2 again.
 
 :ref:`Back to top <settings>`
 

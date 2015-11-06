@@ -69,6 +69,9 @@ the Admin-Menus menu (see: :ref:`Manage menus <manage-menus>`).
 **Jump to:**
 
 * :ref:`browse-descriptions`
+
+  * :ref:`browse-hierarchy`
+
 * :ref:`browse-authority-records`
 * :ref:`browse-institutions`
 

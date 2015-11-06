@@ -112,6 +112,7 @@ see the sections below for more specific instructions on the use of
 .. seealso::
 
    * :ref:`add-term-fly`
+   * :ref:`browse-hierarchy`
    * :ref:`Physical storage <link-physical-storage>`
    * :ref:`Upload digital objects <upload-digital-object>`
    * :ref:`Create an archival description from an accession record
