@@ -1138,6 +1138,144 @@ archival institution, like so (assuming the repository ID returned is ``12345``)
 
 :ref:`Back to the top <maintenance-cli-tools>`
 
+.. _cli-sitemap:
+
+Generate an XML sitemap for search engine optimization
+======================================================
+
+This task will allow a system administrator with to generate an XML sitemap of
+your AtoM instance, to enhance search engine optimization. It uses the sitemap
+protocol, as described on sitemaps.org. From the site's home page:
+
+    *Sitemaps are an easy way for webmasters to inform search engines about
+    pages on their sites that are available for crawling. In its simplest
+    form, a Sitemap is an XML file that lists URLs for a site along with
+    additional metadata about each URL (when it was last updated, how often
+    it usually changes, and how important it is, relative to other URLs in
+    the site) so that search engines can more intelligently crawl the site.*
+
+    *Web crawlers usually discover pages from links within the site and from
+    other sites. Sitemaps supplement this data to allow crawlers that support
+    Sitemaps to pick up all URLs in the Sitemap and learn about those URLs
+    using the associated metadata. Using the Sitemap protocol does not
+    guarantee that web pages are included in search engines, but provides
+    hints for web crawlers to do a better job of crawling your site.*
+
+    source: http://www.sitemaps.org/
+
+This XML sitemap can then be passed to search index providers such as Google,
+for better indexing of your AtoM instance. Multiple sitemaps can be generated
+by the task to account for Google's limits on size and/or number of nodes. If
+the sitemap file has more than 50,000 nodes, it will automatically be broken
+into multiple sitemaps.
+
+More information:
+
+* On the protocol: http://www.sitemaps.org/protocol.html
+* Google support: https://support.google.com/webmasters/answer/183668?hl=en&ref_topic=6080646&rd=1
+
+The task will draw the default weighting for each :term:`level of description`
+used in :term:`archival descriptions <archival description>` from a
+configuration file found in ``config/sitemap.yml``. Here are the default
+weightings (or priorities) for each level included:
+
+====================  ==============
+Level of description  Default weight
+====================  ==============
+Collection             0.9
+Fonds                  0.9
+Subfonds               0.8
+Series                 0.7
+Subseries              0.6
+File                   0.5
+Item                   0.4
+====================  ==============
+
+If a user adds a custom level of description to the Level of description
+:term:`taxonomy` (see: :ref:`terms`), or if you wish to change the default
+priorities, you can edit the ``sitemap.yml`` file found in the config directory.
+see: :ref:`config-sitemap-yml` for more information.
+
+.. IMPORTANT::
+
+   There is currently no way to add custom weights for other
+   :term:`entities <entity>` in AtoM such as :term:`authority records
+   <authority record>`, :term:`archival institutions <archival institution>`,
+   :term:`functions <function>`, or :term:`static pages <static page>`, etc.
+
+   The **default weighting** for new :term:`archival description` levels of
+   description added, without a custom entry into the ``config/sitemap.yml``
+   file is **0.9**.
+
+   By default, authority records receive a weight of **0.5** and static pages
+   a weight of **1.0**.
+
+When the command is run, at least 2 files are generated - by default they are
+added to the root AtoM directory (though a specific location can be specified
+using the task's options - see below). A ``sitemap.xml`` file acts as a
+pointer file when multiple sitemaps are produced (e.g. if there are more than
+50,000 nodes, the task will automatically break this up into 2 or more XML
+files, as per Google's recommendations). If only 1 sitemap file is produced,
+this pointer will still be generated, but will not be needed and can be
+discarded if desired. The other file (or files) is the actual sitemap for your
+AtoM instance - by default it is compressed using
+`Gzip <https://www.gnu.org/software/gzip/>`__, although again there is also an
+option to disable this if desired.
+
+**Using the sitemap generation command-line task:**
+
+Example use:
+
+.. code-block:: bash
+
+   php symfony tools:sitemap
+
+.. image:: images/cli-sitemap-help.*
+   :align: center
+   :width: 70%
+   :alt: An image of the help page for the sitemap CLI tool
+
+By typing ``php symfony help tools:sitemap`` into the command-line, you can
+see the options available on the ``export:bulk`` command, as pictured above.
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the task.
+
+the ``--output-directory`` (or ``-O`` for short) option is used to specify a
+specific location for the sitemap XML files on output - by default, they are
+added to AtoM's root directory.
+
+The ``--base-url`` option can be used to specify a base URL for the AtoM
+instance, used in the sitmap XML files generated. Note that AtoM will use the
+value entered in the **Admin > Settings > Site information** page for the Base
+URL by default, so if you've added the correct value there, you shouldn't need
+this option. See: :ref:`site-information` for more on Base URLs.
+
+The ``--indent`` is a boolean value - by default, the XML generated will be
+indented and formatted to assist human readability (e.g. ``--indent=1``).
+However, if desired, linebreaks and indentation can be removed, but adding
+``--indent=0`` to the command
+
+Also by default, the XML sitemap generated will be compressed using
+`Gzip <https://www.gnu.org/software/gzip/>`__ - however, if desired, you can
+prevent the compression by using the ``--no-compress`` option.
+
+If an older sitemap already exists in the target directory when the task is
+run, AtoM will ask you to confirm if you want the older versions to be
+overwritten or not. If you don't want this interruption (e.g. if you are using
+this task as part of an automated deployment, etc), you can skip the
+confirmation step with ``--no-confirmation``, or ``-B`` for short.
+
+Finally, if you would like the sitemap(s) to be submitted to Bing and Google
+after generation, you can add the ``--ping`` option to the command.
+
+.. SEEALSO::
+
+   * :ref:`config-sitemap-yml`
+
+:ref:`Back to top <maintenance-cli-tools>`
+
 .. _common-atom-queries:
 
 ============================
