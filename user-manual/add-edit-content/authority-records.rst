@@ -198,7 +198,8 @@ overall) in the application, AtoM behaves in several specific ways:
 .. seealso::
 
    * :ref:`add-term-fly`
-   * :doc:`Entity types <../overview/entity-types>`
+   * :ref:`add-custom-links`
+   * :ref:`entity-types`
    * :ref:`Exit edit mode <exit-edit-mode>`
    * :ref:`term-name-vs-subject`
 

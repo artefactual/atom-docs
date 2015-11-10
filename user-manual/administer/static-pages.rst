@@ -420,6 +420,13 @@ See below for instructions on how to create and edit:
 * :ref:`Images <static-image>`
 * :ref:`Boxes and dividers <static-boxes-dividers>`
 
+.. TIP::
+
+   There is also a custom syntax that you can use throughout AtoM to add
+   hyperlinks, which will also work in the static pages - see:
+
+   * :ref:`add-custom-links`
+
 .. _static-headers-subtitles:
 
 Headers and subtitles
@@ -476,6 +483,9 @@ The above code would appear like this on the static page:
    :align: center
    :width: 70%
    :alt: An image of a hyperlink
+
+Alternately, instead of HTML, you can also use AtoM's custom syntax for adding
+hyperlinks - for more information, see: :ref:`add-custom-links`.
 
 .. _static-image:
 

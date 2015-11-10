@@ -119,7 +119,7 @@ see the sections below for more specific instructions on the use of
      <create-accession-description>`
    * :ref:`Link an accession record to an archival description
      <link-accession-description>`
-   * :ref:`Exit edit mode <exit-edit-mode>`
+   * :ref:`add-custom-links`
    * :ref:`link-function-description`
    * :ref:`link-authority-to-description`
    * :ref:`upload-digital-object`
