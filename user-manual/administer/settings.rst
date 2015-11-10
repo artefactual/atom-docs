@@ -22,6 +22,7 @@ Below, you will find information on the following :term:`information areas
 * :ref:`Permissions <permissions>`
 * :ref:`inventory-settings`
 * :ref:`digital-object-derivatives`
+* :ref:`dip-upload-settings`
 
 Each of the settings areas listed above is accessible via a list of links on
 the left-hand side of the settings page. Click on the appropriate link, and
@@ -1060,3 +1061,56 @@ If you make changes, remember to click the "Save" button in the
    :alt: Digital object derivative settings in AtoM
 
 :ref:`Back to top <settings>`
+
+.. _dip-upload-settings:
+
+DIP upload
+==========
+
+.. image:: images/dip-upload-settings.*
+   :align: center
+   :width: 80%
+   :alt: DIP upload settings page in AtoM
+
+This setting is for users who are uploading content from a linked
+Archivematica instance. Archivematica is an open-source digital preservation
+system developed by Artefactual Systems, the same creators of AtoM. For more
+information, see: https://www.archivematica.org
+
+.. SEEALSO::
+
+   For information on DIP upload from Archivematica to AtoM, see the
+   following page in the Archivematica documentation:
+
+   * :ref:`Upload DIP to AtoM <archivematica:upload-atom>`
+
+Archivematica can be used to manage and prepare digital content for long-term
+preservation, and can generate a Dissemination Information Package (DIP) with
+access-copy derivatives of your :term:`master digital object` files processed
+in Archivematica, for upload into AtoM.
+
+If no additional metadata is provided with the content during preparation,
+then when uploaded to AtoM, AtoM will use the file names as the default titles
+for the associated :term:`information objects <information object>` (a.k.a.
+:term:`descriptions <archival description>`) generated, to which the digital
+objects in the DIP will be attached. However, this might produce descriptions
+with titles like ``my-picture.jpg``, or ``my.document.pdf``.
+
+When this setting is set to "Yes," AtoM will automatically strip the file
+extensions from the information object names automatically generated during
+the DIP upload process - from the examples above, this setting would lead to
+information object titles such as ``my-picture`` or ``my.document``. Users can
+still edit the description title after DIP upload to customize them as
+desired.
+
+Note that the setting will **not** retroactively affect existing
+uploads/information objects, only new information objects created during the
+DIP upload process from Archivematica. Similarly, the uploaded file itself is
+**not** affected (the extension is not stripped from the
+:term:`digital object`) - only the title of the description generated so the
+digital object can be attached and uploaded.
+
+
+:ref:`Back to top <settings>`
+
+
