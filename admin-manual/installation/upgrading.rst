@@ -101,7 +101,15 @@ Alternatively, you can just use `cp <https://en.wikipedia.org/wiki/Cp_%28Unix%29
 
    $ mysqldump -u username -p old_database > /tmp/database.sql
 
-3. Now, load the contents into the new database:
+3. Drop and re-create the new AtoM database to remove any unnecessary tables and
+   columns.
+
+.. code-block:: bash
+
+   $ mysql -u username -p -e 'drop database new_database; create database
+   new_database character set utf8 collate utf8_unicode_ci;'
+
+4. Now, load the contents into the new database:
 
 .. code-block:: bash
 
@@ -197,7 +205,7 @@ Set site base URL
 One final step is to set your site's base URL. This URL is used in XML exports
 to formulate absolute URLs referring to resources.
 
-To set the site base URL: 
+To set the site base URL:
 
 .. |gears| image:: ../../images/gears.png
    :height: 18
