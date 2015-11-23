@@ -665,6 +665,21 @@ remove HTML from archival descriptions - other :term:`entity` types (such as
 archival institution records, accessions, authority records, etc) will not be
 affected.
 
+.. IMPORTANT::
+
+   There are also some fields in the information object (e.g.
+   :term:`archival description`) that **do not** currently support this task -
+   meaning HTML will **not** be removed from these fields by running this CLI
+   task:
+
+   * :ref:`RAD <rad-template>` title note (e.g. Source of title proper,
+     Attributions and conjectures, etc)
+   * General notes fields in any template
+   * :ref:`RAD <rad-template>` Other notes and :ref:`DACS <dacs-template>`
+     Specialized notes (e.g. Variant title information, citation, or
+     record-keeping activity notes in DACS; Accompanying material, cast,
+     editions, or physical description notes in RAD)
+
 **To run the HTML scrub task:**
 
 From the root directory of your AtoM installation, run the following command:
@@ -685,12 +700,11 @@ task terminates:
 
 The task will have the following effects on HTML elements:
 
-* Links will be separated from HTML anchor tags and display text - for
-  example,  ``<a href="http://example.org/foo">Foo</a>`` will become
-  ``Foo [http://example.org/foo]``
-* Email mailto: links will be similarly separated - so for example,
-  ``<a href="mailto:janedoe@example.org">email Jane Doe</a>`` will become
-  ``email Jane Does [janedoe@example.org]``
+* Links, including email ``mailto:`` links, will be replaced with AtoM's
+  custom formatting for links - for more information, see:
+  :ref:`add-custom-links`. This means that after being run, links will now
+  appear in AtoM's view pages as they were intended to when the HTML was
+  added.
 * Styling elements, such as ``<em>``, ``<b>``, ``<strong>``, ``<i>``, etc.
   will be removed with no substitutions (the text they wrap will be
   preserved).
