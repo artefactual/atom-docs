@@ -455,7 +455,8 @@ harvesting of headers based on set membership and/or datestamp. The
   specifies a lower bound for datestamp-based selective harvesting.
 * ``until`` - *optional* - parameter entered as UTCdatetime value, which
   specifies an upper bound for datestamp-based selective harvesting.
-* ``metadataPrefix`` - *required* - must be ``oai_dc``.
+* ``metadataPrefix`` - *required* - must be ``oai_dc`` (**not** required if
+  resuming a truncated request - see ``resumptionToken``, below).
 * ``resumptionToken`` - *exclusive* - used to continue a request that was
   truncated. Value is a token supplied as part of the previous incomplete
   request. If you have previously passed other arguments (such as the
@@ -549,7 +550,8 @@ selective harvesting of records based on set membership and/or datestamp. The
   specifies an upper bound for datestamp-based selective harvesting.
 * ``set`` - *optional* argument with a ``setSpec`` value , which specifies set
   criteria for selective harvesting.
-* ``metadataPrefix`` - *required* - must be ``oai_dc``.
+* ``metadataPrefix`` - *required* - must be ``oai_dc`` (**not** required if
+  resuming a truncated request - see ``resumptionToken``, below).
 * ``resumptionToken`` - *exlusive* - used to continue a request that was
   truncated. Value is a token supplied as part of the previous incomplete
   request. If you have previously passed other arguments (such as the
@@ -776,7 +778,7 @@ parameter supported by this verb.
 
 **Arguments**
 
-* ``resumptionToken`` - *exlusive* - used to continue a request that was
+* ``resumptionToken`` - *exclusive* - used to continue a request that was
   truncated. Value is a token supplied as part of the previous incomplete
   request. If you have previously passed other arguments (such as the
   metadataPrefix, or from/until parameters), they should not be included in
