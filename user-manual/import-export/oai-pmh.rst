@@ -405,7 +405,7 @@ the repository.
 
 .. NOTE::
 
-   In AtoM 2.2, only Dublin Core (oai_dc) XML is currently available.
+   At this time, only Dublin Core (oai_dc) XML is currently available.
 
 **Example request:**
 
@@ -456,9 +456,12 @@ harvesting of headers based on set membership and/or datestamp. The
 * ``until`` - *optional* - parameter entered as UTCdatetime value, which
   specifies an upper bound for datestamp-based selective harvesting.
 * ``metadataPrefix`` - *required* - must be ``oai_dc``.
-* ``resumptionToken`` - *optional* - used to continue a request that was
+* ``resumptionToken`` - *exclusive* - used to continue a request that was
   truncated. Value is a token supplied as part of the previous incomplete
-  request.
+  request. If you have previously passed other arguments (such as the
+  metadataPrefix, or from/until parameters), they should not be included in
+  the continued request - only the verb, and the resumptionToken argument and
+  token should be included.
 
 **Example request:**
 
@@ -503,7 +506,7 @@ A resumption token is included in the example.
 
 .. code:: bash
 
-   http://example-site.com/;oai?verb=ListIdentifiers&metadataPrefix=oai_dc&resumptionToken=eyJmcm9tIjoiIiwidW50aWwiOiIiLCJjdXJzb3IiOjE2MDAsIm1ldGFkYXRhUHJlZml4Ijoib2FpX2RjIiwic2V0Ijoib2FpOnZpcnR1YWw6dG9wLWxldmVsLXJlY29yZHMifQ==
+   http://example-site.com/;oai?verb=ListIdentifiers&resumptionToken=eyJmcm9tIjoiIiwidW50aWwiOiIiLCJjdXJzb3IiOjE2MDAsIm1ldGFkYXRhUHJlZml4Ijoib2FpX2RjIiwic2V0Ijoib2FpOnZpcnR1YWw6dG9wLWxldmVsLXJlY29yZHMifQ==
 
 
 **Example requests with** ``from`` **and** ``until`` **parameters**
@@ -547,9 +550,12 @@ selective harvesting of records based on set membership and/or datestamp. The
 * ``set`` - *optional* argument with a ``setSpec`` value , which specifies set
   criteria for selective harvesting.
 * ``metadataPrefix`` - *required* - must be ``oai_dc``.
-* ``resumptionToken`` - *optional* - used to continue a request that was
+* ``resumptionToken`` - *exlusive* - used to continue a request that was
   truncated. Value is a token supplied as part of the previous incomplete
-  request.
+  request. If you have previously passed other arguments (such as the
+  metadataPrefix, or from/until parameters), they should not be included in
+  the continued request - only the verb, and the resumptionToken argument and
+  token should be included.
 
 **Example request:**
 
@@ -767,6 +773,15 @@ parameter supported by this verb.
    also be included in a List sets response. The example response below includes
    a virtual set example. For more information, see the :ref:`oai-pmh-settings`
    section above.
+
+**Arguments**
+
+* ``resumptionToken`` - *exlusive* - used to continue a request that was
+  truncated. Value is a token supplied as part of the previous incomplete
+  request. If you have previously passed other arguments (such as the
+  metadataPrefix, or from/until parameters), they should not be included in
+  the continued request - only the verb and the resumptionToken argument and
+  token should be included.
 
 **Example request**
 
