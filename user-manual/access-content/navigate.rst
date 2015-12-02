@@ -1209,9 +1209,14 @@ descriptions).
   All additions and changes made by the user to the current record are saved;
   the page will reload in :term:`view mode`.
 * |more-button| **More**: Only available on :term:`archival descriptions
-  <archival description>`. Reveals three further options: Link physical
-  storage, link digital object, and Import digital objects. See:
-  :ref:`physical-storage` and :ref:`upload-digital-object`.
+  <archival description>`. Reveals several further options: Rename, Link
+  physical storage, Link digital object, Import digital objects, and Create
+  new rights. See: :ref:`rename-title-slug`, :ref:`physical-storage`, and
+  :ref:`upload-digital-object`. If a digital object is already linked to the
+  description, "Edit digital object"  will be available instead of the link
+  option - see: :ref:`edit-digital-object`. If rights have already been added
+  to the description, the option to "Manage rights inheritance" will be
+  available instead of create new rights - see: :ref:`rights-inheritance`.
 * |edittheme-button| **Edit theme**: Only available on :term:`archival
   institutions <archival institution>`. Opens an edit page where an
   :term:`administrator` can customize the theme of a repository by changing
