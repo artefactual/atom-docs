@@ -619,11 +619,27 @@ The digital object :term:`carousel` appears when there are multiple
    :width: 80%
    :alt: An image of the carousel shown at the top of a description
 
-When unchecked, these elements will be hidden from display after you save the
-default page element settings. This can be useful for customization - for
+The Copyright status filter and the General material designation filter appear
+as filters available in the Advanced search panel. For more information on
+using this panel, see: :ref:`advanced-search`. The Copyright status filter
+relates to PREMIS rights added to descriptions - for more information, see:
+:ref:`rights`. The General material designation filter is derived from the
+Canadian Rules for Archival Description (:ref:`RAD <rad-template>`) standard,
+and is only used on the RAD template.
+
+.. image:: images/search-filters-hide.*
+   :align: center
+   :width: 80%
+   :alt: An image of the Copyright status and GMD filters in the advanced
+         search panel
+
+When unchecked, the above elements will be hidden from display after you save
+the default page element settings. This can be useful for customization - for
 example, if you are not translating the content of your website and do not
 need the language menu, unchecking it here will remove it from the AtoM
-:term:`header bar`.
+:term:`header bar`. Similarly, if you are not using the Canadian :ref:`RAD
+<rad-template>` standard as your :ref:`default-template`, you might want to
+hide the General material designation filter from the advanced search panel.
 
 .. SEEALSO::
 
