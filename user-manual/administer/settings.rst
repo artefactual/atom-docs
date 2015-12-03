@@ -638,8 +638,9 @@ the default page element settings. This can be useful for customization - for
 example, if you are not translating the content of your website and do not
 need the language menu, unchecking it here will remove it from the AtoM
 :term:`header bar`. Similarly, if you are not using the Canadian :ref:`RAD
-<rad-template>` standard as your :ref:`default-template`, you might want to
-hide the General material designation filter from the advanced search panel.
+<rad-template>` standard as your :ref:`default template <default-templates>`,
+you might want to hide the General material designation filter from the
+advanced search panel.
 
 .. SEEALSO::
 
@@ -648,7 +649,6 @@ hide the General material designation filter from the advanced search panel.
    * :ref:`The language menu <language-menu>`
    * :ref:`The AtoM header bar <atom-header-bar>`
    * :ref:`default-page-elements`
-
 
 :ref:`Back to top <settings>`
 
