@@ -84,28 +84,39 @@ available on the web. Instructions on how to do both are included below.
    automate the creation of these lower levels - see
    :ref:`upload-multiple-objects` for more information.
 
-
 .. image:: images/link-digital-object.*
    :align: center
-   :width: 70%
+   :width: 80%
    :alt: A image of the link digital object edit page
 
 To link a single :term:`digital object`:
 
-#. Navigate to the :term:`view page` of an existing :term:`archival description`
-   in AtoM. You can do this by :ref:`browsing <browse>` or by
-   :ref:`searching <search-atom>` for a specific archival description - see
-   :ref:`Access content <access-content>` for more information on navigation in
-   AtoM.
-#. Click on the "More" button in the :term:`button block`; from the menu that
+1. Navigate to the :term:`view page` of an existing
+   :term:`archival description` in AtoM. You can do this by
+   :ref:`browsing <browse>` or by :ref:`searching <search-atom>` for a specific
+   archival description - see :ref:`access-content` for more information on
+   navigation in AtoM.
+2. Click on the "More" button in the :term:`button block`; from the menu that
    appears, select "Link digital object".
-#. AtoM will redirect you to the link digital object :term:`edit page`. Users
+
+.. image:: images/more-menu-link.*
+   :align: center
+   :width: 80%
+   :alt: A image of the more menu, with the Link digital object option selected
+
+3. AtoM will redirect you to the link digital object :term:`edit page`. Users
    can either upload a digital object, or link to an existing digital object
    available on the internet.
-#. **To upload a digital object**, cick the "Choose File" button to navigate
-   to and select a file on your computer or device. Click "Open" once item has
-   been selected from the window that will appear.
-#. **To link to an object on the internet**, enter the URL to the external
+
+.. image:: images/link-digital-object.*
+   :align: center
+   :width: 80%
+   :alt: A image of the link digital object edit page
+
+4. **To upload a digital object locally**, cick the "Choose File" button to
+   navigate to and select a file on your computer or device. Click "Open" once
+   the item has been selected from the window that will appear.
+5. **To link to an object on the internet**, enter the URL to the external
    object to which you wish to link.
 
 .. IMPORTANT::
@@ -116,6 +127,11 @@ To link a single :term:`digital object`:
    .png, etc. You can usually get to this URL by clicking on the resource
    directly, or by right-clicking and selecting "View image" etc in your
    browser.
+
+   .. image:: images/link-external-example.*
+      :align: center
+      :width: 90%
+      :alt: An example of linking to an external digital object
 
 6. Click the "Create" button in the :term:`button block`. When you return to the
    :term:`view page`, the :term:`reference display copy` will be displayed in
@@ -183,6 +199,12 @@ description.
    :width: 70%
    :alt: A image of the upload multiple images edit page
 
+.. NOTE::
+
+   The following workflow has been known to fail when using Firefox as your
+   webbrowser. For this particular workflow, we recommend using another
+   browser, such as Chrome.
+
 **To upload multiple digital objects in AtoM:**
 
 1. Navigate to the :term:`view page` of an existing
@@ -192,6 +214,12 @@ description.
    information on navigation in AtoM.
 2. Click on the "More" button in the :term:`button block`; from the menu that
    appears, select "Import digital objects".
+
+.. image:: images/import-digi-objects.*
+   :align: center
+   :width: 80%
+   :alt: An image of the options in the More button located in the button block
+
 3. Select a title for the objects  - this will be used as the title for the
    associated :term:`archival description` that will be created for each object
    uploaded. Each object will also have its own title field once selected, but
@@ -199,12 +227,25 @@ description.
    title can be added to all objects using the title field at the top of the
    upload page. Currently the default is image 01, image 02, etc. (which will
    appear as a placeholder (i.e. image %dd%) in the "Title field").
+
+.. image:: images/import-objects-title.*
+   :align: center
+   :width: 80%
+   :alt: Choosing the default title added to child descriptions
+
 4. Choose a :term:`level of description`. Unlike the
    :ref:`link-digital-object` option, which attaches the :term:`digital object`
    directly to the :term:`archival description` at that level, the "Import
    multiple objects" option requires the user to designate a level of
    description (e.g.: Fonds, Subfonds, Collection, Series, Subseries, File,
-   Item, Record group, Part, etc).
+   Item, Record group, Part, etc). This level of description will be used for
+   the new :term:`children <child record>` that are generated as part of the
+   upload.
+
+.. image:: images/import-objects-select.*
+   :align: center
+   :width: 80%
+   :alt: Selecting a level of description for the child descriptions
 
 .. TIP::
 
@@ -218,6 +259,12 @@ description.
    title you enter here will be the title used for the associated
    :term:`archival description` that will be created for each
    :term:`digital object` uploaded.
+
+.. image:: images/import-objects-title2.*
+   :align: center
+   :width: 80%
+   :alt: Customizing individual description titles for each object uploaded
+
 7. You can quit the upload process at any time by clicking the "Cancel" button
    in the :term:`button block`; any digital objects already uploaded will not be
    saved. Note that simply navigating away from the page by any other means,
@@ -226,7 +273,16 @@ description.
 8. Click the "Import" button in the :term:`button block` when you are satisfied
    with your changes. When you return to the :term:`view page`, you will see
    that the objects have all been attached to the :term:`archival description`
-   as :term:`child records <child record>` of that description.
+   as :term:`child records <child record>` of that description. If the digital
+   object :ref:`recurring-carousel` is enabled (see
+   :ref:`default-page-elements` for instructions on enabling or disabling the
+   carousel), you will also see the thumbnails of your uploaded digital
+   objects in the carousel.
+
+.. image:: images/import-objects-children.*
+   :align: center
+   :width: 80%
+   :alt: An image of a description after uploading multiple digital objects
 
 :ref:`Back to top <upload-digital-object>`
 
@@ -247,6 +303,8 @@ Currently, AtoM 2.x truncates PDF text after the first 65,535 bytes.
 As mentioned above, it is possible to upload multi-page TIFFs or PDF files to
 be displayed with a page viewer and to upload each page as a child object of
 the parent. To enable this feature, see :ref:`settings <upload-multi-files>`.
+
+Otherwise, the process for uploading PDFs is the same as described above.
 
 
 :ref:`Back to top <upload-digital-object>`
