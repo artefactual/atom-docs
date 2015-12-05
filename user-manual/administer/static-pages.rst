@@ -48,13 +48,14 @@ deleted from the application.
 **Below are instructions on how to edit and add static pages in AtoM:**
 
 * :ref:`security-static-pages`
-* :ref:`Edit and existing static page <edit-static-page>`
+* :ref:`edit-static-page`
 
   * :ref:`Edit the "Home page" <edit-home-page>`
   * :ref:`Edit the "About page" <edit-about-page>`
 
 * :ref:`Add a new static page <add-static-page>`
 * :ref:`Add links to a new static page <add-links-static>`
+* :ref:`static-pages-menu`
 * :ref:`Styling static pages <styling-static-page>`
 
 .. NOTE::
@@ -397,6 +398,182 @@ The information which will be needed when linking a new static page:
 5. Description: an optional area to describe the purpose of the page.
 
 For more information on managing menus in AtoM, see: :ref:`manage-menus`.
+
+:ref:`Back to top <manage-static-pages>`
+
+.. _static-pages-menu:
+
+Add a custom sidebar menu with links to your static pages
+=========================================================
+
+If you have certain static pages that you would like to be prominent and
+readily available to users throughout the application, you can also create a
+custom Static pages menu. This involves working with both static pages, and
+the :ref:`manage-menus` module.
+
+.. image:: images/staticpages-menu-top.*
+   :align: center
+   :width: 80%
+   :alt: An example of the Static pages menu, shown on a static page
+
+When nodes are added as children to the ``staticPagesMenu`` in |gears| **Admin
+> Manage menus**, They become visible in the following places:
+
+* On the homepage's left-hand side, above the Browse and Popular this week
+  links
+* On all :term:`archival description` pages, below the treeview (or below the
+  Quick search menu, when the full-width treeview is in use - see:
+  :ref:`treeview-type` for more information)
+* As a sidebar menu on the left side of all static pages.
+
+You can also give the new sidebar menu a custom heading. The following
+instructions will use the example of adding links to help pages, created using
+the static pages module.
+
+.. SEEALSO::
+
+   * :ref:`manage-menus`
+
+**To add a custom sidebar menu wtih links to your static pages:**
+
+1. Prepare the static pages you would like to use in the menu items. If you
+   haven't created them yet, see above, :ref:`add-static-page` for guidance on
+   creating new static pages, and below, :ref:`styling-static-page` for hints
+   on how to use HTML and simple inline-CSS to style them.
+
+2. You will need to know the :term:`slug` you have assigned to each static
+   page you want to add to the new menu - you can either return to the
+   :term:`edit page` of your static page, or navigate to the :term:`view page`,
+   and look at the URL to identify the permalink (the unique part of the URL -
+   for example, on the webpage http://www.example.com/about-us, ``about-us``
+   would be the slug. For further information, see :ref:`slugs-in-atom`).
+3. Navigate to |gears| **Admin > Menus** and scroll down until you see the
+   ``staticPagesMenu``node near the bottom. Click on it to enter
+   :term:`edit mode`.
+
+.. image:: images/staticpages-menu.*
+   :align: center
+   :width: 80%
+   :alt: An image of the staticPagesMenu node in Manage Menus
+
+4. You can now edit the "Label" :term:`field` value, to give your new menu a
+   custom header. In this example, we'll call our new menu "Help pages."
+
+.. image:: images/staticpages-menu-label.*
+   :align: center
+   :width: 80%
+   :alt: An image of editing the staticPagesMenu Label value
+
+5. Save the page by clicking the "Save" button in the :term:`button block` at
+   the bottom of the page. **Note:** you may be prevented from saving the
+   first time - AtoM will prompt you for a Path value, even though none was
+   there before. You can simply enter a ``/`` slash character in the field,
+   and then click "Save."
+
+.. image:: images/staticpages-menu-path.*
+   :align: center
+   :width: 80%
+   :alt: An example of a save warning, and adding a slash to the Path field to
+         resolve it.
+
+6. AtoM will return you to the Manage menus page. Now we'll add our static
+   page(s) to this menu. Click the "Add new" button in the
+   :term:`button block` located at the bottom of the Manage menus page.
+7. AtoM will open a new :term:`edit page` for a menu item. For further
+   information on working with menus, see: :ref:`manage-menus`.
+8. Fill out the menu edit page with the information about your static page:
+
+   * **Name:** This is an internal name used by AtoM, that will not be seen by
+     AtoM users.  We suggest using
+     `camelCase <https://en.wikipedia.org/wiki/CamelCase>`__ as part of a naming
+     convention. In this example, we've called our menu node ``searchHelp``.
+   * **Label**: This is what public users will see in your sidebar menu. Note
+     that the name does not need to be the same one you've given your static
+     page - in our example, we've named our static page "Searching in AtoM,"
+     but we've decided to call the menu link "Search Help."
+   * **Parent**: For your new menu node to show up in the sidebar menu, you
+     must choose ``-staticPagesMenu`` from the drop-down list
+   * **Path**: This is where we'll use the :term:`slug` from your static page.
+     We could just add the slug directly, but to make the routing more
+     reliable, add it as follows: ``staticpage/index?slug=your-slug-here``,
+     where ``your-slug-here`` is the slug you gave your static page.
+   * **Description** This is not visible to public users - you can add a
+     description to remind yourself and other
+     :term:`administrators <administrator>` how and why this node was added to
+     the Menus page, if you like.
+
+.. image:: images/staticpages-menu-add-new.*
+   :align: center
+   :width: 80%
+   :alt: An example of a new menu page
+
+9. You can quit the create process at any time, by clicking the "Cancel"
+   button in the :term:`button block` at the bottom of the page. Note that
+   navigating away from the page without first clicking "Save" will also
+   result in a loss of all your changes.
+10. When you are satisfied with the information entered, click the "Save"
+    button located in the :term:`button block` at the bottom of the page. AtoM
+    will redirect you to the Manage menus page.
+11. You can repeat steps 6-10 as needed, to add other static pages to your new
+    menu.
+12. You should now see your new sidebar menu on the home page,
+    :term:`archival description` view pages, and when viewing any other
+    :term:`static page`. Some examples images are included below.
+
+.. IMPORTANT::
+
+   Some things to remember when working with static pages and new new Static
+   pages sidebar menu:
+
+   * Because the presence of the menu affects the normal width of the static
+     pages, you might want to review how your static pages look if you have
+     added a lot of custom styling to them.
+   * If you create a new static page, it is **not** automatically added to
+     either the Quick links menu, OR the new Static pages Menu described
+     above - you must add links yourself.
+   * If you delete a static page that has been added to either of the above
+     menus, the menu links will **not** automatically disappear - you must
+     also manually delete the links from the ``staticPagesMenu`` in the Manage
+     menus page. Otherwise, they will still be visible throughout the
+     application - but they will lead to a broken page!
+   * If you decide you no longer want the Static pages menu to be visible,
+     simply delete the child page nodes you have added - if the
+     ``staticPagesMenu`` node in **Admin > Manage menus** has no children, the
+     sidebar will no longer display in the user interface.
+   * For more information on managing menus in AtoM, see: :ref:`manage-menus`.
+
+.. _static-pages-menu-examples:
+
+Examples of the Static pages menu in use
+----------------------------------------
+
+**On the homepage**:
+
+.. image:: images/staticpages-menu-home.*
+   :align: center
+   :width: 80%
+   :alt: An example of the sidebar menu on the home page
+
+**On an archival description (sidebar treeview)**:
+
+.. image:: images/staticpages-menu-tree-side.*
+   :align: center
+   :width: 80%
+   :alt: An example of the sidebar menu on an archival description
+
+**On an archival description (full-width treeview)**:
+
+.. image:: images/staticpages-menu-tree-full.*
+   :align: center
+   :width: 80%
+   :alt: An example of the sidebar menu on an archival description
+
+**On annother static page**:
+
+.. image:: images/staticpages-menu-static.*
+   :align: center
+   :width: 80%
+   :alt: An example of the sidebar menu on a static page
 
 :ref:`Back to top <manage-static-pages>`
 
