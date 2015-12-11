@@ -260,7 +260,7 @@ The configuration of your virtual server shoud look like the following:
 
 .. code-block:: apache
 
-    <VirtualHost *:90>
+    <VirtualHost *:80>
       DocumentRoot /usr/share/nginx/atom
       RewriteEngine On
       RewriteRule ^/uploads/r/([^/]*)/conf/(.*)$ /usr/share/nginx/atom/uploads/r/$1/conf/$2 [L]
