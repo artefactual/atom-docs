@@ -261,10 +261,10 @@ The configuration of your virtual server shoud look like the following:
 .. code-block:: apache
 
     <VirtualHost *:80>
-      DocumentRoot /usr/share/nginx/atom
+      DocumentRoot /var/www/atom
       RewriteEngine On
-      RewriteRule ^/uploads/r/([^/]*)/conf/(.*)$ /usr/share/nginx/atom/uploads/r/$1/conf/$2 [L]
-      RewriteRule ^/uploads/(.*)$ /usr/share/nginx/atom/uploads/$1 [L]
+      RewriteRule ^/uploads/r/([^/]*)/conf/(.*)$ /var/www/atom/uploads/r/$1/conf/$2 [L]
+      RewriteRule ^/uploads/(.*)$ /var/www/atom/uploads/$1 [L]
       <LocationMatch ^/uploads>
         XSendFile On
         XSendFilePath /usr/share/nginx/atom/uploads
@@ -272,6 +272,11 @@ The configuration of your virtual server shoud look like the following:
       </LocationMatch>
     </VirtualHost>
 
+You also need to decide if you are going to use php5-fpm or mod_php. We prefer
+the former, in combination with Nginx, but you can combine php5-fpm and Apache
+as long as you install the Apache module mod_fastcgi (the corresponding Ubuntu
+package is called libapache2-mod-fastcgi). We have not tried this ourselves but
+it is definitely `possible <http://blog.starcklin.com/2013/08/install-mod-fastcgi-and-php5-fpm-on-ubuntu/>`__.
 
 .. _linux-dependency-php:
 
