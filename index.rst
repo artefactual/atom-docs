@@ -10,6 +10,7 @@ AtoM documentation
    index
    /user-manual/index
    /admin-manual/index
+   /dev-manual/index
 
 .. _user-manual-home:
 
@@ -249,3 +250,19 @@ Security
 * :ref:`security-firewall`
 * :ref:`security-backups`
 
+.. _dev-manual-home:
+
+Developer's manual
+==================
+
+Guidelines for developers interested in customizing AtoM, developing new
+modules, and working with the application's API.
+
+.. _dev-api-home:
+
+API
+---
+
+Overview of the application programming interface available in AtoM
+
+*
