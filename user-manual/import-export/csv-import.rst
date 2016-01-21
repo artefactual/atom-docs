@@ -84,6 +84,15 @@ CSV.
    please see our section on :ref:`Server migration <server-migration>` in the
    Administrators manual.
 
+.. IMPORTANT::
+   If your CSV import contains physical storage information, the CSV file must contain
+   information in both of the physical object storage fields: *physicalObjectName*
+   and *physicalObjectLocation*. Entering information in *physicalObjectName* only will result in the creation
+   of duplicates, as AtoM defaults to duplicates rather than accidentally merging separate
+   records with the same location. For example, several collections may contain physicalObjectName
+   Box 1, but adding physicalObjectLocation Shelf 1 will differentiate it from Box 1
+   on Shelf 5.
+
 .. _csv-determine-import-complexity:
 
 Determining import complexity
