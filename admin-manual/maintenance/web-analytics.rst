@@ -15,7 +15,7 @@ third-party server when a page is rendered by a web browser.
 
 .. TIP::
   If your analytics tracker is not working, try turning debugging on and off again
-  via index.php. The analytics code should then appear in 'View Source'.
+  via index.php. The analytics code should appear in 'View Source'.
 
 
 Logfile analysis tools
