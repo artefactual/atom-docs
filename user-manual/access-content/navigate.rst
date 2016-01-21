@@ -170,6 +170,12 @@ edit templates, :term:`tooltips`, labels, help text, etc.) will appear in the
 selected language, and will remain in the selected language until the user
 changes the language again.
 
+.. TIP::
+
+   If the language menu is not needed for your site, it can be disabled and
+   hidden via |gears| **Admin > Settings > Default page elements**. For more
+   information, see: :ref:`default-page-elements`.
+
 .. |globe| image:: images/globe.png
    :height: 18
    :width: 18
@@ -177,7 +183,7 @@ changes the language again.
 * For more information on changing the language, see: :ref:`Choose language
   <choose-language>`
 
-.. seealso::
+.. SEEALSO::
 
    * :doc:`Default language <../administer/default-language>`
    * :ref:`Add/remove languages <add-remove-languages>`
@@ -819,6 +825,12 @@ all.
   browse page to navigate to the related :term:`archival description` and a
   larger version of the :term:`digital object` that the thumbnail depicts.
 
+.. TIP::
+
+   The carousel can be disabled and hidden if it is not desired, via |gears|
+   **Admin > Settings > Default page elements**. For more information, see:
+   :ref:`default-page-elements`.
+
 .. _recurring-facet-filters:
 
 Facet filters
@@ -928,6 +940,8 @@ being pulled from.
 
 * **Language:** Filters for content in a different available language (i.e.,
   if the content has been tranlsated into more than one language)
+* **Part of:** Allows users to limit results to
+  :term:`children <child record>` of the selected top-level description
 * **Archival institution:** Limits results to only the holdings of the
   selected institution
 * **Creator:** Limits results to only those where the :term:`name` matches
@@ -939,12 +953,12 @@ being pulled from.
 * **Subject:** Limits results to those with a matching :term:`subject` added
   as a subject :term:`access point` to an :term:`archival description`
 * **Genre:** Limits results to those with a matching genre :term:`term` added
-  as an :term:`access point` to an :term:`archival description`.
+  as an :term:`access point` to an :term:`archival description`
 * **Level of description:** Limits results to those that match the selected
   :term:`level of description` (e.g. fonds, collection, series, file, item,
   etc). Includes a :term:`top-level description filter`, that allows users to
   limit results to those that are :term:`parents <parent record>` - e.g. the top
-  hierarchical record in a multi-level descriptive :term:`archival unit`.
+  hierarchical record in a multi-level descriptive :term:`archival unit`
 * **Media type:** Limits results to those with a :term:`digital object`
   attached that matches the selected media type (image, audio, text, video,
   or other)
@@ -1195,9 +1209,14 @@ descriptions).
   All additions and changes made by the user to the current record are saved;
   the page will reload in :term:`view mode`.
 * |more-button| **More**: Only available on :term:`archival descriptions
-  <archival description>`. Reveals three further options: Link physical
-  storage, link digital object, and Import digital objects. See:
-  :ref:`physical-storage` and :ref:`upload-digital-object`.
+  <archival description>`. Reveals several further options: Rename, Link
+  physical storage, Link digital object, Import digital objects, and Create
+  new rights. See: :ref:`rename-title-slug`, :ref:`physical-storage`, and
+  :ref:`upload-digital-object`. If a digital object is already linked to the
+  description, "Edit digital object"  will be available instead of the link
+  option - see: :ref:`edit-digital-object`. If rights have already been added
+  to the description, the option to "Manage rights inheritance" will be
+  available instead of create new rights - see: :ref:`rights-inheritance`.
 * |edittheme-button| **Edit theme**: Only available on :term:`archival
   institutions <archival institution>`. Opens an edit page where an
   :term:`administrator` can customize the theme of a repository by changing

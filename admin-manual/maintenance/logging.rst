@@ -228,9 +228,15 @@ Web server logs
 You might also want to access the error logs from your web server during
 debugging. If you are using `Nginx <http://wiki.nginx.org/Main>`__ (our
 recommended web server; see our Linux installation instructions for
+<<<<<<< HEAD
 :ref:`linux-dependency-httpd-nginx`), and have followed our Linux install instructions
 (:ref:`here <installation-linux>`), you can view the Nginx error log by typing
 the following command from your root AtoM directory:
+=======
+:ref:`linux-dependency-httpd-nginx`), and have followed our Linux install
+instructions (:ref:`here <installation-linux>`), you can view the Nginx error
+log by typing the following command from your root AtoM directory:
+>>>>>>> 27b2b8515bacc87b3f028374fefa26bd93acbcae
 
 .. code:: bash
 

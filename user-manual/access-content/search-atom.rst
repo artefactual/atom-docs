@@ -431,6 +431,8 @@ steps involved in searching for
 
   * **Language:** Filters for content in a different available language (i.e.,
     if the content has been tranlsated into more than one language)
+  * **Part of:** Allows users to limit results to
+    :term:`children <child record>` of the selected top-level description
   * **Archival institution:** Limits results to only the holdings of the
     selected institution
   * **Creator:** Limits results to only those where the :term:`name` matches
@@ -528,6 +530,10 @@ The treeview quick search can be accessed by navigating to an :term:`archival
 description`, and clicking the "Quick search" tab above the :term:`treeview`
 in the left-hand :term:`context menu` of the description's :term:`view page`.
 
+.. SEEALSO::
+
+   * :ref:`browse-hierarchy`
+
 **TO USE THE TREEVIEW QUICK SEARCH:**
 
 1. Navigate to a top-level :term:`archival description` (i.e. a :term:`fonds`,
@@ -582,7 +588,8 @@ in the left-hand :term:`context menu` of the description's :term:`view page`.
    button at the bottom of the Quick search results. AtoM will redirect you
    to a browse page, where you can use features such as the browse page's
    :ref:`sort button <recurring-sort-button>` and :ref:`facet filters
-   <recurring-facet-filters>` to navigate the descriptions.
+   <recurring-facet-filters>` to navigate the descriptions. See:
+   :ref:`browse-hierarchy-quick-search`.
 
 :ref:`Back to top <search-atom>`
 
@@ -842,31 +849,40 @@ For more information on working with accession records in AtoM, see:
 
 A dedicated search box for :term:`archival institutions <archival institution>`
 has been provided on the archival institution
-:ref:`browse page <page-type-browse>`. In AtoM 2.0.0, this search box will
-search the following fields of an archival institution record:
+:ref:`browse page <page-type-browse>`. All fields are indexed, but as of AtoM
+2.3 and earlier, no weighting has been added to specific fields.
 
-* **Authorized form of name** in the Identity area
-* **All fields** in the Description area, Access area, and Service area
-  (**except** Finding aids, guides, and publications in the Description Area)
-* **Dates of creation, revision, and deletion**, **Sources**, and **Maintenance
-  notes** in the Control area
+The archival institution browse page has 2 different views - a "card" based
+view, and a table view. Users can switch quickly between these two views via
+the view toggle button located next to the archival institution
+:term:`dedicated search box`:
 
-.. NOTE::
+.. image:: images/view-toggle-repository.*
+   :align: center
+   :width: 80%
+   :alt: An image of the view toggle button on the repository browse page
 
-   Other name fields in the Identity area (Parallel forms of name; Other forms
-   of name) and the Finding aids field in the Description area have **not**
-   been indexed in AtoM 2.0.0. We hope to add this in a future release.
+For more information on navigating the archival institution browse page, see:
+:ref:`Browse archival institutions <browse-institutions>`.
 
-For more information on working with :term:`archival institutions <archival
-institution>` in AtoM, see: :ref:`archival-institutions`. For information on
-working with particular fields in the archival institution record edit
-template, see: :ref:`isdiah-template`.
+For more information on working with :term:`archival institution` records in
+AtoM, see: :ref:`archival-institutions`. For information on working with
+particular fields in the archival institution record edit template, see:
+:ref:`isdiah-template`.
 
 **To search for archival institutions in AtoM:**
 
 1. Using the :term:`browse menu` (available as a :term:`drop-down menu` next
    to the :term:`search box` in the AtoM :term:`header bar` at the top of the
-   page), navigate to **Browse > Archival institutions**
+   page), navigate to **Browse > Archival institutions**. The way the page
+   will appear may depend on the default view set by an :term:`administrator`
+   - there is a table view, and a card view, and users can toggle between the
+   two:
+
+.. image:: images/repo-views.*
+   :align: center
+   :width: 70%
+   :alt: An comparison of the card and table views of the repository browse page
 
 .. TIP::
 
@@ -878,11 +894,6 @@ template, see: :ref:`isdiah-template`.
    and the default menu labels can be changed via **Admin > Menus**. See the
    :ref:`administer` section for more details.
 
-.. image:: images/repository-browse.*
-   :align: center
-   :width: 70%
-   :alt: An image of the archival institution browse page
-
 2. Place your cursor in the :term:`dedicated search box` at the top of
    the :term:`archival institution` browse page. Type a search term and press
    enter, or use your mouse to click the |searchbutton| search button
@@ -893,29 +904,6 @@ template, see: :ref:`isdiah-template`.
    :width: 70%
    :alt: An image of the archival institution dedicated search box
 
-3. AtoM will reload the page with results. If there are more than 10 results,
-   a pager will be included at the bottom of the results page.
-
-.. NOTE::
-
-   See :ref:`above <dedicated-search-institutions>` for a list of
-   :term:`fields <field>` that AtoM will search in an archival institution
-   record. In the  current release, results have not been weighted to favor
-   title matches. If you see results without matches in the title (i.e. the
-   authorized form of name), it means the search term(s) appears somewhere in
-   the body of the record.
-
-.. image:: images/repository-searchresults.*
-   :align: center
-   :width: 70%
-   :alt: An image of the archival institution search results
-
-4. The results page includes a :term:`sort button` (allowing you to sort
-   results to show them in alphabetic order, or most recently created/updated)
-   and a set of :term:`facet filters <facet filter>` to help you sift through
-   results. For more information on these elements, see
-   :ref:`recurring-sort-button` and :ref:`recurring-facet-filters`.
-
 .. TIP::
 
    You can use :term:`Boolean search` operators such as AND, OR, or NOT, as
@@ -924,11 +912,68 @@ template, see: :ref:`isdiah-template`.
    available special characters and boolean searching in AtoM, see:
    :ref:`advanced-search`.
 
-5. You can click the |searchreset| button next to your search term in the
+3. AtoM will reload the page with results. If there are more than 10 results,
+   a pager will be included at the bottom of the results page.
+
+.. NOTE::
+
+   In the current release, results have not been weighted to favor title
+   matches. If you see results without matches in the title (i.e. the
+   authorized form of name), it means the search term(s) appears somewhere in
+   the body of the record.
+
+.. image:: images/repository-searchresults.*
+   :align: center
+   :width: 70%
+   :alt: An image of the archival institution search results, card view
+
+4. Users can toggle between the table view and card view at any time during
+   the search process, using the view toggle button to the right of the search
+   box:
+
+.. image:: images/repository-searchresults-table.*
+   :align: center
+   :width: 70%
+   :alt: An image of the archival institution search results, table view
+
+5. You can further refine your search with the advanced filters - click the
+   "Advanced" button below the search box to display the advanced filters.
+   Select the desired filters from the
+   :term:`drop-down menus <drop-down menu>`, then click the "Set filters"
+   button to refine the results:
+
+.. image:: images/repository-searchfilters.*
+   :align: center
+   :width: 70%
+   :alt: An image of the archival institution search filters
+
+6. AtoM will reload the page, with the results refined based on the Advanced
+   search filters.
+
+.. image:: images/repository-searchfilters-results.*
+   :align: center
+   :width: 70%
+   :alt: An image of the archival institution results after a search with
+         filters
+
+.. NOTE::
+
+   After a search, the advanced search filters will reset. You will have to
+   re-apply them to perform the same search again.
+
+7. Results in the table view can be sorted based on column - click on the
+   column header to sort the results; click again to reverse the sort order.
+   The results page also includes a :term:`sort button` (allowing you to sort
+   results to show them in alphabetic order, by identifier, or by most
+   recently created/updated), and a set of :term:`facet filters <facet filter>`
+   to help you sift through results. For more information on these elements, see
+   :ref:`recurring-sort-button` and :ref:`recurring-facet-filters`.
+
+8. You can click the |searchreset| button next to your search term in the
    dedicated search box to clear the field and begin a new search.
    Alternately, simply place the cursor in the search box and enter a new
    search term.
-6. When you have found the record you are searching for, click on its title in
+9. When you have found the record you are searching for, click on its title in
    the results, and AtoM will redirect you to the selected archival
    institution's :term:`view page`.
 

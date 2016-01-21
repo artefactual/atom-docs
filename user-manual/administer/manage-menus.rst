@@ -4,16 +4,14 @@
 Manage Menus
 ============
 
+.. |gears| image:: images/gears.png
+   :height: 18
+   :width: 18
+
 AtoM includes a menu customization feature that allows authenticated (i.e.
 logged-in) :term:`administrators <administrator>` to manage menu labels; menus
 can be edited, created, moved menus to different positions on the page, deleted
 as necessary.
-
-In AtoM, "menus" and "menu labels" refer to ...
-
-.. |gears| image:: images/gears.png
-   :height: 18
-   :width: 18
 
 To view a list of menus, click the |gears| :ref:`Admin <main-menu-admin>` menu
 in the :term:`main menu` located in the :term:`header bar` and select "Menus"
@@ -30,6 +28,10 @@ Below, you will find instructions on how to:
 * :ref:`Edit an existing menu <edit-menu>`
 * :ref:`Move a menu <move-menu>`
 * :ref:`Delete a menu <delete-menu>`
+
+.. SEEALSO::
+
+   * :ref:`static-pages-menu`
 
 .. _add-menu:
 

@@ -26,12 +26,22 @@ From AtoM's root directory, use the ``nano`` command to open a file for editing
 You can save changes with ``CTRL+O + ENTER``, and exit with ``CTRL+X`` (you
 will be asked to save if you haven't yet).
 
+.. IMPORTANT::
+
+   If you change any of the files listed below, clear the cache and restart
+   php5-fpm to apply the changes.
+
+   .. code-block:: bash
+
+      php symfony cc
+      sudo php5-fpm restart
+
 Important files:
 ================
 
 .. _config-apps-yml:
 
-config/apps.yml
+config/app.yml
 ---------------
 
 .. _htmlpurifier: http://htmlpurifier.org/
@@ -93,15 +103,25 @@ config/config.php
   as the database user, pass, and name
 * We don't recommend changing this file unless you know what you're doing!
 
-.. IMPORTANT::
+.. _config-sitemap-yml:
 
-   If you change any of the files listed above, clear the cache and restart
-   php5-fpm to apply the changes.
+config/sitemap.yml
+------------------
 
-   .. code-block:: bash
+This configuration file is used in conjunction with the sitemap generation
+command-line task - for more information, see: :ref:`cli-sitemap`.
 
-      php symfony cc
-      sudo php5-fpm restart
+This file contains the priorities (or weighting) for each
+:term:`level of description` of archival descriptions included in the sitemap
+the CLI task will generate. If you have added new levels of description to the
+Levels of description :term:`taxonomy`, you can give them a priority here, or
+adjust the default priorities included in the file (shown in the image below).
+
+.. image:: images/config-sitemap-yml.*
+   :align: center
+   :width: 60%
+   :alt: An image of the sitemap.yml file in the command-line
+
 
 .. _config-application-server:
 

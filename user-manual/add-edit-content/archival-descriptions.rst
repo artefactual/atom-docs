@@ -95,6 +95,7 @@ to:**
 * :ref:`link-related-descriptions`
 * :ref:`change-display-standard`
 * :ref:`add-alternative-id`
+* :ref:`rename-title-slug`
 * :ref:`Move an archival description <move-archival-description>`
 * :ref:`Delete an archival description <delete-archival-description>`
 
@@ -112,13 +113,14 @@ see the sections below for more specific instructions on the use of
 .. seealso::
 
    * :ref:`add-term-fly`
+   * :ref:`browse-hierarchy`
    * :ref:`Physical storage <link-physical-storage>`
    * :ref:`Upload digital objects <upload-digital-object>`
    * :ref:`Create an archival description from an accession record
      <create-accession-description>`
    * :ref:`Link an accession record to an archival description
      <link-accession-description>`
-   * :ref:`Exit edit mode <exit-edit-mode>`
+   * :ref:`add-custom-links`
    * :ref:`link-function-description`
    * :ref:`link-authority-to-description`
    * :ref:`upload-digital-object`
@@ -917,6 +919,172 @@ AtoM, see the following:
    :align: center
    :width: 80%
    :alt: Alternative IDs as displayed in the view page of a description
+
+:ref:`Back to top <archival-descriptions>`
+
+.. _rename-title-slug:
+
+Rename the title or slug of an archival description
+===================================================
+
+When archival descriptions are created, a permalink (also known as a
+:term:`slug`) is generated as well, to be used in the URL associated with the
+description - the slug is the unique part of that URL. In AtoM, the slug of an
+:term:`archival description` is generated automatically, from either the title
+of the description, or from the inherited :term:`reference code` of the
+description - an :term:`administrator` can determine which is used globally
+based on a setting available in **Admin > Settings > Global**. For more
+information, see: :ref:`description-permalinks`.
+
+However, users with the appropriate :term:`permissions <access privilege>` can
+edit the slug, the title of the description, or even the filename of an
+associated uploaded :term:`digital object` after the description is saved, by
+using the "Rename" module.
+
+When editing a slug in AtoM, it is important to understand how they are
+generated, and why your slug may be saved differently than the value you
+input. Slugs in AtoM are sanitized to remove spaces, special characters (such
+as ! @ # $ % & etc), stopwords (such as "a," "an," "the," etc), and
+capitalization. They are also truncated to a maximum of 250 characters. Since
+they are used as permalinks, they must also be unique within the system - so
+AtoM will automatically append a dash and an incrementing number to the end of
+non-unique slugs. More information on slugs in AtoM can be found here:
+:ref:`slugs-in-atom`. Whenever the Rename module alters the slug you enter
+based on the above parameters, a notification indicating this will be shown.
+
+Note that the title of a description can always be edited within the
+:term:`edit page` of the description itself - for more information, see above,
+:ref:`edit-archival-description`. The ability to edit the title of the
+description in the Rename module has been included for convenience - when the
+title of archival description is edited in the Rename module, **and** the
+checkbox for editing the slug is also selected, then the slug will be
+automatically updated to match the title.
+
+.. TIP::
+
+   If you ever update the slug accidentally when editing the title, don't
+   worry! You can simply uncheck the update slug box to the right of the field
+   - AtoM will disable the slug edit field, and when saved, the slug will be
+   unchanged from the original. You can also always re-open the Rename module
+   and edit the slug or title again as needed. Further details are included
+   below.
+
+Although it can be done in the same module, specific instructions on editing
+the filename of a linked digital object will be covered on the
+:ref:`upload-digital-object` page - for more information, see:
+:ref:`rename-digital-object`.
+
+**To update the title or slug of an archival description:**
+
+1. Navigate to the :term:`archival description` whose title or :term:`slug`
+   you wish to edit. You can do this by :ref:`browsing <browse>` or
+   :ref:`searching <search-atom>` for the :term:`archival description` - see
+   :ref:`Access content <access-content>` for more information on navigation
+   in AtoM.
+2. Scroll down to the :term:`button block` at the bottom of the page, and
+   click on the "More" button - a menu will open with further options. Click
+   on "Rename" to open the Rename module.
+
+.. image:: images/rename-button.*
+   :align: center
+   :width: 80%
+   :alt: An image of the More button menu opened on an archival description
+
+3. AtoM will redirect you to the Rename module page. You will see at least 2
+   :term:`fields <field>` - one for the title of the description, and one for
+   the slug. If there is a digital object linked to the description, you will
+   also see a third field to edit the :term:`digital object` filename.
+
+.. image:: images/rename-page.*
+   :align: center
+   :width: 80%
+   :alt: An image of the Rename module's available fields
+
+.. SEEALSO::
+
+   For more information on editing the :term:`digital object` filename with
+   the rename module, see: :ref:`rename-digital-object`.
+
+4. To the right of the edit fields, there is a checkbox corresponding to each
+   field. By default, the title and slug checkboxes will be checked - this
+   means that they are enabled for editing. You can uncheck these fields at
+   any time to disable them - doing so will undo any changes made and prevent
+   the field from updating when the "Update" button is clicked.
+
+5. Place your cursor in the :term:`field` whose value you would like to edit,
+   and make changes as necessary. For reference, the original value before
+   your changes is displayed below each field. **Remember** to uncheck any
+   fields you don't wish to edit - this will disable them.
+
+.. image:: images/rename-slug-not-title.*
+   :align: center
+   :width: 80%
+   :alt: An image of editing the slug value in the Rename module
+
+.. IMPORTANT::
+
+   If you are editing the title of a description, and the "Update slug"
+   checkbox is checked, then **the slug will be automatically updated based on
+   the new title you enter**! The updated slug will be visible in the slug's
+   edit field after you move your cursor out of the title field. You can still
+   make changes to the slug after it is automatically updated. Also, if you do
+   not want to save the changes made to the slug, you can uncheck the "Update
+   slug" box at any time during the edit process - AtoM will disable the edit
+   field, and the original slug will be preserved when your changes are saved.
+
+   .. image:: images/rename-title-not-slug.*
+      :align: center
+      :width: 90%
+      :alt: An image of editing the title value in the Rename module
+
+6. When editing the :term:`slug` of a description, if you enter a slug value
+   that is already in use in AtoM, a notification pop-up will appear when you
+   move your cursor out of the slug edit field, and AtoM will automatically
+   append an incremental number to the slug to make it unique. You can still
+   edit this value as desired to find a unique slug.
+
+.. image:: images/rename-slug-in-use.*
+   :align: center
+   :width: 80%
+   :alt: An image of the "slug in use" notification pop-up
+
+.. TIP::
+
+   To make sure you see the notification pop-up before saving your record, we
+   recommend actively moving the cursor out of the slug field after making an
+   edit, instead of directly clicking on the "Update" button while your cursor
+   is still in the slug edit field.
+
+7. When you are satisfied with your changes, click the "Update" button in the
+   :term:`button block` at the bottom of the Rename module's edit page. If you
+   wish to cancel all changes and return to the :term:`archival description`,
+   click the "Cancel" button.
+
+8. After submitting your changes by clicking the "Update" button, AtoM will
+   redirect you to the archival description's :term:`view page`. A yellow
+   notification banner will appear at the top of the page acknowledging your
+   edits. If the value you have entered for the slug has been changed by AtoM
+   (e.g. sanitized to remove special characters, spaces, or capital letters,
+   or incremented to make the slug uniqe), the message will mention this so
+   you can review the slug in your browser's address bar.
+
+.. image:: images/rename-slug-warning-banner.*
+   :align: center
+   :width: 80%
+   :alt: An image of the notification banner after changes are saved
+
+9. You can repeat these steps as needed until you are satisfied with the
+   outcome. Note that links to the description from other entities (e.g.
+   a linked :term:`archival institution`, :term:`authority record`, etc) will
+   be preserved even when the title or slug are changed.
+
+.. NOTE::
+
+   AtoM does **not** automatically add redirects from the old URL to the new
+   one after a slug is updated - this allows previous slugs to be re-used if
+   they are available. However, this means that if you have added links to a
+   specific description on an external website, they may break after changing
+   the slug.
 
 :ref:`Back to top <archival-descriptions>`
 

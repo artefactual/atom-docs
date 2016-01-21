@@ -25,6 +25,7 @@ links to each chapter's main sections.
    add-edit-content/control-area
    add-edit-content/terms
    add-edit-content/physical-storage
+   add-edit-content/formatting
    add-edit-content/exit-edit-mode
    access-content/search-atom
    access-content/advanced-search
@@ -43,6 +44,7 @@ links to each chapter's main sections.
    import-export/import-descriptions-terms
    import-export/export-descriptions-terms
    import-export/csv-import
+   import-export/csv-export
    import-export/oai-pmh
    administer/manage-user-accounts
    administer/manage-digital-object-storage

@@ -22,11 +22,10 @@ that can be linked to :term:`accession records <accession record>`,
 :term:`archival descriptions <archival description>` and their related
 :term:`digital objects <digital object>`. AtoM Rights metadata elements use
 `PREMIS rights elements <http://www.loc.gov/standards/premis/>`__. In AtoM
-restrictions can be based on Copyright(s), License, Statute(s) and Policy.
-You can also include rights restrictions based on guidelines set by the
-Donor of the records. Rights can be set to be inherited in AtoM, which means
-that rights added at a higher level (e.g., fonds level) can be inherited by the
-lower levels (e.g., item level). See
+restrictions can be based on Copyright(s), License, Statute(s), Policy, or
+Donor (as in an agreement established with a donor). Rights can be set to be
+inherited in AtoM, which means that rights added at a higher level (e.g., fonds
+level) can be inherited by the lower levels (e.g., item level). See
 :ref:`Manage rights inheritance <rights-inheritance>`, below.
 
 If you add rights to an :term:`accession record`, all
@@ -34,8 +33,20 @@ If you add rights to an :term:`accession record`, all
 accession will inherit the same rights.
 
 AtoM also allows you to choose one PREMIS rights :term:`act` (such as Display,
-Disseminate, etc) to use as an action for your digital objects. See
-:ref:`Make rights actionable on digital objects <rights-digital-object>`, below.
+Disseminate, etc) to use as an action for your digital objects - though you
+can configure different digital object access permissions for each PREMIS
+rights Basis. See :ref:`rights-digital-object`, below.
+
+**Jump to:**
+
+* :ref:`add-rights`
+* :ref:`rights-inheritance`
+* :ref:`rights-digital-object`
+* :ref:`disallow-statements`
+* :ref:`copyright-pop-up`
+* :ref:`manage-rights-holders`
+
+.. _add-rights:
 
 Add a new rights record
 =======================
@@ -266,7 +277,7 @@ from the archival description in view mode:
 .. _rights-inheritance:
 
 Manage rights inheritance
--------------------------
+=========================
 
 AtoM will allow you to add a rights record to a :term:`parent record` and choose
 whether or not the same rights record should be applied to that parent's
@@ -304,7 +315,7 @@ parent record as you indicated.
    will not be able to modify the rights of a child record and have them
    passed up to the parent record.
 
-.. note::
+.. tip::
 
    Rights inheritance is a task that AtoM performs asynchronously, via the Jobs
    Scheduler. If the parent description has many children, it may take some time
@@ -314,7 +325,7 @@ parent record as you indicated.
 .. _rights-digital-object:
 
 Make rights actionable on digital objects
------------------------------------------
+=========================================
 
 :term:`Administrators <administrator>` can choose an act/granted right for which
 digital object permissions are set. This means that digital object
@@ -339,106 +350,461 @@ Display, Disseminate, Migrate, Modify and Replicate. For many institutions,
 either Display or Disseminate will be the logical choice since this functionality
 relates to the display of digital objects.
 
-Next, use the drop-down menus to indicate whether viewing/downloading digital
-objects should be allowed or disallowed. You will set these permissions for
-each of the three possible restrictions (Allow, Conditional, and Disallow). For
-each restriction you will also indicate whether viewing and downloading
-:term:`masters <master digital object>`, :term:`reference representations
-<reference display copy>` and :term:`thumbnails <thumbnail>` are allowed or
-disallowed.
+.. image:: images/permissions-select-act.*
+   :align: center
+   :width: 80%
+   :alt: Selecting which PREMIS act will be actionable on digital objects
 
-You can only make rights actionable based on one act/granted right. Other
-acts and granted rights can be added to the archival description, but they
-will have no effect on the visibility of digital objects to your users.
+.. TIP::
 
-.. tip::
+   The PREMIS acts are maintained in the "Rights act" :term:`taxonomy`, and
+   can be customized by users with the proper edit permissions. If you add a
+   new :term:`term` to the Rights act taxonomy, it will appear in the PREMIS
+   Access permissions table when you return to the Settings page. You can then
+   configure its settings.
 
-   Here is an example use case:
+   The default terms are mostly derived from the PREMIS 2.2 standard - here
+   are their definitions as found in the PREMIS Data Dictionary
+   (`v2.2, 2012 <http://www.loc.gov/standards/premis/v2/premis-2-2.pdf>`__),
+   p. 225:
 
-   Suppose an institution has determined that their digital objects fall into
-   3 categories: those that are in the public domain, those that are definitely
-   still under copyright, and those that have an unknown copyright status.
-   The institution does a risk assessment and determines that:
+   * replicate = make an exact copy
+   * migrate = make a copy identical in content in a different file format
+   * modify = make a version different in content
+   * disseminate = create a copy or version for use outside of the preservation repository
+   * delete = remove from the repository
 
-   - Public domain digital objects can be accessed by anyone in any format
-   - Items under copyright can only be viewed online in their thumbnail version
-   - Items with unknown or uncertain copyright status can be viewed online, but
-     only in smaller resolution. It is determined to be too risky to allow online
-     access to the master copies.
+   AtoM includes 2 other default basis terms: discover, and display. These
+   were added because PREMIS is intended to support digital preservation, and
+   its rights module does not get very granular, especially when applied to
+   digital object permissions management in an access system.
 
-   The institution has created rights records for their archival descriptions
-   using the act "Display".
+   * discover = based on "Resource discovery", i.e. exposing metadata through searches
+   * display = display a digital object in a public access system
 
-   This institution would set their Permissions as such:
-
-   .. image:: images/example-rights.*
-      :align: center
-      :width: 70%
-      :alt: Example permissions settings
-
-   Example rights records in the related archival descriptions could look like
-   this:
-
-   Public domain items: Display - Allow
-
-   .. image:: images/example-allow.*
-      :align: center
-      :width: 60%
-      :alt: Example rights records when displayed is Allowed
+   Users can use these terms as originally defined, or based on local
+   interpretations. New terms can be added to the Rights act taxonomy as need,
+   and unnecessary terms can be altered or deleted. For more information on
+   managing terms and taxonomies, see: :ref:`terms`.
 
 
-   The digital object would display, and would also be "clickable" to access
-   the master copy:
+Next, use the permissions table to indicate whether viewing/downloading
+digital objects should be allowed or disallowed. You will set these permissions for
+each of possible Rights bases (Copyright, License, Statute, Policy, and
+Donor), covering each of the three possible restrictions (Allow, Conditional,
+and Disallow). For each restriction you will also indicate whether viewing and
+downloading :term:`masters <master digital object>`,
+:term:`reference representations <reference display copy>` and
+:term:`thumbnails <thumbnail>` are allowed or disallowed.
 
-   .. image:: images/image-allowed.*
-      :align: center
-      :width: 60%
-      :alt: Example of digital object for which display is allowed.
+.. NOTE::
 
-   Copyrighted items: Display - Disallow
+   You can only make rights actionable based on one act/granted right,
+   determined by the PREMIS act :term:`drop-down menu` above the permissions
+   table. Other acts and granted rights can be added to an
+   :term:`archival description`, but they will have no effect on the visibility
+   of digital objects to your users.
 
-   .. image:: images/example-disallow.*
-      :align: center
-      :width: 60%
-      :alt: Example rights records when displayed is Disallowed
+When a check-box in the permissions table is **checked** (and the area
+surrounding it is green), it means that access is allowed for that particular
+rights configuration. When a check-box is **unchecked** (and the area
+surrounding it is red), it means that access is disallowed for that particular
+rights configuration.
 
-   The digital object would not display, and is replaced by a statement
-   explaining why it is not visible:
+You can use the "Master," "Reference," and "Thumb" buttons above each row to
+check or uncheck all basis rows in a particular column. You can also use the
+"All / none" link below the table to check or uncheck all values in the
+permissions table:
 
-   .. image:: images/image-disallow.*
-      :align: center
-      :width: 60%
-      :alt: Example of digital object for which display is disallowed.
+.. image:: images/permissions-select.*
+   :align: center
+   :width: 80%
+   :alt: Using the select buttons to toggle values for an entire permissions column
 
-   Uncertain copyright: Display - Conditional
+Don't forget to **save** your changes with the "Save" button in the
+:term:`button block` at the bottom of the page.
 
-   .. image:: images/example-conditional.*
-      :align: center
-      :width: 60%
-      :alt: Example rights records when displayed is Conditional
+Remember, for your rights to have an effect on a :term:`digital object`
+attached to an :term:`archival description`:
 
-   The image will display in its reference representation, but will not be
-   "clickable", preventing the user from using the master image:
+* A Rights statement must be associated with the description (see above,
+  :ref:`rights-archival-description`)
+* The associated rights must have the same :term:`act` as the one set in the
+  PREMIS act :term:`drop-down menu` above the permissions table in |gears|
+  **Admin > Settings > Permissions**
+* The basis of the rights on your archival description must be configured to
+  disallow access in the permissions table in  |gears| **Admin > Settings >
+  Permissions**
+* The user must be a public user (e.g. not logged in; also known as a
+  :term:`researcher`) - the rights do not apply to authenticated (e.g. logged
+  in) users
 
-   .. image:: images/image-conditional.*
-      :align: center
-      :width: 60%
-      :alt: Example of digital object for which display is conditional.
+For a public user, when access to the :term:`thumbnail` is disallowed based on
+an attached rights statement, AtoM will instead display a default generic
+media type icon:
 
+.. image:: images/restricted-thumbnails.*
+   :align: center
+   :width: 80%
+   :alt: Example of default icons shown in place of thumbnails
+
+When access to the :term:`reference display copy` is disallowed based on an
+attached rights statement, users will instead be shown the related Access
+statement, depending on the Basis of your PREMIS right. Access statements are
+intended to be user-friendly messages explaining the restriction, and can be
+configured by an :term:`administrator` - see below for more information:
+:ref:`disallow-statements`.
+
+.. image:: images/access-statement.*
+   :align: center
+   :width: 80%
+   :alt: Example of an access statement shown when access to a reference
+         display copy is restricted via PREMIS rights
+
+If access to the :term:`reference display copy` is allowed, but access to the
+:term:`master digital object` (e.g. the original) is disallowed, the users
+will be able to view the reference copy, but they will not be able to click on
+it to view/download the original.
+
+.. _rights-digital-object-example:
+
+Example: Configuring copyright permissions
+------------------------------------------
+
+Here is an example use case:
+
+Suppose an institution has determined that their digital objects fall into
+3 categories: those that are in the public domain, those that are definitely
+still under copyright, and those that have an unknown copyright status.
+The institution does a risk assessment and determines that:
+
+* Public domain digital objects can be accessed by anyone in any format
+* Items under copyright can only be viewed online in their thumbnail version
+* Items with unknown or uncertain copyright status can be viewed online, but
+  only in smaller resolution. It is determined to be too risky to allow online
+  access to the master copies.
+
+The institution has created rights records for their archival descriptions
+using the act "Display".
+
+This institution would set their Permissions as such:
+
+.. image:: images/example-rights.*
+  :align: center
+  :width: 70%
+  :alt: Example permissions settings
+
+Example rights records in the related archival descriptions could look like
+this:
+
+Public domain items: Display - Allow
+
+.. image:: images/example-allow.*
+  :align: center
+  :width: 60%
+  :alt: Example rights records when displayed is Allowed
+
+
+The digital object would display, and would also be "clickable" to access
+the master copy:
+
+.. image:: images/image-allowed.*
+  :align: center
+  :width: 60%
+  :alt: Example of digital object for which display is allowed.
+
+Copyrighted items: Display - Disallow
+
+.. image:: images/example-disallow.*
+  :align: center
+  :width: 60%
+  :alt: Example rights records when displayed is Disallowed
+
+The digital object would not display, and is replaced by a statement
+explaining why it is not visible:
+
+.. image:: images/image-disallow.*
+  :align: center
+  :width: 60%
+  :alt: Example of digital object for which display is disallowed.
+
+Uncertain copyright: Display - Conditional
+
+.. image:: images/example-conditional.*
+  :align: center
+  :width: 60%
+  :alt: Example rights records when displayed is Conditional
+
+The image will display in its reference representation, but will not be
+"clickable", preventing the user from using the master image:
+
+.. image:: images/image-conditional.*
+  :align: center
+  :width: 60%
+  :alt: Example of digital object for which display is conditional.
+
+.. TIP::
+
+   For another possible way of dealing with access to digital objects with
+   conditional copyright restrictions, see below, :ref:`copyright-pop-up`.
 
 .. _disallow-statements:
 
-Disallowed and Conditional statements
--------------------------------------
+Configure Disallowed and Conditional access statements
+======================================================
 
-To alter the statement displayed for either Disallowed or Conditional digital
-object views, :term:`administrators <administrator>` can do so
-on the :ref:`Settings <settings>` page under
-:ref:`User Interface Labels <user-interface-labels>`.
+When access to the :term:`reference display copy` of a digital object is
+restricted to public users via a PREMIS right, AtoM will display a
+customizable access statement in its place:
 
+.. image:: images/access-statement.*
+   :align: center
+   :width: 80%
+   :alt: Example of an access statement shown when access to a reference
+         display copy is restricted via PREMIS rights
+
+Access statements are intended to be user-friendly explanations of why access
+is restricted, and what the user can do (if anything) to gain access (for
+example, contact the Reference Archivist, etc).
+
+These access statements can be individually configured for each Rights basis
+by an :term:`administrator`, in |gears| **Admin > Settings > Permissions**.
+Scroll down to the section labelled "PREMIS access statements":
+
+.. image:: images/example-access-copyright.*
+   :align: center
+   :width: 80%
+   :alt: An image of the PREMIS access statements in Settings
+
+The different Rights basis terms along the left act as tabs - click on one to
+flip the view and display the current accesss statement text for that basis.
+Each basis has a Conditional access statement (when the associated rights
+restriction is set to "Conditional" and the permissions table setting for
+the :term:`reference display copy` is set to "Disallow"), and A Disallow access
+statement (when the rights restriction is "Disallow" and the associated
+permission for the reference copy is also "Disallow"). You can add custom text
+for each.
+
+.. TIP::
+
+   The PREMIS Rights basis :term:`terms <term>` are all maintained in a
+   :term:`taxonomy`. The terms can be edited or deleted, and new terms can be
+   added by logged-in users with appropriate
+   :term:`access privileges <access privilege>`. If a new term is added to the
+   Right basis taxonomy, then a new tab will be added to the PREMIS access
+   statements section in |gears| **Admin > Settings > Permissions**. An
+   :term:`administrator` can then add custom Conditional and Disallow access
+   statements for the new PREMIS basis.
+
+You can customize the access statements for each Rights basis, as needed based
+on local practice. When you have made the edits you want to each Basis tab,
+remember to scroll down and click "Save" in the :term:`button block` at the
+bottom of the page.
+
+.. _copyright-pop-up:
+
+Add a Copyright statement before allowing access to a master digital object
+===========================================================================
+
+There may be use cases where you wish to allow users access to the
+:term:`master digital object` (i.e. the original :term:`digital object` you
+have uploaded), but want to remind users of the copyright terms involved in
+the digital object's usage and/or dissemination. For example, perhaps the
+terms of the copyright do not permit commercial use, or require attribution.
+
+In these cases, AtoM includes the ability to configure a customizable
+copyright pop-up notice, that will appear for all users when they try to
+access the :term:`master digital object`. The copyright pop-up must be viewed,
+and an "Accept" button clicked (acknowledging the terms in the pop-up), before
+access to the master digital object is granted. This pop-up will come into
+effect when:
+
+* The copyright pop-up is enabled in |gears| **Admin > Settings >
+  Permissions**
+* Users are granted sufficient :term:`access privileges <access privilege>` to
+  access the :term:`master digital object`
+* A Rights statement with a Copyright basis and the Restriction set to
+  "Conditional" is attached to the associated :term:`archival description`
+* The :term:`digital object` is uploaded locally, **not** linked via a web
+  address (i.e. from an external site).
+
+More on each of these points will be included below.
+
+.. _copyright-pop-up-configure:
+
+Configuring the copyright pop-up
+--------------------------------
+
+1. To enable and configure the copyright pop-up, click on the |gears|
+   :ref:`Admin menu <main-menu-admin>` in the AtoM :term:`header bar`, and
+   select "Settings". AtoM will redirect you to the settings page. Choose
+   "Permissions" in the left-hand navigation menu, and scroll down to the
+   section entitled "Copyright statement":
+
+.. image:: images/copyright-pop-up.*
+   :align: center
+   :width: 80%
+   :alt: An image of the Copyright statement section of the Permissions settings
+
+2. To activate the copyright statement, make sure that the "Enable copyright
+   statement" :term:`radio button` is toggled to "Yes"
+
+.. image:: images/enable-pop-up.*
+   :align: center
+   :width: 80%
+   :alt: An image of the radio button enabling the Copyright statement
+
+3. Now, in the text-box below, you can add the content you would like to see
+   appear in your copyright statement. Content added here will be rendered
+   similar to a :term:`static page` - that is, you can add HTML to style and
+   structure the content. For tips on working with HTML in static pages, see:
+   :ref:`styling-static-page`. You can also drag the bottom of the text-box
+   down to expand it, if you need more room to work.
+
+.. image:: images/copyright-pop-up-configured.*
+   :align: center
+   :width: 80%
+   :alt: An image of the Copyright statement, with user-added text and HTML
+
+4. As you add your custom content, you can preview your work at any time to
+   see how it will be rendered in the copyright pop-up page. Click the
+   "Preview" button below the text-box: AtoM will open a new tab in your
+   browser, with a preview of the rendered Copyright statement. It will differ
+   from an actual copyright statement in 3 ways:
+
+   * At the top of the preview tab, a message in a blue box indicates this is
+     the "Copyright statement preview"
+   * Where the title of the related :term:`archival description` would
+     normally appear, the preview tab will only say "Untitled"
+   * The "Agree" button in the :term:`button block` on the preview page will
+     be disabled - normally users who click "Agree" will be taken to the
+     related :term:`master digital object`.
+
+.. image:: images/copyright-pop-up-preview.*
+   :align: center
+   :width: 80%
+   :alt: An example of the Copyright statement preview page
+
+5. Clicking "Close" in the copyright statement preview tab will close the tab.
+6. When you are done configuring your copyright statement, don't forget to
+   scroll down and click the "Save" button in the :term:`button block` at the
+   bottom of the page.
+
+.. _copyright-pop-up-apply:
+
+Applying the Copyright statement pop-up
+---------------------------------------
+
+Now that you have enabled and configured the Copyright statement, there are
+still 3 other conditions that must be met before your copyright statement will
+be seen:
+
+* Users must be granted sufficient :term:`access privileges <access
+  privilege>` to access the :term:`master digital object`
+* A Rights statement with a Copyright basis and the Restriction set to
+  "Conditional" must be attached to the associated
+  :term:`archival description`
+* The :term:`digital object` is uploaded locally, **not** linked via a web
+  address (i.e. from an external site).
+
+**Step 1: Granting sufficient access**
+
+For users to be able to see the Copyright statement, they must first have
+access to the :term:`master digital object`. By default, the "anonymous" group
+in AtoM's permissions module (e.g. a :term:`researcher` or public user who is
+not logged into the application) does **not** allow public users to view the
+master digital object - so you must change this setting from "Inherit" to
+"Allow" in |gears| **Admin > Groups > Anonymous > Archival description
+permissions**:
+
+.. image:: images/copyright-pop-up-acl.*
+   :align: center
+   :width: 80%
+   :alt: Changing the default permissions for public users to allow access to
+         the master digital object via Admin > Groups
+
+.. TIP::
+
+   For more information on working with Users and Groups in AtoM, see:
+   :ref:`manage-user-accounts`. For more information on configuring the
+   permissions for Users and Groups, see: :ref:`edit-user-permissions`.
+
+You will also need to ensure that the PREMIS Rights permissions you have
+configured in |gears| **Admin > Settings > Permissions** will allow your users
+to access the :term:`master digital object` when the Basis is "Copyright" and
+the Restriction is "Conditional":
+
+.. image:: images/copyright-pop-up-permissions.*
+   :align: center
+   :width: 80%
+   :alt: Changing the default PREMIS permissions for Copyright
+
+.. TIP::
+
+   For more information on configuring the PREMIS permissions, see above,
+   :ref:`rights-digital-object`.
+
+Now public users will have enough rights to access the master digital objects.
+If there are some masters to which you do not wish to grant access, you can
+always apply a PREMIS right with the Restriction "Disallow", and configure the
+permissions settings accordingly (see :ref:`above <rights-digital-object>` for
+further details on configuration). For the copyright pop-up statement to be
+presented, we still have to apply the appropriate Rights to related
+:term:`archival descriptions <archival description>`.
+
+**Step 2 - Applying the appropriate PREMIS rights**
+
+The Copyright statement is only triggered when specific PREMIS rights have
+been associated with the :term:`archival description` to which the
+:term:`digital object` is attached:
+
+* **Act**: Whichever act you have chosen to be actionable in |gears| **Admin >
+  Settings > Permissions**. See :ref:`above <rights-digital-object>` for
+  further details on configuration.
+* **Basis**: Must be "Copyright"
+* **Restriction:** Must be "Conditional"
+
+For example, if you have set "Display" as the Act in the Permissions settings,
+then the following rights statement, when applied to an
+:term:`archival description` with a :term:`digital object` attached, will
+trigger the copyright statement:
+
+.. image:: images/example-conditional.*
+  :align: center
+  :width: 60%
+  :alt: Example rights records when displayed is Conditional
+
+For further guidance in applying actionable PREMIS rights to archival
+descriptions with associated digital objects, see the section above,
+:ref:`rights-archival-description`. For an example use case, see:
+:ref:`rights-digital-object-example`.
+
+.. IMPORTANT::
+
+   The copyright statment will **only** work when it is applied to digital
+   objects that are uploaded locally - not to those linked via URL to an
+   external web address! This is because the pop-up relates to the
+   :term:`master digital object`. When you upload locally, then the master
+   digital object is stored in AtoM. When you link to an external digital
+   object, AtoM will generate local derivatives (ie the
+   :term:`reference display copy` and the :term:`thumbnail`), but the master
+   is still external!
+
+   We suggest using a different (perhaps custom) Basis, and applying rights
+   with the settings configured to deny access to the master digital object,
+   if you wish to restrict access to external digital objects. You can also
+   hide the source URL from the Digital object metadata
+   :term:`area <information area>` via the Visible elements module.
+
+   For more information on configuring PREMIS settings, see
+   :ref:`above <rights-digital-object>`. For information on uploading digital
+   objects, see: :ref:`upload-digital-object`. For information on the Visible
+   elements module, see: :ref:`visible-elements`.
+
+.. _manage-rights-holders:
 
 Manage Rights holders records
------------------------------
+=============================
 
 1. Users with :term:`editor` and :term:`administrator` access permissions can
    navigate to the :term:`main menu` located in the AtoM :term:`header bar` and

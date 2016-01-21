@@ -1022,6 +1022,32 @@ Glossary
     information about and intellectual control over archival materials,
     which include records. See: :ref:`archival-descriptions`.
 
+  Reference code
+    In AtoM, a reference code is a unique identifier string associated with an
+    :term:`archival description`, created through the combination of inherited
+    identifiers from other related entities. This unique string is built using
+    the archival description identifier plus the identifier of all its ancestors
+    (:term:`parent records <parent record>`), as well as the related
+    repository identifier and country code if they have been entered. The
+    string will appear in this order with the applicable elements:
+
+    * Country code (derived from the country code of the country entered into the
+      contact information of the related :term:`archival institution`)
+    * Repository identifier (derived from the identifier field on the related
+      :term:`archival institution`)
+    * Fonds/Collection level identifier
+    * Series identifier
+    * Subseries identifier
+    * File identifier
+    * Item identifier
+
+    The display of either the full inherited reference code, or only the
+    identifier associated with the current description, is managed by a
+    setting available to an :term:`administrator` in **Admin > Settings >
+    Global**. For more information, see: :ref:`inherit-reference-code`.
+
+
+
   Reference display copy
     A reference display copy is a low-resolution version of a
     :term:`master digital object` generated automatically by AtoM on

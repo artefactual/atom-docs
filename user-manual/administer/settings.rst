@@ -20,6 +20,9 @@ Below, you will find information on the following :term:`information areas
 * :ref:`Finding aid <finding-aid>`
 * :ref:`Security panel <security-panel>`
 * :ref:`Permissions <permissions>`
+* :ref:`inventory-settings`
+* :ref:`digital-object-derivatives`
+* :ref:`dip-upload-settings`
 
 Each of the settings areas listed above is accessible via a list of links on
 the left-hand side of the settings page. Click on the appropriate link, and
@@ -69,14 +72,17 @@ This section will describe each :term:`field` in the "Global"
 * :ref:`Accession counter <accession-counter>`
 * :ref:`Reference code separator <reference-code-separator>`
 * :ref:`Inherit reference code (Information object) <inherit-reference-code>`
+* :ref:`Treeview type <treeview-type>`
 * :ref:`Sort treeview (information object) <sort-treeview>`
 * :ref:`Sort browser (users) <sort-browser-users>`
 * :ref:`Sort browser (anonymous) <sort-browser-anonymous>`
+* :ref:`Default repository browse view <default-repo-view>`
 * :ref:`Multiple repositories <multiple-repositories>`
 * :ref:`Default archival institution upload limit <default-institution-upload>`
 * :ref:`Total space available for uploads <total-upload-space>`
 * :ref:`Upload multi-page files as multiple descriptions <upload-multi-files>`
 * :ref:`Show tooltips <tooltips>`
+* :ref:`Generate description permalinks from <description-permalinks>`
 * :ref:`Default publication status <default-publication-status>`
 * :ref:`SWORD deposit directory <sword-directory>`
 
@@ -258,6 +264,58 @@ information to help orient the user.
 
    * :ref:`Control area <control-area>`
 
+.. _treeview-type:
+
+Treeview type
+-------------
+
+This setting allows administrators to choose between two different display
+formats for the :term:`treeview`. For more information about the treeview in
+AtoM, see: :ref:`context-menu-treeview`.
+
+The **Sidebar** setting refers to the classic treeview that appears in the
+left-hand :term:`context menu` of an :term:`archival description`. The **Full
+width** treeview, introduced in the AtoM 2.3 release, will display below the
+description title, and above the first :term:`information area` of the
+description. The display space of the full-width treeview can be expanded by
+users by gripping and dragging the bottom bar of the treeview downwards to
+expand the viewing area.
+
+Other differences include:
+
+* The sidebar version does not indent lower-levels, while indentation is used
+  in the full width treeview
+* The Identifier is included in the sidebar treeview nodes, while no
+  identifier is included in those of the full width version
+* The results in the sidebar treeview are truncated - the first 5-6 nodes in
+  the hierarchy are displayed by default, after which an approximate count of
+  remaining nodes in the current level is provided, with the option to expand
+  the results to display more. All nodes are shown in the full width treeview.
+
+Below are screenshots of the same :term:`fonds`, shown with each version of
+the treeview enabled, for comparison.
+
+**Sidebar treeview**
+
+.. image:: images/treeview-sidebar-example.*
+   :align: center
+   :width: 75%
+   :alt: an example a description displayed with the sidebar treeview
+
+
+**Full width treeview**
+
+.. image:: images/treeview-fullwidth-example.*
+   :align: center
+   :width: 75%
+   :alt: an example a description displayed with the full width treeview
+
+.. SEEALSO::
+
+   * :ref:`context-menu-treeview`
+   * :ref:`context-menu`
+   * :ref:`archival-descriptions`
+
 .. _sort-treeview:
 
 Sort treeview (information object)
@@ -325,6 +383,39 @@ at the top of most browse pages.
    * :ref:`Browsing in AtoM <browse>`
    * :ref:`recurring-sort-button`
    * :ref:`user-roles`
+
+.. _default-repo-view:
+
+Default repository browse view
+------------------------------
+
+This setting will determine if the "card view" or the "table view" is the
+default view for the :term:`archival institution` browse page, when users
+first arrive on the page.
+
+.. image:: images/repo-views.*
+   :align: center
+   :width: 70%
+   :alt: An comparison of the card and table views of the repository browse page
+
+.. TIP::
+
+   Regardless of which setting you choose, any user can easily toggle between
+   the card view and the table view on the :term:`archival institution` browse
+   page, using the view toggle button that appears to the right of the archival
+   institution search box:
+
+   .. image:: images/view-toggle-repository.*
+      :align: center
+      :width: 80%
+      :alt: An image of the view toggle button on the repository browse page
+
+For more information on working with archival institutions, see:
+
+* :ref:`Browse archival institutions <browse-institutions>`
+* :ref:`Search archival institutions <dedicated-search-institutions>`
+* :ref:`archival-institutions`
+
 
 .. _multiple-repositories:
 
@@ -409,6 +500,34 @@ edit templates are based (e.g. RAD, ISAD, etc).
 appear in :term:`edit pages <edit page>` as the user enters data. Selecting "no"
 will disable tooltips.
 
+.. _description-permalinks:
+
+Generate description permalinks from
+------------------------------------
+
+This setting allows an :term:`administrator` to determine if the :term:`slug`
+(or permalink) generated from an :term:`archival description` when it is saved
+is derived from the title, or from the reference code of the description (for
+more information on how reference codes are constructed in AtoM, see above:
+:ref:`inherit-reference-code`). By default, AtoM will derive the slug from the
+title of a description - the title will be sanitized by removing
+capitalization, spaces, and special characters; it will also be truncated if
+it exceeds a certain length. Administrators can now choose, via this setting,
+if they prefer that the slug is derived from the reference code instead.
+
+Note that this setting does not apply retro-actively to descriptions already
+created. It will only apply to new descriptions created after changing the
+setting.
+
+For further context on slugs in AtoM, see: :ref:`slugs-in-atom`
+
+.. TIP::
+
+   This setting will also be respected by the command-line task to generate
+   slugs - see: :ref:`cli-generate-slugs`. So it would be possible to update
+   legacy descriptions in AtoM by deleting their slugs, and then generating
+   new ones after changing this setting.
+
 .. _default-publication-status:
 
 Default publication status
@@ -483,15 +602,53 @@ these settings will be used site-wide.
    :alt: An image of the Default page elements menu in AtoM
 
 Checked boxes will display the corresponding element and unchecked boxes will
-hide the element. The logo, site title, and site description all appear as
-part of the AtoM :term:`header bar`:
+hide the element. The logo, site title, site description, and language menu
+all appear as part of the AtoM :term:`header bar`:
 
 .. image:: images/headerBar_admin.*
    :align: center
    :width: 70%
    :alt: An image of the AtoM header bar elements for an Administrator
 
-For more information on page elements, see :ref:`Themes & Theming <themes>`.
+The digital object :term:`carousel` appears when there are multiple
+:term:`digital objects <digital object>` attached to lower-level
+:term:`descriptions <archival description>`:
+
+.. image:: images/carousel-example.*
+   :align: center
+   :width: 80%
+   :alt: An image of the carousel shown at the top of a description
+
+The Copyright status filter and the General material designation filter appear
+as filters available in the Advanced search panel. For more information on
+using this panel, see: :ref:`advanced-search`. The Copyright status filter
+relates to PREMIS rights added to descriptions - for more information, see:
+:ref:`rights`. The General material designation filter is derived from the
+Canadian Rules for Archival Description (:ref:`RAD <rad-template>`) standard,
+and is only used on the RAD template.
+
+.. image:: images/search-filters-hide.*
+   :align: center
+   :width: 80%
+   :alt: An image of the Copyright status and GMD filters in the advanced
+         search panel
+
+When unchecked, the above elements will be hidden from display after you save
+the default page element settings. This can be useful for customization - for
+example, if you are not translating the content of your website and do not
+need the language menu, unchecking it here will remove it from the AtoM
+:term:`header bar`. Similarly, if you are not using the Canadian :ref:`RAD
+<rad-template>` standard as your :ref:`default template <default-templates>`,
+you might want to hide the General material designation filter from the
+advanced search panel.
+
+.. SEEALSO::
+
+   * :ref:`Theming - Add or remove elements <themes-add-remove-elements>`
+   * :ref:`Carousel <recurring-carousel>`
+   * :ref:`The language menu <language-menu>`
+   * :ref:`The AtoM header bar <atom-header-bar>`
+   * :ref:`default-page-elements`
 
 :ref:`Back to top <settings>`
 
@@ -579,14 +736,6 @@ see glossary definitions and descriptions of how the terms are used in AtoM.
 * materialtype: Material type (general material designations used in the
   :ref:`Canadian Rules for Archival Description <rad-template>`).
 * facetstitle: :term:`facets title`
-* access_disallow_warning: Used for customizable access restriction statements
-  when access to a :term:`digital object` is disallowed via an associated
-  PREMIS rights statement. See: :ref:`rights`, specifically
-  :ref:`rights-digital-object` for more information.
-* access_conditional_warning: Used for customizable access restriction statements
-  when access to a :term:`digital object` is set to conditional via an associated
-  PREMIS rights statement. See: :ref:`rights`, specifically
-  :ref:`rights-digital-object` for more information.
 * genre: Term for the Genre access point taxonomy, currently only available on
   the :ref:`RAD template <rad-template>`. It appears as a :term:`facet filter`
   in the :term:`archival description` browse and search pages - this label will
@@ -617,7 +766,7 @@ AtoM relies on volunteer translators from the community to support new language
 options. The translations are managed using
 `Transifex <https://www.transifex.com/projects/p/atom/>`__ and community
 members can learn more about contibuting translations `here
-<https://www.accesstomemory.org/community/translate>`_.
+<https://wiki.accesstomemory.org/Resources/Translation>`_.
 
 .. image:: images/add-remove-languages.*
    :align: center
@@ -644,6 +793,20 @@ your AtoM application.
    appear in the "Add/remove language" section in "Settings", as well as in the
    :term:`drop-down menu` of the |globe| :term:`language navigation menu
    <language menu>` located at the top right corner of the :term:`header bar`.
+
+.. IMPORTANT::
+
+   If you are adding a new language to the AtoM user interface, you **must
+   re-index your site** for the new language to work as expected after adding
+   it via the settings page. Using the command-line, a system administrator
+   will need to run the following command from the root directory of your AtoM
+   installation:
+
+   .. code-block:: bash
+
+      php symfony search:populate
+
+   See: :ref:`maintenance-populate-search-index` for more information.
 
 .. NOTE::
 
@@ -706,6 +869,9 @@ included in the :ref:`OAI repository <oai-pmh>` documentation, here:
 
    * :ref:`oai-pmh-plugin`
    * :ref:`manage-plugins`
+
+   If the arOAIPlugin is **not** turned on, then you won't see the OAI
+   repository tab on the settings page menu!
 
 :ref:`Back to top <settings>`
 
@@ -783,8 +949,184 @@ Permissions
 ===========
 
 Permissions settings are used by :term:`administrators <administrator>` to
-make PREMIS rights records in archival descriptions actionable on
-attached digital objects. For more instructions and examples, please see
-:ref:`Make rights actionable on digital objects <rights-digital-object>`.
+make PREMIS rights records in
+:term:`archival descriptions <archival description>` actionable on
+attached :term:`digital objects <digital object>`. See :ref:`rights` for more
+information on working with rights in AtoM.
+
+The permissions settings page is divided into 3 sections - PREMIS access
+permissions, PREMIS access statements, and the Copyright statement.
+
+For information on configuring the PEMIS access permissions, see:
+:ref:`rights-digital-object` (and for an example use case, see:
+:ref:`rights-digital-object-example`). For information on configuring the PREMIS
+access statements, see: :ref:`disallow-statements`. For information on
+configuring and using the Copyright statement, see: :ref:`copyright-pop-up`.
+
+.. image:: images/permissions-settings.*
+   :align: center
+   :width: 80%
+   :alt: Permissions settings in AtoM
 
 :ref:`Back to top <settings>`
+
+.. _inventory-settings:
+
+Inventory
+=========
+
+The Inventory list allows an :term:`administrator` to make a page of lower-
+level descriptions contained within a :term:`parent record` available on a
+separate inventory page formatted as a table with sortable columns. For more
+information, screenshots, and instructions for end users, see:
+:ref:`browse-hierarchy-inventory`.
+
+.. image:: images/inventory-settings.*
+   :align: center
+   :width: 80%
+   :alt: Inventory settings in AtoM
+
+The selections an administrator makes in this section of the settings will
+determine what :term:`levels of description <level of description>` are
+included in the inventory list when accessed by users.
+
+To multi-select multiple levels of description for inclusion in the inventory
+list, hold down the CTRL key (or the Command key on a Mac) while clicking the
+target levels.
+
+.. image:: images/inventory-select.*
+   :align: center
+   :width: 70%
+   :alt: Selecting multiple levels of description in the inventory settings
+
+Any level not selected will not appear in the inventory list results when a
+user clicks the inventory link.
+
+Because level of description :term:`terms <term>` are included in a
+:term:`taxonomy` that can be configured by users with the appropriate
+:term:`permissions <access privilege>`, a hyperlink to the Levels of
+description taxonomy is also provided - an :term:`administrator` can customize
+available terms by adding new ones, removing unused ones, or editing existing
+terms (for more information, see: :ref:`terms`). Any new term added to the
+Levels of description taxonomy will show up in the Inventory settings page the
+next time an administrator returns to the settings page.
+
+When you have selected the levels of description you want included in the
+Inventory list, remember to click the "Save" button located in the
+:term:`button block` at the bottom of the page.
+
+.. IMPORTANT::
+
+   **Configuring the Inventory settings in a multilingual environment**
+
+   If you have multilingual content in your AtoM instance, or you expect users
+   to be browsing in different cultures (using the :ref:`language-menu`), you
+   will need to configure the Inventory settings for each target culture. For
+   example, to configure the settings for English, French, and Spanish:
+
+   1. Make sure the user interface is set to "English" using the
+      :term:`language menu` - see :ref:`language-menu` for more information.
+   2. Configure the inventory settings as described above for English, and
+      save.
+   3. Using the :term:`language menu`, flip the user interface to French.
+   4. Repeat steps 1-2.
+   5. Using the :term:`language menu`, flip the user interface to Spanish, and
+      repeat steps 1-2 again.
+
+:ref:`Back to top <settings>`
+
+.. _digital-object-derivatives:
+
+Digital object derivatives
+==========================
+
+This setting will affect the :term:`digital object` derivatives generated by
+AtoM when uploading multi-page content, such as a PDF.
+
+Whenever a digital object is linked to an :term:`archival description`, AtoM
+will generate two derivative copies from the :term:`master digital object`
+(e.g. the original) -  a :term:`reference display copy`, used on the archival
+description :term:`view page`, and a :term:`thumbnail`, used in search and
+browse results, and in the digital object
+:ref:`carousel <recurring-carousel>`. By default, AtoM will use the first page
+of multi-page content (such as a PDF) when generating the derivative images.
+
+However, with multi-page content such as PDFs, the first page may not be
+useful to users browsing the content - it may be an institutional cover page
+used on all digitized content, a blank cover page, etc.
+
+This setting will allow users to set a page number that should be used when
+generating the derivative copies. It will work for both locally uploaded
+content, and for PDFs linked via URL. If a system administrator runs the
+:ref:`derivatives regeneration task <cli-regenerate-derivatives>`, AtoM will
+use the setting value when regenerating PDF derivatives.
+
+.. TIP::
+
+   If you enter a page number that does not exist for one or more of your
+   derivatives (for example, entering 99 as the value, when your PDF only has
+   9 pages), AtoM will use the closest available value (in this example, page
+   9) when generating the derivatives.
+
+If you make changes, remember to click the "Save" button in the
+:term:`button block`.
+
+.. image:: images/derivatives-settings.*
+   :align: center
+   :width: 80%
+   :alt: Digital object derivative settings in AtoM
+
+:ref:`Back to top <settings>`
+
+.. _dip-upload-settings:
+
+DIP upload
+==========
+
+.. image:: images/dip-upload-settings.*
+   :align: center
+   :width: 80%
+   :alt: DIP upload settings page in AtoM
+
+This setting is for users who are uploading content from a linked
+Archivematica instance. Archivematica is an open-source digital preservation
+system developed by Artefactual Systems, the same creators of AtoM. For more
+information, see: https://www.archivematica.org
+
+.. SEEALSO::
+
+   For information on DIP upload from Archivematica to AtoM, see the
+   following page in the Archivematica documentation:
+
+   * :ref:`Upload DIP to AtoM <archivematica:upload-atom>`
+
+Archivematica can be used to manage and prepare digital content for long-term
+preservation, and can generate a Dissemination Information Package (DIP) with
+access-copy derivatives of your :term:`master digital object` files processed
+in Archivematica, for upload into AtoM.
+
+If no additional metadata is provided with the content during preparation,
+then when uploaded to AtoM, AtoM will use the file names as the default titles
+for the associated :term:`information objects <information object>` (a.k.a.
+:term:`descriptions <archival description>`) generated, to which the digital
+objects in the DIP will be attached. However, this might produce descriptions
+with titles like ``my-picture.jpg``, or ``my.document.pdf``.
+
+When this setting is set to "Yes," AtoM will automatically strip the file
+extensions from the information object names automatically generated during
+the DIP upload process - from the examples above, this setting would lead to
+information object titles such as ``my-picture`` or ``my.document``. Users can
+still edit the description title after DIP upload to customize them as
+desired.
+
+Note that the setting will **not** retroactively affect existing
+uploads/information objects, only new information objects created during the
+DIP upload process from Archivematica. Similarly, the uploaded file itself is
+**not** affected (the extension is not stripped from the
+:term:`digital object`) - only the title of the description generated so the
+digital object can be attached and uploaded.
+
+
+:ref:`Back to top <settings>`
+
+

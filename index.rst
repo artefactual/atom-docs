@@ -68,6 +68,7 @@ This section describes how to add, edit, and delete content in AtoM.
 * :ref:`Control area <control-area>`
 * :ref:`Terms <terms>`
 * :ref:`Physical storage <physical-storage>`
+* :ref:`formatting`
 * :ref:`Exit edit mode <exit-edit-mode>`
 
 .. _access-content:
@@ -127,6 +128,7 @@ application.
 * :ref:`Import descriptions and terms <import-descriptions-terms>`
 * :ref:`Export descriptions and terms <export-descriptions-terms>`
 * :ref:`CSV import <csv-import>`
+* :ref:`csv-export`
 * :ref:`oai-pmh`
 
 .. _administer:

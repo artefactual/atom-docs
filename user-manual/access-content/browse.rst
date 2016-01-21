@@ -35,6 +35,9 @@ Browse
    :height: 24
    :width: 24
 
+.. |gears| image:: images/gears.png
+   :height: 18
+
 The Browse menus in AtoM allow users to browse complete lists of
 :term:`archival descriptions <archival description>`, as well as digital objects,
 :term:`authority records <authority record>` (for people and organizations),
@@ -66,6 +69,9 @@ the Admin-Menus menu (see: :ref:`Manage menus <manage-menus>`).
 **Jump to:**
 
 * :ref:`browse-descriptions`
+
+  * :ref:`browse-hierarchy`
+
 * :ref:`browse-authority-records`
 * :ref:`browse-institutions`
 
@@ -176,6 +182,406 @@ Additionally, the results include helpful contextual information, including:
    * :ref:`recurring-facet-filters`
    * :ref:`archival-descriptions`
 
+:ref:`Back to top <browse>`
+
+.. _browse-hierarchy:
+
+Browsing within an archival unit's hierarchy
+--------------------------------------------
+
+There are several ways to explore lower-level records (i.e. :term:`children
+<child record>`) within an :term:`archival unit` (such as a :term:`fonds`,
+:term:`collection`, or series). Each will be described below.
+
+**Jump to:**
+
+* :ref:`browse-hierarchy-facet`
+* :ref:`browse-hierarchy-top-filter`
+* :ref:`browse-hierarchy-list`
+* :ref:`browse-hierarchy-digi-objects`
+* :ref:`browse-hierarchy-inventory`
+* :ref:`browse-hierarchy-quick-search`
+
+The "Part of" facet and Top-level description filter options are performed
+from a Search/Browse page, while the remaining options are accessed from
+the :term:`view page` of an :term:`archival description`
+
+.. SEEALSO::
+
+   * :ref:`search-atom`
+   * :ref:`archival-descriptions`
+   * :ref:`navigate`
+
+
+.. _browse-hierarchy-facet:
+
+Using the "Part of" facet
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When arriving on a search or browse page, you can use the "Part of"
+:term:`facet filter` to limit results to :term:`children <child record>`
+contained within an :term:`archival unit` such as a :term:`fonds` or
+:term:`collection`. Note however that at present, the AtoM facet filters will
+only show the top 10 results for any facet - so this method will only work if
+your target archival unit is included in the facet's display (see the
+section below on :ref:`browse-hierarchy-top-filter` if your target archival
+unit is not included in the "Part of" facet filter).
+
+.. SEEALSO::
+
+   More information on using the search/browse pages and the facet filters
+   can be found in the sections listed below:
+
+   * :ref:`search-atom`
+   * :ref:`browse`
+   * :ref:`recurring-facet-filters`
+
+**To use the "Part of" facet for limiting results to a single archival unit:**
+
+1. Using the :ref:`browse-menu` located in the :ref:`atom-header-bar`, navigate
+   to **Browse > Archival descriptions**. For more information on navigation in
+   AtoM, see: :ref:`navigate`.
+2. Make sure that the top-level descriptions filter is turned off - by
+   default, AtoM will display only top-level :term:`parent <parent record>`
+   records when arriving on the Browse page. You can display all results by
+   clicking the **X** on the "top-level descriptions" :term:`filter tag`.
+3. In the left-hand column, locate the "Part of" facet filter. The facet will
+   display the top 10 results - e.g. those top-level records with the most
+   :term:`children <child record>`. For more information on using facet
+   filters in AtoM, see: :ref:`recurring-facet-filters`
+4. Click on the name of the :term:`archival unit` (e.g. fonds or collection)
+   whose lower-level records (:term:`children <child record>`) you would like
+   to explore.
+5. AtoM will reload the page with the results filtered to the chosen archival
+   unit. This will be indicated, and can be quickly removed, via the
+   :term:`filter tag` with the name of the unit at the top of the
+   search/browse results page. You can continue to apply further facets and
+   fliters as desired to narrow your results within the selected archival unit.
+
+.. _browse-hierarchy-top-filter:
+
+Using the top-level description filter
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+TO ADD AFTER SEARCH PAGE REDESIGN
+
+.. _browse-hierarchy-list:
+
+Using the "Browse as list" button
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you are already on the view page of an :term:`archival description` that
+includes a descriptive hierarchy (i.e. a top-level description such as a
+:term:`fonds`, :term:`collection`, or series that has lower-level
+:term:`children <child record>`), you can explore the descriptions contained
+in the :term:`archival unit` using the browse buttons included in the
+"Explore" section of the right-hand :term:`context menu`. For more information
+on context menu items in AtoM, see: :ref:`context-menu` and
+:ref:`recurring-page-elements`.
+
+There are two options for browsing within an archival unit included here - the
+"Browse as list" button, and the "Browse digital objects" button.
+Additionally, if it has been configured by an :term:`administrator`, there
+may also be an option to view an inventory. This section will describe the
+"Browse as list" button - see the
+:ref:`Browse digital objects button <browse-hierarchy-digi-objects>` and
+:ref:`Browse inventory list <browse-hierarchy-inventory>` sections below for
+the other options in this part of the context menu.
+
+.. NOTE::
+
+   The "Browse as list" and the "Browse digital objects" links will appear in
+   the right-hand :term:`context menu` in all cases - even if there are no
+   lower-level descriptions or digital objects to browse. So, it is possible
+   that clicking on the link will lead to a results page with 0 results.
+
+**To use the Browse as list button:**
+
+1. Navigate to an :term:`archival description` that is part of the
+   :term:`archival unit` whose :term:`children <child record>` you wish to
+   explore - it does not have to be the top-level :term:`parent record`. For
+   more information on searching, browsing, and navigation in AtoM, see:
+   :ref:`access-content`.
+2. In the right-hand :term:`context menu`, locate the *Explore* section - you
+   will see browse options listed there, including the "Browse as list"
+   button.
+
+.. image:: images/browse-collection-options.*
+   :align: center
+   :width: 30%
+   :alt: An image of the Explore section of the right-hand context menu
+
+3. Click on the "Browse as list" link. AtoM will redirect you to a browse
+   page, limited to the current :term:`archival unit` - this will be indicated
+   by the :term:`filter tag` at the top of the browse page with the name of
+   the top-level description. If you click the **X** to remove the filter tag,
+   AtoM will reload all search/browse results (i.e. the page will no longer be
+   limited to the selected archival unit).
+
+.. NOTE::
+
+   The top-level record for the selected :term:`archival unit` (for example,
+   the :term:`fonds` or :term:`collection` description) will **not** be
+   included in the results. The "Browse as list" option will only return
+   results for :term:`children <child record>` of the top-level record.
+
+4. You can continue to apply further facets and fliters as desired to narrow
+   your results within the selected archival unit.
+
+.. _browse-hierarchy-digi-objects:
+
+Using the "Browse digital objects" button
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you are already on the view page of an :term:`archival description` that
+includes a descriptive hierarchy (i.e. a top-level description such as a
+:term:`fonds`, :term:`collection`, or series that has lower-level
+:term:`children <child record>`), you can explore the descriptions contained
+in the :term:`archival unit` using the browse buttons included in the
+"Explore" section of the right-hand :term:`context menu`. For more information
+on context menu items in AtoM, see: :ref:`context-menu` and
+:ref:`recurring-page-elements`.
+
+There are two options for browsing within an archival unit included here - the
+"Browse as list" button, and the "Browse digital objects" button.
+Additionally, if it has been configured by an :term:`administrator`, there
+may also be an option to view an inventory. This section will describe the
+"Browse digital objects" button - see the
+:ref:`Browse digital objects button <browse-hierarchy-list>` section above,
+and the :ref:`Browse inventory list <browse-hierarchy-inventory>` section below
+for the other options in this part of the context menu.
+
+The "Browse digital objects" button will allow you to explore the
+:term:`digital objects <digital object>` associated with descriptions included
+in the target :term:`archival unit`, on a dedicated browse page described in
+the :ref:`browse-digital-objects` section below, but limited to that specific
+descriptive hierarchy.
+
+.. NOTE::
+
+   The "Browse as list" and the "Browse digital objects" links will appear in
+   the right-hand :term:`context menu` in all cases - even if there are no
+   lower-level descriptions or digital objects to browse. So, it is possible
+   that clicking on the link will lead to a results page with 0 results.
+
+**To use the Browse digital objects button:**
+
+1. Navigate to an :term:`archival description` that is part of the
+   :term:`archival unit` whose :term:`children <child record>` you wish to
+   explore - it does not have to be the top-level :term:`parent record`. For
+   more information on searching, browsing, and navigation in AtoM, see:
+   :ref:`access-content`.
+2. In the right-hand :term:`context menu`, locate the *Explore* section - you
+   will see browse options listed there, including the "Browse digital
+   objects" button.
+
+.. image:: images/browse-collection-options.*
+   :align: center
+   :width: 30%
+   :alt: An image of the Explore section of the right-hand context menu
+
+3. Click on the "Browse digital objects" link. AtoM will redirect you to a
+   digital object browse page, limited to the current :term:`archival unit` -
+   this will be indicated by the :term:`filter tag` at the top of the browse
+   page with the name of the top-level description. If you click the **X** to
+   remove the filter tag, AtoM will reload all digital object browse results
+   (i.e. the page will no longer be limited to the selected archival unit).
+
+.. image:: images/browse-digital-objects-button.*
+   :align: center
+   :width: 70%
+   :alt: An image of the Digital object browse page limited to a collection
+
+.. NOTE::
+
+   The top-level record for the selected :term:`archival unit` (for example,
+   the :term:`fonds` or :term:`collection` description) will **not** be
+   included in the results. The "Browse digital objects" option will only
+   return results for :term:`children <child record>` of the top-level record
+   - so if there is a digital object attached to the top-level record, it will
+   not appear in these results!
+
+4. You can use the :ref:`recurring-sort-button` and the media type filter
+   on the page to further sort or limit the results as desired.
+
+.. _browse-hierarchy-inventory:
+
+Using the Inventory list
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+The Inventory list allows an :term:`administrator` to make a page of lower-
+level descriptions contained within a :term:`parent record` available on a
+separate inventory page formatted as a table with sortable columns.
+
+.. IMPORTANT::
+
+   The Inventory list requires configuration by an :term:`administrator`
+   before it will appear in the AtoM user interface. For instructions on
+   configuring the Inventory, see the :ref:`settings` page;
+   specifically, :ref:`inventory-settings`.
+
+.. image:: images/inventory-list.*
+   :align: center
+   :width: 80%
+   :alt: An image of the Inventory list for a series
+
+If there are a lot of lower-level descriptions (for example, many files and
+items in a series), this can be a useful way to quickly browse the contents of
+the :term:`archival unit` - and the sortable columns can be used to sort and
+view the lower-level :term:`children <child record>` in a way that the
+:term:`treeview` does not allow. Columns in the inventory page include:
+
+* Identifier
+* Title
+* Level of description
+* Date
+* Digital object
+
+Only the :term:`digital object` column is not sortable - this column will
+provide an indication of whether or not there is a digital object attached to
+the description - if so, the row will have a hyperlink called "View" in the
+Digital object column. Clicking on the "View" link will take a user directly
+to the :term:`master digital object` - if a user does not have
+:term:`permission <access privilege>` to view the master, the column's value
+will be empty for that row.
+
+Whether or not the Inventory link appears on a particular description will
+depend on how it has been configured in the settings page - there, an
+:term:`administrator` determines which levels of description will be included
+(see: :ref:`inventory-settings` for more information). If the current
+:term:`archival description` you are viewing does **not** include lower-level
+:term:`child <child record>` descriptions matching the settings, no link will
+appear.
+
+Because it is configurable, an inventory list may not include *ALL* lower-level
+records available in a particular archival unit. For example, if you viewed
+the inventory page from a :term:`fonds`-level description that included
+sub-fonds, series, files, and items, but the administrator has configured the
+inventory settings to display only files and items, then at the fonds level,
+the inventory list will display all files and items (including those contained
+within lower-level subfonds and series), but the subfonds and series records
+themselves will not be included on the inventory page.
+
+Similarly, the Inventory link will only appear on :term:`parent <parent record>`
+records - for example, if you are viewing a file that is part of a series, you
+would need to navigate to the series record to see the inventory link.
+
+**To use the Inventory list:**
+
+1. Navigate to the :term:`archival description` whose
+   :term:`children <child record>` you would like to explore. For more
+   information on navigation in AtoM, see: :ref:`access-content`.
+
+.. TIP::
+
+   If you are looking for a particular record in an archival unit (such as a
+   series in a fonds), the other entries in this section might be useful to
+   you! See above and below, :ref:`browse-hierarchy`. See also: information on
+   using the :ref:`context-menu-treeview` for navigation, and information on the
+   :ref:`treeview-search`.
+
+2. If the description includes :term:`children <child record>` that match the
+   inventory settings configured by the :term:`administrator` (see:
+   :ref:`inventory-settings`), then an "Inventory" link will appear in the
+   right-hand :term:`context menu`, in the *Explore* section:
+
+.. image:: images/inventory-link.*
+   :align: center
+   :width: 80%
+   :alt: An image of the Inventory link in the right-hand context menu of an
+         archival description.
+
+3. Click on the "Inventory" link. AtoM will redirect you to the inventory list
+   of lower-level records for the chosen description.
+
+.. image:: images/inventory-list-annotated.*
+   :align: center
+   :width: 80%
+   :alt: An image of the Inventory list for a series, with annotations
+
+4. The Inventory list page will include the title of the parent description,
+   as well as a :term:`breadcrumb trail` back to the top-level description for
+   the :term:`archival unit`. On the right-hand side of the page, a button to
+   return to the :term:`view page` of the parent :term:`archival description`
+   is also included.
+
+5. The column headers of the inventory list that appear in blue can be clicked
+   to sort the inventory list by that column. Clicking again will reverse the
+   sort order of the column (for example, from A-Z to Z-A). The only column
+   that cannot be sorted is the Digital objects column.
+
+6. The Digital object column will indicate whether or not there is a
+   :term:`digital object` associated with the :term:`archival description`
+   listed in the inventory list row. If there is, and the user has sufficient
+   :term:`permissions <access privilege>` to view the
+   :term:`master digital object`, then AtoM will provide a direct link to the
+   master digital object.
+
+.. NOTE::
+
+   By default, public users who are not logged into AtoM do not have
+   permission to access the :term:`master digital object` for locally uploaded
+   digital content. This can be changed by an :term:`administrator` via
+   **Admin > Groups** - edit the archival description permissions for the
+   "anonymous" group to grant permission to "View master." See:
+   :ref:`edit-user-permissions` and :ref:`manage-user-accounts`.
+
+   Note that the above means that there are many possible scenarios where a
+   digital object is attached to a description, but there is no indication of
+   this in the Inventory list - it will depend on the
+   :term:`access privileges <access privilege>` of the user viewing the
+   inventory list.
+
+7. If there are more than 10 results, a pager, with a count of the total
+   number of results above it, will be included at the bottom of the page.
+
+.. TIP::
+
+   10 results per page is just the default setting in AtoM, but this can be
+   adjusted by an :term:`administrator` via **Admin > Settings > Global**. For
+   more information, see: :ref:`results-page`. The number of results included
+   on a single page of the inventory list is controlled by this global
+   setting, which affects all paged-results in the application.
+
+.. _browse-hierarchy-quick-search:
+
+Using the Quick search bar's browse option
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The :term:`view page` for an :term:`archival description` includes a feature
+known as the Treeview Quick search - it allows a user to quickly search an
+:term:`archival unit` for a specific lower-level description. Instructions on
+how to use it can be found at:
+
+* :ref:`treeview-search`
+
+However, whenever a search query is returned with at least 1 matching result,
+a link that allows a user to browse all descriptions in a dedicated
+search/browse page, limited to the current archival unit, is also included:
+
+.. image:: images/quicksearch-browse-link.*
+   :align: center
+   :width: 30%
+   :alt: An image of the browse descriptions link on the Quick search results page
+
+If you click the "Browse all descriptions" link included at the bottom of the
+Quick search results, AtoM will redirect you to a search/browse results page,
+limited to the current :term:`archival unit`.
+
+.. TIP::
+
+   The Quick search bar will accept Boolean operators (see
+   :ref:`advanced-search-operators` for more information), including the ** * **
+   wildcard character. If you just want to use the Quick search to access the
+   browse link, you can enter an asterix and press enter - AtoM will return
+   a subset of all results, and then provide the browse link.
+
+   Of course, an easier way to do this would be to use the "Browse as list"
+   button, described :ref:`above <browse-hierarchy-list>`
+
+
+:ref:`Back to top <browse>`
+
 .. _browse-authority-records:
 
 |authicon| Browse people, families and organizations
@@ -233,7 +639,34 @@ Click the Browse menu, then click Archival Institutions.
 .. image:: images/browse-institutions.*
    :align: center
    :width: 80%
-   :alt: View of browsing archival institutions
+   :alt: View of browsing archival institutions, card view
+
+There are 2 ways of viewing the browse page for institutions - the "card"
+view, pictured above, or the "table" view:
+
+.. image:: images/browse-institutions-table.*
+   :align: center
+   :width: 80%
+   :alt: View of browsing archival institutions, table view
+
+In the table view, the columns that appear as blue hyperlinks (the Name,
+Region, and Locality columnns) can be clicked to sort the results
+alphabetically by that column. Click the column header once to sort in
+descending (A-Z) order; click again to sort in ascending (Z-A) order.
+
+Users can flip between the table and card views while browsing, using the
+view toggle button that appears to the right of the archival institution search box:
+
+.. image:: images/view-toggle-repository.*
+   :align: center
+   :width: 80%
+   :alt: An image of the view toggle button on the repository browse page
+
+.. TIP::
+
+   An :term:`administrator` can set the default view for the archival
+   institution browse page, in |gears| **Admin > Settings > Global**. For more
+   information, see: :ref:`default-repo-view`.
 
 If the institution has uploaded a logo as part of their institution record,
 the logo will be displayed in the browse display (see:
@@ -248,7 +681,7 @@ users, which can be changed by the user to Most recent or identifier via the
 
    :term:`Administrators <administrator>` can change the default sort order
    on search/browse pages for both public and authenticated (i.e. logged in)
-   users, in **Admin > Settings > Global**. For more information, see:
+   users, in |gears| **Admin > Settings > Global**. For more information, see:
    :ref:`sort-browser-users` and :ref:`sort-browser-anonymous`.
 
 Users can narrow the results list using the available
@@ -258,8 +691,9 @@ more information on using the facet filters in AtoM, see:
 :ref:`Using facet filters in AtoM <using-facet-filters>`.
 
 The archival institution browse page also includes a
-:term:`dedicated search box`. For more information on searching for archival
-institutions in AtoM, see: :ref:`Archival institution search
+:term:`dedicated search box`, and further filters available under the
+"Advanced" button that appears below the search box. For more information on
+searching for archival institutions in AtoM, see: :ref:`Archival institution search
 <dedicated-search-institutions>`. For general information on working with
 :term:`archival institution` records, see: :ref:`archival-institutions`.
 
