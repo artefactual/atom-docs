@@ -106,7 +106,7 @@ link for more instructions: http://upstart.ubuntu.com/cookbook/#initctl.
 
 An AtoM worker needs to know where the job server is running, which is defined
 in an application setting called :guilabel:`gearman_job_server` under
-:file:`config/app.yml`. Whenever you change that setting, make sure that the
+:file:`config/gearman.yml`. Whenever you change that setting, make sure that the
 Symfony cache is refreshed and the worker is restarted.
 
 Note that the job server will perfectly handle multiple workers running
