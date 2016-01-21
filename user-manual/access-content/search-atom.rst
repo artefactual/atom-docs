@@ -764,6 +764,14 @@ Received extent units
 For more information on working with accession records in AtoM, see:
 :ref:`accession-records`. See also: :ref:`deaccessions`.
 
+.. TIP::
+
+   In order to search by accession number, please use the prefix "identifier:" before
+   the accession date (i.e. identifier:2015-12-28). This will pull up all accessions
+   that begin with the accession date 2015-12-28. Do not use the rest of the accession
+   number, as the backslash will break the search. This issue has been marked for resolution
+   in the 2.3 release of AtoM.
+
 .. NOTE::
 
    To view and search for :term:`accession records <accession record>` in
