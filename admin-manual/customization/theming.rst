@@ -78,7 +78,7 @@ Let's begin to do some real work:
    $ git push
 
 We've created an empty directory where our plugin is going to be contained,
-made a git repository of it, track our first file and publish our work to
+made a git repository of it, tracked our first file and published our work to
 GitHub! However, our plugin does not meet the needed requirements for AtoM to
 recognize it and allow us to enable it. Let's make that happen:
 
@@ -97,36 +97,43 @@ following contents:
 
    class arCorcovadoPluginConfiguration extends sfPluginConfiguration
    {
+     // Summary and version. AtoM recognizes any plugin as a theme as long as
+     // the $summary string contains the word "theme" in it (case-insensitive).
      public static
        $summary = 'Theme plugin, extension of arCorcovadoPlugin.',
        $version = '0.0.1';
 
      public function contextLoadFactories(sfEvent $event)
      {
+       // Here we are including the CSS stylesheet build in our pages.
        $context = $event->getSubject();
        $context->response->addStylesheet('/plugins/arCorcovadoPlugin/css/min.css', 'last', array('media' => 'all'));
      }
 
      public function initialize()
      {
+       // Run the clas method contextLoadFactories defined above once Symfony
+       // is done loading the internal framework factories.
        $this->dispatcher->connect('context.load_factories', array($this, 'contextLoadFactories'));
 
+       // This allows us to override the application decorators.
        $decoratorDirs = sfConfig::get('sf_decorator_dirs');
        $decoratorDirs[] = $this->rootDir.'/templates';
        sfConfig::set('sf_decorator_dirs', $decoratorDirs);
 
+       // This allows us to override the contents of the application modules.
        $moduleDirs = sfConfig::get('sf_module_dirs');
        $moduleDirs[$this->rootDir.'/modules'] = false;
        sfConfig::set('sf_module_dirs', $moduleDirs);
      }
    }
 
-You may also have to clear the Symfony cache, depending on the configuration of
-your environment but it's not necessary in our Vagrant box. Now open the theme
-manager in AtoM found under the Admin menu. The new arCorcovadoPlugin should
-appear and you can enable it now. We have not defined our stylesheets yet so
-you will basically see a bunch of text and links on a blank page. We are going
-to fix that now.
+You may also have to :ref:`clear the Symfony cache <maintenance-clear-cache>`,
+depending on the configuration of your environment but it's not necessary in
+our Vagrant box. Now open the theme manager in AtoM found under the Admin menu.
+The new arCorcovadoPlugin should appear and you can enable it now. We have not
+defined our stylesheets yet so you will basically see a bunch of text and links
+on a blank page. We are going to fix that now.
 
 Download the reference stylesheet and compile it:
 
@@ -164,8 +171,8 @@ controllers, filters, signal callbacks and much more. Take a look at our
 `arArchivesCanadaPlugin <https://github.com/artefactual/atom/tree/qa/2.3.x/plugins/arArchivesCanadaPlugin>`_.
 This theme overrides the original homepage template as well as the search box
 and the main header template. Other plugins in the same repository may give you
-more ideas on what are the possibilities - we've built much more than simple
-application themes through plugins, e.g. our metadata templates or our initial
-HTTP API work are Symfony plugins too.
+more ideas of what's possible - we've built much more than simple application
+themes through plugins, e.g. our metadata templates or our initial HTTP API
+work are Symfony plugins too.
 
 :ref:`Back to the top <customization-theming>`
