@@ -112,7 +112,7 @@ following contents:
 
      public function initialize()
      {
-       // Run the clas method contextLoadFactories defined above once Symfony
+       // Run the class method contextLoadFactories defined above once Symfony
        // is done loading the internal framework factories.
        $this->dispatcher->connect('context.load_factories', array($this, 'contextLoadFactories'));
 
