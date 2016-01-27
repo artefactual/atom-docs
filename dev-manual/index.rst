@@ -9,6 +9,7 @@ set of links to each chapter's main sections.
 
 .. toctree::
 
-
+   overview/api-intro
+   endpoints/browse-taxonomies
 
 :ref:`Back to top <dev-manual-index>`
