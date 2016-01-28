@@ -57,38 +57,32 @@ Example response
 
 .. code-block:: json
 
- HTTP/1.1 200 OK
- Content-Type: application/json; charset=utf-8
- [
-     {
-         "name": "Collection",
-         "notes": [
-             "scope note 1",
-             "scope note 2"
-         ]
-     },
-     {
-         "name": "File"
-     },
-     {
-         "name": "Fonds"
-     },
-     {
-         "name": "Item"
-     },
-     {
-         "name": "Part"
-     },
-     {
-         "name": "Series"
-     },
-     {
-         "name": "Subfonds"
-     },
-     {
-         "name": "Subseries"
-     }
- ]
+   HTTP/1.1 200 OK
+   Content-Type: application/json; charset=utf-8
+
+   [{
+       "name": "Collection"
+   }, {
+       "name": "File"
+   }, {
+       "name": "Fonds"
+   }, {
+       "name": "Item"
+   }, {
+       "name": "Part"
+   }, {
+       "name": "Series"
+   }, {
+       "name": "sub-series"
+   }, {
+       "name": "sub-sub-series"
+   }, {
+       "name": "Subfonds"
+   }, {
+       "name": "Subseries"
+   }, {
+       "name": "subsubseries"
+   }]
 
 Request parameters
 ==================

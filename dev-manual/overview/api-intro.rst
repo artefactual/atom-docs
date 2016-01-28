@@ -67,6 +67,10 @@ code (examples include en, fr, es - see
 `Wikipedia <https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__ for a
 list of available codes) as the parameter value.
 
+This parameter is not required for an API request. If it is not included, then
+AtoM will return the response with data from the default culture of the
+application.
+
 AtoM is a multilingual application that supports the translation of both user
 interface elements, and user content. This means that it is possible that a
 particular resource is available in more than one culture - the availability
