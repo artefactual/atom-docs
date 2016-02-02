@@ -241,13 +241,8 @@ Apache
 ``````
 .. warning::
 
-<<<<<<< HEAD
-   Remember that our preferred choice is :ref:`linux-dependency-httpd-nginx` but it
-   is perfectly possible to use Apache and we have verified that it works.
-=======
    Remember that our preferred choice is :ref:`linux-dependency-httpd-nginx` but
    it is perfectly possible to use Apache and we have verified that it works.
->>>>>>> 27b2b8515bacc87b3f028374fefa26bd93acbcae
 
 Install the necessary packages:
 
@@ -281,7 +276,7 @@ You also need to decide if you are going to use php5-fpm or mod_php. We prefer
 the former, in combination with Nginx, but you can combine php5-fpm and Apache
 as long as you install the Apache module mod_fastcgi (the corresponding Ubuntu
 package is called libapache2-mod-fastcgi). We have not tried this ourselves but
-it is definitely `possible <http://blog.starcklin.com/2013/08/install-mod-fastcgi-and-php5-fpm-on-ubuntu/>`__.
+it is definitely `possible <https://wiki.apache.org/httpd/PHP-FPM>`__.
 
 .. _linux-dependency-php:
 
