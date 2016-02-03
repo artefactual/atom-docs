@@ -1,8 +1,8 @@
 .. _isad-template:
 
-=========================================================================================
-General International Standard Archival Description (ISAD(G)) data entry and CSV template
-=========================================================================================
+=============================================================
+General International Standard Archival Description (ISAD(G))
+=============================================================
 
 On this page you will find:
 
@@ -22,8 +22,7 @@ On this page you will find:
 ISAD CSV template
 =================
 
-To download the ISAD(G) CSV template for AtoM, please visit our wiki page
-(link to come).
+To download the ISAD(G) CSV template for AtoM, please visit our `wiki page <https://wiki.accesstomemory.org/Resources/CSV_templates>`_.
 
 Field descriptions
 ==================

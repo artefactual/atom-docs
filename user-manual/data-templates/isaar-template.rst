@@ -1,8 +1,8 @@
 .. _isaar-template:
 
-============================================================================================
-International Standard Archival Authority Record for Corporate Bodies, Persons, and Families
-============================================================================================
+========================================================================================================
+International Standard Archival Authority Record for Corporate Bodies, Persons, and Families (ISAAR-CPF)
+========================================================================================================
 
 On this page you will find:
 
@@ -11,7 +11,8 @@ On this page you will find:
 * Description of fields used when entering or importing
   :term:`authority records <authority record>` using ISAAR(CPF)
   in a :term:`CSV` file or entering the data manually.
-* `Encoded Archival Context (EAC-CPF XML) <http://eac.staatsbibliothek-berlin.de/>`__
+* `Encoded Archival Context (EAC-CPF XML) <http://eac.staatsbibliothek-berlin.de/>`_
+
   mappings
 
 .. SEEALSO::
@@ -25,8 +26,7 @@ On this page you will find:
 ISAAR(CPF) Authority record CSV template
 ========================================
 
-To download the ISAAR(CPF) CSV templates for AtoM, please visit our wiki page
-(link to come).
+To download the ISAAR(CPF) CSV templates for AtoM, please visit our `wiki page <https://wiki.accesstomemory.org/Resources/CSV_templates#Other_CSV_templates>`_ and download the Authority Record CSV Template.
 
 Field descriptions
 ==================

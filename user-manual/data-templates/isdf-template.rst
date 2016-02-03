@@ -9,9 +9,9 @@ template for describing functions.
 
 The ISDF template is based on the guidelines found in the *International Standard
 For Describing Functions* (ISDF). ISDF is maintained by the International Council
-on Archives (`ICA <http://www.ica.org/>`__), and is available at:
+on Archives (`ICA <http://www.ica.org/>`__), and is available at `on the ICA website <http://www.ica.org/10208/standards/isdf-international-standard-for-describing-functions.html>`_.
 
-* http://www.ica.org/10208/standards/isdf-international-standard-for-describing-functions.html
+Please note that there is currently no CSV import option for ISDF.
 
 .. SEEALSO::
 

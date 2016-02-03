@@ -1,8 +1,8 @@
 .. _rad-template:
 
-================================================================
-Rules for Archival Description (RAD) data entry and CSV template
-================================================================
+====================================
+Rules for Archival Description (RAD)
+====================================
 
 On this page you will find:
 
@@ -23,7 +23,7 @@ RAD CSV template
 ================
 
 To download the Rules for Archival Description CSV template for AtoM,
-please visit our wiki page (link to come).
+please visit our `wiki page <https://wiki.accesstomemory.org/Resources/CSV_templates>`_.
 
 Field descriptions
 ==================

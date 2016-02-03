@@ -1,8 +1,8 @@
 .. _isdiah-template:
 
-=========================================================================
-International Standard for Describing Institutions with Archival Holdings
-=========================================================================
+==================================================================================
+International Standard for Describing Institutions with Archival Holdings (ISDIAH)
+==================================================================================
 
 On this page you will find a description of the fields used when entering
 :term:`archival institution` data  into AtoM's ISDIAH-based template
@@ -16,9 +16,9 @@ Field descriptions
 ==================
 
 ISDIAH is maintained by the `International Council on Archives
-<http://www.ica.org/>`_ and is available at:
+<http://www.ica.org/>`_ and is available `on the ICA website <http://www.ica.org/10198/standards/isdiah-international-standard-for-describing-institutions-with-archival-holdings.html>`_.
 
-* http://www.ica.org/10198/standards/isdiah-international-standard-for-describing-institutions-with-archival-holdings.html
+Please note that there is currently no CSV import option for ISDF.
 
 Information below includes:
 
