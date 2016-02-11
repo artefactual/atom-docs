@@ -26,8 +26,8 @@ Admin/Plugins.
 There are three endpoints available:
 
 * :ref:`Browse taxonomy terms <api-browse-taxonomies>`
-* Browse information objects
-* Read information object
+* :ref:`Browse information objects <api-browse-io>`
+* :ref:`Read information object <api-read-io>`
 
 .. _api-intro-auth:
 

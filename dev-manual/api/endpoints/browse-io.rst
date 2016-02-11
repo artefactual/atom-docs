@@ -39,7 +39,7 @@ Information object fields returned include:
 * **repository**: the :term:`archival institution` associated with the
   description.
 * **physical_characteristics**: Physical characteristics and technical
-   requirements; equivalent to ISAD(G) 3.4.4.
+  requirements; equivalent to ISAD(G) 3.4.4.
 * **place_access_points**: :term:`place` :term:`access points <access point>`
   that have been associated with the description. Can return multiple values.
 * **thumbnail_url**: the path to the :term:`thumbnail` of a linked
@@ -287,26 +287,26 @@ Example requests with Boolean criteria
 **Return results with** ``conveyance`` **AND** ``issuing`` **in scope and
 content:**
 
-   /api/informationobjects?sq0=conveyance+AND+issuing&sf0=scopeAndContent
+``/api/informationobjects?sq0=conveyance+AND+issuing&sf0=scopeAndContent``
 
 Or, this could also be expressed as:
 
-  /api/informationobjects?sq0=conveyance&sf0=scopeAndContent&sq1=issuing&sf1=scopeAndContent
+``/api/informationobjects?sq0=conveyance&sf0=scopeAndContent&sq1=issuing&sf1=scopeAndContent``
 
 **Return results with** ``"conveyance issuing"`` **(e.g. that exact string)
 in Scope and content:**
 
-   /api/informationobjects?sq0="conveyance+issuing"&sf0=scopeAndContent
+``/api/informationobjects?sq0="conveyance+issuing"&sf0=scopeAndContent``
 
 **Return results with** ``conveyance`` **OR** ``issuing`` **in the scope and
 content field:**
 
-   /api/informationobjects?sq0=conveyance+issuing&sf0=scopeAndContent
+``/api/informationobjects?sq0=conveyance+issuing&sf0=scopeAndContent``
 
 **Return results with** ``coffee`` **OR** ``chocolate`` **in any field, AND**
 (``photo*`` OR ``picture*`` OR ``image*``) **in Extent and medium:**
 
-   /api/informationobjects?sq0=chocolate&so1=or&sq1=coffee&so2=and&sq2=photo*+OR+picture*+OR+image*&sf2=extentAndMedium&topLod=0
+``/api/informationobjects?sq0=chocolate&so1=or&sq1=coffee&so2=and&sq2=photo*+OR+picture*+OR+image*&sf2=extentAndMedium&topLod=0``
 
 .. image:: images/api-browse-io-tip2.*
   :align: center
@@ -320,20 +320,18 @@ Filter parameters
 
 The filter parameters below are the same as those found in the
 :term:`user interface` as part of the :ref:`advanced-search` module, with some
-small variations (such as the ``skip`` parameter). In many cases, the
-parameters expect internal IDs as the values for the parameters. Since all
-:term:`terms <term>` in AtoM exist in user-editable
-:term:`taxonomies <taxonomy>`, it is not possible to list all available
-options for each parameter - it will depend on the data in your particular
-system. Where possible, we've listed the IDs for the default terms that ship
-with AtoM as terms in taxonomies derived from controlled value lists (e.g.
-those drawn from related standards such as the PREMIS rights module, as in the
-Copyright status term IDs listed below). For other values, you can find a list
-of some of the default term IDs in ``lib/model/QubitTerm.php``, or you can
-always perform an advanced search via the :term:`user interface`, and then look
-at the resulting URL to see how the parameter has been passed - the same
-parameter and ID can be used in the API. Some examples will be included below
-as well.
+small variations (such as the ``skip`` parameter).
+
+In many cases, the parameters expect internal IDs as the values for the
+parameters. Since these ids are automatically generated via mysql autonumerics
+(and thus subject to change over time), and because all :term:`terms <term>`
+in AtoM exist in user-editable :term:`taxonomies <taxonomy>`, it is not possible
+to list all available options for each parameter - it will depend on the data
+in your particular system. For some values, you can find a list of some of the
+default term IDs in ``lib/model/QubitTerm.php``, or you can always perform an
+advanced search via the :term:`user interface`, and then look at the resulting
+URL to see how the parameter has been passed - the same parameter and ID can be
+used in the API.
 
 .. TIP::
 
@@ -358,6 +356,9 @@ as well.
    * :ref:`terms`
    * :ref:`recurring-facet-filters`
 
+Filter parameters available for the Browse information object endpoint
+include:
+
 * **sf_culture**: ISO 639-1 language code for display. See :ref:`api-intro-i18n`
   for more information on this parameter.
 * **limit**: The maximum number of information objects returned in a single
@@ -366,7 +367,8 @@ as well.
   (e.g. request less results than the global setting), but increasing the
   limit parameter will not override the Results per page setting value.
 
-  * *Example* - return only 5 results per request: ``/api/informationobjects?limit=1``
+  * *Example* - return only 5 results per request:
+    ``/api/informationobjects?limit=5``
 
 * **skip**: The amount of information objects skipped when returning the
   results. This parameter can be used to page results - for example, if the
@@ -414,31 +416,19 @@ as well.
 * **copyrightStatus**: Return records with a particular copyright status,
   based on PREMIS rights statements associated with the description. For more
   information on PREMIS rights in AtoM, see: :ref:`rights`. Expects the
-  internal ID of a particular term as the value. Options included as default
-  :term:`terms <term>` available at installation in AtoM:
+  internal ID of a particular term from the Copyright status
+  :term:`taxonomy` as the value.
 
-  * ``335``: Under copyright
-  * ``336``: Public domain
-  * ``337``: Unknown
   * *Example* - Return records with a PREMIS rights statement that indicates
     they are under copyright: ``/api/informationobjects?copyrightStatus=335``
 
 * **materialType**: Relates to the Canadian
-  :ref:`RAD standard's <rad-template>` General material desgination
-  terms - terms are found in AtoM's Material type  :term:`taxonomy`. Expects the
-  internal ID of a particular term as the value. Options included as default
-  :term:`terms <term>` available at installation in AtoM:
+  :ref:`RAD standard's <rad-template>` General material desgination (GMD)
+  terms - terms are found in AtoM's Material type  :term:`taxonomy`.
+  Returns results limited to those linked to a particular GMD term. Expects
+  the internal ID of a particular :term:`term` from the Material type taxonomy
+  as its value.
 
-  * ``261``: Architectural drawing
-  * ``262``: Cartographic material
-  * ``263``: Graphic material
-  * ``264``: Moving images
-  * ``265``: Multiple media
-  * ``266``: Object
-  * ``267``: Philatelic record
-  * ``268``: Sound recording
-  * ``269``: Technical drawing
-  * ``270``: Textual record
   * *Example* - Return records with a General material designation of "Moving
     images": ``/api/informationobjects?materialType=264``
 
@@ -449,29 +439,17 @@ as well.
   * *Example* - return records in French: ``/api/informationobjects?languages=fr``
 
 * **levels**: Return results limited to a specified level of description.
-  Expects an ID as the parameter value. Like all :term:`taxonomy` terms in AtoM,
-  these :term:`terms <term>` can be user-defined, so the IDs may vary. Options
-  included as default :term:`terms <term>` available at installation in AtoM:
+  Expects a term ID from the Levels of description taxonomy as the parameter
+  value. Like all :term:`taxonomy` terms in AtoM, these :term:`terms <term>` can
+  be user-defined, so the IDs may vary.
 
-  * ``221``: Fonds
-  * ``222``: Subfonds
-  * ``223``: Collection
-  * ``224``: Series
-  * ``225``: Subseries
-  * ``226``: File
-  * ``227``: Item
   * *Example* - Return records with a level of description of "Series":
     ``/api/informationobjects?levels=224``
 
 * **mediaTypes**: Filters results based on the :term:`digital object`
   linked to the descriptions returned. Expects the internal id of the default
-  terms used in the Media Type taxonomy:
+  terms used in the Media type taxonomy:
 
-  * ``135``: Audio
-  * ``136``: Image
-  * ``137``: Text
-  * ``138``: Video
-  * ``139``: Other
   * *Example* - Return records with a linked digital object that is an image:
     ``/api/informationobjects?mediaTypes=136``
 
@@ -509,13 +487,11 @@ as well.
 * **genres**: Returns records filtered by their association to a
   particular genre :term:`access point`. For more information on
   linking an :term:`archival description` to an access point, see:
-  :ref:`add-term-fly`. Expects the internal genre term ID as a value. AtoM
+  :ref:`add-term-fly`. Expects a specific ID for one of the
+  :term:`terms <term>` in the Genre :term:`taxonomy` as a value. AtoM
   includes 45 default terms at installation, taken from the US Library of
   Congress' "Basic Genre Terms for Cultural Heritage Materials," available at:
-  http://memory.loc.gov/ammem/techdocs/genre.html. The range of default term
-  IDs in AtoM is from 372 (Advertisemnts) to 415 (Transcriptions) - use the
-  sample SQL query provided in the tip above to determine the full list of
-  default term IDs.
+  http://memory.loc.gov/ammem/techdocs/genre.html.
 
   * *Example* - Return records with "Photographs" (ID = 403) as a linked
     genre access point: ``/api/informationobjects?genres=403``
@@ -590,16 +566,16 @@ Examples of using filter parameters in combination
 **Return results with a Genre access point of "Maps" created between 1900 and
 1970, and return the results sorted by start date:**
 
-  /api/informationobjects?genres=394&startDate=1900-01-01&endDate=1970-12-31&rangeType=exact&sort=date
+``/api/informationobjects?genres=394&startDate=1900-01-01&endDate=1970-12-31&rangeType=exact&sort=date``
 
 **Return any series-level records with a start date after 1900 from a
 particular repository:**
 
-  /api/informationobjects?repos=471&levels=224&topLod=0&startDate=1900-01-01&rangeType=exact
+``/api/informationobjects?repos=471&levels=224&topLod=0&startDate=1900-01-01&rangeType=exact``
 
 **Return top-level descriptions with a linked digital object that is textual:**
 
-  /api/informationobjects?topLod=1&onlyMedia=1&mediaTypes=137
+``/api/informationobjects?topLod=1&onlyMedia=1&mediaTypes=137``
 
 .. NOTE::
 
@@ -609,11 +585,11 @@ particular repository:**
    combine available parameters, and should return the same number of results
    as:
 
-        /api/informationobjects?topLod=1&mediaTypes=137
+``/api/informationobjects?topLod=1&mediaTypes=137``
 
 **Return Spanish descriptions with a digital object attached:**
 
-  /api/informationobjects?languages=es&onlyMedia=1
+``/api/informationobjects?languages=es&onlyMedia=1``
 
 .. _browse-io-examples:
 
@@ -622,12 +598,12 @@ Combining boolean and filter parameters - examples
 
 **Return results that have the word "west" in a place access point field:**
 
-  /api/informationobjects?sq0=west&sf0=place&topLod=0
+``/api/informationobjects?sq0=west&sf0=place&topLod=0``
 
 **Return results that have NO place access point, created between 1950 and
 1969:**
 
-  /api/informationobjects?sq0=_missing_:places&startDate=1950-01-01&endDate=1969-12-31&rangeType=exact&topLod=0
+``/api/informationobjects?sq0=_missing_:places&startDate=1950-01-01&endDate=1969-12-31&rangeType=exact&topLod=0``
 
 .. TIP::
 
@@ -649,7 +625,7 @@ Combining boolean and filter parameters - examples
 
    Return descriptions with no data in the scope and content field in English:
 
-     /api/informationobjects?sq0=_missing_:i18n.en.scopeAndContent
+   ``/api/informationobjects?sq0=_missing_:i18n.en.scopeAndContent``
 
    The examples above and below this tip show this parameter used in an API
    query.
@@ -658,14 +634,13 @@ Combining boolean and filter parameters - examples
 **in the Scope and content field, sorted by most recently created or
 modified:**
 
-  /api/informationobjects?sq0=_exists_:subjects&so1=and&sq1=tax*&sf1=scopeAndContent&levels=224&sort=lastUpdated
+``/api/informationobjects?sq0=_exists_:subjects&so1=and&sq1=tax*&sf1=scopeAndContent&levels=224&sort=lastUpdated``
 
 **Return results with** ``coffee`` **OR** ``chocolate`` **in any field, with
 dates that match or overlap a range of January 1, 1990 - March 4, 2001, sorted
 by date:**
 
-
-/api/informationobjects?sq0=chocolate&so1=or&sq1=coffee&startDate=1990-01-01&endDate=2001-03-04&rangeType=inclusive&sort=date
+``/api/informationobjects?sq0=chocolate&so1=or&sq1=coffee&startDate=1990-01-01&endDate=2001-03-04&rangeType=inclusive&sort=date``
 
 .. TIP::
 
@@ -673,7 +648,7 @@ by date:**
    boolean operator and rangeType defaults, and therefore being able to exclude some
    parameters, like so:
 
-     /api/informationobjects?sq0=chocolate+coffee&startDate=1990-01-01&endDate=2001-03-04&sort=date
+   ``/api/informationobjects?sq0=chocolate+coffee&startDate=1990-01-01&endDate=2001-03-04&sort=date``
 
 
 :ref:`Back to top <api-browse-io>`
