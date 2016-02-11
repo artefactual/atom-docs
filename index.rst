@@ -263,8 +263,10 @@ modules, and working with the application's API.
 API
 ---
 
-* :ref:`api-intro`
-* :ref:`api-browse-taxonomies`
-
 Overview of the application programming interface available in AtoM. Includes
 sample requests and responses for available endpoints.
+
+* :ref:`api-intro`
+* :ref:`api-browse-taxonomies`
+* :ref:`api-browse-io`
+* :ref:`api-read-io`
