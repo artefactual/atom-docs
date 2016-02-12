@@ -56,6 +56,9 @@ the string ``<user_email>:<password>``.
    Content-Type: application/json; charset=utf-8
    Set-Cookie: symfony=54gc5cfmc0stnra3beh2pcl925; path=/; HttpOnly
 
+Cookie-based authentication is optional. It can be used in subsequent
+requests, or the Authorization header can be re-sent.
+
 .. _api-intro-i18n:
 
 Common parameter - i18n culture
