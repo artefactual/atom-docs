@@ -267,7 +267,7 @@ The configuration of your virtual server shoud look like the following:
       RewriteRule ^/uploads/(.*)$ /var/www/atom/uploads/$1 [L]
       <LocationMatch ^/uploads>
         XSendFile On
-        XSendFilePath /usr/share/nginx/atom/uploads
+        XSendFilePath /var/www/atom/uploads
         SetEnv ATOM_XSENDFILE 1
       </LocationMatch>
     </VirtualHost>
