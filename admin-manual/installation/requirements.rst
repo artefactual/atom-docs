@@ -35,8 +35,7 @@ of each component.
 * `Elasticsearch <https://www.elastic.co/products/elasticsearch>`__ 1.3.0 or newer (users have reported testing Elasticsearch 1.7 without problems)
 * Oracle `Java <https://www.java.com/en/>`__ 8 or newer (required for Elasticsearch)
 * `MySQL <https://www.mysql.com/>`__ 5.1 or newer
-* `PHP <http://php.net/>`__ 5.4 or newer (PHP 5.5 works too and is used by
-   Artefactual developers in development and production deployments)
+* `PHP <http://php.net/>`__ 5.4 or newer (PHP 5.5 works too and is used by Artefactual developers in development and production deployments)
 * `Memcached <http://memcached.org>`__
 * `Gearman job server <http://gearman.org>`__
 
