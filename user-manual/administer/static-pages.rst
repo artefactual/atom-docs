@@ -448,7 +448,7 @@ the static pages module.
    for example, on the webpage http://www.example.com/about-us, ``about-us``
    would be the slug. For further information, see :ref:`slugs-in-atom`).
 3. Navigate to |gears| **Admin > Menus** and scroll down until you see the
-   ``staticPagesMenu``node near the bottom. Click on it to enter
+   ``staticPagesMenu`` node near the bottom. Click on it to enter
    :term:`edit mode`.
 
 .. image:: images/staticpages-menu.*
