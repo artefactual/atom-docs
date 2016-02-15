@@ -446,12 +446,12 @@ include:
   * *Example* - Return records with a level of description of "Series":
     ``/api/informationobjects?levels=224``
 
-* **mediaTypes**: Filters results based on the :term:`digital object`
+* **mediatypes**: Filters results based on the :term:`digital object`
   linked to the descriptions returned. Expects the internal id of the default
   terms used in the Media type taxonomy:
 
   * *Example* - Return records with a linked digital object that is an image:
-    ``/api/informationobjects?mediaTypes=136``
+    ``/api/informationobjects?mediatypes=136``
 
 * **repos**: Returns records filtered by their association to a
   particular :term:`repository` (e.g. an :term:`archival institution`). Only
@@ -575,17 +575,17 @@ particular repository:**
 
 **Return top-level descriptions with a linked digital object that is textual:**
 
-``/api/informationobjects?topLod=1&onlyMedia=1&mediaTypes=137``
+``/api/informationobjects?topLod=1&onlyMedia=1&mediatypes=137``
 
 .. NOTE::
 
    In this example, the ``onlyMedia`` parameter is not really needed - the
-   ``mediaTypes`` parameter will ensure that only results with textual digital
+   ``mediatypes`` parameter will ensure that only results with textual digital
    objects linked will be returned. It has been included to demonstrate how to
    combine available parameters, and should return the same number of results
    as:
 
-``/api/informationobjects?topLod=1&mediaTypes=137``
+``/api/informationobjects?topLod=1&mediatypes=137``
 
 **Return Spanish descriptions with a digital object attached:**
 
