@@ -8,7 +8,7 @@
 
    user-manual/index
    admin-manual/index
-
+   dev-manual/index
 
 Indices and tables
 ==================
