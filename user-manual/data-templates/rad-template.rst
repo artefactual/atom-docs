@@ -755,7 +755,7 @@ create and link to a new authority record.
 .. TIP::
 
    When entering the description manually, the Creator field is found in the
-   RAD template  within the Dates of creation :term:` information area`,
+   RAD template  within the Dates of creation :term:`information area`,
    labeled as "Actor name."
 
 .. IMPORTANT::
