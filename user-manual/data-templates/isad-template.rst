@@ -1301,7 +1301,8 @@ Dates of creation, revision and deletion
 .. code-block:: xml
 
    <processinfo>
-      <date>
+      <p>
+          <date>
 
 .. NOTE::
 
@@ -1327,7 +1328,7 @@ archival material."
 
    <eadheader>
       <profiledesc>
-         <language>
+         <langusage>
             <language langcode="[ISO code]">
 
 .. NOTE::
@@ -1357,7 +1358,7 @@ archival material."
 
    <eadheader>
       <profiledesc>
-         <language>
+         <langusage>
             <language scriptcode="[ISO code]">
 
 .. NOTE::
@@ -1411,10 +1412,9 @@ and who prepared it. (ISAD 3.7.1)
 
 .. code-block:: xml
 
-   <eadheader>
-      <filedesc>
-         <titlestmt>
-            <author encodinganalog="creator">
+    <archdesc>
+       <processinfo>
+          <p>
 
 :ref:`Back to the top <isad-template>`
 
