@@ -447,68 +447,128 @@ records.
    Administrators can change the default publication status, via **Admin >
    Settings**. For more information, see: :ref:`Settings <settings>`.
 
-Publication status is inherited from the highest :term:`level of description`,
-meaning that changes to the publication status of the :term:`parent record`
-will affect the publication status of all :term:`child records <child
-record>`. For example, when a :term:`fonds` description is changed from draft
-to published, all child levels within the fonds (series, files, items, etc.)
-are automatically changed as well.
+Publication status can also be inherited from the highest :term:`level of
+description`, meaning that changes to the publication status of the
+:term:`parent record` can be made to affect the publication status of all
+:term:`child records <child record>`. For example, when a :term:`fonds`
+description is changed from draft to published and the option to update
+descendants is also selected, all lower levels within the fonds (series,
+files, items, etc.) will be automatically changed as well. Note that it is
+still possible to only change the publication status of the current level, if
+the "Update descendants" option is not selected.
+
+.. WARNING::
+
+   It is possible to break the full-width :term:`treeview` in AtoM by
+   publishing child descriptions of a draft parent. For example, publishing
+   all items within a series, and then making the parent series record draft
+   again (but not the children). In this case, the fullwidth treeview will not
+   load. The sidebar treeview will still load, displaying the draft parent
+   node (e.g. the series) in the tree - public users will get a "Permission
+   denied" message if trying to access the draft record. **It is up to you as
+   a user to ensure you are not making contradictory publication status
+   updates that will break the treeview**. For more information on the
+   treeview in AtoM, see: :ref:`context-menu-treeview` and
+   :ref:`treeview-type`.
 
 If a :term:`contributor` (i.e. a logged in user **without** permission to
 publish descriptions - see: :ref:`User roles <user-roles>`) edits a
 :term:`published record`, the record's status is **automatically changed back
 to draft**, unless the default publication status has been changed to *published*.
 
-Changing a record's status to published allows unauthenticated users such as
-:term:`researchers <researcher>` the ability to see the record, i.e. read
-access is granted to the public. Draft records are not viewable by
-unauthenticated users (i.e. those not logged in).
+Changing a record's status to published allows unauthenticated (i.e. not
+logged in) users such as :term:`researchers <researcher>` the ability to see
+the record, i.e. read access is granted to the public. Draft records are not
+viewable by unauthenticated users (i.e. those not logged in).
 
+To avoid timeouts via the web browser for large publication status requests,
+updates to descendants are performed asynchronously in the background via
+AtoM's job scheduler. For example, when a user publishes a draft :term:`fonds`
+and selects the "Update descendants" checkbox as well (so all lower-level
+records in the fonds will be published as well), the fonds-level record will
+be immediately updated, while the job scheduler will begin the task of
+updating the descendants in the background. In this case, a notification will
+appear at the top of the archival description :term:`view page` when the user
+is redirected to it after submitting the update request, with a link to the
+Jobs page, where more information about the status of the job can be seen. In
+most cases this will be very rapid, but for exceptionally large requests it
+is possible for a user to navigate to a descendant record (e.g. an item in the
+fonds) before the update job has been completed. If you're unsure if your
+publication status update job has executed properly or not, be sure to check
+the jobs page. For more information on the Jobs page in AtoM, see:
+:ref:`manage-jobs`.
+
+.. TIP::
+
+   For AtoM 2.2 and earlier users - the "Update publication status" options
+   have moved out of the description edit page! You can now find this option
+   in the "More" button menu, in the :term:`button block` at the bottom of an
+   archival description :term:`view page` for authenticated users. Further
+   details are included in the steps below.
 
 **To publish an existing archival description**
 
 1. Navigate to the record you wish to publish. For more information on
    navigation in AtoM, see: :ref:`Access content <access-content>`
-2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
-   button in the :term:`button block`, or by clicking on one of the
-   :term:`information area` headings; this takes you to the record's
-   :term:`edit page`.
+2. Scroll to the :term:`button block` at the bottom of the archival
+   description's :term:`view page`, and click on the "More" button. A menu
+   will appear - select the "Update publication status" option.
 
-.. image:: images/button-block-description.*
+.. image:: images/pubstatus-link.*
    :align: center
    :width: 85%
-   :alt: An image of the button block on an archival description view page
+   :alt: An image of the More button in the button block of an archival
+         description view page
 
-3. On loading, the :term:`edit page` displays the record with all
-   :term:`information areas <information area>` closed; click on the
-   :term:`Administration area` heading to expand it and make changes.
+3. AtoM will redirect you to a publication status configuration page. Using
+   the :term:`drop-down menu` provided, select the desired publication status
+   - published, or draft.
 
-.. image:: images/description-collapsed.*
+.. image:: images/pubstatus-config.*
    :align: center
    :width: 85%
-   :alt: An archival description with all information areas closed
+   :alt: An image of the publication status configuration page
 
-4. In the :term:`drop-down menu` underneath the subheading "Publication
-   status", select "published".
+4. If you would like all lower-level records (descendants) to be updated as
+   well, check the "Update descendants" box beneath the drop-down menu. Note
+   that this option will not appear if there are no lower-level records.
+5. You can cancel your actions at any time, and return to the archival
+   description :term:`view page` by clicking the "Cancel" button in the
+   :term:`button block` at the bottom of the page. Note that navigating away
+   from the page has the same effect - the publication status will **not** be
+   updated unless the Save button is clicked.
+6. To save your changes, and update the publication status of your
+   description(s), click the "Update" button in the :term:`button block` at
+   the bottom of the publication status configuration page.
+7. AtoM will redirect you back to the archival description :term:`view page`.
+   The current description will now be updated to the desired publication
+   status (e.g. published, if it was previously draft). If you have also
+   checked the box to update descendants, a notification will appear at the
+   top of the page, with a link to the :ref:`Jobs page <manage-jobs>`.
 
-.. image:: images/description-admin-area.*
+.. image:: images/pubstatus-msg.*
    :align: center
    :width: 85%
-   :alt: The Administration area in an archival description
-
-5. Scroll down to the :term:`button block` at the bottom of the :term:`edit
-   page` and click the "Save" button.
-
-.. image:: images/button-block-save.*
-   :align: center
-   :width: 85%
-   :alt: An image of the button block
+   :alt: An image of a notification on an updated description's view page
 
 The archival description, and any lower :term:`levels of description <level of
 description>` associated with it, will now be published - public users who are
 not logged will now be granted read access to view (but not edit) the
 record(s). The record(s) will also be discoverable to public users via
-:ref:`browse` or :ref:`search-atom`
+:ref:`browse` or :ref:`Search <search-atom>`.
+
+For updates to descendants, you can use the link in the notification message
+to navigate directly to the Jobs page - The Jobs page will include the name of
+the parent description whose descendants are being updated, a link (the blue
+arrow in the Job status column) back to the parent description, and
+information on the current job status (Running, Completed, or Failed).
+
+.. image:: images/pubstatus-job.*
+   :align: center
+   :width: 85%
+   :alt: An image of the Jobs page showing completed publication status update jobs
+
+For more information on using the Jobs page, see: :ref:`manage-jobs`.
 
 :ref:`Back to top <archival-descriptions>`
 
