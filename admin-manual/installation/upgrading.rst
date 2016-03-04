@@ -11,6 +11,7 @@ ICA-AtoM versions 1.1 to 1.3.1 or newer) to |version|.
 
    If you are on an earlier release of ICA-AtoM (older than 1.1), please
    upgrade to the latest ICA-AtoM release before following these instructions.
+   Please see `Upgrading from ICA-AtoM 1.0.x <https://wiki.accesstomemory.org/Community/Community_resources/Documentation/Upgrading_from_ICA-AtoM_1.0.x>`_ on the AtoM wiki.
 
 While we have tried to make this document usable by readers with a broad range
 of technical knowledge, it may be too complex if you have no previous
