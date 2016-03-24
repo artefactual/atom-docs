@@ -368,32 +368,29 @@ This verb is used to retrieve information about a repository.
 .. code-block:: xml
 
    <?xml version="1.0" encoding="utf-8" ?>
-    <OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/
-    http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
-      <responseDate>2015-03-27T23:23:04Z</responseDate>
-      <request verb="Identify">http://example-site.com/;oai</request>
-      <Identify>
-        <repositoryName>Example Repository</repositoryName>
-        <baseURL>http://example-site.com</baseURL>
-        <protocolVersion>2.0</protocolVersion>
-        <adminEmail>admin@example-site.com</adminEmail>
-        <adminEmail>admin2@example-site.com</adminEmail>
-        <earliestDatestamp>1985-10-26T01:20:00Z</earliestDatestamp>
-        <deletedRecord>no</deletedRecord>
-        <granularity>YYYY-MM-DDThh:mm:ssZ</granularity>
-        <compression>gzip</compression>
-        <description>
-          <oai-identifier xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai-identifier http://www.openarchives.org/OAI/2.0/oai-identifier.xsd">
-            <scheme>oai</scheme>
-            <repositoryIdentifier>example-site.com:repoid</repositoryIdentifier>
-            <delimiter>:</delimiter>
-            <sampleIdentifier>example-site.com:repoid_100002</sampleIdentifier>
-          </oai-identifier>
-        </description>
-      </Identify>
-    </OAI-PMH>
+     <OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+       <responseDate>2016-03-24T22:58:11Z</responseDate>
+       <request verb="Identify">http://192.168.33.10/;oai</request>
+       <Identify>
+         <repositoryName>Example repository</repositoryName>
+         <baseURL>http://www.example.com/index.php</baseURL>
+         <protocolVersion>2.0</protocolVersion>
+               <adminEmail>admin1@example.com</adminEmail>
+               <adminEmail>admin2@example.com</adminEmail>
+             <earliestDatestamp>2016-03-18T13:52:23Z</earliestDatestamp>
+         <deletedRecord>no</deletedRecord>
+         <granularity>YYYY-MM-DDThh:mm:ssZ</granularity>
+         <compression>gzip</compression>
+         <description>
+           <oai-identifier xmlns="http://www.openarchives.org/OAI/2.0/oai-identifier" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai-identifier http://www.openarchives.org/OAI/2.0/oai-identifier.xsd">
+             <scheme>oai</scheme>
+             <repositoryIdentifier>www.example.com</repositoryIdentifier>
+             <delimiter>:</delimiter>
+             <sampleIdentifier>oai:www.example.com:repocode_100002</sampleIdentifier>
+           </oai-identifier>
+         </description>
+       </Identify>
+     </OAI-PMH>
 
 .. _oai-list-metadata-formats:
 
