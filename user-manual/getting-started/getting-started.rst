@@ -554,8 +554,8 @@ For more information on the language menu, see: :ref:`language-menu`
 Change password
 ===============
 
-Users can change their own :term:`passwords <password>`. If a user forgets his
-or her :term:`password`, the system :term:`administrator` must reset it (see
+Users can change their own :term:`passwords <password>`. If a user forgets their
+:term:`password`, the system :term:`administrator` must reset it (see
 :ref:`manage-user-accounts`).
 
 1. Click your :term:`username` in the :term:`header bar`, at the upper
@@ -568,23 +568,34 @@ or her :term:`password`, the system :term:`administrator` must reset it (see
    :width: 85%
    :alt: An image of a user clicking on the Profile option
 
-
 3. You will be redirected to your user profile :term:`view page`. To change
-   your password, click the "Edit" button in the :term:`button block` at the
-   bottom of the page.
+   your password, click the "Change password" button in the center of the
+   page.
 
-.. image:: images/profile-view.*
+.. image:: images/password-change.*
    :align: center
    :width: 85%
    :alt: An image of a user's profile page in view mode
 
-4. Enter your new :term:`password` under "Change password" and enter it again
+.. TIP::
+
+   If you are an :term:`administrator`, you will have full access to edit
+   your user profile. To change your password or edit other account
+   details, click the "Edit" button in the :term:`button block` at the
+   bottom of the page.
+
+   .. image:: images/profile-view.*
+      :align: center
+      :width: 85%
+      :alt: An image of a administrator's profile page in view mode
+
+4. Enter your new :term:`password` under "New password" and enter it again
    under "Confirm password". The green bar on the right will offer you an
    indication of your password strength - use a mixture of upper and lower
    case letters, numbers, and special characters (e.g. ! $ % & # etc) to
    create a stronger password.
 
-.. image:: images/profile-edit.*
+.. image:: images/reset-password.*
    :align: center
    :width: 85%
    :alt: An image of a user's profile page in edit mode
