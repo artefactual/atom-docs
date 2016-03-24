@@ -12,8 +12,9 @@ document apply to any modern Linux environment, however some of them will
 apply only to Ubuntu and likely to any Ubuntu-based distribution.
 
 To be specific, this document is based in
-`Ubuntu 12.04 LTS (Precise Pangolin) <http://releases.ubuntu.com/precise/>`_
-and `Ubuntu 14.04 LTS (Trusty Tahr) <http://releases.ubuntu.com/trusty/>`_.
+`Ubuntu 12.04 LTS (Precise Pangolin) <http://releases.ubuntu.com/precise/>`_,
+`Ubuntu 14.04 LTS (Trusty Tahr) <http://releases.ubuntu.com/trusty/>`_ and
+`Ubuntu 16.04 LTS (Trusty Tahr) <http://releases.ubuntu.com/trusty/>`_.
 Once you have installed it, you should be able to follow the instructions
 described below. In particular, we are going to use Ubuntu packages that can
 be found under the
@@ -35,16 +36,17 @@ Install the dependencies
 MySQL
 -----
 
-We strongly recommend using `MySQL <https://www.mysql.com/>`__  5.5 as it's
-much better than its previous major release in terms of speed, scalability and
-user-friendliness. Also, we've experienced very good results using forks like
-Percona Server or MariaDB, so don't be afraid and use them if you want!
+We strongly recommend using `MySQL <https://www.mysql.com/>`__  5.5 or newer
+as it's much better than its previous major release in terms of speed,
+scalability and user-friendliness. Also, we've experienced very good results
+using forks like Percona Server or MariaDB, so don't be afraid and use them if
+you want!
 
 Let's install MySQL using :command:`apt-get`:
 
 .. code-block:: bash
 
-   sudo apt-get install mysql-server-5.5
+   sudo apt-get install mysql-server
 
 During the installation, you will be prompted to set a password for the default
 administrator user (root). We strongly recommend that you use a strong password
@@ -65,9 +67,11 @@ Ubuntu doesn't provide a package but you can download it directly from the
 unable to download it using the method that follows.
 
 First, make sure that `Java <https://www.java.com/en/>`__ is installed.
-Elasticsearch is compatible with OpenJDK (package openjdk-7-jre-headless) but
-we are going to use Oracle's JVM distributed by
-`Web Upd8 <http://www.webupd8.org/>`_.
+Elasticsearch is compatible with OpenJDK which is available in Ubuntu via
+packages like openjdk-7-jdk-headless, openjdk-8-jdk-headless and so on. See the
+`full list <http://packages.ubuntu.com/search?keywords=openjdk&searchon=names>`_.
+We are going to use Oracle's JVM distributed by `Web Upd8 <http://www.webupd8.org/>`_
+as it provides modern releases compatible with older versions of Ubuntu.
 
 .. code-block:: bash
 
@@ -86,7 +90,7 @@ Add the following to your /etc/apt/sources.list to enable the repository:
 
 .. code-block:: bash
 
-   deb http://packages.elasticsearch.org/elasticsearch/1.3/debian stable main
+   deb http://packages.elasticsearch.org/elasticsearch/1.7/debian stable main
 
 Ready to be installed. Run:
 
@@ -95,12 +99,21 @@ Ready to be installed. Run:
    sudo apt-get update
    sudo apt-get install elasticsearch
 
-Start the service and configure it to start when the system is booted.
+Start the service and configure it to start when the system is booted. This is
+how it is done in Ubuntu 14.04 or older:
 
 .. code-block:: bash
 
    sudo update-rc.d elasticsearch defaults 95 10
    sudo /etc/init.d/elasticsearch start
+
+In Ubuntu 16.04 or newer:
+
+.. code-block:: bash
+
+   sudo systemctl enable elasticsearch
+   sudo systemctl start elasticsearch
+
 
 .. _linux-dependency-httpd:
 
@@ -229,11 +242,18 @@ in :file:`/etc/nginx/sites-enabled/atom`.
 
    }
 
-Now you need to restart Nginx:
+Now you need to restart Nginx. In Ubuntu 14.04 or older:
 
 .. code-block:: bash
 
    sudo service nginx restart
+
+In Ubuntu 16.04 or newer:
+
+.. code-block:: bash
+
+   sudo systemctl restart nginx
+
 
 .. _linux-dependency-httpd-apache:
 
@@ -290,17 +310,23 @@ described below.
 Our favorite way to deploy AtoM is using `PHP-FPM <http://php-fpm.org/>`__, a
 process manager that scales better than other solutions like FastCGI. The
 following command will install it along with the rest of PHP extensions
-:ref:`required <installation-requirements>` by AtoM:
+:ref:`required <installation-requirements>` by AtoM. In Ubuntu 12.04:
 
 .. code-block:: bash
 
     sudo apt-get install php5-cli php5-fpm php5-curl php5-mysql php5-xsl php5-json php5-ldap php-apc
 
-If you are using Ubuntu 14.04, the package php5-readline is also recommended.
+In Ubuntu 14.04:
 
 .. code-block:: bash
 
-    sudo apt-get install php5-readline
+    sudo apt-get install php5-cli php5-fpm php5-curl php5-mysql php5-xsl php5-json php5-ldap php5-readline php-apc
+
+In Ubuntu 16.04:
+
+.. code-block:: bash
+
+    sudo apt-get install php5-cli php5-fpm php5-curl php5-mysql php5-xsl php5-json php5-ldap php5-readline php-apcu
 
 If you are using Apache, you will also need to install mod_php:
 
@@ -376,13 +402,19 @@ called :file:`/etc/php5/fpm/pool.d/atom.conf`:
    env[ATOM_READ_ONLY] = "off"
 
 Note that the section "Zend OPcache" won't work in Ubuntu 12.04. Comment it out
-or remove it unless you are using Ubuntu 14.04.
+or remove it unless you are using Ubuntu 14.04 or newer.
 
-The process manager has to be restarted:
+The process manager has to be restarted. In Ubuntu 14.04 or older, run:
 
 .. code-block:: bash
 
    sudo service php5-fpm restart
+
+In Ubuntu 16.04 or newer:
+
+.. code-block:: bash
+
+   sudo systemctl restart php5-fpm
 
 If the service fails to start, make sure that the configuration file has been
 has been pasted properly. You can also check the syntax by running:
@@ -392,12 +424,8 @@ has been pasted properly. You can also check the syntax by running:
    sudo php5-fpm --test
 
 If you are not planning to use the default PHP pool (``www``), feel free to
-remove it:
+remove its configuration file and restart the manager again.
 
-.. code-block:: bash
-
-   sudo rm /etc/php5/fpm/pool.d/www.conf
-   sudo service php5-fpm restart
 
 .. _linux-other-packages:
 
@@ -442,8 +470,7 @@ dependencies at once:
 
    sudo apt-get install imagemagick ghostscript poppler-utils
 
-Install ffmpeg from Archivematica's PPA, which works for both Ubuntu 12.04
-(precise) and Ubuntu 14.04 (trusty).
+Install ffmpeg from Archivematica's PPA:
 
 .. code-block:: bash
 
@@ -507,9 +534,8 @@ the CSS files:
 
 .. code-block:: bash
 
-   sudo add-apt-repository ppa:chris-lea/node.js
-   sudo apt-get update
-   sudo apt-get install nodejs make
+   curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+   sudo apt-get install -y nodejs make
    sudo npm install -g "less@<2.0.0"
    cd /usr/share/nginx/atom/plugins/arDominionPlugin/
    sudo make # At this point the files still belong to root
