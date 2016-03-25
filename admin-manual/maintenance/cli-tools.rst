@@ -665,6 +665,26 @@ command to delete it from the command-line:
 
    php symfony tools:delete-description <slug>
 
+AtoM will ask you for confirmation before you proceed giving you a count of
+descriptions affected (e.g. the target description and its descendants):
+
+.. image:: images/cli-delete-description.*
+   :align: center
+   :width: 70%
+   :alt: The CLI warning when deleting a description
+
+.. TIP::
+
+   If you would like to proceed without having to confirm your actions, you
+   can use the ``--no-confirmation`` option - or its shorthand, ``-B``, like
+   so:
+
+   .. code:: bash
+
+      php symfony tools:delete-description -B <slug>
+
+:ref:`Back to top <cli-tools>`
+
 .. _cli-delete-drafts:
 
 Delete all draft descriptions
