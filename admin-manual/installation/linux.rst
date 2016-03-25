@@ -427,7 +427,6 @@ variable FOP_HOME to the folder path you extracted Apache FOP to, for example:
    mv fop-1.0 /usr/share
    ln -s /usr/share/fop-1.0/fop /usr/bin/fop
    echo 'FOP_HOME="/usr/share/fop-1.0"' >> /etc/environment
-   exit
 
 If you want AtoM to be able to process :term:`digital objects <digital object>`
 in formats like JPEG or to extract the text from your PDF documents, there are
