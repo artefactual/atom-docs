@@ -64,7 +64,7 @@ The simplest way to run a worker is from your terminal:
 
 A better way to run a worker is to use a process supervisor like upstart
 (included in Ubuntu). An upstart service (:file:`/etc/init/atom-worker.conf`)
-could look like:
+suitable for Ubuntu 14.04 or older could look like:
 
 .. code-block:: none
 
@@ -99,6 +99,9 @@ You can control the service execution status with the following commands:
    sudo stop atom-worker    # Stops the worker
    sudo restart atom-worker # Restarts the workers
    sudo status atom-worker  # Obtain current running status
+
+Ubuntu 16.04 `switched to systemd <https://wiki.ubuntu.com/SystemdForUpstartUsers>`_.
+TODO: create a service and enable it.
 
 :command:`initctl` is the primary command used to interact with Upstart and its
 services. Check out its man page (:command:`man initctl`) or the following
