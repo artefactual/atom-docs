@@ -68,20 +68,22 @@ Information below includes:
 **Skip to**:
 
 * :ref:`mods-elements-area`
-* :ref:`mods-identifier`
-* :ref:`mods-title`
-* :ref:`mods-names-origin-info`
-* :ref:`mods-type`
-* :ref:`mods-child-levels`
-* :ref:`mods-language`
-* :ref:`mods-subject`
-* :ref:`mods-places`
-* :ref:`mods-names`
-* :ref:`mods-access-conditions`
-* :ref:`mods-repository`
-* :ref:`mods-description`
+
+  * :ref:`mods-identifier`
+  * :ref:`mods-title`
+  * :ref:`mods-names-origin-info`
+  * :ref:`mods-type`
+  * :ref:`mods-child-levels`
+  * :ref:`mods-language`
+  * :ref:`mods-subject`
+  * :ref:`mods-places`
+  * :ref:`mods-names`
+  * :ref:`mods-access-conditions`
+  * :ref:`mods-repository`
+  * :ref:`mods-description`
+
 * :ref:`mods-admin`
-* :ref:`mods-admin-display-standard`
+  * :ref:`mods-admin-display-standard`
 
 
 .. _mods-elements-area:
