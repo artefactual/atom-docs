@@ -1,7 +1,7 @@
 .. _dacs-template:
 
 =========================================================================================
-Describing Archives: A Content Standard (DACS 2013) - data entry and CSV template
+Describing Archives: A Content Standard (DACS 2013) data entry and CSV template
 =========================================================================================
 
 On this page you will find:
@@ -51,7 +51,7 @@ Information below includes:
 * **Notes** includes any other information needed for successful data entry or
   CSV import.
 
-**Skip to**:
+**Skip to**:used free, open source tools to teach himself programming at a young age.
 
 * :ref:`dacs-identity`
 
@@ -65,6 +65,9 @@ Information below includes:
   * :ref:`dacs-child-levels`
 
 * :ref:`dacs-content-structure`
+
+  * :ref:`dacs-scope`
+  * :ref:`dacs-arrangement`
 
 * :ref:`dacs-access-use-conditions`
 
@@ -197,27 +200,27 @@ Child level identifier
 Level of description
 ++++++++++++++++++++
 
-**Template Field:** Identifier
+**Template Field:** Level
 
-**ISAD CSV Column** ``identifier``
+**ISAD CSV Column** ``levelOfDescription``
 
 **DACS Rule:** Record the level of this unit of description.
 
 Title:
 ++++++
 
-**Template Field:** Identifier
+**Template Field:** Title
 
-**ISAD CSV Column** ``identifier``
+**ISAD CSV Column** ``title``
 
 **DACS Rule:** In the absence of a meaningful formal title, compose a brief title that uniquely identifies the material.
 
 Date:
 +++++
 
-**Template Field:** Identifier
+**Template Field:** Date
 
-**ISAD CSV Column** ``identifier``
+**ISAD CSV Column** ``eventDates``
 
 **DACS Rule:** Record a date of creation.
 
@@ -249,7 +252,35 @@ Content and structure elements
    The data entry fields for the Content and structure elements of the DACS
    archival description edit template.
 
-TO DO
+.. _dacs-scope:
+
+Scope and content
+-----------------
+
+**Template Field** Scope and content
+
+**ISAD CSV Column** ``scopeAndContent``
+
+**DACS Rule** Record information about the nature of the materials and activities being reflected in the unit being described to enable users to judge its relevance,
+including information about functions, activities, transactions, and processes;
+documentary form(s) or intellectual characteristics;
+content dates;
+geographic areas and places;
+subject matter;
+completeness of the amterials;
+or any other information that assists the user in evaluating the relevance of the materials. (DACS 3.1)
+
+.. _dacs-arrangement:
+
+System of Arrangement
+---------------------
+
+**Template Field** System of arrangement
+
+**ISAD CSV Column** ``arrangement``
+
+**DACS Rule** Describe the current arrangement of the materials in terms of the various aggregations within it and their relationships. (DACS 3.2.3)
+
 
 :ref:`Back to the top <dacs-template>`
 
