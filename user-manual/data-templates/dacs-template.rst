@@ -71,6 +71,15 @@ Information below includes:
 
 * :ref:`dacs-access-use-conditions`
 
+  * :ref:`dacs-conditions-governing-access`
+  * :ref:`dacs-physical-access`
+  * :ref:`dacs-technical-access`
+  * :ref:`dacs-reproduction-use`
+  * :ref:`dacs-language`
+  * :ref:`dacs-script`
+  * :ref:`dacs-language-script-notes`
+  * :ref:`dacs-finding-aids`
+
 * :ref:`dacs-acquisition-appraisal`
 
 * :ref:`dacs-related-materials`
@@ -298,7 +307,96 @@ Conditions of access and use elements
    The data entry fields for the Conditions of access and use elements of the
    DACS archival description edit template.
 
-TO DO
+.. _dacs-conditions-governing-access:
+
+Conditions governing access
+---------------------------
+
+**Template Field** Conditions governing access
+
+**ISAD CSV Column** ``accessConditions``
+
+**DACS Rule** Give information about any restrictions on access to the unit being described (or parts thereof) as a result of the nature of the information therein or statutory/contractual requirements. As appropriate, specify the details of the restriction. If there are no restrictions, state that fact. (DACS 4.1.5)
+
+.. _dacs-physical-access:
+
+Physical access
+---------------
+
+**Template Field** Physical access
+
+**ISAD CSV Column** ``physicalCharacteristics``
+
+**DACS Rule** Provide information about the physical characteristics or condition of the unit being described that limit access to it or restrict its use. (DACS 4.2.5)
+
+.. _dacs-technical-access:
+
+Technical access
+----------------
+
+**Template Field** Technical access
+
+**ISAD CSV Column** Not mapped to ISAD(G) CSV template
+
+**DACS Rule** Provide information about any special equipment required to view or access the unit being described, if it is not clear from the Extent element. (DACS 4.3.5)
+
+.. _dacs-reproduction-use:
+
+Conditions governing reproduction and use
+-----------------------------------------
+
+**Template Field** Conditions governing reproduction and use
+
+**ISAD CSV Column** ``reproductionConditions``
+
+**DACS Rule** Give information about copyright status and any other conditions governing the reproduction, publication, and further use (e.g., display, public screening, broadcast, etc.) of the unit being described after access has been provided. (DACS 4.4.5)
+
+.. _dacs-language:
+
+Languages of the material
+-------------------------
+
+**Template Field** Languages of the material
+
+**ISAD CSV Column** ``language``
+
+**DACS Rule** Record the language(s) of the materials being described. (DACS 4.5.2)
+
+.. _dacs-script:
+
+Scripts of the material
+-----------------------
+
+**Template Field** Scripts of the material
+
+**ISAD CSV Column** ``script``
+
+**DACS Rule** Record the scripts(s) of the materials being described.
+
+.. _dacs-language-script-notes:
+
+Language and script notes
+-------------------------
+
+**Template Field** Language and script notes
+
+**ISAD CSV Column** ``languageNotes``
+
+**DACS Rule** Record information about any distinctive alphabets, scripts, symbol systems, or abbreviations employed (DACS 4.5.3).
+If there is no language content, record “no linguistic content.” (DACS 4.5.4)
+
+.. _dacs-finding-aids:
+
+Finding aids
+------------
+
+**Template Field** Finding aids
+
+**ISAD CSV Column** ``findingAids``
+
+**DACS Rule** Record information about any existing finding aids that provide information relating to the context and contents of the unit being described including any relevant information about its location or availability, and any other information necessary to assist the user in evaluating its usefulness.
+Include finding aids prepared by the creator (e.g., registers, indexes, etc.) that are part of the unit being described. (DACS 4.6.2)
+
 
 :ref:`Back to the top <dacs-template>`
 
