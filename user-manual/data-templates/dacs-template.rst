@@ -501,6 +501,14 @@ When appropriate, indicate frequency and volume.
 Related materials elements
 ==========================
 
+.. figure:: images/dacs-related-materials-elements.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An image of the data entry fields for the Related materials area.
+
+   The data entry fields for the Related materials area.
+
 .. _dacs-existence-originals:
 
 Existence and location of originals
@@ -568,8 +576,16 @@ Publication notes
 
 .. _dacs-notes:
 
-Notes element
-=============
+Notes elements
+==============
+
+.. figure:: images/dacs-notes-elements.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An image of the data entry fields for the Notes area.
+
+   The data entry fields for the Notes area.
 
 .. _dacs-general-note:
 
@@ -603,10 +619,16 @@ or Processing information (DACS 7.1.8).
 
 .. _dacs-description-control:
 
-Description control element
-===========================
+Description control elements
+============================
 
-TO DO
+.. figure:: images/dacs-description-control-elements.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An image of the data entry fields for the Description control area.
+
+   The data entry fields for the Description control area.
 
 :ref:`Back to the top <dacs-template>`
 
@@ -615,7 +637,13 @@ TO DO
 Access points
 =============
 
-TO DO
+.. figure:: images/dacs-access-points-elements.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An image of the data entry fields for the Access points area.
+
+   The data entry fields for the Access points area.
 
 :ref:`Back to the top <dacs-template>`
 
