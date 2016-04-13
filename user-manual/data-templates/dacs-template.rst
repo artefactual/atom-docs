@@ -1,8 +1,8 @@
 .. _dacs-template:
 
-=========================================================================================
+===============================================================================
 Describing Archives: A Content Standard (DACS 2013) data entry and CSV template
-=========================================================================================
+===============================================================================
 
 On this page you will find:
 
@@ -256,9 +256,9 @@ Content and structure elements
    :align: center
    :figwidth: 50%
    :width: 100%
-   :alt: Data entry fields in the DACS Content and Structure elements.
+   :alt: Data entry fields in the DACS content and structure elements.
 
-   The data entry fields for the Content and structure elements of the DACS
+   The data entry fields for the content and structure elements of the DACS
    archival description edit template.
 
 .. _dacs-scope:
@@ -277,7 +277,8 @@ content dates;
 geographic areas and places;
 subject matter;
 completeness of the amterials;
-or any other information that assists the user in evaluating the relevance of the materials. (DACS 3.1)
+or any other information that assists the user in evaluating the relevance of the materials.
+(DACS 3.1)
 
 .. _dacs-arrangement:
 
@@ -288,7 +289,8 @@ System of Arrangement
 
 **ISAD CSV Column** ``arrangement``
 
-**DACS Rule** Describe the current arrangement of the materials in terms of the various aggregations within it and their relationships. (DACS 3.2.3)
+**DACS Rule** Describe the current arrangement of the materials in terms of the various aggregations within it and their relationships.
+(DACS 3.2.3)
 
 
 :ref:`Back to the top <dacs-template>`
@@ -302,9 +304,9 @@ Conditions of access and use elements
    :align: center
    :figwidth: 50%
    :width: 100%
-   :alt: Data entry fields in the DACS Conditions of access and use elements
+   :alt: Data entry fields in the DACS conditions of access and use elements
 
-   The data entry fields for the Conditions of access and use elements of the
+   The data entry fields for the conditions of access and use elements of the
    DACS archival description edit template.
 
 .. _dacs-conditions-governing-access:
@@ -316,7 +318,8 @@ Conditions governing access
 
 **ISAD CSV Column** ``accessConditions``
 
-**DACS Rule** Give information about any restrictions on access to the unit being described (or parts thereof) as a result of the nature of the information therein or statutory/contractual requirements. As appropriate, specify the details of the restriction. If there are no restrictions, state that fact. (DACS 4.1.5)
+**DACS Rule** Give information about any restrictions on access to the unit being described (or parts thereof) as a result of the nature of the information therein or statutory/contractual requirements. As appropriate, specify the details of the restriction. If there are no restrictions, state that fact.
+(DACS 4.1.5)
 
 .. _dacs-physical-access:
 
@@ -327,7 +330,8 @@ Physical access
 
 **ISAD CSV Column** ``physicalCharacteristics``
 
-**DACS Rule** Provide information about the physical characteristics or condition of the unit being described that limit access to it or restrict its use. (DACS 4.2.5)
+**DACS Rule** Provide information about the physical characteristics or condition of the unit being described that limit access to it or restrict its use.
+(DACS 4.2.5)
 
 .. _dacs-technical-access:
 
@@ -338,7 +342,8 @@ Technical access
 
 **ISAD CSV Column** Not mapped to ISAD(G) CSV template
 
-**DACS Rule** Provide information about any special equipment required to view or access the unit being described, if it is not clear from the Extent element. (DACS 4.3.5)
+**DACS Rule** Provide information about any special equipment required to view or access the unit being described, if it is not clear from the Extent element.
+(DACS 4.3.5)
 
 .. _dacs-reproduction-use:
 
@@ -349,7 +354,8 @@ Conditions governing reproduction and use
 
 **ISAD CSV Column** ``reproductionConditions``
 
-**DACS Rule** Give information about copyright status and any other conditions governing the reproduction, publication, and further use (e.g., display, public screening, broadcast, etc.) of the unit being described after access has been provided. (DACS 4.4.5)
+**DACS Rule** Give information about copyright status and any other conditions governing the reproduction, publication, and further use (e.g., display, public screening, broadcast, etc.) of the unit being described after access has been provided.
+(DACS 4.4.5)
 
 .. _dacs-language:
 
@@ -360,7 +366,8 @@ Languages of the material
 
 **ISAD CSV Column** ``language``
 
-**DACS Rule** Record the language(s) of the materials being described. (DACS 4.5.2)
+**DACS Rule** Record the language(s) of the materials being described.
+(DACS 4.5.2)
 
 .. _dacs-script:
 
@@ -383,7 +390,8 @@ Language and script notes
 **ISAD CSV Column** ``languageNotes``
 
 **DACS Rule** Record information about any distinctive alphabets, scripts, symbol systems, or abbreviations employed (DACS 4.5.3).
-If there is no language content, record “no linguistic content.” (DACS 4.5.4)
+If there is no language content, record “no linguistic content.”
+(DACS 4.5.4)
 
 .. _dacs-finding-aids:
 
@@ -395,7 +403,8 @@ Finding aids
 **ISAD CSV Column** ``findingAids``
 
 **DACS Rule** Record information about any existing finding aids that provide information relating to the context and contents of the unit being described including any relevant information about its location or availability, and any other information necessary to assist the user in evaluating its usefulness.
-Include finding aids prepared by the creator (e.g., registers, indexes, etc.) that are part of the unit being described. (DACS 4.6.2)
+Include finding aids prepared by the creator (e.g., registers, indexes, etc.) that are part of the unit being described.
+(DACS 4.6.2)
 
 
 :ref:`Back to the top <dacs-template>`
@@ -405,7 +414,64 @@ Include finding aids prepared by the creator (e.g., registers, indexes, etc.) th
 Acquisition and appraisal elements
 ==================================
 
-TO DO
+.. figure:: images/dacs-acquisition-appraisal-elements.*
+   :align: center
+   :figwidth: 50%
+   :width: 100%
+   :alt: Data entry fields in the DACS acquisition and appraisal elements
+
+   The data entry fields for the acquisition and appraisal elements of the
+   DACS archival description edit template.
+
+.. _dacs-custodial-history:
+
+Custodial history
+-----------------
+
+**Template Field** Custodial history
+
+**ISAD CSV Column** ``archivalHistory``
+
+**DACS Rule** Record the successive transfers of ownership, responsibility, or custody or control of the unit being described from the time it left the possession of the creator until its acquisition by the repository, along with the dates thereof,
+insofar as this information can be ascertained and is significant to the user’s understanding of the authenticity.
+(DACS 5.1.3)
+
+.. _dacs-source-acquisition-transfer:
+
+Immediate source of acquisition or transfer
+-------------------------------------------
+
+**Template Field** Immediate source of acquisition or transfer
+
+**ISAD CSV Column** ``acquisition``
+
+**DACS Rule** Record the source(s) from which the materials being described were acquired, the date(s) of acquisition, and the method of acquisition, if this information is not confidential.
+(DACS 5.2.3)
+
+.. _dacs-appraisal-information:
+
+Appraisal, destruction and scheduling information
+-------------------------------------------------
+
+**Template Field** Appraisal, destruction and scheduling information
+
+**ISAD CSV Column** ``appraisal``
+
+**DACS Rule** Where the destruction or retention of archival materials has a bearing on the interpretation and use of the unit being described, provide information about the materials destroyed or retained and provide the reason(s) for the appraisal decision(s), where known.
+(DACS 5.3.4)
+
+.. _dacs-acrruals:
+
+Accruals
+--------
+
+**Template Field** Accruals
+
+**ISAD CSV Column** ``accruals``
+
+**DACS Rule** If known, indicate whether or not further accruals are expected.
+When appropriate, indicate frequency and volume.
+(DACS 5.4.2)
 
 :ref:`Back to the top <dacs-template>`
 
