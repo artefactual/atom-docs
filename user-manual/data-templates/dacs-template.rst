@@ -97,6 +97,9 @@ Information below includes:
 
 * :ref:`dacs-notes`
 
+  * :ref:`dacs-general-note`
+  * :ref:`dacs-specialized-note`
+
 * :ref:`dacs-description-control`
 
 * :ref:`dacs-access-points`
@@ -568,7 +571,33 @@ Publication notes
 Notes element
 =============
 
-TO DO
+.. _dacs-general-note:
+
+General note(s)
+---------------
+
+**Template Field** General note(s)
+
+**ISAD CSV Column** ``generalNote``
+
+**DACS Rule** Record, as needed, information not accommodated by any of the defined elements of description.
+(DACS 7.1.2)
+
+.. _dacs-specialized-note:
+
+Specialized note(s)
+-------------------
+
+**Template Field** Specialized note(s)
+
+**ISAD CSV Column** N/A
+
+**DACS Rule** Select a note type from the drop-down menu and record, as needed, specialized information not accommodated by any of the defined elements of description,
+including Conservation (DACS 7.1.3),
+Citation (DACS 7.1.5),
+Alphanumeric designation (DACS 7.1.6),
+Variant title information (DACS 7.1.7),
+or Processing information (DACS 7.1.8).
 
 :ref:`Back to the top <dacs-template>`
 
