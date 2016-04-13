@@ -89,6 +89,12 @@ Information below includes:
 
 * :ref:`dacs-related-materials`
 
+  * :ref:`dacs-existence-originals`
+  * :ref:`dacs-existence-copies`
+  * :ref:`dacs-related-archival-materials`
+  * :ref:`dacs-related-descriptions`
+  * :ref:`dacs-publication-notes`
+
 * :ref:`dacs-notes`
 
 * :ref:`dacs-description-control`
@@ -492,7 +498,68 @@ When appropriate, indicate frequency and volume.
 Related materials elements
 ==========================
 
-TO DO
+.. _dacs-existence-originals:
+
+Existence and location of originals
+-----------------------------------
+
+**Template Field** Existence and location of originals
+
+**ISAD CSV Column** ``locationOfOriginals``
+
+**DACS Rule** If the materials being described are reproductions and the originals are located elsewhere, give the location of the originals.
+(DACS 6.1.4)
+Record any identifying numbers that may help in locating the originals in the cited location.
+(DACS 6.1.6)
+
+.. _dacs-existence-copies:
+
+Existence and location of copies
+--------------------------------
+
+**Template Field** Existence and location of copies
+
+**ISAD CSV Column** ``locationOfCopies``
+
+**DACS Rule** If a copy of all or part of the material being described is available, in addition to the originals, record information about the medium and location of the copy, any identifying numbers, and any conditions on the use or availability of the copy.
+If a copy of only a part of the unit being described is available, indicate which part.
+If the materials being described are available via remote access (electronically or otherwise), provide the relevant information needed to access them.
+(DACS 6.2.3)
+
+.. _dacs-related-archival-materials:
+
+Related archival materials
+--------------------------
+
+**Template Field** Related archival materials
+
+**ISAD CSV Column** ``relatedUnitsOfDescription``
+
+**DACS Rule** If there are materials that have a direct and significant connection to those being described by reason of closely shared responsibility or sphere of activity, provide the title, location, and, optionally, the reference number(s) of the related materials and their relationship with the materials being described.
+(DACS 6.3.5)
+
+.. _dacs-related-descriptions:
+
+Related descriptions
+--------------------
+
+**Template Field** Related descriptions
+
+**ISAD CSV Column** N/A
+
+**DACS Rule** To create a relationship between this description and another description held in AtoM, begin typing the name of the related description and select it from the autocomplete drop-down menu when it appears below.
+Multiple relationships can be created.
+
+.. _dacs-publication-notes:
+
+Publication notes
+-----------------
+
+**Template Field** Publication notes
+
+**ISAD CSV Column** ``publicationNote``
+
+**DACS Rule** No rule.
 
 :ref:`Back to the top <dacs-template>`
 
