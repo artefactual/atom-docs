@@ -54,69 +54,14 @@ Information below includes:
 **Skip to**:
 
 * :ref:`dacs-identity`
-
-  * :ref:`dacs-identifier`
-  * :ref:`dacs-repository`
-  * :ref:`dacs-levels-of-description`
-  * :ref:`dacs-title`
-  * :ref:`dacs-date`
-  * :ref:`dacs-extent`
-  * :ref:`dacs-creator`
-  * :ref:`dacs-child-levels`
-
 * :ref:`dacs-content-structure`
-
-  * :ref:`dacs-scope`
-  * :ref:`dacs-arrangement`
-
 * :ref:`dacs-access-use-conditions`
-
-  * :ref:`dacs-conditions-governing-access`
-  * :ref:`dacs-physical-access`
-  * :ref:`dacs-technical-access`
-  * :ref:`dacs-reproduction-use`
-  * :ref:`dacs-language`
-  * :ref:`dacs-script`
-  * :ref:`dacs-language-script-notes`
-  * :ref:`dacs-finding-aids`
-
 * :ref:`dacs-acquisition-appraisal`
-
-  * :ref:`dacs-custodial-history`
-  * :ref:`dacs-source-acquisition-transfer`
-  * :ref:`dacs-appraisal-information`
-  * :ref:`dacs-accruals`
-
 * :ref:`dacs-related-materials`
-
-  * :ref:`dacs-existence-originals`
-  * :ref:`dacs-existence-copies`
-  * :ref:`dacs-related-archival-materials`
-  * :ref:`dacs-related-descriptions`
-  * :ref:`dacs-publication-notes`
-
 * :ref:`dacs-notes`
-
-  * :ref:`dacs-general-note`
-  * :ref:`dacs-specialized-note`
-
 * :ref:`dacs-description-control`
-
-  * :ref:`dacs-sources-used`
-  * :ref:`dacs-rules-conventions`
-  * :ref:`dacs-archivist`
-
 * :ref:`dacs-access-points`
-
-  * :ref:`dacs-subject-access-points`
-  * :ref:`dacs-place-access-points`
-  * :ref:`dacs-genre-access-points`
-  * :ref:`dacs-name-access-points`
-
 * :ref:`dacs-administration`
-
-  * :ref:`dacs-admin-display`
-  * :ref:`dacs-admin-pubstatus`
 
 .. _dacs-identity:
 
