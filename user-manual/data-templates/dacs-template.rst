@@ -323,6 +323,13 @@ completeness of the amterials;
 or any other information that assists the user in evaluating the relevance of the materials.
 (DACS 3.1)
 
+**EAD**
+
+.. code-block:: xml
+
+   <scopecontent encodinganalog="3.3.1">
+      <p>
+
 .. _dacs-arrangement:
 
 System of Arrangement
@@ -335,6 +342,12 @@ System of Arrangement
 **DACS Rule** Describe the current arrangement of the materials in terms of the various aggregations within it and their relationships.
 (DACS 3.2.3)
 
+**EAD**
+
+.. code-block:: xml
+
+   <scopecontent encodinganalog="3.3.4">
+      <p>
 
 :ref:`Back to the top <dacs-template>`
 
@@ -364,6 +377,13 @@ Conditions governing access
 **DACS Rule** Give information about any restrictions on access to the unit being described (or parts thereof) as a result of the nature of the information therein or statutory/contractual requirements. As appropriate, specify the details of the restriction. If there are no restrictions, state that fact.
 (DACS 4.1.5)
 
+**EAD**
+
+.. code-block:: xml
+
+   <scopecontent encodinganalog="3.4.1">
+      <p>
+
 .. _dacs-physical-access:
 
 Physical access
@@ -375,6 +395,13 @@ Physical access
 
 **DACS Rule** Provide information about the physical characteristics or condition of the unit being described that limit access to it or restrict its use.
 (DACS 4.2.5)
+
+**EAD**
+
+.. code-block:: xml
+
+   <scopecontent encodinganalog="3.4.3">
+      <p>
 
 .. _dacs-technical-access:
 
@@ -388,6 +415,8 @@ Technical access
 **DACS Rule** Provide information about any special equipment required to view or access the unit being described, if it is not clear from the Extent element.
 (DACS 4.3.5)
 
+**EAD** Not mapped to EAD.
+
 .. _dacs-reproduction-use:
 
 Conditions governing reproduction and use
@@ -399,6 +428,13 @@ Conditions governing reproduction and use
 
 **DACS Rule** Give information about copyright status and any other conditions governing the reproduction, publication, and further use (e.g., display, public screening, broadcast, etc.) of the unit being described after access has been provided.
 (DACS 4.4.5)
+
+**EAD**
+
+.. code-block:: xml
+
+   <scopecontent encodinganalog="3.4.2">
+      <p>
 
 .. _dacs-language:
 
@@ -412,6 +448,14 @@ Languages of the material
 **DACS Rule** Record the language(s) of the materials being described.
 (DACS 4.5.2)
 
+**EAD**
+
+.. code-block:: xml
+
+   <did>
+      <langmaterial encodinganalog="3.4.3">
+         <language langcode="[ISO code]">
+
 .. _dacs-script:
 
 Scripts of the material
@@ -422,6 +466,14 @@ Scripts of the material
 **ISAD CSV Column** ``script``
 
 **DACS Rule** Record the scripts(s) of the materials being described.
+
+**EAD**
+
+.. code-block:: xml
+
+   <did>
+      <langmaterial encodinganalog="3.4.3">
+         <language scriptcode="[ISO code]">
 
 .. _dacs-language-script-notes:
 
@@ -436,6 +488,13 @@ Language and script notes
 If there is no language content, record “no linguistic content.”
 (DACS 4.5.4)
 
+**EAD**
+
+.. code-block:: xml
+
+   <did>
+      <langmaterial encodinganalog="3.4.3">
+
 .. _dacs-finding-aids:
 
 Finding aids
@@ -449,6 +508,12 @@ Finding aids
 Include finding aids prepared by the creator (e.g., registers, indexes, etc.) that are part of the unit being described.
 (DACS 4.6.2)
 
+**EAD**
+
+.. code-block:: xml
+
+   <otherfindaid encodinganalog="3.4.5">
+      <p>
 
 :ref:`Back to the top <dacs-template>`
 
