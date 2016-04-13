@@ -83,7 +83,9 @@ Information below includes:
   * :ref:`mods-description`
 
 * :ref:`mods-admin`
-  * :ref:`mods-admin-display-standard`
+
+  * :ref:`mods-admin-displaystandard`
+  * :ref:`mods-admin-pubstatus`
 
 
 .. _mods-elements-area:
@@ -447,7 +449,7 @@ and contents.
 Administration area
 ===================
 
-.. figure:: images/mods-administration-area.png
+.. figure:: images/admin-area-mods.png
    :align: center
    :figwidth: 80%
    :width: 100%
@@ -455,7 +457,7 @@ Administration area
 
    The data entry fields for the Administration area.
 
-.. _mods-admin-display-standard:
+.. _mods-admin-displaystandard:
 
 Display standard
 ----------------
@@ -475,5 +477,35 @@ Display standard
    for the shown archival description only, with the option to also change the
    display standard for all existing children of the description. See:
    :ref:`change-display-standard`.
+
+   .. _mods-admin-pubstatus:
+
+Publication status
+------------------
+
+**Template field** Publication status is available under the More tab located on the object view screen.
+
+**CSV column** publicationsStatus
+
+**RAD Rule** N/A
+
+**EAD**
+
+.. code-block:: xml
+
+  <odd type="publicationStatus">
+     <p>
+
+.. note::
+
+  The :term:`publication status` refers to the public visibility of a
+  description for unauthenticated (e.g. not logged in) users. The default
+  terms available are "Published" (i.e. visible to public users), and "Draft"
+  (e.g. not visible to public users). See: :ref:`publish-archival-description`.
+
+  In the :ref:`Global Site Settings <global-settings>`, if the default
+  publication status is set to draft, all imported descriptions will be set to
+  draft and the EAD file will have the value "draft" in the
+  <odd type="publicationStatus"> tag.
 
 :ref:`Back to the top <dc-template>`

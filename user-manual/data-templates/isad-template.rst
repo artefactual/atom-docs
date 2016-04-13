@@ -1442,43 +1442,13 @@ For more information, see :ref:`rights`, especially
 Administration area
 ===================
 
-.. figure:: images/admin-area.*
+.. figure:: images/admin-area-isad.*
    :align: center
    :figwidth: 80%
    :width: 100%
    :alt: An image of the data entry fields for the Administration area.
 
    The data entry fields for the Administration area.
-
-Publication status
-------------------
-
-**Template field** Publication status
-
-**CSV column** publicationsStatus
-
-**RAD Rule** N/A
-
-**EAD**
-
-.. code-block:: xml
-
-   <odd type="publicationStatus">
-      <p>
-
-.. NOTE::
-
-   The :term:`publication status` refers to the public visibility of a
-   description for unauthenticated (e.g. not logged in) users. The default
-   terms available are "Published" (i.e. visible to public users), and "Draft"
-   (e.g. not visible to public users). See: :ref:`publish-archival-description`.
-
-   In the :ref:`Global Site Settings <global-settings>`, if the default
-   publication status is set to draft, all imported descriptions will be set to
-   draft and the EAD file will have the value "draft" in the
-   <odd type="publicationStatus"> tag.
-
-:ref:`Back to the top <isad-template>`
 
 Display standard
 ----------------
@@ -1493,10 +1463,38 @@ Display standard
 
 .. NOTE::
 
-   This fields allows the user to choose a different display standard
-   from the :ref:`default template <default-templates>`
-   for the shown archival description only, with the option to also change the
-   display standard for all existing children of the description. See:
-   :ref:`change-display-standard`.
+  This fields allows the user to choose a different display standard
+  from the :ref:`default template <default-templates>`
+  for the shown archival description only, with the option to also change the
+  display standard for all existing children of the description. See:
+  :ref:`change-display-standard`.
+
+Publication status
+------------------
+
+**Template field** Publication status is available under the More tab located on the object view screen.
+
+**CSV column** publicationsStatus
+
+**RAD Rule** N/A
+
+**EAD**
+
+.. code-block:: xml
+
+  <odd type="publicationStatus">
+     <p>
+
+.. note::
+
+  The :term:`publication status` refers to the public visibility of a
+  description for unauthenticated (e.g. not logged in) users. The default
+  terms available are "Published" (i.e. visible to public users), and "Draft"
+  (e.g. not visible to public users). See: :ref:`publish-archival-description`.
+
+  In the :ref:`Global Site Settings <global-settings>`, if the default
+  publication status is set to draft, all imported descriptions will be set to
+  draft and the EAD file will have the value "draft" in the
+  <odd type="publicationStatus"> tag.
 
 :ref:`Back to the top <isad-template>`

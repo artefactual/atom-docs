@@ -82,11 +82,23 @@ Information below includes:
 
 * :ref:`dacs-acquisition-appraisal`
 
+  * :ref:`dacs-custodial-history`
+  * :ref:`dacs-source-acquisition-transfer`
+  * :ref:`dacs-appraisal-information`
+  * :ref:`dacs-accruals`
+
 * :ref:`dacs-related-materials`
 
 * :ref:`dacs-notes`
 
 * :ref:`dacs-description-control`
+
+* :ref:`dacs-access-points`
+
+* :ref:`dacs-administration`
+
+  * :ref:`dacs-admin-display`
+  * :ref:`dacs-admin-pubstatus`
 
 .. _dacs-identity:
 
@@ -460,7 +472,7 @@ Appraisal, destruction and scheduling information
 **DACS Rule** Where the destruction or retention of archival materials has a bearing on the interpretation and use of the unit being described, provide information about the materials destroyed or retained and provide the reason(s) for the appraisal decision(s), where known.
 (DACS 5.3.4)
 
-.. _dacs-acrruals:
+.. _dacs-accruals:
 
 Accruals
 --------
@@ -499,5 +511,80 @@ Description control element
 ===========================
 
 TO DO
+
+:ref:`Back to the top <dacs-template>`
+
+.. _dacs-access-points:
+
+Access points
+=============
+
+TO DO
+
+:ref:`Back to the top <dacs-template>`
+
+.. _dacs-administration:
+
+Administration area
+===================
+
+.. figure:: images/admin-area-dacs.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An image of the data entry fields for the Administration area.
+
+   The data entry fields for the Administration area.
+
+.. _dacs-admin-display:
+
+Display standard
+----------------
+
+**Template field** Display standard
+
+**CSV column** N/A
+
+**RAD Rule** N/A
+
+**EAD** N/A
+
+.. NOTE::
+
+   This fields allows the user to choose a different display standard
+   from the :ref:`default template <default-templates>`
+   for the shown archival description only, with the option to also change the
+   display standard for all existing children of the description. See:
+   :ref:`change-display-standard`.
+
+.. _dacs-admin-pubstatus:
+
+Publication status
+------------------
+
+**Template field** Publication status is available under the More tab located on the object view screen.
+
+**CSV column** publicationsStatus
+
+**RAD Rule** N/A
+
+**EAD**
+
+.. code-block:: xml
+
+ <odd type="publicationStatus">
+    <p>
+
+.. note::
+
+ The :term:`publication status` refers to the public visibility of a
+ description for unauthenticated (e.g. not logged in) users. The default
+ terms available are "Published" (i.e. visible to public users), and "Draft"
+ (e.g. not visible to public users). See: :ref:`publish-archival-description`.
+
+ In the :ref:`Global Site Settings <global-settings>`, if the default
+ publication status is set to draft, all imported descriptions will be set to
+ draft and the EAD file will have the value "draft" in the
+ <odd type="publicationStatus"> tag.
 
 :ref:`Back to the top <dacs-template>`
