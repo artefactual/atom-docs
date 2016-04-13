@@ -630,6 +630,30 @@ Description control elements
 
    The data entry fields for the Description control area.
 
+.. _dacs-sources-used:
+
+Sources used
+------------
+
+**Template Field** Sources used
+
+**ISAD CSV Column** ``sources``
+
+**DACS Rule** Record relevant information about sources consulted in establishing or revising the description.
+(DACS 8.1.3)
+
+.. _dacs-slug:
+
+Rules or conventions
+--------------------
+
+**Template Field** Rules or conventions
+
+**ISAD CSV Column** ``rules``
+
+**DACS Rule** Record the international, national or local rules or conventions followed in preparing the description.
+(DACS 8.1.4)
+
 :ref:`Back to the top <dacs-template>`
 
 .. _dacs-access-points:
