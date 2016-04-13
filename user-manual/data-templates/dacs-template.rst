@@ -141,6 +141,13 @@ Identifier
 Optionally, devise unique identifiers at lower levels of a multilevel description. (DACS 2.1.3)
 The country and repository code will be automatically added from the linked repository record to form a full reference code.
 
+**EAD**
+
+.. code-block:: xml
+
+   <did>
+      <unitid encodinganalog="3.1.1">
+
 .. _dacs-repository:
 
 Name and Location of Repository
@@ -153,6 +160,14 @@ Name and Location of Repository
 **DACS Rule** Explicitly state the name of the repository, including any parent bodies. (DACS 2.2.2)
 Search for an existing name in the archival institution records by typing in the first few letters of the name.
 Alternatively, type a new name to create and link tidentifier
+
+**EAD**
+
+.. code-block:: xml
+
+   <did>
+      <repository>
+         <corpname>
 
 .. _dacs-levels-of-description:
 
@@ -167,6 +182,23 @@ Levels of Description
 Follow any relevant local or institutional guidelines in selecting the proper level of description.
 See DACS (2013) Chapter 1 for further guidance.
 
+**EAD**
+
+At the parent level:
+
+.. code-block:: xml
+
+   <archdesc level="[level of description]" relatedencoding="ISAD(G)v2">
+
+
+At the child level:
+
+.. code-block:: xml
+
+   <archdesc level="collection" relatedencoding="ISAD(G)v2">
+      <dsc type="combined">
+          <c level="[level of description]">
+
 .. _dacs-title:
 
 Title
@@ -178,6 +210,13 @@ Title
 
 **DACS Rule** In the absense of a meaningful formal title, compose a brief title that uniquely identifies the material, normally consisting of a name segment, a term indicating the nature of the unit being described, and optionally a topical segment.
 Do not enclose devised titles in square brackets. (DACS 2.3.3)
+
+**EAD**
+
+.. code-block:: xml
+
+   <did>
+      <unitid encodinganalog="3.1.2">
 
 .. _dacs-date:
 
@@ -194,6 +233,13 @@ Use the start and end fields (``eventStartDates`` and ``eventEndDates``) to make
 Do not use any qualifiers or typographical symbols in the start and end fields.
 Acceptable date formats: YYYYMMDD, YYYY-MM-DD, YYYY-MM, YYYY.
 
+**EAD**
+
+.. code-block:: xml
+
+   <did>
+     <unitdate encodinganalog="3.1.3">
+
 .. _dacs-extent:
 
 Extent
@@ -205,6 +251,13 @@ Extent
 
 **DACS Rule** Record the quantity of the material in terms of its physical extent as linear or cubic feet, number of items, or number of containers or carriers. (DACS 2.5.4)
 Optionally, record the quantity in terms of the material type(s) (DACS 2.5.5), and/or qualify the statement of physical extent to hgihlight the existence of material types that are important. (DACS 2.5.6)
+
+**EAD**
+
+.. code-block:: xml
+
+   <did>
+      <physdesc encodinganalog="3.1.5">
 
 .. _dacs-creator:
 
@@ -218,6 +271,13 @@ Creator
 **DACS Rule** Record the name(s) of the creator(s) identified in the name elevent in the devised title of the materials using standardized vocabularies or with rules for formulating standardized names (DACS 2.6.4).
 Search for an existing name in the authority records by typing the first few characters of the name.
 Alternatively, type a new name to create and link to a new authority record.
+
+**EAD**
+
+.. code-block:: xml
+
+   <controlaccess>
+      <name role="Publisher" id="atom_506_actor">
 
 .. _dacs-child-levels:
 
@@ -236,6 +296,8 @@ Child level identifier
 
 **DACS Rule** Provide a unique identifier for the materials being described in accordance with the institution's administrative control system.
 
+**EAD** See the EAD mappings in the related fields.
+
 Level of description
 ++++++++++++++++++++
 
@@ -245,8 +307,10 @@ Level of description
 
 **DACS Rule:** Record the level of this unit of description.
 
-Title:
-++++++
+**EAD** See the EAD mappings in the related fields.
+
+Title
++++++
 
 **Template Field:** Title
 
@@ -254,8 +318,10 @@ Title:
 
 **DACS Rule:** In the absence of a meaningful formal title, compose a brief title that uniquely identifies the material.
 
-Date:
-+++++
+**EAD** See the EAD mappings in the related fields above.
+
+Date
+++++
 
 **Template Field:** Date
 
@@ -263,15 +329,17 @@ Date:
 
 **DACS Rule:** Record a date of creation.
 
+**EAD** See the EAD mappings in the related fields above.
+
 .. IMPORTANT::
   To include child levels in the ISAD CSV for import, the ``parentId`` column must contain the legacy ID of the parent record. For example, if the parent record has the legacy ID *249* recorded in the ``legacyId`` column, the child record must have the number *249* in the ``parentId`` column, as shown in the table here:
 
     +--------------------+------------+----------+
     | title              | legacyId   | parentId |
     +====================+============+==========+
-    | DACS Collection    | 249        |          |
+    | DACS parent level  | 249        |          |
     +--------------------+------------+----------+
-    | body row 2         | 250        | 249      |
+    | DACS child level   | 250        | 249      |
     +--------------------+------------+----------+
 
 

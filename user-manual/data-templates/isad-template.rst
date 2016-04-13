@@ -353,8 +353,16 @@ with the rules of multilevel description and national conventions.
    type, or simply ignore the date field in the widget, and add the correct
    date type manually to the child record after saving the new parent record.
 
-   In CSV import, adding child records can be achieved using the *legacyID* and
-   *parentID* columns. See :ref:`csv-legacy-id-mapping`.
+.. IMPORTANT::
+   To include child levels in the ISAD CSV for import, the ``parentId`` column must contain the legacy ID of the parent record. For example, if the parent record has the legacy ID *249* recorded in the ``legacyId`` column, the child record must have the number *249* in the ``parentId`` column, as shown in the table here:
+
+       +--------------------+------------+----------+
+       | title              | legacyId   | parentId |
+       +====================+============+==========+
+       | ISAD Collection    | 249        |          |
+       +--------------------+------------+----------+
+       | ISAD child level   | 250        | 249      |
+       +--------------------+------------+----------+
 
 
 Extent and medium
