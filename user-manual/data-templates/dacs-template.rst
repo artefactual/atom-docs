@@ -51,7 +51,7 @@ Information below includes:
 * **Notes** includes any other information needed for successful data entry or
   CSV import.
 
-**Skip to**:used free, open source tools to teach himself programming at a young age.
+**Skip to**:
 
 * :ref:`dacs-identity`
 
@@ -102,7 +102,16 @@ Information below includes:
 
 * :ref:`dacs-description-control`
 
+  * :ref:`dacs-sources-used`
+  * :ref:`dacs-rules-conventions`
+  * :ref:`dacs-archivist`
+
 * :ref:`dacs-access-points`
+
+  * :ref:`dacs-subject-access-points`
+  * :ref:`dacs-place-access-points`
+  * :ref:`dacs-genre-access-points`
+  * :ref:`dacs-name-access-points`
 
 * :ref:`dacs-administration`
 
@@ -642,7 +651,7 @@ Sources used
 **DACS Rule** Record relevant information about sources consulted in establishing or revising the description.
 (DACS 8.1.3)
 
-.. _dacs-slug:
+.. _dacs-rules-conventions:
 
 Rules or conventions
 --------------------
@@ -653,6 +662,18 @@ Rules or conventions
 
 **DACS Rule** Record the international, national or local rules or conventions followed in preparing the description.
 (DACS 8.1.4)
+
+.. _dacs-archivist:
+
+Archivist and date
+------------------
+
+**Template Field** Archivist and date
+
+**ISAD CSV Column** ``archivistNote``
+
+**DACS Rule** Record the name(s) of the person(s) who created or revised the description, as well as the creation or revision date.
+(DACS 8.1.5)
 
 :ref:`Back to the top <dacs-template>`
 
@@ -668,6 +689,50 @@ Access points
    :alt: An image of the data entry fields for the Access points area.
 
    The data entry fields for the Access points area.
+
+.. _dacs-subject-access-points:
+
+Subject access points
+---------------------
+
+**Template Field** Subject access points
+
+**ISAD CSV Column** ``subjectAccessPoints``
+
+**DACS Rule** No rule.
+
+.. _dacs-place-access-points:
+
+Place access points
+-------------------
+
+**Template Field** Place access points
+
+**ISAD CSV Column** ``placeAccessPoints``
+
+**DACS Rule** No rule.
+
+.. _dacs-genre-access-points:
+
+Genre access points
+-------------------
+
+**Template Field** Genre access points
+
+**ISAD CSV Column** ``genreAccessPoints``
+
+**DACS Rule** No rule.
+
+.. _dacs-name-access-points:
+
+Name access points
+------------------
+
+**Template Field** Name access points (subjects)
+
+**ISAD CSV Column** ``nameAccessPoints``
+
+**DACS Rule** No rule.
 
 :ref:`Back to the top <dacs-template>`
 
