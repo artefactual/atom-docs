@@ -28,9 +28,6 @@ JavaScript to achieve certain effects when displaying content:
 * Some :term:`drop-down menus <drop-down menu>` are collapsible (i.e. options
   in the list can be expanded to display more options or collapsed to hide them)
 
-The digital object multi-uploader requires Flash. This is a requirement that we
-are hoping to eliminate in future releases.
-
 Older browsers that do not support JavaScript will not be able to view these
 effects. They are still able to access AtoM unimpaired; it just won't look as
 nice. It is recommended, therefore, that users employ modern web browsers
@@ -39,3 +36,6 @@ that support JavaScript (such as `Firefox
 <https://www.google.com/intl/en_uk/chrome/browser/>`_, `Opera
 <http://www.opera.com/browser/>`_, or `Safari
 <http://www.apple.com/safari/>`_.)
+
+The digital object multi-uploader requires Flash. This is a requirement that we
+are hoping to eliminate in future releases.
