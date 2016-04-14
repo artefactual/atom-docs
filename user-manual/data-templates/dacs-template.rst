@@ -544,6 +544,13 @@ Custodial history
 insofar as this information can be ascertained and is significant to the user’s understanding of the authenticity.
 (DACS 5.1.3)
 
+**EAD**
+
+.. code-block:: xml
+
+   <custodhist encodinganalog="3.2.3">
+      <p>
+
 .. _dacs-source-acquisition-transfer:
 
 Immediate source of acquisition or transfer
@@ -555,6 +562,13 @@ Immediate source of acquisition or transfer
 
 **DACS Rule** Record the source(s) from which the materials being described were acquired, the date(s) of acquisition, and the method of acquisition, if this information is not confidential.
 (DACS 5.2.3)
+
+**EAD**
+
+.. code-block:: xml
+
+   <acqinfo encodinganalog="3.2.4">
+      <p>
 
 .. _dacs-appraisal-information:
 
@@ -568,6 +582,13 @@ Appraisal, destruction and scheduling information
 **DACS Rule** Where the destruction or retention of archival materials has a bearing on the interpretation and use of the unit being described, provide information about the materials destroyed or retained and provide the reason(s) for the appraisal decision(s), where known.
 (DACS 5.3.4)
 
+**EAD**
+
+.. code-block:: xml
+
+   <appraisal encodinganalog="3.3.2">
+      <p>
+
 .. _dacs-accruals:
 
 Accruals
@@ -580,6 +601,13 @@ Accruals
 **DACS Rule** If known, indicate whether or not further accruals are expected.
 When appropriate, indicate frequency and volume.
 (DACS 5.4.2)
+
+**EAD**
+
+.. code-block:: xml
+
+   <accruals encodinganalog="3.3.3">
+      <p>
 
 :ref:`Back to the top <dacs-template>`
 
