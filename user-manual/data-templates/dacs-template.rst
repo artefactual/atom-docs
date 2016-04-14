@@ -832,6 +832,14 @@ Sources used
 **DACS Rule** Record relevant information about sources consulted in establishing or revising the description.
 (DACS 8.1.3)
 
+**EAD**
+
+.. code-block:: xml
+
+   <did>
+      <note type="sourcesDescription">
+          <p>
+
 .. _dacs-rules-conventions:
 
 Rules or conventions
@@ -844,6 +852,14 @@ Rules or conventions
 **DACS Rule** Record the international, national or local rules or conventions followed in preparing the description.
 (DACS 8.1.4)
 
+**EAD**
+
+.. code-block:: xml
+
+   <eadheader>
+      <profiledesc>
+         <descrules encodinganalog="3.7.2">
+
 .. _dacs-archivist:
 
 Archivist and date
@@ -855,6 +871,14 @@ Archivist and date
 
 **DACS Rule** Record the name(s) of the person(s) who created or revised the description, as well as the creation or revision date.
 (DACS 8.1.5)
+
+**EAD**
+
+.. code-block:: xml
+
+    <archdesc>
+       <processinfo>
+          <p>
 
 :ref:`Back to the top <dacs-template>`
 
