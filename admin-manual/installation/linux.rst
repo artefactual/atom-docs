@@ -64,16 +64,12 @@ Ubuntu doesn't provide a package but you can download it directly from the
 `Elasticsearch site <https://www.elastic.co/downloads/elasticsearch>`_ if you are
 unable to download it using the method that follows.
 
-First, make sure that `Java <https://www.java.com/en/>`__ is installed.
-Elasticsearch is compatible with OpenJDK (package openjdk-7-jre-headless) but
-we are going to use Oracle's JVM distributed by
-`Web Upd8 <http://www.webupd8.org/>`_.
+First, make sure that `Java <https://www.java.com/en/>`__ is installed. In this
+example we are going to use OpenJDK but Oracle's JVM would also work.
 
 .. code-block:: bash
 
-   sudo add-apt-repository ppa:webupd8team/java
-   sudo apt-get update
-   sudo apt-get install oracle-java8-installer
+   sudo apt-get install openjdk-7-jre-headless
 
 After successfully installing Java, proceed to install Elasticsearch. Download
 and install the public signing key used in their repository:
@@ -86,7 +82,7 @@ Add the following to your /etc/apt/sources.list to enable the repository:
 
 .. code-block:: bash
 
-   deb http://packages.elasticsearch.org/elasticsearch/1.3/debian stable main
+   deb http://packages.elasticsearch.org/elasticsearch/1.7/debian stable main
 
 Ready to be installed. Run:
 
@@ -292,7 +288,7 @@ following command will install it along with the rest of PHP extensions
 
     sudo apt-get install php5-cli php5-fpm php5-curl php5-mysql php5-xsl php5-json php5-ldap php-apc
 
-If you are using Ubuntu 14.04, the package php5-readline is also recommended.
+If you are using Ubuntu 14.04, make sure that php5-readline is also installed.
 
 .. code-block:: bash
 
@@ -503,9 +499,8 @@ the CSS files:
 
 .. code-block:: bash
 
-   sudo add-apt-repository ppa:chris-lea/node.js
-   sudo apt-get update
-   sudo apt-get install nodejs make
+   curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+   sudo apt-get install nodejs
    sudo npm install -g "less@<2.0.0"
    cd /usr/share/nginx/atom/plugins/arDominionPlugin/
    sudo make # At this point the files still belong to root
