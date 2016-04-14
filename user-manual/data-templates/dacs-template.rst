@@ -638,6 +638,13 @@ Existence and location of originals
 Record any identifying numbers that may help in locating the originals in the cited location.
 (DACS 6.1.6)
 
+**EAD**
+
+.. code-block:: xml
+
+   <originalsloc encodinganalog="3.5.1">
+      <p>
+
 .. _dacs-existence-copies:
 
 Existence and location of copies
@@ -652,6 +659,13 @@ If a copy of only a part of the unit being described is available, indicate whic
 If the materials being described are available via remote access (electronically or otherwise), provide the relevant information needed to access them.
 (DACS 6.2.3)
 
+**EAD**
+
+.. code-block:: xml
+
+   <altformavail encodinganalog="3.5.2">
+      <p>
+
 .. _dacs-related-archival-materials:
 
 Related archival materials
@@ -663,6 +677,13 @@ Related archival materials
 
 **DACS Rule** If there are materials that have a direct and significant connection to those being described by reason of closely shared responsibility or sphere of activity, provide the title, location, and, optionally, the reference number(s) of the related materials and their relationship with the materials being described.
 (DACS 6.3.5)
+
+**EAD**
+
+.. code-block:: xml
+
+   <relatedmaterial encodinganalog="3.5.3">
+      <p>
 
 .. _dacs-related-descriptions:
 
@@ -676,6 +697,8 @@ Related descriptions
 **DACS Rule** To create a relationship between this description and another description held in AtoM, begin typing the name of the related description and select it from the autocomplete drop-down menu when it appears below.
 Multiple relationships can be created.
 
+**EAD** Not mapped to EAD.
+
 .. _dacs-publication-notes:
 
 Publication notes
@@ -686,6 +709,13 @@ Publication notes
 **ISAD CSV Column** ``publicationNote``
 
 **DACS Rule** No rule.
+
+**EAD**
+
+.. code-block:: xml
+
+   <bibliography encodinganalog="3.5.4">
+      <p>
 
 :ref:`Back to the top <dacs-template>`
 
@@ -714,6 +744,14 @@ General note(s)
 **DACS Rule** Record, as needed, information not accommodated by any of the defined elements of description.
 (DACS 7.1.2)
 
+**EAD**
+
+.. code-block:: xml
+
+   <did>
+      <note type="generalNote">
+          <p>
+
 .. _dacs-specialized-note:
 
 Specialized note(s)
@@ -729,6 +767,43 @@ Citation (DACS 7.1.5),
 Alphanumeric designation (DACS 7.1.6),
 Variant title information (DACS 7.1.7),
 or Processing information (DACS 7.1.8).
+
+**EAD**
+
+Conservation note:
+
+.. code-block:: xml
+
+   <odd type="dacsConservation">
+         <p>
+
+Citation note:
+
+.. code-block:: xml
+
+  <odd type="dacsCitation">
+        <p>
+
+Alphanumeric designation note:
+
+.. code-block:: xml
+
+  <odd type="dacsAlphanumericDesignation">
+        <p>
+
+Variant title information note:
+
+.. code-block:: xml
+
+  <odd type="dacsVariantTitleInformation">
+        <p>
+
+Processing information note:
+
+.. code-block:: xml
+
+  <odd type="dacsProcessingInformation">
+        <p>
 
 :ref:`Back to the top <dacs-template>`
 
