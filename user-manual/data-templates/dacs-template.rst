@@ -222,7 +222,7 @@ Alternatively, type a new name to create and link to a new authority record.
 .. code-block:: xml
 
    <controlaccess>
-      <name role="Publisher" id="atom_506_actor">
+      <name role="[role]" id="[authority record ID]">
 
 .. _dacs-child-levels:
 
@@ -906,6 +906,11 @@ Subject access points
 
 **DACS Rule** No rule.
 
+.. code-block:: xml
+
+   <controlaccess>
+      <subject>
+
 .. _dacs-place-access-points:
 
 Place access points
@@ -916,6 +921,11 @@ Place access points
 **ISAD CSV Column** ``placeAccessPoints``
 
 **DACS Rule** No rule.
+
+.. code-block:: xml
+
+   <controlaccess>
+      <geogname>
 
 .. _dacs-genre-access-points:
 
@@ -928,6 +938,11 @@ Genre access points
 
 **DACS Rule** No rule.
 
+.. code-block:: xml
+
+   <controlaccess>
+      <genreform>
+
 .. _dacs-name-access-points:
 
 Name access points
@@ -938,6 +953,11 @@ Name access points
 **ISAD CSV Column** ``nameAccessPoints``
 
 **DACS Rule** No rule.
+
+.. code-block:: xml
+
+   <controlaccess>
+      <name role="subject">
 
 :ref:`Back to the top <dacs-template>`
 
