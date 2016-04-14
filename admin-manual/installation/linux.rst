@@ -409,7 +409,7 @@ Gearman job server is required by AtoM as of version 2.2.
 Other packages
 --------------
 
-In order to generate PDF finding aids, AtoM requires `Apache FOP 1.0 <https://archive.apache.org/dist/xmlgraphics/fop/binaries/fop-1.0-bin.tar.gz>`__.
+In order to generate PDF finding aids, AtoM requires `Apache FOP 2.1 <https://archive.apache.org/dist/xmlgraphics/fop/binaries/fop-1.0-bin.tar.gz>`__.
 After downloading and extracting it, ensure you have the fop executable in your
 system's executable path. Additionally, you may need to set the environmental
 variable FOP_HOME to the folder path you extracted Apache FOP to, for example:
@@ -417,12 +417,12 @@ variable FOP_HOME to the folder path you extracted Apache FOP to, for example:
 .. code-block:: bash
 
    sudo -s
-   wget https://archive.apache.org/dist/xmlgraphics/fop/binaries/fop-1.0-bin.tar.gz
-   tar -zxvf fop-1.0-bin.tar.gz
-   rm fop-1.0-bin.tar.gz
-   mv fop-1.0 /usr/share
-   ln -s /usr/share/fop-1.0/fop /usr/bin/fop
-   echo 'FOP_HOME="/usr/share/fop-1.0"' >> /etc/environment
+   wget https://archive.apache.org/dist/xmlgraphics/fop/binaries/fop-2.1-bin.tar.gz
+   tar -zxvf fop-2.1-bin.tar.gz
+   rm fop-2.1-bin.tar.gz
+   mv fop-2.1 /usr/share
+   ln -s /usr/share/fop-2.1/fop /usr/bin/fop
+   echo 'FOP_HOME="/usr/share/fop-2.1"' >> /etc/environment
    exit
 
 If you want AtoM to be able to process :term:`digital objects <digital object>`
