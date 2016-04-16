@@ -18,7 +18,7 @@ Field descriptions
 ISDIAH is maintained by the `International Council on Archives
 <http://www.ica.org/>`_ and is available at:
 
-* http://www.ica.org/10198/standards/isdiah-international-standard-for-describing-institutions-with-archival-holdings.html
+* http://www.ica.org/en/isdiah-international-standard-describing-institutions-archival-holdings
 
 Information below includes:
 
