@@ -16,7 +16,9 @@ Field descriptions
 ==================
 
 ISDIAH is maintained by the `International Council on Archives
-<http://www.ica.org/>`_ and is available `on the ICA website <http://www.ica.org/10198/standards/isdiah-international-standard-for-describing-institutions-with-archival-holdings.html>`_.
+<http://www.ica.org/>`_ and is available on the ICA website:
+
+* http://www.ica.org/en/isdiah-international-standard-describing-institutions-archival-holdings
 
 Please note that there is currently no CSV import option for ISDF.
 
