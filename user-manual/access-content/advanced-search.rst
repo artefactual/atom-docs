@@ -4,6 +4,9 @@
 Advanced search
 ===============
 
+.. |gears| image:: images/gears.png
+   :height: 18
+
 In addition to AtoM's general :term:`search box` (located in the AtoM
 :term:`header bar`), AtoM also includes a robust advanced search interface
 that allows user to build complex queries via the :term:`user interface`.
@@ -50,30 +53,46 @@ operators and special characters.
 
 .. _advanced-search-interface:
 
-The Advanced search interface
-=============================
+The Advanced search panel
+=========================
 
 This section will outline how to use AtoM's advanced search interface. The
 advanced search interface is used to find descriptions in AtoM that contain text
-matching a search query. The advanced search hyperlink can be accessed in the
-:term:`drop-down menu` that appears when a user places the cursor in the
-:term:`search box` located in the AtoM :term:`header bar`. In the advanced
-search page, a user can select "and, or, not" operators, and search specific
-:term:`archival description` fields, to create a powerful search query. The
-option to apply filters to limit or narrow the search are also provided in a
-friendly :term:`user interface`.
+matching a search query. The :term:`advanced search panel` is available on all
+:term:`archival description` search and browse pages, at the top of the
+results - click on the panel header to expand or collapse it:
 
-**To search for archival descriptions using the advanced search interface:**
+.. image:: images/advancedsearch-panel.*
+   :align: center
+   :width: 70%
+   :alt: An image of the advanced search panel, collapsed. Click to expand.
+
+Users can also go directly to the search page with the advanced search
+panel expanded by using the "Advanced search" hyperlink available in the
+:term:`drop-down menu` that appears when a user places the cursor in the
+:term:`search box` located in the AtoM :term:`header bar`.
+
+In the advanced search panel, a user can select "and, or, not" operators to
+build powerful :term:`Boolean search` queries, limit search terms to specific
+:term:`archival description` fields, and/or apply a number of different
+filters to limit or narrow the results returned along specific criteria, all
+via a friendly :term:`user interface`.
+
+**To search for archival descriptions using the advanced search panel:**
 
 1. Place your cursor in the :term:`search box` located in the AtoM
    :term:`header bar`. A :term:`drop-down menu` will appear below the search
    box - to access the advanced search interface, click on the "Advanced
    search" link in the drop-down menu.
 
-.. image:: images/searchbox-dropdown.*
-   :align: center
-   :width: 70%
-   :alt: An image of the drop-down beneath the search box
+   .. image:: images/searchbox-dropdown.*
+      :align: center
+      :width: 70%
+      :alt: An image of the drop-down beneath the search box
+
+   Alternatively, you can use the :term:`Browse menu` to navigate to **Browse
+   > Archival descriptions**, and then click on the Advanced search panel to
+   expand it.
 
 .. IMPORTANT::
 
@@ -89,16 +108,17 @@ friendly :term:`user interface`.
 .. image:: images/advanced-search.*
    :align: center
    :width: 70%
-   :alt: An image of the advanced search interface
+   :alt: An image of the advanced search panel
 
-3. To begin searching, enter a search term into the search field in the central
-   column of the page.
+3. To begin searching, enter a search term into the first search field at the
+   top of the Advanced search panel, under the heading, "Find results
+   with":
 
 .. image:: images/advancedsearch-start.*
    :align: center
    :width: 70%
    :alt: An image of a user entering data in the main search field of the
-         advanced search interface
+         advanced search panel
 
 4. Use the drop-down menu to limit your search query to a specific
    :term:`field` in the :term:`archival description` templates. The default
@@ -108,17 +128,18 @@ friendly :term:`user interface`.
    * Archival history
    * Scope and content
    * Extent and medium
-   * Subject access points
-   * Name access points
-   * Place access points
+   * :term:`Subject` access points
+   * :term:`Name` access points
+   * :term:`Place` access points
+   * Genre access points
    * Identifier
-   * Reference code
+   * :term:`Reference code`
 
 .. image:: images/advancedsearch-fields.*
    :align: center
-   :width: 70%
+   :width: 80%
    :alt: An image of a user limiting a search term to the scope and content
-         field using the advanced search interface
+         field using the advanced search panel
 
 .. NOTE::
 
@@ -136,11 +157,12 @@ friendly :term:`user interface`.
    :term:`Boolean search` operators via the :term:`user interface` - by using
    these operators, you can narrow your search, combine terms, or exclude
    terms. AtoM will add a new set of fields below, into which you can enter your
-   terms - repeat steps 3-5 as necessary.
+   terms - repeat steps 3-5 as necessary. You can use the **X** to the right
+   of the fields to remove a row of fields from your Boolean query if needed.
 
 .. image:: images/advancedsearch-andornot.*
    :align: center
-   :width: 70%
+   :width: 80%
    :alt: An image of a user adding search fields using the "Add new criteria"
          button in the Advanced search interface
 
@@ -156,51 +178,70 @@ friendly :term:`user interface`.
 
 .. image:: images/advancedsearch-newfields.*
    :align: center
-   :width: 70%
+   :width: 80%
    :alt: An image of a user adding search fields using the "Add new criteria"
          button in the Advanced search interface
 
-.. image:: images/advanced-search-filters.*
-   :align: right
-   :width: 40%
+6. The filters available under the "Limit results to:" section of the Advanced
+   search panel will allow you to limit the results to a specific
+   :term:`repository` or :term:`archival unit`.
+
+   .. image:: images/advancedsearch-limits.*
+      :align: center
+      :width: 80%
+      :alt: An image of the advanced search limiters
+
+   * **Repository**: Limit the search to the :term:`holdings` of a specific
+     :term:`archival institution`. The :term:`drop-down menu` will be
+     populated by all of the archival institution records in AtoM. Select the
+     :term:`repository` or archival institution you wish from the drop-down;
+     when you submit your query, results returned will only include those
+     associated with the selected repository.
+   * **Top-level description**: This is an auto-complete field that will
+     populate with all of the top-level descriptions held in AtoM (generally,
+     :term:`fonds` and :term:`collections <collection>`, but if a series or
+     another level is set as the top level of a descriptive hierarchy, it will
+     be available in the list). Begin typing the title of a top-level
+     description, and the auto-complete will populate the :term:`drop-down menu`
+     with matching selections. Click on one to select it - search results will
+     be limited to :term:`archival descriptions <archival description>` found
+     within the chosen top-level description's descendants - i.e.
+     :term:`children <child record>`.
+
+7. In the section below that, labelled "Filter results by:", you can also add
+   filters to your search to limit the results returned to specific parameters.
+   The functions of each search filter are outlined below:
+
+.. NOTE::
+
+   An :term:`administrator` can control the visibility of some advanced search
+   filters via the Default page elements settings. Depending on your settings,
+   some fields described below may be hidden in your AtoM installation. For
+   more information, see: :ref:`default-page-elements`.
+
+.. image:: images/advancedsearch-filters.*
+   :align: center
+   :width: 80%
    :alt: An image of the advanced search filters
 
-6. You can also add filters to your search to limit the results returned to
-   specific parameters. The functions of each search filter are outlined
-   below:
-
-* **Repository**: Limit the search to the :term:`holdings` of a specific
-  :term:`archival institution`. The :term:`drop-down menu` will be populated
-  by all of the archival institution records in AtoM.
-* **Top-level descriptions**: This is an auto-complete field that will
-  populate with all of the top-level descriptions held in AtoM (generally,
-  :term:`fonds` and :term:`collections <collection>`, but if a series or
-  another level is set as the top level of a descriptive hierarchy, it will
-  be available in the list). Begin typing the title of a top-level
-  description, and the auto-complete will populate the :term:`drop-down menu`
-  with matching selections. Click on one to select it - search results will
-  be limited to :term:`archival descriptions <archival description>` found
-  within the chosen top-level description's descendants - i.e.
-  :term:`children <child record>`.
-* **General material designation**: This is a filter that is particular to a
-  controlled field found within the :ref:`RAD template <rad-template>` for
-  archival descriptions - it is a controlled vocabulary drawn directly from
-  the Canadian Rules for Archival Description, and managed in one of AtoM's
-  :term:`taxnomies <taxonomy>` and used to define the type of material found
-  within an :term:`archival unit`. Select a GMD term from the
-  :term:`drop-down menu` to limit search results to descriptions that have
-  been been marked with the matching GMD value.
-* **Media type**: Used to search for a particular type of
-  :term:`digital object`. Values include: Audio, Image, Other, Text, or
-  Video. Selecting a Media type term from the :term:`drop-down menu` to limit
-  search results to include only those descriptions with linked digital
-  objects that match the selected media type.
+* **Level of description**: This filter will limit the returned search
+  results to a specific :term:`level of description`.
 * **Digital object available**: Use this filter to determine if a the search
   results returned include :term:`digital objects <digital object>` (e.g.
   images, audio or video files, text documents, etc.), or by selecting "No",
   include only results without digital objects.
-* **Level of description**: This filter will limit the returned search
-  results to a specific :term:`level of description`.
+
+.. TIP::
+
+   If there are digital objects available in your results, you can then use
+   the "Media type" :term:`facet <facet filter>` to further limit the results
+   by media type - e.g. Video, Audio, Image, Text, or Other. For more
+   information on using Facet filters in AtoM, see:
+
+   * :ref:`Facet filters in AtoM (overview) <recurring-facet-filters>`
+   * :ref:`facets-by-record-type`
+   * :ref:`using-facet-filters`
+
 * **Copyright status**: AtoM :term:`archival description` templates include a
   the ability to add Rights statements, drawn from elements of the
   `PREMIS <http://www.loc.gov/standards/premis/>`__
@@ -211,73 +252,72 @@ friendly :term:`user interface`.
   results to those descriptions where a PREMIS Rights copyright status has
   been added matching the selection in the filter's :term:`drop-down menu`.
   For more information, see: :ref:`rights`.
-* **Date range**: An inclusive date-range search. Its use is explained in
-  greater detail in the section below, :ref:`date-range-search`.
+* **General material designation**: This is a filter that is particular to a
+  controlled field found within the :ref:`RAD template <rad-template>` for
+  archival descriptions - it is a controlled vocabulary drawn directly from
+  the Canadian Rules for Archival Description, and managed in one of AtoM's
+  :term:`taxnomies <taxonomy>` and used to define the type of material found
+  within an :term:`archival unit`. Select a GMD term from the
+  :term:`drop-down menu` to limit search results to descriptions that have
+  been been marked with the matching GMD value.
 
-7. Click "Search" in the :term:`button block` to view the results of your search
-   query. Results will appear in order of relevance below the button block. If
-   there are more than 10 results, a pager will be included at the bottom of the
-   results page.
+8. Finally, the last section, labelled "Filter by date range:", will allow you
+   to search against the internal StartDate and EndDate values of of creation
+   events associated with an :term:`archival description`. For more
+   information on using the date range search in AtoM, see below,
+   :ref:`date-range-search`.
 
-8. Click on the blue titles to navigate to that result's specific page.
-   Navigating back will bring you back to your original list of results;
-   however, navigating to the "Advanced search" page from the :term:`search
-   box` will require you to restart your search from the beginning
+9. If you wish to restart your search and quickly clear all filters and
+   boolean fields, you can use the "Reset" button located at the bottom of the
+   Advanced search panel. AtoM will reload the page, with all filters and
+   parameters removed.
 
-9. Your search can be modified at any time and the results refrehsed accordingly
-   by simply changing the required search :term:`terms <term>` and :term:`fields
-   <field>` and clicking "Search" once again. You can also restart your search
-   at any time; simply click the "Reset" button in the :term:`button block`.
+10. When you have entered all of your search parameters, click the "Search"
+    button in the :term:`button block` at the bottom of the Advanced search
+    panel to view the results of your search query. AtoM will reload
+    the page, with a count of results above the Advanced search panel,
+    and the results listed below. Results will appear in order of relevance
+    below the button block. If there are more than 10 results, a pager will be
+    included at the bottom of the results page. Remember, you can click on the
+    header of the :term:`Advanced search panel` to collapse it out of view
+    while you browse the results.
+
+.. NOTE::
+
+   An :term:`administrator` can set the default number of results per page
+   throughout the application via |gears| **Admin > Settings**. For more
+   information, see: :ref:`results-page`.
+
+11. Click on the blue titles of the results stubs to navigate to that result's
+    specific page. Navigating back will bring you back to your original list
+    of results; however, navigating to the "Advanced search" page from the
+    :term:`search box` will require you to restart your search from the
+    beginning.
+
+12. Your search can be modified at any time and the results refrehsed
+    accordingly by simply changing the required search terms and
+    :term:`fields <field>`, and clicking "Search" once again. You can also
+    restart your search at any time; simply click the "Reset" button in the
+    :term:`button block` of the :term:`Advanced search panel`.
 
 .. _date-range-search:
 
-Using the date range search filters
------------------------------------
+Date range search filter
+------------------------
 
 .. image:: images/date-range-search.*
-   :align: right
-   :width: 25%
+   :align: center
+   :width: 90%
    :alt: An image of the date range search filters
 
 The date range search allows users to search for any records whose active
-dates (e.g. dates of creation, accumulation, etc.) overlap a selected range.
-It is a broadly inclusive search: any records whose dates overlap the user
-input range will be returned. For example, a search for a range from 1950-1970
-would return descriptions with the following dates:
-
-* 1945 - 1990
-* 1945 - 1950
-* 1970 - 1990
-* 1955 - 1965
-* 1955 - (no end date)
-* (no start date) 1980
-
-In the following image, results in green will be returned by the search query;
-results in red will be excluded from the results:
-
-.. image:: images/2.3-advanced-date-search-1.*
-   :align: center
-   :width: 90%
-   :alt: An example of results returned for a 1950-1970 query
-
-You can also input only a start date, or an end date, into the date range
-search if desired. If a user gives **just a start date**, it is interpreted to
-mean 'filter to records that were active after this date' - in other words,
-'end date of record **>** user supplied start date':
-
-.. image:: images/2.3-advanced-date-search-2-startDate.*
-   :align: center
-   :width: 90%
-   :alt: An example of results returned for a 1950 start date query
-
-If the user gives **just an end date**, it means 'filter to records that were
-active before this date' - in other words, 'start date of record **<** user
-supplied end date':
-
-.. image:: images/2.3-advanced-date-search-3-endDate.*
-   :align: center
-   :width: 90%
-   :alt: An example of results returned for a 1970 end date query
+dates (e.g. dates of creation, accumulation, etc.) either overlap, or fall
+exactly within, a selected range. AtoM expects ISO 8601 formatted date values
+for searching - i.e. YYYY-MM-DD. Note that the fields include calendar widgets,
+to provide users with a graphical interface for date selection if desired -
+alternatively, you can manually enter your range directly into the text field.
+Whenever only YYYY values are entered, AtoM will automatically add -01-01 to
+values in the Start date field, and -12-31 to values in the End date field.
 
 .. IMPORTANT::
 
@@ -297,7 +337,132 @@ supplied end date':
    then your description(s) will not be returned when performing a date range
    search!
 
-**Using the date range search filters**
+There are 2 ways of searching dates, represented by the :term:`radio button`
+options in the Date range search interface - "Overlapping" (which is the
+default), and "Exact."
+
+The **Overlapping** option is a broadly inclusive search: any records whose
+dates overlap the user input range will be returned. For example, a search for
+a range from 1950-1970 would return descriptions with the following dates:
+
+* 1945 - 1990
+* 1945 - 1950
+* 1970 - 1990
+* 1955 - 1965
+* 1955 - (no end date)
+* (no start date) - 1980
+
+The **Exact** option means that records must fall exactly within the specified
+parameters to be returned as a result. A search for 1950-1970 using the
+"Exact" option would not return any of the results listed above - but its
+results returned might include values such as:
+
+* 1950 - 1955
+* 1952 - 1969
+* 1950 - 1970
+* 1964 - 1969
+* 1968 - 1970
+
+To better clarify these options, some example diagrams have been included
+below to indicate the difference, illustrating how each option behaves for
+closed ranges (both start and end date included), and open ranges (where
+either a start or end date is included, and the second date is left blank). In
+the following images, results in green will be returned by the search query;
+results in red will be excluded from the results:
+
+.. _date-search-closed-example:
+
+Closed range example
+^^^^^^^^^^^^^^^^^^^^
+
+**Overlapping**:
+
+.. image:: images/2.3-advanced-date-search-1-OVERLAP.*
+   :align: center
+   :width: 90%
+   :alt: An example of results returned for a 1950-1970 query using the
+         Overlap option
+
+**Exact**:
+
+.. image:: images/2.3-advanced-date-search-1-EXACT.*
+   :align: center
+   :width: 90%
+   :alt: An example of results returned for a 1950-1970 query using the Exact
+         option
+
+As you can see, the "Overlapping" option is very inclusive, while the "Exact"
+option is much more strict in terms of the results returned.
+
+.. _date-search-open-end-example:
+
+Open end date example
+^^^^^^^^^^^^^^^^^^^^^
+
+You can also input only a start date, or an end date, into the date range
+search if desired. If a user gives **just a start date**, it is interpreted to
+mean 'filter to records that were active after this date' - in other words,
+'end date of record **>** user supplied start date.'
+
+**Overlapping**:
+
+.. image:: images/2.3-advanced-date-search-2-startDate-OVERLAP.*
+   :align: center
+   :width: 90%
+   :alt: An example of results returned for a 1950 start date query using the
+         Overlapping option
+
+When the "Overlapping" option is used, records which start before the
+specified start date will be included if their date range extends into the
+specified parameter.
+
+**Exact**:
+
+.. image:: images/2.3-advanced-date-search-2-startDate-EXACT.*
+   :align: center
+   :width: 90%
+   :alt: An example of results returned for a 1950 start date query using the
+         Exact option
+
+When the "Exact" option is used, records starting before the specified start
+date range are excluded.
+
+.. _date-search-open-start-example:
+
+Open start date example
+^^^^^^^^^^^^^^^^^^^^^^^
+
+If the user gives **just an end date**, it means 'filter to records that were
+active before this date' - in other words, 'start date of record **<** user
+supplied end date.'
+
+**Overlapping**
+
+.. image:: images/2.3-advanced-date-search-3-endDate-OVERLAP.*
+   :align: center
+   :width: 90%
+   :alt: An example of results returned for a 1970 end date query with the
+         Overlap option used
+
+When the "Overlapping" option is used for search with a specified end date but
+no start date, records whose ranges extend beyond the specified range may be
+included, if their start dates extend into the specified range.
+
+**Exact**
+
+.. image:: images/2.3-advanced-date-search-3-endDate-EXACT.*
+   :align: center
+   :width: 90%
+   :alt: An example of results returned for a 1970 end date query with the
+         Exact option used
+
+When the "Exact" option is used, any record whose end date falls outside of
+the specified parameter will be excluded.
+
+.. _using-date-range:
+
+Using the date range search filter
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When you place the cursor in the start date or end date fields of the date
 range search, a calendar :term:`drop-down menu` will appear. This "datepicker"
@@ -305,7 +470,7 @@ offers a graphical user interface for selecting the date, if desired.
 
 .. image:: images/date-range-calendar.*
    :align: center
-   :width: 30%
+   :width: 80%
    :alt: An example of calendar widget dropdown in the date range fields
 
 Click on a day in the calendar to select that as your start or end date. You
@@ -315,26 +480,42 @@ The month and year can also be adjusted via the two drop-down menus:
 
 .. image:: images/date-range-calendar-dropdown.*
    :align: center
-   :width: 30%
+   :width: 80%
    :alt: An example of calendar widget dropdown menus in the date range fields
 
-You can also ignore the calendar widget, and simply enter a date directly into
-the text field. AtoM expects the dates to be formattedd as **YYYY** or
-**YYYY-MM-DD**. If you enter only the year, then AtoM will add -01-01 to start
-dates and -12-31 to end dates when the search query is submitted - for
-example, if you search for 1950 - 1970, AtoM will submit the query as 1950-01-01
-(January 01, 1950) to 1970-12-31 (December 31, 1970).
+Alternatively, you can also ignore the calendar widget, and simply enter a
+date directly into the text field. AtoM expects the dates to be formatted as
+**YYYY** or **YYYY-MM-DD**. If you enter only the year, then AtoM will add
+-01-01 to start dates and -12-31 to end dates when the search query is
+submitted - for example, if you search for 1950 - 1970, AtoM will submit the
+query as 1950-01-01 (January 01, 1950) to 1970-12-31 (December 31, 1970).
+You can also specify an open range, by entering just a start date or just an
+end date.
 
-If you attempt to enter a date manually, but do not use the correct format,
-(e.g. you enter ``YYYY-MM``, or ``YYYYMMDD`` without the separating dashes)
-AtoM will return a warning, which must be corrected before the query can be
-submitted:
+Once you have entered your desired date range, use the :term:`radio button`
+options to the right of the input fields to specify how the date range should
+be performed. "Exact" means that the start and end dates of descriptions
+returned must fall entirely within the date range entered, while "Overlapping"
+is much more inclusive, and any description whose start or end dates touch or
+overlap the target date range will be returned. See above for an illustration
+of the differences between Overlapping and Exact when returning results for:
 
-.. image:: images/date-range-error.*
+* :ref:`Closed range (start and end date) <date-search-closed-example>`
+* :ref:`Open range (no end date) <date-search-open-end-example>`
+* :ref:`Open range (no start date) <date-search-open-start-example>`
+
+If you click the **(?)** Help icon, a :term:`tooltip <tooltips>` will appear
+below the fields with a brief explanation of the difference between
+"Overlapping" and "Exact."
+
+.. image:: images/date-range-help.*
    :align: center
-   :width: 30%
-   :alt: An example of incorrectly formatted values in the date range fields
+   :width: 80%
+   :alt: An image of help tooltip in the date range fields
 
+When you have entered all desired parameters, use the "Search" button to
+submit your query. Remember, you can also use other Advanced search filters or
+:term:`facets <facet filter>` to further refine your search!
 
 :ref:`Back to top <advanced-search>`
 
@@ -368,7 +549,6 @@ include "city" **OR** "hall".
 **To search for a phrase** in AtoM, use double quotes to contain the terms
 you wish to search. For example, search *"city hall"* to return results that
 contain both "city" and "hall" in that exact order.
-
 
 .. _advanced-search-operators:
 
@@ -429,35 +609,35 @@ search interface.
 +--------+-------------------------------------------------------------------+
 | Symbol | Use                                                               |
 +========+===================================================================+
-|   `"`  | Term enclosed in quotes must appear exactly as provided. Example: |
+| ``"``  | Term enclosed in quotes must appear exactly as provided. Example: |
 |        | "towel" will find towel, but not towels.                          |
 +--------+-------------------------------------------------------------------+
-|  `+`   | Term after "+" must be in the result. Example: +tea cricket       |
+| ``+``  | Term after "+" must be in the result. Example: +tea cricket       |
 |        | requires that results that must contain the term tea in them, and |
 |        | may have the term cricket.                                        |
 +--------+-------------------------------------------------------------------+
-|   `-`  | Term after "-" must not be in the result. Example: -tea cricket   |
+|  ``-`` | Term after "-" must not be in the result. Example: -tea cricket   |
 |        | requires that results that must not contain the term tea in them, |
 |        | and may have the term cricket.                                    |
 +--------+-------------------------------------------------------------------+
-|   `?`  | Single character wildcard. Example: p?per will find paper and     |
+|  ``?`` | Single character wildcard. Example: p?per will find paper and     |
 |        | piper, but not pepper.                                            |
 +--------+-------------------------------------------------------------------+
-|   `*`  | Multiple character wildcard. Example: `galax*` will find galaxy   |
-|        |  and galaxies, but not galactic.                                  |
+| ``*``  | Multiple character wildcard. Example: ``galax*`` will find galaxy |
+|        | and galaxies, but not galactic.                                   |
 |        |                                                                   |
 +--------+-------------------------------------------------------------------+
-|   `~`  | Fuzzy search. Will return results with words similar to the term. |
+|  ``~`` | Fuzzy search. Will return results with words similar to the term. |
 |        | Example: fjord~ will find fjord, fjords, ford, form, fonds, etc.  |
 +--------+-------------------------------------------------------------------+
-|  `&&`  | Boolean operator. Can be used in place of AND. Will cause an      |
+| ``&&`` | Boolean operator. Can be used in place of AND. Will cause an      |
 |        | error if combined with spelled-out operators. Example: Arthur &&  |
 |        | Ford AND Zaphod will fail; Arthur && Ford && Zaphod will succeed. |
 +--------+-------------------------------------------------------------------+
-|   `!`  | Boolean operator. Can be used in place of NOT. Will cause an      |
+|  ``!`` | Boolean operator. Can be used in place of NOT. Will cause an      |
 |        | error  if combined with spelled-out operators.                    |
 +--------+-------------------------------------------------------------------+
-|   `^`  | Boost relevance. Multiplies the relevance of the preceding term   |
+|  ``^`` | Boost relevance. Multiplies the relevance of the preceding term   |
 |        | by the number following the symbol, affecting the sorting of the  |
 |        | search results. Example: paranoid android^5 gives results         |
 |        | containing the term "android" 5x the relevance as results         |
@@ -468,31 +648,29 @@ search interface.
 |        | treated as text, rather than as a special character. For example, |
 |        | to search for "(1+1):2", use the following: ``\(1\+1\)\:2``       |
 +--------+-------------------------------------------------------------------+
-|  `( )` | Used to group search clauses. This can be useful if you want to   |
+| ``()`` | Used to group search clauses. This can be useful if you want to   |
 |        | control the precedence of boolean operators for a query, e.g.     |
 |        | (coffee NOT tea) OR cream will return different results than      |
 |        | coffee NOT (tea OR cream). Without grouping, by default in        |
 |        | Elasticsearch, NOT takes precedence over AND, which takes         |
 |        | precedence over OR.                                               |
 +--------+-------------------------------------------------------------------+
-|  `[ ]` | Closed interval range search. Example: ["Frogstar" TO             |
+| ``[]`` | Closed interval range search. Example: ["Frogstar" TO             |
 |        | "Magrathea"] will return results in the alphabetic range          |
 |        | between "Frogstar" and "Magrathea", including"Frogstar" and       |
 |        | "Magrathea".                                                      |
 +--------+-------------------------------------------------------------------+
-|  `{ }` | Open interval range search. Example: {"Frogstar" TO "Magrathea"}  |
+| ``{}`` | Open interval range search. Example: {"Frogstar" TO "Magrathea"}  |
 |        | will return all results in the alphabetic range between           |
 |        | "Frogstar" and "Magrathea", excluding"Frogstar" and "Magrathea".  |
 +--------+-------------------------------------------------------------------+
 
 For further examples of the use of these Boolean operators, users can consult
-the `Zend Lucene search documentation
-<http://framework.zend.com/manual/1.12/en/zend.search.lucene.query-language.html>`__
+the `Zend Lucene search documentation <http://framework.zend.com/manual/1.12/en/zend.search.lucene.query-language.html>`__
 as Elasticsearch is built on the same Apache Lucene base as the Zend
 framework. Developers interested in fine-tuning these settings, or technical
 users interested in how Elasticsearch operates may wish to consult the
-`query string query
-<http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html>`__
+`query string query <http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html>`__
 Elasticsearch reference documentation for more information on Elasticsearch's
 default behaviors, and possible configurations.
 

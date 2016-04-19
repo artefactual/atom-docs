@@ -38,6 +38,9 @@ Search
 .. |manage| image:: images/edit-sign.png
    :height: 18
 
+.. |clipboard| image:: images/paperclip.png
+   :height: 18
+
 To help users locate and manage content, AtoM includes powerful search
 support, available anywhere in the application through the :term:`search box`
 located in the AtoM :term:`header bar`, or through one of the many dedicated
@@ -126,6 +129,8 @@ filter>`), including:
 * :term:`Archival description`
 * :term:`Authority record`
 * :term:`Archival institution`
+* :term:`Subject` access points
+* :term:`Place` access points
 
 When multiple results for a record type exist, the :term:`typeahead`
 drop-down includes an option to view all records for a particular record
@@ -231,8 +236,8 @@ display global search results. This offers two advantages to the user:
    :alt: Example of a filter tag on a search results page
 
    An example of a search results page with a filter tag visible - in this
-   instance, the user has performed a search for "cash" delimited to the
-   holdings of the City of Greater Sudbury Archives
+   instance, the user has performed a search limited to top-level descriptions
+   from the holdings of the Wilfrid Laurier University Archives
 
 .. _search-using-delimiters:
 
@@ -256,7 +261,7 @@ Using the Institutional search box delimiters
    <search-typeahead>`, you can click it to go straight to the record - AtoM
    will redirect you to the selected description's :term:`view page`.
 6. You can use "quotations", :term:`Boolean operators <boolean search>` such
-   as AND, OR, and NOT, or special characters such as the ** * ** wildcard, to
+   as AND, OR, and NOT, or special characters such as the ``*`` wildcard, to
    broaden or narrow your search. For more information, see:
    :ref:`advanced-search`
 7. When you have entered your search term(s), press enter to submit and begin
@@ -274,10 +279,10 @@ Using the Institutional search box delimiters
    filter>`, to help you sort through the results and find the content you are
    looking for. For more information on working with facet filters, see:
    :ref:`recurring-facet-filters`.
-10. Search results can be sorted either alphabetically, or by most-recently
-    updated, using the :term:`sort button` available at the top-left side of
-    the search results. For more information, see:
-    :ref:`recurring-sort-button`.
+10. Search results can be sorted either alphabetically, by most-recently
+    updated, by reference code, or by date of creation using the
+    :term:`sort button` available at the top-left side of the search results.
+    For more information, see: :ref:`recurring-sort-button`.
 
 :ref:`Back to top <search-atom>`
 
@@ -387,12 +392,18 @@ steps involved in searching for
    :width: 80%
    :alt: An image of an example search results page
 
-* **A**: The search term you have entered will be shown at the top of a search
-  results page in black, for context. In this example, the search term
-  "brown" has been entered.
-* **B**: Next to the search term, a count of the number of total matching
-  results returned is shown in grey. In this example, there are 6 archival
-  descriptions returned for the search "brown"
+* **A**: The number of relevant search results returned will be shown at the
+  top of the screen, for context. Your search term(s) will be visible in the
+  search bar - additionally, if you click to open the
+  :term:`Advanced search panel`, your search query will be visible in the
+  first Boolean field at the top of the panel. For more information on the
+  advanced search panel and using the options it contains, see:
+  :ref:`advanced-search`.
+* **B**: This is the :term:`Advanced search panel`. Click to expand or
+  collapse the panel. It contains a user interface for building
+  :term:`Boolean search` queries, as well as a number of additional filters
+  that can be used to refine search results. For more information, see:
+  :ref:`advanced-search`.
 * **C**: Results appear in the main column of the page - click on a result
   and AtoM will take you to a :term:`view page` for the related
   :term:`archival description`. Additionally, the results include helpful
@@ -403,7 +414,9 @@ steps involved in searching for
     below the title of the record.
   * *Publication status* - if a description's :term:`publication status` is
     "draft" (i.e. it is not visible to public users), the draft status will be
-    indicated in the stub record.
+    indicated in the stub record. You must be logged in to see the draft
+    status displayed. If no status is displayed, the record is published, and
+    visible to public (i.e. not logged in) users.
   * *Description* - if a scope and content note has been included in the
     archival description, its first 2-3 lines will be visible here for greater
     context.
@@ -426,8 +439,10 @@ steps involved in searching for
 
 * **D**: Search result pages include :term:`facet filters <facet filter>` to
   help you narrow your search further. For more information on facet filters
-  and using them in AtoM, see :ref:`recurring-facet-filters`. Facets
-  available on archival description search/browse pages include:
+  and using them in AtoM, see :ref:`recurring-facet-filters`. By
+  default, only those facets that relate to the results will be
+  displayed - if a facet has 0 or only 1 result, it will not be shown. Facets
+  available on archival description search/browse pages can include:
 
   * **Language:** Filters for content in a different available language (i.e.,
     if the content has been tranlsated into more than one language)
@@ -466,29 +481,40 @@ steps involved in searching for
   and return to all results (see :ref:`above <search-delimiter-filter-tag>`
   for more on filter tags):
 
-.. image:: images/search-results-objects.*
-   :align: center
-   :width: 80%
-   :alt: An image of an example search results page limited to digital
-         objects
+  .. image:: images/search-results-objects.*
+     :align: center
+     :width: 80%
+     :alt: An image of an example search results page limited to digital
+           objects
 
-.. TIP::
+  .. TIP::
 
-   You can limit the digital object to a specific type of digital object
-   (Image, Audio, Video, Text, or Other) using the Media Type
-   :term:`facet filter` available on the left-hand column of the search
-   results page. For more information on Facet filters in AtoM, see:
-   :ref:`recurring-facet-filters`.
+     You can limit the digital object to a specific type of digital object
+     (Image, Audio, Video, Text, or Other) using the Media Type
+     :term:`facet filter` available on the left-hand column of the search
+     results page. For more information on Facet filters in AtoM, see:
+     :ref:`recurring-facet-filters`. There is also a general digital object
+     filter inclued in the :term:`Advanced search panel` - see
+     :ref:`advanced-search`.
+
+ * **F**: The :term:`Clipboard` icon appears on all archival description
+   search and browse results. Click on the |clipboard| paperclip icon, and the
+   result will be added to the Clipboard. You can use the Clipboard menu at the
+   top of the page. For more information, see **CLIPBOARD LINK**
 
 6. If you are searching within the holdings of a particular :term:`archival
    institution`, consult the section above for guidance and tips on using the
-   institutional search box delimiters: :ref:`search-using-delimiters`.
+   institutional search box delimiters: :ref:`search-using-delimiters`. There
+   is also a Repository filter in the :term:`advanced search panel` that will
+   allow you to limit the results to a specific institution - see
+   :ref:`advanced-search`.
 7. When you have found the :term:`archival description` you are looking for,
    click on its title, and AtoM will take you to the description's
    :term:`view page`.
 8. Note that you can use :term:`Boolean search` operators such as AND, OR, or
    NOT, as well as Boolean special characters such as the ``*`` wildcard
-   symbol to improve your search results. For more information on available
+   symbol to improve your search results, directly from the global search box
+   in the AtoM :term:`header bar`. For more information on available
    special characters and boolean searching in AtoM, see:
    :ref:`advanced-search`.
 9. If you do not see the record you are looking for, you can use the pager
@@ -505,8 +531,10 @@ steps involved in searching for
    :alt: An image of a pager at the bottom of a search results page
 
 10. If you still have not found the description you are searching for, you can
-    try using the Advanced search interface. For more information, see:
-    :ref:`advanced-search`.
+    try using the options in the :term:`Advanced search panel` to further
+    refine your results. For more information, see: :ref:`advanced-search`.
+
+:ref:`Back to top <search-atom>`
 
 .. _treeview-search:
 

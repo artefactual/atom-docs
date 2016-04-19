@@ -91,10 +91,20 @@ Glossary
     The advanced search is used to find descriptions in AtoM that contain
     text matching a search query. The advanced search hyperlink can be
     accessed in the drop-down that appears when a user places the cursor
-    in the :term:`search box`. In the advanced search page, the user can
+    in the :term:`search box`. It is also available on all
+    :term:`archival description` search and browse pages, in the
+    :term:`Advanced search panel`. In the advanced search panel, the user can
     select "and, or, not" operators, and search specific fields, to create
     a powerful search query. The option to apply filters to limit or
     narrow the search are also provided. See: :ref:`advanced-search`.
+
+  Advanced search panel
+    The advanced search panel appears on :term:`archival description` search
+    and browse pages, contained in a collapsible section at the top of the
+    results page. Click on the panel to expand or collapse it. The options in
+    the panel can be used to perform advanced search queries, and/or to
+    further refine initial search or browse results. For more information,
+    see: :ref:`advanced-search`.
 
   Archival description
     An archival description is a body of information about an archival
@@ -1045,8 +1055,6 @@ Glossary
     identifier associated with the current description, is managed by a
     setting available to an :term:`administrator` in **Admin > Settings >
     Global**. For more information, see: :ref:`inherit-reference-code`.
-
-
 
   Reference display copy
     A reference display copy is a low-resolution version of a
