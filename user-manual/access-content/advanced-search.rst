@@ -577,7 +577,7 @@ search interface.
    :width: 70%
    :alt: An example of a user building a boolean query in the AtoM search box
 
-.. TIP:
+.. TIP::
 
    By default in AtoM, the :term:`Boolean search` settings of AtoM are set to
    use **OR** as the default operator when multiple search terms are entered.
