@@ -683,7 +683,7 @@ descriptions affected (e.g. the target description and its descendants):
 
       php symfony tools:delete-description -B <slug>
 
-:ref:`Back to top <cli-tools>`
+:ref:`Back to top <maintenance-cli-tools>`
 
 .. _cli-delete-drafts:
 
