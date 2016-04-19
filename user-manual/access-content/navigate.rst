@@ -873,6 +873,15 @@ count of the records included in each facet appears next to the facet label,
 giving users a sense of how many search/browse results fall under each facet
 result.
 
+.. NOTE::
+
+   Facet filters are configured not to display if there are only 0 or 1
+   facets. So for example, if you perform a search, and none of the results
+   have :term:`digital objects <digital object>` attached, then the "Media
+   types" facet filter will not display. Only those facets relevant to the
+   results being displayed will appear in the user interface.
+
+
 Facet filters in AtoM are configured so that each facet displays its results
 with the highest number of matches at the top. Currently, AtoM will only
 display a maximum of the top ten matched results in each facet. Facets are
@@ -907,10 +916,6 @@ as a place filter, the "Levels of description" facet results will now display
 results that apply only to the records being displayed (records with an
 "Ontario" place :term:`access point`), until the previous facet filter is
 removed.
-
-If "All" is the only option available beneath a facet heading, it means that
-there are no relevant filters in the facet that apply to the current records
-being displayed in the search/browse results page.
 
 .. _facets-by-record-type:
 
@@ -1047,22 +1052,20 @@ For more information on uploading and managing digital objects, see:
    depends on the level of detail included in the related records. For
    example, if no :term:`place` :term:`access points <access point>` have been
    added to the :term:`archival descriptions <archival description>` in your
-   installation, there will be not matched filter options under the "Places"
-   facet filter. The richer your descriptive data, the more useful the facet
-   filters will be.
+   installation, then no Places facet filter will be shown. The richer your
+   descriptive data, the more useful the facet filters will be.
 
 .. _using-facet-filters:
 
 Using facet filters in AtoM:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Navigate to a :ref:`browse <browse>` or :doc:`search
-  <../access-content/search-atom>` page
+* Navigate to a :ref:`browse <browse>` or :ref:`search-atom` page
 * Available :term:`facet filters <facet filter>` will appear on the left-hand
   side of the page (unless you are on the Digital objects browse page - the
   filter buttons there are in the upper right-hand corner of the page). If
   there are no facet filters present, they are not available for that
-  :term`entity` (e.g. Place, Subject, Function browse pages, etc.)
+  :term:`entity` (e.g. Place, Subject, Function browse pages, etc.)
 * Click on the heading of a facet to expand or collapse its available options
 * The filter currently selected in a facet will appear in black underlined
   text. Available filters appear as blue :ref:`text links
@@ -1071,7 +1074,11 @@ Using facet filters in AtoM:
   browse page (unless a specific query has brought them there that engages a
   filter).
 * Click on a blue :ref:`text link <recurring-text-links>` to apply a filter
-* Click on "All" under a facet to remove an applied filter
+* Click on "All" under a facet to remove an applied filter. Alternately, you
+  can click on the related :term:`filter tag` that will appear above the
+  search or browse results. For more information on filter tags, see:
+  :ref:`search-atom`; see particularly :ref:`search-box-delimiters` for a
+  screenshot and example application of the filter tags.
 * When a filter is applied, all other facet filters are updated to provide
   filters that relate only to the results currently being displayed. For
   example, if you filter by :term:`Level of description` to display only
@@ -1089,15 +1096,13 @@ Using facet filters in AtoM:
   the returned results by common subject access point ("Industry" and "Union")
   would remain.
 * If no data exists in the related description fields for the records
-  available under a facet, no filters (except the default "All") will appear
-  under the facet heading.
-
+  available under a facet, or there is only one result, then no facet filter
+  for that data will appear.
 
 .. seealso::
 
    * :ref:`Browse <browse>`
    * :ref:`Search <search-atom>`
-
 
 .. _recurring-button-block:
 
