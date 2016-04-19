@@ -6,8 +6,8 @@ International Standard Archival Authority Record for Corporate Bodies, Persons, 
 
 On this page you will find:
 
-* Link to downloadable CSV template using
-  `ISAAR(CPF) International Standard Archival Authority Record for Corporate Bodies, Persons, and Families <http://www.ica.org/10203/standards/isaar-cpf-international-standard-archival-authority-record-for-corporate-bodies-persons-and-families-2nd-edition.html>`_
+* Link to downloadable CSV template using *ISAAR(CPF) International Standard
+  Archival Authority Record for Corporate Bodies, Persons, and Families*
 * Description of fields used when entering or importing
   :term:`authority records <authority record>` using ISAAR(CPF)
   in a :term:`CSV` file or entering the data manually.
@@ -32,8 +32,9 @@ Field descriptions
 ==================
 
 ISAAR(CPF) is maintained by the `International Council on Archives
-<http://www.ica.org/>`_ and is available at
-http://www.ica.org/10203/standards/isaar-cpf-international-standard-archival-authority-record-for-corporate-bodies-persons-and-families-2nd-edition.html
+<http://www.ica.org/>`_ and is available at:
+
+* http://www.ica.org/en/isaar-cpf-international-standard-archival-authority-record-corporate-bodies-persons-and-families-2nd
 
 Information below includes:
 

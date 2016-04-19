@@ -11,7 +11,7 @@ The ISDF template is based on the guidelines found in the *International Standar
 For Describing Functions* (ISDF). ISDF is maintained by the International Council
 on Archives (`ICA <http://www.ica.org/>`__), and is available at:
 
-* http://www.ica.org/10208/standards/isdf-international-standard-for-describing-functions.html
+* http://www.ica.org/en/isdf-international-standard-describing-functions
 
 .. SEEALSO::
 

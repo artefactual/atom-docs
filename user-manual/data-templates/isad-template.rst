@@ -6,8 +6,8 @@ General International Standard Archival Description (ISAD(G)) data entry and CSV
 
 On this page you will find:
 
-* Link to downloadable CSV template using
-  `ISAD(G) General International Standard Archival Description <http://www.ica.org/10207/standards/isadg-general-international-standard-archival-description-second-edition.html>`_
+* Link to downloadable CSV template using ISAD(G) General International
+  Standard Archival Description
 * Description of fields used when entering or importing
   :term:`archival descriptions <archival description>` using ISAD(G)
   in a :term:`CSV` file or entering the data manually.
@@ -30,7 +30,7 @@ Field descriptions
 ISAD is maintained by the `International Council on Archives
 <http://www.ica.org/>`_ and is available at:
 
-* http://www.ica.org/10207/standards/isadg-general-international-standard-archival-description-second-edition.html.
+* http://www.ica.org/en/isadg-general-international-standard-archival-description-second-edition
 
 Information below includes:
 
@@ -354,7 +354,12 @@ with the rules of multilevel description and national conventions.
    date type manually to the child record after saving the new parent record.
 
 .. IMPORTANT::
-   To include child levels in the ISAD CSV for import, the ``parentId`` column must contain the legacy ID of the parent record. For example, if the parent record has the legacy ID *249* recorded in the ``legacyId`` column, the child record must have the number *249* in the ``parentId`` column, as shown in the table here:
+
+   To include child levels in the ISAD CSV for import, the ``parentId`` column
+   must contain the legacy ID of the parent record. For example, if the parent
+   record has the legacy ID *249* recorded in the ``legacyId`` column, the child
+   record must have the number *249* in the ``parentId`` column, as shown in
+   the table here:
 
        +--------------------+------------+----------+
        | title              | legacyId   | parentId |

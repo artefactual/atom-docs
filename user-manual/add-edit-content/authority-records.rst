@@ -47,9 +47,7 @@ notes,
 In AtoM, the :term:`data elements <data element>` used to describe
 authority records are based on the `ICA's <http://www.ica.org/>`__
 *International Standard Archival Authority Record for Corporate Bodies,
-Persons and Families* (`ISAAR <http://www.ica.org/10203/standards/isaar-cpf-
-international-standard-archival-authority-record-for-corporate-bodies-persons-
-and-families-2nd-edition.html>`__).
+Persons and Families*, or :ref:`ISAAR(CPF) <isaar-template>`.
 
 .. image:: images/authority-record-example.*
    :align: center
