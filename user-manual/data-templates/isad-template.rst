@@ -76,12 +76,11 @@ Reference code
 
 **Template field** Identifier
 
-**CSV Column** identifier
+**CSV Column** ``identifier``
 
-**ISAD Rule** Provide a specific local reference code, control number, or other
-unique identifier. The country and repository code will be automatically
-added from the linked repository record to form a full reference code. (ISAD
-3.1.1)
+**ISAD Rule** Provide a specific local reference code, control number, or other unique identifier.
+The country and repository code will be automatically added from the linked repository record to form a full reference code.
+(ISAD 3.1.1)
 
 **EAD**
 
@@ -92,11 +91,8 @@ added from the linked repository record to form a full reference code. (ISAD
 
 .. NOTE::
 
-   Depending on the "inherit reference code" settings in **Adming > Settings >
-   Global**, this field can display to non-logged in users as "Reference code."
-   While editing the record, the full reference code including any identifiers
-   :ref:`inherited <inherit-reference-code>` from higher levels will appear
-   below the Identifier field.
+   Depending on the "inherit reference code" settings in **Admin > Settings > Global**, this field can display to non-logged in users as "Reference code."
+   While editing the record, the full reference code including any identifiers :ref:`inherited <inherit-reference-code>` from higher levels will appear below the Identifier field.
 
 
 :ref:`Back to the top <isad-template>`
@@ -104,10 +100,9 @@ added from the linked repository record to form a full reference code. (ISAD
 Alternative identifier
 ----------------------
 
-**Template field** Add alternative identifier(s) (link beneath identifier
-field)
+**Template field** Add alternative identifier(s) (toggles open using link beneath identifier field)
 
-**CSV Columns** alternativeIdentifiers and alternativeIdentifierLabels
+**CSV Columns** ``alternativeIdentifiers`` and ``alternativeIdentifierLabels``
 
 **ISAD Rule** N/A (see note below)
 
@@ -137,7 +132,7 @@ Title
 
 **Template field** Title
 
-**CSV Column** title
+**CSV Column** ``title``
 
 **ISAD Rule** Provide either a formal title or a concise supplied title in
 accordance with the rules of multilevel description and national
@@ -164,14 +159,13 @@ Date(s)
 
 **Template field** Date(s)
 
-**CSV Column** creationDates and creationDatesType
+**CSV Columns** ``eventTypes``, ``eventDates``, ``eventStartDates``, and ``eventEndDates``
 
 .. NOTE::
 
-   The CSV column in earlier versions prior to 2.2 was named "creatorDates" -
-   it has been updated to clarify its relation to the creation event - not to
-   the dates of existence of the creator. However, we have added fallback
-   code, so if the old name is used, the import will still succeed.
+   The CSV columns in 2.2 were titled ``creationDates`` and ``creationDatesType``.
+   Prior to 2.2, there was one CSV column called ``creatorDates``.
+   We have added fallback code, so if the old name is used, the import will still succeed.
 
 **ISAD Rule** Identify and record the date(s) of the unit of description.
 Identify the type of date given. Record as a single date or a range of dates
