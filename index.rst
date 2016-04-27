@@ -4,14 +4,6 @@
 AtoM documentation
 ==================
 
-.. toctree::
-   :hidden:
-
-   index
-   /user-manual/index
-   /admin-manual/index
-   /dev-manual/index
-
 .. _user-manual-home:
 
 User manual
