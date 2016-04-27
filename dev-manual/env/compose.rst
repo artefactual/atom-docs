@@ -52,8 +52,8 @@ change your current directory.
    git clone -b qa/2.3.x https://github.com/artefactual/atom.git atom
    cd atom
 
-Now set the environment variable `COMPOSE_FILE` so we don't have to do this
-every time we invoke docker-compose (or use the `-f` flag):
+Now set the environment variable ``COMPOSE_FILE`` so we don't have to do this
+every time we invoke docker-compose (or use the ``-f`` flag):
 
 .. code-block:: bash
 
@@ -119,8 +119,9 @@ You can also verify that two workers have subscribed to Gearman:
    fdd4764376d2f763-arInformationObjectCsvExportJob    0   0   2
    fdd4764376d2f763-arInheritRightsJob                 0   0   2
 
-You could temporarily stop all the services with `stop` or both stop and remove
-related containers, networks, images and volumes by running:
+You could temporarily stop all the services with ``docker-compose stop`` (which
+will need ``docker-compose up -d`` later to start the services again) or both
+stop and remove related containers, networks, images and volumes by running:
 
 .. code-block:: bash
 
