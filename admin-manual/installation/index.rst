@@ -12,7 +12,7 @@ Installation
    linux
    windows
    macosx
-   multi-node
+   ansible
    upgrading
    execution-limits
    asynchronous-jobs

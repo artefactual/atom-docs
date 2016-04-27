@@ -209,7 +209,7 @@ Installation
 * :ref:`installation-linux`
 * :ref:`installation-windows`
 * :ref:`installation-macosx`
-* :ref:`installation-multi-node`
+* :ref:`installation-ansible`
 * :ref:`installation-upgrading`
 * :ref:`installation-execution-limits`
 * :ref:`installation-asynchronous-jobs`

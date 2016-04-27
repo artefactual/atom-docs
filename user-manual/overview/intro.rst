@@ -54,7 +54,7 @@ To encourage application reliability (for example, the replacement of nodes in
 case of failure) and scalability (e.g. the ability to handle more traffic,
 requests, etc.), all elements of AtoM's core stack can be configured in a
 `distributed <https://en.wikipedia.org/wiki/Distributed_computing>`__ manner.
-For more information, see: :ref:`installation-multi-node`.
+For more information, see: :ref:`installation-ansible`.
 
 Web-based
 =========
