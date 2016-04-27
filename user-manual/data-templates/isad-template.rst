@@ -161,12 +161,6 @@ Date(s)
 
 **CSV Columns** ``eventTypes``, ``eventDates``, ``eventStartDates``, and ``eventEndDates``
 
-.. NOTE::
-
-   The CSV columns in 2.2 were titled ``creationDates`` and ``creationDatesType``.
-   Prior to 2.2, there was one CSV column called ``creatorDates``.
-   We have added fallback code, so if the old name is used, the import will still succeed.
-
 **ISAD Rule** Identify and record the date(s) of the unit of description.
 Identify the type of date given. Record as a single date or a range of dates
 as appropriate." (ISAD 3.1.3) The Date Display field can be used to
@@ -182,91 +176,23 @@ approximation, uncertainty, or qualification.
 
 .. NOTE::
 
-   When entering data manually, users can choose an event type from a
+   When entering data in the template, users can choose an event type from a
    :term:`drop-down menu`. The event types in ISAD(G) are Creation and
-   Accumulation. When importing descriptions via CSV, the event type defaults
-   to Creation. In the CSV, use the ``creationDatesType`` column.
+   Accumulation. When importing descriptions via CSV, use the ``eventTypes`` column.
 
-AtoM will also add a ``@datechar`` attribute for different types of events. Here
-is an example for a accumulation event date in EAD XML:
+   AtoM will also add a ``datechar`` attribute for different types of events.
+   Here is an example for as accumulation event date in EAD XML:
 
-.. code-block:: xml
+   .. code-block:: xml
 
-   <did>
-      <unitdate id="[atom-generated-value]" datechar="accumulation" normal="[start date/end date]" encodinganalog="3.1.3">
-
-
-:ref:`Back to the top <isad-template>`
-
-.. _isad-date-start:
-
-Dates of creation- Start
-------------------------
-
-**Template field** Date(s)- Start
-
-**CSV Column** creationDatesStart
+      <did>
+        <unitdate id="[atom-generated-value]" datechar="accumulation" normal="[start date/end date]" encodinganalog="3.1.3">
 
 .. NOTE::
 
-   The CSV column in earlier versions prior to 2.2 was named
-   "creatorDatesStart" - it has been updated to clarify its relation to the
-   creation event - not to the dates of existence of the creator. However, we
-   have added fallback code, so if the old name is used, the import will still
-   succeed.
-
-**ISAD Rule** Use the start and end dates to make the dates searchable. Do not
-use any qualifiers or typographical symbols to express uncertainty. Acceptable
-date formats: YYYYMMDD, YYYY-MM-DD, YYYY-MM, YYYY.
-
-**EAD**
-
-.. code-block:: xml
-
-   <did>
-      <unitdate normal="[start]/[end]" encodinganalog="3.1.3">
-
-.. NOTE::
-
-   This field only displays while editing the description. If AtoM is
-   able to interpret the start date from the Date(s) field, above, it will
-   autopopulate upon entering.
-
-:ref:`Back to the top <isad-template>`
-
-.. _isad-date-end:
-
-Dates of creation- End
-----------------------
-
-**Template field** Date(s)- End
-
-**CSV Column** creationDatesEnd
-
-.. NOTE::
-
-   The CSV column in earlier versions prior to 2.2 was named
-   "creatorDatesEnd" - it has been updated to clarify its relation to the
-   creation event - not to the dates of existence of the creator. However, we
-   have added fallback code, so if the old name is used, the import will still
-   succeed.
-
-**ISAD Rule** Use the start and end dates to make the dates searchable. Do not
-use any qualifiers or typographical symbols to express uncertainty. Acceptable
-date formats: YYYYMMDD, YYYY-MM-DD, YYYY-MM, YYYY.
-
-**EAD**
-
-.. code-block:: xml
-
-   <did>
-      <unitdate normal="[start]/[end]" encodinganalog="3.1.3">
-
-.. NOTE::
-
-   This field only displays while editing the description. If AtoM is
-   able to interpret the start date from the Date(s) field, above, it will
-   autopopulate upon entering.
+   The CSV columns in 2.2 were titled ``creationDates`` and ``creationDatesType``.
+   Prior to 2.2, there was one CSV column called ``creatorDates``.
+   We have added fallback code so if the old name is used the import will still succeed.
 
 :ref:`Back to the top <isad-template>`
 
@@ -337,9 +263,9 @@ with the rules of multilevel description and national conventions.
 .. NOTE::
 
    This widget has been added to help improve workflows when creating new
-   descriptions via the :term:`user interface`.  When entering descriptions
-   manually, users can add new :term:`child records <child record>` in this area
-   while creating a parent record.
+   descriptions via the :term:`user interface`. When entering descriptions
+   through the form, users can add new :term:`child records <child record>` in
+   this area while creating a parent record.
 
    The *dates* field corresponds to a date of creation - if you would like a
    different kind of date, you will have to either navigate to the child
@@ -386,15 +312,15 @@ multiple extents with a linebreak. (ISAD 3.1.5)"
 .. NOTE::
 
    AtoM will allow users to add additional EAD subelements to :term:`field` in
-   the :term:`edit page`, to accommodate all the possibilities in EAD for more
+   the :term:`edit page` to accommodate all the possibilities in EAD for more
    granularity, such as ``<extent>``, ``<dimensions>``, ``<physfacet>``, and
    ``<genreform>``. In the :term:`view page` the EAD tags will be hidden, but
    preserved during export and re-import.
 
-.. image:: images/physdesc-ead-isad.*
-   :align: center
-   :width: 75%
-   :alt: A comparison of the edit and view pages for physical description
+   .. image:: images/physdesc-ead-isad.*
+      :align: center
+      :width: 75%
+      :alt: A comparison of the edit and view pages for physical description
 
 :ref:`Back to the top <isad-template>`
 
