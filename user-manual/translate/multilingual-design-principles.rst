@@ -1,8 +1,8 @@
 .. _multilingual-design-principles:
 
-======================================
-Multilingual design principles in AtoM
-======================================
+==============================
+Multilingual design principles
+==============================
 
 .. |globe2| image:: images/globe.png
    :height: 18
