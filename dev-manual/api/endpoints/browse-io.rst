@@ -60,7 +60,7 @@ records in the response.
 Example request
 ===============
 
-.. code-block:: json
+.. code-block:: none
 
    GET /api/informationobjects HTTP/1.1
    Host: www.example.com
@@ -70,7 +70,7 @@ Example request
 Example response
 ================
 
-.. code-block:: json
+.. code-block:: none
 
    HTTP/1.1 200 OK
    Content-Type: application/json; charset=utf-8

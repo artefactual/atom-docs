@@ -47,7 +47,7 @@ Taxonomy name                       ID
 Example request
 ===============
 
-.. code-block:: json
+.. code-block:: none
 
    GET /api/taxonomies/34 HTTP/1.1
    Host: www.example.com
@@ -55,7 +55,7 @@ Example request
 Example response
 ================
 
-.. code-block:: json
+.. code-block:: none
 
    HTTP/1.1 200 OK
    Content-Type: application/json; charset=utf-8

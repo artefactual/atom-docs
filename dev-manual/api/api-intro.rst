@@ -42,7 +42,7 @@ the string ``<user_email>:<password>``.
 
 **Example request:**
 
-.. code-block:: json
+.. code-block:: none
 
    GET /api/informationobjects HTTP/1.1
    Host: www.example.com
@@ -50,7 +50,7 @@ the string ``<user_email>:<password>``.
 
 **Example response header:**
 
-.. code-block:: json
+.. code-block:: none
 
    HTTP/1.1 200 OK
    Content-Type: application/json; charset=utf-8

@@ -258,7 +258,7 @@ Developer's manual
 Guidelines for developers interested in customizing AtoM, developing new
 modules, and working with the application's API.
 
-.. _dev-api-home:
+.. _dev-env-home:
 
 Environments
 ------------
@@ -267,6 +267,8 @@ We provide two developer-friendly environments for AtoM.
 
 * :ref:`dev-env-vagrant`
 * :ref:`dev-env-compose`
+
+.. _dev-api-home:
 
 API
 ---
