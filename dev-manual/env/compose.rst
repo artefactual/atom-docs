@@ -40,14 +40,14 @@ Spin it up
 Let's make sure that the Docker client can reach the engine. The following
 command will list the currently running containers:
 
-   .. code-block:: bash
+.. code-block:: bash
 
    docker ps
 
 You should see an empty list. Now using git, check out the sources of AtoM and
 change your current directory.
 
-   .. code-block:: bash
+.. code-block:: bash
 
    git clone -b qa/2.3.x https://github.com:artefactual/atom.git atom
    cd atom
@@ -55,7 +55,7 @@ change your current directory.
 Now set the environment variable `COMPOSE_FILE` so we don't have to do this
 every time we invoke docker-compose (or use the `-f` flag):
 
-   .. code-block:: bash
+.. code-block:: bash
 
    # For bash users
    export COMPOSE_FILE="$PWD/docker/docker-compose.dev.yml"
@@ -65,7 +65,7 @@ every time we invoke docker-compose (or use the `-f` flag):
 
 It's time to use Docker Compose in order to provision our containers:
 
-   .. code-block:: bash
+.. code-block:: bash
 
    docker-compose up -d
    docker-compose exec atom php symfony tools:purge --demo
@@ -79,7 +79,7 @@ effect immediately.
 Due to a bug that has not been solved yet, the AtoM worker needs to be
 restarted after the database is populated for the first time:
 
-   .. code-block:: bash
+.. code-block:: bash
 
    docker-compose restart atom_worker
 
@@ -87,20 +87,20 @@ Docker Compose lets you perform many different actions. Please refer to the
 `documentation <https://docs.docker.com/compose/overview/>`_ for more help.
 For example, you can monitor the output of some of your containers as follows:
 
-   .. code-block:: bash
+.. code-block:: bash
 
    docker-compose logs -f atom atom_worker
 
 You can also scale the cluster as needed. In the following example we are going
 to add extra AtoM workers and Elasticsearch nodes.
 
-   .. code-block:: bash
+.. code-block:: bash
 
    docker-compose scale atom_worker=2 elasticsearch=3
 
 Let's verify that the Elasticsearch cluster has indeed three nodes in place:
 
-   .. code-block:: bash
+.. code-block:: bash
 
    docker-compose exec atom curl elasticsearch:9200/_cat/nodes
 
@@ -110,7 +110,7 @@ Let's verify that the Elasticsearch cluster has indeed three nodes in place:
 
 You can also verify that two workers have subscribed to Gearman:
 
-   .. code-block:: bash
+.. code-block:: bash
 
    docker-compose exec atom bash -c "echo STATUS | nc gearmand 4730"
 
@@ -122,7 +122,7 @@ You can also verify that two workers have subscribed to Gearman:
 You could temporarily stop all the services or both stop and remove related
 containers, networks, images and volumes by running:
 
-   .. code-block:: bash
+.. code-block:: bash
 
    docker-compose down --volumes
 
@@ -133,7 +133,7 @@ Connect to AtoM
 AtoM should be now accessible from your browser. If you want to find the
 address run the following:
 
-   .. code-block:: bash
+.. code-block:: bash
 
    $ docker-compose ps
 
