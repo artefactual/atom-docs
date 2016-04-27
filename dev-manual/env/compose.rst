@@ -7,7 +7,7 @@ Docker Compose
 Linux containers and Docker are radically changing the way that applications
 are developed, built, distributed and deployed. The AtoM team is experimenting
 with new workflows that make use of containers. This document introduces our
-new development workflow based on Docker and `Docker Compose <https://docs.docker.com/compose/>`_.
+new development workflow based on Docker and `Docker Compose <https://docs.docker.com/compose/>`__.
 The latter is a tool that help us to run multi-container applications like AtoM
 and it is suitable for both development and production environments.
 
