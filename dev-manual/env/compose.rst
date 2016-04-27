@@ -49,7 +49,7 @@ change your current directory.
 
 .. code-block:: bash
 
-   git clone -b qa/2.3.x https://github.com:artefactual/atom.git atom
+   git clone -b qa/2.3.x https://github.com/artefactual/atom.git atom
    cd atom
 
 Now set the environment variable `COMPOSE_FILE` so we don't have to do this
