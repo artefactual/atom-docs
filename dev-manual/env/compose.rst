@@ -42,34 +42,34 @@ command will list the currently running containers:
 
    .. code-block:: bash
 
-      docker ps
+   docker ps
 
 You should see an empty list. Now using git, check out the sources of AtoM and
 change your current directory.
 
    .. code-block:: bash
 
-      git clone -b qa/2.3.x https://github.com:artefactual/atom.git atom
-      cd atom
+   git clone -b qa/2.3.x https://github.com:artefactual/atom.git atom
+   cd atom
 
 Now set the environment variable `COMPOSE_FILE` so we don't have to do this
 every time we invoke docker-compose (or use the `-f` flag):
 
    .. code-block:: bash
 
-      # For bash users
-      export COMPOSE_FILE="$PWD/docker/docker-compose.dev.yml"
+   # For bash users
+   export COMPOSE_FILE="$PWD/docker/docker-compose.dev.yml"
 
-      # For fish users
-      set -lx COMPOSE_FILE (pwd)/docker/docker-compose.dev.yml
+   # For fish users
+   set -lx COMPOSE_FILE (pwd)/docker/docker-compose.dev.yml
 
 It's time to use Docker Compose in order to provision our containers:
 
    .. code-block:: bash
 
-      docker-compose up -d
-      docker-compose exec atom php symfony tools:purge --demo
-      docker-compose exec atom make -C plugins/arDominionPlugin
+   docker-compose up -d
+   docker-compose exec atom php symfony tools:purge --demo
+   docker-compose exec atom make -C plugins/arDominionPlugin
 
 That's it! You have started the containers and put them in the background,
 populated the database and compile the CSS stylesheet of the Dominion plugin.
@@ -81,7 +81,7 @@ restarted after the database is populated for the first time:
 
    .. code-block:: bash
 
-      docker-compose restart atom_worker
+   docker-compose restart atom_worker
 
 Docker Compose lets you perform many different actions. Please refer to the
 `documentation <https://docs.docker.com/compose/overview/>`_ for more help.
@@ -89,42 +89,42 @@ For example, you can monitor the output of some of your containers as follows:
 
    .. code-block:: bash
 
-      docker-compose logs -f atom atom_worker
+   docker-compose logs -f atom atom_worker
 
 You can also scale the cluster as needed. In the following example we are going
 to add extra AtoM workers and Elasticsearch nodes.
 
    .. code-block:: bash
 
-      docker-compose scale atom_worker=2 elasticsearch=3
+   docker-compose scale atom_worker=2 elasticsearch=3
 
 Let's verify that the Elasticsearch cluster has indeed three nodes in place:
 
    .. code-block:: bash
 
-      docker-compose exec atom curl elasticsearch:9200/_cat/nodes
+   docker-compose exec atom curl elasticsearch:9200/_cat/nodes
 
-      cdec404af617 172.18.0.7 6 65 0.26 d m Huntara
-      366a7817864f 172.18.0.3 5 65 0.26 d * Vance Astro
-      0e52024208fe 172.18.0.6 4 65 0.26 d m Bloodstorm
+   cdec404af617 172.18.0.7 6 65 0.26 d m Huntara
+   366a7817864f 172.18.0.3 5 65 0.26 d * Vance Astro
+   0e52024208fe 172.18.0.6 4 65 0.26 d m Bloodstorm
 
 You can also verify that two workers have subscribed to Gearman:
 
    .. code-block:: bash
 
-      docker-compose exec atom bash -c "echo STATUS | nc gearmand 4730"
+   docker-compose exec atom bash -c "echo STATUS | nc gearmand 4730"
 
-      fdd4764376d2f763-arGenerateFindingAidJob            0   0   2
-      fdd4764376d2f763-arUpdatePublicationStatusJob       0   0   2
-      fdd4764376d2f763-arInformationObjectCsvExportJob    0   0   2
-      fdd4764376d2f763-arInheritRightsJob                 0   0   2
+   fdd4764376d2f763-arGenerateFindingAidJob            0   0   2
+   fdd4764376d2f763-arUpdatePublicationStatusJob       0   0   2
+   fdd4764376d2f763-arInformationObjectCsvExportJob    0   0   2
+   fdd4764376d2f763-arInheritRightsJob                 0   0   2
 
 You could temporarily stop all the services or both stop and remove related
 containers, networks, images and volumes by running:
 
    .. code-block:: bash
 
-      docker-compose down --volumes
+   docker-compose down --volumes
 
 
 Connect to AtoM
@@ -135,17 +135,17 @@ address run the following:
 
    .. code-block:: bash
 
-      $ docker-compose ps
+   $ docker-compose ps
 
-      Name                       Command               State             Ports
-      -------------------------------------------------------------------------------------------
-      docker_atom_1            /atom/src/docker/entrypoin ...   Up
-      docker_atom_worker_1     /atom/src/docker/entrypoin ...   Up
-      docker_elasticsearch_1   /docker-entrypoint.sh bash ...   Up
-      docker_gearmand_1        gearmand --queue-type=libm ...   Up
-      docker_memcached_1       /entrypoint.sh -p 11211 -m ...   Up
-      docker_nginx_1           nginx -g daemon off;             Up      192.168.64.2:8000->80/tcp
-      docker_percona_1         /docker-entrypoint.sh mysqld     Up
+   Name                       Command               State             Ports
+   -------------------------------------------------------------------------------------------
+   docker_atom_1            /atom/src/docker/entrypoin ...   Up
+   docker_atom_worker_1     /atom/src/docker/entrypoin ...   Up
+   docker_elasticsearch_1   /docker-entrypoint.sh bash ...   Up
+   docker_gearmand_1        gearmand --queue-type=libm ...   Up
+   docker_memcached_1       /entrypoint.sh -p 11211 -m ...   Up
+   docker_nginx_1           nginx -g daemon off;             Up      192.168.64.2:8000->80/tcp
+   docker_percona_1         /docker-entrypoint.sh mysqld     Up
 
 As you can see in the right column, Nginx has published a TCP port. It may be
 different in your environment. In this example, we will put the following
