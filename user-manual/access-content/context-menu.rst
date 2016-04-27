@@ -59,8 +59,8 @@ elements, depending on some configuration options set by an
 
 **Right-hand context menu**
 
-4. A link to add the current record to the Clipboard. For more information on
-   the Clipboard, see: **TO DO**
+4. A link to add the current record to the :term:`Clipboard`. For more
+   information on using the Clipboard, see: :ref:`clipboard`.
 
 5. The "Explore" section, which contains various ways to explore the current
    :term:`archival unit`. These include:

@@ -88,6 +88,7 @@ edit :term:`access privileges <access privilege>`.
 * :ref:`Browse <browse>`
 * :ref:`Navigate <navigate>`
 * :ref:`Context menu <context-menu>`
+* :ref:`clipboard`
 
 .. _translate:
 

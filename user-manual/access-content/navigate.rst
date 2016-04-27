@@ -19,6 +19,7 @@ things unrelated to the current entity.
   * :ref:`The log-in button <log-in-button>`
   * :ref:`The quick links menu <quick-links-menu>`
   * :ref:`The language menu <language-menu>`
+  * :ref:`The clipboard menu <clipboard-menu-header>`
   * :ref:`The main menu <main-menu>`
 
     * |plus| :ref:`Add <main-menu-add>`
@@ -50,9 +51,10 @@ The AtoM Header Bar
 The :term:`header bar` is the primary means to access, manage, and
 create content in AtoM. It is persistent, meaning it remains available on all
 pages throughout the application. The :term:`header bar` includes the log-in
-button, :term:`quick links menu`, :term:`language menu`, :term:`search box`,
-:term:`browse menu`, and :term:`site logo` for all users, and the
-:term:`main menu` for authenticated (i.e. logged in) users.
+button, :term:`quick links menu`, :term:`language menu`,
+:term:`clipboard menu`, :term:`search box`, :term:`browse menu`, and
+:term:`site logo` for all users, and the :term:`main menu` for authenticated
+(i.e. logged in) users.
 
 .. image:: images/headerBar_unauthenticated.*
    :align: center
@@ -65,6 +67,12 @@ then determine whether or not these are visible in the :term:`header bar` via
 **Admin > Settings > Default page elements**. The visibility of the :term:`site
 logo` can also be controlled via Default page elements. For more information
 see :ref:`Settings <settings>`.
+
+.. TIP::
+
+   An administrator can also use the settings available in |gears| **Admin >
+   Settings > Default page elements** to hide some user interface elements,
+   including the :term:`language menu`. See :ref:`Settings <settings>`.
 
 The :term:`main menu` only becomes visible in the :term:`header bar` after a
 user has logged in. Depending on a user's :term:`access privileges <access
@@ -83,6 +91,7 @@ example, only :term:`administrators <administrator>` will see the
    * :ref:`The Log-in button <log-in-button>`
    * :ref:`The quick links menu <quick-links-menu>`
    * :ref:`The language menu <language-menu>`
+   * :ref:`The clipboard menu <clipboard-menu-header>`
    * :ref:`The main menu <main-menu>`
    * :ref:`The browse menu <browse-menu>`
    * :ref:`The search box <search-box>`
@@ -145,8 +154,10 @@ AtoM documentation (as a"Help" link).
 .. TIP::
 
    Don't need or want the quick links menu in the :term:`header bar`? You can
-   remove it entirely if you prefer - see: :ref:`manage-menus` for more
-   information.
+   remove it entirely if you prefer. :term:`Administrators <administrator>`
+   can  also change what links appear in the  quick links menu (and all menus)
+   via **Admin > Menus**. For more information,  see:
+   :ref:`Manage menus <manage-menus>`.
 
 :ref:`Back to top <navigate>`
 
@@ -187,6 +198,27 @@ changes the language again.
 
    * :doc:`Default language <../administer/default-language>`
    * :ref:`Add/remove languages <add-remove-languages>`
+
+:ref:`Back to top <navigate>`
+
+.. _clipboard-menu-header:
+
+|clip1| Clipboard menu
+======================
+
+.. |clip1| image:: images/paperclip.png
+   :height: 23
+   :width: 23
+
+The :term:`Clipboard` is a :term:`user interface` element that allows users to
+select archival descriptions while searching and browsing, and add them to a
+list (the "clipboard"), for later review or further action. The
+:term:`Clipboard menu` can be used to manage selections added to the
+clipboard, or to navigate to the clipboard. For more information on using the
+clipboard and the clipboard menu, see:
+
+* :ref:`clipboard`
+
 
 :ref:`Back to top <navigate>`
 
@@ -1152,7 +1184,7 @@ user options are revealed, including: Link physical storage, Link digital
 object, and Import digital objects (actions which only relate to archival
 descriptions).
 
-**Buttons found in the button block throughout AtoM:**
+**Examples of buttons found in the button block throughout AtoM:**
 
 .. |edit-button| image:: images/edit-buttonblock.png
    :height: 22px
@@ -1214,19 +1246,27 @@ descriptions).
   All additions and changes made by the user to the current record are saved;
   the page will reload in :term:`view mode`.
 * |more-button| **More**: Only available on :term:`archival descriptions
-  <archival description>`. Reveals several further options: Rename, Link
-  physical storage, Link digital object, Import digital objects, and Create
-  new rights. See: :ref:`rename-title-slug`, :ref:`physical-storage`, and
-  :ref:`upload-digital-object`. If a digital object is already linked to the
-  description, "Edit digital object"  will be available instead of the link
-  option - see: :ref:`edit-digital-object`. If rights have already been added
-  to the description, the option to "Manage rights inheritance" will be
-  available instead of create new rights - see: :ref:`rights-inheritance`.
+  <archival description>` and :term:`accessions <accession record>`.  Reveals
+  several further options. On archival descriptions, these include: Rename,
+  Update publications status, Link physical storage, Link digital object, Import
+  digital objects, and Create new rights. See: :ref:`rename-title-slug`,
+  :ref:`physical-storage`, and :ref:`upload-digital-object`. If a digital object
+  is already linked to the description, "Edit digital object"  will be available
+  instead of the link option - see: :ref:`edit-digital-object`. If rights have
+  already been added to the description, the option to "Manage rights
+  inheritance" will be available in addition to Create new rights - see:
+  :ref:`rights-inheritance`. On accessions, the More menu includes the option
+  to create new rights - see: :ref:`rights`.
 * |edittheme-button| **Edit theme**: Only available on :term:`archival
   institutions <archival institution>`. Opens an edit page where an
   :term:`administrator` can customize the theme of a repository by changing
   the background color, uploading a logo and/or banner, and adding custom
   descriptive content - see: :ref:`edit-institution-theme`
+
+.. NOTE::
+
+   The above list is not intended to be comprehensive - there may be other
+   buttons found in the application!
 
 
 **For more infomation on adding and editing content in AtoM, see:**
@@ -1338,16 +1378,22 @@ Sort button
 
 The sort button is a navigational element that appears on some browse and
 search pages throughout AtoM. It allows a user to change the sort order of the
-results being displayed, as either alphabetic, most recent, or by identifier
-(or reference code). When the sort order is set to "Alphabetic," results are
-organized A-Z. When results are ordered by "Most recent" the most recently
-added and/or edited records in the results will appear at the top of the list,
-allowing users to discover new or recently updated content.
+results being displayed. Common values used in the sort button as it
+appears in AtoM include: Alphabetic, Identifier (or
+:term:`reference code`), Most recent, or Date.
 
 On search and/or browse pages, the Sort button appears as a small
 :term:`drop-down menu` at the top right of the results. Hovering over the button
 reveals the option currently not selected - a user can click this option in the
 drop-down menu, and the page will reload in the new sort order.
+
+When the sort order is set to "Alphabetic,"results are organized A-Z. Note
+that this is an **ASCII sort** - see the IMPORTANT note below for more
+information.
+
+When results are ordered by "Most recent," the most recently added and/or
+edited records in the results will appear at the top of the list, allowing users
+to discover new or recently updated content.
 
 When the sort order is set to "Identifier," (or "Reference code" as it is
 labeled on the :term:`archival description` browse page), results are
@@ -1356,8 +1402,15 @@ information on ASCII sort is included in the IMPORTANT note below). On
 archival descriptions, the sort order is based on full inherited reference
 code, and NOT on the individual identifiers of each record, regardless of
 whether or not :ref:`reference code inheritance <inherit-reference-code>` is
-turned on in **Admin > Settings** or not. for more information on reference
+turned on in **Admin > Settings** or not. For more information on reference
 codes vs. identifiers and display options, see: :ref:`inherit-reference-code`.
+
+When the sort order is set to "Date" (currently only available on
+:term:`archival descriptions <archival description>`), AtoM will order the
+results by the internal, ISO-8601 formatted (e.g. YYYY-MM-DD) start date
+values - **not** the display date shown to public users, which is a free text
+field allowing users to express approximation or uncertainty. Results without
+a start date value will appear last.
 
 .. IMPORTANT::
 
@@ -1391,6 +1444,7 @@ or list pages:
 * :term:`Functions <function>`
 * Rights holders
 * Browse :term:`digital objects <digital object>`
+* :ref:`Clipboard results page <clipboard>`
 
 On the browse page for :term:`accessions <accession record>`, the sort button
 has been customized to offer sorting options specific to accession records,

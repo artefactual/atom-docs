@@ -268,6 +268,21 @@ Glossary
     broader or narrower terms. A narrower term would be a child of the parent
     broader term. See also: :term:`Parent record`.
 
+  Clipboard
+    The Clipboard is a :term:`user interface` element that allows users to
+    select archival descriptions while searching and browsing, and add them to
+    a list (the "clipboard"), for later review or further action. Authenicated
+    users (i.e. those logged in) can also perform CSV exports of Clipboard
+    results via the user interface. The clipboard is **session-based** - meaning
+    that it does not persist between user sessions. When you close your browser,
+    any results on the clipboard will be lost. See: :ref:`clipboard`
+
+  Clipboard menu
+    The Clipboard menu appears in the AtoM :term:`header bar` for all users.
+    It is represented by a paperclip icon, and allows users to manage
+    :term:`Clipboard` selections as the navigate around the application. See:
+    :ref:`clipboard`, especially :ref:`clipboard-menu`.
+
   Collection
     In ISAD, a collection is "[a]n artificial assemblage of documents
     accumulated on the basis of some common characteristic without regard

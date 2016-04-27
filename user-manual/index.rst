@@ -32,6 +32,7 @@ links to each chapter's main sections.
    access-content/browse
    access-content/navigate
    access-content/context-menu
+   access-content/clipboard
    translate/multilingual-design-principles
    translate/translate-content
    translate/translate-interface
