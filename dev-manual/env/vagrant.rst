@@ -1,8 +1,8 @@
-.. _installation-vagrant:
+.. _dev-env-vagrant:
 
-=============
-Using Vagrant
-=============
+=======
+Vagrant
+=======
 
 This guide will setup a new Oracle `VirtualBox
 <https://www.virtualbox.org/>`__ virtual machine with AtoM installed on your

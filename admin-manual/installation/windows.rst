@@ -33,13 +33,13 @@ You should be able to use a virtual appliance in the virtualization tool of
 your choice. However, Artefactual does **not** maintain production-ready virtual
 applicances - so you will need an experienced technical administator to help you
 create and configure one if that is the approach you'd like to take. We do
-provide a :ref:`Vagrant box <installation-vagrant>` for developers and users
+provide a :ref:`Vagrant box <dev-env-vagrant>` for developers and users
 interested in testing AtoM on their laptops, but the Vagrant box is not intended
 for production use!
 
 .. seealso::
 
-    * :ref:`installation-vagrant`
+    * :ref:`dev-env-vagrant`
 
 If you intend to continue using Windows, please proceed by following the
 instructions provided below. Be warned that installing AtoM in a Windows

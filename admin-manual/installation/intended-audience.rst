@@ -19,4 +19,4 @@ documents.
 
 If you are a non-technical reader and are just interested in trying out
 AtoM, please check out the `AtoM online demo <http://demo.accesstomemory.org>`_
-or our :ref:`Vagrant box <installation-vagrant>`.
+or our :ref:`Vagrant box <dev-env-vagrant>`.

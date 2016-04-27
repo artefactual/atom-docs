@@ -209,7 +209,6 @@ Installation
 * :ref:`installation-linux`
 * :ref:`installation-windows`
 * :ref:`installation-macosx`
-* :ref:`installation-vagrant`
 * :ref:`installation-multi-node`
 * :ref:`installation-upgrading`
 * :ref:`installation-execution-limits`
@@ -259,6 +258,14 @@ Guidelines for developers interested in customizing AtoM, developing new
 modules, and working with the application's API.
 
 .. _dev-api-home:
+
+Environments
+------------
+
+We provide two developer-friendly environments for AtoM.
+
+* :ref:`dev-env-vagrant`
+* :ref:`dev-env-compose`
 
 API
 ---

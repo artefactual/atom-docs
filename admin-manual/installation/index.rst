@@ -12,7 +12,6 @@ Installation
    linux
    windows
    macosx
-   vagrant
    multi-node
    upgrading
    execution-limits

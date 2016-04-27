@@ -56,7 +56,7 @@ former and the following instructions will show you how to create your custom
 theme as we did with arArchivesCanadaPlugin.
 
 Assuming that you already have AtoM installed in your development environment
-(you can use our :ref:`Vagrant box <installation-vagrant>`), let's start
+(you can use our :ref:`Vagrant box <dev-env-vagrant>`), let's start
 building the plugin structure from the command line. Our theme is going to be
 called Corcovado (arCorcovadoPlugin). We are going to track its contents with
 git and publish them in a remote repository hosted by GitHub so we can enable

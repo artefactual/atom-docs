@@ -9,6 +9,8 @@ set of links to each chapter's main sections.
 
 .. toctree::
 
+   env/vagrant
+   env/compose
    api/api-intro
    api/endpoints/browse-taxonomies
    api/endpoints/browse-io
