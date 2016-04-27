@@ -89,7 +89,7 @@ For example, you can monitor the output of some of your containers as follows:
 
 .. code-block:: bash
 
-   docker-compose logs -f atom atom_worker
+   docker-compose logs -f atom atom_worker nginx
 
 You can also scale the cluster as needed. In the following example we are going
 to add extra AtoM workers and Elasticsearch nodes.
@@ -119,8 +119,8 @@ You can also verify that two workers have subscribed to Gearman:
    fdd4764376d2f763-arInformationObjectCsvExportJob    0   0   2
    fdd4764376d2f763-arInheritRightsJob                 0   0   2
 
-You could temporarily stop all the services or both stop and remove related
-containers, networks, images and volumes by running:
+You could temporarily stop all the services with `stop` or both stop and remove
+related containers, networks, images and volumes by running:
 
 .. code-block:: bash
 
