@@ -129,7 +129,11 @@ You can also verify that two workers have subscribed to Gearman:
 
 .. code-block:: bash
 
-   docker-compose exec atom bash -c "echo STATUS | nc gearmand 4730"
+   # Establish a TCP connection to gearmand, port 4730
+   docker-compose exec atom bash -c "nc gearmand 4730"
+
+   # Send STATUS command
+   STATUS
 
    fdd4764376d2f763-arGenerateFindingAidJob            0   0   2
    fdd4764376d2f763-arUpdatePublicationStatusJob       0   0   2
