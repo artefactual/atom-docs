@@ -85,7 +85,7 @@ It's time to use Docker Compose in order to provision our containers:
    which describes the steps that are taken to build the AtoM image. It is
    based on Alpine Linux (only 2 MB) + PHP7 and the rest of dependencies. In
    addition, our `docker-compose.dev.yml <https://github.com/artefactual/atom/blob/qa/2.3.x/docker/docker-compose.dev.yml>`__
-   file shows how AtoM is ochestrated together with its service dependencies.
+   file shows how AtoM is orchestrated together with its service dependencies.
    It is an environment meant to be used by developers.
 
 That's it! You have started the containers and put them in the background,
