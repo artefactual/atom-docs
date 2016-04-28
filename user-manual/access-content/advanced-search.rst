@@ -492,6 +492,17 @@ query as 1950-01-01 (January 01, 1950) to 1970-12-31 (December 31, 1970).
 You can also specify an open range, by entering just a start date or just an
 end date.
 
+.. NOTE::
+
+   If you enter the dates in the wrong format, such as **YYYY-MM**, your
+   search will return no results! In this case, AtoM will provide a warning
+   above the date range fields:
+
+   .. image:: images/date-range-error.*
+      :align: center
+      :width: 80%
+      :alt: An example of improper dates entered into the Date range widget
+
 Once you have entered your desired date range, use the :term:`radio button`
 options to the right of the input fields to specify how the date range should
 be performed. "Exact" means that the start and end dates of descriptions
