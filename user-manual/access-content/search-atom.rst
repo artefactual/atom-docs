@@ -497,10 +497,11 @@ steps involved in searching for
      filter inclued in the :term:`Advanced search panel` - see
      :ref:`advanced-search`.
 
- * **F**: The :term:`Clipboard` icon appears on all archival description
-   search and browse results. Click on the |clipboard| paperclip icon, and the
-   result will be added to the Clipboard. You can use the Clipboard menu at the
-   top of the page. For more information, see **CLIPBOARD LINK**
+* **F**: The :term:`Clipboard` icon appears on all archival description
+  search and browse results. Click on the |clipboard| paperclip icon, and the
+  result will be added to the Clipboard. You can use the
+  :term:`Clipboard menu` at the top of the page. For more information, see
+  :ref:`clipboard`
 
 6. If you are searching within the holdings of a particular :term:`archival
    institution`, consult the section above for guidance and tips on using the
