@@ -220,7 +220,7 @@ At the child level:
 
 .. code-block:: xml
 
-   <dsc type="combined>
+   <dsc type="combined">
       <c level="[name of level]">
 
 .. NOTE::
@@ -391,7 +391,7 @@ narrative description." (ISAAR 5.2.2)
 
 **EAD**
 
-.. code-block:: xml
+.. code-block:: none
 
    <bioghist id=[md5 hash]>
       <note>

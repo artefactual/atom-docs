@@ -564,7 +564,7 @@ selective harvesting of records based on set membership and/or datestamp. The
 
 **Example response:**
 
-.. code-block:: xml
+.. code-block:: none
 
     <?xml version="1.0" encoding="utf-8" ?>
     <OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/"
