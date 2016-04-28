@@ -52,12 +52,13 @@ change your current directory.
    git clone -b qa/2.3.x https://github.com/artefactual/atom.git atom
    cd atom
 
-Now set the environment variable ``COMPOSE_FILE`` so we don't have to do this
-every time we invoke docker-compose (or use the ``-f`` flag):
+Now set the environment variable ``COMPOSE_FILE`` to tell Compose what is the
+location of our YAML file. You could do the same using the ``-f`` flag but we
+don't want to do so each time we invoke the ``docker-compose`` command.
 
 .. code-block:: bash
 
-   # For bash users
+   # For bash users (most of you)
    export COMPOSE_FILE="$PWD/docker/docker-compose.dev.yml"
 
    # For fish users
@@ -67,9 +68,25 @@ It's time to use Docker Compose in order to provision our containers:
 
 .. code-block:: bash
 
+   # Create and start containers. This may take a while the first time you run
+   # it because all the images have to be downloaded (e.g. percona, memcached)
+   # and the AtoM image has to be built.
    docker-compose up -d
+
+   # Execute a command in the running container atom: purge database
    docker-compose exec atom php symfony tools:purge --demo
+
+   # Execute another command: build stylesheets
    docker-compose exec atom make -C plugins/arDominionPlugin
+
+.. TIP::
+
+   While you wait, take the opportunity to check out our `Dockerfile <https://github.com/artefactual/atom/blob/qa/2.3.x/docker/Dockerfile>`__,
+   which describes the steps that are taken to build the AtoM image. It is
+   based on Alpine Linux (only 2 MB) + PHP7 and the rest of dependencies. In
+   addition, our `docker-compose.dev.yml <https://github.com/artefactual/atom/blob/qa/2.3.x/docker/docker-compose.dev.yml>`__
+   file shows how AtoM is ochestrated together with its service dependencies.
+   It is an environment meant to be used by developers.
 
 That's it! You have started the containers and put them in the background,
 populated the database and compile the CSS stylesheet of the Dominion plugin.
@@ -150,7 +167,7 @@ address run the following:
 
 As you can see in the right column, Nginx has published a TCP port. It may be
 different in your environment. In this example, we will put the following
-address in our browser: http://192.168.4.2:8000.
+address in our browser: http://192.168.64.2:8000.
 
 The default login details are:
 
