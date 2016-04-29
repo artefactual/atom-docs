@@ -1048,7 +1048,7 @@ Subject access points
 
 .. NOTE::
 
-  In the CSV template, this columns can accept multiple values, separated by a
+  In the CSV template, this column can accept multiple values, separated by a
   pipe ``|`` character.
 
 :ref:`Back to the top <isad-template>`
@@ -1080,7 +1080,7 @@ Place access points
 
 .. NOTE::
 
- In the CSV template, this columns can accept multiple values, separated by a
+ In the CSV template, this column can accept multiple values, separated by a
  pipe ``|`` character.
 
 :ref:`Back to the top <isad-template>`
@@ -1125,7 +1125,7 @@ corporate body:
 
 .. NOTE::
 
- In the CSV template, this columns can accept multiple values, separated by a
+ In the CSV template, this column can accept multiple values, separated by a
  pipe ``|`` character.
 
 :ref:`Back to the top <isad-template>`
@@ -1157,7 +1157,7 @@ Genre access points
 
 .. NOTE::
 
- In the CSV template, this columns can accept multiple values, separated by a
+ In the CSV template, this column can accept multiple values, separated by a
  pipe ``|`` character.
 
 :ref:`Back to the top <isad-template>`
