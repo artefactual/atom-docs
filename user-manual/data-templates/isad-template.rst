@@ -159,7 +159,7 @@ Date(s)
 
 **Template field** Date(s)
 
-**CSV Columns** ``eventTypes``, ``eventDates``, ``eventStartDates``, and ``eventEndDates``
+**CSV Columns** ``eventDates``, ``eventTypes``, ``eventStartDates``, and ``eventEndDates``
 
 **ISAD Rule** Identify and record the date(s) of the unit of description.
 Identify the type of date given. Record as a single date or a range of dates
@@ -187,6 +187,19 @@ approximation, uncertainty, or qualification.
 
       <did>
         <unitdate id="[atom-generated-value]" datechar="accumulation" normal="[start date/end date]" encodinganalog="3.1.3">
+
+.. NOTE::
+
+  If multiple dates are being added, the content across all date fields must be
+  written in the same order with the pipe character ``|`` used as a separator.
+  For example, in a description with two dates where the first date is a creation event
+  and the second date is an accumulation event, enter the following:
+
+  +-------------------------+---------------------------+
+  | eventDates              | eventTypes                |
+  +=========================+===========================+
+  | 2000-2001 | 1983-1984   | Creation | Accumulation   |
+  +-------------------------+---------------------------+
 
 .. NOTE::
 
@@ -345,7 +358,7 @@ Name of creator(s)
 
 **Template field** Name of creator(s)
 
-**CSV Column** creators
+**CSV Column** eventActors
 
 **ISAD Rule** Record the name of the organization(s) or the individual(s)
 responsible for the creation, accumulation and maintenance of the records in
@@ -364,9 +377,9 @@ a new name to create and link to a new authority record. (ISAD 3.2.1)
 
    This is the default export EAD when an Entity type has not been set for the
    actor on the related :term:`authority record`. The final EAD element can be
-   more precise, if the user has entered an Entity type on the related
+   more precise if the user has entered an Entity type on the related
    :term:`authority record`. When the Entity type is set to **Person**, the EAD
-   will export using ``<persname>`` instead of  ``<name>``; when set to
+   will export using ``<persname>`` instead of ``<name>``; when set to
    **Family**, the EAD will export using ``<famname>``  instead of ``<name>``;
    and when set to **Organization**, the EAD will export using ``<corpname>``
    instead of ``<name>``. The ``<name>`` element is the default when no
@@ -374,14 +387,40 @@ a new name to create and link to a new authority record. (ISAD 3.2.1)
    standard upon which the authority record template is based, see:
    :ref:`authority-records` and :ref:`isaar-template`.
 
+.. NOTE::
+
+  If multiple creators are being added, the content in related fields must be
+  written in the same order with the pipe character ``|`` as a separator. It is
+  possible to use ``NULL`` to include an empty element in related fields. For
+  example, in a description with two creators where the first creator does not
+  have a biographical history but the second creator does, enter the following:
+
+  +---------------------------+-------------------------------+
+  | eventActors               | eventActorHistories           |
+  +===========================+===============================+
+  | Creator 1 | Creator 2     | NULL | Creator 2 bioghist     |
+  +---------------------------+-------------------------------+
+
+.. IMPORTANT::
+
+  When linking a :term:`creator` to an :term:`archival description`,
+  you should only link at the highest level of description. AtoM will
+  automatically inherit the creator name at lower levels. This conforms to
+  ISAD(G)'s Multilevel Description Rule 2.4, *Non-repetition of information*: "At
+  the highest appropriate level, give information that is common to the component
+  parts. Do not repeat information at a lower level of description that has
+  already been given at a higher level." Linking a creator at all levels of
+  description (instead of just at the parent level) in a large hierarchy can also
+  impact performance.
+
 :ref:`Back to the top <isad-template>`
 
 Biographical or Administative history
 -------------------------------------
 
-**Template field** Biographical history/Administrative history
+**Template field** N/A
 
-**CSV Column** creatorHistories
+**CSV Column** eventActorHistories
 
 **ISAD Rule** "Record in narrative form or as a chronology the main life events,
 activities, achievements and/or roles of the entity being described. This may
@@ -399,11 +438,20 @@ narrative description." (ISAAR 5.2.2)
 
 .. NOTE::
 
-   When entering data manually, this field needs to be written in the
+   When entering data manually, this field is written in the
    :term:`authority record`. If an authority record does not already exist, AtoM
-   will create one when a new creator is entered, above. The user can then
+   will create one when a new creator is entered. The user can then
    navigate to the authority record to enter the Biographical or Administrative
    history (see: :ref:`Authority records <authority-records>`).
+
+   When importing descriptions by CSV, by default this column will create a
+   Biographical history in the :term:`authority record`, regardless of whether
+   the creator is a person, family, or organization. To specify the entity type
+   when importing creators, users would need to
+   :ref:`import authority records <csv-import-authority-records>` or manually edit
+   the authority record.
+
+.. NOTE::
 
    When roundtripping descriptions from one AtoM instance to another, creator
    names in the ``<origination>`` element are matched 1:1 in order with
@@ -413,20 +461,6 @@ narrative description." (ISAAR 5.2.2)
    expected. If an extra ``<bioghist>`` element is included that does not have
    a corresponding creator name, a stub :term:`authority record` will be created
    to hold the ``<bioghist>`` data.
-
-When importing descriptions by CSV, by default this column will create a
-Biographical history in the :term:`authority record`, regardless of whether
-the creator is a person, family, or organization. To specify the entity type
-when importing creators, users would need to
-:ref:`import authority records <csv-import-authority-records>` or manually edit
-the authority record.
-
-.. IMPORTANT::
-
-   The creator(s) should only be added at the highest relevant level. AtoM
-   will automatically inherit the creator name(s) at lower levels, unless a
-   different creator is intentionally introduced. Adding the creator at all levels
-   unnecessarily can affect the performance of the application.
 
 :ref:`Back to the top <isad-template>`
 
@@ -458,30 +492,32 @@ a new name to create and link to a new archival institution record.
    will appear in one field of the Contact area upon re-import. Below is an
    example of the EAD with an address included:
 
-.. code-block:: xml
+   .. code-block:: xml
 
-   <repository>
-      <corpname>Artefactual Archives</corpname>
-      <address>
-         <addressline>Suite 201 – 301 6th Street</addressline>
-         <addressline>New Westminster</addressline>
-         <addressline>British Columbia</addressline>
-         <addressline>Canada</addressline>
-         <addressline>Telephone: (604)527-2056</addressline>
-         <addressline>Email: info@artefactual.com</addressline>
-         <addressline>http://www.artefactual.com</addressline>
-      </address>
-   </repository>
+     <repository>
+        <corpname>Artefactual Archives</corpname>
+        <address>
+           <addressline>Suite 201 – 301 6th Street</addressline>
+           <addressline>New Westminster</addressline>
+           <addressline>British Columbia</addressline>
+           <addressline>Canada</addressline>
+           <addressline>Telephone: (604)527-2056</addressline>
+           <addressline>Email: info@artefactual.com</addressline>
+           <addressline>http://www.artefactual.com</addressline>
+        </address>
+     </repository>
 
 .. IMPORTANT::
 
    When linking an :term:`archival institution` to an :term:`archival description`,
-   You should only link at the highest level of description. AtoM will
+   you should only link at the highest level of description. AtoM will
    automatically inherit the repository name at lower levels. This conforms to
-   RAD's General Rule 1.0A2d *Non-repetition of information*: "Do not repeat
-   information at a lower level of description that has already been given at a
-   higher level...." Linking a repository at all levels of description (instead
-   of just at the parent level) in a large hierarchy can also impact performance.
+   ISAD(G)'s Multilevel Description Rule 2.4, *Non-repetition of information*: "At
+   the highest appropriate level, give information that is common to the component
+   parts. Do not repeat information at a lower level of description that has
+   already been given at a higher level." Linking a repository at all levels of
+   description (instead of just at the parent level) in a large hierarchy can also
+   impact performance.
 
 :ref:`Back to the top <isad-template>`
 
