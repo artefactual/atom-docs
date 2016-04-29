@@ -302,6 +302,8 @@ with the rules of multilevel description and national conventions.
        | ISAD child level   | 250        | 249      |
        +--------------------+------------+----------+
 
+   Fill out subsequent fields following the same rules as described for parent
+   records.
 
 Extent and medium
 -----------------
@@ -1352,6 +1354,11 @@ archival material."
    list as you type, which will be generated as a three-letter language code
    in the EAD.
 
+.. NOTE::
+
+  In the CSV template, this column can accept multiple values, separated by a
+  pipe ``|`` character.
+
 :ref:`Back to the top <isad-template>`
 
 
@@ -1381,6 +1388,11 @@ archival material."
    entering data manually, AtoM will offer an autocomplete drop-down
    list as you type, which will be generated as a four-letter script code
    in the EAD.
+
+.. NOTE::
+
+  In the CSV template, this column can accept multiple values, separated by a
+  pipe ``|`` character.
 
 :ref:`Back to the top <isad-template>`
 
@@ -1440,7 +1452,7 @@ This area of the description allows users to enter a :term:`rights record`
 compliant with `PREMIS <http://www.loc.gov/standards/premis/>`_. These fields
 are separate from the ISAD Conditions and access of use area, above, and editing
 one area does not effect the other. Rights records cannot be imported with
-descriptions via CSV.
+descriptions via CSV. Rights are located under the More tab visible on the archival view page for logged in users.
 
 At present, the PREMIS rights added to a record are only visible to authenticated
 (i.e. logged in) users.
