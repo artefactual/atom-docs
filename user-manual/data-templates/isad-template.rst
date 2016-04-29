@@ -1046,6 +1046,11 @@ Subject access points
    not careful, it is easy to accidentally create duplicate terms (e.g. by
    pressing enter instead of selecting the match from the drop-down).
 
+.. NOTE::
+
+  In the CSV template, this columns can accept multiple values, separated by a
+  pipe ``|`` character.
+
 :ref:`Back to the top <isad-template>`
 
 Place access points
@@ -1073,6 +1078,11 @@ Place access points
    not careful, it is easy to accidentally create duplicate terms (e.g. by
    pressing enter instead of selecting the match from the drop-down).
 
+.. NOTE::
+
+ In the CSV template, this columns can accept multiple values, separated by a
+ pipe ``|`` character.
+
 :ref:`Back to the top <isad-template>`
 
 Name access points (subjects)
@@ -1083,8 +1093,6 @@ Name access points (subjects)
 **CSV Column** nameAccessPoints
 
 **ISAD Rule** N/A
-
-**EAD**
 
 **EAD**
 
@@ -1114,6 +1122,34 @@ corporate body:
    suggest existing authority records as you type. Values in this column/field
    that are entered instead of selected from the drop-down will create new
    :term:`authority records <authority record>`.
+
+.. NOTE::
+
+ In the CSV template, this columns can accept multiple values, separated by a
+ pipe ``|`` character.
+
+:ref:`Back to the top <isad-template>`
+
+Genre access points
+-------------------
+
+**Template field** Genre access points
+
+**CSV Column** genreAccessPoints
+
+**ISAD Rule** N/A
+
+**EAD**
+
+.. code-block:: xml
+
+   <controlaccess>
+      <genreform>
+
+.. NOTE::
+
+ In the CSV template, this columns can accept multiple values, separated by a
+ pipe ``|`` character.
 
 :ref:`Back to the top <isad-template>`
 
