@@ -64,15 +64,13 @@ Information below includes:
 Title and statement of responsibility area
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: images/title-area.*
+.. figure:: images/title-statement-responsibility-area-rad.*
    :align: center
    :figwidth: 50%
    :width: 100%
-   :alt: An image of the data entry fields for the Title and statement of
-         responsibility area
+   :alt: An image of the data entry fields for the Title and statement of responsibility area.
 
-   The data entry fields for Title proper, GMD, Parallel titles, Other title
-   information, and Statement of responsibility
+   The data entry fields for the Title and statement of responsibility area.
 
 Title proper
 ------------
@@ -198,15 +196,6 @@ the chief source of information..." (RAD 1.1F)
 
 :ref:`Back to the top <rad-template>`
 
-.. figure:: images/title-notes.*
-   :align: center
-   :figwidth: 80%
-   :width: 100%
-   :alt: An image of the data entry fields for the Title notes area
-
-   The data entry fields for Title notes. Multiple title notes can be added
-   by clicking "Add new."
-
 Title notes- Statements of responsibility
 -----------------------------------------
 
@@ -320,16 +309,6 @@ considered to be important." (RAD 1.8B3)
 
 :ref:`Back to the top <rad-template>`
 
-.. figure:: images/title-area-2.*
-   :align: center
-   :figwidth: 80%
-   :width: 100%
-   :alt: An image of the data entry fields for the Level of description, new
-         child levels, Repository and Identifier.
-
-   The data entry fields for Level of description, child levels, Repository
-   and Identifier. Multiple child levels can be added by clicking "Add new."
-
 Level of description
 --------------------
 
@@ -368,11 +347,6 @@ At the child level:
 
 Add new child levels
 --------------------
-
-.. image:: images/add-new-child-widget.*
-   :align: center
-   :width: 80%
-   :alt: Add new child widget in RAD
 
 **Template field** Identifier, Level, Title, Date
 
@@ -1307,14 +1281,25 @@ speeches)." (RAD 1.7D1)
 Notes area
 ^^^^^^^^^^
 
-.. figure:: images/notes-area.*
+.. figure:: images/notes-area-rad-1.*
    :align: center
    :figwidth: 80%
    :width: 100%
-   :alt: An image of the data entry fields for the notes area.
+   :alt: An image of the first block of data entry fields for the notes area.
 
-   The data entry fields for the Notes area. More notes fields continue below
-   the screen shown.
+.. figure:: images/notes-area-rad-2.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An image of the second block of data entry fields for the notes area.
+
+.. figure:: images/notes-area-rad-3.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An image of the third block of data entry fields for the notes area.
+
+   The data entry fields for the Notes area.
 
 Physical condition
 ------------------
@@ -2061,7 +2046,7 @@ corporate body:
 Control area
 ^^^^^^^^^^^^
 
-.. figure:: images/control-area.*
+.. figure:: images/control-area-rad.*
    :align: center
    :figwidth: 80%
    :width: 100%
@@ -2328,7 +2313,7 @@ For more information, see :ref:`rights`, especially
 Administration area
 ^^^^^^^^^^^^^^^^^^^
 
-.. figure:: images/admin-area-rad.*
+.. figure:: images/rad-admin-area.*
    :align: center
    :figwidth: 50%
    :width: 100%
