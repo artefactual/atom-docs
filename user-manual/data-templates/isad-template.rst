@@ -1148,6 +1148,15 @@ Genre access points
 
 .. NOTE::
 
+   This field is an auto-complete - as you type, AtoM will suggest matches with
+   :term:`terms <term>` already in the related :term:`taxonomy`. If you do not
+   explicitly pick a value from the :term:`drop-down menu` that appears, AtoM
+   will create a new term in the taxonomy. **Warning**: this means if you are
+   not careful, it is easy to accidentally create duplicate terms (e.g. by
+   pressing enter instead of selecting the match from the drop-down).
+
+.. NOTE::
+
  In the CSV template, this columns can accept multiple values, separated by a
  pipe ``|`` character.
 
