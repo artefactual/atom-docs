@@ -77,7 +77,7 @@ Title proper
 
 **Template field** Title proper
 
-**CSV Column** title
+**CSV Column** ``title``
 
 **RAD Rule** Enter the title proper, either transcribed or supplied (RAD 1.1B)
 
@@ -112,7 +112,7 @@ General material designation
 
 **Template field** General material designation
 
-**CSV Column** radGeneralMaterialDesignation
+**CSV Column** ``radGeneralMaterialDesignation``
 
 **RAD Rule** Select the General Material Designation at the highest level of
 description. If there are more than three, select "multiple media." (RAD 1.1C)
@@ -142,7 +142,7 @@ Parallel title
 
 **Template field** Parallel title
 
-**CSV Column** alternateTitle
+**CSV Column** ``alternateTitle``
 
 **RAD Rule** [W]hen applicable, transcribe parallel titles that appear in
 conjunction with the formal title proper...(RAD 1.1D)
@@ -162,7 +162,7 @@ Other title information
 
 **Template field** Other title information
 
-**CSV Column** radOtherTitleInformation
+**CSV Column** ``radOtherTitleInformation``
 
 **RAD Rule** Transcribe other title information that appears in conjunction with
 the formal title proper. (RAD 1.1E)
@@ -181,7 +181,7 @@ Title statement of responsibility
 
 **Template field** Statements of responsibility
 
-**CSV Column** radTitleStatementOfResponsibility
+**CSV Column** ``radTitleStatementOfResponsibility``
 
 **RAD Rule** "At the item level of description, transcribe explicit statements of
 responsibility appearing in conjunction with the formal title proper in or on
@@ -201,7 +201,7 @@ Title notes - Statements of responsibility
 
 **Template field** Title notes- Statements of responsibility
 
-**CSV Column** radTitleStatementOfResponsibilityNote
+**CSV Column** ``radTitleStatementOfResponsibilityNote``
 
 **RAD Rule** "Make notes on any statement(s) of
 responsibility that appear outside the chief source of information or that appear on the
@@ -222,7 +222,7 @@ Title notes - Attributions and conjectures
 
 **Template field** Title notes- Attributions and conjectures
 
-**CSV Column** radTitleAttributionsAndConjectures
+**CSV Column** ``radTitleAttributionsAndConjectures``
 
 **RAD Rule** "Make notes on authors to whom the unit being
 described has been attributed, and cite sources, if appropriate." (RAD 1.8B6)
@@ -240,7 +240,7 @@ Title notes - Continuation of title
 
 **Template field** Title notes- Continuation of title
 
-**CSV Column** radTitleContinues
+**CSV Column** ``radTitleContinues``
 
 **RAD Rule** "Complete the transcription if the formal title proper and/or
 other title information was abridged in the description." (RAD 1.8B4)
@@ -258,7 +258,7 @@ Title notes - Source of title proper
 
 **Template field** Title notes- Source of title proper
 
-**CSV Column** radTitleSourceOfTitleProper
+**CSV Column** ``radTitleSourceOfTitleProper``
 
 **RAD Rule** "Indicate the source of a title proper, when appropriate." (RAD
 1.8B2)
@@ -276,7 +276,7 @@ Title notes - Variations in title
 
 **Template field** Title notes- Variations in title
 
-**CSV Column** radTitleVariationsInTitle
+**CSV Column** ``radTitleVariationsInTitle``
 
 **RAD Rule** "Make notes on variant titles appearing outside the prescribed
 source of information. Make notes on titles by which the unit being described has been
@@ -295,7 +295,7 @@ Title notes - Parallel titles and other title information
 
 **Template field** Title notes- Parallel titles and other title information
 
-**CSV Column** radTitleParallelTitles
+**CSV Column** ``radTitleParallelTitles``
 
 **RAD Rule** "Make notes on parallel titles and other title information not
 recorded in the Title and statement of responsibility area if they are
@@ -314,7 +314,7 @@ Level of description
 
 **Template field** Level of description
 
-**CSV Column** levelOfDescription
+**CSV Column** ``levelOfDescription``
 
 **RAD Rule** Select a level of description from the drop-down menu. See RAD 1.0A for
 rules and conventions on selecting levels of description.
@@ -386,7 +386,7 @@ Repository
 
 **Template field** Repository
 
-**CSV Column** repository
+**CSV Column** ``repository``
 
 **RAD Rule** Select the :term:`repository` that has custody and
 control of the archival material. The values in this field are drawn from the
@@ -445,7 +445,7 @@ Reference code
 
 **Template field** Identifier
 
-**CSV Column** identifier
+**CSV Column** ``identifier``
 
 **RAD Rule** Enter an unambiguous code used to uniquely identify the description.
 
@@ -473,7 +473,7 @@ Alternative identifier
 **Template field** Add alternative identifier(s) [link beneath identifier
 field]
 
-**CSV Columns** alternativeIdentifiers and alternativeIdentifierLabels
+**CSV Columns** ``alternativeIdentifiers`` and ``alternativeIdentifierLabels``
 
 **RAD Rule** N/A (see note below)
 
@@ -513,7 +513,7 @@ Edition statement
 
 **Template field** Edition statement
 
-**CSV Column** radEdition
+**CSV Column** ``radEdition``
 
 **RAD Rule** "Transcribe the edition statement relating to the item being
 described." (RAD 1.2B1) "If the item being described lacks an edition
@@ -541,7 +541,7 @@ Edition statement of responsibility
 
 **Template field** Edition statement of responsibility
 
-**CSV Column** radEditionStatementOfResponsibility
+**CSV Column** ``radEditionStatementOfResponsibility``
 
 **RAD Rule** "Transcribe a statement of responsibility relating to one or more
 editions, but not to all editions, of the item being described following the
@@ -584,7 +584,7 @@ Statement of scale (cartographic)
 
 **Template field** Statement of scale (cartographic)
 
-**CSV Column** radStatementOfScaleCartographic
+**CSV Column** ``radStatementOfScaleCartographic``
 
 **RAD Rule** "Give the scale of the unit being described...as a representative
 fraction (RF) expressed as a ratio (1: ). Precede the ratio by Scale. Give the
@@ -605,7 +605,7 @@ Statement of projection (cartographic)
 
 **Template field** Statement of projection (cartographic)
 
-**CSV Column** radStatementOfProjection
+**CSV Column** ``radStatementOfProjection``
 
 **RAD Rule** "Give the statement of projection if it is found on the prescribed
 source(s) of information." (RAD 5.3C1)
@@ -624,7 +624,7 @@ Statement of coordinates (cartographic)
 
 **Template field** Statement of coordinates (cartographic)
 
-**CSV Column** radStatementOfCoordinates
+**CSV Column** ``radStatementOfCoordinates``
 
 **RAD Rule** "At the fonds, series or file levels, record coordinates for the
 maximum coverage provided by the materials in the unit, as long as they are
@@ -644,7 +644,7 @@ Statement of scale (architectural)
 
 **Template field** Statement of scale (architectural)
 
-**CSV Column** radStatementOfScaleArchitectural
+**CSV Column** ``radStatementOfScaleArchitectural``
 
 **RAD Rule** "Give in English the scale in the units of measure found on the unit
 being described. If there is no English equivalent for the name of the unit
@@ -665,7 +665,7 @@ Issuing jurisdiction and denomination (philatelic)
 
 **Template field** Issuing jurisdiction and denomination (philatelic)
 
-**CSV Column** radIssuingJurisdiction
+**CSV Column** ``radIssuingJurisdiction``
 
 **RAD Rule** "Give the name of the jurisdiction (e.g., government) responsible for
 issuing the philatelic records." (RAD 12.3B1) "For all units possessing a
@@ -698,7 +698,7 @@ Creator
 
 **Template field** Creator
 
-**CSV Column** creators
+**CSV Column** ``creators``
 
 **RAD Rule** Use the Actor name field to link an authority record to this
 description. Search for an existing name in the authority records by typing
@@ -749,7 +749,7 @@ Biographical history
 
 **Template field** Biographical history
 
-**CSV Column** creatorHistories
+**CSV Column** ``creatorHistories``
 
 **RAD Rule** "Record in narrative form or as a chronology the main life events,
 activities, achievements and/or roles of the entity being described. This may
@@ -853,7 +853,7 @@ Date(s)
 
 **Template field** Date(s)
 
-**CSV Column** creationDates and creationDatesType
+**CSV Column** ``creationDates`` and ``creationDatesType``
 
 .. NOTE::
 
@@ -915,7 +915,7 @@ Dates of creation- Start
 
 **Template field** Dates of creation- Start
 
-**CSV Column** creationDatesStart
+**CSV Column** ``creationDatesStart``
 
 .. NOTE::
 
@@ -950,7 +950,7 @@ Dates of creation- End
 
 **Template field** Dates of creation- End
 
-**CSV Column** creationDatesEnd
+**CSV Column** ``creationDatesEnd``
 
 .. NOTE::
 
@@ -985,7 +985,7 @@ Dates of creation- Note
 
 **Template field** Dates of creation- Note
 
-**CSV Column** creationDatesNotes
+**CSV Column** ``creationDatesNotes``
 
 .. NOTE::
 
@@ -1029,7 +1029,7 @@ Physical description
 
 **Template field** Physical description
 
-**CSV Column** extentAndMedium
+**CSV Column** ``extentAndMedium``
 
 **RAD Rule** "At all levels record the extent of the unit being described by
 giving the number of physical units in arabic numerals and the specific
@@ -1080,7 +1080,7 @@ Title proper of publisher's series
 
 **Template field** Title proper of publisher's series
 
-**CSV Column** radTitleProperOfPublishersSeries
+**CSV Column** ``radTitleProperOfPublishersSeries``
 
 **RAD Rule** "At the item level of description, transcribe a title proper of the
 publisher's series as instructed in 1.1B1." (RAD 1.6B)
@@ -1102,7 +1102,7 @@ Parallel titles of publisher's series
 
 **Template field** Parallel titles of publisher's series
 
-**CSV Column** radParallelTitlesOfPublishersSeries
+**CSV Column** ``radParallelTitlesOfPublishersSeries``
 
 **RAD Rule** "Transcribe parallel titles of a publisher's series as instructed in
 1.1D." (RAD 1.6C1)
@@ -1124,7 +1124,7 @@ Other title information of publisher's series
 
 **Template field** Other title information of publisher's series
 
-**CSV Column** radOtherTitleInformationOfPublishersSeries
+**CSV Column** ``radOtherTitleInformationOfPublishersSeries``
 
 **RAD Rule** "Transcribe other title information of a publisher's series as
 instructed in 1.1E and only if considered necessary for identifying the
@@ -1148,7 +1148,7 @@ Statement of responsibility relating to publisher's series
 
 **Template field** Statement of responsibility relating to publisher's series
 
-**CSV Column** radStatementOfResponsibilityRelatingToPublishersSeries
+**CSV Column** ``radStatementOfResponsibilityRelatingToPublishersSeries``
 
 **RAD Rule** "Transcribe explicit statements of responsibility appearing in
 conjunction with a formal title proper of a publisher's series as instructed
@@ -1172,7 +1172,7 @@ Numbering within publisher's series
 
 **Template field** Numbering within publisher's series
 
-**CSV Column** radNumberingWithinPublishersSeries
+**CSV Column** ``radNumberingWithinPublishersSeries``
 
 **RAD Rule** "Give the numbering of the item within a publisher's series in the
 terms given in the item." (RAD 1.6F1)
@@ -1194,7 +1194,7 @@ Note on publisher's series
 
 **Template field** Note on publisher's series
 
-**CSV Column** radPublishersSeriesNote
+**CSV Column** ``radPublishersSeriesNote``
 
 **RAD Rule** "Make notes on important details of publisher's series that are not
 included in the Publisher's series area, including variant series titles,
@@ -1232,7 +1232,7 @@ Custodial history
 
 **Template field** Custodial history
 
-**CSV Column** archivalHistory
+**CSV Column** ``archivalHistory``
 
 **RAD Rule** "Give the history of the custody of the unit being described, i.e., the
 successive transfers of ownership and custody or control of the material,
@@ -1252,7 +1252,7 @@ Scope and content
 
 **Template field** Scope and content
 
-**CSV Column** scopeAndContent
+**CSV Column** ``scopeAndContent``
 
 **RAD Rule** "At the fonds, series, and collection levels of description, and when
 necessary at the file and the item levels of description, indicate the level
@@ -1309,7 +1309,7 @@ Physical condition
 
 **Template field** Physical condition
 
-**CSV Column** physicalCharacteristics
+**CSV Column** ``physicalCharacteristics``
 
 **RAD Rule** "Make notes on the physical condition of the unit being described if
 that condition materially affects the clarity or legibility of the records."
@@ -1329,7 +1329,7 @@ Immediate source of acquisition
 
 **Template field** Immediate source of acquisition
 
-**CSV Column** acquisition
+**CSV Column** ``acquisition``
 
 **RAD Rule** "Record the donor or source (i.e., the immediate prior custodian) from
 whom the unit being described was acquired, and the date and method of
@@ -1351,7 +1351,7 @@ Arrangement
 
 **Template field** Arrangement
 
-**CSV Column** arrangement
+**CSV Column** ``arrangement``
 
 **RAD Rule** "Make notes on the arrangement of the unit being described which
 contribute significantly to its understanding but cannot be put in the Scope
@@ -1373,7 +1373,7 @@ Language of material
 
 **Template field** Language of material
 
-**CSV Column** language
+**CSV Column** ``language``
 
 **RAD Rule** "Record the language or languages of the unit being described, unless
 they are noted elsewhere or are apparent from other elements of the
@@ -1400,7 +1400,7 @@ Script of material
 
 **Template field** Script of material
 
-**CSV Column** script
+**CSV Column** ``script``
 
 **RAD Rule** "[N]ote any distinctive alphabets or symbol systems employed."
 RAD (1.8.B14)
@@ -1428,7 +1428,7 @@ Language and script note
 
 **Template field** Language and script note
 
-**CSV Column** languageNote
+**CSV Column** ``languageNote``
 
 **RAD Rule** "Record the language or languages of the unit being described, unless
 they are noted elsewhere or are apparent from other elements of the
@@ -1454,7 +1454,7 @@ Location of originals
 
 **Template field** Location of originals
 
-**CSV Column** locationOfOriginals
+**CSV Column** ``locationOfOriginals``
 
 **RAD Rule** "If the unit being described is a reproduction and the location of the
 original material is known, give that location. Give, in addition, any
@@ -1477,7 +1477,7 @@ Availability of other formats
 
 **Template field** Availability of other formats
 
-**CSV Column** locationOfCopies
+**CSV Column** ``locationOfCopies``
 
 **RAD Rule** "If all or part of the unit being described is available (either in the
 institution or elsewhere) in another format(s), e.g., if the text being
@@ -1501,7 +1501,7 @@ Restrictions on access
 
 **Template field** Restrictions on access
 
-**CSV Column** accessConditions
+**CSV Column** ``accessConditions``
 
 **RAD Rule** "Give information about any restrictions placed on access to the unit
 (or parts of the unit) being described." (RAD 1.8B16a)
@@ -1526,7 +1526,7 @@ Terms governing use, reproduction, and publication
 
 **Template field** Terms governing use, reproduction, and publication
 
-**CSV Column** reproductionConditions
+**CSV Column** ``reproductionConditions``
 
 **RAD Rule** "Give information on legal or donor restrictions that may affect use or
 reproduction of the material." (RAD 1.8B16c)
@@ -1546,7 +1546,7 @@ Finding aids
 
 **Template field** Finding aids
 
-**CSV Column** findingAids
+**CSV Column** ``findingAids``
 
 **RAD Rule** "Give information regarding the existence of any finding aids. Include
 appropriate administrative and/or intellectual control tools over the
@@ -1572,7 +1572,7 @@ Associated materials
 
 **Template field** Associated materials
 
-**CSV Column** relatedUnitsOfDescription
+**CSV Column** ``relatedUnitsOfDescription``
 
 **RAD Rule** For associated material, "If records in another institution are
 associated with the unit being described by virtue of the fact that they
@@ -1603,7 +1603,7 @@ Accruals
 
 **Template field** Accruals
 
-**CSV Column** accruals
+**CSV Column** ``accruals``
 
 **RAD Rule** "When the unit being described is not yet complete, e.g., an open fonds
 or series, make a note explaining that further accruals are expected... If
@@ -1633,7 +1633,7 @@ Other notes- Accompanying material
 
 **Template field** Other notes- Accompanying material
 
-**CSV Column** radNoteAccompanyingMaterial
+**CSV Column** ``radNoteAccompanyingMaterial``
 
 **RAD Rule** "Give details of accompanying material not mentioned
 in the Physical description area (see 1.5E)." (RAD 1.8B9c)
@@ -1652,7 +1652,7 @@ Other notes- Alpha-numeric designations
 
 **Template field** Other notes- Alpha-numeric designations
 
-**CSV Column** radNoteAlphaNumericDesignation
+**CSV Column** ``radNoteAlphaNumericDesignation``
 
 **RAD Rule** "If desirable, make a note of any important
 numbers borne by the unit being described other than publisher's series numbers (see
@@ -1672,7 +1672,7 @@ Other notes- Cast note
 
 **Template field** Other notes- Cast note
 
-**CSV Column** radNoteCast
+**CSV Column** ``radNoteCast``
 
 **RAD Rule** "List featured players, performers, presenters or other on-screen
 personnel." (Moving images - RAD 7.8B5b)
@@ -1692,7 +1692,7 @@ Other notes- Conservation
 
 **Template field** Other notes- Conservation
 
-**CSV Column** radNoteConservation
+**CSV Column** ``radNoteConservation``
 
 **RAD Rule** "If the unit being described has received any specific
 conservation treatment, e.g., if repair work has been done on it, briefly indicate the
@@ -1712,7 +1712,7 @@ Other notes- Credits note
 
 **Template field** Other notes- Credits note
 
-**CSV Column** radNoteCredits
+**CSV Column** ``radNoteCredits``
 
 **RAD Rule** "List persons (other than the cast) who have contributed to the
 artistic and/or technical production of a moving image document. Preface each
@@ -1733,7 +1733,7 @@ Other notes- Edition
 
 **Template field** Other notes- Edition
 
-**CSV Column** radNoteEdition
+**CSV Column** ``radNoteEdition``
 
 **RAD Rule** "Make notes relating to the edition being described or of the relationship
 of the unit being described to other editions." (RAD 1.8B7)
@@ -1752,7 +1752,7 @@ Other notes- Physical description
 
 **Template field** Other notes- Physical description
 
-**CSV Column** radNotePhysicalDescription
+**CSV Column** ``radNotePhysicalDescription``
 
 **RAD Rule** "Make notes relating to the physical description of the unit
 being described." (RAD 1.8B9)
@@ -1771,7 +1771,7 @@ Other notes- Publisher's series
 
 **Template field** Other notes- Publisher's series
 
-**CSV Column** radPublishersSeriesNote
+**CSV Column** ``radPublishersSeriesNote``
 
 **RAD Rule** "Make notes on important details of publisher's series that are not
 included in the Publisher's series area, including variant series titles,
@@ -1798,7 +1798,7 @@ Other notes- Rights
 
 **Template field** Other notes- Rights
 
-**CSV Column** radNoteRights
+**CSV Column** ``radNoteRights``
 
 **RAD Rule** "Indicate the copyright status, literary rights, patents or any
 other rights pertaining to the unit being described." (RAD 1.8B16b)
@@ -1817,7 +1817,7 @@ Other notes- Signatures note
 
 **Template field** Other notes- Signatures note
 
-**CSV Column** radNoteSignatures
+**CSV Column** ``radNoteSignatures``
 
 **RAD Rule** "Make notes on signatures, inscriptions, or monograms, etc.,
 which appear on the unit being described. Indicate where such signatures and
@@ -1841,7 +1841,7 @@ Other notes- General note
 
 **Template field** Other notes- General note
 
-**CSV Column** radNoteGeneral
+**CSV Column** ``radNoteGeneral``
 
 **RAD Rule** "Use this note to record any other descriptive information
 considered important but not falling within the definitions of the other notes.
@@ -1874,7 +1874,7 @@ Standard number
 
 **Template field** Standard number
 
-**CSV Column** radStandardNumber
+**CSV Column** ``radStandardNumber``
 
 **RAD Rule** "Give the International Standard Book Number (ISBN), International
 Standard Serial Number (ISSN), or any other internationally agreed standard
@@ -1908,7 +1908,7 @@ Subject access points
 
 **Template field** Subject access points
 
-**CSV Column** subjectAccessPoints
+**CSV Column** ``subjectAccessPoints``
 
 **RAD Rule** "Search for an existing term in the Subjects taxonomy by typing the
 first few characters of the term. Alternatively, type a new term to create and
@@ -1935,7 +1935,7 @@ Place access points
 
 **Template field** Place access points
 
-**CSV Column** placeAccessPoints
+**CSV Column** ``placeAccessPoints``
 
 **RAD Rule** "Search for an existing term in the Places taxonomy by typing the
 first few characters of the term name. Alternatively, type a new term to
@@ -2003,7 +2003,7 @@ Name access points
 
 **Template field** Name access points
 
-**CSV Column** nameAccessPoints
+**CSV Column** ``nameAccessPoints``
 
 **RAD Rule** "Choose provenance, author and other non-subject access points from
 the archival description, as appropriate. All access points must be apparent
@@ -2067,7 +2067,7 @@ Description record identifier
 
 **Template field** Description record identifier
 
-**CSV Column** descriptionIdentifier
+**CSV Column** ``descriptionIdentifier``
 
 **RAD Rule** "Record a unique description identifier in accordance with local
 and/or national conventions. If the description is to be used
@@ -2092,7 +2092,7 @@ Institution identifier
 
 **Template field** Institution identifier
 
-**CSV Column** institutionIdentifier
+**CSV Column** ``institutionIdentifier``
 
 **RAD Rule** "Record the full, authorised form of name(s) of the agency(ies)
 responsible for creating, modifying, or disseminating the description, or,
@@ -2114,7 +2114,7 @@ Rules or conventions
 
 **Template field** Rules or conventions
 
-**CSV Column** rules
+**CSV Column** ``rules``
 
 **RAD Rule** "Record the international, national, and/or local rules or
 conventions followed in preparing the description."
@@ -2134,7 +2134,7 @@ Status
 
 **Template field** Status
 
-**CSV Column** descriptionStatus
+**CSV Column** ``descriptionStatus``
 
 **RAD Rule** "Record the current status of the description, indicating whether it
 is a draft, finalized, and/or revised or deleted."
@@ -2160,7 +2160,7 @@ Level of detail
 
 **Template field** Level of detail
 
-**CSV Column** levelOfDetail
+**CSV Column** ``levelOfDetail``
 
 **RAD Rule** "Record whether the description consists of a minimal, partial, or
 full level of detail in accordance with relevant international and/or
@@ -2187,7 +2187,7 @@ Dates of creation, revision and deletion
 
 **Template field** Dates of creation, revision and deletion
 
-**CSV Column** revisionHistory
+**CSV Column** ``revisionHistory``
 
 **RAD Rule** "Record the date(s) the entry was prepared and/or revised."
 
@@ -2212,7 +2212,7 @@ Language of description
 
 **Template field** Language of description
 
-**CSV Column** languageOfDescription
+**CSV Column** ``languageOfDescription``
 
 **RAD Rule** "Indicate the language(s) used to create the description of the
 archival material."
@@ -2242,7 +2242,7 @@ Script of description
 
 **Template field** Script of description
 
-**CSV Column** scriptOfDescription
+**CSV Column** ``scriptOfDescription``
 
 **RAD Rule** "Indicate the script(s) used to create the description of the
 archival material."
@@ -2272,7 +2272,7 @@ Sources
 
 **Template field** Sources
 
-**CSV Column** sources
+**CSV Column** ``sources``
 
 **RAD Rule** "Record citations for any external sources used in the archival
 description (such as the Scope and Content, Custodial History, or Notes
@@ -2354,7 +2354,7 @@ Publication status
 
 **Template field** Publication status is available under the More tab located on the object view screen.
 
-**CSV column** publicationsStatus
+**CSV column** ``publicationsStatus``
 
 **RAD Rule** N/A
 
