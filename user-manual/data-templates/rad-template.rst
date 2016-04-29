@@ -196,8 +196,8 @@ the chief source of information..." (RAD 1.1F)
 
 :ref:`Back to the top <rad-template>`
 
-Title notes- Statements of responsibility
------------------------------------------
+Title notes - Statements of responsibility
+------------------------------------------
 
 **Template field** Title notes- Statements of responsibility
 
@@ -217,8 +217,8 @@ applicable." (RAD 1.8B5)
 
 :ref:`Back to the top <rad-template>`
 
-Title notes- Attributions and conjectures
------------------------------------------
+Title notes - Attributions and conjectures
+------------------------------------------
 
 **Template field** Title notes- Attributions and conjectures
 
@@ -235,8 +235,8 @@ described has been attributed, and cite sources, if appropriate." (RAD 1.8B6)
 
 :ref:`Back to the top <rad-template>`
 
-Title notes- Continuation of title
-----------------------------------
+Title notes - Continuation of title
+-----------------------------------
 
 **Template field** Title notes- Continuation of title
 
@@ -253,8 +253,8 @@ other title information was abridged in the description." (RAD 1.8B4)
 
 :ref:`Back to the top <rad-template>`
 
-Title notes- Source of title proper
------------------------------------
+Title notes - Source of title proper
+------------------------------------
 
 **Template field** Title notes- Source of title proper
 
@@ -271,8 +271,8 @@ Title notes- Source of title proper
 
 :ref:`Back to the top <rad-template>`
 
-Title notes- Variations in title
---------------------------------
+Title notes - Variations in title
+---------------------------------
 
 **Template field** Title notes- Variations in title
 
@@ -290,8 +290,8 @@ traditionally known other than the title proper." (RAD 1.8B1)
 
 :ref:`Back to the top <rad-template>`
 
-Title notes- Parallel titles and other title information
---------------------------------------------------------
+Title notes - Parallel titles and other title information
+---------------------------------------------------------
 
 **Template field** Title notes- Parallel titles and other title information
 
@@ -413,20 +413,20 @@ type a new name to create and link to a new archival institution.
    will appear in one field of the Contact area upon re-import. Below is an
    example of the EAD with an address included:
 
-.. code-block:: xml
+   .. code-block:: xml
 
-   <repository>
-      <corpname>Artefactual Archives</corpname>
-      <address>
-         <addressline>Suite 201 – 301 6th Street</addressline>
-         <addressline>New Westminster</addressline>
-         <addressline>British Columbia</addressline>
-         <addressline>Canada</addressline>
-         <addressline>Telephone: (604)527-2056</addressline>
-         <addressline>Email: info@artefactual.com</addressline>
-         <addressline>http://www.artefactual.com</addressline>
-      </address>
-   </repository>
+    <repository>
+        <corpname>Artefactual Archives</corpname>
+        <address>
+          <addressline>Suite 201 – 301 6th Street</addressline>
+          <addressline>New Westminster</addressline>
+          <addressline>British Columbia</addressline>
+          <addressline>Canada</addressline>
+          <addressline>Telephone: (604)527-2056</addressline>
+          <addressline>Email: info@artefactual.com</addressline>
+          <addressline>http://www.artefactual.com</addressline>
+          </address>
+    </repository>
 
 .. IMPORTANT::
 
@@ -734,10 +734,13 @@ create and link to a new authority record.
 
 .. IMPORTANT::
 
-   The creator(s) should only be added at the highest relevant level. AtoM
-   will automatically inherit the creator name(s) at lower levels, unless a
-   different creator is intentionally introduced. Adding the creator at all levels
-   unnecessarily can affect the performance of the application.
+   When linking a :term:`creator` to an :term:`archival description`,
+   you should only link at the highest level of description. AtoM will
+   automatically inherit the creator name at lower levels. This conforms to
+   RAD's General Rule 1.0A2d *Non-repetition of information*: "Do not repeat
+   information at a lower level of description that has already been given at a
+   higher level...." Linking a repository at all levels of description (instead
+   of just at the parent level) in a large hierarchy can also impact performance.
 
 :ref:`Back to the top <rad-template>`
 
@@ -2308,18 +2311,22 @@ At present, the PREMIS rights added to a record are only visible to authenticate
 For more information, see :ref:`rights`, especially
 :ref:`rights-archival-description`, and :ref:`premis-template`.
 
+:ref:`Back to the top <rad-template>`
+
 .. _template-admin:
 
 Administration area
 ^^^^^^^^^^^^^^^^^^^
 
-.. figure:: images/rad-admin-area.*
+.. figure:: images/admin-area-rad.*
    :align: center
    :figwidth: 50%
    :width: 100%
    :alt: An image of the data entry fields for the Administration area.
 
    The data entry fields for the Administration area.
+
+:ref:`Back to the top <rad-template>`
 
 Display standard
 ----------------
@@ -2339,6 +2346,8 @@ Display standard
    for the shown archival description only, with the option to also change the
    display standard for all existing children of the description. See:
    :ref:`change-display-standard`.
+
+:ref:`Back to the top <rad-template>`
 
 Publication status
 ------------------
