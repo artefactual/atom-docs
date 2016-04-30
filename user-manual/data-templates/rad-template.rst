@@ -100,7 +100,7 @@ At a child level:
       <did>
          <unittitle encodinganalog="1.1B">
 
-.. note::
+.. NOTE::
 
    The EAD tag ``<titleproper encodinganalog="title">`` refers to the
    title of the finding aid, not the archival description.
@@ -125,7 +125,7 @@ description. If there are more than three, select "multiple media." (RAD 1.1C)
       <controlaccess>
          <genreform source="rad" encodinganalog="1.1C">
 
-.. note::
+.. NOTE::
 
    Although the RAD standard specifies set values for General Material
    Designations, in AtoM these can be edited in the Material type
@@ -336,7 +336,7 @@ At the child level:
    <dsc type="combined">
       <c level="[name of level]">
 
-.. note::
+.. NOTE::
 
    An :term:`administrator` can edit the values in the Levels of
    description :term:`taxonomy` (see: :ref:`Add a new term <add-term>`). In
@@ -365,7 +365,7 @@ creation; see :ref:`below <template-dates>` for more information in RAD)
 
 **EAD** N/A (see the related fields elsewhere in this page)
 
-.. note::
+.. NOTE::
 
    This widget has been added to help improve workflows when creating new
    descriptions via the :term:`user interface`.  When entering descriptions
@@ -456,7 +456,7 @@ Reference code
    <did>
       <unitid encodinganalog="1.8B11" countrycode="[2 letter country code]">
 
-.. note::
+.. NOTE::
 
    This field displays to non-logged in users as "Reference code."
    While editing the record, the full reference code including any identifiers
@@ -484,7 +484,7 @@ field]
    <did>
       <unitid type="alternative" label="[user entered value]">
 
-.. note::
+.. NOTE::
 
    The use of the alternative identifier fields is documented in full here:
 
@@ -529,7 +529,7 @@ proper and enclose it in square brackets." (RAD 1.2B3)
       <unittitle type="editionStat" encodinganalog="1.2B1">
          <edition>
 
-.. note::
+.. NOTE::
 
    This field also maps to the ``<editionstmt><edition>`` tag in
    ``<eadheader><filedesc>``.
@@ -698,7 +698,7 @@ Creator
 
 **Template field** Creator
 
-**CSV Column** ``creators``
+**CSV Column** ``eventActors``
 
 **RAD Rule** Use the Actor name field to link an authority record to this
 description. Search for an existing name in the authority records by typing
@@ -726,6 +726,11 @@ create and link to a new authority record.
    standard upon which the authority record template is based, see:
    :ref:`authority-records` and :ref:`isaar-template`.
 
+.. NOTE::
+
+  In the CSV template, this column can accept multiple values, separated by a
+  pipe ``|`` character. The label values will be matched 1:1 with the identifiers.
+
 .. TIP::
 
    When entering the description manually, the Creator field is found in the
@@ -749,7 +754,7 @@ Biographical history
 
 **Template field** Biographical history
 
-**CSV Column** ``creatorHistories``
+**CSV Column** ``eventActorHistories``
 
 **RAD Rule** "Record in narrative form or as a chronology the main life events,
 activities, achievements and/or roles of the entity being described. This may
@@ -767,14 +772,27 @@ See also RAD section 1.7B1.
       <note>
          <p>
 
-
-.. note::
+.. NOTE::
 
    When entering data manually, this field needs to be written in the
    :term:`authority record`. If an authority record does not already exist, AtoM
    will create one when a new creator is entered, above. The user can then
    navigate to the authority record to enter the Biographical or Administrative
    history (see: :ref:`Authority records <authority-records>`).
+
+.. NOTE::
+
+   When importing descriptions by CSV, by default this column will
+   create a Biographical history in the :term:`authority record`, regardless of
+   whether the creator is a person, family, or organization. To specify the
+   entity type when importing creators, users would need to
+   :ref:`import authority records <csv-import-authority-records>` or manually edit
+   the authority record.
+
+   In the CSV template, this column can accept multiple values, separated by a
+   pipe ``|`` character. The label values will be matched 1:1 with the identifiers.
+
+.. NOTE::
 
    When roundtripping descriptions from one AtoM instance to another, creator
    names in the ``<origination>`` element are matched 1:1 in order with
@@ -785,12 +803,6 @@ See also RAD section 1.7B1.
    a corresponding creator name, a stub :term:`authority record` will be created
    to hold the ``<bioghist>`` data.
 
-When importing descriptions by CSV, by default this column will
-create a Biographical history in the :term:`authority record`, regardless of
-whether the creator is a person, family, or organization. To specify the
-entity type when importing creators, users would need to
-:ref:`import authority records <csv-import-authority-records>` or manually edit
-the authority record.
 
 :ref:`Back to the top <rad-template>`
 
@@ -840,7 +852,7 @@ link to a new place term.
    <controlaccess>
       <geogname role="Creator" encodinganalog="1.4C" id="atom_200823_place">
 
-.. note::
+.. NOTE::
 
    The above example assumes that the place was linked to a creator, as opposed
    to a publisher, broadcaster, or other role - the ``@role`` attribute value
@@ -851,16 +863,9 @@ link to a new place term.
 Date(s)
 -------
 
-**Template field** Date(s)
+**Template field** Date
 
-**CSV Column** ``creationDates`` and ``creationDatesType``
-
-.. NOTE::
-
-   The CSV column in earlier versions prior to 2.2 was named "creatorDates" -
-   it has been updated to clarify its relation to the creation event - not to
-   the dates of existence of the creator. However, we have added fallback
-   code, so if the old name is used, the import will still succeed.
+**CSV Column** ``eventDates`` and ``eventTypes``
 
 **RAD Rule** "Give the date(s) of creation of the unit being described either as a
 single date, or range of dates (for inclusive dates and/or predominant dates).
@@ -876,7 +881,14 @@ and uncertain dates in square brackets, using the conventions described in RAD
    <did>
       <unitdate id="[atom-generated-value]" normal="[start date/end date]" encodinganalog="1.4B2">
 
-.. note::
+.. NOTE::
+
+   The CSV column in earlier versions prior to 2.2 was named "creatorDates" -
+   it has been updated to clarify its relation to the creation event - not to
+   the dates of existence of the creator. However, we have added fallback
+   code, so if the old name is used, the import will still succeed.
+
+.. NOTE::
 
    This field will display the date as intended by the editor of the
    archival description, in the language of the standard being used. The start
@@ -910,12 +922,12 @@ is an example for a broadcasting event date in EAD XML:
 
 :ref:`Back to the top <rad-template>`
 
-Dates of creation- Start
-------------------------
+Dates of creation - Start
+-------------------------
 
-**Template field** Dates of creation- Start
+**Template field** Start
 
-**CSV Column** ``creationDatesStart``
+**CSV Column** ``eventStartDates``
 
 .. NOTE::
 
@@ -936,7 +948,7 @@ YYYY-MM-DD, YYYY-MM, YYYY.
    <did>
       <unitdate id="[atom-generated-value]" normal="[start date/end date]" encodinganalog="1.4B2">
 
-.. note::
+.. NOTE::
 
    This field only displays while editing the description. If AtoM is
    able to interpret the start date from the Date(s) field, above, it will
@@ -945,20 +957,12 @@ YYYY-MM-DD, YYYY-MM, YYYY.
 
 :ref:`Back to the top <rad-template>`
 
-Dates of creation- End
-----------------------
+Dates of creation - End
+-----------------------
 
-**Template field** Dates of creation- End
+**Template field** Dates of creation - End
 
-**CSV Column** ``creationDatesEnd``
-
-.. NOTE::
-
-   The CSV column in earlier versions prior to 2.2 was named
-   "creatorDatesEnd" - it has been updated to clarify its relation to the
-   creation event - not to the dates of existence of the creator. However, we
-   have added fallback code, so if the old name is used, the import will still
-   succeed.
+**CSV Column** ``eventEndDates``
 
 **RAD Rule** Enter the end year. Do not use any qualifiers or typographical symbols
 to express uncertainty. Acceptable date formats: YYYYMMDD,
@@ -971,7 +975,15 @@ YYYY-MM-DD, YYYY-MM, YYYY.
    <did>
       <unitdate id="[atom-generated-value]" normal="[start date/end date]" encodinganalog="1.4B2">
 
-.. note::
+.. NOTE::
+
+   The CSV column in earlier versions prior to 2.2 was named
+   "creatorDatesEnd" - it has been updated to clarify its relation to the
+   creation event - not to the dates of existence of the creator. However, we
+   have added fallback code, so if the old name is used, the import will still
+   succeed.
+
+.. NOTE::
 
    This field only displays while editing the description. If AtoM is
    able to interpret the start date from the Date(s) field, above, it will
@@ -980,12 +992,19 @@ YYYY-MM-DD, YYYY-MM, YYYY.
 
 :ref:`Back to the top <rad-template>`
 
-Dates of creation- Note
------------------------
+Dates of creation - Note
+------------------------
 
-**Template field** Dates of creation- Note
+**Template field** Event Note
 
-**CSV Column** ``creationDatesNotes``
+**CSV Column** ``eventDescriptions``
+
+**RAD Rule** "Make notes on dates and any details pertaining to the dates of
+creation, publication, or distribution, of the unit being described that are
+not included in the Date(s) of creation, including publication, distribution,
+etc., area and that are considered to be important. " (RAD 1.8B8) "Make notes
+on the date(s) of accumulation or collection of the unit being described." RAD
+1.8B8a)
 
 .. NOTE::
 
@@ -994,13 +1013,6 @@ Dates of creation- Note
    creation event - not to the dates of existence of the creator. However, we
    have added fallback code, so if the old name is used, the import will still
    succeed.
-
-**RAD Rule** "Make notes on dates and any details pertaining to the dates of
-creation, publication, or distribution, of the unit being described that are
-not included in the Date(s) of creation, including publication, distribution,
-etc., area and that are considered to be important. " (RAD 1.8B8) "Make notes
-on the date(s) of accumulation or collection of the unit being described." RAD
-1.8B8a)
 
 .. NOTE::
 
@@ -1054,10 +1066,10 @@ carriage return (i.e. press the Enter key on your keyboard).
    ``<genreform>``. In the :term:`view page` the EAD tags will be hidden, but
    preserved during export and re-import.
 
-.. image:: images/physdesc-ead-rad.*
-   :align: center
-   :width: 75%
-   :alt: A comparison of the edit and view pages for physical description
+   .. image:: images/physdesc-ead-rad.*
+    :align: center
+    :width: 75%
+    :alt: A comparison of the edit and view pages for physical description
 
 
 :ref:`Back to the top <rad-template>`
@@ -1207,7 +1219,7 @@ incomplete series, and of numbers or letters that imply a series." (RAD
 
    <odd type="bibSeries" encodinganalog="1.8B10">
 
-.. note::
+.. NOTE::
 
    This field maps to the same EAD field as the field in Notes area below,
    Other notes- Publisher's Series. Both notes refer to RAD 1.8B10.
@@ -1387,7 +1399,7 @@ description." RAD (1.8.B14).
          <langmaterial encodinganalog="1.8B9a">
             <language langcode="[ISO code]">
 
-.. note::
+.. NOTE::
 
    Use a three-letter language code from
    `ISO 639-2 <http://www.loc.gov/standards/iso639-2/php/code_list.php>`_ when
@@ -1414,7 +1426,7 @@ RAD (1.8.B14)
          <langmaterial encodinganalog="1.8B9a">
             <language scriptcode="[ISO code]">
 
-.. note::
+.. NOTE::
 
    Use a three-letter language code from
    `ISO 639-2 <http://www.loc.gov/standards/iso639-2/php/code_list.php>`_ when
@@ -1442,7 +1454,7 @@ RAD (1.8.B14).
    <did>
       <langmaterial encodinganalog="1.8B9a">
 
-.. note::
+.. NOTE::
 
    Not intended to duplicate information from language or script, above.
 
@@ -1628,10 +1640,10 @@ closed." (RAD 1.8B19)
    The data entry fields for Other notes. Multiple notes can be added by
    clicking "Add new"
 
-Other notes- Accompanying material
-----------------------------------
+Other notes - Accompanying material
+-----------------------------------
 
-**Template field** Other notes- Accompanying material
+**Template field** Other notes - Accompanying material
 
 **CSV Column** ``radNoteAccompanyingMaterial``
 
@@ -1647,10 +1659,10 @@ in the Physical description area (see 1.5E)." (RAD 1.8B9c)
 
 :ref:`Back to the top <rad-template>`
 
-Other notes- Alpha-numeric designations
----------------------------------------
+Other notes - Alpha-numeric designations
+----------------------------------------
 
-**Template field** Other notes- Alpha-numeric designations
+**Template field** Other notes - Alpha-numeric designations
 
 **CSV Column** ``radNoteAlphaNumericDesignation``
 
@@ -1667,10 +1679,10 @@ numbers borne by the unit being described other than publisher's series numbers 
 
 :ref:`Back to the top <rad-template>`
 
-Other notes- Cast note
-----------------------
+Other notes - Cast note
+-----------------------
 
-**Template field** Other notes- Cast note
+**Template field** Other notes - Cast note
 
 **CSV Column** ``radNoteCast``
 
@@ -1687,10 +1699,10 @@ personnel." (Moving images - RAD 7.8B5b)
 :ref:`Back to the top <rad-template>`
 
 
-Other notes- Conservation
--------------------------
+Other notes - Conservation
+--------------------------
 
-**Template field** Other notes- Conservation
+**Template field** Other notes - Conservation
 
 **CSV Column** ``radNoteConservation``
 
@@ -1707,10 +1719,10 @@ nature of the work." (RAD 1.8B9b)
 
 :ref:`Back to the top <rad-template>`
 
-Other notes- Credits note
--------------------------
+Other notes - Credits note
+--------------------------
 
-**Template field** Other notes- Credits note
+**Template field** Other notes - Credits note
 
 **CSV Column** ``radNoteCredits``
 
@@ -1728,10 +1740,10 @@ name or group of names with a statement of function." (Moving images - RAD
 
 :ref:`Back to the top <rad-template>`
 
-Other notes- Edition
---------------------
+Other notes - Edition
+---------------------
 
-**Template field** Other notes- Edition
+**Template field** Other notes - Edition
 
 **CSV Column** ``radNoteEdition``
 
@@ -1747,10 +1759,10 @@ of the unit being described to other editions." (RAD 1.8B7)
 
 :ref:`Back to the top <rad-template>`
 
-Other notes- Physical description
----------------------------------
+Other notes - Physical description
+----------------------------------
 
-**Template field** Other notes- Physical description
+**Template field** Other notes - Physical description
 
 **CSV Column** ``radNotePhysicalDescription``
 
@@ -1766,10 +1778,10 @@ being described." (RAD 1.8B9)
 
 :ref:`Back to the top <rad-template>`
 
-Other notes- Publisher's series
--------------------------------
+Other notes - Publisher's series
+--------------------------------
 
-**Template field** Other notes- Publisher's series
+**Template field** Other notes - Publisher's series
 
 **CSV Column** ``radPublishersSeriesNote``
 
@@ -1785,7 +1797,7 @@ incomplete series, and of numbers or letters that imply a series." (RAD
    <odd type="bibSeries" encodinganalog="1.8B10">
       <p>
 
-.. note::
+.. NOTE::
 
    This column maps to the same EAD field as the column above,
    Note on Publishers Series. Both notes refer to RAD 1.8B10.
@@ -1836,10 +1848,10 @@ RAD 12.8B7 (Philatelic records).
 
 :ref:`Back to the top <rad-template>`
 
-Other notes- General note
--------------------------
+Other notes - General note
+--------------------------
 
-**Template field** Other notes- General note
+**Template field** Other notes - General note
 
 **CSV Column** ``radNoteGeneral``
 
@@ -1921,7 +1933,7 @@ link to a new subject term."
    <controlaccess>
       <subject>
 
-.. note::
+.. NOTE::
 
    The values in this column/field will create
    :term:`terms <term>` in the subjects :term:`taxonomy` where those do not
@@ -1948,7 +1960,7 @@ create and link to a new place term."
    <controlaccess>
       <geogname>
 
-.. note::
+.. NOTE::
 
    The values in this column/field will create :term:`terms <term>` in the
    places :term:`taxonomy` where those do not already exist.
@@ -1960,7 +1972,7 @@ Genre access points
 
 **Template field** Genre access points
 
-**CSV Column** N/A
+**CSV Column** ``genreAccessPoints``
 
 .. NOTE::
 
@@ -2173,7 +2185,7 @@ national guidelines and/or rules."
    <odd type="levelOfDetail">
       <p>
 
-.. note::
+.. NOTE::
 
    AtoM uses a :term:`taxonomy` to determine the value of this field. The
    default terms are Full, Partial and Minimal, but can be edited through the
@@ -2199,7 +2211,7 @@ Dates of creation, revision and deletion
          <date>
 
 
-.. note::
+.. NOTE::
 
    This is a free text field, allowing users to also write narrative
    notes about the revision history of the description.
@@ -2226,7 +2238,7 @@ archival material."
          <language>
             <language langcode="[ISO code]">
 
-.. note::
+.. NOTE::
 
    In CSV import, use a three-letter language code from
    `ISO 639-2 <http://www.loc.gov/standards/iso639-2/php/code_list.php>`_ .
@@ -2256,7 +2268,7 @@ archival material."
          <language>
             <language scriptcode="[ISO code]">
 
-.. note::
+.. NOTE::
 
    In CSV import, use a four-letter script code from
    `ISO 1924 <http://www.unicode.org/iso15924/iso15924-codes.html>`_. When
@@ -2286,7 +2298,7 @@ fields)."
       <note type="sourcesDescription">
          <p>
 
-.. note::
+.. NOTE::
 
    If there are sources to cite used used in a biographical
    sketch or administrative history, record these in the sources field for the
@@ -2339,7 +2351,7 @@ Display standard
 
 **EAD** N/A
 
-.. note::
+.. NOTE::
 
    This fields allows the user to choose a different display standard
    from the :ref:`default template <default-templates>`
@@ -2365,7 +2377,7 @@ Publication status
   <odd type="publicationStatus">
      <p>
 
-.. note::
+.. NOTE::
 
   The :term:`publication status` refers to the public visibility of a
   description for unauthenticated (e.g. not logged in) users. The default
