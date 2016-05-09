@@ -19,7 +19,7 @@ resource to get up to speed quickly.
 Install Docker and Docker Compose
 =================================
 
-If you're a Mac on Windows user, the `Docker Toolbox <https://www.docker.com/products/docker-toolbox>`_
+If you're a Mac or Windows user, the `Docker Toolbox <https://www.docker.com/products/docker-toolbox>`_
 will install everything you need. Docker Toolbox incorporates a tool called
 Docker Machine that lets you provision Docker machines anywhere you need,
 including local VirtualBox machines running boot2docker, a lightweight Linux
