@@ -1144,10 +1144,16 @@ target description.
    For the export task to succeed when using the ``--single-slug`` option, you
    **must** specify not just a target output directory, but a target output file
    name. Exporting to ``path/to/my/directory/`` will result in nothing being
-   exported (though the command will appear to complete successfully) - while
-   exporting to ``path/to/my/directory/some-filename.xml`` will succeed. For
-   further information see issue
-   `#8905 <https://projects.artefactual.com/issues/8905>`__.
+   exported - you will be given a warning that the path should be a file -
+   while exporting to ``path/to/my/directory/some-filename.xml`` will succeed.
+   Note that the task **cannot** create new directories - but you can give the
+   target file any name you wish (ending in ``.xml``); it doesn't need to be
+   based on the target :term:`slug`.
+
+   .. image:: images/single-slug-warning.*
+      :align: center
+      :width: 90%
+      :alt: An example of using the single-slug option
 
 The  ``--public`` option is useful for excluding draft records from an export.
 Normally, all records in a hierarchical tree will be exported regardless of
