@@ -531,36 +531,74 @@ new series to the *parentID* column of the new files.
    *qubitParentSlug* value. In general, each row must have **only** one or the
    other - either a parent slug, or a parent ID.
 
-Creator-related import columns
-------------------------------
+Creator-related import columns (actors and events)
+--------------------------------------------------
 
-The *creators*, *creatorHistories*, *creationDates*, *creationDatesStart*, and
-*creationDatesEnd* columns are related to the creation of creators, and creation
-dates. If multiple creators exist for an information object, the values in these
-fields should be pipe-separated (e.g. using the | pipe separator between values).
+The *eventActors*, *eventActorHistories*, *eventTypes*, *eventDates*,
+*eventStartDates*, and *eventEndDates* columns are related to the creation of
+actors and events. In AtoM's data model, an :term:`archival description` is a
+description of a record, understood as the documentary evidence created by an
+action - or event. It is events that link actors (represented in AtoM by an
+:term:`authority record`) to archival descriptions.
+
+The most common use for these columns is to add creation dates associated with
+an actor via an :term:`authority record` - in this case, the *eventType* is
+Creation, the *eventActor* is the creator, and the various *eventDates* fields
+are the dates of creation associated with the description.
+
+However, some standards support other types of events as well. For example,
+the :ref:`ISAD(G) template <isad-template>` in AtoM also supports Accummulation
+as an event type, while the Canadian :ref:`RAD template <rad-template>` allows
+direct association between actors and events, and includes many other event
+types, such as contribution, broadcasting, manufacturing, and more.
+
+A brief summary of the fields is included below, followed by a longer
+discussion of their use:
+
+* ``eventActors``: Add the associated creator or other actor name here. AtoM
+  will link to an existing :term:`authority record` or create a new one. For
+  details on linking behavior, see below: :ref:`csv-actors-import`.
+* ``eventActorHistories``: Add the associated creator or other actor's
+  administrative or biographical history here. Equivalent to ISAD(G) 3.2.2,
+  RAD 1.7B, and/or DACS 2.7 - Administrative/Biographical history. This will be
+  mapped to the related :term:`authority record`.
+* ``eventTypes``: Type of event. Values include:
+
+  * **ISAD**: Creation, Accumulation
+  * **RAD**: Creation, Accumulation, Contribution, Collection, Broadcasting,
+    Manufacturing, Custody, Publication, Reproduction, Distribution
+
+* ``eventDates``: Display dates shown in public user interface for event on
+   archival description :term:`view page`. May use free-text, including
+   typographical conventions to express approximation or uncertainty (e.g.
+   [190-?]; [ca. 1885]).
+* ``eventStartDates``: Internal ISO-8601 formatted (e.g. YYYY, YYYY-MM,
+   YYYY-MM-DD) start date of event
+* ``eventEndDates``: Internal ISO-8601 formatted (e.g. YYYY, YYYY-MM,
+   YYYY-MM-DD) end date of event
+
+.. image:: images/date-range-search-fields-used.*
+   :align: center
+   :width: 90%
+   :alt: An illustration of the different date fields and their uses
+
+* ``eventDescriptions``: Only in RAD CSV template. Adds a note to the event
+* ``eventPlaces``: Only in RAD CSV templates. Associates a place with the
+  event.
+
+.. image:: images/csv-rad-event-note-place.*
+   :align: center
+   :width: 60%
+   :alt: An illustration of the RAD event note and event place fields
+
+If multiple actors/events exist for an information object, the values in
+these fields can be pipe-separated (e.g. using the | pipe separator between
+values).
 
 .. image:: images/csv-creatorDates.*
    :align: center
-   :width: 85%
-   :alt: example CSV creatorDates rows
-
-Note that *creationDates*, *creationDatesStart*, and *creationDatesEnd* fields
-relate to **dates of creation** for the related description, and **not** to
-the dates of existence for the related creators. The *creationDates* field
-will map to the free-text date field in AtoM, where users can use special
-characters to express approximation, uncertainty, etc. (e.g. [190-?]; [ca.
-1885]), while *creationDatesStart* and *creationDatesEnd* should include
-ISO-formatted date values (YYYY-MM-DD, YYYY-MM, or YYYY).
-
-.. TIP::
-
-   In previous versions of AtoM (2.1 and earlier), these fields were labelled as
-   *creatorDates*, *creatorDatesStart*, and *creatorDatesEnd*. They were renamed
-   in 2.2 to clarify that they relate to creation events - but we've included
-   fall-back logic, so if the old names are accidentally used, they will still work!
-
-*creatorHistories* is equivalent to ISAD(G) 3.2.2, RAD 1.7B, and/or DACS 2.7 -
-Administrative/Biographical history.
+   :width: 99%
+   :alt: example CSV actor and event rows
 
 .. _csv-actors-import:
 
@@ -581,30 +619,47 @@ the key behaviors are outlined below:
 
 **Creating new actor records on import**
 
-* AtoM looks for creator names in the *creators* column in the RAD and ISAD CSV
-  import templates, as well as :term:`access point` names (used as subjects) in
-  the *nameAccessPoints* column during a CSV import of
+* AtoM looks for creator names in the *eventActors* column in the RAD and ISAD
+  CSV import templates, as well as :term:`access point` names (used as subjects)
+  in the *nameAccessPoints* column during a CSV import of
   :term:`archival descriptions <archival description>`.
 * Similarly, any Administrative / biographical history data in an archival
-  description CSV import (i.e. data contained in the *creatorHistories* CSV
+  description CSV import (i.e. data contained in the *eventActorHistories* CSV
   column will be mapped to the "History" :term:`field` (ISAAR-CPF 5.2.2) in the
   related :term:`authority record` (generated from the data contained in the
   *creators* column of the CSV), and then is presented in AtoM in any related
   descriptions where the entity is listed as a creator.
 * Where multiple creator names and histories are included in an import,
-  *creators* and *creatorHistories* elements are matched 1:1 in the  order they
-  appear in the CSV, divided by pipe elements (e.g. ``|`` ). For example, if the
-  *creators* column contains ``name 1|name 2``, the *creatorHistories* should
-  also include ``history 1|history 2`` to match on import.
-* If a creator history element is included in a CSV import, but no creator
+  *eventActors* and *eventActorHistories* elements are matched 1:1 in the
+  order they appear in the CSV, divided by pipe elements (e.g. ``|`` ). For
+  example, if the *eventActors* column contains ``name 1|name 2``, the
+  *eventActorHistories* should  also include ``history 1|history 2`` to match on
+  import. If there is **no** history for the first actor, you can include
+  ``NULL``, and AtoM will ignore the imput - e.g. ``name 1|name 2`` should be
+  matched with ``NULL|history 2`` to include only a history for name 2.
+* This same ``NULL`` approach can be used for any matched date values where
+  multiple actor names are included for import - ``eventDates``,
+  ``eventStartDates``, ``eventEndDates`` can all include ``NULL`` if you wish
+  to leave these blank when associating multiple actors with an event. An
+  example, using the RAD template:
+
+.. image:: images/csv-creatorDates-2.*
+   :align: center
+   :width: 99%
+   :alt: example CSV actor and event rows from the RAD template
+
+* If a creator history element is included in a CSV import, but **no** creator
   name is included, AtoM will still automatically generate a stub
   :term:`authority record` and map the history data to the "History"
   :term:`field` (ISAAR-CPF 5.2.2) - the authority record will be left
   untitled, until the user manually adds the appropriate :term:`name` to the
-  authority record. Similarly, if there are more *creatorHistories* elements
+  authority record. Similarly, if there are more *eventActorHistories* elements
   included in an import than  creator names included in the *creators* column,
   the final biographical/administrative history will be mapped to an
-  untitled authority record.
+  untitled authority record. Because the :term:`slug` is normally based on the
+  title of the authority record, AtoM will generate a random alphanumeric
+  string to use as the slug - and you will **not** be able to edit this
+  through the user interface.
 
 **Attempting to match to existing authority records**
 
@@ -624,9 +679,9 @@ the key behaviors are outlined below:
   authority record in a :term:`multi-repository system`, the approach is
   conservative - for a match to be made and a link to an existing record added
   instead of a new record being created, the authorized form of name,
-  biographical/administrative history (contained in *creatorHistories*), and the
-  :term:`archival institution` associated with the :term:`archival description`
-  must *all* match.
+  biographical/administrative history (contained in *eventActorHistories*),
+  and the :term:`archival institution` associated with the
+  :term:`archival description` must *all* match.
 * If one of these elements (actor name, repository, or history) do **not**
   match, then AtoM will create a new actor record. Since AtoM does not currently
   have the capacity to suspend the import and ask the user whether to update an
