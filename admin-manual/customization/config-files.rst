@@ -21,7 +21,7 @@ From AtoM's root directory, use the ``nano`` command to open a file for editing
 
 .. code-block:: bash
 
-   nano config/apps.yml
+   nano config/app.yml
 
 You can save changes with ``CTRL+O + ENTER``, and exit with ``CTRL+X`` (you
 will be asked to save if you haven't yet).
@@ -39,7 +39,7 @@ will be asked to save if you haven't yet).
 Important files:
 ================
 
-.. _config-apps-yml:
+.. _config-app-yml:
 
 config/app.yml
 ---------------
@@ -69,7 +69,30 @@ such as:
 .. image:: images/app-yml-settings.*
    :align: center
    :width: 70%
-   :alt: An image of the apps.yml file in the command-line
+   :alt: An image of the app.yml file in the command-line
+
+.. IMPORTANT::
+
+   Symfony (the PHP framework that AtoM uses) has a cascading system of
+   priorization for configuration files - if you create an ``app.yml`` file in
+   ``apps/qubit/config/``, its settings will override those found in
+   ``config/app.yml``. This can be useful if you want to change some
+   configuration values without actually altering AtoM's installation
+   defaults - Artefactual uses this method for automated deployment via
+   Ansible, for example.
+
+   If your settings changes aren't taking effect in ``config/app.yml`` and
+   you've already cleared the cache and restarted php-fpm, you might want to
+   double-check to make sure you don't have a file in
+   ``apps/qubit/config/app.yml`` overriding the other configuration file. If
+   you are using the :ref:`dev-env-vagrant` box for example, you will have
+   this extra config file, since Artefactual uses Ansible to automate the
+   build of the Vagrant box.
+
+   .. image:: images/apps-qubit-config-app-yml.*
+      :align: center
+      :width: 90%
+      :alt: An example of the app.yml file in apps/qubit/config
 
 .. _config-settings-yml:
 

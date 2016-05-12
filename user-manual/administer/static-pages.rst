@@ -86,7 +86,7 @@ all possible security settings and mitigating the risk of XSS-based attack vecto
 can enable the library by altering the ``config/app.yml`` file. For more
 information, see:
 
-* :ref:`config-apps-yml`
+* :ref:`config-app-yml`
 * :ref:`admin-security`
 
 When the configuration is set to ``true``, htmlpurifier_ will limit the available

@@ -1217,7 +1217,7 @@ require a systems administrator who can edit AtoM's files from the server.
 
 3. Add the API key to AtoM's code in the :file:`config/apps.yml` file .
    Uncomment the :file:`google_maps_api_key` value and add the API key. For
-   more information see: :ref:`config-apps-yml`.
+   more information see: :ref:`config-app-yml`.
 
 4. Save the changes to :file:`apps.yml` and
    :ref:`clear the cache <maintenance-clear-cache>`.
