@@ -167,6 +167,25 @@ You can check if the box you're using is outdated with ``vagrant box outdated``.
 This can check if the box in your current Vagrant environment is outdated as
 well as any other box installed on the system.
 
+To pull in the latest code for your box, connect via SSH (see
+:ref:`vagrant-connect-terminal`), navigate to the atom folder with ``cd atom``, and run ``git pull --rebase``. After pulling in new code, you will want to do the following:
+
+* Clear cache: ``php symfony cc``
+
+* Restart services: ``sudo restart php5-fpm``, ``sudo restart nginx``, ``sudo service memcached restart``, and ``sudo service nginx restart``
+
+In some cases, depending on the code that has been pulled in, you may need to do
+the following:
+
+* Repopulate the search index: ``php symfony search:populate``
+
+* Remake the CSS
+
+If you are pulling in major changes to the AtoM codebase, we recommend purging
+the database back to the clean demo version (``sudo php symfony tools:purge --demo``)
+run the SQL upgrade task, and clear the cache and restart services. Then re-import
+some test data and repopulate the search index.
+
 Finally, you can update boxes with ``vagrant box update``. This will download
 and install the new box. This will not magically update running Vagrant
 environments. If a Vagrant environment is already running, you'll have to

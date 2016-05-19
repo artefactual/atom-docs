@@ -1001,7 +1001,7 @@ accommodated by any of the defined elements of description. (ISAD 3.6.1)"
 .. code-block:: xml
 
    <did>
-      <note type="general note">
+      <note type="generalNote">
          <p>
 
 :ref:`Back to the top <isad-template>`
