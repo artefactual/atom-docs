@@ -32,35 +32,35 @@ of each component.
 * A webserver like `Apache <https://httpd.apache.org/>`__ or
   `Nginx <http://nginx.com/>`__; Artefactual prefers the latter in
   development
-* `Elasticsearch <https://www.elastic.co/products/elasticsearch>`__ 1.3.0 or newer (users have reported testing Elasticsearch 1.7 without problems)
-* Oracle `Java <https://www.java.com/en/>`__ 8 or newer (required for Elasticsearch)
+* `Elasticsearch <https://www.elastic.co/products/elasticsearch>`__ 1.3.0 or
+  newer (users have reported testing Elasticsearch 1.7 without problems).
+  Elasticsearch 2.0 or newer is still not supported as they have deprecated a
+  number of APIs still used in AtoM
+* Oracle `Java <https://www.java.com/en/>`__ 8 or newer (required for
+  Elasticsearch)
 * `MySQL <https://www.mysql.com/>`__ 5.1 or newer
-* `PHP <http://php.net/>`__ 5.4 or newer (PHP 5.5 works too and is used by Artefactual developers in development and production deployments)
+* `PHP <http://php.net/>`__ 5.5, 5.6, 7.0 or newer
 * `Memcached <http://memcached.org>`__
 * `Gearman job server <http://gearman.org>`__
 
 Additionally, the following PHP extensions are mandatory:
 
-* cURL (php5-curl)
-* JSON (php5-json)
-* APC (php-apc, or php5-apcu in PHP 5.5)
-* PDO and PDO-MySQL (php5-mysql)
-* XSL (php5-xsl)
+* cURL
+* JSON
+* APC (apcu in PHP 5.5+, apcu-bc also required in PHP 7.0+)
+* PDO and PDO-MySQL
+* XSL
 
 Optionally:
 
-* Readline (php5-readline, required in 14.04 only, not available in Windows).
+* Readline (not available in Windows).
+* Memcache
 
 .. note::
 
    All these dependencies can run in a number of different operative systems,
    including :ref:`installation-windows`, :ref:`installation-macosx`, Solaris,
-   FreeBSD or :ref:`installation-linux`. This documentation is based in
-   **Ubuntu Linux 12.04/14.04 LTS** as it seems to be one of the most widely
-   used Linux distributions. However, it should serve as a reference for other
-   environments and distro flavours - we've also written specific guides for
-   other operating systems such as :ref:`installation-windows` and
-   :ref:`installation-macosx`.
+   FreeBSD or :ref:`installation-linux`.
 
 .. _other-dependencies:
 
@@ -122,4 +122,5 @@ AtoM's :term:`user interface`.
     a Java application that reads a formatting object (FO) tree and renders the
     resulting pages to a specified output.*
 
-`Apache FOP <https://xmlgraphics.apache.org/fop/>`__ is used in AtoM to create PDF finding aids.
+`Apache FOP <https://xmlgraphics.apache.org/fop/>`__ is used in AtoM to create
+PDF finding aids.

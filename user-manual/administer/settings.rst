@@ -107,7 +107,7 @@ see:
 
 * Installing AtoM with:
 
-  * :ref:`Linus <installation-linux>`
+  * :ref:`Linux <installation-linux>`
   * :ref:`Windows <installation-windows>`
   * :ref:`Mac OS X <installation-macosx>`
 

@@ -9,7 +9,7 @@ Installation
 
    intended-audience
    requirements
-   linux
+   linux/linux
    windows
    macosx
    ansible

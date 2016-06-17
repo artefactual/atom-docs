@@ -63,8 +63,13 @@ The simplest way to run a worker is from your terminal:
    php symfony jobs:worker
 
 A better way to run a worker is to use a process supervisor like upstart
-(included in Ubuntu). An upstart service (:file:`/etc/init/atom-worker.conf`)
-could look like:
+(included in Ubuntu 14.04) or systemd (included in Ubuntu 16.04). Both options
+are documented below.
+
+Upstart (Ubuntu 14.04)
+----------------------
+
+An upstart service (:file:`/etc/init/atom-worker.conf`) could look like:
 
 .. code-block:: none
 
@@ -103,6 +108,56 @@ You can control the service execution status with the following commands:
 :command:`initctl` is the primary command used to interact with Upstart and its
 services. Check out its man page (:command:`man initctl`) or the following
 link for more instructions: http://upstart.ubuntu.com/cookbook/#initctl.
+
+systemd (Ubuntu 16.04)
+----------------------
+
+Create the following service (:file:`/usr/lib/systemd/system/atom-worker.service`):
+
+.. code-block:: none
+
+   [Unit]
+   Description=AtoM worker
+   After=network.target
+
+   [Install]
+   WantedBy=multi-user.target
+
+   [Service]
+   Type=simple
+   User=www-data
+   Group=www-data
+   WorkingDirectory=/usr/share/nginx/atom
+   ExecStart=/usr/bin/php -d memory_limit=-1 -d error_reporting="E_ALL" symfony jobs:worker
+   ExecStop=/bin/kill -s TERM $MAINPID
+   Restart=no
+
+Now reload systemd:
+
+.. code-block:: bash
+
+   sudo systemctl daemon-reload
+
+You can control the service execution status with the following commands:
+
+.. code-block:: bash
+
+   sudo systemctl enable atom-worker   # Enables the worker (on boot)
+   sudo systemctl start atom-worker    # Starts the worker
+   sudo systemctl stop atom-worker     # Stops the worker
+   sudo systemctl restart atom-worker  # Restarts the workers
+   sudo systemctl status atom-worker   # Obtains current status
+
+You can have access to the journal of our new ``atom-worker`` unit as follows:
+
+.. code-block:: bash
+
+   sudo journalctl -f -u atom-worker
+
+This is going to be useful in case you need to troubleshoot the worker.
+
+Other considerations
+--------------------
 
 An AtoM worker needs to know where the job server is running, which is defined
 in an application setting called :guilabel:`gearman_job_server` under

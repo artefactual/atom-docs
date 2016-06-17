@@ -1,75 +1,70 @@
-.. _installation-linux:
+.. _installation-linux-ubuntu-xenial:
 
-=====
-Linux
-=====
+=======================================
+Linux - Ubuntu 16.04 LTS (Xenial Xerus)
+=======================================
 
-We use and recommend `Ubuntu Linux <http://www.ubuntu.com/>`__ as an easy to
-use Linux distro with a large and lively community behind it - however, we've
-obtained satisfactory results with a number of other distributions like
-Debian, CentOS or Fedora. Most of the configuration steps described in this
+Most of the configuration steps described in this
 document apply to any modern Linux environment, however some of them will
 apply only to Ubuntu and likely to any Ubuntu-based distribution.
 
-To be specific, this document is based in
-`Ubuntu 12.04 LTS (Precise Pangolin) <http://releases.ubuntu.com/precise/>`_
-and `Ubuntu 14.04 LTS (Trusty Tahr) <http://releases.ubuntu.com/trusty/>`_.
-Once you have installed it, you should be able to follow the instructions
-described below. In particular, we are going to use Ubuntu packages that can
-be found under the
-`repositories <https://help.ubuntu.com/community/Repositories/Ubuntu>`_ *main*
-and *universe*.
+This document is based in
+`Ubuntu 16.04 LTS (Xenial Xerus) <http://releases.ubuntu.com/xenial/>`_. Once
+you have installed it, you should be able to follow the instructions described
+below. In particular, we are going to use Ubuntu packages that can be found
+under the `repositories
+<https://help.ubuntu.com/community/Repositories/Ubuntu>`_ *main* and *universe*.
 
 .. IMPORTANT::
 
    Please make sure you have reviewed the :ref:`requirements
    <installation-requirements>` before proceeding.
 
-.. _linux-install-dependencies:
+.. _linux-ubuntu-xenial-install-dependencies:
 
 Install the dependencies
 ========================
 
-.. _linux-dependency-mysql:
+.. _linux-ubuntu-xenial-dependency-mysql:
 
 MySQL
 -----
 
-We strongly recommend using `MySQL <https://www.mysql.com/>`__  5.5 as it's
+We strongly recommend using `MySQL <https://www.mysql.com/>`__  5.6 as it's
 much better than its previous major release in terms of speed, scalability and
 user-friendliness. Also, we've experienced very good results using forks like
 Percona Server or MariaDB, so don't be afraid and use them if you want!
 
-Let's install MySQL using :command:`apt-get`:
+Let's install MySQL using :command:`apt install`:
 
 .. code-block:: bash
 
-   sudo apt-get install mysql-server-5.5
+   sudo apt install percona-server-server-5.6
 
 During the installation, you will be prompted to set a password for the default
 administrator user (root). We strongly recommend that you use a strong password
-and please write it down as you are going to need it :ref:`later <create-the-database-linux>`.
+and please write it down as you are going to need it later.
 
-.. _linux-dependency-elasticsearch:
+.. _linux-ubuntu-xenial-dependency-elasticsearch:
 
 Elasticsearch
 -------------
 
 A relatively new search server based on Apache Lucene and developed in Java that
-has brought AtoM a lot of advanced features, performance and scalability. This is
-probably the biggest change introduced in AtoM 2.x and we are pleased
-with the results.
+has brought AtoM a lot of advanced features, performance and scalability. This
+is probably the biggest change introduced in AtoM 2.x and we are pleased with
+the results.
 
 Ubuntu doesn't provide a package but you can download it directly from the
-`Elasticsearch site <https://www.elastic.co/downloads/elasticsearch>`_ if you are
-unable to download it using the method that follows.
+`Elasticsearch site <https://www.elastic.co/downloads/elasticsearch>`_ if you
+are unable to download it using the method that follows.
 
 First, make sure that `Java <https://www.java.com/en/>`__ is installed. In this
 example we are going to use OpenJDK but Oracle's JVM would also work.
 
 .. code-block:: bash
 
-   sudo apt-get install openjdk-7-jre-headless
+   sudo apt install openjdk-8-jre-headless
 
 After successfully installing Java, proceed to install Elasticsearch. Download
 and install the public signing key used in their repository:
@@ -78,27 +73,27 @@ and install the public signing key used in their repository:
 
    wget -qO - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add -
 
-Add the following to your /etc/apt/sources.list to enable the repository:
+Now add their repository:
 
 .. code-block:: bash
 
-   deb http://packages.elasticsearch.org/elasticsearch/1.7/debian stable main
+   sudo add-apt-repository "deb http://packages.elasticsearch.org/elasticsearch/1.7/debian stable main"
 
 Ready to be installed. Run:
 
 .. code-block:: bash
 
-   sudo apt-get update
-   sudo apt-get install elasticsearch
+   sudo apt update
+   sudo apt install elasticsearch
 
 Start the service and configure it to start when the system is booted.
 
 .. code-block:: bash
 
-   sudo update-rc.d elasticsearch defaults 95 10
-   sudo /etc/init.d/elasticsearch start
+   sudo systemctl enable elasticsearch
+   sudo systemctl start elasticsearch
 
-.. _linux-dependency-httpd:
+.. _linux-ubuntu-xenial-dependency-httpd:
 
 Web server
 ----------
@@ -109,9 +104,9 @@ the most popular and we like it, but we've found that
 `Nginx <http://nginx.com/>`__ adapts itself much better to limited resource
 environments while it also scales better and more predictably under high loads.
 You are welcome to try other solutions, but the following documentation will
-focus upon Nginx and Apache, our preferred web server solutions.
+focus merely on Nginx.
 
-.. _linux-dependency-httpd-nginx:
+.. _linux-ubuntu-xenial-dependency-httpd-nginx:
 
 Nginx
 `````
@@ -120,21 +115,7 @@ In Ubuntu, the installation of Nginx is simple:
 
 .. code-block:: bash
 
-   sudo apt-get install nginx
-
-`Ubuntu <http://www.ubuntu.com/>`__ 12.04 uses Nginx 1.1. However, the team
-behind Nginx provides an official PPA  (Personal Package Archive) channel for
-Ubuntu users that supports more recent stable packages for the different
-releases of Ubuntu, including 12.04. This could be a good choice if you want
-to enjoy some of the latest features and improvements added to Nginx while
-taking minimal risks in your production environments. If you are interested,
-run the following commands:
-
-.. code-block:: bash
-
-   sudo add-apt-repository ppa:nginx/stable
-   sudo apt-get update
-   sudo apt-get install nginx
+   sudo apt install nginx
 
 Nginx deploys a default server (aka VirtualHost, for Apache users) called
 **default** and you can find it in :file:`/etc/nginx/sites-available/default`.
@@ -147,8 +128,8 @@ one. We are going to you show you how to do the latter:
    sudo ln -sf /etc/nginx/sites-available/atom /etc/nginx/sites-enabled/atom
    sudo rm /etc/nginx/sites-enabled/default
 
-We have now created the configuration file and linked it from sites-enabled/, which
-is the directory that Nginx will look for. This means that you could
+We have now created the configuration file and linked it from sites-enabled/,
+which is the directory that Nginx will look for. This means that you could
 disable a site by removing its symlink from sites-enabled/ while keeping the
 original one under sites-available/, in case that you want to re-use it in the
 future. You can do this with the Nginx default server.
@@ -159,7 +140,7 @@ in :file:`/etc/nginx/sites-enabled/atom`.
 .. code-block:: nginx
 
    upstream atom {
-     server unix:/var/run/php5-fpm.atom.sock;
+     server unix:/run/php7.0-fpm.atom.sock;
    }
 
    server {
@@ -225,63 +206,19 @@ in :file:`/etc/nginx/sites-enabled/atom`.
 
    }
 
-Now you need to restart Nginx:
+Now you need to enable and reload Nginx:
 
 .. code-block:: bash
 
-   sudo service nginx restart
+   sudo systemctl enable nginx
+   sudo systemctl reload nginx
 
-.. _linux-dependency-httpd-apache:
-
-Apache
-``````
-.. warning::
-
-   Remember that our preferred choice is :ref:`linux-dependency-httpd-nginx` but
-   it is perfectly possible to use Apache and we have verified that it works.
-
-Install the necessary packages:
-
-.. code-block:: bash
-
-   sudo apt-get install apache2 libapache2-mod-xsendfile
-
-Enable the required modules:
-
-.. code-block:: bash
-
-   sudo a2enmod rewrite xsendfile
-
-The configuration of your virtual server shoud look like the following:
-
-.. code-block:: apache
-
-    <VirtualHost *:80>
-      DocumentRoot /var/www/atom
-      RewriteEngine On
-      RewriteRule ^/uploads/r/([^/]*)/conf/(.*)$ /var/www/atom/uploads/r/$1/conf/$2 [L]
-      RewriteRule ^/uploads/(.*)$ /var/www/atom/uploads/$1 [L]
-      <LocationMatch ^/uploads>
-        XSendFile On
-        XSendFilePath /var/www/atom/uploads
-        SetEnv ATOM_XSENDFILE 1
-      </LocationMatch>
-    </VirtualHost>
-
-You also need to decide if you are going to use php5-fpm or mod_php. We prefer
-the former, in combination with Nginx, but you can combine php5-fpm and Apache
-as long as you install the Apache module mod_fastcgi (the corresponding Ubuntu
-package is called libapache2-mod-fastcgi). We have not tried this ourselves but
-it is definitely `possible <https://wiki.apache.org/httpd/PHP-FPM>`__.
-
-.. _linux-dependency-php:
+.. _linux-ubuntu-xenial-dependency-php:
 
 PHP
 ---
 
-You will need to ensure that you have at leat PHP 5.4 or higher installed - we
-use PHP 5.5 in development - in addition to a number of PHP extentions,
-described below.
+Ubuntu 16.04 bundles PHP 7.0 which is much faster than older releases.
 
 Our favorite way to deploy AtoM is using `PHP-FPM <http://php-fpm.org/>`__, a
 process manager that scales better than other solutions like FastCGI. The
@@ -290,38 +227,38 @@ following command will install it along with the rest of PHP extensions
 
 .. code-block:: bash
 
-    sudo apt-get install php5-cli php5-fpm php5-curl php5-mysql php5-xsl php5-json php5-ldap php-apc
+   sudo apt install php7.0-cli php7.0-curl php7.0-json php7.0-ldap php7.0-mysql php7.0-opcache php7.0-readline php7.0-xml php7.0-fpm php7.0-mbstring php7.0-mcrypt php7.0-xsl php7.0-zip php-memcache php-apcu
 
-If you are using Ubuntu 14.04, make sure that php5-readline is also installed.
-
-.. code-block:: bash
-
-    sudo apt-get install php5-readline
-
-If you are using Apache, you will also need to install mod_php:
+We also need ``php-apcu-bc``, which is not available yet in Ubuntu 16.04. Let's
+install it manually for now:
 
 .. code-block:: bash
 
-    sudo apt-get install libapache2-mod-php5
+   sudo apt install php-dev
+   sudo pecl install apcu_bc-beta
+   echo "extension=apc.so" >> /etc/php/7.0/mods-available/apcu-bc.ini
+   ln -sf /etc/php/7.0/mods-available/apcu-bc.ini /etc/php/7.0/fpm/conf.d/30-apcu-bc.ini
+   ln -sf /etc/php/7.0/mods-available/apcu-bc.ini /etc/php/7.0/cli/conf.d/30-apcu-bc.ini
+   sudo systemctl restart php7.0-fpm
 
 Let's add a new PHP pool for AtoM by adding the following contents in a new file
-called :file:`/etc/php5/fpm/pool.d/atom.conf`:
+called :file:`/etc/php/7.0/fpm/pool.d/atom.conf`:
 
 .. code-block:: ini
 
    [atom]
 
-   # The user running the application
+   ; The user running the application
    user = www-data
    group = www-data
 
-   # Use UNIX sockets if Nginx and PHP-FPM are running in the same machine
-   listen = /var/run/php5-fpm.atom.sock
+   ; Use UNIX sockets if Nginx and PHP-FPM are running in the same machine
+   listen = /run/php7.0-fpm.atom.sock
    listen.owner = www-data
    listen.group = www-data
    listen.mode = 0600
 
-   # The following directives should be tweaked based in your hardware resources
+   ; The following directives should be tweaked based in your hardware resources
    pm = dynamic
    pm.max_children = 30
    pm.start_servers = 10
@@ -331,8 +268,8 @@ called :file:`/etc/php5/fpm/pool.d/atom.conf`:
 
    chdir = /
 
-   # Some defaults for your PHP production environment
-   # A full list here: http://www.php.net/manual/en/ini.list.php
+   ; Some defaults for your PHP production environment
+   ; A full list here: http://www.php.net/manual/en/ini.list.php
    php_admin_value[expose_php] = off
    php_admin_value[allow_url_fopen] = on
    php_admin_value[memory_limit] = 512M
@@ -346,56 +283,50 @@ called :file:`/etc/php5/fpm/pool.d/atom.conf`:
    php_admin_value[html_errors] = off
    php_admin_value[session.use_only_cookies] = 0
 
-   # APC, which is still used in PHP 5.5 for userland memory cache unless you
-   # are switching to something like sfMemcacheCache
+   ; APC
    php_admin_value[apc.enabled] = 1
    php_admin_value[apc.shm_size] = 64M
    php_admin_value[apc.num_files_hint] = 5000
    php_admin_value[apc.stat] = 0
 
-   # Zend OPcache
-   # Only in Ubuntu 14.04 (PHP 5.5).
-   # Don't use this in Ubuntu 12.04, it won't work.
+   ; Zend OPcache
    php_admin_value[opcache.enable] = 1
-   php_admin_value[opcache.enable_cli] = 0
    php_admin_value[opcache.memory_consumption] = 192
    php_admin_value[opcache.interned_strings_buffer] = 16
    php_admin_value[opcache.max_accelerated_files] = 4000
    php_admin_value[opcache.validate_timestamps] = 0
    php_admin_value[opcache.fast_shutdown] = 1
 
-   # This is a good place to define some environment variables, e.g. use
-   # ATOM_DEBUG_IP to define a list of IP addresses with full access to the
-   # debug frontend or ATOM_READ_ONLY if you want AtoM to prevent
-   # authenticated users
+   ; This is a good place to define some environment variables, e.g. use
+   ; ATOM_DEBUG_IP to define a list of IP addresses with full access to the
+   ; debug frontend or ATOM_READ_ONLY if you want AtoM to prevent
+   ; authenticated users
    env[ATOM_DEBUG_IP] = "10.10.10.10,127.0.0.1"
    env[ATOM_READ_ONLY] = "off"
 
-Note that the section "Zend OPcache" won't work in Ubuntu 12.04. Comment it out
-or remove it unless you are using Ubuntu 14.04.
-
-The process manager has to be restarted:
+The process manager has to be enabled and restarted:
 
 .. code-block:: bash
 
-   sudo service php5-fpm restart
+   sudo systemctl enable php7.0-fpm
+   sudo systemctl start php7.0-fpm
 
 If the service fails to start, make sure that the configuration file has been
 has been pasted properly. You can also check the syntax by running:
 
 .. code-block:: bash
 
-   sudo php5-fpm --test
+   sudo php-fpm7.0 --test
 
 If you are not planning to use the default PHP pool (``www``), feel free to
 remove it:
 
 .. code-block:: bash
 
-   sudo rm /etc/php5/fpm/pool.d/www.conf
-   sudo service php5-fpm restart
+   sudo rm /etc/php/7.0/fpm/pool.d/www.conf
+   sudo systemctl restart php7.0-fpm
 
-.. _linux-other-packages:
+.. _linux-ubuntu-xenial-other-packages:
 
 Gearman job server
 ------------------
@@ -404,7 +335,7 @@ Gearman job server is required by AtoM as of version 2.2.
 
 .. code-block:: bash
 
-   sudo apt-get install gearman-job-server
+   sudo apt install gearman-job-server
 
 Other packages
 --------------
@@ -412,18 +343,20 @@ Other packages
 In order to generate PDF finding aids, AtoM requires `Apache FOP 2.1 <https://archive.apache.org/dist/xmlgraphics/fop/binaries/fop-1.0-bin.tar.gz>`__.
 After downloading and extracting it, ensure you have the fop executable in your
 system's executable path. Additionally, you may need to set the environmental
-variable FOP_HOME to the folder path you extracted Apache FOP to, for example:
+variable FOP_HOME to the folder path you extracted Apache FOP. The following is
+a single command that will set up everything for you automatically:
 
 .. code-block:: bash
 
-   sudo -s
-   wget https://archive.apache.org/dist/xmlgraphics/fop/binaries/fop-2.1-bin.tar.gz
-   tar -zxvf fop-2.1-bin.tar.gz
-   rm fop-2.1-bin.tar.gz
-   mv fop-2.1 /usr/share
-   ln -s /usr/share/fop-2.1/fop /usr/bin/fop
-   echo 'FOP_HOME="/usr/share/fop-2.1"' >> /etc/environment
-   exit
+   sudo -u root bash -c "\
+       set -e \
+       && mkdir /usr/share/fop-2.1 \
+       && wget https://archive.apache.org/dist/xmlgraphics/fop/binaries/fop-2.1-bin.tar.gz -O /tmp/fop.tar.gz \
+       && tar xvzf /tmp/fop.tar.gz --strip-components 1 -C /usr/share/fop-2.1 \
+       && ln -s /usr/share/fop-2.1/fop /usr/bin/fop \
+       && rm /tmp/fop.tar.gz \
+       && echo 'FOP_HOME=/usr/share/fop-2.1' >> /etc/environment
+   "
 
 If you want AtoM to be able to process :term:`digital objects <digital object>`
 in formats like JPEG or to extract the text from your PDF documents, there are
@@ -436,18 +369,9 @@ dependencies at once:
 
 .. code-block:: bash
 
-   sudo apt-get install imagemagick ghostscript poppler-utils
+   sudo apt install imagemagick ghostscript poppler-utils ffmpeg
 
-Install ffmpeg from Archivematica's PPA, which works for both Ubuntu 12.04
-(precise) and Ubuntu 14.04 (trusty).
-
-.. code-block:: bash
-
-   sudo add-apt-repository ppa:archivematica/externals
-   sudo apt-get update
-   sudo apt-get install ffmpeg
-
-.. _linux-install-atom:
+.. _linux-ubuntu-xenial-install-atom:
 
 Download AtoM
 =============
@@ -462,19 +386,22 @@ experienced users may prefer to check out the code from our `public repository
 The following instructions assume that we are installing AtoM under
 :file:`/usr/share/nginx` and that you are using AtoM |release|.
 
-.. _linux-install-tarball:
+.. _linux-ubuntu-xenial-install-tarball:
 
 Option 1: Download the tarball
 ------------------------------
 
 .. code-block:: bash
 
-   wget https://storage.accesstomemory.org/releases/atom-2.2.1.tar.gz
+   wget https://storage.accesstomemory.org/releases/atom-2.3.0.tar.gz
    sudo mkdir /usr/share/nginx/atom
-   sudo tar xzf atom-2.2.1.tar.gz -C /usr/share/nginx/atom --strip 1
+   sudo tar xzf atom-2.3.0.tar.gz -C /usr/share/nginx/atom --strip 1
 
+Please note that the tarball may not be available yet if this version is still
+in development. In this case, you can try the alternative installation method
+explained below.
 
-.. _linux-checkout-git:
+.. _linux-ubuntu-xenial-checkout-git:
 
 Option 2: Check out the code from our git repository
 ----------------------------------------------------
@@ -483,13 +410,15 @@ Install git:
 
 .. code-block:: bash
 
-   sudo apt-get install git
+   sudo apt install git
 
 .. code-block:: bash
 
    sudo mkdir /usr/share/nginx/atom
-   sudo git clone -b stable/2.2.x http://github.com/artefactual/atom.git /usr/share/nginx/atom
+   sudo git clone -b qa/2.3.x http://github.com/artefactual/atom.git /usr/share/nginx/atom
    cd /usr/share/nginx/atom
+
+Branch ``stable/2.3.x`` is not avaiable yet, we are using ``qa/2.3.x`` instead.
 
 If you are not interested in downloading all the history from git, you could
 also truncate it to a specific number of revisions, e.g.: just one revision
@@ -504,13 +433,11 @@ the CSS files:
 .. code-block:: bash
 
    curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
-   sudo apt-get install nodejs
+   sudo apt install nodejs make
    sudo npm install -g "less@<2.0.0"
-   cd /usr/share/nginx/atom/plugins/arDominionPlugin/
-   sudo make # At this point the files still belong to root
+   sudo make -C /usr/share/nginx/atom/plugins/arDominionPlugin
 
-
-.. _linux-filesystem-permissions:
+.. _linux-ubuntu-xenial-filesystem-permissions:
 
 Filesystem permissions
 ======================
@@ -531,7 +458,7 @@ example on how to clear all mode bits for others:
 
    sudo chmod o= /usr/share/nginx/atom
 
-.. _create-the-database-linux:
+.. _linux-ubuntu-xenial-create-database:
 
 Create the database
 ===================
@@ -568,7 +495,7 @@ during the installation process or when you are upgrading AtoM to a newer
 version. They can be removed from the user once you are finished with the
 installation or you can change the user used by AtoM in :ref:`config.php <config-config-php>`.
 
-.. _linux-run-installer:
+.. _linux-ubuntu-xenial-run-installer:
 
 Run the web installer
 =====================
@@ -617,7 +544,7 @@ The rest of the fields can be filled as you need:
    password can also be changed by an :term:`administrator` after installation
    via the :term:`user interface` - see: :ref:`edit-user`.
 
-.. _linux-workers:
+.. _linux-ubuntu-xenial-workers:
 
 Deployment of workers
 =====================
@@ -627,7 +554,7 @@ SWORD deposits, managing rights inheritance, and generating finding aids. Check
 out the following page for further installation details:
 :ref:`installation-asynchronous-jobs`.
 
-.. _linux-configuration-files:
+.. _linux-ubuntu-xenial-configuration-files:
 
 Configure AtoM via the command-line
 ===================================
@@ -637,7 +564,7 @@ for example, the default timezone of the application. Depending on your local
 requirements, it may be preferable to configure some of these now. For more
 information on these settings see: :ref:`customization-config-files`.
 
-.. _linux-security-considerations:
+.. _linux-ubuntu-xenial-security-considerations:
 
 Security considerations
 =======================
