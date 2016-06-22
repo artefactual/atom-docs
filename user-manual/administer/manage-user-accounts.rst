@@ -464,26 +464,54 @@ application, via the :term:`main menu`. To do so, follow these instructions:
 
 1. In the :term:`main menu` located in the :term:`header bar`, click the
    |gears| :ref:`Admin <main-menu-admin>` menu and select "Groups" from the
-   :term:`drop-down menu`. This will take you to a list of current groups and
-   the number of members within each group.
-2. Scroll to the bottom of the "List groups" page and click the "Add new" button
-   in the :term:`button block`. AtoM will direct you to a blank Group
+   :term:`drop-down menu`.
+
+.. image:: images/admin-groups.*
+   :align: center
+   :width: 25%
+   :alt: An image of the Admin menu
+
+2. AtoM will redirect you to a list of current groups and the number of members
+   within each group.
+
+.. image:: images/list-groups.*
+   :align: center
+   :width: 80%
+   :alt: An image of the List groups page
+
+3. Scroll to the bottom of the "List groups" page and click the "Add new"
+   button in the :term:`button block`. AtoM will direct you to a blank Group
    :term:`edit page`.
-3. In the "Main area" :term:`information area`, enter the "Name" and the
+
+.. image:: images/create-group-blank.*
+   :align: center
+   :width: 90%
+   :alt: An image of a blank edit page for a new Group
+
+4. In the "Main area" :term:`information area`, enter the "Name" and the
    "Description" of the group, and select whether or not the group will have
    the :term:`access privilege` permission to "Translate". For more information
    on user roles, see: :ref:`user-roles`.
-4. You can quit the process at any time by clicking the "Cancel" button, or
-   exiting (i.e. clicking "**X**") the window. Any changes made will not
-   be saved.
-5. When you have complete, click the :term:`"Create" button <Create button>`.
-   AtoM will be direct you to a :term:`view page` where the new :term:`user
-   profile` will be displayed. When you have complete, click "Create".
 
-Once the new group has been saved, AtoM will direct you to the group's `
-:term:`view page`, where you can review your work. Clicking "Edit" in the
-:term:`button block` at the bottom of the user profile will re-open the group in
-:term:`edit mode`.
+.. image:: images/create-group.*
+   :align: center
+   :width: 80%
+   :alt: An image of a blank edit page for a new Group
+
+5. You can quit the process at any time by clicking the "Cancel" button, or
+   exiting (i.e. clicking "**X**") the browser tab. Any changes made will not
+   be saved.
+6. When you have completed your data entry, click the
+   :term:`"Create" button <Create button>` in the :term:`button block` at the
+   bottom of the page. AtoM will be direct you to a :term:`view page` where the
+   new :term:`user profile` will be displayed. Clicking "Edit" in the
+   :term:`button block` at the bottom of the group profile will re-open the
+   group in :term:`edit mode` if you need to make changes.
+
+.. image:: images/view-group.*
+   :align: center
+   :width: 90%
+   :alt: An image of the view page for a new Group
 
 The group profile will also display the following permission :term:`information
 areas <information area>`: "Information object permissions", "Actor
@@ -491,6 +519,11 @@ permissions", "Taxonomy permissions", and "Archival institution permissions".
 Navigate through these sections to customize the group's :term:`access
 privileges <access privilege>`. For more information on user permissions,
 see :ref:`Edit user permissions <edit-user-permissions>`.
+
+.. image:: images/group-permissions.*
+   :align: center
+   :width: 90%
+   :alt: An image of the Group permissions tabs
 
 .. _add-group-view:
 
@@ -504,13 +537,31 @@ user group via the :term:`Add new button` in the :term:`button block`. To do so:
    |gears| :ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
    in the :term:`header bar` and selecting "Groups" from the
    :term:`drop-down menu`. This will take you to a list of current user groups.
+
+.. image:: images/list-groups.*
+   :align: center
+   :width: 80%
+   :alt: An image of the List groups page
+
 2. Select a group from the list that appears on the page by clicking on the
    group name. AtoM will direct you to that user group's :term:`view page`.
 3. At the bottom of the group's :term:`view page`, you will see the
-   :term:`button block` with several options (Edit, Delete, and Add new). Click
-   the :term:`Add new button`.
+   :term:`button block` with several options (Edit, Delete, Add new, and
+   Return to group list). Click the :term:`Add new button`.
+
+.. image:: images/add-new-from-group.*
+   :align: center
+   :width: 80%
+   :alt: Clicking the Add new button from a group view page
+
 4. AtoM takes you to a blank :term:`edit page` for data entry. Enter data as
    required.
+
+.. image:: images/create-group-blank.*
+   :align: center
+   :width: 80%
+   :alt: An image of a blank edit page for a new Group
+
 5. You can quit the creation process at any time by clicking the "Cancel" button
    in the :term:`button block`; any data already entered will not be saved, and
    no new user record will be created. Note that simply navigating away from the
@@ -518,6 +569,11 @@ user group via the :term:`Add new button` in the :term:`button block`. To do so:
    in no new record being created.
 6. To save the new user record, click the :term:`"Create" button <Create
    button>` located in the :term:`button block` at the bottom of the record.
+
+.. image:: images/button-block-create.*
+   :align: center
+   :width: 80%
+   :alt: An image of the button block on a new Group edit page
 
 Once the new user has been saved, AtoM will direct you to the :group's
 :term:`view page`, where you can review your work. Clicking "Edit" in the
@@ -547,6 +603,12 @@ A user group can be edited at any time by an authenticated administrator.
    |gears| :ref:`Admin <main-menu-admin>` menu in the :term:`main menu` located
    in the :term:`header bar` and selecting "Groups" from the
    :term:`drop-down menu`. This will take you to a list of current user groups.
+
+.. image:: images/list-groups.*
+   :align: center
+   :width: 80%
+   :alt: An image of the List groups page
+
 2. Select the user group you wish to edit from the list that appears on the page
    by clicking on the group name. AtoM will direct you to that user group's
    :term:`view page`.
@@ -557,12 +619,23 @@ A user group can be edited at any time by an authenticated administrator.
 4. On loading, the :term:`edit page` displays the user group's
    :term:`information areas <information area>`; add and/or revise data as
    required.
+
+.. image:: images/edit-group.*
+   :align: center
+   :width: 80%
+   :alt: An image of a Group edit page
+
 5. You can quit the process at any time by clicking the "Cancel" button
    in the :term:`button block`; any changes made will not be saved. Note that
    simply navigating away from the page by any other means, **without first
    clicking "Save"** will also result in no changes being saved.
 6. To save your edits, click the "Save" button located in the :term:`button
    block`.
+
+.. image:: images/button-block-save.*
+   :align: center
+   :width: 80%
+   :alt: An image of the button block on a Group edit page
 
 You will be redirected to the :term:`view page` for the edited user group where
 you can review your work. Follow steps 3 through 6 if you are not satisfied
@@ -594,9 +667,21 @@ information on user roles, see: :ref:`user-roles`.
    "Users" from the :term:`drop-down menu`. This will take you to a list of
    current users accounts (i.e. the "List users" page). By default, the list
    that appears will be of all "Active" users (i.e. "Show Active only").
+
+.. image:: images/browse-users.*
+   :align: center
+   :width: 80%
+   :alt: An image of List users page
+
 2. Select the user you wish to mark as "Inactive" from the list of users that
    appears on the page. You can navigate through the list of users by scrolling
    to the bottom of the "List users" page and clicking through the page numbers.
+
+.. image:: images/users-active-inactive.*
+   :align: center
+   :width: 50%
+   :alt: An image of Active/Inactive tabs in the Browse users page
+
 3. Click on the :term:`username` of the user you wish to mark as "Inactive";
    AtoM will direct you to that :term:`user's profile <user profile>`
    :term:`view page`.
@@ -607,6 +692,11 @@ information on user roles, see: :ref:`user-roles`.
 5. Mark the user as "Inactive" by unchecking the box next to "Active" |Inactive|
    in the "Basic info" :term:`information area` of the :term:`user's profile
    <user profile>`; a blank box will set that user's status as "Inactive".
+
+.. image:: images/mark-inactive.*
+   :align: center
+   :width: 90%
+   :alt: An image of marking an existing user inactive
 
 .. TIP::
 
@@ -622,9 +712,22 @@ information on user roles, see: :ref:`user-roles`.
 7. To save your edits, click the "Save" button located in the :term:`button
    block`.
 
+.. image:: images/button-block-save.*
+   :align: center
+   :width: 80%
+   :alt: An image of the button block on a User edit page
+
 AtoM will be redirected to the :term:`view page` for the edited user where
-you can review your work. Follow steps 3 through 7 if you would like to reverse
-the changes made.
+you can review your work. You'll note the big red warning at the top of
+the page indicating that the user is now inactive. Inactive users will
+no longer be able to log in with their existing credentials, until an
+administrator marks their account as active again. Follow steps 3 through 7 if
+you would like to reverse the changes made.
+
+.. image:: images/inactive-user.*
+   :align: center
+   :width: 90%
+   :alt: An image of an inactive user's profile view page
 
 :ref:`Back to top <manage-user-accounts>`
 
@@ -648,6 +751,12 @@ Follow the instructions below to delete a user in AtoM:
    menu` located in the :term:`header bar`, and selecting "Users" from the :term
    :`drop-down menu`. This will take you to a list of current users accounts
    (i.e. the "List users" page).
+
+.. image:: images/browse-users.*
+   :align: center
+   :width: 80%
+   :alt: An image of the list user page
+
 2. Select whether you wish to view "Active" users (i.e. "Show Active only") or
    "Inactive" users (i.e. "Show Inactive only").
 3. The list will appear in alphabetical order. Find and click on the
@@ -660,6 +769,12 @@ Follow the instructions below to delete a user in AtoM:
 5. AtoM prompts you to confirm the delete request: click "Delete" to proceed
    (or you can click "Cancel" to return to the user's profile
    :term:`view page`).
+
+.. image:: images/user-delete-confirm.*
+   :align: center
+   :width: 80%
+   :alt: An image of the confirmation message when deleting a user
+
 6. AtoM will delete the user and redirect you to the "List users" page.
 
 :ref:`Back to top <manage-user-accounts>`
