@@ -59,7 +59,7 @@ not, check the box and then save the change using the Save button located in the
       sudo service php5-fpm restart
       php symfony cc
 
-After enabling the OAI plugin, you will want to make sure that you generated
+After enabling the plugin, you will want to make sure that you generated
 an API key, so you can send requests to the available endpoints. See
 :ref:`api-intro-auth`, below.
 
