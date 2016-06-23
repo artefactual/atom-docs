@@ -1600,15 +1600,33 @@ AtoM will located the matching description, and link the two during import,
 similar to how an accession created through the user interface can be linked
 to a description (see: :ref:`link-accession-description`).
 
-As of AtoM 2.2, creation events columns have been added as well. The
-``creationDates``, ``creationDatesStart``, and ``creationDatesEnd`` columns can be
-used similarly to those in the archival description CSV templates - The
-``creationDates`` field will map to the free-text date field in AtoM, where users
-can use special characters to express approximation, uncertainty, etc. (e.g.
-[190-?]; [ca. 1885]), while ``creationDatesStart`` and ``creationDatesEnd``
-should include ISO-formatted date values (YYYY-MM-DD, YYYY-MM, or YYYY). The
-``creationDatesType`` column will accept two values - either *creation* or
-*accumulation* .
+As of AtoM 2.2, creation event columns have been added as well. The
+``creators`` column can be used to add the name(s) of the :term:`creator` of
+the accession materials. For now, only creation events are supported, so the
+the ``eventTypes`` value should always be *Creation*. ``eventDates``,
+``eventStartDates``, and ``eventEndDates`` columns can be used similarly to
+those in the archival description CSV templates - The ``eventDates`` field
+will map to the free-text display date field in AtoM, where users can use special
+characters to express approximation, uncertainty, etc. (e.g. [190-?];
+[ca. 1885]), while ``eventStartDates`` and ``eventEndDates`` should include
+ISO-formatted date values (YYYY-MM-DD, YYYY-MM, or YYYY). If there are
+multiple creators/events associated with the accession, these fields can all
+accept multiple values, separated using the pipe ``|`` character.
+
+.. image:: images/csv-accession-dates.*
+   :align: center
+   :width: 95%
+   :alt: An example of pipe-separated values in the event/creation columns
+
+.. IMPORTANT::
+
+   When using pipe-separated values to add multiple creators/events, values
+   will be matched 1:1 across all related rows (``creators``, ``eventTypes``,
+   ``eventDates``, ``eventStartDates`` and ``eventEndDates``). This means that
+   even if you wish to leave the values for one creator blank (say the end
+   date for creator 1 of 2), you must still pipe the field when adding the
+   second creator's endDate values, or else they will be matched up with
+   creator 1!
 
 .. _csv-import-accessions-gui:
 
