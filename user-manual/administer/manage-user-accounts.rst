@@ -28,6 +28,7 @@ have a user account, and only an authenticated (i.e. logged-in)
    * :ref:`Edit user permissions <edit-user-permissions>`
    * :ref:`User roles <user-roles>`
    * :ref:`oai-pmh-api-key`
+   * :ref:`api-intro-auth-key`
 
 .. _add-user:
 

@@ -12,8 +12,8 @@ set of links to each chapter's main sections.
    env/vagrant
    env/compose
    api/api-intro
-   api/endpoints/browse-taxonomies
-   api/endpoints/browse-io
-   api/endpoints/read-io
+   api/browse-taxonomies
+   api/browse-io
+   api/read-io
 
 :ref:`Back to top <dev-manual-index>`
