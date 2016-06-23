@@ -7,8 +7,8 @@ API Overview
 AtoM includes an API allowing access to part of the AtoM dataset in JSON
 format. The API is implemented in a Symfony plugin that needs to be
 :ref:`enabled <api-intro-plugin>` in Admin/Plugins. This API requires an API
-key to be passed with each request; details on generating an API are included
-below in the :ref:`api-intro-auth` section.
+key to be passed with each request; details on generating an API key are
+included below in the :ref:`api-intro-auth` section.
 
 There are three endpoints available:
 
@@ -82,8 +82,8 @@ The AtoM API requires that an API key value be passed as part of the header
 with each request. These keys are generated in AtoM, and are associated with a
 user account - this maintains a chain of custody and responsibility. Only an
 :term:`administrator` has the proper :term:`permissions <access privilege>` to
-generate an API Key; however, admins can generate a key for any other user in
-the system.
+generate an API Key; however, admins can generate a key associated with any
+user account.
 
 .. _api-intro-auth-key:
 
@@ -91,10 +91,10 @@ Generating an API Key for a user
 --------------------------------
 
 API keys are associated with :term:`user accounts <user account>` in AtoM -
-for more general information, see: :ref:`manage-user-accounts`. Only an
-:term:`administrator` has the proper :term:`permissions <access privilege>` to
-generate an API Key; however, admins can generate a key associated with any
-user account.
+for more general information, see: :ref:`manage-user-accounts`. The
+instructions below will walk you through the process - note that you can
+follow the same instructions with some variations to regenerate a new key at
+any time, or to delete an existing key (see step 8 below).
 
 .. SEEALSO::
 
@@ -162,8 +162,9 @@ Using an API Key in a request
 -----------------------------
 
 An API key value must be passed with each request to the API endpoints, or no
-response will be returned. You can use something like `curl <https://curl.haxx.se/>`__
-to submit the requests with the API key in the header.
+response will be returned. Below is an example of using
+`curl <https://curl.haxx.se/>`__ to submit the requests with the API key in
+the header.
 
 **Example request** (using curl):
 
