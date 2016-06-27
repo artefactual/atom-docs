@@ -835,11 +835,11 @@ there is also a ``--demo`` option available:
    * It will **NOT** clear the application cache. We recommend clearing the
      cache and restarting all services after running this task - e.g.
 
-  .. code-block:: bash
+   .. code-block:: bash
 
-     php symfony cc
-     sudo service php5-fpm restart
-     sudo /etc/init.d/memcached restart
+      php symfony cc
+      sudo service php5-fpm restart
+      sudo /etc/init.d/memcached restart
 
    See :ref:`manage-user-accounts` for information on how to edit or delete the
    demo user account via the :term:`user interface`. See: :ref:`site-information`
