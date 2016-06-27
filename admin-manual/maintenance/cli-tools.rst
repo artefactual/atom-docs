@@ -827,15 +827,24 @@ there is also a ``--demo`` option available:
    * The task will NOT ask for confirmation before purging all data (the warning is skipped)
    * It will repopulate the database with a default demo user
 
-      * Username: demo
-      * Email: demo@example.com
-      * Pass: demo
+     * Username: demo
+     * Email: demo@example.com
+     * Pass: demo
 
    * It will add a site title to the installation - "Demo site".
+   * It will **NOT** clear the application cache. We recommend clearing the
+     cache and restarting all services after running this task - e.g.
+
+  .. code-block:: bash
+
+     php symfony cc
+     sudo service php5-fpm restart
+     sudo /etc/init.d/memcached restart
 
    See :ref:`manage-user-accounts` for information on how to edit or delete the
    demo user account via the :term:`user interface`. See: :ref:`site-information`
-   for instructions on how to edit the site title via the user interface.
+   for instructions on how to edit the site title via the user interface. See
+   :ref:`maintenance-clear-cache` for more information on clearing the cache.
 
 :ref:`Back to top <maintenance-cli-tools>`
 
