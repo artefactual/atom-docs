@@ -36,7 +36,7 @@ of each component.
   newer (users have reported testing Elasticsearch 1.7 without problems).
   Elasticsearch 2.0 or newer is still not supported as they have deprecated a
   number of APIs still used in AtoM
-* Oracle `Java <https://www.java.com/en/>`__ 8 or newer (required for
+* Oracle `Java <https://www.java.com/en/>`__ 7 or newer (required for
   Elasticsearch)
 * `MySQL <https://www.mysql.com/>`__ 5.1 or newer
 * `PHP <http://php.net/>`__ 5.5, 5.6, 7.0 or newer
