@@ -539,7 +539,8 @@ The *eventActors*, *eventActorHistories*, *eventTypes*, *eventDates*,
 actors and events. In AtoM's data model, an :term:`archival description` is a
 description of a record, understood as the documentary evidence created by an
 action - or event. It is events that link actors (represented in AtoM by an
-:term:`authority record`) to archival descriptions.
+:term:`authority record`) to archival descriptions - see :ref:`entity-types`
+for more information.
 
 The most common use for these columns is to add creation dates associated with
 an actor via an :term:`authority record` - in this case, the *eventType* is
@@ -678,15 +679,15 @@ the key behaviors are outlined below:
   avoid collisions, or situations in which multiple imports overwrite the same
   authority record in a :term:`multi-repository system`, the approach is
   conservative - for a match to be made and a link to an existing record added
-  instead of a new record being created, the authorized form of name,
-  biographical/administrative history (contained in *eventActorHistories*),
-  and the :term:`archival institution` associated with the
-  :term:`archival description` must *all* match.
-* If one of these elements (actor name, repository, or history) do **not**
-  match, then AtoM will create a new actor record. Since AtoM does not currently
-  have the capacity to suspend the import and ask the user whether to update an
-  existing authority record or ignore it and create a new one, this method was
-  chosen as the least destructive. However, this means that administrative or
+  instead of a new record being created, the authorized form of name must be
+  an *exact* match.
+* Note that if biographical/administrative history included in the CSV will be
+  ignored - it will **not** update an existing history when a match is made.
+* If there is no exact match on the authorized form of name, then AtoM will
+  create a new actor record. Since AtoM does not currently have the capacity to
+  suspend the import and ask the user whether to update an existing authority
+  record or ignore it and create a new one, this method was chosen as the
+  least destructive. However, this means that currently, administrative or
   biographical histories CANNOT be updated via an import.
 * This also means that **users should be careful to double check authority
   linking behaviors in AtoM following an import**, and manually perform any
