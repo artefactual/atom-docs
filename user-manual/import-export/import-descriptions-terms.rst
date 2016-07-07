@@ -95,16 +95,14 @@ the key behaviors are outlined below:
   avoid collisions, or situations in which multiple imports overwrite the same
   authority record in a :term:`multi-repository system`, the approach is
   conservative - for a match to be made and a link to an existing record added
-  instead of a new record being created, the authorized form of name,
-  biographical/administrative history (contained in ``<bioghist>``), and the
-  :term:`archival institution` associated with the :term:`archival description`
-  must *all* match.
-* If one of these elements (actor name, repository, or ``<bioghist>``) do **not**
-  match, then AtoM will create a new actor record. Since AtoM does not currently
-  have the capacity to suspend the import and ask the user whether to update an
-  existing authority record or ignore it and create a new one, this method was
-  chosen as the least destructive. However, this means that administrative or
-  biographical histories CANNOT be updated via an import.
+  instead of a new record being created, there must be an *exact* match on the
+  authorized form of name.
+* If there is no exact match, then AtoM will create a new actor record. Since
+  AtoM does not currently have the capacity to suspend the import and ask the
+  user whether to update an existing authority record or ignore it and create
+  a new one, this method was chosen as the least destructive. However, this
+  means that administrative or biographical histories CANNOT be updated via an
+  import.
 * This also means that **users should be careful to double check authority
   linking behaviors in AtoM following an import**, and manually perform any
   desired adjustments where needed.
