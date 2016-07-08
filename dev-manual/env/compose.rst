@@ -19,20 +19,13 @@ resource to get up to speed quickly.
 Install Docker and Docker Compose
 =================================
 
-If you're a Mac or Windows user, the `Docker Toolbox <https://www.docker.com/products/docker-toolbox>`_
-will install everything you need. Docker Toolbox incorporates a tool called
-Docker Machine that lets you provision Docker machines anywhere you need,
-including local VirtualBox machines running boot2docker, a lightweight Linux
-distribution with Docker Engine, so you can run your Linux containers locally
-on non-Linux platforms with a native feeling.
-
-Docker is also working on `Docker for Mac and Docker for Windows <https://blog.docker.com/2016/03/docker-for-mac-windows-beta/>`_,
-an alternative to Docker Toolbox, but it is currently in private beta.
-
-If you are on Linux, install `Docker <https://docs.docker.com/engine/installation/>`_
-and `Docker Compose <https://docs.docker.com/compose/install/>`_ following the
+Docker works the same whether you are using `Docker for Windows
+<https://docs.docker.com/docker-for-windows/>`_, `Docker for Mac
+<https://docs.docker.com/docker-for-mac/>`_ or Docker on Linux. For the latter,
+make sure that both `Docker Engine
+<https://docs.docker.com/engine/installation/>`_ and `Docker Compose
+<https://docs.docker.com/compose/install/>`_  are installed following the
 instructions in the links.
-
 
 Spin it up
 ==========
