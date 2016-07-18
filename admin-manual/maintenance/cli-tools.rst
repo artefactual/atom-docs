@@ -1047,6 +1047,22 @@ command:
    :ref:`usage <cli-bulk-export-usage>` guidelines for how to use the available
    options.
 
+.. IMPORTANT::
+
+   The :ref:`inherit-reference-code` setting also determines how the
+   ``<unitid>`` element in the EAD XML is populated. If the inheritance is
+   turned on, then AtoM will populate all descendant records in the EAD XML
+   with the full inherited reference code. If inheritance is turned off, AtoM
+   will only add the identifier for that record in the ``<unitid>`` on export.
+   This allows users exporting to a different source system that does not have
+   a reference code inheritance setting to maintain a full reference code at
+   all levels in the target system. **However, if you are exporting from one
+   AtoM instance to another** (for example, from a local institution to a
+   portal site), you might want to consider how this will impact your record
+   display in the target system - if you have reference code inheritance
+   turned on when you export, and the target AtoM instance *also* has the
+   setting turned on, you may end up with duplication in the display!
+
 .. _cli-bulk-export-usage:
 
 Using the export:bulk command
