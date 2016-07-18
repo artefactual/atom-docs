@@ -103,6 +103,18 @@ the :term:`permissions tab`) that has been selected. Because each permission
 type has a different list of default *Actions*, permission-specific instructions
 have been included below.
 
+.. IMPORTANT::
+
+   By default, **all** users can view the :term:`digital object master` of an
+   uploaded PDF, regardless of the "View master" settings in the Archival
+   description permissions tab. This is because the reference display copy is
+   not large enough to be useful without access to the full PDF, while the
+   reference copy might be perfectly serviceable for an image (and restricting
+   access to the master may be part of the required copyright conditions).
+   Note that users could still restrict public access to uploaded PDFs using
+   the PREMIS actionable rights module - for more information, see:
+   :ref:`rights`.
+
 .. _description-default-actions:
 
 Archival description privileges
@@ -273,14 +285,21 @@ For more information on user roles, see: :ref:`user-roles`.
 
 .. _researcher-default:
 
-Default settings: Researcher
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Default settings: Anonymous
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A :term:`researcher` is any user who is not logged-in (or an
-unauthenticated user) and therefore has view-only access to the application. A
-researcher can search and browse descriptions (published :term:`archival
-descriptions <archival description>`, :term:`authority records <authority
-record>`, :term:`archival institutions <archival institution>`).
+An anonymous user, also known as a :term:`researcher`, is any user who is not
+logged-in (a.k.a an unauthenticated user) and therefore has view-only access
+to the application. A researcher can search and browse descriptions (published
+:term:`archival descriptions <archival description>`,
+:term:`authority records <authority record>`,
+:term:`archival institutions <archival institution>`) and access points such
+as :term:`subjects <subject>` and :term:`places <place>`.
+
+By default, an anonymous user **cannot** access the
+:term:`digital object master` - except for PDFs, where permission is
+automatically granted to all users. Note that the default settings can be
+changed by an :term:`administrator`.
 
 *Archival descriptions*
 
@@ -354,10 +373,11 @@ record>`, :term:`archival institutions <archival institution>`).
 | Translate         |       No      |
 +-------------------+---------------+
 
-Creating a user group of "Researchers" will automatically assign the above
-default :term:`access privileges <access privilege>` to that group. However,
-the access privileges of individual users in that user group can still be
-edited without it altering the overall privileges of that group as a whole.
+Creating a new user, or a new user group of "Researchers" will automatically
+assign the above default :term:`access privileges <access privilege>` to that
+group. However, the access privileges of individual users in that user group
+can still be edited without it altering the overall privileges of that group
+as a whole.
 
 .. _administrator-default:
 
@@ -448,10 +468,12 @@ users from the new role. For more information on creating a new user role, see
 | Translate         |       No      |
 +-------------------+---------------+
 
-Creating a user group of "Administrators" will automatically assign the above
-default :term:`access privileges <access privilege>` to that group. However,
-the access privileges of individual users in that user group can still be
-edited without it altering the overall privileges of that group as a whole.
+Adding a new user to the "Administrators" group will automatically assign the
+above default :term:`access privileges <access privilege>` to that group. However,
+the access privileges of individual users,in that user group can still be
+edited without it altering the overall privileges of that group as a whole,
+and an administrator can edit the default permissions of the administrator
+group if desired.
 
 .. _editor-default:
 
