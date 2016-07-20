@@ -487,10 +487,8 @@ Install git:
 .. code-block:: bash
 
    sudo mkdir /usr/share/nginx/atom
-   sudo git clone -b qa/2.3.x http://github.com/artefactual/atom.git /usr/share/nginx/atom
+   sudo git clone -b qa/2.4.x http://github.com/artefactual/atom.git /usr/share/nginx/atom
    cd /usr/share/nginx/atom
-
-Branch `stable/2.3.x` is not available yet, we are using `qa/2.3.x` instead.
 
 If you are not interested in downloading all the history from git, you could
 also truncate it to a specific number of revisions, e.g.: just one revision
