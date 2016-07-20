@@ -42,7 +42,7 @@ change your current directory.
 
 .. code-block:: bash
 
-   git clone -b qa/2.3.x https://github.com/artefactual/atom.git atom
+   git clone -b stable/2.3.x https://github.com/artefactual/atom.git atom
    cd atom
 
 Now set the environment variable ``COMPOSE_FILE`` to tell Compose what is the
@@ -74,10 +74,10 @@ It's time to use Docker Compose in order to provision our containers:
 
 .. TIP::
 
-   While you wait, take the opportunity to check out our `Dockerfile <https://github.com/artefactual/atom/blob/qa/2.3.x/docker/Dockerfile>`__,
+   While you wait, take the opportunity to check out our `Dockerfile <https://github.com/artefactual/atom/blob/stable/2.3.x/docker/Dockerfile>`__,
    which describes the steps that are taken to build the AtoM image. It is
    based on Alpine Linux (only 2 MB) + PHP7 and the rest of dependencies. In
-   addition, our `docker-compose.dev.yml <https://github.com/artefactual/atom/blob/qa/2.3.x/docker/docker-compose.dev.yml>`__
+   addition, our `docker-compose.dev.yml <https://github.com/artefactual/atom/blob/stable/2.3.x/docker/docker-compose.dev.yml>`__
    file shows how AtoM is orchestrated together with its service dependencies.
    It is an environment meant to be used by developers.
 

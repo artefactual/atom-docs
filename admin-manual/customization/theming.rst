@@ -157,7 +157,7 @@ artifact which you could track in your git repository or build when needed. We
 prefer the latter but you may prefer to avoid having to install Less and its
 dependencies in production.
 
-In `Dominion <https://github.com/artefactual/atom/tree/qa/2.3.x/plugins/arDominionPlugin>`_,
+In `Dominion <https://github.com/artefactual/atom/tree/stable/2.3.x/plugins/arDominionPlugin>`_,
 we use the `Gulp build system <http://gulpjs.com/>`_ in order to automatically
 build the final CSS file when we make changes in our stylesheets, saving us
 from running that extra step. It's a tiny improvement that really counts when
@@ -168,7 +168,7 @@ that's something that we haven't tried yet.
 Symfony plugins allow you to do much more, e.g. you could include our own images,
 override the original templates provided by AtoM or add your owns, inject new
 controllers, filters, signal callbacks and much more. Take a look at our
-`arArchivesCanadaPlugin <https://github.com/artefactual/atom/tree/qa/2.3.x/plugins/arArchivesCanadaPlugin>`_.
+`arArchivesCanadaPlugin <https://github.com/artefactual/atom/tree/stable/2.3.x/plugins/arArchivesCanadaPlugin>`_.
 This theme overrides the original homepage template as well as the search box
 and the main header template. Other plugins in the same repository may give you
 more ideas of what's possible - we've built much more than simple application
