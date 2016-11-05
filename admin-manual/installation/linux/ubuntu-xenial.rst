@@ -18,7 +18,10 @@ under the `repositories
 .. IMPORTANT::
 
    Please make sure you have reviewed the :ref:`requirements
-   <installation-requirements>` before proceeding.
+   <installation-requirements>` before proceeding. Also, you may want to
+   consider setting up the :ref:`firewall <security-firewall>` before you start
+   installing the services described below to avoid exposing them to outside
+   access.
 
 .. _linux-ubuntu-xenial-install-dependencies:
 
@@ -30,12 +33,20 @@ Install the dependencies
 MySQL
 -----
 
-We strongly recommend using `MySQL <https://www.mysql.com/>`__  5.6 as it's
-much better than its previous major release in terms of speed, scalability and
+We strongly recommend using `MySQL <https://www.mysql.com/>`__  5.6 as it's much
+better than the previous major release in terms of speed, scalability and
 user-friendliness. Also, we've experienced very good results using forks like
 Percona Server or MariaDB, so don't be afraid and use them if you want!
 
-Let's install MySQL using :command:`apt install`:
+.. warning::
+
+   If you are planning to use MySQL 5.7 please be aware that it has not been
+   fully tested yet and we know at least of `one bug <https://projects.artefactual.com/issues/9051>`__
+   that it has not been solved yet!
+
+Ubuntu 16.04 does not include an installation candidate for MySQL 5.6 but we
+can use Percona Server 5.6 instead. Let's install it with the following
+command:
 
 .. code-block:: bash
 
@@ -43,7 +54,7 @@ Let's install MySQL using :command:`apt install`:
 
 During the installation, you will be prompted to set a password for the default
 administrator user (root). We strongly recommend that you use a strong password
-and please write it down as you are going to need it later.
+and please write it down somewhere safe, you are going to need it later.
 
 .. _linux-ubuntu-xenial-dependency-elasticsearch:
 
@@ -64,7 +75,7 @@ example we are going to use OpenJDK but Oracle's JVM would also work.
 
 .. code-block:: bash
 
-   sudo apt install openjdk-8-jre-headless
+   sudo apt install openjdk-8-jre-headless software-properties-common
 
 After successfully installing Java, proceed to install Elasticsearch. Download
 and install the public signing key used in their repository:
@@ -106,6 +117,16 @@ environments while it also scales better and more predictably under high loads.
 You are welcome to try other solutions, but the following documentation will
 focus merely on Nginx.
 
+.. WARNING::
+
+   The following instructions assume that the Nginx package is creating the
+   directory :file:`/usr/share/nginx` and that is the location where we are
+   going to place the AtoM sources. However, we have been told this location may
+   be different in certain environments (e.g. :file:`/var/www`) or you may opt
+   for a different location. If that is the case, please make sure that you
+   update the configuration snippets that we share later in this document
+   according to your location.
+
 .. _linux-ubuntu-xenial-dependency-httpd-nginx:
 
 Nginx
@@ -135,7 +156,7 @@ original one under sites-available/, in case that you want to re-use it in the
 future. You can do this with the Nginx default server.
 
 The following is a recommended server block for AtoM. Put the following contents
-in :file:`/etc/nginx/sites-enabled/atom`.
+in :file:`/etc/nginx/sites-available/atom`.
 
 .. code-block:: nginx
 
@@ -236,9 +257,9 @@ install it manually for now:
 
    sudo apt install php-dev
    sudo pecl install apcu_bc-beta
-   echo "extension=apc.so" >> /etc/php/7.0/mods-available/apcu-bc.ini
-   ln -sf /etc/php/7.0/mods-available/apcu-bc.ini /etc/php/7.0/fpm/conf.d/30-apcu-bc.ini
-   ln -sf /etc/php/7.0/mods-available/apcu-bc.ini /etc/php/7.0/cli/conf.d/30-apcu-bc.ini
+   echo "extension=apc.so" | sudo tee > /etc/php/7.0/mods-available/apcu-bc.ini
+   sudo ln -sf /etc/php/7.0/mods-available/apcu-bc.ini /etc/php/7.0/fpm/conf.d/30-apcu-bc.ini
+   sudo ln -sf /etc/php/7.0/mods-available/apcu-bc.ini /etc/php/7.0/cli/conf.d/30-apcu-bc.ini
    sudo systemctl restart php7.0-fpm
 
 Let's add a new PHP pool for AtoM by adding the following contents in a new file
@@ -348,7 +369,7 @@ a single command that will set up everything for you automatically:
 
 .. code-block:: bash
 
-   sudo -u root bash -c "\
+   sudo bash -c "\
        set -e \
        && mkdir /usr/share/fop-2.1 \
        && wget https://archive.apache.org/dist/xmlgraphics/fop/binaries/fop-2.1-bin.tar.gz -O /tmp/fop.tar.gz \
@@ -486,7 +507,7 @@ password ``12345`` and the permissions needed for the database created above.
 
 .. code-block:: bash
 
-   mysql -h localhost -u root -p -e "GRANT INDEX, CREATE, SELECT, INSERT, UPDATE, DELETE, ALTER, LOCK TABLES ON atom.* TO 'atom'@'localhost' IDENTIFIED BY '12345';"
+   mysql -h localhost -u root -p -e "GRANT ALL ON atom.* TO 'atom'@'localhost' IDENTIFIED BY '12345';"
 
 Note that the ``INDEX``, ``CREATE`` and ``ALTER`` privileges are only necessary
 during the installation process or when you are upgrading AtoM to a newer

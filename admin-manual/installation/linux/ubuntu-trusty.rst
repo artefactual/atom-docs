@@ -18,7 +18,10 @@ under the `repositories
 .. IMPORTANT::
 
    Please make sure you have reviewed the :ref:`requirements
-   <installation-requirements>` before proceeding.
+   <installation-requirements>` before proceeding. Also, you may want to
+   consider setting up the :ref:`firewall <security-firewall>` before you start
+   installing the services described below to avoid exposing them to outside
+   access.
 
 .. _linux-ubuntu-trusty-install-dependencies:
 
@@ -31,7 +34,7 @@ MySQL
 -----
 
 We strongly recommend using `MySQL <https://www.mysql.com/>`__  5.5 as it's
-much better than its previous major release in terms of speed, scalability and
+much better than the previous major release in terms of speed, scalability and
 user-friendliness. Also, we've experienced very good results using forks like
 Percona Server or MariaDB, so don't be afraid and use them if you want!
 
@@ -44,6 +47,13 @@ Let's install MySQL using :command:`apt-get`:
 During the installation, you will be prompted to set a password for the default
 administrator user (root). We strongly recommend that you use a strong password
 and please write it down as you are going to need it later.
+
+.. warning::
+
+   If you are planning to use MySQL 5.7 please be aware that it has not been
+   fully tested yet and we know at least of `one bug <https://projects.artefactual.com/issues/9051>`__
+   that has not been solved yet! MySQL 5.6 will work fine but it is not bundled
+   in Ubuntu 14.04.
 
 .. _linux-ubuntu-trusty-dependency-elasticsearch:
 
@@ -64,7 +74,7 @@ example we are going to use OpenJDK but Oracle's JVM would also work.
 
 .. code-block:: bash
 
-   sudo apt-get install openjdk-7-jre-headless
+   sudo apt-get install openjdk-7-jre-headless software-properties-common
 
 After successfully installing Java, proceed to install Elasticsearch. Download
 and install the public signing key used in their repository:
@@ -105,6 +115,16 @@ the most popular and we like it, but we've found that
 environments while it also scales better and more predictably under high loads.
 You are welcome to try other solutions, but the following documentation will
 focus upon Nginx and Apache, our preferred web server solutions.
+
+.. WARNING::
+
+   The following instructions assume that the Nginx package is creating the
+   directory :file:`/usr/share/nginx` and that is the location where we are
+   going to place the AtoM sources. However, we have been told this location may
+   be different in certain environments (e.g. :file:`/var/www`) or you may opt
+   for a different location. If that is the case, please make sure that you
+   update the configuration snippets that we share later in this document
+   according to your location.
 
 .. _linux-ubuntu-trusty-dependency-httpd-nginx:
 
@@ -149,7 +169,7 @@ original one under sites-available/, in case that you want to re-use it in the
 future. You can do this with the Nginx default server.
 
 The following is a recommended server block for AtoM. Put the following contents
-in :file:`/etc/nginx/sites-enabled/atom`.
+in :file:`/etc/nginx/sites-available/atom`.
 
 .. code-block:: nginx
 
@@ -412,14 +432,15 @@ variable FOP_HOME to the folder path you extracted Apache FOP to, for example:
 
 .. code-block:: bash
 
-   sudo -s
-   wget https://archive.apache.org/dist/xmlgraphics/fop/binaries/fop-2.1-bin.tar.gz
-   tar -zxvf fop-2.1-bin.tar.gz
-   rm fop-2.1-bin.tar.gz
-   mv fop-2.1 /usr/share
-   ln -s /usr/share/fop-2.1/fop /usr/bin/fop
-   echo 'FOP_HOME="/usr/share/fop-2.1"' >> /etc/environment
-   exit
+   sudo bash -c "\
+       set -e \
+       && mkdir /usr/share/fop-2.1 \
+       && wget https://archive.apache.org/dist/xmlgraphics/fop/binaries/fop-2.1-bin.tar.gz -O /tmp/fop.tar.gz \
+       && tar xvzf /tmp/fop.tar.gz --strip-components 1 -C /usr/share/fop-2.1 \
+       && ln -s /usr/share/fop-2.1/fop /usr/bin/fop \
+       && rm /tmp/fop.tar.gz \
+       && echo 'FOP_HOME=/usr/share/fop-2.1' >> /etc/environment
+   "
 
 If you want AtoM to be able to process :term:`digital objects <digital object>`
 in formats like JPEG or to extract the text from your PDF documents, there are
@@ -558,7 +579,7 @@ password ``12345`` and the permissions needed for the database created above.
 
 .. code-block:: bash
 
-   mysql -h localhost -u root -p -e "GRANT INDEX, CREATE, SELECT, INSERT, UPDATE, DELETE, ALTER, LOCK TABLES ON atom.* TO 'atom'@'localhost' IDENTIFIED BY '12345';"
+   mysql -h localhost -u root -p -e "GRANT ALL ON atom.* TO 'atom'@'localhost' IDENTIFIED BY '12345';"
 
 Note that the ``INDEX``, ``CREATE`` and ``ALTER`` privileges are only necessary
 during the installation process or when you are upgrading AtoM to a newer
