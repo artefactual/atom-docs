@@ -8,8 +8,8 @@ Linux - Ubuntu 16.04 LTS (Xenial Xerus)
 
    Some users have reported some technical issues running AtoM under Ubuntu
    16.04. We're currently looking into this. In the meantime, we recommend
-   deploying AtoM in :ref:`Ubuntu 14.04 <ubuntu-trusty>` if possible, as we
-   know the software works well in this environment. See ticket
+   deploying AtoM in :ref:`Ubuntu 14.04 <installation-linux-ubuntu-trusty>` if
+   possible, as we know the software works well in this environment. See ticket
    `#10633 <https://projects.artefactual.com/issues/10633>`_ for more details.
 
 Most of the configuration steps described in this
@@ -492,7 +492,7 @@ Create the database
 
 Assuming that you are running `MySQL <https://www.mysql.com/>`__ in localhost,
 please create the database by running the following command using the
-password you created :ref:`earlier <linux-dependency-mysql>`:
+password you created :ref:`earlier <linux-ubuntu-xenial-dependency-mysql>`:
 
 .. code-block:: bash
 
