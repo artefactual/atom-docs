@@ -26,7 +26,7 @@ permissions of unauthenticated users - for more information, see:
 
 .. IMPORTANT::
 
-   By default, **all** users can view the :term:`digital object master` of an
+   By default, **all** users can view the :term:`master digital object` of an
    uploaded PDF, regardless of the "View master" settings in the Archival
    description permissions tab. This is because the reference display copy is
    not large enough to be useful without access to the full PDF, while the

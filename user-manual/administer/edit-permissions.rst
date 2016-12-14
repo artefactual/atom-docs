@@ -105,7 +105,7 @@ have been included below.
 
 .. IMPORTANT::
 
-   By default, **all** users can view the :term:`digital object master` of an
+   By default, **all** users can view the :term:`master digital object` of an
    uploaded PDF, regardless of the "View master" settings in the Archival
    description permissions tab. This is because the reference display copy is
    not large enough to be useful without access to the full PDF, while the
@@ -297,7 +297,7 @@ to the application. A researcher can search and browse descriptions (published
 as :term:`subjects <subject>` and :term:`places <place>`.
 
 By default, an anonymous user **cannot** access the
-:term:`digital object master` - except for PDFs, where permission is
+:term:`master digital object` - except for PDFs, where permission is
 automatically granted to all users. Note that the default settings can be
 changed by an :term:`administrator`.
 
