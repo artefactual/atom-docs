@@ -1059,7 +1059,7 @@ The information object (e.g., :term:`archival description`) import tool allows
 you to import creation events, but doesn't accommodate other types of events,
 such as accumulation, broadcasting, etc).
 
-For this the event import tool is better suited and should be ran after you
+For this the event import tool is better suited and should be run after you
 import your information objects.
 
 The event import processes 3 CSV columns: *legacyId*, *eventActorName*, and
@@ -1077,6 +1077,9 @@ template file is available in the AtoM source code
    above, to ensure that your CSV import will work. Here is a basic checklist
    of things to check for importing a CSV of events via the user interface:
 
+   * Target description was imported using either the command line or the CSV
+     import feature - events import will *not* work with descriptions created
+     in the user interface.
    * CSV file is saved with UTF-8 encodings
    * CSV file uses Linux/Unix style end-of-line characters (``/n``)
    * CSV file is less than 100 records if importing via the :term:`user interface`
@@ -1089,6 +1092,7 @@ template file is available in the AtoM source code
 
 If you have double-checked the above, you should be ready to import your
 events.
+
 
 .. _csv-import-events-gui:
 
