@@ -523,7 +523,7 @@ the CSS files:
 
 .. code-block:: bash
 
-   curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+   curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
    sudo apt install nodejs make
    sudo npm install -g "less@<2.0.0"
    sudo make -C /usr/share/nginx/atom/plugins/arDominionPlugin
