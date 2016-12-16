@@ -485,7 +485,9 @@ and export descriptions and edit :term:`controlled vocabulary`
 :term:`terms <term>`. However, editors do not have access to the administror
 tab. An editor can change the :term:`publication status` of an
 :term:`information object`. An editor can access the :term:`reference
-<reference display copy>` and :term:`master digital object`.
+<reference display copy>` and :term:`master digital object`. An editor is also
+the only user group besides the :term:`administrator` who can access the
+:term:`accessions <accession record>` module.
 
 *Archival descriptions*
 

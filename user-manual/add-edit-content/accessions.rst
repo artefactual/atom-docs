@@ -50,9 +50,8 @@ materials have been arranged.
 
    You must have a :term:`user account` with sufficient edit
    permissions to access the accessions module of AtoM, such as an
-   :term:`administrator`, :term:`editor`, or :term:`contributor`. For more
-   information on types of users and edit permissions, see :ref:`User roles
-   <user-roles>`
+   :term:`administrator` or :term:`editor`. For more information on types of
+   users and edit permissions, see :ref:`User roles <user-roles>`.
 
 .. seealso::
 
