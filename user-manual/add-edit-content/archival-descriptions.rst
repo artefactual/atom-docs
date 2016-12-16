@@ -471,11 +471,6 @@ the "Update descendants" option is not selected.
    treeview in AtoM, see: :ref:`context-menu-treeview` and
    :ref:`treeview-type`.
 
-If a :term:`contributor` (i.e. a logged in user **without** permission to
-publish descriptions - see: :ref:`User roles <user-roles>`) edits a
-:term:`published record`, the record's status is **automatically changed back
-to draft**, unless the default publication status has been changed to *published*.
-
 Changing a record's status to published allows unauthenticated (i.e. not
 logged in) users such as :term:`researchers <researcher>` the ability to see
 the record, i.e. read access is granted to the public. Draft records are not
@@ -506,7 +501,48 @@ the jobs page. For more information on the Jobs page in AtoM, see:
    archival description :term:`view page` for authenticated users. Further
    details are included in the steps below.
 
-**To publish an existing archival description**
+.. _publish-description-permissions:
+
+Notes on publication status and publish permissions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+An :term:`administrator` can set whether or not groups and/or users have
+publish :term:`permissions <access privilege>` via the User and Group settings
+- see :ref:`manage-user-accounts` and :ref:`edit-user-permissions` for more
+information. This means that a user may have the ability to edit a record, but
+without publication permissions, the record may revert from a published status
+to a draft one on save. The following points describe the expected behavior
+for publication status updates based on user permissions:
+
+* When new records are created, they default to the global publication status
+  setting. In a new installation, this setting is set to Draft, but an
+  administrator can change this via **Admin > Settings > Global** - see:
+  :ref:`default-publication-status`
+* If the default pub status is set to "Published", but a new record is created
+  by a user **WITHOUT** publication permissions (e.g. a
+  :ref:`contributor <user-contributor>`), the record will default to Draft
+  when it is saved.
+* When new records are created, or a published record is
+  :ref:`duplicated <duplicate-archival-description>`, the new records will use
+  the default publication status - unless the setting is set to published, and
+  the user **doesn't** have publish permissions. In this case, the new
+  record(s) will have a draft publication status
+* The above is also true for new child records created via the "Add new child
+  records" widget
+* If a record is published, and a user **WITH** publish permissions edits the
+  record, then on save, it will maintain the same publication status it had at
+  the time of editing (e.g. in this case, published)
+* If a record is published, and a user **WITHOUT** publish permissions edits
+  the record, the published record will revert to draft on save, and a
+  notification will appear, informing the user of this change with the
+  following text:
+
+  *Your edits to this description have been saved and the description has
+  reverted to Draft status. Please ask a user with sufficient permissions to
+  publish the description again to make it publicly visible.*
+
+To publish an existing archival description
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Navigate to the record you wish to publish. For more information on
    navigation in AtoM, see: :ref:`Access content <access-content>`
