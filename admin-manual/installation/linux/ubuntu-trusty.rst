@@ -508,11 +508,7 @@ Install git:
 .. code-block:: bash
 
    sudo mkdir /usr/share/nginx/atom
-<<<<<<< HEAD
-   sudo git clone -b qa/2.4.x http://github.com/artefactual/atom.git /usr/share/nginx/atom
-=======
-   sudo git clone -b stable/2.3.x http://github.com/artefactual/atom.git /usr/share/nginx/atom
->>>>>>> 2.3
+   sudo git clone -b stable/2.4.x http://github.com/artefactual/atom.git /usr/share/nginx/atom
    cd /usr/share/nginx/atom
 
 If you are not interested in downloading all the history from git, you could
