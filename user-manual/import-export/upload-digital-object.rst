@@ -24,6 +24,18 @@ digital objects by default (though this can be changed by editing the
 permissions of unauthenticated users - for more information, see:
 :ref:`edit-user-permissions`).
 
+.. IMPORTANT::
+
+   By default, **all** users can view the :term:`master digital object` of an
+   uploaded PDF, regardless of the "View master" settings in the Archival
+   description permissions tab. This is because the reference display copy is
+   not large enough to be useful without access to the full PDF, while the
+   reference copy might be perfectly serviceable for an image (and restricting
+   access to the master may be part of the required copyright conditions).
+   Note that users could still restrict public access to uploaded PDFs using
+   the PREMIS actionable rights module - for more information, see:
+   :ref:`rights`.
+
 .. image:: images/carousel.*
    :align: center
    :width: 70%

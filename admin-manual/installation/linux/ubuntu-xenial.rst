@@ -20,8 +20,8 @@ This document is based in
 `Ubuntu 16.04 LTS (Xenial Xerus) <http://releases.ubuntu.com/xenial/>`_. Once
 you have installed it, you should be able to follow the instructions described
 below. In particular, we are going to use Ubuntu packages that can be found
-under the `repositories
-<https://help.ubuntu.com/community/Repositories/Ubuntu>`_ *main* and *universe*.
+under the `repositories <https://help.ubuntu.com/community/Repositories/Ubuntu>`_
+*main* and *universe*.
 
 .. IMPORTANT::
 
@@ -422,9 +422,9 @@ Option 1: Download the tarball
 
 .. code-block:: bash
 
-   wget https://storage.accesstomemory.org/releases/atom-2.3.0.tar.gz
+   wget https://storage.accesstomemory.org/releases/atom-2.4.0.tar.gz
    sudo mkdir /usr/share/nginx/atom
-   sudo tar xzf atom-2.3.0.tar.gz -C /usr/share/nginx/atom --strip 1
+   sudo tar xzf atom-2.4.0.tar.gz -C /usr/share/nginx/atom --strip 1
 
 Please note that the tarball may not be available yet if this version is still
 in development. In this case, you can try the alternative installation method
@@ -444,7 +444,7 @@ Install git:
 .. code-block:: bash
 
    sudo mkdir /usr/share/nginx/atom
-   sudo git clone -b qa/2.4.x http://github.com/artefactual/atom.git /usr/share/nginx/atom
+   sudo git clone -b stable/2.4.x http://github.com/artefactual/atom.git /usr/share/nginx/atom
    cd /usr/share/nginx/atom
 
 If you are not interested in downloading all the history from git, you could

@@ -215,6 +215,33 @@ in a reference code (see Inherit reference code, below). The default
 reference code separator appears as a dash "-" in AtoM, which can be changed
 by an administrator to suit institutional practices.
 
+.. WARNING::
+
+   A bug has been found in the `2.3.0 release <https://wiki.accesstomemory.org/Releases/Release_announcements/Release_2.3>`__
+   related to this setting - see issue
+   `#10276 <https://projects.artefactual.com/issues/10276>`__ in our issue
+   tracker for more information. If you have tried to use a ``.`` period as a
+   reference code separator and are experiencing issues, the 2.3.1 release
+   will include a fix for this issue going forward. To resolve the
+   current issues in your AtoM instance, we have prepared a script that can be
+   run from the command-line. The script is available at:
+
+   * https://gist.github.com/fiver-watson/929e6c3380bedd32f3a77d21403c80de
+
+   **Instructions on how to run the script locally**
+
+   1. Follow the link above and download the script. Place it somewhere
+      accessible from the root directory of your AtoM installation.
+   2. From AtoM's root directory, use the ``tools:run`` command to execute the
+      script, like so:
+
+      .. code-block:: bash
+
+         php symfony tools:run path/to/location/of/10276-separator-fix.php
+
+      The script will replace any periods used with the default ``-`` dash
+      separator in the database, which should resolve page load errors.
+
 .. _inherit-reference-code:
 
 Inherit reference code (information object)
@@ -251,7 +278,7 @@ information to help orient the user.
    :width: 45%
    :alt: an example of the reference code display in edit mode
 
-.. IMPORTANT::
+.. NOTE::
 
    Whether reference code inheritance is turned on or not, the
    :ref:`sort button <recurring-sort-button>` option on the
@@ -259,6 +286,22 @@ information to help orient the user.
    reference code, and **not** by identifier alone. This setting only affects
    the display. For more information on sorting, see:
    :ref:`recurring-sort-button`.
+
+.. IMPORTANT::
+
+   This setting also determines how the ``<unitid>`` element in the EAD XML is
+   populated. If the inheritance is turned on, then AtoM will populate all
+   descendant records in the EAD XML with the full inherited reference code.
+   If inheritance is turned off, AtoM will only add the identifier for that
+   record in the ``<unitid>`` on export. This allows users exporting to a
+   different source system that does not have a reference code inheritance
+   setting to maintain a full reference code at all levels in the target
+   system. **However, if you are exporting from one AtoM instance to another**
+   (for example, from a local institution to a portal site), you might want to
+   consider how this will impact your record display in the target system - if
+   you have reference code inheritance turned on when you export, and the
+   target AtoM instance *also* has the setting turned on, you may end up with
+   duplication in the display!
 
 .. SEEALSO::
 
