@@ -1,8 +1,8 @@
 .. _print-finding-aids:
 
-==========================================
-Generate, download, and print finding aids
-==========================================
+==================================================
+Generate, upload, download, and print finding aids
+==================================================
 
 .. |gears| image:: images/gears.png
    :height: 18
@@ -23,10 +23,11 @@ Generate, download, and print finding aids
 AtoM allows logged-in users to generate printer-friendly
 :term:`finding aids <finding aid>` in either PDF or RTF format. The format and
 some other parameters can be set by :term:`administrators <administrator>`
-in the :ref:`finding aid settings <finding-aid>`. Once the finding aid is
-generated, it can be downloaded from the top :term:`parent <parent record>`
-description level of an :term:`archival description` by any user, via a link
-provided in the right-hand :term:`context menu`.
+in the :ref:`finding aid settings <finding-aid>`. Alternatively, authenticated
+users can choose to upload locally created finding aids instead of generating
+them from existing descriptions. Once the finding aid is generated or uploaded,
+it can be downloaded by any user, via a link provided in the right-hand
+:term:`context menu`.
 
 .. seealso::
 
@@ -34,6 +35,7 @@ provided in the right-hand :term:`context menu`.
    * :ref:`create-item-list-report-print`
    * :ref:`archival-descriptions`
    * :ref:`manage-jobs`
+   * :ref:`context-menu`
 
 Finding aids in AtoM are generated asynchronously in the background using
 `Gearman <http://gearman.org>`__, AtoM's job manager. You will need to make sure
@@ -55,14 +57,15 @@ management page in AtoM, see: :ref:`manage-jobs`.
    :ref:`descriptive-standards`.
 
 Below you'll find information on how to configure the finding aid settings,
-generate a finding aid, view information on the status of your finding aid
-generation request, and how users can view the finding aid after it has been
-successfully generated.
+generate or upload a finding aid, view information on the status of your
+finding aid generation request, and how users can view the finding aid after
+it has been successfully generated or uploaded.
 
 **Jump to:**
 
 * :ref:`print-finding-aid-settings`
 * :ref:`generate-finding-aid`
+* :ref:`delete-finding-aid`
 * :ref:`finding-aid-layout`
 * :ref:`finding-aid-troubleshoot`
 
@@ -94,16 +97,12 @@ aid, the finding aid will usually open in a new tab and be visible immediately t
 the user), while RTF finding aids will require local download to access, and will
 need to be opened in a separate application.
 
-.. WARNING::
+.. NOTE::
 
-   At present, you can only have 1 format of finding aid used for download
-   throughout AtoM. If you have previously generated a bunch of PDF finding
-   aids, and then you switch this setting to RTF, it will make the previous
-   finding aids inaccessible, and  you will need to re-generate new finding
-   aids in the new target format. If you switch the setting back, your PDFs will
-   be available again - the file is still there, but this setting also determines
-   what format the download link will look for, so unless you generate all your
-   finding aids in both formats, be careful when switching settings!
+   Even if you are uploading pre-existing finding aids instead of generating
+   them from your descriptions, you will need to set the format. During the
+   upload process, AtoM will check that the uploaded format matches this
+   setting, and will not allow you to upload other formats.
 
 **Finding aid model**: At present, this setting will change how lower-level
 descriptions (e.g. :term:`children <child record>`, such as files and items) are
@@ -157,48 +156,47 @@ on using the Visible elements module, see: :ref:`visible-elements`.
    If you have the "Generate Finding Aid as public user" setting set to "Yes,"
    the option to generate a finding aid will **not appear** on any
    :term:`draft <draft record>` descriptions in AtoM. You will have to publish
-   the description before you can generate a finding aid.
+   the description before you can generate a finding aid. You will still have
+   the option to upload a finding aid - but remember, if the associated
+   description is in Draft mode, users won't be able to access it, or your
+   uplaoded finding aid until it's published.
 
 :ref:`Back to top <print-finding-aids>`
 
 .. _generate-finding-aid:
 
-Generate finding aid
-====================
+Generate or upload a finding aid
+================================
 
-Once you have configured the finding aid settings, you can now begin to generate
-:term:`finding aids <finding aid>` for your
+Once you have configured the finding aid settings, you can now begin to
+either generate or upload :term:`finding aids <finding aid>` for your
 :term:`archival descriptions <archival description>`. While the settings can only
 be configured by an :term:`administrator`, at present **any authenticated user**
-can generate a finding aid for a description they have permission to view. An
-administrator can review all finding aid generation requests via the Jobs page -
-for more information on managing :term:`jobs <job>` in AtoM, see:
+can generate or upload a finding aid for a description they have permission to
+view. An administrator can review all finding aid generation requests via the
+Jobs page - for more information on managing :term:`jobs <job>` in AtoM, see:
 :ref:`manage-jobs`.
 
-**To generate a finding aid:**
+**To generate or upload a finding aid:**
 
 1. Navigate to the :term:`archival description` for which you would like to
    generate a finding aid. You can do this by :ref:`browsing <browse>` or
    :ref:`searching <search-atom>` for the :term:`archival description` - see
    :ref:`access-content` for more information on navigation in AtoM.
 
-.. NOTE::
+.. TIP::
 
-   You can only generate a finding aid for a top-level description - e.g. a
-   :term:`parent record` such as a :term:`fonds`, :term:`collection`, or perhaps
-   a series (depending on local practice). The :term:`level of description` in
-   AtoM does not determine if it is a top-level description or not (in AtoM,
-   even an item-level description could be considered a top-level description if
-   it has no :term:`parent <parent record>`) - instead, a description is
-   considered top-level if it is not the :term:`child <child record>` of any
-   other descriptions in a hierarchy.
+   You can only generate or upload one finding aid per :term:`archival unit`
+   (that is, one descriptive hierarchy), but you can generate or upload from
+   any level of description in the hierarchy, not just the
+   :term:`parent <parent record>` description.
 
 2. In the right-hand :term:`context menu`, you will see a section titled "Finding
-   aid". For logged-in users, this menu will include status information, and if a
-   finding aid has already been generated, a download link for the current finding
-   aid. Status messages are never shown to public users - the finding aid section
-   will only appear in the context menu if a finding aid has been successfully
-   generated.
+   aid". For logged-in users, this menu may include status information, and if
+   a finding aid has already been generated or uploaded, a download button for
+   the current finding aid. Status messages are never shown to public users - the
+   finding aid section will only appear in the context menu if a finding aid has
+   been successfully generated or uploaded.
 
    .. image:: images/finding-aid-statuses.*
       :align: center
@@ -207,57 +205,145 @@ for more information on managing :term:`jobs <job>` in AtoM, see:
 
    **Finding aid statuses and their meanings**
 
-   * *Unknown*: No finding aid has previously been generated for this description.
-   * *File missing*: Finding aid was previously generated, but the
-     :ref:`print-finding-aid-settings` for have sinced changed. Generate a new
-     finding aid to resolve.
+   * *No status*: No finding aid has been generated or uploaded for this
+     description.
+   * *In progress*: The job is underway and the finding aid is generating or
+     being uploaded. Refresh the page for an updated status, and/or visit the
+     Jobs page - see: :ref:`manage-jobs`
+   * *Generated*: A finding aid that has been generated is available.
+   * *Uploaded*: A finding aid that has been uploaded is available.
    * *Error*: Something went wrong with the finding aid generation. See the
      :ref:`finding-aid-troubleshoot` section below, and try generating a new
      finding aid.
-   * *Generating*: The job is underway and the finding aid is generating. Refresh
-     the page for an updated status, and/or visit the Jobs page - see:
-     :ref:`manage-jobs`
 
 .. TIP::
 
-   Don't see the Finding aid section in the right-hand context menu? It could be
-   because your :term:`archival description` is still in
+   Don't see the option to generate a finding in the right-hand context menu?
+   It could be  because your :term:`archival description` is still in
    :term:`draft <draft record>` status, and your Finding aid
    :ref:`settings <print-finding-aid-settings>` are set to "Generate Finding Aid
    as public user." AtoM will hide the link to generate finding aids from any
    draft descriptions when this setting is engaged. You can either change your
    settings (see above), or you can publish the description - see:
-   :ref:`publish-archival-description`.
+   :ref:`publish-archival-description`. You'll still be able to upload a
+   finding aid to a draft description, but remember: your public users will
+   not be able to see the descriptions or the finding aid until the
+   descriptions are published!
 
-3. To generate a new finding aid, click the "Generate" link in the Finding aid
-   section of the right-hand context menu. AtoM will reload the page, and the
-   Finding aid section will display a status message of "Generating".
+3. To **generate** a finding aid from your archival descriptions, click the
+   "Generate" link in the Finding aid section of the right-hand context menu.
+   AtoM will reload the page, and the Finding aid section will display a status
+   message of "In progress".
 
 .. image:: images/link-internal-generating.*
    :align: center
    :width: 20%
    :alt: An image of the Finding aid generating status message
 
-4. To update the status and determine if your finding aid was successfully
-   generated, wait a moment for the process to execute, and then refresh the
-   browser. Alternately, you can navigate to the jobs page for more details about
-   the status of a job - see: :ref:`manage-jobs` for more information.
+4. To **upload** a finding aid, click the "Upload" link in the Finding aid
+   section of the right-hand context menu. AtoM will redirect you to a page
+   where you can select a finding aid from your local computer. When ready,
+   click the "Upload" button. After upload, AtoM will redirect you to the
+   archival description view page - you'll see the status message in the
+   finding aid section of the right-hand :term:`context menu` will read "In
+   progress" as your finding aid is uploaded.
 
-5. If the finding aid has failed to generate, you will see an "Error" status
+.. image:: images/upload-fa.*
+   :align: center
+   :width: 90%
+   :alt: An image of the Finding aid upload selection page
+
+5. To update the status and determine if your finding aid was successfully
+   generated or uploaded, wait a moment for the process to execute, and then
+   refresh the browser. Alternately, you can navigate to the jobs page for more
+   details about the status of a job - see: :ref:`manage-jobs` for more
+   information.
+
+6. If the finding aid has failed to generate, you will see an "Error" status
    message in the right-hand context menu. You can also navigate to |edit|
    **Manage > Jobs** to see if further details on the cause of the error are
    available. See the troubleshooting section
    :ref:`below <finding-aid-troubleshoot>` for suggestions on how to resolve
    errors.
 
-6. If the finding aid has generated successfully, you will see a Download link
-   when you refresh the page. Click on this link to view your finding aid. Public
-   users will now be able to see this Download link as well.
+.. image:: images/fa-error.*
+   :align: center
+   :width: 20%
+   :alt: An image of an error message in the Finding aid section
 
-7. You can re-generate a new finding aid at any time by following steps 1-5 above.
+7. If the finding aid has generated successfully, you will see a Download
+   button when you refresh the page. The status message (visible only to
+   logged-in users) will indicate if the existing finding aid was generated or
+   uploaded. Click on the Download button to view your finding aid. If your
+   description is published, unauthenticated (e.g. public) users will now be
+   able to see this Download link as well - they will not see the status
+   messages or delete options, however.
+
+.. image:: images/fa-generated.*
+   :align: center
+   :width: 20%
+   :alt: An image of a status message for a generated finding aid
+
+8. You can re-generate or re-upload a new finding aid at any time by
+   first deleting the existing finding aid (covered
+   :ref:`below <delete-finding-aid>`, and then following steps 1-6 again.
    This can be useful if you make :ref:`edits <edit-archival-description>` to
    your :term:`archival description` or its :term:`children <child record>`, or
-   if you change the format of the finding aid in the settings.
+   if you change the format of the finding aid in the settings. **The finding
+   aids are not automatically updated when you make edits to your
+   descriptions**. Be sure to re-upload or regenerate a new finding aid if you
+   have made changes.
+
+:ref:`Back to top <print-finding-aids>`
+
+.. _delete-finding-aid:
+
+Delete an existing finding aid
+==============================
+
+Each :term:`archival unit` (i.e. descriptive hierarchy) can only have one
+finding aid associated with it, and finding aids are not automatically updated
+when descriptions are edited. If you wish to generate or upload a new finding
+aid to an archival unit that already has a finding aid, you will need to
+delete the existing finding aid first. You must be authenticated (e.g. logged
+in) to be able to delete existing finding aids or add new ones.
+
+**To delete an existing finding aid:**
+
+1. Navigate to the :term:`archival unit` whose finding aid you wish to delete,
+   and locate the Finding aid section in the right-hand :term:`context menu`.
+   You can do this from any level of description in the hierarchy.
+
+2. The Finding aid section will include a status message indicating whether
+   the current finding aid was uploaded or generated, a Delete link, and a
+   Download button to view the current finding aid:
+
+.. image:: images/fa-uploaded.*
+   :align: center
+   :width: 20%
+   :alt: An image of a status message for an uploaded finding aid
+
+3. In the Finding aid section, click on the "Delete" link.
+
+.. image:: images/fa-generated-delete.*
+   :align: center
+   :width: 20%
+   :alt: An image of a user clicking on the delete link in the finding aid
+         section of the right-hand context menu
+
+4. AtoM will redirect you to a confirmation page. Click the "Delete" button if
+   you are certain you would like to delete the existing finding aid.
+   Alternatively, you can click the "Cancel" button to abort the delete
+   operation.
+
+.. image:: images/fa-delete-warning.*
+   :align: center
+   :width: 90%
+   :alt: An image of the delete confirmation page when deleting a finding aid
+
+5. After clicking "Delete," AtoM will redirect you to the archival description
+   :term:`view page`. You can now upload or generate a new finding aid,
+   following the instructions in the section :ref:`above <generate-finding-aid>`.
 
 :ref:`Back to top <print-finding-aids>`
 
@@ -337,7 +423,6 @@ in AtoM. For more information on the Jobs page, see: :ref:`manage-jobs`.
 * :ref:`fa-trouble-storage-included`
 * :ref:`fa-trouble-drafts-included`
 * :ref:`fa-trouble-no-generate-link`
-* :ref:`fa-trouble-file-missing`
 * :ref:`fa-trouble-fields-excluded`
 * :ref:`fa-trouble-ead-export-failed`
 
@@ -416,6 +501,20 @@ you make any changes.
 Now you can re-generate your finding aids, following the steps above,
 :ref:`generate-finding-aid`.
 
+.. TIP::
+
+   Don't see the option to generate a finding in the right-hand context menu?
+   It could be  because your :term:`archival description` is still in
+   :term:`draft <draft record>` status, and your Finding aid
+   :ref:`settings <print-finding-aid-settings>` are set to "Generate Finding Aid
+   as public user." AtoM will hide the link to generate finding aids from any
+   draft descriptions when this setting is engaged. You can either change your
+   settings (see above), or you can publish the description - see:
+   :ref:`publish-archival-description`. You'll still be able to upload a
+   finding aid to a draft description, but remember: your public users will
+   not be able to see the descriptions or the finding aid until the
+   descriptions are published!
+
 .. SEEALSO::
 
    * :ref:`print-finding-aid-settings`
@@ -443,44 +542,16 @@ link on draft descriptions, an administrator can therefore restrict finding aid
 generation for drafts to only those users who have publish privileges, as the
 description must be published before the link will reappear.
 
+Note that you will still have the option to upload a finding aid to a draft
+archival description - but remember, your public users will not be able to see
+the archival descriptions or the related finding aid until the
+:term:`archival unit` is published.
+
 .. SEEALSO::
 
    * :ref:`print-finding-aid-settings`
    * :ref:`publish-archival-description`
    * :ref:`edit-user-permissions`
-
-.. _fa-trouble-file-missing:
-
-My finding aid link says "Status: File missing"
------------------------------------------------
-
-.. image:: images/link-internal-generating.*
-   :align: right
-   :width: 15%
-   :alt: An image of the Finding aid missing status message
-
-This could be because you changed the finding aid format in the
-:ref:`Finding aid settings<print-finding-aid-settings>`.
-
-At present, AtoM can only offer one type of finding aid download at a time to
-users - there is no option for a public user to pick the format even if both a
-PDF and an RTF finding aid have been generated. This means that the "Finding aid
-format" setting is actually setting 2 things - the format for future finding aid
-generation, AND the default download format for finding aids.
-
-If you have generated a bunch of finding aids in PDF format, and then you change
-the format setting to RTF, your previous descriptions with PDF finding aids will
-now display a "Status: missing" message, and the download link will be hidden
-from public users. This is because AtoM is now looking for an RTF finding aid,
-and not finding it. You can either generate a new finding aid in RTF format, or
-you can change the setting back - your PDF finding aids have not been lost. Once
-the Format setting is restored to PDF, any previous finding aids generated in PDF
-format will be available again via the Download link.
-
-.. SEEALSO::
-
-   * :ref:`print-finding-aid-settings`
-   * :ref:`generate-finding-aid`
 
 .. _fa-trouble-fields-excluded:
 
@@ -516,6 +587,23 @@ Now you can re-generate your finding aids, following the steps above,
 Finding aid generation error; the jobs page says that "Exporting EAD has failed"
 --------------------------------------------------------------------------------
 
+First, check if you have a working internet connection. AtoM will attempt to
+reach the EAD XML DTD kept at
+http://lcweb2.loc.gov/xmlcommon/dtds/ead2002/ead.dtd and if there is no
+internet connection the task may fail, with a message like this in the Job
+details page:
+
+.. image:: images/fa-saxon-fail.*
+   :align: center
+   :width: 95%
+   :alt: An example of a failed finding aid generation in the Jobs page
+
+If you restore your internet connection, you can try again - the issue may now
+be resolved.
+
+If not, it may have to do with the content you have added to your archival
+description.
+
 AtoM generates its PDF finding aids by first exporting the
 :term:`archival description` as `EAD XML <http://www.loc.gov/ead/tglib/index.html>`__,
 and then transforming that EAD XML using an
@@ -526,7 +614,8 @@ it must first be valid `XML <https://en.wikipedia.org/wiki/XML>`__.
 
 This means your EAD may fail to export properly if:
 
-* You've used unescaped special characters, such as ampersands ``&``
+* You've used unescaped special characters, such as ampersands ``&`` or ``<``
+  and ``>``.
 * You've used inline HTML elements to style the display of some fields in AtoM -
   for example, using ``<em>`` or ``<i>`` elements for emphasis or italics.
 * You've cut and pasted non UTF-8 encoded characters into AtoM - a common example
@@ -537,23 +626,7 @@ This means your EAD may fail to export properly if:
 We suggest you try reviewing your description(s) in :term:`edit mode` and look
 for some of these common errors that can affect EAD export. Remove any HTML you
 have added inside AtoM's edit fields. Make sure that you replace any non-standard
-punctuation cut and pasted from common word processor applications. You can also
-escape special characters using HTML character escapes - for example, ``&amp;``,
-when written in an :term:`edit page` field in AtoM and saved, will render in the
-:term:`view page` as ``&``.
-
-**Other useful character escapes:**
-
-========== ================
-Character  Character escape
-========== ================
-``&lt;``   ``<``
-``&gt;``   ``<``
-``&amp;``  ``&``
-``&quot;`` ``"``
-``&#39;``  ``'``
-========== ================
-
+punctuation cut and pasted from common word processor applications.
 
 Now you can re-generate your finding aids, following the steps above,
 :ref:`generate-finding-aid`.
