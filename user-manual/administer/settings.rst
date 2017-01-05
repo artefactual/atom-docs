@@ -84,6 +84,7 @@ This section will describe each :term:`field` in the "Global"
 * :ref:`Show tooltips <tooltips>`
 * :ref:`Generate description permalinks from <description-permalinks>`
 * :ref:`Default publication status <default-publication-status>`
+* :ref:`drafts-notification`
 * :ref:`SWORD deposit directory <sword-directory>`
 
 Hovering over each :term:`field` will also provide additional information on
@@ -581,6 +582,26 @@ description>` will automatically appear as :term:`draft records <draft record>`
 or :term:`published records <published record>`. Note that this setting also
 affects imported descriptions. For more information, see
 :ref:`archival-descriptions`.
+
+.. _drafts-notification:
+
+Show available drafts notification upon user login
+--------------------------------------------------
+
+This setting, when enabled, will display a notification with a count of the
+number of :term:`draft <draft record>` archival descriptions currently
+available in AtoM. A link to the Description updates page is also provided if
+users wish to review the current available draft records - for more
+information on working with the Description updates page, see:
+:ref:`search-updates`.
+
+.. image:: images/drafts-notification.*
+   :align: center
+   :width: 70%
+   :alt: An image of a notification of available draft records on login.
+
+This notification, when enabled, will be visible to all authenticated (i.e.
+logged in) users.
 
 .. _sword-directory:
 

@@ -493,13 +493,21 @@ publication status update job has executed properly or not, be sure to check
 the jobs page. For more information on the Jobs page in AtoM, see:
 :ref:`manage-jobs`.
 
-.. TIP::
+.. NOTE::
 
    For AtoM 2.2 and earlier users - the "Update publication status" options
    have moved out of the description edit page! You can now find this option
    in the "More" button menu, in the :term:`button block` at the bottom of an
    archival description :term:`view page` for authenticated users. Further
    details are included in the steps below.
+
+.. TIP::
+
+   An :term:`administrator` can turn on a setting in the Global settings page
+   that will notify authenticated (i.e. logged in) users of the number of
+   draft records in AtoM when they log in. For more information, see:
+
+   * :ref:`drafts-notification`
 
 .. _publish-description-permissions:
 
@@ -605,6 +613,10 @@ information on the current job status (Running, Completed, or Failed).
    :alt: An image of the Jobs page showing completed publication status update jobs
 
 For more information on using the Jobs page, see: :ref:`manage-jobs`.
+
+.. SEEALSO::
+
+   * :ref:`drafts-notification`
 
 :ref:`Back to top <archival-descriptions>`
 
