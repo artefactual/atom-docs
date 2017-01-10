@@ -25,7 +25,7 @@ provided by community volunteers, and managed via
 management application. If you would like to contribute your interface
 translations to a future release instead of translating locally, we welcome
 your contributions - please see our guide to getting started with Transifex:
-https://www.accesstomemory.org/community/translate/
+https://wiki.accesstomemory.org/Resources/Translation.
 
 **To translate the AtoM user interface locally:**
 
