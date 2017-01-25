@@ -46,11 +46,12 @@ upgrading AtoM, just restart the PHP pool and the APC cache will be flushed.
 
 .. note::
 
-   APC has not been ported to PHP 5.5. Instead, Zend has contributed their Zend
-   Optimizer+ opcode cache (OPcache). However, user-data cache is not something
-   that OPcache implements, so if you are planning to use PHP 5.5 please look at
-   APCu as a valid replacement for user-land caching, which emulates its
-   functionality while providing the same API.
+   APC has not been ported to PHP 5.5. Instead, Zend has contributed their `Zend
+   Optimizer+ opcode cache (OPcache) <http://php.net/manual/en/book.opcache.php>`__.
+   However, user-data cache is not something that OPcache implements, so if you
+   are planning to use PHP 5.5 please look at APCu as a valid replacement for
+   user-land caching, which emulates its functionality while providing the same
+   API.
 
 
 Other components that can be tweaked
