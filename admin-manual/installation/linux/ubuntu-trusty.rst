@@ -306,13 +306,7 @@ following command will install it along with the rest of PHP extensions
 
 .. code-block:: bash
 
-    sudo apt-get install php5-cli php5-fpm php5-curl php5-mysql php5-xsl php5-json php5-ldap php-apc
-
-If you are using Ubuntu 14.04, make sure that php5-readline is also installed.
-
-.. code-block:: bash
-
-    sudo apt-get install php5-readline
+    sudo apt-get install php5-cli php5-fpm php5-curl php5-mysql php5-xsl php5-json php5-ldap php5-readline php-apc
 
 If you are using Apache, you will also need to install mod_php:
 

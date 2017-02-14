@@ -265,7 +265,7 @@ install it manually for now:
 
    sudo apt install php-dev
    sudo pecl install apcu_bc-beta
-   echo "extension=apc.so" | sudo tee > /etc/php/7.0/mods-available/apcu-bc.ini
+   echo "extension=apc.so" | sudo tee /etc/php/7.0/mods-available/apcu-bc.ini
    sudo ln -sf /etc/php/7.0/mods-available/apcu-bc.ini /etc/php/7.0/fpm/conf.d/30-apcu-bc.ini
    sudo ln -sf /etc/php/7.0/mods-available/apcu-bc.ini /etc/php/7.0/cli/conf.d/30-apcu-bc.ini
    sudo systemctl restart php7.0-fpm
