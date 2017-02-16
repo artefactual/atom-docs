@@ -31,7 +31,8 @@ Server):
 
 It's up to you to install the job server in the same machine where you are
 running AtoM or in another machine in the same network. If you are doing the
-latter, make sure that you update :file:`/etc/defaults/gearman` accordingly:
+latter, make sure that you update :file:`/etc/default/gearman-job-server`
+accordingly:
 
 .. code-block:: bash
 
