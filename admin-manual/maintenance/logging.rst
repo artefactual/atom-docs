@@ -221,6 +221,8 @@ Remember to :ref:`clear the cache <maintenance-clear-cache>` after saving your
 changes to the ``factories.yml`` file. See also the notes above in Example 1
 about clearing and rotating logs.
 
+.. _maintenance-webserver:
+
 ===============
 Web server logs
 ===============
