@@ -360,24 +360,23 @@ Gearman job server is required by AtoM as of version 2.2.
 
 Other packages
 --------------
+In order to generate PDF finding aids, AtoM requires Apache FOP 2.1 to be
+installed. Fortunately, Apache FOP 2.1 can now be installed directly from
+Ubuntu packages using the command below.
 
-In order to generate PDF finding aids, AtoM requires `Apache FOP 2.1 <https://archive.apache.org/dist/xmlgraphics/fop/binaries/fop-1.0-bin.tar.gz>`__.
-After downloading and extracting it, ensure you have the fop executable in your
-system's executable path. Additionally, you may need to set the environmental
-variable FOP_HOME to the folder path you extracted Apache FOP. The following is
-a single command that will set up everything for you automatically:
+.. note::
+
+   The command specified below uses the ``--no-install-recommends`` parameter:
+   this is intentional and ensures that only dependencies are installed and not
+   'recommended' or 'suggested' packages. If ``--no-install-recommends`` is not
+   specified, openjdk-8-jre will be installed as a dependency for one of the
+   recommended packages. Since openjdk-8-jre-headless was already installed in
+   the Elasticsearch installation section above, we want to prevent installing
+   the openjdk-8-jre package as well.
 
 .. code-block:: bash
 
-   sudo bash -c "\
-       set -e \
-       && mkdir /usr/share/fop-2.1 \
-       && wget https://archive.apache.org/dist/xmlgraphics/fop/binaries/fop-2.1-bin.tar.gz -O /tmp/fop.tar.gz \
-       && tar xvzf /tmp/fop.tar.gz --strip-components 1 -C /usr/share/fop-2.1 \
-       && ln -s /usr/share/fop-2.1/fop /usr/bin/fop \
-       && rm /tmp/fop.tar.gz \
-       && echo 'FOP_HOME=/usr/share/fop-2.1' >> /etc/environment
-   "
+   sudo apt install --no-install-recommends fop libsaxon-java
 
 If you want AtoM to be able to process :term:`digital objects <digital object>`
 in formats like JPEG or to extract the text from your PDF documents, there are
