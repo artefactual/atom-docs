@@ -68,6 +68,5 @@ links to each chapter's main sections.
    data-templates/isaar-template
    data-templates/isdiah-template
    data-templates/isdf-template
+   data-templates/premis-template
    glossary/glossary
-
-

@@ -177,6 +177,10 @@ in AtoM, and more.
 
   * :ref:`ISDF template <isdf-template>`
 
+* **Rights record templates**
+
+  * :ref:`PREMIS template <premis-template>`
+
 Glossary
 --------
 
