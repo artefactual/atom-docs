@@ -168,18 +168,30 @@ This can check if the box in your current Vagrant environment is outdated as
 well as any other box installed on the system.
 
 To pull in the latest code for your box, connect via SSH (see
-:ref:`vagrant-connect-terminal`), navigate to the atom folder with ``cd atom``, and run ``git pull --rebase``. After pulling in new code, you will want to do the following:
+:ref:`vagrant-connect-terminal`), navigate to the atom folder with ``cd atom``, and 
+run ``git pull --rebase``. After pulling in new code, you will want to do the following:
 
 * Clear cache: ``php symfony cc``
 
-* Restart services: ``sudo restart php5-fpm``, ``sudo restart nginx``, ``sudo service memcached restart``, and ``sudo service nginx restart``
+* Restart services: ``sudo restart php5-fpm`` and ``sudo restart atom-worker``
 
-In some cases, depending on the code that has been pulled in, you may need to do
-the following:
+.. NOTE::
+
+    In most cases, you will definitely want to complete the next two steps:  
+    *Run the SQL upgrade task* and *Repopulate the search index*. There is no
+    harm in running these even if they are not necessary.
+
+    If you know for certain that the changes pulled in did not contain updates 
+    to the database, feel free to omit executing ``tools:upgrade-sql`` and 
+    ``search:populate`` below.
+
+.. _vagrant-updates:
+
+* Run the SQL upgrade task: ``php symfony tools:upgrade-sql``
 
 * Repopulate the search index: ``php symfony search:populate``
 
-* Remake the CSS
+* Compile stylesheets: ``make -C plugins/arDominionPlugin``
 
 If you are pulling in major changes to the AtoM codebase, we recommend purging
 the database back to the clean demo version (``sudo php symfony tools:purge --demo``)
