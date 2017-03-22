@@ -170,9 +170,10 @@ well as any other box installed on the system.
 To pull in the latest code for your box, connect via SSH (see
 :ref:`vagrant-connect-terminal`), navigate to the atom folder with ``cd atom``, and run ``git pull --rebase``. After pulling in new code, you will want to do the following:
 
+* Run the SQL upgrade task: ``php symfony tools:upgrade-sql``
 * Clear cache: ``php symfony cc``
 
-* Restart services: ``sudo restart php5-fpm``, ``sudo restart nginx``, ``sudo service memcached restart``, and ``sudo service nginx restart``
+* Restart services: ``sudo restart php5-fpm``, ``sudo service memcached restart``, and ``sudo service nginx restart``
 
 In some cases, depending on the code that has been pulled in, you may need to do
 the following:
