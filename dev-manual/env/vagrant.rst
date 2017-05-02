@@ -26,9 +26,9 @@ Install Vagrant and VirtualBox
 ==============================
 
 #. Install VirtualBox from https://www.virtualbox.org/ (or use your package
-   manager). VirtualBox 4.3 or newer is required.
+   manager). VirtualBox 5.1.18 or newer is required.
 #. Install Vagrant from http://www.vagrantup.com/ (or use your package manager).
-   Vagrant 1.6 or newer is required. Be aware that Ubuntu 14.04 installs
+   Vagrant 1.9.3 or newer is required. Be aware that Ubuntu 14.04 installs
    Vagrant 1.4.3, which does not meet the requirements.
 
 
