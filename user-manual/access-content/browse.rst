@@ -142,7 +142,7 @@ descriptions, a pager will be provided at the bottom of the results.
 .. TIP::
 
    :term:`Administrators <administrator>` can change the default number of
-   results returned per page in **Admin > Settings > Global**. For more
+   results returned per page in |gears| **Admin > Settings > Global**. For more
    information, see: :ref:`results-page`.
 
 Results appear in the main column of the page - click on a result and AtoM will
