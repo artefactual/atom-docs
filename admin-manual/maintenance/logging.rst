@@ -41,13 +41,16 @@ The ``factories.yml`` file in AtoM has 4 main environmentally-aware
 ``dev`` (for development and debugging - i.e. ``qubit_dev.php``, when the site
 is in :ref:`debug-mode`), and ``all``, which are  the default settings
 inherited by the other factories, unless they are more explicitly defined
-within each and overrriden. According to Symfony:
+within each and overriden. According to Symfony:
 
     When symfony needs a value from a configuration file, it merges the
     configuration found in the current environment section with the ``all``
     configuration. The special ``all`` section describes the default
     configuration for all environments. If the environment section is not
     defined, symfony falls back to the ``all`` configuration.
+
+If you are an administrator and wish to override factories.yml settings, it's
+recommended you modify ``apps/qubit/config/factories.yml``.
 
 **Example - the debug factories settings:**
 
