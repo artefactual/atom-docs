@@ -792,6 +792,126 @@ The task will have the following effects on HTML elements:
    :alt: An example of HTML in a form, before and after running the script
 
 
+.. _cli-count-terms:
+
+Export a list of terms linked to one or more descriptions from a taxonomy
+=========================================================================
+
+This task is useful when performing an administrative review of your AtoM
+installation. If you have imported a large controlled vocabulary to one of
+AtoM's taxonomies (such as :term:`subject`, :term:`place`, or genre access
+point terms), you might want to be able to determine which terms are actually
+in use (i.e. linked to descriptions) versus those which are currently not
+linked to any descriptions.
+
+This task, when run against a specific :term:`taxonomy`, will generate a CSV
+with a list of terms that are linked to one or more archival descriptions
+(information objects). The CSV includes a count of how many times a specific
+term is used (e.g. a count of direct links to information objects - inherited
+links from a hierarchy are *not* counted). It does not list terms that are in
+the taxonomy but currently not used.
+
+The CSV output for the task includes the following columns:
+
+* **id**: the internal object ID of the term
+* **parentId**: the object ID of the the parent to which the term is linked.
+
+  * Even in a taxonomy that is not organized hierarchically, terms are linked
+    to a root term object. If the terms are organized heirarchically, then the
+    ``parentID`` value will be the objectID of the parent term.
+
+* **taxonomy**: the ID of the taxonomy to which the terms belong. In AtoM,
+  typically the Subjects taxonomy ID is 35; Places is 42, etc.
+* **name**: the authorized/preferred form of name for the term in the
+   current culture
+* **sourceCulture**: the culture in which the term was created - generally a 2
+  letter ISO language code value (e.g. en, fr, es, etc)
+* **culture**: Generally the value of the default installation culture of your
+  AtoM instance, returned as a 2 letter ISO language code value (e.g. en, fr,
+  es, etc)
+* **use_count**: a simple count of the number of times the term has been
+  directly linked to an information object (archival description). Inherited
+  relationships are not counted - e.g. in a hierarchy of
+  ``Canada > Ontario > Toronto``, when Toronto is linked to an information
+  object, Canada and Ontario do not also receive a count.
+
+To see the help for the task:
+
+.. code-block:: bash
+
+   php symfony help csv:export-term-usage
+
+.. image:: images/cli-count-terms-help.*
+   :align: center
+   :width: 85%
+   :alt: The output of running the help options for the csv:export-term-usage
+         task
+
+You must specify a target destination for the export as a file path, including
+the name of the csv, and ending in the ``.csv`` extension, for the command to
+work as expected. See the examples below.
+
+**Options**
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the export.
+
+The ``--items-until-update`` option accepts a whole integer value, and will
+indicate the progress of the task every n items by printing a dot in the
+console.
+
+you can use either the ``--taxonomy-name`` or the ``--taxonomy-id`` options to
+tell the command which taxonomy terms you wish to count in the resulting CSV.
+By default, the ``--taxonomy-name`` option expects the English name of the
+target taxonomy; however, you can use the ``--taxonomy-name-culture`` option
+to give the name of a taxonomy in another culture - this option expects a
+2-letter ISO language code (e.g. "en", "fr", "es", etc) as its value.
+
+The ``--taxonomy-id`` option expects as its value the internal ID of the
+target taxonomy. Below is a list of some of the more commonly used taxonomies
+in AtoM, and their IDs. This list is NOT comprehensive - to see the full list,
+navigate to ``/lib/model/QubitTaxonomy.php``, or see a full list in AtoM's
+code on GitHub :at-gh:`here <lib/model/QubitTaxonomy.php#L20>`.
+
+=================================== ===
+Taxonomy name                       ID
+=================================== ===
+ Places                             42
+ Subjects                           35
+ Genres                             78
+ Levels of description              34
+=================================== ===
+
+**Examples**
+
+Sample command to return terms currently used in the Subjects taxonomy, using
+the ``taxonomy-name`` option:
+
+.. code-block:: bash
+
+   php symfony csv:export-term-usage --taxonomy-name="Subjects" /path/to/my-subjects.csv
+
+The same command, but using the French name of the taxonomy:
+
+.. code-block:: bash
+
+   php symfony csv:export-term-usage --taxonomy-name-culture="fr" --taxonomy-name="Sujets" /path/to/mes-sujets.csv
+
+An example of using the ``taxonomy-id`` option to specify the Places taxonomy:
+
+.. code-block:: bash
+
+   php symfony csv:export-term-usage --taxonomy-id="42" /path/to/my-places.csv
+
+Here is the sample CSV output of a command run against the Places taxonomy in
+an English installation:
+
+.. image:: images/cli-count-terms-example.*
+   :align: center
+   :width: 85%
+   :alt: A sample CSV output from the Places taxonomy
+
 .. _cli-purge-data:
 
 Purging all data
@@ -950,6 +1070,7 @@ Taxonomy name                       ID
 =================================== ===
  Places                             42
  Subjects                           35
+ Genres                             78
  Level of description               34
  Actor entity type (ISAAR)          32
  Thematic area (repository)         72
