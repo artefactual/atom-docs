@@ -157,6 +157,16 @@ feel free to modify this according to your environment.
    want to visit `Comparing Filesystem Performance in Virtual Machines <http://mitchellh.com/comparing-filesystem-performance-in-virtual-machines>`__
    by Mitchell Hashimoto, the creator of Vagrant.
 
+Note that the directory where you have installed the vagrantfile on your host
+system (e.g. ``Desktop/atom-vagrant``) will be accessible from inside the
+guest as ``/vagrant``. So if you want to import a CSV called
+``my-descriptions.csv`` from your host's ``atom-vagrant`` directory, the
+command might look like:
+
+.. code-block:: bash
+
+   php symfony csv:import /vagrant/my-descriptions.csv
+
 
 .. _vagrant-updates:
 
@@ -168,24 +178,24 @@ This can check if the box in your current Vagrant environment is outdated as
 well as any other box installed on the system.
 
 To pull in the latest code for your box, connect via SSH (see
-:ref:`vagrant-connect-terminal`), navigate to the atom folder with ``cd atom``, and 
+:ref:`vagrant-connect-terminal`), navigate to the atom folder with ``cd atom``, and
 run ``git pull --rebase``. After pulling in new code, you will want to do the following:
 
 * Clear cache: ``php symfony cc``
 
-* Restart services: ``sudo restart php5-fpm`` and ``sudo restart atom-worker``
+* Restart services: ``sudo systemctl restart php7.0-fpm`` and ``sudo
+  systemctl restart atom-worker``
 
 .. NOTE::
 
-    In most cases, you will definitely want to complete the next two steps:  
+    In most cases, you will definitely want to complete the next two steps:
     *Run the SQL upgrade task* and *Repopulate the search index*. There is no
     harm in running these even if they are not necessary.
 
-    If you know for certain that the changes pulled in did not contain updates 
-    to the database, feel free to omit executing ``tools:upgrade-sql`` and 
+    If you know for certain that the changes pulled in did not contain updates
+    to the database, feel free to omit executing ``tools:upgrade-sql`` and
     ``search:populate`` below.
 
-.. _vagrant-updates:
 
 * Run the SQL upgrade task: ``php symfony tools:upgrade-sql``
 
