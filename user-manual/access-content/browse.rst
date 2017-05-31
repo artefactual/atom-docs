@@ -328,6 +328,12 @@ the other options in this part of the context menu.
 4. You can continue to apply further facets and fliters as desired to narrow
    your results within the selected archival unit.
 
+.. SEEALSO::
+
+   * :ref:`recurring-facet-filters`
+   * :ref:`search-atom`
+   * :ref:`advanced-search`
+
 .. _browse-hierarchy-digi-objects:
 
 Using the "Browse digital objects" button
@@ -401,8 +407,14 @@ descriptive hierarchy.
    - so if there is a digital object attached to the top-level record, it will
    not appear in these results!
 
-4. You can use the :ref:`recurring-sort-button` and the media type filter
-   on the page to further sort or limit the results as desired.
+4. You can continue to apply further facets and fliters as desired to narrow
+   your results within the selected archival unit.
+
+.. SEEALSO::
+
+   * :ref:`recurring-facet-filters`
+   * :ref:`search-atom`
+   * :ref:`advanced-search`
 
 .. _browse-hierarchy-inventory:
 
@@ -942,16 +954,8 @@ Click the Browse menu, then click Digital Objects.
    :width: 80%
    :alt: View of browsing all digital objects.
 
-AtoM will display all of the digital objects in the database. The layout will
-change according to the screen size, as shown in the screenshot of the same
-digital object browse as above, but in a smaller screen:
-
-.. image:: images/browse-digital-smaller.*
-   :align: center
-   :width: 80%
-   :alt: View of browsing all digital objects in a smaller screen size.
-
-By default, AtoM will display 30 results per page; if there are more than 30
+AtoM will display all of the digital objects in the database. By default, AtoM
+will display 10 results per page; if there are more than 10
 digital objects, a pager will be provided at the bottom of the results.
 
 .. TIP::
@@ -960,26 +964,53 @@ digital objects, a pager will be provided at the bottom of the results.
    results returned per page in **Admin > Settings > Global**. For more
    information, see: :ref:`results-page`.
 
-Users can filter the results by :term:`media type` by clicking the facet filter
-buttons at the top of the search results.
+Users can filter the results by :term:`media type` by clicking open the "Media
+type" :term:`facet <facet filter>` in the left-hand facet column and
+selecting a specific media type - default types in AtoM are audio, image,
+text, video, and other.
 
 .. image:: images/digital-object-browse-button.*
-   :align: right
-   :alt: Facet filter buttons when viewing digital objects browse results.
+   :align: center
+   :width: 80%
+   :alt: The media type facet in AtoM's search and browse pages
 
-The automatic sort is alphabetic (title) for unauthenticated (e.g. not logged in)
-users, which can be changed by the user to Most recent or alphabetic (identifier)
-via the :ref:`recurring-sort-button` at the top right of the page.
+.. NOTE::
+
+   Facets will not be displayed if there is only 1 or 0 results - so for example,
+   if there are only images returned, then the Media type facet will not be
+   displayed.
+
+The automatic sort of the results is alphabetic (title) for unauthenticated
+(e.g. not logged in) users, which can be changed by the user to various other
+sort options via the :ref:`recurring-sort-button` at the top right of the page.
 
 .. TIP::
 
    :term:`Administrators <administrator>` can change the default sort order
    on search/browse pages for both public and authenticated (i.e. logged in)
    users, in **Admin > Settings > Global**. For more information, see:
-   :ref:`sort-browser-users` and :ref:`sort-browser-anonymous`.
+   :ref:`sort-browser-users` and :ref:`sort-browser-anonymous`. For more
+   information on the sort button in general, see:
+   :ref:`recurring-sort-button`.
+
+The view of the results can be toggled from the default "card" based view of
+the Digital object browse page to a "list" view like that found on the
+:term:`archival description` browse page:
+
+.. image:: images/browse-view-toggle.*
+   :align: center
+   :width: 80%
+   :alt: The view toggle button on the Description browse page
+
+Users can also use the other facets and filters available in the
+:ref:`recurring-facet-filters` and the :ref:`advanced-search` panel to furthe
+narrow results.
 
 .. SEEALSO::
 
+   * :ref:`search-atom`
+   * :ref:`advanced-search`
+   * :ref:`recurring-facet-filters`
    * :ref:`upload-digital-object`
 
 .. _browse-functions:
