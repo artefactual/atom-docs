@@ -38,6 +38,10 @@ Browse
 .. |gears| image:: images/gears.png
    :height: 18
 
+.. |clip| image:: images/paper-clip.png
+   :height: 18
+
+
 The Browse menus in AtoM allow users to browse complete lists of
 :term:`archival descriptions <archival description>`, as well as digital objects,
 :term:`authority records <authority record>` (for people and organizations),
@@ -448,14 +452,18 @@ view the lower-level :term:`children <child record>` in a way that the
 * Level of description
 * Date
 * Digital object
+* :ref:`clipboard` link
 
-Only the :term:`digital object` column is not sortable - this column will
-provide an indication of whether or not there is a digital object attached to
-the description - if so, the row will have a hyperlink called "View" in the
-Digital object column. Clicking on the "View" link will take a user directly
-to the :term:`master digital object` - if a user does not have
-:term:`permission <access privilege>` to view the master, the column's value
-will be empty for that row.
+Only the :term:`digital object`  and the Clipboard columns are not sortable.
+
+The Digital object column will provide an indication of whether or not there
+is a digital object attached to the description - if so, the row will have a
+hyperlink called "View" in the Digital object column. Clicking on the "View"
+link will take a user directly to the :term:`master digital object` - if a
+user does not have :term:`permission <access privilege>` to view the master,
+the column's value will be empty for that row.
+
+The :term:`clipboard` column contains links indicated by the
 
 Whether or not the Inventory link appears on a particular description will
 depend on how it has been configured in the settings page - there, an
