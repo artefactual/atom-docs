@@ -726,12 +726,18 @@ longer display correctly:
    :width: 85%
    :alt: An image of how escaped HTML content will appear when saved in AtoM
 
-To assist legacy users who have added HTML to
-:term:`archival descriptions <archival description>`, a command-line task to
-strip the HTML from descriptions has been added. At present, it will only
-remove HTML from archival descriptions - other :term:`entity` types (such as
-archival institution records, accessions, authority records, etc) will not be
-affected.
+To assist legacy users who have added HTML to records in AtoM, a command-line
+task to strip the HTML from descriptions and other entities has been added. At
+present, it will only remove HTML from the following :term:`entity` types:
+
+* :term:`archival description`
+* :term:`authority record`
+* Notes (however, General notes are **not** affected currently)
+* :term:`archival institution` (aka :term:`repository` records)
+* :term:`rights record`
+
+Other entities in AtoM (such as accessions, user and goup records, terms, etc.)
+will not be affected.
 
 .. IMPORTANT::
 
@@ -743,10 +749,6 @@ affected.
    * :ref:`RAD <rad-template>` title note (e.g. Source of title proper,
      Attributions and conjectures, etc)
    * General notes fields in any template
-   * :ref:`RAD <rad-template>` Other notes and :ref:`DACS <dacs-template>`
-     Specialized notes (e.g. Variant title information, citation, or
-     record-keeping activity notes in DACS; Accompanying material, cast,
-     editions, or physical description notes in RAD)
 
 **To run the HTML scrub task:**
 
@@ -785,6 +787,9 @@ The task will have the following effects on HTML elements:
   import data) will be removed (the text they wrap will be preserved).
 * Paragraph tags (``<p>``) will be removed, and substituted with 2 line breaks
   to preserve spacing (i.e. ``/n/n``)
+* HTML escape characters (for example, ``&quot;``, ``&amp;``, ``&lt;``) will
+  will be replaced with the character they represent (e.g. ``"``, ``&``,
+  ``<``)
 
 .. image:: images/scrub-html-example.*
    :align: center
