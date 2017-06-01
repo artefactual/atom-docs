@@ -463,7 +463,12 @@ link will take a user directly to the :term:`master digital object` - if a
 user does not have :term:`permission <access privilege>` to view the master,
 the column's value will be empty for that row.
 
-The :term:`clipboard` column contains links indicated by the
+The :term:`clipboard` column contains links indicated by the |clip| paper clip
+icon. Clicking on one of these will add the description in the related row
+directly to the Clipboard. For more information on working with the Clipboard,
+see: :ref:`clipboard`.
+
+**Configuring the inventory list**
 
 Whether or not the Inventory link appears on a particular description will
 depend on how it has been configured in the settings page - there, an
