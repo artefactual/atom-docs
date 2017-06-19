@@ -70,6 +70,8 @@ This section will describe each :term:`field` in the "Global"
 * :ref:`Results per page <results-page>`
 * :ref:`Accession mask <accession-mask>`
 * :ref:`Accession counter <accession-counter>`
+* :ref:`Identifier mask <identifier-mask>`
+* :ref:`Identifier counter <identifier-counter>`
 * :ref:`Reference code separator <reference-code-separator>`
 * :ref:`Inherit reference code (Information object) <inherit-reference-code>`
 * :ref:`Treeview type <treeview-type>`
@@ -205,6 +207,35 @@ AtoM provides you with the number of :term:`accessions <accession record>`
 created. If you delete an accession, it will still be included in the Accession
 counter total value. If this number is changed by an administrator, the next
 accession created will receive the next number in sequence.
+
+.. _identifier-mask:
+
+Identifier mask
+---------------
+
+By enabling the identifier mask, all descriptions created through the user interface
+will be assigned an identifier based on a pre-defined pattern. This pattern can
+be customized using text strings and `PHP strftime parameters <http://php.net/manual/en/function.strftime.php#refsect1-function.strftime-parameters>`_.
+For example, providing the identifier mask *Archives-%Y-%m-%d/#i* will result in
+a description with the identifier **Archives-2017-01-31/1**. The final parameter,
+*#i*, represents the :ref:`identifier-counter`.
+
+It is possible to replace an identifier with one based on the identifier mask by
+editing a description and selecting *Generate identifier* below the identifier field.
+
+.. _identifier-counter:
+
+Identifier counter
+------------------
+
+The identifier counter defines incremental integer at the end of the identifier,
+represented in the identifier mask as *#i*. The counter indicates the next number
+that will be used for the integer, so if the number is currently at *259* then the
+identifier will be **Archives-2017-01-31/259**. It is possible to set the identifier
+counter to begin at a specific integer.
+
+Deleting an archival description will not affect the counter - it simply adds the
+next integer, rather than looking for unused integers.
 
 .. _reference-code-separator:
 
@@ -1192,5 +1223,3 @@ digital object can be attached and uploaded.
 
 
 :ref:`Back to top <settings>`
-
-
