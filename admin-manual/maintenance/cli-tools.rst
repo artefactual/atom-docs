@@ -436,10 +436,10 @@ Accession            Identifier (accession number)
 Other entities       Name
 ==================== =============================
 
-Generated slugs will only allow digits, letters, and dashes. English articles
-(such as "the," "a," "an," etc) are removed, and any other sequences of
+Generated slugs will only allow digits, letters, and dashes. Sequences of
 unaccepted characters (e.g. accented or special characters, etc.) are replaced
-with dashes. This conforms to general practice around slug creation - for example,
+with valid characters such as English alphabet equivalents or dashes.
+This conforms to general practice around slug creation - for example,
 it is "common practice to make the slug all lowercase, accented characters are
 usually replaced by letters from the English alphabet, punctuation marks are
 generally removed, and long page titles should also be truncated to keep the
@@ -455,9 +455,10 @@ receive the slug "*correspondence-2*".
 If a record is created without data in the :term:`field` from which the slug
 is normally derived (e.g. an :term:`archival description` created without a
 title), AtoM will assign it a randomly generated alpha-numeric slug. Once
-assigned, slugs cannot be changed through the :term:`user interface` - either
-the record must be deleted and a new record created, or you must manipulate
-the database directly.
+assigned, slugs for archival descriptions can be changed through the
+:term:`user interface`. Slugs for other entity types cannot be changed through
+the user interface - either the record must be deleted and a new record created,
+or you must manipulate the database directly.
 
 Finally, :term:`static pages <static page>`, or permanent links, include a
 slug :term:`field` option, but only slugs for new static pages can be edited
