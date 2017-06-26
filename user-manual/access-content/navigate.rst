@@ -954,14 +954,6 @@ removed.
 Facets available by record type in AtoM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: images/facet-filters-authority.*
-   :align: right
-   :figwidth: 30%
-   :width: 100%
-   :alt: An image of the facet filters on the authority records browse page
-
-   Facet filters available on the authority records browse page
-
 Currently facets are only available on :term:`archival description`,
 :term:`authority record`, and :term:`archival institution` search and browse
 pages. Additionally, filter buttons by media type are available in the
@@ -1043,6 +1035,13 @@ institution access points, see: :ref:`institution-access-points`.
   in the "Type of entity" :term:`field` available in the Identity :term:`area
   <information area>` of the :ref:`ISAAR <isaar-template>` edit template for
   :term:`authority records <authority record>`
+* **Maintained by:** Lmits results to those records being maintained by the
+  related :term:`archival institution`. Depends on the authority being linked
+  to a repository via the "Maintaining institution" field in the authority
+  record - for more information, see: :ref:`link-repo-actor`.
+* **Occupations:** Limits results to those authority records with a matching
+  :term:`access point` added to the Occupations field in the "Access points"
+  :term:`area <information area>` of the authority record edit template.
 
 For more infomration on working with :term:`authority records <authority
 record>` for people, families, and :term:`corporate bodies <corporate body>`,
@@ -1051,22 +1050,11 @@ record edit template, see: :ref:`ISAAR(CPF) template <isaar-template>`.
 
 **Digital objects**
 
-.. figure:: images/facet-filter-digobject.*
-   :align: right
-   :figwidth: 30%
-   :width: 100%
-   :alt: An image of the facet filter buttons on the digital object browse page
-
-   Facet filter buttons available on the digital object browse page
-
-The :term:`digital object` browse page currently includes a set of buttons,
-that work similarly to the "Media type" facet filters available in the
-:term:`archival descriptions <archival description>` search and browse pages.
-A user can toggle them by clicking to limit the results by Media type (image,
-text, video, autdio, or other). The media type is drawn from the "Media type"
-:term:`field` available on a digital object edit page - upon upload, a type
-(based on MIME type) will be automatically assigned, but a user can edit the
-digital object to change its type if desired.
+The :term:`digital object` browse page is the same as the
+:term:`archival description` browse page - it merely has certain filters and
+facets already applied when the user arrives. All facets available for
+archival descriptions are available when browsing digital objects as well. See
+above for information on the archival description facets
 
 For more information on uploading and managing digital objects, see:
 

@@ -80,6 +80,7 @@ the Admin-Menus menu (see: :ref:`Manage menus <manage-menus>`).
 * :ref:`browse-institutions`
 
   * :ref:`browse-holdings`
+  * :ref:`browse-maintained-actors`
 
 * :ref:`browse-subjects-places`
 
@@ -637,8 +638,9 @@ users, which can be changed by the user to Most recent or identifier via the
 
 Users can narrow the results list using the available
 :term:`facet filters <facet filter>` on the left-hand side of the screen,
-which for :term:`authority records <authority record>` includes language and
-entity type (Person, Family or Corporate body).
+which for :term:`authority records <authority record>` includes language,
+entity type (Person, Family or Corporate body), Maintaining repository, and
+Occupation.
 
 The authority record browse page also includes a dedicated search box - for
 more information on searching for authority records in AtoM, see:
@@ -800,6 +802,65 @@ number.
    * :ref:`search-archival-descriptions`
    * :ref:`recurring-facet-filters`
    * :ref:`archival-institutions`
+
+.. _browse-maintained-actors:
+
+Browse the authority records of an institution
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If an institution has linked its authority records (indicating that it is the
+institution responsible for maintaining them), then a list, similar to the
+:ref:`holdings list <browse-holdings>`, will appear on the archival
+institution :term:`view page`. For more information on linking an authority
+record to a repository, see: :ref:`link-repo-actor`.
+
+The maintained authority records list can be used to browse the
+:term:`authority records <authority record>` of a particular
+:term:`archival institution`, which can be especially useful in a multi-repository
+AtoM instance, such as a union catalogue, portal site, or network. It appears
+in the left-hand :term:`context menu` of the :term:`view page` for an archival
+institution, beneath the logo and the holdings list.
+
+.. figure:: images/maintained-auth-list.*
+   :align: center
+   :figwidth: 30%
+   :width: 100%
+   :alt: An image of list of maintained authority records on an archival
+         institution's view page
+
+At the top of the maintained list is a **browse link**, that lists
+the total number of authority records maintained by the repository. Clicking
+on this link will take a user to an authority record browse page limited to
+the current repository. See :ref:`browse-authority-records` for more
+information on browsing.
+
+Below the browse link, an alphabetized list of authority records appears. The
+list consists of hyperlinks - clicking on one will take the user to the related
+authority record. The number of results in this list per page is controlled by
+the "results per page" setting found in **Admin > Settings > Global**.
+See: :ref:`results-page` for information on changing this value. The default
+value in AtoM is 10 results per page.
+
+A **count** appears under the maintained authority records list, which
+includes the number of results per page, and the total - e.g.
+*Results 1 to 10 of 45,* etc.
+
+If there are more maintained authority records  than the number of results per
+page, a **pager** will be included below. Click the **<-** back and forward
+**->** arrows to move through the pages. The current page number is listed
+between the navigation arrows. For large results sets, you can also manually
+enter a number into the current page number box - the list will jump to the
+appropriate page. Any invalid numbers (e.g. entering 1000 when there
+are only 10 pages) will be ignored, and after a moment, AtoM will replace the
+value with the current page number.
+
+
+.. SEEALSO::
+
+   * :ref:`browse-authority-records`
+   * :ref:`recurring-facet-filters`
+   * :ref:`archival-institutions`
+   * :ref:`authority-records`
 
 :ref:`Back to top <browse>`
 

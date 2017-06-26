@@ -779,6 +779,85 @@ From the authority record
 
 :ref:`Back to top <authority-records>`
 
+.. _link-repo-actor:
+
+Link an authority record to a repository as its maintainer
+==========================================================
+
+In a :term:`multi-repository system`, it is possible to have two authority
+records for two different individuals with same name. It is also possible to
+have one authority record created and maintained by a single institution, but
+used as a name :term:`access point` or even as the :term:`creator` by many
+other institutions in their descriptions.
+
+To clarify who is responsible for maintaining an authority record and to
+improve actor matching during imports, AtoM includes the ability to link an
+authority record to an :term:`archival institution` as its maintainer.
+
+When a link is created between an authority record and a repository, it will
+additionally appear as a :term:`facet filter` on the authority record browse
+page, and in the list of maintained authority records visible on the archival
+institution's browse page:
+
+.. figure:: images/maintained-auth-list.*
+   :align: center
+   :figwidth: 30%
+   :width: 100%
+   :alt: An image of list of maintained authority records on an archival
+         institution's view page
+
+.. figure:: images/maintained-facet.*
+   :align: center
+   :figwidth: 90%
+   :width: 100%
+   :alt: An image of the "Maintained by" facet on the authority record browse
+         page
+
+.. SEEALSO::
+
+   * :ref:`recurring-facet-filters`
+   * :ref:`csv-actors-import`
+   * :ref:`archival-institutions`
+   * :ref:`browse`
+
+**To link an authority record to an archival institution**
+
+1. First, navigate to the :term:`authority record` you wish to edit. You
+   can do this by :ref:`browsing <browse>` or :ref:`searching <search-atom>`
+   for the :term:`archival description` - see :ref:`access-content` for more
+   information on navigation in AtoM.
+2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
+   button in the :term:`button block`, or by clicking on one of the
+   :term:`information area` headings; this takes you to the record's
+   :term:`edit page`.
+
+.. image:: images/button-block-authority.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block on an authority record
+
+3. In the Control :term:`information area`, place your cursor in the field
+   labelled "Maintaining repository":
+
+.. image:: images/maintaining-repo.*
+   :align: center
+   :width: 90%
+   :alt: An image of the Maintaining repository field
+
+4. The field is an auto-complete :term:`drop-down menu` - it will show the
+   first 10 repository records in the drop-down menu by default. You can also
+   begin typing the name of a repository to find it - as you begin to type,
+   AtoM will update the auto-complete results to show repository records that
+   match. Select the matching repository to which you want to link your
+   authority record from the drop-down list.
+5. When you are finished, scroll down to the :term:`button block` at the
+   bottom of the :term:`edit page` and click the "Save" button. AtoM will
+   reload the page in :term:`view mode` so you can review your work. The
+   related repository will be displayed as a hyperlink in the Control area of
+   your authority record.
+
+:ref:`Back to top <authority-records>`
+
 .. _link-two-authority-records:
 
 Create a relationship between two authority records
@@ -872,10 +951,9 @@ Create a relationship between two authority records
    :alt: An image of the button block when in Edit mode
 
 10. AtoM will reload the :term:`authority record` in :term:`view mode`.
-    :ref:`Back to top <authority-records>`. The relationship is expressed in
-    the "Relationships" :term:`information area` of the authority record's
-    :term:`view page`, and the related record's name will appear as a
-    hyperlink.
+    relationship is expressed in the "Relationships" :term:`information area`
+    of the authority record's :term:`view page`, and the related record's name
+    will appear as a hyperlink.
 
 .. image:: images/relationships-area-view.*
    :align: center
