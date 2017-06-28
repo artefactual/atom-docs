@@ -27,16 +27,21 @@ Prior to AtoM 2.2, only the ingest of `Archivematica <https://www.archivematica.
 DIPs was processed asynchronously. See
 :ref:`Upload DIP <archivematica:upload-atom>` for more details.
 
-As of AtoM 2.2, the ability to generate PDF or RTF
-:term:`finding aids <finding aid>` from
+As of AtoM 2.2, the ability to generate a PDF or RTF :term:`finding aid` from
 :term:`archival descriptions <archival description>`, and the ability to manage
 :ref:`PREMIS <premis-template>` rights inheritance, are now also handled as
-asynchronous :term:`jobs <job>` in AtoM.
+asynchronous :term:`jobs <job>` in AtoM. Later versions of AtoM have increasingly
+used the job scheduler to handle long-running operations, including publication
+status updates, imports and exports, move operations, and more.
 
 .. SEEALSO::
 
    * :ref:`print-finding-aids`
    * :ref:`rights-inheritance`
+   * :ref:`publish-archival-description`
+   * :ref:`move-archival-description`
+   * :ref:`csv-import`
+   * :ref:`csv-export`
 
 Users can see the status of job requests by navigating to |edit| **Manage > Jobs**.
 
@@ -65,13 +70,22 @@ the Manage jobs page.
 **End date**: When the job completed. A status of "N/A" implies that the job is
 still executing.
 
-**Job name**: Indicates the type of job being performed.
+**Job name**: Internal name of the job executed; indicates the type of job
+being performed. Examples include:
 
-* *arGenerateFindingAid* - Generate a :term:`finding aid` in either PDF or RTF
+* *arFindingAidJob* - Generate a :term:`finding aid` in either PDF or RTF
   format from an :term:`archival description`. See: :ref:`print-finding-aids`.
 * *Inherit rights* - Allow :term:`child <child record>` descriptions to inherit
   the :ref:`PREMIS <premis-template>` rights applied to a parent. See:
   :ref:`rights-inheritance`.
+* *arObjectMoveJob* - Move an archival description from one
+   :term:`parent record` to another (or to become a top-level description).
+   See: :ref:`move-archival-description`
+* *arUpdatePublicationStatusJob* - Update the :term:`publication status` of a
+  record and its descendants to either "published" or "draft". See:
+  :ref:`publish-archival-description`.
+* *arFileImportJob*: an import of records, such as a CSV or XML import. See:
+  :ref:`import-export`.
 
 **Job status**: Jobs can have 1 of 3 statuses:
 
@@ -81,8 +95,14 @@ still executing.
 * *Error* - The job failed to complete as requested. If there is any further
   information, it will be included in the "Info" column of the Jobs table.
 
+If the job is related to a specific record, then the Job status column will
+also include a blue arrow icon - this acts as a hyperlink to the related
+record.
+
 **Info**: Provides any available additional information about the status of a
-job.
+job. The Info column also includes a link to the full report from the console
+of the job, also known as the Job details page. For more information, see
+below: :ref:`job-details`.
 
 **User**: The :term:`username` of the AtoM user who initiated the job.
 
@@ -163,6 +183,27 @@ AtoM will indicate this in the jobs page with a message.
    `Gearman <http://gearman.org>`__ and asynchronous job support in AtoM. The
    page also includes some examples of how to manage workers and jobs from the
    command-line - see: :ref:`installation-gearman-job-worker`.
+
+.. _job-details:
+
+The Job details page
+====================
+
+When a job is executed, the task is run by one of the AtoM workers managed by
+the Job scheduler, and all job details are captured by the console and
+recorded to the AtoM worker log. The Job details page provides users with this
+output via the :term:`user interface`. This can be useful in many cases - for
+example, troubleshooting a job that has failed. Additionally, some import
+options allow users to skip matched records and report them in the Job details
+instead - an administrator can then review the output found on the Job details
+page against the original import to determine what records where skipped
+during import. For more information on imports, see: :ref:`import-export`.
+
+.. image:: images/job-details.*
+   :align: center
+   :width: 90%
+   :alt: An example image of the Job details page
+
 
 .. _jobs-permissions:
 
