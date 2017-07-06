@@ -217,6 +217,7 @@ Maintenance
 -----------
 
 * :ref:`maintenance-cli-tools`
+* :ref:`cli-import-export`
 * :ref:`maintenance-clear-cache`
 * :ref:`maintenance-web-analytics`
 * :ref:`maintenance-logging`

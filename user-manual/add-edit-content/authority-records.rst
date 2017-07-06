@@ -565,6 +565,13 @@ Edit an existing authority record
 You will be redirected to the :term:`view page` for the edited
 :term:`authority record`, where you can review your work.
 
+.. TIP::
+
+   Did you know that you can also use a CSV import to update your authority
+   records? See:
+
+   * :ref:`csv-update-actors`
+
 :ref:`Back to top <authority-records>`
 
 .. _link-authority-to-description:
@@ -813,8 +820,15 @@ institution's browse page:
    :alt: An image of the "Maintained by" facet on the authority record browse
          page
 
+For more information on how linking a repository to an authority record can
+improve import matching, see:
+
+* :ref:`csv-actor-matching`
+* :ref:`csv-update-actors`
+
 .. SEEALSO::
 
+   * :ref:`browse-maintained-actors`
    * :ref:`recurring-facet-filters`
    * :ref:`csv-actors-import`
    * :ref:`archival-institutions`

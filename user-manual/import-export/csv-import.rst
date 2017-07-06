@@ -47,20 +47,33 @@ familiarity with using the command line.
 
 **Below are instructions for using the CSV import module in AtoM to:**
 
-* :ref:`Prepare for your import <csv-before-you-import>`
+* :ref:`csv-before-you-import`
 * :ref:`Map legacy IDs to express hierarchical data <csv-legacy-id-mapping>`
-* :ref:`Import archival descriptions <csv-import-descriptions>`
-* :ref:`Import events <csv-import-events>`
-* :ref:`Import archival institutions <csv-import-repositories>`
-* :ref:`Import authority records <csv-import-authority-records>`
-* :ref:`Import accessions <csv-import-accessions>`
-* :ref:`Display progress during a command-line import <csv-import-progress>`
-* :ref:`Load digital objects via the command line <digital-object-load-task>`
-* :ref:`Index your content after an upload <csv-search-indexing>`
+* :ref:`csv-import-descriptions`
+* :ref:`csv-import-descriptions-gui`
+* :ref:`csv-descriptions-updates`
+* :ref:`csv-import-events`
+* :ref:`csv-import-events-gui`
+* :ref:`csv-import-repositories`
+* :ref:`csv-import-repos-ui`
+* :ref:`csv-repo-update`
+* :ref:`csv-import-authority-records`
+* :ref:`csv-import-authority-records-gui`
+* :ref:`csv-update-actors`
+* :ref:`csv-import-accessions`
+* :ref:`csv-import-accessions-gui`
 
 .. SEEALSO::
 
+   All AtoM CSV templates can be found on the AtoM wiki:
+
    * `CSV import templates <https://wiki.accesstomemory.org/Resources/CSV_templates>`__
+
+   CSV imports can also be completed by a system administrator via the
+   command-line interface. For more information, see The Administrator's
+   Manual:
+
+   * :ref:`csv-import-cli`
 
 .. _csv-before-you-import:
 
@@ -84,16 +97,7 @@ CSV.
    please see our section on :ref:`Server migration <server-migration>` in the
    Administrators manual.
 
-.. IMPORTANT::
-   If your CSV import contains physical storage information, the CSV file must contain
-   information in both of the physical object storage fields: *physicalObjectName*
-   and *physicalObjectLocation*. Entering information in *physicalObjectName* only will result in the creation
-   of duplicates, since AtoM defaults to duplicates rather than accidentally merging separate
-   records with the same location. For example, several collections may contain physicalObjectName
-   Box 1, but adding physicalObjectLocation Shelf 1 will differentiate it from Box 1
-   on Shelf 5.
-
-.. _csv-determine-import-complexity:
+  .. _csv-determine-import-complexity:
 
 Determining import complexity
 -----------------------------
@@ -324,6 +328,8 @@ installation. This prevents you from having to delete any improperly imported
 data. During import testing if you want to delete all imported data you can
 use the command-line purge tool.
 
+See: :ref:`cli-purge-data` in the Administrator's manual for more information.
+
 :ref:`Back to top <csv-import>`
 
 
@@ -366,6 +372,23 @@ or reference mappings for a specific data source. This will add a value in
 the *source_name* column of AtoM's keymap table, which can then be used for
 mapping subsequent imports.
 
+.. TIP::
+
+   There is no way to set the ``--source-name`` during an import conducted via
+   the :term`user interface`. Instead, the file name of the import is used as
+   the source name value by default.
+
+   You can always check what source name was used for records created via an
+   import by entering into :term:`edit mode` and navigating to the
+   Administration :term:` area <information area>` of the :term:`edit page` -
+   the source name used will be diplayed there:
+
+   .. image:: images/source-name-ui.*
+      :align: center
+      :width: 90%
+      :alt: An image of the source name used during import, shown in the
+            Administration area of the AtoM edit page.
+
 The following example shows an import of information objects that records a
 specific source name when mapping legacy IDs to AtoM IDs:
 
@@ -405,23 +428,26 @@ AtoM from duplicating import data, such as :term:`terms <term>` and actors
 
 .. _csv-import-descriptions:
 
-Import archival descriptions via CSV
-====================================
+Prepare archival descriptions for CSV import
+============================================
 
-The information object import tool allows you to map CSV columns to AtoM data.
-Example RAD and ISAD CSV template files are available in AtoM source code
-(``lib/task/import/example/rad/example_information_objects_rad.csv`` and
+The AtoM CSV import allows you to map CSV columns with specific headers to
+AtoM data. Example RAD and ISAD CSV template files are available in AtoM source
+code (``lib/task/import/example/rad/example_information_objects_rad.csv`` and
 ``lib/task/import/example/isad/example_information_objects_isad.csv``) or you
 can download the files here:
 
 * https://wiki.accesstomemory.org/Resources/CSV_templates#Archival_descriptions
 
+The following section will introduce some of the relevant CSV columns so you
+can prepare your archival descriptions for import.
+
 Hierarchical relationships
 --------------------------
 
 Information objects often have parent-child relationships - for example, a
-series is a :term:`child <child record>` of the fonds to which it belongs; it
-has a :term:`parent <parent record>` fonds. If you want to import a
+series may be a :term:`child <child record>` of the fonds to which it belongs;
+it has a :term:`parent <parent record>` fonds. If you want to import a
 :term:`fonds` or :term:`collection` into AtoM along with its lower levels of
 description (i.e. its children - series, files, items, etc.), you will need a
 way to specify which rows in your CSV file belong to which parent description.
@@ -530,6 +556,8 @@ new series to the *parentID* column of the new files.
    columns populated in a single row, AtoM will default to use the
    *qubitParentSlug* value. In general, each row must have **only** one or the
    other - either a parent slug, or a parent ID.
+
+.. _csv-descriptions-actor-columns:
 
 Creator-related import columns (actors and events)
 --------------------------------------------------
@@ -662,7 +690,10 @@ the key behaviors are outlined below:
   string to use as the slug - and you will **not** be able to edit this
   through the user interface.
 
-**Attempting to match to existing authority records**
+.. _csv-actor-matching:
+
+Attempting to match to existing authority records on import
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. IMPORTANT::
 
@@ -675,29 +706,130 @@ the key behaviors are outlined below:
    template after the description CSV, you might end up creating duplicate
    authority records!
 
-* AtoM will attempt to find matches for current authority records. However, to
-  avoid collisions, or situations in which multiple imports overwrite the same
-  authority record in a :term:`multi-repository system`, the approach is
-  conservative - for a match to be made and a link to an existing record added
-  instead of a new record being created, the authorized form of name must be
-  an *exact* match.
-* Note that if biographical/administrative history included in the CSV will be
-  ignored - it will **not** update an existing history when a match is made.
-* If there is no exact match on the authorized form of name, then AtoM will
-  create a new actor record. Since AtoM does not currently have the capacity to
-  suspend the import and ask the user whether to update an existing authority
-  record or ignore it and create a new one, this method was chosen as the
-  least destructive. However, this means that currently, administrative or
-  biographical histories CANNOT be updated via an import.
-* This also means that **users should be careful to double check authority
-  linking behaviors in AtoM following an import**, and manually perform any
-  desired adjustments where needed.
+During an archival description CSV import, AtoM will attempt to find matches
+for current authority records, and link to those instead of creating new ones
+during import when possible. However, to avoid collisions, or situations in
+which multiple imports overwrite the same authority record in a
+:term:`multi-repository system`, the approach is conservative - for a match to
+be made and a link to an existing record added instead of a new record being
+created, the authorized form of name must bean *exact* match, **and** the
+existing authority record in AtoM must be linked to the same repository as the
+incoming records' repository column value. The presence of a matching or
+different actor history, and the import type (import as new, match and update,
+or delete and replace) can also affect how actor linking behaves during a CSV
+import.
+
+This means that **users should be careful to double check authority
+linking behaviors in AtoM following an import**, and manually perform any
+desired adjustments where needed.
+
+For more information on linking an authority record to a repository, see:
+:ref:`link-repo-actor`. For more information on the different types of imports,
+see below.
+
+Below is a table summarizing the actor matching behavior on CSV imports of
+archival descriptions. It is followed by an explanation of the columns.
+
++----+-----------------------+---------------+---------------------+------------------+-------------------------------------+
+| #  |      Import type      | Match on name | Match on repository | Match on history |               Outcome               |
++====+=======================+===============+=====================+==================+=====================================+
+| 1  | Any                   | Yes           | Yes (or blank)      | Yes (or blank)   | Linked (no updates)                 |
++----+-----------------------+---------------+---------------------+------------------+-------------------------------------+
+| 2A | New or delete/replace | Yes           | Yes                 | No               | New actor created                   |
++----+-----------------------+---------------+---------------------+------------------+-------------------------------------+
+| 2B | Update                | Yes           | Yes (or blank)      | No               | Linked AND existing history updated |
++----+-----------------------+---------------+---------------------+------------------+-------------------------------------+
+| 3  | Any                   | Yes           | No                  | Yes (or blank)   | Linked (no updates)                 |
++----+-----------------------+---------------+---------------------+------------------+-------------------------------------+
+| 4  | Any                   | Yes           | No                  | No               | New actor created                   |
++----+-----------------------+---------------+---------------------+------------------+-------------------------------------+
+| 5  | Any                   | No            | Yes (or blank)      | Yes  (or blank)  | New actor created                   |
++----+-----------------------+---------------+---------------------+------------------+-------------------------------------+
+
+**Table legend**
+
+* **#**: Scenario number
+* **Import type**: AtoM's CSV import supports 3 modes - import a record as
+  new (ignore any matches found); find matches and update the record in place;
+  or find matches, delete the existing record, and import the current record
+  as a replacement. See more on how to use these options
+  :ref:`below <csv-descriptions-updates>`.
+* **Match on name**: Whether or not the CSV row's ``eventActors`` value matches
+  the existing authority record's authorized form of name.
+* **Match on repository**: Whether or not the CSV row's ``repository`` value
+  matches the Maintaining repository linked to the existing authority record.
+  AtoM includes the ability to link an authority record directly to a
+  repository, and this is used as a match parameter during import. For more
+  information on linking authority records to a repository, see:
+  :ref:`link-repo-actor`.  Note that during match and update imports, a blank
+  value in a CSV is ignored (the original data is not modified) - hence "Yes
+  (or blank)" as a response in some cases.
+* **Match on history**: Whether or not the CSV row's ``eventActorHistories``
+  value matches the biographical or administrative history associated with the
+  existing authority record. Note that during match and update imports, a
+  blank value in a CSV is ignored (the original data is not modified) - hence
+  "Yes (or blank)" as a response in some cases.
+* **Outcome**: Based on the variables in the other columns, whether or not the
+  CSV import will result in linking to an existing authority record (and
+  whether or not any parts of the authority record is updated), or if a new
+  actor is created by the import instead.
+
+**Scenario summaries**
+
+**1**: If you are importing a CSV and there is a match to an existing
+authority record's authorized form of name, history, and the repository the
+existing authority record is linked to matches the repository in the CSV for
+the related description, then AtoM will link to the existing authority record.
+
+**2A**: If you are importing new records or trying to update existing ones
+using "Delete and replace" and there's a match on authority record name AND
+maintaining institution BUT NOT on the admin/bio history, AtoM will create a
+new authority record, instead of overwriting the match's existing history. If
+you wanted to update the existing admin/bio history instead, use the "Match
+and update" option instead.
+
+**2B**: If you are trying to update existing descriptions using the "Match and
+update" option  and there's a match on authority record name AND maintaining
+institution BUT NOT on the admin/bio history, then AtoM will link to the
+existing authority record but update the current admin/bio history to the data
+included in the CSV. If you don't want this to happen, you can either
+exclude the admin/bio history (in which case, no changes will be made to the
+linked authority record) or use the "Delete and replace" import option
+instead (in which case a new authority record will be created).
+
+**3**: If you are importing new descriptions or trying to update existing ones
+and there's a match on an authority record's name AND the history is either
+blank or also matches exactly on the existing authority record, BUT the
+maintaining repository does NOT match (or is blank on the existing authority
+record), then AtoM will link to the existing authority record without making
+any changes to it.
+
+**4**: If you are importing new descriptions or trying to update existing ones
+and there's a match on an authority record's name BUT neither the repository
+NOR the admin/biog history matches, then a new authority record will be created
+(to avoid overwriting another institution's history). If you want to link to
+an existing authority record, omit the history from your CSV import or make it
+exactly match the existing one.
+
+**5**: If you are importing new descriptions or trying to update existing ones
+and there is NO match to any existing authority records on the authorized form
+of the name of the actor in your import CSV, then AtoM will create a new
+authority record on import. You cannot use the descriptions CSV import to
+update the authorized form of name of a linked authority record.
+
+.. IMPORTANT::
+
+   Even with the "Delete and replace" update option **only** the related
+   archival description is deleted - existing authority records and other
+   entities (e.g. :term:`access points <access point>`, etc) are not
+   automatically deleted. If you have created a new authority record, make
+   sure you remember to manually delete any superceded versions!
 
 .. SEEALSO::
 
    * :ref:`ead-actors-import`
 
-.. _csv-import-descriptions-digital-object:
+.. _csv-descriptions-digital-objects:
 
 Digital object-related import columns
 -------------------------------------
@@ -746,6 +878,9 @@ value.
 .. SEEALSO::
 
    * :ref:`upload-digital-object`
+   * :ref:`digital-object-load-task`
+
+.. _csv-descriptions-storage:
 
 Physical object-related import columns
 --------------------------------------
@@ -761,6 +896,17 @@ locations related to an :term:`archival description`.
 
 For more information on working with physical storage in AtoM, see:
 :ref:`physical-storage`.
+
+.. IMPORTANT::
+
+   If your CSV import contains physical storage information, the CSV file must
+   contain information in both of the physical object storage fields:
+   ``physicalObjectName`` and ``physicalObjectLocation``. Entering information
+   in ``physicalObjectName`` only will result in the creation of duplicates,
+   since AtoM defaults to duplicates rather than accidentally merging separate
+   records with the same location. For example, several collections may
+   contain ``physicalObjectName`` Box 1, but adding ``physicalObjectLocation``
+   Shelf 1 will differentiate it from Box 1 on Shelf 5.
 
 Standards related fields
 -------------------------
@@ -780,6 +926,8 @@ being uploaded. This column expects two-letter ISO 639-1 language code
 values - for example, "en" for English; "fr" for French, "it" for Italian,
 etc. See `Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
 for a full list of ISO 639-1 language codes.
+
+.. _csv-descriptions-other-fields:
 
 Other data entry notes
 ----------------------
@@ -804,14 +952,24 @@ Other data entry notes
   section on Accession CSV import :ref:`below <csv-import-accessions>` for more
   information.
 
-
 .. _csv-import-descriptions-gui:
 
-Using the user interface
-------------------------
+Import new archival descriptions via CSV
+========================================
 
-For small imports (i.e. CSV files with less than 100 records), imports can be
-performed via the user interface.
+The following section will introduce how an :term:`archival description` CSV of
+new records can be imported into AtoM via the user interface. AtoM also has
+the ability to use a CSV import to update existing descriptions - for more
+information on this, see :ref:`below <csv-descriptions-updates>`.
+
+When importing new records, AtoM can also check for existing records that seem
+to match the descriptions you are about to import, and skip these records if
+desired - they will be reported in the :ref:`Job details <job-details>` page
+of the related import job (see: :ref:`manage-jobs` for more information). This
+can be useful if you are uncertain if some of the records in your CSV have been
+previously imported - such as when passing records to a portal site or union
+catalogue. For more information on the criteria used during a CSV import to
+identify matches, see below, :ref:`csv-descriptions-match-criteria`.
 
 .. IMPORTANT::
 
@@ -822,7 +980,6 @@ performed via the user interface.
 
    * CSV file is saved with UTF-8 encodings
    * CSV file uses Linux/Unix style end-of-line characters (``/n``)
-   * CSV file is less than 100 records
    * All :term:`parent <parent record>` descriptions appear in rows **above**
      their children
    * All new parent records have a *legacyID* value, and all
@@ -832,6 +989,14 @@ performed via the user interface.
      - if both are present AtoM will default to using the *qubitParentSlug*)
    * Any records to be imported as children of an existing record in AtoM use
      the proper *qubitParentSlug* of the existing parent record
+   * If you have physical storage data in your CSV, you have ensured that all
+     3 physical storage columns are populated with data to avoid the
+     accidental creation of duplicate storage locations (see above,
+     :ref:`csv-descriptions-storage`)
+   * You have reviewed any other relevant data entry guidelines in the section
+     above: :ref:`csv-import-descriptions`
+   * You have reviewed how the :ref:`authority record matching <csv-actor-matching>`
+     behavior works above, and know what to expect with your import.
 
 If you have double-checked the above, you should be ready to import your
 descriptions.
@@ -846,23 +1011,45 @@ descriptions.
    :width: 30%
    :alt: The import menu
 
-2. AtoM will redirect you to the CSV import page. Make sure that the "Type"
-   :term:`drop-down menu` is set to "Archival description".
+2. AtoM will redirect you to the CSV import page. To import new archival
+   descriptions, Make sure that the "Type" :term:`drop-down menu` is set to
+   "Archival description" and the Update behaviors drop-down is set to "Ignore
+   matches and create new records on import."
 
 .. image:: images/csv-import-page.*
    :align: center
    :width: 85%
    :alt: The CSV import page in AtoM
 
-3. Click the "Browse" button to open a window on your local computer. Select
-   the CSV file that you would like to import.
+3. AtoM can check for existing records that seem to match the descriptions
+   you are about to import, and skip these records if desired - they will be
+   reported in the :ref:`Job details <job-details>` page of the related import
+   job (see: :ref:`manage-jobs` for more information). To enable this option
+   and skip matched records, click the checkbox labelled "Skip matched
+   records."
+
+4. If you do not want your files indexed during the import, you can click the
+   checkbox labelled "Do not index imported items." This will prevent the new
+   records from automatically being added to AtoM's search index.
+
+.. WARNING::
+
+   If you do not index your records during import, they will not be
+   discoverable via search or browse in the user interface! You will need to
+   know the exact URL to reach them. To make them visible in the interface
+   again, a system administrator will need to rebuild the search index. See:
+   :ref:`maintenance-populate-search-index`.
+
+5. When you have configured your import options, click the "Browse" button to
+   open a window on your local computer. Select the CSV file that you would
+   like to import.
 
 .. image:: images/csv-import-browse.*
    :align: center
    :width: 25%
    :alt: Clicking the "Browse" button in the CSV import page
 
-4. When you have selected the file from your device, its name will appear
+6. When you have selected the file from your device, its name will appear
    next to the "Browse" button. Click the "Import" button located in the
    :term:`button block` to begin your import.
 
@@ -874,27 +1061,28 @@ descriptions.
 .. NOTE::
 
    Depending on the size of your CSV import, this can take some time to
-   complete. Be patient! Remember, uploads performed via the user interface
-   are limited by the browser's timeout limits - this is one of the reasons
-   we recommend importing only smaller CSV files via the user interface.
+   complete. Be patient! Remember, you can always check on the status of an
+   import by reviewing the :ref:`Job details <job-details>` page of the related
+   import job - see: :ref:`manage-jobs` for more information.
 
-5. After your import is complete, AtoM will list the amount of time the
-   import took, and provide a link to the :term:`archival description` browse
-   page. Unlike the XML import, a link directly to your import is not
-   provided, because a CSV upload may contain multiple descriptions; instead,
-   a link to the browse page is given, so users can locate their
-   descriptions.
+7. After your import is complete, AtoM will indicate that the import has been
+   initiated. A notification at the top of the page will also provide you with
+   a link to the :ref:`Job details <job-details>` page of the related import
+   job. Alternatively, you can click the "Back" button in the
+   :term:`button block` at the bottom of the page to return to the CSV import
+   page, or navigate elsewhere in the application.
 
 .. image:: images/csv-import-completed.*
    :align: center
    :width: 85%
-   :alt: Starting a CSV import in AtoM
+   :alt: When a CSV import has been initiated in AtoM
 
 .. TIP::
 
-   Use the :ref:`sort button <recurring-sort-button>` located in the
-   top-right hand side of the browse page to change the results display to be
-   ordered by "Most recent" if it is not already - that way, the most
+   Want to find your recent imports? You can use the
+   :ref:`sort button <recurring-sort-button>` located in the top-right hand
+   side of the archival description browse page to change the results display
+   to be ordered by "Most recent" if it is not already - that way, the most
    recently added or edited descriptions will appear at the top of the
    results. If you have come directly here after importing your descriptions,
    they should appear at the top of the results.
@@ -904,163 +1092,445 @@ descriptions.
       :width: 85%
       :alt: The browse page following a CSV import
 
-6. If any warnings or errors are encountered, AtoM will also display them on
-   the import page. Some warnings will cause an import to fail (and some will
-   not - they will alert the user, but the import will still complete), while
-   all error messages mean that the import has failed, and a link to the
-   :term:`archival description` browse page will not be provided. - instead,
-   the CSV upload page will reappear below the error message. Errors can
+
+8. If any warnings or errors are encountered, AtoM will display them on
+   :ref:`Job details <job-details>` page of the related import job.
+   Generally, errors will cause an import to fail, while warnings will be
+   logged but will allow the import to proceed anyway. Errors can
    occur for many reasons - please review the checklist
    :ref:`above <csv-import-descriptions-gui>` for suggestions on resolving
-   the most common reasons that CSV imports fail.
+   the most common reasons that CSV imports fail. In the example pictured
+   below, the CSV includes a ``qubitParentSlug`` value for a description that
+   does not exist - so AtoM cannot attach the CSV row description to its
+   intended parent:
 
 .. image:: images/csv-import-error.*
   :align: center
   :width: 85%
   :alt: An error message from a failed CSV import
 
-.. _csv-import-descriptions-cli:
+:ref:`Back to top <csv-import>`
 
-Using the command-line interface (CLI)
---------------------------------------
+.. _csv-descriptions-updates:
 
-For larger CSV imports (e.g. those with 100 or more records), we recommend
-using the Command-line interface to import your descriptions.
+Update existing descriptions via CSV import
+===========================================
 
-Example use (with the RAD CSV template) - run from AtoM's root directory:
+AtoM's CSV import includes the ability to use the import to update existing
+descriptions in two different ways, depending on the outcome desired. After
+attempting to identify existing matches, AtoM can either delete the existing
+match and replace it with the matched row in the CSV import, or it can attempt
+to use the matched CSV row to update the description in-place with new data.
+Both options (and their limitations) will be explained further below, along
+with the additional import options available when importing updates.
 
-.. code-block:: bash
+**Jump to:**
 
-   php symfony csv:import lib/task/import/example/rad/example_information_objects_rad.csv
+* :ref:`csv-descriptions-match-criteria`
+* :ref:`csv-descriptions-update-match`
+* :ref:`csv-descriptions-delete-replace`
+* :ref:`csv-descriptions-updates-ui`
 
-.. _csv-cli-options:
+.. _csv-descriptions-match-criteria:
 
-Command-line options
-^^^^^^^^^^^^^^^^^^^^
+Matching criteria for archival descriptions
+-------------------------------------------
 
-.. image:: images/cliopts.*
-  :align: center
-  :width: 85%
-  :alt: An image of the command-line options for CSV import
+AtoM uses the following cascading criteria when checking for matches on
+existing archival descriptions during a CSV import:
 
-By typing ``php symfony help csv:import`` into the command-line from your root
-directory, without specifying the location of a CSV, you will able able to
-see the CSV import options available (pictured above). A brief explanation of
-each is included below.
-
-The ``--application``, ``--env``, and ``connection`` options **should not be
-used** - AtoM requires the uses of the pre-set defaults for symfony to be
-able to execute the import.
-
-The ``--rows-until-update`` option can be used for a simple visual
-representation of progress in the command-line. Enter a whole integer, to
-represent the number of rows should be imported from the CSV before the
-command-line prints a period (e.g. `` . `` ) in the console, as a sort of
-crude progress bar. For example, entering ``--rows-until-update=5`` would
-mean that the import progresses, another period will be printed every 5 rows.
-This is a simple way to allow the command-line to provide a visual output of
-progress. For further information on the ``--rows-until-update`` option and an
-example of the command-line option in use, see also the section below,
-:ref:`csv-import-progress`.
-
-You can use the ``--skip-rows`` option to skip **X** amount of rows in the CSV
-before beginning the import. This can be useful if you have interrupted the
-import, and wish to re-run it without duplicating the records already
-imported. ``--skip-rows=10`` would skip the first 10 rows in the CSV file,
-for example. Note that this count does **not** inlcude the header column, so
-in fact, the above example would skip the header column, and rows 2-11 in
-your CSV file.
-
-The ``--error-log`` option can be used to specify a directory where errors
-should be logged. **Note that this option has not been tested by Artefactual
-developers**.
-
-Use the ``--source-name`` option (described :ref:`above <csv-legacy-id-mapping>`
-to specify a source when importing information objects from multiple sources
-(with possibly conflicting legacy IDs). This will ensure that multiple related
-CSV files will remain related - so, for example, if you import an
-:term:`archival description` CSV, and then supplement the
-:term:`authority records <authority record>` created (from the *creators* field
-in the description CSV templates) with an authority record CSV import, using the
-``--source-name`` option will make sure that matching names are linked and
-related, instead of duplicate authority records being created. You can also
-use this option to relate a large import that is broken up into multiple
-CSV files. See the :ref:`csv-legacy-id-mapping` section above for further
-tips and details on the uses of this option.
-
-The ``--default-legacy-parent-id`` option will allow the user to set a default
-*parentID* value - for any row in the CSV where no *parentID* value is
-included and no *qubitParentSlug* is present, this default value will be
-inserted as the *parentID*.
-
-Similarly, the ``--default-parent-slug`` option allows a user to set a
-default *qubitParentSlug* value - wherever no slug value or *parentID* /
-*legacyID*  is included, AtoM will populate the *qubitParentSlug* with the
-default value. If you are importing **all** rows in a CSV file to one parent
-description already in AtoM, you could use the ``--default-parent-slug`` option
-to specify the target :term:`slug` of the parent, and then leave the *legacyID*,
-*parentID*, and *qubitParentSlug* columns blank in your CSV. **Note** that this
-example will affect ALL rows in a CSV - so use this **only** if you are
-importing all descriptions to a single parent!
-
-By default, AtoM will build the
-`nested set <http://en.wikipedia.org/wiki/Nested_set_model>`__ after an import
-task. The nested set is a way to manage hierarchical data stored in the flat
-tables of a relational database. However, as Wikipedia notes, "Nested sets are
-very slow for inserts because it requires updating left and right domain values
-for all records in the table after the insert. This can cause a lot of database
-thrash as many rows are rewritten and indexes rebuilt." When performing a large
-import, it can therefore sometimes be desirable to disable the building of the
-nested set during the import process, and then run it as a separate command-line
-task following the completion of the import. To achieve this, the
-``--skip-nested-set-build`` option can be used to disable the default behavior.
-
-**NOTE** that the nested set WILL need to be built for AtoM to behave as
-expected. You can use the following command-line task, from the AtoM root
-directory, to rebuild the nested set if you have disabled during import:
-
-.. code-block:: bash
-
-   php symfony propel:build-nested-set
+* First AtoM will look for an exact match in the ``legacyID`` and the
+  ``source_name`` value (for more information on ``source_name``, see above:
+  :ref:`csv-legacy-id-mapping`). During a CSV import via the user interface,
+  the default source name value stored will be the filename of the CSV.
 
 .. TIP::
 
-   Want to learn more about why and how nested sets are used? Here are a few
-   great resources:
+   You can always check what source name was used for records created via an
+   import by entering into :term:`edit mode` and navigating to the
+   Administration :term:`area <information area>` of the :term:`edit page` -
+   the source name used will be diplayed there:
 
-   * Mike Hyllier's article on
-     `Managing Hierarchical data in MySQL <http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/>`__
-   * Evan Petersen's discussion of `nested sets <http://www.evanpetersen.com/item/nested-sets.html>`__
-   * Wikipedia's `Nested set model <http://en.wikipedia.org/wiki/Nested_set_model>`__
+   .. image:: images/source-name-ui.*
+      :align: center
+      :width: 90%
+      :alt: An image of the source name used during import, shown in the
+            Administration area of the AtoM edit page.
 
-Similarly, when using the :ref:`user interface <csv-import-descriptions-gui>`
-to perform an import, the import is indexed automatically - but when running
-an import via the command-line interface, indexing is disabled by default.
-This is because indexing during import can be incredibly slow, and the
-command-line is generally used for larger imports. Generally, we recommend a
-user simply clear the cache and rebuild the search index following an import -
-from AtoM's root directory, run:
+* If no match is found on ``legacyID`` and ``source_name``, then AtoM will
+  look for an exact match on **title, repository, and identifier**.
+* If there is no exact match on all of these 3 values, then the record is
+  considered not to have a match. Depending on user settings during import, it
+  will either import as new, or be skipped and reported in the Job details page.
 
-.. code-block:: bash
+The **default behavior** when no match is found during an updates import is to
+import the record as a new description. However, AtoM does have an option in
+the user interface (and in the command-line options) to skip unmatched
+records. When this option is selected, any records that do not match
+existing descriptions will be ignored during the import, and reported in the
+console log shown on the :ref:`Job details <job-details>` page of the related
+import job (see: :ref:`manage-jobs` for more information). This is recommended
+if you are intending to only import updates to existing records.
 
-   php symfony cc && php symfony search:populate
+.. image:: images/csv-match-options.*
+   :align: center
+   :width: 90%
+   :alt: An image of the matching options on the CSV import page
 
-However, if a user would like to index the import as it progresses, the
-``--index`` option can be used to enable this.
+.. WARNING::
+
+   If you are working with hierarchical data and you include a ``parentID``
+   value in a CSV import that cannot be matched on import (for example, the
+   parent is not included in the CSV, and a matching parentID is not found in
+   the keymap table duing import, AtoM will add the record as a top-level
+   description. The console output shown on the :ref:`Job details <job-details>`
+   page of the related import job will say "attaching to root" for that
+   record.
+
+   If you don't want this to happen, make sure you use the "Skip unmatched"
+   option!
+
+You can also narrow the scope of the matching criteria to either records
+linked to a specific :term:`repository` (i.e. an :term:`archival institution`),
+or a specific :term:`archival unit` (i.e. a top-level description such as a
+:term:`fonds` or :term:`collection`, etc.). To avoid contradictory options,
+AtoM will only allow one of these parameters to be specified at a time. These
+options are useful for ensuring that you are matching the correct descriptions
+before updating them - for example, when importing updates to the records of
+one specific institution into a :term:`multi-repository system`.
+
+.. _csv-descriptions-update-match:
+
+Update matches in place
+-----------------------
+
+AtoM's first option for updates allows you to use incoming CSV data as an
+update to existing descriptions. Whenever a match is found for an existing
+description, AtoM will use the data in the CSV to update the related
+:term:`field` in place. If a column is left blank in the updates CSV, it will
+be ignored (it will not overwrite existing data by erasing it).
+
+To import a CSV as updates to existing descriptions, select the option
+"Update matches ignoring blank fields in CSV" from the "Update behaviours"
+:term:`drop-down menu` on the CSV import page.
+
+.. image:: images/csv-update-match.*
+   :align: center
+   :width: 80%
+   :alt: An image of the Update matches option in the CSV import user
+         interface
+
+.. IMPORTANT::
+
+   AtoM can only update description fields that are stored in the primary
+   information object database table using this method. This means that
+   related entities (such as :term:`events <event>`,
+   :term:`creators <creator>`, :term:`access points <access point>`,
+   physical storage locations, etc.) **cannot be deleted or updated with this
+   method**. You can add additional related entities, but the old ones will be
+   left in place. There is code to prevent duplication however - so if you
+   have left the same creator/event information as previously, it will be
+   ignored.
+
+   The one exception to this is updating the biographical or administrative
+   history of a related :term:`authority record`, which requires specifc
+   criteria. See scenario **2B** in the section above,
+   :ref:`csv-actor-matching`.
+
+   Additionally, in AtoM notes are stored in a different database table - this
+   includes the General note, Archivist's note, and the RAD- and DACS-specific
+   note type fields in AtoM's archival description templates. This means that
+   in addition to related entities, **notes cannot be deleted or updated with
+   this method**
+
+   If you wish to make updates to these entitites or fields, consider using
+   the "Delete and replace" update option instead - though be sure to read up
+   on the behavior and limitations of that method as well!
+
+If a match is not found during the import, the default behavior is to import
+the CSV row as a new record. If you are only importing updates, we recommend
+clicking the checkbox for the "Skip unmatched records" - AtoM will then skip
+any unmatched CSV rows and report them in the console log shown on the
+:ref:`Job details <job-details>` page of the related import job.
+
+Specific instructions on configuring the :term:`user interface` for import are
+included below - see: :ref:`csv-descriptions-updates-ui`.
+
+.. _csv-descriptions-delete-replace:
+
+Delete matches and replace with imported records
+------------------------------------------------
+
+AtoM's second update option allows you to identify matched descriptions during
+import, and then delete the matches prior to importing the CSV data as a new
+record to replace it.
+
+Note that **only** the matched :term:`archival description` and its
+:term:`children <child record>` are deleted during this process. Any
+related/linked :term:`entities <entity>` (such as an :term:`authority record`
+linked as a :term:`creator`, subject/place/name/genre
+:term:`access points <access point>`, linked
+:term:`accession <accession record>` records, physical storage locations,
+etc.) **are not automatically deleted**. If you want these fully removed, you
+will have to find them and manually delete them via the user interface after
+the import.
+
+Once the original matched archival description has been deleted, the CSV
+import proceeds as if the record is new. That is to say, just as AtoM does not
+automatically delete related entities in the original archival
+description, it *also* not automatically re-link previously related entities.
+Instead, AtoM will use its default matching behaviors to determine if related
+entities in the import (such as a :term:`creator` in the ``eventActors`` CSV
+column) should be linked to existing records in AtoM, or created as new
+records during the import. AtoM's matching criteria for authority records is
+outlined above - see: :ref:`csv-actor-matching`
+
+To import an archival description CSV of records as replacements for existing
+descriptions in AtoM, select the "Delete matches and replace with imported
+records" option from the "Update behaviours" :term:`drop-down menu` on the CSV
+import page.
+
+.. image:: images/csv-update-delete.*
+   :align: center
+   :width: 80%
+   :alt: An image of the Delete and replace updates option in the CSV import
+         user interface
+
+If a match is not found during the import, the default behavior is to import
+the CSV row as a new record. If you are only importing updates, you can click
+the checkbox for the "Skip unmatched records" if desired - AtoM will then skip
+any unmatched CSV rows and report them in the console log shown on the
+:ref:`Job details <job-details>` page of the related import job.
+
+.. WARNING::
+
+   It is very difficult to use the "Skip unmatched records" option with a
+   "Delete and replace" import when working with hierarchical data. Once a
+   match is found for the top-level description (e.g. the root
+   :term:`parent record`), AtoM will then proceed to delete the
+   original description and all of its :term:`children <child record>` (e.g.
+   lower level records). This means that when AtoM gets to the next child row
+   in the CSV, it will find no match in the database - because it has already
+   deleted the children - and the records will therefore be skipped and not
+   imported.
+
+   Unless you are **only** updating standalone descriptions (e.g. descriptions
+   with no children), we do not recommend using the "Skip unmatched records"
+   with the "Delete and replace" import update method.
+
+Specific instructions on configuring the :term:`user interface` for import are
+included below - see: :ref:`csv-descriptions-updates-ui`.
+
+.. _csv-descriptions-updates-ui:
+
+Importing updates via the user interface
+----------------------------------------
+
+.. IMPORTANT::
+
+   Before proceeding, make sure that you have reviewed the preparation
+   instructions above, to ensure that your CSV import will work. Here is a
+   basic checklist of things to check for importing a CSV of archival
+   descriptions updates via the user interface:
+
+   * CSV file is saved with UTF-8 encodings
+   * CSV file uses Linux/Unix style end-of-line characters (``/n``)
+   * All :term:`parent <parent record>` descriptions appear in rows **above**
+     their children
+   * All new parent records have a *legacyID* value, and all
+     :term:`children <child record>` include the parent's *legacyID* value in
+     their *parentID* column
+   * No row uses both *parentID* and *qubitParentSlug* (only one should be used
+     - if both are present AtoM will default to using the *qubitParentSlug*)
+   * Any records to be imported as children of an existing record in AtoM use
+     the proper *qubitParentSlug* of the existing parent record
+   * You have reviewed how the :ref:`authority record matching <csv-actor-matching>`
+     behavior works above, and know what to expect with your import.
+   * If you are using the "Delete and replace" method with hierarchical data -
+     don't use the "Skip unmatched records" option as well (see above,
+     :ref:`csv-descriptions-delete-replace`).
+   * If you are using the "Update matches ignoring blank fields in CSV"
+     option, you have reviewed which entities and fields cannot be updated
+     using this method (see above, :ref:`csv-descriptions-update-match`).
+
+If you have double-checked the above, you should be ready to import your
+updates.
+
+**To import a CSV file of description updates via the user interface:**
+
+1. Click on the |import| :ref:`Import <main-menu-import>` menu, located in
+   the AtoM :ref:`header bar <atom-header-bar>`, and select "CSV".
+
+.. image:: images/import-menu-csv.*
+   :align: center
+   :width: 30%
+   :alt: The import menu
+
+2. AtoM will redirect you to the CSV import page. Make sure that the "Type"
+   :term:`drop-down menu` is set to "Archival description" .
+
+.. image:: images/csv-import-page.*
+   :align: center
+   :width: 85%
+   :alt: The CSV import page in AtoM
+
+3. Select the type of update import you want to initiate.
+
+   To update existing archival descriptions in place, select the option
+   "Update matches ignoring blank fields in CSV" from the "Update behaviours"
+   :term:`drop-down menu` on the CSV import page.
+
+   .. image:: images/csv-update-match.*
+      :align: center
+      :width: 80%
+      :alt: An image of the Update matches option in the CSV import user
+            interface
+
+   To delete existing matched archival descriptions and replace them with the
+   data in your CSV, select the "Delete matches and replace with imported
+   records" option from the "Update behaviours" :term:`drop-down menu` on the
+   CSV import page.
+
+   .. image:: images/csv-update-delete.*
+      :align: center
+      :width: 80%
+      :alt: An image of the Delete and replace updates option in the CSV import
+            user interface
+
+.. TIP::
+
+   You can read more about each update option in the sections above:
+
+   * :ref:`csv-descriptions-update-match`
+   * :ref:`csv-descriptions-delete-replace`
+
+4. AtoM's default behavior when it cannot find a match during an update import
+   is to import the CSV row as a new record. However, if you are **only**
+   importing updates and don't want to accidentally create new records when no
+   match is found, you can check the "Skip unmatched records" checkbox. Any
+   unmatched records will not be imported - instead, skipped records will be
+   reported in the :ref:`Job details <job-details>` page of the related import
+   job (see: :ref:`manage-jobs` for more information).
+
+.. image:: images/csv-match-options.*
+   :align: center
+   :width: 85%
+   :alt: The Match options available on the archival description CSV import
+         page.
+
+5. To improve the default matching behavior (described in detail above:
+   :ref:`csv-descriptions-match-criteria`), you can provide further criteria
+   to help AtoM find the correct match. You can limit the matches to either
+   the :term:`holdings` of a specific :term:`repository`, or if you are
+   updating a single :term:`archival unit`, you can limit matches to a
+   specific top-level description. To prevent contradictory options, these
+   limiters are mutually exclusive - you cannot pick a repository AND a
+   top-level description.
+
+   To limit your matches to the holdings of a specifc
+   :term:`archival institution`, use the :term:`drop-down menu` to select the
+   name of the related institution
+
+   To limit your matches to a specific top-level description, place your
+   cursor in the "Top-level description" field and begin to slowly type the
+   name of the top-level description. This :term:`field` is an autcomplete
+   menu - as you begin to type, AtoM will display matching records in the
+   :term:`drop-down menu` that will appear below. When you see the top-level
+   description you want to use as a match limit, click on it in the drop-down
+   menu to select it.
+
+6. If you do not want your files indexed during the import, you can click the
+   checkbox labelled "Do not index imported items." This will prevent the new
+   records from automatically being added to AtoM's search index.
+
+.. WARNING::
+
+   If you do not index your records during import, they will not be
+   discoverable via search or browse in the user interface! You will need to
+   know the exact URL to reach them. To make them visible in the interface
+   again, a system administrator will need to rebuild the search index. See:
+   :ref:`maintenance-populate-search-index`.
+
+7. When you have configured your import options, click the "Browse" button to
+   open a window on your local computer. Select the CSV file that you would
+   like to import as your update.
+
+.. image:: images/csv-import-browse.*
+   :align: center
+   :width: 25%
+   :alt: Clicking the "Browse" button in the CSV import page
+
+8. When you have selected the file from your device, its name will appear
+   next to the "Browse" button. Click the "Import" button located in the
+   :term:`button block` to begin your import.
+
+.. image:: images/csv-import-start-2.*
+   :align: center
+   :width: 85%
+   :alt: Starting a CSV import update in AtoM
+
+.. NOTE::
+
+   Depending on the size of your CSV import, this can take some time to
+   complete. Be patient! Remember, you can always check on the status of an
+   import by reviewing the :ref:`Job details <job-details>` page of the related
+   import job - see: :ref:`manage-jobs` for more information.
+
+9. After your import is complete, AtoM will indicate that the import has been
+   initiated. A notification at the top of the page will also provide you with
+   a link to the :ref:`Job details <job-details>` page of the related import
+   job. Alternatively, you can click the "Back" button in the
+   :term:`button block` at the bottom of the page to return to the CSV import
+   page, or navigate elsewhere in the application.
+
+.. image:: images/csv-import-completed.*
+   :align: center
+   :width: 85%
+   :alt: When a CSV import has been initiated in AtoM
+
+.. TIP::
+
+   Want to find your recently updated records? You can use the
+   :ref:`sort button <recurring-sort-button>` located in the top-right hand
+   side of the archival description browse page to change the results display
+   to be ordered by "Most recent" if it is not already - that way, the most
+   recently added or edited descriptions will appear at the top of the
+   results. If you have come directly here after importing your descriptions,
+   they should appear at the top of the results.
+
+   .. image:: images/csv-import-browse-page.*
+      :align: center
+      :width: 85%
+      :alt: The browse page following a CSV import
+
+10. If any warnings or errors are encountered, AtoM will display them on
+    :ref:`Job details <job-details>` page of the related import job.
+    Generally, errors will cause an import to fail, while warnings will be
+    logged but will allow the import to proceed anyway. Errors can
+    occur for many reasons - please review the checklist
+    :ref:`above <csv-descriptions-updates-ui>` for suggestions on resolving
+    the most common reasons that CSV import updates fail.
 
 :ref:`Back to top <csv-import>`
 
+
 .. _csv-import-events:
 
-Import events via CSV
-=====================
+Prepare events for CSV import
+=============================
 
-The information object (e.g., :term:`archival description`) import tool allows
-you to import creation events, but doesn't accommodate other types of events,
-such as accumulation, broadcasting, etc).
-
-For this the event import tool is better suited and should be run after you
-import your information objects.
+The Events CSV import can be used to supplement the types of events that
+associate an actor (represented in AtoM by an :term:`authority record`) and
+an information object (represented in AtoM by an :term:`archival description`.
+In AtoM's data model, an :term:`archival description` is a description of a
+record, understood as the documentary evidence created by an action - or event.
+It is events that link actors to  descriptions - see :ref:`entity-types` for
+more information, and see the section above for more information on actors and
+events in the archival description CSV: :ref:`csv-descriptions-actor-columns`.
+The Events CSV can be useful for adding other event types to relate actors to
+descriptions, such as publication, broadcasting, editing, etc. At this time,
+the events import will **only** work with archival descriptions that have been
+created via import.
 
 The event import processes 3 CSV columns: *legacyId*, *eventActorName*, and
 *eventType*. The *legacyId* should be the legacy ID of the information object the
@@ -1073,34 +1543,33 @@ template file is available in the AtoM source code
 
 .. IMPORTANT::
 
-   Before proceeding, make sure that you have reviewed the instructions
-   above, to ensure that your CSV import will work. Here is a basic checklist
-   of things to check for importing a CSV of events via the user interface:
+   Before proceeding, make sure that you have reviewed the general CSV instructions
+   above, to ensure that your CSV import will work. Here is a basic checklist of
+   things to check before importing a CSV of events:
 
-   * Target description was imported using either the command line or the CSV
-     import feature - events import will *not* work with descriptions created
-     in the user interface.
-   * CSV file is saved with UTF-8 encodings
-   * CSV file uses Linux/Unix style end-of-line characters (``/n``)
-   * CSV file is less than 100 records if importing via the :term:`user interface`
+   * The target description was imported using either the command line or the
+     CSV import in the :term:`user interface` - events import will **not** work
+     with descriptions created in the user interface.
+   * The CSV file is saved with UTF-8 encodings
+   * The CSV file uses Linux/Unix style end-of-line characters (``/n``)
    * All *legacyID* values entered correspond to the *legacyID* values of
      their corresponding archival descriptions
-   * If you are referencing existing
-     :term:`authority records <authority record>` already in AtoM, make sure
-     that the name used in the *actorName* column matches the authorized form
-     of name in the authority record exactly.
+   * The events CSV file should be renamed to match the ``source_name`` value
+     of the previous import. See above for more information,
+     :ref:`csv-legacy-id-mapping`.
+   * If you are referencing existing :term:`authority records <authority record>`
+     already in AtoM, make sure that the name used in the *actorName* column
+     matches the authorized form of name in the authority record exactly. See
+     above for more information on how AtoM attempts to identify authority
+     record matches: :ref:`csv-actor-matching`.
 
 If you have double-checked the above, you should be ready to import your
 events.
 
-
 .. _csv-import-events-gui:
 
-Using the user interface
-------------------------
-
-For small imports (i.e. CSV files with less than 100 records), imports can be
-performed via the user interface.
+Import events via CSV
+=====================
 
 **To import an events CSV file via the user interface:**
 
@@ -1115,10 +1584,10 @@ performed via the user interface.
 2. AtoM will redirect you to the CSV import page. Make sure that the "Type"
    :term:`drop-down menu` is set to "Event".
 
-.. image:: images/csv-import-page.*
+.. image:: images/csv-import-page-events.*
    :align: center
    :width: 85%
-   :alt: The CSV import page in AtoM
+   :alt: The CSV Events import page in AtoM
 
 3. Click the "Browse" button to open a window on your local computer. Select
    the events CSV file that you would like to import.
@@ -1128,108 +1597,142 @@ performed via the user interface.
    :width: 25%
    :alt: Clicking the "Browse" button in the CSV import page
 
-4. When you have selected the file from your device, its name will appear
+4. If you do not want your files indexed during the import, you can click the
+   checkbox labelled "Do not index imported items." This will prevent the new
+   records from automatically being added to AtoM's search index.
+
+.. WARNING::
+
+   If you do not index your records during import, they will not be
+   discoverable via search or browse in the user interface! You will need to
+   know the exact URL to reach them. To make them visible in the interface
+   again, a system administrator will need to rebuild the search index. See:
+   :ref:`maintenance-populate-search-index`.
+
+5. When you have selected the file from your device, its name will appear
    next to the "Browse" button. Click the "Import" button located in the
    :term:`button block` to begin your import.
 
-.. image:: images/csv-import-start.*
+.. image:: images/import-button-block.*
    :align: center
-   :width: 85%
-   :alt: Starting a CSV import in AtoM
+   :width: 80%
+   :alt: The import button on the CSV import page
 
 .. NOTE::
 
    Depending on the size of your CSV import, this can take some time to
-   complete. Be patient! Remember, uploads performed via the user interface
-   are limited by the browser's timeout limits - this is one of the reasons
-   we recommend importing only smaller CSV files via the user interface.
+   complete. Be patient! Remember, you can always check on the status of an
+   import by reviewing the :ref:`Job details <job-details>` page of the related
+   import job - see: :ref:`manage-jobs` for more information.
 
-.. _csv-import-events-cli:
+6. After your import is complete, AtoM will indicate that the import has been
+   initiated. A notification at the top of the page will also provide you with
+   a link to the :ref:`Job details <job-details>` page of the related import
+   job. Alternatively, you can click the "Back" button in the
+   :term:`button block` at the bottom of the page to return to the CSV import
+   page, or navigate elsewhere in the application.
 
-Using the command-line interface (CLI)
---------------------------------------
-
-For larger CSV imports (e.g. those with 100 or more records), we recommend
-using the Command-line interface to import your descriptions.
-
-Example use - run from AtoM's root directory:
-
-.. code-block:: bash
-
-   php symfony csv:event-import lib/task/import/example/example_events.csv
-
-There are also various command-line options that can be used, as illustrated in
-the options depicted in the image below:
-
-.. image:: images/csv-event-options.*
+.. image:: images/csv-import-completed.*
    :align: center
    :width: 85%
-   :alt: An image of the command-line options for events imports
+   :alt: When a CSV import has been initiated in AtoM
 
-By typing ``php symfony help csv:event-import`` into the command-line from your
-root directory, without specifying the location of a CSV, you will able able to
-see the CSV import options available (pictured above). A brief explanation of
-each is included below.
+.. WARNING::
 
-The ``--application``, ``--env``, and ``connection`` options **should not be
-used** - AtoM requires the uses of the pre-set defaults for symfony to be
-able to execute the import.
+   There is a known bug in AtoM where Events that are imported via CSV will
+   require further manual editing post-import to make them visible in AtoM's
+   user interface. Please see note 7 in the following issue ticket for more
+   information:
 
-The ``--rows-until-update``, ``--skip-rows``, and ``--error-log`` options can
-be used the same was as described in the section :ref:`above <csv-cli-options>`
-on importing descriptions. For more information on the ``--rows-until-update``
-option, see also the section below, :ref:`csv-import-progress`.
+   * https://projects.artefactual.com/issues/9649#note-7
 
-Use the ``--source-name`` to specify a source importing to a AtoM installation
-in which information objects from multiple sources have been imported, and/or
-to associate it explicitly with a previously-imported CSV file that used the
-same ``--source-name`` value. An example is provided
-:ref:`above <csv-legacy-id-mapping>` in the section on legacy ID mapping.
-
-The ``--event-types`` option is deprecated, and no longer supported in AtoM.
-
-:ref:`Back to top <csv-import>`
 
 .. _csv-import-repositories:
 
-Import archival institutions via CSV
-====================================
+Prepare archival institution records for CSV import
+===================================================
 
 You can import repositories (i.e. :term:`archival institutions <archival institution>`
-into AtoM as well. At this time, there is no support for importing a
-repository CSV via the :term:`user interface` - however, the command-line
-may be used.
+into AtoM as well. At this time, there is not support for importing all
+repository record data fields into AtoM. However, most fields are supported.
 
 Find the example CSV import template here:
 
 * https://wiki.accesstomemory.org/Resources/CSV_templates#Other_CSV_templates
 
-CSV columns
------------
+.. SEEALSO::
 
-* The *uploadLimit* column allows a user to set a default upload limit for a
-  repository at the time of import. This value should be a number,
-  representing Gigabytes. For more information on the use of respository
-  upload limits in AtoM, see: :ref:`upload-limit`.
-* Almost all other fields are drawn directly from the archival institution
-  edit template in AtoM, which is based upon the International Council on
-  Archives' International Standard for Describing Institutions with Archival
-  Holdings (`ISDIAH <http://www.ica.org/10198/standards/isdiah-international-standard-for-describing-institutions-with-archival-holdings.html>`__).
-  For more information on the use of each field, see: :ref:`isdiah-template`.
+   * :ref:`archival-institutions`
 
-  * Most fields in the CSV template have been named in a fairly obvious way,
-    translating a simplified version of the field name in our data entry
-    templates into a condensed `camelCase <http://en.wikipedia.org/wiki/CamelCase>`__.
-    For example, ISDIAH 5.3.2, Geographical and cultural context (in the
-    Description :term:`Area <information area>`) becomes *geoCulturalContext*
-    in the CSV template. Consult the :ref:`ISDIAH <isdiah-template>` for further
-    help with fields.
+Repository CSV columns
+----------------------
 
-* The *culture* column indicates to AtoM the language of the descriptions
-  being uploaded. This column expects two-letter ISO 639-1 language code
-  values - for example, "en" for English; "fr" for French, "it" for Italian,
-  etc. See `Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
-  for a full list of ISO 639-1 language codes.
+The ``legacyID`` column is a required field, used only internally. Add a
+unique numeric value to this column. The legacyID can be used to assist in
+matching multiple CSV import types. Further information is provided in the
+section on legacy ID mapping above - see: :ref:`csv-legacy-id-mapping`.
+
+The ``uploadLimit`` column allows a user to set a default upload limit for a
+repository at the time of import. This value should be a number, representing
+Gigabytes. For more information on the use of respository upload limits in
+AtoM, see: :ref:`upload-limit`.
+
+The ``types`` column relates to the institution type found in the Identity
+:term:`information area` of the archival institution :term:`edit page`.
+It is linked to the "Repository Types" :term:`taxonomy` in AtoM, which comes
+pre-populated with 22 :term:`terms <term>`. New terms added via the CSV import
+will be created successfully and be added to the Repository Types taxonomy.
+You can add multiple terms by using the ``|`` pipe character between them,
+like so:
+
+.. code-block:: none
+
+   Arts Organization|Community
+
+.. SEEALSO::
+
+   * :ref:`institution-access-points`
+   * :ref:`ISDIAH edit template <isdiah-template>`
+   * :ref:`terms`
+
+Almost all other fields are drawn directly from the archival institution edit
+template in AtoM, which is based upon the International Council on Archives'
+International Standard for Describing Institutions with Archival Holdings
+(ISDIAH). For more information on the use of each field and a link to the
+related standard, see: :ref:`ISDIAH edit template <isdiah-template>`.
+Generally, fields in the CSV template have been named in a fairly obvious way,
+translating a simplified version of the field name in our data entry templates
+into a condensed `camelCase <http://en.wikipedia.org/wiki/CamelCase>`__. For
+example, ISDIAH 5.3.2, Geographical and cultural context (in the Description
+:term:`Area <information area>`) becomes ``geoCulturalContext`` in the CSV
+template. Consult the :ref:`ISDIAH <isdiah-template>` page for further help
+with fields.
+
+The ``descStatus`` and ``descDetail`` columns are both also related to
+controlled term :term:`taxonomies <taxonomy>` in AtoM - the "Description
+Statuses" and "Description Detail Levels" taxonomies respectively. The
+``descStatus`` column has the following default terms available for use:
+
+* Final
+* Revised
+* Draft
+
+The ``descDetails`` column has the following default terms available for use:
+
+* Full
+* Minimal
+* Partial
+
+The ``culture`` column indicates to AtoM the language of the descriptions
+being uploaded. This column expects two-letter ISO 639-1 language code values
+- for example, "en" for English; "fr" for French, "it" for Italian, etc. See
+`Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__ for a
+full list of ISO 639-1 language codes.
+
+.. _csv-import-repos-ui:
+
+Import new archival institutions via CSV
+========================================
 
 .. IMPORTANT::
 
@@ -1239,77 +1742,396 @@ CSV columns
 
    * CSV file is saved with UTF-8 encodings
    * CSV file uses Linux/Unix style end-of-line characters (``/n``)
+   * You have prepared your repository CSV data following the recommendations
+     in the section above, :ref:`csv-import-repositories`.
 
-Using the command-line
-----------------------
+**To import new archival institutions via the user interface:**
 
-Example use - run from AtoM's root directory:
+1. Click on the |import| :ref:`Import <main-menu-import>` menu, located in
+   the AtoM :ref:`header bar <atom-header-bar>`, and select "CSV".
 
-.. code-block:: bash
+.. image:: images/import-menu-csv.*
+   :align: center
+   :width: 30%
+   :alt: The import menu
 
-   php symfony csv:repository-import lib/task/import/example/example_repositories.csv
+2. AtoM will redirect you to the CSV import page. Make sure that the "Type"
+   :term:`drop-down menu` is set to "Archival institution". For new
+   :term:`repository` records, make sure that the "Update behaviors"
+   :term:`drop-down menu` is set to "Ignore matches and create new records on
+   import".
 
-There are also various command-line options that can be used, as illustrated in
-the options depicted in the image below:
-
-.. image:: images/csv-repo-options.*
+.. image:: images/csv-import-page-repos.*
    :align: center
    :width: 85%
-   :alt: An image of the command-line options for repository imports
+   :alt: The CSV import page in AtoM, set for new Archival institutions
 
-By typing ``php symfony help csv:repository-import`` into the command-line from
-your root directory, without specifying the location of a CSV, you will able
-able to see the CSV import options available (pictured above). A brief
-explanation of each is included below.
+3. AtoM can also double-check to see if a :term:`repository` with an
+   authorized form of name that exactly matches your import(s) already exists,
+   and skip these records during import if desired. To skip any exact matches,
+   check the "Skip matched records" checkbox. AtoM will report any skipped
+   rows in the console output provided on the :ref:`Job details <job-details>`
+   page of the related import job - see: :ref:`manage-jobs` for more
+   information.
 
-The ``--application``, ``--env``, and ``connection`` options **should not be
-used** - AtoM requires the uses of the pre-set defaults for symfony to be
-able to execute the import.
+   The console output on the Job details page will include something similar
+   to the following example when a match is found and skipped:
 
-The ``--rows-until-update``, ``--skip-rows``, and ``--error-log`` options can
-be used the same was as described in the section :ref:`above <csv-cli-options>`
-on importing descriptions. For more information on the ``--rows-until-update``
-option, see also the section below, :ref:`csv-import-progress`.
+   .. code-block:: bash
 
-The ``--merge-existing`` option may be used to avoid the creation of
-duplicate repositories. That is - if, during import, any rows in the CSV
-contain the same authorized form of name as a repository already in the
-database, those rows will be ignored (i.e. not imported).
+      [info] [2018-01-01 14:06:04] Job 2003115 "arFileImportJob": Row 1: Matching record found for "Example Archives", skipping.
 
-You can use the ``--upload-limit`` option to specify the default upload limit for
-repositories which don't specify their *uploadLimit* in the CSV file. That is,
-if for example you performed a CSV import with the command-line option of
-``--upload-limit=5``, then for every repository in the CSV that does NOT have
-a value in the *uploadLimit* column, the default value of 5 GBs will be
-assigned.
+4. If you do not want your files indexed during the import, you can click the
+   checkbox labelled "Do not index imported items." This will prevent the new
+   records from automatically being added to AtoM's search index.
+
+.. WARNING::
+
+   If you do not index your records during import, they will not be
+   discoverable via search or browse in the user interface! You will need to
+   know the exact URL to reach them. To make them visible in the interface
+   again, a system administrator will need to rebuild the search index. See:
+   :ref:`maintenance-populate-search-index`.
+
+5. Click the "Browse" button to open a window on your local computer. Select
+   the Repositories CSV file that you would like to import.
+
+.. image:: images/csv-import-browse.*
+   :align: center
+   :width: 25%
+   :alt: Clicking the "Browse" button in the CSV import page
+
+6. When you have selected the file from your device, its name will appear
+   next to the "Browse" button. Click the "Import" button located in the
+   :term:`button block` to begin your import.
+
+.. image:: images/import-button-block.*
+   :align: center
+   :width: 80%
+   :alt: The import button on the CSV import page
+
+.. NOTE::
+
+   Depending on the size of your CSV import, this can take some time to
+   complete. Be patient! Remember, you can always check on the status of an
+   import by reviewing the :ref:`Job details <job-details>` page of the related
+   import job - see: :ref:`manage-jobs` for more information.
+
+7. After your import is complete, AtoM will indicate that the import has been
+   initiated. A notification at the top of the page will also provide you with
+   a link to the :ref:`Job details <job-details>` page of the related import
+   job. Alternatively, you can click the "Back" button in the
+   :term:`button block` at the bottom of the page to return to the CSV import
+   page, or navigate elsewhere in the application.
+
+.. image:: images/csv-import-completed.*
+   :align: center
+   :width: 85%
+   :alt: When a CSV import has been initiated in AtoM
+
+.. _csv-repo-update:
+
+Update archival institutions via CSV import
+===========================================
+
+AtoM's CSV import includes the ability to use the import to update existing
+archival institution in two different ways, depending on the outcome desired.
+After attempting to identify existing matches, AtoM can either delete the existing
+match and replace it with the matched row in the CSV import, or it can attempt
+to use the matched CSV row to update the :term:`repository` record in-place
+with new data.
+
+Both options (and their limitations) will be explained further below, along
+with any additional import options available when importing updates.
+
+**Jump to:**
+
+* :ref:`csv-repo-update-match`
+* :ref:`csv-repo-delete-replace`
+* :ref:`csv-repo-updates-ui`
+
+When importing updates, AtoM will attempt to match against the existing
+repository records using the authorized form of name of the repository. This
+means that it is **not currently possible to use the update functionality to
+change the name of your repository record**. If the authorized form of name is
+edited then no match will be found.
+
+By default, when no match is found, AtoM will proceed to create a new record
+instead. If you do not want this to happen, you can click the "Skip unmatched
+records" checkbox. When no matches are found with this option checked, AtoM
+will skip the unmatched CSV row and report it in the console output found on
+the :ref:`Job details <job-details>` page of the related import job - see:
+:ref:`manage-jobs` for more information.
+
+
+.. _csv-repo-update-match:
+
+Updating repository records in place via CSV import
+---------------------------------------------------
+
+AtoM's first option for :term:`archival institution` updates allows you to use
+incoming CSV data as an update to existing :term:`repository` records.
+Whenever a match is found for an existing repository (based on the authorized
+form of name), AtoM will use the data in the CSV to update the related
+:term:`field` in place. If a column is left blank in the updates CSV, it will
+be ignored (it will not overwrite existing data by erasing it).
+
+To import a CSV as updates to existing repository records, select the option
+"Update matches ignoring blank fields in CSV" from the "Update behaviours"
+:term:`drop-down menu` on the CSV import page.
+
+.. image:: images/csv-update-match.*
+   :align: center
+   :width: 80%
+   :alt: An image of the Update matches option in the CSV import user
+         interface
+
+.. IMPORTANT::
+
+   At this time, not all fields in the :term:`archival institution` record can
+   be updated. Primarily, these are fields that are found in other tables in
+   the AtoM database than the primary repository record table. Examples of
+   fields that **cannot** be updated include:
+
+   * Name (changing the repository name in your CSV will cause the match to
+     fail)
+   * Parallel form(s) of name
+   * Other form(s) of name
+   * Institution type
+   * Locality, Revion, Country, and Postal code in Contact area
+   * Languages
+   * Scripts
+   * Status
+   * Level of detail
+   * Thematic area
+   * Geographic subregion
+
+   If you wish to update these fields, you might want to either make the
+   changes manually, or consider the "delete and replace" method. However,
+   please read the details :ref:`below <csv-repo-delete-replace>` on the
+   limitations of Delete and replace as well before proceeding!
+
+If a match is not found during the import, the default behavior is to import
+the CSV row as a new record. If you are only importing updates, you can click
+the checkbox for the "Skip unmatched records" if desired - AtoM will then skip
+any unmatched CSV rows and report them in the console log shown on the
+:ref:`Job details <job-details>` page of the related import job.
+
+See :ref:`below <csv-repo-updates-ui>` for step-by-step instructions on
+importing repository updates via the user interface.
+
+.. _csv-repo-delete-replace:
+
+Deleting and replacing repository records via CSV import
+--------------------------------------------------------
+
+AtoM's second update option allows you to identify matched repositories during
+import, and then delete the matches prior to importing the CSV data as a new
+record to replace it.
+
+Note that **only** the matched :term:`archival institution` record is deleted
+during this process. Any related/linked :term:`entities <entity>` (such as an
+:term:`authority record` linked as being maintained by the repository,
+Thematic area or other repository :term:`access points <access point>`, and
+linked :term:`archival descriptions <archival description>`) **are not
+automatically deleted**. If you also want these fully removed, you will have to
+find them and manually delete them via the user interface after the import.
+
+Once the original matched repository record has been deleted, the CSV
+import proceeds as if the record is new. That is to say, just as AtoM does not
+automatically delete entities related to the original archival institution,
+it *also* not automatically re-link previously related entities.
+
+.. WARNING::
+
+   This means that if your :term:`archival institution` record is linked to
+   descriptions, using the "Delete and replace" method will **unlink all
+   descriptions** - these will not be automatically re-linked with the new
+   import!
+
+   We recommend you **only** use the "Delete and replace" method with
+   repository records that are not currently linked to other entities.
+
+To import an archival institution CSV of records as replacements for existing
+repositories in AtoM, select the "Delete matches and replace with imported
+records" option from the "Update behaviours" :term:`drop-down menu` on the CSV
+import page.
+
+.. image:: images/csv-update-delete.*
+   :align: center
+   :width: 80%
+   :alt: An image of the Delete and replace updates option in the CSV import
+         user interface
+
+If a match is not found during the import, the default behavior is to import
+the CSV row as a new record. If you are only importing updates, you can click
+the checkbox for the "Skip unmatched records" if desired - AtoM will then skip
+any unmatched CSV rows and report them in the console log shown on the
+:ref:`Job details <job-details>` page of the related import job.
+
+See :ref:`below <csv-repo-updates-ui>` for step-by-step instructions on
+importing repository updates via the user interface.
+
+.. _csv-repo-updates-ui:
+
+Importing repository updates in the user interface
+--------------------------------------------------
+
+.. IMPORTANT::
+
+   Before proceeding, make sure that you have reviewed the "Before you import"
+   instructions above, to ensure that your CSV import will work. Most
+   importantly, make sure your:
+
+   * CSV file is saved with UTF-8 encodings
+   * CSV file uses Linux/Unix style end-of-line characters (``/n``)
+   * You have prepared your repository CSV data following the recommendations
+     in the section above, :ref:`csv-import-repositories`
+   * You have confirmed that the authorized form of name of the repository
+     record in your CSV matches *exactly* the repository record in AtoM you
+     wish to update
+   * You have reviewed the sections above on each of the update behaviors and
+     their limitations, and know what to expect.
+
+If you have double-checked the above, you should be ready to import your
+updates.
+
+**To import a CSV file of repository updates via the user interface:**
+
+1. Click on the |import| :ref:`Import <main-menu-import>` menu, located in
+   the AtoM :ref:`header bar <atom-header-bar>`, and select "CSV".
+
+.. image:: images/import-menu-csv.*
+   :align: center
+   :width: 30%
+   :alt: The import menu
+
+2. AtoM will redirect you to the CSV import page. Make sure that the "Type"
+   :term:`drop-down menu` is set to "Archival institution" .
+
+.. image:: images/csv-import-page-repos.*
+   :align: center
+   :width: 85%
+   :alt: The CSV import page in AtoM
+
+3. Select the type of update import you want to initiate.
+
+   To update existing archival institutions in place, select the option
+   "Update matches ignoring blank fields in CSV" from the "Update behaviours"
+   :term:`drop-down menu` on the CSV import page.
+
+   .. image:: images/csv-update-match.*
+      :align: center
+      :width: 80%
+      :alt: An image of the Update matches option in the CSV import user
+            interface
+
+   To delete existing matched archival institutions and replace them with the
+   data in your CSV, select the "Delete matches and replace with imported
+   records" option from the "Update behaviours" :term:`drop-down menu` on the
+   CSV import page.
+
+   .. image:: images/csv-update-delete.*
+      :align: center
+      :width: 80%
+      :alt: An image of the Delete and replace updates option in the CSV import
+            user interface
+
+.. TIP::
+
+   You can read more about each update option in the sections above:
+
+   * :ref:`csv-repo-update-match`
+   * :ref:`csv-repo-delete-replace`
+
+4. AtoM's default behavior when it cannot find a match during an update import
+   is to import the CSV row as a new record. However, if you are **only**
+   importing updates and don't want to accidentally create new records when no
+   match is found, you can check the "Skip unmatched records" checkbox. Any
+   unmatched records will not be imported - instead, skipped records will be
+   reported in the :ref:`Job details <job-details>` page of the related import
+   job (see: :ref:`manage-jobs` for more information).
+
+.. image:: images/csv-match-skip.*
+   :align: center
+   :width: 85%
+   :alt: The Skip unmatched records option on the CSV import page
+
+5. If you do not want your files indexed during the import, you can click the
+   checkbox labelled "Do not index imported items." This will prevent the new
+   records from automatically being added to AtoM's search index.
+
+.. WARNING::
+
+   If you do not index your records during import, they will not be
+   discoverable via search or browse in the user interface! You will need to
+   know the exact URL to reach them. To make them visible in the interface
+   again, a system administrator will need to rebuild the search index. See:
+   :ref:`maintenance-populate-search-index`.
+
+6. When you have configured your import options, click the "Browse" button to
+   open a window on your local computer. Select the CSV file that you would
+   like to import as your update.
+
+.. image:: images/csv-import-browse.*
+   :align: center
+   :width: 25%
+   :alt: Clicking the "Browse" button in the CSV import page
+
+7. When you have selected the file from your device, its name will appear
+   next to the "Browse" button. Click the "Import" button located in the
+   :term:`button block` to begin your import.
+
+.. image:: images/import-button-block.*
+   :align: center
+   :width: 80%
+   :alt: The import button on the CSV import page
+
+.. NOTE::
+
+   Depending on the size of your CSV import, this can take some time to
+   complete. Be patient! Remember, you can always check on the status of an
+   import by reviewing the :ref:`Job details <job-details>` page of the related
+   import job - see: :ref:`manage-jobs` for more information.
+
+8. After your import is complete, AtoM will indicate that the import has been
+   initiated. A notification at the top of the page will also provide you with
+   a link to the :ref:`Job details <job-details>` page of the related import
+   job. Alternatively, you can click the "Back" button in the
+   :term:`button block` at the bottom of the page to return to the CSV import
+   page, or navigate elsewhere in the application.
+
+.. image:: images/csv-import-completed.*
+   :align: center
+   :width: 85%
+   :alt: When a CSV import has been initiated in AtoM
+
+9. If any warnings or errors are encountered, AtoM will display them on
+   :ref:`Job details <job-details>` page of the related import job.
+   Generally, errors will cause an import to fail, while warnings will be
+   logged but will allow the import to proceed anyway. Errors can
+   occur for many reasons - please review the checklist
+   :ref:`above <csv-repo-updates-ui>` for suggestions on resolving the most
+   common reasons that CSV import updates fail.
 
 :ref:`Back to top <csv-import>`
 
 .. _csv-import-authority-records:
 
-Import authority records via CSV
-================================
+Prepare authority records for CSV import
+========================================
 
-The authority record import tool allows you to import data about organizations
-and individuals. In addition to importing data detailing these entities, the
-tool also allows the simultaneous import of supplementary data (in separate CSV
-files) on how these entities relate to each other and alternate names these
-entities are known by.
+The :term:`authority record` import tool allows you to import data about
+people, familiies, and organizations. In addition to importing data detailing
+these entities, the tool also allows the simultaneous import of supplementary
+data (in separate CSV files) on how these entities relate to each other and
+alternate names these entities are known by.
 
 You can view the example CSV files for authority records in the AtoM code (at
-``lib/task/import/example/authority_records/``) or they can be downloaded directly
-here:
+``lib/task/import/example/authority_records/``) or they can be downloaded
+directly here:
 
 * https://wiki.accesstomemory.org/Resources/CSV_templates#Other_CSV_templates
-
-CSV Columns
------------
-
-A brief explanation of the main fields in each CSV template is included
-below.
-
-Authority records CSV
-^^^^^^^^^^^^^^^^^^^^^
 
 .. IMPORTANT::
 
@@ -1322,117 +2144,94 @@ Authority records CSV
    template after the description CSV, you might end up creating duplicate
    authority records!
 
+   For more information on how the archival description import manages the
+   identification and linking of existing authority records, see:
+   :ref:`csv-actor-matching`.
 
-* The *culture* column indicates to AtoM the language of the descriptions
-  being uploaded. This column expects two-letter ISO 639-1 language code
-  values - for example, "en" for English; "fr" for French, "it" for Italian,
-  etc. See `Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
-  for a full list of ISO 639-1 language codes.
-* the *typeOfEntity* column maps to the entity type terms recommended in
-  ISAAR 5.1.1 Type of Entity, and maintained in AtoM in the *Actor Entity
-  Types* :term:`taxonomy`. This column expects one of three recommended
-  values - Person, Corporate body, or Family.
-* Almost all other fields are drawn directly from the :term:`authority record`
-  edit template in AtoM, which is based upon the International Council on
-  Archives' International Standard Archival Authority Record for Corporate
-  Bodies, Persons and Famillies (`ISAAR-CPF <http://www.ica.org/10203/standards/isaar-cpf-international-standard-archival-authority-record-for-corporate-bodies-persons-and-families-2nd-edition.html>`__).
-  For more information on the use of each field, see: :ref:`isaar-template`.
+A brief explanation of the main fields in authority record CSV template is
+included below.
 
-  * Most fields in the CSV template have been named in a fairly obvious way,
-    translating a simplified version of the field name in our data entry
-    templates into a condensed `camelCase <http://en.wikipedia.org/wiki/CamelCase>`__.
-    For example, ISAAR 5.2.1, Dates of Existence (in the ISAAR
-    Description :term:`Area <information area>`) becomes
-    *datesOfExistence* in the CSV template. Consult the
-    :ref:`ISDIAH <isaar-template>` for further help with fields.
-  * The *history* column, which conforms to ISAAR 5.2.2, will appear as the
-    Administrative or Biographical history in any  :term:`archival description`
-    that the :term:`authority record` is linked to. For more information on how
-    AtoM manages authority records, see: :ref:`authority-records`.
+The ``culture`` column indicates to AtoM the language of the descriptions
+being uploaded. This column expects two-letter ISO 639-1 language code values
+- for example, "en" for English; "fr" for French, "it" for Italian, etc. See
+`Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__ for a
+full list of ISO 639-1 language codes.
 
-.. _csv-authority-alternate-names:
+The ``typeOfEntity`` column maps to the entity type terms recommended in
+ISAAR-CPF 5.1.1 Type of Entity, and maintained in AtoM in the *Actor Entity
+Types* :term:`taxonomy`. This column expects one of three recommended
+values - Person, Corporate body, or Family.
 
-Alternate names CSV
-^^^^^^^^^^^^^^^^^^^
+Almost all other fields are drawn directly from the :term:`authority record`
+edit template in AtoM, which is based upon the International Council on
+Archives' International Standard Archival Authority Record for Corporate
+Bodies, Persons and Famillies (ISAAR-CPF). For more information on the use of
+each field, see the Data entry page on the
+:ref:`ISAAR-CPF template <isaar-template>` and consult the related standard.
+See also: :ref:`authority-records`.
 
-* The *parentAuthorizedFormOfName* should match exactly a target name in the
-  related authority record CSV being imported. The aliases (or alternate
-  names) included in the Aliases CSV will be associated with that actor's
-  :term:`authority record` following import.
-* The *alternateForm* should include the alternate name or alias you wish to import.
-* The *formType* column contains data about what kind of alternate is being
-  created. Each alias can be one of three forms: a parallel form, a standardized
-  form according to other descriptive practices, or an "other" form. Enter
-  either "parallel", "standardized", or "other" as a value in this the cells
-  of this column. For more information on the distinction between these three
-  types of alternate names, please consult
-  `ISAAR-CPF <http://www.ica.org/10203/standards/isaar-cpf-international-standard-archival-authority-record-for-corporate-bodies-persons-and-families-2nd-edition.html>`__
-  5.1.3 - 5.1.5
-* The *culture* column indicates to AtoM the language of the descriptions
-  being uploaded. This column expects two-letter ISO 639-1 language code
-  values - for example, "en" for English; "fr" for French, "it" for Italian,
-  etc. See `Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
-  for a full list of ISO 639-1 language codes.
+Most fields in the CSV template have been named in a fairly obvious way,
+translating a simplified version of the field name in our data entry
+templates into a condensed `camelCase <http://en.wikipedia.org/wiki/CamelCase>`__.
+For example, ISAAR 5.2.1, Dates of Existence (in the ISAAR Description
+:term:`Area <information area>`) becomes ``datesOfExistence`` in the CSV
+template. Consult the :ref:`ISDIAH <isaar-template>` data entry page for
+further help with fields.
 
-.. _csv-authority-relationships:
+The ``history`` column, which conforms to ISAAR 5.2.2, will appear as the
+Administrative or Biographical history in any  :term:`archival description`
+to which an :term:`authority record` is linked. For more information on
+how AtoM manages authority records, see: :ref:`authority-records`.
 
-Relationships CSV
-^^^^^^^^^^^^^^^^^
+The ``status`` and ``levelOfDetail`` columns are both also related to controlled
+term :term:`taxonomies <taxonomy>` in AtoM - the "Description Statuses" and
+"Description Detail Levels" taxonomies respectively. The ``status`` column has
+the following default terms available for use:
 
-* The *sourceAuthorizedFormOfName* is used to specify one of the actors
-  included in the Authority record CSV upload. This field should match
-  exactly one of the actors listed in the *authorizedFormOfName* column of
-  the Authority record CSV.
-* The *targetAuthorizedFormOfName* is also used to specify one of the actors
-  in the Authority record CSV upload - the actor with which you intend to
-  create a relationship. The values entered int this column should match
-  exactly one of the actors listed in the *authorizedFormOfName* column of
-  the Authority record CSV.
-* The *category* column contains data about the type of relationship you are
-  creating, and maps to ISAAR 5.3.2 Category of Relationship. The terms
-  recommended in the ISAAR standard are maintained in the Actor Relation Type
-  :term:`taxonomy` in AtoM. Values entered should be either "associative",
-  "family", "hierarchical", or "temporal". For more information on the
-  distinction between these terms, please consult
-  `ISAAR-CPF <http://www.ica.org/10203/standards/isaar-cpf-international-standard-archival-authority-record-for-corporate-bodies-persons-and-families-2nd-edition.html>`__
-  5.3.2.
-* The *date* field is a free-text string field that will allow a user to enter
-  a date or date range for the relationship. It allows the use of special
-  characters and typographical marks to indicate approximation (e.g. [ca.
-  1900]) and/or uncertainty (e.g. [199-?]). Use the *startDate* and *endDate*
-  fields to enter ISO-formated date values (e.g. YYYY-MM-DD, YYYY-MM, or
-  YYYY) that correspond to the free-text *date* field. Public users in the
-  interface will see the *date* field values when viewing relationships; the
-  *startDate* and *endDate* values are not visible, and are used for date
-  range searching in the application.
-* The *culture* column indicates to AtoM the language of the descriptions
-  being uploaded. This column expects two-letter ISO 639-1 language code
-  values - for example, "en" for English; "fr" for French, "it" for Italian,
-  etc. See `Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
-  for a full list of ISO 639-1 language codes.
+* Final
+* Revised
+* Draft
+
+The ``levelOfDetails`` column has the following default terms available for
+use:
+
+* Full
+* Minimal
+* Partial
+
+.. TIP::
+
+   Some fields available in the :term:`user interface` (such as alternative
+   forms of name, as well as the Relationships area, where you can link one
+   authority record to another) are not available in this CSV template.
+   However, two additional CSV templates can be imported  at the same time by
+   a system administrator via the command-line interface to add this
+   information. For more information, see: :ref:`csv-actor-import-cli`.
+
+
+.. _csv-import-authority-records-gui:
+
+Import new authority records via CSV
+====================================
 
 .. IMPORTANT::
 
    Before proceeding, make sure that you have reviewed the "Before you import"
-   instructions above, to ensure that your CSV import will work. Most
-   importantly, make sure your:
+   instructions :ref:`above <csv-before-you-import>`, to ensure that your
+   CSV import will work. Most importantly, make sure:
 
-   * CSV file is saved with UTF-8 encodings
-   * CSV file uses Linux/Unix style end-of-line characters (``/n``)
-
-.. _csv-import-authority-records-gui:
-
-Using the user interface
-------------------------
-
-.. NOTE::
-
-   Only the basic Authoriy record CSV can be imported via the
-   :term:`user interface`. If you wish to import authority relationships and
-   aliases as well, you will need to use the
-   :ref:`command-line <csv-import-authority-records-cli>`. Imports conducted via
-   the user interface should include no more than 100 records - otherwise we
-   strongly recommend you use the command-line!
+   * Your CSV file is saved with UTF-8 encodings
+   * Your CSV file uses Linux/Unix style end-of-line characters (``/n``)
+   * If you intend to import archival descriptions as well and hope to link
+     them to your authority records, make sure you are importing the authority
+     records CSV **first**, that the authorized form of name used in the
+     authority records CSV matches exactly the name used in the
+     ``eventActors`` column of the related descriptions CSV. Be sure you also
+     review how AtoM attempts to link descriptions to existing authority
+     records on import - see: :ref:`csv-actor-matching`
+   * You've reviewed the instructions in the section above on preparing your
+     CSV file and have made sure it conforms to the recommendations. See:
+     :ref:`csv-import-authority-records`.
 
 **To import authority records via the user interface:**
 
@@ -1445,148 +2244,411 @@ Using the user interface
    :alt: The import menu
 
 2. AtoM will redirect you to the CSV import page. Make sure that the "Type"
-   :term:`drop-down menu` is set to "Authority record".
+   :term:`drop-down menu` is set to "Authority record". For new
+   :term:`authority records <authority record>`, make sure that the "Update
+   behaviors" :term:`drop-down menu` is set to "Ignore matches and create new
+   records on import".
 
-.. image:: images/csv-import-page.*
+.. image:: images/csv-import-page-actors.*
    :align: center
    :width: 85%
-   :alt: The CSV import page in AtoM
+   :alt: The CSV import page in AtoM, set to import new Authority records
 
-3. Click the "Browse" button to open a window on your local computer. Select
-   the :term:`authority record` CSV file that you would like to import.
+3. AtoM can also double-check to see if an :term:`authority record` with an
+   authorized form of name that exactly matches your import(s) already exists,
+   and skip these records during import if desired. To skip any exact matches,
+   check the "Skip matched records" checkbox. AtoM will report any skipped
+   rows in the console output provided on the :ref:`Job details <job-details>`
+   page of the related import job - see: :ref:`manage-jobs` for more
+   information.
+
+   The console output on the Job details page will include something similar
+   to the following example when a match is found and skipped:
+
+   .. code-block:: bash
+
+      [info] [2018-01-01 15:01:04] Job 2003116 "arFileImportJob": Row 1: Matching record found for "Jane Doe", skipping.
+
+4. If you do not want your files indexed during the import, you can click the
+   checkbox labelled "Do not index imported items." This will prevent the new
+   records from automatically being added to AtoM's search index.
+
+.. WARNING::
+
+   If you do not index your records during import, they will not be
+   discoverable via search or browse in the user interface! You will need to
+   know the exact URL to reach them. To make them visible in the interface
+   again, a system administrator will need to rebuild the search index. See:
+   :ref:`maintenance-populate-search-index`.
+
+5. Click the "Browse" button to open a window on your local computer. Select
+   the Authority record CSV file that you would like to import.
 
 .. image:: images/csv-import-browse.*
    :align: center
    :width: 25%
    :alt: Clicking the "Browse" button in the CSV import page
 
-4. When you have selected the file from your device, its name will appear
+6. When you have selected the file from your device, its name will appear
    next to the "Browse" button. Click the "Import" button located in the
    :term:`button block` to begin your import.
 
-.. image:: images/csv-import-start.*
+.. image:: images/import-button-block.*
    :align: center
-   :width: 85%
-   :alt: Starting a CSV import in AtoM
+   :width: 80%
+   :alt: The import button on the CSV import page
 
 .. NOTE::
 
    Depending on the size of your CSV import, this can take some time to
-   complete. Be patient! Remember, uploads performed via the user interface
-   are limited by the browser's timeout limits - this is one of the reasons
-   we recommend importing only smaller CSV files via the user interface.
+   complete. Be patient! Remember, you can always check on the status of an
+   import by reviewing the :ref:`Job details <job-details>` page of the related
+   import job - see: :ref:`manage-jobs` for more information.
 
+7. After your import is complete, AtoM will indicate that the import has been
+   initiated. A notification at the top of the page will also provide you with
+   a link to the :ref:`Job details <job-details>` page of the related import
+   job. Alternatively, you can click the "Back" button in the
+   :term:`button block` at the bottom of the page to return to the CSV import
+   page, or navigate elsewhere in the application.
 
-.. _csv-import-authority-records-cli:
-
-Using the command-line interface (CLI)
---------------------------------------
-
-Example use - run from AtoM's root directory:
-
-.. code-block:: bash
-
-   php symfony csv:authority-import lib/task/import/example/authority_records/example_authority_records.csv
-
-There are also various command-line options that can be used, as illustrated in
-the options depicted in the image below:
-
-.. image:: images/csv-authority-options.*
+.. image:: images/csv-import-completed.*
    :align: center
    :width: 85%
-   :alt: An image of the command-line options for authority record imports
+   :alt: When a CSV import has been initiated in AtoM
 
-By typing ``php symfony help csv:authority-import`` into the command-line from
-your root directory, **without** specifying the location of a CSV, you will
-able able to see the CSV import options available (pictured above). A brief
-explanation of each is included below.
+:ref:`Back to top <csv-import>`
 
-The ``--application``, ``--env``, and ``connection`` options **should not be
-used** - AtoM requires the uses of the pre-set defaults for symfony to be
-able to execute the import.
+.. _csv-update-actors:
 
-The ``--rows-until-update``, ``--skip-rows``, ``--error-log``, and ``--index``
-options can be used the same was as described in the section
-:ref:`above <csv-cli-options>` on importing descriptions. For more information
-on the ``--rows-until-update`` option, see also the section below,
-:ref:`csv-import-progress`.
+Update authority records via CSV import
+=======================================
 
-The ``--alias-file`` and ``--relation-file`` options are used to import
-accompanying alternate name (aka Alias data) and relationship CSV files at
-the same time as the authority record CSV import. An example of each will be
-given below, though they can be used together.
+AtoM's CSV import includes the ability to use the import to update existing
+authority records in two different ways, depending on the outcome desired.
+After attempting to identify existing matches, AtoM can either delete the existing
+match and replace it with the matched row in the CSV import, or it can attempt
+to use the matched CSV row to update the :term:`authority record` in-place
+with new data.
 
-.. _csv-import-aliases-cli:
+Both options (and their limitations) will be explained further below, along
+with any additional import options available when importing updates.
 
-Importing alternate names (Alias data)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Jump to:**
 
-Alternate names are defined in a separate CSV file. Each alias can be one of
-three forms: a parallel form, a standardized form, or "other" form. See the
-section on data entry :ref:`above <csv-authority-alternate-names>` for further
-guidance.
+* :ref:`csv-actors-match-update`
+* :ref:`csv-actors-delete-replace`
+* :ref:`csv-actors-update-gui`
 
-An example CSV template file of supplementary alias data is available in the
-AtoM source code ( at ``lib/task/import/example/authority_records/example_authority_
-record_aliases.csv``) or can be downloaded here:
+When importing updates, AtoM will attempt to match against the existing
+authority records using the authorized form of name of the existing actor
+(a.k.a. authority record). This means that it is **not currently possible to
+use the update functionality to change the name of your authority record**. If
+the authorized form of name is edited then no match will be found.
 
-* https://wiki.accesstomemory.org/Resources/CSV_templates#Other_CSV_templates
+If you have previously linked your authority records to a repository (for more
+information, see: :ref:`link-repo-actor`), then it is possible to increase the
+likelihood of a successful match on import by limiting the update to only
+those authority records associated with a particular repository.
 
-The Alternate names CSV file must be imported at the same time as its related
-Authority record CSV file. The ``--alias-file`` command-line option is used
-to specify a separate path to the Alternate names CSV, with a back slash
-( ``\`` ) used to separate it from the path of the original authority record
-CSV, as shown below.
+.. image:: images/csv-actor-skip-limit.*
+   :align: center
+   :width: 80%
+   :alt: An image of the Authority record update option in the CSV import
+         user interface
 
-**Example import of authority records and corresponding aliases:**
+By default, when no match is found, AtoM will proceed to create a new record
+instead. If you do not want this to happen, you can click the "Skip unmatched
+records" checkbox. When no matches are found with this option checked, AtoM
+will skip the unmatched CSV row and report it in the console output found on
+the :ref:`Job details <job-details>` page of the related import job - see:
+:ref:`manage-jobs` for more information.
 
-.. code-block:: bash
+.. _csv-actors-match-update:
 
-   php symfony csv:authority-import lib/task/import/example/authority_records/example_authority_records.csv \
-   --alias-file=lib/task/import/example/authority_records/example_authority_record_aliases.csv
+Update authority records in place via CSV import
+------------------------------------------------
 
+AtoM's first option for :term:`authority record` updates allows you to use
+incoming CSV data as an update to existing authority records in place.
+Whenever a match is found for an existing authority record (based on the
+authorized form of name), AtoM will use the data in the CSV to update the
+related :term:`field` in place. If a column is left blank in the updates CSV,
+it will be ignored (it will not overwrite existing data by erasing it).
 
-.. _csv-import-relations-cli:
+To import a CSV as updates to existing authority records, select the option
+"Update matches ignoring blank fields in CSV" from the "Update behaviours"
+:term:`drop-down menu` on the CSV import page.
 
-Importing related corporate bodies, persons, or families
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. image:: images/csv-update-match.*
+   :align: center
+   :width: 80%
+   :alt: An image of the Update matches option in the CSV import user
+         interface
 
-Relations between authority records are also defined in a separate CSV file.
-Each relationship can be either hierarchical, temporal, family, or
-associative. See the section on data entry
-:ref:`above <csv-authority-relationships>` for further guidance.
+.. IMPORTANT::
 
-An example CSV template file of relation data is available in the AtoM source
-code ( at ``lib/task/import/example/authority_records/example_authority_record_relat
-ionships.csv``) or can be downloaded here:
+   At this time, not all fields in the :term:`authority record` can be updated.
+   Primarily, these are fields that are found in other tables in the AtoM
+   database than the primary authority record table. Examples of fields that
+   **cannot** currently be updated this way include:
 
-* https://wiki.accesstomemory.org/Resources/CSV_templates#Other_CSV_templates
+   * Name (changing the authority record name in your CSV will cause the match
+     to fail)
+   * Parallel form(s) of name
+   * Standardized form(s) of name according to other rules
+   * Other form(s) of name
+   * Any relationships to other authority records
+   * Language(s)
+   * Script(s)
 
-The Relationships CSV file must be imported at the same time as its related
-Authority record CSV file. The ``--relation-file`` command-line option is used
-to specify a separate path to the Relationships names CSV, with a back slash
-( ``\`` ) used to separate it from the path of the original authority record
-CSV, as shown below.
+   If you wish to update these fields, you might want to either make the
+   changes manually, or consider the "delete and replace" method. However,
+   please read the details :ref:`below <csv-repo-delete-replace>` on the
+   limitations of Delete and replace as well before proceeding!
 
-**Example import of authority records and corresponding relationships:**
+   Note as well that any existing :term:`access point` data (for example, the
+   Occupations access point on the authority record) cannot be modified or
+   removed via this method - though new access points can be added via this
+   "Match and update" approach.
 
-.. code-block:: bash
+See :ref:`below <csv-actors-update-gui>` for step-by-step instructions on
+importing repository updates via the user interface.
 
-   php symfony csv:authority-import lib/task/import/example/authority_records/example_authority_records.csv \
-   --relation-file=lib/task/import/example/authority_records/example_authority_record_relationships.csv
+.. _csv-actors-delete-replace:
+
+Delete and replace existing authority records via CSV import
+------------------------------------------------------------
+
+AtoM's second update option allows you to identify matched authority records
+during import, and then delete the matches prior to importing the CSV data as a
+new record to replace it.
+
+Note that **only** the matched :term:`authority record` is deleted during this
+process. Any related/linked :term:`entities <entity>` (such as a
+:term:`repository` linked as the authority record's maintainer, other
+authority records linked via a relationship, Occupation
+:term:`access points <access point>`, and linked
+:term:`archival descriptions <archival description>`) **are not also
+automatically deleted**. If you also want these fully removed, you will have to
+find them and manually delete them via the user interface after the import.
+
+Once the original matched authority record has been deleted, the CSV
+import proceeds as if the record is new. That is to say, just as AtoM does not
+automatically delete entities related to the original archival institution,
+it *also* not automatically re-link previously related entities.
+
+.. WARNING::
+
+   This means that if your :term:`authority record` is linked to
+   descriptions, a repository, or other authority records, using the "Delete
+   and replace" method will **unlink all related descriptions, repositories,
+   and authority records** - these will not be automatically re-linked with
+   the new import!
+
+   We recommend you **only** use the "Delete and replace" method with
+   authority records that are not currently linked to other entities.
+
+   For more information on linking authority records, see:
+
+   * :ref:`link-authority-to-description`
+   * :ref:`link-two-authority-records`
+   * :ref:`link-repo-actor`
+
+To import an archival institution CSV of records as replacements for existing
+repositories in AtoM, select the "Delete matches and replace with imported
+records" option from the "Update behaviours" :term:`drop-down menu` on the CSV
+import page.
+
+.. image:: images/csv-update-delete.*
+   :align: center
+   :width: 80%
+   :alt: An image of the Delete and replace updates option in the CSV import
+         user interface
+
+See :ref:`below <csv-actors-update-gui>` for step-by-step instructions on
+importing repository updates via the user interface.
+
+.. _csv-actors-update-gui:
+
+Updating authority records via import in the user inteface
+----------------------------------------------------------
+
+.. IMPORTANT::
+
+   Before proceeding, make sure that you have reviewed the "Before you import"
+   instructions above, to ensure that your CSV import will work. Most
+   importantly, make sure your:
+
+   * CSV file is saved with UTF-8 encodings
+   * CSV file uses Linux/Unix style end-of-line characters (``/n``)
+   * You have prepared your authority record CSV data following the
+     recommendations in the section above, :ref:`csv-import-authority-records`
+   * You have confirmed that the authorized form of name of the authority
+     record in your CSV matches *exactly* the authority record in AtoM you
+     wish to update
+   * You are aware that using the "Delete and replace" update option will
+     remove the links between **all related entities**  (descriptions, other
+     authority records, repositories, access points, etc) - though it will not
+     delete these entities.
+   * You have reviewed the sections above on each of the update behaviors and
+     their limitations, and know what to expect.
+
+If you have double-checked the above, you should be ready to import your
+updates.
+
+**To import a CSV file of authority record updates via the user interface:**
+
+1. Click on the |import| :ref:`Import <main-menu-import>` menu, located in
+   the AtoM :ref:`header bar <atom-header-bar>`, and select "CSV".
+
+.. image:: images/import-menu-csv.*
+   :align: center
+   :width: 30%
+   :alt: The import menu
+
+2. AtoM will redirect you to the CSV import page. Make sure that the "Type"
+   :term:`drop-down menu` is set to "Archival institution" .
+
+.. image:: images/csv-import-page-actors.*
+   :align: center
+   :width: 85%
+   :alt: The CSV import page in AtoM
+
+3. Select the type of update import you want to initiate.
+
+   To update existing authority records in place, select the option
+   "Update matches ignoring blank fields in CSV" from the "Update behaviours"
+   :term:`drop-down menu` on the CSV import page.
+
+   .. image:: images/csv-update-match.*
+      :align: center
+      :width: 80%
+      :alt: An image of the Update matches option in the CSV import user
+            interface
+
+   To delete existing matched authority records and replace them with the
+   data in your CSV, select the "Delete matches and replace with imported
+   records" option from the "Update behaviours" :term:`drop-down menu` on the
+   CSV import page.
+
+   .. image:: images/csv-update-delete.*
+      :align: center
+      :width: 80%
+      :alt: An image of the Delete and replace updates option in the CSV import
+            user interface
+
+.. TIP::
+
+   You can read more about each update option in the sections above:
+
+   * :ref:`csv-actors-match-update`
+   * :ref:`csv-actors-delete-replace`
+
+4. AtoM's default behavior when it cannot find a match during an update import
+   is to import the CSV row as a new record. However, if you are **only**
+   importing updates and don't want to accidentally create new records when no
+   match is found, you can check the "Skip unmatched records" checkbox. Any
+   unmatched records will not be imported - instead, skipped records will be
+   reported in the :ref:`Job details <job-details>` page of the related import
+   job (see: :ref:`manage-jobs` for more information).
+
+5. To improve the default matching behavior (based on the authorized form of
+   name of the authority record), you can provide further criteria
+   to help AtoM find the correct match. If you have linked your authority
+   record(s) to a :term:`repository` as the maintainer, then you can limit the
+   matches to either the authority records of a specific :term:`repository`.
+   To learn more about linking an authority record to a repository, see:
+   :ref:`link-repo-actor`.
+
+   To limit your matches to the holdings of a specifc
+   :term:`archival institution`, use the :term:`drop-down menu` to select the
+   name of the related repository.
+
+   If you previously created your repository record via CSV import, it will
+   sometimes not appear at first in the drop-down menu. Try to begin typing
+   the first letters of the target repository name when your cursor is on the
+   Limit matches drop-down to see if it appears.
+
+.. image:: images/csv-actor-skip-limit.*
+   :align: center
+   :width: 85%
+   :alt: The Skip and Limit options on the CSV import page
+
+6. If you do not want your files indexed during the import, you can click the
+   checkbox labelled "Do not index imported items." This will prevent the new
+   records from automatically being added to AtoM's search index.
+
+.. WARNING::
+
+   If you do not index your records during import, they will not be
+   discoverable via search or browse in the user interface! You will need to
+   know the exact URL to reach them. To make them visible in the interface
+   again, a system administrator will need to rebuild the search index. See:
+   :ref:`maintenance-populate-search-index`.
+
+7. When you have configured your import options, click the "Browse" button to
+   open a window on your local computer. Select the CSV file that you would
+   like to import as your update.
+
+.. image:: images/csv-import-browse.*
+   :align: center
+   :width: 25%
+   :alt: Clicking the "Browse" button in the CSV import page
+
+8. When you have selected the file from your device, its name will appear
+   next to the "Browse" button. Click the "Import" button located in the
+   :term:`button block` to begin your import.
+
+.. image:: images/import-button-block.*
+   :align: center
+   :width: 85%
+   :alt: Starting a CSV import update in AtoM
+
+.. NOTE::
+
+   Depending on the size of your CSV import, this can take some time to
+   complete. Be patient! Remember, you can always check on the status of an
+   import by reviewing the :ref:`Job details <job-details>` page of the related
+   import job - see: :ref:`manage-jobs` for more information.
+
+9. After your import is complete, AtoM will indicate that the import has been
+   initiated. A notification at the top of the page will also provide you with
+   a link to the :ref:`Job details <job-details>` page of the related import
+   job. Alternatively, you can click the "Back" button in the
+   :term:`button block` at the bottom of the page to return to the CSV import
+   page, or navigate elsewhere in the application.
+
+.. image:: images/csv-import-completed.*
+   :align: center
+   :width: 85%
+   :alt: When a CSV import has been initiated in AtoM
+
+10. If any warnings or errors are encountered, AtoM will display them on
+    :ref:`Job details <job-details>` page of the related import job.
+    Generally, errors will cause an import to fail, while warnings will be
+    logged but will allow the import to proceed anyway. Errors can
+    occur for many reasons - please review the checklist
+    :ref:`above <csv-update-actors>` for suggestions on resolving the most
+    common reasons that CSV import updates fail.
 
 :ref:`Back to top <csv-import>`
 
 .. _csv-import-accessions:
 
-Import accessions via CSV
-=========================
+Prepare accession records for CSV import
+========================================
 
-When importing information objects (e.g.
-:term:`archival descriptions <archival description>`, you can specify an
-associated :term:`accession record` using an ``accessionNumber`` column in the
-CSV. After importing your information objects you can then run the accession
-import tool to import details about each accession from a CSV file.
+The :term:`accession record` import tool allows you to import data about your
+accessions. Additionally, when importing descriptions as well, you can use the
+subsequent :term:`archival description` CSV import to create a link between
+your accession records and your descriptions, by adding an ``accessionNumber``
+column in the archival description CSV and populating it with the exact
+accession number(s) used during your accessions data import.
+
+Alternatively, you can use the ``qubitParentSlug`` column to link existing
+descriptions in AtoM to new or updated accessions records via your import -
+more details below.
 
 An example CSV template file is available in the
 ``lib/task/import/example/example_accessions.csv`` directory of AtoM, or it
@@ -1594,27 +2656,59 @@ can be downloaded here:
 
 * https://wiki.accesstomemory.org/Resources/CSV_templates#Other_CSV_templates
 
-As of AtoM 2.1, a new column, ``qubitParentSlug`` has been added. This column
-will behave similarly to the ``qubitParentSlug`` column in the
-:term:`archival description` CSV templates (described
-:ref:`above <csv-description-parent-slug>`) - it will allow you to link new
-CSV-imported accessions to existing descriptions in AtoM. To link an accession
+.. SEEALSO::
+
+   * :ref:`accession-records`
+
+Below you'll find brief data entry guidelines for preparing a CSV file of
+accessions data for import.
+
+The ``acquisitionDate`` column expects date strings to be formatted according
+to the `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`__ date format
+standard - that is, YYYY-MM-DD.
+
+To link incoming accession records to existing archival descriptions, you can
+add a column named  ``qubitParentSlug``. This column will behave similarly to
+the ``qubitParentSlug`` column in the :term:`archival description` CSV templates
+(described :ref:`above <csv-description-parent-slug>`). To link an accession
 row in your CSV to an existing description in your AtoM instance, simply enter
 the :term:`slug` of the target description in the ``qubitParentSlug`` column.
-AtoM will located the matching description, and link the two during import,
+AtoM will locate the matching description and link the two during import,
 similar to how an accession created through the user interface can be linked
 to a description (see: :ref:`link-accession-description`).
 
-As of AtoM 2.2, creation event columns have been added as well. The
-``creators`` column can be used to add the name(s) of the :term:`creator` of
-the accession materials. For now, only creation events are supported, so the
+Most fields in the CSV template have been named in a fairly obvious way,
+translating a simplified version of the field name in the AtoM
+:term:`user interface` into a condensed `camelCase <http://en.wikipedia.org/wiki/CamelCase>`__
+in our data entry. For example, the "Immediate source of acquisition" field in
+the user interface is represented in the CSV template as the
+``sourceOfAcquisition`` column.
+
+Some fields are linked to a :term:`taxonomy` of controlled values in AtoM,
+maintained as :term:`terms <term>`. These are generally represented in the
+accession record :term:`edit page` in the user interface as a
+:term:`drop-down menu` providing a limited list of options for a user to
+select. To learn more about managing taxonomies and terms, see: :ref:`terms`.
+Some of the taxonomy-related fields in the CSV template include:
+
+* ``acquisitionType`` - listed in the user inteface as "Acquisition type."
+  Default values are: Deposit, Gift, Purchase, Transfer.
+* ``resourceType`` - listed in the user interface as "Resource type." Default
+  values are: Public transfer, Private transfer.
+* ``processingStatus`` - listed in the user interface as "Processing status."
+  Default values are: Complete, Incomplete, In-Progress.
+* ``processingPriority`` - listed in the user interface as "Processing
+  priority." Default values are: High, Medium, Low.
+
+The ``creators`` column can be used to add the name(s) of the :term:`creator`
+of the accession materials. For now, only creation events are supported, so the
 the ``eventTypes`` value should always be *Creation*. ``eventDates``,
 ``eventStartDates``, and ``eventEndDates`` columns can be used similarly to
 those in the archival description CSV templates - The ``eventDates`` field
 will map to the free-text display date field in AtoM, where users can use special
 characters to express approximation, uncertainty, etc. (e.g. [190-?];
 [ca. 1885]), while ``eventStartDates`` and ``eventEndDates`` should include
-ISO-formatted date values (YYYY-MM-DD, YYYY-MM, or YYYY). If there are
+ISO 8601-formatted date values (YYYY-MM-DD, YYYY-MM, or YYYY). If there are
 multiple creators/events associated with the accession, these fields can all
 accept multiple values, separated using the pipe ``|`` character.
 
@@ -1633,13 +2727,29 @@ accept multiple values, separated using the pipe ``|`` character.
    second creator's endDate values, or else they will be matched up with
    creator 1!
 
+The ``culture`` column indicates to AtoM the default language of the
+accession records being uploaded. This column expects two-letter ISO 639-1
+language code values - for example, "en" for English; "fr" for French, "it"
+for Italian, etc. See `Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
+for a full list of ISO 639-1 language codes.
+
+:ref:`Back to top <csv-import>`
+
 .. _csv-import-accessions-gui:
 
-Using the user interface
-------------------------
+Create new accession records via CSV import
+===========================================
 
-For small imports (i.e. CSV files with less than 100 records), accession record
-imports can be performed via the user interface.
+.. IMPORTANT::
+
+   Before proceeding, make sure that you have reviewed the "Before you import"
+   instructions above, to ensure that your CSV import will work. Most
+   importantly, make sure your:
+
+   * CSV file is saved with UTF-8 encodings
+   * CSV file uses Linux/Unix style end-of-line characters (``/n``)
+   * You have prepared your CSV data in accordance with the accession CSV
+     guidance provided above - :ref:`csv-import-accessions`.
 
 **To import an accessions CSV file via the user interface:**
 
@@ -1659,331 +2769,61 @@ imports can be performed via the user interface.
    :width: 85%
    :alt: The CSV import page in AtoM
 
-3. Click the "Browse" button to open a window on your local computer. Select
-   the :term:`authority record` CSV file that you would like to import.
+3. If you do not want your files indexed during the import, you can click the
+   checkbox labelled "Do not index imported items." This will prevent the new
+   records from automatically being added to AtoM's search index.
+
+.. WARNING::
+
+   If you do not index your records during import, they will not be
+   discoverable via search or browse in the user interface! You will need to
+   know the exact URL to reach them. To make them visible in the interface
+   again, a system administrator will need to rebuild the search index. See:
+   :ref:`maintenance-populate-search-index`.
+
+4. When you have configured your import options, click the "Browse" button to
+   open a window on your local computer. Select the CSV file that you would
+   like to import as your update.
 
 .. image:: images/csv-import-browse.*
    :align: center
    :width: 25%
    :alt: Clicking the "Browse" button in the CSV import page
 
-4. When you have selected the file from your device, its name will appear
+5. When you have selected the file from your device, its name will appear
    next to the "Browse" button. Click the "Import" button located in the
    :term:`button block` to begin your import.
 
-.. image:: images/import-accession-2.*
+.. image:: images/import-button-block.*
    :align: center
    :width: 85%
-   :alt: Starting a CSV import in AtoM
+   :alt: Starting a CSV import update in AtoM
 
 .. NOTE::
 
    Depending on the size of your CSV import, this can take some time to
-   complete. Be patient! Remember, uploads performed via the user interface
-   are limited by the browser's timeout limits - this is one of the reasons
-   we recommend importing only smaller CSV files via the user interface.
+   complete. Be patient! Remember, you can always check on the status of an
+   import by reviewing the :ref:`Job details <job-details>` page of the related
+   import job - see: :ref:`manage-jobs` for more information.
 
+6. After your import is complete, AtoM will indicate that the import has been
+   initiated. A notification at the top of the page will also provide you with
+   a link to the :ref:`Job details <job-details>` page of the related import
+   job. Alternatively, you can click the "Back" button in the
+   :term:`button block` at the bottom of the page to return to the CSV import
+   page, or navigate elsewhere in the application.
 
-.. _csv-import-accessions-cli:
-
-Using the command-line interface (CLI)
---------------------------------------
-
-For larger :term:`accession record` imports (e.g. those with 100 or more
-records), we recommend using the command-line task to import your CSV file.
-
-**Example use** - run from AtoM's root directory:
-
-.. code-block:: bash
-
-   php symfony csv:accession-import /path/to/my/example_accessions.csv
-
-There are also a number of options available with this command-line task.
-
-.. image:: images/csv-accession-options.*
+.. image:: images/csv-import-completed.*
    :align: center
    :width: 85%
-   :alt: An image of the command-line options for accession record imports
-
-By typing ``php symfony help csv:accession-import`` into the command-line from
-your root directory, **without** specifying the location of a CSV, you will
-able able to see the CSV import options available (pictured above). A brief
-explanation of each is included below.
-
-The ``--application``, ``--env``, and ``connection`` options **should not be
-used** - AtoM requires the uses of the pre-set defaults for symfony to be
-able to execute the import.
-
-Use the ``--source-name`` to specify a source importing to a AtoM installation
-in which accessions and information objects from multiple sources have been
-imported, and/or to associate it explicitly with a previously-imported CSV
-file that used the same ``--source-name`` value. An example is provided
-:ref:`above <csv-legacy-id-mapping>` in the section on legacy ID mapping.
-
-The ``--rows-until-update``, ``--skip-rows``, ``--error-log``, and ``--index``
-options can be used the same was as described in the section
-:ref:`above <csv-cli-options>` on importing descriptions. For more information
-on the ``--rows-until-update`` option, see also the section below,
-:ref:`csv-import-progress`.
-
-
-:ref:`Back to top <csv-import>`
-
-.. _csv-import-progress:
-
-Display the progress of an upload via the command-line interface (CLI)
-======================================================================
-
-The various CSV import tools allow the use of the ``--rows-until-update``
-command-line option to display the current row of CSV data being imported.
-This is an extremely simplified way to indicate progress graphically via the
-command-line - the user sets a numerical value for the number of rows the task
-will progress before an update, and then the task will output a dot (or period
-) in the command-line every time the indicated number of rows has been
-processed in the current CSV.
-
-Example use reporting progress every 5 rows:
-
-.. code-block:: bash
-
-   php symfony csv:import lib/task/import/example/rad/example_information_objects_rad.csv --rows-until-update=5
-
-This can be useful for large imports, to ensure the import is still progressing,
-and to try to roughly determine how far the task has progressed and how long
-it will take to complete.
-
-:ref:`Back to top <csv-import>`
-
-.. _digital-object-load-task:
-
-Load digital objects via the command line
-=========================================
-
-Known as the **Digital object load task**, this command-line tool will allow a
-user to bulk attach digital objects to existing information objects (e.g.
-:term:`archival descriptions <archival description>`) through the use of a
-simple CSV file.
-
-This task will take a CSV file as input, which contains two columns: ``filename``
-and **EITHER** ``information_object_id`` **OR** ``identifier`` as the second
-column; the script will fail if these column headers are not
-present in the first row of the CSV file, and it will fail if there are more
-than 2 columns - you must choose which variable you prefer to work with (
-identifier or object ID) for the second column. Each will be explained below.
-
-The ``filename`` column contains the full (current) path to the digital asset
-(file). The ``information_object_id`` or ``identifier`` column identifies the
-linked information object. AtoM does not allow more than one digital object
-per information object (with the exception of derivatives), and each digital
-object must have a corresponding information object to describe it, so this
-one-to-one relationship must be respected in the CSV import file.
-
-The ``information_object_id`` is a unique internal value assigned to each
-:term:`information object` in AtoM's database - it is not visible via the
-:term:`user interface` and you will have to perform a SQL query to find it out
-- a sample SQL query with basic instructions has been included below.
-
-The ``identifier`` can be used instead if preferred. A
-:term:`description's <archival description>` identifier is visible in the
-:term:`user interface`, which can make it less difficult to discover. **
-However,**, if the target description's identifier is not unique throughout
-your AtoM instance, the digital object may not be attached to the correct
-description - AtoM will attach it to the first matching identifier it finds.
-
-.. _digital-object-load-sql-object-id:
-
-Finding the information_object_id
----------------------------------
-
-The ``information_object_id`` is not a value that is accessible via the
-:term:`user interface` - it is a unique value used in AtoM's database. You can,
-however, use SQL in the command-line to determine the ID of an information
-object. The following example will show you how to use a SQL query to find the
-``information_object_id``, if you know the :term:`slug` of the description:
-
-1. First, you will need to access mysqlCLI to be able to input a SQL query. To
-   do this, you will need to know the database name, user name, and password you
-   used when creating your database during installation. If your database is
-   on a different server (e.g. if you are trying to SSH in to access your
-   database server), you will also need to know the hostname - that is, the IP
-   address or domain name of the server where your database is located.
-2. The following is an example of the CLI command to enter to access mysqlCLI:
-
-   .. code-block:: bash
-
-      mysql -u root -pMYSECRETPASSWORD atom
-
-   * ``-u`` = user. If you followed our :ref:`installation instructions
-     <installation-linux>`, this will be ``root``
-   * ``-p`` = password. Enter the password you used during installation right
-     after the ``-p``. If you did not enter a password, include the ``-p``
-     on its own. If you are prompted later for a password and didn't use one,
-     just press enter.
-   * ``-h`` = hostname. If your database is on a different server, supply either
-     an IP address, or the domain name, where it is located.
-   * ``atom`` = your database name. If you followed our
-     :ref:`installation instructions <installation-linux>`, this will be
-     ``atom``; otherwise enter the database name you used when installing AtoM.
-
-3. You may be prompted for your password again. If so, enter it. If you did
-   not use a password during installation, simply press enter.
-4. Your command prompt should now say something like ``mysql>``. You can now
-   enter a SQL query directly.
-5. The following example SQL command will return the information_object_id for
-   a desription, when the information object's :term:`slug` is known:
-
-   .. code-block:: bash
-
-      SELECT object_id FROM slug WHERE slug='your-slug-here';
-
-6. The query should return the object_id for the description. Here is an
-   example:
-
-.. image:: images/digi-object-load-mysql-select.*
-   :align: center
-   :width: 70%
-   :alt: An image of a successful SELECT statement in mysqlCLI
-
-7. Enter ``quit`` to exit mysqlCLI.
-
-Using the digital object load task
-----------------------------------
-
-Before using this task, you will need to prepare:
-
-* A CSV file with 2 columns -  **EITHER** ``information_object_id`` and
-  ``filename``, **OR** ``identifier`` and ``filename``
-* A directory with your digital objects inside of it
-
-.. IMPORTANT::
-
-   You cannot use both ``information_object_id`` and ``identifier`` in the
-   same CSV - it must be one or the other. If you use the ``identifier``, make
-   sure your target description identifiers are **unique** in AtoM - otherwise
-   your digital objects may not upload to the right description!
-
-Here is a sample image of what the CSV looks like when the identifier is used,
-and the CSV is prepared in a spreadsheet application:
-
-.. image:: images/digital-object-load-identifier.*
-   :align: center
-   :width: 60%
-   :alt: Example CSV for digitalobject:load task using identifier
-
-.. TIP::
-
-   Before proceeding, make sure that you have reviewed the instructions
-   :ref:`above <csv-encoding-newline>`, to ensure that your CSV will work when
-   used with the ``digitalobject:load`` task. The key point when creating a
-   CSV is to ensure the following:
-
-   * CSV file is saved with UTF-8 encodings
-   * CSV file uses Linux/Unix style end-of-line characters (``/n``)
-
-You can see the options available on the CLI task by typing in the following
-command:
-
-.. code-block:: bash
-
-   php symfony help digitalobject:load
-
-
-.. image:: images/digital-object-load-options.*
-   :align: center
-   :width: 85%
-   :alt: An image of the command-line options for digitalobject:load
-
-The ``--application``, ``--env``, and ``connection`` options **should not be
-used** - AtoM requires the uses of the pre-set defaults for symfony to be
-able to execute the import.
-
-By default, the digital object load task will **not index** the collection as
-it runs. This means that normally, you will need to manually repopulate the
-search index after running the task. Running without indexing allows the task
-to complete much more quickly - however, if you're only uploading a small set
-of digital objects, you can choose to have the task index the collection as it
-progresses, using the ``--index`` (or ``-i``) option
-
-The ``--path`` option will allow you to simplify the ``filename`` column in
-your CSV, to avoid repetition. If all the digital objects you intend to upload
-are stored in the same folder, then adding /path/to/my/folder/ to each object
-filename seems tedious - your ``filename`` column will need to look something
-like this:
-
-.. code-block:: bash
-
-   filename
-   /path/to/my/folder/image1.png
-   /path/to/my/folder/image2.jpg
-   /path/to/my/folder/text1.pdf
-   etc...
-
-To avoid this when all digital objects are in the same directory, you can use
-the ``--path`` option to pre-supply the path to the digital objects - for each
-filename, the path supplied will be appended. **Note** that you will need to
-use a trailing slash to finish your path prefix - e.g.:
-
-.. code-block:: bash
-
-   php symfony digitalobject:load --path="/path/to/my/folder/" /path/to/my/spreadsheet.csv
-
-
-**TO RUN THE DIGITAL OBJECT LOAD TASK**
-
-.. code-block:: bash
-
-   php symfony digitalobject:load /path/to/your/loadfile.csv
-
-**NOTES ON USE**
-
-* If an information object already has a :term:`digital object` attached to it,
-  it will be skipped during the import
-* Remember to repopulate the search index afterwards if you haven't used the
-  ``--index`` option!
-
-
-  .. code-block:: bash
-
-     php symfony search:populate
-
-
-Regenerating derivatives
-------------------------
-
-Sometimes the ``digitalobject:load`` task won't generate the :term:`thumbnail`
-and :term:`reference <reference display copy>` images properly for digital
-objects that were loaded (e.g. due to a crash or absence of convert installed,
-etc.). In this case, you can regenerate these thumbsnail/reference images using
-the following command:
-
-.. code-block:: bash
-
-   php symfony digitalobject:regen-derivatives
-
-.. WARNING::
-
-   All of your current derivatives will be deleted! They will be replaced
-   with new derivatives after the task has finished running. If you have
-   manually changed the :term:`thumbnail` or :term:`reference display copy`
-   of a digital object via the user interface (see:
-   :ref:`edit-digital-object`), these two will be replaced with digital
-   object derivatives created from the :term:`master digital object`.
-
-For more information on this task and the options available, see:
-:ref:`cli-regenerate-derivatives`.
-
-:ref:`Back to top <csv-import>`
-
-.. _csv-search-indexing:
-
-Index your content after an upload
-==================================
-
-After an import, you'll want to index your content so it can be searched by
-users. To do so, enter the following into the command-line:
-
-.. code-block:: bash
-
-   php symfony search:populate
+   :alt: When a CSV import has been initiated in AtoM
+
+7. If any warnings or errors are encountered, AtoM will display them on
+   :ref:`Job details <job-details>` page of the related import job.
+   Generally, errors will cause an import to fail, while warnings will be
+   logged but will allow the import to proceed anyway. Errors can
+   occur for many reasons - please review the checklist
+   :ref:`above <csv-import-accessions-gui>` for suggestions on resolving the
+   most common reasons that CSV imports fail.
 
 :ref:`Back to top <csv-import>`

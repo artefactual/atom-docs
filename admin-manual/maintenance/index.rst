@@ -8,6 +8,7 @@ Maintenance
    :maxdepth: 1
 
    cli-tools
+   cli-import-export
    clear-cache
    web-analytics
    logging
