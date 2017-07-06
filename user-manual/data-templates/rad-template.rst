@@ -16,8 +16,9 @@ On this page you will find:
 
    * :ref:`archival-descriptions`
    * :ref:`csv-import`
-   * :ref:`cli-bulk-import-xml`
-   * :ref:`cli-bulk-export`
+   * :ref:`import-xml`
+   * :ref:`export-xml`
+   * :ref:`cli-import-export`
 
 RAD CSV template
 ================

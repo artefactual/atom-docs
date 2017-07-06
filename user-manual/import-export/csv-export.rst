@@ -48,6 +48,7 @@ results; and an export of jobs completed. Each will be outlined below.
 .. SEEALSO::
 
    * :ref:`csv-import`
+   * :ref:`import-export-skos`
    * :ref:`advanced-search`
    * :ref:`manage-jobs`
    * :ref:`archival-descriptions`

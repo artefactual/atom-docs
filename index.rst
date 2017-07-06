@@ -119,10 +119,11 @@ This section describes automated methods for getting data in and out of an AtoM
 application.
 
 * :ref:`Upload digital objects <upload-digital-object>`
-* :ref:`Import descriptions and terms <import-descriptions-terms>`
-* :ref:`Export descriptions and terms <export-descriptions-terms>`
+* :ref:`import-xml`
+* :ref:`export-xml`
 * :ref:`CSV import <csv-import>`
 * :ref:`csv-export`
+* :ref:`import-export-skos`
 * :ref:`oai-pmh`
 
 .. _administer:

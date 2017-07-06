@@ -15,9 +15,10 @@ On this page you will find:
 .. seealso::
 
    * :ref:`archival-descriptions`
-   * :ref:`csv-testing-import`
-   * :ref:`import-descriptions-terms`
-   * :ref:`export-descriptions-terms`
+   * :ref:`csv-import`
+   * :ref:`import-xml`
+   * :ref:`export-xml`
+   * :ref:`cli-import-export`
 
 .. _mods-and-csv:
 

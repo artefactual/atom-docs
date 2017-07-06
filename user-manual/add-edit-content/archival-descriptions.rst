@@ -125,7 +125,8 @@ see the sections below for more specific instructions on the use of
    * :ref:`link-authority-to-description`
    * :ref:`upload-digital-object`
    * :ref:`rights-archival-description`
-   * :ref:`import-descriptions-terms`
+   * :ref:`import-xml`
+   * :ref:`export-xml`
    * :ref:`csv-import`
 
 

@@ -32,7 +32,8 @@ exports in AtoM.
 
    * :ref:`csv-import`
    * :ref:`csv-before-you-import`
-   * :ref:`import-descriptions-terms`
+   * :ref:`import-xml`
+   * :ref:`import-export-skos`
    * :ref:`csv-export`
 
 .. _cli-bulk-import-xml:
@@ -41,7 +42,7 @@ Bulk import of XML files
 ========================
 
 While XML files can be imported individually via the :term:`user interface`
-(see: :ref:`import-descriptions-terms`), it may be desireable to import multiple
+(see: :ref:`import-xml`), it may be desireable to import multiple
 XML files through the command line. Below is the basic syntax for the bulk XML
 import task:
 
@@ -192,7 +193,7 @@ Bulk export of XML files
 ========================
 
 While XML files can be exported individually via the :term:`user interface`
-(see: :ref:`export-descriptions-terms`), it may be desireable to export multiple
+(see: :ref:`export-xml`), it may be desireable to export multiple
 XML files, or large files (typically larger than 1 MB) through the command line.
 This can avoid browser-timeout issues when trying to export large files, and
 it can be useful for extracting several descriptions at the same time. XML
@@ -356,7 +357,7 @@ to break the established hierarchy.
 
 .. SEEALSO::
 
-   * :ref:`export-descriptions-terms`
+   * :ref:`export-xml`
 
 .. _cli-bulk-export-eac:
 

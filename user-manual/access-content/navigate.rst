@@ -382,7 +382,7 @@ AtoM.
 
 **Find more information on:**
 
-* :ref:`Importing descriptions and terms <import-descriptions-terms>`
+* :ref:`Importing descriptions and terms <import-xml>`
 
 .. seealso::
 

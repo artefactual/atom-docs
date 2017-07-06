@@ -1,16 +1,12 @@
-.. _export-descriptions-terms:
+.. _export-xml:
 
-=============================
-Export descriptions and terms
-=============================
+==========
+Export XML
+==========
 
 AtoM provides an export functionality that can be used to export
-:term:`archival descriptions <archival description>`,
-:term:`authority records <authority record>`,
-:term:`archival institutions <archival institution>` and
-:term:`terms <term>`. Exported descriptions and :term:`taxonomies <taxonomy>`
-will be displayed in your web browser window. To save the XML export file, use
-your browser's "Save page as" functionality.
+:term:`archival descriptions <archival description>` and
+:term:`authority records <authority record>` as XML data.
 
 .. TIP::
 
@@ -30,11 +26,13 @@ The following file types can be exported:
   archival institution descriptions and taxonomy terms)
 * Dublin Core XML, MODS XML (archival descriptions and associated taxonomy terms)
 * EAC (authority records)
-* SKOS (hierarchical taxonomies)
+
 
 .. SEEALSO::
 
    * :ref:`cli-bulk-export`
+   * :ref:`csv-export`
+   * :ref:`import-export-skos`
 
 EAD export
 ==========
@@ -107,33 +105,4 @@ This will export the authority record currently being viewed.
    :width: 80%
    :alt: Export EAC file from authority record page.
 
-SKOS export
-===========
-
-In AtoM 2.0, authenticated (logged-in) users can export SKOS files by clicking
-on Manage term while on a term :term:`view page`.
-
-.. image:: images/manage-term.*
-   :align: center
-   :width: 80%
-   :alt: Finding the manage term page from View term page.
-
-In a manage :term:`term` page, select SKOS under Export. This will
-export the current term and all its narrow terms.
-
-.. image:: images/export-eac.*
-   :align: center
-   :width: 80%
-   :alt: Export SKOS file from manage term page.
-
-.. TIP::
-
-   Be aware that some browsers (e.g., Safari) may only allow you to save the
-   Exported SKOS file as HTML. Firefox and Chrome provide the ability to Save
-   page as XML, which enables Importing as XML into another program or into
-   another version of AtoM.
-
-
-
-
-:ref:`Back to top <export-descriptions-terms>`
+:ref:`Back to top <export-xml>`

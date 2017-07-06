@@ -1,23 +1,27 @@
-.. _import-descriptions-terms:
-
-=============================
-Import descriptions and terms
-=============================
-
-This page describes how to import
-:term:`archival descriptions <archival description>`, :term:`terms <term>` and
-:term:`archival institutions <archival institution>`. The following file types
-can be imported:
-
-* EAD (hierarchical archival descriptions and associated authority records,
-  archival institution descriptions and taxonomy terms)
-* Dublin Core XML, MODS XML (archival descriptions and associated taxonomy terms)
-* EAC (authority records)
-* :term:`SKOS` (hierarchical taxonomies)
-
-To import using a CSV file, please see the :ref:`CSV import page <csv-import>`.
-
 .. _import-xml:
+
+==========
+Import XML
+==========
+
+This page describes how to import :term:`archival description` and
+:term:`authority record` data in XML format via the :term:`user interface`.
+For descriptions, this includes:
+
+* EAD 2002 XML
+* Dublin Core XML
+* MODS XML
+
+For authority records, this includes EAC-CPF XML.
+
+.. SEEALSO::
+
+   AtoM can also import SKOS RDF XML and CSV files. For more information, see:
+
+   * :ref:`import-export-skos`
+   * :ref:`csv-import`
+
+.. _import-description-xml:
 
 Import XML file
 ===============
@@ -111,39 +115,4 @@ the key behaviors are outlined below:
 
    * :ref:`csv-actors-import`
 
-.. _import-skos:
-
-Import SKOS file
-================
-
-1. Click on the import menu, then click on XML.
-
-2. Click on the link to the SKOS import page.
-
-.. image:: images/import-menu-skos.*
-   :align: center
-   :width: 80%
-   :alt: Import menu showing link to SKOS import page.
-
-3. Click on Browse, and navigate to an XML file saved to your computer. Click
-   Open.
-
-4. Type in the name of the :term:`Taxonomy` you are importing into (e.g.
-   Places, Subjects, etc).
-
-.. TIP::
-
-   AtoM currently defaults to "Places" in the taxonomy field. Users can
-   replace this with the name of any taxonomy by typing it into the field.
-
-5. Click Import. AtoM will display the number of terms imported to the
-   taxonomy and the time elapsed. Users can click to view the taxonomy, or
-   return to import more terms to the same taxonomy. If there are errors in
-   the import, AtoM will display the errors.
-
-.. image:: images/skos-completed.*
-   :align: center
-   :width: 80%
-   :alt: Screen showing completed SKOS import.
-
-:ref:`Back to top <import-descriptions-terms>`
+:ref:`Back to top <import-xml>`

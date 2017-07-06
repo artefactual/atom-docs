@@ -1197,7 +1197,7 @@ Glossary
     types of controlled vocabulary." (`W3C SKOS Primer, 18 August 2009
     <http://www.w3.org/TR/2009/NOTE-skos-primer-20090818/>`_). It is used
     in AtoM to import and export hierarchical :term:`taxonomies
-    <taxonomy>`. See: :ref:`export-descriptions-terms`. See also:
+    <taxonomy>`. See: :ref:`export-xml`. See also:
     :ref:`terms` and :ref:`import-skos`.
 
   Slug

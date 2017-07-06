@@ -101,10 +101,11 @@ application.
 * :ref:`Edit an existing term <edit-term>`
 * :ref:`Delete a term <delete-term>`
 
-.. SEE ALSO:
+.. SEEALSO::
 
    * :ref:`term-name-vs-subject`
-   * :ref:`browse-places-subjects`
+   * :ref:`browse-subjects-places`
+   * :ref:`import-export-skos`
    * :ref:`The Manage menu <main-menu-manage>`
    * :ref:`term-data-entry`
    * :ref:`archival-descriptions`

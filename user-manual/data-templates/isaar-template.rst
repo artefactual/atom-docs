@@ -18,8 +18,9 @@ On this page you will find:
 
    * :ref:`authority-records`
    * :ref:`csv-import`
-   * :ref:`import-descriptions-terms`
-   * :ref:`export-descriptions-terms`
+   * :ref:`import-xml`
+   * :ref:`export-xml`
+   * :ref:`cli-import-export`
 
 
 ISAAR(CPF) Authority record CSV template

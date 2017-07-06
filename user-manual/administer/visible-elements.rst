@@ -163,7 +163,7 @@ When you have made your changes, remember to click "Save" in the
    module, it is also removed from the EAD XML export for public users.
 
    For more information on EAD XML export, see:
-   :ref:`export-descriptions-terms`
+   :ref:`export-xml`
 
 :ref:`Back to top <visible-elements>`
 
@@ -226,7 +226,7 @@ When you have made your changes, remember to click "Save" in the
    exported by a non-authenticated user. For more information on export and
    physical storage, see:
 
-   * :ref:`export-descriptions-terms`
+   * :ref:`export-xml`
    * :ref:`physical-storage`
 
 :ref:`Back to top <visible-elements>`
