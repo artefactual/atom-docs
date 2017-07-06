@@ -79,8 +79,8 @@ being performed. Examples include:
   the :ref:`PREMIS <premis-template>` rights applied to a parent. See:
   :ref:`rights-inheritance`.
 * *arObjectMoveJob* - Move an archival description from one
-   :term:`parent record` to another (or to become a top-level description).
-   See: :ref:`move-archival-description`
+  :term:`parent record` to another (or to become a top-level description).
+  See: :ref:`move-archival-description`
 * *arUpdatePublicationStatusJob* - Update the :term:`publication status` of a
   record and its descendants to either "published" or "draft". See:
   :ref:`publish-archival-description`.
