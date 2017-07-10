@@ -43,8 +43,28 @@ Bulk import of XML files
 
 While XML files can be imported individually via the :term:`user interface`
 (see: :ref:`import-xml`), it may be desireable to import multiple
-XML files through the command line. Below is the basic syntax for the bulk XML
-import task:
+XML files through the command line. The ``import:bulk`` command-line task can
+be used to import the following types of XML data:
+
+* MODS and EAD 2002 (for :term:`archival description` data)
+* SKOS RDF XML (for :term:`term` data import into a :term:`taxonomy`)
+* EAC-CPF XML (for :term:`authority record` data)
+
+The primary documentation on preparing for XML imports, and on how matching
+behavior is handled for some of the import options, is maintained in the User
+Manual. See:
+
+* :ref:`import-xml`
+* :ref:`import-export-skos`
+
+.. WARNING::
+
+   You can only import one type of XML at a time with this task. For example,
+   do not attempt to import EAC CPF and EAD 2002 XML at the same time.
+   Instead, you should import one :term:`entity` type first, and then the
+   other with a separate ``import:bulk`` command
+
+Below is the basic syntax for the bulk XML import task:
 
 .. code:: bash
 
@@ -55,7 +75,7 @@ Using the import:bulk command
 
 .. image:: images/bulk-import-cli-options.*
    :align: center
-   :width: 85%
+   :width: 90%
    :alt: An image of the options available in the import:bulk command
 
 By typing ``php symfony help import:bulk`` into the command-line without
@@ -90,6 +110,15 @@ identifiers used internally in AtoM to manage the various taxonomies, which
 can be found in AtoM in ``/lib/model/QubitTaxonomy.php`` (see on GitHub
 :at-gh:`here <lib/model/QubitTaxonomy.php#L20>`).
 
+.. TIP::
+
+   SKOS imports can also be completed via the user interface from a remote URL
+   or a local file. In the user interface, multiple SKOS serializations can be
+   used, while only SKOS XML can be imported with this task. See the primary
+   SKOS import documentation in the User Manual:
+
+   * :ref:`import-export-skos`
+
 **Example use:** Importing terms to the Places taxonomy
 
 .. code-block:: bash
@@ -119,15 +148,18 @@ Taxonomy name                       ID
 =================================== ===
 
 The ``--completed-dir`` option is used to automatically move files (e.g. XML
-files during an import) into a completed directory after they have imported. This
-can be useful during troubleshooting, to determine which files have imported and
-which have failed. The option takes a file path to the chosen directory as its
-parameter. You must manually create the directory first - the task will not
-automatically generate one at the specified location. Example use:
+files during an import) into a completed directory after they have imported.
+This can be useful during troubleshooting, to determine which files have
+imported and which have failed. The option takes a file path to the chosen
+directory as its parameter. You must manually create the directory first - the
+task will not automatically generate one at the specified location. Example
+use:
 
 .. code-block:: bash
 
    php symfony import:bulk --completed-dir="/path/to/my/completed-directory" /path/to/my/importFolder
+
+The ``--schema`` option is deprecated and should not be used.
 
 The ``--output`` option will generate a simple CSV file containing details of
 the import process, including the time elapsed and memory used during each
@@ -184,6 +216,93 @@ number and [z] is the total number of files to be imported.
    :align: center
    :width: 80%
    :alt: an example of the verbose output after an import via the CLI
+
+The ``--update`` option can be used when you want to use an XML import to
+update existing archival descriptions, instead of creating new records. There
+are 2 modes, but only the ``--update="delete-and-replace`` mode is supported
+for XML imports. When used, AtoM will attempt to identify matching records,
+and then delete the match before proceeding with the XML import as a new
+record. For more information on how AtoM attempts to match incoming XML
+imports to existing records, see:
+
+* :ref:`xml-description-matching`
+* :ref:`actor-xml-matching`
+
+.. IMPORTANT::
+
+   The ``--update`` option will **only** work with EAC-CPF and EAD 2002 XML
+   imports. It cannot be used for MODS or SKOS XML imports via the
+   command-line. Only the "Delete and replace" mode will work with the update
+   option.
+
+   Related :term:`enities <entity>` that were linked to the matched and
+   deleted records are **not** also deleted - if you want them removed, they
+   must be manually deleted separately. Simliarly, on import of the
+   replacement record(s), recreating the previous links to other related
+   entities is not guaranteed - AtoM proceeds with the replacement import as
+   if it were new, and uses the matching and linking criteria described in the
+   links above to determine if it should link to existing related entities or
+   create new ones.
+
+   We strongly recommend you review the User Manual documentation, as it
+   contains further details:
+
+   * :ref:`ead-delete-replace`
+   * :ref:`delete-replace-actor-xml`
+
+The ``--limit`` option can be used with ``--update`` to increase the
+likelihood of a successful match by limiting the match criteria to either
+records belonging to a specific repository, or matching a specific existing
+top-level description (for :term:`archival description` imports). For more
+information on how entities can be linked to a repository, see:
+
+* :ref:`link-archival-institution`
+* :ref:`link-repo-actor`
+
+The ``--limit`` option takes the :term:`slug` of the related :term:`repository`
+or top-level :term:`archival description` as its value. For example, to
+import a folder of EAD 2002 XML descriptions called "*my-updates*", deleting
+any existing matches but limit the matching criteria to those descriptions
+linked to a repository with the slug "*my-repository*", your command might
+look like this:
+
+
+.. code-block:: bash
+
+   php symfony import:bulk --update="delete-and-replace" --limit="my-repository" /path/to/my-updates
+
+.. IMPORTANT::
+
+   The ``--limit`` option can only be used in conjunction with the
+   ``--update="delete-and-replace"`` option. This means it can only be used
+   for EAD 2002 and EAC-CPF XML. When importing EAC-CPF
+   :term:`authority record` data, you can only use a repository slug as the
+   limiter. See the links above to the primary User Manual documentation for
+   more information.
+
+Normally, when attempting to match records, if AtoM fails to find a match
+candidate, it will proceed to import the row as a new record. However, you can
+use the ``--skip-unmatched`` option with ``--update`` to change this default
+behavior. When ``--skip-unmatched`` is used, then any records that do not
+match will be ignored during the import, and reported in the console log shown
+on the :ref:`Job details <job-details>` page of the related import job (see:
+:ref:`manage-jobs` for more information). This is recommended if you are
+intending to only import updates to existing records. Note that
+``--skip-unmatched`` will not work if it is not used in conjunction with the
+``--update`` option.
+
+Similarly, with new imports, you can use the ``--skip-matched`` option to skip
+any records that AtoM identifies as matching those you have already imported.
+This can be useful if you are uncertain if some of the XML records
+have been previously imported - such as when passing records to a portal site
+or union catalogue. Any XML data that appear to match records will be ignored
+during the import, and reported in the console log shown on the
+:ref:`Job details <job-details>` page of the related import job. For more
+information on how AtoM attempts to match incoming imports to
+existing records, see:
+
+* :ref:`xml-description-matching`
+* :ref:`actor-xml-matching`
 
 :ref:`Back to top <cli-import-export>`
 

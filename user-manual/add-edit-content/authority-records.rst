@@ -181,26 +181,26 @@ overall) in the application, AtoM behaves in several specific ways:
 
 * :ref:`Create a new authority record <create-authority-record>`
 * :ref:`Edit an existing authority record <edit-authority-record>`
-* :ref:`Link an existing authority record to an archival description
-  <link-authority-to-description>`
-* :ref:`Create a relationship between two authority records
-  <link-two-authority-records>`
-* :ref:`Create a relationship between an authority record and a function
-  <link-authority-record-function>`
-* :ref:`Delete an authority record <delete-authority-record>`
+* :ref:`link-authority-to-description`
+* :ref:`link-repo-actor`
+* :ref:`link-two-authority-records`
+* :ref:`link-authority-record-function`
+* :ref:`delete-authority-record`
 
 .. TIP::
+
    For more information on using the specific :term:`fields <field>` within
    the Authority record template, see: :ref:`ISAAR template <isaar-template>`
 
-.. seealso::
+.. SEEALSO::
 
    * :ref:`add-term-fly`
    * :ref:`add-custom-links`
    * :ref:`entity-types`
    * :ref:`Exit edit mode <exit-edit-mode>`
    * :ref:`term-name-vs-subject`
-
+   * :ref:`import-actor-xml`
+   * :ref:`csv-import-authority-records-gui`
 
 
 .. _create-authority-record:
@@ -825,6 +825,8 @@ improve import matching, see:
 
 * :ref:`csv-actor-matching`
 * :ref:`csv-update-actors`
+* :ref:`actor-xml-matching`
+* :ref:`delete-replace-actor-xml`
 
 .. SEEALSO::
 
