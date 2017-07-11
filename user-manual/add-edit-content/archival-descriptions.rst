@@ -1243,8 +1243,8 @@ the intellectual :term:`arrangement` of an :term:`archival unit`.
    :ref:`searching <search-atom>` for the :term:`archival description` - see
    :ref:`Access content <access-content>` for more information on navigation
    in AtoM.
-2. In the :term:`treeview` located in the :term:`context menu` on the left-
-   hand side of the record's :term:`view page`, the current record being
+2. In the :term:`treeview` (depending on your settings located either on the left-
+   hand side or above the record's :term:`view page`), the current record being
    displayed in the :term:`view page` will be highlighted by a dark grey bar.
    For more information on the treeview, see: :ref:`context-menu-treeview`.
 3. In the :term:`treeview`, hover your cursor over the sibling record you wish

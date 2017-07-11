@@ -42,7 +42,6 @@ status updates, imports and exports, move operations, print reports, and more.
    * :ref:`move-archival-description`
    * :ref:`csv-import`
    * :ref:`csv-export`
-   * :ref:`manage-jobs`
 
 Users can see the status of job requests by navigating to |edit| **Manage > Jobs**.
 
