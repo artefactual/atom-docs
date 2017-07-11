@@ -1367,8 +1367,8 @@ Sort button
 The sort button is a navigational element that appears on some browse and
 search pages throughout AtoM. It allows a user to change the sort order of the
 results being displayed. Common values used in the sort button as it
-appears in AtoM include: Alphabetic, Identifier (or
-:term:`reference code`), Most recent, or Date.
+appears in AtoM include: Alphabetic, Relevance, Identifier, :term:`Reference code` 
+Most recent, or Start date and End date.
 
 On search and/or browse pages, the Sort button appears as a small
 :term:`drop-down menu` at the top right of the results. Hovering over the button
@@ -1383,22 +1383,23 @@ When results are ordered by "Most recent," the most recently added and/or
 edited records in the results will appear at the top of the list, allowing users
 to discover new or recently updated content.
 
-When the sort order is set to "Identifier," (or "Reference code" as it is
-labeled on the :term:`archival description` browse page), results are
+When the sort order is set to "Identifier," results are
 displayed by the identifier, based on an alphabetic **ASCII sort** (more
-information on ASCII sort is included in the IMPORTANT note below). On
-archival descriptions, the sort order is based on full inherited reference
+information on ASCII sort is included in the IMPORTANT note below). 
+
+When the sort order is set to "Reference code," (on the :term:`archival description` 
+browse page) results are based on the full inherited reference
 code, and NOT on the individual identifiers of each record, regardless of
 whether or not :ref:`reference code inheritance <inherit-reference-code>` is
 turned on in **Admin > Settings** or not. For more information on reference
 codes vs. identifiers and display options, see: :ref:`inherit-reference-code`.
 
-When the sort order is set to "Date" (currently only available on
+When the sort order is set to "Start date" or "End date" (currently only available on
 :term:`archival descriptions <archival description>`), AtoM will order the
-results by the internal, ISO-8601 formatted (e.g. YYYY-MM-DD) start date
-values - **not** the display date shown to public users, which is a free text
+results by the internal, ISO-8601 formatted (e.g. YYYY-MM-DD) start date or end 
+date values - **not** the display date shown to public users, which is a free text
 field allowing users to express approximation or uncertainty. Results without
-a start date value will appear last.
+a start date value or end date value will appear last.
 
 .. IMPORTANT::
 

@@ -425,13 +425,15 @@ Sort browser (users)
 --------------------
 
 :term:`Administrators <administrator>` can configure default sort order for
-the browse display as either "alphabetic", "last updated," or "identifier" for
-logged-in users. "Last updated" will display records most recently added or
-edited at the top of the results, allowing users to explore what has changed.
-By default, the sort order is set to "Last updated" for authenticated users.
-However, users have the option to reorder the page while browsing via the
-:ref:`sort button <recurring-sort-button>` located at the top of most browse
-pages.
+the browse display as either "alphabetic,"" "last updated," "identifier," or 
+"reference code" for logged-in users. "Last updated" will display records most 
+recently added or edited at the top of the results, allowing users to explore 
+what has changed. "Reference code" refers to the full inherited reference code, 
+while "Identifier" refers to the individual identifier of each record. 
+
+By default, the sort order is set to "Last updated" for authenticated users. 
+However, users have the option to reorder the page while browsing via the 
+:ref:`sort button <recurring-sort-button>` located at the top of most browse pages.
 
 .. seealso::
 
@@ -445,13 +447,16 @@ Sort browser (anonymous)
 ------------------------
 
 :term:`Administrators <administrator>` can configure default sort order for
-the browse display as either "alphabetic," "last updated," or "identifier" for
-public users (e.g., not logged-in). "Last updated" will display records most
-recently added or edited at the top of the results, allowing users to explore
-what has changed. By default, the sort order is set to "Alphabetic" for
-anonymous (i.e. public) users. However, users have the option to reorder the
-page while browsing via the :ref:`sort button <recurring-sort-button>` located
-at the top of most browse pages.
+the browse display as either "alphabetic," "last updated," "identifier," or 
+"reference code" for public users (e.g., not logged-in). "Last updated" will 
+display records most recently added or edited at the top of the results, allowing 
+users to explore what has changed. "Reference code" refers to the full inherited 
+reference code while "Identifier" refers to the individual identifier of each 
+record.
+
+By default, the sort order is set to "Alphabetic" page while browsing via 
+the :ref:`sort button <recurring-sort-button>` located at the top of most browse 
+pages.
 
 .. seealso::
 
