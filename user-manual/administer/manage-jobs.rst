@@ -32,7 +32,7 @@ As of AtoM 2.2, the ability to generate a PDF or RTF :term:`finding aid` from
 :ref:`PREMIS <premis-template>` rights inheritance, are now also handled as
 asynchronous :term:`jobs <job>` in AtoM. Later versions of AtoM have increasingly
 used the job scheduler to handle long-running operations, including publication
-status updates, imports and exports, move operations, and more.
+status updates, imports and exports, move operations, print reports, and more.
 
 .. SEEALSO::
 
@@ -42,6 +42,7 @@ status updates, imports and exports, move operations, and more.
    * :ref:`move-archival-description`
    * :ref:`csv-import`
    * :ref:`csv-export`
+   * :ref:`manage-jobs`
 
 Users can see the status of job requests by navigating to |edit| **Manage > Jobs**.
 
