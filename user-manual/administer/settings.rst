@@ -88,6 +88,7 @@ This section will describe each :term:`field` in the "Global"
 * :ref:`Default publication status <default-publication-status>`
 * :ref:`drafts-notification`
 * :ref:`SWORD deposit directory <sword-directory>`
+* :ref:`cache-xml-setting`
 
 Hovering over each :term:`field` will also provide additional information on
 that field - it will appear in an "information box" below your cursor.
@@ -247,33 +248,6 @@ in a reference code (see Inherit reference code, below). The default
 reference code separator appears as a dash "-" in AtoM, which can be changed
 by an administrator to suit institutional practices.
 
-.. WARNING::
-
-   A bug has been found in the `2.3.0 release <https://wiki.accesstomemory.org/Releases/Release_announcements/Release_2.3>`__
-   related to this setting - see issue
-   `#10276 <https://projects.artefactual.com/issues/10276>`__ in our issue
-   tracker for more information. If you have tried to use a ``.`` period as a
-   reference code separator and are experiencing issues, the 2.3.1 release
-   will include a fix for this issue going forward. To resolve the
-   current issues in your AtoM instance, we have prepared a script that can be
-   run from the command-line. The script is available at:
-
-   * https://gist.github.com/fiver-watson/929e6c3380bedd32f3a77d21403c80de
-
-   **Instructions on how to run the script locally**
-
-   1. Follow the link above and download the script. Place it somewhere
-      accessible from the root directory of your AtoM installation.
-   2. From AtoM's root directory, use the ``tools:run`` command to execute the
-      script, like so:
-
-      .. code-block:: bash
-
-         php symfony tools:run path/to/location/of/10276-separator-fix.php
-
-      The script will replace any periods used with the default ``-`` dash
-      separator in the database, which should resolve page load errors.
-
 .. _inherit-reference-code:
 
 Inherit reference code (information object)
@@ -425,14 +399,14 @@ Sort browser (users)
 --------------------
 
 :term:`Administrators <administrator>` can configure default sort order for
-the browse display as either "alphabetic,"" "last updated," "identifier," or 
-"reference code" for logged-in users. "Last updated" will display records most 
-recently added or edited at the top of the results, allowing users to explore 
-what has changed. "Reference code" refers to the full inherited reference code, 
-while "Identifier" refers to the individual identifier of each record. 
+the browse display as either "alphabetic,"" "last updated," "identifier," or
+"reference code" for logged-in users. "Last updated" will display records most
+recently added or edited at the top of the results, allowing users to explore
+what has changed. "Reference code" refers to the full inherited reference code,
+while "Identifier" refers to the individual identifier of each record.
 
-By default, the sort order is set to "Last updated" for authenticated users. 
-However, users have the option to reorder the page while browsing via the 
+By default, the sort order is set to "Last updated" for authenticated users.
+However, users have the option to reorder the page while browsing via the
 :ref:`sort button <recurring-sort-button>` located at the top of most browse pages.
 
 .. seealso::
@@ -447,15 +421,15 @@ Sort browser (anonymous)
 ------------------------
 
 :term:`Administrators <administrator>` can configure default sort order for
-the browse display as either "alphabetic," "last updated," "identifier," or 
-"reference code" for public users (e.g., not logged-in). "Last updated" will 
-display records most recently added or edited at the top of the results, allowing 
-users to explore what has changed. "Reference code" refers to the full inherited 
-reference code while "Identifier" refers to the individual identifier of each 
+the browse display as either "alphabetic," "last updated," "identifier," or
+"reference code" for public users (e.g., not logged-in). "Last updated" will
+display records most recently added or edited at the top of the results, allowing
+users to explore what has changed. "Reference code" refers to the full inherited
+reference code while "Identifier" refers to the individual identifier of each
 record.
 
-By default, the sort order is set to "Alphabetic" page while browsing via 
-the :ref:`sort button <recurring-sort-button>` located at the top of most browse 
+By default, the sort order is set to "Alphabetic" page while browsing via
+the :ref:`sort button <recurring-sort-button>` located at the top of most browse
 pages.
 
 .. seealso::
@@ -651,6 +625,90 @@ systems administrator. The default is ``/tmp``.
 
 :ref:`Back to top <settings>`
 
+
+.. _cache-xml-setting:
+
+Cache description XML exports upon creation/modification
+--------------------------------------------------------
+
+AtoM includes several options for exporting :term:`archival description`
+metadata in XML format - for more information, see: :ref:`export-xml`.
+
+Additionally, users can enable the OAI plugin to allow harvesters to collect
+archival description metadata via the OAI-PMH protocol, in EAD 2002 or Dublin
+Core XML - for more information, see: :ref:`oai-pmh`.
+
+Normally, when exporting or exposing archival description metadata, the XML is
+generated synchronously - that is, on request via the web browser. However,
+many web browsers have a built-in timeout limit of approximately 1 minute, to
+prevent long-running tasks and requests from exhausting system resources.
+Because of this, attempts to export or harvest EAD 2002 XML for large
+descriptive hierarchies can fail, as the browser times out before the document
+can be fully generated and served to the end user.
+
+To avoid this, AtoM includes this setting, which allows users to pre-generate
+XML exports via AtoM's job scheduler, and then cache them in the ``downloads``
+directory. This way, when users attempt to download large XML files, they can
+be served directly, instead of having to generate before the browser timeout
+limit is reached.
+
+When this setting is set to "Yes," then anytime an :term:`archival description`
+is created or modified via the :term:`user interface`, this will automatically
+trigger a background :term:`job` that will generate and cache EAD 2002 XML and
+DC XML for the related resource. With any new description or edit, two jobs
+are initiated - one to generate the EAD 2002 XML, and the other to generate
+the Dublin Core XML.
+
+.. figure:: images/xml-cache-jobs.*
+   :align: center
+   :figwidth: 90%
+   :width: 100%
+   :alt: XML cache jobs as seen on the Jobs page.
+
+   Highlighted in red is an example of the 2 jobs triggered by an edit to an
+   archival description when the Cache XML setting is turned on -  one job to
+   generate an updated version of the cached EAD 2002 XML, and another job to
+   generate an updated version of the cached DC XML.
+
+The XML generated will be cached in AtoM's ``downloads`` directory - 2
+subdirectories named ``ead`` and ``dc`` will automatically be created, and the
+XML will be stored by type in these two subdirectories.
+
+When users attempt to download XML from the :term:`view page` of an archival
+description, AtoM will check if there is a cached copy of the requested XML
+and if so, it will serve it. If there is no cached version available, then
+AtoM will fall back to the default behavior of generating the XML on request.
+
+By default, cached XML files are generated for public users, meaning that
+:term:`draft <draft record>` descriptions are **not** included in the XML.
+
+.. IMPORTANT::
+
+   This functionality does **not** cover imports - you will need to edit the
+   record in the user interface after an import to trigger the automatic cache
+   XML job.
+
+   Additionally, edits to related entities (such as a linked
+   :term:`authority record`, :term:`subject` or :term:`place` access points,
+   etc.) will **not** automatically trigger an update to the cached EAD 2002
+   and DC XML. Again, you will need to manually edit the related description
+   to trigger an update.
+
+There is also a command-line task available that will generate cached
+EAD 2002 and DC XML for all existing descriptions. See:
+
+* :ref:`cache-xml-cli`
+
+If you are making many edits to your AtoM site, you may want to disable this
+setting until your edits are complete and then run the command-line task, to
+avoid constantly triggering many jobs.
+
+.. NOTE::
+
+   Archival description XML data exported via the :term:`clipboard` is
+   generated on request via AtoM's job scheduler - the cached XML is not used.
+   For more information on this functionality, see:
+   :ref:`xml-export-clipboard`
 
 .. _site-information:
 

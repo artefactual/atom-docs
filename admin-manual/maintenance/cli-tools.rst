@@ -717,6 +717,99 @@ The task will ask you to confirm the operation:
 
 Enter "y" if you are certain you would like to delete all draft records.
 
+:ref:`Back to top <maintenance-cli-tools>`
+
+.. _cache-xml-cli:
+
+Generate and cache XML for all archival descriptions
+====================================================
+
+AtoM includes several options for exporting :term:`archival description`
+metadata in XML format - for more information, see: :ref:`export-xml`.
+
+Additionally, users can enable the OAI plugin to allow harvesters to collect
+archival description metadata via the OAI-PMH protocol, in EAD 2002 or Dublin
+Core XML - for more information, see: :ref:`oai-pmh`.
+
+Normally, when exporting or exposing archival description metadata, the XML is
+generated synchronously - that is, on request via the web browser. However,
+many web browsers have a built-in timeout limit of approximately 1 minute, to
+prevent long-running tasks and requests from exhausting system resources.
+Because of this, attempts to export or harvest EAD 2002 XML for large
+descriptive hierarchies can fail, as the browser times out before the document
+can be fully generated and served to the end user.
+
+To avoid this, AtoM includes a setting that allows users to pre-generate
+XML exports via AtoM's job scheduler, and then cache them in the ``downloads``
+directory. This way, when users attempt to download large XML files, they can
+be served directly, instead of having to generate before the browser timeout
+limit is reached. For more information, see: :ref:`cache-xml-setting`.
+
+When engaged, this setting will **not** retroactively generate and cache XML
+for existing descriptions. Howeveer, this command-line task can be used to
+generate and cache EAD 2002 and DC XML for all existing descriptions.
+
+The basic syntax for the task is:
+
+.. code-block:: bash
+
+    php symfony cache:xml-representations
+
+By running ``php symfony help cache:xml-representations`` we can see the
+command-line's help output for the task:
+
+.. image:: images/cli-cache-xml.*
+   :align: center
+   :width: 85%
+   :alt: An image of the command-line's help text for the Cache XML task
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for Symfony to be
+able to execute the task.
+
+As the task progresses, the console will output the related ID of the current
+:term:`information object`, followed by the number of the current information
+object (aka :term:`archival description`) and the total count:
+
+.. image:: images/cli-cache-xml-progress.*
+   :align: center
+   :width: 60%
+   :alt: An example of the console's output when running the cache xml task
+
+In some cases with very large hierarchies (for example, an
+:term:`archival unit` with thousands or tens of thousands of descendants),
+available system memory may be exhausted during this process, and the task may
+crash before all XML can be generated. In that case, the ``--skip`` option can
+be useful for restarting the task exactly where it left off.
+
+The ``--skip`` option accepts as a parameter the number of information objects
+to be skipped - so for example, if the task crashed while trying to generate
+the XML for infomation object 2445 of 5528, then you could restart it on
+information object 2445 again by skipping the first 2444, like so:
+
+.. code-block:: bash
+
+   php symfony cache:xml-representations --skip="2444"
+
+.. NOTE::
+
+   By default, cached XML files are generated for public users, meaning that
+   :term:`draft <draft record>` descriptions are **not** included in the XML,
+   and cached XML is not generated for any unpublished archival units.
+
+The XML generated will be cached in AtoM's ``downloads`` directory - 2
+subdirectories named ``ead`` and ``dc`` will automatically be created, and the
+XML will be stored by type in these two subdirectories.
+
+.. SEEALSO::
+
+   * :ref:`cache-xml-setting`
+   * :ref:`oai-pmh`
+   * :ref:`export-xml`
+
+:ref:`Back to top <maintenance-cli-tools>`
+
+
 .. _cli-scrub-html:
 
 Remove HTML content from archival description fields
@@ -802,6 +895,7 @@ The task will have the following effects on HTML elements:
    :width: 85%
    :alt: An example of HTML in a form, before and after running the script
 
+:ref:`Back to top <maintenance-cli-tools>`
 
 .. _cli-count-terms:
 
@@ -922,6 +1016,8 @@ an English installation:
    :align: center
    :width: 85%
    :alt: A sample CSV output from the Places taxonomy
+
+:ref:`Back to top <maintenance-cli-tools>`
 
 .. _cli-purge-data:
 

@@ -77,8 +77,8 @@ full EAD 2002 XML file can be generated.
 
    For more information, see:
 
-   * **TO DO - Link to settings**
-   * **TO DO - Link to CLI task**
+   * :ref:`cache-xml-setting`
+   * :ref:`cache-xml-cli`
 
 Public users will not see :term:`draft <draft record>` descriptions in the EAD
 XML provided. For authenticated (i.e. logged in) users, all descriptions will
@@ -175,8 +175,8 @@ By default, the export is created on-request via the web browser.
 
    For more information, see:
 
-   * **TO DO - Link to settings**
-   * **TO DO - Link to CLI task**
+   * :ref:`cache-xml-setting`
+   * :ref:`cache-xml-cli`
 
 **To export DC XML from an archival description view page**
 
