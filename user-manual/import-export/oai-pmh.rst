@@ -9,9 +9,9 @@ OAI Repository
    :width: 18
 
 AtoM has the ability to act as a data provider to service providers interested
-in harvesting descriptive metadata from AtoM, by exposing simple Dublin Core
-XML via OAI-PMH, the Open Archives Initiative Protocol for Metadata
-Harvesting (version 2.0).
+in harvesting descriptive metadata from AtoM, by exposing either simple Dublin
+Core XML or EAD 2002 XML via OAI-PMH, the Open Archives Initiative Protocol
+for Metadata Harvesting (version 2.0).
 
 The Open Archives Initiative describes OAI-PMH as follows:
 
@@ -35,6 +35,7 @@ requests and responses using the OAI-PMH verbs supported by AtoM.
 * :ref:`oai-pmh-plugin`
 * :ref:`oai-pmh-settings`
 * :ref:`oai-pmh-api-key`
+* :ref:`cache-xml-oai`
 * :ref:`oai-pmh-verbs`
 
 .. _oai-pmh-plugin:
@@ -330,6 +331,43 @@ requests by directly manipulating the URL in the browser.
 
 :ref:`Back to top <oai-pmh>`
 
+.. _cache-xml-oai:
+
+Cache XML to make EAD 2002 XML available via OAI-PMH
+====================================================
+
+EAD 2002 XML is a metadata exchange standard designed to express the full
+hierarchical arrangement of an :term:`archival unit` in a single XML document.
+
+Normally, when exposing archival description metadata, the XML is
+generated synchronously - that is, on request via the web browser. However,
+many web browsers and harvesters have a built-in timeout limit of
+approximately 1 minute, to prevent long-running tasks and requests from
+exhausting system resources. Because of this, attempts to expose EAD 2002 XML
+for large descriptive hierarchies via OAI-PMH can fail, as the timeout limit
+is reachedbefore the document can be fully generated and served to the end user.
+
+To avoid this, AtoM includes this setting, which allows users to pre-generate
+XML exports via AtoM's job scheduler, and then cache them in the ``downloads``
+directory. This way, when harvesters attempt to request EAD XML via OAI-PMH, the
+file can be served directly, instead of having to generate on the fly.
+
+For more information, see:
+
+* :ref:`cache-xml-setting`
+
+There is also a command-line task that a system administrator can run to
+pre-generate and cache XML for all existing descriptions. See:
+
+* :ref:`cache-xml-cli`
+
+We strongly recommend users enable this setting and run the command-line task
+if you wish to make EAD 2002 XML available to harvesters via the OAI
+Repository module. If you do not, then AtoM will return a
+``cannotDisseminateFormat`` error code to attempts by harvesters to request
+``oai_ead``.
+
+
 .. _oai-pmh-verbs:
 
 OAI-PMH verbs in AtoM
@@ -340,6 +378,11 @@ will support, along with some example responses. For more details, see the
 OAI-PMH 2.0 documentation, available at:
 
 * http://www.openarchives.org/OAI/2.0/openarchivesprotocol.htm
+
+Presently, AtoM can expose metadata in 2 XML formats via the OAI Repository
+module: ``oai_dc`` (i.e. simple Dublin Core XML), and ``oai_ead`` (i.e. EAD
+2002 XML). See the :ref:`oai-list-metadata-formats` Verb example below for
+mroe information.
 
 OAI verbs covered below include:
 
@@ -369,8 +412,8 @@ This verb is used to retrieve information about a repository.
 
    <?xml version="1.0" encoding="utf-8" ?>
      <OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
-       <responseDate>2016-03-24T22:58:11Z</responseDate>
-       <request verb="Identify">http://192.168.33.10/;oai</request>
+       <responseDate>2017-08-16T22:58:11Z</responseDate>
+       <request verb="Identify">http://www.example.com/;oai</request>
        <Identify>
          <repositoryName>Example repository</repositoryName>
          <baseURL>http://www.example.com/index.php</baseURL>
@@ -402,7 +445,9 @@ the repository.
 
 .. NOTE::
 
-   At this time, only Dublin Core (oai_dc) XML is currently available.
+   Presently, AtoM can expose metadata in 2 XML formats via the OAI Repository
+   module: ``oai_dc`` (i.e. simple Dublin Core XML), and ``oai_ead`` (i.e. EAD
+   2002 XML).
 
 **Example request:**
 
@@ -412,29 +457,48 @@ the repository.
 
 **Example response:**
 
-The response shows that the repository supports one metadata format:
-``oai_dc``. For each of the formats returned by such a request, the location
-of an XML Schema describing the format should be given. The support of these
-formats at the repository-level does not imply support of each format for each
-item of the repository.
+The response shows that the repository supports two metadata formats:
+``oai_dc`` and ``oai_ead``. For each of the formats returned by such a
+request, the location of an XML Schema describing the format should be given.
+The support of these formats at the repository-level does not imply support of
+each format for each item of the repository.
+
+If you request a format (for example ``oai_ead``) and it is not available,
+then AtoM will return a ``cannotDisseminateFomat`` error code. Harvesters
+can then try again in one of the other available metadata formats.
 
 .. code-block:: xml
 
    <?xml version="1.0" encoding="utf-8" ?>
-    <OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/
-    http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
-      <responseDate>2015-03-26T22:12:10Z</responseDate>
-      <request verb="ListMetadataFormats">http://example-site.com/;oai</request>
-      <ListMetadataFormats>
-          <metadataFormat>
-              <metadataPrefix>oai_dc</metadataPrefix>
-              <schema>http://www.openarchives.org/OAI/2.0/oai_dc.xsd</schema>
-              <metadataNamespace>http://www.openarchives.org/OAI/2.0/oai_dc/</metadataNamespace>
-          </metadataFormat>
-      </ListMetadataFormats>
-  </OAI-PMH>
+   <OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/
+   http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+     <responseDate>2017-08-16T21:29:28Z</responseDate>
+     <request verb="ListMetadataFormats">http://10.10.10.10/;oai</request>
+     <ListMetadataFormats>
+             <metadataFormat>
+           <metadataPrefix>oai_dc</metadataPrefix>
+           <schema>http://www.openarchives.org/OAI/2.0/oai_dc.xsd</schema>
+           <metadataNamespace>http://www.openarchives.org/OAI/2.0/oai_dc/</metadataNamespace>
+         </metadataFormat>
+             <metadataFormat>
+           <metadataPrefix>oai_ead</metadataPrefix>
+           <schema>http://www.loc.gov/ead/ead.xsd</schema>
+           <metadataNamespace>urn:isbn:1-931666-22-9</metadataNamespace>
+         </metadataFormat>
+         </ListMetadataFormats>
+   </OAI-PMH>
+
+.. IMPORTANT::
+
+   If you want to make ``oai_ead`` metadata available to harvesters, then you
+   **must** pre-generate and cache the EAD XML - AtoM will not attempt to
+   generate it on the fly for OAI request. If no EAD 2002 XML has been
+   pre-generated and cached, then AtoM will return a ``cannotDisseminateFormat``
+   error code to attempts by harvesters to request ``oai_ead``.
+
+   For more information, see above: :ref:`cache-xml-oai`.
 
 .. _oai-list-identifiers:
 
@@ -452,8 +516,9 @@ harvesting of headers based on set membership and/or datestamp. The
   specifies a lower bound for datestamp-based selective harvesting.
 * ``until`` - *optional* - parameter entered as UTCdatetime value, which
   specifies an upper bound for datestamp-based selective harvesting.
-* ``metadataPrefix`` - *required* - must be ``oai_dc`` (**not** required if
-  resuming a truncated request - see ``resumptionToken``, below).
+* ``metadataPrefix`` - *required* - can be either ``oai_dc`` for Dublin Core
+  XML, or ``oai_ead`` for EAD 2002 XML (**not** required if resuming a
+  truncated request - see ``resumptionToken``, below).
 * ``resumptionToken`` - *exclusive* - used to continue a request that was
   truncated. Value is a token supplied as part of the previous incomplete
   request. If you have previously passed other arguments (such as the
@@ -478,7 +543,7 @@ A resumption token is included in the example.
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/
     http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
-      <responseDate>2015-03-26T22:41:15Z</responseDate>
+      <responseDate>2017-08-16T21:35:39Z</responseDate>
       <request verb="ListIdentifiers" metadataPrefix="oai_dc">http://example-site.com/;oai</request>
       <ListIdentifiers>
         <header>
@@ -547,14 +612,32 @@ selective harvesting of records based on set membership and/or datestamp. The
   specifies an upper bound for datestamp-based selective harvesting.
 * ``set`` - *optional* argument with a ``setSpec`` value , which specifies set
   criteria for selective harvesting.
-* ``metadataPrefix`` - *required* - must be ``oai_dc`` (**not** required if
-  resuming a truncated request - see ``resumptionToken``, below).
-* ``resumptionToken`` - *exlusive* - used to continue a request that was
+* ``metadataPrefix`` - *required* - can be either ``oai_dc`` for Dublin Core
+  XML, or ``oai_ead`` for EAD 2002 XML (**not** required if resuming a
+  truncated request - see ``resumptionToken``, below).
+* ``resumptionToken`` - *exclusive* - used to continue a request that was
   truncated. Value is a token supplied as part of the previous incomplete
   request. If you have previously passed other arguments (such as the
   metadataPrefix, or from/until parameters), they should not be included in
   the continued request - only the verb, and the resumptionToken argument and
   token should be included.
+
+.. IMPORTANT::
+
+   EAD 2002 XML is a hierarchically organized metadata exchange standard,
+   designed to express a full :term:`archival unit` (such as a :term:`fonds`
+   or :term:`collection` and all of its descendant records) in a single XML
+   document. This means that one EAD XML file could contain thousands of
+   descriptions.
+
+   To ensure that the response does not exhaust all available system memory,
+   when ``oai_ead`` is the metadata prefix used for a ListRecords request, AtoM
+   will return a single full EAD 2002 XML document at a time before halting
+   the request and including a resumption token. A harvester can use the
+   resumption token to continue requesting records as needed - see the
+   :ref:`oai-list-identifiers` section above for an example request using a
+   resumption token.
+
 
 **Example request:**
 
@@ -648,7 +731,7 @@ requested and the format of the metadata that should be included in the record.
 
    http://example-site.com/;oai?verb=GetRecord&identifier=oai:example-site.com:repoid_10267&metadataPrefix=oai_dc
 
-**Example response**
+**Example response - DC XML**
 
 .. code-block:: xml
 
@@ -756,6 +839,144 @@ link to the  digital object in the OAI response, using
     </GetRecord>
     </OAI-PMH>
 
+**Example response - EAD 2002 XML**
+
+.. code-block:: xml
+
+   <?xml version="1.0" encoding="utf-8" ?>
+   <OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+     <responseDate>2017-08-16T22:04:49Z</responseDate>
+     <request verb="GetRecord" identifier="oai:10.10.10.10:atomdemo_20099" metadataPrefix="oai_ead">http://10.10.10.10/;oai</request>
+         <GetRecord>
+         <record>
+           <header>
+             <identifier>oai:10.10.10.10:atomdemo_20099</identifier>
+             <datestamp>2013-06-13T22:36:34Z</datestamp>
+             <setSpec>oai:10.10.10.10:atomdemo_20099</setSpec>
+           </header>
+           <metadata>
+               <ead>
+                 <eadheader langencoding="iso639-2b" countryencoding="iso3166-1" dateencoding="iso8601" repositoryencoding="iso15511" scriptencoding="iso15924" relatedencoding="DC">
+                   <eadid identifier="faculty-of-social-work-office-of-dean-fonds" countrycode="CA" mainagencycode="CA-ON00362" url="http://demo.accesstomemory.org/index.php/faculty-of-social-work-office-of-dean-fonds" encodinganalog="identifier">U257</eadid>
+                   <filedesc>
+                     <titlestmt>
+                       <titleproper encodinganalog="title">Faculty of Social Work – Office of the Dean fonds</titleproper>
+                     </titlestmt>
+                     <publicationstmt>
+                       <publisher encodinganalog="publisher">Wilfrid Laurier University Archives</publisher>
+                       <address>
+                         <addressline>75 University Avenue West</addressline>
+                         <addressline>Waterloo</addressline>
+                         <addressline>Ontario</addressline>
+                         <addressline>Canada</addressline>
+                         <addressline>N2L 3C5</addressline>
+                         <addressline>Telephone: 519-884-0710 ext.3906</addressline>
+                         <addressline>Email: libarch@wlu.ca</addressline>
+                         <addressline>http://library.wlu.ca/archives</addressline>
+                       </address>
+                       <date normal="2012-04-23" encodinganalog="date">2012-04-23</date>
+                     </publicationstmt>
+                   </filedesc>
+                   <profiledesc>
+                     <creation>
+                     Generated by Access to Memory (AtoM) 2.4.0 <date normal="2017-08-16">2017-08-16 21:44 UTC</date>
+                   </creation>
+                     <langusage>
+                       <language langcode="eng">English</language>
+                     </langusage>
+                   </profiledesc>
+                 </eadheader>
+                 <archdesc level="fonds" relatedencoding="ISAD(G)v2">
+                   <did>
+                     <unittitle encodinganalog="3.1.2">Faculty of Social Work – Office of the Dean fonds</unittitle>
+                     <unitid encodinganalog="3.1.1" countrycode="CA" repositorycode="ON00362">U257</unitid>
+                     <unitdate id="atom_77515_event" normal="1968" encodinganalog="3.1.3">1968 - ?</unitdate>
+                     <physdesc encodinganalog="3.1.5">24 cm of textual records.</physdesc>
+                     <repository>
+                       <corpname>Wilfrid Laurier University Archives</corpname>
+                       <address>
+                         <addressline>75 University Avenue West</addressline>
+                         <addressline>Waterloo</addressline>
+                         <addressline>Ontario</addressline>
+                         <addressline>Canada</addressline>
+                         <addressline>N2L 3C5</addressline>
+                         <addressline>Telephone: 519-884-0710 ext.3906</addressline>
+                         <addressline>Email: libarch@wlu.ca</addressline>
+                         <addressline>http://library.wlu.ca/archives</addressline>
+                       </address>
+                     </repository>
+                     <langmaterial encodinganalog="3.4.3">
+                       <language langcode="eng">English</language>
+                     </langmaterial>
+                     <dao linktype="simple" href="http://demo.accesstomemory.org/uploads/r/wilfrid-laurier-university-archives/7/7/77511/firstdswgrads.jpg" role="master" actuate="onrequest" show="embed"/>
+                     <origination encodinganalog="3.2.1">
+                       <corpname id="atom_77515_actor">Wilfrid Laurier University. Faculty of Social Work</corpname>
+                     </origination>
+                   </did>
+                   <bioghist id="md5-9f94c64df4259a9b0020b3eb8e6bbd34" encodinganalog="3.2.2">
+                     <note>
+                       <p>The Waterloo Lutheran University Graduate School of Social Work was founded in 1966 with a curriculum based on clinical practice as well as community organization practice. Students specialized in one of five concentrations: community development, social planning, social administration, research, or individuals, families and social groups. The first class graduated in 1968, the same year that the Graduate School of Social Work was accredited by the Council on Social Work Education. In 1974, the name of the program was changed to the Faculty of Social Work to reflect the expansion into part-time, continuing education and undergraduate social welfare courses (offered in the Faculty of Arts and Science). In 1981, the Faculty of Social Work created an undergraduate Social Welfare Option, considered to be a minor.<lb/><lb/>The Doctor of Social Work program was established in 1987, making it the first doctoral program at Wilfrid Laurier University.<lb/><lb/>By 1988 the Faculty had moved from the seminary to the Peters building and then to the Aird building before moving to the St. Jerome’s Duke Street building in 2006. This Laurier Kitchener campus was a 12 million dollar conversion from historic landmark to professional school.<lb/><lb/>The first Dean of the Faculty of Social Work was Sheldon L. Rahn (1966-1968), followed by Francis J. Turner (1969-1979), Sherman Merle (1980-1983), Shankar A. Yelaja (1983-1993), Jonnah Hurn Mather (1994-2001), Luke J. Fusco (2001-2006), Leslie Cooper (2006-2009), and Nicholas Coady (2011-).</p>
+                     </note>
+                   </bioghist>
+                   <odd type="publicationStatus">
+                     <p>published</p>
+                   </odd>
+                   <odd type="statusDescription">
+                     <p>Final</p>
+                   </odd>
+                   <scopecontent encodinganalog="3.3.1">
+                     <p>Fonds consists of records from the Office of the Dean, Faculty of Social Work.</p>
+                   </scopecontent>
+                   <controlaccess>
+                     <genreform source="rad" encodinganalog="1.1C">Textual record</genreform>
+                     <subject>Education</subject>
+                   </controlaccess>
+                   <accruals encodinganalog="3.3.3">
+                     <p>Further accruals are expected.</p>
+                   </accruals>
+                   <accessrestrict encodinganalog="3.4.1">
+                     <p>Open</p>
+                   </accessrestrict>
+                   <otherfindaid encodinganalog="3.4.5">
+                     <p>http://library.wlu.ca/specialcollections/findingaid/3472</p>
+                   </otherfindaid>
+                   <dsc type="combined">
+                     <c level="series">
+                       <did>
+                         <unittitle encodinganalog="3.1.2">Alumni Office records</unittitle>
+                         <unitid encodinganalog="3.1.1" countrycode="CA" repositorycode="ON00362">U257-1</unitid>
+                       </did>
+                       <odd type="publicationStatus">
+                         <p>published</p>
+                       </odd>
+                     </c>
+                   </dsc>
+                 </archdesc>
+               </ead>
+           </metadata>
+           <about>
+             <feed xmlns="http://www.w3.org/2005/Atom">
+              <entry>
+                <id>firstdswgrads-jpg</id>
+                <title>firstdswgrads.jpg</title>
+                <link
+               href="http://demo.accesstomemory.org/uploads/r/wilfrid-laurier-university-archives/7/7/77511/firstdswgrads.jpg" rel="self"></link>
+                <category term="master" label="Master"></category>
+              </entry>
+              <entry>
+                <id>firstdswgrads-142-jpg</id>
+                <title>firstdswgrads_142.jpg</title>
+                <link
+               href="http://demo.accesstomemory.org/uploads/r/wilfrid-laurier-university-archives/7/7/77511/firstdswgrads_142.jpg" rel="self"></link>
+                <category term="thumbnail" label="Thumbnail"></category>
+              </entry>
+             </feed>
+            </about>
+         </record>
+       </GetRecord>
+   </OAI-PMH>
+
+
 .. _oai-list-sets:
 
 List sets
@@ -797,7 +1018,7 @@ parameter supported by this verb.
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/
     http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
-      <responseDate>2015-03-29T23:28:18Z</responseDate>
+      <responseDate>2017-08-16T23:28:18Z</responseDate>
       <request verb="ListSets">http://example-site.com/;oai</request>
       <ListSets>
           <set>
