@@ -370,16 +370,24 @@ This task will work for the following entities:
 
 * information objects (e.g. :term:`archival descriptions <archival description>`)
 * actors (e.g. :term:`authority records <authority record>`)
-* terms
-* physical objects (e.g. storage locations, etc)
-* events (e.g. creation events, etc - usually the relationship between actors
-  and information objects)
-* accessions
+* :term:`terms <term>`
+* :term:`taxonomies <taxonomy>`
+* physical objects (e.g. :term:`storage <physical storage>` locations, etc)
+* :term:`events <event>` (e.g. creation events, etc - usually the relationship
+  between actors and information objects)
+* :term:`accession records <accession record>`
+* :term:`deaccession records <deaccession record>`
+* :term:`digital objects <digital object>`
+* :term:`functions <function>`
+* :term:`rights records <rights record>`
+* :term:`static pages <static page>`
+* relations (e.g. relations between objects - i.e. relating two descriptions,
+  relating an information object to a digital object, relating an information
+  object to a physical storage location, relating two actors, etc)
 
-If an error has left other areas in AtoM without slugs (for example, a user
-account's view page, a donor record, etc), this task will **not** resolve the
-issue - you will likely have to manually insert a slug into the database for
-that entity.
+If an error has left other areas in AtoM without slugs (for example, a donor
+record, etc), this task will **not** resolve the issue - you will likely have
+to manually insert a slug into the database for that entity.
 
 For information objects, the generate slugs task will respect the global
 settings for the source from which description permalinks are created. These
@@ -394,8 +402,8 @@ used to generate the slug has not been provided (see
 :ref:`below <slugs-in-atom>` for more information on how slugs are generated in
 AtoM).
 
-However, if you would like to replace all existing slugs with newly generated
-slugs, you can use the ``--delete`` option, like so:
+However, if you would like to replace **all** existing slugs with newly
+generated slugs, you can use the ``--delete`` option, like so:
 
 .. code:: bash
 
@@ -438,6 +446,7 @@ Entity type          Slug derived from
 Archival description Title or Reference code
 Authority record     Authorized form of name
 Accession            Identifier (accession number)
+Users, Groups        Automatically generated
 Other entities       Name
 ==================== =============================
 
@@ -464,6 +473,13 @@ assigned, slugs for archival descriptions can be changed through the
 :term:`user interface`. Slugs for other entity types cannot be changed through
 the user interface - either the record must be deleted and a new record created,
 or you must manipulate the database directly.
+
+.. TIP::
+
+   Users can also edit the slug associated with an :term:`archival description`
+   via the :term:`user interface`. For more information, see:
+
+   * :ref:`rename-title-slug`
 
 Finally, :term:`static pages <static page>`, or permanent links, include a
 slug :term:`field` option, but only slugs for new static pages can be edited
