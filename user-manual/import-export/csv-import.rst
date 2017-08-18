@@ -528,6 +528,18 @@ spreadsheet application), importing a **Fonds > Series > Item** hierarchy:
    is not properly ordered with parent records appearing **before** their
    children, your import will fail!
 
+Records in a CSV are imported sequentially, row by row. As each row is
+imported, the legacyID value is added to AtoM's ``keymap`` table in the
+database. When a *parentID* is encountered, AtoM will check the ``keymap`` table
+for the corresponding *legacyID*. If a *parentID* value doesn't refer to the
+*legacyID* of a previously imported description, AtoM's import logic will fall
+back to check for an existing description with that internal object ID.
+
+If there is still no match, then a warning will be included in the console
+output (shown on the :ref:`Job details <job-details>`page), and the record will
+be imported as a top-level description. Be sure to double-check the results
+post-import!
+
 .. _csv-description-parent-slug:
 
 qubitParentSlug
