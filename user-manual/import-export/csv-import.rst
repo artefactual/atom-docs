@@ -358,6 +358,15 @@ See: :ref:`cli-purge-data` in the Administrator's manual for more information.
 Legacy ID mapping: dealing with hierarchical data in a CSV
 ==========================================================
 
+.. figure:: images/keymap-table.*
+   :align: right
+   :figwidth: 20%
+   :width: 100%
+   :alt: Image of the the keymap table in AtoM's database
+
+   A representation of the keymap table in AtoM, from an Entity Relationship
+   Diagram of AtoM's MySQL database.
+
 The *legacyId* column in imports is used to associate specific legacy data to
 AtoM data using ID columns. Why would you need to associate this data? Let's
 say you're importing a CSV file of description data you've exported from a
@@ -368,15 +377,6 @@ then be used to look up the AtoM ID of the parent that was imported earlier.
 With the AtoM ID discovered, the parent/child relationship can then be
 created. In addition to hierarchical description data, supplementary data such
 as events must specify a legacy parent ID when imported.
-
-.. figure:: images/keymap-table.*
-   :align: right
-   :figwidth: 20%
-   :width: 100%
-   :alt: Image of the the keymap table in AtoM's database
-
-   A representation of the keymap table in AtoM, from an Entity Relationship
-   Diagram of AtoM's MySQL database.
 
 When CSV data is imported into AtoM, values in the *legacyID* column are
 stored in AtoM's keymap table, in a column named *source_id*. A system
@@ -395,12 +395,12 @@ mapping subsequent imports.
 .. TIP::
 
    There is no way to set the ``--source-name`` during an import conducted via
-   the :term`user interface`. Instead, the file name of the import is used as
+   the :term:`user interface`. Instead, the file name of the import is used as
    the source name value by default.
 
    You can always check what source name was used for records created via an
    import by entering into :term:`edit mode` and navigating to the
-   Administration :term:` area <information area>` of the :term:`edit page` -
+   Administration :term:`area <information area>` of the :term:`edit page` -
    the source name used will be diplayed there:
 
    .. image:: images/source-name-ui.*
@@ -416,12 +416,12 @@ specific source name when mapping legacy IDs to AtoM IDs:
 
     php symfony csv:import information_objects_rad.csv --source-name=collection_name
 
-In the above example, `collection_name` represents the value added by the user
-during import - now `collection_name` will be added to the *source_name* column
+In the above example, ``collection_name`` represents the value added by the user
+during import - now ``collection_name`` will be added to the *source_name* column
 of the keymap table for all records imported. Given the above example, the
 subsequent import of :ref:`events <csv-import-events>` using the following
 command would make sure that they get associated with information objects from
-the specific source identified as `collection_name`:
+the specific source identified as ``collection_name``:
 
 .. code-block:: bash
 
@@ -434,11 +434,11 @@ the specific source identified as `collection_name`:
    need to enclose it in quotation marks. For example, both of the following
    are valid:
 
-   `php symfony csv:import information_objects_rad.csv --source-name=collection_name`
+   ``php symfony csv:import information_objects_rad.csv --source-name=collection_name``
 
    or:
 
-   `php symfony csv:import information_objects_rad.csv --source-name="collection name"`
+   ``php symfony csv:import information_objects_rad.csv --source-name="collection name"``
 
 The ``--source-name`` option can also be used to keep larger imports that
 have been broken into multiple CSV files related. Adding the ``--source-name``
