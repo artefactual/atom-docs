@@ -1320,7 +1320,7 @@ lower level of description can also be moved so that it becomes a new
 
 3. You will be redirected to the Move page, which lists all top-level (i.e.
    :term:`parent <parent record>`) descriptions, and provides a search bar.
-4. To find your move location more quickly ou can use the Move search bar to
+4. To find your move location more quickly you can use the Move search bar to
    bring up results in the Move browse results listed below. For example, if
    you don't know the name of a series record but you do know the name of the
    :term:`fonds` or :term:`collection`, you could search for the top-level
@@ -1335,13 +1335,13 @@ lower level of description can also be moved so that it becomes a new
 5. The blue hyperlinks allow Users to drill down into the hierarchy of the
    :term:`archival description` selected.  Clicking on a top-level description
    in the Move page will display the description's lower levels of description
-   - for example, clicking on a :term:`fonds` would reveal the series or sous-
-   fonds below it, and clicking on the series would then reveal the files
-   below it. To orient yourself, a :term:`breadcrumb trail` will appear above
-   the list of potential archival descriptions, indicating where in the
-   :term:`archival unit's <archival unit>` you are currently located -
-   this is intented to help Users understand if they are moving the record to
-   a sous-fonds, series, sub-series, or a file.
+   - for example, clicking on a :term:`fonds` would reveal the series below it,
+   and clicking on the series would then reveal the files below the series. To
+   orient yourself, a :term:`breadcrumb trail` will appear above the list of
+   potential archival descriptions, indicating where in the
+   :term:`archival unit's <archival unit>` you are currently located - this is
+   intented to help Users understand if they are moving the record to
+   a subfonds, series, sub-series, or a file.
 
 .. image:: images/move-breadcrumb.*
    :align: center
@@ -1350,7 +1350,10 @@ lower level of description can also be moved so that it becomes a new
 
 6. If there are no more lower-level descriptions beneath the current level you
    are exploring in the move browser, then the move browser will be empty, as
-   you can no longer drill down any lower in the hierarchy.
+   you can no longer drill down any lower in the hierarchy. You can always use
+   the :term:`breadcrumb trail` above the move browser to navigate back up the
+   current archival hierarchy, or use the search box to begin a new search and
+   browse for the correct move location.
 
 .. image:: images/move-no-lower.*
    :align: center
@@ -1359,9 +1362,9 @@ lower level of description can also be moved so that it becomes a new
 
 7. When you have reached the right level where you want to move the record,
    the new :term:`parent description<parent record>` should be the last
-   breadcrumb in the :term:`breadcrumb trail`, while the new siblings will be
-   listed as hyperlinks below. Click "Move here" in the :term:`button block`
-   to move the record.
+   breadcrumb in the :term:`breadcrumb trail`, while the new siblings (if
+   any) will be listed as hyperlinks below. Click "Move here" in the
+   :term:`button block` to move the record.
 
 .. image:: images/button-block-move.*
    :align: center
@@ -1371,11 +1374,42 @@ lower level of description can also be moved so that it becomes a new
 8. To make a child-level description a top-level description (e.g. to turn a
    series into a :term:`fonds`), click "Move here" **without** selecting one
    of the blue links.
-9. You will be redirected to the moved record's :term:`view page`. If you look
-   at the :term:`treeview` located in the :term:`context menu` on the left-
-   hand side of the description's view page, you will see that your
-   description has been moved to a new location.
+9. After clicking the Move button, the page will reload with a notification
+   at the top of the page informing you that the Move operation has been
+   initiated by the job scheduler. There is a link in the notification that
+   will take you to the :ref:`manage-jobs` page if you want to check on the
+   status of the move operation.
 
+.. image:: images/move-notification.*
+   :align: center
+   :width: 85%
+   :alt: An image of the Move page after initiating a Move job.
+
+10. On the Jobs page, if the job has been successfully completed, then a link
+    to the record's new location will appear as a blue arrow in the Job status
+    column.
+
+    .. image:: images/move-jobs-link-01.*
+       :align: center
+       :width: 85%
+       :alt: An image of the Jobs page with a user about to click the link to
+             the related record
+
+    Additionally, if you click the "Full report" link, you will be taken to the
+    :ref:`Job details <job-details>` page, where you can see the console output
+    of the move job. There will also be a link to the associated description
+    provided there.
+
+    .. image:: images/move-jobs-link-02.*
+       :align: center
+       :width: 85%
+       :alt: An image of the Jobs page with a user about to click the link to
+             the related record
+
+.. SEEALSO::
+
+   * :ref:`manage-jobs`
+   * :ref:`installation-asynchronous-jobs`
 
 :ref:`Back to top <archival-descriptions>`
 
