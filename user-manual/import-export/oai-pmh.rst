@@ -510,6 +510,9 @@ retrieving only headers rather than records. Optional arguments permit selective
 harvesting of headers based on set membership and/or datestamp. The
 ``metadataPrefix`` is a required argument as part of the request.
 
+When the metadata prefix used in the request is `oai_ead`, only top-level
+descriptions will be returned in the response.
+
 **Arguments**
 
 * ``from`` - *optional* - parameter entered as UTCdatetime value, which
