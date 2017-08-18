@@ -32,20 +32,33 @@ information on CSV.
 
 **In AtoM**, the CSV import function allows user to import data from a
 spreadsheet, or another database (so long as the export from the database is
-in CSV format). Artefactual has created a number of
-:ref:`CSV templates <csv-column-mapping>` that can be used to import
+made to conform with the AtoM CSV template format). Artefactual has created a
+number of :ref:`CSV templates <csv-column-mapping>` that can be used to import
+various different :term:`entity` types. AtoM expects the column headers used in
+the templates and imports that do not conform to this pattern will fail or
+cause unexpected results.
 
-For **small data imports** (i.e. CSV files with less than 100 records), CSV files
-that have been mapped to the sample templates provided
-(:ref:`below <csv-column-mapping>`) can be imported via the :term:`user
-interface`.
+CSV imports peformed via the :term:`user interface` in AtoM are are executed
+as :term:`jobs <job>` and performed asynchronously in the background to avoid
+timeouts in the web browser. Jobs in AtoM are handled by
+`Gearman <http://gearman.org>`__, and the status of AtoM jobs can be seen in
+the :term:`user interface` via the **Manage > Jobs** page. For more information,
+see: :ref:`manage-jobs` and :ref:`installation-asynchronous-jobs`.
 
-For **large data imports** (i.e. CSV files with 100 or more records), the
-import will need to be performed using the Command-line interface (CLI) -
-meaning you will need access to your installation environment and some basic
-familiarity with using the command line.
+To import CSV files, a user must be logged in as an :term:`administrator`.
+For more information on user groups and permissions, see:
 
-**Below are instructions for using the CSV import module in AtoM to:**
+* :ref:`user-roles`
+* :ref:`manage-user-accounts`
+* :ref:`edit-user-permissions`
+
+In addition to importing new records, AtoM can also attempt to identify
+matches on existing records and either update them in place, or delete the
+matches before importing the new records as replacements. This functionality
+will be described in greater detail below, along with other import options.
+
+
+**Jump to:**
 
 * :ref:`csv-before-you-import`
 * :ref:`Map legacy IDs to express hierarchical data <csv-legacy-id-mapping>`
@@ -74,6 +87,12 @@ familiarity with using the command line.
    Manual:
 
    * :ref:`csv-import-cli`
+
+   For other import options, see:
+
+   * :ref:`import-xml`
+   * :ref:`import-export-skos`
+   * :ref:`upload-digital-object`
 
 .. _csv-before-you-import:
 
@@ -171,6 +190,7 @@ Available example files are:
 
 * Accessions CSV template
 * Events CSV template
+* Repository CSV template
 
 All CSV templates can be found on the AtoM wiki:
 
