@@ -536,7 +536,7 @@ for the corresponding *legacyID*. If a *parentID* value doesn't refer to the
 back to check for an existing description with that internal object ID.
 
 If there is still no match, then a warning will be included in the console
-output (shown on the :ref:`Job details <job-details>`page), and the record will
+output (shown on the :ref:`Job details <job-details>` page), and the record will
 be imported as a top-level description. Be sure to double-check the results
 post-import!
 
