@@ -44,11 +44,10 @@ Search
 To help users locate and manage content, AtoM includes powerful search
 support, available anywhere in the application through the :term:`search box`
 located in the AtoM :term:`header bar`, or through one of the many dedicated
-search boxes for specific :term:`entities <entity>` or record types. As of
-release 2.0.0, AtoM now uses `Elasticsearch <http://www.elasticsearch.org/>`__
-to power its search functionality - Elasticsearch is an open source
-distributed search server based on Apache Lucene, which acts as AtoM's new
-search and analytic engine.
+search boxes for specific :term:`entities <entity>` or record types. AtoM uses
+`Elasticsearch <http://www.elasticsearch.org/>`__ to power its search
+functionality - Elasticsearch is an open source distributed search server
+based on Apache Lucene, which acts as AtoM's search and analytic engine.
 
 This section of the User Manual will cover the features available in the
 :term:`search box` (including faceted typeahead results, institutional search
@@ -56,6 +55,10 @@ box delimiters, and filter tags), and it will walk users through how to
 search for archival descriptions. Additionally, an outline of each of the
 dedicated search bars available throughout the application is provided, with
 instructions on how to search for different record types in each.
+
+For more information on how the search in AtoM is configured, see
+:ref:`advanced-search` - specifically, see:
+:ref:`advanced-search-via-searchbox`.
 
 **Below you will find an overview of:**
 
@@ -99,10 +102,13 @@ when a user enters text and presses enter, the results returned are for
 record-type results can be discovered via the :term:`typeahead` results
 presented in the search box (see: :ref:`below <search-typeahead>`).
 
-Search terms entered in the search box are, by default, searched with an "OR"
-operator - that is to say, searching for *kitty cat* would by default search
-*kitty* OR *kat*. AtoM supports a number of :term:`Boolean <boolean search>`
-operators - see: :ref:`Advanced search <advanced-search>`.
+Search terms entered in the search box are, by default, searched with an "AND"
+operator - that is to say, searching for ``kitty cat`` would by default search
+``kitty AND cat``. AtoM supports a number of :term:`Boolean <boolean search>`
+operators - see: :ref:`Advanced search <advanced-search>`, specifically:
+
+* :ref:`advanced-search-via-searchbox`
+* :ref:`advanced-search-operators`
 
 .. _search-typeahead:
 
@@ -215,7 +221,7 @@ suggestions from all records in the application for those types).
 Filter tags
 ^^^^^^^^^^^
 
-If a user enters a search query in the :term:`search box` while the delimiter.
+If a user enters a search query in the :term:`search box` while the delimiter
 is set to a particular :term:`repository` and presses enter, the
 :ref:`search results <page-type-search>` page will include a :term:`filter tag`
 at the top of the results, to offer a visual cue to the user that the results
@@ -763,6 +769,54 @@ with particular fields in the authority record edit template, see:
    the results, and AtoM will redirect you to the selected authority record's
    :term:`view page`.
 
+.. _es-fields-actor:
+
+Elasticsearch Authority record fields
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Below is a list of all indexed :term:`authority record` field names as they
+are found in Elasticsearch, the search index used in AtoM. Expert users can
+use the infomation below to target search queries to specific indexed fields,
+and implement search parameters otherwise not directly available via the
+:term:`user interface`. For more introductory information on syntax and basic
+use, see the Advanced search documentation - specifically,
+:ref:`es-fields-intro`. These must be used in the relevant dedicated search
+box to return results.
+
+.. WARNING::
+
+   Not all fields have been tested for their ability to be searched. In some
+   cases, the parameter expected may be an internal ID value and not a string
+   - for example, when searching for controlled terms that appear in a
+   :term:`drop-down menu` in the AtoM :term:`edit pages <edit page>`.
+
+.. code-block:: none
+
+   corporateBodyIdentifiers
+   createdAt
+   descriptionIdentifier
+   entityTypeId
+   i18n.%LANG%.authorizedFormOfName
+   i18n.%LANG%.datesOfExistence
+   i18n.%LANG%.functions
+   i18n.%LANG%.generalContext
+   i18n.%LANG%.history
+   i18n.%LANG%.institutionResponsibleIdentifier
+   i18n.%LANG%.internalStructures
+   i18n.%LANG%.legalStatus
+   i18n.%LANG%.mandates
+   i18n.%LANG%.places
+   i18n.%LANG%.revisionHistory
+   i18n.%LANG%.rules
+   i18n.%LANG%.sources
+   maintainingRepositoryId
+   otherNames.i18n.%LANG%.name
+   parallelNames.i18n.%LANG%.name
+   slug
+   sourceCulture
+   standardizedNames.i18n.%LANG%.name
+   updatedAt
+
 :ref:`Back to top <search-atom>`
 
 .. _dedicated-search-accessions:
@@ -877,6 +931,95 @@ For more information on working with accession records in AtoM, see:
 6. When you have found the record you are searching for, click on its title in
    the results, and AtoM will redirect you to the selected accession record's
    :term:`view page`.
+
+.. _es-fields-accession:
+
+Elasticsearch Accession record fields
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Below is a list of all indexed :term:`accession record` field names as they
+are found in Elasticsearch, the search index used in AtoM. Expert users can
+use the infomation below to target search queries to specific indexed fields,
+and implement search parameters otherwise not directly available via the
+:term:`user interface`. For more introductory information on syntax and basic
+use, see the Advanced search documentation - specifically,
+:ref:`es-fields-intro`. These must be used in the relevant dedicated search
+box to return results.
+
+.. WARNING::
+
+   Not all fields have been tested for their ability to be searched. In some
+   cases, the parameter expected may be an internal ID value and not a string
+   - for example, when searching for controlled terms that appear in a
+   :term:`drop-down menu` in the AtoM :term:`edit pages <edit page>`.
+
+.. code-block:: none
+
+   createdAt
+   date
+   i18n.%LANG.appraisal
+   i18n.%LANG.archivalHistory
+   i18n.%LANG.locationInformation
+   i18n.%LANG.physicalCharacteristics
+   i18n.%LANG.processingNotes
+   i18n.%LANG.receivedExtentUnits
+   i18n.%LANG.scopeAndContent
+   i18n.%LANG.sourceOfAcquisition
+   i18n.%LANG.title
+   identifier
+   slug
+   sourceCulture
+   updatedAt
+
+   Linked Creators - indexed fields
+   --------------------------------
+
+   creators.createdAt
+   creators.descriptionIdentifier
+   creators.i18n.%LANG.authorizedFormOfName
+   creators.i18n.%LANG.datesOfExistence
+   creators.i18n.%LANG.functions
+   creators.i18n.%LANG.generalContext
+   creators.i18n.%LANG.history
+   creators.i18n.%LANG.institutionResponsibleIdentifier
+   creators.i18n.%LANG.internalStructures
+   creators.i18n.%LANG.legalStatus
+   creators.i18n.%LANG.mandates
+   creators.i18n.%LANG.places
+   creators.i18n.%LANG.revisionHistory
+   creators.i18n.%LANG.rules
+   creators.i18n.%LANG.sources
+   creators.otherNames.i18n.%LANG.dates
+   creators.otherNames.i18n.%LANG.name
+   creators.otherNames.i18n.%LANG.note
+   creators.otherNames.sourceCulture
+
+   creators.parallelNames.i18n.%LANG.name
+   creators.parallelNames.i18n.%LANG.note
+   creators.parallelNames.sourceCulture
+   creators.slug
+   creators.standardizedNames.i18n.%LANG.dates
+   creators.standardizedNames.i18n.%LANG.name
+   creators.standardizedNames.i18n.%LANG.note
+   creators.standardizedNames.id
+   creators.standardizedNames.sourceCulture
+   creators.updatedAt
+
+   Linked Donors - indexed fields
+   ------------------------------
+
+   donors.contactInformations.contactPerson
+   donors.contactInformations.countryCode
+   donors.contactInformations.createdAt
+   donors.contactInformations.i18n.%LANG.authorizedFormOfName
+   donors.contactInformations.i18n.%LANG.city
+   donors.contactInformations.i18n.%LANG.contactType
+   donors.contactInformations.postalCode
+   donors.contactInformations.sourceCulture
+   donors.contactInformations.streetAddress
+   donors.contactInformations.updatedAt
+   donors.slug
+
 
 :ref:`Back to top <search-atom>`
 
@@ -1015,6 +1158,81 @@ particular fields in the archival institution record edit template, see:
    the results, and AtoM will redirect you to the selected archival
    institution's :term:`view page`.
 
+.. _es-fields-repository:
+
+Elasticsearch Archival institution record fields
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Below is a list of all indexed :term:`repository` field names as they
+are found in Elasticsearch, the search index used in AtoM. Expert users can
+use the infomation below to target search queries to specific indexed fields,
+and implement search parameters otherwise not directly available via the
+:term:`user interface`. For more introductory information on syntax and basic
+use, see the Advanced search documentation - specifically,
+:ref:`es-fields-intro`. These must be used in the relevant dedicated search
+box to return results.
+
+.. WARNING::
+
+   Not all fields have been tested for their ability to be searched. In some
+   cases, the parameter expected may be an internal ID value and not a string
+   - for example, when searching for controlled terms that appear in a
+   :term:`drop-down menu` in the AtoM :term:`edit pages <edit page>`.
+
+.. code-block:: none
+
+   contactInformations.contactPerson
+   contactInformations.countryCode
+   contactInformations.createdAt
+   contactInformations.i18n.%LANG%.authorizedFormOfName
+   contactInformations.i18n.%LANG%.city
+   contactInformations.i18n.%LANG%.contactType
+   contactInformations.location
+   contactInformations.postalCode
+   contactInformations.streetAddress
+   contactInformations.updatedAt
+   createdAt
+   geographicSubregions
+   i18n.%LANG%.accessConditions
+   i18n.%LANG%.authorizedFormOfName
+   i18n.%LANG%.buildings
+   i18n.%LANG%.city
+   i18n.%LANG%.collectingPolicies
+   i18n.%LANG%.contactType
+   i18n.%LANG%.datesOfExistence
+   i18n.%LANG%.descInstitutionIdentifier
+   i18n.%LANG%.descRevisionHistory
+   i18n.%LANG%.descRules
+   i18n.%LANG%.descSources
+   i18n.%LANG%.disabledAccess
+   i18n.%LANG%.findingAids
+   i18n.%LANG%.functions
+   i18n.%LANG%.generalContext
+   i18n.%LANG%.geoculturalContext
+   i18n.%LANG%.history
+   i18n.%LANG%.holdings
+   i18n.%LANG%.institutionResponsibleIdentifier
+   i18n.%LANG%.internalStructures
+   i18n.%LANG%.legalStatus
+   i18n.%LANG%.mandates
+   i18n.%LANG%.note
+   i18n.%LANG%.openingTimes
+   i18n.%LANG%.places
+   i18n.%LANG%.publicFacilities
+   i18n.%LANG%.region
+   i18n.%LANG%.reproductionServices
+   i18n.%LANG%.researchServices
+   i18n.%LANG%.revisionHistory
+   i18n.%LANG%.rules
+   i18n.%LANG%.sources
+   identifier
+   otherNames.i18n.%LANG%.name
+   otherNames.sourceCulture
+   parallelNames.i18n.%LANG%.name
+   slug
+   sourceCulture
+   updatedAt
+
 :ref:`Back to top <search-atom>`
 
 .. _dedicated-search-terms:
@@ -1129,6 +1347,40 @@ and then selecting a taxonomy).
 8. When you have found the record you are searching for, click on its title in
    the results, and AtoM will redirect you to the selected term's
    :term:`view page`.
+
+.. _es-fields-term:
+
+Elasticsearch term fields
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Below is a list of all indexed :term:`term` field names as they
+are found in Elasticsearch, the search index used in AtoM. Expert users can
+use the infomation below to target search queries to specific indexed fields,
+and implement search parameters otherwise not directly available via the
+:term:`user interface`. For more introductory information on syntax and basic
+use, see the Advanced search documentation - specifically,
+:ref:`es-fields-intro`. These must be used in the relevant dedicated search
+box to return results.
+
+.. WARNING::
+
+   Not all fields have been tested for their ability to be searched. In some
+   cases, the parameter expected may be an internal ID value and not a string
+   - for example, when searching for controlled terms that appear in a
+   :term:`drop-down menu` in the AtoM :term:`edit pages <edit page>`.
+
+.. code-block:: none
+
+   createdAt
+   i18n.%LANG%.name
+   numberOfDescendants
+   scopeNotes.i18n.%LANG%.content
+   slug
+   sourceCulture
+   taxonomyId
+   updatedAt
+   useFor.i18n.%LANG%.name
+   useFor.id
 
 :ref:`Back to top <search-atom>`
 
@@ -1416,16 +1668,16 @@ functions edit template, see: :ref:`isdf-template`.
 Users
 -----
 
-In AtoM 2.0.1, a :term:`dedicated search box` for managing Users and user
-accounts has been added to the user :ref:`browse page <page-type-browse>`.
-This search box will **only return user name and email
-matches** However, the search box is configured to return partial matches, so
-for example, a search for "ca" would return Names such as Cameron, Cal, and
-also Bianca, as well as returning any user with an email that ends with ".ca".
-This allows the dedicated search box to be used as a navigational aid, allowing
-an :term:`administrator` to quickly locate a specific user when there are many
-user accounts saved in the system (particularly in a :term:`multi-repository
-system` such as a :term:`network` or portal site).
+A :term:`dedicated search box` for managing Users and user accounts has been
+added to the user :ref:`browse page <page-type-browse>`. This search box will
+**only return user name and email matches** However, the search box is
+configured to return partial matches, so for example, a search for "ca" would
+return Names such as Cameron, Cal, and also Bianca, as well as returning any
+user with an email that ends with ".ca". This allows the dedicated search box
+to be used as a navigational aid, allowing an :term:`administrator` to quickly
+locate a specific user when there are many user accounts saved in the system
+(particularly in a :term:`multi-repository system` such as a :term:`network`
+or portal site).
 
 For more information on working with User accounts in AtoM, see:
 :ref:`manage-user-accounts`. See also: :ref:`edit-user-permissions`.
