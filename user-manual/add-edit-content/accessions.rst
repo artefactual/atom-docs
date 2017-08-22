@@ -4,6 +4,14 @@
 Accessions
 ==========
 
+.. |manage| image:: images/edit-sign.png
+   :height: 17
+   :width: 17
+
+.. |gears| image:: images/gears.png
+   :height: 17
+   :width: 17
+
 Accessions form an important first step in gaining physical and intellectual
 control over the resources held by an :term:`archival institution` or other
 form of :term:`repository`. "Accession" tends to be used as both a noun and a
@@ -82,37 +90,57 @@ Add a new accession record
    :alt: An image of of the Add menu in AtoM
 
 2. AtoM takes you to an accession record :term:`edit page` screen for data
-   entry. The Accession number field is automatically assigned a Unique ID, this
-   number cannot be altered.
+   entry. If you have the Accession mask enabled, then the Accession number
+   field will be automatically assigned a Unique ID based on the mask settings
+   - for more information, see: :ref:`accession-mask`. If the mask setting is
+   turned off, the field will be empty. Add a unique value to the Accession
+   number field or make edits to the pre-populated one as needed.
 
 .. image:: images/new-accession-edit.*
    :align: center
-   :width: 70%
+   :width: 90%
    :alt: An image of the accessions edit page
 
 .. TIP::
 
-   :term:`Administrators <administrator>` can alter the default accession mask
-   and counter (from which the accession number is generated) by navigating to
-   **Admin > Settings > Accession mask**. For more information, see:
-   :ref:`accession-mask` in :ref:`settings` - see also the example provided
-   in the section on altering the accessions mask for legacy accessions,
-   :ref:`below <alter-accession-mask>`.
+   :term:`Administrators <administrator>` can turn the accession mask on
+   or off, and alter the default accession mask and counter (from which the
+   accession number is generated) by navigating to |gears| **Admin > Settings
+   > Accession mask**. For more information, see: :ref:`accession-mask` in
+   :ref:`settings` - see also the example provided in the section on altering
+   the accessions mask for legacy accessions, :ref:`below <alter-accession-mask>`.
 
    .. image:: images/accession-mask.*
       :align: center
-      :width: 70%
+      :width: 90%
       :alt: An image of the accessions mask in Global settings
 
-3. The accession record edit template provides a variety of field types for
+3. If you attempt to use a value for the Accession number that is not unique
+   (i.e. is already in use by another :term:`accession record`), AtoM will
+   provide a warning, and will not allow the record to be saved until the
+   Accession number is edited and a unique value is added.
+
+.. image:: images/accession-id-warning.*
+   :align: center
+   :width: 80%
+   :alt: An image of the accession number warning
+
+4. The accession record edit template provides a variety of field types for
    data entry (e.g., calendar, free-text, pop-up dialogs and :term:`drop-downs
    <drop-down menu>`). Remember to click on each :term:`information area` to
    access the data entry fields grouped under it. Enter data as required
    (further information on filling out specific parts of the accession record
    is included below).
-4. Click the "Create" button in the :term:`button block` to create and save
+5. Click the "Create" button in the :term:`button block` to create and save
    the new :term:`accession record`. If you do not want to keep the record you
    can click the "Cancel" button and remove the record.
+
+.. image:: images/button-block-create.*
+   :align: center
+   :width: 75%
+   :alt: An image of the accession button block
+
+:ref:`Back to top <accession-records>`
 
 .. _add-accession-donor:
 
@@ -121,33 +149,72 @@ Add a donor
 
 In the Edit accession record screen, under the Donor/Transferring body area
 you can enter the names and contact information for related donors using the
-:term:`donor dialog`.
+:term:`donor dialog`. Click the "Add new" button to open the Donor dialog and
+add a new donor.
+
+.. image:: images/accession-donor-add.*
+   :align: center
+   :width: 70%
+   :alt: An image of the donor Area in the Accessions edit template
+
+In the :term:`donor dialog` that will pop-up, the Name :term:`field` at the
+top of the dialog is an autocomplete field. To link to an existing donor
+record, begin typing the name of the related Donor into the Name field - as
+you type, matches will appear in a :term:`drop-down menu` below the field and
+you can click on a name there to select it. Alternatively, you can create a
+new donor record by typing a new name, and completing the other related fields
+in the Donor dialog.
 
 .. image:: images/accession-donor-dialog.*
    :align: center
-   :width: 70%
+   :width: 90%
    :alt: An image of the donor dialog in the accession edit template
 
-Fields available in the :term:`donor dialog` include:
+Fields in the donor dialog are organized into 3 tabs - Main, Physical
+location, and Other details. Be sure to click on each tab and
+complete the related fields in the dialog as needed. Fields available in the
+:term:`donor dialog` include:
 
-* Name
-* Contact person
-* Street address
-* Region/province
-* Country
-* Postal code
-* Telephone
-* Email
+* **Name** - an autcomplete field where you can link to an existing donor
+  record or enter a new name to create a new donor record.
+* **Main tab:**
 
-When information is entered into the :term:`donor dialog`, a new Donor record
-is created. Donor records can be accessed via the :term:`main menu` by
-navigating to **Manage > Donors**.
+  * Contact person
+  * Telephone
+  * Fax
+  * Email
+  * URL
+
+* **Physical location tab:**
+
+  * Street address
+  * Region/province
+  * Country
+  * Postal code
+  * City
+  * Latitude
+  * Longitude
+
+* **Other details tab:**
+
+  * Contact type
+  * Note
+
+When new information is entered into the :term:`donor dialog`, a new Donor
+record is created. Alternatively, if you have selected an existing donor
+using the autcomplete values in the Name field, you can edit the existing
+contact information.
+
+Donor records can be accessed via the :term:`main menu` by navigating to
+|manage| **Manage > Donors**.
 
 .. TIP::
 
    Donor records can be created and managed separately from :term:`accession
    records <accession record>`. For a full explanation of donors, go to the
    :ref:`donors` page
+
+:ref:`Back to top <accession-records>`
 
 .. _add-accession-rights:
 
@@ -170,6 +237,7 @@ be added. For a full explanation of rights, go to the :ref:`rights` page.
    :width: 70%
    :alt: An image of the rights entry page accessed from the accessions edit page
 
+:ref:`Back to top <accession-records>`
 
 .. _link-accession-description:
 
@@ -203,7 +271,10 @@ by clicking "Save" in the :term:`button block` at the bottom of the accession
    Users can link an :term:`accession record` to a
    :term:`fonds`/:term:`collection` level :term:`archival description` or
    lower :term:`levels of description <level of description>` including sous-
-   fonds, series, sub-series, and files.
+   fonds, series, sub-series, and files. You can link to multiple archival
+   descriptions as needed by repeating the steps above.
+
+:ref:`Back to top <accession-records>`
 
 .. _view-accession:
 
@@ -232,6 +303,7 @@ to:
 * :ref:`Create an archival description from the accession
   <create-accession-description>`
 * :ref:`Delete an accession record <delete-accession-record>`
+* Under the "More button" you have the option to :ref:`add-rights-accession`
 
 .. image:: images/accession-button-block.*
    :align: center
@@ -241,12 +313,10 @@ to:
 .. TIP::
 
    You can always return to your :term:`accession record` later via the
-   :term:`main menu`, by navigating to **Manage > Acessions** and selecting a
-   record from the accessions :ref:`browse page <page-type-browse>`
-
+   :term:`main menu`, by navigating to |manage| **Manage > Acessions** and
+   selecting a record from the accessions :ref:`browse page <page-type-browse>`
 
 :ref:`Back to top <accession-records>`
-
 
 .. _edit-accession-record:
 
@@ -257,9 +327,9 @@ Existing :term:`accession records <accession record>` can be upated at any
 time by a logged-in user with edit privileges.
 
 1. Navigate to the record you want to edit. You can do this via the
-   :term:`main menu` in the AtoM :term:`header bar`, by clicking on **Manage >
-   Accessions**. For more information on navigation in AtoM, see: :ref:`Access
-   content <access-content>`
+   :term:`main menu` in the AtoM :term:`header bar`, by clicking on |manage|
+   **Manage > Accessions**. For more information on navigation in AtoM, see:
+   :ref:`Access content <access-content>`
 
 2. AtoM will redirect you to the accession record :ref:`browse page
    <page-type-browse>`. Select the record you want by clicking on the
@@ -394,6 +464,8 @@ so:
    limit to how many accruals can be added to an original
    :term:`accession record`.
 
+:ref:`Back to top <accession-records>`
+
 .. _add-legacy-accession:
 
 Add a legacy accession record
@@ -401,8 +473,8 @@ Add a legacy accession record
 
 Users who have recently migrated to AtoM, or are catching up on a backlog of
 accessions, may need to add new :term:`accession records <accession record>`
-that have older dates encoded in the accession number. There are two ways
-this can be done in AtoM - however, both require that a user have
+that have older dates encoded in the accession number. There are several ways
+this can be done in AtoM - however, the first two require that a user have
 :term:`administrator` access to the application.
 
 Method 1: CSV Import
@@ -447,9 +519,9 @@ for example.
 To create a number of accessions from October 1998, an :term:`administrator`
 could edit the Accession mask like so: **1998-10/#i**
 
-If the changes are saved in **Admin > Settings > Global**, then when a user
-next creates a :ref:`new accession record <add-new-accession>`, the accession
-number will read:
+If the changes are saved in |gears| **Admin > Settings > Global**, then when a
+user next creates a :ref:`new accession record <add-new-accession>`, the
+accession number will read:
 
 * 1998-10/1
 
@@ -460,9 +532,41 @@ And the following accession record's identifier (accession number) will read:
 .. warning::
 
    These changes will stay in effect until an :term:`administrator` returns
-   to the global settings menu via **Admin > Settings > Global** and returns
-   the Accession mask to the default setting. Don't forget to do this, or all
-   your new accessions will appear to be legacy accessions!
+   to the global settings menu via |gears| **Admin > Settings > Global** and
+   returns the Accession mask to the default setting. Don't forget to do
+   this, or all your new accessions will appear to be legacy accessions!
+
+.. _disable-accession-mask:
+
+Method 3: Disabling the Accessions mask
+---------------------------------------
+
+The accessions mask is provided to help users apply consistent and unique
+identifiers to accessions. Users always have the ability to edit the
+pre-populated values provided by the accessions mask when creating a
+:ref:`new accession record <add-new-accession>`.
+
+However, when working with legacy accessions, it may be easier to simply
+disable the accessions mask, and manually populate the Accession number field.
+An :term:`administrator` can do this via |gears| **Admin > Settings** - for
+more information, see: :ref:`accession-mask` in :ref:`settings`.
+
+.. image:: images/accession-mask.*
+   :align: center
+   :width: 90%
+   :alt: An image of the accessions mask in Global settings
+
+Note that, even with the Accessions mask disabled, AtoM will still attempt
+to enforce unique Accession number values. If you attempt to use a value for
+the Accession number that is not unique (i.e. is already in use by another
+:term:`accession record`), AtoM will provide a warning, and will not allow the
+record to be saved until the Accession number is edited and a unique value is
+added.
+
+.. image:: images/accession-id-warning.*
+   :align: center
+   :width: 80%
+   :alt: An image of the accession number warning
 
 :ref:`Back to top <accession-records>`
 

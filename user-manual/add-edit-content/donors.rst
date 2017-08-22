@@ -98,12 +98,48 @@ Using the donor dialog in the accessions template
    to include the donor name and give an alternative contact person. Enter
    data as required.
 
-.. image:: images/donor-dialog.*
+.. image:: images/accession-donor-dialog.*
    :align: center
-   :width: 55%
-   :alt: An image of the Donor dialog
+   :width: 90%
+   :alt: An image of the donor dialog in the accession edit template
 
-4. Once you have completed entering the donor information, click on the
+
+4. Fields in the donor dialog are organized into 3 tabs - Main, Physical
+   location, and Other details. Be sure to click on each tab and
+   complete the related fields in the dialog as needed. Fields available in
+   the :term:`donor dialog` include:
+
+   * **Name** - an autcomplete field where you can link to an existing donor
+     record or enter a new name to create a new donor record.
+   * **Main tab:**
+
+     * Contact person
+     * Telephone
+     * Fax
+     * Email
+     * URL
+
+   * **Physical location tab:**
+
+     * Street address
+     * Region/province
+     * Country
+     * Postal code
+     * City
+     * Latitude
+     * Longitude
+
+   * **Other details tab:**
+
+     * Contact type
+     * Note
+
+   When new information is entered into the :term:`donor dialog`, a new Donor
+   record is created. Alternatively, if you have selected an existing donor
+   using the autcomplete values in the Name field, you can edit the existing
+   contact information.
+
+5. Once you have completed entering the donor information, click on the
    "Submit" button to save and return to the :term:`accession record` edit
    template.
 
@@ -320,10 +356,10 @@ that you would like to associate with the donor. To do so:
    results will load in a :term:`drop-down menu` below the field. When you see
    the donor name you would like to link, click on it to select it.
 
-.. image:: images/donor-dialog.*
+.. image:: images/accession-donor-dialog.*
    :align: center
-   :width: 55%
-   :alt: An image of the Donor dialog
+   :width: 90%
+   :alt: An image of the donor dialog in the accession edit template
 
 .. IMPORTANT::
 
@@ -341,18 +377,16 @@ that you would like to associate with the donor. To do so:
 
 7. If the related Donor record already has the correct contact information,
    you do not need to add it to the remaining fields in the
-   :term:`donor dialog` - it will appear when you save the accession record.
-   Click "Submit" in the donor dialog.
+   :term:`donor dialog` - it will appear in the related fields when you select
+   the Donor name from the autocomplete :term:`field` for the related Name.
+   Alternatively, if you need to make edits to the existing contact
+   information, you can do so now. When you're ready, click "Submit"in the
+   donor dialog.
 
 .. image:: images/donor-dialog-submit.*
    :align: center
    :width: 55%
    :alt: An image of the Donor dialog submit button
-
-.. WARNING::
-
-   If you do add any information to the contact fields in the Donor dialog,
-   **any previous data will be overwritten** by the new contact information.
 
 8. To create links to multiple donor records, you can repeat this process
    as needed. When you are done editing the record, save the
