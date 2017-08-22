@@ -68,8 +68,10 @@ This section will describe each :term:`field` in the "Global"
 * :ref:`Check for updates <check-updates>`
 * :ref:`Maximum image width <max-image-width>`
 * :ref:`Results per page <results-page>`
+* :ref:`enable-accession-mask`
 * :ref:`Accession mask <accession-mask>`
 * :ref:`Accession counter <accession-counter>`
+* :ref:`enable-identifier-mask`
 * :ref:`Identifier mask <identifier-mask>`
 * :ref:`Identifier counter <identifier-counter>`
 * :ref:`Reference code separator <reference-code-separator>`
@@ -182,15 +184,65 @@ For more information on navigating in AtoM, see :ref:`Searching in AtoM
    Editing this number to display a large number of results per page may
    affect page load times.
 
+.. _enable-accession-mask:
+
+Enable accession mask
+---------------------
+
+This setting controls whether or not the :ref:`accession-mask` (described in
+the section below) is enabled or not.
+
+When this setting is set to "yes," then when a user creates a new
+:term:`accession record`, the Accession number :term:`field` will be
+prepopulated with the next unique value based upon the :ref:`accession-mask`
+settings - users can still manually edit the pre-populated value provided by
+the mask, so long as a unique number is used.
+
+When this setting is set to "no," then the accession mask will not be used,
+and when creating a new accession record, the accession number field will be
+blank.
+
+See:
+
+* :ref:`add-new-accession`
+* :ref:`accession-mask`
+
+.. NOTE::
+
+   In a new installation, the accession mask is enabled by default. An
+   :term:`administrator` can use this setting to disable it if desired.
+
 .. _accession-mask:
 
 Accession mask
 --------------
 
-By default, AtoM creates the :term:`accession record` identifier as a unique
-number compiled from YEAR-MONTH-DAY-Incremental#, expressed as ``%Y-%m-%d/#i``.
-This mask, or default counter, can be changed by
-:term:`administrators <administrator>` to suit institutional needs.
+When working with an :term:`accession record`, AtoM requires that a unique
+Accession number be added - for more information, see:
+:ref:`add-new-accession`. To help ensure that accession record numbers are
+created in a consistent and unique manner, AtoM includes an accession mask,
+which can define a pattern by which the next unique accession number is
+generated. Turning the mask on or off is controlled by the setting described
+above, :ref:`enable-accession-mask`.
+
+On installation, the accession mask is enabled by default, and prepopulated
+with a suggested value that will generate unique accession numbers. Expressed
+in the mask setting as ``%Y-%m-%d/#i``, this value will generate a unique
+accession number for every new accession record compiled from the following
+elements: ``YEAR-MONTH-DAY/Incremental#``. So for example with the default
+mask setting, the first accession you create, if it was generated on January
+01, 2018, would have an accession number of ``2018-01-01/1``.
+
+This mask, or default counter, can be changed by an :term:`administrator` to
+suit institutional needs, using text strings and
+`PHP strftime parameters <http://php.net/manual/en/function.strftime.php#refsect1-function.strftime-parameters>`_.
+To add leading zeroes to the unique incrementing number for example, you can
+add more ``i`` characters to the mask setting - so for example ``%Y-%m-%d/#iii``
+would lead to incremental numbers like 001, 002, 003, etc.
+
+The value of the incremental number is based on the :ref:`accession-counter`
+value, described below. An administrator can choose to manually change or
+reset the counter number if desired.
 
 .. image:: images/accession-mask.*
    :align: center
@@ -207,36 +259,116 @@ Accession counter
 AtoM provides you with the number of :term:`accessions <accession record>`
 created. If you delete an accession, it will still be included in the Accession
 counter total value. If this number is changed by an administrator, the next
-accession created will receive the next number in sequence.
+accession created will receive the next number in sequence. The value of this
+counter is used to inform the incremental value used in the
+:ref:`accession-mask`, described above.
+
+.. NOTE::
+
+   A CSV import of accession records will **not** increment this value - AtoM
+   can only automatically track and increment the number based on accessions
+   created manually via the :term:`user interface`. This is another reason why
+   the accession counter is an editable value - if you perform a CSV import of
+   accessions, you may wish to manualy increment the counter to the correct
+   value, to ensure consistency.
+
+.. _enable-identifier-mask:
+
+Enable identifier mask
+----------------------
+
+This setting controls whether or not the :ref:`identifier-mask` (described in
+the section below) is enabled or not.
+
+When this setting is set to "yes," then when a user creates a new
+:term:`archival description`, the Identifier :term:`field` will be
+prepopulated with the next unique value based upon the :ref:`identifier-mask`
+settings - users can still manually edit the pre-populated value provided by
+the mask. AtoM does not enforce the uniqueness of archival description
+identifer values.
+
+When this setting is set to "no," then the identifier mask will not be used
+to pre-populate identifier values, and when creating a new archival description,
+the identifier field will be blank. However, a *Generate identifier* option
+will still be provided below the field - if clicked, then the settings defined
+in the Identifier mask will be used to populate the field.
+
+See:
+
+* :ref:`add-archival-description`
+* :ref:`identifier-mask`
+
+.. NOTE::
+
+   In a new installation, the identifier mask is disabled by default. An
+   :term:`administrator` can use this setting to enable it if desired.
+
 
 .. _identifier-mask:
 
 Identifier mask
 ---------------
 
-By enabling the identifier mask, all descriptions created through the user interface
-will be assigned an identifier based on a pre-defined pattern. This pattern can
-be customized using text strings and `PHP strftime parameters <http://php.net/manual/en/function.strftime.php#refsect1-function.strftime-parameters>`_.
-For example, providing the identifier mask *Archives-%Y-%m-%d/#i* will result in
-a description with the identifier **Archives-2017-01-31/1**. The final parameter,
-*#i*, represents the :ref:`identifier-counter`.
+The Identifier mask can be used to manage the creation of unique
+:term:`archival description` identifier values when creating new
+descriptins. By enabling the identifier mask, all descriptions created through
+the user interface will be assigned an identifier based on a pre-defined pattern.
 
-It is possible to replace an identifier with one based on the identifier mask by
-editing a description and selecting *Generate identifier* below the identifier field.
+On installation, the identifier mask is **disabled** by default - to change
+this, use the :ref:`enable-identifier-mask` setting described above.
+
+The identifier mask is prepopulated with a suggested value that will generate
+unique identifiers. Expressed in the mask setting as ``%Y-%m-%d/#i``, this
+value will generate a unique identifiers for every new
+:term:`archival description` created, comprised of the following elements:
+``YEAR-MONTH-DAY/Incremental#``. So for example with the default mask setting,
+the first description you create, if it was created on January 01, 2018, would
+have an identifier of ``2018-01-01/1``. The value of the parameter, *#i*,
+represents the :ref:`identifier-counter` value.
+
+This mask, can be changed by an :term:`administrator` to suit institutional
+needs, using text strings and `PHP strftime parameters <http://php.net/manual/en/function.strftime.php#refsect1-function.strftime-parameters>`_.
+To add leading zeroes to the unique incrementing number for example, you can
+add more ``i`` characters to the mask setting - so for example ``%Y-%m-%d/#iii``
+would lead to incremental numbers like 001, 002, 003, etc.
+
+The value of the incremental number is based on the :ref:`identifier-counter`
+value, described below. An administrator can choose to manually change or
+reset the counter number if desired.
+
+It is also possible to replace an existing :term:`archival description`
+identifier with one based on the identifier mask by editing a description and
+selecting *Generate identifier* below the identifier field.
+
+For more information on creating archival descriptions, see:
+
+* :ref:`add-archival-description`
 
 .. _identifier-counter:
 
 Identifier counter
 ------------------
 
-The identifier counter defines incremental integer at the end of the identifier,
-represented in the identifier mask as *#i*. The counter indicates the next number
-that will be used for the integer, so if the number is currently at *259* then the
-identifier will be **Archives-2017-01-31/259**. It is possible to set the identifier
-counter to begin at a specific integer.
+The identifier counter defines incremental integer at the end of a generated
+identifier, represented in the identifier mask as *#i*. AtoM provides you with
+a count of the number of :term:`archival description` records created via the
+:term:`user interface`. This value is then used as part of the
+:ref:`identifier-mask` as the incrementing number value.
 
 Deleting an archival description will not affect the counter - it simply adds the
-next integer, rather than looking for unused integers.
+next integer, rather than looking for unused integers. If this number is
+changed by an administrator, the next accession created will receive the next
+number in sequence.
+
+.. NOTE::
+
+   A CSV import of archival descriptions will **not** increment this value -
+   AtoM can only automatically track and increment the number based on records
+   created manually via the :term:`user interface`. This is another reason why
+   the identifier counter is an editable value - if you perform a CSV import
+   of descriptions, you may wish to manualy increment the counter to the
+   correct value, to ensure consistency.
+
 
 .. _reference-code-separator:
 
@@ -244,9 +376,10 @@ Reference code separator
 ------------------------
 
 The reference code separator is the character separating hierarchal elements
-in a reference code (see Inherit reference code, below). The default
-reference code separator appears as a dash "-" in AtoM, which can be changed
-by an administrator to suit institutional practices.
+in a :term:`reference code` (see Inherit reference code,
+:ref:`below <inherit-reference-code>`).The default reference code separator
+appears as a dash ``-`` in AtoM, which can be changed by an
+:term:`administrator` to suit institutional practices.
 
 .. _inherit-reference-code:
 

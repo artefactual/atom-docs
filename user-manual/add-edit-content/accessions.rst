@@ -106,9 +106,10 @@ Add a new accession record
    :term:`Administrators <administrator>` can turn the accession mask on
    or off, and alter the default accession mask and counter (from which the
    accession number is generated) by navigating to |gears| **Admin > Settings
-   > Accession mask**. For more information, see: :ref:`accession-mask` in
-   :ref:`settings` - see also the example provided in the section on altering
-   the accessions mask for legacy accessions, :ref:`below <alter-accession-mask>`.
+   > Accession mask**. For more information, see: :ref:`accession-mask` and
+   :ref:`enable-accession-mask` in :ref:`settings` - see also the example
+   provided in the section on altering the accessions mask for legacy accessions,
+   :ref:`below <alter-accession-mask>`.
 
    .. image:: images/accession-mask.*
       :align: center
@@ -549,7 +550,8 @@ pre-populated values provided by the accessions mask when creating a
 However, when working with legacy accessions, it may be easier to simply
 disable the accessions mask, and manually populate the Accession number field.
 An :term:`administrator` can do this via |gears| **Admin > Settings** - for
-more information, see: :ref:`accession-mask` in :ref:`settings`.
+more information, see: :ref:`accession-mask` and :ref:`enable-accession-mask`
+in :ref:`settings`.
 
 .. image:: images/accession-mask.*
    :align: center
