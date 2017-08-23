@@ -788,20 +788,29 @@ more information on how reference codes are constructed in AtoM, see above:
 title of a description - the title will be sanitized by removing
 capitalization, spaces, and special characters; it will also be truncated if
 it exceeds a certain length. Administrators can now choose, via this setting,
-if they prefer that the slug is derived from the reference code instead.
+if they prefer that the slug is derived from the identifier or the reference
+code (with or without the country and repository code included) instead.
 
-Note that this setting does not apply retro-actively to descriptions already
-created. It will only apply to new descriptions created after changing the
-setting.
+Note that this setting does **not** apply retro-actively to descriptions
+already created. It will only apply to new descriptions created after changing
+the setting.
 
-For further context on slugs in AtoM, see: :ref:`slugs-in-atom`
-
-.. TIP::
+.. NOTE::
 
    This setting will also be respected by the command-line task to generate
    slugs - see: :ref:`cli-generate-slugs`. So it would be possible to update
    legacy descriptions in AtoM by deleting their slugs, and then generating
    new ones after changing this setting.
+
+For further context on slugs in AtoM, see: :ref:`slugs-in-atom`
+
+.. TIP::
+
+   Users with sufficient edit :term:`permissions <access privilege>` can also
+   edit the slug associated with an :term:`archival description` via the user
+   interface, using the Rename module. For more information, see:
+
+   * :ref:`rename-title-slug`
 
 .. _default-publication-status:
 
