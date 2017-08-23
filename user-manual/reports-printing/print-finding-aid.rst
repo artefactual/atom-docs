@@ -294,6 +294,28 @@ Jobs page - for more information on managing :term:`jobs <job>` in AtoM, see:
    descriptions**. Be sure to re-upload or regenerate a new finding aid if you
    have made changes.
 
+.. TIP::
+
+   In addition to providing a button to view the finding aid in the right-hand
+   :term:`context menu`, AtoM will also automatically add a link in the body
+   of the related description, appearing below the free-text "Finding aids"
+   :term:`field`. The link description text will also specify whether the
+   finding aid is uploaded or generated. Here is an example of a generated
+   finding aid link in the :term:`view page` of an archival description:
+
+   .. image:: images/fa-generated-link.*
+      :align: center
+      :width: 80%
+      :alt: An image of a finding aid link for a Generated finding aid
+
+   And here is an example of an uploaded finding aid link:
+
+   .. image:: images/fa-uploaded-link.*
+      :align: center
+      :width: 80%
+      :alt: An image of a finding aid link for an Uploaded finding aid
+
+
 :ref:`Back to top <print-finding-aids>`
 
 .. _delete-finding-aid:
