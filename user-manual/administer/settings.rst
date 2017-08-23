@@ -531,45 +531,133 @@ For more information, see :ref:`treeview-search`.
 Sort browser (users)
 --------------------
 
-:term:`Administrators <administrator>` can configure default sort order for
-the browse display as either "alphabetic,"" "last updated," "identifier," or
-"reference code" for logged-in users. "Last updated" will display records most
-recently added or edited at the top of the results, allowing users to explore
-what has changed. "Reference code" refers to the full inherited reference code,
-while "Identifier" refers to the individual identifier of each record.
+This setting controls the default sort order of records shown on :ref:`browse`
+pages in AtoM - specifically, :term:`archival description` results. Sorting can
+always be changed by users via the :ref:`sort button <recurring-sort-button>`
+available on related search and browse pages, but an :term:`administrator` can
+use this setting to control the default sort when arriving on the page for the
+first time.
 
-By default, the sort order is set to "Last updated" for authenticated users.
-However, users have the option to reorder the page while browsing via the
-:ref:`sort button <recurring-sort-button>` located at the top of most browse pages.
+:term:`Administrators <administrator>` can configure default sort order for
+the browse display for both authenticated (i.e. logged in) and unauthenticated
+(i.e. public) users - **this** setting controls the default sort of records
+for logged in users, while the setting described below,
+:ref:`sort-browser-anonymous`, affects the default sort for public users.
+
+Options available include:
+
+* **Alphabetic**: A-Z (but see the IMPORTANT admonition below) based on the
+  title or authorized form of name
+* **Last updated**: Will show the records most recently created or edited
+  first
+* **Identifier**: A-Z (but see the IMPORTANT admonition below) based on the
+  unique identifier value added to the record
+* **Reference code**: A-Z (but see the IMPORTANT admonition below) based on
+  the :term:`reference code` associated with the description. See the related
+  setting, :ref:`inherit-reference-code` for more information.
+
+.. IMPORTANT::
+
+   The Alphabetic, Identifier, and Reference code sorts are all based on what
+   is sometimes known as ASCII sort - that is, the sort is not a true
+   alphabetic sort as humans think of it, but rather as computers do.
+
+   Elasticsearch does not naturally apply alphabetic sort in a human-friendly
+   way (what is often known as "**natural sort**" in computer science) -
+   instead, it applies what is known as **ASCII sort**, based on the order of
+   the characters in the `ASCII <https://en.wikipedia.org/wiki/Ascii>`__
+   character encoding scheme. Consequently, some results may appear out of
+   order, depending on how the values have been entered. Artefactual hopes to
+   improve sorting in AtoM for future releases. In the meantime, below is an
+   image of an ASCII table - sort order is determined based on this schema -
+   so that a description whose title starts with "A" will be preceded by one
+   starting with a number, which in turn will be preceded by one beginning
+   with a quotation mark, which will be preceded by a description that begins
+   with a space before its first character. **If you are concerned about sort
+   order, be sure to consider this when naming your records.**
+
+   .. image:: images/ascii-sort.*
+      :align: center
+      :width: 400px
+
+
+By default in a new installation, the sort order is set to "Last updated" for
+authenticated users. However, users have the option to reorder the page while
+browsing via the :ref:`sort button <recurring-sort-button>` located at the top
+of most browse pages.
 
 .. seealso::
 
    * :ref:`Browsing in AtoM <browse>`
    * :ref:`recurring-sort-button`
-   * :ref:`user-roles`
+   * :ref:`inherit-reference-code`
 
 .. _sort-browser-anonymous:
 
 Sort browser (anonymous)
 ------------------------
 
-:term:`Administrators <administrator>` can configure default sort order for
-the browse display as either "alphabetic," "last updated," "identifier," or
-"reference code" for public users (e.g., not logged-in). "Last updated" will
-display records most recently added or edited at the top of the results, allowing
-users to explore what has changed. "Reference code" refers to the full inherited
-reference code while "Identifier" refers to the individual identifier of each
-record.
+This setting controls the default sort order of records shown on :ref:`browse`
+pages in AtoM - specifically, :term:`archival description` results. Sorting can
+always be changed by users via the :ref:`sort button <recurring-sort-button>`
+available on related search and browse pages, but an :term:`administrator` can
+use this setting to control the default sort when arriving on the page for the
+first time.
 
-By default, the sort order is set to "Alphabetic" page while browsing via
-the :ref:`sort button <recurring-sort-button>` located at the top of most browse
-pages.
+:term:`Administrators <administrator>` can configure default sort order for
+the browse display for both authenticated (i.e. logged in) and unauthenticated
+(i.e. public) users - **this** setting controls the default sort of records
+for public (i.e. anonymous; unauthenticated) users, while the setting
+described above, :ref:`sort-browser-users`, affects the default sort for
+logged in users.
+
+Options available include:
+
+* **Alphabetic**: A-Z (but see the IMPORTANT admonition below) based on the
+  title or authorized form of name
+* **Last updated**: Will show the records most recently created or edited
+  first
+* **Identifier**: A-Z (but see the IMPORTANT admonition below) based on the
+  unique identifier value added to the record
+* **Reference code**: A-Z (but see the IMPORTANT admonition below) based on
+  the :term:`reference code` associated with the description. See the related
+  setting, :ref:`inherit-reference-code` for more information.
+
+.. IMPORTANT::
+
+   The Alphabetic, Identifier, and Reference code sorts are all based on what
+   is sometimes known as ASCII sort - that is, the sort is not a true
+   alphabetic sort as humans think of it, but rather as computers do.
+
+   Elasticsearch does not naturally apply alphabetic sort in a human-friendly
+   way (what is often known as "**natural sort**" in computer science) -
+   instead, it applies what is known as **ASCII sort**, based on the order of
+   the characters in the `ASCII <https://en.wikipedia.org/wiki/Ascii>`__
+   character encoding scheme. Consequently, some results may appear out of
+   order, depending on how the values have been entered. Artefactual hopes to
+   improve sorting in AtoM for future releases. In the meantime, below is an
+   image of an ASCII table - sort order is determined based on this schema -
+   so that a description whose title starts with "A" will be preceded by one
+   starting with a number, which in turn will be preceded by one beginning
+   with a quotation mark, which will be preceded by a description that begins
+   with a space before its first character. **If you are concerned about sort
+   order, be sure to consider this when naming your records.**
+
+   .. image:: images/ascii-sort.*
+      :align: center
+      :width: 400px
+
+
+By default in a new installation, the sort order is set to "Alphabetic" for
+public users. However, users have the option to reorder the page while
+browsing via the :ref:`sort button <recurring-sort-button>` located at the top
+of most browse pages.
 
 .. seealso::
 
    * :ref:`Browsing in AtoM <browse>`
    * :ref:`recurring-sort-button`
-   * :ref:`user-roles`
+   * :ref:`inherit-reference-code`
 
 .. _default-repo-view:
 
