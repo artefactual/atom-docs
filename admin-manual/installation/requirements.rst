@@ -18,7 +18,7 @@ Furthermore, AtoM makes use of different components and services that could be
 deployed in a distributed manner (across multiple machines in a network) in
 order to accept an escalating number of users. The main goal of this
 documentation is to describe the configuration of AtoM and its dependencies on a
-single machine, but some aspects of a :ref:`installation-multi-node` will also
+single machine, but some aspects of a multi-node installation will also
 be described.
 
 
