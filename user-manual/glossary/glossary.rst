@@ -1084,13 +1084,9 @@ Glossary
     In AtoM a report icon can be found in the right hand :term:`context
     menu` of an :term:`archival description` :term:`view page`. Clicking
     on the report icon takes the user to a Reports screen and the choice
-    of printing 3 different reports: File list, Item list, :term:`Physical
-    storage <physical storage>` locations, or a set of Box labels,
-    formatted as a `CSV <https://en.wikipedia.org/wiki/Comma-
-    separated_values>`_. See :ref:`Reports/printing <reports-printing>`. Once
-    the user has finalized their report selection and is ready to print,
-    go to the browser tabs and select file, from the drop-down list select
-    print.
+    of printing 4 different reports: File list, Item list, :term:`Physical
+    storage <physical storage>` locations, or a set of Box labels. See
+    :ref:`Reports/printing <reports-printing>`.
 
   Repository
     The Society of American Archivists `Glossary

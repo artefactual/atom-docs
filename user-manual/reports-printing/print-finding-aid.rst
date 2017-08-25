@@ -31,8 +31,7 @@ it can be downloaded by any user, via a link provided in the right-hand
 
 .. seealso::
 
-   * :ref:`create-file-list-report-print`
-   * :ref:`create-item-list-report-print`
+   * :ref:`file-item-reports`
    * :ref:`archival-descriptions`
    * :ref:`manage-jobs`
    * :ref:`context-menu`

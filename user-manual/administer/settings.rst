@@ -855,6 +855,26 @@ systems administrator. The default is ``/tmp``.
 
 :ref:`Back to top <settings>`
 
+.. _reports-public-setting:
+
+Generate archival description reports as public user
+----------------------------------------------------
+
+This setting relates to the creation of file and item-level reports for
+archival descriptions - for more information, see:
+
+* :ref:`create-file-list-report-print`
+* :ref:`create-item-list-report-print`
+
+This setting determines whether or not Retrieval information is included in
+the reports generated or not - that is, :term:`physical storage` information
+such as location, type, and name.
+
+When this setting is set to "Yes", then reports generated will **not** include
+:term:`physical storage` information. When set to "No", then the reports will
+include physical storage information.
+
+:ref:`Back to top <settings>`
 
 .. _cache-xml-setting:
 

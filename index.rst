@@ -104,9 +104,8 @@ Reports/printing
 This section describes how to create and print different types of reports using
 AtoM:
 
-* :ref:`Create file list report & print <create-file-list-report-print>`
-* :ref:`Create item list report & print <create-item-list-report-print>`
-* :ref:`Create physical storage locations report & print <create-physical-storage-report>`
+* :ref:`file-item-reports`
+* :ref:`create-physical-storage-report`
 * :ref:`print-finding-aids`
 
 
