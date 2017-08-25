@@ -863,12 +863,11 @@ Generate archival description reports as public user
 This setting relates to the creation of file and item-level reports for
 archival descriptions - for more information, see:
 
-* :ref:`create-file-list-report-print`
-* :ref:`create-item-list-report-print`
+* :ref:`file-item-reports`
 
 This setting determines whether or not Retrieval information is included in
 the reports generated or not - that is, :term:`physical storage` information
-such as location, type, and name.
+such as location, container type, and name.
 
 When this setting is set to "Yes", then reports generated will **not** include
 :term:`physical storage` information. When set to "No", then the reports will
@@ -924,10 +923,23 @@ The XML generated will be cached in AtoM's ``downloads`` directory - 2
 subdirectories named ``ead`` and ``dc`` will automatically be created, and the
 XML will be stored by type in these two subdirectories.
 
+.. image:: images/downloads-dir.*
+   :align: center
+   :width: 40%
+   :alt: An image of the Downloads directory structure as seen in a file
+         explorer
+
 When users attempt to download XML from the :term:`view page` of an archival
 description, AtoM will check if there is a cached copy of the requested XML
 and if so, it will serve it. If there is no cached version available, then
 AtoM will fall back to the default behavior of generating the XML on request.
+
+In an OAI-PMH request, if a cached version of the EAD 2002 XML is available,
+AtoM will serve it in response to ``oai_ead`` requests - if there is **not** a
+cached version, then AtoM will return a "Metadata format unavailable" reponse.
+In contrast, if no cached DC XML exists, the OAI Repository module will
+generate DC XML on the fly to respond to the request. For further information,
+see: :ref:`oai-pmh`.
 
 By default, cached XML files are generated for public users, meaning that
 :term:`draft <draft record>` descriptions are **not** included in the XML.
