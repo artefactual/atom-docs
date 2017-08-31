@@ -1,8 +1,8 @@
 .. _upload-digital-object:
 
-======================
-Upload digital objects
-======================
+=================================
+Upload and manage digital objects
+=================================
 
 :term:`Digital objects <digital object>` objects are computer files that can be
 uploaded into and displayed by AtoM; they can include scanned images,
@@ -65,6 +65,7 @@ See below for more information on:
 * :ref:`Uploading multiple digital objects <upload-multiple-objects>`
 * :ref:`Uploading PDFs <upload-pdf>`
 * :ref:`Editing digital objects <edit-digital-object>`
+* :ref:`digital-object-map`
 * :ref:`rename-digital-object`
 * :ref:`Deleting digital objects <delete-digital-object>`
 * :ref:`Digital object storage <digital-object-storage>`
@@ -348,11 +349,16 @@ Any :term:`digital object` that has been uploaded and linked to an
    adjust it here for better results. Values include: Audio, Image, Video,
    Text, and Other. For more information on filter facets in AtoM, see:
    :ref:`recurring-facet-filters`.
+5. You can also add latitude and longitude values to the Master digital
+   object's metadata for basic geolocation support. This can configured to
+   display a dynamic Google map in AtoM - for more information, see below:
+
+   * :ref:`digital-object-map`
 
 Edit reference and thumbnail representations
 --------------------------------------------
 
-5. If you wish to use a different image as the :term:`thumbnail` or
+6. If you wish to use a different image as the :term:`thumbnail` or
    :term:`reference <reference display copy>` version this is also performed
    from the Edit digital object screen. First click delete in Reference
    representation or Thumbnail area.
@@ -362,7 +368,7 @@ Edit reference and thumbnail representations
    :width: 70%
    :alt: Deleting a thumbnail or reference image
 
-6. AtoM will ask the user to confirm that they would like to delete the
+7. AtoM will ask the user to confirm that they would like to delete the
    thumbnail/reference image. After confirming, the Edit digital object
    screen will allow the user to upload a new reference representation by
    clicking Browse and selecting a file from their computer, or auto-generate a
@@ -376,18 +382,147 @@ Edit reference and thumbnail representations
 Save changes
 ------------
 
-7. You can quit the edit process at any time by clicking the "Cancel" button
+8. You can quit the edit process at any time by clicking the "Cancel" button
    in the :term:`button block`; any edits made to digital objects will not be
    saved. Note that simply navigating away from the page by any other means,
    **without first clicking "Save"** will also result in no new digital objects
    being uploaded.
 
-8. Once all your changes have been made, click the "Save" button in the
+9. Once all your changes have been made, click the "Save" button in the
    :term:`button block`. You will be redirected back to the
    :term:`archival description's <archival description>` :term:`view page`.
 
 All changes made can be edited once again, at any time, by following the steps
 outlined above.
+
+:ref:`Back to top <upload-digital-object>`
+
+.. _digital-object-map:
+
+Add dynamic maps to your digital object metadata
+================================================
+
+To support basic geolocation, AtoM has the ability to associate latitude and
+longitude coordinates with a digital object. If desired, you can also display
+a dynamic Google map in the digital object metadata
+:term:`area <information area>` showing the location of the coordinates. To do
+so, an :term:`administrator` will first need to configure certain settings so
+the map can be visible.
+
+.. image:: images/digi-object-map.*
+   :align: center
+   :width: 90%
+   :alt: The map displayed in the digital object metadata area
+
+**Enabling the display of digital object maps**
+
+Two separate settings must be changed to enable the display of the digital
+object maps in AtoM. First, in **Admin > Settings > Global**, an API key must
+be added to the :ref:`maps-api-key`.
+
+You can request a Google Maps API key free of charge - all you need is a
+Google account. For more information, see:
+
+* https://developers.google.com/maps/documentation/javascript/get-api-key
+
+Additionally, in **Admin > Settings > Default page elements**, the "Digital
+obect map" setting checkbox must be checked. Remember to save your changes in
+the Settings area!
+
+.. image:: images/digi-map-setting.*
+   :align: center
+   :width: 90%
+   :alt: The Digital object map checkbox in Default page elements
+
+For more information, see:
+
+* :ref:`maps-api-key`
+* :ref:`default-page-elements`
+
+**Adding latitude and longitude values to a digital object**
+
+Once the above settings are configured, then any time a digital object has
+latitude and longitude values added to it, it will display a dynamic,
+zoomable map in the Digital object metadata area. To add your latitude and
+longitude values to an existing digital object:
+
+1. Navigate to the :term:`archival description` linked to the
+   :term:`digital object` you want to edit. You can do this by
+   :ref:`searching <search-atom>` or :ref:`browsing <browse>` - for more
+   information on navigation in AtoM, see: :ref:`access-content`.
+
+.. image:: images/view-digi-object.*
+   :align: center
+   :width: 90%
+   :alt: The view page of an archival description with a digital object
+
+2. When you are on the :term:`view page` of the related description, scroll
+   down the :term:`button block` at the bottom of the page, and in the "More"
+   menu, select "Edit digital object"
+
+.. image:: images/edit-digi-object.*
+   :align: center
+   :width: 90%
+   :alt: The Edit digital object option in the More menu at the bottom of the
+         page
+
+3. AtoM will redirect you to the :term:`edit page` for the digital object. In
+   the :term:`information area` for the :term:`master digital object`, add your
+   latitude and longitude values to the fields provided.
+
+.. image:: images/lat-longs.*
+   :align: center
+   :width: 90%
+   :alt: Adding latitute and longitude values to a digital object
+
+.. IMPORTANT::
+
+   For **all** latitude and longitude :term:`fields <field>` in AtoM, you need
+   to use the Signed degrees format (e.g. DDD.dddd) for the data to work!
+   Degree and cardinal based formats (e.g. DDD MM SS + compass direction)
+   **will not work** and the map will not be generated properly.
+
+   When only one field is provided, latitude values should be entered first,
+   followed by a comma before the longitude values.
+
+   Here is an example of the latitude and longitude for Vancouver, BC, Canada:
+
+   **Correct format:** (signed degrees)
+
+   * 49.246292, -123.116226
+
+   **Will not work in AtoM:** (DMS cardinal)
+
+   * 49° 14' 46.6512" N, 123° 6' 58.4136" W
+
+4. When you save the record, AtoM will return you to the archival
+   description's :term:`view page`. In the Digital object metadata area, you
+   should now see a Google map showing your coordinates with a pin. You can
+   zoom, pan, change the map type, and clik to view a full Google map in a new
+   tab.
+
+.. image:: images/digi-object-map.*
+   :align: center
+   :width: 90%
+   :alt: The map displayed in the digital object metadata area
+
+.. TIP::
+
+   Not sure how to find out the coordinates of a location? You can use Google
+   maps!
+
+   Find your location on a map - zoom in to make it as precise as possible. If
+   you right-click and select the "What's here?" option that will appear in
+   the context menu that appears, Google Maps will display the latitude and
+   longitude values, along with any addtional information it has:
+
+   .. image:: images/google-lat-longs.*
+      :align: center
+      :width: 90%
+      :alt: Finding lat and long values with Google Maps
+
+   You can then use this information in AtoM following the steps described
+   above!
 
 :ref:`Back to top <upload-digital-object>`
 

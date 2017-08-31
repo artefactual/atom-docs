@@ -1060,6 +1060,69 @@ an English installation:
 
 :ref:`Back to top <maintenance-cli-tools>`
 
+.. _repository-lat-long:
+
+Auto-populate repository latitude and longitude values
+======================================================
+
+AtoM includes the ability for users to add dynamic Google maps to the
+:term:`view page` of a repository. To do so, a user must first have a Google
+`API Key <https://developers.google.com/maps/documentation/javascript/get-api-key>`__,
+and the Google Maps Javascript API key setting in **Admin > Settings** must be
+populated - see:
+
+* :ref:`maps-api-key`
+
+Once the key is added, then any time a user adds valid latitude and longitude
+values to the Contact area of an :term:`archival institution`, AtoM will add a
+Dynamic Google map to the top of the repository's :term:`view page`. See:
+
+* :ref:`add-map`
+
+However, you can also attempt to automatically populate existing latitude and
+longitude fields, based on previously entered Contact area address data (e.g.
+street address, city, region, postal or zip code, country, etc).
+
+To do so, run the following command:
+
+.. code-block:: bash
+
+   php symfony tools:repository-lat-lng
+
+AtoM will begin reviewing all available :term:`repository` contact information,
+and where possible, it will populate the latitude and longitude fields based
+on the address data. If any issues are encountered (such as incorrect or
+insufficient contact information for a lookup), the console will print an
+error message and move on to the next repository for lookup.
+
+.. image:: images/cli-latlong-output.*
+   :align: center
+   :width: 75%
+   :alt: A sample output from the console as the lat-long task runs
+
+By default, the task will **not** overwrite existing latitude and longitude
+information. However, if you would like to replace existing data with updated
+values based on the task's lookup, you can use the ``--overwrite`` option like
+so:
+
+.. code-block:: bash
+
+   php symfony tools:repository-lat-lng --overwrite
+
+You may want to clear the application cache and repopulate the search index
+after. See:
+
+* :ref:`maintenance-clear-cache`
+* :ref:`maintenance-populate-search-index`
+
+.. SEEALSO::
+
+   * :ref:`digital-object-map`
+   * :ref:`add-map`
+   * :ref:`maps-api-key`
+
+:ref:`Back to top <maintenance-cli-tools>`
+
 .. _cli-purge-data:
 
 Purging all data

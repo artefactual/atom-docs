@@ -4,6 +4,10 @@
 Archival Institutions
 =====================
 
+.. |gears| image:: images/gears.png
+   :height: 17
+   :width: 17
+
 :term:`Archival institutions <archival institution>` are one of the core
 :doc:`entity types <../overview/entity-types>` in AtoM and provide users with
 the means of managing information about :term:`repositories <repository>`
@@ -1194,17 +1198,18 @@ more.
 Add a Google map to an archival institution
 -------------------------------------------
 
+Users can add a Google map to the :term:`view page` for an archival
+institution showing the location of the institution. These instructions
+require an :term:`administrator` who can make changes to AtoM's settings via
+the :term:`user interface`.
+
 .. figure:: images/institution-map.*
-   :align: right
-   :figwidth: 30%
+   :align: center
+   :figwidth: 90%
    :width: 100%
    :alt: Institution view page with Google map
 
    Institution view page with Google map
-
-Users can add a Google map to the :term:`view page` for an archival
-institution showing the location of the institution. These instructions do
-require a systems administrator who can edit AtoM's files from the server.
 
 
 1. First, you will need to set up a
@@ -1212,34 +1217,56 @@ require a systems administrator who can edit AtoM's files from the server.
    have one.
 
 2. Next, request an
-   `API key <https://developers.google.com/maps/documentation/javascript/tutorial#api_key>`_
+   `API key <https://developers.google.com/maps/documentation/javascript/get-api-key>`__
    from Google.
 
-3. Add the API key to AtoM's code in the :file:`config/apps.yml` file .
-   Uncomment the :file:`google_maps_api_key` value and add the API key. For
-   more information see: :ref:`config-app-yml`.
+3. Navigate to |gears| **Admin > Settings** and scroll down to near the bottom
+   of the Global settings page. Add your Maps API key to the field marked
+   "Google Maps Javascript API key setting." For more information, see:
+   :ref:`maps-api-key`. Don't forget to save your settings after making
+   changes, using the :term:`button block` at the bottom of the Settings page.
 
-4. Save the changes to :file:`apps.yml` and
-   :ref:`clear the cache <maintenance-clear-cache>`.
+4. Maps will only appear on an institution's :term:`view page` if the latitude
+   and longitude coordinates are added to the Contact information for the
+   repository. For more information on how to edit your :term:`repository`
+   record, see: :ref:`edit-archival-institution`.
 
-5. The map will appear on an institution page only if the latitude and
-   longitude coordinates are added to the Contact information for the
-   repository. See
-   :ref:`Edit an existing archival institution <edit-archival-institution>`.
+.. IMPORTANT::
 
-6. When the institution record is saved the map will appear at the top of the
-   view page.
+   For **all** latitude and longitude :term:`fields <field>` in AtoM, you need
+   to use the Signed degrees format (e.g. DDD.dddd) for the data to work!
+   Degree/minute/second (DMS) and cardinal based formats (e.g. DDD MM SS +
+   compass direction) **will not work** and the map will not be generated
+   properly.
 
-To populate the latitude and longitude values to all institutions in a
-:term:`multi-repository installation <multi-repository system>` run in the
-command line:
+   When only one field is provided, latitude values should be entered first,
+   followed by a comma before the longitude values.
 
-.. code-block:: bash
+   Here is an example of the latitude and longitude for Vancouver, BC, Canada:
 
-   tools:find-repository-latlng
+   **Correct format:** (signed degrees)
 
-This command will use Google to find the latitude and longitude based on the
-institutions' addresses as found in the Contact information.
+   * 49.246292, -123.116226
+
+   **Will not work in AtoM:** (DMS cardinal)
+
+   * 49° 14' 46.6512" N, 123° 6' 58.4136" W
+
+5. When the :term:`archival institution` record is saved with the latitude
+   and longitude coordinates added to the Contact area, the map will appear at
+   the top of the :term:`view page`.
+
+.. TIP::
+
+   There is also a command-line tool that can be run by a system administrator
+   that will use repository contact information and address data to
+   automatically populate all latitude and longitude fields. This can be
+   really useful in a :term:`multi-repository system` when you want to enable
+   this maps feature, but don't want to manually find and add all of the
+   latitude and longitude coordinates. For more information, see:
+
+   * :ref:`repository-lat-long`
+
 
 :ref:`Back to top <archival-institutions>`
 

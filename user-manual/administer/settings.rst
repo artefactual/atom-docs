@@ -855,6 +855,41 @@ systems administrator. The default is ``/tmp``.
 
 :ref:`Back to top <settings>`
 
+.. _maps-api-key:
+
+Google Maps Javascript API key setting
+--------------------------------------
+
+This setting allows you to store and use a Google Maps API key - AtoM relies
+on this setting to be able to add dynamic Google maps to the :term:`view page`
+of a :term:`repository`, and to the Metadata :term:`area <information area>`
+of a :term:`digital object`, when latitude and longitude values are provided.
+For more information on these features, see:
+
+* :ref:`add-map`
+* :ref:`digital-object-map`
+
+.. NOTE::
+
+   For the digital object map, you must also check the "Digital object map"
+   setting in **Admin > Settings > Default page elements**. See:
+   :ref:`default-page-elements`.
+
+You can request a Google Maps API key free of charge - all you need is a
+Google account. For more information, see:
+
+* https://developers.google.com/maps/documentation/javascript/get-api-key
+
+.. IMPORTANT::
+
+   There is a limitation on how many maps you can generate a day with the free
+   version of this key. For more information, see:
+
+   * https://developers.google.com/maps/documentation/javascript/usage
+
+
+:ref:`Back to top <settings>`
+
 .. _reports-public-setting:
 
 Generate archival description reports as public user
@@ -1053,6 +1088,20 @@ and is only used on the RAD template.
    :alt: An image of the Copyright status and GMD filters in the advanced
          search panel
 
+The Digital object map setting relates to the ability for users to add basic
+geolocation data to :term:`digital objects <digital object>`, by displaying a
+dynamic Google map in the Digital object metadata
+:term:`area <information area>`. For more information, see:
+:ref:`digital-object-map`
+
+.. IMPORTANT::
+
+   To be able to enable this setting, you must first request a Google MAPS
+   `API Key <https://developers.google.com/maps/documentation/javascript/get-api-key>`__,
+   and the Google Maps Javascript API key setting in **Admin > Settings >
+   Global** must be populated - see: :ref:`maps-api-key`
+
+
 When unchecked, the above elements will be hidden from display after you save
 the default page element settings. This can be useful for customization - for
 example, if you are not translating the content of your website and do not
@@ -1068,7 +1117,7 @@ advanced search panel.
    * :ref:`Carousel <recurring-carousel>`
    * :ref:`The language menu <language-menu>`
    * :ref:`The AtoM header bar <atom-header-bar>`
-   * :ref:`default-page-elements`
+   * :ref:`digital-object-map`
 
 :ref:`Back to top <settings>`
 
