@@ -1116,13 +1116,13 @@ using the "Rename" module.
 When editing a slug in AtoM, it is important to understand how they are
 generated, and why your slug may be saved differently than the value you
 input. Slugs in AtoM are sanitized to remove spaces, special characters (such
-as ! @ # $ % & etc), stopwords (such as "a," "an," "the," etc), and
-capitalization. They are also truncated to a maximum of 250 characters. Since
-they are used as permalinks, they must also be unique within the system - so
-AtoM will automatically append a dash and an incrementing number to the end of
-non-unique slugs. More information on slugs in AtoM can be found here:
-:ref:`slugs-in-atom`. Whenever the Rename module alters the slug you enter
-based on the above parameters, a notification indicating this will be shown.
+as ! @ # $ % & etc), and capitalization. They are also truncated to a maximum
+of 250 characters. Since they are used as permalinks, they must also be unique
+within the system - so AtoM will automatically append a dash and an
+incrementing number to the end of non-unique slugs. More information on slugs
+in AtoM can be found here: :ref:`slugs-in-atom`. Whenever the Rename module
+alters the slug you enter based on the above parameters, a notification
+indicating this will be shown.
 
 Note that the title of a description can always be edited within the
 :term:`edit page` of the description itself - for more information, see above,
