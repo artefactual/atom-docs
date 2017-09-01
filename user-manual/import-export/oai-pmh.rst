@@ -222,6 +222,15 @@ Set name                        Set Spec                      AtoM version
 Top-level collection record set oai:virtual:top-level-records 2.2.0
 =============================== ============================= ============
 
+When the setting is enabled and the changes saved, AtoM will display a list of 
+available virtual sets below the setting. You can click the name of a virtual 
+set to trigger an OAI request in the browser. 
+
+.. image:: images/oai-sets.*
+   :align: center
+   :width: 90%
+   :alt: An image of the available OAI virtual sets 
+   
 When this setting is set to "Yes," the virtual sets available can be used by
 harvesters as criteria when issuing requests - for example, to issue a Get Records
 request limited to top-level records:
