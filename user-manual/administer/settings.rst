@@ -23,6 +23,7 @@ Below, you will find information on the following :term:`information areas
 * :ref:`inventory-settings`
 * :ref:`digital-object-derivatives`
 * :ref:`dip-upload-settings`
+* :ref:`treeview-settings`
 
 Each of the settings areas listed above is accessible via a list of links on
 the left-hand side of the settings page. Click on the appropriate link, and
@@ -445,86 +446,6 @@ information to help orient the user.
 .. SEEALSO::
 
    * :ref:`Control area <control-area>`
-
-.. _treeview-type:
-
-Treeview type
--------------
-
-This setting allows administrators to choose between two different display
-formats for the :term:`treeview`. For more information about the treeview in
-AtoM, see: :ref:`context-menu-treeview`.
-
-The **Sidebar** setting refers to the classic treeview that appears in the
-left-hand :term:`context menu` of an :term:`archival description`. The **Full
-width** treeview, introduced in the AtoM 2.3 release, will display below the
-description title, and above the first :term:`information area` of the
-description. The display space of the full-width treeview can be expanded by
-users by gripping and dragging the bottom bar of the treeview downwards to
-expand the viewing area.
-
-Other differences include:
-
-* The sidebar version does not indent lower-levels, while indentation is used
-  in the full width treeview
-* The Identifier is included in the sidebar treeview nodes, while no
-  identifier is included in those of the full width version
-* The results in the sidebar treeview are truncated - the first 5-6 nodes in
-  the hierarchy are displayed by default, after which an approximate count of
-  remaining nodes in the current level is provided, with the option to expand
-  the results to display more. All nodes are shown in the full width treeview.
-
-Below are screenshots of the same :term:`fonds`, shown with each version of
-the treeview enabled, for comparison.
-
-**Sidebar treeview**
-
-.. image:: images/treeview-sidebar-example.*
-   :align: center
-   :width: 75%
-   :alt: an example a description displayed with the sidebar treeview
-
-
-**Full width treeview**
-
-.. image:: images/treeview-fullwidth-example.*
-   :align: center
-   :width: 75%
-   :alt: an example a description displayed with the full width treeview
-
-.. SEEALSO::
-
-   * :ref:`context-menu-treeview`
-   * :ref:`context-menu`
-   * :ref:`archival-descriptions`
-
-.. _sort-treeview:
-
-Sort treeview (information object)
-----------------------------------
-
-This setting determines how lower-level :term:`descriptions <archival
-description>` are sorted in an :term:`archival description's <archival
-description>` :term:`context menu`.
-
-* Selecting "manual" means the descriptions will appear in the order in which
-  they were entered into AtoM. If manual sort is selected, editors can also
-  drag and drop descriptions within the :term:`treeview` to re-order.
-* Selecting "title" sorts the descriptions by title.
-* Selecting "identifier - title" sorts the descriptions by identifier, then by
-  title.
-
-.. TIP::
-
-   AtoM's search index is based on Elasticsearch, which sorts characters based
-   on the order of the in the `ASCII <https://en.wikipedia.org/wiki/Ascii>`_
-   character encoding scheme. This can result in seemingly wrong orders when
-   sorting by identifier- for example, 1-1 will be followed by 1-10 instead of
-   1-2. The solution is to use **leading zeroes** when forumulating
-   identifiers that you wish to sort in a human- readable order, e.g. 1-01,
-   1-02, etc.
-
-For more information, see :ref:`treeview-search`.
 
 .. _sort-browser-users:
 
@@ -1594,6 +1515,186 @@ DIP upload process from Archivematica. Similarly, the uploaded file itself is
 **not** affected (the extension is not stripped from the
 :term:`digital object`) - only the title of the description generated so the
 digital object can be attached and uploaded.
+
+
+:ref:`Back to top <settings>`
+
+.. _treeview-settings:
+
+Treeview settings
+=================
+
+.. image:: images/treeview-settings.*
+   :align: center
+   :width: 90%
+   :alt: Treview settings page in AtoM
+
+The :term:`treeview` is a user interface element designed to assist with 
+hierarchical navigation. The settings in this section relate to the treeview as
+it is displayed and used on :term:`archival description` view pages. For more
+information on navigation with and use of the treeview, see: 
+:ref:`context-menu-treeview`. 
+
+.. SEEALSO::
+
+   * :ref:`context-menu`
+   * :ref:`archival-descriptions`
+   * :ref:`treeview-search`
+
+.. _treeview-type:
+
+Treeview type
+-------------
+
+This setting allows administrators to choose between two different display
+formats for the :term:`treeview`. For more information about the treeview in
+AtoM, see: :ref:`context-menu-treeview`.
+
+The **Sidebar** setting refers to the classic treeview that appears in the
+left-hand :term:`context menu` of an :term:`archival description`. The **Full
+width** treeview, introduced in the AtoM 2.3 release, will display below the
+description title, and above the first :term:`information area` of the
+description. The display space of the full-width treeview can be expanded by
+users by gripping and dragging the bottom bar of the treeview downwards to
+expand the viewing area.
+
+Other differences include:
+
+* The sidebar version does not indent lower-levels, while indentation is used
+  in the full width treeview
+* The Identifier is included in the sidebar treeview nodes. With the full-width
+  treeview, users can configure which elements are included in each node - for
+  more information, see below: :ref:`fullwidth-treeview-settings`.
+* The results in the sidebar treeview are truncated - the first 5-6 nodes in
+  the hierarchy are displayed by default, after which an approximate count of
+  remaining nodes in the current level is provided, with the option to expand
+  the results to display more. All nodes are shown in the full-width treeview.
+
+Below are screenshots of the same :term:`fonds`, shown with each version of
+the treeview enabled, for comparison.
+
+**Sidebar treeview**
+
+.. image:: images/treeview-sidebar-example.*
+   :align: center
+   :width: 75%
+   :alt: an example a description displayed with the sidebar treeview
+
+
+**Full width treeview**
+
+.. image:: images/treeview-fullwidth-example.*
+   :align: center
+   :width: 75%
+   :alt: an example a description displayed with the full width treeview
+
+For more information on each treeview type, see: 
+
+* :ref:`context-menu-treeview-sidebar`
+* :ref:`context-menu-treeview-full`
+
+
+.. _sidebar-treeview-settings:
+
+Sidebar treeview settings
+-------------------------
+
+Settings in this area relate only to the sidebar treeview. They will not affect
+the behavior of the full-width treeview. 
+
+.. _sort-treeview:
+
+Sort treeview (information object)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This setting determines how lower-level :term:`descriptions <archival
+description>` are sorted in an archival description's :term:`context menu`.
+
+* Selecting "manual" means the descriptions will appear in the order in which
+  they were entered into AtoM. If manual sort is selected, editors can also
+  drag and drop descriptions within the :term:`treeview` to re-order.
+* Selecting "title" sorts the descriptions by title.
+* Selecting "identifier - title" sorts the descriptions by identifier, then by
+  title.
+
+In new installations, the default sort order is Manual. Note that when the
+treeview sort is set to Manual, an authenticated (i.e. logged in) user with
+edit :term:`permissions <access privilege>` can re-order sibling descriptions
+in the treeview by dragging and dropping them. This ability **only** works when
+the treeview sort setting is set to "Manual." For more information, see:
+
+* :ref:`Change the sort order of an archival hierarchy <change-sort-order>`
+
+.. TIP::
+
+   AtoM's search index is based on Elasticsearch, which sorts characters based
+   on the order of the in the `ASCII <https://en.wikipedia.org/wiki/Ascii>`_
+   character encoding scheme. This can result in seemingly wrong orders when
+   sorting by identifier- for example, 1-1 will be followed by 1-10 instead of
+   1-2. The solution is to use **leading zeroes** when forumulating
+   identifiers that you wish to sort in a human- readable order, e.g. 1-01,
+   1-02, etc.
+
+.. _fullwidth-treeview-settings:
+
+Full-width treeview settings
+----------------------------
+
+Settings in this area relate to the functionality and display of the
+full-width treeview. They do not affect the behavior of the sidebar treeview. 
+
+Currently all elements in this section relate to what information is displayed
+in the treeview for each node. Users can configure whether the
+identifier/reference code, level of description, and/or dates of creation are
+included in each node's display. 
+
+When all elements are displayed, the ordering of the metadata elements is as
+follows:
+
+.. code-block:: none
+
+   [Level] ID - Title of description, dates
+
+So for a Series level description with an identifier of 004 called
+"Photographs" and created in 1959, the display with all elements would be:
+
+.. code-block:: none
+
+   [Series] 004 - Photographs, 1959
+
+Each configurable element is described further below. 
+
+
+.. _fwt-show-id:
+
+Show identifier
+^^^^^^^^^^^^^^^
+
+This setting controls whether or not an identifier or full inherited 
+:term:`reference code` is included in the treeview display for each node. 
+
+For more information on how reference codes are formed in AtoM and the
+difference between an identifier and a full reference code, see above,
+:ref:`inherit-reference-code`. 
+
+.. _fwt-show-lod:
+
+Show level of description
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This setting determines whether or not the level of description assigned to the
+current description is included in the treeview node display or not. 
+
+.. _fwt-show-dates:
+
+Show dates
+^^^^^^^^^^
+
+This setting determines whether or not dates of creation are included in the
+treeview node display or not. Where there are multiple dates of creation, only
+the first will be shown. Other event type dates (for example, dates of
+accumulation, or dates of broadcast, etc.) are not included regardless of the
+setting. 
 
 
 :ref:`Back to top <settings>`

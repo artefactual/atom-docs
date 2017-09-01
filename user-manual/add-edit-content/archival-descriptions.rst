@@ -1293,11 +1293,16 @@ the intellectual :term:`arrangement` of an :term:`archival unit`.
 
 .. IMPORTANT::
 
-   To be able to change the sort order, an :term:`administrator` **must**
-   change the "Sort treeview" settings (located in **Admin > Settings >
-   Global > Sort treeview**) to "Manual". Otherwise the drag and drop
-   capabilities of the :term:`treeview` are disabled. For more information,
-   see :ref:`Settings <settings>`.
+   This ability works with both treeview types (full-width and sidebar). However, 
+   to be able to change the sort order with the sidebar treeview, an 
+   :term:`administrator` **must** change the "Sort treeview" settings (located 
+   in **Admin > Settings > Treeview**) to "Manual". Otherwise the drag and drop
+   capabilities of the sidebar :term:`treeview` are disabled. 
+
+   For more information, see :ref:`treeview-settings`. See also: 
+
+   * :ref:`context-menu-treeview-sidebar`
+   * :ref:`context-menu-treeview-full`
 
 **To change the sort order of sibling descriptions in the treeview:**
 
@@ -1308,26 +1313,57 @@ the intellectual :term:`arrangement` of an :term:`archival unit`.
    in AtoM.
 2. In the :term:`treeview` (depending on your settings located either on the left-
    hand side or above the record's :term:`view page`), the current record being
-   displayed in the :term:`view page` will be highlighted by a dark grey bar.
+   displayed in the :term:`view page` will be highlighted.
    For more information on the treeview, see: :ref:`context-menu-treeview`.
 3. In the :term:`treeview`, hover your cursor over the sibling record you wish
    to move - it can be any record on the same :term:`level of description` as
    the one currently being viewed.
-4. If the "Sort treeview" setting has been set to "Manual" by an
-   :term:`administrator` in **Admin > Settings > Global > Sort treeview**,
-   then you will see three horizontal lines or bars appear on the right-hand
-   side of the record-title you are hovering over in the treeview. This means
-   the item can be dragged and dropped to a new sort order.
+4. In the :ref:`context-menu-treeview-sidebar`, if the "Sort treeview" setting 
+   has been set to "Manual" by an :term:`administrator` in **Admin > Settings > 
+   Global > Sort treeview**, then you will see three horizontal lines or bars 
+   appear on the right-hand side of the record-title you are hovering over in 
+   the treeview. This means the item can be dragged and dropped to a new sort 
+   order.
+
+.. image:: images/sidebar-dragdrop.*
+   :align: center
+   :width: 40%
+   :alt: Dragging a node in the sidebar treeview
+
+5. In the :ref:`context-menu-treeview-full`, nothing will show when you first 
+   click and hold on the treeview node. However, as you begin to drag the node,
+   node text will follow your cursor. A red **X** will appear if you attempt to 
+   drag the node to a new :term:`parent record` (indicating this is not a 
+   supported move function with the drag-and-drop), while a green checkmark will 
+   be shown if you can drop the node where your cursor is currently positioned. A
+   black caret character on the left-side of the treeview indicates where the 
+   node will be positioned if you drop it: 
+
+.. image:: images/full-dragdrop.*
+   :align: center
+   :width: 80%
+   :alt: Dragging a node in the full-width treeview
+
 5. Click on the record in the treeview and hold, and then drag it to the new
    position you would like it to have in the treeview. Remember, you can move
    it to another position within the same :term:`level of description`, but
    the record will **not be moved** if you attempt to drag it from a lower to a
    higher level (e.g., from an item level to a file level, from a file level
    to a series or fonds level, etc.)
-6. The record in the treeview will drop into its new location. No changes will
-   occur on the :term:`view page` of the current record, though the sort order
-   has been changed within the collection. You can repeat these steps as many
-   times as are necessary to achieve the sort order you wish.
+6. The record in the treeview will drop into its new location. For the sidebar
+   treeview, no changes will occur on the :term:`view page` of the current
+   record, though the sort order has been changed within the collection. You
+   can repeat these steps as many times as are necessary to achieve the sort
+   order you wish.
+7. For the full-width treeview, a Move :term:`job` will be triggered, and a 
+   notification will appear. You can continue to drag nodes as needed, but the 
+   page will not be automatically updated until you manually refresh your browser 
+   page. 
+
+.. image:: images/dragdrop-notification.*
+   :align: center
+   :width: 80%
+   :alt: The notification shown after a drag and drop in the full-width treeview
 
 .. NOTE::
 
