@@ -12,12 +12,21 @@ Clipboard
 
 The :term:`Clipboard` is a :term:`user interface` element that allows users to
 select records while searching and browsing, and add them to a list (the
-"clipboard"), for later review or further action. Authenicated users
-(i.e. those logged in) can also perform CSV exports of Clipboard results via
-the user interface. Currently the Clipboard is only available for use with
+"clipboard"), for later review or further action. All users can also perform 
+exports of Clipboard results via the user interface - for more information, see: 
+
+* :ref:`xml-export-clipboard`
+* :ref:`csv-export-clipboard`
+
+Currently the Clipboard is only available for use with 
 :term:`archival descriptions <archival description>`,
 :term:`authority records <authority record>`, and
-:term:`archival institutions <archival institution>`.
+:term:`archival institutions <archival institution>`. Clipboard pin icons are 
+also available on the Inventory list page, and the Description updates page. For 
+more information, see:
+
+* :ref:`browse-hierarchy-inventory`
+* :ref:`search-updates`
 
 Additionally, the clipboard is **session-based** - meaning that it does not
 persist between user sessions. When you close your browser, any results on
@@ -37,6 +46,13 @@ the clipboard will be lost.
 The following sections will introduce you to the Clipboard and the
 :term:`Clipboard menu` in the AtoM header bar, as well as how the Clipboard
 can be used.
+
+**Jump to:**
+
+* :ref:`clipboard-menu`
+* :ref:`clipboard-pinning`
+* :ref:`clipboard-page`
+* :ref:`clipboard-export-all`
 
 .. SEEALSO::
 
@@ -311,5 +327,26 @@ You will still be provided with the warning when using these options on the
 Clipboard page - but be aware: using the "Clear selections" option in the
 Clipboard menu when elsewhere in the application will **immediately** remove
 all results!
+
+.. _clipboard-export-all:
+
+Using the clipboard to export records
+=====================================
+
+The clipboard has been configured so that all users, whether anonymous (i.e. 
+public) or authenticated (i.e. logged in), can export records, in both CSV and
+XML formats, depending on the formats supported in AtoM for export. 
+
+Documentation on how to export records using the clipboard is maintained in the 
+general :ref:`import-export` documentation. For more information, see: 
+
+* :ref:`xml-export-clipboard`
+* :ref:`csv-export-clipboard`
+
+.. SEEALSO::
+
+   * :ref:`clipboard`
+   * :ref:`manage-jobs`
+   * :ref:`csv-export-search`
 
 :ref:`Back to top <clipboard>`

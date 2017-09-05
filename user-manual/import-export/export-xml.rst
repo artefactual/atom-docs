@@ -347,7 +347,7 @@ will allow you to "unzip" a ZIP file.
    :alt: An image of the Clipboard with results.
 
 4. Click on the "Export" link in the :term:`button block` at the bottom of
-    the page.
+   the page.
 
 .. image:: images/button-block-clipboard.*
    :align: center
@@ -408,7 +408,7 @@ will allow you to "unzip" a ZIP file.
    scheduler. After clicking the "Export" button, AtoM will reload the page
    with a notification about the job at the top.
 
-   For authenticated users, this will include a link to the
+   For **authenticated users**, this will include a link to the
    :ref:`Jobs <manage-jobs>` page, where you can review the status of the
    export job, and download the ZIP file containing your CSV export when it is
    complete. Click on the link in the notification to go to the Jobs page.
@@ -419,7 +419,7 @@ will allow you to "unzip" a ZIP file.
       :alt: The notification message for authenticated users performing an
             export
 
-   For public users, first a notification that the job has been initiated
+   For **public users**, first a notification that the job has been initiated
    will be displayed, with a link that will refresh the page to see if there
    are updates. Users can use the **X** icon on the right of the notification
    to remove it. You can now navigate elsewhere in the application - another
