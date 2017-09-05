@@ -4,14 +4,27 @@
 Description Updates
 ===================
 
-AtoM includes a module, available in the Admin menu, that helps an
-:term:`administrator` search for new and updated records in AtoM. Only
-an authenticated (i.e. logged-in) :term:`administrator` can search for updates
-via this module.
-
 .. |gears| image:: images/gears.png
    :height: 18
    :width: 18
+
+AtoM includes a module, available in the Admin menu, that helps an
+:term:`administrator` search for new and updated records in AtoM. Only
+an authenticated (i.e. logged-in) :term:`administrator` can search for updates
+via this module. The Description updates page (historically referred to as 
+"Search updates" and "Newest additions" as well) includes a number of filters 
+that can be used to narrow results, as well as :term:`clipboard` pins so 
+administrators can easily add new updates to the clipboard for export.
+
+.. image:: images/search-updates.*
+   :align: center
+   :width: 90%
+   :alt: An image of the Description updates page in AtoM
+
+.. SEEALSO::
+
+   * :ref:`clipboard`
+   * :ref:`drafts-notification`
 
 **To search for new updates:**
 
@@ -27,13 +40,14 @@ via this module.
    page), click the larger header at the top of the page that says "Filter
    options." The options will open to reveal the available filters.
 
-.. image:: images/search-updates.*
+.. image:: images/search-updates-filters.*
    :align: center
    :width: 90%
-   :alt: An image of the Description updates page in AtoM
+   :alt: An image of the Description updates page in AtoM with filters shown
 
 3. In the Filter options menu, select a type of record to display from the
-   "Type" :term:`drop-down menu`. Options include
+   "Type" :term:`drop-down menu`. Options include:
+
    * Archival description
    * Authority record
    * Archival institution
@@ -42,14 +56,21 @@ via this module.
 
 4. Beside the "Type" drop-down, select the type of date used to filter the
    results:
+
    * Select *Creation* for new records
    * Select *Revision* for updated records, or
    * Select *Both* for both.
 
-5. If searching for *Archival description*, set "Publication status" to either
+5. You can limit the results to records associated with a specific 
+   :term:`archival institution` using the :term:`repository` filter. Note that 
+   currently this filter **only** works with :term:`archival description` records 
+   - if you flip the "Type" to a different :term:`entity`, the Repository filter 
+   will be hidden. 
+
+6. If searching for *Archival description*, set "Publication status" to either
    *published* or *draft* records, or both (i.e. *All*).
 
-6. Select the range of time you for which you want to return results, using
+7. Select the range of time you for which you want to return results, using
    the Start and End date fields in the Date range area. When you click into
    one of the fields, AtoM will display a drop-down graphical date-picker you
    can use to select the desired date; alternatively, you can type a date into
@@ -60,7 +81,7 @@ via this module.
    :width: 90%
    :alt: An image of the Datepicker on the Description updates page in AtoM
 
-7. When you have configured the filter options as you wish, click the "Search"
+8. When you have configured the filter options as you wish, click the "Search"
    button to apply them - AtoM will reload the page and display your results
    below the filters. Alternatively, you can click the "Reset" button to clear
    the existing values from the filters.
@@ -72,13 +93,13 @@ via this module.
    results per page, but an :term:`administrator` can change this. For more
    infomation, see: :ref:`results-page`.
 
-8. You can add results directly to the :term:`Clipboard` using the links in
+9. You can add results directly to the :term:`Clipboard` using the links in
    the right-hand column of the results table. To add all the results
    displayed on a page, click the "All" link at the top of the column. For
    more information on working with the Clipboard, see: :ref:`clipboard`.
 
-9. You can click on the blue hyperlinked names in the Title column to navigate
-   directly to a specific record.
+10. You can click on the blue hyperlinked names in the Title column to navigate
+    directly to a specific record.
 
 .. seealso::
 
