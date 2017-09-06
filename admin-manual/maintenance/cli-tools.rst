@@ -171,12 +171,12 @@ command-line, you can see the options available for this task:
 
 .. image:: images/cli-regen-derivs.*
    :align: center
-   :width: 85%
+   :width: 90%
    :alt: An image of the options available in the regen-derivatives command
 
 The ``--application``, ``--env``, and ``connection`` options **should not be
 used** - AtoM requires the uses of the pre-set defaults for symfony to be
-able to execute the import.
+able to execute the task.
 
 The ``--index`` option is used to enable the rebuilding of the search index as
 part of the regeneration task. When running this task via the command-line
@@ -190,7 +190,8 @@ from AtoM's root directory, run:
    php symfony cc && php symfony search:populate
 
 However, if you would like to re-index as the derivative regeneration progresses,
-the ``--index`` option can be used to enable this.
+the ``--index`` option can be used to enable this. For more information on 
+populating the search index, see: :ref:`maintenance-populate-search-index`. 
 
 The ``--slug`` option can be used to target specific derivatives associated with
 a description, using the description's :term:`slug` as criteria. Any
@@ -200,6 +201,22 @@ provided as criteria will have its derivatives regenerated. Example use:
 .. code:: bash
 
    php symfony digitalobject:regen-derivatives --slug="the-jane-doe-fonds"
+
+The ``--type`` option (or ``-d`` for derivative type) can be used if you only 
+want to regenerate one type of digital object derivative - either the 
+:term:`reference display copy` used on the :term:`view page` of related archival 
+descriptions, or the :term:`thumbnail` used in search and browse results. Supported
+parameters are: 
+
+* reference
+* thumbnail
+
+So, for example, if you only wanted to regenerate your thumbnails, you could 
+execute the command like so: 
+
+.. code:: bash
+
+   php symfony digitalobject:regen-derivatives --type="thumbnail" 
 
 The ``--force`` or ``-f`` option can be used to skip the warning normally
 delivered by the task when the command is entered. Because the task will delete
@@ -282,6 +299,14 @@ The criteria for the ``--json`` option then becomes the path to your JSON file:
    of a digital object via the user interface (see:
    :ref:`edit-digital-object`), these two will be replaced with digital
    object derivatives created from the :term:`master digital object`.
+
+Finally, the ``--no-overwrite`` or ``-n`` option can be used if you only want to 
+generate derivatives where they are currently missing. All existing derivatives 
+will be left as-is in AtoM. When this option is used, no confirmation prompt is 
+given: the task will begin generating missing derivatives as soon as you enter 
+it in the console. 
+
+:ref:`Back to top <maintenance-cli-tools>`
 
 .. _cli-re-index-pdf:
 
