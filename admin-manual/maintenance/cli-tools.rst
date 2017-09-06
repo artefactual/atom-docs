@@ -1383,6 +1383,99 @@ after generation, you can add the ``--ping`` option to the command.
 
 :ref:`Back to top <maintenance-cli-tools>`
 
+.. _cli-dip-upload:
+
+Manually upload Archivematica DIP objects
+=========================================
+
+AtoM includes integration with the open source digital preservation system, 
+`Archivematica <https://www.archivematica.org/>`__. Using Archivematica, you can 
+generate Archival Information Packages (AIPs) for preservation, as well as 
+Dissemination Information Packages (DIPs) for use in an access system such as 
+AtoM. For more information, see: 
+
+* :ref:`archivematica:intro`
+* :ref:`archivematica:upload-atom`
+* :ref:`archivematica:store-dip`
+* :ref:`Archivematica configuration for AtoM DIP upload <archivematica:admin-dashboard-atom>`
+
+While a workflow that will automatically upload DIPs from Archivematica to 
+AtoM is supported (see the links above), there may be cases where an archivist 
+chooses to store a DIP, and then wishes to upload it later without having to run 
+it through the re-ingest process. In that case, a system administrator can use 
+this task to manually attach DIP objects to existing archival descriptions in 
+AtoM. 
+
+To execute the task requires several things. First, the task expects to find 
+DIP digital objects that have been modified by Archivematica in 2 key ways: 
+
+1. The original object file has been converted to a derivative with a corresponding 
+   file extension (e.g. ``.jpg``, ``.mp3``, etc)
+2. A Unique Universal Identifier (UUID) as been pre-pended to the file name (for 
+   example, ``815da5cf-f49f-41f5-aa5d-c40d9d4dec3c-MARBLES.jpg``)
+
+Additionally, the object names **without** the UUID must be unique for the
+upload to succeed. If you have a number of files with the same name, we
+suggest appending an incrementing number (e.g. ``correspondence-01``,
+``correspondence-02``, etc).
+
+For AtoM to know where to upload the objects, you will also need to prepare a
+simple :term:`CSV` file. The CSV can be named anything, but must have the
+extension ``.csv`` for the upload to work. The CSV must include a ``filename``
+column, which specifies the full name of each object. Additionally, include
+**either** an ``identifier`` column (if your identifier values in AtoM are
+unique) or, preferrably, a ``slug`` column, so AtoM knows the description to
+which each object will be attached. 
+
+.. image:: images/cli-dip-csv.*
+   :align: center
+   :width: 70%
+   :alt: An image of a sample CSV accompanying a DIP objects import
+
+.. IMPORTANT::
+
+   Do not include both an identifier and a slug column in your CSV, or the 
+   upload may fail. You must choose one or the other - the final CSV should only 
+   have 2 columns. 
+
+The CSV should be placed in the ``objects`` directory of the DIP, with the 
+digital objects that will be imported. The basic syntax for the task is as 
+follows:
+
+.. code-block:: bash
+
+   php symfony import:dip-object /path/to/my/dip
+
+By running ``php symfony help import:dip-object`` we can see the help page and 
+options included with the task: 
+
+.. image:: images/cli-dip-import.*
+   :align: center
+   :width: 70%
+   :alt: An image of the help page for the DIP object import CLI tool
+
+As a parameter, the task requires a file path. The path should point to the 
+top-level directory where you have added the DIP. 
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for Symfony to be
+able to execute the task.
+
+The ``--undo-log-dir`` option can be used to log which information objects (aka 
+descriptions) have digital objects added to them as a result of running the task. 
+This log can be used, in event of an incomplete import, to either establish 
+where the import stopped or to manually remove the imported digital objects. 
+Undo logs contain two columns: the object ID of the :term:`information object` 
+to which objects have beem imported, and the DIP directory from which the objects 
+were imported. For more information on using the object ID, you might want to 
+review the section below, :ref:`common-atom-queries`. 
+
+Similarly, the ``--audit`` option can be used to verify that all objects 
+specified in the CSV file were imported. If any are found to be missing, then the 
+object's filename will be output in the console.  
+
+:ref:`Back to top <maintenance-cli-tools>`
+
 .. _common-atom-queries:
 
 ============================
