@@ -77,8 +77,7 @@ This section will describe each :term:`field` in the "Global"
 * :ref:`Identifier counter <identifier-counter>`
 * :ref:`Reference code separator <reference-code-separator>`
 * :ref:`Inherit reference code (Information object) <inherit-reference-code>`
-* :ref:`Treeview type <treeview-type>`
-* :ref:`Sort treeview (information object) <sort-treeview>`
+* :ref:`escape-chars`
 * :ref:`Sort browser (users) <sort-browser-users>`
 * :ref:`Sort browser (anonymous) <sort-browser-anonymous>`
 * :ref:`Default repository browse view <default-repo-view>`
@@ -382,6 +381,15 @@ in a :term:`reference code` (see Inherit reference code,
 appears as a dash ``-`` in AtoM, which can be changed by an
 :term:`administrator` to suit institutional practices.
 
+.. TIP::
+
+   If you intend to use a ``/`` slash as your reference code separator, we 
+   recommend you review the following setting below! 
+
+   * :ref:`escape-chars`
+
+:ref:`Back to top <settings>`
+
 .. _inherit-reference-code:
 
 Inherit reference code (information object)
@@ -446,6 +454,94 @@ information to help orient the user.
 .. SEEALSO::
 
    * :ref:`Control area <control-area>`
+   * :ref:`reference-code-separator`
+   * :ref:`escape-chars`
+
+:ref:`Back to top <settings>`
+
+.. _escape-chars:
+
+Escape special characters from searches
+---------------------------------------
+
+This setting allows users to define special characters that should be escaped 
+when performing a search, to avoid errors. 
+
+AtoM uses `Elasticsearch <https://www.elastic.co/products/elasticsearch>`__  (ES) 
+as its search index. In ES, certain characters are normally reserved to be used as
+operators in advanced searching - for more information, see: 
+:ref:`advanced-search-via-searchbox` - particularly, 
+:ref:`advanced-search-operators`. Normally, if you want to perform a search using 
+these special characters **without** them being interpreted as operators, then 
+you need to manually escape them with a ``\`` leading backslash character. From 
+the ES `documentation <https://www.elastic.co/guide/en/elasticsearch/reference/1.7/query-dsl-query-string-query.html#_reserved_characters>`__:
+
+  If you need to use any of the characters which function as operators in your 
+  query itself (and not as operators), then you should escape them with a 
+  leading backslash. For instance, to search for ``(1+1)=2``, you would need to 
+  write your query as ``\(1\+1\)\=2``.
+
+  The reserved characters are: ``+ - = && || > < ! ( ) { } [ ] ^ " ~ * ? : \ /``
+
+  Failing to escape these special characters correctly could lead to a syntax 
+  error which prevents your query from running.
+
+Many institutions prefer to use a ``/`` slash character as the default 
+:ref:`reference-code-separator`. This can lead to errors for users trying to 
+search for full reference code strings. However, with this setting, you can 
+define characters (such as the ``/``) that you wish to be automatically escaped 
+when a search string is submitted as a query. 
+
+You can add multiple escape characters to the field by separating them with 
+commas: 
+
+.. image:: images/escape-chars.*
+   :align: center
+   :width: 90%
+   :alt: An image of multiple escape characters in the escape field, separated 
+         by commas
+
+.. IMPORTANT::
+
+   It is important to understand how searching works in AtoM's ES index, to 
+   understand the consequences of escaping special characters and how it might 
+   affect search results. 
+
+   ES will automatically tokenize a search string - that is, when submitting a
+   string such as ``city hall`` as a search, it is automatically broken into
+   tokens that can be searched individually and weighted for relevance when
+   returning results. So, ``city hall`` automatically becomes ``city AND
+   hall`` - that is, return records that have both ``city`` AND ``hall`` in
+   them. By default, spaces as well as some punctuation marks are interpreted
+   as breaking points between tokens, and are removed when searching to
+   prevent too many poor results from being returned - so for example,
+   ``city-hall`` would also be submitted as ``city hall``, and searched as
+   ``city AND hall``.
+
+   When you escape a special character, you are essentially telling AtoM to
+   ignore it in the search - so it effectively becomes a white space. Thus, a
+   reference code search for ``01/02/03/04``, when ``/`` is escaped, becomes a
+   command to return results that include ``01 AND 02 AND 03 AND 04``. This
+   means that you may still see unexpected results returned.
+
+   Note that users can still search for an exact string by using quotations.
+   The special character will still be escaped and removed, but with
+   quotations, exact order and proximity are also taken into account,
+   producing better results.
+
+   For more search tips and tricks, see: 
+
+   * :ref:`advanced-search-via-searchbox`
+   * :ref:`advanced-search-operators`
+   * :ref:`Searching for phrases <advanced-search-phrases>`
+   * :ref:`es-fields-atom`
+
+   You can see what Elasticsearch tokenizers and filters are implemented in AtoM
+   in the following file: 
+
+   * https://github.com/artefactual/atom/blob/HEAD/plugins/arElasticSearchPlugin/config/search.yml
+
+:ref:`Back to top <settings>`
 
 .. _sort-browser-users:
 
