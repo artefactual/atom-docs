@@ -708,6 +708,17 @@ descriptions affected (e.g. the target description and its descendants):
 
       php symfony tools:delete-description -B <slug>
 
+You can also delete all descriptions that are associated with a particular 
+:term:`repository`, by using the ``--repository`` option, and supplying the 
+:term:`slug` of the linked repository instead of the slug of a description. For
+example, if your repository is called "Example Archives," with a slug in AtoM of
+``example-archives``, then you could delete **all** :term:`archival description` 
+records linked to this repository with the following command: 
+
+.. code-block:: bash
+
+   php symfony tools:delete-description --repository example-archives
+
 :ref:`Back to top <maintenance-cli-tools>`
 
 .. _cli-delete-drafts:
