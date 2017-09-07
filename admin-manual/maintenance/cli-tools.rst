@@ -101,6 +101,8 @@ If the operation succeeds:
    * :ref:`manage-user-accounts`
    * :ref:`edit-user-permissions`
 
+:ref:`Back to top <maintenance-cli-tools>`
+
 .. _cli-change-password:
 
 Change a password
@@ -138,6 +140,69 @@ If the user account is currently marked inactive in the system (see
 
    * :ref:`change-password`
    * :ref:`edit-user`
+
+:ref:`Back to top <maintenance-cli-tools>`
+
+.. _cli-delete-user:
+
+Delete a user account from the command-line
+===========================================
+
+AtoM provides a method to delete a user account via the :term:`user interface`, 
+but you can also delete a user directly from the command-line interface. To do 
+so, you will need to know the username of the user you wish to delete. The 
+basic syntax for the command is:
+
+.. code-block:: bash
+
+   php symfony tools:delete-user <username>
+
+By typing ``php symfony help tools:delete-user`` into the console, we can see 
+the help text and options associated with this task:
+
+.. image:: images/cli-delete-user.*
+   :align: center
+   :width: 90%
+   :alt: An image of the options available in the delete-user command
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the task.
+
+The command, when run, will normally prompt you for comfirmation before 
+proceeding. However, if you wish to skip the confirmation step, you can use the 
+``--force`` or ``-f`` option. 
+
+Additionally, if the user has added notes (e.g. General notes; RAD special
+notes such as Accompanying material notes; Archivists' notes; etc.) to an
+:term:`archival description`, then by default, the user ID of that user is
+associated with the note in the database. Because of this, AtoM will not let you 
+delete a user without first removing the user association from the notes, and 
+the task will be aborted without delting the user account:
+
+.. image:: images/cli-delete-user-notes.*
+   :align: center
+   :width: 90%
+   :alt: An image of the options available in the delete-user command
+
+To remove the user association with the notes so the task can proceed, you can use
+the ``--update-notes`` (or ``-n`` for short) option. When this is used, any notes
+associated with the user in the database will be updated so the user field is 
+``NULL``, and the user account can now be deleted. Any notes created by the user 
+will remain in the system, unaffected by the deletion. 
+
+Here is an example of running the task with both options (force and update-notes) 
+used together, where the user being deleted has a username of ``demo``: 
+
+.. code-block:: bash
+
+   php symfony tools:delete-user -f -n demo
+
+.. SEEALSO::
+
+   * :ref:`Delete a user account via the user interface <delete-user>`
+
+:ref:`Back to top <maintenance-cli-tools>`
 
 .. _cli-regenerate-derivatives:
 
