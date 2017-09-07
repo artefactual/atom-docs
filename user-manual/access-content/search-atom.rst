@@ -216,6 +216,16 @@ such as :term:`authority record` and :term:`archival institution`
 suggestions, will **not** be limited (instead AtoM will continue to make
 suggestions from all records in the application for those types).
 
+.. NOTE::
+
+   If the :ref:`Institutional scoping <enable-scoping>` setting is turned on, 
+   then the the institutional search box delimiter is automatically turned off. 
+   Users can search the :term:`holdings` of an institution via the dedicated 
+   search box provided in the :term:`institution block` that will appear when 
+   the setting is engaged. 
+
+   For more information, see: :ref:`enable-scoping`. 
+
 .. _search-delimiter-filter-tag:
 
 Filter tags
@@ -1030,8 +1040,8 @@ box to return results.
 
 A dedicated search box for :term:`archival institutions <archival institution>`
 has been provided on the archival institution
-:ref:`browse page <page-type-browse>`. All fields are indexed, but as of AtoM
-2.3 and earlier, no weighting has been added to specific fields.
+:ref:`browse page <page-type-browse>`. All fields are indexed, but no weighting 
+has been added to specific fields.
 
 The archival institution browse page has 2 different views - a "card" based
 view, and a table view. Users can switch quickly between these two views via

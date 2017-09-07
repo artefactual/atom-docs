@@ -82,6 +82,7 @@ This section will describe each :term:`field` in the "Global"
 * :ref:`Sort browser (anonymous) <sort-browser-anonymous>`
 * :ref:`Default repository browse view <default-repo-view>`
 * :ref:`Multiple repositories <multiple-repositories>`
+* :ref:`enable-scoping`
 * :ref:`Default archival institution upload limit <default-institution-upload>`
 * :ref:`Total space available for uploads <total-upload-space>`
 * :ref:`Upload multi-page files as multiple descriptions <upload-multi-files>`
@@ -731,6 +732,91 @@ page.
    * :ref:`Browsing in AtoM <browse>`
    * :ref:`archival-descriptions`
    * :ref:`archival-institutions`
+
+.. _enable-scoping:
+
+Enable institutional scoping
+----------------------------
+
+Institutional scoping adds additional visual cues and user interface elements
+to better support searching and browsing within the holdings of one 
+:term:`archival institution` when used in a :term:`multi-repository system`. 
+We strongly recommend that the setting above, :ref:`multiple-repositories`, is 
+set to "Yes" when using this setting.
+
+When enabled (i.e. set to "Yes"), this setting will add an 
+:term:`institution block` to the repository :term:`view page`, consisting of the 
+repository logo, as well a dedicated search box and browse menu that will both 
+return results linked to the current archival institution. 
+
+.. image:: images/scoping-comparison.*
+   :align: center
+   :width: 90%
+   :alt: An comparison of the repository view page with and without 
+         institutional scoping
+
+Similarly, when an :term:`archival description` search or browse page is
+filtered (or "scoped") to a particular repository, the 
+:term:`institution block` will appear, and (if applied) the custom background 
+color of the institution will also be displayed behind the scoped search results.
+
+.. image:: images/scoped-results.*
+   :align: center
+   :width: 90%
+   :alt: An image of an archival description browse page, limited to the holdings
+         of a particular repository, with insittutional scoping enabled.
+
+.. TIP::
+
+   For more information on applying a custom background color, uploading a custom
+   repository logo, and other aspects of archival institution theming, see: 
+
+   * :ref:`edit-institution-theme`
+
+Additionally, the :ref:`search-box-delimiters` are disabled when Institutional 
+scoping is enabled - the global :term:`search box` in the AtoM :term:`header bar` 
+will only return results from all repositories, while the dedicated search box 
+inside the :term:`institution block` can be used to search the holdings of the 
+scoped repository. As such, the institution block offers users a method of 
+remaining "scoped" to one institution's holdings - users can still search and 
+browse across all repositories using the global :term:`search box` and 
+:term:`browse menu` found in the AtoM :term:`header bar`, but the institution 
+block provides a method of better limiting results to one institution as a user
+explores. 
+
+Finally, the institution block will also appear on the :term:`view page` of a
+related :term:`archival description`, but **only** if the description is
+arrived at via one of the scoped elements - i.e. the holdings list on the
+:term:`repository` view page, or from a scoped search or browse page. If a
+user arrives at the archival description via a global search or browse page,
+the institution block will not appear.
+
+An :term:`administrator` can customize the search box header text via **Admin > 
+User interface labels**, using the ``institutionSearchHoldings`` field - for more
+information on changing these settings, see: :ref:`user-interface-labels`. At 
+installation, the default text label is "Search our collection."
+
+.. image:: images/scoping-search-label.*
+   :align: center
+   :width: 90%
+   :alt: An image of the Institution search holdings label settings
+
+The institution block's dedicted browse menu can also be customized via **Admin 
+> Manage menus**, under the ``browseInstitution`` menu - for more information
+on working with menus, see: :ref:`manage-menus`. 
+
+.. image:: images/scoping-browse-menu.*
+   :align: center
+   :width: 90%
+   :alt: An image of the Institution browse menu settings in Manage menus
+
+.. SEEALSO::
+
+   * :ref:`archival-institutions`
+   * :ref:`browse-scoped-holdings`
+
+
+:ref:`Back to top <settings>`
 
 .. _default-institution-upload:
 

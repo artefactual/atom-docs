@@ -803,6 +803,89 @@ number.
    * :ref:`recurring-facet-filters`
    * :ref:`archival-institutions`
 
+.. _browse-scoped-holdings:
+
+Browse institution holdings when Institutional scoping is enabled
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+AtoM includes an additional mode that can be enabled by an :term:`administrator` 
+via |gears| **Admin > Settings > Global** called :ref:`enable-scoping`. When 
+institutional scoping is turned on, additional visual cues and user interface 
+elements are added to better support searching and browsing within the holdings 
+of one :term:`archival institution` when used in a :term:`multi-repository system`.
+The most prominent of these changes in the :term:`user interface` is the addition
+of the :term:`institution block`, comprised of the :term:`repository` logo, 
+as well a dedicated search box and browse menu that will both return results 
+linked to the current archival institution. 
+
+.. image:: images/scoping-comparison.*
+   :align: center
+   :width: 90%
+   :alt: An comparison of the repository view page with and without 
+         institutional scoping
+
+The **holdings list** behaves the same as before (see above, 
+:ref:`browse-holdings`, for more information on how to use the holdings list). 
+However, if you click on the **holdings browse link**, then the institution block
+will also appear on the browse page, offering an additional visual cue that you 
+are viewing only the holdings of a particular institution. 
+
+.. image:: images/scoped-results.*
+   :align: center
+   :width: 90%
+   :alt: An image of an archival description browse page, limited to the holdings
+         of a particular repository, with insittutional scoping enabled.
+
+You can remove the insitutional scoping and see all global browse results a 
+number of different ways: 
+
+* By clicking the **X** on the :term:`filter tag` for the repository at the top 
+  of the browse results - this removes the repository filter. AtoM will reload 
+  the Browse page without the :term:`institution block` and show all results.
+* By clicking the "All" link in the Archival institution :term:`facet filter` - 
+  this also removes the repository filter. AtoM will reload the Browse page 
+  without the :term:`institution block` and show all results.
+* By using the :term:`browse menu` located in the AtoM :term:`header bar` at the
+  top of the page and selecting **Browse > Archival descriptions**. 
+* By performing a search via the global :term:`search box` in the AtoM 
+  :term:`header bar` at the top of the page. AtoM will return global results from
+  all repositories when the global search box is used. 
+
+For more information on using the elements of the archival description browse 
+page, see: :ref:`Browse archival descriptions <browse-descriptions>`. 
+
+Additionally, the :term:`institution block` introduces a dedicated browse menu
+for the holdings of the :term:`archival institution`. The links in this menu 
+will take users to browse pages that are already limited to the :term:`holdings` 
+of the current :term:`repository`. 
+
+.. image:: images/scoped-browse-menu.*
+   :align: center
+   :width: 35%
+   :alt: An image of an institution block with the browse menu open
+
+If you follow these links, the institution block will remain visible on the 
+related browse page, and if a background color has been applied to the instituion, 
+it will also be present on the browse page. 
+
+.. TIP::
+
+   For more information on applying a custom background color, uploading a custom
+   repository logo, and other aspects of archival institution theming, see: 
+
+   * :ref:`edit-institution-theme`
+
+Institution scoping can again be removed at any time from these browse pages 
+using the methods described above. 
+
+.. SEEALSO::
+
+   * :ref:`enable-scoping`
+   * :ref:`browse-descriptions`
+   * :ref:`search-archival-descriptions`
+   * :ref:`recurring-facet-filters`
+   * :ref:`archival-institutions`
+
 .. _browse-maintained-actors:
 
 Browse the authority records of an institution

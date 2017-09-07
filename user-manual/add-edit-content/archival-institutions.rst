@@ -95,6 +95,7 @@ institution :term:`edit page`, see:
 
    * :ref:`browse-institutions`
    * :ref:`browse-holdings`
+   * :ref:`enable-scoping`
    * :ref:`Archival descriptions <archival-descriptions>`
    * :ref:`Authority records <authority-records>`
    * :ref:`add-custom-links`

@@ -851,6 +851,16 @@ Glossary
     description` that can be more broadly applied to any description of a
     resource, not necessarily archival in origin.
 
+  Institution block
+    An element of the Institutional scoping setting (found in **Admin > Settings 
+    > Global**), this :term:`user interface` element comprises of a 
+    :term:`repository` logo, dedicated search box, and dedicated browse menu 
+    that will return search or browse pages related to the :term:`holdings` of a
+    particular institution. When enabled, the institution block appears on the 
+    :term:`view page` of a repository, as well as any search or browse page that 
+    has been filtered (i.e. "scoped") to a particular 
+    :term:`archival institution`. For more information, see: :ref:`enable-scoping`.  
+
   Job
     In AtoM, a job refers to a set of operations requested by a user that are
     performed asynchronously in the background, rather than via the web browser,
