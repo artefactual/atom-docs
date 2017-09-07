@@ -36,6 +36,8 @@ Customize how an AtoM theme looks
    in the user interface- see :ref:`manage-menus`.
 
 
+.. _customization-custom-theme:
+
 Create a custom theme
 ---------------------
 

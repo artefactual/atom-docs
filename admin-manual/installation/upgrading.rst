@@ -122,12 +122,12 @@ Run the upgrade task
 ====================
 
 This is perhaps the most critical step in the upgrade process. If you
-encounter any errors, please consult our main
-`FAQ <https://www.accesstomemory.org/docs/faq/>`__, search in our `User Forum
-<https://groups.google.com/forum/#!forum/ica-atom-users>`__, or if you don't
-find a solution, feel free to post a question there yourself. We will be
-trying to add to our FAQ as we receive feedback, to help users troubleshoot
-any upgrading issues encountered.
+encounter any errors, please consult our 
+`User Forum <https://groups.google.com/forum/#!forum/ica-atom-users>`__, or if 
+you don't find a solution, feel free to post a question there yourself. We will 
+also be trying to add to our `FAQ <https://wiki.accesstomemory.org/AtoM-FAQ>`__ 
+as we receive feedback, to help users troubleshoot any upgrading issues 
+encountered.
 
 First, change the current directory:
 
@@ -167,13 +167,16 @@ images will often appear fuzzy in the redesigned digital object browse. A
 directory naming convention has also been added to make the location of the
 :term:`master digital object` more secure.
 
-First, make sure you have not changed the directory (/usr/share/nginx/atom).
+First, make sure you have not changed the directory (``/usr/share/nginx/atom``).
 
 Now, run the regen-derivatives task:
 
 .. code-block:: bash
 
-   $ php symfony digitalobject:regen-derivatives
+   php symfony digitalobject:regen-derivatives
+
+For more information on this task and its available options, see: 
+:ref:`cli-regenerate-derivatives`.
 
 .. _upgrading-rebuild-index-cc:
 
@@ -181,13 +184,16 @@ Rebuild search index and clear cache
 ====================================
 
 To make all these changes take effect, you will need to re-index the files
-you've imported into your database, and clear the cache.
+you've imported into your database, and clear the application cache.
 
 First, rebuild the search index:
 
 .. code-block:: bash
 
    php symfony search:populate
+
+For more information and options on this task, see: 
+:ref:`maintenance-populate-search-index`.
 
 Then, clear your `cache <http://symfony.com/legacy/doc/book/1_0/en/12-Caching>`__
 to remove any out-of-date data from the application:
@@ -218,6 +224,72 @@ To set the site base URL:
 2. Click on or scroll down to Site information. Enter your site's base URL
    into the site base URL field. If your domain is "townarchives.org", for
    example, your base URL would normally be "http://townarchives.org".
+
+.. SEEALSO::
+
+   * :ref:`Site information <site-information>`
+
+.. _upgrading-custom-themes:
+
+Upgrading with a custom theme plugin
+====================================
+
+If you have developed a custom theme plugin for your application (for more
+information, see :ref:`customization-custom-theme`), you may need to perform
+an additional step following an upgrade to ensure that all pages are styled
+correctly.
+
+Specifically, :ref:`job-details` may not appear properly styled in a custom
+theme without an additional step. To ensure your Jobs pages properly inherit
+the base Dominion theming, you will need to add a call to import the
+``jobs.less`` CSS file to your theme plugin's ``main.less`` file. If you have
+followed our recommendations for creating a theme plugin, then you should find
+the ``main.less`` file for your plugin in
+``plugins/yourThemePluginName/css/main.less``. Here is an example of where you
+need to add a line in the ArchivesCanada theme plugin:
+
+* https://github.com/artefactual/atom/blob/HEAD/plugins/arArchivesCanadaPlugin/css/main.less#L78
+
+The line you will need to add is to import the base Jobs CSS, like so: 
+
+.. code-block:: bash
+
+   @import "../../arDominionPlugin/css/less/jobs.less" 
+
+After adding the line, you should rebuild the CSS for the plugin, using the 
+``make`` command. Here is an example of rebuilding the CSS for the ArchivesCanada 
+theme - you can swap in the name of your plugin: 
+
+.. code-block:: bash
+
+   make -C plugins/arArchivesCanadaPlugin
+
+You will also want to clear the application cache, and restart PHP-FPM. 
+
+To clear the application cache: 
+
+.. code-block:: bash
+
+   php symfony cc
+
+For more information, see: :ref:`maintenance-clear-cache`. 
+
+To restart PHP-FPM on Ubuntu 14.04: 
+
+.. code-block:: bash
+
+   sudo service php5-fpm restart
+
+To restart PHP-FPM on Ubuntu 16.04: 
+
+.. code-block:: bash
+
+   sudo systemctl restart php7.0-fpm
+
+.. TIP::
+
+   If you are still not seeing your changes take effect, remember to clear your
+   web browser's cache as well! 
 
 Start using the software!
 =========================
