@@ -191,6 +191,16 @@ associated with the user in the database will be updated so the user field is
 ``NULL``, and the user account can now be deleted. Any notes created by the user 
 will remain in the system, unaffected by the deletion. 
 
+.. IMPORTANT::
+
+   The task will not allow you to delete a user account if it is the **only** 
+   :term:`administrator` account in the system. If you wish to do so, you can use
+   the other available tasks to create a new user and/or promote an existing user
+   to the administrator group. See: 
+
+   * :ref:`cli-add-superuser`
+   * :ref:`cli-promote-user-admin`
+
 Here is an example of running the task with both options (force and update-notes) 
 used together, where the user being deleted has a username of ``demo``: 
 
