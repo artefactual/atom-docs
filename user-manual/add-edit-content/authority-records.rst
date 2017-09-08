@@ -4,16 +4,15 @@
 Authority records
 =================
 
-Authority records are one of the core :doc:`entity types
-<../overview/entity-types>` in AtoM and provide users with a means to control
-the representation of information about actors - :term:`corporate bodies
-<corporate body>`, persons, or families - who interact with archival
-materials, typically as :term:`creators <creator>`. Typically, authority
-records contain information about the authorized form of name and other forms
-of name by which the actor is known, dates of existence, relevant adminstrtive
-or biographical history details, and other contextual information;
-additionally, roles in :term:`events <event>` and relationships with archival
-materials are also captured and expressed.
+Authority records are one of the core :ref:`entity-types` in AtoM and provide
+users with a means to control the representation of information about actors -
+:term:`corporate bodies <corporate body>`, persons, or families - who interact
+with archival materials, typically as :term:`creators <creator>`. Typically,
+authority records contain information about the authorized form of name and
+other forms of name by which the actor is known, dates of existence, relevant
+adminstrtive or biographical history details, and other contextual
+information; additionally, roles in :term:`events <event>` and relationships
+with archival materials are also captured and expressed.
 
 The International Council on Archives (`ICA <http://www.ica.org/>`__) defines
 an authority record as "*The authorized form of name combined with other
@@ -181,6 +180,7 @@ overall) in the application, AtoM behaves in several specific ways:
 
 * :ref:`Create a new authority record <create-authority-record>`
 * :ref:`Edit an existing authority record <edit-authority-record>`
+* :ref:`authority-access-points`
 * :ref:`link-authority-to-description`
 * :ref:`link-repo-actor`
 * :ref:`link-two-authority-records`
@@ -522,6 +522,10 @@ record's :term:`view page`, where you can review your work. Clicking "Edit"
 in the :term:`button block` at the bottom of the record will re-open the
 authority record in :term:`edit mode`.
 
+.. SEEALSO::
+
+   * :ref:`authority-access-points`
+
 :ref:`Back to top <authority-records>`
 
 .. _edit-authority-record:
@@ -571,6 +575,162 @@ You will be redirected to the :term:`view page` for the edited
    records? See:
 
    * :ref:`csv-update-actors`
+
+:ref:`Back to top <authority-records>`
+
+.. _authority-access-points:
+
+Add access points to your authority record
+==========================================
+
+The International Council on Archives' :ref:`ISAD(G) <isad-template>` standard 
+defines an :term:`access point` as a "*name, term, keyword, phrase or code that 
+may be used to search, identify and locate an archival description.*" Access 
+points help users not only understand contextual information, but discover further
+related content. In AtoM, you can now apply access points to an 
+:term:`authority record` as well. 
+
+In AtoM, access points are controlled value :term:`terms <term>` maintained in a 
+:term:`taxonomy`, which can be used to aid in discovery. Currently AtoM supports
+one type of access point for authority records - Occupations. By default in a 
+new installation, the related taxonomy is empty, but as users add access point
+data to authority records, they are preserved as terms in the Actor occupations
+taxonomy, so they can be managed and reused. For more information on working with
+terms and taxonomies in AtoM, see: :ref:`terms`. 
+
+The Occupations access point includes an autocomplete field linked to the Actor
+occupations taxonomy, and a free-text note field, where you can add further 
+context specific to the person, family, or corporate body described in the related
+:term:`authority record`. 
+
+Once occupation access points have been added to your authority records, they 
+will show up as a :term:`facet <facet filter>` on the authority record browse
+page: 
+
+.. image:: images/occupations-facet.*
+   :align: center
+   :width: 75%
+   :alt: An image of the authority record browse page, with the Occupations facet 
+         visible in the left-hand context menu. 
+
+.. SEEALSO::
+   
+   * :ref:`browse-authority-records`
+   * :ref:`Search for authority records <dedicated-search-authority>`
+
+
+**To add access points to your authority record:**
+
+1. First, navigate to an existing :term:`authority record` in AtoM. You can do
+   this by :ref:`browsing <browse>` or by :ref:`searching <search-atom>` for a
+   specific :term:`authority record` - see :ref:`access-content` for more
+   information on navigation in AtoM. See :ref:`ISAAR-CPF <isaar-template>`
+   for more information on specific fields in the authority record edit
+   template.
+
+.. TIP::
+
+   You can always add access points to new authority records as you create them 
+   as well - for more information on creating authority records, see above: 
+
+   * :ref:`add-authority-main`
+
+   Steps 4-7 of these instructions will provide further specific guidance on 
+   using the access point fields. 
+
+2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
+   button in the :term:`button block`, or by clicking on one of the
+   :term:`information area` headings; this takes you to the record's
+   :term:`edit page`.
+
+.. image:: images/button-block-authority.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block on an authority record
+
+3. On loading, the :term:`edit page` displays the record with all
+   :term:`information areas <information area>` closed; click on an
+   information area to access the :term:`fields <field>` grouped under it
+4. Navigate to the Access points :term:`area <information area>`, near the 
+   bottom of the :term:`edit page`. If it is not already expanded to display 
+   the available fields, you can click on the "Access points" :term:`area header` 
+   to expand it. 
+
+.. image:: images/occupations-edit-empty.*
+   :align: center
+   :width: 75%
+   :alt: An image of the Access points area in an Authority record
+
+5. Add data as required. The "Occupation" field is your :term:`access point` -
+   the :term:`field` is an auto-complete, linked to the Actor occupations
+   :term:`taxonomy`. If you have previously added terms to the taxonomy, then
+   as you type, matches will appear below - click on a matching term that
+   appears in the :term:`drop-down menu` to select it. Alternatively, you can
+   create a new access point simply by entering it into the field - on save,
+   the access point will be saved as a :term:`term` in the Actor occupations
+   taxonomy so you can reuse it in the future.
+
+.. image:: images/occupations-autocomplete.*
+   :align: center
+   :width: 75%
+   :alt: An image of the terms drop-down beneath the Occupations field as a user 
+         types
+
+.. IMPORTANT::
+
+   If you are not careful, it is easy to accidentally create duplicate terms!
+   To avoid duplication, matching terms **must** be selected from the
+   auto-complete :term:`drop-down <drop-down menu>` - otherwise, even exact
+   matches will create duplicates when the user presses enter.
+
+6. The "Note" :term:`field` is a free-text field where you can add further 
+   contextual information specific to the current person, organization, or family
+   being described. This note data is **not** stored in the Actor occupations
+   taxonomy - it is only associated with the current :term:`authority record`. 
+
+.. image:: images/occupations-autocomplete.*
+   :align: center
+   :width: 75%
+   :alt: An image of the Note field in the Occupations access point
+
+7. You can add multiple access points at once, as needed. To add an additional
+   :term:`access point`, click the "Add new" link beneath the access point fields. 
+   AtoM will add a new row of fields, and you can continue your data entry as 
+   needed. If you decide you wish to remove one or more of the access points, 
+   click the **X** to the right of the Note field, and AtoM will delete the row.
+
+.. NOTE::
+
+   If you have added a new access point and saved your record, then re-entering
+   :term:`edit mode` and deleting the access point  will **only** remove it from 
+   the :term:`authority record` - it will **not** delete the term from the Actor
+   occupations taxonomy. If you wish to delete the term from AtoM completely, 
+   you will need to do so via **Manage > Terms**. For more information, see: 
+
+   * :ref:`Delete a term <delete-term>`
+
+8. You can quit the create process at any time by clicking the "Cancel" button
+   in the :term:`button block` at the bottom of the page; any changes made
+   will not be saved. Note that simply navigating away from the page by any
+   other means, **without first clicking "Save"** will also result in no
+   changes being saved to the authority record.
+9. To save your edits, click the "Save" button located in the :term:`button
+   block` at the bottom of the record.
+
+.. image:: images/button-block-save.*
+   :align: center
+   :width: 75%
+   :alt: An image of the button block when editing an authority record
+
+You will be redirected to the :term:`view page` for the edited
+:term:`authority record`, where you can review your work.
+
+.. SEEALSO::
+
+   * :ref:`terms`
+   * :ref:`edit-authority-record`
+   * :ref:`add-authority-main`
+   * :ref:`browse-authority-records`
 
 :ref:`Back to top <authority-records>`
 

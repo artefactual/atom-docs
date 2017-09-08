@@ -636,11 +636,12 @@ users, which can be changed by the user to Most recent or identifier via the
    users, in **Admin > Settings > Global**. For more information, see:
    :ref:`sort-browser-users` and :ref:`sort-browser-anonymous`.
 
-Users can narrow the results list using the available
+Users can narrow the results list using the available 
 :term:`facet filters <facet filter>` on the left-hand side of the screen,
 which for :term:`authority records <authority record>` includes language,
-entity type (Person, Family or Corporate body), Maintaining repository, and
-Occupation.
+:term:`entity` type (Person, Family or Corporate body), 
+:ref:`Maintaining repository <link-repo-actor>`, and
+:ref:`Occupation <authority-access-points>`.
 
 The authority record browse page also includes a dedicated search box - for
 more information on searching for authority records in AtoM, see:
@@ -649,8 +650,8 @@ information on working with authority records, see: :ref:`authority-records`.
 
 .. SEEALSO::
 
-   * :ref:`authority-records`
-   * :ref:`dedicated-search-authority`
+   * :ref:`link-repo-actor`
+   * :ref:`authority-access-points`
    * :ref:`recurring-facet-filters`
 
 .. _browse-institutions:
