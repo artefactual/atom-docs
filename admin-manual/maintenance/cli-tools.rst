@@ -665,8 +665,8 @@ so:
 
 .. _cli-update-publication-status:
 
-Update the publication status of a description
-==============================================
+Update the publication status of descriptions
+=============================================
 
 In AtoM, an :term:`archival description` can have :term:`publication status`
 of either "Draft" or "Published". The publication status of a record, which
@@ -682,7 +682,12 @@ the user interface.
 If you would like to change the publication status of a record via the
 command-line, you can use the following command-line tool, run from the root
 directory of AtoM. You will need to know the :term:`slug` of the description
-whose publication status you wish to update:
+whose publication status you wish to update. 
+
+You can also update the publication status of all descriptions associated with 
+an :term:`archival institution` by using the ``--repo`` option and providing a 
+:term:`repository` slug instead - details are included below. Here is the basic 
+syntax of the command with all options shown: 
 
 .. code:: bash
 
@@ -698,14 +703,8 @@ Publication status :term:`taxonomy` in AtoM - the default terms are Draft, and
 Published. You **cannot** create a new publication status :term:`term` by using
 this task - the term must already exist in AtoM, or the task will fail.
 
-For more information on slugs in AtoM, see above, :ref:`slugs-in-atom`. Note that
-even when updating all the descriptions associated with a :term:`archival institution` using
-the ``--repository`` option described below, you **still must provide a slug**
-as a parameter for the task to execute. It can be any slug when using the
-``--repository`` option.
-
 **Example use (no options)** - update a description with a slug of
-"example-description" to published:
+``example-description`` to published:
 
 .. code:: bash
 
@@ -723,16 +722,16 @@ command-line, you see the options available on this tool, as pictured above.
 
 The ``--application``, ``--env``, and ``connection`` options **should not be
 used** - AtoM requires the uses of the pre-set defaults for symfony to be
-able to execute the import.
+able to execute the task.
 
-In general and as in the user interface, if a parent description is updated,
-it will also update the publication status of its children. In some rare
-cases however, there may be legacy records in the system with a publication
-status of NULL. The command-line option ``--force``, or ``-f`` for short, will
-force the update of the target information object and all of its
-:term:`children <child record>`, including legacy records that might have a
-publication status of NULL. We recommend using this option any time you want
-a publication status update to affect children as well.
+In general and as in the user interface, if a :term:`parent <parent record>`
+description is updated, it will also update the publication status of its
+children. In some rare cases however, there may be legacy records in the
+system with a publication status of NULL. The command-line option ``--force``,
+or ``-f`` for short, will force the update of the target information object
+and all of its :term:`children <child record>`, including legacy records that 
+might have a publication status of NULL. We recommend using this option any 
+time you want a publication status update to affect children as well.
 
 The ``--ignore-descendents``, or ``-i``, option can be used to leave the
 publication status of all :term:`children <child record>` unchanged. This is
@@ -746,18 +745,24 @@ can override the confirmation step.
 
 If the ``--repo`` or ``-r`` option is used, AtoM will update the publication
 status for **ALL** descriptions belonging to the associated
-:term:`repository` (e.g. :term:`archival institution`). To use this option,
-you must supply the :term:`slug` of the repository. An information object
-slug must still be present for the task to execute, but it will be ignored,
-and ALL descriptions belonging to the repository will be updated instead.
+:term:`repository` (i.e. :term:`archival institution`). To use this option,
+you must supply the :term:`slug` of the repository. 
 
 **Example use** - updating all the descriptions associated with "My archival
-institution" (slug = "my-archival-institution") to published. Note I must
-still provide a description slug ("my-description") for it to execute:
+institution" (slug = ``my-archival-institution``) to published.
 
 .. code:: bash
 
-   php symfony tools:update-publication-status --force --repo="my-archival-institution" published my-description
+   php symfony tools:update-publication-status --repo published my-archival-institution
+
+As the task proceeds, it will print a ``.`` period in the command-line for each
+record that is updated, providing a visual indication of progress. 
+
+
+.. image:: images/cli-update-pub-repo.*
+   :align: center
+   :width: 70%
+   :alt: The CLI output when updating all descriptions associated with a repository
 
 .. WARNING::
 
@@ -768,6 +773,8 @@ still provide a description slug ("my-description") for it to execute:
    * :ref:`sql-update-publication-status`
    * :ref:`sql-update-publication-status-repo`
 
+
+:ref:`Back to top <maintenance-cli-tools>`
 
 .. _cli-delete-description:
 
