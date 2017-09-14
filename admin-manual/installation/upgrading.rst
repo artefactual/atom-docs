@@ -54,6 +54,17 @@ latest version of AtoM, as well as those from previous releases.
 
 .. _upgrading-install-atom:
 
+Make sure the dependencies are updated
+======================================
+
+Since the 2.5 version, AtoM uses Elasticsearch 5.x. If you're upgrading from an
+earlier version, please make sure to upgrade your Elasticsearch installation.
+You don't need to backup your index data as it will be recreated from the
+database later in the upgrade.
+
+You will also need to upgrade to Java 8 if the system is using a previous
+version, as this is a requirement for Elasticsearch 5.x.
+
 Install the latest version of AtoM
 ==================================
 

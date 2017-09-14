@@ -82,13 +82,13 @@ and install the public signing key used in their repository:
 
 .. code-block:: bash
 
-   wget -qO - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add -
+   wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 
 Now add their repository:
 
 .. code-block:: bash
 
-   sudo add-apt-repository "deb http://packages.elasticsearch.org/elasticsearch/1.7/debian stable main"
+   echo "deb https://artifacts.elastic.co/packages/5.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-5.x.list
 
 Ready to be installed. Run:
 

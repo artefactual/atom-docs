@@ -69,25 +69,27 @@ Ubuntu doesn't provide a package but you can download it directly from the
 `Elasticsearch site <https://www.elastic.co/downloads/elasticsearch>`_ if you
 are unable to download it using the method that follows.
 
-First, make sure that `Java <https://www.java.com/en/>`__ is installed. In this
-example we are going to use OpenJDK but Oracle's JVM would also work.
+First, make sure that `Java 8 <https://www.java.com/en/>`__ is installed. In this
+example we are going to use Oracle's JVM but OpenJDK would also work.
 
 .. code-block:: bash
 
-   sudo apt-get install openjdk-7-jre-headless software-properties-common
+   sudo apt-add-repository ppa:webupd8team/java
+   sudo apt-get update
+   sudo apt-get install software-properties-common oracle-java8-installer
 
 After successfully installing Java, proceed to install Elasticsearch. Download
 and install the public signing key used in their repository:
 
 .. code-block:: bash
 
-   wget -qO - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add -
+   wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 
-Add the following to your /etc/apt/sources.list to enable the repository:
+Enable the repository:
 
 .. code-block:: bash
 
-   deb http://packages.elasticsearch.org/elasticsearch/1.7/debian stable main
+   echo "deb https://artifacts.elastic.co/packages/5.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-5.x.list
 
 Ready to be installed. Run:
 
