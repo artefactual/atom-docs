@@ -519,26 +519,41 @@ described for the archival description export options
 :ref:`above <cli-bulk-export-usage>`. Please refer there for more detailed usage
 notes. Below is an example application, using the ``--criteria`` option:
 
-**Example: using the --criteria option to select only authority records linked
-to descriptions from one repository**
+**Example: using the** ``--criteria`` **option to select only authority records 
+whose entity type is "family"**
 
-First, you will need to know the repository ID of the target
-:term:`archival institution`. See the section :ref:`below <common-atom-queries>`
-for basic instructions on how to access MySQL from the command-line, so you can
-enter the following SQL query. You will first need to know the :term:`slug` of
-the archival institution whose ID you would like to know:
+First, you will need to know the entity type ID for family. Entity type is a 
+:term:`term` maintained in the Actor entity types :term:`taxonomy` - when elements 
+from a different table in the database are linked to actors, the term ID is used. 
+Here are the term object IDs for the Actor entity types: 
+
+============== =======          
+Term           Term ID 
+============== =======
+Corporate body 131
+Person         132
+Family         133
+============== =======
+
+.. TIP::
+
+   An easy way to figure this out in the user interface is to use the related 
+   Entity type facet on the authority record browse page, and look at the 
+   resulting URL. For example, if we go to the public AtoM demo site, navigate
+   to the Authority record browse page, and use the facet to limit the results
+   to those records with an Entity type of family, the resulting URL is: 
+
+   * https://demo.accesstomemory.org/actor/browse?types=133&sort=alphabetic
+
+   See the ``133`` in the URL? This represents the Entity type we have applied
+   to filter the results! 
+
+We can now use the entity type to limit our export to include only those authority 
+records with an entity type of "Family," like so: 
 
 .. code:: bash
 
-   SELECT object_id FROM slug WHERE slug=`your-institution-slug`;
-
-Now with the repository ID, you can use the ``--criteria`` option to export only
-authority records that have been linked to descriptions related to the target
-archival institution, like so (assuming the repository ID returned is ``12345``):
-
-.. code:: bash
-
-   php symfony export:auth-recs --criteria='i.repository_id=12345' path/to/my/export-folder
+   php symfony export:auth-recs --criteria='a.entity_type_id=133' path/to/my/export-folder
 
 :ref:`Back to top <cli-import-export>`
 
