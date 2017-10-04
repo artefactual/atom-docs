@@ -239,7 +239,14 @@ Now you need to enable and reload Nginx:
 PHP
 ---
 
-Ubuntu 16.04 bundles PHP 7.0 which is much faster than older releases.
+Ubuntu 16.04 bundles PHP 7.0 which is much faster than older releases. 
+
+.. IMPORTANT::
+
+   At this time, PHP 7.1 or higher will not work with AtoM - non-backwards 
+   compatible changes were introduced in PHP 7.1 which affect some actions in 
+   AtoM, causing errors. We recommend installing v7.0 until affected areas in 
+   AtoM can be reviewed and updated.
 
 Our favorite way to deploy AtoM is using `PHP-FPM <http://php-fpm.org/>`__, a
 process manager that scales better than other solutions like FastCGI. The

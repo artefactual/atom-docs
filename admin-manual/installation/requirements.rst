@@ -33,13 +33,13 @@ of each component.
   `Nginx <http://nginx.com/>`__; Artefactual prefers the latter in
   development
 * `Elasticsearch <https://www.elastic.co/products/elasticsearch>`__ 1.3.0 or
-  newer (users have reported testing Elasticsearch 1.7 without problems).
+  newer (we use ES 1.7.6 in development).
   Elasticsearch 2.0 or newer is still not supported as they have deprecated a
   number of APIs still used in AtoM
 * Oracle `Java <https://www.java.com/en/>`__ 7 or newer (required for
   Elasticsearch)
 * `MySQL <https://www.mysql.com/>`__ 5.1 or newer
-* `PHP <http://php.net/>`__ 5.5, 5.6, 7.0 or newer
+* `PHP <http://php.net/>`__ 5.5 or 5.6 (with Ubuntu 14.04) or 7.0 (with Ubuntu 16.04) 
 * `Memcached <http://memcached.org>`__
 * `Gearman job server <http://gearman.org>`__
 
@@ -64,8 +64,8 @@ Optionally:
 
 .. _other-dependencies:
 
-Other dependencies (not required; recommended)
-----------------------------------------------
+Other dependencies
+------------------
 
 **ImageMagick**
 
