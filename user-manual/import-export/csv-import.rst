@@ -561,8 +561,9 @@ parent description.
 Alternately, if you are using the command-line to perform your import, you can
 use the ``--default-parent-slug`` option in the command-line to set a default
 slug value, that will be used when no *qubitParentSlug* or *parentID* values
-have been included for the row. For more information, see the details in the
-:ref:`csv-cli-options` section below.
+have been included for the row. For more information, see the details in the 
+Administrator's manual on command-line CSV export: 
+:ref:`csv-import-descriptions-cli`.
 
 Here is an example of the first few columns of a CSV file (shown in a
 spreadsheet application), importing a new series to an existing
