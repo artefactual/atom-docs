@@ -61,8 +61,8 @@ deleted from the application.
 .. NOTE::
 
    :term:`Static pages <static page>` can only be edited and added by an
-   authenticated (i.e. logged-in) :term:`administrator` or :term:`editor`.
-   For more information on user permissions, see :ref:`edit-user-permissions`.
+   authenticated (i.e. logged-in) :term:`administrator`. For more information 
+   on user permissions, see :ref:`edit-user-permissions`.
 
 .. _security-static-pages:
 
@@ -137,8 +137,8 @@ Edit an existing static page
 
 In AtoM, :term:`static pages <static page>`, that is both the :term:`Home page`
 and the :term:`About page` can be edited by authenticated (i.e. logged-in)
-:term:`administrators <administrator>` or :term:`editors <editor>` to reflect
-your own institution's or :term:`network's <network>` requirements.
+:term:`administrators <administrator>`to reflect your own institution's or 
+:term:`network's <network>` requirements.
 
 This section contains instructions on how to edit :term:`static
 pages <static page>` in AtoM. There are two ways to edit :term:`static pages
@@ -312,7 +312,7 @@ To add a new static page in AtoM:
    When creating a new :term:`static page`, the :term:`slug` :term:`field` can
    either be customized or left blank. If you choose to customize the
    :term:`slug`, make the slug all lowercase, keep it short, and avoid accented
-   characters (e.g.: "é"; "ñ"; "û") and punctuation (e.g.: "!"; ";"; "..."). If
+   characters (e.g.: ``é``, ``ñ``, ``û``) and punctuation (e.g.: ``!``,``;``, ``...``). If
    you leave the :term:`field` blank, AtoM will automatically generate a slug
    based on the "Title" you have indicated for your page (e.g.: If your "Title"
    is *About Us*, the slug for that static page will automatically be generated
