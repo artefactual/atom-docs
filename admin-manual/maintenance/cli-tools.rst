@@ -1526,9 +1526,9 @@ follows:
 
 .. code-block:: bash
 
-   php symfony import:dip-object /path/to/my/dip
+   php symfony import:dip-objects /path/to/my/dip
 
-By running ``php symfony help import:dip-object`` we can see the help page and 
+By running ``php symfony help import:dip-objects`` we can see the help page and 
 options included with the task: 
 
 .. image:: images/cli-dip-import.*
