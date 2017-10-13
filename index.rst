@@ -236,6 +236,7 @@ Customization
 
 * :ref:`customization-config-files`
 * :ref:`customization-theming`
+* :ref:`customization-watermarking`
 * :ref:`customization-localization`
 
 .. _admin-security:

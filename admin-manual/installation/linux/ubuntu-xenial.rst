@@ -354,7 +354,7 @@ remove it:
    sudo rm /etc/php/7.0/fpm/pool.d/www.conf
    sudo systemctl restart php7.0-fpm
 
-.. _linux-ubuntu-xenial-other-packages:
+.. _linux-ubuntu-xenial-gearman: 
 
 Gearman job server
 ------------------
@@ -364,6 +364,8 @@ Gearman job server is required by AtoM as of version 2.2.
 .. code-block:: bash
 
    sudo apt install gearman-job-server
+
+.. _linux-ubuntu-xenial-other-packages:
 
 Other packages
 --------------
