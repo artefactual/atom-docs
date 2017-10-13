@@ -9,4 +9,5 @@ Customization
 
    config-files
    theming
+   watermarking
    localization

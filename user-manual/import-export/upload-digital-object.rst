@@ -68,6 +68,7 @@ See below for more information on:
 * :ref:`digital-object-map`
 * :ref:`rename-digital-object`
 * :ref:`Deleting digital objects <delete-digital-object>`
+* :ref:`digital-object-watermark`
 * :ref:`Digital object storage <digital-object-storage>`
 * :ref:`Supported file formats <file-formats>`
 
@@ -677,6 +678,21 @@ To delete a :term:`digital object` that has been uploaded and linked to an
    confirm that you wish to "Delete" the digital object; click "Delete" once
    again. You will be redirected to the archival description's
    :term:`view page`.
+
+:ref:`Back to top <upload-digital-object>`
+
+.. _digital-object-watermark:
+
+Adding a watermark to reference images
+======================================
+
+A system administator can place a watermark file in AtoM's root directory, so
+a digital watermark is overlayed over all :term:`reference display copy` images
+generated when a digital object is uploaded. 
+
+For more information, see the Administrator's manual: 
+
+* :ref:`customization-watermarking`
 
 :ref:`Back to top <upload-digital-object>`
 
