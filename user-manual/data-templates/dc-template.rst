@@ -41,8 +41,9 @@ changed at the  same time using the *Default template* setting available in
 The CSV mappings below will provide guidance on which ISAD CSV fields can be
 used to import your DC-based descriptions into AtoM.
 
-To download the ISAD(G) CSV template for AtoM, please visit our wiki page
-(link to come).
+To download the ISAD(G) CSV template for AtoM, please visit our wiki page:
+
+* https://wiki.accesstomemory.org/Resources/CSV_templates
 
 Field descriptions
 ==================

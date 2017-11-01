@@ -30,8 +30,9 @@ on Archives <http://www.ica.org/>`_ ' ISAD(G) standard, the ISAD CSV template
 can be used.  The CSV mappings below will provide guidance on which ISAD CSV
 fields can be used to  import your DACS-based descriptions into AtoM.
 
-To download the ISAD(G) CSV template for AtoM, please visit our wiki page
-(link to come).
+To download the ISAD(G) CSV template for AtoM, please visit our wiki page:
+
+* https://wiki.accesstomemory.org/Resources/CSV_templates
 
 Field descriptions
 ==================

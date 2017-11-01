@@ -26,8 +26,9 @@ On this page you will find:
 ISAAR(CPF) Authority record CSV template
 ========================================
 
-To download the ISAAR(CPF) CSV templates for AtoM, please visit our wiki page
-(link to come).
+To download the ISAAR(CPF) CSV templates for AtoM, please visit our wiki page:
+
+* https://wiki.accesstomemory.org/Resources/CSV_templates
 
 Field descriptions
 ==================
