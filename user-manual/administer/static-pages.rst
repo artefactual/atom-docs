@@ -137,7 +137,7 @@ Edit an existing static page
 
 In AtoM, :term:`static pages <static page>`, that is both the :term:`Home page`
 and the :term:`About page` can be edited by authenticated (i.e. logged-in)
-:term:`administrators <administrator>`to reflect your own institution's or 
+:term:`administrators <administrator>` to reflect your own institution's or 
 :term:`network's <network>` requirements.
 
 This section contains instructions on how to edit :term:`static
