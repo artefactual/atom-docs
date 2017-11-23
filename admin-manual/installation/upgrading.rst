@@ -74,8 +74,8 @@ Copy your old data
 ==================
 
 At this point, you should have an |version| functional installation using a
-fresh database. Now we are going to copy the contents of the old uploads
-directory as well as the database:
+fresh database. Now we are going to copy the contents of the old uploads and 
+downloads directories, as well as the database:
 
 1. `rsync <https://rsync.samba.org/>`__ is a robust directory sync solution
    that we can use to copy the contents of your old uploads directory to the
@@ -84,17 +84,41 @@ directory as well as the database:
 
 .. code-block:: bash
 
-   $ rsync -av /var/www/icaatom_old/uploads /usr/share/nginx/atom/uploads
+   $ rsync -av /var/www/icaatom_old/uploads/ /usr/share/nginx/atom/uploads/
 
-Where "icaatom_old" is the name of your old installation. The path included
-for the new installation in this example (/usr/share/nginx/atom) is the path
+Where ``icaatom_old`` is the name of your old installation. The path included
+for the new installation in this example (``/usr/share/nginx/atom``) is the path
 we recommend in our installation documentation.
 
 Alternatively, you can just use `cp <https://en.wikipedia.org/wiki/Cp_%28Unix%29>`__:
 
 .. code-block:: bash
 
-   $ cp -r /var/www/icaatom_old/uploads /usr/share/nginx/atom/uploads
+   $ cp -r /var/www/icaatom_old/uploads/ /usr/share/nginx/atom/uploads/
+
+We're going to want to do the same with the downloads directory as well - this is 
+where :ref:`reports <reports-printing>`, :ref:`cached xml <cache-xml-setting>`, 
+and downloads created by the job scheduler (such as 
+:ref:`clipboard exports <csv-export-clipboard>`) are kept. 
+
+.. code-block:: bash
+
+   $ rsync -av /var/www/icaatom_old/downloads/ /usr/share/nginx/atom/downloads/
+
+.. NOTE:: 
+   
+   You may choose to delete the contents of the ``jobs`` subdirectory after 
+   copying it over - this subdirectory in the downloads folder generally contains 
+   zip files of previous exports. As such, it is temporary data and does not need 
+   to be kept. We recommend leaving the ``jobs`` subdirectory itself in place, 
+   for future exports. 
+
+   If you want to delete the contents of this directory, you can use the 
+   following command: 
+
+   .. code-block:: bash
+
+      rm -f /usr/share/nginx/atom/downloads/jobs/*
 
 2. Dump the contents of your old database to a temporary file:
 
