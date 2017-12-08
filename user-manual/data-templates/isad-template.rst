@@ -760,8 +760,8 @@ description. (ISAD 3.4.3)
 
 .. NOTE::
 
-   Use a three-letter language code from
-   `ISO 639-2 <http://www.loc.gov/standards/iso639-2/php/code_list.php>`_ when
+   Use a two-letter language code from
+   `ISO 639-1 <http://www.loc.gov/standards/iso639-2/php/code_list.php>`_ when
    importing from CSV.
 
 
@@ -788,8 +788,8 @@ description. (ISAD 3.4.3)
 
 .. NOTE::
 
-   Use a four-letter language code from
-   `ISO 639-2 <http://www.loc.gov/standards/iso639-2/php/code_list.php>`_ when
+   Use a four-letter script code from
+   `ISO 15924 <http://www.unicode.org/iso15924/iso15924-codes.html>`_ when
    importing from CSV.
 
 :ref:`Back to the top <isad-template>`
@@ -1351,8 +1351,8 @@ archival material."
 
 .. NOTE::
 
-   In CSV import, use a three-letter language code from
-   `ISO 639-2 <http://www.loc.gov/standards/iso639-2/php/code_list.php>`_ .
+   In CSV import, use a two-letter language code from
+   `ISO 639-1 <http://www.loc.gov/standards/iso639-2/php/code_list.php>`_ .
    When entering data manually, AtoM will offer an autocomplete drop-down
    list as you type, which will be generated as a three-letter language code
    in the EAD.
@@ -1387,7 +1387,7 @@ archival material."
 .. NOTE::
 
    In CSV import, use a four-letter script code from
-   `ISO 1924 <http://www.unicode.org/iso15924/iso15924-codes.html>`_. When
+   `ISO 15924 <http://www.unicode.org/iso15924/iso15924-codes.html>`_. When
    entering data manually, AtoM will offer an autocomplete drop-down
    list as you type, which will be generated as a four-letter script code
    in the EAD.

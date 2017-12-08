@@ -314,6 +314,12 @@ Language
 
 **ISAD CSV Column** ``language``
 
+.. NOTE::
+
+   Use a two-letter language code from
+   `ISO 639-1 <http://www.loc.gov/standards/iso639-2/php/code_list.php>`_ when
+   importing from CSV.
+
 **MODS Rule** A designation of the language in which the content of the resource
 is expressed. Select as many languages as required.
 

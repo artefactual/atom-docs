@@ -447,6 +447,12 @@ Languages of the material
 
 **ISAD CSV Column** ``language``
 
+.. NOTE::
+
+   Use a two-letter language code from
+   `ISO 639-1 <http://www.loc.gov/standards/iso639-2/php/code_list.php>`_ when
+   importing from CSV.
+
 **DACS Rule** Record the language(s) of the materials being described.
 (DACS 4.5.2)
 
@@ -466,6 +472,12 @@ Scripts of the material
 **Template Field** Scripts of the material
 
 **ISAD CSV Column** ``script``
+
+.. NOTE::
+
+   Use a four-letter script code from
+   `ISO 15924 <http://www.unicode.org/iso15924/iso15924-codes.html>`_ when
+   importing from CSV.
 
 **DACS Rule** Record the scripts(s) of the materials being described.
 

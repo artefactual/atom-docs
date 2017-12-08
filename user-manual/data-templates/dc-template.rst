@@ -453,8 +453,8 @@ Language
 
 .. TIP::
 
-   Use a three-letter language code from
-   `ISO 639-2 <http://www.loc.gov/standards/iso639-2/php/code_list.php>`_ when
+   Use a two-letter language code from
+   `ISO 639-1 <http://www.loc.gov/standards/iso639-2/php/code_list.php>`_ when
    importing from CSV.
 
 **DC Rule**: "A language of the resource. Recommended best practice is to use
