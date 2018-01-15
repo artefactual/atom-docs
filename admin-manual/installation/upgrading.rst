@@ -239,6 +239,65 @@ to remove any out-of-date data from the application:
 
 See :ref:`maintenance-clear-cache` for more detailed instructions.
 
+.. _upgrading-restart-services:
+
+Restart services
+================
+
+You might also want to restart some of your services after upgrading, including
+PHP-FPM, memcached, and the atom-workers managed by the job scheduler. 
+
+**To restart PHP-FPM**:
+
+Ubuntu 14.04:
+
+.. code-block:: bash
+
+   sudo service php5-fpm restart
+
+Ubuntu 16.04:
+
+.. code-block:: bash
+
+   sudo systemctl restart php7.0-fpm 
+
+**To restart memcached**:
+
+Ubuntu 14.04: 
+
+.. code-block:: bash
+
+   sudo service memcached restart
+
+Ubuntu 16.04: 
+
+.. code-block:: bash
+
+   sudo systemctl restart memcached
+
+**To restart the atom-workers**:
+
+Ubuntu 14.04: 
+
+.. code-block:: bash
+
+   sudo restart atom-worker # Restarts the workers
+   sudo status atom-worker  # Obtain current running status
+
+Ubuntu 16.04:  
+
+.. code-block:: bash
+
+   sudo systemctl restart atom-worker  # Restarts the workers
+   sudo systemctl status atom-worker   # Obtains current status
+
+.. TIP::
+
+   For further information on configuring the job scheduler, see: 
+
+   * :ref:`installation-asynchronous-jobs`
+
+
 .. _upgrading-use-software:
 
 Set site base URL
