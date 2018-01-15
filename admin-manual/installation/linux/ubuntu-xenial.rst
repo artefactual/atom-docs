@@ -365,6 +365,12 @@ Gearman job server is required by AtoM as of version 2.2.
 
    sudo apt install gearman-job-server
 
+We'll configure the job server and the workers after initial installation (see 
+:ref:`below <linux-ubuntu-xenial-workers>`). Full configuration detalis can be 
+found here:
+
+* :ref:`installation-asynchronous-jobs`.
+
 .. _linux-ubuntu-xenial-other-packages:
 
 Other packages
@@ -576,10 +582,21 @@ The rest of the fields can be filled as you need:
 Deployment of workers
 =====================
 
-Optionally, you can use Gearman to add support for asynchronous tasks like
+Gearman is used in AtoM to add support for asynchronous tasks like
 SWORD deposits, managing rights inheritance, and generating finding aids. Check
 out the following page for further installation details:
 :ref:`installation-asynchronous-jobs`.
+
+.. IMPORTANT::
+
+   You **must** complete the installation instructions found on the Job Scheduler 
+   page for your AtoM installation to be fully functional! Increasingly in AtoM, 
+   the job scheduler is used to support long-running tasks, some of which are 
+   core functionality such as updating the :term:`publication status` of a 
+   descriptive hierarchy, moving descriptions to a new :term:`parent record`, and 
+   much more. Please do this now! See:
+
+   * :ref:`installation-asynchronous-jobs`
 
 .. _linux-ubuntu-xenial-configuration-files:
 
