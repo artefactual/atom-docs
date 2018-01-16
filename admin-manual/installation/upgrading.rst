@@ -244,8 +244,9 @@ See :ref:`maintenance-clear-cache` for more detailed instructions.
 Restart services
 ================
 
-You might also want to restart some of your services after upgrading, including
-PHP-FPM, memcached, and the atom-workers managed by the job scheduler. 
+To ensure everything works correctly, you must restart your services after 
+upgrading, including PHP-FPM, memcached, and the atom-workers managed by the 
+job scheduler. 
 
 **To restart PHP-FPM**:
 
