@@ -297,8 +297,8 @@ it is definitely `possible <https://wiki.apache.org/httpd/PHP-FPM>`__.
 PHP
 ---
 
-You will need to ensure that you have at leat PHP 5.4 or higher installed - we
-use PHP 5.5 in development - in addition to a number of PHP extentions,
+You will need to ensure that you have **at least PHP 5.5 or higher installed** 
+- we use PHP 5.5 in development - in addition to a number of PHP extentions,
 described below.
 
 Our favorite way to deploy AtoM is using `PHP-FPM <http://php-fpm.org/>`__, a
