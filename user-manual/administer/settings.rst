@@ -427,15 +427,6 @@ information to help orient the user.
    :width: 45%
    :alt: an example of the reference code display in edit mode
 
-.. NOTE::
-
-   Whether reference code inheritance is turned on or not, the
-   :ref:`sort button <recurring-sort-button>` option on the
-   :term:`archival description` browse page will still sort by full inherited
-   reference code, and **not** by identifier alone. This setting only affects
-   the display. For more information on sorting, see:
-   :ref:`recurring-sort-button`.
-
 .. IMPORTANT::
 
    This setting also determines how the ``<unitid>`` element in the EAD XML is
