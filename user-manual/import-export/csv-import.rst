@@ -385,6 +385,13 @@ the command-line, or by using a graphical application such as
 `phpMyAdmin <http://www.phpmyadmin.net>`__ to look up exising legacy ID values
 in the *source_id* column of the MySQL keymap table.
 
+.. NOTE::
+
+   Even if you are importing your descriptions as top-level records, we still
+   recommend using a ``legacyId`` value during import. Simply leave both the
+   ``parentID`` and ``qubitParentSlug`` columns blank for any row you want to
+   import as a top-level description.
+
 In cases where data is being imported from multiple sources, legacy IDs may
 conflict. Two datasets, for example, may have objects with an ID of 3. When
 importing, you can use the command-line option ``--source-name`` to only record
@@ -497,6 +504,12 @@ lower-level file descriptions. However, using both *parentID* and
 the *qubitParentSlug* so the import does not fail.
 
 Both methods of establishing hierarchical relationships are described below.
+
+.. NOTE::
+
+   If you want your records to import as **top-level descriptions**, simply 
+   include a ``legacyID`` value, and leave both the ``parentID`` and 
+   ``qubitParentSlug`` columns blank for that row. 
 
 .. _csv-description-legacy-id:
 
