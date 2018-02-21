@@ -768,15 +768,6 @@ Glossary
     Functions (ISDF). See :doc:`Entity types <../overview/entity-types>`
     and :ref:`functions`.
 
-  Global search/replace
-    Global search and replace allows :term:`administrators
-    <administrator>` to query the entire database and globally replace
-    specific :term:`terms <term>` in each :term:`field`: title, alternate
-    title, scope and content, bio/admin history etc. The Global search and
-    replace menu can be found under the :term:`Admin menu <admin menu>`.
-    See the Global search and replace menu for a full list of available
-    fields.
-
   Group profile
     A "Group" profile is information about a user group in AtoM. The following 4
     :term:`user roles <user role>` are established as default "Groups" in AtoM
