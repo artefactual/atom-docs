@@ -1571,12 +1571,12 @@ databases, which are not accommodated from the user interface. For all of
 these, you will need to execute them from inside MySQL, using the username
 and password you created during installation.
 
-Assuming your username and pass are both set to "root", here is an example of
-what you would type into the command-line:
+Assuming your username and pass are both set to "root" and your database name is 
+``atom``, here is an example of what you would type into the command-line:
 
 .. code:: bash
 
-   $ mysql -u root -p root
+   $ mysql -u root -proot atom
 
 Once you've accessed the database, you can run SQL queries to manually modify
 the AtoM database.
