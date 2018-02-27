@@ -29,12 +29,11 @@ will be asked to save if you haven't yet).
 .. IMPORTANT::
 
    If you change any of the files listed below, clear the cache and restart
-   php5-fpm to apply the changes.
+   PHP-FPM to apply the changes.
 
-   .. code-block:: bash
+   * :ref:`maintenance-clear-cache`
+   * :ref:`troubleshooting-restart-php-fpm`
 
-      php symfony cc
-      sudo php5-fpm restart
 
 Important files:
 ================

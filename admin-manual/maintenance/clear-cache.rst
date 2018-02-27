@@ -13,10 +13,41 @@ which is located in the root directory of this project.
 
    php symfony cache:clear
 
-Additionally, if :ref:`apc.stat <maintenance-tuning-apc-stat>` is not activated
-in your PHP configuration, you'll also have to clear the opcode cache
-by invoking ``apc_clear_cache('opcode')`` from a script or reloading PHP-FPM:
+
+You can also use the shorthand version of the command, like so: 
 
 .. code-block:: bash
 
-   sudo /etc/init.d/php5-fpm reload
+   php symfony cc
+
+Note that, because AtoM is session based, clearing the web browser cache might
+log you out of the application. Be sure you have saved any work you are doing
+in the user interface saved before doing so.
+
+.. IMPORTANT::
+
+   There are also other caches to consider clearing! 
+
+   PHP-FPM (a PHP extension that AtoM uses) can also cache some content - if you
+   are clearing the application cache, you should also consider restarting
+   PHP-FPM. See:
+
+   * :ref:`troubleshooting-restart-php-fpm`   
+
+   Memcached is also an external cache engine that can be used with AtoM - you
+   should restart it as well. See:
+
+   * :ref:`troubleshooting-restart-memcached`   
+
+   Finally, don’t forget that **your web browser has its own cache** - in some
+   cases, if you are not seeing changes take affect, you might want to try
+   clearing your web browser cache. Note that, because AtoM is session based,
+   clearing the web browser cache might log you out of the application. Be sure
+   you have saved any work you are doing in the user interface before doing so.
+
+.. SEEALSO::
+
+   * :ref:`troubleshooting-clear-cache`
+   * :ref:`maintenance-troubleshooting`
+   * :ref:`maintenance-cli-tools`
+   * :ref:`maintenance-populate-search-index`

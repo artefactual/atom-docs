@@ -16,6 +16,7 @@ See below for :ref:`common-atom-queries`.
    * :ref:`digital-object-load-task`
    * :ref:`cli-import-export`
    * :ref:`maintenance-webserver`
+   * :ref:`maintenance-troubleshooting`
 
    We also have a slides and videos of many of our command-line tasks. See:
 

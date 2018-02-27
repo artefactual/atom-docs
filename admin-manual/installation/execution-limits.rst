@@ -183,6 +183,11 @@ caches.
    sudo systemctl restart memcached
    php symfony cc
 
+For more details on these commands, see: 
+
+* :ref:`troubleshooting-restart-services`
+* :ref:`maintenance-clear-cache`
+
 .. TIP:: 
 
    Learn more about AtoM command-line tasks and basic maintenance commands in 
@@ -194,5 +199,10 @@ caches.
    get started:
 
    * https://www.slideshare.net/accesstomemory/commandline-101
+
+.. SEEALSO::
+
+   * :ref:`maintenance-troubleshooting`
+   * :ref:`maintenance-cli-tools`
 
 :ref:`Back to top <installation-execution-limits>`
