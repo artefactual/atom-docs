@@ -49,7 +49,7 @@ ID to the file config/app.yml:
      google_analytics_api_key: UA-XXXXX-X
 
 Replace UA-XXXXX-X with your tracking ID. Once you are done, remember to
-:ref:`clear the cache <maintenance-clear-cache>`.
+`clear the cache`_.
 
 Google Analytics for tracking institutional pageviews
 +++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -57,7 +57,9 @@ Google Analytics for tracking institutional pageviews
 As of AtoM 2.5, it is possible to track pageviews for individual institutions
 who are sharing a multi-repository AtoM instance by adding a custom dimension to
 the tracking ID. Adding this dimension will set the authorized form of name from
-the repository as the dimension value.
+the source culture of the repository as the dimension value (e.g. for a repository
+where the source culture is English but translations into other languages are
+present, Analytics will use the English form of the authorized form of name).
 
 * Description pages (all templates) use the repository value (direct or inherited)
 * Actor pages use the maintaining repository value
@@ -77,7 +79,7 @@ the API key and make sure that the setting is uncommented.
      google_analytics_api_key: UA-XXXXX-X
      google_analytics_institutions_dimension_index: 1
 
-Remember to clear the cache and restart PHP-FPM after configuration.
+Remember to `clear the cache`_ and `restart PHP-FPM`_ after configuration.
 
 Viewing Google Analytics institutional pageview data
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -123,3 +125,5 @@ pageviews for each institution:
 
 .. _`Google Analytics`: https://analytics.google.com/analytics/web/#/
 .. _`Set up custom dimension`: https://support.google.com/analytics/answer/2709829#set_up_custom_dimensions
+.. _`clear the cache`: clear-cache.html
+.. _`restart PHP-FPM`: troubleshooting.html#troubleshooting-restart-php-fpm
