@@ -61,9 +61,9 @@ the source culture of the repository as the dimension value (e.g. for a reposito
 where the source culture is English but translations into other languages are
 present, Analytics will use the English form of the authorized form of name).
 
-* Description pages (all templates) use the repository value (direct or inherited)
-* Actor pages use the maintaining repository value
-* Repository pages use the repository
+* Description pages (all templates) use the *repository* value (direct or inherited)
+* Actor pages use the *maintaining repository* value
+* Repository pages use the repository's *authorized form of name* value
 
 Follow the instructions provided in Google's Analytics Help pages to
 `Set up custom dimension`_. When you reach step 6, *Select the scope*, choose
