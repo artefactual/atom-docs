@@ -50,6 +50,7 @@ command:
 
 .. code-block:: bash
 
+   sudo apt-get update
    sudo apt install percona-server-server-5.6
 
 During the installation, you will be prompted to set a password for the default
@@ -239,13 +240,13 @@ Now you need to enable and reload Nginx:
 PHP
 ---
 
-Ubuntu 16.04 bundles PHP 7.0 which is much faster than older releases. 
+Ubuntu 16.04 bundles PHP 7.0 which is much faster than older releases.
 
 .. IMPORTANT::
 
-   At this time, PHP 7.1 or higher will not work with AtoM - non-backwards 
-   compatible changes were introduced in PHP 7.1 which affect some actions in 
-   AtoM, causing errors. We recommend installing v7.0 until affected areas in 
+   At this time, PHP 7.1 or higher will not work with AtoM - non-backwards
+   compatible changes were introduced in PHP 7.1 which affect some actions in
+   AtoM, causing errors. We recommend installing v7.0 until affected areas in
    AtoM can be reviewed and updated.
 
 Our favorite way to deploy AtoM is using `PHP-FPM <http://php-fpm.org/>`__, a
@@ -354,7 +355,7 @@ remove it:
    sudo rm /etc/php/7.0/fpm/pool.d/www.conf
    sudo systemctl restart php7.0-fpm
 
-.. _linux-ubuntu-xenial-gearman: 
+.. _linux-ubuntu-xenial-gearman:
 
 Gearman job server
 ------------------
@@ -365,8 +366,8 @@ Gearman job server is required by AtoM as of version 2.2.
 
    sudo apt install gearman-job-server
 
-We'll configure the job server and the workers after initial installation (see 
-:ref:`below <linux-ubuntu-xenial-workers>`). Full configuration detalis can be 
+We'll configure the job server and the workers after initial installation (see
+:ref:`below <linux-ubuntu-xenial-workers>`). Full configuration detalis can be
 found here:
 
 * :ref:`installation-asynchronous-jobs`.
@@ -589,11 +590,11 @@ out the following page for further installation details:
 
 .. IMPORTANT::
 
-   You **must** complete the installation instructions found on the Job Scheduler 
-   page for your AtoM installation to be fully functional! Increasingly in AtoM, 
-   the job scheduler is used to support long-running tasks, some of which are 
-   core functionality such as updating the :term:`publication status` of a 
-   descriptive hierarchy, moving descriptions to a new :term:`parent record`, and 
+   You **must** complete the installation instructions found on the Job Scheduler
+   page for your AtoM installation to be fully functional! Increasingly in AtoM,
+   the job scheduler is used to support long-running tasks, some of which are
+   core functionality such as updating the :term:`publication status` of a
+   descriptive hierarchy, moving descriptions to a new :term:`parent record`, and
    much more. Please do this now! See:
 
    * :ref:`installation-asynchronous-jobs`
