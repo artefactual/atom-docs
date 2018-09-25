@@ -286,7 +286,7 @@ When this setting is set to "yes," then when a user creates a new
 prepopulated with the next unique value based upon the :ref:`identifier-mask`
 settings - users can still manually edit the pre-populated value provided by
 the mask. AtoM does not enforce the uniqueness of archival description
-identifer values.
+identifier values.
 
 When this setting is set to "no," then the identifier mask will not be used
 to pre-populate identifier values, and when creating a new archival description,
@@ -384,8 +384,8 @@ appears as a dash ``-`` in AtoM, which can be changed by an
 
 .. TIP::
 
-   If you intend to use a ``/`` slash as your reference code separator, we 
-   recommend you review the following setting below! 
+   If you intend to use a ``/`` slash as your reference code separator, we
+   recommend you review the following setting below!
 
    * :ref:`escape-chars`
 
@@ -456,48 +456,48 @@ information to help orient the user.
 Escape special characters from searches
 ---------------------------------------
 
-This setting allows users to define special characters that should be escaped 
-when performing a search, to avoid errors. 
+This setting allows users to define special characters that should be escaped
+when performing a search, to avoid errors.
 
-AtoM uses `Elasticsearch <https://www.elastic.co/products/elasticsearch>`__  (ES) 
+AtoM uses `Elasticsearch <https://www.elastic.co/products/elasticsearch>`__  (ES)
 as its search index. In ES, certain characters are normally reserved to be used as
-operators in advanced searching - for more information, see: 
-:ref:`advanced-search-via-searchbox` - particularly, 
-:ref:`advanced-search-operators`. Normally, if you want to perform a search using 
-these special characters **without** them being interpreted as operators, then 
-you need to manually escape them with a ``\`` leading backslash character. From 
+operators in advanced searching - for more information, see:
+:ref:`advanced-search-via-searchbox` - particularly,
+:ref:`advanced-search-operators`. Normally, if you want to perform a search using
+these special characters **without** them being interpreted as operators, then
+you need to manually escape them with a ``\`` leading backslash character. From
 the ES `documentation <https://www.elastic.co/guide/en/elasticsearch/reference/1.7/query-dsl-query-string-query.html#_reserved_characters>`__:
 
-  If you need to use any of the characters which function as operators in your 
-  query itself (and not as operators), then you should escape them with a 
-  leading backslash. For instance, to search for ``(1+1)=2``, you would need to 
+  If you need to use any of the characters which function as operators in your
+  query itself (and not as operators), then you should escape them with a
+  leading backslash. For instance, to search for ``(1+1)=2``, you would need to
   write your query as ``\(1\+1\)\=2``.
 
   The reserved characters are: ``+ - = && || > < ! ( ) { } [ ] ^ " ~ * ? : \ /``
 
-  Failing to escape these special characters correctly could lead to a syntax 
+  Failing to escape these special characters correctly could lead to a syntax
   error which prevents your query from running.
 
-Many institutions prefer to use a ``/`` slash character as the default 
-:ref:`reference-code-separator`. This can lead to errors for users trying to 
-search for full reference code strings. However, with this setting, you can 
-define characters (such as the ``/``) that you wish to be automatically escaped 
-when a search string is submitted as a query. 
+Many institutions prefer to use a ``/`` slash character as the default
+:ref:`reference-code-separator`. This can lead to errors for users trying to
+search for full reference code strings. However, with this setting, you can
+define characters (such as the ``/``) that you wish to be automatically escaped
+when a search string is submitted as a query.
 
-You can add multiple escape characters to the field by separating them with 
-commas: 
+You can add multiple escape characters to the field by separating them with
+commas:
 
 .. image:: images/escape-chars.*
    :align: center
    :width: 90%
-   :alt: An image of multiple escape characters in the escape field, separated 
+   :alt: An image of multiple escape characters in the escape field, separated
          by commas
 
 .. IMPORTANT::
 
-   It is important to understand how searching works in AtoM's ES index, to 
-   understand the consequences of escaping special characters and how it might 
-   affect search results. 
+   It is important to understand how searching works in AtoM's ES index, to
+   understand the consequences of escaping special characters and how it might
+   affect search results.
 
    ES will automatically tokenize a search string - that is, when submitting a
    string such as ``city hall`` as a search, it is automatically broken into
@@ -521,7 +521,7 @@ commas:
    quotations, exact order and proximity are also taken into account,
    producing better results.
 
-   For more search tips and tricks, see: 
+   For more search tips and tricks, see:
 
    * :ref:`advanced-search-via-searchbox`
    * :ref:`advanced-search-operators`
@@ -529,7 +529,7 @@ commas:
    * :ref:`es-fields-atom`
 
    You can see what Elasticsearch tokenizers and filters are implemented in AtoM
-   in the following file: 
+   in the following file:
 
    * https://github.com/artefactual/atom/blob/HEAD/plugins/arElasticSearchPlugin/config/search.yml
 
@@ -730,25 +730,25 @@ Enable institutional scoping
 ----------------------------
 
 Institutional scoping adds additional visual cues and user interface elements
-to better support searching and browsing within the holdings of one 
-:term:`archival institution` when used in a :term:`multi-repository system`. 
-We strongly recommend that the setting above, :ref:`multiple-repositories`, is 
+to better support searching and browsing within the holdings of one
+:term:`archival institution` when used in a :term:`multi-repository system`.
+We strongly recommend that the setting above, :ref:`multiple-repositories`, is
 set to "Yes" when using this setting.
 
-When enabled (i.e. set to "Yes"), this setting will add an 
-:term:`institution block` to the repository :term:`view page`, consisting of the 
-repository logo, as well a dedicated search box and browse menu that will both 
-return results linked to the current archival institution. 
+When enabled (i.e. set to "Yes"), this setting will add an
+:term:`institution block` to the repository :term:`view page`, consisting of the
+repository logo, as well a dedicated search box and browse menu that will both
+return results linked to the current archival institution.
 
 .. image:: images/scoping-comparison.*
    :align: center
    :width: 90%
-   :alt: An comparison of the repository view page with and without 
+   :alt: An comparison of the repository view page with and without
          institutional scoping
 
 Similarly, when an :term:`archival description` search or browse page is
-filtered (or "scoped") to a particular repository, the 
-:term:`institution block` will appear, and (if applied) the custom background 
+filtered (or "scoped") to a particular repository, the
+:term:`institution block` will appear, and (if applied) the custom background
 color of the institution will also be displayed behind the scoped search results.
 
 .. image:: images/scoped-results.*
@@ -760,20 +760,20 @@ color of the institution will also be displayed behind the scoped search results
 .. TIP::
 
    For more information on applying a custom background color, uploading a custom
-   repository logo, and other aspects of archival institution theming, see: 
+   repository logo, and other aspects of archival institution theming, see:
 
    * :ref:`edit-institution-theme`
 
-Additionally, the :ref:`search-box-delimiters` are disabled when Institutional 
-scoping is enabled - the global :term:`search box` in the AtoM :term:`header bar` 
-will only return results from all repositories, while the dedicated search box 
-inside the :term:`institution block` can be used to search the holdings of the 
-scoped repository. As such, the institution block offers users a method of 
-remaining "scoped" to one institution's holdings - users can still search and 
-browse across all repositories using the global :term:`search box` and 
-:term:`browse menu` found in the AtoM :term:`header bar`, but the institution 
+Additionally, the :ref:`search-box-delimiters` are disabled when Institutional
+scoping is enabled - the global :term:`search box` in the AtoM :term:`header bar`
+will only return results from all repositories, while the dedicated search box
+inside the :term:`institution block` can be used to search the holdings of the
+scoped repository. As such, the institution block offers users a method of
+remaining "scoped" to one institution's holdings - users can still search and
+browse across all repositories using the global :term:`search box` and
+:term:`browse menu` found in the AtoM :term:`header bar`, but the institution
 block provides a method of better limiting results to one institution as a user
-explores. 
+explores.
 
 Finally, the institution block will also appear on the :term:`view page` of a
 related :term:`archival description`, but **only** if the description is
@@ -782,9 +782,9 @@ arrived at via one of the scoped elements - i.e. the holdings list on the
 user arrives at the archival description via a global search or browse page,
 the institution block will not appear.
 
-An :term:`administrator` can customize the search box header text via **Admin > 
+An :term:`administrator` can customize the search box header text via **Admin >
 User interface labels**, using the ``institutionSearchHoldings`` field - for more
-information on changing these settings, see: :ref:`user-interface-labels`. At 
+information on changing these settings, see: :ref:`user-interface-labels`. At
 installation, the default text label is "Search our collection."
 
 .. image:: images/scoping-search-label.*
@@ -792,9 +792,9 @@ installation, the default text label is "Search our collection."
    :width: 90%
    :alt: An image of the Institution search holdings label settings
 
-The institution block's dedicted browse menu can also be customized via **Admin 
+The institution block's dedicted browse menu can also be customized via **Admin
 > Manage menus**, under the ``browseInstitution`` menu - for more information
-on working with menus, see: :ref:`manage-menus`. 
+on working with menus, see: :ref:`manage-menus`.
 
 .. image:: images/scoping-browse-menu.*
    :align: center
@@ -1702,11 +1702,11 @@ Treeview settings
    :width: 90%
    :alt: Treview settings page in AtoM
 
-The :term:`treeview` is a user interface element designed to assist with 
+The :term:`treeview` is a user interface element designed to assist with
 hierarchical navigation. The settings in this section relate to the treeview as
 it is displayed and used on :term:`archival description` view pages. For more
-information on navigation with and use of the treeview, see: 
-:ref:`context-menu-treeview`. 
+information on navigation with and use of the treeview, see:
+:ref:`context-menu-treeview`.
 
 .. SEEALSO::
 
@@ -1761,7 +1761,7 @@ the treeview enabled, for comparison.
    :width: 75%
    :alt: an example a description displayed with the full width treeview
 
-For more information on each treeview type, see: 
+For more information on each treeview type, see:
 
 * :ref:`context-menu-treeview-sidebar`
 * :ref:`context-menu-treeview-full`
@@ -1773,7 +1773,7 @@ Sidebar treeview settings
 -------------------------
 
 Settings in this area relate only to the sidebar treeview. They will not affect
-the behavior of the full-width treeview. 
+the behavior of the full-width treeview.
 
 .. _sort-treeview:
 
@@ -1814,12 +1814,12 @@ Full-width treeview settings
 ----------------------------
 
 Settings in this area relate to the functionality and display of the
-full-width treeview. They do not affect the behavior of the sidebar treeview. 
+full-width treeview. They do not affect the behavior of the sidebar treeview.
 
 Currently all elements in this section relate to what information is displayed
 in the treeview for each node. Users can configure whether the
 identifier/reference code, level of description, and/or dates of creation are
-included in each node's display. 
+included in each node's display.
 
 When all elements are displayed, the ordering of the metadata elements is as
 follows:
@@ -1835,7 +1835,7 @@ So for a Series level description with an identifier of 004 called
 
    [Series] 004 - Photographs, 1959
 
-Each configurable element is described further below. 
+Each configurable element is described further below.
 
 
 .. _fwt-show-id:
@@ -1843,12 +1843,12 @@ Each configurable element is described further below.
 Show identifier
 ^^^^^^^^^^^^^^^
 
-This setting controls whether or not an identifier or full inherited 
-:term:`reference code` is included in the treeview display for each node. 
+This setting controls whether or not an identifier or full inherited
+:term:`reference code` is included in the treeview display for each node.
 
 For more information on how reference codes are formed in AtoM and the
 difference between an identifier and a full reference code, see above,
-:ref:`inherit-reference-code`. 
+:ref:`inherit-reference-code`.
 
 .. _fwt-show-lod:
 
@@ -1856,7 +1856,7 @@ Show level of description
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This setting determines whether or not the level of description assigned to the
-current description is included in the treeview node display or not. 
+current description is included in the treeview node display or not.
 
 .. _fwt-show-dates:
 
@@ -1867,7 +1867,7 @@ This setting determines whether or not dates of creation are included in the
 treeview node display or not. Where there are multiple dates of creation, only
 the first will be shown. Other event type dates (for example, dates of
 accumulation, or dates of broadcast, etc.) are not included regardless of the
-setting. 
+setting.
 
 
 :ref:`Back to top <settings>`
