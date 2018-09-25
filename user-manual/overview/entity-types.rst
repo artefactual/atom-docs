@@ -58,10 +58,6 @@ description fields inherit the data entered into the accession record:
 * Scope & content
 * Physical condition
 
-Name :term:`access points <access point>` and :term:`Rights <rights record>`
-added to the accession record are inherited into the :term:`archival
-description`.
-
 In AtoM the accession record includes data entry :term:`fields <field>` to
 capture donor information (e.g., donor name and contact information) and
 rights information (e.g., type of act, rights holder, dates and basis of
