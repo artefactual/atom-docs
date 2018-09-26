@@ -8,8 +8,7 @@ The `Symfony framework <http://symfony.com/legacy>`__ used in AtoM includes a
 number of logging options which can be customized based on :term:`developer`
 or system administrator needs.
 
-By default, two log files are included in the ``/log/`` directory of AtoM
-(see where on `Github <https://github.com/artefactual/atom/tree/2.x/log>`__).
+By default, two log files are included in the ``/log/`` directory of AtoM.
 If you look in this directory, you should see two files: ``qubit_cli.log``
 and ``qubit_dev.log``. You can view the contents of these log files like so:
 
@@ -20,8 +19,8 @@ and ``qubit_dev.log``. You can view the contents of these log files like so:
 A :term:`developer` or system administrator can customize the output of these
 logs, depending on what information is needed. In Symfony, the output to these
 logs is controlled by the settings in the ``factories.yml`` file found at
-``/apps/qubit/config/factories.yml`` (view example on Github   `here <https://
-github.com/artefactual/atom/blob/2.x/apps/qubit/config/factories.yml>`__).
+``/apps/qubit/config/factories.yml``.
+
 Factories in Symfony are "core objects needed by the framework during the life
 of any request. They are configured in the ``factories.yml`` configuration
 file." The ``factories.yml`` file, like several other configuration files in
