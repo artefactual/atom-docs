@@ -149,16 +149,16 @@ If the user account is currently marked inactive in the system (see
 Delete a user account from the command-line
 ===========================================
 
-AtoM provides a method to delete a user account via the :term:`user interface`, 
-but you can also delete a user directly from the command-line interface. To do 
-so, you will need to know the username of the user you wish to delete. The 
+AtoM provides a method to delete a user account via the :term:`user interface`,
+but you can also delete a user directly from the command-line interface. To do
+so, you will need to know the username of the user you wish to delete. The
 basic syntax for the command is:
 
 .. code-block:: bash
 
    php symfony tools:delete-user <username>
 
-By typing ``php symfony help tools:delete-user`` into the console, we can see 
+By typing ``php symfony help tools:delete-user`` into the console, we can see
 the help text and options associated with this task:
 
 .. image:: images/cli-delete-user.*
@@ -170,15 +170,15 @@ The ``--application``, ``--env``, and ``connection`` options **should not be
 used** - AtoM requires the uses of the pre-set defaults for symfony to be
 able to execute the task.
 
-The command, when run, will normally prompt you for comfirmation before 
-proceeding. However, if you wish to skip the confirmation step, you can use the 
-``--force`` or ``-f`` option. 
+The command, when run, will normally prompt you for comfirmation before
+proceeding. However, if you wish to skip the confirmation step, you can use the
+``--force`` or ``-f`` option.
 
 Additionally, if the user has added notes (e.g. General notes; RAD special
 notes such as Accompanying material notes; Archivists' notes; etc.) to an
 :term:`archival description`, then by default, the user ID of that user is
-associated with the note in the database. Because of this, AtoM will not let you 
-delete a user without first removing the user association from the notes, and 
+associated with the note in the database. Because of this, AtoM will not let you
+delete a user without first removing the user association from the notes, and
 the task will be aborted without delting the user account:
 
 .. image:: images/cli-delete-user-notes.*
@@ -188,22 +188,22 @@ the task will be aborted without delting the user account:
 
 To remove the user association with the notes so the task can proceed, you can use
 the ``--update-notes`` (or ``-n`` for short) option. When this is used, any notes
-associated with the user in the database will be updated so the user field is 
-``NULL``, and the user account can now be deleted. Any notes created by the user 
-will remain in the system, unaffected by the deletion. 
+associated with the user in the database will be updated so the user field is
+``NULL``, and the user account can now be deleted. Any notes created by the user
+will remain in the system, unaffected by the deletion.
 
 .. IMPORTANT::
 
-   The task will not allow you to delete a user account if it is the **only** 
+   The task will not allow you to delete a user account if it is the **only**
    :term:`administrator` account in the system. If you wish to do so, you can use
    the other available tasks to create a new user and/or promote an existing user
-   to the administrator group. See: 
+   to the administrator group. See:
 
    * :ref:`cli-add-superuser`
    * :ref:`cli-promote-user-admin`
 
-Here is an example of running the task with both options (force and update-notes) 
-used together, where the user being deleted has a username of ``demo``: 
+Here is an example of running the task with both options (force and update-notes)
+used together, where the user being deleted has a username of ``demo``:
 
 .. code-block:: bash
 
@@ -266,8 +266,8 @@ from AtoM's root directory, run:
    php symfony cc && php symfony search:populate
 
 However, if you would like to re-index as the derivative regeneration progresses,
-the ``--index`` option can be used to enable this. For more information on 
-populating the search index, see: :ref:`maintenance-populate-search-index`. 
+the ``--index`` option can be used to enable this. For more information on
+populating the search index, see: :ref:`maintenance-populate-search-index`.
 
 The ``--slug`` option can be used to target specific derivatives associated with
 a description, using the description's :term:`slug` as criteria. Any
@@ -278,21 +278,21 @@ provided as criteria will have its derivatives regenerated. Example use:
 
    php symfony digitalobject:regen-derivatives --slug="the-jane-doe-fonds"
 
-The ``--type`` option (or ``-d`` for derivative type) can be used if you only 
-want to regenerate one type of digital object derivative - either the 
-:term:`reference display copy` used on the :term:`view page` of related archival 
+The ``--type`` option (or ``-d`` for derivative type) can be used if you only
+want to regenerate one type of digital object derivative - either the
+:term:`reference display copy` used on the :term:`view page` of related archival
 descriptions, or the :term:`thumbnail` used in search and browse results. Supported
-parameters are: 
+parameters are:
 
 * reference
 * thumbnail
 
-So, for example, if you only wanted to regenerate your thumbnails, you could 
-execute the command like so: 
+So, for example, if you only wanted to regenerate your thumbnails, you could
+execute the command like so:
 
 .. code:: bash
 
-   php symfony digitalobject:regen-derivatives --type="thumbnail" 
+   php symfony digitalobject:regen-derivatives --type="thumbnail"
 
 The ``--force`` or ``-f`` option can be used to skip the warning normally
 delivered by the task when the command is entered. Because the task will delete
@@ -376,11 +376,11 @@ The criteria for the ``--json`` option then becomes the path to your JSON file:
    :ref:`edit-digital-object`), these two will be replaced with digital
    object derivatives created from the :term:`master digital object`.
 
-Finally, the ``--no-overwrite`` or ``-n`` option can be used if you only want to 
-generate derivatives where they are currently missing. All existing derivatives 
-will be left as-is in AtoM. When this option is used, no confirmation prompt is 
-given: the task will begin generating missing derivatives as soon as you enter 
-it in the console. 
+Finally, the ``--no-overwrite`` or ``-n`` option can be used if you only want to
+generate derivatives where they are currently missing. All existing derivatives
+will be left as-is in AtoM. When this option is used, no confirmation prompt is
+given: the task will begin generating missing derivatives as soon as you enter
+it in the console.
 
 :ref:`Back to top <maintenance-cli-tools>`
 
@@ -683,12 +683,12 @@ the user interface.
 If you would like to change the publication status of a record via the
 command-line, you can use the following command-line tool, run from the root
 directory of AtoM. You will need to know the :term:`slug` of the description
-whose publication status you wish to update. 
+whose publication status you wish to update.
 
-You can also update the publication status of all descriptions associated with 
-an :term:`archival institution` by using the ``--repo`` option and providing a 
-:term:`repository` slug instead - details are included below. Here is the basic 
-syntax of the command with all options shown: 
+You can also update the publication status of all descriptions associated with
+an :term:`archival institution` by using the ``--repo`` option and providing a
+:term:`repository` slug instead - details are included below. Here is the basic
+syntax of the command with all options shown:
 
 .. code:: bash
 
@@ -730,8 +730,8 @@ description is updated, it will also update the publication status of its
 children. In some rare cases however, there may be legacy records in the
 system with a publication status of NULL. The command-line option ``--force``,
 or ``-f`` for short, will force the update of the target information object
-and all of its :term:`children <child record>`, including legacy records that 
-might have a publication status of NULL. We recommend using this option any 
+and all of its :term:`children <child record>`, including legacy records that
+might have a publication status of NULL. We recommend using this option any
 time you want a publication status update to affect children as well.
 
 The ``--ignore-descendents``, or ``-i``, option can be used to leave the
@@ -747,7 +747,7 @@ can override the confirmation step.
 If the ``--repo`` or ``-r`` option is used, AtoM will update the publication
 status for **ALL** descriptions belonging to the associated
 :term:`repository` (i.e. :term:`archival institution`). To use this option,
-you must supply the :term:`slug` of the repository. 
+you must supply the :term:`slug` of the repository.
 
 **Example use** - updating all the descriptions associated with "My archival
 institution" (slug = ``my-archival-institution``) to published.
@@ -757,7 +757,7 @@ institution" (slug = ``my-archival-institution``) to published.
    php symfony tools:update-publication-status --repo published my-archival-institution
 
 As the task proceeds, it will print a ``.`` period in the command-line for each
-record that is updated, providing a visual indication of progress. 
+record that is updated, providing a visual indication of progress.
 
 
 .. image:: images/cli-update-pub-repo.*
@@ -816,12 +816,12 @@ descriptions affected (e.g. the target description and its descendants):
 
       php symfony tools:delete-description -B <slug>
 
-You can also delete all descriptions that are associated with a particular 
-:term:`repository`, by using the ``--repository`` option, and supplying the 
+You can also delete all descriptions that are associated with a particular
+:term:`repository`, by using the ``--repository`` option, and supplying the
 :term:`slug` of the linked repository instead of the slug of a description. For
 example, if your repository is called "Example Archives," with a slug in AtoM of
-``example-archives``, then you could delete **all** :term:`archival description` 
-records linked to this repository with the following command: 
+``example-archives``, then you could delete **all** :term:`archival description`
+records linked to this repository with the following command:
 
 .. code-block:: bash
 
@@ -1206,7 +1206,7 @@ To do so, run the following command:
 
 .. code-block:: bash
 
-   php symfony tools:repository-lat-lng
+   php symfony tools:find-repository-latlng
 
 AtoM will begin reviewing all available :term:`repository` contact information,
 and where possible, it will populate the latitude and longitude fields based
@@ -1226,7 +1226,7 @@ so:
 
 .. code-block:: bash
 
-   php symfony tools:repository-lat-lng --overwrite
+   php symfony tools:find-repository-latlng --overwrite
 
 You may want to clear the application cache and repopulate the search index
 after. See:
@@ -1471,30 +1471,30 @@ after generation, you can add the ``--ping`` option to the command.
 Manually upload Archivematica DIP objects
 =========================================
 
-AtoM includes integration with the open source digital preservation system, 
-`Archivematica <https://www.archivematica.org/>`__. Using Archivematica, you can 
-generate Archival Information Packages (AIPs) for preservation, as well as 
-Dissemination Information Packages (DIPs) for use in an access system such as 
-AtoM. For more information, see: 
+AtoM includes integration with the open source digital preservation system,
+`Archivematica <https://www.archivematica.org/>`__. Using Archivematica, you can
+generate Archival Information Packages (AIPs) for preservation, as well as
+Dissemination Information Packages (DIPs) for use in an access system such as
+AtoM. For more information, see:
 
 * :ref:`archivematica:intro`
 * :ref:`archivematica:upload-atom`
 * :ref:`archivematica:store-dip`
 * :ref:`Archivematica configuration for AtoM DIP upload <archivematica:admin-dashboard-atom>`
 
-While a workflow that will automatically upload DIPs from Archivematica to 
-AtoM is supported (see the links above), there may be cases where an archivist 
-chooses to store a DIP, and then wishes to upload it later without having to run 
-it through the re-ingest process. In that case, a system administrator can use 
-this task to manually attach DIP objects to existing archival descriptions in 
-AtoM. 
+While a workflow that will automatically upload DIPs from Archivematica to
+AtoM is supported (see the links above), there may be cases where an archivist
+chooses to store a DIP, and then wishes to upload it later without having to run
+it through the re-ingest process. In that case, a system administrator can use
+this task to manually attach DIP objects to existing archival descriptions in
+AtoM.
 
-To execute the task requires several things. First, the task expects to find 
-DIP digital objects that have been modified by Archivematica in 2 key ways: 
+To execute the task requires several things. First, the task expects to find
+DIP digital objects that have been modified by Archivematica in 2 key ways:
 
-1. The original object file has been converted to a derivative with a corresponding 
+1. The original object file has been converted to a derivative with a corresponding
    file extension (e.g. ``.jpg``, ``.mp3``, etc)
-2. A Unique Universal Identifier (UUID) as been pre-pended to the file name (for 
+2. A Unique Universal Identifier (UUID) as been pre-pended to the file name (for
    example, ``815da5cf-f49f-41f5-aa5d-c40d9d4dec3c-MARBLES.jpg``)
 
 Additionally, the object names **without** the UUID must be unique for the
@@ -1508,7 +1508,7 @@ extension ``.csv`` for the upload to work. The CSV must include a ``filename``
 column, which specifies the full name of each object. Additionally, include
 **either** an ``identifier`` column (if your identifier values in AtoM are
 unique) or, preferrably, a ``slug`` column, so AtoM knows the description to
-which each object will be attached. 
+which each object will be attached.
 
 .. image:: images/cli-dip-csv.*
    :align: center
@@ -1517,45 +1517,45 @@ which each object will be attached.
 
 .. IMPORTANT::
 
-   Do not include both an identifier and a slug column in your CSV, or the 
-   upload may fail. You must choose one or the other - the final CSV should only 
-   have 2 columns. 
+   Do not include both an identifier and a slug column in your CSV, or the
+   upload may fail. You must choose one or the other - the final CSV should only
+   have 2 columns.
 
-The CSV should be placed in the ``objects`` directory of the DIP, with the 
-digital objects that will be imported. The basic syntax for the task is as 
+The CSV should be placed in the ``objects`` directory of the DIP, with the
+digital objects that will be imported. The basic syntax for the task is as
 follows:
 
 .. code-block:: bash
 
    php symfony import:dip-objects /path/to/my/dip
 
-By running ``php symfony help import:dip-objects`` we can see the help page and 
-options included with the task: 
+By running ``php symfony help import:dip-objects`` we can see the help page and
+options included with the task:
 
 .. image:: images/cli-dip-import.*
    :align: center
    :width: 70%
    :alt: An image of the help page for the DIP object import CLI tool
 
-As a parameter, the task requires a file path. The path should point to the 
-top-level directory where you have added the DIP. 
+As a parameter, the task requires a file path. The path should point to the
+top-level directory where you have added the DIP.
 
 The ``--application``, ``--env``, and ``connection`` options **should not be
 used** - AtoM requires the uses of the pre-set defaults for Symfony to be
 able to execute the task.
 
-The ``--undo-log-dir`` option can be used to log which information objects (aka 
-descriptions) have digital objects added to them as a result of running the task. 
-This log can be used, in event of an incomplete import, to either establish 
-where the import stopped or to manually remove the imported digital objects. 
-Undo logs contain two columns: the object ID of the :term:`information object` 
-to which objects have beem imported, and the DIP directory from which the objects 
-were imported. For more information on using the object ID, you might want to 
-review the section below, :ref:`common-atom-queries`. 
+The ``--undo-log-dir`` option can be used to log which information objects (aka
+descriptions) have digital objects added to them as a result of running the task.
+This log can be used, in event of an incomplete import, to either establish
+where the import stopped or to manually remove the imported digital objects.
+Undo logs contain two columns: the object ID of the :term:`information object`
+to which objects have beem imported, and the DIP directory from which the objects
+were imported. For more information on using the object ID, you might want to
+review the section below, :ref:`common-atom-queries`.
 
-Similarly, the ``--audit`` option can be used to verify that all objects 
-specified in the CSV file were imported. If any are found to be missing, then the 
-object's filename will be output in the console.  
+Similarly, the ``--audit`` option can be used to verify that all objects
+specified in the CSV file were imported. If any are found to be missing, then the
+object's filename will be output in the console.
 
 :ref:`Back to top <maintenance-cli-tools>`
 
