@@ -9,7 +9,11 @@ Technical Requirements
 * :ref:`Hardware and server environment <hardware>`
 * :ref:`Minimum hardware requirements <minreq>`
 * :ref:`Software dependencies <soft_dep>`
+<<<<<<< HEAD
 * :ref:`Other dependencies <other-dependencies>`
+=======
+* :ref:`Other dependencies <other_dependencies>`
+>>>>>>> Update 'Requirements' topic to include more specs for basic setup
 
 .. _hardware:
 
@@ -41,7 +45,12 @@ Minimum hardware requirements
    deployment, with all of the services (i.e. nginx, Percona server, ES,
    memcached) installed in a single virtual machine.
 
+<<<<<<< HEAD
 For a frame of reference, Artefactual's standard AtoM test/demo site deployment is a cloud VM with the following specifications:
+=======
+For a frame of reference, Artefactual's AtoM test/demo site deployment is an
+OVH cloud VM with the following specifications:
+>>>>>>> Update 'Requirements' topic to include more specs for basic setup
 
 * Processor: 2 vCPUs @ 2.3GHz
 * Memory: 7GB
@@ -91,7 +100,11 @@ Optionally:
    including :ref:`installation-windows`, :ref:`installation-macosx`, Solaris,
    FreeBSD or :ref:`installation-linux`.
 
+<<<<<<< HEAD
 .. _other_dep:
+=======
+.. _other_dependencies:
+>>>>>>> Update 'Requirements' topic to include more specs for basic setup
 
 Other dependencies
 ------------------
