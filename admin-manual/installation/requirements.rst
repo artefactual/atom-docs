@@ -165,4 +165,8 @@ AtoM's :term:`user interface`.
     resulting pages to a specified output.*
 
 `Apache FOP <https://xmlgraphics.apache.org/fop/>`__ is used in AtoM to create
+<<<<<<< HEAD
 PDF finding aids.
+=======
+PDF finding aids.
+>>>>>>> Resolved merge conflict by incorporating edits
