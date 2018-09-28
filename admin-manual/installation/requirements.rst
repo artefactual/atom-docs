@@ -1,26 +1,56 @@
 .. _installation-requirements:
 
-============
-Requirements
-============
+======================
+Technical Requirements
+======================
 
+*On this page*
+
+* :ref:`Hardware and server environment <hardware>`
+* :ref:`Minimum hardware requirements <minreq>`
+* :ref:`Software dependencies <soft_dep>`
+* :ref:`Other dependencies <other-dependencies>`
+
+.. _hardware:
 
 Hardware and server environment
--------------------------------
+===============================
 
 Please note that it is difficult to provide an authoritative baseline or
-recommended system specification for running AtoM because what is considered an
+recommended system specification for running AtoM. What is considered an
 "acceptable" performance level is subjective, and the performance of the
 application depends greatly on factors such as the how much data is in the
-database, and how many users are accessing the site simultaneously.
+database and how many users are accessing the site simultaneously.
 
 Furthermore, AtoM makes use of different components and services that could be
 deployed in a distributed manner (across multiple machines in a network) in
 order to accept an escalating number of users. The main goal of this
-documentation is to describe the configuration of AtoM and its dependencies on a
-single machine, but some aspects of a multi-node installation will also
-be described.
+documentation is to describe the configuration of AtoM and its dependencies on
+a single machine, but some aspects of a multi-node installation will also be
+discussed.
 
+.. _minreq:
+
+Minimum hardware requirements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   The following information is intended to provide a starting point for
+   setting up your system. It provides specifications for an "all-in-one"
+   deployment, with all of the services (i.e. nginx, Percona server, ES,
+   memcached) installed in a single virtual machine.
+
+For a frame of reference, Artefactual's AtoM test/demo site deployment is an
+OVH cloud VM with the following specifications:
+
+* Processor: 2 vCPUs @ 2.3GHz
+* Memory: 7GB
+* Disk space (processing):  50GB at a minimum for AtoM's core stack plus more
+  storage would be required for supporting any substantial number of digital
+  objects.
+
+.. _soft_dep:
 
 Software dependencies (required)
 --------------------------------
