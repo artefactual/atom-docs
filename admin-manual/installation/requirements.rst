@@ -9,7 +9,7 @@ Technical Requirements
 * :ref:`Hardware and server environment <hardware>`
 * :ref:`Minimum hardware requirements <minreq>`
 * :ref:`Software dependencies <soft_dep>`
-* :ref:`Other dependencies <other_dependencies>`
+* :ref:`Other dependencies <other-dependencies>`
 
 .. _hardware:
 
@@ -92,7 +92,7 @@ Optionally:
    including :ref:`installation-windows`, :ref:`installation-macosx`, Solaris,
    FreeBSD or :ref:`installation-linux`.
 
-.. _other_dependencies:
+.. _other-dependencies:
 
 Other dependencies
 ------------------
@@ -154,3 +154,5 @@ AtoM's :term:`user interface`.
 
 `Apache FOP <https://xmlgraphics.apache.org/fop/>`__ is used in AtoM to create
 PDF finding aids.
+
+:ref:`Back to the top <installation-requirements>`
