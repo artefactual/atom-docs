@@ -154,5 +154,3 @@ AtoM's :term:`user interface`.
 
 `Apache FOP <https://xmlgraphics.apache.org/fop/>`__ is used in AtoM to create
 PDF finding aids.
-
-:ref:`Back to the top <installation-requirements>`
