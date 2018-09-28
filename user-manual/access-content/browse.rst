@@ -198,8 +198,8 @@ There are several ways to explore lower-level records (i.e. :term:`children
 
 **Jump to:**
 
-* :ref:`browse-hierarchy-facet`
 * :ref:`browse-hierarchy-top-filter`
+* :ref:`browse-hierarchy-facet`
 * :ref:`browse-hierarchy-list`
 * :ref:`browse-hierarchy-digi-objects`
 * :ref:`browse-hierarchy-inventory`
@@ -215,6 +215,24 @@ the :term:`view page` of an :term:`archival description`
    * :ref:`archival-descriptions`
    * :ref:`navigate`
 
+.. _browse-hierarchy-top-filter:
+
+Using the top-level description filter
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Using the :ref:`browse-menu` located in the :ref:`atom-header-bar`, navigate
+   to **Browse > Archival descriptions**. For more information on navigation in
+   AtoM, see: :ref:`navigate`.
+2. By default, AtoM will display only top-level :term:`parent <parent record>`
+   records when arriving on the Browse page. This limits what you see to the
+   highest levels of description.
+
+.. image:: images/browse-topleveldesc.*
+
+3. Choose a description by clicking the hyperlink description name.
+4. To see all child-l;evel descriptions, You can display all results by clicking
+   the **X** on the "top-level descriptions" :term:`filter tag`.
+5. You can continue to refine your browsing using :term:`facet filter` or :ref:`advanced-search`.
 
 .. _browse-hierarchy-facet:
 
@@ -242,11 +260,8 @@ unit is not included in the "Part of" facet filter).
 **To use the "Part of" facet for limiting results to a single archival unit:**
 
 1. Using the :ref:`browse-menu` located in the :ref:`atom-header-bar`, navigate
-   to **Browse > Archival descriptions**. For more information on navigation in
-   AtoM, see: :ref:`navigate`.
-2. Make sure that the top-level descriptions filter is turned off - by
-   default, AtoM will display only top-level :term:`parent <parent record>`
-   records when arriving on the Browse page. You can display all results by
+   to **Browse > Archival descriptions**.
+2. Turn off the top-level descriptions filter. You can display all results by
    clicking the **X** on the "top-level descriptions" :term:`filter tag`.
 3. In the left-hand column, locate the "Part of" facet filter. The facet will
    display the top 10 results - e.g. those top-level records with the most
@@ -261,12 +276,6 @@ unit is not included in the "Part of" facet filter).
    search/browse results page. You can continue to apply further facets and
    fliters as desired to narrow your results within the selected archival unit.
 
-.. _browse-hierarchy-top-filter:
-
-Using the top-level description filter
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-TO ADD AFTER SEARCH PAGE REDESIGN
 
 .. _browse-hierarchy-list:
 
