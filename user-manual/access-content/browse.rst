@@ -228,6 +228,10 @@ Using the top-level description filter
    highest levels of description.
 
 .. image:: images/browse-topleveldesc.*
+   :align: center
+   :width: 80%
+   :alt: View of top level description filter
+
 
 3. Choose a description by clicking the hyperlink description name.
 4. To see all child-l;evel descriptions, You can display all results by clicking
