@@ -46,11 +46,15 @@ Minimum hardware requirements
    memcached) installed in a single virtual machine.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 For a frame of reference, Artefactual's standard AtoM test/demo site deployment is a cloud VM with the following specifications:
 =======
 For a frame of reference, Artefactual's AtoM test/demo site deployment is an
 OVH cloud VM with the following specifications:
 >>>>>>> Update 'Requirements' topic to include more specs for basic setup
+=======
+For a frame of reference, Artefactual's standard AtoM test/demo site deployment is a cloud VM with the following specifications:
+>>>>>>> Remove vendor name from install requirements
 
 * Processor: 2 vCPUs @ 2.3GHz
 * Memory: 7GB
