@@ -41,7 +41,8 @@ Minimum hardware requirements
    deployment, with all of the services (i.e. nginx, Percona server, ES,
    memcached) installed in a single virtual machine.
 
-For a frame of reference, Artefactual's standard AtoM test/demo site deployment is a cloud VM with the following specifications:
+For a frame of reference, Artefactual's standard AtoM test/demo site deployment
+is a cloud VM with the following specifications:
 
 * Processor: 2 vCPUs @ 2.3GHz
 * Memory: 7GB
