@@ -24,6 +24,7 @@ Below, you will find information on the following :term:`information areas
 * :ref:`digital-object-derivatives`
 * :ref:`dip-upload-settings`
 * :ref:`treeview-settings`
+* :ref:`privacy-notification`
 
 Each of the settings areas listed above is accessible via a list of links on
 the left-hand side of the settings page. Click on the appropriate link, and
@@ -1871,3 +1872,137 @@ setting.
 
 
 :ref:`Back to top <settings>`
+
+.. _privacy-notification:
+
+Privacy notification
+====================
+
+.. NOTE:: This feature is new in the AtoM 2.4.1 release and is not present or
+   available in any previous versions (see `Release Notes 2.4.1
+   <https://wiki.accesstomemory.org/Releases/Release_announcements/Release_2.4.1>`_)
+
+We have added a new default static page called "Privacy Policy" (available under
+the Quick links menu in AtoM header), and a new configurable cookie notification
+banner in the AtoM 2.4.1 release to comply with the European Union's General
+Data Protection Regulation (GDPR). The GDPR came into effect on May 1, 2018, and
+even if your institution is not situtated in the EU, it is important to be aware
+of this regulation and how it might affect you.
+
+In compliance with the GDPR, AtoM now makes explicit its collection and use of
+cookies. AtoM collects cookies in order to enable browsing and loading of
+certain types of content. Visitors to AtoM sites who do not wish to have cookies
+placed on their computers should set their browsers to refuse cookies. However,
+certain features may not function properly without the aid of cookies.
+
+AtoM supports integration with `Google Analytics
+<https://www.google.com/analytics/>`_ for the purposes of gathering statistics on
+page views, site usage, user location, and other data on site visits. All data
+collected by Google Analytics are stored and processed by Google, according to
+the `Google Ads Data Processing Terms
+<https://privacy.google.com/businesses/processorterms/>`_
+
+None of the information gathered through the use of cookies or Google Analytics
+is used for any purpose other than the ones described here.
+
+System administrators will need to perform some manual steps to finalize the
+setup of the new features when upgrading or installing AtoM 2.4.1 for the first
+time.
+
+New 2.4.1 installations
+-----------------------
+
+Update cookie banner
+^^^^^^^^^^^^^^^^^^^^
+
+* The default cookie notification banner message will require updating.  This
+  can be done in |gears| *Admin > Settings > Privacy Notification*.
+* The default message will require the URL to the Privacy Policy static page be
+  updated. Currently the message reads:
+
+     .. code-block:: none
+
+        This website uses cookies to enhance your ability to browse and load
+        content. This website uses cookies to enhance your ability to browse
+        and load content. More Info: http://10.10.10.10/privacy
+
+Administrators can edit the text of the banner message, and choose whether or
+not to display the banner when a user accesses your site for the first time.
+Here's an example of how the notification banner will look:
+
+.. image:: images/gdpr-banner-post-set.*
+   :align: center
+   :width: 80%
+   :alt: GDPR banner first access
+
+* Update the URL in the message to the base URL for your site (see :ref:`Site
+  information <site-information>`)
+* If desired, you can use the current custom link syntax formatting to style the
+  hyperlink -  see :ref:`formatting` for more information
+
+Edit the Privacy Policy
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Administrators should also review the wording of the new default Privacy Policy
+static page. This can be found in |gears| *Admin > Static Pages >Privacy
+Policy*, or it can be accessed via the Quick links menu in the AtoM header.
+Click on ``edit`` at the bottom of the view page, make your desired edits, and
+select "save" to save your changes or ``cancel`` to return to the default text.
+
+For more information on working with :term:`static pages <static page>` in AtoM,
+see:
+
+* :ref:`manage-static-pages`
+
+Upgrades to 2.4.1
+-----------------
+
+After first upgrading the cookie notification banner will appear as follows:
+
+.. image:: images/gdpr-banner-pre-task.*
+   :align: center
+   :width: 80%
+   :alt: GDPR banner first access
+
+* Additionally, if no further action is taken, the new default Privacy policy
+  static page will not exist
+* If you don't intend to use the banner or need the Privacy policy static page,
+  you can disable the notification banner via |gears| *Admin > Settings >
+  Privacy policy*
+* To create the Privacy policy static page and update the banner message, a
+  system administrator should run the following task from the root AtoM
+  installation directory:
+
+.. code-block:: bash
+
+   php symfony tools:run lib/task/tools/addGdprSettings.php
+
+Custom theme updates
+--------------------
+
+* If you have a custom theme and the file ``scaffolding.less`` has been
+  customized, this file will need to be updated. Changes are identified
+  `here <https://goo.gl/d6HVVf>`_ - see the changes to ``scaffolding.less``
+* If a theme has been customized, but the file ``scaffolding.less`` is being
+  referenced from the arDominion theme, then there are no modifications
+  required.
+
+  * This can be checked in your theme's
+    ``plugins/<themefolder>/css/main.less`` file.  Look for:
+    ``@import "../../arDominionPlugin/css/less/scaffolding.less";`` -
+    if this line is present, no modifications should be required
+
+* Check if ``_header.php`` has been overridden in the custom theme. If so, the
+  change highlighted in this `issue <https://github.com/artefactual/atom/commit/c65e84e809a5760c9814f8117a291bdb9a7491da#diff-e3a653026878cbc4745a5526934888d7R3>`_
+  need to be made
+* Post upgrade, run ``make`` from your root theme plugin folder to rebuild the
+  CSS, and clear the application cache:
+
+  * If you are using the Dominion theme, run: ``make -C
+    plugins/arDominionPlugin``
+  * If you are using a custom theme, then you might want to run the task above
+    for Dominion, as well as for your custom theme: ``make -C
+    plugins/<yourPluginDirectory``
+
+* And finally, in all cases, clear the application cache afterwards: ``php
+  symfony cc``
