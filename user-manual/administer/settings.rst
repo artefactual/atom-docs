@@ -1330,7 +1330,7 @@ AtoM relies on volunteer translators from the community to support new language
 options. The translations are managed using
 `Transifex <https://www.transifex.com/projects/p/atom/>`__ and community
 members can learn more about contibuting translations `here
-<https://wiki.accesstomemory.org/Resources/Translation>`_.
+<https://wiki.accesstomemory.org/Resources/Translation>`__.
 
 .. image:: images/add-remove-languages.*
    :align: center
@@ -1878,9 +1878,11 @@ setting.
 Privacy notification
 ====================
 
-.. NOTE:: This feature is new in the AtoM 2.4.1 release and is not present or
-   available in any previous versions (see `Release Notes 2.4.1
-   <https://wiki.accesstomemory.org/Releases/Release_announcements/Release_2.4.1>`_)
+.. NOTE:: 
+
+   This feature is new in the AtoM 2.4.1 release and is not present or
+   available in any previous versions (see 
+   `Release Notes 2.4.1 <https://wiki.accesstomemory.org/Releases/Release_announcements/Release_2.4.1>`__)
 
 We have added a new default static page called "Privacy Policy" (available under
 the Quick links menu in AtoM header), and a new configurable cookie notification
@@ -1893,14 +1895,14 @@ In compliance with the GDPR, AtoM now makes explicit its collection and use of
 cookies. AtoM collects cookies in order to enable browsing and loading of
 certain types of content. Visitors to AtoM sites who do not wish to have cookies
 placed on their computers should set their browsers to refuse cookies. However,
-certain features may not function properly without the aid of cookies.
+certain features (such as the :ref:`clipboard`) may not function properly without 
+the aid of cookies.
 
-AtoM supports integration with `Google Analytics
-<https://www.google.com/analytics/>`_ for the purposes of gathering statistics on
-page views, site usage, user location, and other data on site visits. All data
-collected by Google Analytics are stored and processed by Google, according to
-the `Google Ads Data Processing Terms
-<https://privacy.google.com/businesses/processorterms/>`_
+AtoM supports integration with `Google Analytics <https://www.google.com/analytics/>`__ 
+for the purposes of gathering statistics on page views, site usage, user 
+location, and other data on site visits. All data collected by Google Analytics 
+are stored and processed by Google, according to the 
+`Google Ads Data Processing Terms <https://privacy.google.com/businesses/processorterms/>`__
 
 None of the information gathered through the use of cookies or Google Analytics
 is used for any purpose other than the ones described here.
@@ -1909,34 +1911,37 @@ System administrators will need to perform some manual steps to finalize the
 setup of the new features when upgrading or installing AtoM 2.4.1 for the first
 time.
 
+.. _privacy-notification-new-2.4.1:
+
 New 2.4.1 installations
 -----------------------
 
 Update cookie banner
 ^^^^^^^^^^^^^^^^^^^^
 
-* The default cookie notification banner message will require updating.  This
-  can be done in |gears| *Admin > Settings > Privacy Notification*.
-* The default message will require the URL to the Privacy Policy static page be
-  updated. Currently the message reads:
+* By default, the new cookie notification banner will be set to "off" in new
+  installations, meaning it will not display unless an :term:`administrator`
+  enables it.  This can be done in |gears| *Admin > Settings > Privacy
+  Notification*.
+* The default message will require review, and the URL to the Privacy Policy
+  static page should be updated to match your site's base URL. Currently the
+  message reads:
 
-     .. code-block:: none
+  .. code-block:: none
 
-        This website uses cookies to enhance your ability to browse and load
-        content. This website uses cookies to enhance your ability to browse
-        and load content. More Info: http://10.10.10.10/privacy
+     This website uses cookies to enhance your ability to browse and load content. More Info: http://10.10.10.10/privacy
 
 Administrators can edit the text of the banner message, and choose whether or
 not to display the banner when a user accesses your site for the first time.
-Here's an example of how the notification banner will look:
+Here's an example of how the notification banner will look without modification:
 
 .. image:: images/gdpr-banner-post-set.*
    :align: center
    :width: 80%
    :alt: GDPR banner first access
 
-* Update the URL in the message to the base URL for your site (see :ref:`Site
-  information <site-information>`)
+* Update the URL in the message to the base URL for your site (see 
+  :ref:`Site information <site-information>`)
 * If desired, you can use the current custom link syntax formatting to style the
   hyperlink -  see :ref:`formatting` for more information
 
@@ -1946,8 +1951,8 @@ Edit the Privacy Policy
 Administrators should also review the wording of the new default Privacy Policy
 static page. This can be found in |gears| *Admin > Static Pages >Privacy
 Policy*, or it can be accessed via the Quick links menu in the AtoM header.
-Click on ``edit`` at the bottom of the view page, make your desired edits, and
-select "save" to save your changes or ``cancel`` to return to the default text.
+Click on "Edit" at the bottom of the view page, make your desired edits, and
+select "Save" to save your changes or "Cancel" to return to the default text.
 
 For more information on working with :term:`static pages <static page>` in AtoM,
 see:
@@ -1957,32 +1962,51 @@ see:
 Upgrades to 2.4.1
 -----------------
 
-After first upgrading the cookie notification banner will appear as follows:
+After first upgrading the cookie notification banner will be disabled by
+default, and the text field empty. Additionally, if no further action is
+taken, the new default Privacy policy :term:`static page` will not exist. If
+you don't intend to use the banner or need the Privacy policy static page, no
+further action needs to be taken.
 
-.. image:: images/gdpr-banner-pre-task.*
-   :align: center
-   :width: 80%
-   :alt: GDPR banner first access
+.. NOTE:: 
 
-* Additionally, if no further action is taken, the new default Privacy policy
-  static page will not exist
-* If you don't intend to use the banner or need the Privacy policy static page,
-  you can disable the notification banner via |gears| *Admin > Settings >
-  Privacy policy*
-* To create the Privacy policy static page and update the banner message, a
-  system administrator should run the following task from the root AtoM
-  installation directory:
+   When upgrading to 2.5 in the future, the Privacy Policy static page **will** 
+   appear, even if the cookie notification banner is not enabled. An 
+   :term:`administrator` can delete the static page if it is not desired. For
+   more information on managing static pages, see: 
+
+   * :ref:`manage-static-pages`
+
+The notification banner can also be enabled without taking any action to create 
+the Privacy policy page. However, if you would like the default Privacy policy 
+static page to appear, a system administrator will need to run the following task
+following the site upgrade:  
 
 .. code-block:: bash
 
    php symfony tools:run lib/task/tools/addGdprSettings.php
+
+This task will create the new Privacy policy static page, list it under the 
+:ref:`Quick links menu <quick-links-menu>`, and populate the cookie notification
+banner with a default message. When enabled (via |gears| *Admin > Settings > 
+Privacy Notification*), here is how the default message will appear: 
+
+
+.. image:: images/gdpr-banner-post-set.*
+   :align: center
+   :width: 80%
+   :alt: GDPR banner first access
+
+Follow the instructions above in the section for :ref:`privacy-notification-new-2.4.1` 
+to customize the cookie notificiation banner message and the default Privacy 
+policy static page. 
 
 Custom theme updates
 --------------------
 
 * If you have a custom theme and the file ``scaffolding.less`` has been
   customized, this file will need to be updated. Changes are identified
-  `here <https://goo.gl/d6HVVf>`_ - see the changes to ``scaffolding.less``
+  `here <https://goo.gl/d6HVVf>`__ - see the changes to ``scaffolding.less``
 * If a theme has been customized, but the file ``scaffolding.less`` is being
   referenced from the arDominion theme, then there are no modifications
   required.
@@ -1993,7 +2017,7 @@ Custom theme updates
     if this line is present, no modifications should be required
 
 * Check if ``_header.php`` has been overridden in the custom theme. If so, the
-  change highlighted in this `issue <https://github.com/artefactual/atom/commit/c65e84e809a5760c9814f8117a291bdb9a7491da#diff-e3a653026878cbc4745a5526934888d7R3>`_
+  change highlighted in this `issue <https://github.com/artefactual/atom/commit/c65e84e809a5760c9814f8117a291bdb9a7491da#diff-e3a653026878cbc4745a5526934888d7R3>`__
   need to be made
 * Post upgrade, run ``make`` from your root theme plugin folder to rebuild the
   CSS, and clear the application cache:
@@ -2006,3 +2030,5 @@ Custom theme updates
 
 * And finally, in all cases, clear the application cache afterwards: ``php
   symfony cc``
+
+:ref:`Back to top <settings>`
