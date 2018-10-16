@@ -10,8 +10,8 @@ Manage Menus
 
 AtoM includes a menu customization feature that allows authenticated (i.e.
 logged-in) :term:`administrators <administrator>` to manage menu labels; menus
-can be edited, created, moved menus to different positions on the page, deleted
-as necessary.
+can be edited, created, moved to different positions on the page, and some menus
+can be deleted as necessary.
 
 To view a list of menus, click the |gears| :ref:`Admin <main-menu-admin>` menu
 in the :term:`main menu` located in the :term:`header bar` and select "Menus"
@@ -32,6 +32,13 @@ Below, you will find instructions on how to:
 .. SEEALSO::
 
    * :ref:`static-pages-menu`
+
+.. NOTE::
+
+  Changing the menu labels will not automatically change the corresponding labels
+  in the user interface. To change the user interface labels, go to **Admin >
+  Settings > User interface labels**. See the :ref:`User interface labels
+  <user-interface-labels>` page for more information.
 
 .. _add-menu:
 
