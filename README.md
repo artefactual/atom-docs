@@ -1,7 +1,7 @@
 # AtoM documentation
 
 [AtoM](https://www.accesstomemory.org/) is a web-based, open source application for standards-based archival description and access in a multilingual, multi-repository environment.
-Our target users are archivists, librarians, and anyone working to describe and provide access to archival material.
+Our target users are archivists, librarians, and anyone working to describe and provide access to archival material. This repository holds the documentation for the AtoM project, including the User, Administrator, and Developer Manuals. 
 
 You are free to copy, modify, and distribute the AtoM documentation with attribution under the terms of the Creative Commons Attribution Share Alike 4.0 (CC-BY-SA-4.0) license.
 See the [LICENCE](LICENCE) file for details.
