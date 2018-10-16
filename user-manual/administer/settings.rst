@@ -1265,7 +1265,7 @@ institutions <archival institution>`, :term:`functions <function>` and
    * :ref:`entity-types`
    * :ref:`recurring-facet-filters`
 
-AtoM is flexible enough to support descriptions a variety of cultural
+AtoM is flexible enough to support descriptions for a variety of cultural
 materials such as archival, library, museum, and art gallery collections.
 The code, therefore, uses generic terms for entities.
 :term:`Administrators <administrator>` can specify how they want these
@@ -1878,10 +1878,10 @@ setting.
 Privacy notification
 ====================
 
-.. NOTE:: 
+.. NOTE::
 
    This feature is new in the AtoM 2.4.1 release and is not present or
-   available in any previous versions (see 
+   available in any previous versions (see
    `Release Notes 2.4.1 <https://wiki.accesstomemory.org/Releases/Release_announcements/Release_2.4.1>`__)
 
 We have added a new default static page called "Privacy Policy" (available under
@@ -1895,13 +1895,13 @@ In compliance with the GDPR, AtoM now makes explicit its collection and use of
 cookies. AtoM collects cookies in order to enable browsing and loading of
 certain types of content. Visitors to AtoM sites who do not wish to have cookies
 placed on their computers should set their browsers to refuse cookies. However,
-certain features (such as the :ref:`clipboard`) may not function properly without 
+certain features (such as the :ref:`clipboard`) may not function properly without
 the aid of cookies.
 
-AtoM supports integration with `Google Analytics <https://www.google.com/analytics/>`__ 
-for the purposes of gathering statistics on page views, site usage, user 
-location, and other data on site visits. All data collected by Google Analytics 
-are stored and processed by Google, according to the 
+AtoM supports integration with `Google Analytics <https://www.google.com/analytics/>`__
+for the purposes of gathering statistics on page views, site usage, user
+location, and other data on site visits. All data collected by Google Analytics
+are stored and processed by Google, according to the
 `Google Ads Data Processing Terms <https://privacy.google.com/businesses/processorterms/>`__
 
 None of the information gathered through the use of cookies or Google Analytics
@@ -1940,7 +1940,7 @@ Here's an example of how the notification banner will look without modification:
    :width: 80%
    :alt: GDPR banner first access
 
-* Update the URL in the message to the base URL for your site (see 
+* Update the URL in the message to the base URL for your site (see
   :ref:`Site information <site-information>`)
 * If desired, you can use the current custom link syntax formatting to style the
   hyperlink -  see :ref:`formatting` for more information
@@ -1968,28 +1968,28 @@ taken, the new default Privacy policy :term:`static page` will not exist. If
 you don't intend to use the banner or need the Privacy policy static page, no
 further action needs to be taken.
 
-.. NOTE:: 
+.. NOTE::
 
-   When upgrading to 2.5 in the future, the Privacy Policy static page **will** 
-   appear, even if the cookie notification banner is not enabled. An 
+   When upgrading to 2.5 in the future, the Privacy Policy static page **will**
+   appear, even if the cookie notification banner is not enabled. An
    :term:`administrator` can delete the static page if it is not desired. For
-   more information on managing static pages, see: 
+   more information on managing static pages, see:
 
    * :ref:`manage-static-pages`
 
-The notification banner can also be enabled without taking any action to create 
-the Privacy policy page. However, if you would like the default Privacy policy 
+The notification banner can also be enabled without taking any action to create
+the Privacy policy page. However, if you would like the default Privacy policy
 static page to appear, a system administrator will need to run the following task
-following the site upgrade:  
+following the site upgrade:
 
 .. code-block:: bash
 
    php symfony tools:run lib/task/tools/addGdprSettings.php
 
-This task will create the new Privacy policy static page, list it under the 
+This task will create the new Privacy policy static page, list it under the
 :ref:`Quick links menu <quick-links-menu>`, and populate the cookie notification
-banner with a default message. When enabled (via |gears| *Admin > Settings > 
-Privacy Notification*), here is how the default message will appear: 
+banner with a default message. When enabled (via |gears| *Admin > Settings >
+Privacy Notification*), here is how the default message will appear:
 
 
 .. image:: images/gdpr-banner-post-set.*
@@ -1997,9 +1997,9 @@ Privacy Notification*), here is how the default message will appear:
    :width: 80%
    :alt: GDPR banner first access
 
-Follow the instructions above in the section for :ref:`privacy-notification-new-2.4.1` 
-to customize the cookie notificiation banner message and the default Privacy 
-policy static page. 
+Follow the instructions above in the section for :ref:`privacy-notification-new-2.4.1`
+to customize the cookie notificiation banner message and the default Privacy
+policy static page.
 
 Custom theme updates
 --------------------
