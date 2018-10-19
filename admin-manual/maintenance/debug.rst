@@ -61,13 +61,20 @@ different IP address than that of the server.
    :alt: an image of the ATOM_DEBUG_IP variable in the php configuration file
 
 After making changes to the ``ATOM_DEBUG_IP`` variable in ``atom.conf``, you
-will need to restart PHP5-FPM:
+will need to restart PHP-FPM.
+
+For **Ubuntu 14.04**:
 
 .. code:: bash
 
    sudo service php5-fpm restart
 
+For **Ubuntu 16.04**:
 
+.. code:: bash
+
+   sudo systemctl restart php7.0-fpm
+   
 Editing the index.php file
 --------------------------
 
