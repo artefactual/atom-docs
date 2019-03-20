@@ -314,6 +314,12 @@ If you are using Apache, you will also need to install mod_php:
 
     sudo apt-get install libapache2-mod-php5
 
+If you are using Memcached as cache engine, you will also need to install `php-memcache`:
+
+.. code-block:: bash
+
+    sudo apt-get install php-memcache
+
 Let's add a new PHP pool for AtoM by adding the following contents in a new file
 called :file:`/etc/php5/fpm/pool.d/atom.conf`:
 

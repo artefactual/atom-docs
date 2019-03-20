@@ -256,7 +256,13 @@ following command will install it along with the rest of PHP extensions
 
 .. code-block:: bash
 
-   sudo apt install php7.0-cli php7.0-curl php7.0-json php7.0-ldap php7.0-mysql php7.0-opcache php7.0-readline php7.0-xml php7.0-fpm php7.0-mbstring php7.0-mcrypt php7.0-xsl php7.0-zip php-memcache php-apcu
+   sudo apt install php7.0-cli php7.0-curl php7.0-json php7.0-ldap php7.0-mysql php7.0-opcache php7.0-readline php7.0-xml php7.0-fpm php7.0-mbstring php7.0-mcrypt php7.0-xsl php7.0-zip php-apcu
+
+If you are using Memcached as cache engine, you will also need to install `php-memcache`:
+
+.. code-block:: bash
+
+   sudo apt-get install php-memcache
 
 We also need ``php-apcu-bc``, which is not available yet in Ubuntu 16.04. Let's
 install it manually for now:

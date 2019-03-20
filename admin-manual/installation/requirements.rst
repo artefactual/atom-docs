@@ -70,8 +70,11 @@ of each component.
   Elasticsearch)
 * `MySQL <https://www.mysql.com/>`__ 5.1 or newer
 * `PHP <http://php.net/>`__ 5.5 or 5.6 (with Ubuntu 14.04) or 7.0 (with Ubuntu 16.04) 
-* `Memcached <http://memcached.org>`__
 * `Gearman job server <http://gearman.org>`__
+
+Optionally, Memcached can be used as cache engine:
+
+* `Memcached <http://memcached.org>`__
 
 Additionally, the following PHP extensions are mandatory:
 
@@ -81,10 +84,10 @@ Additionally, the following PHP extensions are mandatory:
 * PDO and PDO-MySQL
 * XSL
 
-Optionally:
+And the following PHP extensions are optional:
 
 * Readline (not available in Windows).
-* Memcache
+* Memcache (needs`php-memcache`, not `php-memcached`).
 
 .. note::
 

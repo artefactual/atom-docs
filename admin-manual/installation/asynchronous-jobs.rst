@@ -40,13 +40,10 @@ accordingly:
 
 .. note::
 
-   By default, Gearman's job queues are stored in
-   `memcache <http://memcached.org/>`__. In Ubuntu, the memcache package is
-   installed locally as a dependency when you install gearman-job-server.
-   However you are free to deploy the queue storage in a different machine or
-   replace it with a durable solution like MySQL or SQLite3.
-   For more configuration options available, visit:
-   http://gearman.org/manual/job_server/.
+   By default, Gearman's job queues are stored in memory. However you are free
+   to deploy the queue storage in a different machine or replace it with a
+   durable solution like MySQL or SQLite3. For more configuration options
+   available, visit: http://gearman.org/manual/job_server/.
 
 .. _installation-gearman-job-worker:
 
