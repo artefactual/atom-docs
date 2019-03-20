@@ -11,6 +11,17 @@ new development workflow based on Docker and `Docker Compose <https://docs.docke
 The latter is a tool that help us to run multi-container applications like AtoM
 and it is suitable for both development and production environments.
 
+.. WARNING::
+
+   The Docker Compose integration and AtoM Dockerfile outlined here are intended
+   for **testing and development purposes only**. They have not been fully
+   tested and prepared for use in production environments at this time.
+
+   If you encounter issues or bugs, you are welcome to report them via the
+   `AtoM users forum <https://groups.google.com/forum/#!forum/ica-atom-users>`__
+   - we will provide basic support as we are able, but urge you to proceed at
+   your own risk.
+
 If this is the first time that you have heard about containers you may find
 `The New Stack eBook Series <http://thenewstack.io/ebookseries/>`_ a useful
 resource to get up to speed quickly.
@@ -42,8 +53,13 @@ change your current directory.
 
 .. code-block:: bash
 
-   git clone -b stable/2.4.x https://github.com/artefactual/atom.git atom
+   git clone -b qa/2.5.x https://github.com/artefactual/atom.git atom
    cd atom
+
+.. note::
+
+   Clone the "stable/2.4.x" branch if you want to test the latest stable
+   version of AtoM.
 
 Now set the environment variable ``COMPOSE_FILE`` to tell Compose what is the
 location of our YAML file. You could do the same using the ``-f`` flag but we
@@ -92,6 +108,16 @@ restarted after the database is populated for the first time:
 .. code-block:: bash
 
    docker-compose restart atom_worker
+
+.. IMPORTANT::
+
+   To avoid reseting the configuration files to their default version each time
+   the containers are created, the following files are only generated if they
+   don't exist already in the source code:
+
+   - apps/qubit/config/app.yml
+   - apps/qubit/config/factories.yml
+   - apps/qubit/config/settings.yml
 
 Docker Compose lets you perform many different actions. Please refer to the
 `documentation <https://docs.docker.com/compose/overview/>`_ for more help.
