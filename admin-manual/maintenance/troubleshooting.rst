@@ -220,9 +220,7 @@ Restarting memcached
 Memcached is an open-source, general purpose distributed memory object caching
 system. It is often used to speed up dynamic database-driven websites by
 caching data and objects in memory to reduce the number of times an external
-data source (such as a database) must be read. In AtoM, the Gearman 
-:ref:`job scheduler <installation-asynchronous-jobs>` also uses Memcached as 
-its default job queue store. 
+data source (such as a database) must be read.
 
 .. SEEALSO::
 
@@ -230,9 +228,8 @@ its default job queue store.
 
 **when**
 
-You should consider restarting Memcached if: 
+You should consider restarting Memcached if you're using it when:
 
-* You have experienced issues with the job scheduler and are also restarting it
 * You are trying to ensure all application caches are cleared
 
 **How**

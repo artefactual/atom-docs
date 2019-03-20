@@ -35,7 +35,7 @@ in the user interface saved before doing so.
    * :ref:`troubleshooting-restart-php-fpm`   
 
    Memcached is also an external cache engine that can be used with AtoM - you
-   should restart it as well. See:
+   should restart it as well if you're using it. See:
 
    * :ref:`troubleshooting-restart-memcached`   
 

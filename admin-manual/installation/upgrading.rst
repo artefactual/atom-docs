@@ -244,9 +244,9 @@ See :ref:`maintenance-clear-cache` for more detailed instructions.
 Restart services
 ================
 
-To ensure everything works correctly, you must restart your services after 
-upgrading, including PHP-FPM, memcached, and the atom-workers managed by the 
-job scheduler. 
+To ensure everything works correctly, you must restart your services after
+upgrading, including PHP-FPM, Memcached (if you're using it as cache engine),
+and the atom-workers managed by the job scheduler.
 
 **To restart PHP-FPM**:
 
@@ -262,7 +262,7 @@ Ubuntu 16.04:
 
    sudo systemctl restart php7.0-fpm 
 
-**To restart memcached**:
+**Optionally, to restart Memcached**:
 
 Ubuntu 14.04: 
 

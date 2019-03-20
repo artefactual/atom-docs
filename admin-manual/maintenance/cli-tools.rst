@@ -1292,7 +1292,12 @@ there is also a ``--demo`` option available:
 
       php symfony cc
       sudo service php5-fpm restart
-      sudo /etc/init.d/memcached restart
+
+   Optionally, if you're using Memcached as cache engine:
+
+   .. code-block:: bash
+
+      sudo service memcached restart
 
    See :ref:`manage-user-accounts` for information on how to edit or delete the
    demo user account via the :term:`user interface`. See: :ref:`site-information`

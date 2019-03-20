@@ -163,16 +163,15 @@ Adjusting PHP script execution limits
 After making configuration changes
 ==================================
 
-If you do make changes to the PHP configuration poool and/or the ``php.ini`` 
-default settings, you should restart PHP-FPM after, and clear your application 
-caches. 
+If you do make changes to the PHP configuration poool and/or the ``php.ini``
+default settings, you should restart PHP-FPM after, and clear your application
+caches and restart Memcached (if you're using it as cache engine).
 
 **In Ubuntu 14.04 with PHP 5.x:**
 
 .. code-block:: bash
 
    sudo service php5-fpm restart
-   sudo service memcached restart
    php symfony cc
 
 **In Ubuntu 16.04 with PHP 7:**
@@ -180,15 +179,28 @@ caches.
 .. code-block:: bash
 
    sudo systemctl restart php7.0-fpm
-   sudo systemctl restart memcached
    php symfony cc
 
-For more details on these commands, see: 
+**Optionally, to restart Memcached**:
 
-* :ref:`troubleshooting-restart-services`
-* :ref:`maintenance-clear-cache`
+Ubuntu 14.04:
 
-.. TIP:: 
+.. code-block:: bash
+
+   sudo service memcached restart
+
+Ubuntu 16.04:
+
+.. code-block:: bash
+
+   sudo systemctl restart memcached
+
+ For more details on these commands, see:
+
+ * :ref:`troubleshooting-restart-services`
+ * :ref:`maintenance-clear-cache`
+
+.. TIP::
 
    Learn more about AtoM command-line tasks and basic maintenance commands in 
    the following slide deck: 
