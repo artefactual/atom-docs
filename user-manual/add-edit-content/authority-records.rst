@@ -55,7 +55,7 @@ Persons and Families*, or :ref:`ISAAR(CPF) <isaar-template>`.
 
 .. _authority-bioghist-access:
 
-AtoM, Authority records, Biographical histories, and Name access points
+AtoM, Authority records, Biographical histories, and Access points
 =======================================================================
 
 In AtoM, authority records are maintained separately from archival
@@ -262,9 +262,9 @@ Add a new authority record from the main menu
 
 3. Enter data as required. The authority record edit template is based on the
    `ICA's <http://www.ica.org/>`__ *International Standard Archival Authority
-   Record for Corporate Bodies, Persons and Families* 
-   (`ISAAR <https://www.ica.org/isaar-cpf-international-standard-archival-authority-record-corporate-bodies-persons-and-families-2nd>`__). 
-   For more information on the use of particular fields in the ISAAR authority 
+   Record for Corporate Bodies, Persons and Families*
+   (`ISAAR <https://www.ica.org/isaar-cpf-international-standard-archival-authority-record-corporate-bodies-persons-and-families-2nd>`__).
+   For more information on the use of particular fields in the ISAAR authority
    record edit template, see: :ref:`ISAAR(CPF) <isaar-template>`.
 4. You can quit the creation process at any time by clicking the "Cancel"
    button in the :term:`button block`; any data already entered will not be
@@ -496,9 +496,9 @@ page` of any other authority record via the "Add new" button in the
 
 3. Enter data as required. The authority record edit template is based on the
    `ICA's <http://www.ica.org/>`__ *International Standard Archival Authority
-   Record for Corporate Bodies, Persons and Families* 
-   (`ISAAR <https://www.ica.org/isaar-cpf-international-standard-archival-authority-record-corporate-bodies-persons-and-families-2nd>`__). 
-   For more information on the use of particular fields in the ISAAR authority 
+   Record for Corporate Bodies, Persons and Families*
+   (`ISAAR <https://www.ica.org/isaar-cpf-international-standard-archival-authority-record-corporate-bodies-persons-and-families-2nd>`__).
+   For more information on the use of particular fields in the ISAAR authority
    record edit template, see: :ref:`ISAAR(CPF) <isaar-template>`.
 4. You can quit the creation process at any time by clicking the "Cancel"
    button in the :term:`button block`; any data already entered will not be
@@ -579,38 +579,39 @@ You will be redirected to the :term:`view page` for the edited
 Add access points to your authority record
 ==========================================
 
-The International Council on Archives' :ref:`ISAD(G) <isad-template>` standard 
-defines an :term:`access point` as a "*name, term, keyword, phrase or code that 
-may be used to search, identify and locate an archival description.*" Access 
+The International Council on Archives' :ref:`ISAD(G) <isad-template>` standard
+defines an :term:`access point` as a "*name, term, keyword, phrase or code that
+may be used to search, identify and locate an archival description.*" Access
 points help users not only understand contextual information, but discover further
-related content. In AtoM, you can now apply access points to an 
-:term:`authority record` as well. 
+related content. In AtoM, you can now apply access points to an
+:term:`authority record` as well.
 
-In AtoM, access points are controlled value :term:`terms <term>` maintained in a 
-:term:`taxonomy`, which can be used to aid in discovery. Currently AtoM supports
-one type of access point for authority records - Occupations. By default in a 
-new installation, the related taxonomy is empty, but as users add access point
-data to authority records, they are preserved as terms in the Actor occupations
-taxonomy, so they can be managed and reused. For more information on working with
-terms and taxonomies in AtoM, see: :ref:`terms`. 
+In AtoM, access points are controlled value :term:`terms <term>` maintained in a
+:term:`taxonomy`, which can be used to aid in discovery. With the 2.5 release,
+AtoM supports three types of access points for authority records - Occupations,
+Places, and Subjects. By default in a new installation, the related taxonomy is
+empty, but as users add access point data to authority records, they are
+preserved as terms in the Actor occupation, Places, and Subjects taxonomies, so
+they can be managed and reused. For more information on working with terms and
+taxonomies in AtoM, see: :ref:`terms`.
 
-The Occupations access point includes an autocomplete field linked to the Actor
-occupations taxonomy, and a free-text note field, where you can add further 
-context specific to the person, family, or corporate body described in the related
-:term:`authority record`. 
+Each of the three access points includes an autocomplete field linked to the
+relevant taxonomy. The Actor occupations entry also includes a free-text note
+field, where you can add further context specific to the person, family, or
+corporate body described in the related :term:`authority record`.
 
-Once occupation access points have been added to your authority records, they 
+Once access points have been added to your authority records, they
 will show up as a :term:`facet <facet filter>` on the authority record browse
-page: 
+page. The following example shows the occupation taxonomy:
 
 .. image:: images/occupations-facet.*
    :align: center
    :width: 75%
-   :alt: An image of the authority record browse page, with the Occupations facet 
-         visible in the left-hand context menu. 
+   :alt: An image of the authority record browse page, with the Occupations facet
+         visible in the left-hand context menu.
 
 .. SEEALSO::
-   
+
    * :ref:`browse-authority-records`
    * :ref:`Search for authority records <dedicated-search-authority>`
 
@@ -626,13 +627,13 @@ page:
 
 .. TIP::
 
-   You can always add access points to new authority records as you create them 
-   as well - for more information on creating authority records, see above: 
+   You can always add access points to new authority records as you create them
+   as well - for more information on creating authority records, see above:
 
    * :ref:`add-authority-main`
 
-   Steps 4-7 of these instructions will provide further specific guidance on 
-   using the access point fields. 
+   Steps 4-7 of these instructions will provide further specific guidance on
+   using the access point fields.
 
 2. Switch from :term:`view mode` to :term:`edit mode` by clicking "Edit"
    button in the :term:`button block`, or by clicking on one of the
@@ -647,29 +648,30 @@ page:
 3. On loading, the :term:`edit page` displays the record with all
    :term:`information areas <information area>` closed; click on an
    information area to access the :term:`fields <field>` grouped under it
-4. Navigate to the Access points :term:`area <information area>`, near the 
-   bottom of the :term:`edit page`. If it is not already expanded to display 
-   the available fields, you can click on the "Access points" :term:`area header` 
-   to expand it. 
+4. Navigate to the Access points :term:`area <information area>`, near the
+   bottom of the :term:`edit page`. If it is not already expanded to display
+   the available fields, you can click on the "Access points" :term:`area header`
+   to expand it.
 
-.. image:: images/occupations-edit-empty.*
+.. image:: images/access-points-edit-empty.*
    :align: center
    :width: 75%
    :alt: An image of the Access points area in an Authority record
 
-5. Add data as required. The "Occupation" field is your :term:`access point` -
-   the :term:`field` is an auto-complete, linked to the Actor occupations
-   :term:`taxonomy`. If you have previously added terms to the taxonomy, then
-   as you type, matches will appear below - click on a matching term that
-   appears in the :term:`drop-down menu` to select it. Alternatively, you can
-   create a new access point simply by entering it into the field - on save,
-   the access point will be saved as a :term:`term` in the Actor occupations
-   taxonomy so you can reuse it in the future.
+5. Add data as required to each :term:`access point` for "Occupation", "Place",
+   and "Subject". Each :term:`field` is an auto-complete field, linked to the
+   relevant :term:`taxonomy`. If you have previously added terms to the
+   taxonomies, then as you type, matches will appear below - click on a matching
+   term that appears in the :term:`drop-down menu` to select it. Alternatively,
+   you can create a new access point simply by entering it into the field - on
+   save, the access point will be saved as a :term:`term` in the relevant
+   taxonomy so you can reuse it in the future. The image below shows examples
+   for the Occupation access point.
 
 .. image:: images/occupations-autocomplete.*
    :align: center
    :width: 75%
-   :alt: An image of the terms drop-down beneath the Occupations field as a user 
+   :alt: An image of the terms drop-down beneath the Occupations field as a user
          types
 
 .. IMPORTANT::
@@ -679,10 +681,11 @@ page:
    auto-complete :term:`drop-down <drop-down menu>` - otherwise, even exact
    matches will create duplicates when the user presses enter.
 
-6. The "Note" :term:`field` is a free-text field where you can add further 
-   contextual information specific to the current person, organization, or family
-   being described. This note data is **not** stored in the Actor occupations
-   taxonomy - it is only associated with the current :term:`authority record`. 
+6. The "Note" :term:`field` available for Occupation access points is a
+   free-text field where you can add further contextual information specific to
+   the current person, organization, or family being described. This note data
+   is **not** stored in the Actor occupations taxonomy - it is only associated
+   with the current :term:`authority record`.
 
 .. image:: images/occupations-autocomplete.*
    :align: center
@@ -690,18 +693,18 @@ page:
    :alt: An image of the Note field in the Occupations access point
 
 7. You can add multiple access points at once, as needed. To add an additional
-   :term:`access point`, click the "Add new" link beneath the access point fields. 
-   AtoM will add a new row of fields, and you can continue your data entry as 
-   needed. If you decide you wish to remove one or more of the access points, 
+   :term:`access point`, click the "Add new" link beneath the access point fields.
+   AtoM will add a new row of fields, and you can continue your data entry as
+   needed. If you decide you wish to remove one or more of the access points,
    click the **X** to the right of the Note field, and AtoM will delete the row.
 
 .. NOTE::
 
    If you have added a new access point and saved your record, then re-entering
-   :term:`edit mode` and deleting the access point  will **only** remove it from 
+   :term:`edit mode` and deleting the access point  will **only** remove it from
    the :term:`authority record` - it will **not** delete the term from the Actor
-   occupations taxonomy. If you wish to delete the term from AtoM completely, 
-   you will need to do so via **Manage > Terms**. For more information, see: 
+   occupations taxonomy. If you wish to delete the term from AtoM completely,
+   you will need to do so via **Manage > Terms**. For more information, see:
 
    * :ref:`Delete a term <delete-term>`
 
