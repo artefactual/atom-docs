@@ -165,7 +165,8 @@ use:
 
 .. code-block:: bash
 
-   php symfony import:bulk --completed-dir="/path/to/my/completed-directory" /path/to/my/importFolder
+   php symfony import:bulk --completed-dir="/path/to/my/completed-directory"
+   /path/to/my/importFolder
 
 The ``--schema`` option is deprecated and should not be used.
 
@@ -176,7 +177,8 @@ CSV file to output. For example:
 
 .. code-block:: bash
 
-   php symfony import:bulk --output="/path/to/output-results.csv" /path/to/my/importFolder
+   php symfony import:bulk --output="/path/to/output-results.csv"
+   /path/to/my/importFolder
 
 The CSV contains 3 columns. The first (titled "File" in the first row) will
 list the path and filename of each imported file. The second column (titled
@@ -277,7 +279,8 @@ look like this:
 
 .. code-block:: bash
 
-   php symfony import:bulk --update="delete-and-replace" --limit="my-repository" /path/to/my-updates
+   php symfony import:bulk --update="delete-and-replace" --limit="my-repository"
+   /path/to/my-updates
 
 .. IMPORTANT::
 
@@ -408,7 +411,8 @@ target specific descriptions.
 
 .. code-block:: bash
 
-   php symfony export:bulk --criteria="i.id IN (SELECT object_id FROM status WHERE status_id = 159 AND type_id = 158)" /path/to/my/exportFolder
+   php symfony export:bulk --criteria="i.id IN (SELECT object_id FROM status
+   WHERE status_id = 159 AND type_id = 158)" /path/to/my/exportFolder
 
 If you wanted to export all published descriptions instead, you could simply
 change the value of the ``status_id`` in the query from 159 (draft) to 160
@@ -423,7 +427,8 @@ institution's record in AtoM. In this example, the slug is
 
 .. code-block:: bash
 
-   php symfony export:bulk --criteria="i.repository_id = (SELECT object_id FROM slug WHERE slug='example-repo-slug')" /path/to/my/exportFolder
+   php symfony export:bulk --criteria="i.repository_id = (SELECT object_id FROM
+   slug WHERE slug='example-repo-slug')" /path/to/my/exportFolder
 
 **Example 3: exporting specific descriptions by title**
 
@@ -433,7 +438,9 @@ following command:
 
 .. code-block:: bash
 
-   sudo php symfony export:bulk --criteria="i18n.title in ('779 King Street, Fredericton deeds', '1991 Canada Winter Games fonds', 'A history of Kincardine')" path/to/my/exportFolder
+   sudo php symfony export:bulk --criteria="i18n.title in ('779 King Street,
+   Fredericton deeds', '1991 Canada Winter Games fonds', 'A history of
+   Kincardine')" path/to/my/exportFolder
 
 You could add additional archival descriptions of any level of description into
 the query by adding a comma then another title in quotes within the ()s.
@@ -448,15 +455,16 @@ accepts collection/fonds-level descriptions. If a lower-level description
 (e.g. a series, file, or item) is the target of the export, it's
 :term:`parents <parent record>` will not be exported either.
 
-The ``--single-slug`` option can be used to to target a single :term:`archival unit`
-(e.g. fonds, collection, etc) for export, if you know the :term:`slug` of the
-target description.
+The ``--single-slug`` option can be used to to target a single :term:`archival
+unit` (e.g. fonds, collection, etc) for export, if you know the :term:`slug` of
+the target description.
 
 **Example use**
 
 .. code-block:: bash
 
-   php symfony export:bulk --single-slug="test-export" /path/to/my/directory/test-export.xml
+   php symfony export:bulk --single-slug="test-export"
+   /path/to/my/directory/test-export.xml
 
 .. IMPORTANT::
 
@@ -491,8 +499,8 @@ to break the established hierarchy.
 Exporting EAC-CPF XML for authority records
 -------------------------------------------
 
-In addition to the bulk export CLI tool for archival descriptions described above,
-AtoM also has a separate command-line task for the bulk export of
+In addition to the bulk export CLI tool for archival descriptions described
+above, AtoM also has a separate command-line task for the bulk export of
 :term:`authority records <authority record>` in EAC-CPF XML format.
 
 The EAC-CPF XML standard is prepared and maintained by the Technical Subcommittee
@@ -513,9 +521,9 @@ The authority record bulk export task has the same options available as the
 archival description export task described :ref:`above <cli-bulk-export-usage>`.
 Some of these options will not be relevant to EAC-CPF exports (e.g. the
 ``--current-level-only`` option, as authority records are not hierarchical; and
-the ``--public`` option, as currently authority records do not have a publication
-status), but otherwise they can be used with this task in the same way as
-described for the archival description export options
+the ``--public`` option, as currently authority records do not have a
+publication status), but otherwise they can be used with this task in the same
+way as described for the archival description export options
 :ref:`above <cli-bulk-export-usage>`. Please refer there for more detailed usage
 notes. Below is an example application, using the ``--criteria`` option:
 
@@ -523,9 +531,9 @@ notes. Below is an example application, using the ``--criteria`` option:
 whose entity type is "family"**
 
 First, you will need to know the entity type ID for family. Entity type is a 
-:term:`term` maintained in the Actor entity types :term:`taxonomy` - when elements 
-from a different table in the database are linked to actors, the term ID is used. 
-Here are the term object IDs for the Actor entity types: 
+:term:`term` maintained in the Actor entity types :term:`taxonomy` - when
+    elements from a different table in the database are linked to actors, the
+    term ID is used. Here are the term object IDs for the Actor entity types:
 
 ============== =======          
 Term           Term ID 
@@ -548,12 +556,13 @@ Family         133
    See the ``133`` in the URL? This represents the Entity type we have applied
    to filter the results! 
 
-We can now use the entity type to limit our export to include only those authority 
-records with an entity type of "Family," like so: 
+We can now use the entity type to limit our export to include only those
+authority records with an entity type of "Family," like so:
 
 .. code:: bash
 
-   php symfony export:auth-recs --criteria='a.entity_type_id=133' path/to/my/export-folder
+   php symfony export:auth-recs --criteria='a.entity_type_id=133'
+   path/to/my/export-folder
 
 :ref:`Back to top <cli-import-export>`
 
@@ -616,7 +625,8 @@ Example syntax use (with the RAD CSV template):
 
 .. code-block:: bash
 
-   php symfony csv:import lib/task/import/example/rad/example_information_objects_rad.csv
+   php symfony csv:import
+   lib/task/import/example/rad/example_information_objects_rad.csv
 
 .. image:: images/cliopts.*
   :align: center
@@ -706,17 +716,17 @@ to specify the target :term:`slug` of the parent, and then leave the *legacyID*,
 example will affect ALL rows in a CSV - so use this **only** if you are
 importing all descriptions to a single parent!
 
-By default, AtoM will build the `nested set <http://en.wikipedia.org/wiki/Nested_set_model>`__
-after an import task. The nested set is a way to manage hierarchical data
-stored in the flat tables of a relational database. However, as Wikipedia
-notes, "Nested sets are very slow for inserts because it requires updating
-left and right domain values for all records in the table after the insert.
-This can cause a lot of database thrash as many rows are rewritten and indexes
-rebuilt." When performing a large import, it can therefore sometimes be
-desirable to disable the building of the nested set during the import process,
-and then run it as a separate command-line task following the completion of
-the import. To achieve this, the ``--skip-nested-set-build`` option can be
-used to disable the default behavior.
+By default, AtoM will build the `nested set
+<http://en.wikipedia.org/wiki/Nested_set_model>`__ after an import task. The
+nested set is a way to manage hierarchical data stored in the flat tables of a
+relational database. However, as Wikipedia notes, "Nested sets are very slow for
+inserts because it requires updating left and right domain values for all
+records in the table after the insert. This can cause a lot of database thrash
+as many rows are rewritten and indexes rebuilt." When performing a large import,
+it can therefore sometimes be desirable to disable the building of the nested
+set during the import process, and then run it as a separate command-line task
+following the completion of the import. To achieve this, the
+``--skip-nested-set-build`` option can be used to disable the default behavior.
 
 **NOTE** that the nested set WILL need to be built for AtoM to behave as
 expected. You can use the following command-line task, from the AtoM root
@@ -736,8 +746,10 @@ The task is further outlined on the :ref:`maintenance-cli-tools` page - see:
 
    * Mike Hyllier's article on
      `Managing Hierarchical data in MySQL <http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/>`__
-   * Evan Petersen's discussion of `nested sets <http://www.evanpetersen.com/item/nested-sets.html>`__
-   * Wikipedia's `Nested set model <http://en.wikipedia.org/wiki/Nested_set_model>`__
+   * Evan Petersen's discussion of `nested sets
+     <http://www.evanpetersen.com/item/nested-sets.html>`__
+   * Wikipedia's `Nested set model
+     <http://en.wikipedia.org/wiki/Nested_set_model>`__
 
 Similarly, when using the :ref:`user interface <csv-import-descriptions-gui>`
 to perform an import, the import is indexed automatically - but when running
@@ -827,7 +839,8 @@ Fonds, your command might look like this:
 
 .. code-block:: bash
 
-   php symfony csv:import --update="match-and-update" --limit="john-smith-fonds" /path/to/my-updates.csv
+   php symfony csv:import --update="match-and-update" --limit="john-smith-fonds"
+   /path/to/my-updates.csv
 
 Normally, when attempting to match records, if AtoM fails to find a match
 candidate, it will proceed to import the row as a new record. However, you can
@@ -955,7 +968,8 @@ Example use - run from AtoM's root directory:
 
 .. code-block:: bash
 
-   php symfony csv:repository-import lib/task/import/example/example_repositories.csv
+   php symfony csv:repository-import
+   lib/task/import/example/example_repositories.csv
 
 There are also various command-line options that can be used, as illustrated in
 the options depicted in the image below:
@@ -1003,10 +1017,10 @@ used as the was used during the original import for greater matching. By
 default in AtoM, when no source name is specified during import, the CSV
 filename will be stored in the keymap table as the source name.
 
-The ``--index`` option will progressively add your imported repository
-records to AtoM's search index as the import progresses. Normally when using
-the :ref:`user interface <csv-import-repos-ui>` to perform an import, the
-import is indexed automatically - but when running an import via the command-line
+The ``--index`` option will progressively add your imported repository records
+to AtoM's search index as the import progresses. Normally when using the
+:ref:`user interface <csv-import-repos-ui>` to perform an import, the import is
+indexed automatically - but when running an import via the command-line
 interface, indexing is **disabled by default.** This is because indexing during
 import can sometimes be incredibly slow, and the command-line is generally used
 for larger imports. Generally, we recommend a user simply clear the cache and
@@ -1098,12 +1112,12 @@ records (based on the authorized form of name) will be ignored during the
 import, and reported in the console log shown on the
 :ref:`Job details <job-details>` page of the related import job.
 
-You can use the ``--upload-limit`` option to specify the default upload limit for
-repositories which don't specify their *uploadLimit* in the CSV file. That is,
-if for example you performed a CSV import with the command-line option of
-``--upload-limit=5``, then for every repository in the CSV that does NOT have
-a value in the *uploadLimit* column, the default value of 5 GBs will be
-assigned. For more information on this functionality in the
+You can use the ``--upload-limit`` option to specify the default upload limit
+for repositories which don't specify their *uploadLimit* in the CSV file. That
+is, if for example you performed a CSV import with the command-line option of
+``--upload-limit=5``, then for every repository in the CSV that does NOT have a
+value in the *uploadLimit* column, the default value of 5 GBs will be assigned.
+For more information on this functionality in the
 :term:`user interface`, see: :ref:`upload-limit`.
 
 :ref:`Back to top <cli-import-export>`
@@ -1149,9 +1163,10 @@ Alternate names CSV
 ^^^^^^^^^^^^^^^^^^^
 
 This CSV template, also known as the Aliases CSV template, can be imported at
-the same time as the Authority record CSV template to supply addtional forms
-of name. The :ref:`ISAAR-CPF standard <isaar-template>` upon which the AtoM
-authority record template is based includes 3 fields for alternate forms of name:
+the same time as the Authority record CSV template to supply addtional forms of
+name. The :ref:`ISAAR-CPF standard <isaar-template>` upon which the AtoM
+authority record template is based includes 3 fields for alternate forms of
+name:
 
 * Parallel form(s) of name
 * Standardized form(s) of name according to other rules
@@ -1373,7 +1388,8 @@ something like this example:
 
 .. code-block:: bash
 
-   php symfony csv:authority-import --update="match-and-update" --limit="example-archives" /path/to/my-updates.csv
+   php symfony csv:authority-import --update="match-and-update"
+   --limit="example-archives" /path/to/my-updates.csv
 
 Normally, when attempting to match records, if AtoM fails to find a match
 candidate, it will proceed to import the row as a new record. However, you can
@@ -1406,7 +1422,8 @@ section on data entry :ref:`above <csv-authority-alternate-names>` for further
 guidance.
 
 An example CSV template file of supplementary alias data is available in the
-AtoM source code ( at ``lib/task/import/example/authority_records/example_authority_
+AtoM source code ( at
+``lib/task/import/example/authority_records/example_authority_
 record_aliases.csv``) or can be downloaded here:
 
 * https://wiki.accesstomemory.org/Resources/CSV_templates#Other_CSV_templates
@@ -1436,7 +1453,8 @@ associative. See the section on data entry
 :ref:`above <csv-authority-relationships>` for further guidance.
 
 An example CSV template file of relation data is available in the AtoM source
-code ( at ``lib/task/import/example/authority_records/example_authority_record_relat
+code ( at
+``lib/task/import/example/authority_records/example_authority_record_relat
 ionships.csv``) or can be downloaded here:
 
 * https://wiki.accesstomemory.org/Resources/CSV_templates#Other_CSV_templates
@@ -1561,7 +1579,9 @@ Example use reporting progress every 5 rows:
 
 .. code-block:: bash
 
-   php symfony csv:import lib/task/import/example/rad/example_information_objects_rad.csv --rows-until-update=5
+   php symfony csv:import
+   lib/task/import/example/rad/example_information_objects_rad.csv
+   --rows-until-update=5
 
 This can be useful for large imports, to ensure the import is still progressing,
 and to try to roughly determine how far the task has progressed and how long
@@ -1579,12 +1599,12 @@ user to bulk attach digital objects to existing information objects (e.g.
 :term:`archival descriptions <archival description>`) through the use of a
 simple CSV file.
 
-This task will take a CSV file as input, which contains two columns: ``filename``
-and **EITHER** ``information_object_id`` **OR** ``identifier`` as the second
-column; the script will fail if these column headers are not
-present in the first row of the CSV file, and it will fail if there are more
-than 2 columns - you must choose which variable you prefer to work with (
-identifier or object ID) for the second column. Each will be explained below.
+This task will take a CSV file as input, which contains two columns:
+``filename`` and **EITHER** ``information_object_id`` **OR** ``identifier`` as
+the second column; the script will fail if these column headers are not present
+in the first row of the CSV file, and it will fail if there are more than 2
+columns - you must choose which variable you prefer to work with ( identifier or
+object ID) for the second column. Each will be explained below.
 
 The ``filename`` column contains the full (current) path to the digital asset
 (file). The ``information_object_id`` or ``identifier`` column identifies the
@@ -1719,9 +1739,26 @@ to complete much more quickly - however, if you're only uploading a small set
 of digital objects, you can choose to have the task index the collection as it
 progresses, using the ``--index`` (or ``-i``) option
 
-The ``--path`` option will allow you to simplify the ``filename`` column in
-your CSV, to avoid repetition. If all the digital objects you intend to upload
-are stored in the same folder, then adding /path/to/my/folder/ to each object
+The ``--limit`` option enables you to set the number of digital objects imported
+via CSV using the digital object load task.
+
+The ``--link-source`` option could apply in a use case where an institution
+might typically store master digital objects in a separate local repository.
+Rather than maintain multiple copies of every digital object, you could use the
+``--link-source`` option to load objects via local filepath stored to a source
+file in the database. Essentially, when you use the ``--link-source`` option,
+the digital object load task will behave like an external digital object being
+uploaded via URI, and ultimately, the source "master" file(s) are not copied to
+the ``uploads`` directory.
+
+.. NOTE::
+   When using the ``--link-source`` option, local derivatives are still
+   generated and stored in the ``uploads`` directory per usual.
+
+
+The ``--path``option will allow you to simplify the ``filename`` column in your
+CSV, to avoid repetition. If all the digital objects you intend to upload are
+stored in the same folder, then adding /path/to/my/folder/ to each object
 filename seems tedious - your ``filename`` column will need to look something
 like this:
 
@@ -1740,7 +1777,8 @@ use a trailing slash to finish your path prefix - e.g.:
 
 .. code-block:: bash
 
-   php symfony digitalobject:load --path="/path/to/my/folder/" /path/to/my/spreadsheet.csv
+   php symfony digitalobject:load --path="/path/to/my/folder/"
+   /path/to/my/spreadsheet.csv
 
 
 **TO RUN THE DIGITAL OBJECT LOAD TASK**
@@ -1881,7 +1919,8 @@ target specific descriptions.
 
 .. code-block:: bash
 
-   php symfony csv:export --criteria="i.id IN (SELECT object_id FROM status WHERE status_id = 159 AND type_id = 158)" /path/to/my/exportFolder
+   php symfony csv:export --criteria="i.id IN (SELECT object_id FROM status
+   WHERE status_id = 159 AND type_id = 158)" /path/to/my/exportFolder
 
 If you wanted to export all published descriptions instead, you could simply
 change the value of the ``status_id`` in the query from 159 (draft) to 160
@@ -1896,7 +1935,8 @@ institution's record in AtoM. In this example, the slug is
 
 .. code-block:: bash
 
-   php symfony csv:export --criteria="i.repository_id = (SELECT object_id FROM slug WHERE slug='example-repo-slug')" /path/to/my/exportFolder
+   php symfony csv:export --criteria="i.repository_id = (SELECT object_id FROM
+   slug WHERE slug='example-repo-slug')" /path/to/my/exportFolder
 
 **Example 3: exporting specific descriptions by title**
 
@@ -1906,7 +1946,9 @@ following command:
 
 .. code-block:: bash
 
-   sudo php symfony csv:export --criteria="i18n.title in ('779 King Street, Fredericton deeds', '1991 Canada Winter Games fonds', 'A history of Kincardine')" path/to/my/exportFolder
+   sudo php symfony csv:export --criteria="i18n.title in ('779 King Street,
+   Fredericton deeds', '1991 Canada Winter Games fonds', 'A history of
+   Kincardine')" path/to/my/exportFolder
 
 You could add additional archival descriptions of any level of description into
 the query by adding a comma then another title in quotes within the ()s.
@@ -1921,15 +1963,16 @@ accepts collection/fonds-level descriptions. If a lower-level description
 (e.g. a series, file, or item) is the target of the export, its
 :term:`parents <parent record>` will not be exported either.
 
-The ``--single-slug`` option can be used to to target a single :term:`archival unit`
-(e.g. fonds, collection, etc) for export, if you know the :term:`slug` of the
-target description.
+The ``--single-slug`` option can be used to to target a single :term:`archival
+unit` (e.g. fonds, collection, etc) for export, if you know the :term:`slug` of
+the target description.
 
 **Example use**
 
 .. code-block:: bash
 
-   php symfony csv:export --single-slug="test-export" /path/to/my/directory/test-export.csv
+   php symfony csv:export --single-slug="test-export"
+   /path/to/my/directory/test-export.csv
 
 The  ``--public`` option is useful for excluding draft records from an export.
 Normally, all records in a hierarchical tree will be exported regardless of
