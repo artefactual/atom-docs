@@ -532,8 +532,8 @@ whose entity type is "family"**
 
 First, you will need to know the entity type ID for family. Entity type is a 
 :term:`term` maintained in the Actor entity types :term:`taxonomy` - when
-    elements from a different table in the database are linked to actors, the
-    term ID is used. Here are the term object IDs for the Actor entity types:
+elements from a different table in the database are linked to actors, the
+term ID is used. Here are the term object IDs for the Actor entity types:
 
 ============== =======          
 Term           Term ID 
