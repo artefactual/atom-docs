@@ -357,10 +357,10 @@ where you can view your changes. The page can be :ref:`edited
 
 .. _add-links-static:
 
-Add links to a new static page
-==============================
+Add menu links to a new static page
+===================================
 
-Once a new :term:`static page` has been created, a new link must also be
+Once a new :term:`static page` has been created, a new menu link must also be
 created in order to allow users to navigate to the new static page. You can do
 this by either creating a link within one of the default :term:`static pages
 <static page>` or by clicking Admin > Menus and clicking the
@@ -582,32 +582,44 @@ Examples of the Static pages menu in use
 Styling static pages
 ====================
 
-Basic styling of :term:`static pages <static page>` can be achieved by including
-`HTML <https://en.wikipedia.org/wiki/Html>`__ and inline
-`CSS <https://en.wikipedia.org/wiki/CSS>`__ code
-to the "Content" :term:`field`. There are plenty of online tutorials
-and resources out there for instruction on HTML and inline CSS use, but a few
-basic examples commonly employed by AtoM users have been included here as an
-example.
+.. _HTML: https://en.wikipedia.org/wiki/Html
+.. _CSS: https://en.wikipedia.org/wiki/CSS
 
-See below for instructions on how to create and edit:
+Basic styling of :term:`static pages <static page>` can be achieved in two ways. 
 
-* :ref:`Headers and subtitles <static-headers-subtitles>`
+The first method is to use AtoM's Markdown formatting to style content. For
+more information on formatting content using Markdown, see: 
+
+* :ref:`formatting`
+
+The second method of styling AtoM static page content is by adding
+HTML_ and inline CSS_ code to the static page's editable area. There are
+plenty of online tutorials and resources out there for instruction on HTML and
+inline CSS use, but a few basic examples commonly employed by AtoM users have
+been included here as an example.
+
+You can use a mix of Markdown and HTML in static pages. Note that HTML content 
+is **not** supported outside of static pages in AtoM. 
+
+See below for instructions on how to use HTML to create and edit:
+
+* :ref:`Headers, subtitles, and emphasis <static-headers-subtitles>`
 * :ref:`Hyperlinks <static-hyperlinks>`
 * :ref:`Images <static-image>`
 * :ref:`Boxes and dividers <static-boxes-dividers>`
 
 .. TIP::
 
-   There is also a custom syntax that you can use throughout AtoM to add
-   hyperlinks, which will also work in the static pages - see:
+   Remember, if you enable Markdown formatting in AtoM, you don't need to write
+   any HTML! For more information, see: 
 
-   * :ref:`add-custom-links`
+   * :ref:`formatting`
+   * :ref:`markdown-settings`
 
 .. _static-headers-subtitles:
 
-Headers and subtitles
----------------------
+Headers, subtitles, and emphasis
+--------------------------------
 
 To increase the size of a heading or subtitle, wrap the relevant text in
 ``<h3> </h3>`` tags, like so:
@@ -624,16 +636,22 @@ This will produce the following results:
    :alt: An image of a larger heading
 
 For larger headings, use smaller numbers, such as ``<h2>`` or ``<h1>``.
-Similarly, for smaller headers, use ``<h4>`` or ``<h5>``. To bold, italicize or
-underline headers and subtitles, simply wrap the relevant text in
-``<strong></strong>`` for **bold**, ``<em> </em>`` for *italics*, or ``<u> </u>``
-for underline. Typing ``<strong>Artefactual Systems Inc.</strong>`` will produce
-the following results:
+Similarly, for smaller headers, use ``<h4>`` or ``<h5>``. 
+
+To bold, italicize or underline headers and subtitles, simply wrap the relevant 
+text in ``<strong></strong>`` for **bold**, ``<em> </em>`` for *italics*, or 
+``<u> </u>`` for underline. Typing ``<strong>Artefactual Systems Inc.</strong>`` 
+will produce the following results:
 
 .. image:: images/headings-subtitles.*
    :align: center
    :width: 70%
    :alt: An image of a bolded subtitle
+
+.. SEEALSO:: 
+
+   * :ref:`Using markdown to add headings <formatting-headers>`
+   * :ref:`Using markdown to add emphasis <formatting-emphasis>`
 
 .. _static-hyperlinks:
 
@@ -661,8 +679,9 @@ The above code would appear like this on the static page:
    :width: 70%
    :alt: An image of a hyperlink
 
-Alternately, instead of HTML, you can also use AtoM's custom syntax for adding
-hyperlinks - for more information, see: :ref:`add-custom-links`.
+.. SEEALSO:: 
+
+   * :ref:`Using markdown to add hyperlinks <formatting-links>`
 
 .. _static-image:
 
@@ -670,7 +689,7 @@ Images
 ------
 
 If you have access to the server on which your AtoM instance is located (i.e.,
-if you are hosting it yourself, or can ask the host provider to include a file
+if you are hosting it yourself, or can ask the hosting provider to include a file
 for you), you can place images in a directory on the host server, and use a
 local URL to point to them. Images can then be used via the HTML ``<img>``
 image element, where the ``src=" "`` attribute points to the
@@ -739,6 +758,15 @@ Produces:
    Resuing existing Bootstrap CSS classes is a good way to style elements when
    you have the htmlpurifier_ setting engaged - see above,
    :ref:`security-static-pages` for more information.
+
+.. SEEALSO::
+
+   To link to external images using Markdown instead of HTML, see: 
+
+   * :ref:`formatting-images`
+
+   Note that reusing Bootstrap CSS classes is not possible with the Markdown 
+   syntax. 
 
 .. _static-boxes-dividers:
 

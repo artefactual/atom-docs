@@ -24,6 +24,7 @@ Below, you will find information on the following :term:`information areas
 * :ref:`digital-object-derivatives`
 * :ref:`dip-upload-settings`
 * :ref:`treeview-settings`
+* :ref:`markdown-settings`
 
 Each of the settings areas listed above is accessible via a list of links on
 the left-hand side of the settings page. Click on the appropriate link, and
@@ -1869,5 +1870,43 @@ the first will be shown. Other event type dates (for example, dates of
 accumulation, or dates of broadcast, etc.) are not included regardless of the
 setting.
 
+
+:ref:`Back to top <settings>`
+
+.. _markdown-settings:
+
+Markdown settings
+=================
+
+.. image:: images/markdown-settings.*
+   :align: center
+   :width: 75%
+   :alt: An image of the markdown settings in AtoM
+
+.. _Markdown: https://daringfireball.net/projects/markdown/
+.. _Parsedown: https://parsedown.org/
+
+Markdown_ is a lightweight markup syntax for text formatting, originally created 
+by John Gruber. As of the 2.5 release, AtoM supports the use of Markdown_ in 
+both :term:`edit pages <edit page>` and :term:`static pages <static page>`, via 
+a PHP library known as Parsedown_.
+
+This setting enables Markdown support in AtoM, which will allow for content 
+added to edit and static pages to be styled using Markdown syntax. For more 
+information on using Markdown in AtoM, see: :ref:`formatting`. 
+
+.. IMPORTANT::
+
+   After enabling or disabling this setting, a system administrator **must** 
+   rebuild the search index for the changes to take effect. For more information 
+   on how to rebuild AtoM's search index, see: 
+
+   * :ref:`maintenance-populate-search-index`.
+
+   To ensure you are seeing the most up-to-date results, you may also want to 
+   :ref:`clear the application cache <maintenance-clear-cache>` and restart services 
+   (such as :ref:`PHP-FPM <troubleshooting-restart-php-fpm>` and 
+   :ref:`Memcached <troubleshooting-restart-memcached>` if you 
+   are using it for additional caching), and clear your web browser cache.
 
 :ref:`Back to top <settings>`
