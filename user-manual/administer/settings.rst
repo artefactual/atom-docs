@@ -11,20 +11,21 @@ Below, you will find information on the following :term:`information areas
 <information area>`:
 
 * :ref:`Global settings <global-settings>`
-* :ref:`Site information <site-information>`
+* :ref:`dip-upload-settings`
 * :ref:`Default page elements <default-page-elements>`
 * :ref:`Default templates <default-templates>`
-* :ref:`User interface labels <user-interface-labels>`
-* :ref:`Add/Remove languages <add-remove-languages>`
-* :ref:`OAI repository <oai-repository>`
-* :ref:`Finding aid <finding-aid>`
-* :ref:`Security panel <security-panel>`
-* :ref:`Permissions <permissions>`
-* :ref:`inventory-settings`
 * :ref:`digital-object-derivatives`
-* :ref:`dip-upload-settings`
-* :ref:`treeview-settings`
+* :ref:`Finding aid <finding-aid>`
+* :ref:`Add/Remove languages <add-remove-languages>`
+* :ref:`identifier-settings`
+* :ref:`inventory-settings`
 * :ref:`markdown-settings`
+* :ref:`OAI repository <oai-repository>`
+* :ref:`Permissions <permissions>`
+* :ref:`Security panel <security-panel>`
+* :ref:`Site information <site-information>`
+* :ref:`treeview-settings`
+* :ref:`User interface labels <user-interface-labels>`
 
 Each of the settings areas listed above is accessible via a list of links on
 the left-hand side of the settings page. Click on the appropriate link, and
@@ -36,7 +37,12 @@ click save after making your changes.
    :width: 100%
    :alt: Settings menu appears on left hand side
 
-   Choose the settings area you wish to view/edit by clicking a link in the menu on the left-hand side.
+   Choose the settings area you wish to view/edit by clicking a link in the 
+   menu on the left-hand side.
+
+By default, users will first be shown the :ref:`global-settings` when first
+arriving on the Settings page. Otherwise, Settings are organized in the
+left-hand menu alphabetically.
 
 .. _global-settings:
 
@@ -54,34 +60,26 @@ To access the "Settings" menu in AtoM, click on the |gears| :ref:`Admin
 menu <main-menu-admin>` in the :term:`main menu` located in the
 :term:`header bar` and select "Settings" from the :term:`drop-down menu`. You
 will be redirected to the "Site Settings", where a number of :term:`information
-areas <information area>`, including the "Global" settings, should be opened.
-If closed, simply click on the "Global" blue menu to open the area and view the
-:term:`fields <field>`.
+areas <information area>`, including the "Global" settings,  which should be 
+opened first by default. 
 
 .. image:: images/global-settings.*
    :align: center
-   :width: 70%
+   :width: 80%
    :alt: An image of the Global settings in AtoM
 
-This section will describe each :term:`field` in the "Global"
-:term:`information area`:
+This section will describe each setting in the "Global" :term:`information area`. 
+
+**Jump to:**
 
 * :ref:`Application version <application-version>`
 * :ref:`Check for updates <check-updates>`
-* :ref:`Maximum image width <max-image-width>`
 * :ref:`Results per page <results-page>`
-* :ref:`enable-accession-mask`
-* :ref:`Accession mask <accession-mask>`
-* :ref:`Accession counter <accession-counter>`
-* :ref:`enable-identifier-mask`
-* :ref:`Identifier mask <identifier-mask>`
-* :ref:`Identifier counter <identifier-counter>`
-* :ref:`Reference code separator <reference-code-separator>`
-* :ref:`Inherit reference code (Information object) <inherit-reference-code>`
 * :ref:`escape-chars`
 * :ref:`Sort browser (users) <sort-browser-users>`
 * :ref:`Sort browser (anonymous) <sort-browser-anonymous>`
 * :ref:`Default repository browse view <default-repo-view>`
+* :ref:`default-description-view`
 * :ref:`Multiple repositories <multiple-repositories>`
 * :ref:`enable-scoping`
 * :ref:`Default archival institution upload limit <default-institution-upload>`
@@ -94,8 +92,9 @@ This section will describe each :term:`field` in the "Global"
 * :ref:`SWORD deposit directory <sword-directory>`
 * :ref:`cache-xml-setting`
 
-Hovering over each :term:`field` will also provide additional information on
-that field - it will appear in an "information box" below your cursor.
+Hovering over each setting :term:`field` will also provide additional
+information on that field - it will appear in an "information box" below your
+cursor.
 
 When making changes to the global settings in AtoM, don't forget to click the
 "Save" button in the :term:`button block`, located at the bottom of the "Global"
@@ -108,7 +107,14 @@ Application version
 
 This :term:`field` shows the current version of the software. The value cannot
 be edited but is automatically updated when AtoM is upgraded to a newer
-release.
+release. 
+
+The second number after the dash represents the database schema version. 
+This can be useful information to include in a support message if you are 
+experiencing unexpected issues with your installation - if a system administrator
+forgets to run the :ref:`upgrade task <upgrading-run-upgrade-task>` as part of
+a site upgrade this can lead to missing tables and/or columns in the database, 
+which can cause unexpected errors later when trying to use AtoM. 
 
 For more information on installing AtoM and searching for different versions,
 see:
@@ -119,18 +125,19 @@ see:
   * :ref:`Windows <installation-windows>`
   * :ref:`Mac OS X <installation-macosx>`
 
-* :ref:`Search for updates <search-updates>`
+* :ref:`installation-upgrading`
+* :ref:`check-updates`
 
 .. _check-updates:
 
 Check for updates
 -----------------
 
-If yes is selected, an :term:`administrator` will automatically receive a
-notification if a newer version of the AtoM software has been released and can
-be installed. This notification will appear in the browser for authenticated
-(i.e. logged in) users, as an orange bar across the top of the application
-alerting users to the newest release available.
+If yes is selected, authenticated (i.e. logged in) users will automatically
+receive a notification if a newer version of the AtoM software has been
+released and can be installed. This notification will appear in the browser
+for authenticated (i.e. logged in) users, as an orange bar across the top of
+the application alerting users to the newest release available.
 
 .. figure:: images/cva-theme.*
    :align: center
@@ -147,27 +154,6 @@ For more information on updates, see:
 
 * :ref:`Search for updates <search-updates>`
 
-.. _max-image-width:
-
-Maximum image width (pixels)
-----------------------------
-
-One of AtoM's design assumptions is that the display dimensions of files
-users upload typically will be too large to fit into the :term:`view page` for
-an :term:`archival description`. Therefore, when you upload a file, AtoM creates
-a :term:`reference display copy` for displaying in the view page.
-
-AtoM ships with a default setting specifying the maximum width of the
-:term:`reference display copy` at **480 pixels**. This is the optimized width
-given AtoM's :term:`field` width. :term:`Administrators <administrator>`,
-however, can increase or decrease the maximum reference image
-width to suit the requirements of their institution or network.
-
-.. seealso::
-
-   * :ref:`Styling static pages <styling-static-page>`
-   * :ref:`Themes & Theming <themes>`
-
 .. _results-page:
 
 Results per page
@@ -176,7 +162,8 @@ Results per page
 By default, AtoM lists objects in list pages and search results **ten at a
 time**, with a pager at the bottom of the page to allow users to navigate
 through long lists of objects. :term:`Administrators <administrator>` can
-increase or decrease this default number.
+increase or decrease this default number. Note that the minimum accepted value
+is 5 results per page, and the max value is 100. 
 
 For more information on navigating in AtoM, see :ref:`Searching in AtoM
 <search-atom>` and :ref:`Navigating in AtoM <navigate>`.
@@ -185,272 +172,6 @@ For more information on navigating in AtoM, see :ref:`Searching in AtoM
 
    Editing this number to display a large number of results per page may
    affect page load times.
-
-.. _enable-accession-mask:
-
-Enable accession mask
----------------------
-
-This setting controls whether or not the :ref:`accession-mask` (described in
-the section below) is enabled or not.
-
-When this setting is set to "yes," then when a user creates a new
-:term:`accession record`, the Accession number :term:`field` will be
-prepopulated with the next unique value based upon the :ref:`accession-mask`
-settings - users can still manually edit the pre-populated value provided by
-the mask, so long as a unique number is used.
-
-When this setting is set to "no," then the accession mask will not be used,
-and when creating a new accession record, the accession number field will be
-blank.
-
-See:
-
-* :ref:`add-new-accession`
-* :ref:`accession-mask`
-
-.. NOTE::
-
-   In a new installation, the accession mask is enabled by default. An
-   :term:`administrator` can use this setting to disable it if desired.
-
-.. _accession-mask:
-
-Accession mask
---------------
-
-When working with an :term:`accession record`, AtoM requires that a unique
-Accession number be added - for more information, see:
-:ref:`add-new-accession`. To help ensure that accession record numbers are
-created in a consistent and unique manner, AtoM includes an accession mask,
-which can define a pattern by which the next unique accession number is
-generated. Turning the mask on or off is controlled by the setting described
-above, :ref:`enable-accession-mask`.
-
-On installation, the accession mask is enabled by default, and prepopulated
-with a suggested value that will generate unique accession numbers. Expressed
-in the mask setting as ``%Y-%m-%d/#i``, this value will generate a unique
-accession number for every new accession record compiled from the following
-elements: ``YEAR-MONTH-DAY/Incremental#``. So for example with the default
-mask setting, the first accession you create, if it was generated on January
-01, 2018, would have an accession number of ``2018-01-01/1``.
-
-This mask, or default counter, can be changed by an :term:`administrator` to
-suit institutional needs, using text strings and
-`PHP strftime parameters <http://php.net/manual/en/function.strftime.php#refsect1-function.strftime-parameters>`_.
-To add leading zeroes to the unique incrementing number for example, you can
-add more ``i`` characters to the mask setting - so for example ``%Y-%m-%d/#iii``
-would lead to incremental numbers like 001, 002, 003, etc.
-
-The value of the incremental number is based on the :ref:`accession-counter`
-value, described below. An administrator can choose to manually change or
-reset the counter number if desired.
-
-.. image:: images/accession-mask.*
-   :align: center
-   :width: 75%
-   :alt: an image of the accession mask
-
-For more information on accession records, see :ref:`accession-records`.
-
-.. _accession-counter:
-
-Accession counter
------------------
-
-AtoM provides you with the number of :term:`accessions <accession record>`
-created. If you delete an accession, it will still be included in the Accession
-counter total value. If this number is changed by an administrator, the next
-accession created will receive the next number in sequence. The value of this
-counter is used to inform the incremental value used in the
-:ref:`accession-mask`, described above.
-
-.. NOTE::
-
-   A CSV import of accession records will **not** increment this value - AtoM
-   can only automatically track and increment the number based on accessions
-   created manually via the :term:`user interface`. This is another reason why
-   the accession counter is an editable value - if you perform a CSV import of
-   accessions, you may wish to manualy increment the counter to the correct
-   value, to ensure consistency.
-
-.. _enable-identifier-mask:
-
-Enable identifier mask
-----------------------
-
-This setting controls whether or not the :ref:`identifier-mask` (described in
-the section below) is enabled or not.
-
-When this setting is set to "yes," then when a user creates a new
-:term:`archival description`, the Identifier :term:`field` will be
-prepopulated with the next unique value based upon the :ref:`identifier-mask`
-settings - users can still manually edit the pre-populated value provided by
-the mask. AtoM does not enforce the uniqueness of archival description
-identifier values.
-
-When this setting is set to "no," then the identifier mask will not be used
-to pre-populate identifier values, and when creating a new archival description,
-the identifier field will be blank. However, a *Generate identifier* option
-will still be provided below the field - if clicked, then the settings defined
-in the Identifier mask will be used to populate the field.
-
-See:
-
-* :ref:`add-archival-description`
-* :ref:`identifier-mask`
-
-.. NOTE::
-
-   In a new installation, the identifier mask is disabled by default. An
-   :term:`administrator` can use this setting to enable it if desired.
-
-
-.. _identifier-mask:
-
-Identifier mask
----------------
-
-The Identifier mask can be used to manage the creation of unique
-:term:`archival description` identifier values when creating new
-descriptins. By enabling the identifier mask, all descriptions created through
-the user interface will be assigned an identifier based on a pre-defined pattern.
-
-On installation, the identifier mask is **disabled** by default - to change
-this, use the :ref:`enable-identifier-mask` setting described above.
-
-The identifier mask is prepopulated with a suggested value that will generate
-unique identifiers. Expressed in the mask setting as ``%Y-%m-%d/#i``, this
-value will generate a unique identifiers for every new
-:term:`archival description` created, comprised of the following elements:
-``YEAR-MONTH-DAY/Incremental#``. So for example with the default mask setting,
-the first description you create, if it was created on January 01, 2018, would
-have an identifier of ``2018-01-01/1``. The value of the parameter, *#i*,
-represents the :ref:`identifier-counter` value.
-
-This mask, can be changed by an :term:`administrator` to suit institutional
-needs, using text strings and `PHP strftime parameters <http://php.net/manual/en/function.strftime.php#refsect1-function.strftime-parameters>`_.
-To add leading zeroes to the unique incrementing number for example, you can
-add more ``i`` characters to the mask setting - so for example ``%Y-%m-%d/#iii``
-would lead to incremental numbers like 001, 002, 003, etc.
-
-The value of the incremental number is based on the :ref:`identifier-counter`
-value, described below. An administrator can choose to manually change or
-reset the counter number if desired.
-
-It is also possible to replace an existing :term:`archival description`
-identifier with one based on the identifier mask by editing a description and
-selecting *Generate identifier* below the identifier field.
-
-For more information on creating archival descriptions, see:
-
-* :ref:`add-archival-description`
-
-.. _identifier-counter:
-
-Identifier counter
-------------------
-
-The identifier counter defines incremental integer at the end of a generated
-identifier, represented in the identifier mask as *#i*. AtoM provides you with
-a count of the number of :term:`archival description` records created via the
-:term:`user interface`. This value is then used as part of the
-:ref:`identifier-mask` as the incrementing number value.
-
-Deleting an archival description will not affect the counter - it simply adds the
-next integer, rather than looking for unused integers. If this number is
-changed by an administrator, the next accession created will receive the next
-number in sequence.
-
-.. NOTE::
-
-   A CSV import of archival descriptions will **not** increment this value -
-   AtoM can only automatically track and increment the number based on records
-   created manually via the :term:`user interface`. This is another reason why
-   the identifier counter is an editable value - if you perform a CSV import
-   of descriptions, you may wish to manualy increment the counter to the
-   correct value, to ensure consistency.
-
-
-.. _reference-code-separator:
-
-Reference code separator
-------------------------
-
-The reference code separator is the character separating hierarchal elements
-in a :term:`reference code` (see Inherit reference code,
-:ref:`below <inherit-reference-code>`).The default reference code separator
-appears as a dash ``-`` in AtoM, which can be changed by an
-:term:`administrator` to suit institutional practices.
-
-.. TIP::
-
-   If you intend to use a ``/`` slash as your reference code separator, we
-   recommend you review the following setting below!
-
-   * :ref:`escape-chars`
-
-:ref:`Back to top <settings>`
-
-.. _inherit-reference-code:
-
-Inherit reference code (information object)
--------------------------------------------
-
-When this is set to "yes", the reference code string will be built using the
-archival description identifier plus the identifier of all its ancestors
-(:term:`parent records <parent record>`), as well as the repository identifier
-and country code if they have been entered. The string will appear in this
-order with the applicable elements:
-
-* Country code (derived from the country code of the country entered into the
-  contact information of the related :term:`archival institution`)
-* Repository identifier (derived from the identifier field on the related
-  :term:`archival institution`)
-* Fonds/Collection level identifier
-* Series identifier
-* Subseries identifier
-* File identifier
-* Item identifier
-
-.. image:: images/refcode-inherit.*
-   :align: center
-   :width: 75%
-   :alt: an example of reference code inheritance
-
-When reference code inheritance is enabled, AtoM will also display the full
-reference code in the edit page for
-:term:`archival descriptions <archival description>`, as contextual
-information to help orient the user.
-
-.. image:: images/reference-edit-mode.*
-   :align: center
-   :width: 45%
-   :alt: an example of the reference code display in edit mode
-
-.. IMPORTANT::
-
-   This setting also determines how the ``<unitid>`` element in the EAD XML is
-   populated. If the inheritance is turned on, then AtoM will populate all
-   descendant records in the EAD XML with the full inherited reference code.
-   If inheritance is turned off, AtoM will only add the identifier for that
-   record in the ``<unitid>`` on export. This allows users exporting to a
-   different source system that does not have a reference code inheritance
-   setting to maintain a full reference code at all levels in the target
-   system. **However, if you are exporting from one AtoM instance to another**
-   (for example, from a local institution to a portal site), you might want to
-   consider how this will impact your record display in the target system - if
-   you have reference code inheritance turned on when you export, and the
-   target AtoM instance *also* has the setting turned on, you may end up with
-   duplication in the display!
-
-.. SEEALSO::
-
-   * :ref:`Control area <control-area>`
-   * :ref:`reference-code-separator`
-   * :ref:`escape-chars`
-
-:ref:`Back to top <settings>`
 
 .. _escape-chars:
 
@@ -556,10 +277,10 @@ for logged in users, while the setting described below,
 
 Options available include:
 
-* **Alphabetic**: A-Z (but see the IMPORTANT admonition below) based on the
-  title or authorized form of name
-* **Last updated**: Will show the records most recently created or edited
-  first
+* **Title/name**: An "alphabetic" A-Z sort (but see the IMPORTANT admonition
+  below) based on the title or authorized form of name
+* **Date modified**: Will sort based on the date the records were created or last
+  modified. 
 * **Identifier**: A-Z (but see the IMPORTANT admonition below) based on the
   unique identifier value added to the record
 * **Reference code**: A-Z (but see the IMPORTANT admonition below) based on
@@ -568,7 +289,7 @@ Options available include:
 
 .. IMPORTANT::
 
-   The Alphabetic, Identifier, and Reference code sorts are all based on what
+   The Title/name, Identifier, and Reference code sorts are all based on what
    is sometimes known as ASCII sort - that is, the sort is not a true
    alphabetic sort as humans think of it, but rather as computers do.
 
@@ -601,6 +322,7 @@ of most browse pages.
    * :ref:`Browsing in AtoM <browse>`
    * :ref:`recurring-sort-button`
    * :ref:`inherit-reference-code`
+   * :ref:`sort-browser-anonymous`
 
 .. _sort-browser-anonymous:
 
@@ -623,10 +345,10 @@ logged in users.
 
 Options available include:
 
-* **Alphabetic**: A-Z (but see the IMPORTANT admonition below) based on the
-  title or authorized form of name
-* **Last updated**: Will show the records most recently created or edited
-  first
+* **Title/name**: An "alphabetic" A-Z sort (but see the IMPORTANT admonition
+  below) based on the title or authorized form of name
+* **Date modified**: Will sort based on the date the records were created or last
+  modified. 
 * **Identifier**: A-Z (but see the IMPORTANT admonition below) based on the
   unique identifier value added to the record
 * **Reference code**: A-Z (but see the IMPORTANT admonition below) based on
@@ -635,7 +357,7 @@ Options available include:
 
 .. IMPORTANT::
 
-   The Alphabetic, Identifier, and Reference code sorts are all based on what
+   The Title/name, Identifier, and Reference code sorts are all based on what
    is sometimes known as ASCII sort - that is, the sort is not a true
    alphabetic sort as humans think of it, but rather as computers do.
 
@@ -668,6 +390,7 @@ of most browse pages.
    * :ref:`Browsing in AtoM <browse>`
    * :ref:`recurring-sort-button`
    * :ref:`inherit-reference-code`
+   * :ref:`sort-browser-users`
 
 .. _default-repo-view:
 
@@ -676,7 +399,8 @@ Default repository browse view
 
 This setting will determine if the "card view" or the "table view" is the
 default view for the :term:`archival institution` browse page, when users
-first arrive on the page.
+first arrive on the page. By default in a new installation, this setting is set 
+to "card." 
 
 .. image:: images/repo-views.*
    :align: center
@@ -701,6 +425,47 @@ For more information on working with archival institutions, see:
 * :ref:`Search archival institutions <dedicated-search-institutions>`
 * :ref:`archival-institutions`
 
+.. _default-description-view:
+
+Default archival description browse view
+----------------------------------------
+
+Similar to the :ref:`default-repo-view` setting, this setting will determine if
+the "card view" (used by default on the Digital object browse page) or the 
+"results stub view" (the default description search/browse view in new AtoM 
+installations - called "table" in the related setting) is used when users first 
+arrive on the :term:`archival description` search/browse page. By default in a 
+new installation, this setting is set to "table"  - aka the results stub view. 
+
+.. image:: images/description-view-options.*
+   :align: center
+   :width: 70%
+   :alt: A comparison of the card and results stub views of the archival 
+         description browse page
+
+Note that this setting will not affect the use of the card view on the Digital
+object browse page - however, an :term:`administrator` could change this by 
+altering the path in the related node of the :term:`browse menu` - for more 
+information on editing menus, see: :ref:`manage-menus`.
+
+Additionally, even once set, any user can easily toggle between the results stub
+view and the card view, by using the view toggle button that appears above 
+archival description and digital object results: 
+
+.. image:: images/description-view-toggle.*
+   :align: center
+   :width: 70%
+   :alt: An image of the description view toggle button on the description 
+         browse page
+
+For more information on working with archival descriptions, see: 
+:ref:`archival-descriptions`. For information on searching, browsing, and 
+navigating in AtoM, see: 
+
+* :ref:`search-atom`
+* :ref:`browse-descriptions`
+* :ref:`navigate`
+* :ref:`advanced-search`
 
 .. _multiple-repositories:
 
@@ -710,20 +475,36 @@ Multiple repositories
 Select "yes" if your AtoM application is acting as a union list or portal for
 :term:`descriptions <archival description>` of materials held at more than one
 :term:`archival institution` or :term:`repository`. The repository will appear
-as a column on the "Browse archival descriptions" page. The repository will
-appear as a link in the :term:`context menu`.
+as a :term:`facet filter` on the "Browse archival descriptions" page. Once a 
+specific description linked to an archival institution, or a repository record 
+has been visited, AtoM will also provide the option to filter searches in the 
+global :term:`search box` to the most recent repository - for more information, 
+see: :ref:`search-box-delimiters`
 
 Select "no" if your AtoM application is being used only by a single institution.
 By selecting "no", the repository name will be excluded from certain displays
-because it will be too repetitive and the :term:`creator` rather than the
-repository will now appear as a column on the list :term:`archival description`
-page.
+because it will be too repetitive. Other changes include: 
+
+* Hiding the repository :term:`facet filter` from archival description search 
+  and browse result pages
+* Hiding the repository filter in the :term:`advanced search panel`
+* Hiding the :ref:`search-box-delimiters` in the global :term:`search box`
+* Hiding the related repository name in search/browse result stubs
+
+.. TIP::
+
+   The "Archival institutions" link in the :term:`Browse menu` will **not** be 
+   hidden by default when this setting is changed. However, an 
+   :term:`administrator` can manually remove this link by editing the Browse 
+   menu via |gears| **Admin > Menus**. For more information, see: 
+   :ref:`manage-menus`. 
 
 .. seealso::
 
    * :ref:`Browsing in AtoM <browse>`
    * :ref:`archival-descriptions`
    * :ref:`archival-institutions`
+   * :ref:`enable-scoping`
 
 .. _enable-scoping:
 
@@ -835,13 +616,22 @@ For more information, see :ref:`upload-digital-object`.
 Total space available for uploads
 ---------------------------------
 
-This field will display the used space for digital objects as well as the
-total space available.
+This field will display the used space for 
+:term:`digital objects <digital object>` as well as the total space available. 
+The space available is determined by a configurable setting that a system 
+administrator can modify in one of AtoM's configuration files - see:
+
+* :ref:`config-app-yml`
 
 .. _upload-multi-files:
 
 Upload multi-page files as multiple descriptions
 ------------------------------------------------
+
+Normally, a multi-page file such as a PDF is uploaded as a single 
+:term:`digital object`, linked to a single target :term:`archival description`. 
+However, it is possible to break up each page into its own digital object, and
+attach these to new :term:`child <child record>` descriptions
 
 Select "yes" if you would like each page of a multi-page file to be attached
 to a separate :term:`child-level <child record>` description. For example, a
@@ -855,6 +645,7 @@ description.
 
    * :ref:`archival-descriptions`
    * :ref:`upload-digital-object`
+   * :ref:`Digital object derivative settings <digital-object-derivatives>`
 
 .. _tooltips:
 
@@ -914,9 +705,13 @@ Default publication status
 
 This setting determines whether new :term:`archival descriptions <archival
 description>` will automatically appear as :term:`draft records <draft record>`
-or :term:`published records <published record>`. Note that this setting also
-affects imported descriptions. For more information, see
-:ref:`archival-descriptions`.
+or :term:`published records <published record>`. By default, public users (i.e. 
+those who are not logged into AtoM) cannot see draft descriptions.  
+
+Note that this setting also affects imported descriptions. For more information, 
+see :ref:`archival-descriptions` - specifically, see: 
+
+* :ref:`publish-archival-description`
 
 .. _drafts-notification:
 
@@ -947,8 +742,6 @@ The SWORD deposit directory is currently being used to support packages
 deposited by `Archivematica <https://www.archivematica.org/>`__ into AtoM.
 If you do not know the name of your deposit directory, consult with your
 systems administrator. The default is ``/tmp``.
-
-:ref:`Back to top <settings>`
 
 .. _maps-api-key:
 
@@ -983,27 +776,27 @@ Google account. For more information, see:
    * https://developers.google.com/maps/documentation/javascript/usage
 
 
-:ref:`Back to top <settings>`
-
 .. _reports-public-setting:
 
 Generate archival description reports as public user
 ----------------------------------------------------
 
 This setting relates to the creation of file and item-level reports for
-archival descriptions - for more information, see:
+archival descriptions, as well as finding aids - for more information, see:
 
 * :ref:`file-item-reports`
+* :ref:`print-finding-aids`
 
-This setting determines whether or not Retrieval information is included in
-the reports generated or not - that is, :term:`physical storage` information
-such as location, container type, and name.
+This setting determines whether or not :term:`draft records <draft record>` and
+retrieval information is included in the reports generated or not - that is, 
+:term:`physical storage` information such as location, container type, and name.
 
 When this setting is set to "Yes", then reports generated will **not** include
-:term:`physical storage` information. When set to "No", then the reports will
-include physical storage information.
+draft descriptions. Additionally, if physical storage information is hidden
+via the :ref:`visible-elements` settings, then :term:`physical storage` 
+information will also be excluded from finding aids. When set to "No", then the 
+reports and finding aids will include drafts and physical storage information.
 
-:ref:`Back to top <settings>`
 
 .. _cache-xml-setting:
 
@@ -1102,38 +895,54 @@ avoid constantly triggering many jobs.
    For more information on this functionality, see:
    :ref:`xml-export-clipboard`
 
-.. _site-information:
+.. _dip-upload-settings:
 
-Site information
-================
+DIP upload
+==========
 
-In this section, :term:`administrators <administrator>` can change the
-:term:`site title` and :term:`site description`, and set a :term:`Base URL` for
-the application.
-
-.. image:: images/site-information.*
+.. image:: images/dip-upload-settings.*
    :align: center
-   :width: 70%
-   :alt: An image of the Site information menu in AtoM
+   :width: 80%
+   :alt: DIP upload settings page in AtoM
 
-The site title and description will appear in the AtoM header bar, if they
-are included in the default page elements. See
-:ref:`below <default-page-elements>` for an image of where the Title and
-description appear, and more about setting the visibility of default page
-elements.
+This setting is for users who are uploading content from a linked
+Archivematica instance. Archivematica is an open-source digital preservation
+system developed by Artefactual Systems, the same creators of AtoM. For more
+information, see: https://www.archivematica.org
 
-The base URL is used to create absolute URLs included in XML exports (e.g.
-MODS and EAD exports). For example, your AtoM site is made up a series of web
-pages. Each page has a full Uniform Resource Locator (URL) something like
-``http://www.your-atom-site.com/your-description``. The Base URL is the part of
-this URL that does not change - in this example, ``http://www.your-atom-site.com``.
+.. SEEALSO::
 
-Setting this value will ensure that links included in your XML exports will be
-properly formed. Do not include a slash ``/`` at the end of your base URL -
-AtoM will automatically add this when building the absolute URLs.
+   For information on DIP upload from Archivematica to AtoM, see the
+   following page in the Archivematica documentation:
 
-To save any modifications, click the "Save" button located below the
-"Site Description" field.
+   * :ref:`Upload DIP to AtoM <archivematica:upload-atom>`
+
+Archivematica can be used to manage and prepare digital content for long-term
+preservation, and can generate a Dissemination Information Package (DIP) with
+access-copy derivatives of your :term:`master digital object` files processed
+in Archivematica, for upload into AtoM.
+
+If no additional metadata is provided with the content during preparation,
+then when uploaded to AtoM, AtoM will use the file names as the default titles
+for the associated :term:`information objects <information object>` (a.k.a.
+:term:`descriptions <archival description>`) generated, to which the digital
+objects in the DIP will be attached. However, this might produce descriptions
+with titles like ``my-picture.jpg``, or ``my.document.pdf``.
+
+When this setting is set to "Yes," AtoM will automatically strip the file
+extensions from the information object names automatically generated during
+the DIP upload process - from the examples above, this setting would lead to
+information object titles such as ``my-picture`` or ``my.document``. Users can
+still edit the description title after DIP upload to customize them as
+desired.
+
+Note that the setting will **not** retroactively affect existing
+uploads/information objects, only new information objects created during the
+DIP upload process from Archivematica. Similarly, the uploaded file itself is
+**not** affected (the extension is not stripped from the
+:term:`digital object`) - only the title of the description generated so the
+digital object can be attached and uploaded.
+
 
 :ref:`Back to top <settings>`
 
@@ -1249,75 +1058,104 @@ viewed in the templates that have been selected.
 
 :ref:`Back to top <settings>`
 
-.. _user-interface-labels:
+.. _digital-object-derivatives:
 
-User interface labels
-=====================
+Digital object derivatives
+==========================
 
-Users of AtoM interact with six main :term:`entities <entity>`: :term:`accession
-records <accession record>`, :term:`archival descriptions <archival
-description>`, :term:`authority records <authority record>`, :term:`archival
-institutions <archival institution>`, :term:`functions <function>` and
-:term:`terms <term>`.
+Whenever a :term:`digital object` is linked to an :term:`archival description`, 
+AtoM will generate two derivative copies from the :term:`master digital object` 
+(e.g. the original) -  a :term:`reference display copy`, used on the archival 
+description :term:`view page`, and a :term:`thumbnail`, used in search and browse 
+results, and in the digital object :ref:`carousel <recurring-carousel>`.
+
+The following settings affect the way that 
+:term:`reference <reference display copy>` derivatives are generated in AtoM. 
+
+**Jump to:**
+
+* :ref:`pdf-page-settings`
+* :ref:`Maximum image width <max-image-width>`
+
+.. SEEALSO::
+
+   * :ref:`total-upload-space`
+   * :ref:`default-institution-upload`
+   * :ref:`upload-multi-files`
+
+.. image:: images/derivatives-settings.*
+   :align: center
+   :width: 80%
+   :alt: Digital object derivative settings in AtoM
+
+.. _pdf-page-settings:
+
+PDF page number for image derivative
+------------------------------------
+
+This setting will affect the :term:`digital object` derivatives generated by
+AtoM when uploading multi-page content, such as a PDF.
+
+By default, AtoM will use the first page of multi-page content (such as a PDF) 
+when generating the :term:`reference display copy` and :term:`thumbnail` images.
+
+However, with multi-page content such as PDFs, the first page may not be
+useful to users browsing the content - it may be an institutional cover page
+used on all digitized content, a blank cover page, etc.
+
+This setting will allow users to set a page number that should be used when
+generating the derivative copies. It will work for both locally uploaded
+content, and for PDFs linked via URL. If a system administrator runs the
+:ref:`derivatives regeneration task <cli-regenerate-derivatives>`, AtoM will
+use the setting value when regenerating PDF derivatives.
+
+.. TIP::
+
+   If you enter a page number that does not exist for one or more of your
+   derivatives (for example, entering 99 as the value, when your PDF only has
+   9 pages), AtoM will use the closest available value (in this example, page
+   9) when generating the derivatives.
+
+If you make changes, remember to click the "Save" button in the
+:term:`button block`.
+
+.. _max-image-width:
+
+Maximum image width (pixels)
+----------------------------
+
+One of AtoM's design assumptions is that the display dimensions of files
+users upload typically will be too large to fit into the :term:`view page` for
+an :term:`archival description`. Therefore, when you upload a file, AtoM creates
+a :term:`reference display copy` for displaying in the view page.
+
+AtoM ships with a default setting specifying the maximum width of the
+:term:`reference display copy` at **480 pixels**. This is the optimized width
+given AtoM's :term:`field` width. :term:`Administrators <administrator>`,
+however, can increase or decrease the maximum reference image
+width to suit the requirements of their institution or network.
 
 .. seealso::
 
-   * :ref:`entity-types`
-   * :ref:`recurring-facet-filters`
+   * :ref:`Styling static pages <styling-static-page>`
+   * :ref:`Themes & Theming <themes>`
 
-AtoM is flexible enough to support descriptions a variety of cultural
-materials such as archival, library, museum, and art gallery collections.
-The code, therefore, uses generic terms for entities.
-:term:`Administrators <administrator>` can specify how they want these
-:term:`terms <term>` to appear in the :term:`user interface` labels to suit the
-institution's collections. The default labels that ship with AtoM are terms
-typically used by archival institutions.
+:ref:`Back to top <settings>`
 
-.. image:: images/user-interface-label.*
+.. _finding-aid:
+
+Finding aid
+===========
+
+These settings configure how AtoM generates :term:`finding aids <finding aid>`
+from :term:`archival descriptions <archival description>`. For more information,
+see :ref:`Print finding aids <print-finding-aids>`; specifically,
+:ref:`print-finding-aid-settings` includes a description of each settings field.
+
+.. image:: images/finding-aid-settings.*
    :align: center
-   :width: 65%
-   :alt: User interface label settings
-
-The "Name" column shows the generic entity name and the "Value" column
-shows AtoM's default user interface labels. The following is a list of the
-generic terms and their AtoM user interface labels. Click on each label below to
-see glossary definitions and descriptions of how the terms are used in AtoM.
-
-* informationobject: :term:`archival description`
-* actor: :term:`Authority record`
-* creator: :term:`Creator`
-* repository: :term:`Archival institution`
-* function: :term:`Function`
-* term: :term:`Term`
-* subject: :term:`Subject`
-* collection: :term:`Fonds`
-* holdings: :term:`Holdings`
-* place: :term:`Place`
-* name: :term:`Name`
-* digitalobject: :term:`Digital object`
-* physicalobject: :term:`Physical storage`
-* mediatype: :term:`Media type`
-* materialtype: Material type (general material designations used in the
-  :ref:`Canadian Rules for Archival Description <rad-template>`).
-* facetstitle: :term:`facets title`
-* genre: Term for the Genre access point taxonomy, currently only available on
-  the :ref:`RAD template <rad-template>`. It appears as a :term:`facet filter`
-  in the :term:`archival description` browse and search pages - this label will
-  change the display in the facet headers.
-
-:term:`User interface <user interface>` labels can be changed by
-:term:`administrators <administrator>` by entering a new label(s) into the
-:term:`field(s) <field>` under the "Value" column. Changes will only be
-saved once the "Save" button is clicked. Changing the label will change its
-appearance throughout AtoM for both authenticated (logged-in) and
-public users.
-
-.. NOTE::
-
-   Changing the user interface labels will *not* automatically change the
-   corresponding labels in the navigation menus. To change these menus, go to
-   **Admin > Menus**. See the :ref:`Manage menus <manage-menus>` page for more
-   information.
+   :width: 80%
+   :alt: Finding aid settings
 
 :ref:`Back to top <settings>`
 
@@ -1327,18 +1165,23 @@ Add/Remove languages
 ====================
 
 AtoM relies on volunteer translators from the community to support new language
-options. The translations are managed using
-`Transifex <https://www.transifex.com/projects/p/atom/>`__ and community
-members can learn more about contibuting translations `here
-<https://wiki.accesstomemory.org/Resources/Translation>`_.
+options. The translations are managed using an Artefactual-hosted instance of 
+`Weblate <https://translations.artefactual.com/>`__ and community
+members can learn more about contibuting translations here:
+
+* https://wiki.accesstomemory.org/Resources/Translation
+
+With each new  major public release, we incorporate community-supplied
+translations of AtoM's  :term:`user interface`, which can easily be changed by
+end users by selecting a different language from the global 
+:ref:`language menu <language-menu>`. The language menu will display the 
+languages that are currently enabled in your AtoM application. This setting 
+determines what languages appear in the language menu.
 
 .. image:: images/add-remove-languages.*
    :align: center
    :width: 70%
    :alt: An image of the add/remove languages menu in AtoM
-
-The language menu will display the languages that are currently available in
-your AtoM application.
 
 .. |delete| image:: images/xdelete.png
    :height: 18
@@ -1350,10 +1193,10 @@ your AtoM application.
 
 **To add a language:**
 
-#. Select a language from the :term:`drop-down menu` located under "Language
+1. Select a language from the :term:`drop-down menu` located under "Language
    code".
-#. Click the "Add" button.
-#. AtoM adds the language and refreshes the page; the added language will now
+2. Click the "Add" button.
+3. AtoM adds the language and refreshes the page; the added language will now
    appear in the "Add/remove language" section in "Settings", as well as in the
    :term:`drop-down menu` of the |globe| :term:`language navigation menu
    <language menu>` located at the top right corner of the :term:`header bar`.
@@ -1389,9 +1232,9 @@ To continue adding languages, repeat these steps as required.
 
 **To remove a language:**
 
-#. Click the delete |delete| located in the third (blank) column next to the
+4. Click the delete |delete| located in the third (blank) column next to the
    language.
-#. AtoM will delete the language and refresh the page; the deleted language will
+5. AtoM will delete the language and refresh the page; the deleted language will
    no longer appear in the "Add/remove language" section in "Settings", nor in
    the :term:`drop-down menu` of the |globe| :term:`language navigation menu
    <language menu>` located at the top right corner of the :term:`header bar`.
@@ -1406,131 +1249,320 @@ To continue removing languages, repeat these steps as required.
 
 :ref:`Back to top <settings>`
 
+.. _identifier-settings:
 
-.. _oai-repository:
+Identifier settings
+===================
 
-OAI repository
-==============
+Settings in this section relate to :term:`archival description` identifiers, as 
+well as :term:`accession record` numbers. AtoM can automatically generate 
+unique identifiers for these :term:`entities <entity>` based on a configurable
+mask. Users can also set :term:`reference code` behavior for descriptions in this 
+section of the settings. 
 
-`Open Archives Initiative <http://www.openarchives.org/>`_, or OAI, is a
-protocol for metadata harvesting that allows automatic data harvesting
-and crawling within other systems that support OAI harvesters.
-
-.. image:: images/oai-repository.*
+.. figure:: images/identifier-settings.*
    :align: center
-   :width: 70%
-   :alt: An image of the OAI repository menu in AtoM
+   :width: 100%
+   :figwidth: 75%
+   :alt: An image of the identifier-related settings in AtoM
 
-Comprehensive documentation on each field in the OAI repository settings is
-included in the :ref:`OAI repository <oai-pmh>` documentation, here:
+   The identifier-related settings in AtoM. These affect descriptions and 
+   accession records
 
-* :ref:`oai-pmh-settings`
+**Jump to:**
 
-.. TIP::
+* :ref:`enable-accession-mask`
+* :ref:`Accession mask <accession-mask>`
+* :ref:`Accession counter <accession-counter>`
+* :ref:`enable-identifier-mask`
+* :ref:`Identifier mask <identifier-mask>`
+* :ref:`Identifier counter <identifier-counter>`
+* :ref:`Reference code separator <reference-code-separator>`
+* :ref:`Inherit reference code (Information object) <inherit-reference-code>`
 
-   To use the OAI repository functionality in AtoM, you must first make sure
-   that the arOAIPlugin is turned on. For more information, see:
+.. _enable-accession-mask:
 
-   * :ref:`oai-pmh-plugin`
-   * :ref:`manage-plugins`
+Enable accession mask
+---------------------
 
-   If the arOAIPlugin is **not** turned on, then you won't see the OAI
-   repository tab on the settings page menu!
+This setting controls whether or not the :ref:`accession-mask` (described in
+the section :ref:`below <accession-mask>`) is enabled or not.
 
-:ref:`Back to top <settings>`
+When this setting is set to "yes," then when a user creates a new
+:term:`accession record`, the Accession number :term:`field` will be
+prepopulated with the next unique value based upon the :ref:`accession-mask`
+settings - users can still manually edit the pre-populated value provided by
+the mask, so long as a unique number is used.
 
-.. _finding-aid:
+When this setting is set to "no," then the accession mask will not be used,
+and when creating a new accession record, the accession number field will be
+blank.
 
-Finding aid
-===========
+See:
 
-These settings configure how AtoM generates :term:`finding aids <finding aid>`
-from :term:`archival descriptions <archival description>`. For more information,
-see :ref:`Print finding aids <print-finding-aids>`; specifically,
-:ref:`print-finding-aid-settings` includes a description of each settings field.
-
-.. image:: images/finding-aid-settings.*
-   :align: center
-   :width: 80%
-   :alt: Finding aid settings
-
-.. _security-panel:
-
-Security panel
-==============
-
-.. image:: images/security-panel.*
-   :align: right
-   :width: 35%
-   :alt: Security settings in AtoM
-
-**Limit administrator functionality by IP address**
-
-This feature allows :term:`administrators <administrator>` to limit
-administrator functionality to one or more IP addresses or IP ranges. Separate
-multiple IP address or ranges by semicolons, and use a dash to indicate an IP
-range. For example:
-
-  * 192.168.0.1 (single IP address)
-  * 192.168.0.1;192.168.0.255 (multiple unique IP addresses)
-  * 192.168.0.1-192.168.0.255 (IP range)
-
-**Require SSL for all administrator functionality**
-
-This feature allows administrators the option to enable the `Hypertext
-Transfer Protocol Secure (HTTPS) <http://en.wikipedia.org/wiki/HTTP_Secure>`_,
-which is a protocol for security over a computer network. It works by layering
-the Hypertext Transfer Protocol (HTTP) with the SSL/TLS protocol (Secure
-Sockets Layer/Transport Layer Security).
-
-Select yes to require all HTTP requests to be redirected to the HTTPS server,
-changing the URI scheme from "http" to "https."
+* :ref:`add-new-accession`
+* :ref:`accession-mask`
 
 .. NOTE::
 
-   This will only apply to users who are authenticated (logged-in) or
-   visiting the login page.
+   In a new installation, the accession mask is enabled by default. An
+   :term:`administrator` can use this setting to disable it if desired.
 
+.. _accession-mask:
 
-**Require strong passwords**
+Accession mask
+--------------
 
-This feature allows :term:`administrators <administrator>` to enhance login
-validation by requiring the use of strong passwords. Strong passwords use
-least 8 characters, and contain characters from 3 of the following
-classes:
+When working with an :term:`accession record`, AtoM requires that a unique
+Accession number be added - for more information, see:
+:ref:`add-new-accession`. To help ensure that accession record numbers are
+created in a consistent and unique manner, AtoM includes an accession mask,
+which can define a pattern by which the next unique accession number is
+generated. Turning the mask on or off is controlled by the setting described
+above, :ref:`enable-accession-mask`.
 
-  #. Upper case letters
-  #. Lower case letters
-  #. Numbers
-  #. Special characters
+On installation, the accession mask is enabled by default, and prepopulated
+with a suggested value that will generate unique accession numbers. Expressed
+in the mask setting as ``%Y-%m-%d/#i``, this value will generate a unique
+accession number for every new accession record compiled from the following
+elements: ``YEAR-MONTH-DAY/Incremental#``. So for example with the default
+mask setting, the first accession you create, if it was generated on January
+01, 2018, would have an accession number of ``2018-01-01/1``.
 
-Choose "yes" to require authenticated (logged-in) users to have strong
-passwords.
+This mask, or default counter, can be changed by an :term:`administrator` to
+suit institutional needs, using text strings and
+`PHP strftime parameters <http://php.net/manual/en/function.strftime.php#refsect1-function.strftime-parameters>`_.
+To add leading zeroes to the unique incrementing number for example, you can
+add more ``i`` characters to the mask setting - so for example ``%Y-%m-%d/#iii``
+would lead to incremental numbers like 001, 002, 003, etc.
 
-.. _permissions:
+The value of the incremental number is based on the :ref:`accession-counter`
+value, described below. An administrator can choose to manually change or
+reset the counter number if desired.
 
-Permissions
-===========
-
-Permissions settings are used by :term:`administrators <administrator>` to
-make PREMIS rights records in
-:term:`archival descriptions <archival description>` actionable on
-attached :term:`digital objects <digital object>`. See :ref:`rights` for more
-information on working with rights in AtoM.
-
-The permissions settings page is divided into 3 sections - PREMIS access
-permissions, PREMIS access statements, and the Copyright statement.
-
-For information on configuring the PEMIS access permissions, see:
-:ref:`rights-digital-object` (and for an example use case, see:
-:ref:`rights-digital-object-example`). For information on configuring the PREMIS
-access statements, see: :ref:`disallow-statements`. For information on
-configuring and using the Copyright statement, see: :ref:`copyright-pop-up`.
-
-.. image:: images/permissions-settings.*
+.. image:: images/accession-mask.*
    :align: center
-   :width: 80%
-   :alt: Permissions settings in AtoM
+   :width: 75%
+   :alt: an image of the accession mask
+
+For more information on accession records, see :ref:`accession-records`.
+
+.. _accession-counter:
+
+Accession counter
+-----------------
+
+AtoM provides you with the number of :term:`accessions <accession record>`
+created. If you delete an accession, it will still be included in the Accession
+counter total value. If this number is changed by an administrator, the next
+accession created will receive the next number in sequence. The value of this
+counter is used to inform the incremental value used in the
+:ref:`accession-mask`, described above.
+
+.. NOTE::
+
+   A CSV import of accession records will **not** increment this value - AtoM
+   can only automatically track and increment the number based on accessions
+   created manually via the :term:`user interface`. This is another reason why
+   the accession counter is an editable value - if you perform a CSV import of
+   accessions, you may wish to manualy increment the counter to the correct
+   value, to ensure consistency.
+
+.. _enable-identifier-mask:
+
+Enable identifier mask
+----------------------
+
+This setting controls whether or not the :ref:`identifier-mask` (described in
+the section below) is enabled or not.
+
+When this setting is set to "yes," then when a user creates a new
+:term:`archival description`, the Identifier :term:`field` will be
+prepopulated with the next unique value based upon the :ref:`identifier-mask`
+settings - users can still manually edit the pre-populated value provided by
+the mask. AtoM does not enforce the uniqueness of archival description
+identifier values.
+
+When this setting is set to "no," then the identifier mask will not be used
+to pre-populate identifier values, and when creating a new archival description,
+the identifier field will be blank. However, a *Generate identifier* option
+will still be provided below the field - if clicked, then the settings defined
+in the Identifier mask will be used to populate the field.
+
+See:
+
+* :ref:`add-archival-description`
+* :ref:`identifier-mask`
+
+.. NOTE::
+
+   In a new installation, the identifier mask is disabled by default. An
+   :term:`administrator` can use this setting to enable it if desired.
+
+.. _identifier-mask:
+
+Identifier mask
+---------------
+
+The Identifier mask can be used to manage the creation of unique
+:term:`archival description` identifier values when creating new
+descriptins. By enabling the identifier mask, all descriptions created through
+the user interface will be assigned an identifier based on a pre-defined pattern.
+
+On installation, the identifier mask is **disabled** by default - to change
+this, use the :ref:`enable-identifier-mask` setting described above.
+
+The identifier mask is prepopulated with a suggested value that will generate
+unique identifiers. Expressed in the mask setting as ``%Y-%m-%d/#i``, this
+value will generate a unique identifiers for every new
+:term:`archival description` created, comprised of the following elements:
+``YEAR-MONTH-DAY/Incremental#``. So for example with the default mask setting,
+the first description you create, if it was created on January 01, 2018, would
+have an identifier of ``2018-01-01/1``. The value of the parameter, *#i*,
+represents the :ref:`identifier-counter` value.
+
+This mask, can be changed by an :term:`administrator` to suit institutional
+needs, using text strings and `PHP strftime parameters <http://php.net/manual/en/function.strftime.php#refsect1-function.strftime-parameters>`_.
+To add leading zeroes to the unique incrementing number for example, you can
+add more ``i`` characters to the mask setting - so for example ``%Y-%m-%d/#iii``
+would lead to incremental numbers like 001, 002, 003, etc.
+
+The value of the incremental number is based on the :ref:`identifier-counter`
+value, described below. An administrator can choose to manually change or
+reset the counter number if desired.
+
+It is also possible to replace an existing :term:`archival description`
+identifier with one based on the identifier mask by editing a description and
+selecting *Generate identifier* below the identifier field.
+
+For more information on creating archival descriptions, see:
+
+* :ref:`add-archival-description`
+
+.. _identifier-counter:
+
+Identifier counter
+------------------
+
+The identifier counter defines incremental integer at the end of a generated
+identifier, represented in the identifier mask as *#i*. AtoM provides you with
+a count of the number of :term:`archival description` records created via the
+:term:`user interface`. This value is then used as part of the
+:ref:`identifier-mask` as the incrementing number value.
+
+Deleting an archival description will not affect the counter - it simply adds the
+next integer, rather than looking for unused integers. If this number is
+changed by an administrator, the next accession created will receive the next
+number in sequence.
+
+.. NOTE::
+
+   A CSV import of archival descriptions will **not** increment this value -
+   AtoM can only automatically track and increment the number based on records
+   created manually via the :term:`user interface`. This is another reason why
+   the identifier counter is an editable value - if you perform a CSV import
+   of descriptions, you may wish to manualy increment the counter to the
+   correct value, to ensure consistency.
+
+.. _reference-code-separator:
+
+Reference code separator
+------------------------
+
+The reference code separator is the character separating hierarchal elements
+in a :term:`reference code` (see Inherit reference code,
+:ref:`below <inherit-reference-code>`).The default reference code separator
+appears as a dash ``-`` in AtoM, which can be changed by an
+:term:`administrator` to suit institutional practices.
+
+.. TIP::
+
+   If you intend to use a ``/`` slash as your reference code separator, we
+   recommend you review the following setting! See: 
+
+   * :ref:`escape-chars`
+
+.. IMPORTANT::
+
+   If you change this setting, it will be applied immediately on
+   :term:`view pages <view page>`. However, to see these changes take effect
+   in search and browse results pages, a system administrator will need to
+   :ref:`clear the application cache <maintenance-clear-cache>`,
+   :ref:`restart services <troubleshooting-restart-services>`, and
+   :ref:`populate the search <maintenance-populate-search-index>` before they
+   are visible.
+
+   If you continue to see the previous reference code separator in
+   search/browse results after performing the above tasks, be sure to clear
+   your web browser cache as well.
+
+.. _inherit-reference-code:
+
+Inherit reference code (information object)
+-------------------------------------------
+
+In AtoM, a reference code is a unique identifier string associated with an 
+:term:`archival description`, created through the combination of inherited 
+identifiers from other related entities. While an individual description 
+identifier is rarely globally unique (and is often not unique even in the same
+AtoM instance), by combining additional elements such as a the country code, 
+repository code, and any :term:`parent <parent record>` identifiers, a unique
+reference code can be created, which facilitates international discovery and 
+exchange. 
+
+When this setting is set to "yes", the reference code string will be built
+using the archival description identifier plus the identifier of all its
+ancestors (:term:`parent records <parent record>`), as well as the repository
+identifier and country code if they have been entered. The string will appear
+in this order with the applicable elements:
+
+* Country code (derived from the country code of the country entered into the
+  contact information of the related :term:`archival institution`)
+* Repository identifier (derived from the identifier field on the related
+  :term:`archival institution`)
+* Fonds/Collection level identifier
+* Series identifier
+* Subseries identifier
+* File identifier
+* Item identifier
+* etc. 
+
+.. image:: images/refcode-inherit.*
+   :align: center
+   :width: 75%
+   :alt: an example of reference code inheritance
+
+When reference code inheritance is enabled, AtoM will also display the full
+reference code in the edit page for
+:term:`archival descriptions <archival description>`, as contextual
+information to help orient the user.
+
+.. image:: images/reference-edit-mode.*
+   :align: center
+   :width: 45%
+   :alt: an example of the reference code display in edit mode
+
+.. IMPORTANT::
+
+   This setting also determines how the ``<unitid>`` element in the EAD XML is
+   populated. If the inheritance is turned on, then AtoM will populate all
+   descendant records in the EAD XML with the full inherited reference code.
+   If inheritance is turned off, AtoM will only add the identifier for that
+   record in the ``<unitid>`` on export. This allows users exporting to a
+   different source system that does not have a reference code inheritance
+   setting to maintain a full reference code at all levels in the target
+   system. **However, if you are exporting from one AtoM instance to another**
+   (for example, from a local institution to a portal site), you might want to
+   consider how this will impact your record display in the target system - if
+   you have reference code inheritance turned on when you export, and the
+   target AtoM instance *also* has the setting turned on, you may end up with
+   duplication in the display!
+
+.. SEEALSO::
+
+   * :ref:`Control area <control-area>`
+   * :ref:`reference-code-separator`
+   * :ref:`escape-chars`
 
 :ref:`Back to top <settings>`
 
@@ -1599,97 +1631,228 @@ Inventory list, remember to click the "Save" button located in the
 
 :ref:`Back to top <settings>`
 
-.. _digital-object-derivatives:
+.. _markdown-settings:
 
-Digital object derivatives
-==========================
+Markdown settings
+=================
 
-This setting will affect the :term:`digital object` derivatives generated by
-AtoM when uploading multi-page content, such as a PDF.
-
-Whenever a digital object is linked to an :term:`archival description`, AtoM
-will generate two derivative copies from the :term:`master digital object`
-(e.g. the original) -  a :term:`reference display copy`, used on the archival
-description :term:`view page`, and a :term:`thumbnail`, used in search and
-browse results, and in the digital object
-:ref:`carousel <recurring-carousel>`. By default, AtoM will use the first page
-of multi-page content (such as a PDF) when generating the derivative images.
-
-However, with multi-page content such as PDFs, the first page may not be
-useful to users browsing the content - it may be an institutional cover page
-used on all digitized content, a blank cover page, etc.
-
-This setting will allow users to set a page number that should be used when
-generating the derivative copies. It will work for both locally uploaded
-content, and for PDFs linked via URL. If a system administrator runs the
-:ref:`derivatives regeneration task <cli-regenerate-derivatives>`, AtoM will
-use the setting value when regenerating PDF derivatives.
-
-.. TIP::
-
-   If you enter a page number that does not exist for one or more of your
-   derivatives (for example, entering 99 as the value, when your PDF only has
-   9 pages), AtoM will use the closest available value (in this example, page
-   9) when generating the derivatives.
-
-If you make changes, remember to click the "Save" button in the
-:term:`button block`.
-
-.. image:: images/derivatives-settings.*
+.. image:: images/markdown-settings.*
    :align: center
-   :width: 80%
-   :alt: Digital object derivative settings in AtoM
+   :width: 75%
+   :alt: An image of the markdown settings in AtoM
+
+.. _Markdown: https://daringfireball.net/projects/markdown/
+.. _Parsedown: https://parsedown.org/
+
+Markdown_ is a lightweight markup syntax for text formatting, originally created 
+by John Gruber. As of the 2.5 release, AtoM supports the use of Markdown_ in 
+both :term:`edit pages <edit page>` and :term:`static pages <static page>`, via 
+a PHP library known as Parsedown_.
+
+This setting enables Markdown support in AtoM, which will allow for content 
+added to edit and static pages to be styled using Markdown syntax. For more 
+information on using Markdown in AtoM, see: :ref:`formatting`. 
+
+.. IMPORTANT::
+
+   After enabling or disabling this setting, a system administrator **must** 
+   rebuild the search index for the changes to take effect. For more information 
+   on how to rebuild AtoM's search index, see: 
+
+   * :ref:`maintenance-populate-search-index`.
+
+   To ensure you are seeing the most up-to-date results, you may also want to 
+   :ref:`clear the application cache <maintenance-clear-cache>` and restart services 
+   (such as :ref:`PHP-FPM <troubleshooting-restart-php-fpm>` and 
+   :ref:`Memcached <troubleshooting-restart-memcached>` if you 
+   are using it for additional caching), and clear your web browser cache.
 
 :ref:`Back to top <settings>`
 
-.. _dip-upload-settings:
+.. _oai-repository:
 
-DIP upload
-==========
+OAI repository
+==============
 
-.. image:: images/dip-upload-settings.*
+`Open Archives Initiative <http://www.openarchives.org/>`_, or OAI, is a
+protocol for metadata harvesting that allows automatic data harvesting
+and crawling within other systems that support OAI harvesters.
+
+.. image:: images/oai-repository.*
+   :align: center
+   :width: 70%
+   :alt: An image of the OAI repository menu in AtoM
+
+Comprehensive documentation on each field in the OAI repository settings is
+included in the :ref:`OAI repository <oai-pmh>` documentation, here:
+
+* :ref:`oai-pmh-settings`
+
+.. TIP::
+
+   To use the OAI repository functionality in AtoM and to see the related 
+   settings, you must first make sure that the arOAIPlugin is turned on. For 
+   more information, see:
+
+   * :ref:`oai-pmh-plugin`
+   * :ref:`manage-plugins`
+
+   If the arOAIPlugin is **not** turned on, then you won't see the OAI
+   repository tab on the settings page menu!
+
+:ref:`Back to top <settings>`
+
+.. _permissions:
+
+Permissions
+===========
+
+Permissions settings are used by :term:`administrators <administrator>` to
+make PREMIS rights records in
+:term:`archival descriptions <archival description>` actionable on
+attached :term:`digital objects <digital object>`. See :ref:`rights` for more
+information on working with rights in AtoM.
+
+The permissions settings page is divided into 3 sections - PREMIS access
+permissions, PREMIS access statements, and the Copyright statement.
+
+For information on configuring the PEMIS access permissions, see:
+:ref:`rights-digital-object` (and for an example use case, see:
+:ref:`rights-digital-object-example`). For information on configuring the PREMIS
+access statements, see: :ref:`disallow-statements`. For information on
+configuring and using the Copyright statement, see: :ref:`copyright-pop-up`.
+
+.. image:: images/permissions-settings.*
    :align: center
    :width: 80%
-   :alt: DIP upload settings page in AtoM
+   :alt: Permissions settings in AtoM
 
-This setting is for users who are uploading content from a linked
-Archivematica instance. Archivematica is an open-source digital preservation
-system developed by Artefactual Systems, the same creators of AtoM. For more
-information, see: https://www.archivematica.org
+:ref:`Back to top <settings>`
+
+.. _security-panel:
+
+Security panel
+==============
+
+This section includes settings that administrators can enable to enhance the 
+security of AtoM. 
+
+**Jump to:**
+
+* :ref:`security-limit-ip`
+* :ref:`security-require-ssl`
+* :ref:`security-require-strong-pass`
 
 .. SEEALSO::
 
-   For information on DIP upload from Archivematica to AtoM, see the
-   following page in the Archivematica documentation:
+   The Administrator's manual has some further suggestions on security for 
+   site administrators. See: 
 
-   * :ref:`Upload DIP to AtoM <archivematica:upload-atom>`
+   * :ref:`security`
 
-Archivematica can be used to manage and prepare digital content for long-term
-preservation, and can generate a Dissemination Information Package (DIP) with
-access-copy derivatives of your :term:`master digital object` files processed
-in Archivematica, for upload into AtoM.
+.. image:: images/security-panel.*
+   :align: center
+   :width: 70%
+   :alt: Security settings in AtoM
 
-If no additional metadata is provided with the content during preparation,
-then when uploaded to AtoM, AtoM will use the file names as the default titles
-for the associated :term:`information objects <information object>` (a.k.a.
-:term:`descriptions <archival description>`) generated, to which the digital
-objects in the DIP will be attached. However, this might produce descriptions
-with titles like ``my-picture.jpg``, or ``my.document.pdf``.
+.. _security-limit-ip: 
 
-When this setting is set to "Yes," AtoM will automatically strip the file
-extensions from the information object names automatically generated during
-the DIP upload process - from the examples above, this setting would lead to
-information object titles such as ``my-picture`` or ``my.document``. Users can
-still edit the description title after DIP upload to customize them as
-desired.
+Limit administrator functionality by IP address
+-----------------------------------------------
 
-Note that the setting will **not** retroactively affect existing
-uploads/information objects, only new information objects created during the
-DIP upload process from Archivematica. Similarly, the uploaded file itself is
-**not** affected (the extension is not stripped from the
-:term:`digital object`) - only the title of the description generated so the
-digital object can be attached and uploaded.
+This feature allows :term:`administrators <administrator>` to limit
+administrator functionality to one or more IP addresses or IP ranges. Separate
+multiple IP address or ranges by semicolons, and use a dash to indicate an IP
+range. For example:
 
+  * 192.168.0.1 (single IP address)
+  * 192.168.0.1;192.168.0.255 (multiple unique IP addresses)
+  * 192.168.0.1-192.168.0.255 (IP range)
+
+.. _security-require-ssl:
+
+Require SSL for all administrator functionality
+-----------------------------------------------
+
+This feature allows administrators the option to enable the `Hypertext
+Transfer Protocol Secure (HTTPS) <http://en.wikipedia.org/wiki/HTTP_Secure>`_,
+which is a protocol for security over a computer network. It works by layering
+the Hypertext Transfer Protocol (HTTP) with the SSL/TLS protocol (Secure
+Sockets Layer/Transport Layer Security).
+
+.. WARNING:: 
+
+   To use this setting, you must **first** ensure that your server is configured
+   to support SSL! If you enable this setting and haven't first acquired and 
+   installed and SSL certificate and updated your site to use HTTPS, then you
+   will end up locking yourself out of your site!
+
+Select yes to require all HTTP requests to be redirected to the HTTPS server,
+changing the URI scheme from "http" to "https."
+
+.. NOTE::
+
+   This will only apply to users who are authenticated (logged-in) or
+   visiting the login page.
+
+.. _security-require-strong-pass:
+
+Require strong passwords
+------------------------
+
+This feature allows :term:`administrators <administrator>` to enhance login
+validation by requiring the use of strong passwords. Strong passwords use
+least 8 characters, and contain characters from 3 of the following
+classes:
+
+#. Upper case letters
+#. Lower case letters
+#. Numbers
+#. Special characters
+
+Choose "yes" to require authenticated (logged-in) users to have strong
+passwords.
+
+:ref:`Back to top <settings>`
+
+.. _site-information:
+
+Site information
+================
+
+In this section, :term:`administrators <administrator>` can change the
+:term:`site title` and :term:`site description`, and set a :term:`Base URL` for
+the application.
+
+.. image:: images/site-information.*
+   :align: center
+   :width: 70%
+   :alt: An image of the Site information menu in AtoM
+
+The site title and description will appear in the AtoM header bar, if they
+are included in the default page elements. See :ref:`default-page-elements` for 
+an image of where the Title and description appear, and more about setting the 
+visibility of default page elements. These are also used when your site is 
+indexed by web crawlers for public results in search engines such as Google, 
+Yahoo, Bing, etc. You can choose to hide them from public view via the 
+:ref:`default-page-elements` settings, but we recommending adding site 
+information here even if you decide not to display the title and description 
+publicly.
+
+The base URL is used to create absolute URLs included in exports (e.g. MODS
+and EAD exports, and the ``digitalObjectURI`` column in CSV exports). For
+example, your AtoM site is made up a series of web pages. Each page has a full
+Uniform Resource Locator (URL) something like
+``http://www.your-atom-site.com/your-description``. The Base URL is the part
+of this URL that does not change - in this example,
+``http://www.your-atom-site.com``.
+
+Setting this value will ensure that links included in your XML exports will be
+properly formed. Do not include a slash ``/`` at the end of your base URL -
+AtoM will automatically add this when building the absolute URLs.
+
+To save any modifications, click the "Save" button located below the
+"Site Description" field.
 
 :ref:`Back to top <settings>`
 
@@ -1708,6 +1871,12 @@ hierarchical navigation. The settings in this section relate to the treeview as
 it is displayed and used on :term:`archival description` view pages. For more
 information on navigation with and use of the treeview, see:
 :ref:`context-menu-treeview`.
+
+**Jump to:**
+
+* :ref:`treeview-type`
+* :ref:`sidebar-treeview-settings`
+* :ref:`fullwidth-treeview-settings`
 
 .. SEEALSO::
 
@@ -1873,40 +2042,80 @@ setting.
 
 :ref:`Back to top <settings>`
 
-.. _markdown-settings:
+.. _user-interface-labels:
 
-Markdown settings
-=================
+User interface labels
+=====================
 
-.. image:: images/markdown-settings.*
+Users of AtoM interact with six main :term:`entities <entity>`: :term:`accession
+records <accession record>`, :term:`archival descriptions <archival
+description>`, :term:`authority records <authority record>`, :term:`archival
+institutions <archival institution>`, :term:`functions <function>` and
+:term:`terms <term>`.
+
+.. seealso::
+
+   * :ref:`entity-types`
+   * :ref:`recurring-facet-filters`
+
+AtoM is flexible enough to support descriptions a variety of cultural
+materials such as archival, library, museum, and art gallery collections.
+The code, therefore, uses generic terms for entities.
+:term:`Administrators <administrator>` can specify how they want these
+:term:`terms <term>` to appear in the :term:`user interface` labels to suit the
+institution's collections. The default labels that ship with AtoM are terms
+typically used by archival institutions.
+
+.. image:: images/user-interface-label.*
    :align: center
-   :width: 75%
-   :alt: An image of the markdown settings in AtoM
+   :width: 65%
+   :alt: User interface label settings
 
-.. _Markdown: https://daringfireball.net/projects/markdown/
-.. _Parsedown: https://parsedown.org/
+The "Name" column shows the generic entity name and the "Value" column
+shows AtoM's default user interface labels. The following is a list of the
+generic terms and their AtoM user interface labels. Click on each label below to
+see glossary definitions and descriptions of how the terms are used in AtoM.
 
-Markdown_ is a lightweight markup syntax for text formatting, originally created 
-by John Gruber. As of the 2.5 release, AtoM supports the use of Markdown_ in 
-both :term:`edit pages <edit page>` and :term:`static pages <static page>`, via 
-a PHP library known as Parsedown_.
+* informationobject: :term:`archival description`
+* actor: :term:`Authority record`
+* creator: :term:`Creator`
+* repository: :term:`Archival institution`
+* function: :term:`Function`
+* term: :term:`Term`
+* subject: :term:`Subject`
+* collection: :term:`Fonds`
+* holdings: :term:`Holdings`
+* place: :term:`Place`
+* name: :term:`Name`
+* digitalobject: :term:`Digital object`
+* physicalobject: :term:`Physical storage`
+* mediatype: :term:`Media type`
+* materialtype: Material type (general material designations used in the
+  :ref:`Canadian Rules for Archival Description <rad-template>`).
+* facetstitle: :term:`facets title`
+* genre: Term for the Genre access point taxonomy, currently only available on
+  the :ref:`RAD template <rad-template>`. It appears as a :term:`facet filter`
+  in the :term:`archival description` browse and search pages - this label will
+  change the display in the facet headers.
+* globalSearch: the placeholder help text that will appear in the global 
+  :term:`search box`.
+* institutionSearchHoldings: only visible if institutional scoping is enabled - 
+  when enabled, this is the default placeholder help text that will appear in the
+  per-institution search box included in the :term:`institution block`. For more 
+  information, see: :ref:`enable-scoping`
 
-This setting enables Markdown support in AtoM, which will allow for content 
-added to edit and static pages to be styled using Markdown syntax. For more 
-information on using Markdown in AtoM, see: :ref:`formatting`. 
+:term:`User interface <user interface>` labels can be changed by
+:term:`administrators <administrator>` by entering a new label(s) into the
+:term:`field(s) <field>` under the "Value" column. Changes will only be
+saved once the "Save" button is clicked. Changing the label will change its
+appearance throughout AtoM for both authenticated (logged-in) and
+public users.
 
-.. IMPORTANT::
+.. NOTE::
 
-   After enabling or disabling this setting, a system administrator **must** 
-   rebuild the search index for the changes to take effect. For more information 
-   on how to rebuild AtoM's search index, see: 
-
-   * :ref:`maintenance-populate-search-index`.
-
-   To ensure you are seeing the most up-to-date results, you may also want to 
-   :ref:`clear the application cache <maintenance-clear-cache>` and restart services 
-   (such as :ref:`PHP-FPM <troubleshooting-restart-php-fpm>` and 
-   :ref:`Memcached <troubleshooting-restart-memcached>` if you 
-   are using it for additional caching), and clear your web browser cache.
+   Changing the user interface labels will *not* automatically change the
+   corresponding labels in the navigation menus. To change these menus, go to
+   |gears| **Admin > Menus**. See the :ref:`Manage menus <manage-menus>` page 
+   for more information.
 
 :ref:`Back to top <settings>`
