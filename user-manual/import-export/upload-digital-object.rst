@@ -5,15 +5,15 @@ Upload and manage digital objects
 =================================
 
 :term:`Digital objects <digital object>` objects are computer files that can be
-uploaded into and displayed by AtoM; they can include scanned images,
-digital photographs, sound and moving image files, and other scanned or
-born-digital items. AtoM allows the user to link a single :term:`digital object`
-to an :term:`archival description`, or import multiple digital objects to new
-lower :term:`levels of description <level of description>`. In AtoM,
-there is a 1:1 relationship between a digital object and an
-:term:`information object` - meaning every digital object
-must be associated with an :term:`archival description`, typically at the file
-or item level (see :term:`level of description`).
+uploaded into and displayed by AtoM; they can include scanned images, digital
+photographs, sound and moving image files, and other scanned or born-digital
+items. AtoM allows the user to link a single :term:`digital object` to an
+:term:`archival description` or an an :term:`authority record`, or import
+multiple digital objects to new lower :term:`levels of description <level of
+description>`. In AtoM, there is a 1:1 relationship between a digital object and
+an :term:`information object` - meaning every digital object must be associated
+with an :term:`archival description`, typically at the file or item level (see
+:term:`level of description`), or an :term:`authority record`.
 
 For every object uploaded, AtoM creates two derivative objects from the
 :term:`master <master digital object>`: a :term:`thumbnail` image and a
@@ -61,7 +61,8 @@ see the :ref:`recurring-carousel` entry in :ref:`navigate`.
 
 See below for more information on:
 
-* :ref:`Linking single digital objects <link-digital-object>`
+* :ref:`Linking single digital objects to archival descriptions <link-digital-object>`
+* :ref:`Linking single digital objects to authority records <link-to-authority>`
 * :ref:`Uploading multiple digital objects <upload-multiple-objects>`
 * :ref:`Uploading PDFs <upload-pdf>`
 * :ref:`Editing digital objects <edit-digital-object>`
@@ -190,10 +191,77 @@ your :term:`digital object`.
 
 :ref:`Back to top <upload-digital-object>`
 
+.. _link-to-authority:
+
+Link a single digital object to an authority record
+===================================================
+
+The process to link a :term:`digital object` to an :term:`authority record` is
+similar:
+
+1. Navigate to the :term:`view page` of an existing
+   :term:`authority record` in AtoM. You can do this by
+   :ref:`browsing <browse>` or by :ref:`searching <search-atom>` for a specific
+   authority record - see :ref:`access-content` for more information on
+   navigation in AtoM.
+
+2. Click on the "More" button in the :term:`button block` and select "Link
+   digital object".
+
+.. image:: images/link-do-authority.*
+   :align: center
+   :width: 80%
+   :alt: A image of the more menu, with the Link digital object option selected
+
+3. AtoM will redirect you to the link digital object :term:`edit page`. Users
+   can either upload a digital object, or link to an existing digital object
+   available on the internet.
+
+4. **To upload a digital object locally**, cick the "Choose File" button to
+   navigate to and select a file on your computer or device. Click "Open" once
+   the item has been selected from the window that will appear.
+5. **To link to an object on the internet**, enter the URL to the external
+   object to which you wish to link.
+
+.. IMPORTANT::
+
+   To link to a digital object via the web, you **must** enter a URL that
+   ends with the file extension of the resource to which you are trying to
+   link - for example, to link to an image, the URL should end with .jpg,
+   .png, etc. You can usually get to this URL by clicking on the resource
+   directly, or by right-clicking and selecting "View image" etc in your
+   browser.
+
+6. Click the "Create" button in the :term:`button block`. When you return to the
+   :term:`view page`, the :term:`reference display copy` will be displayed in
+   the digital object field, above the other fields linked to that
+   :term:`authority record`.
+
+   .. image:: images/authority-image.*
+      :align: center
+      :width: 80%
+      :alt: Authority record with linked image
+
+.. Note::
+   Unauthenticated users (i.e. not logged in) cannot download digital
+   objects associated with authority records.
+
+As with :term:`archival descriptions <archival description>`, you can upload any
+file format to :term:`authority records<authority record>`, but only supported
+formats can be viewed or played directly in AtoM.  For a list of formats, see
+:ref:`File formats <file-formats>`. Formats that are not supported can still be
+uploaded: clicking the object will download it to the user's desktop where
+(assuming the user has the required software) it can be viewed or played.
+
+See :ref:`below <edit-digital-object>` for more information on making changes to
+your :term:`digital object`.
+
+:ref:`Back to top <link-to-authority>`
+
 .. _upload-multiple-objects:
 
-Upload multiple digital objects
-===============================
+Upload multiple digital objects to archival descriptions
+========================================================
 
 In AtoM, there is a 1:1 relationship between
 :term:`archival descriptions <archival description>` and
@@ -329,15 +397,17 @@ Edit digital objects
 ====================
 
 Any :term:`digital object` that has been uploaded and linked to an
-:term:`archival description` can be edited at any time by an authenticated
-(i.e. logged-in) user. To do this:
+:term:`archival description` or :term:`authority record` can be edited at any
+time by an authenticated (i.e. logged-in) user.
+
+To edit a digital object:
 
 .. |pencil| image:: images/pencil.png
    :height: 18
    :width: 18
 
-1. Navigate to the :term:`view page` of an existing :term:`archival
-   description` that has an existing :term:`digital object`.
+1. Navigate to the :term:`view page` of an existing :term:`archival description`
+   or :term:`authority record` that has an associated :term:`digital object`.
 2. Click on the "More" button in the :term:`button block`; from the menu that
    appears, select "Edit digital object".
 3. You will be redirected to the digital object's :term:`edit page`. On this
@@ -347,12 +417,14 @@ Any :term:`digital object` that has been uploaded and linked to an
    listed, along with information on their Filename, Filesize and Media Type.
 4. The Media type is used by the Media type facet in the search/browse pages -
    in some cases, AtoM might not properly detect the media type, and you can
-   adjust it here for better results. Values include: Audio, Image, Video,
-   Text, and Other. For more information on filter facets in AtoM, see:
+   adjust it here for better results. Values include: Audio, Image, Video, Text,
+   and Other. For more information on filter facets in AtoM, see:
    :ref:`recurring-facet-filters`.
-5. You can also add latitude and longitude values to the Master digital
-   object's metadata for basic geolocation support. This can configured to
-   display a dynamic Google map in AtoM - for more information, see below:
+5. You can add alternative text to display if the image cannot be displayed in
+   your browser.
+6. You can also add latitude and longitude values to the Master digital object's
+   metadata for basic geolocation support. This can configured to display a
+   dynamic Google map in AtoM - for more information, see below:
 
    * :ref:`digital-object-map`
 
@@ -362,7 +434,7 @@ Edit reference and thumbnail representations
 6. If you wish to use a different image as the :term:`thumbnail` or
    :term:`reference <reference display copy>` version this is also performed
    from the Edit digital object screen. First click delete in Reference
-   representation or Thumbnail area.
+   representation or Thumbnail area. 
 
 .. image:: images/edit-thumbnail.*
    :align: center
@@ -443,12 +515,14 @@ For more information, see:
 **Adding latitude and longitude values to a digital object**
 
 Once the above settings are configured, then any time a digital object has
-latitude and longitude values added to it, it will display a dynamic,
-zoomable map in the Digital object metadata area. To add your latitude and
-longitude values to an existing digital object:
+latitude and longitude values added to it, it will display a dynamic, zoomable
+map in the Digital object metadata area. To add your latitude and longitude
+values to an existing digital object (Examples show this process for
+:term:`archival description` - the instructions are the same for
+:term:`authority record`):
 
-1. Navigate to the :term:`archival description` linked to the
-   :term:`digital object` you want to edit. You can do this by
+1. Navigate to the :term:`archival description` or :term:`authority record`
+   linked to the :term:`digital object` you want to edit. You can do this by
    :ref:`searching <search-atom>` or :ref:`browsing <browse>` - for more
    information on navigation in AtoM, see: :ref:`access-content`.
 
@@ -529,14 +603,17 @@ longitude values to an existing digital object:
 
 .. _rename-digital-object:
 
-Edit the filename of a linked digital object
-============================================
+Edit the filename of a digital object linked to an archival description
+=======================================================================
 
-For locally uploaded digital objects, you can edit the file name of the
-digital object after it has already been uploaded, using the "Rename" module.
-Once edited, AtoM will automatically update all related file paths to ensure
-that the link between the digital object and the associated
-:term:`archival description` is maintained.
+For locally uploaded digital objects, you can edit the file name of the digital
+object after it has already been uploaded, using the "Rename" module.  Once
+edited, AtoM will automatically update all related file paths to ensure that the
+link between the digital object and the associated :term:`archival description`
+is maintained.
+
+Note: this is not available for :term:`digital objects <digital
+object>` linked to :term:`authority records <authority record>`.
 
 .. IMPORTANT::
 
@@ -667,17 +744,17 @@ Delete digital objects
 ======================
 
 To delete a :term:`digital object` that has been uploaded and linked to an
-:term:`archival description`:
+:term:`archival description` or :term:`authority record`:
 
-1. Navigate to the :term:`view page` of an existing :term:`archival
-   description` that has an existing :term:`digital object`.
+1. Navigate to the :term:`view page` of an existing :term:`archival description`
+   or :term:`authority record` that has an existing :term:`digital object`.
 2. Click on the "More" button in the :term:`button block`; from the menu that
    appears, select "Edit digital object". You will be redirected to the digital
    object's :term:`edit page`.
 3. Scroll to the bottom of the page and click "Delete". You will be prompted to
    confirm that you wish to "Delete" the digital object; click "Delete" once
-   again. You will be redirected to the archival description's
-   :term:`view page`.
+   again. You will be redirected to the archival description's :term:`view
+   page`.
 
 :ref:`Back to top <upload-digital-object>`
 
@@ -688,9 +765,9 @@ Adding a watermark to reference images
 
 A system administator can place a watermark file in AtoM's root directory, so
 a digital watermark is overlayed over all :term:`reference display copy` images
-generated when a digital object is uploaded. 
+generated when a digital object is uploaded.
 
-For more information, see the Administrator's manual: 
+For more information, see the Administrator's manual:
 
 * :ref:`customization-watermarking`
 

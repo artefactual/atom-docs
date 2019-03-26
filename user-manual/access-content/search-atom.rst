@@ -218,13 +218,13 @@ suggestions from all records in the application for those types).
 
 .. NOTE::
 
-   If the :ref:`Institutional scoping <enable-scoping>` setting is turned on, 
-   then the the institutional search box delimiter is automatically turned off. 
-   Users can search the :term:`holdings` of an institution via the dedicated 
-   search box provided in the :term:`institution block` that will appear when 
-   the setting is engaged. 
+   If the :ref:`Institutional scoping <enable-scoping>` setting is turned on,
+   then the the institutional search box delimiter is automatically turned off.
+   Users can search the :term:`holdings` of an institution via the dedicated
+   search box provided in the :term:`institution block` that will appear when
+   the setting is engaged.
 
-   For more information, see: :ref:`enable-scoping`. 
+   For more information, see: :ref:`enable-scoping`.
 
 .. _search-delimiter-filter-tag:
 
@@ -665,15 +665,16 @@ entity. Basic instructions for each are included below.
 
    Some of these searches will return results from all (or most) data entry
    :term:`fields <field>` in the related records (i.e. full-text search), while
-   others are currently only configured to return title matches. Details on
-   each are included below. Dedicated search boxes that return more than just
-   title matches currently include: :term:`authority records <authority record>`
-   and :term:`archival institutions <archival institution>`. Note that in 2.2
-   these full-text search results have **not** been `weighted
+   others are currently only configured to return title matches. Details on each
+   are included below. Dedicated search boxes that return more than just title
+   matches currently include: :term:`authority records <authority record>` and
+   :term:`archival institutions <archival institution>`.  These full-text search
+   results have **not** been `weighted
    <http://dictionary.reference.com/browse/weighted+search>`__ to favor title
-   matches, etc **except for accessions**. If you see results without matches
-   in the title (or name), it means the search term(s) appears somewhere in
-   the body of the record.
+   matches, etc., **except for accessions**. If you see results without matches in
+   the title (or name), it means the search term(s) appears somewhere in the
+   body of the record. Note: with the release of 2.5, an advanced search
+   screen is provided for :term:`authority records <authority record>`.
 
 .. _dedicated-search-authority:
 
@@ -686,31 +687,31 @@ entity. Basic instructions for each are included below.
 .. |searchreset| image:: images/search-resetbutton.png
    :height: 19
 
-A dedicated search box for :term:`authority records <authority record>` has
-been provided on the authority record :ref:`browse page <page-type-browse>`.
-In AtoM 2.0.0, this search box will search the following fields of an
-authority record:
+When browsing :term:`authority records <authority record>` users have two
+options: the dedicated search box and the advanced search options screen. All
+indexed fields can be searched in the dedicated search box including:
 
-* **Authorized form of name** in the Identity area
+* **All forms of name** in the Identity area as well as
 * **All fields** in the Description area (Dates of existence, History, Places,
   Legal status, Functions occupations and activities, Mandates/sources of
   authority, General context)
+* **Access points**: occupation and occupation notes, subjects, places
 * **Dates of creation, revision, and deletion** and **Sources** in the Control
   area
 
-.. NOTE::
+Further search options  to filter results using the advanced search options:
 
-   Other name fields in the Identity area (Parallel forms of name;
-   Standardized names according to other rules; Other forms of name) have
-   **not** been indexed in AtoM 2.2. We hope to add this in a future
-   release.
+* **Repository**
+* **Digital object available**
+* **Entity type**
+* **Empty fields**
 
 For more information on working with :term:`authority records <authority
 record>` in AtoM, see: :ref:`authority-records`. For information on working
 with particular fields in the authority record edit template, see:
 :ref:`isaar-template`.
 
-**To search for authority records in AtoM:**
+**To search for authority records in AtoM using the dedicated search box:**
 
 1. Using the :term:`browse menu` (available as a :term:`drop-down menu` next
    to the :term:`search box` in the AtoM :term:`header bar` at the top of the
@@ -726,7 +727,7 @@ with particular fields in the authority record edit template, see:
    and the default menu labels can be changed via **Admin > Menus**. See the
    :ref:`administer` section for more details.
 
-.. image:: images/authority-browse.*
+.. image:: images/authority-search-options.*
    :align: center
    :width: 70%
    :alt: An image of the authority record browse page
@@ -736,23 +737,26 @@ with particular fields in the authority record edit template, see:
    click the |searchbutton| search button (represented by the magnifying
    glass icon to the right of the search box).
 
-.. image:: images/authority-searchbox.*
+.. image:: images/authority-search-box.*
    :align: center
    :width: 70%
    :alt: An image of the authority record dedicated search box
 
-3. AtoM will reload the page with results. If there are more than 10 results,
-   a pager will be included at the bottom of the results page.
+3. AtoM will reload the page with results. If there are more than 10 results, a
+   pager will be included at the bottom of the results page. Note that if an
+   :ref:`image has been uploaded for an authority record <add-edit-content>`,
+   the thumbnail will appear in the search results, as will the first few lines
+   of the history.
 
 .. NOTE::
 
    See :ref:`above <dedicated-search-authority>` for a list of :term:`fields
-   <field>` that AtoM will search in an authority record. In release 2.0.0,
-   results have not been weighted to favor title matches. If you see results
-   without matches in the title (i.e. the authorized form of name), it means
-   the search term(s) appears somewhere in the body of the record.
+   <field>` that AtoM will search in an authority record. Results have not been
+   weighted to favor title matches. If you see results without matches in the
+   title (i.e. the authorized form of name), it means the search term(s) appears
+   somewhere in the body of the record.
 
-.. image:: images/authority-searchresults.*
+.. image:: images/authority-search-results.*
    :align: center
    :width: 70%
    :alt: An image of the authority record search results
@@ -778,6 +782,22 @@ with particular fields in the authority record edit template, see:
 6. When you have found the record you are searching for, click on its title in
    the results, and AtoM will redirect you to the selected authority record's
    :term:`view page`.
+
+**To search for authority records in AtoM using the advanced search options:**
+
+With the 2.5 release users now can narrow their searches further using the
+Advanced search options. In this search screen users can:
+
+* Restrict results to certain specified fields
+* Limit results by repository
+* Find results that have digital objects attached
+* Find results by entity type
+* Find results in which specified fields are empty
+
+.. image:: images/authority-advanced-search.*
+   :align: center
+   :width: 70%
+   :alt: Authority record advanced search options
 
 .. _es-fields-actor:
 
@@ -1040,7 +1060,7 @@ box to return results.
 
 A dedicated search box for :term:`archival institutions <archival institution>`
 has been provided on the archival institution
-:ref:`browse page <page-type-browse>`. All fields are indexed, but no weighting 
+:ref:`browse page <page-type-browse>`. All fields are indexed, but no weighting
 has been added to specific fields.
 
 The archival institution browse page has 2 different views - a "card" based
