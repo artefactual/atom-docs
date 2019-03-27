@@ -8,6 +8,10 @@ Archival Descriptions
    :height: 18
    :width: 18
 
+.. |gears| image:: images/gears.png
+   :height: 18
+   :width: 18
+
 Archival descriptions are one of the core :ref:`entity-types` in AtoM and
 provide users with invaluable contextual infomation about the resources held
 by an :term:`archival institution`.
@@ -96,6 +100,7 @@ to:**
 * :ref:`change-display-standard`
 * :ref:`add-alternative-id`
 * :ref:`rename-title-slug`
+* :ref:`view-modification-history`
 * :ref:`Move an archival description <move-archival-description>`
 * :ref:`Delete an archival description <delete-archival-description>`
 
@@ -1257,6 +1262,100 @@ the filename of a linked digital object will be covered on the
    they are available. However, this means that if you have added links to a
    specific description on an external website, they may break after changing
    the slug.
+
+:ref:`Back to top <archival-descriptions>`
+
+.. _view-modification-history:
+
+View the modification history of an archival description
+========================================================
+
+AtoM has a basic audit log for archival descriptions that can be enabled by an
+:term:`administrator` in |gears| **Admin > Settings > Global** - see: 
+:ref:`enable-audit-logging`. 
+
+Once enabled, AtoM will capture basic information (including date, type, 
+associated user, and/or associated description) when archival descriptions are 
+created or modified. 
+
+.. IMPORTANT:: 
+
+   For :term:`archival description` modifications to be tracked by AtoM, an
+   :term:`administrator` must **first** have enabled the 
+   :ref:`enable-audit-logging` setting. Any description creation or modification 
+   events prior to enabling the setting will not be tracked. 
+
+After the setting has been enabled, authenticated (i.e. logged in) users with 
+sufficient :term:`permissions <access privilege>` can see the modification 
+history of an archival description using the "More" button found in the 
+:term:`button block` at the bottom of a description's :term:`view page`. To do
+so: 
+
+1. Navigate to the :term:`view page` of the archival description whose audit log
+   you would like to see. You can do this by :ref:`browsing <browse>` or
+   :ref:`searching <search-atom>` for the :term:`archival description` - see
+   :ref:`Access content <access-content>` for more information on navigation
+   in AtoM.
+2. In the :term:`button block` at the bottom of the description's view page, 
+   click on the More menu, and select "View modification history."
+
+.. image:: images/more-mod-history.*
+   :align: center
+   :width: 80%
+   :alt: The more menu in AtoM, expanded to show the "View modification history"
+         option.
+
+.. NOTE::
+
+   If the "View modification history" option is not present in the More menu, 
+   this is likely because the audit log has not been enabled by an 
+   :term:`administrator`. See: :ref:`enable-audit-logging`.
+
+3. AtoM will redirect you to the Modifications :term:`view page` for the related
+   archival description. The page includes a table with 3 columns: 
+
+   * **Date**: Includes the date and time the change was made. The date and time 
+     values are determined based on the PHP time zone settings, which can be 
+     modified by a system administrator in the ``apps/qubit/config/settings.yml`` 
+     configuration file. For more information, see: 
+     :ref:`customization-config-files`.
+   * **Type**: Either Creation, or Modification. Deletions and other events are 
+     not currently tracked. 
+   * **User**: The :term:`username` of the user associated with the modification. 
+     Note that for administrators, these usernames will appear as hyperlinks - an
+     administrator can click the hyperlink to navigate to the related user's 
+     :term:`profile <user profile>` page, where a full history of that user's 
+     desrciption modifications can be seen. For more information, see: 
+     :ref:`user-modification-history`. 
+
+.. image:: images/mod-history-1.*
+   :align: center
+   :width: 80%
+   :alt: An image of the Modification history page for an archival description
+
+.. NOTE:: 
+
+   For records created or modified via actions performed via the command-line 
+   interface (such as a CSV import, etc), no associated :term:`username` will 
+   be shown. In the image above, the record was created via a command-line EAD
+   XML import - as such, the User field for the associated modification is 
+   empty. 
+
+4. The number of results included in the Modifications page is determined by 
+   the :ref:`results-page` setting in |gears| **Admin > Settings > Global**. 
+   If there are more results than the results per page setting, AtoM will 
+   display a pager at the bottom of the page, to allow you to page through 
+   the results.  
+
+.. image:: images/mod-history-2.*
+   :align: center
+   :width: 80%
+   :alt: An image of the Modification history page for an archival description
+ 
+.. SEEALSO::
+
+   * :ref:`enable-audit-logging`
+   * :ref:`user-modification-history`
 
 :ref:`Back to top <archival-descriptions>`
 
