@@ -318,6 +318,162 @@ A new user can also be added to AtoM from the :term:`view page` of any other
 
 :ref:`Back to top <manage-user-accounts>`
 
+.. _user-modification-history:
+
+View a user's description modification history
+==============================================
+
+AtoM has a basic audit log for archival descriptions that can be enabled by an
+:term:`administrator` in |gears| **Admin > Settings > Global**. Once enabled, 
+AtoM will capture basic information (including date, type, associated user, 
+and/or associated description) when archival descriptions are created or 
+modified. 
+
+.. IMPORTANT:: 
+
+   For :term:`archival description` modifications to be tracked by AtoM, an
+   :term:`administrator` must **first** have enabled the 
+   :ref:`enable-audit-logging` setting. Any description creation or modification 
+   events prior to enabling the setting will not be tracked. 
+
+Authenticated (i.e. logged in) users can see their own modification history by
+navigating to their profile page. Additionally, an :term:`administrator` can 
+see the description modification history of any user by navigating to their
+:term:`user profile` page. 
+
+**Jump to:**
+
+* :ref:`view-own-mod-history`
+* :ref:`view-user-mod-history`
+
+.. SEEALSO::
+
+   * :ref:`enable-audit-logging`
+   * :ref:`view-modification-history`
+
+.. _view-own-mod-history:
+
+Viewing your own modification history
+-------------------------------------
+
+If you are logged in, and the audit log has been enabled by an 
+:term:`administrator` in |gears| **Admin > Settings > Global**, then you can 
+view a log of all your creation and modification events associated with archival 
+descriptions in AtoM. To do so: 
+
+1. Click your :term:`username` in the :term:`header bar`, at the upper
+   right-hand corner of the page
+2. A :term:`drop-down menu` will appear with the option to log out, or
+   navigate to your :term:`user profile` - click on "Profile"
+
+.. image:: images/click-profile.*
+   :align: center
+   :width: 85%
+   :alt: An image of a user clicking on the Profile option
+
+3. You will be redirected to your user profile :term:`view page`. If 
+   description logging has been enabled, then you will see a section at the 
+   bottom of the profile labelled "Editing history" - click the heading to 
+   expand the section.
+4. When expanded, the Editing history :term:`area <information area>` will
+   display information about recent creation and modification events
+   associated with your :term:`username`, organized into a table. The Title 
+   column will include a hyperlink to the related description. The Date column 
+   will show the date and time the modification was made. The Type column has 
+   2 possible values - "creation" and "modification."
+
+.. image:: images/audit-log-editor.*
+   :align: center
+   :width: 85%
+   :alt: An image of the Editing history of a user account
+
+.. TIP::
+
+   The date and time values are determined based on the PHP time zone
+   settings, which can be modified by a system administrator in the
+   ``apps/qubit/config/settings.yml`` configuration file. For more
+   information, see:
+
+   * :ref:`customization-config-files`
+
+5. The number of results included in the Editing history pane is determined by
+   the :ref:`results-page` setting in **Admin > Settings > Global**. If there
+   are more results than the results per page setting, AtoM will display 
+   "Previous" and "Next" buttons at the bottom of the table for navigation. 
+
+.. image:: images/audit-log-admin.*
+   :align: center
+   :width: 85%
+   :alt: An image of the Editing history of a user account
+
+
+.. _view-user-mod-history:
+
+Viewing other user's modification histories
+-------------------------------------------
+
+If the audit log has been enabled by an :term:`administrator` in |gears| 
+**Admin > Settings > Global**, then an administrator can view the 
+:term:`archival description` editing history of any :term:`user account` in 
+AtoM. To do so: 
+
+1. In the :term:`main menu` located in the :term:`header bar`, click the
+   |gears| :ref:`Admin <main-menu-admin>` menu and select "Users" from the
+   :term:`drop-down menu`. This will take you to a list of current user
+   accounts.
+
+.. image:: images/admin-users.*
+   :align: center
+   :width: 30%
+   :alt: An image of the Admin menu
+
+2. AtoM will redirect you to the List users page, where you can find, edit,
+   and delete existing users, as well as add new users.
+
+.. image:: images/browse-users.*
+   :align: center
+   :width: 80%
+   :alt: An image of the List users page
+
+3. Select a user from the list that appears on the page by clicking on the
+   :term:`username`. AtoM will direct you to that :term:`user's profile <user
+   profile>` :term:`view page`.
+4. If description logging has been enabled, then at the bottom of the user's 
+   profile :term:`view page`, you will see a section labelled "Editing history" 
+   - click the heading to expand the section.
+5. When expanded, the Editing history :term:`area <information area>` will
+   display information about recent creation and modification events
+   associated with the selected user, organized into a table. The Title 
+   column will include a hyperlink to the related description. The Date column 
+   will show the date and time the modification was made. The Type column has 
+   2 possible values - "creation" and "modification."
+
+.. image:: images/audit-log-editor.*
+   :align: center
+   :width: 85%
+   :alt: An image of the Editing history of a user account
+
+.. TIP::
+
+   The date and time values are determined based on the PHP time zone
+   settings, which can be modified by a system administrator in the
+   ``apps/qubit/config/settings.yml`` configuration file. For more
+   information, see:
+
+   * :ref:`customization-config-files`
+
+5. The number of results included in the Editing history pane is determined by
+   the :ref:`results-page` setting in **Admin > Settings > Global**. If there
+   are more results than the results per page setting, AtoM will display 
+   "Previous" and "Next" buttons at the bottom of the table for navigation. 
+
+.. image:: images/audit-log-admin.*
+   :align: center
+   :width: 85%
+   :alt: An image of the Editing history of a user account
+
+:ref:`Back to top <manage-user-accounts>`
+
 .. _edit-user:
 
 Edit an existing user

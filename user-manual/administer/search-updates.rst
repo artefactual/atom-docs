@@ -67,10 +67,32 @@ administrators can easily add new updates to the clipboard for export.
    - if you flip the "Type" to a different :term:`entity`, the Repository filter 
    will be hidden. 
 
-6. If searching for *Archival description*, set "Publication status" to either
+6. If an :term:`administrator` has enabled the archival description audit log
+   (via the :ref:`enable-audit-logging` setting in |gears| **Admin > Settings 
+   > Global**), then an additional "User" filter will be available. This is an
+   autocomplete field linked to user accounts, that will allow you to filter 
+   the results returned based on the modification history of a specific user. 
+   To filter results by a specific user, start typing the target :term:`username`
+   into the autocomplete field, and select the matching result from the 
+   drop-down field that will appear below. 
+
+.. image:: images/updates-user-filter.*
+   :align: center
+   :width: 90%
+   :alt: An image of the User filter on the Description updates page in AtoM
+
+.. NOTE::
+
+   The User filter will not be visible on the Description updates page if the
+   audit log has not first been enabled via the Global settings. Only changes
+   that have occurred **after** the audit log has been enabled will return
+   results when the User filter is used on Description updates. For more 
+   information, see: :ref:`enable-audit-logging`. 
+
+7. If searching for *Archival description*, set "Publication status" to either
    *published* or *draft* records, or both (i.e. *All*).
 
-7. Select the range of time you for which you want to return results, using
+8. Select the range of time you for which you want to return results, using
    the Start and End date fields in the Date range area. When you click into
    one of the fields, AtoM will display a drop-down graphical date-picker you
    can use to select the desired date; alternatively, you can type a date into
@@ -81,7 +103,7 @@ administrators can easily add new updates to the clipboard for export.
    :width: 90%
    :alt: An image of the Datepicker on the Description updates page in AtoM
 
-8. When you have configured the filter options as you wish, click the "Search"
+9. When you have configured the filter options as you wish, click the "Search"
    button to apply them - AtoM will reload the page and display your results
    below the filters. Alternatively, you can click the "Reset" button to clear
    the existing values from the filters.
@@ -93,12 +115,12 @@ administrators can easily add new updates to the clipboard for export.
    results per page, but an :term:`administrator` can change this. For more
    infomation, see: :ref:`results-page`.
 
-9. You can add results directly to the :term:`Clipboard` using the links in
-   the right-hand column of the results table. To add all the results
-   displayed on a page, click the "All" link at the top of the column. For
-   more information on working with the Clipboard, see: :ref:`clipboard`.
+10. You can add results directly to the :term:`Clipboard` using the links in
+    the right-hand column of the results table. To add all the results
+    displayed on a page, click the "All" link at the top of the column. For
+    more information on working with the Clipboard, see: :ref:`clipboard`.
 
-10. You can click on the blue hyperlinked names in the Title column to navigate
+11. You can click on the blue hyperlinked names in the Title column to navigate
     directly to a specific record.
 
 .. seealso::
@@ -108,5 +130,6 @@ administrators can easily add new updates to the clipboard for export.
    * :ref:`archival-institutions`
    * :ref:`terms`
    * :ref:`functions`
+   * :ref:`enable-audit-logging`
 
 :ref:`Back to top <search-updates>`

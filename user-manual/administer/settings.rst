@@ -84,6 +84,7 @@ This section will describe each setting in the "Global" :term:`information area`
 * :ref:`enable-scoping`
 * :ref:`Default archival institution upload limit <default-institution-upload>`
 * :ref:`Total space available for uploads <total-upload-space>`
+* :ref:`enable-audit-logging`
 * :ref:`Upload multi-page files as multiple descriptions <upload-multi-files>`
 * :ref:`Show tooltips <tooltips>`
 * :ref:`Generate description permalinks from <description-permalinks>`
@@ -622,6 +623,41 @@ The space available is determined by a configurable setting that a system
 administrator can modify in one of AtoM's configuration files - see:
 
 * :ref:`config-app-yml`
+
+.. _enable-audit-logging:
+
+Enable description change logging
+---------------------------------
+
+
+This setting will enable a basic `audit log <https://en.wikipedia.org/wiki/Audit_trail>`__ 
+for :term:`archival descriptions <archival description>` in AtoM. When enabled, 
+the log will capture basic information on creation and modification events
+related to archival descriptions, including date, type (creation or
+modification), :term:`username`, and/or related description title, depending on 
+where the information is viewed. Note that the contents of specific changes made 
+are **not** currently captured as part of the modification history's audit 
+trail.
+
+Once enabled, authenticated (i.e. logged in) users with sufficient 
+:term:`permissions <access privilege>` can view the modification history for a
+description by opening the "More" menu in the :term:`button block` at the bottom
+of the description's :term:`view page`, and selecting "View modification 
+history." For more details, see: 
+
+* :ref:`view-modification-history`
+
+Users can see their own description modification history by navigating to their
+user profile. An :term:`administrator` can view the description modification 
+history for any user. Fore more details, see: 
+
+* :ref:`user-modification-history` 
+
+Additionally, an administrator can filter archival description results in the 
+:ref:`Description updates <search-updates>` module by a specific username. For 
+more information on using the Description updates module, see: 
+
+* :ref:`search-updates`
 
 .. _upload-multi-files:
 
