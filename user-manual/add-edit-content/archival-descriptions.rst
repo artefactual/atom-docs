@@ -93,9 +93,9 @@ to:**
 * :ref:`Edit an existing archival description <edit-archival-description>`
 
   * :ref:`Publish an archival description <publish-archival-description>`
+  * :ref:`calculate-dates`
 
-* :ref:`Duplicate an existing archival description
-  <duplicate-archival-description>`
+* :ref:`duplicate-archival-description`
 * :ref:`link-related-descriptions`
 * :ref:`change-display-standard`
 * :ref:`add-alternative-id`
@@ -689,6 +689,171 @@ For more information on using the Jobs page, see: :ref:`manage-jobs`.
 
 :ref:`Back to top <archival-descriptions>`
 
+
+.. _calculate-dates:
+
+Calculate dates based on lower-level descriptions
+-------------------------------------------------
+
+.. |pencil| image:: images/edit-sign.png
+   :height: 18
+
+To assist the description workflow when working with hierarchical descriptions,
+AtoM includes a "Calculate dates" task that can automatically update the 
+controlled start and end date fields of a :term:`parent <parent record>` 
+:term:`archival description's <archival description>` event dates, based on the 
+broadest values found in descendant descriptions. Users can update any
+:term:`event` type (e.g. Creation and Accumulation in 
+:ref:`ISAD(G) <isad-template>`; or other event types such as Manufacturing, 
+Collection, Broadcast, etc. found in other description templates), and in
+cases where there are multiple dates, the option to select the target date is
+provided. Additionally, for a non-destructive approach (or if users would like
+to compare the existing date range with a newly calculated one), it's also
+possible to calculate a new date range without overwriting existing data.
+
+.. IMPORTANT:: 
+
+   AtoM will **only** update the internal controlled start and end date
+   fields, **not** the display date. The Display date field is a free-text
+   :term:`field` that allows the use of typography (as suggested by relevant
+   standards or local practice) to indicate approximation and/or uncertainty.
+   When a description is saved, the values in this field are what are shown in
+   the :term:`view page` of an archival description. The start and end date
+   fields, which expect ISO 8601 date values (e.g. YYYY-MM-DD, YYYY-MM, or
+   YYYY), are never shown to public users. These fields are used to support
+   :ref:`date range searching <date-range-search>` and sorting.
+
+   .. image:: images/date-range-search-fields-used.*
+     :align: center
+     :width: 85%
+     :alt: An image of the date range fields in an AtoM ISAD template  
+
+   Because the display date field is free-text and may contain important 
+   non-numerical contextual information, AtoM is not able to automatically 
+   update this field. 
+
+   This means if you use the Calculate dates task, **it is important that you
+   review the display date field** of the updated date range after the task
+   has completed, and make any further manual updates necessary. 
+
+AtoM will not indicate on the :term:`parent record` if the current dates do
+not match the range expressed in all descendant records. However, on
+lower-level descriptions, if the date range of a :term:`child record` is
+broader than that of its parents, AtoM will show a warning in the 
+:term:`view page` when the description is saved:
+
+.. figure:: images/dates-not-consistent-warning.*
+   :align: center
+   :width: 100%
+   :figwidth: 85%
+   :alt: An image of a warning notification in AtoM about dates not being 
+         consistent with higher levels. 
+
+   In this example, the "Interviews" series currently being viewed has a
+   broader date range added to it than its parent collection, the *J.A.
+   Wainright - Robert Markle collection*.
+
+Clicking the hyperlink on "higher levels"  in the warning will redirect AtoM
+to the nearest :term:`parent record` in need of an update.
+
+.. image:: images/calc-dates-last-run.*
+   :align: right
+   :width: 30%
+   :alt: An image of the Calculate dates link in the context menu, showing the
+         last date and time the task was run
+
+The option to launch the Calculate dates task appears in the right hand 
+:term:`context menu` (aka sidebar) of the archival description view page. If 
+there are no lower-level descriptions with dates, the option will not be shown.
+
+Once the task has been run, AtoM will display the date and time of the most
+recent task execution. This date value is derived in part from the PHP timezone
+settings, which a system administrator can configure in one of AtoM's 
+configuration files. For more information, see the Administrator manual: 
+:ref:`customization-config-files`.  
+
+**To use the Calculate dates task:**
+
+1. First, navigate to the :term:`archival description` whose dates you would 
+   like to update. You can do this by :ref:`browsing <browse>` or 
+   :ref:`searching <search-atom>` for the archival description - see 
+   :ref:`access-content` for more information on navigation in AtoM.
+2. In the right-hand :term:`context menu` under the Tasks section, click the 
+   "Calculate dates" link. 
+
+.. image:: images/calculate-dates-link.*
+   :align: center
+   :width: 85%
+   :alt: An image of the Calculate dates link in the context menu
+
+3. AtoM will redirect you to the Calculate dates configuration page: 
+
+.. image:: images/calculate-dates.*
+   :align: center
+   :width: 85%
+   :alt: An image of the Calculate dates configuration page
+
+4. The top section of the page will display a list of existing dates on the 
+   current record - the :term:`event` type (e.g. creation, accumulation, etc.) 
+   will be shown in square brackets following the date range value. If you wish
+   to update the start and end date values of an existing date range, select the
+   target date range using the radio button next to the appropriate date. 
+5. Alternatively, you can also choose to create a new date range. AtoM will 
+   present date event types based on those present in the lower levels of 
+   description - if your lower level descriptions only have creation dates, then
+   you will only see "Creation" as an option here. 
+6. When you have configured your choice, click the "Continue" button in the 
+   :term:`button block` at the bottom of the configuration page. This will 
+   launch the task.
+7. When launched, you will be redirected back to the :term:`view page` of the
+   :term:`archival description`, and a notification message will appear at the 
+   top of the page, indicating that the job is in progress: 
+
+.. image:: images/calculate-dates-notification.*
+   :align: center
+   :width: 85%
+   :alt: An image of the notification on an archival description view page 
+         when the Calculate dates task has been launched
+
+.. IMPORTANT:: 
+
+   While the date range update is running, the selected description should 
+   **not** be edited. 
+
+8. The task is handled by AtoM's job scheduler. You can navigate to |pencil| 
+   **Manage > Jobs** to check on the status of the job. The 
+   :ref:`Job details <job-details>` page's console output will also display
+   what the original start and end date values were, and what they have been
+   updated to after the task completes. For more information on Jobs in AtoM, 
+   see: :ref:`manage-jobs`. 
+
+.. image:: images/calculate-dates-job.*
+   :align: center
+   :width: 85%
+   :alt: An image of the job details page for a Calculate dates task
+
+9. Remember, AtoM will **only** update the start and end date fields for the
+   target date, **not** the display date visible on the :term:`view page` of
+   the description. This is because the the display date field is a free-text
+   :term:`field` and may contain important non-numerical contextual information 
+   (such as typographical marks to express approximation or uncertainty, etc), 
+   and as such AtoM is not able to automatically update this field.
+
+   .. image:: images/date-range-search-fields-used.*
+      :align: center
+      :width: 85%
+      :alt: An image of the date range fields in an AtoM ISAD template  
+
+   This means if you use the Calculate dates task, **it is important that you
+   review the display date field** visible on the :term:`view page` of the 
+   description after the task has completed, and make any further manual 
+   updates necessary. See above for more information on editing descriptions 
+   in AtoM: :ref:`edit-archival-description`. 
+
+10. You can repeat this process as many times as needed, or again at higher
+    levels if desired. 
+
+:ref:`Back to top <archival-descriptions>`
 
 .. _duplicate-archival-description:
 
