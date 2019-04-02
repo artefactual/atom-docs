@@ -22,6 +22,7 @@ Below, you will find information on the following :term:`information areas
 * :ref:`markdown-settings`
 * :ref:`OAI repository <oai-repository>`
 * :ref:`Permissions <permissions>`
+* :ref:`privacy-notification`
 * :ref:`Security panel <security-panel>`
 * :ref:`Site information <site-information>`
 * :ref:`treeview-settings`
@@ -1703,6 +1704,11 @@ information on using Markdown in AtoM, see: :ref:`formatting`.
    :ref:`Memcached <troubleshooting-restart-memcached>` if you 
    are using it for additional caching), and clear your web browser cache.
 
+   Markdown is also used in the default text of the :ref:`privacy-notification` 
+   banner in new installations. If you are using the privacy notification and
+   intend to disable Markdown in AtoM, be sure to review and update your 
+   notification message!
+
 :ref:`Back to top <settings>`
 
 .. _oai-repository:
@@ -1762,6 +1768,118 @@ configuring and using the Copyright statement, see: :ref:`copyright-pop-up`.
    :align: center
    :width: 80%
    :alt: Permissions settings in AtoM
+
+:ref:`Back to top <settings>`
+
+.. _privacy-notification:
+
+Privacy notification
+====================
+
+.. _cookies: https://en.wikipedia.org/wiki/HTTP_cookie
+.. _GDPR: https://en.wikipedia.org/wiki/General_Data_Protection_Regulation
+
+The Privacy notification provides :term:`administrators <administrator>` with
+a configurable notification banner that, when enabled, will be shown to all 
+users when first visiting AtoM in a session. It was designed to assist site 
+administrators in complying with proactive privacy policy disclosure 
+regulations such as the European Union's General Data Protection Regulation 
+(GDPR_), which requires that any information collected about a user through the 
+use of a website must be disclosed to the user in advance, with the option to
+opt out and/or leave the site. However, the notification message is entirely 
+customizable and could be repurposed for any use. 
+
+.. NOTE:: 
+
+   **AtoM's data collection**   
+
+   AtoM collects cookies_ in order to enable browsing and loading of certain
+   types of content. Visitors to AtoM sites who do not wish to have cookies
+   placed on their computers can set their browsers to refuse cookies.
+   However, certain features (such as the :ref:`clipboard`) may not function
+   properly without the aid of cookies.
+
+   AtoM supports integration with `Google Analytics <https://www.google.com/analytics/>`__ 
+   for the purposes of gathering statistics on page views, site usage, user 
+   location, and other data on site visits. All data collected by Google Analytics 
+   are stored and processed by Google, according to the Google Ads 
+   `Data Processing Terms <https://privacy.google.com/businesses/processorterms/>`__. 
+
+   None of the information gathered through the use of cookies or Google
+   Analytics is used for any purpose other than the ones described here.
+
+   Users who log in have user accounts with usernames and passwords. These
+   data are collected solely for the purpose of enabling users to log in to
+   the software and are not disclosed to third parties. All AtoM user
+   passwords are stored in encrypted form to enhance data security.
+
+To support the use of the notification banner in proactive privacy disclosure, 
+AtoM includes a default Privacy Policy :term:`static page` which contains a 
+slightly more detailed version of the text in the note above about AtoM's data
+collection. 
+
+.. image:: images/privacy-static-page.*
+   :align: center
+   :width: 80%
+   :alt: An image of the default Privacy Policy static page in AtoM
+
+A link to the page is also included in the :ref:`Quick links menu <quick-links-menu>` 
+as "Privacy Policy." The static page and the Quick links menu node can both be 
+customized or deleted by an :term:`administrator` - for more information on 
+working with menus and static pages, see:
+
+* :ref:`manage-static-pages`
+* :ref:`manage-menus`
+
+**Enabling the Privacy notification**
+
+.. image:: images/privacy-notification-settings.*
+   :align: center
+   :width: 80%
+   :alt: Privacy notification settings in AtoM
+
+By default in new installations, the Privacy notification banner will be turned
+off, meaning it will not display unless an :term:`administrator` enables it. 
+To enable the setting, log in and navigate to |gears| **Admin > Settings > 
+Privacy Notification**. 
+
+In the Privacy notification settings page, set the :term:`radio button` to "Yes" 
+to enable the privacy notification banner. Once you click Save in the 
+:term:`button block` at the bottom of the settings, the banner will immediately
+become visible. When users visit the site, the banner will remain persistently 
+visible until the "Ok" button in the notification banner is clicked.
+
+.. image:: images/privacy-notification.*
+   :align: center
+   :width: 80%
+   :alt: An image of the privacy notification banner shown above an AtoM homepage
+
+**Customizing the Privacy notification message**
+
+Administrators can customize the content shown in the notification banner by 
+editing the text included in the "Privacy Notification Message" :term:`field`. 
+The default text included in this field in new installations is: 
+
+.. code-block:: none
+
+   This website uses cookies to enhance your ability to browse and load
+   content. [More Info.](/privacy)
+
+The ``[More Info.](/privacy)`` text, when saved, will render as a hyperlink to 
+the Privacy policy :term:`static page`. This hyperlink is created using Markdown_ 
+- for more information on using Markdown for text formatting in AtoM, see: 
+
+* :ref:`formatting`
+* :ref:`markdown-settings`
+
+.. IMPORTANT::
+
+   If you are using AtoM with a custom theme, a developer or system administrator 
+   may need to make some changes to your custom theme plugin to ensure that the
+   Privacy notification displays properly. Further details are included in the 
+   :ref:`installation-upgrading` documentation - see: 
+
+   * :ref:`upgrading-custom-themes`
 
 :ref:`Back to top <settings>`
 

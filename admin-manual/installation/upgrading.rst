@@ -351,9 +351,20 @@ The line you will need to add is to import the base Jobs CSS, like so:
 
    @import "../../arDominionPlugin/css/less/jobs.less" 
 
-After adding the line, you should rebuild the CSS for the plugin, using the 
-``make`` command. Here is an example of rebuilding the CSS for the ArchivesCanada 
-theme - you can swap in the name of your plugin: 
+Additionally, if you intend to use AtoM's :ref:`privacy-notification` feature
+with a custom theme, and you have customized the ``scaffolding.less`` file, you 
+may need to update it. Changes are identified `here <https://goo.gl/d6HVVf>`__. 
+If the theme has been customized, but the ``scaffolding.less`` file is being 
+referenced from the ``arDominionPlugin`` theme then no modifications are 
+required. You should also check if ``_header.php`` has been overridden in your
+custom theme. If so, the change highlighted in 
+`this issue <https://github.com/artefactual/atom/commit/c65e84e809a5760c9814f8117a291bdb9a7491da#diff-e3a653026878cbc4745a5526934888d7R3>`__ 
+needs to be added to your custom ``_header.php`` file. 
+
+After making any necessary updates to your custom theme, you should rebuild
+the CSS for the custom themeplugin, using the ``make`` command. Here is an
+example of rebuilding the CSS for the ArchivesCanada theme - you can swap in
+the name of your plugin:
 
 .. code-block:: bash
 
@@ -369,17 +380,23 @@ To clear the application cache:
 
 For more information, see: :ref:`maintenance-clear-cache`. 
 
-To restart PHP-FPM on Ubuntu 14.04: 
-
-.. code-block:: bash
-
-   sudo service php5-fpm restart
-
-To restart PHP-FPM on Ubuntu 16.04: 
+To restart PHP-FPM on Ubuntu 16.04 with PHP 7.0: 
 
 .. code-block:: bash
 
    sudo systemctl restart php7.0-fpm
+
+To restart PHP-FPM on Ubuntu 18.04 with PHP 7.2: 
+
+.. code-block:: bash
+
+   sudo systemctl restart php7.2-fpm
+
+If you are using Memcached with AtoM, you may also want to restart it:
+
+.. code-block:: bash
+
+   sudo systemctl restart memcached
 
 .. TIP::
 
