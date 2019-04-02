@@ -106,14 +106,16 @@ Click the Browse menu, then click on Archival descriptions.
 When arriving on the :term:`archival description` browse page, a
 :term:`top-level description filter` is engaged by default, meaning that all
 results shown are :term:`parents <parent record>` with or without children, but
-without any higher levels of description above them in the hierarchy. Users
-can disengage this filter by clicking the **X** on the "Only top-level
-descriptions" :term:`filter tag` at the top of the results (see :ref:`browse-hierarchy-top-filter`).
+without any higher levels of description above them in the hierarchy. Users can
+disengage this filter by clicking the **X** on the "Only top-level descriptions"
+:term:`filter tag` at the top of the results (see
+:ref:`browse-hierarchy-top-filter`).
 
-The automatic sort is alphabetic by default for public users, but users can also
-change the sort to most recently updated, or by reference code, using the
-:ref:`sort button <recurring-sort-button>` located at the top-right of the
-page above the results.
+The automatic sort is alphabetic by default for public users and by most
+recently updated (date modifed) for authenticated users, but users can
+change the sort to most recently updated, identifier, reference code, and start
+or end date, using the :ref:`sort button <recurring-sort-button>` located at the
+top-right of the page above the results.
 
 .. TIP::
 
@@ -122,7 +124,7 @@ page above the results.
    users, in **Admin > Settings > Global**. For more information, see:
    :ref:`sort-browser-users` and :ref:`sort-browser-anonymous`.
 
-Users can narrow the results list using the available
+Users can narrow the results list with the available
 :term:`facet filters <facet filter>` on the left-hand side of the screen. For
 more information on using the facet filters in AtoM, see:
 :ref:`recurring-facet-filters`; especially
@@ -186,6 +188,51 @@ Additionally, the results include helpful contextual information, including:
    * :ref:`archival-descriptions`
 
 :ref:`Back to top <browse>`
+
+In the event that there are more than 10,000 results to return when browsing,
+AtoM will stop loading to preserve memory capacity, and the user will see the
+following message:
+
+.. image:: images/sort-options.*
+   :align: center
+   :width: 70%
+   :alt: Sort options error message
+
+With the release of 2.5, a second sort option has been added in the top
+right-hand corner to allow the user to change a sort from ascending to
+descending. This allows the user to quickly review the results from the end of
+the list. Note: this sort option is available for
+
+* :term:`Accession <accession record>`
+* :term:`Archival descriptions <archival description>`
+* :term:`Archival institututions <archival institution>`
+* :term:`Authority records <authority record>`
+* Donors
+* :term:`Functions <function>`
+* :term:`Rights holders <rights record>`
+* Browse :term:`digital objects <digital object>`
+* :ref:`Clipboard results page <clipboard>`
+* :term:`Taxonomies <taxonomy>`
+
+The default sort is ascending.
+
+.. image:: images/sort-ascending.*
+   :align: center
+   :width: 70%
+   :alt: Sort option ascending
+
+By choosing 'Direction: Descending' the user can view the browse results from
+the end of the list:
+
+.. image:: images/sort-descending.*
+   :align: center
+   :width: 70%
+   :alt: Sort option descending
+
+.. IMPORTANT::
+
+   Results may not be exactly as expected. Alphabetic sort order in AtoM is
+   'ASCII-betical'. For more, see :ref:`navigate`.
 
 .. _browse-hierarchy:
 

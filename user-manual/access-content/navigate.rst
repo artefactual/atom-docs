@@ -347,7 +347,7 @@ access the full taxonomies list and the jobs page.
 * :ref:`Donors <donors>`
 * :ref:`Physical storage <physical-storage>`
 * :ref:`Rights <rights>`
-* :ref:`Taxononmy terms <terms>`
+* :ref:`Taxonomy terms <terms>`
 * :ref:`Jobs <manage-jobs>`
 
 .. _main-menu-import:
@@ -578,7 +578,7 @@ Recurring page elements listed below include:
 * :ref:`Facet filters <recurring-facet-filters>`
 * :ref:`Button block <recurring-button-block>`
 * :ref:`Breadcrumb trail <recurring-breadcrumb-trail>`
-* :ref:`Sort button <recurring-sort-button>`
+* :ref:`Sort buttons <recurring-sort-button>`
 * :ref:`Institution logos <recurring-institution-logos>`
 
 .. _recurring-title-bar:
@@ -1353,27 +1353,30 @@ description>` that have also been tagged with the same access point.
 
 .. _recurring-sort-button:
 
-Sort button
------------
+Sort buttons
+------------
 
 .. figure:: images/sort-button-archdesc.*
    :align: right
    :figwidth: 55%
    :width: 100%
-   :alt: An image of a sort button on an archival description browse page
+   :alt: An image of sort buttons on an archival description browse page
 
-   An example of the sort button on an archival description browse page
+   An example of the sort buttons on an archival description browse page
 
-The sort button is a navigational element that appears on some browse and
-search pages throughout AtoM. It allows a user to change the sort order of the
-results being displayed. Common values used in the sort button as it
-appears in AtoM include: Alphabetic, Relevance, Identifier, :term:`Reference code` 
-Most recent, or Start date and End date.
+The sort buttons (**Sort by** and **Direction**) are navigational tools that appear on
+some browse and search pages throughout AtoM. They allow a user to change the
+sort order of the results being displayed. Common values used in the Sort by
+button as it appears in AtoM include: Alphabetic, Relevance, Identifier,
+:term:`Reference code` Most recent, or Start date and End date. The **Direction**
+sort button reverses the direction (ascending or descending) of items according
+to the **Sort by** option.
 
-On search and/or browse pages, the Sort button appears as a small
-:term:`drop-down menu` at the top right of the results. Hovering over the button
-reveals the option currently not selected - a user can click this option in the
-drop-down menu, and the page will reload in the new sort order.
+On search and/or browse pages, the Sort buttons appear as small :term:`drop-down
+menus <drop-down menu>` at the top right of the results. Hovering over the
+buttons reveal the option(s) currently not selected - a user can click the
+desired option in the drop-down menu, and the page will reload in the new sort
+order.
 
 When the sort order is set to "Alphabetic,"results are organized A-Z. Note
 that this is an **ASCII sort** - see the IMPORTANT note below for more
@@ -1385,9 +1388,9 @@ to discover new or recently updated content.
 
 When the sort order is set to "Identifier," results are
 displayed by the identifier, based on an alphabetic **ASCII sort** (more
-information on ASCII sort is included in the IMPORTANT note below). 
+information on ASCII sort is included in the IMPORTANT note below).
 
-When the sort order is set to "Reference code," (on the :term:`archival description` 
+When the sort order is set to "Reference code," (on the :term:`archival description`
 browse page) results are based on the full inherited reference
 code, and NOT on the individual identifiers of each record, regardless of
 whether or not :ref:`reference code inheritance <inherit-reference-code>` is
@@ -1396,7 +1399,7 @@ codes vs. identifiers and display options, see: :ref:`inherit-reference-code`.
 
 When the sort order is set to "Start date" or "End date" (currently only available on
 :term:`archival descriptions <archival description>`), AtoM will order the
-results by the internal, ISO-8601 formatted (e.g. YYYY-MM-DD) start date or end 
+results by the internal, ISO-8601 formatted (e.g. YYYY-MM-DD) start date or end
 date values - **not** the display date shown to public users, which is a free text
 field allowing users to express approximation or uncertainty. Results without
 a start date value or end date value will appear last.
@@ -1431,13 +1434,15 @@ or list pages:
 * :term:`Authority records <authority record>`
 * Donors
 * :term:`Functions <function>`
-* Rights holders
+* :term:`Rights holders <rights record>`
 * Browse :term:`digital objects <digital object>`
 * :ref:`Clipboard results page <clipboard>`
+* :term:`Taxonomies <taxonomy>`
 
-On the browse page for :term:`accessions <accession record>`, the sort button
-has been customized to offer sorting options specific to accession records,
-including:
+
+Sort buttons are customized for particular entities. For example, on the browse
+page for :term:`accessions <accession record>`, the sort button has been
+customized to offer sorting options specific to accession records, including:
 
 * Accession number
 * Most recent (created or updated)
