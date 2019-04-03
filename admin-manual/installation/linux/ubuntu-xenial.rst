@@ -115,7 +115,7 @@ the most popular and we like it, but we've found that
 `Nginx <http://nginx.com/>`__ adapts itself much better to limited resource
 environments while it also scales better and more predictably under high loads.
 You are welcome to try other solutions, but the following documentation will
-focus merely on Nginx.
+focus on Nginx.
 
 .. WARNING::
 
@@ -239,7 +239,7 @@ Now you need to enable and reload Nginx:
 PHP
 ---
 
-Ubuntu 16.04 bundles PHP 7.0 which is much faster than older releases. 
+Ubuntu 16.04 bundles PHP 7.0, which is much faster than older releases.
 
 .. IMPORTANT::
 

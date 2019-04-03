@@ -33,8 +33,8 @@ Install the dependencies
 MySQL
 -----
 
-We strongly recommend using `MySQL <https://www.mysql.com/>`__  5.7 as it's much
-better than the previous major release in terms of speed, scalability and
+We strongly recommend using `MySQL <https://www.mysql.com/>`__  5.7 as it's
+much better than the previous major release in terms of speed, scalability and
 user-friendliness. Also, we've experienced very good results using forks like
 Percona Server or MariaDB, so don't be afraid and use them if you want!
 
@@ -105,7 +105,7 @@ the most popular and we like it, but we've found that
 `Nginx <http://nginx.com/>`__ adapts itself much better to limited resource
 environments while it also scales better and more predictably under high loads.
 You are welcome to try other solutions, but the following documentation will
-focus merely on Nginx.
+focus on Nginx.
 
 .. WARNING::
 
@@ -229,7 +229,7 @@ Now you need to enable and reload Nginx:
 PHP
 ---
 
-Ubuntu 18.04 bundles PHP 7.2 which is much faster than older releases.
+Ubuntu 18.04 bundles PHP 7.2, which is much faster than older releases.
 
 Our favorite way to deploy AtoM is using `PHP-FPM <http://php-fpm.org/>`__, a
 process manager that scales better than other solutions like FastCGI. The
