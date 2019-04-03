@@ -12,5 +12,5 @@ Debian, CentOS or Fedora.
 .. toctree::
    :maxdepth: 1
 
-   ubuntu-trusty
    ubuntu-xenial
+   ubuntu-bionic
