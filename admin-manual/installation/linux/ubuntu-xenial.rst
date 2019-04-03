@@ -263,18 +263,6 @@ If you are using Memcached as cache engine, you will also need to install `php-m
 
    sudo apt-get install php-memcache
 
-We also need ``php-apcu-bc``, which is not available yet in Ubuntu 16.04. Let's
-install it manually for now:
-
-.. code-block:: bash
-
-   sudo apt install php-dev
-   sudo pecl install apcu_bc-beta
-   echo "extension=apc.so" | sudo tee /etc/php/7.0/mods-available/apcu-bc.ini
-   sudo ln -sf /etc/php/7.0/mods-available/apcu-bc.ini /etc/php/7.0/fpm/conf.d/30-apcu-bc.ini
-   sudo ln -sf /etc/php/7.0/mods-available/apcu-bc.ini /etc/php/7.0/cli/conf.d/30-apcu-bc.ini
-   sudo systemctl restart php7.0-fpm
-
 Let's add a new PHP pool for AtoM by adding the following contents in a new file
 called :file:`/etc/php/7.0/fpm/pool.d/atom.conf`:
 
