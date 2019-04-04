@@ -234,6 +234,52 @@ the end of the list:
    Results may not be exactly as expected. Alphabetic sort order in AtoM is
    'ASCII-betical'. For more, see :ref:`navigate`.
 
+If an administrator has enabled the **Hierarchy browse** options (see
+:ref:`settings`) the user will also see a button to engage that view.
+
+.. image:: images/browse-hierarchy-choice.*
+   :align: center
+   :width: 70%
+   :alt: Browse hierarchy choice
+
+Clicking this button will take users to a full-page, full-width
+treeview containing all top-level descriptions in AtoM.
+
+.. image:: images/browse-hierarchy.*
+   :align: center
+   :width: 70%
+   :alt: Browse hierarchy page
+
+As with the current description treeview, each description in the hierarchy
+browse page that has children will display an “expand/collapse” icon that can
+be clicked to display all the children of that description. Any child
+descriptions that in turn have children will also be expandable.
+
+A number in the top right corner of the page will indicate how many more
+descriptions can be seen in the hierarchy. Click on that number to bring up the
+next page of results.
+
+.. image:: images/browse-hierarchy-more.*
+   :align: center
+   :width: 70%
+   :alt: Browse hierarchy page
+
+The Browse by hierarchy treeview will have the same functionality as the
+standard treeview, except:
+
+* All top level description titles in the catalogue database will be shown in
+  alphabetic order
+* When lower level descriptions exist, an "expand/collapse" icon will be
+  visible; clicking that icon will display lower levels in the order in which
+  they are described
+* The treeview will use the entire display area of the page, so the “gripper” to
+  expand and shrink the vertical size of the treeview pane will not be necessary
+* When a user clicks a description title in the hierarchy browse page,they will
+  be redirected to the related archival description view page with the standard
+  treeview (the user should then be able to return to the hierarchy browse page
+  where they left off)
+* No filters or facets will be available on the hierarchy browse page
+
 .. _browse-hierarchy:
 
 Browsing within an archival unit's hierarchy

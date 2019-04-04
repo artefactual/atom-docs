@@ -38,7 +38,7 @@ click save after making your changes.
    :width: 100%
    :alt: Settings menu appears on left hand side
 
-   Choose the settings area you wish to view/edit by clicking a link in the 
+   Choose the settings area you wish to view/edit by clicking a link in the
    menu on the left-hand side.
 
 By default, users will first be shown the :ref:`global-settings` when first
@@ -61,15 +61,15 @@ To access the "Settings" menu in AtoM, click on the |gears| :ref:`Admin
 menu <main-menu-admin>` in the :term:`main menu` located in the
 :term:`header bar` and select "Settings" from the :term:`drop-down menu`. You
 will be redirected to the "Site Settings", where a number of :term:`information
-areas <information area>`, including the "Global" settings,  which should be 
-opened first by default. 
+areas <information area>`, including the "Global" settings,  which should be
+opened first by default.
 
 .. image:: images/global-settings.*
    :align: center
    :width: 80%
    :alt: An image of the Global settings in AtoM
 
-This section will describe each setting in the "Global" :term:`information area`. 
+This section will describe each setting in the "Global" :term:`information area`.
 
 **Jump to:**
 
@@ -109,14 +109,14 @@ Application version
 
 This :term:`field` shows the current version of the software. The value cannot
 be edited but is automatically updated when AtoM is upgraded to a newer
-release. 
+release.
 
-The second number after the dash represents the database schema version. 
-This can be useful information to include in a support message if you are 
+The second number after the dash represents the database schema version.
+This can be useful information to include in a support message if you are
 experiencing unexpected issues with your installation - if a system administrator
 forgets to run the :ref:`upgrade task <upgrading-run-upgrade-task>` as part of
-a site upgrade this can lead to missing tables and/or columns in the database, 
-which can cause unexpected errors later when trying to use AtoM. 
+a site upgrade this can lead to missing tables and/or columns in the database,
+which can cause unexpected errors later when trying to use AtoM.
 
 For more information on installing AtoM and searching for different versions,
 see:
@@ -165,7 +165,7 @@ By default, AtoM lists objects in list pages and search results **ten at a
 time**, with a pager at the bottom of the page to allow users to navigate
 through long lists of objects. :term:`Administrators <administrator>` can
 increase or decrease this default number. Note that the minimum accepted value
-is 5 results per page, and the max value is 100. 
+is 5 results per page, and the max value is 100.
 
 For more information on navigating in AtoM, see :ref:`Searching in AtoM
 <search-atom>` and :ref:`Navigating in AtoM <navigate>`.
@@ -282,7 +282,7 @@ Options available include:
 * **Title/name**: An "alphabetic" A-Z sort (but see the IMPORTANT admonition
   below) based on the title or authorized form of name
 * **Date modified**: Will sort based on the date the records were created or last
-  modified. 
+  modified.
 * **Identifier**: A-Z (but see the IMPORTANT admonition below) based on the
   unique identifier value added to the record
 * **Reference code**: A-Z (but see the IMPORTANT admonition below) based on
@@ -350,7 +350,7 @@ Options available include:
 * **Title/name**: An "alphabetic" A-Z sort (but see the IMPORTANT admonition
   below) based on the title or authorized form of name
 * **Date modified**: Will sort based on the date the records were created or last
-  modified. 
+  modified.
 * **Identifier**: A-Z (but see the IMPORTANT admonition below) based on the
   unique identifier value added to the record
 * **Reference code**: A-Z (but see the IMPORTANT admonition below) based on
@@ -401,8 +401,8 @@ Default repository browse view
 
 This setting will determine if the "card view" or the "table view" is the
 default view for the :term:`archival institution` browse page, when users
-first arrive on the page. By default in a new installation, this setting is set 
-to "card." 
+first arrive on the page. By default in a new installation, this setting is set
+to "card."
 
 .. image:: images/repo-views.*
    :align: center
@@ -433,36 +433,36 @@ Default archival description browse view
 ----------------------------------------
 
 Similar to the :ref:`default-repo-view` setting, this setting will determine if
-the "card view" (used by default on the Digital object browse page) or the 
-"results stub view" (the default description search/browse view in new AtoM 
-installations - called "table" in the related setting) is used when users first 
-arrive on the :term:`archival description` search/browse page. By default in a 
-new installation, this setting is set to "table"  - aka the results stub view. 
+the "card view" (used by default on the Digital object browse page) or the
+"results stub view" (the default description search/browse view in new AtoM
+installations - called "table" in the related setting) is used when users first
+arrive on the :term:`archival description` search/browse page. By default in a
+new installation, this setting is set to "table"  - aka the results stub view.
 
 .. image:: images/description-view-options.*
    :align: center
    :width: 70%
-   :alt: A comparison of the card and results stub views of the archival 
+   :alt: A comparison of the card and results stub views of the archival
          description browse page
 
 Note that this setting will not affect the use of the card view on the Digital
-object browse page - however, an :term:`administrator` could change this by 
-altering the path in the related node of the :term:`browse menu` - for more 
+object browse page - however, an :term:`administrator` could change this by
+altering the path in the related node of the :term:`browse menu` - for more
 information on editing menus, see: :ref:`manage-menus`.
 
 Additionally, even once set, any user can easily toggle between the results stub
-view and the card view, by using the view toggle button that appears above 
-archival description and digital object results: 
+view and the card view, by using the view toggle button that appears above
+archival description and digital object results:
 
 .. image:: images/description-view-toggle.*
    :align: center
    :width: 70%
-   :alt: An image of the description view toggle button on the description 
+   :alt: An image of the description view toggle button on the description
          browse page
 
-For more information on working with archival descriptions, see: 
-:ref:`archival-descriptions`. For information on searching, browsing, and 
-navigating in AtoM, see: 
+For more information on working with archival descriptions, see:
+:ref:`archival-descriptions`. For information on searching, browsing, and
+navigating in AtoM, see:
 
 * :ref:`search-atom`
 * :ref:`browse-descriptions`
@@ -477,17 +477,17 @@ Multiple repositories
 Select "yes" if your AtoM application is acting as a union list or portal for
 :term:`descriptions <archival description>` of materials held at more than one
 :term:`archival institution` or :term:`repository`. The repository will appear
-as a :term:`facet filter` on the "Browse archival descriptions" page. Once a 
-specific description linked to an archival institution, or a repository record 
-has been visited, AtoM will also provide the option to filter searches in the 
-global :term:`search box` to the most recent repository - for more information, 
+as a :term:`facet filter` on the "Browse archival descriptions" page. Once a
+specific description linked to an archival institution, or a repository record
+has been visited, AtoM will also provide the option to filter searches in the
+global :term:`search box` to the most recent repository - for more information,
 see: :ref:`search-box-delimiters`
 
 Select "no" if your AtoM application is being used only by a single institution.
 By selecting "no", the repository name will be excluded from certain displays
-because it will be too repetitive. Other changes include: 
+because it will be too repetitive. Other changes include:
 
-* Hiding the repository :term:`facet filter` from archival description search 
+* Hiding the repository :term:`facet filter` from archival description search
   and browse result pages
 * Hiding the repository filter in the :term:`advanced search panel`
 * Hiding the :ref:`search-box-delimiters` in the global :term:`search box`
@@ -495,11 +495,11 @@ because it will be too repetitive. Other changes include:
 
 .. TIP::
 
-   The "Archival institutions" link in the :term:`Browse menu` will **not** be 
-   hidden by default when this setting is changed. However, an 
-   :term:`administrator` can manually remove this link by editing the Browse 
-   menu via |gears| **Admin > Menus**. For more information, see: 
-   :ref:`manage-menus`. 
+   The "Archival institutions" link in the :term:`Browse menu` will **not** be
+   hidden by default when this setting is changed. However, an
+   :term:`administrator` can manually remove this link by editing the Browse
+   menu via |gears| **Admin > Menus**. For more information, see:
+   :ref:`manage-menus`.
 
 .. seealso::
 
@@ -618,9 +618,9 @@ For more information, see :ref:`upload-digital-object`.
 Total space available for uploads
 ---------------------------------
 
-This field will display the used space for 
-:term:`digital objects <digital object>` as well as the total space available. 
-The space available is determined by a configurable setting that a system 
+This field will display the used space for
+:term:`digital objects <digital object>` as well as the total space available.
+The space available is determined by a configurable setting that a system
 administrator can modify in one of AtoM's configuration files - see:
 
 * :ref:`config-app-yml`
@@ -631,32 +631,32 @@ Enable description change logging
 ---------------------------------
 
 
-This setting will enable a basic `audit log <https://en.wikipedia.org/wiki/Audit_trail>`__ 
-for :term:`archival descriptions <archival description>` in AtoM. When enabled, 
+This setting will enable a basic `audit log <https://en.wikipedia.org/wiki/Audit_trail>`__
+for :term:`archival descriptions <archival description>` in AtoM. When enabled,
 the log will capture basic information on creation and modification events
 related to archival descriptions, including date, type (creation or
-modification), :term:`username`, and/or related description title, depending on 
-where the information is viewed. Note that the contents of specific changes made 
-are **not** currently captured as part of the modification history's audit 
+modification), :term:`username`, and/or related description title, depending on
+where the information is viewed. Note that the contents of specific changes made
+are **not** currently captured as part of the modification history's audit
 trail.
 
-Once enabled, authenticated (i.e. logged in) users with sufficient 
+Once enabled, authenticated (i.e. logged in) users with sufficient
 :term:`permissions <access privilege>` can view the modification history for a
 description by opening the "More" menu in the :term:`button block` at the bottom
-of the description's :term:`view page`, and selecting "View modification 
-history." For more details, see: 
+of the description's :term:`view page`, and selecting "View modification
+history." For more details, see:
 
 * :ref:`view-modification-history`
 
 Users can see their own description modification history by navigating to their
-user profile. An :term:`administrator` can view the description modification 
-history for any user. Fore more details, see: 
+user profile. An :term:`administrator` can view the description modification
+history for any user. Fore more details, see:
 
-* :ref:`user-modification-history` 
+* :ref:`user-modification-history`
 
-Additionally, an administrator can filter archival description results in the 
-:ref:`Description updates <search-updates>` module by a specific username. For 
-more information on using the Description updates module, see: 
+Additionally, an administrator can filter archival description results in the
+:ref:`Description updates <search-updates>` module by a specific username. For
+more information on using the Description updates module, see:
 
 * :ref:`search-updates`
 
@@ -665,8 +665,8 @@ more information on using the Description updates module, see:
 Upload multi-page files as multiple descriptions
 ------------------------------------------------
 
-Normally, a multi-page file such as a PDF is uploaded as a single 
-:term:`digital object`, linked to a single target :term:`archival description`. 
+Normally, a multi-page file such as a PDF is uploaded as a single
+:term:`digital object`, linked to a single target :term:`archival description`.
 However, it is possible to break up each page into its own digital object, and
 attach these to new :term:`child <child record>` descriptions
 
@@ -742,11 +742,11 @@ Default publication status
 
 This setting determines whether new :term:`archival descriptions <archival
 description>` will automatically appear as :term:`draft records <draft record>`
-or :term:`published records <published record>`. By default, public users (i.e. 
-those who are not logged into AtoM) cannot see draft descriptions.  
+or :term:`published records <published record>`. By default, public users (i.e.
+those who are not logged into AtoM) cannot see draft descriptions.
 
-Note that this setting also affects imported descriptions. For more information, 
-see :ref:`archival-descriptions` - specifically, see: 
+Note that this setting also affects imported descriptions. For more information,
+see :ref:`archival-descriptions` - specifically, see:
 
 * :ref:`publish-archival-description`
 
@@ -825,13 +825,13 @@ archival descriptions, as well as finding aids - for more information, see:
 * :ref:`print-finding-aids`
 
 This setting determines whether or not :term:`draft records <draft record>` and
-retrieval information is included in the reports generated or not - that is, 
+retrieval information is included in the reports generated or not - that is,
 :term:`physical storage` information such as location, container type, and name.
 
 When this setting is set to "Yes", then reports generated will **not** include
 draft descriptions. Additionally, if physical storage information is hidden
-via the :ref:`visible-elements` settings, then :term:`physical storage` 
-information will also be excluded from finding aids. When set to "No", then the 
+via the :ref:`visible-elements` settings, then :term:`physical storage`
+information will also be excluded from finding aids. When set to "No", then the
 reports and finding aids will include drafts and physical storage information.
 
 
@@ -1100,14 +1100,14 @@ viewed in the templates that have been selected.
 Digital object derivatives
 ==========================
 
-Whenever a :term:`digital object` is linked to an :term:`archival description`, 
-AtoM will generate two derivative copies from the :term:`master digital object` 
-(e.g. the original) -  a :term:`reference display copy`, used on the archival 
-description :term:`view page`, and a :term:`thumbnail`, used in search and browse 
+Whenever a :term:`digital object` is linked to an :term:`archival description`,
+AtoM will generate two derivative copies from the :term:`master digital object`
+(e.g. the original) -  a :term:`reference display copy`, used on the archival
+description :term:`view page`, and a :term:`thumbnail`, used in search and browse
 results, and in the digital object :ref:`carousel <recurring-carousel>`.
 
-The following settings affect the way that 
-:term:`reference <reference display copy>` derivatives are generated in AtoM. 
+The following settings affect the way that
+:term:`reference <reference display copy>` derivatives are generated in AtoM.
 
 **Jump to:**
 
@@ -1133,7 +1133,7 @@ PDF page number for image derivative
 This setting will affect the :term:`digital object` derivatives generated by
 AtoM when uploading multi-page content, such as a PDF.
 
-By default, AtoM will use the first page of multi-page content (such as a PDF) 
+By default, AtoM will use the first page of multi-page content (such as a PDF)
 when generating the :term:`reference display copy` and :term:`thumbnail` images.
 
 However, with multi-page content such as PDFs, the first page may not be
@@ -1202,7 +1202,7 @@ Add/Remove languages
 ====================
 
 AtoM relies on volunteer translators from the community to support new language
-options. The translations are managed using an Artefactual-hosted instance of 
+options. The translations are managed using an Artefactual-hosted instance of
 `Weblate <https://translations.artefactual.com/>`__ and community
 members can learn more about contibuting translations here:
 
@@ -1210,9 +1210,9 @@ members can learn more about contibuting translations here:
 
 With each new  major public release, we incorporate community-supplied
 translations of AtoM's  :term:`user interface`, which can easily be changed by
-end users by selecting a different language from the global 
-:ref:`language menu <language-menu>`. The language menu will display the 
-languages that are currently enabled in your AtoM application. This setting 
+end users by selecting a different language from the global
+:ref:`language menu <language-menu>`. The language menu will display the
+languages that are currently enabled in your AtoM application. This setting
 determines what languages appear in the language menu.
 
 .. image:: images/add-remove-languages.*
@@ -1291,11 +1291,11 @@ To continue removing languages, repeat these steps as required.
 Identifier settings
 ===================
 
-Settings in this section relate to :term:`archival description` identifiers, as 
-well as :term:`accession record` numbers. AtoM can automatically generate 
+Settings in this section relate to :term:`archival description` identifiers, as
+well as :term:`accession record` numbers. AtoM can automatically generate
 unique identifiers for these :term:`entities <entity>` based on a configurable
-mask. Users can also set :term:`reference code` behavior for descriptions in this 
-section of the settings. 
+mask. Users can also set :term:`reference code` behavior for descriptions in this
+section of the settings.
 
 .. figure:: images/identifier-settings.*
    :align: center
@@ -1303,7 +1303,7 @@ section of the settings.
    :figwidth: 75%
    :alt: An image of the identifier-related settings in AtoM
 
-   The identifier-related settings in AtoM. These affect descriptions and 
+   The identifier-related settings in AtoM. These affect descriptions and
    accession records
 
 **Jump to:**
@@ -1515,7 +1515,7 @@ appears as a dash ``-`` in AtoM, which can be changed by an
 .. TIP::
 
    If you intend to use a ``/`` slash as your reference code separator, we
-   recommend you review the following setting! See: 
+   recommend you review the following setting! See:
 
    * :ref:`escape-chars`
 
@@ -1538,14 +1538,14 @@ appears as a dash ``-`` in AtoM, which can be changed by an
 Inherit reference code (information object)
 -------------------------------------------
 
-In AtoM, a reference code is a unique identifier string associated with an 
-:term:`archival description`, created through the combination of inherited 
-identifiers from other related entities. While an individual description 
+In AtoM, a reference code is a unique identifier string associated with an
+:term:`archival description`, created through the combination of inherited
+identifiers from other related entities. While an individual description
 identifier is rarely globally unique (and is often not unique even in the same
-AtoM instance), by combining additional elements such as a the country code, 
+AtoM instance), by combining additional elements such as a the country code,
 repository code, and any :term:`parent <parent record>` identifiers, a unique
-reference code can be created, which facilitates international discovery and 
-exchange. 
+reference code can be created, which facilitates international discovery and
+exchange.
 
 When this setting is set to "yes", the reference code string will be built
 using the archival description identifier plus the identifier of all its
@@ -1562,7 +1562,7 @@ in this order with the applicable elements:
 * Subseries identifier
 * File identifier
 * Item identifier
-* etc. 
+* etc.
 
 .. image:: images/refcode-inherit.*
    :align: center
@@ -1681,27 +1681,27 @@ Markdown settings
 .. _Markdown: https://daringfireball.net/projects/markdown/
 .. _Parsedown: https://parsedown.org/
 
-Markdown_ is a lightweight markup syntax for text formatting, originally created 
-by John Gruber. As of the 2.5 release, AtoM supports the use of Markdown_ in 
-both :term:`edit pages <edit page>` and :term:`static pages <static page>`, via 
+Markdown_ is a lightweight markup syntax for text formatting, originally created
+by John Gruber. As of the 2.5 release, AtoM supports the use of Markdown_ in
+both :term:`edit pages <edit page>` and :term:`static pages <static page>`, via
 a PHP library known as Parsedown_.
 
-This setting enables Markdown support in AtoM, which will allow for content 
-added to edit and static pages to be styled using Markdown syntax. For more 
-information on using Markdown in AtoM, see: :ref:`formatting`. 
+This setting enables Markdown support in AtoM, which will allow for content
+added to edit and static pages to be styled using Markdown syntax. For more
+information on using Markdown in AtoM, see: :ref:`formatting`.
 
 .. IMPORTANT::
 
-   After enabling or disabling this setting, a system administrator **must** 
-   rebuild the search index for the changes to take effect. For more information 
-   on how to rebuild AtoM's search index, see: 
+   After enabling or disabling this setting, a system administrator **must**
+   rebuild the search index for the changes to take effect. For more information
+   on how to rebuild AtoM's search index, see:
 
    * :ref:`maintenance-populate-search-index`.
 
-   To ensure you are seeing the most up-to-date results, you may also want to 
-   :ref:`clear the application cache <maintenance-clear-cache>` and restart services 
-   (such as :ref:`PHP-FPM <troubleshooting-restart-php-fpm>` and 
-   :ref:`Memcached <troubleshooting-restart-memcached>` if you 
+   To ensure you are seeing the most up-to-date results, you may also want to
+   :ref:`clear the application cache <maintenance-clear-cache>` and restart services
+   (such as :ref:`PHP-FPM <troubleshooting-restart-php-fpm>` and
+   :ref:`Memcached <troubleshooting-restart-memcached>` if you
    are using it for additional caching), and clear your web browser cache.
 
    Markdown is also used in the default text of the :ref:`privacy-notification` 
@@ -1732,8 +1732,8 @@ included in the :ref:`OAI repository <oai-pmh>` documentation, here:
 
 .. TIP::
 
-   To use the OAI repository functionality in AtoM and to see the related 
-   settings, you must first make sure that the arOAIPlugin is turned on. For 
+   To use the OAI repository functionality in AtoM and to see the related
+   settings, you must first make sure that the arOAIPlugin is turned on. For
    more information, see:
 
    * :ref:`oai-pmh-plugin`
@@ -1888,8 +1888,8 @@ the Privacy policy :term:`static page`. This hyperlink is created using Markdown
 Security panel
 ==============
 
-This section includes settings that administrators can enable to enhance the 
-security of AtoM. 
+This section includes settings that administrators can enable to enhance the
+security of AtoM.
 
 **Jump to:**
 
@@ -1899,8 +1899,8 @@ security of AtoM.
 
 .. SEEALSO::
 
-   The Administrator's manual has some further suggestions on security for 
-   site administrators. See: 
+   The Administrator's manual has some further suggestions on security for
+   site administrators. See:
 
    * :ref:`security`
 
@@ -1909,7 +1909,7 @@ security of AtoM.
    :width: 70%
    :alt: Security settings in AtoM
 
-.. _security-limit-ip: 
+.. _security-limit-ip:
 
 Limit administrator functionality by IP address
 -----------------------------------------------
@@ -1934,10 +1934,10 @@ which is a protocol for security over a computer network. It works by layering
 the Hypertext Transfer Protocol (HTTP) with the SSL/TLS protocol (Secure
 Sockets Layer/Transport Layer Security).
 
-.. WARNING:: 
+.. WARNING::
 
    To use this setting, you must **first** ensure that your server is configured
-   to support SSL! If you enable this setting and haven't first acquired and 
+   to support SSL! If you enable this setting and haven't first acquired and
    installed and SSL certificate and updated your site to use HTTPS, then you
    will end up locking yourself out of your site!
 
@@ -1984,13 +1984,13 @@ the application.
    :alt: An image of the Site information menu in AtoM
 
 The site title and description will appear in the AtoM header bar, if they
-are included in the default page elements. See :ref:`default-page-elements` for 
-an image of where the Title and description appear, and more about setting the 
-visibility of default page elements. These are also used when your site is 
-indexed by web crawlers for public results in search engines such as Google, 
-Yahoo, Bing, etc. You can choose to hide them from public view via the 
-:ref:`default-page-elements` settings, but we recommending adding site 
-information here even if you decide not to display the title and description 
+are included in the default page elements. See :ref:`default-page-elements` for
+an image of where the Title and description appear, and more about setting the
+visibility of default page elements. These are also used when your site is
+indexed by web crawlers for public results in search engines such as Google,
+Yahoo, Bing, etc. You can choose to hide them from public view via the
+:ref:`default-page-elements` settings, but we recommending adding site
+information here even if you decide not to display the title and description
 publicly.
 
 The base URL is used to create absolute URLs included in exports (e.g. MODS
@@ -2015,7 +2015,7 @@ To save any modifications, click the "Save" button located below the
 Treeview settings
 =================
 
-.. image:: images/treeview-settings.*
+.. image:: images/treeview-settings-page.*
    :align: center
    :width: 90%
    :alt: Treview settings page in AtoM
@@ -2090,6 +2090,21 @@ For more information on each treeview type, see:
 * :ref:`context-menu-treeview-sidebar`
 * :ref:`context-menu-treeview-full`
 
+With the 2.5 release, administrators can also choose to show a **browse
+hierarchy** option on the :term:`archival descriptions <archival description>`
+browse page. This new feature will provide users with an additional way of
+browsing records held in AtoM - via a full-page version of the full-width
+treeview that contains all descriptions.
+
+This new browsing mode will be disabled by default in new installations. To
+offer that option to users, an administrator can enable this feature by choosing
+'Yes' to 'Show browse hierarchy page' in the treeview settings. When enabled, a
+new link will appear on the archival description :ref:`search/browse page <browse>`, labelled
+"Browse by hierarchy."
+
+For more information on browsing with this option, see:
+
+* :ref:`browse`
 
 .. _sidebar-treeview-settings:
 
@@ -2251,11 +2266,11 @@ see glossary definitions and descriptions of how the terms are used in AtoM.
   the :ref:`RAD template <rad-template>`. It appears as a :term:`facet filter`
   in the :term:`archival description` browse and search pages - this label will
   change the display in the facet headers.
-* globalSearch: the placeholder help text that will appear in the global 
+* globalSearch: the placeholder help text that will appear in the global
   :term:`search box`.
-* institutionSearchHoldings: only visible if institutional scoping is enabled - 
+* institutionSearchHoldings: only visible if institutional scoping is enabled -
   when enabled, this is the default placeholder help text that will appear in the
-  per-institution search box included in the :term:`institution block`. For more 
+  per-institution search box included in the :term:`institution block`. For more
   information, see: :ref:`enable-scoping`
 
 :term:`User interface <user interface>` labels can be changed by
@@ -2269,7 +2284,7 @@ public users.
 
    Changing the user interface labels will *not* automatically change the
    corresponding labels in the navigation menus. To change these menus, go to
-   |gears| **Admin > Menus**. See the :ref:`Manage menus <manage-menus>` page 
+   |gears| **Admin > Menus**. See the :ref:`Manage menus <manage-menus>` page
    for more information.
 
 :ref:`Back to top <settings>`
