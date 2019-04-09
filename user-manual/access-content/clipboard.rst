@@ -12,35 +12,35 @@ Clipboard
 
 The :term:`Clipboard` is a :term:`user interface` element that allows users to
 select records while searching and browsing, and add them to a list (the
-"clipboard"), for later review or further action. All users can also perform 
-exports of Clipboard results via the user interface - for more information, see: 
+"clipboard"), for later review or further action. All users can also perform
+exports of Clipboard results via the user interface - for more information, see:
 
 * :ref:`xml-export-clipboard`
 * :ref:`csv-export-clipboard`
 
-Currently the Clipboard is only available for use with 
+Currently the Clipboard is only available for use with
 :term:`archival descriptions <archival description>`,
 :term:`authority records <authority record>`, and
-:term:`archival institutions <archival institution>`. Clipboard pin icons are 
-also available on the Inventory list page, and the Description updates page. For 
+:term:`archival institutions <archival institution>`. Clipboard pin icons are
+also available on the Inventory list page, and the Description updates page. For
 more information, see:
 
 * :ref:`browse-hierarchy-inventory`
 * :ref:`search-updates`
 
-Additionally, the clipboard is **session-based** - meaning that it does not
-persist between user sessions. When you close your browser, any results on
-the clipboard will be lost.
+With the release of 2.5, the clipboard is no longer **session-based**, but
+persists between user sessions. You can now save your clipboard and it will be
+available when you open your browser the next time.
 
 .. IMPORTANT::
 
-   The session is renewed when logging in or out of the application - so you
-   might lose your results if you log in or log out! Be aware of this and plan
-   accordingly.
+   The session is renewed when logging in or out of the application - so unless
+   you save your clipboard, you might lose your results if you log in or log
+   out!
 
 .. image:: images/clipboard.*
    :align: center
-   :width: 90%
+   :width: 80%
    :alt: An image of the Clipboard with results.
 
 The following sections will introduce you to the Clipboard and the
@@ -53,6 +53,7 @@ can be used.
 * :ref:`clipboard-pinning`
 * :ref:`clipboard-page`
 * :ref:`clipboard-export-all`
+* :ref:`save-clipboard`
 
 .. SEEALSO::
 
@@ -76,7 +77,7 @@ Clipboard's view page:
 
 .. image:: images/clipboard-menu.*
    :align: center
-   :width: 60%
+   :width: 40%
    :alt: An image of the Clipboard menu.
 
 When records have been pinned to the the Clipboard, the menu will show a
@@ -95,13 +96,15 @@ the different :term:`entity` types:
    :width: 30%
    :alt: An image of the Clipboard menu when items are pinned.
 
-The menu has 2 options. The "Clear selections" option will remove all items
-(across all entity types) currently pinned to the clipboard. On the clipboard page,
-they won't be cleared until you refresh the browser, giving you an opportunity
-to repin them if you've removed them by accident - however, anywhere else in the
-application, this **removal will be immediate**. The "Go to clipboard" option
-in the menu will take you to the Cliboard page, described in more detail
-below.
+The menu has four options. The "Clear selections" option will remove all items
+(across all entity types) currently pinned to the clipboard. On the clipboard
+page, they won't be cleared until you refresh the browser, giving you an
+opportunity to repin them if you've removed them by accident - however, anywhere
+else in the application, this **removal will be immediate**. The "Go to
+clipboard" option in the menu will take you to the Cliboard page, described in
+more detail below. The "Save clipboard" option will allow you to save your
+selections and return to them at a future session, and the "Load clipbaord"
+option will load a previously saved selection.
 
 .. _clipboard-pinning:
 
@@ -262,7 +265,7 @@ built-in print options for actual printing.
 Sort button
 -----------
 
-This button will allow you to sort your pinned results a number of different
+These buttons will allow you to sort your pinned results a number of different
 ways. For more information, see: :ref:`recurring-sort-button`.
 
 Export CSV
@@ -333,12 +336,12 @@ all results!
 Using the clipboard to export records
 =====================================
 
-The clipboard has been configured so that all users, whether anonymous (i.e. 
+The clipboard has been configured so that all users, whether anonymous (i.e.
 public) or authenticated (i.e. logged in), can export records, in both CSV and
-XML formats, depending on the formats supported in AtoM for export. 
+XML formats, depending on the formats supported in AtoM for export.
 
-Documentation on how to export records using the clipboard is maintained in the 
-general :ref:`import-export` documentation. For more information, see: 
+Documentation on how to export records using the clipboard is maintained in the
+general :ref:`import-export` documentation. For more information, see:
 
 * :ref:`xml-export-clipboard`
 * :ref:`csv-export-clipboard`
@@ -348,5 +351,47 @@ general :ref:`import-export` documentation. For more information, see:
    * :ref:`clipboard`
    * :ref:`manage-jobs`
    * :ref:`csv-export-search`
+
+:ref:`Back to top <clipboard>`
+
+.. _save-clipboard:
+
+Saving your clipboard for another session
+=========================================
+
+With the release of 2.5, you are able to save your clipboard, close your
+browser, and return at a later time to continue to use your saved entries. When
+you are ready to leave your current session, click on the clipboard menu button
+and choose "Save clipboard".
+
+.. image:: images/save-clipboard.*
+   :align: center
+   :width: 30%
+   :alt: An image of a Clipboard menu
+
+AtoM will generate a message with an ID number of your saved session and prompt
+you to record the number for later.
+
+.. image:: images/save-clipboard-number.*
+   :align: center
+   :width: 80%
+   :alt: A saved Clipboard message
+
+You can then exit your browser. When you return and want to see your clipboard,
+choose "Load clipboard" from the menu and enter your saved number.
+
+.. image:: images/load-clipboard.*
+   :align: center
+   :width: 80%
+   :alt: Load a saved Clipboard
+
+Your previously saved results will load. Note that if you have saved entries
+from different entity types, they will all be saved. You can switch entity types
+from the menu at the top right.
+
+.. image:: images/loaded-clipboard.*
+   :align: center
+   :width: 80%
+   :alt: An image of a loaded Clipboard
 
 :ref:`Back to top <clipboard>`
