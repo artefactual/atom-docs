@@ -33,7 +33,7 @@ available fields listed below.
 
 .. image:: images/visible-elements-collapsed.*
    :align: center
-   :width: 80%
+   :width: 40%
    :alt: An image of the Visible elements menu in AtoM
 
 Each visible elements area includes a list of :term:`fields <field>` with
@@ -50,6 +50,7 @@ it will NOT be visible to public users (e.g. those not logged in).
 
 Below you will find a brief outline of each Visible elements area:
 
+* :ref:`visible-elements-global`
 * :ref:`visible-elements-headers`
 * :ref:`visible-elements-fields`
 * :ref:`visible-elements-digital-object`
@@ -65,6 +66,32 @@ Below you will find a brief outline of each Visible elements area:
    * :ref:`physical-storage`
    * :ref:`upload-digital-object`
    * :ref:`log-in`
+
+.. _visible-elements-global:
+
+Hide or show the login button
+=============================
+
+With the release of 2.5, an :term:`administrator` can hide the login button for
+public users. The default setting allows the login button to be visible to all
+users. To change this so that the login button is hidden to public users, an
+:term:`administrator` can click the Global section of Visible Elements and
+uncheck the login button. Click "Save", and exit Visible Elements. The login
+button will still be visible for authenticated (i.e. logged in) users, but
+hidden for unauthenticated users.
+
+.. image:: images/visible-elements-global.*
+   :align: center
+   :width: 40%
+   :alt: An image of the Global Visible Elements
+
+Note that the login screen can be accessed by adding 'user/login' at the end of
+the site URL.
+
+.. image:: images/forced-login.*
+   :align: center
+   :width: 80%
+   :alt: An image of forcing the login screen
 
 .. _visible-elements-headers:
 
