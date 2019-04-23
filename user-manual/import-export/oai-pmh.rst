@@ -58,7 +58,7 @@ check the box and then save the change using the Save button located in the
 .. TIP::
 
    Setting not taking effect? In some cases, a system administator with access
-   to the command-line may have to restart your webserver and php5-fpm for the
+   to the command-line may have to restart your webserver and php-fpm for the
    changes to take effect. We also recommend clearing the application cache. If
    you are using our recommended installation configuration (see:
    :ref:`installation-linux`) such as Nginx for your web server, you can restart
@@ -68,7 +68,8 @@ check the box and then save the change using the Save button located in the
    .. code:: bash
 
       sudo service nginx restart
-      sudo service php5-fpm restart
+      sudo systemctl restart php7.0-fpm (Ubuntu 16.04)
+      sudo systemctl restart php7.2-fpm (Ubuntu 18.04)
       php symfony cc
 
 After enabling the OAI plugin, you will want to make sure that you have
@@ -222,15 +223,15 @@ Set name                        Set Spec                      AtoM version
 Top-level collection record set oai:virtual:top-level-records 2.2.0
 =============================== ============================= ============
 
-When the setting is enabled and the changes saved, AtoM will display a list of 
-available virtual sets below the setting. You can click the name of a virtual 
-set to trigger an OAI request in the browser. 
+When the setting is enabled and the changes saved, AtoM will display a list of
+available virtual sets below the setting. You can click the name of a virtual
+set to trigger an OAI request in the browser.
 
 .. image:: images/oai-sets.*
    :align: center
    :width: 90%
-   :alt: An image of the available OAI virtual sets 
-   
+   :alt: An image of the available OAI virtual sets
+
 When this setting is set to "Yes," the virtual sets available can be used by
 harvesters as criteria when issuing requests - for example, to issue a Get Records
 request limited to top-level records:

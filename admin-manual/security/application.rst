@@ -8,10 +8,10 @@ The behavior of PHP code often depends strongly on the values of many
 `configuration settings <http://php.net/manual/en/ini.list.php>`_, including
 fundamental changes to things like how errors are handled.
 
-We defined some sane configuration defaults in our :ref:`installation isntructions
+We defined some sane configuration defaults in our :ref:`installation instructions
 <installation-linux>`. Namely, these settings are defined in the PHP pool
-(:file:`/etc/php5/fpm/pool.d/atom.conf`) and they are prioritized over those
-defined in :file:`/etc/php5/fpm/php.ini`. Be aware that multiple configuration
+(:file:`/etc/php7.2/fpm/php-fpm.conf`) and they are prioritized over those
+defined in :file:`/etc/php/7.2/fpm/php.ini`. Be aware that multiple configuration
 files are read when PHP starts up, therefore it is a good practice to check the
 final configuration state when you are deploying AtoM. You can use
 :ref:`phpinfo() <phpinfo>` for that purpose.

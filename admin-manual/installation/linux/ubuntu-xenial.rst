@@ -56,6 +56,12 @@ During the installation, you will be prompted to set a password for the default
 administrator user (root). We strongly recommend that you use a strong password
 and please write it down somewhere safe, you are going to need it later.
 
+.. TIP::
+
+   If you are not prompted on installation to create a username and password,
+   you can use 'root' as the user and password in later steps. We will create a
+   different mysql user in later steps, where you can add a secure password.
+
 .. _linux-ubuntu-xenial-dependency-elasticsearch:
 
 Elasticsearch
@@ -70,12 +76,17 @@ Ubuntu doesn't provide a package but you can download it directly from the
 `Elasticsearch site <https://www.elastic.co/downloads/elasticsearch>`_ if you
 are unable to download it using the method that follows.
 
-First, make sure that `Java <https://www.java.com/en/>`__ is installed. In this
+Make sure that `Java <https://www.java.com/en/>`__ is installed. In this
 example we are going to use OpenJDK but Oracle's JVM would also work.
+
+   code content
 
 .. code-block:: bash
 
+   sudo add-apt-repository ppa:openjdk-r/ppa
+   sudo apt-get update
    sudo apt install openjdk-8-jre-headless software-properties-common
+
 
 After successfully installing Java, proceed to install Elasticsearch. Download
 and install the public signing key used in their repository:
@@ -243,9 +254,9 @@ Ubuntu 16.04 bundles PHP 7.0, which is much faster than older releases.
 
 .. IMPORTANT::
 
-   At this time, PHP 7.1 or higher will not work with AtoM - non-backwards 
-   compatible changes were introduced in PHP 7.1 which affect some actions in 
-   AtoM, causing errors. We recommend installing v7.0 until affected areas in 
+   At this time, PHP 7.1 or higher will not work with AtoM - non-backwards
+   compatible changes were introduced in PHP 7.1 which affect some actions in
+   AtoM, causing errors. We recommend installing v7.0 until affected areas in
    AtoM can be reviewed and updated.
 
 Our favorite way to deploy AtoM is using `PHP-FPM <http://php-fpm.org/>`__, a
@@ -255,7 +266,7 @@ following command will install it along with the rest of PHP extensions
 
 .. code-block:: bash
 
-   sudo apt install php7.0-cli php7.0-curl php7.0-json php7.0-ldap php7.0-mysql php7.0-opcache php7.0-readline php7.0-xml php7.0-fpm php7.0-mbstring php7.0-mcrypt php7.0-xsl php7.0-zip php-apcu
+   sudo apt install php7.0-cli php7.0-curl php7.0-json php7.0-ldap php7.0-mysql php7.0-opcache php7.0-readline php7.0-xml php7.0-fpm php7.0-mbstring php7.0-xsl php7.0-zip php-apcu
 
 If you are using Memcached as cache engine, you will also need to install `php-memcache`:
 
@@ -348,7 +359,7 @@ remove it:
    sudo rm /etc/php/7.0/fpm/pool.d/www.conf
    sudo systemctl restart php7.0-fpm
 
-.. _linux-ubuntu-xenial-gearman: 
+.. _linux-ubuntu-xenial-gearman:
 
 Gearman job server
 ------------------
@@ -359,8 +370,8 @@ Gearman job server is required by AtoM as of version 2.2.
 
    sudo apt install gearman-job-server
 
-We'll configure the job server and the workers after initial installation (see 
-:ref:`below <linux-ubuntu-xenial-workers>`). Full configuration detalis can be 
+We'll configure the job server and the workers after initial installation (see
+:ref:`below <linux-ubuntu-xenial-workers>`). Full configuration detalis can be
 found here:
 
 * :ref:`installation-asynchronous-jobs`.
@@ -496,7 +507,7 @@ password you created :ref:`earlier <linux-ubuntu-xenial-dependency-mysql>`:
 
 .. code-block:: bash
 
-   mysql -h localhost -u root -p -e "CREATE DATABASE atom CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
+   sudo mysql -h localhost -u root -p -e "CREATE DATABASE atom CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
 
 Notice that the database has been called **atom**. Feel free to change its name.
 
@@ -515,12 +526,37 @@ password ``12345`` and the permissions needed for the database created above.
 
 .. code-block:: bash
 
-   mysql -h localhost -u root -p -e "GRANT ALL ON atom.* TO 'atom'@'localhost' IDENTIFIED BY '12345';"
+   sudo mysql -h localhost -u root -p -e "GRANT ALL ON atom.* TO 'atom'@'localhost' IDENTIFIED BY '12345';"
 
 Note that the ``INDEX``, ``CREATE`` and ``ALTER`` privileges are only necessary
 during the installation process or when you are upgrading AtoM to a newer
 version. They can be removed from the user once you are finished with the
 installation or you can change the user used by AtoM in :ref:`config.php <config-config-php>`.
+
+Finally, let’s configure our MySQL modes. The The MySQL server can operate in
+different SQL modes, which affects the SQL syntax MySQL supports and the data
+validation checks it performs. We’ll add our preferred mode settings in a new
+file.
+
+First, let’s create a new file using nano:
+
+.. code-block:: bash
+
+   sudo nano /etc/mysql/conf.d/mysqld.conf
+
+Paste the following values in:
+
+.. code-block:: bash
+
+   [mysqld]
+   sql_mode=STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+
+Press CTRL+X to exit, then y to confirm, and press Enter. Nowe we’ll restart MySQL:
+
+.. code-block:: bash
+
+   sudo systemctl restart mysql
+
 
 .. _linux-ubuntu-xenial-run-installer:
 
@@ -583,11 +619,11 @@ out the following page for further installation details:
 
 .. IMPORTANT::
 
-   You **must** complete the installation instructions found on the Job Scheduler 
-   page for your AtoM installation to be fully functional! Increasingly in AtoM, 
-   the job scheduler is used to support long-running tasks, some of which are 
-   core functionality such as updating the :term:`publication status` of a 
-   descriptive hierarchy, moving descriptions to a new :term:`parent record`, and 
+   You **must** complete the installation instructions found on the Job Scheduler
+   page for your AtoM installation to be fully functional! Increasingly in AtoM,
+   the job scheduler is used to support long-running tasks, some of which are
+   core functionality such as updating the :term:`publication status` of a
+   descriptive hierarchy, moving descriptions to a new :term:`parent record`, and
    much more. Please do this now! See:
 
    * :ref:`installation-asynchronous-jobs`

@@ -60,55 +60,11 @@ The simplest way to run a worker is from your terminal:
 
    php symfony jobs:worker
 
-A better way to run a worker is to use a process supervisor like upstart
-(included in Ubuntu 14.04) or systemd (included in Ubuntu 16.04). Both options
-are documented below.
+A better way to run a worker is to use a process supervisor like systemd
+(included in Ubuntu 16.04 and 18.04). This is documented below.
 
-Upstart (Ubuntu 14.04)
-----------------------
-
-An upstart service (:file:`/etc/init/atom-worker.conf`) could look like:
-
-.. code-block:: none
-
-   description "AtoM worker (gearmand) upstart service"
-
-   start on (started mysql)
-   stop on runlevel [016]
-
-   respawn
-   respawn limit 5 10
-
-   env LOCATION=/usr/share/nginx/atom
-   env LOGFILE=/usr/share/nginx/atom/log/atom-worker.log
-
-   setuid www-data
-   setgid www-data
-
-   script
-
-     php \
-       -d memory_limit=-1 \
-       -d error_reporting="E_ALL" \
-         ${LOCATION}/symfony jobs:worker >> ${LOGFILE} 2>&1
-
-   end script
-
-You can control the service execution status with the following commands:
-
-.. code-block:: bash
-
-   sudo start atom-worker   # Starts the worker
-   sudo stop atom-worker    # Stops the worker
-   sudo restart atom-worker # Restarts the workers
-   sudo status atom-worker  # Obtain current running status
-
-:command:`initctl` is the primary command used to interact with Upstart and its
-services. Check out its man page (:command:`man initctl`) or the following
-link for more instructions: http://upstart.ubuntu.com/cookbook/#initctl.
-
-systemd (Ubuntu 16.04)
-----------------------
+systemd (Ubuntu 16.04, 18.04)
+-----------------------------
 
 Create the following service (:file:`/usr/lib/systemd/system/atom-worker.service`):
 

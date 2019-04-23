@@ -1291,7 +1291,8 @@ there is also a ``--demo`` option available:
    .. code-block:: bash
 
       php symfony cc
-      sudo service php5-fpm restart
+      sudo systemctl restart php7.0-fpm (Ubuntu 16.04)
+      sudo systemctl restart php7.2-fpm (Ubuntu 18.04)
 
    Optionally, if you're using Memcached as cache engine:
 
@@ -1577,7 +1578,7 @@ databases, which are not accommodated from the user interface. For all of
 these, you will need to execute them from inside MySQL, using the username
 and password you created during installation.
 
-Assuming your username and pass are both set to "root" and your database name is 
+Assuming your username and pass are both set to "root" and your database name is
 ``atom``, here is an example of what you would type into the command-line:
 
 .. code:: bash

@@ -85,7 +85,7 @@ Copy your old data
 ==================
 
 At this point, you should have an |version| functional installation using a
-fresh database. Now we are going to copy the contents of the old uploads and 
+fresh database. Now we are going to copy the contents of the old uploads and
 downloads directories, as well as the database:
 
 1. `rsync <https://rsync.samba.org/>`__ is a robust directory sync solution
@@ -107,25 +107,25 @@ Alternatively, you can just use `cp <https://en.wikipedia.org/wiki/Cp_%28Unix%29
 
    $ cp -r /var/www/icaatom_old/uploads/ /usr/share/nginx/atom/uploads/
 
-We're going to want to do the same with the downloads directory as well - this is 
-where :ref:`reports <reports-printing>`, :ref:`cached xml <cache-xml-setting>`, 
-and downloads created by the job scheduler (such as 
-:ref:`clipboard exports <csv-export-clipboard>`) are kept. 
+We're going to want to do the same with the downloads directory as well - this is
+where :ref:`reports <reports-printing>`, :ref:`cached xml <cache-xml-setting>`,
+and downloads created by the job scheduler (such as
+:ref:`clipboard exports <csv-export-clipboard>`) are kept.
 
 .. code-block:: bash
 
    $ rsync -av /var/www/icaatom_old/downloads/ /usr/share/nginx/atom/downloads/
 
-.. NOTE:: 
-   
-   You may choose to delete the contents of the ``jobs`` subdirectory after 
-   copying it over - this subdirectory in the downloads folder generally contains 
-   zip files of previous exports. As such, it is temporary data and does not need 
-   to be kept. We recommend leaving the ``jobs`` subdirectory itself in place, 
-   for future exports. 
+.. NOTE::
 
-   If you want to delete the contents of this directory, you can use the 
-   following command: 
+   You may choose to delete the contents of the ``jobs`` subdirectory after
+   copying it over - this subdirectory in the downloads folder generally contains
+   zip files of previous exports. As such, it is temporary data and does not need
+   to be kept. We recommend leaving the ``jobs`` subdirectory itself in place,
+   for future exports.
+
+   If you want to delete the contents of this directory, you can use the
+   following command:
 
    .. code-block:: bash
 
@@ -157,11 +157,11 @@ Run the upgrade task
 ====================
 
 This is perhaps the most critical step in the upgrade process. If you
-encounter any errors, please consult our 
-`User Forum <https://groups.google.com/forum/#!forum/ica-atom-users>`__, or if 
-you don't find a solution, feel free to post a question there yourself. We will 
-also be trying to add to our `FAQ <https://wiki.accesstomemory.org/AtoM-FAQ>`__ 
-as we receive feedback, to help users troubleshoot any upgrading issues 
+encounter any errors, please consult our
+`User Forum <https://groups.google.com/forum/#!forum/ica-atom-users>`__, or if
+you don't find a solution, feel free to post a question there yourself. We will
+also be trying to add to our `FAQ <https://wiki.accesstomemory.org/AtoM-FAQ>`__
+as we receive feedback, to help users troubleshoot any upgrading issues
 encountered.
 
 First, change the current directory:
@@ -210,7 +210,7 @@ Now, run the regen-derivatives task:
 
    php symfony digitalobject:regen-derivatives
 
-For more information on this task and its available options, see: 
+For more information on this task and its available options, see:
 :ref:`cli-regenerate-derivatives`.
 
 .. _upgrading-rebuild-index-cc:
@@ -227,7 +227,7 @@ First, rebuild the search index:
 
    php symfony search:populate
 
-For more information and options on this task, see: 
+For more information and options on this task, see:
 :ref:`maintenance-populate-search-index`.
 
 Then, clear your `cache <http://symfony.com/legacy/doc/book/1_0/en/12-Caching>`__
@@ -250,27 +250,21 @@ and the atom-workers managed by the job scheduler.
 
 **To restart PHP-FPM**:
 
-Ubuntu 14.04:
+Ubuntu 16.04 with PHP 7.0:
 
 .. code-block:: bash
 
-   sudo service php5-fpm restart
+   sudo systemctl restart php7.0-fpm
 
-Ubuntu 16.04:
+Ubuntu 18.04 with PHP 7.2:
 
 .. code-block:: bash
 
-   sudo systemctl restart php7.0-fpm 
+   sudo systemctl restart php7.2-fpm
 
 **Optionally, to restart Memcached**:
 
-Ubuntu 14.04: 
-
-.. code-block:: bash
-
-   sudo service memcached restart
-
-Ubuntu 16.04: 
+Ubuntu 16.04 or 18.04:
 
 .. code-block:: bash
 
@@ -278,14 +272,7 @@ Ubuntu 16.04:
 
 **To restart the atom-workers**:
 
-Ubuntu 14.04: 
-
-.. code-block:: bash
-
-   sudo restart atom-worker # Restarts the workers
-   sudo status atom-worker  # Obtain current running status
-
-Ubuntu 16.04:  
+Ubuntu 16.04 or 18.04:
 
 .. code-block:: bash
 
@@ -294,7 +281,7 @@ Ubuntu 16.04:
 
 .. TIP::
 
-   For further information on configuring the job scheduler, see: 
+   For further information on configuring the job scheduler, see:
 
    * :ref:`installation-asynchronous-jobs`
 
@@ -345,21 +332,21 @@ need to add a line in the ArchivesCanada theme plugin:
 
 * https://github.com/artefactual/atom/blob/HEAD/plugins/arArchivesCanadaPlugin/css/main.less#L78
 
-The line you will need to add is to import the base Jobs CSS, like so: 
+The line you will need to add is to import the base Jobs CSS, like so:
 
 .. code-block:: bash
 
-   @import "../../arDominionPlugin/css/less/jobs.less" 
+   @import "../../arDominionPlugin/css/less/jobs.less"
 
 Additionally, if you intend to use AtoM's :ref:`privacy-notification` feature
-with a custom theme, and you have customized the ``scaffolding.less`` file, you 
-may need to update it. Changes are identified `here <https://goo.gl/d6HVVf>`__. 
-If the theme has been customized, but the ``scaffolding.less`` file is being 
-referenced from the ``arDominionPlugin`` theme then no modifications are 
+with a custom theme, and you have customized the ``scaffolding.less`` file, you
+may need to update it. Changes are identified `here <https://goo.gl/d6HVVf>`__.
+If the theme has been customized, but the ``scaffolding.less`` file is being
+referenced from the ``arDominionPlugin`` theme then no modifications are
 required. You should also check if ``_header.php`` has been overridden in your
-custom theme. If so, the change highlighted in 
-`this issue <https://github.com/artefactual/atom/commit/c65e84e809a5760c9814f8117a291bdb9a7491da#diff-e3a653026878cbc4745a5526934888d7R3>`__ 
-needs to be added to your custom ``_header.php`` file. 
+custom theme. If so, the change highlighted in
+`this issue <https://github.com/artefactual/atom/commit/c65e84e809a5760c9814f8117a291bdb9a7491da#diff-e3a653026878cbc4745a5526934888d7R3>`__
+needs to be added to your custom ``_header.php`` file.
 
 After making any necessary updates to your custom theme, you should rebuild
 the CSS for the custom themeplugin, using the ``make`` command. Here is an
@@ -370,23 +357,23 @@ the name of your plugin:
 
    make -C plugins/arArchivesCanadaPlugin
 
-You will also want to clear the application cache, and restart PHP-FPM. 
+You will also want to clear the application cache, and restart PHP-FPM.
 
-To clear the application cache: 
+To clear the application cache:
 
 .. code-block:: bash
 
    php symfony cc
 
-For more information, see: :ref:`maintenance-clear-cache`. 
+For more information, see: :ref:`maintenance-clear-cache`.
 
-To restart PHP-FPM on Ubuntu 16.04 with PHP 7.0: 
+To restart PHP-FPM on Ubuntu 16.04 with PHP 7.0:
 
 .. code-block:: bash
 
    sudo systemctl restart php7.0-fpm
 
-To restart PHP-FPM on Ubuntu 18.04 with PHP 7.2: 
+To restart PHP-FPM on Ubuntu 18.04 with PHP 7.2:
 
 .. code-block:: bash
 
@@ -401,7 +388,7 @@ If you are using Memcached with AtoM, you may also want to restart it:
 .. TIP::
 
    If you are still not seeing your changes take effect, remember to clear your
-   web browser's cache as well! 
+   web browser's cache as well!
 
 Start using the software!
 =========================

@@ -50,7 +50,7 @@ becomes
     information.**
 
 A :term:`developer` can edit the PHP configuration file (frequently located at
-``/etc/php5/fpm/pool.d/atom.conf``) to add further IP addresses to the
+``/etc/php/7.2/fpm/php-fpm.conf``) to add further IP addresses to the
 ``ATOM_DEBUG_IP`` variable - this is called by ``qubit_dev.php`` and checked
 for allowed IP addresses. Doing so will allow you to access Debug mode from a
 different IP address than that of the server.
@@ -61,11 +61,12 @@ different IP address than that of the server.
    :alt: an image of the ATOM_DEBUG_IP variable in the php configuration file
 
 After making changes to the ``ATOM_DEBUG_IP`` variable in ``atom.conf``, you
-will need to restart PHP5-FPM:
+will need to restart PHP-FPM:
 
 .. code:: bash
 
-   sudo service php5-fpm restart
+   sudo systemctl restart php7.0-fpm
+   sudo systemctl restart php7.2-fpm
 
 
 Editing the index.php file

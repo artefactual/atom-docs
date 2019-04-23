@@ -48,7 +48,7 @@ not, check the box and then save the change using the Save button located in the
 .. TIP::
 
    Setting not taking effect? In some cases, a system administator with access
-   to the command-line may have to restart your webserver and php5-fpm for the
+   to the command-line may have to restart your webserver and php-fpm for the
    changes to take effect. We also recommend clearing the application cache. If
    you are using our recommended installation configuration (see:
    :ref:`installation-linux`) such as Nginx for your web server, you can restart
@@ -58,7 +58,8 @@ not, check the box and then save the change using the Save button located in the
    .. code:: bash
 
       sudo service nginx restart
-      sudo service php5-fpm restart
+      sudo systemctl restart php7.0-fpm (for Ubuntu 16.04)
+      sudo systemctl restart php7.2-fpm (for Ubuntu 18.04)
       php symfony cc
 
 After enabling the plugin, you will want to make sure that you generated

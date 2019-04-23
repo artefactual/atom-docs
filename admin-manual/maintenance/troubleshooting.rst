@@ -4,15 +4,15 @@
 Troubleshooting
 ===============
 
-If you're running into issues with your AtoM installation, there are several 
+If you're running into issues with your AtoM installation, there are several
 maintenance actions and command-line tasks you might want to try using to see
-if they resolve the issue, prior to seeking external support. This page will 
-outline some of the most common issues, and how to resolve them. 
+if they resolve the issue, prior to seeking external support. This page will
+outline some of the most common issues, and how to resolve them.
 
 .. TIP::
 
-   If you are new to working with the Unix command-line, you might find the 
-   following slide deck useful to get started: 
+   If you are new to working with the Unix command-line, you might find the
+   following slide deck useful to get started:
 
    * https://www.slideshare.net/accesstomemory/commandline-101
 
@@ -32,36 +32,36 @@ outline some of the most common issues, and how to resolve them.
 Figure out the nature of the problem
 ====================================
 
-The first thing you should do is try to isolate exactly what is causing the issue. 
+The first thing you should do is try to isolate exactly what is causing the issue.
 Specifically:
 
-* What are the exact steps required to reproduce this issue? 
-* What is the error encountered? 
-* What is the expected outcome? 
+* What are the exact steps required to reproduce this issue?
+* What is the error encountered?
+* What is the expected outcome?
 
-Being able to articulate these clearly will often help you figure out what 
-solutions you should try first - and if you can't resolve the issue, you'll 
-need this information to seek further support. 
+Being able to articulate these clearly will often help you figure out what
+solutions you should try first - and if you can't resolve the issue, you'll
+need this information to seek further support.
 
-It's also useful to try to rule out any factors that are unrelated to the issue. 
-For example: can you reproduce the error using a different browser? What about a 
-different computer? If your AtoM site is publicly accessible, does it behave 
-differently if accessed from home as opposed to work (i.e. might firewalls, VPNs, 
-or other restrictions be affecting your access)? Is the issue particular to a 
+It's also useful to try to rule out any factors that are unrelated to the issue.
+For example: can you reproduce the error using a different browser? What about a
+different computer? If your AtoM site is publicly accessible, does it behave
+differently if accessed from home as opposed to work (i.e. might firewalls, VPNs,
+or other restrictions be affecting your access)? Is the issue particular to a
 specific user or group, or does it affect all users? If it's an error related to
-a task supported by the job scheduler, is it just this one task that isn't working, 
-or are all jobs failling? And so forth. 
+a task supported by the job scheduler, is it just this one task that isn't working,
+or are all jobs failling? And so forth.
 
-With a detailed step-by-step guide to reproducing the issue, we can now better 
-diagnose the problem and consider what we can try to resolve it. 
+With a detailed step-by-step guide to reproducing the issue, we can now better
+diagnose the problem and consider what we can try to resolve it.
 
 .. _troubleshooting-logs-debug:
 
 Error logs and Debug mode
 =========================
 
-It can be useful to see if there is further information available on the nature 
-of the error in your webserver logs, particularly if you have encountered a 
+It can be useful to see if there is further information available on the nature
+of the error in your webserver logs, particularly if you have encountered a
 500 internal server error:
 
 .. image:: images/500-error.*
@@ -69,33 +69,39 @@ of the error in your webserver logs, particularly if you have encountered a
    :width: 90%
    :alt: An image of a 500 internal server error message in AtoM
 
-For information on accessing the webserver logs, see: 
+For information on accessing the webserver logs, see:
 
 * :ref:`maintenance-webserver`
 
 Another thing you can try to collect more information on the nature of the error
-is to see if a `stack trace <https://en.wikipedia.org/wiki/Stack_trace>`__ is 
-available. This is particularly useful if the error results in a blank screen. 
+is to see if a `stack trace <https://en.wikipedia.org/wiki/Stack_trace>`__ is
+available. This is particularly useful if the error results in a blank screen.
 
-To check, you can try putting the application into **Debug mode**. More 
-information on how to use Debug mode can be found here: 
+To check, you can try putting the application into **Debug mode**. More
+information on how to use Debug mode can be found here:
 
 * :ref:`debug-mode`
 
 .. TIP::
 
-   We also have a command-line tutorial video that will walk you through how to 
-   enable Debug mode and check your Nginx error logs, available here: 
+   We also have a command-line tutorial video that will walk you through how to
+   enable Debug mode and check your Nginx error logs, available here:
 
    * https://youtu.be/_zdplmuvhf0
 
-   **Note:** The commands used in this video for restarting PHP-FPM is for 
-   Ubuntu 14.04 with PHP 5.x. If you are using Ubuntu 16.04 with PHP7, the 
-   following command can be used to restart PHP-FPM:
+   **Note:** The commands used in this video for restarting PHP-FPM is for
+   Ubuntu 14.04 with PHP 5.x. If you are using Ubuntu 16.04 with PHP7.0, or
+   Ubuntu 18.04 with PHP7.2, the  following command can be used to restart
+   PHP-FPM:
+
 
    .. code-block:: bash
 
       sudo systemctl restart php7.0-fpm
+
+   .. code-block:: bash
+
+      sudo systemctl restart php7.2-fpm
 
 :ref:`Back to top <maintenance-troubleshooting>`
 
@@ -104,16 +110,16 @@ information on how to use Debug mode can be found here:
 Restarting services
 ===================
 
-AtoM makes use of several PHP extensions, services, and libraries that are used 
-to support the functionality of the application. These are not managed directly 
-by AtoM or Symfony, and their use and location will depend on your particular 
+AtoM makes use of several PHP extensions, services, and libraries that are used
+to support the functionality of the application. These are not managed directly
+by AtoM or Symfony, and their use and location will depend on your particular
 installation environment. The following commands assume you have followed our
-:ref:`recommended installation instructions <installation-linux>` - if you have 
-made changes, some of the commands may be different in your installation. 
+:ref:`recommended installation instructions <installation-linux>` - if you have
+made changes, some of the commands may be different in your installation.
 
-Restarting services can be a useful first step in trying to resolve issues - if 
-the service is in a bad state as a result of an aerror that has occurred, then 
-restarting it can often return it to a working condition. Below are basic 
+Restarting services can be a useful first step in trying to resolve issues - if
+the service is in a bad state as a result of an aerror that has occurred, then
+restarting it can often return it to a working condition. Below are basic
 instructions for restarting PHP-FPM, Memcached, Nginx, and the atom-worker.
 
 **Jump to:**
@@ -132,7 +138,7 @@ Restarting PHP-FPM
 
 PHP-FPM is a PHP extension that allows for better interaction with an
 application’s web server, via the use and configuration of FastCGI pools in
-PHP. In AtoM's default installation configuration, Nginx will proxy PHP requests 
+PHP. In AtoM's default installation configuration, Nginx will proxy PHP requests
 to PHP-FPM.
 
 FastCGI is a binary protocol for interfacing interactive programs with a web
@@ -148,7 +154,7 @@ requests at once.
 
 **When**
 
-You should consider restarting PHP-FPM if: 
+You should consider restarting PHP-FPM if:
 
 * You have made any changes to your web server configuration
 * You have made any changes to AtoM's :ref:`configuration files <customization-config-files>`
@@ -156,17 +162,17 @@ You should consider restarting PHP-FPM if:
 
 **How**
 
-If you're using Ubuntu 14.04 with PHP 5.x: 
-
-.. code-block:: bash
-
-   sudo service php5-fpm restart
-
-If you're using Ubuntu 16.04 with PHP 7.x: 
+If you're using Ubuntu 16.04 with PHP 7.0:
 
 .. code-block:: bash
 
    sudo systemctl restart php7.0-fpm
+
+If you're using Ubuntu 18.04 with PHP 7.2:
+
+.. code-block:: bash
+
+   sudo systemctl restart php7.2-fpm
 
 .. SEEALSO::
 
@@ -192,19 +198,13 @@ with AtoM to retrieve and serve the page, or else returns an error message.
 
 **When**
 
-You should consider restarting Nginx if: 
+You should consider restarting Nginx if:
 
 * You've made changes to your web server configuration
 
 **How**
 
-If you're using Ubuntu 14.04 with PHP 5.x: 
-
-.. code-block:: bash
-
-   sudo service nginx reload
-
-If you're using Ubuntu 16.04 with PHP 7.x: 
+If you're using Ubuntu 16.04 or 18.04 with PHP 7.x:
 
 .. code-block:: bash
 
@@ -234,13 +234,7 @@ You should consider restarting Memcached if you're using it when:
 
 **How**
 
-If you're using Ubuntu 14.04 with PHP 5.x: 
-
-.. code-block:: bash
-
-   sudo service memcached restart
-
-If you're using Ubuntu 16.04 with PHP 7.x: 
+If you're using Ubuntu 16.04 or 18.04 with PHP 7.x:
 
 .. code-block:: bash
 
@@ -263,13 +257,13 @@ AtoM relies on a job scheduler in order to execute certain long-running tasks
 asynchronously in the background (instead of synchronously via your web
 browser, making you wait until the task is done and the page loaded before
 continuing), to guarantee that web requests are handled promptly and work
-loads can be distributed across multiple machines. Example tasks in AtoM that 
+loads can be distributed across multiple machines. Example tasks in AtoM that
 use the job scheduler include:
 
 * :ref:`Generating finding aids <print-finding-aids>`
 * :ref:`Importing records <import-export>` via the user interface
 * :ref:`Exporting records <import-export>` via the Clipboard
-* Using the :ref:`Move module <move-archival-description>` to reorganize 
+* Using the :ref:`Move module <move-archival-description>` to reorganize
   :term:`archival description` hierarchies
 * :ref:`Ingesting DIPs from Archivematica <archivematica:upload-atom>`
 
@@ -278,7 +272,7 @@ application framework to farm out work to other machines or processes that are
 better suited to do the work. It allows you to do work in parallel, to load
 balance processing, and to call functions between languages.*"
 
-.. SEEALSO:: 
+.. SEEALSO::
 
    * http://gearman.org/
    * :ref:`installation-asynchronous-jobs`
@@ -286,22 +280,16 @@ balance processing, and to call functions between languages.*"
 
 **When**
 
-You should consider restarting the atom-worker if: 
+You should consider restarting the atom-worker if:
 
-* You have encountered a 500 error related to a task in AtoM supported by the 
+* You have encountered a 500 error related to a task in AtoM supported by the
   job scheduler
 * You have made changes to the worker configuration
 * You have a job that never seems to complete in the queue
 
 **How**
 
-If you're using Ubuntu 14.04 with PHP 5.x: 
-
-.. code-block:: bash
-
-   sudo restart atom-worker
-
-If you're using Ubuntu 16.04 with PHP 7.x: 
+If you're using Ubuntu 16.04 0r 18.04 with PHP 7.x:
 
 .. code-block:: bash
 
@@ -327,36 +315,36 @@ If you're using Ubuntu 16.04 with PHP 7.x:
 Monitoring active processes and checking execution limits
 =========================================================
 
-In some cases, your errors may be caused by a lack of resources - CPU, disk 
+In some cases, your errors may be caused by a lack of resources - CPU, disk
 space, and/or memory - or because you've encountered the limits imposed by your
-PHP configuration. If this is the case, you might need to make changes to the 
-PHP pool configuration or allocate more resources to your server. 
+PHP configuration. If this is the case, you might need to make changes to the
+PHP pool configuration or allocate more resources to your server.
 
 .. _troubleshooting-htop:
 
 Monitoring active processes with htop
 -------------------------------------
 
-Before we make any changes, it can be useful to do some basic monitoring - is 
+Before we make any changes, it can be useful to do some basic monitoring - is
 this a temporary spike, or an ongoing issue? Can you reproduce the issue while
-monitoring resource usage and see any correlation? 
+monitoring resource usage and see any correlation?
 
 
-If you're familiar with the ``top`` command in Linux, this can be a useful way 
-to quickly view all active processes. However, we find ``htop`` to be a slightly 
-more user-friendly version of this.  You can use Ubuntu's package manager to 
-install it: 
+If you're familiar with the ``top`` command in Linux, this can be a useful way
+to quickly view all active processes. However, we find ``htop`` to be a slightly
+more user-friendly version of this.  You can use Ubuntu's package manager to
+install it:
 
 .. code-block:: bash
 
    sudo apt-get install htop
 
-To launch htop in your terminal simply enter ``htop``. The console will display 
-a text-mode graph of your CPU, memory, and swap usage at the top of the page, 
+To launch htop in your terminal simply enter ``htop``. The console will display
+a text-mode graph of your CPU, memory, and swap usage at the top of the page,
 with a detailed list of processes provided below. This should give you a better
-sense of whether or not you have enough resources allocated to your AtoM server. 
-It can also be useful to try to reproduce the error(s) you are encountering 
-while monitoring. 
+sense of whether or not you have enough resources allocated to your AtoM server.
+It can also be useful to try to reproduce the error(s) you are encountering
+while monitoring.
 
 .. image:: images/htop.*
    :align: center
@@ -383,21 +371,21 @@ Adjusting PHP execution limits
 
 PHP includes several execution limits which are either configured during
 AtoM's installation, or are set as defaults when PHP is installed. If you've
-encountered an error, and the web server :ref:`error log <troubleshooting-logs-debug>` 
+encountered an error, and the web server :ref:`error log <troubleshooting-logs-debug>`
 includes a message like:
 
 .. code-block:: none
 
    Fatal error: Maximum execution time of 60 seconds exceeded in ...
 
-or: 
+or:
 
 .. code-block:: none
 
    Fatal error: Allowed memory size of 67108864 bytes exhausted (tried to allocate 233734 bytes) in ...
 
-...then you might want to consider changing PHP's execution limits. For more 
-information, see: 
+...then you might want to consider changing PHP's execution limits. For more
+information, see:
 
 * :ref:`installation-execution-limits`
 
@@ -413,17 +401,17 @@ Running AtoM's most common maintenance tasks
 ============================================
 
 A great deal of issues in AtoM can be resolved by running some of the most common
-command-line and maintenance tasks included in the application. Some brief 
-details on each, and when you might want to use them, are included below. 
+command-line and maintenance tasks included in the application. Some brief
+details on each, and when you might want to use them, are included below.
 
 .. SEEALSO::
 
-   There are many other useful command-line tasks in AtoM that can also be 
-   useful during troubleshooting. For detailed information on each task, see: 
+   There are many other useful command-line tasks in AtoM that can also be
+   useful during troubleshooting. For detailed information on each task, see:
 
    * :ref:`maintenance-cli-tools`
 
-   Prefer to see this information in a slide deck? Check out: 
+   Prefer to see this information in a slide deck? Check out:
 
    * https://www.slideshare.net/accesstomemory/atoms-command-line-tasks-an-introduction
 
@@ -454,20 +442,20 @@ after regular business hours.
 
    If you don't need to reindex all :term:`entity types <entity>`, you
    might want to try using the task's ``--exclude-types`` option. See the full
-   task documentation for more details: 
+   task documentation for more details:
 
    * :ref:`maintenance-populate-search-index`
 
 **When**
- 
-You might consider re-populating the search index if: 
+
+You might consider re-populating the search index if:
 
 * Records seem to be missing from the user interface
 * No records are showing in search or browse at all
 * You have recently imported records from the command-line
-* You have :ref:`added a new language <add-remove-languages>` via the user 
+* You have :ref:`added a new language <add-remove-languages>` via the user
   interface Admin settings
-* You have tried to perform an operation via the user interface that lead to a 
+* You have tried to perform an operation via the user interface that lead to a
   timeout
 
 **Basic usage**
@@ -480,9 +468,9 @@ For more information, see: :ref:`maintenance-populate-search-index`
 
 .. TIP::
 
-   Do you keep getting warnings in the console when running the ``search:populate`` 
-   command? If so, you may have to resolve some data corruption issues first. 
-   See below, :ref:`troubleshooting-data-corruption`. 
+   Do you keep getting warnings in the console when running the ``search:populate``
+   command? If so, you may have to resolve some data corruption issues first.
+   See below, :ref:`troubleshooting-data-corruption`.
 
 .. _troubleshooting-clear-cache:
 
@@ -496,7 +484,7 @@ cache HTML content, for better responsiveness to HTTP requests.
 
   *One of the ways to speed up an application is to store chunks of generated
   HTML code, or even full pages, for future requests. This technique is known as
-  caching, and it can be managed on the server side and on the client side.*  
+  caching, and it can be managed on the server side and on the client side.*
 
   *...The principle of HTML caching is simple: Part or all of the HTML code that
   is sent to a user upon a request can be reused for a similar request. This
@@ -507,7 +495,7 @@ cache HTML content, for better responsiveness to HTTP requests.
   executed, and its result (the view) is stored in the cache folder for future
   requests."*
 
-From the 
+From the
 `Symfony docs <http://symfony.com/legacy/doc/gentle-introduction/1_4/en/12-Caching>`__
 
 Occasionally, when errors occur or changes have been made, we need to flush
@@ -518,16 +506,16 @@ versions of the web pages in AtoM as they are served to you.
 
 **When**
 
-You might want to try clearing the application cache if: 
+You might want to try clearing the application cache if:
 
 * You have made changes to AtoM's :ref:`configuration files <customization-config-files>`
 * You have recently encountered an error, and are testing to see if it's resolved
 * You are seeing something outdated or unexpected in the user interface
 * You want to ensure you are seeing the current version of a page
-* You have gotten a blank screen error that mysteriously works fine when the 
+* You have gotten a blank screen error that mysteriously works fine when the
   application is in :ref:`debug-mode`
 
-.. NOTE:: 
+.. NOTE::
 
    Because AtoM is session based, clearing the web browser cache might log you
    out of the application. Be sure you have saved any work you are doing in
@@ -543,18 +531,18 @@ For more information, see: :ref:`maintenance-clear-cache`
 
 .. IMPORTANT::
 
-   There are also other caches to consider clearing! 
+   There are also other caches to consider clearing!
 
    PHP-FPM (a PHP extension that AtoM uses) can also cache some content - if you
    are clearing the application cache, you should also consider restarting
    PHP-FPM. See above:
 
-   * :ref:`troubleshooting-restart-php-fpm`   
+   * :ref:`troubleshooting-restart-php-fpm`
 
    Memcached is also an external cache engine that can be used with AtoM - you
    should restart it as well. See above:
 
-   * :ref:`troubleshooting-restart-memcached`   
+   * :ref:`troubleshooting-restart-memcached`
 
    Finally, don’t forget that **your web browser has its own cache** - in some
    cases, if you are not seeing changes take affect, you might want to try
@@ -573,26 +561,26 @@ AtoM generally uses a relational database to store its data (generally,
 MySQL). However, relational databases, which are comprised of flat tables, are
 not particularly suited to handling hierarchical data.
 
-As developer `Mike Hillyer <http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/>`__ 
-notes, "Hierarchical data has a parent-child relationship that is not naturally 
-represented in a relational database table." One method of addressing this is to 
+As developer `Mike Hillyer <http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/>`__
+notes, "Hierarchical data has a parent-child relationship that is not naturally
+represented in a relational database table." One method of addressing this is to
 employ a "Nested set model" (`Wikipedia <https://en.wikipedia.org/wiki/Nested_set_model>`__).
 
 AtoM makes use of a nested set to manage hierarchical relationships, such as
 between parent and child terms and descriptions. Sometimes, during operations
 that involve updates to large hierarchies, the nested set can become corrupted
 - especially if the server times out during an operation that reaches the
-:ref:`execution limit <installation-execution-limits>` settings. This task will 
+:ref:`execution limit <installation-execution-limits>` settings. This task will
 rebuild all nested sets in AtoM.
 
 **When**
 
-You might consider rebuilding the nested set if: 
+You might consider rebuilding the nested set if:
 
 * You are seeing strange behavior and/or missing records in the :term:`treeview`
-* You have attempted a long-running task that has timed out, causing it to fail 
+* You have attempted a long-running task that has timed out, causing it to fail
   midway
-* You have gotten a 500 error, and the web server logs include something like: 
+* You have gotten a 500 error, and the web server logs include something like:
   ``Parent Resource id: 'XXXXX' does not exist``
 
 **Basic usage**
@@ -601,7 +589,7 @@ You might consider rebuilding the nested set if:
 
    php symfony propel:build-nested-set
 
-For more information, see: :ref:`cli-rebuild-nested-set` 
+For more information, see: :ref:`cli-rebuild-nested-set`
 
 .. _troubleshooting-slugs:
 
@@ -614,7 +602,7 @@ A slug is a word or sequence of words which make up the last part of a URL in
 AtoM. It is the part of the URL that uniquely identifies the resource and
 often is indicative of the name or title of the page (e.g.: in
 ``www.yourwebpage.com/about``, the slug is ``about``). The slug is meant to
-provide a unique, human-readable, permanent link to a resource. You can read 
+provide a unique, human-readable, permanent link to a resource. You can read
 more about slugs in AtoM here: :ref:`slugs-in-atom`.
 
 In some cases, AtoM may time out in the middle of an operation that involves
@@ -627,17 +615,17 @@ slugs for any that are missing them in the database.
 
 **When**
 
-You might want to try re-generating slugs if: 
+You might want to try re-generating slugs if:
 
-* You have timed out while attempting an operation that creates new records, such 
+* You have timed out while attempting an operation that creates new records, such
   as an import, or saving a large description
-* You have gotten an error or warning while trying to 
+* You have gotten an error or warning while trying to
   :ref:`populate the search index <troubleshooting-search-index>` with a message
-  that includes something like: "*Couldn't find information object (id: XXXXX)*" 
-* You suspect the error you've encountered may be due to  
+  that includes something like: "*Couldn't find information object (id: XXXXX)*"
+* You suspect the error you've encountered may be due to
   :ref:`data corruption <troubleshooting-data-corruption>`
-* You have made changes to the description 
-  :ref:`permalink settings <description-permalinks>` and want to update existing 
+* You have made changes to the description
+  :ref:`permalink settings <description-permalinks>` and want to update existing
   slugs to match these settings
 
 **Basic usage**
@@ -646,7 +634,7 @@ You might want to try re-generating slugs if:
 
    php symfony propel:generate-slugs
 
-For more information, see: :ref:`cli-generate-slugs` 
+For more information, see: :ref:`cli-generate-slugs`
 
 :ref:`Back to top <maintenance-troubleshooting>`
 
@@ -663,72 +651,72 @@ Depending on the nature of the corruption, this can sometimes exist in your
 data for a long time before causing any noticeable issues.
 
 Data corruption can happen in AtoM when large operations are aborted
-mid-process - for example, attempting a large 
-:ref:`move <move-archival-description>`, 
+mid-process - for example, attempting a large
+:ref:`move <move-archival-description>`,
 :ref:`publication status update <publish-archival-description>`,
-or :ref:`import <import-export>` via the web-based :term:`user interface`, and 
-having it time out before the task completes. As of AtoM 2.3, database 
-transaction support in MySQL was added to AtoM, which *should* reduce the 
-likelihood of corruption - if an operation times out, then the database should 
-automatically roll back to the last known good state. However, if you continue 
-to experience errors in AtoM and have attempted many of the steps above without 
-result, then it's possible that you've encountered some corrupt data, and will 
-need to perform some manual checks and fixes to address it. 
+or :ref:`import <import-export>` via the web-based :term:`user interface`, and
+having it time out before the task completes. As of AtoM 2.3, database
+transaction support in MySQL was added to AtoM, which *should* reduce the
+likelihood of corruption - if an operation times out, then the database should
+automatically roll back to the last known good state. However, if you continue
+to experience errors in AtoM and have attempted many of the steps above without
+result, then it's possible that you've encountered some corrupt data, and will
+need to perform some manual checks and fixes to address it.
 
 Data corruption can occur in any :term:`entity type <entity>` in AtoM, but it
 seems to occur most frequently among :term:`information object` data - AKA
 :term:`archival descriptions <archival description>`, likely due to the fact
 that there tends to be many more descriptions than other entity types in a
-typical AtoM installation, and information objects are one of the few entity 
+typical AtoM installation, and information objects are one of the few entity
 types in AtoM organized hierarchically.
 
-It is beyond the scope of this documentation to cover all possible forms of 
+It is beyond the scope of this documentation to cover all possible forms of
 data corruption. Instead, the sections below will provide solutions for the most
-common forms of information object data corruption, followed by further 
+common forms of information object data corruption, followed by further
 resources should you need to inspect and fix data corruption in other entity
-types. 
+types.
 
 .. _troubleshooting-corruption-ios:
 
 Data corruption in information objects
 --------------------------------------
 
-The most common forms of database corruption among information objects (AKA 
-:term:`archival descriptions <archival description>`) in AtoM tend to be due to 
-one of the following: 
+The most common forms of database corruption among information objects (AKA
+:term:`archival descriptions <archival description>`) in AtoM tend to be due to
+one of the following:
 
 * Missing :term:`slug`
 * Missing :term:`publication status` ID value
 * Missing object row values
 
-You can use SQL to check the status of your information objects and see if all 
-necessary values are present. 
+You can use SQL to check the status of your information objects and see if all
+necessary values are present.
 
 .. TIP::
 
-   For basic information on accessing the MySQL database in AtoM from the 
+   For basic information on accessing the MySQL database in AtoM from the
    command-line, see: :ref:`common-atom-queries`
 
-   You will need to know the database username and password you used during 
+   You will need to know the database username and password you used during
    installation, as well as the database name. If you don't remember these, you
-   can always check them by looking in one of AtoM's configuration files - see: 
+   can always check them by looking in one of AtoM's configuration files - see:
    :ref:`config-config-php`.
 
 The following SQL query will output a 4-column table of information objects - the
-columns include the information object ID, the object ID, the publication status 
+columns include the information object ID, the object ID, the publication status
 ID, and the slug for all descriptions. If any of the resulting rows are missing
-values, this will cause the :ref:`search population task <troubleshooting-search-index>` 
-to throw warnings, and may cause other unexpected errors. 
+values, this will cause the :ref:`search population task <troubleshooting-search-index>`
+to throw warnings, and may cause other unexpected errors.
 
 .. code-block:: sql
-   
+
    SELECT io.id as io_id, obj.id as obj_id, st.status_id as pub_status_id, slug.slug
-     FROM information_object io 
+     FROM information_object io
      LEFT JOIN object obj ON io.id=obj.id
      LEFT JOIN status st ON io.id=st.object_id AND st.type_id=158
      LEFT JOIN slug ON slug.object_id=io.id;
 
-The resulting output should look something like this: 
+The resulting output should look something like this:
 
 .. image:: images/sql-data-corruption.*
    :align: center
@@ -749,30 +737,30 @@ Published.
 
 .. code-block:: sql
 
-   INSERT INTO status (object_id, type_id, status_id, id, serial_number) 
+   INSERT INTO status (object_id, type_id, status_id, id, serial_number)
      VALUES ('XXXXX', '158', 'YYY', NULL, '0');
 
 For example, if you found a row with an information object ID value of ``35777``
-that was missing a publication status, and you wanted to mark it as Draft: 
+that was missing a publication status, and you wanted to mark it as Draft:
 
 .. code-block:: sql
 
-   INSERT INTO status (object_id, type_id, status_id, id, serial_number) 
+   INSERT INTO status (object_id, type_id, status_id, id, serial_number)
      VALUES ('35777', '158', '159', NULL, '0');
 
-If you see rows with a **missing object ID** then congratulations, you have 
+If you see rows with a **missing object ID** then congratulations, you have
 encountered a rarer form of data corruption! You have two options for addressing
-this issue. 
+this issue.
 
-The first option is to simply delete the entire row in AtoM - this should cascade 
-across other related tables. This solution will only work if the target row is 
-not a :term:`parent record` of other descriptions. 
+The first option is to simply delete the entire row in AtoM - this should cascade
+across other related tables. This solution will only work if the target row is
+not a :term:`parent record` of other descriptions.
 
-.. WARNING:: 
+.. WARNING::
 
-   This means you are **completely deleting** this description from AtoM, and 
-   will need to recreate it manually via import or via the user interface at a 
-   later date. 
+   This means you are **completely deleting** this description from AtoM, and
+   will need to recreate it manually via import or via the user interface at a
+   later date.
 
 To delete the affected row, you will need to know the information object ID
 for the target row (listed in the first column of the table shown above). In
@@ -783,49 +771,49 @@ be added:
 
    DELETE FROM information_object WHERE id=XXXXX;
 
-For example, if you wanted to delete an information object with an ``io_id`` 
-value of 39447, enter: 
+For example, if you wanted to delete an information object with an ``io_id``
+value of 39447, enter:
 
 .. code-block:: sql
 
    DELETE FROM information_object WHERE id=39447;
 
-We recommend that after deleting the affected row via SQL you 
-:ref:`rebuild the nested set <cli-rebuild-nested-set>` to resolve any corruption 
-in the hierarchy resulting from your changes. 
+We recommend that after deleting the affected row via SQL you
+:ref:`rebuild the nested set <cli-rebuild-nested-set>` to resolve any corruption
+in the hierarchy resulting from your changes.
 
-The second option is to manually insert an object row for the affected record. 
-To do so, you will need to give it a creation date and time, a last-modified date 
-and time, and you'll need to know the information object ID of the target record. 
-The ``created_at`` and ``updated_at`` values can be made up or approximated, and 
-they can also be the same if that's easier. In the following example query, 
-replace ``YYYY-MM-DD hh:mm:ss`` with your chosen ``created_at`` and ``updated_at`` 
+The second option is to manually insert an object row for the affected record.
+To do so, you will need to give it a creation date and time, a last-modified date
+and time, and you'll need to know the information object ID of the target record.
+The ``created_at`` and ``updated_at`` values can be made up or approximated, and
+they can also be the same if that's easier. In the following example query,
+replace ``YYYY-MM-DD hh:mm:ss`` with your chosen ``created_at`` and ``updated_at``
 values, and replace ``XXXXX`` with the information object ID of the target record:
 
 .. code-block:: sql
 
-   INSERT INTO object (class_name, created_at, updated_at, id, serial_number) 
+   INSERT INTO object (class_name, created_at, updated_at, id, serial_number)
      VALUES ('QubitInformationObject', 'YYYY-MM-DD hh:mm:ss', 'YYYY-MM-DD hh:mm:ss', 'XXXXX', '0');
 
-For example, if you wanted to say your information object was created on January 1st, 
-2016 at 1pm, last updated on February 25th, 2018 at 11:45am, and it has an 
-information object ID of ``63172``, then you could construct the SQL query like so:  
+For example, if you wanted to say your information object was created on January 1st,
+2016 at 1pm, last updated on February 25th, 2018 at 11:45am, and it has an
+information object ID of ``63172``, then you could construct the SQL query like so:
 
 .. code-block:: sql
 
-   INSERT INTO object (class_name, created_at, updated_at, id, serial_number) 
+   INSERT INTO object (class_name, created_at, updated_at, id, serial_number)
      VALUES ('QubitInformationObject', '2016-01-01 13:00:00', '2018-02-25 11:45:00', '63172', '0');
 
-Again, we recommend that after making these changes you 
-:ref:`rebuild the nested set <cli-rebuild-nested-set>` to resolve any corruption 
-in the hierarchy resulting from your changes. 
+Again, we recommend that after making these changes you
+:ref:`rebuild the nested set <cli-rebuild-nested-set>` to resolve any corruption
+in the hierarchy resulting from your changes.
 
 Finally, there is one other data corruption edge case which can happen in rare
 circumstances: when an information object ends up with a duplicated
 :term:`publication status`.
 
-You can check for descriptions with a duplicated publication status in your 
-database with the following query: 
+You can check for descriptions with a duplicated publication status in your
+database with the following query:
 
 .. code-block:: sql
 
@@ -840,15 +828,15 @@ database with the following query:
                         HAVING COUNT(*)>1
                     ) dt ON st.object_id=dt.object_id and st.type_id=dt.type_id;
 
-The following query can then be used to remove one of the duplicated publication 
-statuses from the affected records. In the following example, we will remove the 
-:term:`draft <draft record>` status with the publication status ID value of 
-``159`` in the last part of the query - to remove duplicated 
-:term:`published <published record>` statuses, change this value to ``160``: 
+The following query can then be used to remove one of the duplicated publication
+statuses from the affected records. In the following example, we will remove the
+:term:`draft <draft record>` status with the publication status ID value of
+``159`` in the last part of the query - to remove duplicated
+:term:`published <published record>` statuses, change this value to ``160``:
 
 .. code-block:: sql
 
-   DELETE st1 
+   DELETE st1
      FROM status as st1, status as st2
        WHERE
             st1.object_id = st2.object_id
@@ -858,7 +846,7 @@ statuses from the affected records. In the following example, we will remove the
          AND st1.status_id = 159;
 
 As with the other examples above, we recommend that after making these changes
-you :ref:`rebuild the nested set <cli-rebuild-nested-set>` to resolve any 
+you :ref:`rebuild the nested set <cli-rebuild-nested-set>` to resolve any
 corruption in the hierarchy resulting from your changes.
 
 .. _troubleshooting-corruption-other:
@@ -868,39 +856,39 @@ Data corruption in other entities
 
 As noted above, data corruption can potentially occur in any :term:`entity` type
 in AtoM, but it is beyond the scope of this documentation to provide a solution to
-every possible issue. If you think you are encountering data corruption in 
+every possible issue. If you think you are encountering data corruption in
 another entity type in AtoM, you'll need to do some research! We have collected
 some resources below to assist you.
 
-First, we make copies of the AtoM database's Entity Relationship Diagrams (ERDs) 
-available on the AtoM wiki. An ERD is a data modeling technique that graphically 
+First, we make copies of the AtoM database's Entity Relationship Diagrams (ERDs)
+available on the AtoM wiki. An ERD is a data modeling technique that graphically
 illustrates an information system's entities and the relationships between those
 entities. The AtoM ERDs can help you understand what tables exist in the AtoM
-database and how they are related. You can find them on our wiki here: 
+database and how they are related. You can find them on our wiki here:
 
 * https://wiki.accesstomemory.org/Development/ERDs
 
-We also have some slides that will introduce you to using SQL queries in AtoM, 
-available here: 
+We also have some slides that will introduce you to using SQL queries in AtoM,
+available here:
 
 * https://www.slideshare.net/accesstomemory/constructing-sql-queries-for-atom
 
-There are also several utilities that can be used to provide a graphical user 
+There are also several utilities that can be used to provide a graphical user
 interface when exploring AtoM's MySQL database. Two popular utilities that have
-been successfully used with AtoM include: 
+been successfully used with AtoM include:
 
 * MySQL Workbench: https://www.mysql.com/products/workbench/
 * PHPMyAdmin: https://www.phpmyadmin.net/
 
-Finally, be sure to double-check the MySQL reference documentation for your 
-version for further tips on constructing SQL queries. 
+Finally, be sure to double-check the MySQL reference documentation for your
+version for further tips on constructing SQL queries.
 
-Below are a few extra SQL queries that might be useful when troubleshooting 
-data corruption in other entity types. 
+Below are a few extra SQL queries that might be useful when troubleshooting
+data corruption in other entity types.
 
 **Repository records**
 
-Finding a :term:`repository` object ID when you know the slug: 
+Finding a :term:`repository` object ID when you know the slug:
 
 .. code-block:: sql
 
@@ -908,26 +896,26 @@ Finding a :term:`repository` object ID when you know the slug:
 
 **Terms**
 
-Return the ID of all terms in a particular taxonomy (replace ``Taxonomy name`` 
-in the example below with the name of the target taxonomy): 
+Return the ID of all terms in a particular taxonomy (replace ``Taxonomy name``
+in the example below with the name of the target taxonomy):
 
 .. code-block:: sql
 
-   SELECT term.id, term_i18n.name 
-     FROM term 
-     LEFT JOIN term_i18n ON (term.id = term_i18n.id) 
-     WHERE term.taxonomy_id = (SELECT id FROM taxonomy_i18n WHERE culture = 'en' 
+   SELECT term.id, term_i18n.name
+     FROM term
+     LEFT JOIN term_i18n ON (term.id = term_i18n.id)
+     WHERE term.taxonomy_id = (SELECT id FROM taxonomy_i18n WHERE culture = 'en'
      AND name = 'Taxonomy name') AND term_i18n.culture = 'en';
 
-Return the number of times a term is linked to a description, sorting terms from 
+Return the number of times a term is linked to a description, sorting terms from
 most used to least. This will return all terms across taxonomies - if youw want
-to see only one particular term, uncomment (aka remove the ``#`` at the start of 
-the line) the ``WHERE`` line and add the target term ID in place of the ``XXX``: 
+to see only one particular term, uncomment (aka remove the ``#`` at the start of
+the line) the ``WHERE`` line and add the target term ID in place of the ``XXX``:
 
 .. code-block:: sql
 
-   SELECT DISTINCT term_id, term_i18n.name, count(term_id) AS CountOf 
-     FROM object_term_relation 
+   SELECT DISTINCT term_id, term_i18n.name, count(term_id) AS CountOf
+     FROM object_term_relation
      JOIN term_i18n ON term_i18n.id = term_id and term_i18n.culture = 'en'
      #WHERE term_id = XXX
      GROUP BY term_id
@@ -940,58 +928,58 @@ the line) the ``WHERE`` line and add the target term ID in place of the ``XXX``:
 Getting support
 ===============
 
-If none of the above suggestions have resolved your issues, it may be time to 
+If none of the above suggestions have resolved your issues, it may be time to
 seek outside assistance. Remember, before seeking support, you should be able
-to clearly articulate the issue you are encountering, and provide detailed 
-information on your installation environment. See above, 
-:ref:`troubleshooting-first-steps` for suggestions. 
+to clearly articulate the issue you are encountering, and provide detailed
+information on your installation environment. See above,
+:ref:`troubleshooting-first-steps` for suggestions.
 
-The `AtoM User Forum <https://groups.google.com/forum/#!forum/ica-atom-users>`__ 
-is a great way to seek input from other AtoM users and 
-`Artefactual <https://www.artefactual.com>`__, the lead developers of the 
-application. We have a wiki page with more information on the user forum, here: 
+The `AtoM User Forum <https://groups.google.com/forum/#!forum/ica-atom-users>`__
+is a great way to seek input from other AtoM users and
+`Artefactual <https://www.artefactual.com>`__, the lead developers of the
+application. We have a wiki page with more information on the user forum, here:
 
 * https://wiki.accesstomemory.org/Resources/User_forum
 
-Before posting, we **strongly** encourage you to read the above page, especially 
-the `code of conduct <https://wiki.accesstomemory.org/Resources/User_forum#Code_of_conduct>`__ 
-and `What should I include in a post <https://wiki.accesstomemory.org/Resources/User_forum#What_should_I_include_in_a_support_post.3F>`__ 
-sections. 
+Before posting, we **strongly** encourage you to read the above page, especially
+the `code of conduct <https://wiki.accesstomemory.org/Resources/User_forum#Code_of_conduct>`__
+and `What should I include in a post <https://wiki.accesstomemory.org/Resources/User_forum#What_should_I_include_in_a_support_post.3F>`__
+sections.
 
-We also encourage you to search the forum and browse related threads for 
-suggestions before posting. 
+We also encourage you to search the forum and browse related threads for
+suggestions before posting.
 
 .. TIP::
 
    Did you know that posts in the AtoM User forum are now tagged by topic, and
    tags can be browsed to find related previous threads? For more information on
    how to use the tags in the forum (including how to tag your own posts), and a
-   full list of available tags, see: 
+   full list of available tags, see:
 
    * https://wiki.accesstomemory.org/Resources/User_forum/Tags
 
-If you have reviewed our documentation, tried the suggestions in this 
+If you have reviewed our documentation, tried the suggestions in this
 troubleshooting page, and searched the forum for related issues and are still
-encountering errors, you can start a new thread in the user forum. 
+encountering errors, you can start a new thread in the user forum.
 
-Be sure to include the following information in any support-related post: 
+Be sure to include the following information in any support-related post:
 
 * Your full AtoM version number - see: :ref:`application-version`
-* Details on your installation environment, such as: 
+* Details on your installation environment, such as:
 
   * Did you follow our :ref:`recommended installation instructions <installation-linux>`?
-  * If yes, are you using Ubuntu 14.04 or 16.04?
+  * If yes, are you using Ubuntu 16.04 or 18.04?
   * If no, what have you changed? Tell us more about your environment
 
-* Any stack trace or web server error logs relevant to the issue - see: 
+* Any stack trace or web server error logs relevant to the issue - see:
   :ref:`troubleshooting-logs-debug`
 * Detailed steps to reproduce the issue - see: :ref:`troubleshooting-first-steps`
 * Information on any steps you have already tried to resolve the issues
-* Anything else you think will be useful - including screenshots if that will 
+* Anything else you think will be useful - including screenshots if that will
   help other users better understand the issue
 
-Including a useful and descriptive title for your thread will also help other 
-users reference the thread in the future if they encounter similar issue. 
+Including a useful and descriptive title for your thread will also help other
+users reference the thread in the future if they encounter similar issue.
 
 :ref:`Back to top <maintenance-troubleshooting>`
 
@@ -1000,7 +988,7 @@ users reference the thread in the future if they encounter similar issue.
 Troubleshooting FAQ
 ===================
 
-Below are some initial troubleshooting suggestions for frequently asked questions. 
+Below are some initial troubleshooting suggestions for frequently asked questions.
 
 **Jump to:**
 
@@ -1027,22 +1015,22 @@ Why do I get a blank white screen?
 A blank, white screen in AtoM means that an error has occurred when loading
 the page. AtoM usually supresses error messages in production mode for
 security reasons, so the first thing to do is put the application in Debug
-mode, then re-try whatever you were doing when you got the white screen. See: 
+mode, then re-try whatever you were doing when you got the white screen. See:
 
 * :ref:`debug-mode`
 * :ref:`troubleshooting-logs-debug`
 
 
 If the page loads with no errors in Debug mode, then you probably just need to
-clear the application cache to fix the regular (not in debug mode) webpage. See: 
+clear the application cache to fix the regular (not in debug mode) webpage. See:
 
 * :ref:`maintenance-clear-cache`
 * :ref:`troubleshooting-clear-cache`
 
 If you get an error message, please see if it is addressed below.
 
-If you still get a blank, white screen you will have to check your web server 
-error log for error messages. See: 
+If you still get a blank, white screen you will have to check your web server
+error log for error messages. See:
 
 * :ref:`maintenance-webserver`
 * :ref:`troubleshooting-logs-debug`
@@ -1052,34 +1040,34 @@ error log for error messages. See:
 Why do I get a 500 (Internal Server) error?
 -------------------------------------------
 
-The 500 error is a very general HTTP status code that indicates a problem in the 
-web server. You will need to check your web server error logs first, to get more 
-information about the nature of the error. See: 
+The 500 error is a very general HTTP status code that indicates a problem in the
+web server. You will need to check your web server error logs first, to get more
+information about the nature of the error. See:
 
 * :ref:`maintenance-webserver`
 * :ref:`troubleshooting-logs-debug`
 
-If you're not sure what to do with the error message you find, and it is not 
-addressed in the other FAQ sections below, then you can collect as much 
-information as you can, search the `AtoM User Forum <https://groups.google.com/forum/#!forum/ica-atom-users>`__, 
-and start a new thread if you are unable to find anything relevant that will 
-help you resolve the issue. See: 
+If you're not sure what to do with the error message you find, and it is not
+addressed in the other FAQ sections below, then you can collect as much
+information as you can, search the `AtoM User Forum <https://groups.google.com/forum/#!forum/ica-atom-users>`__,
+and start a new thread if you are unable to find anything relevant that will
+help you resolve the issue. See:
 
-* :ref:`troubleshooting-first-steps` 
-* :ref:`troubleshooting-support` 
+* :ref:`troubleshooting-first-steps`
+* :ref:`troubleshooting-support`
 
 .. _faq-max-execution:
 
 Why do I get a "Max execution time" exceeded error?
 ---------------------------------------------------
 
-If you get an error like the following: 
+If you get an error like the following:
 
 .. code-block:: none
 
    Fatal error: Maximum execution time of 60 seconds exceeded in ...
 
-Then you may need to increase your PHP ``max_execution_time`` settings. See 
+Then you may need to increase your PHP ``max_execution_time`` settings. See
 PHP script execution limits for instructions on how to change PHP settings:
 
 * :ref:`installation-execution-limits`
@@ -1090,13 +1078,13 @@ PHP script execution limits for instructions on how to change PHP settings:
 Why do I get a "Allowed memory size" exhausted error?
 -----------------------------------------------------
 
-If you get an error like the following: 
+If you get an error like the following:
 
 .. code-block:: none
 
    Fatal error: Allowed memory size of 67108864 bytes exhausted (tried to allocate 233734 bytes) in ...
 
-Then you may need to increase your PHP ``memory_limit`` settings. See 
+Then you may need to increase your PHP ``memory_limit`` settings. See
 PHP script execution limits for instructions on how to change PHP settings:
 
 * :ref:`installation-execution-limits`
@@ -1107,7 +1095,7 @@ PHP script execution limits for instructions on how to change PHP settings:
 Why do I get a "Too many connections" error?
 --------------------------------------------
 
-If you get an error like the following: 
+If you get an error like the following:
 
 .. code-block:: none
 
@@ -1115,19 +1103,19 @@ If you get an error like the following:
 
    Unable to open PDO connection [wrapped: SQLSTATE[08004] [1040] Too many connections]
 
-This is a problem in MySQL, please refer to its documentation - make sure you 
-are looking at the correct documentation for the version of MySQL have have 
-installed. Below is a relevant link for MySQL 5.6: 
+This is a problem in MySQL, please refer to its documentation - make sure you
+are looking at the correct documentation for the version of MySQL have have
+installed. Below is a relevant link for MySQL 5.6:
 
 * https://dev.mysql.com/doc/refman/5.6/en/too-many-connections.html
 
 
 .. _faq-mysql-gone-away:
 
-Why do I get a "MySQL has gone away" error? 
+Why do I get a "MySQL has gone away" error?
 -------------------------------------------
 
-If you get an error like the following: 
+If you get an error like the following:
 
 .. code-block:: none
 
@@ -1135,17 +1123,17 @@ If you get an error like the following:
 
    [wrapped: SQLSTATE[HY000]: General error: MySQL server has gone away
 
-This is a problem in MySQL, please refer to its documentation - make sure you 
-are looking at the correct documentation for the version of MySQL have have 
-installed. Below is a relevant link for MySQL 5.6: 
+This is a problem in MySQL, please refer to its documentation - make sure you
+are looking at the correct documentation for the version of MySQL have have
+installed. Below is a relevant link for MySQL 5.6:
 
 * https://dev.mysql.com/doc/refman/5.6/en/gone-away.html
 
-It may be helpful to increase the level of verbosity in the MySQL logs to see if 
-more detailss are available. From the MySQL documentation: 
+It may be helpful to increase the level of verbosity in the MySQL logs to see if
+more detailss are available. From the MySQL documentation:
 
-  You can get more information about the lost connections by starting mysqld with 
-  the ``--log-warnings=2`` option. This logs some of the disconnected errors in 
+  You can get more information about the lost connections by starting mysqld with
+  the ``--log-warnings=2`` option. This logs some of the disconnected errors in
   the ``hostname.err`` file. See Section 5.4.2, "The Error Log:
 
   * https://dev.mysql.com/doc/refman/5.6/en/error-log.html
@@ -1157,18 +1145,18 @@ Why do I get a "Parent Resource id: 'XXXXX' does not exist" error?
 
 Usually this error is due to corruption of the nested set hierarchy of the
 resource (e.g. :term:`archival description`, taxonomy :term:`term`). This can
-usually be corrected by running the CLI task to rebuild the nested set: 
+usually be corrected by running the CLI task to rebuild the nested set:
 
 .. code-block:: bash
 
    php symfony propel:build-nested-set
 
-For more details on this command, see: 
+For more details on this command, see:
 
 * :ref:`cli-rebuild-nested-set`
 
 You may want to re-populate the search index and clear your application cache
-after as well. See: 
+after as well. See:
 
 * :ref:`maintenance-populate-search-index`
 * :ref:`maintenance-clear-cache`
@@ -1182,21 +1170,21 @@ If it still doesn't work, then you may want to check for data corruption. See:
 Why do I get warnings when populating the search index?
 -------------------------------------------------------
 
-If you've tried running the ``search:populate`` command (described in detail 
-:ref:`here<maintenance-populate-search-index>`), and you see the following 
-warnings at the end of the console output: 
+If you've tried running the ``search:populate`` command (described in detail
+:ref:`here<maintenance-populate-search-index>`), and you see the following
+warnings at the end of the console output:
 
 .. code-block:: none
 
    Couldn't find information object (id: XXXXX)
 
-Then Elasticsearch has encountered errors in your data, and was unable to find 
-the listed :term:`information object` IDs - consequently, these records have not 
-been added to the search index, and will not be discoverable in the 
-:term:`user interface` via search and browse. 
+Then Elasticsearch has encountered errors in your data, and was unable to find
+the listed :term:`information object` IDs - consequently, these records have not
+been added to the search index, and will not be discoverable in the
+:term:`user interface` via search and browse.
 
-This warning suggests that there may be some corruption in your data. See the 
-following section for further suggestions: 
+This warning suggests that there may be some corruption in your data. See the
+following section for further suggestions:
 
 * :ref:`troubleshooting-data-corruption`
 
@@ -1205,7 +1193,7 @@ following section for further suggestions:
 Why do I get a SearchPhaseExecutionException when trying to search?
 -------------------------------------------------------------------
 
-If you get an error like the following: 
+If you get an error like the following:
 
 .. code-block:: none
 
@@ -1213,46 +1201,40 @@ If you get an error like the following:
 
    SearchPhaseExecutionException[Failed to execute phase [query_fetch], all shards failed]
 
-This indicates an issue with Elasticsearch. 
+This indicates an issue with Elasticsearch.
 
-First, make sure that you have followed all the installation instructions for 
-Elasticsearch, as outlined in our recommended installation documentation: 
+First, make sure that you have followed all the installation instructions for
+Elasticsearch, as outlined in our recommended installation documentation:
 
 * :ref:`Elasticsearch installation <linux-ubuntu-xenial-dependency-elasticsearch>`
 
-You can try restarting Elasticsearch with the following: 
+You can try restarting Elasticsearch with the following:
 
-**Ubuntu 14.04**
-
-.. code-block:: bash
-
-   sudo service elasticsearch restart
-
-**Ubuntu 16.04**
+**Ubuntu 16.04 or 18.04**
 
 .. code-block:: bash
 
    sudo systemctl restart elasticsearch
 
-You can then try re-populating the search index and clearing the cache. See: 
+You can then try re-populating the search index and clearing the cache. See:
 
 * :ref:`maintenance-populate-search-index`
 * :ref:`maintenance-clear-cache`
 
-If this doesn't resolve the issue and/or you are unable to run the 
-``search:populate`` task, it may be that Elasticsearch is down. You can check 
+If this doesn't resolve the issue and/or you are unable to run the
+``search:populate`` task, it may be that Elasticsearch is down. You can check
 the status and health of your ES cluster with the following command: :
 
 .. code-block:: bash
 
    curl -XGET 'http://localhost:9200/_cluster/health/?level=shards&pretty'
 
-The status of shards must be green or yellow. If the status is any shard is red, 
-you might want to try to restart Elasticsearch again. 
+The status of shards must be green or yellow. If the status is any shard is red,
+you might want to try to restart Elasticsearch again.
 
-The most common reason for ES failing to start is a lack of available system 
+The most common reason for ES failing to start is a lack of available system
 resources, such as not enough RAM, CPUs, and/or disk space. Elasticsearch also
-has its own configuration file - you might want to review the relevant ES 
+has its own configuration file - you might want to review the relevant ES
 set-up and configuration documentation:
 
 * ES 1.7: https://www.elastic.co/guide/en/elasticsearch/reference/1.7/setup-configuration.html
@@ -1266,12 +1248,12 @@ Why do I get a 504 Connection timed out error?
 A 504 Gateway timeout error usually means that the server acting as a gateway
 to handle the HTTP request is either down or too slow to fulfill the request.
 This can occur for a number of reasons, and it could be temporary so the first
-thing you might want to try is simply repeating the request. 
+thing you might want to try is simply repeating the request.
 
 If the 504 timeout reoccurs, we suggest first restarting services, clearing
 the application cache, and then monitoring your resources while repeating the
-action that lead to the timeout. For information on restarting services and 
-clearing the application cache, see: 
+action that lead to the timeout. For information on restarting services and
+clearing the application cache, see:
 
 * :ref:`troubleshooting-restart-services`
 * :ref:`maintenance-clear-cache`
@@ -1283,16 +1265,16 @@ monitoring, see above:
 
 * :ref:`troubleshooting-htop`
 
-If you're seeing spikes, then you may need to increase the available system 
-resources (such memory, CPUs, and/or disk space). 
+If you're seeing spikes, then you may need to increase the available system
+resources (such memory, CPUs, and/or disk space).
 
 You may also want to analyze your web logs - in many cases where we've seen
 significant slowdowns in AtoM it's due to search engine web crawlers making a
 lot of requests in a short amount of time - often tens of thousands of
-requests a day.  We've had good results with adding a ``robots.txt`` 
+requests a day.  We've had good results with adding a ``robots.txt``
 `Crawl-delay <https://en.wikipedia.org/wiki/Robots_exclusion_standard#Crawl-delay_directive>`__
 to slow down requests (30 is a good initial value to try) and blocking
-particularly demanding or unwanted web crawlers. For more information, see: 
+particularly demanding or unwanted web crawlers. For more information, see:
 
 * http://www.robotstxt.org/
 * https://en.wikipedia.org/wiki/Robots_exclusion_standard
@@ -1301,7 +1283,7 @@ particularly demanding or unwanted web crawlers. For more information, see:
 
 You can also look into increasing the execution limits configured for the
 site, so that more memory and time is made available before the limits are
-reached. More information can be found in the following sections: 
+reached. More information can be found in the following sections:
 
 * :ref:`installation-execution-limits`
 
@@ -1314,26 +1296,26 @@ reached. More information can be found in the following sections:
 Why am I seeing strange behavior in the AtoM treeview?
 ------------------------------------------------------
 
-If you're using the :ref:`context-menu-treeview-sidebar`, double-check your 
+If you're using the :ref:`context-menu-treeview-sidebar`, double-check your
 Treeview settings (in **Admin > Settings > Treeview**) and ensure the sort is set
-to "Manual". There are known issues with the other sort options, particularly if 
-you have any descriptions missing an identifier or a title. For more context on 
-this particular issue, see the following issue ticket: 
+to "Manual". There are known issues with the other sort options, particularly if
+you have any descriptions missing an identifier or a title. For more context on
+this particular issue, see the following issue ticket:
 
 * https://projects.artefactual.com/issues/6574
 
 If you're using the :ref:`context-menu-treeview-full` and you have recently used
-the drag-and-drop functionality to reorder sibling records in the treeview 
+the drag-and-drop functionality to reorder sibling records in the treeview
 (described in the documentation :ref:`here <change-sort-order>`) and one of the
 moved records also has children, it's possible that the background job to update
 the :term:`children <child record>` has not yet completed. Wait a moment, and then
 refresh your browser. You can also check on the status of the job in the Jobs
-page - see: 
+page - see:
 
 * :ref:`manage-jobs`
 
-If the job shows errors or refuses to complete, see the section above on 
-:ref:`troubleshooting-restart-job-scheduler`. 
+If the job shows errors or refuses to complete, see the section above on
+:ref:`troubleshooting-restart-job-scheduler`.
 
 If none of the above is applicable, and/or you are still seeing issues, it
 could be that you need to rebuild the nested set. See:
@@ -1341,14 +1323,14 @@ could be that you need to rebuild the nested set. See:
 * :ref:`troubleshooting-nested-set`
 
 You might want to clear all application caches after doing so, to ensure you are
-seeing the most up-to-date version of the page. See: 
+seeing the most up-to-date version of the page. See:
 
 * :ref:`maintenance-clear-cache`
 
-Don't forget to clear your web browser's cache as well! 
+Don't forget to clear your web browser's cache as well!
 
 If there are still issues and you've tried all of the above, then it is possible
-you are encountering some data corruption. See the following section: 
+you are encountering some data corruption. See the following section:
 
 * :ref:`troubleshooting-data-corruption`
 
@@ -1364,38 +1346,38 @@ Flash to be installed and enabled in your web browser. If you can't see any
 upload link, or you are constantly seeing an error in the widget when trying
 to upload an image, you may need to enable Flash.
 
-Second, there have been reported issues with some browsers and the multi-uploader. 
-Try using a different web browser and see if the outcome is different. 
+Second, there have been reported issues with some browsers and the multi-uploader.
+Try using a different web browser and see if the outcome is different.
 
 If the file is not huge but will not import via the user interface, you should
-double-check the various settings available in AtoM that can be used to limit the 
-size and/or amount of digital objects. There is a global upload limit setting, 
-and a per-institution upload limit setting. In both cases, set the limit to 
+double-check the various settings available in AtoM that can be used to limit the
+size and/or amount of digital objects. There is a global upload limit setting,
+and a per-institution upload limit setting. In both cases, set the limit to
 ``-1`` for no limits on upload size. See:
 
 * :ref:`default-institution-upload`
 * :ref:`upload-limit`
 
-There is also a global upload limit maintained in one of AtoM's 
-:ref:`configuration files <customization-config-files>` - specifically, the 
+There is also a global upload limit maintained in one of AtoM's
+:ref:`configuration files <customization-config-files>` - specifically, the
 ``config/app.yml`` file. You can also set this to ``-1`` to disable upload limits.
-See: 
+See:
 
-* :ref:`config-app-yml` 
+* :ref:`config-app-yml`
 
 If the file never uploads, or the process times out while attempting the
-upload, then the file itself may be too large to import via the user interface. 
+upload, then the file itself may be too large to import via the user interface.
 One important thing to note is that currently, the digital object
 uploads are performed synchronously - that is, on-demand, in real time, via
 the web browser. Because most web browsers have a built in timeout limit of
 about 1 minute (to prevent long-running requests from consuming all resources
 like memory and crashing your browser), your upload may fail if the digital
-object is too big. 
+object is too big.
 
-Note that during installation, there is also a 64MB limit on 
-``upload_max_filesize``, which is maintained in your ``php.ini`` file. If you 
-continue to experience timeouts or are running into this size limitation, then 
-you may need to adjust your PHP execution limits. For more details, see: 
+Note that during installation, there is also a 64MB limit on
+``upload_max_filesize``, which is maintained in your ``php.ini`` file. If you
+continue to experience timeouts or are running into this size limitation, then
+you may need to adjust your PHP execution limits. For more details, see:
 
 * :ref:`installation-execution-limits`
 
@@ -1403,13 +1385,13 @@ you may need to adjust your PHP execution limits. For more details, see:
 
    * :ref:`faq-504-error`
 
-There are 2 alternative methods of importing digital objects - either with 
-descriptive data in a CSV import, using the 
+There are 2 alternative methods of importing digital objects - either with
+descriptive data in a CSV import, using the
 ``digitalObjectPath`` or ``digitalObjectURI`` columns, or using the command-line
 ``digitalobject:load`` task. These methods either make use of the job scheduler
 to perform the import asynchronously in the background, or they are performed via
-the terminal, avoiding the web browser and its timeout limits entirely. For more 
-information, see: 
+the terminal, avoiding the web browser and its timeout limits entirely. For more
+information, see:
 
 **CSV import documentation**
 
@@ -1429,13 +1411,13 @@ available, please make sure you have the following dependencies installed:
 * :ref:`linux-ubuntu-xenial-other-packages`
 
 If you have them installed, you can try regenerating your :term:`digital object`
-derivatives with the following command: 
+derivatives with the following command:
 
 .. code-block:: bash
 
    php symfony digitalobject:regen-derivatives
 
-For more detailed documentation on this command-line task, see: 
+For more detailed documentation on this command-line task, see:
 
 * :ref:`cli-regenerate-derivatives`
 
@@ -1445,7 +1427,7 @@ Why can't I log into AtoM?
 --------------------------
 
 It could be that you've forgotten your correct password. If you need to reset
-it from the command-line, you can use the following task to change a user 
+it from the command-line, you can use the following task to change a user
 password:
 
 * :ref:`cli-change-password`
@@ -1464,35 +1446,35 @@ your theme. You can try navigating directly to the login page by adding
 available at ``www.my-archives.com``, try navigating to
 ``www.my-archives.com/user/login``.
 
-If you are simply redirected to the homepage instead of seeing a login screen, 
-then there are a few possibilities. The first is that you have turned on AtoM's 
-"Require SSL for all administrator functionality" setting in **Admin > Settings 
-> Security**, but you do not currently have your SSL certificate properly 
-configured for your AtoM site, or are trying to login via HTTP instead of HTTPS. 
+If you are simply redirected to the homepage instead of seeing a login screen,
+then there are a few possibilities. The first is that you have turned on AtoM's
+"Require SSL for all administrator functionality" setting in **Admin > Settings
+> Security**, but you do not currently have your SSL certificate properly
+configured for your AtoM site, or are trying to login via HTTP instead of HTTPS.
 For more on this setting, see: :ref:`security-panel`. Similarly, it could be that
-you (or someone else) has configured IP whitelist restrictions via the Security 
-panel - ensure you are logging in from a white-listed IP. 
+you (or someone else) has configured IP whitelist restrictions via the Security
+panel - ensure you are logging in from a white-listed IP.
 
-If you have accidentally turned on the "Require SSL" setting and can't log in, 
-it's possible to use SQL to disable this setting. For basic information on 
+If you have accidentally turned on the "Require SSL" setting and can't log in,
+it's possible to use SQL to disable this setting. For basic information on
 accesssing MySQL via the command-line, see: :ref:`common-atom-queries`. You will
-need to know the user and password you used for the database when installing AtoM, 
-as well as the database name. 
+need to know the user and password you used for the database when installing AtoM,
+as well as the database name.
 
 .. TIP::
 
-   Can't remember what values you used during installation? You can always find 
-   them listed in the ``config/config.php`` AtoM config file. See: 
-   :ref:`customization-config-files`. 
+   Can't remember what values you used during installation? You can always find
+   them listed in the ``config/config.php`` AtoM config file. See:
+   :ref:`customization-config-files`.
 
-First, we'll need to figure out the ID of the related SSL setting in your 
-database. In the MySQL terminal, run the following query: 
+First, we'll need to figure out the ID of the related SSL setting in your
+database. In the MySQL terminal, run the following query:
 
 .. code-block:: sql
 
    SELECT name,id FROM setting WHERE name LIKE '%ssl%';
 
-This should return a simple table, like so: 
+This should return a simple table, like so:
 
 .. code-block:: none
 
@@ -1502,14 +1484,14 @@ This should return a simple table, like so:
    | require_ssl_admin       | XX |
    +-------------------------+----+
 
-Where ``XX`` represents a number. Replace ``XX`` with the number returned in the 
+Where ``XX`` represents a number. Replace ``XX`` with the number returned in the
 previous query, and check that the value is configured with:
 
 .. code-block:: sql
 
    SELECT * FROM setting_i18n WHERE id=XX;
 
-Which should return something like the following: 
+Which should return something like the following:
 
 .. code-block:: none
 
@@ -1519,10 +1501,10 @@ Which should return something like the following:
    | 1     | XX | en      |
    +-------+----+---------+
 
-If the value shows ``0`` then the setting is not enabled. However, if it shows 
-``1`` (meaning it is enabled) and you need to disable it, use the following - 
-once again, use the numerical value returned from the first query in place of 
-``XX`` in the example below: 
+If the value shows ``0`` then the setting is not enabled. However, if it shows
+``1`` (meaning it is enabled) and you need to disable it, use the following -
+once again, use the numerical value returned from the first query in place of
+``XX`` in the example below:
 
 .. code-block:: sql
 
@@ -1530,51 +1512,50 @@ once again, use the numerical value returned from the first query in place of
 
 The other reason you migh be getting booted back to the home page whenever you
 try to login is that it's possible login for this installation is disabled via
-a setting in one of AtoM's :ref:`configuration files <customization-config-files>` 
-- specifically, the ``config/app.yml`` file. 
+a setting in one of AtoM's :ref:`configuration files <customization-config-files>`
+- specifically, the ``config/app.yml`` file.
 
-Before you update this, double-check: is your installation using a 2-site 
+Before you update this, double-check: is your installation using a 2-site
 deployment model (e.g. one internal read/write site, and a second public facing
-read-only catalog)? If yes, are you sure you are trying to log into the internal 
+read-only catalog)? If yes, are you sure you are trying to log into the internal
 site, and not the public read-only site?
 
 If you've checked that you're trying to log into the correct site and you want
-to ensure that the ``read_only`` setting is not engaged in your edit site, then 
-you will want to open the ``config/app.yml`` file via the command-line and 
+to ensure that the ``read_only`` setting is not engaged in your edit site, then
+you will want to open the ``config/app.yml`` file via the command-line and
 ensure that the ``read_only`` setting is set to ``false``. See:
 
-* :ref:`config-app-yml` 
+* :ref:`config-app-yml`
 
 .. IMPORTANT::
 
-   There is also an environment variable maintained in ``/etc/php5/fpm/pool.d/atom.conf`` 
-   that can override the one in ``config/app.yml``. We recommend checking both 
+   There is also an environment variable maintained in ``/etc/php/7.2/fpm/php-fpm.conf``
+   that can override the one in ``config/app.yml``. We recommend checking both
    files. In the ``atom.conf`` file, ensure that ``env[ATOM_READ_ONLY]`` is set
-   to "off" to disable this setting and allow users to log in again.  
+   to "off" to disable this setting and allow users to log in again.
 
 .. _faq-not-listed:
 
 What should I do if I get an error that isn't described here?
 -------------------------------------------------------------
 
-First, please go through the above sections of this document. Collect as much 
+First, please go through the above sections of this document. Collect as much
 information as you can about the nature of the issue and how to reproduce it, as
-well as information on your particular installation environment. See: 
+well as information on your particular installation environment. See:
 
 * :ref:`troubleshooting-first-steps`
 
 Try restarting services, and/or some of the most common command-line tasks used
-for troubleshooting. See: 
+for troubleshooting. See:
 
 * :ref:`troubleshooting-restart-services`
 * :ref:`troubleshooting-maintenance-tasks`
 
-If these solutions don't help, then you might want to search the AtoM 
-`user forum <https://groups.google.com/forum/#!forum/ica-atom-users>`__. Please 
-review the following section of this document for tips on posting to the user 
-forum: 
+If these solutions don't help, then you might want to search the AtoM
+`user forum <https://groups.google.com/forum/#!forum/ica-atom-users>`__. Please
+review the following section of this document for tips on posting to the user
+forum:
 
 * :ref:`troubleshooting-support`
 
 :ref:`Back to top <maintenance-troubleshooting>`
-

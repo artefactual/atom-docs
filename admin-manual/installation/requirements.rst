@@ -69,7 +69,7 @@ of each component.
 * Oracle `Java <https://www.java.com/en/>`__ 7 or newer (required for
   Elasticsearch)
 * `MySQL <https://www.mysql.com/>`__ 5.1 or newer
-* `PHP <http://php.net/>`__ 5.5 or 5.6 (with Ubuntu 14.04) or 7.0 (with Ubuntu 16.04) 
+* `PHP <http://php.net/>`__ 7.0 (with Ubuntu 16.04) or 7.2 (with Ubuntu 18.04)
 * `Gearman job server <http://gearman.org>`__
 
 Optionally, Memcached can be used as cache engine:
