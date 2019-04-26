@@ -701,6 +701,98 @@ so:
 
    php symfony taxonomy:normalize Places
 
+.. _cli-normalize-physical-object:
+
+Manage physical storage locations
+=================================
+
+AtoM currently provides two command-line tasks that enable system administrators
+to manage physical object storage locations and to perform the following:
+
+* Consolidate duplicated storage location information.
+* Delete physical object storage locations not linked to any descriptions.
+
+Normalize physical object data
+------------------------------
+
+The physical object normalization task aids in the management of containers
+in AtoM's physical storage module. Specifically, this task identifies duplicate
+storage locations that share identical values in the container name, location,
+and type. When duplicates are identified, the oldest of this data (based on the
+createdAt timestamp in the database) will be preserved, and then all relations
+from the duplicate(s) are appended to that record before deletion. Running this
+task essentially aids in the consolidation of duplicate storage locations.
+
+.. code:: bash
+
+   php symfony physicalobject:normalize
+
+**Task options**
+
+.. image:: images/cli-physical-obj-normalize.png
+   :align: center
+   :width: 70%
+   :alt:   An image of the CLI options when invoking the physicalobject:normalize 
+           command
+
+By entering ``php symfony help physicalobject:normalize`` into the command-line,
+you see the options and descriptions available on this tool, as pictured above.
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the import.
+
+The ``--name-only`` option specifies that the task only should match and
+consolidate based on the container's name.
+
+The ``--verbose`` option shows details of what is marked for deletion.
+
+The ``--force`` option will enable normalization without confirmation.
+
+The ``--dry-run`` option makes no database changes. The output will be a list
+of containers that will be affected in the console, without actually merging
+and deleting.
+
+Delete unlinked physical object locations
+-----------------------------------------
+
+Another tool that may be helpful for managing physical storage locations
+is a task to identify containers in the physical storage module that are not
+linked to any archival descriptions and then to delete them.
+
+.. code:: bash
+
+   php symfony physicalobject:delete-unlinked
+
+**Task options**
+
+.. image:: images/cli-physicalobject-delete-unlinked.png
+   :align: center
+   :width: 70%
+   :alt:   An image of the CLI options when invoking the physicalobject:delete-
+           unlinked command
+
+By entering ``php symfony help physicalobject:delete-unlinked`` into the
+command-line, you see the options and descriptions available on this tool, as
+pictured above.
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the import.
+
+The ``--name-only`` option specifies that the task only should match and
+consolidate based on the container's name.
+
+The ``--verbose`` option shows details of what is marked for deletion.
+
+The ``--force`` option will enable normalization without confirmation.
+
+The ``--dry-run`` option makes no database changes. The output will be a list
+of containers that will be affected in the console, without actually merging
+and deleting.
+
+:ref:`Back to top <maintenance-cli-tools>`
+
 .. _cli-update-publication-status:
 
 Update the publication status of descriptions
