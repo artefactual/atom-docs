@@ -22,18 +22,18 @@ Technical overview
 
 HTML pages served to a web browser from a web server. The team at
 `Artefactual <http://www.artefactual.com/>`__ (lead developers of the AtoM
-project) prefers `Nginx <http://wiki.nginx.org/Main>`_ in both development and
+project) prefer `Nginx <http://wiki.nginx.org/Main>`_ in both development and
 production environments, but `Apache <https://httpd.apache.org/>`_ has been
 tested as well; other web servers might be used but they are not tested by
 AtoM :term:`developers <developer>`.
 
 A database on a database server. `MySQL
-<https://en.wikipedia.org/wiki/MySQL>`_ (5.1+) is used in development but AtoM
+<https://en.wikipedia.org/wiki/MySQL>`_ (5.6+) is used in development but AtoM
 uses a database abstraction layer and is therefore potentially compatible with
 Postgres, SQLite, SQLServer, Oracle, etc. (other solutions are not tested by
 AtoM developers)
 
-PHP (5.3.10+) software code that manages requests and responses between the web
+PHP (7.0+) software code that manages requests and responses between the web
 clients, the application logic, and the application content stored in
 the database. AtoM also makes use of a number of PHP extensions; see:
 :ref:`installation-requirements`.
@@ -42,7 +42,7 @@ The Symfony (`1.4 <http://symfony.com/legacy>`_) framework that organizes the
 component parts using object orientation and best practice web design
 patterns.
 
-`Elasticsearch <http://www.elasticsearch.org/>`__ (1.3.0+), a distributed
+`Elasticsearch <http://www.elasticsearch.org/>`__ (5.x), a distributed
 search server based on Apache Lucene, which acts as the application's search
 and analytic engine. Elasticsearch is not integrated directly into AtoM code
 as a library, but as a service deployed in the same network which AtoM
@@ -131,7 +131,8 @@ multiple languages. AtoM comes with several translations installed, all of
 which are generously provided by volunteer translators from the
 AtoM User Community.
 
-Want to help us translate the AtoM application into your language, or improve an existing translation? Find more information on how to contribute
+Want to help us translate the AtoM application into your language, or improve
+an existing translation? Find more information on how to contribute
 `here <https://www.accesstomemory.org/community/translate>`__.
 
 Multi-repository
