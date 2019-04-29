@@ -151,11 +151,13 @@ Application server
 ==================
 
 Remember that nginx is just the HTTP frontend. Internally, each request is
-forwarded to php5-fpm. php5-fpm is a pool of managed AtoM processes. The pool
+forwarded to php-fpm. php-fpm is a pool of managed AtoM processes. The pool
 has its own configuration file that defines some important global PHP settings
 like timeouts, and environment variables that may also modify the way that
 AtoM works as documented in accesstomemory.org.
 
-The file of the pool is located at ``/etc/php5/fpm.d/pool.d/atom.conf``. Edit
-with ``nano``. Once saved, run: ``sudo restart php5-fpm`` and the changes will
-apply.
+The file of the pool is located at ``/etc/php7.0/fpm/pool.d/atom.conf`` (Ubuntu
+16.04) or ``/etc/php7.2/fpm/pool.d/atom.conf`` (Ubuntu 18.04). Edit with
+``nano``. Once saved, run: ``sudo systemctl restart php7.0-fpm`` (Ubuntu 16.04),
+or ``sudo systemctl restart php7.2-fpm`` (Ubuntu 18.04), and
+the changes will apply.
