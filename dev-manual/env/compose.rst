@@ -53,12 +53,12 @@ change your current directory.
 
 .. code-block:: bash
 
-   git clone -b qa/2.5.x https://github.com/artefactual/atom.git atom
+   git clone -b qa/2.6.x https://github.com/artefactual/atom.git atom
    cd atom
 
 .. note::
 
-   Clone the "stable/2.4.x" branch if you want to test the latest stable
+   Clone the "stable/2.5.x" branch if you want to test the latest stable
    version of AtoM.
 
 Now set the environment variable ``COMPOSE_FILE`` to tell Compose what is the
