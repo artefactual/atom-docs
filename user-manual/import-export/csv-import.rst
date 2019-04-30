@@ -189,6 +189,7 @@ Available example files are:
   * Authority record relationships CSV template
 
 * Accessions CSV template
+* Deaccessions CSV template
 * Events CSV template
 * Repository CSV template
 

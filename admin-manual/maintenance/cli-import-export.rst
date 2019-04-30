@@ -586,6 +586,7 @@ the CLI. Below are basic instructions for each available import type.
 * :ref:`csv-repository-import-cli`
 * :ref:`csv-actor-import-cli`
 * :ref:`csv-import-accessions-cli`
+* :ref:`csv-import-deaccessions-cli`
 * :ref:`csv-import-progress`
 * :ref:`digital-object-load-task`
 
@@ -1141,7 +1142,7 @@ You can view the example CSV files for authority records in the AtoM code (at
 ``lib/task/import/example/authority_records/``) or they can be downloaded
 directly here:
 
-* https://wiki.accesstomemory.org/Resources/CSV_templates#Other_CSV_templates
+* https://wiki.accesstomemory.org/Resources/CSV_templates#Authority_records
 
 The primary documentation for preparing the main authority record CSV template
 can be found in the User Manual, here:
@@ -1426,7 +1427,7 @@ AtoM source code ( at
 ``lib/task/import/example/authority_records/example_authority_
 record_aliases.csv``) or can be downloaded here:
 
-* https://wiki.accesstomemory.org/Resources/CSV_templates#Other_CSV_templates
+* https://wiki.accesstomemory.org/Resources/CSV_templates#Authority_records
 
 The Alternate names CSV file must be imported at the same time as its related
 Authority record CSV file. The ``--alias-file`` command-line option is used
@@ -1457,7 +1458,7 @@ code ( at
 ``lib/task/import/example/authority_records/example_authority_record_relat
 ionships.csv``) or can be downloaded here:
 
-* https://wiki.accesstomemory.org/Resources/CSV_templates#Other_CSV_templates
+* https://wiki.accesstomemory.org/Resources/CSV_templates#Authority_records
 
 The Relationships CSV file must be imported at the same time as its related
 Authority record CSV file. The ``--relation-file`` command-line option is used
@@ -1495,7 +1496,7 @@ An example CSV template file is available in the
 ``lib/task/import/example/example_accessions.csv`` directory of AtoM, or it
 can be downloaded here:
 
-* https://wiki.accesstomemory.org/Resources/CSV_templates#Other_CSV_templates
+* https://wiki.accesstomemory.org/Resources/CSV_templates#Accessions
 
 The primary documentation for preparing your accession record data in a CSV
 file for import can be found in the User Manual:
@@ -1559,6 +1560,85 @@ However, if you would like to index the import as it progresses, the
 ``--index`` option can be used to enable this. This is useful if you have a
 large database, and don't want to have to re-index everything. For more
 information on indexing options, see: :ref:`maintenance-populate-search-index`.
+
+:ref:`Back to top <cli-import-export>`
+
+.. _csv-import-deaccessions-cli:
+
+Import deaccession records
+--------------------------
+
+The deaccession import tool allows you to import data about deaccession activies, 
+which can be appended to :term:`accession records <accession record>` in AtoM. 
+For more general information on working with deaccession records in AtoM, consult
+the User manual: :ref:`deaccessions`. For the task to succeed, an accession number
+for an existing accession must be provided for each row - it is not possible to 
+create new accession records while importing deaccession CSV data. 
+
+An example CSV template file is available in the 
+``lib/task/import/example/example_deaccessions.csv`` directory of AtoM, 
+or it can be downloaded here:
+
+* https://wiki.accesstomemory.org/Resources/CSV_templates#Deaccession_records
+
+The expected CSV will have 7 columns, corresponding to various fields
+available in the Deaccession record template. These include:
+
+* **accessionNumber**: expects the accession number of an existing accession
+  record in AtoM as input. If no match is found for an existing accession, the
+  console will provide a warning, the row will be skipped, and the task will
+  continue.
+* **deaccessionNumber**: an identifier for the deaccession. Free text, will
+  support symbols and typographical marks such as dashes and slashes.
+* **date**: expects a date value in ISO-8601 format (YYYY-MM-DD).
+* **scope**: expects one of the controlled terms from the "Scope" field in the
+  AtoM deaccession record template. English options include "Whole" and "Part".
+* **description**: Free-text. Identify what materials are being deaccessioned.
+* **extent**: Free-text. Identify the number of units and the unit of
+  measurement for the amount of records being deaccessioned.
+* **reason**: Free-text. Provide a reason why the records are being
+  deaccessioned.
+* **culture**: Expects a 2-letter ISO 639-1 language code as input (e.g.: en,
+  fr, es, pt, etc).
+
+**Example use** - run from AtoM's root directory:
+
+.. code-block:: bash
+
+   php symfony csv:deaccession-import /path/to/my/example_accessions.csv
+
+There are also a number of options available with this command-line task.
+
+.. image:: images/csv-deaccession-options.*
+   :align: center
+   :width: 85%
+   :alt: An image of the command-line options for deaccession record imports
+
+By typing ``php symfony help csv:deaccession-import`` into the command-line from
+your root directory, **without** specifying the location of a CSV, you will
+be able to see the CSV import options available (pictured above). A brief
+explanation of each is included below.
+
+The ``--application``, ``--env``, and ``--connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the import.
+
+The ``--rows-until-update``, ``--skip-rows``,  and ``--error-log`` options can 
+be used the same was as described in the section 
+:ref:`above <csv-import-descriptions-cli>` on importing descriptions. If you
+wish a summary of warnings reported in the console log, you can use the
+``--error-log`` option - it takes a path to a new text file as input, and
+will copy all console warnings to this log file. Acceptable file extensions for 
+the log file are ``.txt`` or ``.log``. For more information on the 
+``--rows-until-update`` option, see also the section below, 
+:ref:`csv-import-progress`.
+
+More than 1 row of data (i.e more than 1 deaccession record) can be associated
+with the same accession record. To prevent accidental exact duplicates, by
+default AtoM will skip any rows where *all* data is identical to a row
+preceding it, and will report the skipped record in the console log. If you
+are intentionally importing duplicate deaccession records, you can use the
+``--ignore-duplicates`` option.
 
 :ref:`Back to top <cli-import-export>`
 

@@ -44,6 +44,7 @@ reasons behind the deaccssion. Fields include:
 
    * :ref:`Accessions <accession-records>`
    * :ref:`Searching for accession records <dedicated-search-accessions>`
+   * :ref:`csv-import-deaccessions-cli` (from the command-line)
 
 .. NOTE::
 
