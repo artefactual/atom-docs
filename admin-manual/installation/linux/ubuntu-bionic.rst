@@ -84,6 +84,10 @@ and install the public signing key used in their repository:
 
    wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 
+.. IMPORTANT:: 
+
+   Don't miss the dash ( ``-`` ) at the end of the above command! 
+
 Now add their repository:
 
 .. code-block:: bash
@@ -519,20 +523,17 @@ different SQL modes, which affects the SQL syntax MySQL supports and the data
 validation checks it performs. We’ll add our preferred mode settings in a new
 file.
 
-First, let’s create a new file using nano:
+First, let’s create a new file with our SQL modes. 
 
-.. code-block:: bash
-
-   sudo nano /etc/mysql/conf.d/mysqld.conf
-
-Paste the following values in:
+Paste the following values in a new file at ``/etc/mysql/conf.d/mysqld.conf`` 
+and save:
 
 .. code-block:: bash
 
    [mysqld]
    sql_mode=STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
 
-Press CTRL+X to exit, then y to confirm, and press Enter. Nowe we’ll restart MySQL:
+Now we’ll restart MySQL:
 
 .. code-block:: bash
 
@@ -553,9 +554,12 @@ something like http://localhost. AtoM will redirect you to the installer
 automatically.
 
 The installation process consists of a number of steps where you will be asked
-for configuration details such as the location of your database server. If you
-have followed this document to the letter, this is how you should fill the
-following fields:
+for configuration details such as the location of your database server. In some 
+cases, it may provide default values, such as ``root`` for the database username.
+If you have followed this document to the letter (including creating a different 
+database user in the database configuration step 
+:ref:` above <linux-ubuntu-bionic-create-database>`, this is how you should fill 
+the following fields:
 
 * Database name: ``atom``
 * Database username: ``atom``
