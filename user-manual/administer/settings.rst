@@ -89,6 +89,7 @@ This section will describe each setting in the "Global" :term:`information area`
 * :ref:`Upload multi-page files as multiple descriptions <upload-multi-files>`
 * :ref:`Show tooltips <tooltips>`
 * :ref:`Generate description permalinks from <description-permalinks>`
+* :ref:`permissive-slugs`
 * :ref:`Default publication status <default-publication-status>`
 * :ref:`drafts-notification`
 * :ref:`SWORD deposit directory <sword-directory>`
@@ -734,6 +735,34 @@ For further context on slugs in AtoM, see: :ref:`slugs-in-atom`
    interface, using the Rename module. For more information, see:
 
    * :ref:`rename-title-slug`
+
+.. _permissive-slugs:
+
+Use any valid URI path segment and uppercase character in slugs
+---------------------------------------------------------------
+
+This setting will affect how AtoM generates permalinks, or :term:`slugs <slug>` 
+for new records. In new installations, this setting is set to "No" by default. 
+
+When set to "No," generated slugs will only allow digits, letters, and dashes.
+Sequences of unaccepted characters (e.g. accented or special characters, etc.)
+are replaced with valid characters such as English alphabet equivalents or
+dashes. When set to to "Yes," AtoM will allow upper case characters, any valid
+unicode characters as specified in 
+`RFC 3987 <https://tools.ietf.org/html/rfc3987>`__ including accented characters, 
+and some special characters such as: ``, - _ ~ : = * @``. For further details, 
+see: 
+
+* :ref:`slugs-in-atom`
+
+The command-line task to generate slugs, and AtoM's Rename module (which will
+allow users to edit the slug associated with an :term:`archival description`) 
+will both respect and enforce the setting going forward. However, changing this
+setting will **not** automatically alter existing slugs. For more information, 
+see: 
+
+* :ref:`cli-generate-slugs`
+* :ref:`rename-title-slug`
 
 .. _default-publication-status:
 

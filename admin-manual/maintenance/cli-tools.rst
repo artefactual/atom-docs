@@ -493,7 +493,10 @@ to manually insert a slug into the database for that entity.
 For information objects, the generate slugs task will respect the global
 settings for the source from which description permalinks are created. These
 settings can be controlled by an :term:`administrator` via the user interface
-- for more information, see: :ref:`description-permalinks`.
+- for more information, see: 
+
+* :ref:`description-permalinks`.
+* :ref:`permissive-slugs`
 
 Note that by default, existing slugs will **not** be replaced. If you want to
 generate new slugs for existing objects, you will need to first delete the
@@ -551,20 +554,53 @@ Users, Groups        Automatically generated
 Other entities       Name
 ==================== =============================
 
-Generated slugs will only allow digits, letters, and dashes. Sequences of
-unaccepted characters (e.g. accented or special characters, etc.) are replaced
-with valid characters such as English alphabet equivalents or dashes.
-This conforms to general practice around slug creation - for example,
-it is "common practice to make the slug all lowercase, accented characters are
-usually replaced by letters from the English alphabet, punctuation marks are
-generally removed, and long page titles should also be truncated to keep the
-final URL to a reasonable length"
-(`Wikipedia <http://en.wikipedia.org/wiki/Clean_URL#Slug>`__). In AtoM, slugs
-are truncated to a maximum of 250 characters.
+By default in new  installations, AtoM will "sanitize" slugs, removing spaces, 
+special characters, punctuation, and capital letters. However, this behavior can
+be changed by an administrator to allow a more permissive slug generation 
+pattern, where any UTF-8 character allowed by 
+`RFC 3987 <https://tools.ietf.org/html/rfc3987>`__ in an Internationalized 
+Resource Identifier 
+(`IRI <https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier>`__)
+can be used. For more information, see: 
+
+* :ref:`permissive-slugs`
+
+When this permissive mode is enabled, AtoM will allow the following to be used 
+in slugs: 
+
+* a-z, A-Z, and 0-9
+* All unicode characters specified in `RFC 3987 <https://tools.ietf.org/html/rfc3987>`__, 
+  including characters with accents
+* The following punctuation symbols: ``, - _ ~ : = * @``
+
+Certain special characters are still reserved either as specified by IRI
+requirements or based on how AtoM generates URLs. Consequently, even when
+permissive mode is enabled, some sanitization will still take place. For
+example:
+
+* Spaces will still be replaced by dashes
+* Special characters not listed above will be stripped - examples include: 
+  ``! ` " ' # $ / | \ + % ( ) { } [ ] . < > ?``
+
+When the permissive setting is set to "No" and slugs are being more 
+comprehensively sanitized, generated slugs will only allow digits, letters,
+and dashes. Sequences of unaccepted characters (e.g. accented or special
+characters, etc.) are replaced with valid characters such as English alphabet
+equivalents or dashes. This conforms to general practice around slug creation
+- for example, it is "common practice to make the slug all lowercase, accented
+characters are usually replaced by letters from the English alphabet,
+punctuation marks are generally removed, and long page titles should also be
+truncated to keep the final URL to a reasonable length"
+(`Wikipedia <http://en.wikipedia.org/wiki/Clean_URL#Slug>`__). 
+
+In AtoM, all slugs are truncated to a maximum of 250 characters. Case matters
+for the uniqueness of a slug - for example: ``my-slug`` is not considered the
+same as ``My-slug`` or ``My-Slug``, which could all point to different records
+in AtoM.
 
 If a slug is already in use, AtoM will append a dash and an incremental number
 (a numeric suffix) to the new slug - for example, if the slug "*correspondence*"
-is already in use, the next record with a title of "Correspondence" will
+is already in use, the next record with a title of "correspondence" will
 receive the slug "*correspondence-2*".
 
 If a record is created without data in the :term:`field` from which the slug
@@ -573,11 +609,12 @@ title), AtoM will assign it a randomly generated alpha-numeric slug. Once
 assigned, slugs for archival descriptions can be changed through the
 :term:`user interface`. Slugs for other entity types cannot be changed through
 the user interface - either the record must be deleted and a new record created,
-or you must manipulate the database directly.
+or you must manipulate the database directly, or use the :ref:`cli-generate-slugs` 
+task described above.
 
 .. TIP::
 
-   Users can also edit the slug associated with an :term:`archival description`
+   Users can edit the slug associated with an :term:`archival description`
    via the :term:`user interface`. For more information, see:
 
    * :ref:`rename-title-slug`
