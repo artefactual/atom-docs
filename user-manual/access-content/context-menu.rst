@@ -123,13 +123,13 @@ Treeview
 The treeview is a contextual and navigation element for
 :term:`archival descriptions <archival description>` or :term:`terms <term>`
 (such as :term:`place`, :term:`subject`, or genre :term:`access points <access point>`.
-It serves the dual purpose of showing a record or :term:`term's <term>`
+It serves the dual purpose of showing a record's or :term:`term's <term>`
 relationships to other records or terms in a hierarchy, as well as serving as a
 navigational tool. This section will focus on the Treeview as used for context
 and navigation in :term:`archival description` view pages - for more
 information on the Terms treeview, see: :ref:`context-menu-terms-treeview`.
 
-The treeview for archival descriptions has 2 ways of being displayed - either
+The treeview for archival descriptions can be displayed in two ways - either
 in the left-hand context menu (referred to as the sidebar treeview), or in a
 larger version in the main column of the :term:`view page` of an archival
 description. The display of the treeview can be controlled by an
@@ -146,7 +146,7 @@ description. The display of the treeview can be controlled by an
 
 The specific features of each treeview display option will be outlined below.
 
-**Jump now to:**
+**Jump to:**
 
 * :ref:`context-menu-treeview-sidebar`
 * :ref:`context-menu-treeview-full`
@@ -162,17 +162,17 @@ quick search, see: :ref:`treeview-search`.
 
 :term:`Administrators <administrator>` can decide how they would like
 descriptions in the sidebar treeview to sort and display throughout their
-AtoM installation. See :ref:`sort-treeview`. For the full-width treeview, the 
+AtoM installation. See :ref:`sort-treeview`. For the full-width treeview, the
 sort is automatically set to Manual.
 
-In addition to supporting navigation, both treeview types can also be used to 
-support arrangement. That is, a logged in user with sufficient edit 
-:term:`permissions <access privilege>` can drag and drop sibling nodes 
-(i.e. descriptions with the same parent) to re-order them. Dragging and dropping 
-is not currently supported between levels (for example, dragging a file-level 
-description to a different parent Series). For the sidebar treeview, the sort 
-settings must be set to "Manual" for this to work - see: :ref:`sort-treeview`. 
-For more information, see: 
+In addition to supporting navigation, both treeview types can also be used to
+support arrangement. That is, a logged in user with sufficient edit
+:term:`permissions <access privilege>` can drag and drop sibling nodes
+(i.e. descriptions with the same parent) to re-order them. Dragging and dropping
+is not currently supported between levels (for example, dragging a file-level
+description to a different parent Series). For the sidebar treeview, the sort
+settings must be set to "Manual" for this to work - see: :ref:`sort-treeview`.
+For more information, see:
 
 * :ref:`Change the sort order of an archival hierarchy <change-sort-order>`
 
@@ -181,7 +181,7 @@ For more information, see:
    In addition to displaying in the context menu for archival descriptions, the
    treeview is also used for hierarchical :term:`taxonomies <taxonomy>` such as
    Subjects, to show parent-child relationships between :term:`terms <term>`. For
-   more information, see:   
+   more information, see:
 
    * :ref:`context-menu-terms-treeview`
    * :ref:`context-menu-results`
@@ -257,8 +257,8 @@ series, and return to viewing all series below the fonds-level record.
    description, which will also reload the :term:`view page` to display the
    selected fonds-level description.
 
-An :term:`administrator` can also change the default sort order of the sidebar 
-treeview via |gears| **Admin > Settings**. For more information, see: 
+An :term:`administrator` can also change the default sort order of the sidebar
+treeview via |gears| **Admin > Settings**. For more information, see:
 :ref:`sort-treeview`.
 
 .. _context-menu-treeview-full:
@@ -325,10 +325,30 @@ description :term:`view page` will automatically update to display that
 record. When navigating with a keyboard, the view page will not update until
 the user presses the "enter" key to select the description for viewing.
 
-Like the sidebar treeview, "(Draft)" will appear beside all draft descriptions 
+Like the sidebar treeview, for performance reasons AtoM may not load all
+available descriptions in the current position of the hierarchy. If there are
+more than 50 immediate children to the level being viewed AtoM will add the
+number of remaining records not immediately displayed in the top right corner.
+
+.. image:: images/treeview-paging-1.*
+   :align: center
+   :width: 80%
+   :alt: An image of paging in the full-width treeview
+
+Clicking on that number will load the next 50 records. If there are still more
+records not displayed, the number of remaining records will be shown and the
+user can choose to see the next set, or return to the beginning by choosing
+"reset".
+
+.. image:: images/treeview-paging-2.*
+   :align: center
+   :width: 80%
+   :alt: An image of paging in the full-width treeview
+
+Like the sidebar treeview, "(Draft)" will appear beside all draft descriptions
 displayed to authenticated (i.e. logged in) users. Unlike the sidebar treeview,
-however, an :term:`administrator` can configure what metadata elements are used 
-for display in each treeview node - for more information, see: 
+however, an :term:`administrator` can configure what metadata elements are used
+for display in each treeview node - for more information, see:
 
 * :ref:`fullwidth-treeview-settings`
 
