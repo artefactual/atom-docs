@@ -94,6 +94,7 @@ This section will describe each setting in the "Global" :term:`information area`
 * :ref:`drafts-notification`
 * :ref:`SWORD deposit directory <sword-directory>`
 * :ref:`cache-xml-setting`
+* :ref:`clipboard-save-setting`
 
 Hovering over each setting :term:`field` will also provide additional
 information on that field - it will appear in an "information box" below your
@@ -960,6 +961,36 @@ avoid constantly triggering many jobs.
    generated on request via AtoM's job scheduler - the cached XML is not used.
    For more information on this functionality, see:
    :ref:`xml-export-clipboard`
+
+.. _clipboard-save-setting:
+
+Saved clipboard maximum age
+---------------------------
+
+Both public and authenticated (i.e. logged in) users have the option to save 
+results pinned to AtoM's :term:`clipboard`, and load them at a later date - for 
+more information, see: 
+
+* :ref:`save-clipboard`
+* :ref:`load-saved-clipboard`
+
+To avoid having AtoM's database grow indefinitely when the clipboard is used
+heavily, saved clipboards are not stored indefinitely. Instead, an
+:term:`administrator` can configure how many days saved clipboards are stored 
+before being purged from the database. 
+
+The setting takes a numeric value that represents the number of days a saved 
+clipboard should be stored before it is eligible for automatic deletion from
+the database. 
+
+.. IMPORTANT::
+
+   By default in new AtoM installations, this value is 0 - meaning that saved
+   clipboards will be purged the following day! If you intend to allow your
+   users to make use of the Saved clipboard feature, be sure to configure this
+   to a reasonable value - e.g. 30 (days), etc.
+
+:ref:`Back to top <settings>`
 
 .. _dip-upload-settings:
 

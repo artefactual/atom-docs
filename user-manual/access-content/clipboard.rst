@@ -28,9 +28,14 @@ more information, see:
 * :ref:`browse-hierarchy-inventory`
 * :ref:`search-updates`
 
-With the release of 2.5, the clipboard is no longer **session-based**, but
-persists between user sessions. You can now save your clipboard and it will be
-available when you open your browser the next time.
+The clipboard is  **session-based**, meaning that adding results to the
+clipboard and then logging in/out (which starts a new session) or closing your
+browser without first saving the clipboard results will result in all pinned
+items being lost. However, users can now save clipboards and reload the
+clipboard results in a future session if desired. An :term:`administrator` can
+also determine how long saved clipboards are stored in the database before being 
+purged, via a setting found in |gears| **Admin > Settings > Global** - see: 
+:ref:`clipboard-save-setting`. 
 
 .. IMPORTANT::
 
@@ -54,9 +59,11 @@ can be used.
 * :ref:`clipboard-page`
 * :ref:`clipboard-export-all`
 * :ref:`save-clipboard`
+* :ref:`load-saved-clipboard`
 
 .. SEEALSO::
 
+   * :ref:`clipboard-save-setting`
    * :ref:`archival-descriptions`
    * :ref:`authority-records`
    * :ref:`archival-institutions`
@@ -99,20 +106,25 @@ the different :term:`entity` types:
 The menu has four options. The "Clear selections" option will remove all items
 (across all entity types) currently pinned to the clipboard. On the clipboard
 page, they won't be cleared until you refresh the browser, giving you an
-opportunity to repin them if you've removed them by accident - however, anywhere
-else in the application, this **removal will be immediate**. The "Go to
-clipboard" option in the menu will take you to the Cliboard page, described in
-more detail below. The "Save clipboard" option will allow you to save your
-selections and return to them at a future session, and the "Load clipbaord"
-option will load a previously saved selection.
+opportunity to repin them if you've removed them by accident - however,
+anywhere else in the application, this **removal will be immediate**. The "Go
+to clipboard" option in the menu will take you to the Cliboard page, described
+in more detail below: :ref:`clipboard-page`. The "Save clipboard" option will
+allow you to save your selections and return to them at a future session, and
+the "Load clipbaord" option will load a previously saved selection. For more
+information on these options, see below:
+
+* :ref:`save-clipboard`
+* :ref:`load-saved-clipboard`
 
 .. _clipboard-pinning:
 
 Pinning records to the clipboard
 ================================
 
-Users can add or "pin" an :term:`archival description` to the clipboard for
-review or further action from 2 places:
+Users can add or "pin" an :term:`archival description`, an 
+:term:`authority record`, and/or an :term:`archival institution` record to the 
+clipboard for review or further action from 2 places:
 
 * Any search or browse result page where the desired record appears
 * Any :term:`view page` of a record that is a supported entity on the
@@ -359,35 +371,137 @@ general :ref:`import-export` documentation. For more information, see:
 Saving your clipboard for another session
 =========================================
 
-With the release of 2.5, you are able to save your clipboard, close your
-browser, and return at a later time to continue to use your saved entries. When
-you are ready to leave your current session, click on the clipboard menu button
-and choose "Save clipboard".
+With the release of 2.5, all users are now able to save a clipboard, close the
+browser, and return at a later time to continue to use the saved entries. On
+save, AtoM will generate a unique ID number that will be used to load the
+clipboard in the future. This means a saved clipboard could potentially be
+used to support reference requests - for example, a researcher identifies
+records of interest, adds them to the clipboard and saves, and then sends the
+saved clipboard ID to the reference archivist. The archivist is then able to
+load the saved clipboard and see the records of interest for retrieval, which
+can be made available when a researcher visit is scheduled.
+
+.. IMPORTANT::
+
+   To avoid having AtoM's database grow indefinitely when the clipboard is
+   used heavily, saved clipboards are not stored indefinitely. Instead, an
+   :term:`administrator` can configure how many days saved clipboards are
+   stored before being purged from the database, via a setting in |gears|
+   **Admin > Settings > Global**. See:
+
+   * :ref:`clipboard-save-setting`
+
+   By default in new installations, **this setting is set to 0 days** - make
+   sure you configure this setting before using the "Save clipboard" option,
+   to ensure that saved results are not lost!
+
+**To save and reload Clipboard results:**
+
+When you are ready to leave your current session, click on the 
+:term:`clipboard menu` button and choose "Save clipboard". 
 
 .. image:: images/save-clipboard.*
    :align: center
    :width: 30%
    :alt: An image of a Clipboard menu
 
-AtoM will generate a message with an ID number of your saved session and prompt
-you to record the number for later.
+Alternatively, you can also click the "Save" button in the :term:`button block` 
+at the bottom of the Clipboard page.
+
+.. image:: images/button-block-clipboard.*
+   :align: center
+   :width: 85%
+   :alt: An image of the button block found on the Clipboard page
+
+When saved, AtoM will load the Clipboard :term:`view page` and generate a 
+message with an ID number of your saved session and prompt you to record the 
+number for later.
 
 .. image:: images/save-clipboard-number.*
    :align: center
    :width: 80%
    :alt: A saved Clipboard message
 
-You can then exit your browser. When you return and want to see your clipboard,
-choose "Load clipboard" from the menu and enter your saved number.
+.. IMPORTANT:: 
+
+   Be sure to save this number for future reference! You won't be able to 
+   reload your clipboard without it. 
+
+Once you've recorded the saved clipboard's ID, you can now exit your browser. 
+See :ref:`below <load-saved-clipboard>` for instructions on how to load your
+clipboard during a future session. 
+
+:ref:`Back to top <clipboard>`
+
+.. _load-saved-clipboard:
+
+Loading a saved clipboard
+=========================
+
+When reloading a saved clipboard, users have the option to either
+overwrite/replace any records currently pinned to the clipboard with the saved
+records, or merge the two clipboard result sets together. This merge option
+can allow for asynchronous collaboration between two AtoM users - for example,
+two different researchers coordinating to pin records of interest in different
+sessions and then combining the results, or two different archivists working
+on arrangement and description sharing work in progress.
+
+.. IMPORTANT::
+
+   To avoid having AtoM's database grow indefinitely when the clipboard is
+   used heavily, saved clipboards are not stored indefinitely. Instead, an
+   :term:`administrator` can configure how many days saved clipboards are
+   stored before being purged from the database, via a setting in |gears|
+   **Admin > Settings > Global**. See:
+
+   * :ref:`clipboard-save-setting`
+
+   By default in new installations, **this setting is set to 0 days** - make
+   sure you configure this setting before using the "Save clipboard" option,
+   to ensure that saved results are not lost!
+
+**To load a saved clipboard in AtoM**:
+
+ When you return and want to see your saved :term:`clipboard`, choose "Load 
+ clipboard" from the :term:`clipboard menu` and enter your saved number into 
+ the "Clipboard ID" field.
 
 .. image:: images/load-clipboard.*
    :align: center
    :width: 80%
    :alt: Load a saved Clipboard
 
+The "Action" menu is a :term:`drop-down menu` that contains two options: 
+
+* Merge saved clipboard with existing results
+* Replace existing results with saved clipboard
+
+If you currently have 0 results on this session's clipboard, it doesn't matter
+which option you choose. However, if you have already pinned records to the 
+clipboard during this session, AtoM will let you determine how it will handle
+loading the previously saved clipboard results. 
+
+If you would like to purge any records currently added to the clipboard and 
+replace them with your previously saved results, choose "Replace existing results 
+with saved clipboard." Note that overwrites the current session, meaning that 
+any records currently on the clipboard for this session **will be lost** when 
+your saved clipboard is loaded. 
+
+If you would like to combine the current pinned records from this session with 
+your saved clipboard results, choose "Merge saved clipboard with existing 
+results." On load, AtoM will combine the current session results with those from
+the saved clipboard. If the same record is found in both sessions, it will appear
+only once on the combined results
+
+Once you've configured your preferences, click the "Load" button found in the 
+:term:`button block` at the bottom of the Load clipboard page. 
+
 Your previously saved results will load. Note that if you have saved entries
-from different entity types, they will all be saved. You can switch entity types
-from the menu at the top right.
+from different entity types, they will all be present, though they may not be 
+immediately visible - AtoM shows only one :term:`entity` type at a time, and by 
+default will show :term:`archival description` results first.  You can switch 
+entity types using the :term:`drop-down menu` found at the top right above the
+clipboard results.
 
 .. image:: images/loaded-clipboard.*
    :align: center

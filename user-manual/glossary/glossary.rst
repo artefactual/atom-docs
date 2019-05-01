@@ -270,12 +270,14 @@ Glossary
 
   Clipboard
     The Clipboard is a :term:`user interface` element that allows users to
-    select archival descriptions while searching and browsing, and add them to
-    a list (the "clipboard"), for later review or further action. Authenicated
-    users (i.e. those logged in) can also perform CSV exports of Clipboard
-    results via the user interface. The clipboard is **session-based** - meaning
-    that it does not persist between user sessions. When you close your browser,
-    any results on the clipboard will be lost. See: :ref:`clipboard`
+    select records while searching and browsing, and add them to a list (the
+    "clipboard"), for later review or further action. Authenicated users (i.e.
+    those logged in) can also perform CSV exports of Clipboard results via the
+    user interface. The clipboard is **session-based** - meaning that it does
+    not persist between user sessions. When you close your browser, any
+    results on the clipboard will be lost. However, users have the option of 
+    saving clipboard results, which can then be loaded in a future session.  
+    See: :ref:`clipboard`
 
   Clipboard menu
     The Clipboard menu appears in the AtoM :term:`header bar` for all users.
