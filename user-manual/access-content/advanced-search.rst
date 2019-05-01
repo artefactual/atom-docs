@@ -145,6 +145,7 @@ via a friendly :term:`user interface`.
    * Digital object text (i.e. text extracted from uploads such as PDFs and
      documents)
    * :ref:`Finding aid <print-finding-aids>` text
+   * :term:`Creator`
    * Any field except finding aid text
 
 .. image:: images/advancedsearch-fields.*
