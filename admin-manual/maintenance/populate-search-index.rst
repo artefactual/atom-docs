@@ -98,9 +98,10 @@ then re-enter your parameters, using ``--exclude-types`` as needed.
 
 .. SEEALSO::
 
+   * :ref:`cli-search-status`
    * :ref:`maintenance-clear-cache`
    * :ref:`maintenance-cli-tools`
    * :ref:`maintenance-webserver`
-
+   * :ref:`maintenance-elasticsearch`
 
 :ref:`Back to top <maintenance-populate-search-index>`

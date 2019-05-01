@@ -215,6 +215,44 @@ used together, where the user being deleted has a username of ``demo``:
 
 :ref:`Back to top <maintenance-cli-tools>`
 
+.. _cli-search-status:
+
+Check the status of your Elasticsearch index
+============================================
+
+This task will allow a system administrator to review the status of AtoM's
+Elasticsearch index without having to access any configuration files. The task
+output will include: 
+
+* Search host
+* Port
+* Index name
+* Document index status for all primary :term:`entity` types in AtoM (including 
+  Accession, Actor, AIP, Function, Information object, Repository, and Term)
+
+The task should be run from AtoM's root installation directory. It will not
+make any changes, but can provide useful information when troubleshooting
+issues or seeking support. To run the task: 
+
+.. code-block:: bash
+
+   php symfony search:status
+
+Sample response: 
+
+.. image:: images/cli-search-status-response.*
+   :align: center
+   :width: 90%
+   :alt: An image of a typical response to the search:status task
+
+.. SEEALSO::
+
+   * :ref:`maintenance-elasticsearch`
+   * :ref:`maintenance-populate-search-index`
+   * :ref:`maintenance-troubleshooting`
+
+:ref:`Back to top <maintenance-cli-tools>`
+
 .. _cli-regenerate-derivatives:
 
 Regenerating derivatives

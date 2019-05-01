@@ -417,10 +417,56 @@ details on each, and when you might want to use them, are included below.
 
 **Jump to:**
 
+* :ref:`troubleshooting-search-status`
 * :ref:`troubleshooting-search-index`
 * :ref:`troubleshooting-clear-cache`
 * :ref:`troubleshooting-nested-set`
 * :ref:`troubleshooting-slugs`
+
+.. _troubleshooting-search-status:
+
+Get information about your search index
+---------------------------------------
+
+**What**
+
+AtoM maintains an Elasticsearch search index to provide fast, full-text search
+results with faceting. It is this index that allows AtoM to find and display
+records in the user interface when browsing and searching. During the 
+installation process, we need to configure the host, port, and index name to be 
+used in AtoM. Once records have been added to AtoM, they are indexed by 
+Elasticsearch to aid in discovery via the user interface. 
+
+This task will allow a system administrator to review the status of AtoM's
+Elasticsearch index without having to access any configuration files. The task
+output will include: 
+
+* Search host
+* Port
+* Index name
+* Document index status for all primary :term:`entity` types in AtoM (including 
+  Accession, Actor, AIP, Function, Information object, Repository, and Term)
+
+**When**
+
+You might consider running this task if:
+
+* Records seem to be missing from the user interface
+* No records are showing in search or browse at all
+* You are having trouble connecting to the search index
+* You are seeking support and you suspect the issue might be search index related
+
+**Basic usage**
+
+.. code-block:: bash
+
+   php symfony search:status
+
+For more information, see: :ref:`cli-search-status`
+
+.. SEEALSO::
+
+   * :ref:`maintenance-elasticsearch`
 
 .. _troubleshooting-search-index:
 
@@ -975,6 +1021,9 @@ Be sure to include the following information in any support-related post:
   :ref:`troubleshooting-logs-debug`
 * Detailed steps to reproduce the issue - see: :ref:`troubleshooting-first-steps`
 * Information on any steps you have already tried to resolve the issues
+* If you think the issue might be related to the search index, it can be helpful
+  to include the basic output of the ``search:status`` task in your post - see: 
+  :ref:`cli-search-status`
 * Anything else you think will be useful - including screenshots if that will
   help other users better understand the issue
 
@@ -1188,6 +1237,11 @@ following section for further suggestions:
 
 * :ref:`troubleshooting-data-corruption`
 
+You can also get basic configuration and status information about your search
+index with the following command-line task:
+
+* :ref:`cli-search-status`
+
 .. _faq-search-exception:
 
 Why do I get a SearchPhaseExecutionException when trying to search?
@@ -1207,6 +1261,11 @@ First, make sure that you have followed all the installation instructions for
 Elasticsearch, as outlined in our recommended installation documentation:
 
 * :ref:`Elasticsearch installation <linux-ubuntu-xenial-dependency-elasticsearch>`
+
+You can get basic configuration and status information about your search index
+with the following command-line task: 
+
+* :ref:`cli-search-status`
 
 You can try restarting Elasticsearch with the following:
 
@@ -1239,6 +1298,10 @@ set-up and configuration documentation:
 
 * ES 1.7: https://www.elastic.co/guide/en/elasticsearch/reference/1.7/setup-configuration.html
 * ES 5.x: https://www.elastic.co/guide/en/elasticsearch/reference/5.2/settings.html
+
+For more information on troubleshooting Elasticsearch, see: 
+
+* :ref:`maintenance-elasticsearch`
 
 .. _faq-504-error:
 
