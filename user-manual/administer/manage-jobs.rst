@@ -57,7 +57,7 @@ Using the Jobs page
 
 When first arriving on the page, users will see a table showing the status of any
 ongoing jobs, as well as any previous jobs that have not been cleared by another
-user. See :ref:`below <jobs-permissions>` for more information on permissions and
+user. Jobs displayed include CLI tasks that you can run in a terminal. See :ref:`below <jobs-permissions>` for more information on permissions and
 the Manage jobs page.
 
 .. image:: images/manage-jobs.*
@@ -162,12 +162,14 @@ for startDate, endDate, jobName, jobStatus, jobInfo, and jobUser.
 **Clear inactive jobs**
 
 Clicking this button will remove any inactive jobs regardless of status (i.e.
-completed or failed jobs) created by you from the Jobs page. Any jobs still
+completed or failed jobs) created by you from the Jobs page. This includes
+inactive jobs that you inititiated via command-line in a terminal. Any jobs still
 processing, or jobs created by another user, will not be affected.
 
 .. NOTE::
 
-   You can **only** clear jobs that you have initiated.
+   You can **only** clear jobs that you have initiated via the web-based
+   dashboard and via the command-line in a terminal.
 
 If all inactive jobs have been cleared and there are no current jobs running,
 AtoM will indicate this in the jobs page with a message.
@@ -218,5 +220,9 @@ All authenticated (e.g. logged in) users can access the Jobs page. However, most
 users will only see jobs and be able to clear jobs which they have started. Only
 an :term:`administrator` can see the status of all jobs - however, like all users,
 administrators can only clear jobs that belong to them.
+
+.. NOTE::
+
+   As of 2.5, 
 
 :ref:`Back to top <manage-jobs>`
