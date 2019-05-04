@@ -17,6 +17,7 @@ See below for :ref:`common-atom-queries`.
    * :ref:`cli-import-export`
    * :ref:`maintenance-webserver`
    * :ref:`maintenance-troubleshooting`
+   * :ref:`cli-unlink-creators`
 
    We also have a slides and videos of many of our command-line tasks. See:
 
@@ -1729,6 +1730,42 @@ review the section below, :ref:`common-atom-queries`.
 Similarly, the ``--audit`` option can be used to verify that all objects
 specified in the CSV file were imported. If any are found to be missing, then the
 object's filename will be output in the console.
+
+.. _cli-unlink-creators:
+
+Unlink creators from child descriptions and reapply inheritance to hierarchy
+============================================================================
+
+In AtoM, rules of inheritance apply to parent-child relationships by default
+within archival descriptions. This adheres to the International Council
+of Archives' principles of description at the highest level(s) of description
+for an aggregation. In some special circumstances, an intermediate creator can
+be purposefully added (e.g. a different creator for a series). In scenarios where 
+a user unknowingly adds direct links to a different creator at some or all levels
+of description, they can run the following command-line task to unlink that
+creator and reapply the default inheritance rules at lower levels of description.
+
+.. code:: bash
+
+   php symfony tools:unlink-creators
+
+.. image:: images/cli-unlink-creators.png
+   :align: center
+   :width: 70%
+   :alt: An image of the help page for the unlink creators from description tool
+
+By typing ``php symfony help tools:unlink-creators`` into the command-linke, you
+can see the options available on the unlink:creators command, as pictured above.
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for Symfony to be
+able to execute the task.
+
+The ``--creator-slug`` option restricts changes to a specific creator.
+
+The ``--description-slug`` option restricts changes to the specified information
+object hierarchy.
+
 
 :ref:`Back to top <maintenance-cli-tools>`
 
