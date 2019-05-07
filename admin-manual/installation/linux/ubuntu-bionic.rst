@@ -525,7 +525,7 @@ file.
 
 First, let’s create a new file with our SQL modes. 
 
-Paste the following values in a new file at ``/etc/mysql/conf.d/mysqld.conf`` 
+Paste the following values in a new file at ``/etc/mysql/conf.d/mysqld.cnf`` 
 and save:
 
 .. code-block:: bash
