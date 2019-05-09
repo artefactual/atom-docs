@@ -14,7 +14,12 @@ We defined some sane configuration defaults in our :ref:`installation instructio
 defined in :file:`/etc/php/7.2/fpm/php.ini`. Be aware that multiple configuration
 files are read when PHP starts up, therefore it is a good practice to check the
 final configuration state when you are deploying AtoM. You can use
-:ref:`phpinfo() <phpinfo>` for that purpose.
+`phpinfo() <https://www.php.net/manual/en/function.phpinfo.php>`__ for that 
+purpose.
+
+.. SEEALSO::
+
+   * :ref:`execution-php-ini`
 
 There are certain settings in PHP that could be tweaked as a security measure
 but they may have unexpected results in AtoM. For example, you may be tempted to
