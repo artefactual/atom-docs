@@ -98,7 +98,7 @@ institution :term:`edit page`, see:
    * :ref:`enable-scoping`
    * :ref:`Archival descriptions <archival-descriptions>`
    * :ref:`Authority records <authority-records>`
-   * :ref:`add-custom-links`
+   * :ref:`formatting`
    * :ref:`Access content <access-content>`
    * :ref:`User roles <user-roles>`
    * :ref:`Entity types <entity-types>`

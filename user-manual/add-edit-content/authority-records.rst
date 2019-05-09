@@ -195,7 +195,7 @@ overall) in the application, AtoM behaves in several specific ways:
 .. SEEALSO::
 
    * :ref:`add-term-fly`
-   * :ref:`add-custom-links`
+   * :ref:`formatting`
    * :ref:`entity-types`
    * :ref:`Exit edit mode <exit-edit-mode>`
    * :ref:`term-name-vs-subject`
