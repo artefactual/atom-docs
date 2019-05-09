@@ -1198,7 +1198,7 @@ The task will have the following effects on HTML elements:
 
 * Links, including email ``mailto:`` links, will be replaced with AtoM's
   custom formatting for links - for more information, see:
-  :ref:`add-custom-links`. This means that after being run, links will now
+  :ref:`formatting-links`. This means that after being run, links will now
   appear in AtoM's view pages as they were intended to when the HTML was
   added.
 * Styling elements, such as ``<em>``, ``<b>``, ``<strong>``, ``<i>``, etc.
