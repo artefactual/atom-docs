@@ -1832,11 +1832,12 @@ uploaded via URI, and ultimately, the source "master" file(s) are not copied to
 the ``uploads`` directory.
 
 .. NOTE::
+
    When using the ``--link-source`` option, local derivatives are still
    generated and stored in the ``uploads`` directory per usual.
 
 
-The ``--path``option will allow you to simplify the ``filename`` column in your
+The ``--path`` option will allow you to simplify the ``filename`` column in your
 CSV, to avoid repetition. If all the digital objects you intend to upload are
 stored in the same folder, then adding /path/to/my/folder/ to each object
 filename seems tedious - your ``filename`` column will need to look something
