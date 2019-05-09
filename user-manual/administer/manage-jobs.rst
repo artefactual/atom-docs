@@ -57,8 +57,9 @@ Using the Jobs page
 
 When first arriving on the page, users will see a table showing the status of any
 ongoing jobs, as well as any previous jobs that have not been cleared by another
-user. See :ref:`below <jobs-permissions>` for more information on permissions and
-the Manage jobs page.
+user. If you are an administrator, jobs displayed include CLI tasks that you
+can run in a terminal. See :ref:`below <jobs-permissions>` for more information
+on permissions and the Manage jobs page.
 
 .. image:: images/manage-jobs.*
    :align: center
