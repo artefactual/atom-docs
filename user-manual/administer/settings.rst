@@ -28,18 +28,19 @@ Below, you will find information on the following :term:`information areas
 * :ref:`treeview-settings`
 * :ref:`User interface labels <user-interface-labels>`
 
-Each of the settings areas listed above is accessible via a list of links on
-the left-hand side of the settings page. Click on the appropriate link, and
-click save after making your changes.
+Each of the settings areas listed above is accessible via a list of links on the
+left-hand side of the settings page. Click on the appropriate link, and click
+save after making your changes. A notification will appear confirming that your
+changes have been saved.
 
-.. figure:: images/settings-menu.*
+.. figure:: images/settings-saved-notification.*
    :align: center
    :figwidth: 80%
    :width: 100%
    :alt: Settings menu appears on left hand side
 
    Choose the settings area you wish to view/edit by clicking a link in the
-   menu on the left-hand side.
+   menu on the left-hand side, click "Save" when you've made your changes.
 
 By default, users will first be shown the :ref:`global-settings` when first
 arriving on the Settings page. Otherwise, Settings are organized in the
@@ -742,25 +743,25 @@ For further context on slugs in AtoM, see: :ref:`slugs-in-atom`
 Use any valid URI path segment and uppercase character in slugs
 ---------------------------------------------------------------
 
-This setting will affect how AtoM generates permalinks, or :term:`slugs <slug>` 
-for new records. In new installations, this setting is set to "No" by default. 
+This setting will affect how AtoM generates permalinks, or :term:`slugs <slug>`
+for new records. In new installations, this setting is set to "No" by default.
 
 When set to "No," generated slugs will only allow digits, letters, and dashes.
 Sequences of unaccepted characters (e.g. accented or special characters, etc.)
 are replaced with valid characters such as English alphabet equivalents or
 dashes. When set to to "Yes," AtoM will allow upper case characters, any valid
-unicode characters as specified in 
-`RFC 3987 <https://tools.ietf.org/html/rfc3987>`__ including accented characters, 
-and some special characters such as: ``, - _ ~ : = * @``. For further details, 
-see: 
+unicode characters as specified in
+`RFC 3987 <https://tools.ietf.org/html/rfc3987>`__ including accented characters,
+and some special characters such as: ``, - _ ~ : = * @``. For further details,
+see:
 
 * :ref:`slugs-in-atom`
 
 The command-line task to generate slugs, and AtoM's Rename module (which will
-allow users to edit the slug associated with an :term:`archival description`) 
+allow users to edit the slug associated with an :term:`archival description`)
 will both respect and enforce the setting going forward. However, changing this
-setting will **not** automatically alter existing slugs. For more information, 
-see: 
+setting will **not** automatically alter existing slugs. For more information,
+see:
 
 * :ref:`cli-generate-slugs`
 * :ref:`rename-title-slug`
@@ -967,21 +968,21 @@ avoid constantly triggering many jobs.
 Saved clipboard maximum age
 ---------------------------
 
-Both public and authenticated (i.e. logged in) users have the option to save 
-results pinned to AtoM's :term:`clipboard`, and load them at a later date - for 
-more information, see: 
+Both public and authenticated (i.e. logged in) users have the option to save
+results pinned to AtoM's :term:`clipboard`, and load them at a later date - for
+more information, see:
 
 * :ref:`save-clipboard`
 * :ref:`load-saved-clipboard`
 
 To avoid having AtoM's database grow indefinitely when the clipboard is used
 heavily, saved clipboards are not stored indefinitely. Instead, an
-:term:`administrator` can configure how many days saved clipboards are stored 
-before being purged from the database. 
+:term:`administrator` can configure how many days saved clipboards are stored
+before being purged from the database.
 
-The setting takes a numeric value that represents the number of days a saved 
+The setting takes a numeric value that represents the number of days a saved
 clipboard should be stored before it is eligible for automatic deletion from
-the database. 
+the database.
 
 .. IMPORTANT::
 
@@ -1764,9 +1765,9 @@ information on using Markdown in AtoM, see: :ref:`formatting`.
    :ref:`Memcached <troubleshooting-restart-memcached>` if you
    are using it for additional caching), and clear your web browser cache.
 
-   Markdown is also used in the default text of the :ref:`privacy-notification` 
+   Markdown is also used in the default text of the :ref:`privacy-notification`
    banner in new installations. If you are using the privacy notification and
-   intend to disable Markdown in AtoM, be sure to review and update your 
+   intend to disable Markdown in AtoM, be sure to review and update your
    notification message!
 
 :ref:`Back to top <settings>`
@@ -1840,18 +1841,18 @@ Privacy notification
 .. _GDPR: https://en.wikipedia.org/wiki/General_Data_Protection_Regulation
 
 The Privacy notification provides :term:`administrators <administrator>` with
-a configurable notification banner that, when enabled, will be shown to all 
-users when first visiting AtoM in a session. It was designed to assist site 
-administrators in complying with proactive privacy policy disclosure 
-regulations such as the European Union's General Data Protection Regulation 
-(GDPR_), which requires that any information collected about a user through the 
+a configurable notification banner that, when enabled, will be shown to all
+users when first visiting AtoM in a session. It was designed to assist site
+administrators in complying with proactive privacy policy disclosure
+regulations such as the European Union's General Data Protection Regulation
+(GDPR_), which requires that any information collected about a user through the
 use of a website must be disclosed to the user in advance, with the option to
-opt out and/or leave the site. However, the notification message is entirely 
-customizable and could be repurposed for any use. 
+opt out and/or leave the site. However, the notification message is entirely
+customizable and could be repurposed for any use.
 
-.. NOTE:: 
+.. NOTE::
 
-   **AtoM's data collection**   
+   **AtoM's data collection**
 
    AtoM collects cookies_ in order to enable browsing and loading of certain
    types of content. Visitors to AtoM sites who do not wish to have cookies
@@ -1859,11 +1860,11 @@ customizable and could be repurposed for any use.
    However, certain features (such as the :ref:`clipboard`) may not function
    properly without the aid of cookies.
 
-   AtoM supports integration with `Google Analytics <https://www.google.com/analytics/>`__ 
-   for the purposes of gathering statistics on page views, site usage, user 
-   location, and other data on site visits. All data collected by Google Analytics 
-   are stored and processed by Google, according to the Google Ads 
-   `Data Processing Terms <https://privacy.google.com/businesses/processorterms/>`__. 
+   AtoM supports integration with `Google Analytics <https://www.google.com/analytics/>`__
+   for the purposes of gathering statistics on page views, site usage, user
+   location, and other data on site visits. All data collected by Google Analytics
+   are stored and processed by Google, according to the Google Ads
+   `Data Processing Terms <https://privacy.google.com/businesses/processorterms/>`__.
 
    None of the information gathered through the use of cookies or Google
    Analytics is used for any purpose other than the ones described here.
@@ -1873,19 +1874,19 @@ customizable and could be repurposed for any use.
    the software and are not disclosed to third parties. All AtoM user
    passwords are stored in encrypted form to enhance data security.
 
-To support the use of the notification banner in proactive privacy disclosure, 
-AtoM includes a default Privacy Policy :term:`static page` which contains a 
+To support the use of the notification banner in proactive privacy disclosure,
+AtoM includes a default Privacy Policy :term:`static page` which contains a
 slightly more detailed version of the text in the note above about AtoM's data
-collection. 
+collection.
 
 .. image:: images/privacy-static-page.*
    :align: center
    :width: 80%
    :alt: An image of the default Privacy Policy static page in AtoM
 
-A link to the page is also included in the :ref:`Quick links menu <quick-links-menu>` 
-as "Privacy Policy." The static page and the Quick links menu node can both be 
-customized or deleted by an :term:`administrator` - for more information on 
+A link to the page is also included in the :ref:`Quick links menu <quick-links-menu>`
+as "Privacy Policy." The static page and the Quick links menu node can both be
+customized or deleted by an :term:`administrator` - for more information on
 working with menus and static pages, see:
 
 * :ref:`manage-static-pages`
@@ -1899,14 +1900,14 @@ working with menus and static pages, see:
    :alt: Privacy notification settings in AtoM
 
 By default in new installations, the Privacy notification banner will be turned
-off, meaning it will not display unless an :term:`administrator` enables it. 
-To enable the setting, log in and navigate to |gears| **Admin > Settings > 
-Privacy Notification**. 
+off, meaning it will not display unless an :term:`administrator` enables it.
+To enable the setting, log in and navigate to |gears| **Admin > Settings >
+Privacy Notification**.
 
-In the Privacy notification settings page, set the :term:`radio button` to "Yes" 
-to enable the privacy notification banner. Once you click Save in the 
+In the Privacy notification settings page, set the :term:`radio button` to "Yes"
+to enable the privacy notification banner. Once you click Save in the
 :term:`button block` at the bottom of the settings, the banner will immediately
-become visible. When users visit the site, the banner will remain persistently 
+become visible. When users visit the site, the banner will remain persistently
 visible until the "Ok" button in the notification banner is clicked.
 
 .. image:: images/privacy-notification.*
@@ -1916,28 +1917,28 @@ visible until the "Ok" button in the notification banner is clicked.
 
 **Customizing the Privacy notification message**
 
-Administrators can customize the content shown in the notification banner by 
-editing the text included in the "Privacy Notification Message" :term:`field`. 
-The default text included in this field in new installations is: 
+Administrators can customize the content shown in the notification banner by
+editing the text included in the "Privacy Notification Message" :term:`field`.
+The default text included in this field in new installations is:
 
 .. code-block:: none
 
    This website uses cookies to enhance your ability to browse and load
    content. [More Info.](/privacy)
 
-The ``[More Info.](/privacy)`` text, when saved, will render as a hyperlink to 
-the Privacy policy :term:`static page`. This hyperlink is created using Markdown_ 
-- for more information on using Markdown for text formatting in AtoM, see: 
+The ``[More Info.](/privacy)`` text, when saved, will render as a hyperlink to
+the Privacy policy :term:`static page`. This hyperlink is created using Markdown_
+- for more information on using Markdown for text formatting in AtoM, see:
 
 * :ref:`formatting`
 * :ref:`markdown-settings`
 
 .. IMPORTANT::
 
-   If you are using AtoM with a custom theme, a developer or system administrator 
+   If you are using AtoM with a custom theme, a developer or system administrator
    may need to make some changes to your custom theme plugin to ensure that the
-   Privacy notification displays properly. Further details are included in the 
-   :ref:`installation-upgrading` documentation - see: 
+   Privacy notification displays properly. Further details are included in the
+   :ref:`installation-upgrading` documentation - see:
 
    * :ref:`upgrading-custom-themes`
 
