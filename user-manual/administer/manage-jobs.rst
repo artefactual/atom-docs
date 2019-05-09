@@ -168,14 +168,9 @@ processing, or jobs created by another user, will not be affected.
 .. NOTE::
 
    You can **only** clear jobs that you have initiated. If you are an
-<<<<<<< HEAD
    administrator, you can clear all inactive jobs from the jobs page that you
    have initiated via the web-based dashboard or via a command-line terminal
    as of 2.5.
-=======
-   administrator, you can clear all inactive jobs that you have initiated
-   via the web-based dashboard or via a command-line terminal as of 2.5.
->>>>>>> cba1a0bb3a8e7c4e1ed9bd88e67a679103654dc3
 
 If all inactive jobs have been cleared and there are no current jobs running,
 AtoM will indicate this in the jobs page with a message.
