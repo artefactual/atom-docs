@@ -167,7 +167,9 @@ processing, or jobs created by another user, will not be affected.
 
 .. NOTE::
 
-   You can **only** clear jobs that you have initiated.
+   You can **only** clear jobs that you have initiated. If you are an
+   administrator, you can clear all inactive jobs that you have initiated
+   via the web-based dashboard or via a command-line terminal as of 2.5.
 
 If all inactive jobs have been cleared and there are no current jobs running,
 AtoM will indicate this in the jobs page with a message.
