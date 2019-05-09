@@ -863,12 +863,13 @@ Searching for empty fields
 --------------------------
 
 You can perform a field-specific search for fields that do **not** have any
-data added to them (i.e. which are empty) using ``_missing_``. The basic
+data added to them (i.e. which are empty) using the ``_exists_`` filter, but 
+with the Boolean operator for NOT (i.e. ``!``) as a prefix. The basic
 structure of the syntax is like this:
 
 .. code-block:: none
 
-   _missing_:field.name
+   !_exists_:field.name
 
 For example, to search for English archival descriptions with no data in the
 scope and content, use the following as your query:
@@ -876,7 +877,7 @@ field:
 
 .. code-block:: none
 
-   _missing_:i18n.en.scopeAndContent
+   !_exists_:i18n.en.scopeAndContent
 
 .. _es-populated-fields:
 
