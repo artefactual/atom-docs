@@ -17,12 +17,10 @@ See below for :ref:`common-atom-queries`.
    * :ref:`cli-import-export`
    * :ref:`maintenance-webserver`
    * :ref:`maintenance-troubleshooting`
-   * :ref:`cli-unlink-creators`
 
-   We also have a slides and videos of many of our command-line tasks. See:
+   We also have a slides of many of our command-line tasks. See:
 
    * https://www.slideshare.net/accesstomemory/atoms-command-line-tasks-an-introduction
-   * https://www.youtube.com/playlist?list=PLZiwlG5eSMeyeETe15EsEBSu5htPLK-wm
 
 .. _cli-get-version:
 
@@ -942,8 +940,70 @@ record that is updated, providing a visual indication of progress.
    * :ref:`sql-update-publication-status`
    * :ref:`sql-update-publication-status-repo`
 
-
 :ref:`Back to top <maintenance-cli-tools>`
+
+.. _cli-unlink-creators:
+
+Unlink creators from child descriptions and reapply inheritance to hierarchy
+============================================================================
+
+By default in AtoM, :term:`creators <creator>` and :term:`repository` names
+(aka :term:`archival institutions <archival institution>`) are automatically
+inherited from :term:`parent <parent record>` levels in descendant records -
+meaning if you add a creator name at a :term:`collection` level, it will be
+inherited all the way down to the lowest level records if no alternative
+creator name is manually added to an intermediate level.
+
+This adheres to the International Council of Archives' multilevel description
+rules , which encourage descriptive practices that move "from the general to
+the specific" (:ref:`ISAD <isad-template>` 2.1), include only information
+relevant to the level of description (2.2), and "do not repeat information at
+a lower level of description that has already been given at a higher level"
+(2.4). Additionally, this supports better scalability and performance in AtoM
+when working with large hierarchies, as less descriptions need to be updated
+if the creator is edited.
+
+In some circumstances, an intermediate creator can be purposefully added at
+intermediate levels (e.g. a different creator for a series). For scenarios
+where users *unknowingly* add direct links to the same creator at some or all
+lower levels of description, the following command-line task can be used to
+automatically unlink that creator and reapply the default inheritance rules at
+lower levels of description.
+
+**Using the unlink creators task**
+
+.. code:: bash
+
+   php symfony tools:unlink-creators
+
+.. image:: images/cli-unlink-creators.*
+   :align: center
+   :width: 90%
+   :alt: An image of the help page for the unlink creators from description tool
+
+By typing ``php symfony help tools:unlink-creators`` into the command-line, you
+can see the options available on the unlink creators task, as pictured above.
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for Symfony to be
+able to execute the task.
+
+The ``--creator-slug`` option takes the :term:`slug` of an :term:`authority
+record` (i.e. one linked to descriptions as a :term:`creator`) as input. When
+used, it restricts the affected descriptions to those associated with a
+specific creator.
+
+The ``--description-slug`` option takes the :term:`slug` of an 
+:term:`archival description` as input, and when used, restricts the changes to 
+the specified :term:`archival unit` and its descendants. 
+
+An example of using the task to restrict the changes to a specific collection: 
+
+.. code-block:: bash
+
+   php symfony tools:unlink-creators --description-slug="my-collection-slug"
+
+:ref:`Back to the top <maintenance-cli-tools>`
 
 .. _cli-delete-description:
 
@@ -1901,34 +1961,5 @@ so with the following query:
    backing up your database before attempting this - see above,
    :ref:`cli-backup-db` - and we recommend using SQL queries to
    *selectively* delete slugs!
-
-:ref:`Back to the top <maintenance-cli-tools>`
-
-.. _cli-unlink-creators:
-
-Unlink creators from child descriptions and reapply inheritance to hierarchy
-============================================================================
-
-By default in AtoM, :term:`creators <creator>` and :term:`repository` names 
-(aka :term:`archival institutions <archival institution>`) are automatically inherited
-from :term:`parent <parent record>` levels in descendant records - meaning if 
-you add a creator name at a :term:`collection` level, it will be inherited all the way 
-down to the lowest level records if no alternative creator name is manually added 
-to an intermediate level. 
-
-This adheres to the International Council of Archives' multilevel description rules , 
-which encourage descriptive practices that move "from the general to the specific" 
-(:ref:`ISAD <isad-template>` 2.1), include only information relevant to the level of
-description (2.2), and "do not repeat information at a lower level of description that
-has already been given at a higher level" (2.4). Additionally, this supports better
-scalability and performance in AtoM when working with large hierarchies, as less
-descriptions need to be updated if the creator is edited. 
-
-In some circumstances, an intermediate creator can be purposefully added at 
-intermediate levels (e.g. a different creator for a series). For scenarios where users 
-unknowingly add direct links to the same creator at some or all lower levels of 
-description, the following command-line task can be used to automatically 
-unlink that creator and reapply the default inheritance rules at lower levels of 
-description.
 
 :ref:`Back to the top <maintenance-cli-tools>`
