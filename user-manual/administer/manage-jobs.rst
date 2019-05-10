@@ -221,6 +221,7 @@ See :ref:`User roles <user-roles>`, :ref:`manage-user-accounts`, and
 All authenticated (e.g. logged in) users can access the Jobs page. However, most
 users will only see jobs and be able to clear jobs which they have started. Only
 an :term:`administrator` can see the status of all jobs - however, like all users,
-administrators can only clear jobs that belong to them.
+administrators can only clear jobs that belong to them. Administrators can clear
+jobs that are associated with tasks run on the command-line. 
 
 :ref:`Back to top <manage-jobs>`
