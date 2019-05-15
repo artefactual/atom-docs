@@ -200,11 +200,4 @@ The default login details are:
 Please be aware that this process is new and it may have some unknown issues.
 Let us know if you have some feedback!
 
-.. only:: web or json
-
-   In case you have any doubts, we've prepared a recording of the terminal
-   session:
-
-   .. raw:: html
-
-      <script type="text/javascript" src="https://asciinema.org/a/dzjf12zee9tdgs55efyng4kdd.js" id="asciicast-dzjf12zee9tdgs55efyng4kdd" async></script>
+:ref:`Back to top <dev-env-compose>`
