@@ -6,7 +6,7 @@ Vagrant
 
 This guide will setup a new Oracle `VirtualBox
 <https://www.virtualbox.org/>`__ virtual machine with AtoM installed on your
-computer. It works works on most operating systems, including MacOS X, Linux,
+computer. It works on most operating systems, including MacOS X, Linux,
 Windows, FreeBSD and others. If you can install these and have at least
 2048Mb RAM to spare you should be good.
 
