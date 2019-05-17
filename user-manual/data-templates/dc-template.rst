@@ -196,9 +196,9 @@ Date(s)
 **CSV Columns**:
 
 * ``creationDates`` - display date for creation events (what the public users
-  will see in the :term:`view page`).
+  will see in the :term:`view page`). 
 * ``creationDatesStart`` - start date - ISO-formatted (YYYY-MM-DD). Not visible
-  to public users.
+  to public users. 
 * ``creationDatesEnd`` - end date - ISO-formatted (YYYY-MM-DD). Not visible
   to public users.
 
@@ -222,35 +222,40 @@ will be associated with the creation or availability of the resource."
 
 **Notes**:
 
-If desired, enter the date range as you want it to appear in view mode in "Date".
-Add any additional text to qualify date range (e.g. "ca. 1940-1980" or
-"[1940]-1980, predominant 1973-1980").
+* Enter the date range as you want it to appear in view mode in the Date field.
 
-Enter the Start and End dates. Do not use any qualifiers here
-(e.g. "ca.") or typographical symbols (e.g. "[194?]") to express uncertainty.
-If the start and end years are the same, enter data only in the "Start" field and
-leave the "End date" blank. These values should be ISO-formatted - acceptable
-formats include: YYYY, YYYY-MM, YYYY-MM-DD, or YYYYMMDD.
+* If desired, add any additional text to qualify date range (e.g. "ca.
+  1940-1980" or "[1940]-1980, predominant 1973-1980").
 
-.. TIP::
+* If a date range is given, AtoM will try to parse the DC date field into the
+  start/end event dates. It will only do so if both dates are present and
+  separated by '|' or ' - '.
 
-   These fields only display while editing the description. If AtoM is
-   able to interpret the start and end date from the value entered into the
-   Date field, it will autopopulate upon entering - but you can still edit the
-   auto-populated values as needed.
+  .. TIP::
 
-Complete at lower levels of description even if you are leaving the creator
-name field blank (e.g. when describing a series, you do not need to repeat the
-creator name from the fonds description, but you do need to enter the date
-range of the series).
+     These fields only display while editing the description. If AtoM is
+     able to interpret the start and end date from the value entered into the
+     Date field, it will autopopulate upon entering - but you can still edit the
+     auto-populated values as needed.
 
-Whereas "Start" and "End" are used internally for database searching and
-sorting purposes, the "Date" field is for display purposes. However, if you do
-not enter anything into "Date" the "Start" and "End date" will appear as a
-date range when the record is saved.
+* When editing the Start and End dates, do not use any qualifiers here
+  (e.g. "ca.") or typographical symbols (e.g. "[194?]") to express uncertainty.
+  If the start and end years are the same, enter data only in the Start field
+  and leave the End field blank. These values should be ISO 8601 acceptable
+  formats: YYYY, YYYY-MM, YYYY-MM-DD, or YYYYMMDD.
 
-You can add multiple dates as needed. Click the "Add new" hyperlink to add
-another date row.
+* Complete at lower levels of description even if you are leaving the creator
+  name field blank (e.g. when describing a series, you do not need to repeat the
+  creator name from the fonds description, but you do need to enter the date
+  range of the series).
+
+* Whereas Start and End fields are used internally for database searching and
+  sorting purposes, the Date field is for display purposes. However, if you do
+  not enter anything into the Date field, the Start and End fields will appear
+  as a date range when the record is saved.
+
+* You can add multiple dates as needed. Click the "Add new" hyperlink to add
+  another date row.
 
 .. _dc-subject:
 

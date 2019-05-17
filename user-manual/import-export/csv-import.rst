@@ -2712,7 +2712,11 @@ accessions data for import.
 
 The ``acquisitionDate`` column expects date strings to be formatted according
 to the `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`__ date format
-standard - that is, YYYY-MM-DD.
+standard - that is, YYYY-MM-DD. ISO 8601 prescribes, as a minimum, a four-digit
+year [YYYY]. If the date range is not formatted according to ISO 8601 formatting,
+then AtoM will use the PHP date_parse function (which adds '1' as default value
+to the month and day if they are missing) to modify the date to a YYYY-MM-DD
+format.
 
 To link incoming accession records to existing archival descriptions, you can
 add a column named  ``qubitParentSlug``. This column will behave similarly to
