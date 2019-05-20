@@ -1094,6 +1094,7 @@ the syntax described in the introductory section
    conservationNotes.i18n.%LANG%.content
    physicalDescriptionNotes.i18n.%LANG%.content
    continuationOfTitleNotes.i18n.%LANG%.content
+   archivistsNotes.i18n.%LANG%.content
 
 Additionally, there are some related fields belonging to linked
 :term:`entities <entity>` that, when linked to an archival description, can be
