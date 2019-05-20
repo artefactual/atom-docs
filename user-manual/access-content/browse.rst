@@ -234,8 +234,13 @@ the end of the list:
    Results may not be exactly as expected. Alphabetic sort order in AtoM is
    'ASCII-betical'. For more, see :ref:`navigate`.
 
-If an administrator has enabled the **Hierarchy browse** options (see
-:ref:`settings`) the user will also see a button to engage that view.
+.. _browse-hierarchy-browser:
+
+Using the Hierarchy browser
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If an :term:`administrator` has enabled the **Hierarchy browse** options (see
+:ref:`treeview-settings`) users will also see a button to engage that view.
 
 .. image:: images/browse-hierarchy-choice.*
    :align: center
@@ -243,7 +248,9 @@ If an administrator has enabled the **Hierarchy browse** options (see
    :alt: Browse hierarchy choice
 
 Clicking this button will take users to a full-page, full-width
-treeview containing all top-level descriptions in AtoM.
+:term:`treeview` containing all top-level 
+:term:`descriptions <archival description>` in AtoM, called the 
+:term:`hierarchy browser`. 
 
 .. image:: images/browse-hierarchy.*
    :align: center
@@ -251,9 +258,10 @@ treeview containing all top-level descriptions in AtoM.
    :alt: Browse hierarchy page
 
 As with the current description treeview, each description in the hierarchy
-browse page that has children will display an “expand/collapse” icon that can
-be clicked to display all the children of that description. Any child
-descriptions that in turn have children will also be expandable.
+browse page that has :term:`children <child record>` will display an
+"expand/collapse" icon that can be clicked to display all the children of that
+description. Any child descriptions that in turn have children will also be
+expandable.
 
 A number in the top right corner of the page will indicate how many more
 descriptions can be seen in the hierarchy. Click on that number to bring up the
@@ -264,8 +272,8 @@ next page of results.
    :width: 70%
    :alt: Browse hierarchy page
 
-The Browse by hierarchy treeview will have the same functionality as the
-standard treeview, except:
+The hierarchy browser will have the same functionality as the standard treeview, 
+except:
 
 * All top level description titles in the catalogue database will be shown in
   alphabetic order
@@ -279,6 +287,12 @@ standard treeview, except:
   treeview (the user should then be able to return to the hierarchy browse page
   where they left off)
 * No filters or facets will be available on the hierarchy browse page
+
+.. SEEALSO::
+
+   * :ref:`treeview-settings`
+
+:ref:`Back to top <browse>`
 
 .. _browse-hierarchy:
 

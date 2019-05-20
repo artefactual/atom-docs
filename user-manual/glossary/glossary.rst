@@ -805,6 +805,17 @@ Glossary
     color for an :term:`archival institution`. See:
     :ref:`change-institution-background`.
 
+  Hierarchy browser
+    The hierarchy browser is a :term:`user interface` element that can be 
+    enabled or disabled by an :term:`administrator` via the :term:`treeview` 
+    settings page. When enabled, it provides users with a full-width treeview
+    of all of AtoM's :term:`archival description` :term:`holdings`. Users can 
+    expand and collapse individual nodes to explore the hierarchical arrangement
+    of a specific :term:`archival unit`; however, clicking any node in the 
+    hierarchy browser will redirect the user to the related description's 
+    :term:`view page`. See: :ref:`browse-hierarchy-browser` and 
+    :ref:`treeview-settings`.
+
   Holdings
     Holdings is a generic term referring to the :term:`records <record>`
     and other materials held by :term:`archival institutions <archival

@@ -2090,6 +2090,7 @@ information on navigation with and use of the treeview, see:
 **Jump to:**
 
 * :ref:`treeview-type`
+* :ref:`hierarchy-browser-settings`
 * :ref:`sidebar-treeview-settings`
 * :ref:`fullwidth-treeview-settings`
 
@@ -2166,6 +2167,45 @@ new link will appear on the archival description :ref:`search/browse page <brows
 For more information on browsing with this option, see:
 
 * :ref:`browse`
+
+.. _hierarchy-browser-settings:
+
+Show browse hierarchy page
+--------------------------
+
+The :term:`hierarchy browser` is a :term:`user interface` element that can be 
+enabled or disabled by an :term:`administrator`. When enabled, it provides end 
+users with a full-width :term:`treeview` of all of AtoM's 
+:term:`archival description` :term:`holdings`. Users can expand and collapse 
+individual nodes in the treeview to explore the hierarchical arrangement of a 
+specific :term:`archival unit`; however, clicking any node in the hierarchy 
+browser will redirect the user to the related description's :term:`view page`. 
+For more information on using the hierarchy browser, see: 
+:ref:`browse-hierarchy-browser`.
+
+When "Show browse hierarchy page" is set to **yes**, a new option will be added
+to the archival description browse page, above the results: 
+
+.. image:: images/browse-hierarchy-choice.*
+   :align: center
+   :width: 70%
+   :alt: Browse hierarchy choice
+
+This option will be available to all users, including unauthenticated (i.e.
+public, or not logged in) users. When clicked, users will be taken  to a
+full-page, full-width treeview containing all top-level descriptions in AtoM,
+which can be used for high-level browsing:
+
+.. image:: images/browse-hierarchy.*
+   :align: center
+   :width: 70%
+   :alt: Browse hierarchy page
+
+See the related :ref:`browse documentation <browse-hierarchy-browser>`
+for further information on the hierarchy browser's behavior and use.
+
+When the setting is set to **no**, the hierarchy browser will not be created,
+and the link on the browse page will not be shown.
 
 .. _sidebar-treeview-settings:
 
