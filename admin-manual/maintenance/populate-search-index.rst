@@ -56,7 +56,7 @@ the target resource will not be re-indexed as part of the process.
    * When used the ``--slug`` option will ignore any parameters set by the 
      ``--exclude types`` option
    * The ``--ignore-descendants`` option will **only** work when used in 
-     conjunction with teh ``--slug`` option
+     conjunction with the ``--slug`` option
 
 The ``--exclude-types`` option can be used if you do not want to re-index
 certain record types. When this option is used, the existing index is not
