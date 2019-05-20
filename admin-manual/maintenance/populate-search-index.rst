@@ -43,6 +43,21 @@ The ``--application`` and ``--env`` options **should not be used** - AtoM
 requires the uses of the pre-set defaults for Symfony to be able to execute
 the task.
 
+The ``--slug`` option can be used to specify a specifc resource to be 
+re-indexed. If the target resource is hierarchical (i.e. an 
+:term:`archival description` with lower-level :term:`children <child record>`), 
+the descendant records will also be indexed. If you **don't** want lower-level
+records to be indexed when using this option, you can also use the 
+``--ignore-descendants`` option - in this case, any lower-level records below
+the target resource will not be re-indexed as part of the process. 
+
+.. NOTE::
+
+   * When used the ``--slug`` option will ignore any parameters set by the 
+     ``--exclude types`` option
+   * The ``--ignore-descendants`` option will **only** work when used in 
+     conjunction with teh ``--slug`` option
+
 The ``--exclude-types`` option can be used if you do not want to re-index
 certain record types. When this option is used, the existing index is not
 completely flushed - the current part of the index for the excluded types will
@@ -101,6 +116,7 @@ then re-enter your parameters, using ``--exclude-types`` as needed.
    * :ref:`cli-search-status`
    * :ref:`maintenance-clear-cache`
    * :ref:`maintenance-cli-tools`
+   * :ref:`maintenance-troubleshooting`
    * :ref:`maintenance-webserver`
    * :ref:`maintenance-elasticsearch`
 
