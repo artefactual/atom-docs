@@ -348,6 +348,22 @@ custom theme. If so, the change highlighted in
 `this issue <https://github.com/artefactual/atom/commit/c65e84e809a5760c9814f8117a291bdb9a7491da#diff-e3a653026878cbc4745a5526934888d7R3>`__
 needs to be added to your custom ``_header.php`` file.
 
+Finally, if your custom theme includes modifications to the static page files
+``homeSuccess.php`` and ``indexSuccess.php`` (for example, if your theme
+includes a **custom homepage**), then you will also need to ensure that when
+displaying the page content, ``render_value`` calls in these files are updated
+to ``render_value_html``. 
+
+Specifically, your modified files should be updated to match these lines: 
+
+* Line 18 in `indexSuccess.php
+  <https://github.com/artefactual/atom/blob/HEAD/apps/qubit/modules/staticpage/templates/indexSuccess.php#L18>`__
+* Line 28 in `homeSuccess.php
+  <https://github.com/artefactual/atom/blob/HEAD/apps/qubit/modules/staticpage/templates/homeSuccess.php#L28>`__
+
+Recompiling after making modifications
+--------------------------------------
+
 After making any necessary updates to your custom theme, you should rebuild
 the CSS for the custom themeplugin, using the ``make`` command. Here is an
 example of rebuilding the CSS for the ArchivesCanada theme - you can swap in
