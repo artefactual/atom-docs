@@ -133,7 +133,7 @@ AtoM User Community.
 
 Want to help us translate the AtoM application into your language, or improve
 an existing translation? Find more information on how to contribute
-`here <https://www.accesstomemory.org/community/translate>`__.
+`here <https://wiki.accesstomemory.org/Resources/Translation>`__.
 
 Multi-repository
 ================
