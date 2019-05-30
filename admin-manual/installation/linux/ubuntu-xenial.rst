@@ -79,8 +79,6 @@ are unable to download it using the method that follows.
 Make sure that `Java <https://www.java.com/en/>`__ is installed. In this
 example we are going to use OpenJDK but Oracle's JVM would also work.
 
-   code content
-
 .. code-block:: bash
 
    sudo add-apt-repository ppa:openjdk-r/ppa
