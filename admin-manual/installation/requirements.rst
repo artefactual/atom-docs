@@ -62,9 +62,9 @@ of each component.
 * A webserver like `Apache <https://httpd.apache.org/>`__ or
   `Nginx <http://nginx.com/>`__; Artefactual prefers the latter in
   development
-* `Elasticsearch <https://www.elastic.co/products/elasticsearch>`__ 1.3.0 or
-  newer (we use ES 1.7.6 in development).
-  Elasticsearch 2.0 or newer is still not supported as they have deprecated a
+* `Elasticsearch <https://www.elastic.co/products/elasticsearch>`__ 5.0 or
+  newer (we use ES 5.6 in development).
+  Elasticsearch 6.0 or newer is not supported as they have deprecated a
   number of APIs still used in AtoM
 * Oracle `Java <https://www.java.com/en/>`__ 7 or newer (required for
   Elasticsearch)
