@@ -532,6 +532,7 @@ and save:
 
    [mysqld]
    sql_mode=STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+   optimizer_switch='block_nested_loop=off'
 
 Now we’ll restart MySQL:
 
