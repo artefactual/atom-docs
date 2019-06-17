@@ -511,7 +511,7 @@ password you created :ref:`earlier <linux-ubuntu-xenial-dependency-mysql>`:
 
    sudo mysql -h localhost -u root -p -e "CREATE DATABASE atom CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
 
-Note: If you do not supply the password after the -p, you will be prompted for it when you enter the command. If you do supply the password, there is no space following -p; in other words, -pPASSWORD. Remember, supplying the password on the command line is less secure as it may be visible to others in the .bash_history file.
+Note: If you do not supply the MySQL root password after the -p, you will be prompted for it when you enter the command. If you do supply the password, there is no space following -p; in other words, -pPASSWORD. (Replace PASSWORD with the password you created.) Remember, supplying the password on the command line is less secure as it may be visible to others in the .bash_history file.
 
 Notice that the database has been called **atom**. Feel free to change its name.
 
