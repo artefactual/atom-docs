@@ -26,7 +26,6 @@ If this is the first time that you have heard about containers you may find
 `The New Stack eBook Series <http://thenewstack.io/ebookseries/>`_ a useful
 resource to get up to speed quickly.
 
-
 Install Docker and Docker Compose
 =================================
 
@@ -48,8 +47,7 @@ command will list the currently running containers:
 
    docker ps
 
-You should see an empty list. Now using git, check out the sources of AtoM and
-change your current directory.
+Now using git, check out the sources of AtoM and change your current directory:
 
 .. code-block:: bash
 
@@ -58,8 +56,9 @@ change your current directory.
 
 .. note::
 
-   Clone the "stable/2.5.x" branch if you want to test the latest stable
-   version of AtoM.
+   The source code (the entire "atom" folder) is copied to the Docker container
+   on the build process and used to create the instance. For example, clone the
+   "stable/2.5.x" branch if you want to test the latest stable version of AtoM.
 
 Now set the environment variable ``COMPOSE_FILE`` to tell Compose what is the
 location of our YAML file. You could do the same using the ``-f`` flag but we
@@ -75,6 +74,22 @@ don't want to do so each time we invoke the ``docker-compose`` command.
 
 It's time to use Docker Compose in order to provision our containers:
 
+.. IMPORTANT::
+
+   In some operating systems, the default virtual memory limits can be low.
+   Elasticsearch increases one of those limits when installed via packages and
+   in the container that will be created below. However, the same limit needs
+   to be increased in the host running this environment. Check the
+   `Elasticsearch documentation
+   <https://www.elastic.co/guide/en/elasticsearch/reference/5.6/vm-max-map-count.html>`__
+   for more information.
+
+   The containers for the application use ``php:7.2-fpm-alpine`` as their base
+   image. If an old version of this image has been already downloaded by the
+   Docker engine in the host, run ``docker pull php:7.2-fpm-alpine`` to get the
+   latest version before creating the containers. It has to be based on Alpine
+   v3.8 or higher to be able to install some packages.
+
 .. code-block:: bash
 
    # Create and start containers. This may take a while the first time you run
@@ -85,22 +100,19 @@ It's time to use Docker Compose in order to provision our containers:
    # Execute a command in the running container atom: purge database
    docker-compose exec atom php symfony tools:purge --demo
 
-   # Execute another command: build stylesheets
-   docker-compose exec atom make -C plugins/arDominionPlugin
-
 .. TIP::
 
-   While you wait, take the opportunity to check out our `Dockerfile <https://github.com/artefactual/atom/blob/stable/2.4.x/docker/Dockerfile>`__,
+   While you wait, take the opportunity to check out our `Dockerfile <https://github.com/artefactual/atom/blob/stable/2.5.x/Dockerfile>`__,
    which describes the steps that are taken to build the AtoM image. It is
-   based on Alpine Linux (only 2 MB) + PHP7 and the rest of dependencies. In
-   addition, our `docker-compose.dev.yml <https://github.com/artefactual/atom/blob/stable/2.4.x/docker/docker-compose.dev.yml>`__
+   based on Alpine Linux + PHP 7.2 and the rest of dependencies. In addition,
+   our `docker-compose.dev.yml <https://github.com/artefactual/atom/blob/stable/2.5.x/docker/docker-compose.dev.yml>`__
    file shows how AtoM is orchestrated together with its service dependencies.
    It is an environment meant to be used by developers.
 
 That's it! You have started the containers and put them in the background,
-populated the database and compile the CSS stylesheet of the Dominion plugin.
-You can start developing right away. Changes made in the source code will take
-effect immediately.
+populated the database and initiated the Elasticsearch index. You can start
+developing right away. Changes made in the source code will take effect
+immediately.
 
 Due to a bug that has not been solved yet, the AtoM worker needs to be
 restarted after the database is populated for the first time:
@@ -127,24 +139,13 @@ For example, you can monitor the output of some of your containers as follows:
 
    docker-compose logs -f atom atom_worker nginx
 
-You can also scale the cluster as needed. In the following example we are going
-to add extra AtoM workers and Elasticsearch nodes.
+You can also scale the AtoM worker as needed:
 
 .. code-block:: bash
 
-   docker-compose scale atom_worker=2 elasticsearch=3
+   docker-compose up -d --scale atom_worker=2
 
-Let's verify that the Elasticsearch cluster has indeed three nodes in place:
-
-.. code-block:: bash
-
-   docker-compose exec atom curl elasticsearch:9200/_cat/nodes
-
-   cdec404af617 172.18.0.7 6 65 0.26 d m Huntara
-   366a7817864f 172.18.0.3 5 65 0.26 d * Vance Astro
-   0e52024208fe 172.18.0.6 4 65 0.26 d m Bloodstorm
-
-You can also verify that two workers have subscribed to Gearman:
+Let's verify that two workers have subscribed to Gearman:
 
 .. code-block:: bash
 
@@ -154,50 +155,64 @@ You can also verify that two workers have subscribed to Gearman:
    # Send STATUS command
    STATUS
 
-   fdd4764376d2f763-arGenerateFindingAidJob            0   0   2
-   fdd4764376d2f763-arUpdatePublicationStatusJob       0   0   2
-   fdd4764376d2f763-arInformationObjectCsvExportJob    0   0   2
-   fdd4764376d2f763-arInheritRightsJob                 0   0   2
+   0a2a58137e05032d1140fdbd0d6dccbb-arInheritRightsJob	              0	  0	  2
+   0a2a58137e05032d1140fdbd0d6dccbb-arFileImportJob	                  0	  0	  2
+   0a2a58137e05032d1140fdbd0d6dccbb-arInformationObjectXmlExportJob	  0	  0	  2
+   0a2a58137e05032d1140fdbd0d6dccbb-arActorXmlExportJob	              0	  0	  2
+   0a2a58137e05032d1140fdbd0d6dccbb-arCalculateDescendantDatesJob	    0	  0	  2
+   0a2a58137e05032d1140fdbd0d6dccbb-arXmlExportSingleFileJob	        0	  0	  2
+   0a2a58137e05032d1140fdbd0d6dccbb-arUpdatePublicationStatusJob	    0	  0	  2
+   0a2a58137e05032d1140fdbd0d6dccbb-arObjectMoveJob	                  0	  0	  2
+   0a2a58137e05032d1140fdbd0d6dccbb-arInformationObjectCsvExportJob	  0	  0	  2
+   0a2a58137e05032d1140fdbd0d6dccbb-arUpdateEsIoDocumentsJob	        0	  0	  2
+   0a2a58137e05032d1140fdbd0d6dccbb-arActorCsvExportJob	              0	  0	  2
+   0a2a58137e05032d1140fdbd0d6dccbb-arRepositoryCsvExportJob	        0	  0	  2
+   0a2a58137e05032d1140fdbd0d6dccbb-arFindingAidJob	                  0	  0	  2
+   0a2a58137e05032d1140fdbd0d6dccbb-arGenerateReportJob	              0	  0	  2
 
 You could temporarily stop all the services with ``docker-compose stop`` (which
 will need ``docker-compose up -d`` later to start the services again) or both
-stop and remove related containers, networks, images and volumes by running:
+stop and remove related containers, network and volumes by running:
 
 .. code-block:: bash
 
    docker-compose down --volumes
 
-
 Connect to AtoM
 ===============
 
-AtoM should be now accessible from your browser. If you want to find the
-address run the following:
+You can run the following command to check the status and other information
+about the containers:
 
 .. code-block:: bash
 
    $ docker-compose ps
 
-   Name                       Command               State             Ports
-   -------------------------------------------------------------------------------------------
-   docker_atom_1            /atom/src/docker/entrypoin ...   Up
-   docker_atom_worker_1     /atom/src/docker/entrypoin ...   Up
-   docker_elasticsearch_1   /docker-entrypoint.sh bash ...   Up
-   docker_gearmand_1        gearmand --queue-type=libm ...   Up
-   docker_memcached_1       /entrypoint.sh -p 11211 -m ...   Up
-   docker_nginx_1           nginx -g daemon off;             Up      192.168.64.2:8000->80/tcp
-   docker_percona_1         /docker-entrypoint.sh mysqld     Up
+            Name                       Command               State                  Ports
+   -----------------------------------------------------------------------------------------------------
+   docker_atom_1            /atom/src/docker/entrypoin ...   Up      9000/tcp
+   docker_atom_worker_1     /atom/src/docker/entrypoin ...   Up      9000/tcp
+   docker_nginx_1           nginx -g daemon off;             Up      0.0.0.0:63001->80/tcp
+   docker_elasticsearch_1   /bin/bash bin/es-docker          Up      127.0.0.1:63002->9200/tcp, 9300/tcp
+   docker_percona_1         /docker-entrypoint.sh mysqld     Up      127.0.0.1:63003->3306/tcp
+   docker_memcached_1       docker-entrypoint.sh -p 11 ...   Up      127.0.0.1:63004->11211/tcp
+   docker_gearmand_1        docker-entrypoint.sh gearmand    Up      127.0.0.1:63005->4730/tcp
 
-As you can see in the right column, Nginx has published a TCP port. It may be
-different in your environment. In this example, we will put the following
-address in our browser: http://192.168.64.2:8000.
+As you can see in the right column:
+
+* AtoM and its worker share port 9000, only in the containers network.
+* Nginx is accessible in port 63001 from the host and from outside (if the host allows it).
+* Elasticsearch can be accessed through port 63002, only from the host.
+* Percona (MySQL) can be accessed through port 63003, only from the host.
+* Memcached can be accessed through port 63004, only from the host.
+* The Gearman server can be accessed through port 63005, only from the host.
+
+AtoM should be now accessible from your browser. To connect from the host, use
+the following address: http://localhost:63001.
 
 The default login details are:
 
 * Username: ``demo@example.com``
 * Password: ``demo``
-
-Please be aware that this process is new and it may have some unknown issues.
-Let us know if you have some feedback!
 
 :ref:`Back to top <dev-env-compose>`
