@@ -241,6 +241,14 @@ See :ref:`maintenance-clear-cache` for more detailed instructions.
 
 .. _upgrading-restart-services:
 
+Check the services configuration
+================================
+
+It's not usual, but sometimes we introduce changes in the related services
+configuration, like PHP-FPM, MySQL or the AtoM worker, to improve the behaviour
+and performance of the application. Check the installation documentation for
+your operating system to find those changes.
+
 Restart services
 ================
 

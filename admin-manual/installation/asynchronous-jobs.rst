@@ -73,6 +73,10 @@ Create the following service (:file:`/usr/lib/systemd/system/atom-worker.service
    [Unit]
    Description=AtoM worker
    After=network.target
+   # High interval and low restart limit to increase the possibility
+   # of hitting the rate limits in long running recurrent jobs.
+   StartLimitIntervalSec=24h
+   StartLimitBurst=3
 
    [Install]
    WantedBy=multi-user.target
@@ -82,9 +86,10 @@ Create the following service (:file:`/usr/lib/systemd/system/atom-worker.service
    User=www-data
    Group=www-data
    WorkingDirectory=/usr/share/nginx/atom
-   ExecStart=/usr/bin/php -d memory_limit=-1 -d error_reporting="E_ALL" symfony jobs:worker
-   ExecStop=/bin/kill -s TERM $MAINPID
-   Restart=no
+   ExecStart=/usr/bin/php7.2 -d memory_limit=-1 -d error_reporting="E_ALL" symfony jobs:worker
+   KillSignal=SIGTERM
+   Restart=on-failure
+   RestartSec=30
 
 Now reload systemd:
 
@@ -110,16 +115,35 @@ You can have access to the journal of our new ``atom-worker`` unit as follows:
 
 This is going to be useful in case you need to troubleshoot the worker.
 
+.. TIP::
+
+   If the worker hits the start rate limit (3 starts in 24h) to be able to start
+   it again after fixing the issue, the failed status has to be cleared:
+
+   .. code-block:: bash
+
+      sudo systemctl reset-failed atom-worker
+      sudo systemctl start atom-worker
+
+
 Other considerations
 --------------------
 
 An AtoM worker needs to know where the job server is running, which is defined
-in an application setting called :guilabel:`gearman_job_server` under
-:file:`config/gearman.yml`. Whenever you change that setting, make sure that the
-Symfony cache is refreshed and the worker is restarted.
+in an application setting under :file:`config/gearman.yml` and defaults to
+``127.0.0.1:4730``.
 
 Note that the job server will perfectly handle multiple workers running
 simultaneously and the work load will be distributed across all available
 workers. If there are no workers available because they are busy completing
 other tasks, the job server will store the job in the queues and deliver them
 once a worker becomes available.
+
+If you're planing to connect multiple AtoM instances to the same Gearman server,
+make sure to set a different string value for the ``workers_key`` setting
+located in :file:`config/app.yml`. This will avoid collisions between those
+instances and the workers will only take the jobs that belong to their related
+AtoM install.
+
+Whenever you change any of these settings, make sure that the Symfony cache is
+cleared and the workers are restarted.
