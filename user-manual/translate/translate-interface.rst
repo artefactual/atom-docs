@@ -20,12 +20,13 @@ to navigate AtoM or to search for, view, add, modify, and delete
 
 The following instructions are for translating the :term:`user interface`
 locally. AtoM ships with some user interface translations that are kindly
-provided by community volunteers, and managed via
-`Transifex <https://www.transifex.com/>`__, a web-based translation
-management application. If you would like to contribute your interface
+provided by community volunteers, and managed via a web-based
+translation management application. If you would like to contribute your interface
 translations to a future release instead of translating locally, we welcome
-your contributions - please see our guide to getting started with Transifex:
-https://wiki.accesstomemory.org/Resources/Translation.
+your contributions - please see our guide to getting started:
+ 
+* https://wiki.accesstomemory.org/Resources/Translation.
+
 
 **To translate the AtoM user interface locally:**
 

@@ -41,11 +41,16 @@ work within it.
    typing into the data entry :term:`fields <field>`. Note that the content is
    shown in the source language above the data entry :term:`field`.
 
-.. TIP::
 
-   The tooltips (e.g., ISAD) will be shown in the new language because they
-   have been translated as part of the AtoM application using
-   `Transifex instructions <https://www.accesstomemory.org/community/translate/>`__.
+   .. TIP::
+
+   The tooltips (e.g., ISAD) may also be shown in the new language if they
+   have been translated by our community of volunteer translators. For more 
+   information, including how you can contribute translations included in 
+   public releases, see the 
+   `translation instructions <https://www.accesstomemory.org/community/translate/>`__ 
+   on our wiki.
+
 
 6. Repeat for each field as required.
 7. Click the save button in the :term:`button block`

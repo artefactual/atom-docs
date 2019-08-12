@@ -51,13 +51,15 @@ principles:
    translations of the content and the :term:`user interface` with the tools
    provided through the AtoM translation interface.
 
+
 .. TIP::
 
    For information about how to translate the AtoM application into your
    language, or improve an existing translation of the AtoM application and
    submit it to Artefactual for inclusion in our next major release,
    please visit our
-   `Transifex instructions <https://www.accesstomemory.org/community/translate/>`__.
+   `wiki instructions <https://www.accesstomemory.org/community/translate/>`__.
+
 
 **For more information, see the following sections in our User Manual:**
 
