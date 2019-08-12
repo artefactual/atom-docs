@@ -10,7 +10,7 @@ users with a means to control the representation of information about actors -
 with archival materials, typically as :term:`creators <creator>`. Typically,
 authority records contain information about the authorized form of name and
 other forms of name by which the actor is known, dates of existence, relevant
-adminstrtive or biographical history details, and other contextual
+administrative or biographical history details, and other contextual
 information; additionally, roles in :term:`events <event>` and relationships
 with archival materials are also captured and expressed.
 
