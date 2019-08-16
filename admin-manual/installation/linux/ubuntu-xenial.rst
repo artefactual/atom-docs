@@ -33,24 +33,14 @@ Install the dependencies
 MySQL
 -----
 
-We strongly recommend using `MySQL <https://www.mysql.com/>`__  5.6 as it's much
-better than the previous major release in terms of speed, scalability and
+We strongly recommend using `MySQL <https://www.mysql.com/>`__  5.7 as it's
+much better than the previous major release in terms of speed, scalability and
 user-friendliness. Also, we've experienced very good results using forks like
 Percona Server or MariaDB, so don't be afraid and use them if you want!
 
-.. warning::
-
-   If you are planning to use MySQL 5.7 please be aware that it has not been
-   fully tested yet and we know at least of `one bug <https://projects.artefactual.com/issues/9051>`__
-   that it has not been solved yet!
-
-Ubuntu 16.04 does not include an installation candidate for MySQL 5.6 but we
-can use Percona Server 5.6 instead. Let's install it with the following
-command:
-
 .. code-block:: bash
 
-   sudo apt install percona-server-server-5.6
+   sudo apt install mysql-server-5.7
 
 During the installation, you will be prompted to set a password for the default
 administrator user (root). We strongly recommend that you use a strong password
