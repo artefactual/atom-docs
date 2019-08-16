@@ -419,7 +419,7 @@ Option 1: Download the tarball
 
    wget https://storage.accesstomemory.org/releases/atom-2.5.0.tar.gz
    sudo mkdir /usr/share/nginx/atom
-   sudo tar xzf atom-2.5.0.tar.gz -C /usr/share/nginx/atom --strip 1
+   sudo tar xzf atom-2.5.1.tar.gz -C /usr/share/nginx/atom --strip 1
 
 Please note that the tarball may not be available yet if this version is still
 in development. In this case, you can try the alternative installation method
