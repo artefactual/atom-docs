@@ -1324,9 +1324,8 @@ To continue adding languages, repeat these steps as required.
 
 .. NOTE::
 
-   If a user selects a language that is not currently supported (i.e., where
-   the content has not yet been translated through Transifex), AtoM will
-   refresh the settings screen without implementing any changes.
+  If a user selects a language that is not currently supported, AtoM will
+  refresh the settings screen without implementing any changes.
 
 **To remove a language:**
 
