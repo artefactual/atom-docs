@@ -57,7 +57,7 @@ principles:
    language, or improve an existing translation of the AtoM application and
    submit it to Artefactual for inclusion in our next major release,
    please visit our
-   `Transifex instructions <https://www.accesstomemory.org/community/translate/>`__.
+   `wiki instructions <https://wiki.accesstomemory.org/Resources/Translation>`__.
 
 **For more information, see the following sections in our User Manual:**
 
