@@ -91,6 +91,13 @@ Create the following service (:file:`/usr/lib/systemd/system/atom-worker.service
    Restart=on-failure
    RestartSec=30
 
+.. IMPORTANT::
+
+      If you are not using PHP 7.2, be sure to update the `ExecStart` filepath
+      in the `[Service]` section of  the sample configuration block above!
+      Currently it assumes PHP 7.2 is being used, and will not  work for
+      installations using PHP 7.0 without modification.
+
 Now reload systemd:
 
 .. code-block:: bash
