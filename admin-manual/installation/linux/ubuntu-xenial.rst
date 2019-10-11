@@ -83,9 +83,9 @@ and install the public signing key used in their repository:
 
    wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 
-.. IMPORTANT:: 
+.. IMPORTANT::
 
-   Don't miss the dash ( ``-`` ) at the end of the above command! 
+   Don't miss the dash ( ``-`` ) at the end of the above command!
 
 Now add their repository:
 
@@ -243,13 +243,6 @@ PHP
 ---
 
 Ubuntu 16.04 bundles PHP 7.0, which is much faster than older releases.
-
-.. IMPORTANT::
-
-   At this time, PHP 7.1 or higher will not work with AtoM - non-backwards
-   compatible changes were introduced in PHP 7.1 which affect some actions in
-   AtoM, causing errors. We recommend installing v7.0 until affected areas in
-   AtoM can be reviewed and updated.
 
 Our favorite way to deploy AtoM is using `PHP-FPM <http://php-fpm.org/>`__, a
 process manager that scales better than other solutions like FastCGI. The
@@ -501,7 +494,7 @@ password you created :ref:`earlier <linux-ubuntu-xenial-dependency-mysql>`:
 
    sudo mysql -h localhost -u root -p -e "CREATE DATABASE atom CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
 
-.. note:: 
+.. note::
 
    If you do not supply the MySQL root password after the -p, you will be
    prompted for it when you enter the command. If you do supply the password,
@@ -509,7 +502,7 @@ password you created :ref:`earlier <linux-ubuntu-xenial-dependency-mysql>`:
    with the password you created.) Remember, supplying the password on the
    command line is less secure as it may be visible to others in the
    .bash_history file.
-   
+
 Notice that the database has been called **atom**. Feel free to change its name.
 
 In case your MySQL server is **not** the same as your web server, replace
@@ -539,9 +532,9 @@ different SQL modes, which affects the SQL syntax MySQL supports and the data
 validation checks it performs. We’ll add our preferred mode settings in a new
 file.
 
-First, let’s create a new file with our SQL modes. 
+First, let’s create a new file with our SQL modes.
 
-Paste the following values in a new file at ``/etc/mysql/conf.d/mysqld.cnf`` 
+Paste the following values in a new file at ``/etc/mysql/conf.d/mysqld.cnf``
 and save:
 
 .. code-block:: bash
@@ -572,11 +565,11 @@ something like http://localhost. AtoM will redirect you to the installer
 automatically.
 
 The installation process consists of a number of steps where you will be asked
-for configuration details such as the location of your database server. In some 
+for configuration details such as the location of your database server. In some
 cases, it may provide default values, such as ``root`` for the database username.
-If you have followed this document to the letter (including creating a different 
-database user in the database configuration step 
-:ref:` above <linux-ubuntu-xenial-create-database>`, this is how you should fill 
+If you have followed this document to the letter (including creating a different
+database user in the database configuration step
+:ref:` above <linux-ubuntu-xenial-create-database>`, this is how you should fill
 the following fields:
 
 * Database name: ``atom``
