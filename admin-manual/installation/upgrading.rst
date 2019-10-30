@@ -42,15 +42,12 @@ This is the opportunity to find out what has been changed in the new release,
 and if there are new features, enhancements and bug fixes that may be of
 interest to you and your organization.
 
-As a major release with hundreds of issue tickets closed, made public during a
-time when AtoM is in the process of rewriting its documentation and migrating
-wiki content, the AtoM 2.0.0 release notes were made in a more general form in
-our User forum,
-`here <https://groups.google.com/d/msg/ica-atom-users/_zgOnNxM1mE/ODGTv_Bxox4J>`__.
+You can always find the full release notes on the AtoM wiki, here: 
 
-In the future, we will update these instructions with a consistent place on
-our new wiki (coming soon), where you can always find release notes for the
-latest version of AtoM, as well as those from previous releases.
+* https://wiki.accesstomemory.org/Releases/Release_announcements
+
+These often include additional details that can help you understand the
+purpose of the release and how best to install it.
 
 .. _upgrading-install-atom:
 
