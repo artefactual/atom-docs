@@ -82,9 +82,9 @@ and install the public signing key used in their repository:
 
    wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 
-.. IMPORTANT:: 
+.. IMPORTANT::
 
-   Don't miss the dash ( ``-`` ) at the end of the above command! 
+   Don't miss the dash ( ``-`` ) at the end of the above command!
 
 Now add their repository:
 
@@ -434,7 +434,7 @@ Install git:
 
 .. code-block:: bash
 
-   sudo apt install git
+   sudo apt install git unzip
 
 .. code-block:: bash
 
@@ -449,8 +449,33 @@ also truncate it to a specific number of revisions, e.g.: just one revision
 
    git clone --depth 1 http://github.com/artefactual/atom.git /usr/share/nginx/atom
 
-Once you've cloned the code from our git repository, you'll need to compile
-the CSS files:
+We use `Composer`_ to install and manage some third-party PHP libraries. To
+install Composer download and run the Composer installer according to the
+instructions at https://getcomposer.org/download/ in the "Command-line
+installation" section.
+
+Once Composer is installed you will need to run it to install the required
+libraries.
+
+For production AtoM sites, the development libraries do not need to be included:
+
+.. code-block:: bash
+
+   ~/composer.phar install --no-dev
+
+Or if you have installed Composer `globally`_:
+
+.. code-block:: bash
+
+   composer install --no-dev
+
+For development environments, the dev libraries should also be installed:
+
+.. code-block:: bash
+
+   ~/composer.phar install
+
+After downloading the code, you will need to compile the CSS files:
 
 .. code-block:: bash
 
@@ -492,7 +517,7 @@ password you created :ref:`earlier <linux-ubuntu-bionic-dependency-mysql>`:
 
    sudo mysql -h localhost -u root -p -e "CREATE DATABASE atom CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
 
-.. note:: 
+.. note::
 
    If you do not supply the MySQL root password after the -p, you will be
    prompted for it when you enter the command. If you do supply the password,
@@ -500,7 +525,7 @@ password you created :ref:`earlier <linux-ubuntu-bionic-dependency-mysql>`:
    with the password you created.) Remember, supplying the password on the
    command line is less secure as it may be visible to others in the
    .bash_history file.
-   
+
 Notice that the database has been called **atom**. Feel free to change its name.
 
 In case your MySQL server is **not** the same as your web server, replace
@@ -530,9 +555,9 @@ different SQL modes, which affects the SQL syntax MySQL supports and the data
 validation checks it performs. We’ll add our preferred mode settings in a new
 file.
 
-First, let’s create a new file with our SQL modes. 
+First, let’s create a new file with our SQL modes.
 
-Paste the following values in a new file at ``/etc/mysql/conf.d/mysqld.cnf`` 
+Paste the following values in a new file at ``/etc/mysql/conf.d/mysqld.cnf``
 and save:
 
 .. code-block:: bash
@@ -562,11 +587,11 @@ something like http://localhost. AtoM will redirect you to the installer
 automatically.
 
 The installation process consists of a number of steps where you will be asked
-for configuration details such as the location of your database server. In some 
+for configuration details such as the location of your database server. In some
 cases, it may provide default values, such as ``root`` for the database username.
-If you have followed this document to the letter (including creating a different 
-database user in the database configuration step 
-:ref:` above <linux-ubuntu-bionic-create-database>`, this is how you should fill 
+If you have followed this document to the letter (including creating a different
+database user in the database configuration step
+:ref:` above <linux-ubuntu-bionic-create-database>`, this is how you should fill
 the following fields:
 
 * Database name: ``atom``
@@ -643,3 +668,6 @@ We strongly encourage our users to configure a firewall because some of the
 services configured should not be exposed in the wild, e.g. Elasticsearch was
 not designed to be accessible from untrusted networks and it's a common attack
 vector.
+
+.. _`Composer`: https://getcomposer.org/
+.. _`globally`: https://getcomposer.org/doc/00-intro.md#globally
