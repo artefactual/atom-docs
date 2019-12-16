@@ -167,9 +167,10 @@ you spend hours building a theme. Gulp can do much more than that, like
 refreshing our browser or doing live reload each time we make a change, but
 that's something that we haven't tried yet.
 
-Symfony plugins allow you to do much more, e.g. you could include our own images,
-override the original templates provided by AtoM or add your owns, inject new
-controllers, filters, signal callbacks and much more. Take a look at our
+Symfony plugins allow you to do much more. For example, you could include and
+use custom images, add your own templates or override the original ones provided
+by AtoM, inject new controllers, filters, or signal callbacks, and much more.
+Take a look at our
 `arArchivesCanadaPlugin <https://github.com/artefactual/atom/tree/stable/2.4.x/plugins/arArchivesCanadaPlugin>`_.
 This theme overrides the original homepage template as well as the search box
 and the main header template. Other plugins in the same repository may give you
