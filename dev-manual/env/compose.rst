@@ -215,4 +215,42 @@ The default login details are:
 * Username: ``demo@example.com``
 * Password: ``demo``
 
+Monitoring
+==========
+
+Extending the development environment, you can deploy an instance of
+[Percona Monitoring and Management](https://www.percona.com/doc/percona-monitoring-and-management)
+configured by default to collect metrics and query analytics data from the
+MySQL server. To setup the PMM server and client services alongside all the
+others you'll need to indicate two Docker Compose files on the ``COMPOSE_FILE``
+environment variable:
+
+.. code-block:: bash
+
+   export COMPOSE_FILE="$PWD/docker/docker-compose.dev.yml:$PWD/docker/docker-compose.pmm.yml"
+
+Unless it has been changed with the ``COMPOSE_PATH_SEPARATOR`` environment
+variable, on Linux and macOS the separator is ``:``, on Windows it is ``;``.
+
+.. TIP::
+
+   In some cases the ``pmm_client`` service fails to start reporting the
+   following error:
+
+   .. code-block:: bash
+
+      [main] app already is running, exiting
+
+   You'll need to fully recreate the container to make it work:
+
+   .. code-block:: bash
+
+      docker-compose rm pmm_client
+      docker-compose up -d
+
+To access the PMM server interface, visit http://localhost:63006:
+
+* Username: ``pmm``
+* Password: ``pmm``
+
 :ref:`Back to top <dev-env-compose>`
