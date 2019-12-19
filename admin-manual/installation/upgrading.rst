@@ -62,6 +62,9 @@ database later in the upgrade.
 You will also need to upgrade to Java 8 if the system is using a previous
 version, as this is a requirement for Elasticsearch 5.x.
 
+Since the 2.6 version, AtoM requires MySQL 8.0. Bellow we'll explain the steps
+needed to move and upgrade the AtoM database to properly work with that version.
+
 Install the latest version of AtoM
 ==================================
 
@@ -128,25 +131,32 @@ and downloads created by the job scheduler (such as
 
       rm -f /usr/share/nginx/atom/downloads/jobs/*
 
-2. Dump the contents of your old database to a temporary file:
+2. Dump the contents of your old database to a temporary file, change the
+   database name if needed:
 
 .. code-block:: bash
 
-   $ mysqldump -u username -p old_database > /tmp/database.sql
+   $ mysqldump -u username -p atom > /tmp/atom_db.sql
 
-3. Drop and re-create the new AtoM database to remove any unnecessary tables and
-   columns.
+3. If you're upgrading from 2.5.x or lower to 2.6.x or higher make sure your
+   data is on `utf8mb3` or `utf8` (the default if you followed the installation
+   documentation) and that you are using MySQL 8.0 as that's a requirement since
+   AtoM 2.6. During the upgrade task, your data will be transformed to the
+   `utf8mb4` charset and the `utf8mb4_0900_ai_ci` collation.
 
-.. code-block:: bash
-
-   $ mysql -u username -p -e 'drop database new_database; create database
-   new_database character set utf8 collate utf8_unicode_ci;'
-
-4. Now, load the contents into the new database:
+4. Re-create the database with the new charset and collation:
 
 .. code-block:: bash
 
-   $ mysql -u username -p new_database < /tmp/database.sql
+   $ mysql -u username -p -e "DROP DATABASE IF EXISTS atom;"
+   $ mysql -u username -p -e "CREATE DATABASE atom CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;"
+
+
+5. Now, load the contents into the new database:
+
+.. code-block:: bash
+
+   $ mysql -u username -p atom < /tmp/atom_db.sql
 
 .. _upgrading-run-upgrade-task:
 
@@ -172,6 +182,15 @@ Now, run the upgrade-sql task:
 .. code-block:: bash
 
    $ php symfony tools:upgrade-sql
+
+.. _upgrading-restore-configuration-changes:
+
+Restore configuration changes
+=============================
+
+If you made any change to the old AtoM instace configuration files, like
+setting a custom session timeout or a Google Analitycs API key, make sure to
+bring those changes to the new instance if you want to keep them.
 
 .. _upgrading-migrate-translations:
 

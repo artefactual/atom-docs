@@ -33,24 +33,32 @@ Install the dependencies
 MySQL
 -----
 
-We strongly recommend using `MySQL <https://www.mysql.com/>`__  5.7 as it's
-much better than the previous major release in terms of speed, scalability and
-user-friendliness. Also, we've experienced very good results using forks like
-Percona Server or MariaDB, so don't be afraid and use them if you want!
+AtoM |version| requires MySQL 8.0 or higher as it uses common table expressions.
+Also, we've experienced very good results using forks like Percona Server or
+MariaDB, so don't be afraid and use them if you want!
 
 .. code-block:: bash
 
-   sudo apt install mysql-server-5.7
+   wget https://dev.mysql.com/get/mysql-apt-config_0.8.14-1_all.deb
+   sudo dpkg -i mysql-apt-config_0.8.14-1_all.deb
+   rm mysql-apt-config_0.8.14-1_all.deb
+   sudo apt update
+   sudo apt install mysql-server
 
 During the installation, you will be prompted to set a password for the default
 administrator user (root). We strongly recommend that you use a strong password
-and please write it down somewhere safe, you are going to need it later.
+and please write it down somewhere safe, you are going to need it later. **Also,
+you will be asked to select the default authentication plugin, which has to be
+set to "Use Legacy Authentication Method".**
 
 .. TIP::
 
-   If you are not prompted on installation to create a username and password,
-   you can use 'root' as the user and password in later steps. We will create a
-   different mysql user in later steps, where you can add a secure password.
+   The default MySQL installation is not completely secure, but it comes with a
+   security script that can be executed to improve the default configuration:
+
+   .. code-block:: bash
+
+      sudo mysql_secure_installation
 
 .. _linux-ubuntu-bionic-dependency-elasticsearch:
 
@@ -72,8 +80,8 @@ example we are going to use OpenJDK but Oracle's JVM would also work.
 .. code-block:: bash
 
    sudo add-apt-repository ppa:openjdk-r/ppa
-   sudo apt-get update
-   sudo apt install openjdk-11-jre-headless software-properties-common
+   sudo apt update
+   sudo apt install openjdk-8-jre-headless software-properties-common
 
 After successfully installing Java, proceed to install Elasticsearch. Download
 and install the public signing key used in their repository:
@@ -256,7 +264,7 @@ If you are using Memcached as cache engine, you will also need to install `php-m
 
 .. code-block:: bash
 
-   sudo apt-get install php-memcache
+   sudo apt install php-memcache
 
 Let's add a new PHP pool for AtoM by adding the following contents in a new file
 called :file:`/etc/php/7.2/fpm/pool.d/atom.conf`:
@@ -440,14 +448,13 @@ Install git:
 
    sudo mkdir /usr/share/nginx/atom
    sudo git clone -b stable/2.5.x http://github.com/artefactual/atom.git /usr/share/nginx/atom
-   cd /usr/share/nginx/atom
 
 If you are not interested in downloading all the history from git, you could
 also truncate it to a specific number of revisions, e.g.: just one revision
 
 .. code-block:: bash
 
-   git clone --depth 1 http://github.com/artefactual/atom.git /usr/share/nginx/atom
+   sudo git clone --depth 1 http://github.com/artefactual/atom.git /usr/share/nginx/atom
 
 We use `Composer`_ to install and manage some third-party PHP libraries. To
 install Composer download and run the Composer installer according to the
@@ -455,31 +462,35 @@ instructions at https://getcomposer.org/download/ in the "Command-line
 installation" section.
 
 Once Composer is installed you will need to run it to install the required
-libraries.
+libraries. First, move to the AtoM folder:
+
+.. code-block:: bash
+
+   cd /usr/share/nginx/atom
 
 For production AtoM sites, the development libraries do not need to be included:
 
 .. code-block:: bash
 
-   ~/composer.phar install --no-dev
+   sudo ~/composer.phar install --no-dev
 
 Or if you have installed Composer `globally`_:
 
 .. code-block:: bash
 
-   composer install --no-dev
+   sudo composer install --no-dev
 
 For development environments, the dev libraries should also be installed:
 
 .. code-block:: bash
 
-   ~/composer.phar install
+   sudo ~/composer.phar install
 
 After downloading the code, you will need to compile the CSS files:
 
 .. code-block:: bash
 
-   sudo apt install nodejs npm make
+   sudo apt install npm make
    sudo npm install -g "less@<2.0.0"
    sudo make -C /usr/share/nginx/atom/plugins/arDominionPlugin
 
@@ -515,7 +526,7 @@ password you created :ref:`earlier <linux-ubuntu-bionic-dependency-mysql>`:
 
 .. code-block:: bash
 
-   sudo mysql -h localhost -u root -p -e "CREATE DATABASE atom CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
+   sudo mysql -h localhost -u root -p -e "CREATE DATABASE atom CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;"
 
 .. note::
 
@@ -543,7 +554,8 @@ password ``12345`` and the permissions needed for the database created above.
 
 .. code-block:: bash
 
-   sudo mysql -h localhost -u root -p -e "GRANT ALL ON atom.* TO 'atom'@'localhost' IDENTIFIED BY '12345';"
+   sudo mysql -h localhost -u root -p -e "CREATE USER 'atom'@'localhost' IDENTIFIED BY '12345';"
+   sudo mysql -h localhost -u root -p -e "GRANT ALL PRIVILEGES ON atom.* TO 'atom'@'localhost';"
 
 Note that the ``INDEX``, ``CREATE`` and ``ALTER`` privileges are only necessary
 during the installation process or when you are upgrading AtoM to a newer
@@ -563,7 +575,7 @@ and save:
 .. code-block:: bash
 
    [mysqld]
-   sql_mode=STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+   sql_mode=STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
    optimizer_switch='block_nested_loop=off'
 
 Now we’ll restart MySQL:
