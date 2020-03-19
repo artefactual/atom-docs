@@ -413,10 +413,10 @@ the other options in this part of the context menu.
 
 .. NOTE::
 
-   The "Browse as list" and the "Browse digital objects" links will appear in
-   the right-hand :term:`context menu` in all cases - even if there are no
-   lower-level descriptions or digital objects to browse. So, it is possible
-   that clicking on the link will lead to a results page with 0 results.
+   The "Browse as list" link will appear in the right-hand :term:`context menu` 
+   in all cases - even if there are no lower-level descriptions to browse. So, 
+   it is possible that clicking on the link will lead to a results page with only 
+   one result.
 
 **To use the Browse as list button:**
 
@@ -440,13 +440,6 @@ the other options in this part of the context menu.
    the top-level description. If you click the **X** to remove the filter tag,
    AtoM will reload all search/browse results (i.e. the page will no longer be
    limited to the selected archival unit).
-
-.. NOTE::
-
-   The top-level record for the selected :term:`archival unit` (for example,
-   the :term:`fonds` or :term:`collection` description) will **not** be
-   included in the results. The "Browse as list" option will only return
-   results for :term:`children <child record>` of the top-level record.
 
 4. You can continue to apply further facets and fliters as desired to narrow
    your results within the selected archival unit.
@@ -486,13 +479,6 @@ in the target :term:`archival unit`, on a dedicated browse page described in
 the :ref:`browse-digital-objects` section below, but limited to that specific
 descriptive hierarchy.
 
-.. NOTE::
-
-   The "Browse as list" and the "Browse digital objects" links will appear in
-   the right-hand :term:`context menu` in all cases - even if there are no
-   lower-level descriptions or digital objects to browse. So, it is possible
-   that clicking on the link will lead to a results page with 0 results.
-
 **To use the Browse digital objects button:**
 
 1. Navigate to an :term:`archival description` that is part of the
@@ -509,6 +495,12 @@ descriptive hierarchy.
    :width: 30%
    :alt: An image of the Explore section of the right-hand context menu
 
+.. NOTE::
+
+   The "Browse digital objects" option will **not** be displayed if there are no 
+   digital objects linked to any descriptions in the current 
+   :term:`archival unit`. 
+
 3. Click on the "Browse digital objects" link. AtoM will redirect you to a
    digital object browse page, limited to the current :term:`archival unit` -
    this will be indicated by the :term:`filter tag` at the top of the browse
@@ -520,15 +512,6 @@ descriptive hierarchy.
    :align: center
    :width: 70%
    :alt: An image of the Digital object browse page limited to a collection
-
-.. NOTE::
-
-   The top-level record for the selected :term:`archival unit` (for example,
-   the :term:`fonds` or :term:`collection` description) will **not** be
-   included in the results. The "Browse digital objects" option will only
-   return results for :term:`children <child record>` of the top-level record
-   - so if there is a digital object attached to the top-level record, it will
-   not appear in these results!
 
 4. You can continue to apply further facets and fliters as desired to narrow
    your results within the selected archival unit.
