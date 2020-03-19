@@ -290,6 +290,19 @@ area further:
 
    Click and drag the bottom bar of the full-width treeview viewing area to expand it
 
+.. NOTE:: 
+
+   An :term:`administrator` can also enable a setting that will display the full
+   width treeview in a collapsible container, which is closed by default when
+   users first navigate to an archival description :term:`view page`. This
+   widget behaves similarly to :ref:`advanced-search-interface` on archival
+   description search and browse pages. An administrator can also customize the 
+   labels shown for collapsing and expanding the treeview. For more information, 
+   see: 
+
+   * :ref:`treeview-collapsible`
+   * :ref:`user-interface-labels`
+
 The full-width treeview also supports keyboard navigation - use the up and
 down keys to navigate, and the left/right keys to expand or collapse
 descriptions with children.
@@ -326,24 +339,37 @@ record. When navigating with a keyboard, the view page will not update until
 the user presses the "enter" key to select the description for viewing.
 
 Like the sidebar treeview, for performance reasons AtoM may not load all
-available descriptions in the current position of the hierarchy. If there are
-more than 50 immediate children to the level being viewed AtoM will add the
-number of remaining records not immediately displayed in the top right corner.
+available descriptions at once, when there are many immediate 
+:term:`children <child record>` below the top-level description in the 
+:term:`archival unit`. The default value for this behavior is 50 - meaning, if 
+there are more than 50 immediate children below the parent description, AtoM 
+will add a count of the number of remaining records not immediately displayed to
+a button in the top right corner.
 
 .. image:: images/treeview-paging-1.*
    :align: center
    :width: 80%
    :alt: An image of paging in the full-width treeview
 
-Clicking on that number will load the next 50 records. If there are still more
-records not displayed, the number of remaining records will be shown and the
-user can choose to see the next set, or return to the beginning by choosing
-"reset".
+Clicking on that button will load the next set of records. If there are
+still more records not displayed, the number of remaining records will be
+shown and the user can choose to see the next set, or return to the beginning
+by choosing "reset".
 
 .. image:: images/treeview-paging-2.*
    :align: center
    :width: 80%
    :alt: An image of paging in the full-width treeview
+
+.. TIP::
+
+   An :term:`administrator` can adjust how many child records are loaded in the 
+   full-width treeview initially, and with each click of the "More" button, 
+   via a pager setting in |gears| **Admin > Settings > Treeview**. The default
+   value can be set anywhere between 10 and 1,000. For more 
+   information, see: 
+
+   * Treeview :ref:`fwt-items-per-page`
 
 Like the sidebar treeview, "(Draft)" will appear beside all draft descriptions
 displayed to authenticated (i.e. logged in) users. Unlike the sidebar treeview,

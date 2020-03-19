@@ -2089,6 +2089,7 @@ information on navigation with and use of the treeview, see:
 **Jump to:**
 
 * :ref:`treeview-type`
+* :ref:`treeview-collapsible`
 * :ref:`hierarchy-browser-settings`
 * :ref:`sidebar-treeview-settings`
 * :ref:`fullwidth-treeview-settings`
@@ -2166,6 +2167,53 @@ new link will appear on the archival description :ref:`search/browse page <brows
 For more information on browsing with this option, see:
 
 * :ref:`browse`
+
+.. _treeview-collapsible:
+
+Make full width treeview collapsible on description pages
+---------------------------------------------------------
+
+This setting affects the default display of the full width treeview when users 
+first arrive on the :term:`view page` of an :term:`archival description`. See 
+:ref:`treeview-type` above for more information on the different treeview types
+available in AtoM. 
+
+By default in new AtoM installations, this setting will be disabled (i.e. set
+to "no"). When this setting is enabled (i.e. set to "yes"), the full-width
+treeview will be wrapped in a collapsible section, similar to
+:ref:`advanced-search-interface` on archival description search and browse
+pages. 
+
+.. image:: images/treeview-collapsed.*
+   :align: center
+   :width: 70%
+   :alt: An image showing the full-width treeview collapsed on a descrpition
+
+Once the setting is enabled, the treeview collapsible section will be closed
+when users first arrive on a :term:`view page`, but users can click to expand
+it, and it will maintain its open state as users navigate to different
+descriptions in the hierarchy via the treeview nodes. 
+
+.. image:: images/treeview-expanded.*
+   :align: center
+   :width: 70%
+   :alt: An image showing the full-width treeview expanded on a descrpition
+
+Users can click the container heading again at any time to collapse or expand
+the treeview. Navigating elsewhere or triggering a full page refresh will
+result in the treeview widget returning to its default collapsed state.
+
+An :term:`administrator` can also customize the labels used on the widget - the 
+default text included during installation reads "Show hierarchy" when collapsed, 
+and "Hide hierarchy" when expanded. To customize these default labels, see: 
+
+* :ref:`user-interface-labels`
+
+.. SEEALSO::
+
+   * :ref:`fullwidth-treeview-settings`
+   * :ref:`treeview-type`
+   * :ref:`context-menu-treeview`
 
 .. _hierarchy-browser-settings:
 
@@ -2276,6 +2324,9 @@ So for a Series level description with an identifier of 004 called
 
 Each configurable element is described further below.
 
+.. SEEALSO:: 
+
+   * :ref:`treeview-collapsible`
 
 .. _fwt-show-id:
 
@@ -2308,6 +2359,42 @@ the first will be shown. Other event type dates (for example, dates of
 accumulation, or dates of broadcast, etc.) are not included regardless of the
 setting.
 
+.. _fwt-items-per-page:
+
+Items per page
+^^^^^^^^^^^^^^
+
+This setting controls how many immediate :term:`child <child record>` 
+descriptions are loaded below the top-level description when users first visit
+a hierarchical description's :term:`view page`. 
+
+Like the sidebar treeview, for performance reasons AtoM may not load all
+available descriptions at once, when there are many immediate 
+:term:`children <child record>` below the top-level description in the 
+:term:`archival unit`. The default value for this behavior is 50 - meaning, if 
+there are more than 50 immediate children below the parent description, AtoM 
+will add a count of the number of remaining records not immediately displayed to
+a button in the top right corner.
+
+.. image:: images/treeview-paging-1.*
+   :align: center
+   :width: 80%
+   :alt: An image of paging in the full-width treeview
+
+Clicking on that button will load the next set of records, using this "items
+per page" setting value to determine how many to load at once. If there are
+still more records not displayed, the number of remaining records will be
+shown and the user can choose to see the next set, or return to the beginning
+by choosing "reset".
+
+.. image:: images/treeview-paging-2.*
+   :align: center
+   :width: 80%
+   :alt: An image of paging in the full-width treeview
+
+To allow for more records to be loaded initially, and with each subsequent click
+of the "More" button, an :term:`administrator` can adjust this "Items per page"
+value. The minimum value is 10, and the maximum value that can be set is 1,000.
 
 :ref:`Back to top <settings>`
 
@@ -2333,7 +2420,11 @@ The code, therefore, uses generic terms for entities.
 :term:`Administrators <administrator>` can specify how they want these
 :term:`terms <term>` to appear in the :term:`user interface` labels to suit the
 institution's collections. The default labels that ship with AtoM are terms
-typically used by archival institutions.
+typically used by archival institutions, but can be customized as desired. 
+Additionally, some of the user interface label settings allow an administrator
+to customize the display labels on particular user interface elements, such as 
+the text shown for collapsing and expanding the full width treeview when the  
+:ref:`treeview-collapsible` is enabled. 
 
 .. image:: images/user-interface-label.*
    :align: center
@@ -2372,6 +2463,16 @@ see glossary definitions and descriptions of how the terms are used in AtoM.
   when enabled, this is the default placeholder help text that will appear in the
   per-institution search box included in the :term:`institution block`. For more
   information, see: :ref:`enable-scoping`
+* fullTreeviewCollapseOpenedButtonText: Text used in the setting to 
+  :ref:`treeview-collapsible`. This text will be displayed on the collapsible widget
+  when the widget is expanded, showing the descriptions. The text used should 
+  suggest to users that clicking it will cause the widget to collapse, hiding the 
+  treeview.   
+* fullTreeviewCollapseClosedButtonText: Text used in the setting to 
+  :ref:`treeview-collapsible`. This text will be displayed on the collapsible widget
+  when the widget is collapsed, hiding the descriptions. The text used should 
+  suggest to users that clicking it will cause the widget to expand, showing the 
+  treeview.
 
 :term:`User interface <user interface>` labels can be changed by
 :term:`administrators <administrator>` by entering a new label(s) into the
