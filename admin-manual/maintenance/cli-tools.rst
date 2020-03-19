@@ -223,6 +223,7 @@ This task will allow a system administrator to review the status of AtoM's
 Elasticsearch index without having to access any configuration files. The task
 output will include: 
 
+* Installed Elasticsearch version
 * Search host
 * Port
 * Index name
