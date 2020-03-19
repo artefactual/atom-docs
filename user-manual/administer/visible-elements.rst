@@ -63,6 +63,7 @@ Below you will find a brief outline of each Visible elements area:
    * :ref:`archival-descriptions`
    * :ref:`isad-template`
    * :ref:`rad-template`
+   * :ref:`dacs-template`
    * :ref:`physical-storage`
    * :ref:`upload-digital-object`
    * :ref:`log-in`
@@ -72,12 +73,12 @@ Below you will find a brief outline of each Visible elements area:
 Hide or show the login button
 =============================
 
-With the release of 2.5, an :term:`administrator` can hide the login button for
-public users. The default setting allows the login button to be visible to all
-users. To change this so that the login button is hidden to public users, an
-:term:`administrator` can click the Global section of Visible Elements and
-uncheck the login button. Click "Save", and exit Visible Elements. The login
-button will still be visible for authenticated (i.e. logged in) users, but
+An :term:`administrator` can hide the login button for public users. The
+default setting allows the login button to be visible to all users. To change
+this so that the login button is hidden to public users, an
+:term:`administrator` can click the Global section of Visible Elements and 
+uncheck the login button. Click "Save", and exit Visible Elements. The login 
+button will still be visible for authenticated (i.e. logged in) users, but 
 hidden for unauthenticated users.
 
 .. image:: images/visible-elements-global.*
@@ -117,9 +118,9 @@ based.
 
 While these area headers are useful to archivists working with content
 standards for archival description, they may not be meaningful to public
-users. As of AtoM 2.1, an :term:`administrator` can now hide the various
-:term:`area headers <area header>` for the :ref:`RAD <rad-template>` and
-:ref:`ISAD <isad-template>` templates.
+users. If desired, an :term:`administrator` can choose to hide the various
+:term:`area headers <area header>` for the :ref:`RAD <rad-template>`, 
+:ref:`DACS <dacs-template>`, and :ref:`ISAD <isad-template>` templates.
 
 .. image:: images/visible-elements-headers.*
    :align: center
@@ -155,21 +156,22 @@ hidden (i.e. all check boxes |uncheck| unchecked):
 Hide or show metadata fields
 ============================
 
-Within the :ref:`ISAD <isad-template>` and :ref:`RAD <rad-template>`
-templates for :term:`archival descriptions <archival description>`, specific
+Within the :ref:`ISAD <isad-template>`, :ref:`RAD <rad-template>`, and 
+:ref:`DACS <dacs-template>` templates for 
+:term:`archival descriptions <archival description>`, specific
 :term:`fields <field>` can also be hidden from public users if desired.
 
-The names of each field available in the ISAD and RAD elements areas are taken
-directly from field names in AtoM's data entry templates - which are
+The names of each field available in the ISAD, RAD, and DACS elements areas are
+taken directly from field names in AtoM's data entry templates - which are
 themselves drawn directly from the related content standards. For specific
 information on each field, see: :ref:`data-entry`.
 
 An authenticated (logged-in) :term:`administrator` can |check| check the
 checkboxes to reveal the :term:`field`, while an |uncheck| unchecked box hides
 the field. To review which fields can be hidden from the public, select the
-ISAD template and /or the RAD template as applicable. Whether you hide/show
-elements from the  ISAD or RAD area depends on which
-:ref:`default template <default-templates>` you are using.
+ISAD template, the RAD template, and/or the DACS template as applicable. Whether 
+you choose to hide or show elements from the ISAD, RAD, and/or DACS area 
+depends on which :ref:`default template <default-templates>` you are using.
 
 .. image:: images/visible-elements-isad.*
    :align: center
