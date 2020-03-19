@@ -1115,7 +1115,7 @@ XML will be stored by type in these two subdirectories.
 
 .. image:: images/downloads-dir.*
    :align: center
-   :width: 40%
+   :width: 65%
    :alt: An image of the Downloads directory structure as seen in a file
          explorer
 
@@ -1162,14 +1162,27 @@ object (aka :term:`archival description`) and the total count:
 
 .. image:: images/cli-cache-xml-progress.*
    :align: center
-   :width: 60%
+   :width: 80%
    :alt: An example of the console's output when running the cache xml task
 
 In some cases with very large hierarchies (for example, an
 :term:`archival unit` with thousands or tens of thousands of descendants),
 available system memory may be exhausted during this process, and the task may
-crash before all XML can be generated. In that case, the ``--skip`` option can
-be useful for restarting the task exactly where it left off.
+crash before all XML can be generated. In that case, the ``--skip`` and 
+``--limit`` options can be useful for managing partial loads to avoid using all 
+system memory.
+
+The ``--limit`` option can be used to limit the amount of XML files generated
+when the task is executed - by default, without using this option, the task
+will generate DC and EAD 2002 XML for all published descriptions in AtoM. The
+``--limit`` option expects a whole number as a parameter, representing the
+total number of descriptions to be exported as XML by the task. For example,
+if you only want to generate XML for the first 10 descriptions in AtoM, you
+could run the task like so:
+
+.. code-block:: bash
+
+   php symfony cache:xml-representations --limit="10" 
 
 The ``--skip`` option accepts as a parameter the number of information objects
 to be skipped - so for example, if the task crashed while trying to generate
@@ -1179,6 +1192,16 @@ information object 2445 again by skipping the first 2444, like so:
 .. code-block:: bash
 
    php symfony cache:xml-representations --skip="2444"
+
+Below is an example of using these two options together. First, we use the 
+``--limit`` option to generate the XML for only the first 10 descriptions. Then, 
+in our second pass, we skip the first 10 with the ``--skip`` option, and limit 
+the next pass to 5 descriptions: 
+
+.. image:: images/cli-cache-xml-example.*
+   :align: center
+   :width: 85%
+   :alt: An image of using the cache:xml task with the --skip and --limit options 
 
 .. NOTE::
 
