@@ -913,7 +913,17 @@ From the authority record
    remove the relationship link. You can also repeat this process to add
    multiple links by clicking the "Add new" button below the Related
    resources again - AtoM will open a new pop-up dialog. Repeat steps 3-7 as
-   needed.
+   needed. If more desccriptions have been linked than the global 
+   :ref:`results per page <results-page>` setting (which defaults to 10 in new 
+   installations), AtoM will add a pager - you can click "Show more" button 
+   below the list of linked descriptions to load the next set
+
+.. image:: images/actor-event-pager.*
+   :align: center
+   :width: 75%
+   :alt: An image of the "Show more" button when linking many descriptions to an 
+         authority record
+
 8. When you are finished, click "Save" in the :term:`button block` at the bottom
    of the authority record's :term:`edit page` to save your changes and exit
    :term:`edit mode`.
@@ -1115,6 +1125,16 @@ Create a relationship between two authority records
    :align: center
    :width: 75%
    :alt: An image of the relationships area in the edit template
+
+.. NOTE::
+
+   The amount of related authorities shown by default in the *Related corporate 
+   bodies, persons, or families* table is determined by the global 
+   :ref:`results per page <results-page>` setting, which defaults to 10 in new 
+   installations unless adjusted by an :term:`administrator`. If more 
+   relationships have been added than the global results per page value, AtoM 
+   will display a "Show more" button beneath the table - click it to load the 
+   next set of relationships. 
 
 9. When you are finished, click "Save" in the :term:`button block` at the bottom
    of the authority record's :term:`edit page` to save your changes and exit
