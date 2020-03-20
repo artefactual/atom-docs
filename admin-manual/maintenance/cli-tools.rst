@@ -1082,6 +1082,76 @@ Enter "y" if you are certain you would like to delete all draft records.
 
 :ref:`Back to top <maintenance-cli-tools>`
 
+.. _delete-digital-object-cli:
+
+Delete a digital object
+=======================
+
+AtoM maintains a 1:1 relationship between a :term:`digital object` and an 
+:term:`information object` (AKA an :term:`archival description`) - this means 
+that every digital object in AtoM must have an associated description, and a 
+description cannot be linked to more than 1 digital object. For more general
+information on digital objects in AtoM, see: 
+
+* :ref:`upload-digital-object`
+
+You can delete a description's associated digital object from the command-line
+if you know the related description's :term:`slug`, using the 
+``digitalobject:delete`` task. The task also includes an option to delete 
+digital objects from all descendant records, when a 
+:term:`parent <parent record>` description slug is provided.  
+
+.. TIP::
+
+   A slug is a word or sequence of words which make up a part of a URL that
+   identifies a page in AtoM. It is the part of the URL located at the end of
+   the URL path and often is indicative of the name or title of the page
+   (e.g.: in  ``www.youratom.com/this-description``, the slug is
+   ``this-description``). For more information on slugs in AtoM, see: 
+
+   * :ref:`slugs-in-atom`
+
+The basic syntax for the task is:
+
+.. code-block:: bash
+
+    php symfony digitalobject:delete slug-of-description
+
+Where ``slug-of-description`` represents the slug of the target record. 
+
+By running ``php symfony help digitalobject:delete`` we can see the
+command-line's help output for the task:
+
+.. image:: images/cli-delete-object-help.*
+   :align: center
+   :width: 85%
+   :alt: An image of the command-line's help text for the digital object delete task
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for Symfony to be
+able to execute the task.
+
+**Deleting digital objects from a multi-level hierarchy**
+
+The task also include one user option, ``--and-descendants``, that can be used to delete all digital objects from an :term:`archival unit`. When using the ``--and-descendants`` option, the slug you provide should be for the top-level description in the hierarchy. Example use: 
+
+.. code-block:: bash
+
+    php symfony digitalobject:delete --and-descendants slug-of-top-description
+
+Where ``slug-of-top-description`` represents the slug of the top-level 
+:term:`parent <parent record>` description. 
+
+.. IMPORTANT::
+
+   This task will **not** automatically update the search index. You will need 
+   to manually run the ``search:populate`` task after using this task. For more
+   information, see: 
+
+   * :ref:`maintenance-populate-search-index`
+
+:ref:`Back to top <maintenance-cli-tools>`
+
 .. _cache-xml-cli:
 
 Generate and cache XML for all archival descriptions
