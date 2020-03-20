@@ -272,7 +272,7 @@ As well, sometimes the ``digitalobject:load`` task used for importing digital
 objects to existing :term:`descriptions  <archival description>` (see:
 :ref:`digital-object-load-task`) won't generate the :term:`thumbnail` and
 reference images properly for digital objects that were loaded (e.g. due to a
-crash or absence of convert installed, etc. - see under requirements,
+crash or absence of ``convert`` being installed, etc. - see under requirements,
 :ref:`other-dependencies`). In this case, you can regenerate
 these thumbsnail/reference images using the following command:
 
@@ -331,6 +331,20 @@ execute the command like so:
 .. code:: bash
 
    php symfony digitalobject:regen-derivatives --type="thumbnail"
+
+Similarly, the ``--media-type`` (or ``-m``) option can be use to limit the
+regeneration to a specific media type. AtoM uses 5 media types: audio, video,
+image, text, and other; the application displays the media type for each digital object in
+the Digital object metadata :term:`area <information area>` on the 
+:term:`view page` of the associated :term:`archival description`. This task will
+**only** work with the first 4 types - currently "other" is not supported.
+
+For example, if you only wanted to regenerate derivatives for your uploaded 
+videos, you could execute the command like so: 
+
+.. code:: bash
+
+   php symfony digitalobject:regen-derivatives --media-type="video"
 
 The ``--force`` or ``-f`` option can be used to skip the warning normally
 delivered by the task when the command is entered. Because the task will delete
