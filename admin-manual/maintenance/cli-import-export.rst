@@ -587,6 +587,7 @@ the CLI. Below are basic instructions for each available import type.
 * :ref:`csv-actor-import-cli`
 * :ref:`csv-import-accessions-cli`
 * :ref:`csv-import-deaccessions-cli`
+* :ref:`csv-import-storage-cli`
 * :ref:`csv-import-progress`
 * :ref:`digital-object-load-task`
 
@@ -1639,6 +1640,222 @@ default AtoM will skip any rows where *all* data is identical to a row
 preceding it, and will report the skipped record in the console log. If you
 are intentionally importing duplicate deaccession records, you can use the
 ``--ignore-duplicates`` option.
+
+:ref:`Back to top <cli-import-export>`
+
+.. _csv-import-storage-cli:
+
+Import physical storage containers and locations
+------------------------------------------------
+
+This task will allow for the import of physical storage data, as well as
+updates to existing physical storage containers, via a CSV file. Read more about
+managing physical storage data in AtoM in the User manual:
+
+* :ref:`physical-storage`
+
+The basic syntax for this task is: 
+
+.. code-block:: bash
+
+   php symfony csv:physicalobject-import /path/to/storage.csv
+
+The CSV filename and path (shown as the example ``/path/to/storage.csv``
+above) must be a valid path to a CSV file that is readable by the current
+user. The CSV file must use UTF-8 character encoding if it includes characters
+outside of the basic ASCII character set.  The CSV file formatting must use a
+comma for the column delimiter. Literal values that include a comma character
+must be enclosed in double-quotes (e.g. “Shelf 10, Box 12345”).  Line endings
+can be Windows (``\r\n``) or Linux (``\n``) formatted. For more general
+suggestions on properly preparing your CSV for import, see:
+:ref:`csv-encoding-newline`.
+
+You can find a copy of the example physical object CSV import template on the 
+`AtoM wiki <https://wiki.accesstomemory.org/Resources/CSV_templates>`__, or 
+stored locally in AtoM's code at 
+``lib/task/import/example/example_physicalobject.csv``
+
+The CSV template contains 6 columns, summarized below: 
+
+* **legacyID**: A unique value, used to capture database identifiers from legacy
+  systems during data migrations for easier troubleshooting. Not
+  required for new import data, but recommended. Can be any alphanumeric
+  characters. Does not display in AtoM's :term:`user interface`.
+* **name**: Free-text. The container name to be used in AtoM
+* **type**: Type of container. Links to AtoM's Physical Object Type taxonomy. 
+  See :ref:`manage-storage-types` in the User manual for more information and 
+  default terms. A new term in the CSV data will create a new corresponding 
+  term in the Physical Object Type taxonomy in AtoM on import.
+* **location**: Free text. Used to add information about a container's location.
+* **culture**: Language of the import data. Expects ISO 639-1 two-letter 
+  language codes. If left unpopulated, it will default to ``en`` during import.
+* **descriptionSlugs**: multi-value input for the :term:`slugs <slug>` of
+  related :term:`archival descriptions <archival description>`. When linking a
+  container row to multiple archival descriptions, separate each slug value
+  with a ``|`` pipe separator.
+
+.. TIP::
+
+   A slug is a word or sequence of words which make up a part of a URL that
+   identifies a page in AtoM. It is the part of the URL located at the end of
+   the URL path and often is indicative of the name or title of the page
+   (e.g.: in  ``www.youratom.com/this-description``, the slug is
+   ``this-description``). For more information on slugs in AtoM, see: 
+
+   * :ref:`slugs-in-atom`
+
+By typing ``php symfony help csv:physicalobject-import`` into the command-line
+without specifying the path to a CSV file, you can see the options available
+on the ``csv:physicalobject-import`` command:
+
+.. image:: images/csv-storage-options.*
+   :align: center
+   :width: 90%
+   :alt: An image command-line options for the physicalobject:import task
+
+The ``--application``, ``--env``, and ``--connection`` options should **not** be 
+used - AtoM requires the use of the pre-set defaults for symfony to be able to 
+execute the import.
+
+The ``--culture`` option can be used to specify a default culture code for the 
+CSV import using a two letter ISO 639-1 code (e.g. ``en`` for English, ``fr`` 
+for French).  The ``culture`` column in the CSV import file can be used to 
+specify a culture for that row, and will override the default culture value set 
+with this option.  The default value if this option is not specified is ``en`` 
+for English.
+
+The ``--debug`` or ``-d`` option outputs timing data for various import 
+subprocesses to help identify and diagnose bottlenecks.
+
+The ``--empty-overwrite`` or ``-e`` option will cause empty columns to overwrite 
+existing data in AtoM when updating existing physical storage data via the 
+``--update`` option.  This option **must** be used with the ``--update`` option.
+
+The ``--error-log`` or ``-l`` option can be used to specify a file to log errors 
+encountered during import.  Note that it is possible for critical errors in the 
+import to halt the import completely, in which case the critical error will not 
+be written to the log file, but will be output to the console (STDERR) instead.  
+Other error messages and warnings will be logged to the file.  Output that is 
+not a warning or error (e.g. progress indicators) will not be logged to the 
+error log, but will be output to console (STDOUT) and can be saved to file if 
+desired by redirecting STDOUT to a file. This option expects a path to where the 
+log should be output. Example: 
+
+.. code-block:: bash
+
+   php symfony physicalobject:import --error-log="/usr/share/nginx/atom/import-log.txt" lib/task/import/example/example_physicalobject.csv
+
+You can leave the file extension off the error log path, but the path must end
+in the file name you want used for the log file. Acceptable file extensions 
+include ``.log`` or ``.txt``.
+
+The ``--header`` option can be used to specify a comma delimited list of strings 
+(e.g. ``--header="name,type,location,culture"``) that will be used as column 
+names for the import.  This option should **not** be used for CSV import files 
+that already include column headers (such as the ``example_physicalobject.csv`` 
+template), as the first row will be imported as physical object data. If the 
+``--header`` option is not used, the first row of the CSV file will be used as 
+column header names. The number of column names passed to ``--header`` must 
+match the number of columns in the import file.
+
+The ``--index`` or ``-i`` option adds imported data to the AtoM search index 
+incrementally during execution of the import script.  For large imports it may 
+be desirable to omit the index option as the import will run more quickly, and 
+then run ``php symfony search:populate`` to update the search index after the 
+import is complete. For more information on populating the search index, see: 
+:ref:`maintenance-populate-search-index`.
+
+The ``--multi-match`` option determines how the import script will handle an
+import name that matches more than one physical object name in AtoM when the
+``--update`` option is used. It expects one of 3 values as input: "skip", 
+"first", or "all." The default value of "skip" will not update any
+existing records if the import name matches multiple existing records, and
+will report the matched and skipped rows in the error log or STDERR.  The
+"first" option will update only the first matching record in the database, and
+skip subsequent matches - skipped matches will be reported in the error log or
+STDERR. Please be aware that the sort order of the matched records may not
+match your expectations for ordering based on the database primary key or
+default ordering.  The "all" option will update all records in the database
+that match the import name.
+
+The ``--partial-matches`` or ``-p`` option will match any records in the AtoM 
+database where record name starts with the import name value. For instance, an 
+import name of "box" will match existing records "boxes", "box1", and 
+"box-hollinger", but will not match "hollinger-box" or "bo".  Note that matches 
+are **not** case sensitive, and the ``--multi-match`` option will determine 
+which matched records are updated in the case of multiple matching records.
+
+The ``--rows-until-update`` or ``-r`` option controls how often the import task 
+will output information about the progress of the import process. For more on 
+this general import option, see below: :ref:`csv-import-progress`. 
+
+The ``--skip-unmatched`` or ``-s`` option must be used with the ``--update`` 
+option, and prevents the unwanted creation of new records in the database.  
+CSV rows that match an existing record in the database (by name) will update 
+the matched record or records (see the ``--multi-match`` option for information 
+on multiple matches). Normally, when a match is not found duing an update import, 
+AtoM will treat an unmatched row as new data, and will create a new container - 
+however, with the ``skip-unmatched`` option used as well, CSV records that do 
+not match an existing database record will be ignored.  A warning message will 
+be output to the error log or STDERR for each CSV record that is skipped because 
+it does not match an existing container record.
+
+The ``--skip-rows`` or ``-o`` option will skip the specified number of rows in the 
+CSV, and then start importing data after that point.  For instance, specifying 
+``--skip-rows=100`` would start the import at row 101 of the CSV import file. 
+The ``--skip-rows`` option is normally used to resume an import that failed or 
+was aborted to prevent duplicating already imported data. Please note that 
+unless the ``--header`` option is used, the first row of the CSV file is assumed 
+to contain field names rather than data, and this row is **not** counted when 
+determining the number of skipped rows. For example, if the ``--header`` option 
+is not specified and ``--skip-rows=10``, the first eleven rows of the CSV file 
+(i.e. the header plus 10 data rows) will be skipped, and the 12th CSV row will 
+be the first record imported.
+
+The ``--source-name`` option is used to logically group multiple imports 
+together if a single data set has been split into multiple CSV files to prevent 
+running out memory during an import, or to limit the time each import takes to 
+complete. For exmaple, ``--source-name="January 2020 import"`` could be used for 
+multiple CSV files that comprise a January 2020 data update.
+
+Finally, the ``--update``  or ``-u`` option will attempt to match each import
+record with one or more (see ``--multi-match``) existing physical storage
+records in the database, and will use the matching CSV row data to update the
+matched record(s).
+
+A match is determined **solely** on physical object name by default (though
+see the ``--partial-match`` option, which modifies the matching criteria), and
+matching is **not** case sensitive (i.e. "box-1234" will match "BOX-1234").
+For example, if the ``--update`` option is used, and the CSV import file
+includes a container named "box-1234", and there is an existing physical
+object in AtoM named "Box-1234," then the existing physical object will be
+updated with the CSV data instead of creating a new physical object in AtoM.
+
+Please note that the ``--empty-overwrite``, ``--skip-unmatched``, 
+``--multi-match``, and ``--partial-match`` options all affect the match and 
+update criteria when using the ``--update`` option.
+
+**An example**
+
+The following example import command will:
+
+* Import a CSV of physical storage data as an update to existing data
+* Skip any unmatched rows
+* Update all matching records where multiple matches on container name are found
+* Allow for partial name matches to be considered acceptable matching criteria
+* Skip the first 10 data rows of the CSV
+* Report any non-fatal errors to a file called "errors.log"
+* Update the search index as the import progresses
+
+.. code-block:: bash
+
+   php symfony csv:physicalobject-import --update --skip-unmatched --multi-match="all" --partial-match --skip-rows=10 --error-log="/usr/share/nginx/atom/errors.log" --index /path/to/my/storage.csv
+
+This example could also be written as follows, use the short names for the options:
+
+.. code-block:: bash
+
+   php symfony csv:physicalobject-import -u -s --multi-match="all" -p -o=10 -l="/usr/share/nginx/atom/errors.log" -i /path/to/my/storage.csv
 
 :ref:`Back to top <cli-import-export>`
 

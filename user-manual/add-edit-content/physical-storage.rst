@@ -18,6 +18,13 @@ AtoM allows archival institutions to create relationships between
 :term:`archival descriptions <archival description>` and their physical storage
 locations.
 
+.. SEEALSO::
+
+   * :ref:`archival-descriptions`
+   * :ref:`csv-import-storage-cli`
+
+.. _manage-storage-types:
+
 Manage physical storage types
 =============================
 
