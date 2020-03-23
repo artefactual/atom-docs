@@ -1020,6 +1020,83 @@ An example of using the task to restrict the changes to a specific collection:
 
 :ref:`Back to the top <maintenance-cli-tools>`
 
+.. _cli-move-actor-relations:
+
+Move description relations from one authority record to another
+===============================================================
+
+This task allows a user to specify a source :term:`authority record`, and a 
+target. When run, the task will move all :term:`archival description` relations
+from the source to the target, including event relations (i.e. :term:`creator` 
+and other event type relations) and name :term:`access points <access point>`. 
+Any existing description relations already associated with the target authority
+record will be unaffected by the task.  
+
+This can be useful in scenarios such as: 
+
+* When performing a data migration or an update import, and you accidentally 
+  create duplicate authority records
+* When attempting to update an authority causes timeouts (relations 
+  can be moved to a new authority with the correct information, or a temporary
+  authority while the source record is updated)
+* Manually cleaning up near-duplicates in a :term:`multi-repository system` (e.g. 
+  combining "John Smith" and "Smith, John" into a single authority record)
+
+The task accepts two :term:`slugs <slug>` as input - the slug of the source
+authority record (i.e. the one currently with the relations), and the slug of
+the target (i.e. the authority to which you want to move your relations).
+
+.. TIP::
+
+   A :term:`slug` is a word or sequence of words which make up a part of a URL
+   that identifies a page in AtoM. It is the part of the URL located at the
+   end of the URL path and often is indicative of the name or title of the
+   page (e.g.: in  ``www.youratom.com/this-description``, the slug is
+   ``this-description``). For more information on slugs in AtoM, see:
+
+   * :ref:`slugs-in-atom`
+
+The basic syntax of this task is: 
+
+.. code-block:: bash
+
+   php symfony actor:move-description-relations source-slug target-slug
+
+Where ``source-slug`` is the :term:`slug` of the authority with the relations, 
+and ``target-slug`` represents the slug of the authority record where the 
+relations will be moved. 
+
+By default, this task will update AtoM's search index as it runs. However, if 
+you want to disable this behavior (for example, if you are moving hundreds or 
+thousands of relations and want to optimize for performance), you can prevent 
+this by using the ``--skip-index`` option. Example use with this option: 
+
+.. code-block:: bash
+
+   php symfony actor:move-description-relations --skip-index source-slug target-slug
+
+If you skip the search index update, you will need to manually update the search
+index after: 
+
+.. code-block:: bash
+
+   php symfony search:populate
+
+See: :ref:`maintenance-populate-search-index`
+
+.. IMPORTANT::
+
+   **Task notes and limitations**
+
+   * This task will **not** delete either authority record. That must be done
+     manually after the task is run, if desired.
+   * The task will **only** move description relations - not other relations,
+     such as related actors.
+   * This task does **not** attempt to merge actor metadata. Any metadata from
+     the source that you want to see on the target must be manually added.
+
+:ref:`Back to the top <maintenance-cli-tools>`
+
 .. _cli-delete-description:
 
 Delete a description
