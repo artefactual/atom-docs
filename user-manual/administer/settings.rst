@@ -1369,13 +1369,14 @@ section of the settings.
 **Jump to:**
 
 * :ref:`enable-accession-mask`
-* :ref:`Accession mask <accession-mask>`
-* :ref:`Accession counter <accession-counter>`
+* :ref:`accession-mask`
+* :ref:`accession-counter`
 * :ref:`enable-identifier-mask`
-* :ref:`Identifier mask <identifier-mask>`
-* :ref:`Identifier counter <identifier-counter>`
-* :ref:`Reference code separator <reference-code-separator>`
-* :ref:`Inherit reference code (Information object) <inherit-reference-code>`
+* :ref:`identifier-mask`
+* :ref:`identifier-counter`
+* :ref:`reference-code-separator`
+* :ref:`inherit-reference-code`
+* :ref:`inherit-reference-dc`
 
 .. _enable-accession-mask:
 
@@ -1655,11 +1656,60 @@ information to help orient the user.
    target AtoM instance *also* has the setting turned on, you may end up with
    duplication in the display!
 
+   Note as well, this setting does **not** affect the behavior of DC XML exports.
+   This behavior can be managed separately via a different setting - see below: 
+
+   * :ref:`inherit-reference-dc` 
+
 .. SEEALSO::
 
    * :ref:`Control area <control-area>`
    * :ref:`reference-code-separator`
    * :ref:`escape-chars`
+   * :ref:`inherit-reference-dc`
+
+.. _inherit-reference-dc:
+
+Inherit reference code (DC XML)
+-------------------------------
+
+This setting controls whether an individual :term:`archival description`'s
+identifier or its full inherited :term:`reference code` is used when a 
+description is exported as Dublin Core XML (including when exposed via AtoM's 
+:ref:`oai-pmh` module.  
+
+.. SEEALSO::
+
+   * For more information on reference codes in AtoM and how inheritance works, 
+     see above: :ref:`inherit-reference-code`
+   * To set the default separator character used in inherited reference codes, 
+     see: :ref:`reference-code-separator`
+   * To learn more about Dublin Core in AtoM, see: :ref:`dc-template`
+   * For more on XML export, see: :ref:`export-xml`
+   * To learn more about how Dublin Core XML is used in AtoM's OAI repository 
+     module, see: :ref:`oai-pmh`
+
+When set to "No," only the current description's identifier will be included in 
+DC XML exports. When set to "Yes," AtoM will use the reference code inheritance
+model described above in :ref:`inherit-reference-code`, meaning in addition to 
+the description's local identifier, the ``<dc:identifer>`` will also include: 
+
+* The country code of any related :term:`archival institution` (derived from the 
+  country added in the address section of the related :term:`repository` record)
+* The repository identifier of any related :term:`archival institution`
+* Identifiers of any :term:`parent <parent record>` descriptions, separated by
+  the default separator defined in the :ref:`reference-code-separator` setting
+
+By default, this setting is set to "No" in new installations. 
+
+.. IMPORTANT::
+
+   This setting does **not** alter the behavior of how identifiers / reference 
+   codes are displayed on description :term:`view pages <view page>`, nor does 
+   it affect how identifiers are handled in EAD 2002 XML exports. 
+
+   Both of these are instead affected by the :ref:`inherit-reference-code` 
+   setting, described above. 
 
 :ref:`Back to top <settings>`
 
