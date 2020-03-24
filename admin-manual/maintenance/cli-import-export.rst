@@ -581,6 +581,7 @@ the CLI. Below are basic instructions for each available import type.
 
 **Jump to:**
 
+* :ref:`csv-check-filepaths-digital-objects`
 * :ref:`csv-import-descriptions-cli`
 * :ref:`csv-import-events-cli`
 * :ref:`csv-repository-import-cli`
@@ -617,6 +618,63 @@ guidance for preparing a CSV for each entity type - ensure you have reviewed
 it carefully prior to import.
 
 All CSV import command-line tasks should be run from the root AtoM directory.
+
+.. _csv-check-filepaths-digital-objects:
+
+Check filepaths before importing digital objects
+------------------------------------------------
+
+AtoM includes a command-line task to help double-check import files that involve
+:term:`digital objects <digital object>`. The task will take the path to a CSV 
+file and the path to a directory of digital objects as inputs, and will report
+on any potential errors, such as: 
+
+* Any digital objects in the filesystem directory that aren't referenced in
+  the CSV data
+* Any digital objects that are referenced in CSV data but missing on the
+  filesystem
+* Any digital objects that are referenced more than once in the CSV data
+
+This can be a useful way of verifying :term:`archival description` or
+:term:`authority record` CSV imports that use the ``digitalObjectPath`` column
+to link local digital objects during the import, or for double-checking the
+CSV accompanying a :ref:`digital object load <digital-object-load-task>`, before 
+you actually import your data. 
+
+.. SEEALSO::
+
+   * :ref:`csv-import-descriptions-cli`
+   * :ref:`csv-actor-import-cli`
+   * :ref:`csv-descriptions-digital-objects`
+
+The basic syntax of the task is: 
+
+.. code-block:: bash
+
+   php symfony csv:digital-object-path-check path/to/objects/directory path/to/csv-file.csv
+
+Where ``path/to/objects/directory`` is the path to where your digital object
+directory is located on the server, and ``path/to/csv-file.csv`` is the path
+to the CSV file with your import metadata.
+
+By default, this task expects the column in the CSV with the digital object
+file paths to be named ``digitalObjectPath``, as it is in the description and 
+authority record CSV templates. However, the task also includes one user option, 
+``--csv-column-name``, that can be used to specify a different CSV column to 
+check. This allows you to use the task to review a 
+:ref:`digital object load task <digital-object-load-task>` CSV for example, 
+which uses a column named ``filename`` instead. An example: 
+
+.. code-block:: bash
+
+   php symfony csv:digital-object-path-check --csv-column-name="filename" /usr/share/nginx/atom/import-images/ /usr/share/nginx/atom/digital-object-load.csv
+
+An example of the task output: 
+
+.. image:: images/do-path-check-example.*
+  :align: center
+  :width: 85%
+  :alt: An image of the command-line output for the path-check task
 
 .. _csv-import-descriptions-cli:
 
@@ -1917,8 +1975,8 @@ The ``information_object_id`` is a unique internal value assigned to each
 
 The ``identifier`` can be used instead if preferred. A
 :term:`description's <archival description>` identifier is visible in the
-:term:`user interface`, which can make it less difficult to discover. **
-However,**, if the target description's identifier is not unique throughout
+:term:`user interface`, which can make it less difficult to discover. 
+**However**, if the target description's identifier is not unique throughout
 your AtoM instance, the digital object may not be attached to the correct
 description - AtoM will attach it to the first matching identifier it finds.
 
@@ -1928,17 +1986,25 @@ Finding the information_object_id
 ---------------------------------
 
 The ``information_object_id`` is not a value that is accessible via the
-:term:`user interface` - it is a unique value used in AtoM's database. You can,
-however, use SQL in the command-line to determine the ID of an information
-object. The following example will show you how to use a SQL query to find the
-``information_object_id``, if you know the :term:`slug` of the description:
+:term:`user interface` - it is a unique value used in AtoM's database. There are
+however two ways you can access the object IDs for your descriptions. 
 
-1. First, you will need to access mysqlCLI to be able to input a SQL query. To
-   do this, you will need to know the database name, user name, and password you
-   used when creating your database during installation. If your database is
-   on a different server (e.g. if you are trying to SSH in to access your
-   database server), you will also need to know the hostname - that is, the IP
-   address or domain name of the server where your database is located.
+The first method is to export the target descriptions - on export, AtoM will 
+populate the ``legacyId`` column of the resulting CSV with the object ID value
+for each row. 
+
+Alternatively, you can use SQL in the command-line to determine the ID of an
+information object. The following example will show you how to use a SQL query
+to find the ``information_object_id``, if you know the :term:`slug` of the
+description:
+
+1. First, you will need to access the MySQL command prompt to be able to input
+   a SQL query. To do this, you will need to know the database name, user
+   name, and password you used when creating your database during
+   installation. If your database is on a different server (e.g. if you are
+   trying to SSH in to access your database server), you will also need to
+   know the hostname - that is, the IP address or domain name of the server
+   where your database is located.
 2. The following is an example of the CLI command to enter to access mysqlCLI:
 
    .. code-block:: bash
@@ -2011,6 +2077,13 @@ and the CSV is prepared in a spreadsheet application:
 
    * CSV file is saved with UTF-8 encodings
    * CSV file uses Linux/Unix style end-of-line characters (``/n``)
+
+   Additionally, AtoM also has a task that can be used to double-check your 
+   load CSV against the :term:`digital object` directory, looking for any 
+   discrepencies such as unused files, incorrect or duplicate file paths in the 
+   CSV, etc. For more information, see: 
+
+   * :ref:`csv-check-filepaths-digital-objects`
 
 You can see the options available on the CLI task by typing in the following
 command:

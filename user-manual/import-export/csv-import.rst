@@ -922,6 +922,15 @@ use both columns in the same row. If AtoM encounters a CSV row where both the
 favor the ``digitalObjectURI`` value, and ignore the ``digitalObjectPath``
 value.
 
+.. TIP::
+
+   AtoM includes a command-line task that can be used to double-check your 
+   CSV's ``digitalObjectPath`` values  against a :term:`digital object` 
+   directory, looking for any discrepencies such as unused files, incorrect or 
+   duplicate file paths in the CSV, etc. For more information, see: 
+
+   * :ref:`csv-check-filepaths-digital-objects`
+
 .. SEEALSO::
 
    * :ref:`upload-digital-object`
