@@ -18,11 +18,12 @@ primary database, especially after operations that affect many records, e.g.
 * Doing any bulk search and replace operation
 
 Populating the search index requires running a Symfony command line task,
-which is located in the root directory of the application. Running this task
-will delete the current index, then repopulate and optimize the index.
-Depending on the number of records in your installation, this can take a while
-to run - for production sites, we recommend running this task after regular
-business hours.
+which is located in the root directory of the application. By default, running
+this task will delete the current index, then repopulate and optimize the
+index - though an option exists that will allow you to update the index in
+place, without first deleting the existing index. Depending on the number of
+records in your installation, this task can take a while to run - for
+production sites, we recommend running this task after regular business hours.
 
 To run the task without any of the available options, enter the following in
 the command-line interface, in the root AtoM directory:
@@ -110,6 +111,18 @@ types in your AtoM instance:
 Pressing enter will continue and run the ``search:populate`` task (with no
 types), or alternatively, you can exit the task by entering ``CTRL+C`` and
 then re-enter your parameters, using ``--exclude-types`` as needed.
+
+Finally, the ``--update`` option can be used to update the index in place,
+**without** first deleting the existing index. The process may take slightly
+longer, but it can be useful for indexing on production sites, as there is no
+downtime for end users - without this option, no records will display in the
+search/browse results until indexing has completed.
+
+Example use: 
+
+.. code-block:: bash
+
+   php symfony search:populate --update
 
 .. SEEALSO::
 
