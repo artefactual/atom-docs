@@ -454,6 +454,8 @@ option to each CSV import, with a common name added for each, will prevent
 AtoM from duplicating import data, such as :term:`terms <term>` and actors
 (:term:`authority records <authority record>`) during import.
 
+:ref:`Back to top <csv-import>`
+
 .. _csv-import-descriptions:
 
 Prepare archival descriptions for CSV import
@@ -469,6 +471,18 @@ can download the files here:
 
 The following section will introduce some of the relevant CSV columns so you
 can prepare your archival descriptions for import.
+
+**Jump to:**
+
+* :ref:`csv-description-hierarchies`
+* :ref:`csv-descriptions-actor-columns`
+* :ref:`csv-descriptions-digital-objects`
+* :ref:`csv-descriptions-storage`
+* :ref:`csv-description-standards-fields`
+* :ref:`csv-descriptions-other-fields`
+* :ref:`csv-description-translations`
+
+.. _csv-description-hierarchies:
 
 Hierarchical relationships
 --------------------------
@@ -505,6 +519,9 @@ lower-level file descriptions. However, using both *parentID* and
 the *qubitParentSlug* so the import does not fail.
 
 Both methods of establishing hierarchical relationships are described below.
+
+* :ref:`csv-description-legacy-id`
+* :ref:`csv-description-parent-slug`
 
 .. NOTE::
 
@@ -964,6 +981,8 @@ For more information on working with physical storage in AtoM, see:
    contain ``physicalObjectName`` Box 1, but adding ``physicalObjectLocation``
    Shelf 1 will differentiate it from Box 1 on Shelf 5.
 
+.. _csv-description-standards-fields:
+
 Standards related fields
 -------------------------
 
@@ -1007,6 +1026,90 @@ Other data entry notes
   accession record and an archival description being imported via CSV. See the
   section on Accession CSV import :ref:`below <csv-import-accessions>` for more
   information.
+
+.. _csv-description-translations:
+
+Importing translations
+----------------------
+
+As of version 2.6, AtoM will allow you to import new descriptions in multiple 
+languages at once, as a way of adding translations to your source content during
+an import. 
+
+At this time, not all CSV fields support translation imports. Only 
+those fields found in AtoM's ``information_object_i18n`` database table can
+be imported as translations. These include: 
+
+* title
+* alternateTitle
+* radEdition
+* extentAndMedium
+* archivalHistory
+* acquisition
+* scopeAndContent
+* appraisal 
+* accruals
+* arrangement
+* accessConditions
+* reproductionConditions
+* physicalCharacteristics
+* findingAids
+* locationOfOriginals
+* locationOfCopies
+* relatedUnitsOfDescription
+* rules
+* sources
+* revisionHistory
+* institutionIdentifier
+
+The translation import works on the following logic: whenever AtoM encounters
+two CSV rows that have the **same** ``legacyId`` value, but **different**
+``culture`` values, AtoM will import the second row as a translation of the
+first. AtoM expects two-letter ISO 639-1 culture codes to be used in the 
+``culture`` column - e.g. ``en`` for English, ``fr`` for French, etc. See the 
+section above, :ref:`csv-descriptions-other-fields`, for further information.
+
+**Preparing translations for import**
+
+To import new archival descriptions with translations: 
+
+* Make sure that every row in your CSV has a ``legacyId`` and a ``culture``
+  value
+* Place translation rows directly below the source culture row
+* Translation rows must have the **same** ``legacyId`` value as their source
+  culture rows
+* Translation rows must have a **different** ``culture`` value as their source
+  culture rows
+* Make sure that all ``culture`` values use ISO 639-1 two-letter codes
+* In the translation rows, leave any columns that do not support translation
+  blank
+
+An example CSV: 
+
+.. image:: images/csv-translation-example.*
+   :align: center
+   :width: 90%
+   :alt: An example CSV with translation rows included
+
+.. TIP::
+
+   Most fields that can't currently be translated via CSV import can still be 
+   translated via AtoM's :term:`user interface`. For more information on 
+   translating content via the user interface, see: 
+
+   * :ref:`translate-content`
+
+   Remember that linked :term:`entities <entity>` (such as a :term:`creator`
+   name, a subject :term:`access point`, or other :term:`terms <term>` that
+   are maintained in taxonomies such as the Levels of description, etc)
+   cannot be translated directly on the :term:`archival description` edit
+   page. Instead, navigate to the linked entity, flip the user interface into
+   the desired translation culture, enter edit mode, add your translation, and
+   save. When you return to your description and view it in the translation
+   culture, the translated entity will now also display in the translation
+   culture.
+
+:ref:`Back to top <csv-import>`
 
 .. _csv-import-descriptions-gui:
 
