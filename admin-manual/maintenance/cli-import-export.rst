@@ -685,8 +685,7 @@ Example syntax use (with the RAD CSV template):
 
 .. code-block:: bash
 
-   php symfony csv:import
-   lib/task/import/example/rad/example_information_objects_rad.csv
+   php symfony csv:import lib/task/import/example/rad/example_information_objects_rad.csv
 
 .. image:: images/cliopts.*
   :align: center
@@ -701,6 +700,7 @@ documentation, please see:
 
 * :ref:`csv-import-descriptions`
 * :ref:`csv-import-descriptions-gui`
+* :ref:`csv-descriptions-update-fields`
 * :ref:`csv-descriptions-updates`
 
 The ``--application``, ``--env``, and ``--connection`` options **should not be
@@ -757,7 +757,7 @@ for further tips and details on the uses of this option.
 
    .. image:: images/source-name-ui.*
       :align: center
-      :width: 90%
+      :width: 95%
       :alt: An image of the source name used during import, shown in the
             Administration area of the AtoM edit page.
 
@@ -846,13 +846,17 @@ and any existing data in the related field will be preserved.
 .. IMPORTANT::
 
    AtoM can only update description fields that are stored in the primary
-   information object database table using this method. This means that
+   information object database tables using this method. This means that
    related entities (such as :term:`events <event>`,
    :term:`creators <creator>`, :term:`access points <access point>`, etc.)
    **cannot be deleted or updated with this method**. You can add additional
    related entities, but the old ones will be left in place. There is code to
    prevent duplication however - so if you have left the same creator/event
    information as previously, it will be ignored.
+
+   For more information on supported fields for updating, see: 
+
+   * :ref:`csv-descriptions-update-fields`
 
    The one exception to this is updating the biographical or administrative
    history of a related :term:`authority record`, which requires specifc
@@ -863,11 +867,21 @@ and any existing data in the related field will be preserved.
    includes the General note, Archivist's note, and the RAD- and DACS-specific
    note type fields in AtoM's archival description templates. This means that
    in addition to related entities, **notes cannot be deleted or updated with
-   this method**
+   this method**, though again, you can append new notes if desired. 
 
    If you wish to make updates to these entitites or fields, consider using
    the "Delete and replace" update option instead - though be sure to read up
    on the behavior and limitations of that method as well!
+
+   Finally, note that without the ``--rountrip`` option (described below), 
+   title, identifier, and repository may be used as matching criteria. This means
+   that trying to import updates to these fields may cause matching to fail, 
+   unless you successfully meet the first matching criteria or use the 
+   ``--roundtrip`` option. For more information on matching, see: 
+
+   * :ref:`csv-descriptions-match-criteria`
+   * :ref:`csv-legacy-id-mapping`
+
 
 With the "*delete-and-replace*" option, the matched archival description and
 any descendants (i.e. :term:`children <child record>`) will be deleted prior
@@ -955,7 +969,7 @@ then the other way to skip this process is to use the
 ``--update="match-and-update"``, then the deletion of the existing digital
 object and its derivatives will be skipped.
 
-Finally, the ``--skip-derivatives`` option can be used if you are using the
+The ``--skip-derivatives`` option can be used if you are using the
 :ref:`csv-descriptions-digital-objects` to import a digital object attached to
 your description(s). For every digital object uploaded, AtoM creates two
 derivative objects from the :term:`master digital object`: a :term:`thumbnail`
@@ -967,6 +981,50 @@ used, then the thumbnail and reference display copy of your linked digital
 object will **not** be created during the import process. You can use the
 digital object derivative regeneration task to create them later, if desired -
 see: :ref:`cli-regenerate-derivatives`.
+
+Finally, the ``--roundtrip`` option is useful when attempting to update records
+that have been exported from the same system which you are trying to update
+via import ("roundtripping" implies exporting a CSV, making changes, and then 
+re-importing it as an update). On export, AtoM populates the ``legacyId`` 
+column with the unique database object ID value used in AtoM. When the 
+``--roundtrip`` option is used, AtoM will **only** look for exact matches on the 
+``legacyId`` in the CSV, comparing it against AtoM's internal description 
+object ID values and bypassing all other matching criteria. This can be useful
+when trying to update secondary matching criteria values such as the title, 
+identifier, and/or repository associated with a description. 
+
+.. IMPORTANT::
+
+   Note that if you originally created your descriptions via import, AtoM's
+   object ID value (included in the ``legacyID`` column in exports) is **not**
+   the same value as you added in the legacyID column during the original
+   import. That value is stored in AtoM's ``keymap`` database table, and is
+   used only for matching criteria for subsequent imports. The ``legacyID``
+   column was originally added for supporting and troubleshooting migrations
+   from third-party systems (so that a unique ID from the source system would
+   remain associated with the incoming descriptions); without the
+   ``--roundtrip`` option AtoM continues to assume that the metadata
+   originates from outside of AtoM, and will use the ``sourcename`` and
+   ``legacyID`` values in the keymap table from the original import as the
+   first matching criteria. For more information, see:
+
+   * :ref:`csv-descriptions-match-criteria`
+   * :ref:`csv-legacy-id-mapping`
+
+Because AtoM object IDs are always unique throughout an installation, this
+option provides a more reliable matching criteria when roundtripping
+descriptions in the same system. The ``--roundtrip`` should be used in
+conjunction with the ``--update`` option.
+
+Example use: 
+
+.. code-block:: bash
+
+   php symfony csv:import --update="match-and-update" --roundtrip /path/to/rad_0000000001.csv
+
+Normally, the ``--roundtrip`` option, when used, will first ask you if you have
+a backup of your database before proceding. However, you can skip this 
+confirmation requirement by adding the ``--no-confirmation`` option as well. 
 
 :ref:`Back to top <cli-import-export>`
 

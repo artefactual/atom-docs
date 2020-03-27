@@ -1182,10 +1182,122 @@ with the additional import options available when importing updates.
 
 **Jump to:**
 
+* :ref:`csv-descriptions-update-fields`
 * :ref:`csv-descriptions-match-criteria`
 * :ref:`csv-descriptions-update-match`
 * :ref:`csv-descriptions-delete-replace`
 * :ref:`csv-descriptions-updates-ui`
+
+.. _csv-descriptions-update-fields:
+
+Fields that will support update imports
+---------------------------------------
+
+Currently, not all fields in AtoM's :term:`archival description` metadata 
+templates can be updated via import. Only those fields which are found in AtoM's
+primary ``information_object`` and ``information_object_i18n`` database tables 
+will support updates in place. Below is a list of supported fields: 
+
+* title
+* identifier
+* levelOfDescription
+* repository
+* alternateTitle (in the RAD CSV template)
+* radEdition (in the RAD CSV template)
+* extentAndMedium
+* archivalHistory
+* acquisition
+* scopeAndContent
+* appraisal
+* accruals
+* arrangement
+* language
+* script
+* accessConditions
+* reproductionConditions
+* physicalCharacteristics
+* findingAids
+* locationOfOriginals
+* locationOfCopies
+* relatedUnitsOfDescription
+* digitalObjectPath
+* digitalObjectURI
+* rules
+* languageOfDescription
+* scriptOfDescription
+* sources
+* descriptionStatus
+* levelOfDetail
+* revisionHistory
+* institutionIdentifier
+* alternativeIdentifiers
+* alternativIdentifierLabels
+
+.. IMPORTANT::
+
+   Please note that, while title, identifier, and repository **can** be updated 
+   via CSV import, they are also used as part of the matching criteria when 
+   importing updates via the user interface. As such, trying to update these 
+   fields via CSV import may cause the matching to fail. 
+
+   See below for further information on AtoM's import matching criteria: 
+
+   * :ref:`csv-descriptions-match-criteria`
+
+   Note that the command-line import task includes a ``--roundtrip`` option that, 
+   when used with the ``--update`` option, limits matching to the objectID value 
+   (included in the legacyID column on export). Using this option can allow for 
+   updates to title, identifier, and repository, since the only matching criteria 
+   used is the legacyID value in your import CSV. For more information, see: 
+
+   * :ref:`csv-import-descriptions-cli`
+
+There are also additional fields that are not stored in AtoM's primary 
+:term:`information object` database tables that can potentially receive new data
+via an update import. In these cases, existing data will **not** be replaced - 
+instead, the update import will append **new** data to the existing resources. 
+These fields typically relate to note fields (such as all the custom note types 
+in the :ref:`RAD <rad-template>` and :ref:`DACS <dacs-template>` templates), or 
+linked :term:`entities <entity>` such as :term:`terms <term>`, 
+:term:`authority records <authority record>`, etc. 
+
+Below is a list of fields to which new data can be appended via an update 
+import - any existing data will be left in place: 
+
+* accessionNumber
+* radGeneralMaterialDesignation
+* radStatementOfResponsibilityNote
+* radTitleAttributionsAndConjectures
+* radTitleContinues
+* radTitleSourceOfTitleProper
+* radTitleVariationsInTitle
+* radParallelTitles
+* subjectAccessPoints
+* placeAccessPoints
+* genreAccessPoints
+* nameAccessPoints
+* radNoteAccompanyingMaterial
+* radNoteAlphaNumericDesignation
+* radNoteConservation
+* radNoteEdition
+* radNotePhysicalDescription
+* radNotePublisherSeries
+* radNoteRights
+* radNoteCast
+* radNoteCredits
+* radNoteSignaturesInscriptions
+* generalNote
+* archivistNote
+* physicalObjectName
+* physicalObjectLocation
+* physicalObjectType
+
+Finally, please note that ``eventActors`` (i.e. :term:`creators <creator>` and 
+other actors associated with different event types) and other related ``event`` 
+fields are a special case. Please see the table in the section above to 
+determine the matching criteria and resulting behavior: 
+
+* :ref:`csv-actor-matching` 
 
 .. _csv-descriptions-match-criteria:
 
@@ -1218,6 +1330,22 @@ existing archival descriptions during a CSV import:
 * If there is no exact match on all of these 3 values, then the record is
   considered not to have a match. Depending on user settings during import, it
   will either import as new, or be skipped and reported in the Job details page.
+
+.. TIP:: 
+
+   AtoM's command-line CSV import includes an addtional option, called 
+   ``--roundtrip``, that bypasses the above set of criteria. Instead, it will
+   **only** look for an exact match on the legacyID value in your import CSV, 
+   against the unique internal database object ID associated with every record. 
+   AtoM populates the ``legacyId`` column with objectID values during export, 
+   so this option is useful when roundtripping (AKA exporting a CSV, updating 
+   its metadata, and then re-importing it as an update) in the same system. It's
+   also useful when you want to update the title, identifier, and repository
+   values of a description, since otherwise these are used as matching criteria. 
+
+   For more information, see: 
+
+   * :ref:`csv-import-descriptions-cli`
 
 The **default behavior** when no match is found during an updates import is to
 import the record as a new description. However, AtoM does have an option in
@@ -1400,6 +1528,7 @@ Importing updates via the user interface
      - if both are present AtoM will default to using the *qubitParentSlug*)
    * Any records to be imported as children of an existing record in AtoM use
      the proper *qubitParentSlug* of the existing parent record
+   * You have reviewed the list of :ref:`csv-descriptions-update-fields`
    * You have reviewed how the :ref:`authority record matching <csv-actor-matching>`
      behavior works above, and know what to expect with your import.
    * If you are using the "Delete and replace" method with hierarchical data -
