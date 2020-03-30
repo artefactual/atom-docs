@@ -602,6 +602,13 @@ Both parameters can be used together if needed to target a particular range.
 
    http://example-site.com/;oai?verb=ListIdentifiers&until=2012-12-31&metadataPrefix=oai_dc
 
+.. NOTE::
+
+   As per the OAI-PMH specification, AtoM will convert local times into 
+   Coordinated Universal Time (UTC) when handling ``from`` and ``until`` 
+   parameters, and when returning results. Be sure to factor this into your
+   range when using these parameters! 
+
 .. TIP::
 
    The earliest date stamp associated with the records available from the
