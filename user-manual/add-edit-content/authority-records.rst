@@ -132,9 +132,6 @@ overall) in the application, AtoM behaves in several specific ways:
   to add any other creator names or name access points in subsequent
   descriptions.
 * When a :term:`creator` name is added to an :term:`archival description`, the
-  name is also automatically added as a name :term:`access point` - there is
-  no need to add the creator as a name (subject) access point manually.
-* When a :term:`creator` name is added to an :term:`archival description`, the
   biographical/administrative history for that creator will appear at the level
   of description where the name has been added, but will not repeat at lower
   levels. The creator name **will** be inherited by lower levels however, unless
