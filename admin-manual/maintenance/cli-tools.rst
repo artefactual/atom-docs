@@ -734,17 +734,19 @@ entered using two-letter ISO  639-1 language code values - for example,
 See `Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__ for a
 full list of ISO 639-1 language codes.
 
-The taxonomy name value should be entered as it is seen in the :term:`user
-interface` in **Manage > Taxonomies**. This value is case sensitive. If the
-taxonomy name has spaces (i.e. if it is more than one word), you will want to
-use quotation marks.
+The taxonomy name value should be entered as it is seen in the 
+:term:`user interface` in **Manage > Taxonomies** for the culture you want to 
+normalize (i.e. if you are trying to normalize the French terms, then use the 
+French name of the related taxonomy). This value is case sensitive. If the 
+taxonomy name has spaces (i.e. if it is more than one word), use quotation 
+marks around the taxonomy name.
 
-Below is an example of running this command on French terms in the Physical
-object type taxonomy:
+Below is an example of running this command on French terms in the Description 
+Details Level taxonomy:
 
 .. code:: bash
 
-   php symfony taxonomy:normalize --culture="fr" "Physical object type"
+   php symfony taxonomy:normalize --culture=fr "Niveaux de détail de la description"
 
 You might also run this command on English terms in the Places taxonomy like
 so:
