@@ -94,6 +94,13 @@ the site URL.
    :width: 80%
    :alt: An image of forcing the login screen
 
+.. SEEALSO::
+
+   A system administrator can also fully disable the ability to log into AtoM, 
+   if you are using a version of AtoM as a read-only access site. See: 
+
+   * :ref:`read-only-mode`
+
 .. _visible-elements-headers:
 
 Hide or show Information area headers

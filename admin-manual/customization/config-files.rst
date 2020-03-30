@@ -93,6 +93,15 @@ such as:
       :width: 90%
       :alt: An example of the app.yml file in apps/qubit/config
 
+   
+   There are also some settings in this file (such as the ``read_only`` setting) 
+   that may be overwritten by environment variables in the PHP pool set up 
+   during installation. For general information, see below, 
+   :ref:`config-application-server`. For specific information on setting up
+   read-only mode in AtoM, see: 
+
+   * :ref:`read-only-mode`
+
 .. _config-settings-yml:
 
 apps/qubit/config/settings.yml
@@ -156,8 +165,13 @@ has its own configuration file that defines some important global PHP settings
 like timeouts, and environment variables that may also modify the way that
 AtoM works as documented in accesstomemory.org.
 
-The file of the pool is located at ``/etc/php7.0/fpm/pool.d/atom.conf`` (Ubuntu
-16.04) or ``/etc/php7.2/fpm/pool.d/atom.conf`` (Ubuntu 18.04). Edit with
-``nano``. Once saved, run: ``sudo systemctl restart php7.0-fpm`` (Ubuntu 16.04),
-or ``sudo systemctl restart php7.2-fpm`` (Ubuntu 18.04), and
-the changes will apply.
+The file of the pool is located at ``/etc/php/7.0/fpm/pool.d/atom.conf``
+(Ubuntu 16.04) or ``/etc/php/7.2/fpm/pool.d/atom.conf`` (Ubuntu 18.04). Edit
+with ``nano``. Once saved, run: ``sudo systemctl restart php7.0-fpm`` (Ubuntu
+16.04), or ``sudo systemctl restart php7.2-fpm`` (Ubuntu 18.04), and the
+changes will apply.
+
+.. SEEALSO::
+
+   * :ref:`security-application`
+   * :ref:`read-only-mode`
