@@ -139,6 +139,24 @@ can be found in AtoM in ``/lib/model/QubitTaxonomy.php`` (see on GitHub
 
    php symfony import:bulk --taxonomy="35" /path/to/mySKOSfiles
 
+.. NOTE:: 
+
+   To ensure a successful import with SKOS files, please use the **absolute**
+   path to your SKOS file(s), not a relative path from your current location
+
+   Example of a relative path, when currently located at the root AtoM
+   installation directory:
+
+   .. code-block:: bash
+
+      SKOS/mySKOSfile.xml
+
+   Example of an absolute path: 
+
+   .. code-block:: bash
+
+      /usr/share/nginx/atom/SKOS/mySKOSfile.xml
+
 Below is a list of some of the more commonly used taxonomies in AtoM, and
 their IDs. This list is NOT comprehensive - to see the full list, navigate to
 ``/lib/model/QubitTaxonomy.php``, or visit the Github link above.
