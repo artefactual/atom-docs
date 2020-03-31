@@ -746,7 +746,7 @@ Details Level taxonomy:
 
 .. code:: bash
 
-   php symfony taxonomy:normalize --culture=fr "Niveaux de détail de la description"
+   php symfony taxonomy:normalize --culture="fr" "Niveaux de détail de la description"
 
 You might also run this command on English terms in the Places taxonomy like
 so:
@@ -1977,6 +1977,56 @@ review the section below, :ref:`common-atom-queries`.
 Similarly, the ``--audit`` option can be used to verify that all objects
 specified in the CSV file were imported. If any are found to be missing, then the
 object's filename will be output in the console.
+
+:ref:`Back to top <maintenance-cli-tools>`
+
+.. _cli-tools-run:
+
+Run a generic PHP script
+========================
+
+For cases where you need to manipulate your data and there are no existing tasks
+that will accomplish what you need, AtoM has the ability to execute generic PHP 
+scripts via the ``tools:run`` commmand. This task will accept the path to a PHP 
+file as input, and when run will execute the script. Example use: 
+
+.. code-block:: bash
+
+   php symfony tools:run /path/to/my/php-script.php
+
+.. IMPORTANT::
+
+   We **strongly recommend** you make backups of your data before executing 
+   arbitrary PHP scripts in AtoM, and that you understand what the script will
+   do. If you haven't written the script yourself, be sure you trust its source!
+
+This task includes two additional options to support logging. The ``--log`` option
+will capture information about the script's execution in AtoM's default log 
+location,  ``log/tools_run.log``. If a ``tools_run.log`` file already exists at 
+that location, AtoM will append new log data to it the existing file. 
+
+Alternatively, you can specify your own log name and location by using the 
+``--log_file`` option in conjunction with ``--log``. This option accepts a file 
+path and name as input, allowing you to specify a different location for the log
+file. 
+
+Example usage: 
+
+.. code-block:: bash
+
+   php symfony tools:run --log /path/to/my/php-script.php
+
+This will execute the script at ``path/to/my/php-script.php``, and create the 
+file ``log/tools_run.log`` or append data to it if ``log/tools_run.log`` already 
+exists.
+
+.. code-block:: bash
+
+   php symfony tools:run --log --log_file="my-log-file.log" /path/to/my/php-script.php
+
+This will execute the script at ``path/to/my/php-script.php``, and create the 
+file ``my-log-file.log`` in the current location, or append data to it if 
+``my-log-file.log`` already exists. 
 
 :ref:`Back to top <maintenance-cli-tools>`
 
