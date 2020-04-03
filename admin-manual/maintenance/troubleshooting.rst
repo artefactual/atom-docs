@@ -90,18 +90,10 @@ information on how to use Debug mode can be found here:
    * https://youtu.be/_zdplmuvhf0
 
    **Note:** The commands used in this video for restarting PHP-FPM is for
-   Ubuntu 14.04 with PHP 5.x. If you are using Ubuntu 16.04 with PHP7.0, or
-   Ubuntu 18.04 with PHP7.2, the  following command can be used to restart
-   PHP-FPM:
+   Ubuntu 14.04 with PHP 5.x, which is no longer supported after version 2.4. 
+   For more recent instructions on restarting PHP-FPM, see below: 
 
-
-   .. code-block:: bash
-
-      sudo systemctl restart php7.0-fpm
-
-   .. code-block:: bash
-
-      sudo systemctl restart php7.2-fpm
+   * :ref:`troubleshooting-restart-php-fpm`
 
 :ref:`Back to top <maintenance-troubleshooting>`
 
@@ -118,7 +110,7 @@ installation environment. The following commands assume you have followed our
 made changes, some of the commands may be different in your installation.
 
 Restarting services can be a useful first step in trying to resolve issues - if
-the service is in a bad state as a result of an aerror that has occurred, then
+the service is in a bad state as a result of an error that has occurred, then
 restarting it can often return it to a working condition. Below are basic
 instructions for restarting PHP-FPM, Memcached, Nginx, and the atom-worker.
 
@@ -158,6 +150,7 @@ You should consider restarting PHP-FPM if:
 
 * You have made any changes to your web server configuration
 * You have made any changes to AtoM's :ref:`configuration files <customization-config-files>`
+* You have made any changes to the PHP pool set up during installation
 * You are trying to ensure all application caches are cleared
 
 **How**
@@ -297,8 +290,16 @@ If you're using Ubuntu 16.04 0r 18.04 with PHP 7.x:
 
 .. TIP::
 
-   If you have multiple jobs that never seem to complete stuck in the queue,
-   you may also want to kill the queue itself, and then restart the
+   If the worker hits the start rate limit (3 starts in 24h) to be able to start
+   it again after fixing the issue, the failed status has to be cleared:
+
+   .. code-block:: bash
+
+      sudo systemctl reset-failed atom-worker
+      sudo systemctl start atom-worker   
+
+   Also, if you have multiple jobs that never seem to complete stuck in the
+   queue, you may also want to kill the queue itself, and then restart the
    atom-worker. The following task will clear **all jobs** from the queue
    (including those currently running, so be careful). You will need to
    manually restart any jobs you would like to continue via the AtoM user
@@ -307,6 +308,15 @@ If you're using Ubuntu 16.04 0r 18.04 with PHP 7.x:
    .. code-block:: bash
 
       php symfony jobs:clear
+
+Other useful commands for managing the AtoM worker: 
+
+.. code-block:: bash
+
+   sudo systemctl enable atom-worker   # Enables the worker (on boot)
+   sudo systemctl start atom-worker    # Starts the worker
+   sudo systemctl stop atom-worker     # Stops the worker
+   sudo systemctl status atom-worker   # Obtains current status
 
 :ref:`Back to top <maintenance-troubleshooting>`
 
@@ -389,6 +399,19 @@ information, see:
 
 * :ref:`installation-execution-limits`
 
+.. IMPORTANT:: 
+
+   Some PHP settings are configured in the PHP pool set up during installation, 
+   and should be adjusted there. See for example: 
+
+   * :ref:`Ubuntu 18.04 PHP pool setup <linux-ubuntu-bionic-dependency-php>`
+
+Remember, if you make any changes to your PHP settings (either in the ``php.ini``
+file, or in your application PHP pool), you will need to restart PHP-FPM after
+saving your changes. See: 
+
+* :ref:`troubleshooting-restart-php-fpm`
+
 .. SEEALSO::
 
    * :ref:`faq-504-error`
@@ -441,6 +464,7 @@ This task will allow a system administrator to review the status of AtoM's
 Elasticsearch index without having to access any configuration files. The task
 output will include: 
 
+* Elasticsearch version
 * Search host
 * Port
 * Index name
@@ -467,6 +491,7 @@ For more information, see: :ref:`cli-search-status`
 .. SEEALSO::
 
    * :ref:`maintenance-elasticsearch`
+   * :ref:`faq-search-pop-warning`
 
 .. _troubleshooting-search-index:
 
@@ -510,7 +535,9 @@ You might consider re-populating the search index if:
 
    php symfony search:populate
 
-For more information, see: :ref:`maintenance-populate-search-index`
+For more information and additional options, see: 
+
+* :ref:`maintenance-populate-search-index`
 
 .. TIP::
 
