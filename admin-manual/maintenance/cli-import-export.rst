@@ -2031,94 +2031,49 @@ user to bulk attach digital objects to existing information objects (e.g.
 simple CSV file.
 
 This task will take a CSV file as input, which contains two columns:
-``filename`` and **EITHER** ``information_object_id`` **OR** ``identifier`` as
-the second column; the script will fail if these column headers are not present
-in the first row of the CSV file, and it will fail if there are more than 2
-columns - you must choose which variable you prefer to work with ( identifier or
-object ID) for the second column. Each will be explained below.
 
-The ``filename`` column contains the full (current) path to the digital asset
-(file). The ``information_object_id`` or ``identifier`` column identifies the
-linked information object. AtoM does not allow more than one digital object
-per information object (with the exception of derivatives), and each digital
-object must have a corresponding information object to describe it, so this
-one-to-one relationship must be respected in the CSV import file.
+``filename`` is a required column, that should contain the path to the digital
+asset (file), ending in the filename and extension of the object to be
+attached. AtoM does not allow more than one digital object per information
+object (with the exception of derivatives), and each digital object must have
+a corresponding information object to describe it, so this one-to-one
+relationship must be respected in the CSV import file. See the "NOTES ON USE" at
+the bottom of this task's documentation for more information on how the task 
+will behave if more than one CSV row points at a single archival description. 
 
-The ``information_object_id`` is a unique internal value assigned to each
-:term:`information object` in AtoM's database - it is not visible via the
-:term:`user interface` and you will have to perform a SQL query to find it out
-- a sample SQL query with basic instructions has been included below.
+The second CSV column column identifies the related :term:`information object`
+(AKA :term:`archival description`), to which you wish to attach your digital
+object. There are 3 different ways of providing this information - and
+therefore 3 different possible column header names, depending on the method
+you use:
 
-The ``identifier`` can be used instead if preferred. A
-:term:`description's <archival description>` identifier is visible in the
-:term:`user interface`, which can make it less difficult to discover. 
-**However**, if the target description's identifier is not unique throughout
-your AtoM instance, the digital object may not be attached to the correct
-description - AtoM will attach it to the first matching identifier it finds.
+* The first option is ``information_object_id``. This is a unique internal
+  value assigned to each :term:`information object` in AtoM's database - it is 
+  not visible via the :term:`user interface` and you may have to perform a 
+  SQL query to find it out. For instructions on how to do so, see 
+  :ref:`cli-access-mysql` and :ref:`cli-object-id`. 
+* The second option is ``slug``. A :term:`slug` is a word or sequence of words
+  that make up the last part of a URL in AtoM. It is the part of the URL that
+  uniquely identifies the resource and often is indicative of the name or
+  title of the page (e.g.: in *www.yourwebpage.com/about*, the slug is
+  *about*). The slug is meant to provide a unique, human-readable, permanent
+  link to a resource. For more information on slugs in AtoM, see:
+  :ref:`slugs-in-atom`. The values entered into this column are case sensitive, 
+  meaning that capitalization matters - AtoM will not match ``My-Slug`` to 
+  ``my-slug``, for example. 
+* Finally, the description ``identifier`` can be used instead if preferred. A
+  :term:`description's <archival description>` identifier is visible in the
+  :term:`user interface`, which can make it less difficult to discover.
+  **However**, if the target description's identifier is not unique
+  throughout your AtoM instance, the digital object may not be attached to the 
+  correct description - AtoM will attach it to the first matching identifier it 
+  finds.
 
-.. _digital-object-load-sql-object-id:
-
-Finding the information_object_id
----------------------------------
-
-The ``information_object_id`` is not a value that is accessible via the
-:term:`user interface` - it is a unique value used in AtoM's database. There are
-however two ways you can access the object IDs for your descriptions. 
-
-The first method is to export the target descriptions - on export, AtoM will 
-populate the ``legacyId`` column of the resulting CSV with the object ID value
-for each row. 
-
-Alternatively, you can use SQL in the command-line to determine the ID of an
-information object. The following example will show you how to use a SQL query
-to find the ``information_object_id``, if you know the :term:`slug` of the
-description:
-
-1. First, you will need to access the MySQL command prompt to be able to input
-   a SQL query. To do this, you will need to know the database name, user
-   name, and password you used when creating your database during
-   installation. If your database is on a different server (e.g. if you are
-   trying to SSH in to access your database server), you will also need to
-   know the hostname - that is, the IP address or domain name of the server
-   where your database is located.
-2. The following is an example of the CLI command to enter to access mysqlCLI:
-
-   .. code-block:: bash
-
-      mysql -u root -pMYSECRETPASSWORD atom
-
-   * ``-u`` = user. If you followed our :ref:`installation instructions
-     <installation-linux>`, this will be ``root``
-   * ``-p`` = password. Enter the password you used during installation right
-     after the ``-p``. If you did not enter a password, include the ``-p``
-     on its own. If you are prompted later for a password and didn't use one,
-     just press enter.
-   * ``-h`` = hostname. If your database is on a different server, supply either
-     an IP address, or the domain name, where it is located.
-   * ``atom`` = your database name. If you followed our
-     :ref:`installation instructions <installation-linux>`, this will be
-     ``atom``; otherwise enter the database name you used when installing AtoM.
-
-3. You may be prompted for your password again. If so, enter it. If you did
-   not use a password during installation, simply press enter.
-4. Your command prompt should now say something like ``mysql>``. You can now
-   enter a SQL query directly.
-5. The following example SQL command will return the information_object_id for
-   a desription, when the information object's :term:`slug` is known:
-
-   .. code-block:: bash
-
-      SELECT object_id FROM slug WHERE slug='your-slug-here';
-
-6. The query should return the object_id for the description. Here is an
-   example:
-
-.. image:: images/digi-object-load-mysql-select.*
-   :align: center
-   :width: 70%
-   :alt: An image of a successful SELECT statement in mysqlCLI
-
-7. Enter ``quit`` to exit mysqlCLI.
+The final CSV, once prepared, should have **only** 2 columns - one for the 
+``filename``, and a second column with information on the related description 
+(i.e. either ``information_object_id``, ``slug``, or ``identifier``). The task 
+will take a path to this CSV as input - and it includes a number of additional 
+options, described in more detail below. 
 
 Using the digital object load task
 ----------------------------------
@@ -2126,15 +2081,18 @@ Using the digital object load task
 Before using this task, you will need to prepare:
 
 * A CSV file with 2 columns -  **EITHER** ``information_object_id`` and
-  ``filename``, **OR** ``identifier`` and ``filename``
+  ``filename``, **OR** ``identifier`` and ``filename``, **OR** ``slug`` and 
+  ``filename`` . See above for further details on each option. 
 * A directory with your digital objects inside of it
 
 .. IMPORTANT::
 
-   You cannot use both ``information_object_id`` and ``identifier`` in the
-   same CSV - it must be one or the other. If you use the ``identifier``, make
-   sure your target description identifiers are **unique** in AtoM - otherwise
-   your digital objects may not upload to the right description!
+   You cannot use ``information_object_id``, ``slug``, and ``identifier`` in
+   the same CSV - only **one** of these columns must be present. 
+
+   If you use the ``identifier`` column, make sure your target description
+   identifiers are **unique** in AtoM - otherwise your digital objects may not
+   upload to the right description!
 
 Here is a sample image of what the CSV looks like when the identifier is used,
 and the CSV is prepared in a spreadsheet application:
@@ -2144,15 +2102,26 @@ and the CSV is prepared in a spreadsheet application:
    :width: 60%
    :alt: Example CSV for digitalobject:load task using identifier
 
+The task also includes an option to provide a default file path prefix to your
+digital object directory (explained further below). Here is an example of a 
+CSV prepared using the ``slug`` column, with the full path to each object 
+omitted:
+
+.. image:: images/digital-object-load-slug.*
+   :align: center
+   :width: 90%
+   :alt: Example CSV for digitalobject:load task using slug
+
 .. TIP::
 
-   Before proceeding, make sure that you have reviewed the instructions
-   :ref:`above <csv-encoding-newline>`, to ensure that your CSV will work when
+   Before proceeding, make sure that you have reviewed the general CSV 
+   preparation instructions included in the User Manual 
+   :ref:`here <csv-encoding-newline>`, to ensure that your CSV will work when
    used with the ``digitalobject:load`` task. The key point when creating a
    CSV is to ensure the following:
 
-   * CSV file is saved with UTF-8 encodings
-   * CSV file uses Linux/Unix style end-of-line characters (``/n``)
+   * The CSV file is saved with UTF-8 encodings
+   * The CSV file uses Linux/Unix style end-of-line characters (``/n``)
 
    Additionally, AtoM also has a task that can be used to double-check your 
    load CSV against the :term:`digital object` directory, looking for any 
@@ -2171,7 +2140,7 @@ command:
 
 .. image:: images/digital-object-load-options.*
    :align: center
-   :width: 85%
+   :width: 95%
    :alt: An image of the command-line options for digitalobject:load
 
 The ``--application``, ``--env``, and ``--connection`` options **should not be
@@ -2183,7 +2152,18 @@ it runs. This means that normally, you will need to manually repopulate the
 search index after running the task. Running without indexing allows the task
 to complete much more quickly - however, if you're only uploading a small set
 of digital objects, you can choose to have the task index the collection as it
-progresses, using the ``--index`` (or ``-i``) option
+progresses, using the ``--index`` (or ``-i``) option.
+
+Similarly, the task will typically update AtoM's nested set (used to manage
+hierarchical relationships) as it progresses, but this can slow import time.
+If desired, you can use the ``--skip-nested-set-build`` option to omit nested
+set updates, and then manually run the nested set build task after the digital
+object load task completes.
+
+.. SEEALSO::
+
+   * :ref:`maintenance-populate-search-index`
+   * :ref:`cli-rebuild-nested-set`
 
 The ``--limit`` option enables you to set the number of digital objects imported
 via CSV using the digital object load task.
@@ -2201,7 +2181,6 @@ the ``uploads`` directory.
 
    When using the ``--link-source`` option, local derivatives are still
    generated and stored in the ``uploads`` directory per usual.
-
 
 The ``--path`` option will allow you to simplify the ``filename`` column in your
 CSV, to avoid repetition. If all the digital objects you intend to upload are
@@ -2227,6 +2206,50 @@ use a trailing slash to finish your path prefix - e.g.:
    php symfony digitalobject:load --path="/path/to/my/folder/"
    /path/to/my/spreadsheet.csv
 
+The ``--attach-only`` option changes the behavior of where the task will attach
+the associated digital object. When used, rather than attaching the digital
+object to the target description, AtoM will instead always create a new stub 
+:term:`child <child record>` description, and attach the digital object there. 
+This can be useful if you want to pass multiple digital objects to the same
+parent description - for example, attaching individual TIFF files of book 
+pages as children to an item-level record describing the book. 
+
+.. TIP::
+
+   See the "NOTES ON USE" section below to learn more about the load task's 
+   default behaviors when multiple CSV rows point to the same 
+   :term:`archival description` and no other task options are used. 
+
+The ``--replace`` option can be used if you want to overwrite existing digital
+objects with those indicated in the CSV. When used, AtoM will delete any existing
+attached digital object it finds and then attach the new object. 
+
+.. IMPORTANT::
+
+   You cannot use the ``--replace`` and ``--attach-only`` options at the same 
+   time. This will generate the error: 
+
+   ``Cannot use option "--attach-only" with "--replace".``
+
+   Additionally, this option overrides the default multi-row behavior described
+   below (in the "notes on use"), and those of the ``--attach-only`` option. 
+   When the ``--replace`` option is used: 
+
+   * If the import CSV contains one image for a specific description and the
+     description specified in the CSV does not have a digital object attached to 
+     it, this digital object will be imported and linked.
+   * If the import CSV contains one image for a specific description and the
+     description specified in the CSV already has one attached, the attached
+     digital object will be deleted and the one specified in the CSV will be
+     imported and linked.
+   * If the import CSV contains **more than one** image for a specific
+     description, and the description does **not** yet have a digital object 
+     directly linked to it, the *last* image specified in the CSV for this
+     target description will be linked.
+   * If the import CSV contains **more than one** image for a specific
+     description, and the description **does** already has a digital object 
+     directly linked to it, the existing image will be deleted and the *last* 
+     image specified in the CSV for this target description will be linked.
 
 **TO RUN THE DIGITAL OBJECT LOAD TASK**
 
@@ -2236,17 +2259,22 @@ use a trailing slash to finish your path prefix - e.g.:
 
 **NOTES ON USE**
 
-* If an information object already has a :term:`digital object` attached to it,
-  it will be skipped during the import
+* If a single CSV row points to a description that already has a 
+  :term:`digital object`, then the row will be skipped and reported in the console
+* If the CSV contains *multiple* rows pointing at a description that already 
+  has a digital object, then new stub child descriptions will be created 
+  below the target, and digital objects will be attached there. If child 
+  descripitons already exist, they will be ignored (meaning, running the task 
+  more than once will result in duplicate child descriptions).
+* Note that the ``--attach-only`` and ``--replace`` options change the above 
+  default behaviors when multiple rows point to one description. Read the 
+  option descriptions above for more information. 
 * Remember to repopulate the search index afterwards if you haven't used the
   ``--index`` option! For more information, see:
   :ref:`maintenance-populate-search-index`.
-
-
-  .. code-block:: bash
-
-     php symfony search:populate
-
+* Additionally, if you use the ``--skip-nested-set-build`` option, you will need
+  to manually rebuild the nested set after the task has completed. See: 
+  :ref:`cli-rebuild-nested-set`.
 
 Regenerating derivatives
 ------------------------

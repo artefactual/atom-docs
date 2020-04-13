@@ -2043,23 +2043,111 @@ databases, which are not accommodated from the user interface. For all of
 these, you will need to execute them from inside MySQL, using the username
 and password you created during installation.
 
-Assuming your username and pass are both set to "root" and your database name is
-``atom``, here is an example of what you would type into the command-line:
+.. _cli-access-mysql:
 
-.. code:: bash
+Accessing the MySQL command prompt
+==================================
 
-   $ mysql -u root -proot atom
+To access the MySQL command prompt so we can run SQL queries,  we will need to
+know the MySQL username, password, and database name used during installation.
+If you can't recall the credentials you used, you can always check in
+``config/config.php`` - for example, to see this file you could run the following
+from the root AtoM installation directory, which should be
+``/usr/share/nginx/atom`` if you have followed our recommended installation
+instructions:
 
-Once you've accessed the database, you can run SQL queries to manually modify
-the AtoM database.
+.. code-block:: bash
 
-.. important::
+   sudo nano config/config.php
+
+You should see the database name and credentials listed near the top of the file. 
+
+You can also check your database username and password in ``/root/.my.cnf`` like 
+so:
+
+.. code-block:: bash
+
+   sudo cat  /root/.my.cnf
+
+Once you have the database name, MySQL user name, and password, we can use
+these to access the MySQL command prompt. The basic syntax to access the MySQL 
+command prompt is like so: 
+
+.. code-block:: bash
+
+   mysql -u username -pPASSWORD database-name;
+
+Where: 
+
+* ``username`` represents the database username
+* ``PASSWORD`` represents the database password
+* ``database-name`` represents the name of the database used during installation
+
+An example: Assuming that your database name is ``atom`` and your user and
+password are both ``root``, you could access the prompt like so:
+
+.. code-block:: bash
+
+   mysql -u root -proot atom;
+
+Notice that there is a space between the ``-u`` and ``root``, but **NOT**
+between the ``-p`` and the ``root`` password. Alternatively, you can leave no
+password following the -p, and you will be prompted to enter it by the command
+prompt before proceeding.
+
+Once submitted, your command prompt should now say something like ``mysql>``.
+You can now input a SQL query directly.
+
+You can exit the MySQL command prompt at any time simply by typing ``exit``. You 
+will be returned to the unix command-line interface. 
+
+.. IMPORTANT::
 
    We strongly recommend that you back-up all of your data prior to
    manipulating the database! If possible, you should test the outcome on a
    cloned development instance of AtoM, rather than performing these actions
    on a production site without testing them in advance.
 
+.. _cli-object-id:
+
+Finding the object_id of a record
+=================================
+
+Some tasks and SQL queries will require the use of an object ID as part of the 
+criteria. These ID values are not typically accessible via the
+:term:`user interface` - they are unique values used in AtoM's database, with 
+one assigned to every record. There are a few ways you can access the object IDs 
+for your records.
+
+For :term:`archival description` records, the first method is to export the
+target descriptions as a CSV file - on export, AtoM will populate the
+``legacyId`` column of the resulting CSV with the object ID value for each
+row.
+
+Alternatively, you can use SQL in the command-line to determine the ID of an
+object. The following example will show you how to use a SQL query to find the
+``object_id``, if you know the :term:`slug` of the record:
+
+.. code-block:: bash
+
+   SELECT object_id FROM slug WHERE slug='your-slug-here';
+
+The query should return the ``object_id`` for the description. Here is an
+example:
+
+.. image:: images/digi-object-load-mysql-select.*
+   :align: center
+   :width: 70%
+   :alt: An image of a successful SELECT statement in mysqlCLI
+
+Alternatively, for archival descriptions, you can use the following query to 
+look up the object ID based on the title of the description: 
+
+.. code-block:: bash
+
+   SELECT id FROM information_object_i18n WHERE title='TITLE HERE';
+
+Replace ``TITLE HERE`` with the title of your target description. 
 
 .. _sql-update-publication-status:
 
