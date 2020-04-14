@@ -2330,15 +2330,37 @@ For more information on search index population in AtoM, see:
 
 .. _csv-export-cli:
 
-Exporting CSV files from the command-line
-=========================================
+Export CSV files from the command-line
+======================================
+
+In addition to bulk XML import and export, AtoM also includes tasks to export
+:term:`archival descriptions <archival description>` and 
+:term:`authority records <authority record>` in bulk from the command-line in 
+CSV format. 
+
+**Jump to:**
+
+* :ref:`csv-export-cli-descriptions`
+* :ref:`csv-export-cli-actors`
+
+.. SEEALSO::
+
+  * :ref:`csv-export`
+  * :ref:`csv-import-cli`
+  * :ref:`csv-import`
+  * :ref:`cli-bulk-export`
+
+.. _csv-export-cli-descriptions:
+
+Export archival descriptions in CSV from the command-line
+---------------------------------------------------------
 
 The CSV export task is a command-line task that will allow a system
 administrator with access to the root AtoM directory to export some or all
 :term:`archival descriptions <archival description>` held in AtoM in CSV
-format. This template is the same as that used for :ref:`csv-import` (AtoM 2.3
-and higher), and the export produced can therefore also be used to import data
-into another AtoM instance.
+format. This template is the same as that used for :ref:`csv-import`, and the 
+export produced can therefore also be used to import data into another AtoM 
+instance.
 
 Example use - run from AtoM's root directory:
 
@@ -2350,14 +2372,6 @@ If you specify just a path to a directory, AtoM will generate a name for the
 CSV. If you wish to name your CSV file, then you can specify the target
 filename in the path (e.g. in the above example, "example.csv" is the target
 filename).
-
-.. SEEALSO::
-
-  * :ref:`csv-export`
-  * :ref:`csv-import-cli`
-  * :ref:`csv-import`
-  * :ref:`cli-bulk-export`
-
 
 .. _csv-export-cli-options:
 
@@ -2496,5 +2510,58 @@ specify the destination target to a directory, not a filename.
 
 In the above example, when 1000 rows are added to the first CSV, AtoM will
 export it, and begin a second CSV - and so on.
+
+:ref:`Back to top <cli-import-export>`
+
+.. _csv-export-cli-actors:
+
+Export authority records in CSV from the command-line
+-----------------------------------------------------
+
+The CSV authority export task is a command-line task that will allow a system
+administrator with access to the root AtoM directory to export some or all
+:term:`authority records <authority record>` held in AtoM in CSV
+format. This template is the same as that used for the authority record 
+:ref:`csv-import`, and the export produced can therefore also be used to import 
+data into another AtoM instance.
+
+Example use - run from AtoM's root directory:
+
+.. code-block:: bash
+
+   php symfony csv:authority-export /path/to/my/export-location/example.csv
+
+If you specify just a path to a directory, AtoM will generate a name for the
+CSV. If you wish to name your CSV file, then you can specify the target
+filename in the path (e.g. in the above example, "*example.csv*" is the target
+filename).
+
+.. _csv-export-authority-cli-options:
+
+CSV authority export task options
+---------------------------------
+
+.. image:: images/csv-authority-export-cli.*
+  :align: center
+  :width: 85%
+  :alt: An image of the command-line options for CSV authority export
+
+By typing ``php symfony help csv:export`` into the command-line from your root
+directory, without specifying an export location of the CSV, you will able
+able to see the CSV import options available (pictured above). A brief
+explanation of each is included below.
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the export.
+
+The ``--items-until-update`` option can be used for a simple visual
+representation of progress in the command-line. Enter a whole integer, to
+represent the number of rows should be imported from the CSV before the
+command-line prints a period (e.g. `` . `` ) in the console, as a sort of
+crude progress bar. For example, entering ``--items-until-update=5`` would
+mean that the import progresses, another period will be printed every 5 rows.
+This is a simple way to allow the command-line to provide a visual output of
+progress.
 
 :ref:`Back to top <cli-import-export>`
