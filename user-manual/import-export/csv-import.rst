@@ -2934,8 +2934,8 @@ your accession records and your descriptions, by adding an ``accessionNumber``
 column in the archival description CSV and populating it with the exact
 accession number(s) used during your accessions data import.
 
-Alternatively, you can use the ``qubitParentSlug`` column to link existing
-descriptions in AtoM to new or updated accessions records via your import -
+Alternatively, you can use the ``qubitParentSlug`` column to link an existing
+description in AtoM to new or updated accessions records via your import -
 more details below.
 
 An example CSV template file is available in the
@@ -2959,7 +2959,7 @@ then AtoM will use the PHP date_parse function (which adds '1' as default value
 to the month and day if they are missing) to modify the date to a YYYY-MM-DD
 format.
 
-To link incoming accession records to existing archival descriptions, you can
+To link incoming accession records to an existing archival description, you can
 add a column named  ``qubitParentSlug``. This column will behave similarly to
 the ``qubitParentSlug`` column in the :term:`archival description` CSV templates
 (described :ref:`above <csv-description-parent-slug>`). To link an accession
@@ -2968,6 +2968,17 @@ the :term:`slug` of the target description in the ``qubitParentSlug`` column.
 AtoM will locate the matching description and link the two during import,
 similar to how an accession created through the user interface can be linked
 to a description (see: :ref:`link-accession-description`).
+
+.. IMPORTANT::
+
+   While the user interface will allow an accession record to be linked to many
+   archival descriptions, at this time the ``qubitParentSlug`` column in the CSV
+   import template for accessions **cannot support multiple values** - attempting
+   to use a pipe separator to add multiple description slugs will cause the 
+   import to fail. You can add only one related archival description slug to 
+   each row in the ``qubitParentSlug`` column - if you need to link your 
+   accession record to multiple descriptions, we recommend doing this manually
+   via the :term:`user interface` after the import has completed. 
 
 Most fields in the CSV template have been named in a fairly obvious way,
 translating a simplified version of the field name in the AtoM
