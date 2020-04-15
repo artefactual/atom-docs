@@ -1696,6 +1696,32 @@ However, if you would like to index the import as it progresses, the
 large database, and don't want to have to re-index everything. For more
 information on indexing options, see: :ref:`maintenance-populate-search-index`.
 
+The ``--assign-id`` option can be used to automatically assign the next unique 
+accession number value to each incoming record, based on the accession mask and 
+counter settings available in **Admin > Settings > Identifiers**. For more 
+information on these settings, see: 
+
+* :ref:`enable-accession-mask`
+* :ref:`accession-mask`
+* :ref:`accession-counter`
+
+Typically, populating the ``accessionNumber`` column in an 
+:term:`accession record` CSV import is required for the row not to be skipped. 
+However, when the ``--assign-id`` option is used, you can leave this column 
+blank in the CSV file. On import, AtoM will add the next available unique 
+accession number value, based on the mask and counter settings. 
+
+.. IMPORTANT::
+
+   The accession counter may not auto-increment in the user interface after the
+   import completes. To ensure that the next time you generate an accession number
+   in the :term:`user interface` you don't get an error, make sure you check the 
+   incremental number of the last accession in your import against the counter
+   value, and manually increment the counter to this number post-import if it 
+   has not updated automatically. 
+
+   See: :ref:`accession-counter`
+
 :ref:`Back to top <cli-import-export>`
 
 .. _csv-import-deaccessions-cli:
