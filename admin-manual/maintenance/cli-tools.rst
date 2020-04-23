@@ -5,9 +5,8 @@ Command line tools
 ==================
 
 There are a number of command line tools that can help you troubleshoot
-various AtoM problems.
-
-See below for :ref:`common-atom-queries`.
+various AtoM problems, as well as perform actions typically not supported in
+the :term:`user interface`.
 
 .. SEEALSO::
 
@@ -17,6 +16,7 @@ See below for :ref:`common-atom-queries`.
    * :ref:`cli-import-export`
    * :ref:`maintenance-webserver`
    * :ref:`maintenance-troubleshooting`
+   * :ref:`common-atom-queries`
 
    We also have a slides of many of our command-line tasks. See:
 
@@ -397,9 +397,9 @@ user can supply the path to a JSON file that lists the internal
 digital_object ID's associated with the digital objects targeted and stored in
 AtoM's database. These digital_object ID's will first need to be determined
 by crafting an SQL query designed to meet your specific criteria. Help crafting
-these queries is not covered here (though you can see below,
-:ref:`common-atom-queries`, for a BASIC introduction to SQL queries in AtoM) - in
-general, we only recommend this task be used by experienced administators.
+these queries is not covered here (though see :ref:`common-atom-queries`, for a 
+basic introduction to SQL queries in AtoM) - in general, we only recommend this 
+task be used by experienced administators.
 
 Once you have determined the IDs of the digital objects you would like to target
 with the task, you can place them in square brackets in a JSON file, separated by
@@ -572,8 +572,8 @@ generated slugs, you can use the ``--delete`` option, like so:
    :ref:`rename-title-slug`
 
 Slugs can also be manually deleted via SQL queries. For further information on
-deleting slugs from AtoM's database via SQL, see below in the section on
-:ref:`common-atom-queries` - particularly, :ref:`sql-delete-slugs`.
+deleting slugs from AtoM's database via SQL, see :ref:`common-atom-queries` - 
+particularly, :ref:`sql-delete-slugs`.
 
 .. SEEALSO::
 
@@ -1722,33 +1722,6 @@ there is also a ``--demo`` option available:
 
 :ref:`Back to top <maintenance-cli-tools>`
 
-.. _cli-backup-db:
-
-Backing up the database
-=======================
-
-.. seealso::
-
-   :ref:`maintenance-data-backup`
-
-To back up a MySQL database, use the following command:
-
-.. code:: bash
-
-   mysqldump -u myusername -p mydbname > ./mybackupfile.sql
-
-Be sure to use your username / password / database name. To restore
-the database as it was during the dump command, you can suck it back in with
-this command:
-
-.. code:: bash
-
-   mysql -u myusername -p mydbname < ./mybackupfile.sql
-
-The database is now restored to the point when you dumped it.
-
-:ref:`Back to top <maintenance-cli-tools>`
-
 .. _cli-sitemap:
 
 Generate an XML sitemap for search engine optimization
@@ -1971,8 +1944,8 @@ This log can be used, in event of an incomplete import, to either establish
 where the import stopped or to manually remove the imported digital objects.
 Undo logs contain two columns: the object ID of the :term:`information object`
 to which objects have beem imported, and the DIP directory from which the objects
-were imported. For more information on using the object ID, you might want to
-review the section below, :ref:`common-atom-queries`.
+were imported. For more information object IDs, see :ref:`common-atom-queries` - 
+particularly, :ref:`cli-object-id`.
 
 Similarly, the ``--audit`` option can be used to verify that all objects
 specified in the CSV file were imported. If any are found to be missing, then the
@@ -2029,262 +2002,3 @@ file ``my-log-file.log`` in the current location, or append data to it if
 ``my-log-file.log`` already exists. 
 
 :ref:`Back to top <maintenance-cli-tools>`
-
-.. _common-atom-queries:
-
-============================
-Common AtoM database queries
-============================
-
-Occasionally manually modifying the AtoM database is required, such as when
-data gets corrupted from timeouts or other bugs. Here we will include a few
-useful queries based on common actions users wish to perform on their
-databases, which are not accommodated from the user interface. For all of
-these, you will need to execute them from inside MySQL, using the username
-and password you created during installation.
-
-.. _cli-access-mysql:
-
-Accessing the MySQL command prompt
-==================================
-
-To access the MySQL command prompt so we can run SQL queries,  we will need to
-know the MySQL username, password, and database name used during installation.
-If you can't recall the credentials you used, you can always check in
-``config/config.php`` - for example, to see this file you could run the following
-from the root AtoM installation directory, which should be
-``/usr/share/nginx/atom`` if you have followed our recommended installation
-instructions:
-
-.. code-block:: bash
-
-   sudo nano config/config.php
-
-You should see the database name and credentials listed near the top of the file. 
-
-You can also check your database username and password in ``/root/.my.cnf`` like 
-so:
-
-.. code-block:: bash
-
-   sudo cat  /root/.my.cnf
-
-Once you have the database name, MySQL user name, and password, we can use
-these to access the MySQL command prompt. The basic syntax to access the MySQL 
-command prompt is like so: 
-
-.. code-block:: bash
-
-   mysql -u username -pPASSWORD database-name;
-
-Where: 
-
-* ``username`` represents the database username
-* ``PASSWORD`` represents the database password
-* ``database-name`` represents the name of the database used during installation
-
-An example: Assuming that your database name is ``atom`` and your user and
-password are both ``root``, you could access the prompt like so:
-
-.. code-block:: bash
-
-   mysql -u root -proot atom;
-
-Notice that there is a space between the ``-u`` and ``root``, but **NOT**
-between the ``-p`` and the ``root`` password. Alternatively, you can leave no
-password following the -p, and you will be prompted to enter it by the command
-prompt before proceeding.
-
-Once submitted, your command prompt should now say something like ``mysql>``.
-You can now input a SQL query directly.
-
-You can exit the MySQL command prompt at any time simply by typing ``exit``. You 
-will be returned to the unix command-line interface. 
-
-.. IMPORTANT::
-
-   We strongly recommend that you back-up all of your data prior to
-   manipulating the database! If possible, you should test the outcome on a
-   cloned development instance of AtoM, rather than performing these actions
-   on a production site without testing them in advance.
-
-.. _cli-object-id:
-
-Finding the object_id of a record
-=================================
-
-Some tasks and SQL queries will require the use of an object ID as part of the 
-criteria. These ID values are not typically accessible via the
-:term:`user interface` - they are unique values used in AtoM's database, with 
-one assigned to every record. There are a few ways you can access the object IDs 
-for your records.
-
-For :term:`archival description` records, the first method is to export the
-target descriptions as a CSV file - on export, AtoM will populate the
-``legacyId`` column of the resulting CSV with the object ID value for each
-row.
-
-Alternatively, you can use SQL in the command-line to determine the ID of an
-object. The following example will show you how to use a SQL query to find the
-``object_id``, if you know the :term:`slug` of the record:
-
-.. code-block:: bash
-
-   SELECT object_id FROM slug WHERE slug='your-slug-here';
-
-The query should return the ``object_id`` for the description. Here is an
-example:
-
-.. image:: images/digi-object-load-mysql-select.*
-   :align: center
-   :width: 70%
-   :alt: An image of a successful SELECT statement in mysqlCLI
-
-Alternatively, for archival descriptions, you can use the following query to 
-look up the object ID based on the title of the description: 
-
-.. code-block:: bash
-
-   SELECT id FROM information_object_i18n WHERE title='TITLE HERE';
-
-Replace ``TITLE HERE`` with the title of your target description. 
-
-.. _sql-update-publication-status:
-
-Update all draft archival descriptions to published
-===================================================
-
-Use this command to publish all draft descriptions in AtoM:
-
-.. code:: bash
-
-   UPDATE status SET status_id=160 WHERE type_id=158 AND object_id <> 1;
-
-
-.. _sql-update-publication-status-repo:
-
-Update all draft archival descriptions from a particular repository to published
-================================================================================
-
-First, retrieve the id of the repository from the slug. In this example, the
-repository is at http://myatomsite.com/atom/index.php/my-test-repo
-
-.. code:: bash
-
-   SELECT object_id FROM slug WHERE slug='my-test-repo';
-
-Assuming in this example the id returned is 123, you would then execute the
-following query to perform the publication status updates:
-
-.. code:: bash
-
-   UPDATE status
-     SET status_id=160
-     WHERE type_id=158 AND status_id=159
-     AND object_id IN (
-       SELECT id FROM information_object
-       WHERE repository_id=123
-     );
-
-Don't forget to rebuild the search index!
-
-.. code:: bash
-
-   php symfony search:populate
-
-.. _sql-truncate-slugs:
-
-Truncate slugs to maximum character length
-==========================================
-
-This command will truncate all :term:`slugs <slug>` to a specified maximum
-character length. In the example below, the character length is 245.
-
-.. code:: bash
-
-   UPDATE slug SET slug = LEFT(slug, 245) WHERE LENGTH(slug) > 245;
-
-.. _sql-delete-slugs:
-
-Delete slugs from AtoM
-======================
-
-In some cases, you may wish to replace the existing :term:`slugs <slug>` in AtoM -
-particularly if they have been randomly generated because the user-supplied
-data from which the slug is normally derived (e.g. the "Title" field for an
-:term:`archival description`) was not entered when the record was created.
-For more information on how slugs are generated by AtoM, see above,
-:ref:`slugs-in-atom`. If you have since supplied the relevant information
-(e.g. added a title to your archival description), you may want to generate a
-new slug for it that is more meaningful.
-
-In such a case, you will need to delete the slug in AtoM's database first -
-after which you can run the command-line task to generate slugs for those
-without them (see above, :ref:`cli-generate-slugs`). AtoM slugs are
-conveniently stored in a table named "slug" - if you know the slug you'd like
-to delete, you can use the following command to delete it from AtoM's
-database (replacing *your-slug-here* with the slug you'd like to delete):
-
-.. code:: bash
-
-   DELETE FROM slug WHERE slug='your-slug-here';
-
-.. IMPORTANT::
-
-   **Remember**, you will run into problems if you don't replace the slug!
-   You can use the generate-slug task to do so; see
-   :ref:`cli-generate-slugs`, above. Remember as well: if you are trying to
-   replace a randomnly generated slug, but you haven't filled in the data
-   field from which the slug is normally derived prior to deleting the old
-   slug (see :ref:`above <slugs-in-atom>` for more on how slugs are generated
-   in AtoM), you will end up with another randomly generated slug!
-
-If you wanted to delete all slugs associated with descriptions (e.g.
-:term:`information objects <information object>`) and :term:`terms <term>`,
-you could use the following example SQL query to delete them:
-
-.. IMPORTANT::
-
-   Make sure you back up your data before proceeding! See:
-   :ref:`cli-backup-db`.
-
-.. code:: bash
-
-   DELETE
-   FROM slug
-   WHERE (object_id IN
-         (SELECT id
-          FROM term)
-       OR object_id IN
-         (SELECT id
-          FROM information_object))
-   AND object_id <> 1;
-
-You can then use the generate-slugs task to generate new slugs:
-
-.. code:: bash
-
-   php symfony propel:generate-slugs
-
-See :ref:`above <cli-generate-slugs>` for further documentation on this
-command-line tool.
-
-If you wanted to delete **all** slugs currently stored in AtoM, you could do
-so with the following query:
-
-.. code:: bash
-
-   DELETE FROM slug;
-
-.. WARNING::
-
-   This is an extreme action, and it will delete **ALL** slugs, including
-   custom slugs for your static pages - and may break your application. The
-   :ref:`generate-slugs task <cli-generate-slugs>` will not replace fixtures
-   slugs - e.g. those that come installed with AtoM, such as for settings
-   pages, browse pages, menus, etc - or any static pages! We strongly recommend
-   backing up your database before attempting this - see above,
-   :ref:`cli-backup-db` - and we recommend using SQL queries to
-   *selectively* delete slugs!
-
-:ref:`Back to the top <maintenance-cli-tools>`

@@ -27,6 +27,15 @@ outline some of the most common issues, and how to resolve them.
 * :ref:`troubleshooting-support`
 * :ref:`troubleshooting-faq`
 
+.. SEEALSO::
+
+   * :ref:`maintenance-cli-tools`
+   * :ref:`maintenance-populate-search-index`
+   * :ref:`common-atom-queries`
+   * :ref:`maintenance-logging`
+   * :ref:`debug-mode`
+   * :ref:`maintenance-data-backup`
+
 .. _troubleshooting-first-steps:
 
 Figure out the nature of the problem
@@ -298,16 +307,25 @@ If you're using Ubuntu 16.04 0r 18.04 with PHP 7.x:
       sudo systemctl reset-failed atom-worker
       sudo systemctl start atom-worker   
 
-   Also, if you have multiple jobs that never seem to complete stuck in the
-   queue, you may also want to kill the queue itself, and then restart the
-   atom-worker. The following task will clear **all jobs** from the queue
-   (including those currently running, so be careful). You will need to
-   manually restart any jobs you would like to continue via the AtoM user
-   interface after running this command:
+Also, if you have multiple jobs that never seem to complete stuck in the
+queue, you may also want to kill the queue itself, and then restart the
+atom-worker. The following task will clear **all jobs** from the queue
+(including those currently running, so be careful), as well as clear the job 
+history of previous jobs from the database. This means you will need to manually 
+restart any jobs you would like to continue via the AtoM :term:`user interface` 
+after running this command:
 
-   .. code-block:: bash
+.. code-block:: bash
 
-      php symfony jobs:clear
+   php symfony jobs:clear
+
+.. TIP:: 
+
+   A system administrator can also use SQL to kill just a specific stalled job, 
+   if you don't want to lose other jobs in the queue, and/or the job history. 
+   For more information, see: 
+
+   * :ref:`sql-kill-job`
 
 Other useful commands for managing the AtoM worker: 
 
@@ -373,6 +391,8 @@ while monitoring.
    * https://hisham.hm/htop/
    * http://idroot.net/linux/install-htop-ubuntu-16-04-lts/
    * https://www.howtogeek.com/howto/ubuntu/using-htop-to-monitor-system-processes-on-linux/
+
+:ref:`Back to top <maintenance-troubleshooting>`
 
 .. _troubleshooting-execution-limits:
 
@@ -768,12 +788,10 @@ necessary values are present.
 .. TIP::
 
    For basic information on accessing the MySQL database in AtoM from the
-   command-line, see: :ref:`common-atom-queries`
+   command-line, see:  the following section in the :ref:`common-atom-queries` 
+   page: 
 
-   You will need to know the database username and password you used during
-   installation, as well as the database name. If you don't remember these, you
-   can always check them by looking in one of AtoM's configuration files - see:
-   :ref:`config-config-php`.
+   * :ref:`cli-access-mysql`
 
 The following SQL query will output a 4-column table of information objects - the
 columns include the information object ID, the object ID, the publication status
@@ -994,6 +1012,10 @@ the line) the ``WHERE`` line and add the target term ID in place of the ``XXX``:
      GROUP BY term_id
      ORDER BY CountOf desc;
 
+.. SEEALSO:: 
+
+   * :ref:`common-atom-queries`
+
 :ref:`Back to top <maintenance-troubleshooting>`
 
 .. _troubleshooting-support:
@@ -1181,10 +1203,13 @@ If you get an error like the following:
 
 This is a problem in MySQL, please refer to its documentation - make sure you
 are looking at the correct documentation for the version of MySQL have have
-installed. Below is a relevant link for MySQL 5.6:
+installed. Below is a relevant link for MySQL 8.0:
 
-* https://dev.mysql.com/doc/refman/5.6/en/too-many-connections.html
+* https://dev.mysql.com/doc/refman/8.0/en/too-many-connections.html
 
+.. SEEALSO:: 
+
+   * :ref:`common-atom-queries`
 
 .. _faq-mysql-gone-away:
 
@@ -1201,18 +1226,22 @@ If you get an error like the following:
 
 This is a problem in MySQL, please refer to its documentation - make sure you
 are looking at the correct documentation for the version of MySQL have have
-installed. Below is a relevant link for MySQL 5.6:
+installed. Below is a relevant link for MySQL 8.0:
 
-* https://dev.mysql.com/doc/refman/5.6/en/gone-away.html
+* https://dev.mysql.com/doc/refman/8.0/en/gone-away.html
 
 It may be helpful to increase the level of verbosity in the MySQL logs to see if
 more detailss are available. From the MySQL documentation:
 
   You can get more information about the lost connections by starting mysqld with
   the ``--log-warnings=2`` option. This logs some of the disconnected errors in
-  the ``hostname.err`` file. See Section 5.4.2, "The Error Log:
+  the ``hostname.err`` file. See Section 5.4.2, "The Error Log":
 
-  * https://dev.mysql.com/doc/refman/5.6/en/error-log.html
+  * https://dev.mysql.com/doc/refman/8.0/en/error-log.html
+
+.. SEEALSO:: 
+
+   * :ref:`common-atom-queries`
 
 .. _faq-parent-id:
 
@@ -1547,60 +1576,15 @@ panel - ensure you are logging in from a white-listed IP.
 
 If you have accidentally turned on the "Require SSL" setting and can't log in,
 it's possible to use SQL to disable this setting. For basic information on
-accesssing MySQL via the command-line, see: :ref:`common-atom-queries`. You will
+accesssing MySQL via the command-line, see: :ref:`cli-access-mysql`. You will
 need to know the user and password you used for the database when installing AtoM,
 as well as the database name.
 
-.. TIP::
+To use SQL to check and (if necessary) disable the SSL requirement setting, see:
 
-   Can't remember what values you used during installation? You can always find
-   them listed in the ``config/config.php`` AtoM config file. See:
-   :ref:`customization-config-files`.
+* :ref:`sql-disable-ssl`
 
-First, we'll need to figure out the ID of the related SSL setting in your
-database. In the MySQL terminal, run the following query:
-
-.. code-block:: sql
-
-   SELECT name,id FROM setting WHERE name LIKE '%ssl%';
-
-This should return a simple table, like so:
-
-.. code-block:: none
-
-   +-------------------------+----+
-   | name                    | id |
-   +-------------------------+----+
-   | require_ssl_admin       | XX |
-   +-------------------------+----+
-
-Where ``XX`` represents a number. Replace ``XX`` with the number returned in the
-previous query, and check that the value is configured with:
-
-.. code-block:: sql
-
-   SELECT * FROM setting_i18n WHERE id=XX;
-
-Which should return something like the following:
-
-.. code-block:: none
-
-   +-------+----+---------+
-   | value | id | culture |
-   +-------+----+---------+
-   | 1     | XX | en      |
-   +-------+----+---------+
-
-If the value shows ``0`` then the setting is not enabled. However, if it shows
-``1`` (meaning it is enabled) and you need to disable it, use the following -
-once again, use the numerical value returned from the first query in place of
-``XX`` in the example below:
-
-.. code-block:: sql
-
-   UPDATE setting_i18n SET value=0 WHERE id=XX;
-
-The other reason you migh be getting booted back to the home page whenever you
+The other reason you might be getting booted back to the home page whenever you
 try to login is that it's possible login for this installation is disabled via
 a setting in one of AtoM's :ref:`configuration files <customization-config-files>`
 - specifically, the ``config/app.yml`` file.

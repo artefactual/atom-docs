@@ -224,6 +224,7 @@ Maintenance
 * :ref:`maintenance-monitoring`
 * :ref:`maintenance-populate-search-index`
 * :ref:`maintenance-data-backup`
+* :ref:`common-atom-queries`
 * :ref:`maintenance-tuning`
 * :ref:`maintenance-troubleshooting`
 * :ref:`debug-mode`

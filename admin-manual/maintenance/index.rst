@@ -14,6 +14,7 @@ Maintenance
    logging
    monitoring
    data-backup
+   common-atom-queries
    populate-search-index
    tuning
    troubleshooting

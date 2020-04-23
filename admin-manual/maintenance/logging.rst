@@ -21,6 +21,10 @@ logs, depending on what information is needed. In Symfony, the output to these
 logs is controlled by the settings in the ``factories.yml`` file found at
 ``/apps/qubit/config/factories.yml``.
 
+.. SEEALSO:: 
+
+   :ref:`sql-query-log`
+
 Factories in Symfony are "core objects needed by the framework during the life
 of any request. They are configured in the ``factories.yml`` configuration
 file." The ``factories.yml`` file, like several other configuration files in
@@ -110,9 +114,6 @@ EMERG-level messages. Setting ``level`` to DEBUG will log all events.
    See the following in the Symfony documentation for more information on
    Logging: http://symfony.com/legacy/doc/gentle-introduction/1_4/en/16-Application-Management-Tools#chapter_16_logging
 
-.. seealso::
-
-   * :ref:`maintenance-logging`
 
 Example 1: Add a cli factory for increased logging
 --------------------------------------------------
@@ -244,3 +245,11 @@ most Apache web server installs, the following should work:
 .. code:: bash
 
    sudo tail -f /var/log/apache2/error.log
+
+.. SEEALSO::
+
+   * :ref:`sql-query-log`
+   * :ref:`troubleshooting-logs-debug`
+   * :ref:`troubleshooting-resources-limits`
+
+:ref:`Back to top <maintenance-logging>`

@@ -9,65 +9,147 @@ drive failure, data corruption). Make sure to backup all important data on a
 regular basis. We also recommend backing up your data before making any
 changes to AtoM or the underlying database, such as a software upgrade, etc.
 
-On this page you will also find information on
-:ref:`server migration <server-migration>`.
+.. SEEALSO::
 
-Database backup
-===============
+   * :ref:`installation-upgrading`
+   * :ref:`maintenance-troubleshooting`
+   * :ref:`common-atom-queries`
+   * :ref:`maintenance-cli-tools`
 
-We recommend following the instructions linked below provided by Wordpress
-for backing up AtoM data:
+Database backup - overview of options
+=====================================
 
-* `Backing up your database <http://codex.wordpress.org/Backing_Up_Your_Database>`_
-* `Restoring from a backup <http://codex.wordpress.org/Backing_Up_Your_Database#Restoring_From_a_Backup>`_
+.. _MySQL CLI tool: http://dev.mysql.com/doc/refman/8.0/en/mysql.html
+.. _phpMyAdmin: https://www.phpmyadmin.net/
+.. _MySQL Workbench: https://www.mysql.com/products/workbench/
 
-You can follow these instructions using either the `mysql command line tool
-<http://dev.mysql.com/doc/refman/5.0/en/mysql.html>`_ or `phpMyAdmin
-<http://www.phpmyadmin.net/home_page/index.php>`_ .
+We recommend reviewing the overview linked below provided by Wordpress
+for backing up AtoM data, as both applications use MySQL:
 
+* `Backing up your database <https://wordpress.org/support/article/backing-up-your-database/>`_
+* `Restoring from a backup <https://wordpress.org/support/article/backing-up-your-database/#restoring-from-a-backup>`_
 
-Digital Objects backup
-======================
+You can follow these instructions using either the `MySQL CLI tool`_, 
+`phpMyAdmin`_, or `MySQL Workbench`_. 
 
-If your database includes digital objects, you will also need to backup the
-files in ``/uploads`` on a regular basis. See instructions in Server
-migration, below.
+For more detailed instructions on using the `MySQL CLI tool`_ to back
+up AtoM's database, see: 
+
+* :ref:`cli-access-mysql`
+* :ref:`cli-backup-db`
+
+.. SEEALSO:: 
+
+   * :ref:`installation-upgrading`
+
+.. _backup-uploads-downloads:
+
+Uploads and Downloads
+=====================
+
+AtoM stores user uploads and downloads in two directories found just below
+the root AtoM installation directory. 
+
+**Uploads**
+
+The ``uploads`` directory is used to store :term:`digital objects <digital object>`.
+
+The uploads directory typically has one main subdirectory called ``r``. Inside 
+this, the next subdirectories are based on the authorized form of name of 
+:term:`repository` records in the AtoM instance. If users have themed the 
+repositories, then a repository directory will contain a ``conf`` subdirectory, 
+in which you'll find uploaded banners and logos. 
+
+Lower subdirectories after this are used to house 
+:term:`digital objects <digital object>`. For each uploaded or linked object, 
+AtoM will add a SHA-256 hash of the object and then, to avoid collisions and 
+aid in retrieval, it will create a specific set of subdirectories based on this 
+hash - 3 subdirectories named after the first 3 characters in the hash, followed 
+by a final nested subdirectory named after the remaining hash characters. 
+
+.. NOTE:: 
+
+   Older versions of AtoM used only 2 initial subdirectories before creating
+   a final subdirectory with the remaining hash characters. 
+
+The resulting structure looks like so when viewed in a file explorer: 
+
+.. image:: images/uploads-directory.*
+   :align: center
+   :width: 70%
+   :alt: An image of the uploads directory's organization
+
+If your database includes :term:`digital objects <digital object>`, you will 
+want backup the files in ``/uploads`` on a regular basis. 
+
+An example of creating a zipped tarball of your uploads directory: 
+
+.. code:: bash
+
+   cd /usr/share/nginx/atom
+   tar cvf uploads.tar uploads/
+   gzip uploads.tar
+
+**Downloads**
+
+AtoM's ``downloads`` directory is where :ref:`reports <reports-printing>`, 
+:ref:`cached xml <cache-xml-setting>`, generated and uploaded 
+:ref:`finding aids <print-finding-aids>` and downloads created by the 
+:ref:`job scheduler <installation-asynchronous-jobs>` (such as
+:ref:`clipboard exports <csv-export-clipboard>`) are kept:
+
+.. image:: images/downloads-directory.*
+   :align: center
+   :width: 70%
+   :alt: An image of the downloads directory's organization
+
+While previous exports might be considered transitory data not worth keeping, 
+you may want to back up the rest of the contents of this directory. 
+
+.. TIP::
+
+   You may choose to delete the contents of the ``jobs`` subdirectory before 
+   backing up the ``downloads`` directory - this subdirectory generally contains
+   zip files of previous exports. As such, it is temporary data and may not need
+   to be kept. We recommend leaving the ``jobs`` subdirectory itself in place,
+   for future exports.
+
+   If you want to delete the contents of this directory, you can use the
+   following command:
+
+   .. code-block:: bash
+
+      rm -f /usr/share/nginx/atom/downloads/jobs/*
+
+An example of creating a zipped tarball of your downloads directory: 
+
+.. code:: bash
+
+   cd /usr/share/nginx/atom
+   tar cvf downloads.tar downloads/
+   gzip downloads.tar
 
 Translations backup
 ===================
 
+Each public AtoM release includes new :term:`user interface` translations 
+supplied by the global AtoM translation community. However, users with 
+sufficient :term:`permissions <access privilege>` can also add local 
+user interface translations directly via AtoM's user inteface. For more 
+information, see: 
+
+* :ref:`translate-interface`
+
 If you are actively translating the application interface, you will also need
 to backup the translation files in the ``/apps/qubit/i18n`` directory.
 
-.. _server-migration:
+.. WARNING::
 
-Server migration
-----------------
-
-When migrating your AtoM database from server to server, you'll need to copy
-over a number of types of data.
-
-MySQL database
-==============
-
-Make a dump of your Qubit database using ``mysqldump``:
-
-.. code:: bash
-
-   mysqldump -u <MySQL username> -p<MySQL password> -c <database name>
-
-
-Digital objects
-===============
-
-If you've imported digital objects into AtoM, you'll have to create an backup
-of those as well.
-
-.. code:: bash
-
-   cd /path/to/qubit
-   tar cvf uploads.tar uploads/
-   gzip uploads.tar
-
+   At this time, we are troubleshooting challenges in the translation migration
+   process from older releases to |version|. Please see issue
+   `#5505 <https://projects.artefactual.com/issues/5505>`__ for progress - we
+   will update this documentation with instructions when the tranlsation
+   migration process has been optimized and tested. Thank you in advance for
+   your patience.
 
 :ref:`Back to the top <maintenance-data-backup>`

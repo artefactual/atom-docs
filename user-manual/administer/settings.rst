@@ -2052,12 +2052,17 @@ Sockets Layer/Transport Layer Security).
    will end up locking yourself out of your site!
 
 Select yes to require all HTTP requests to be redirected to the HTTPS server,
-changing the URI scheme from "http" to "https."
+changing the URI scheme from "http" to "https." This will only apply to users 
+who are authenticated (logged-in) or visiting the login page. Any attempts to
+log in without using proper HTTPS will redirect to the home page. 
 
-.. NOTE::
+.. TIP::
 
-   This will only apply to users who are authenticated (logged-in) or
-   visiting the login page.
+   If you have accidentally enabled this setting and locked yourself out of 
+   your AtoM site, a system administrator can use SQL to turn off the setting in
+   the database. For more information, see: 
+
+   * :ref:`sql-disable-ssl`
 
 .. _security-require-strong-pass:
 
