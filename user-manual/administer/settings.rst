@@ -2416,11 +2416,13 @@ Items per page
 
 This setting controls how many immediate :term:`child <child record>` 
 descriptions are loaded below the top-level description when users first visit
-a hierarchical description's :term:`view page`. 
+a hierarchical description's :term:`view page`. It also controls the number
+of top-level descriptions that are added to the :term:`hierarchy browser` on
+first load
 
 Like the sidebar treeview, for performance reasons AtoM may not load all
-available descriptions at once, when there are many immediate 
-:term:`children <child record>` below the top-level description in the 
+available descriptions at once in the full-width treeview, when there are many 
+immediate :term:`children <child record>` below the top-level description in the 
 :term:`archival unit`. The default value for this behavior is 50 - meaning, if 
 there are more than 50 immediate children below the parent description, AtoM 
 will add a count of the number of remaining records not immediately displayed to
@@ -2445,6 +2447,12 @@ by choosing "reset".
 To allow for more records to be loaded initially, and with each subsequent click
 of the "More" button, an :term:`administrator` can adjust this "Items per page"
 value. The minimum value is 10, and the maximum value that can be set is 1,000.
+
+The behavior is similar for the :term:`hierarchy browser`, though instead of 
+affecting the number of :term:`children <child record>` loaded below the 
+top-level :term:`archival description`, here the setting will determine how many
+top-level descriptions are loaded in the initial view. See 
+:ref:`browse-hierarchy-browser` for more information. 
 
 :ref:`Back to top <settings>`
 

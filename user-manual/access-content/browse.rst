@@ -263,9 +263,19 @@ browse page that has :term:`children <child record>` will display an
 description. Any child descriptions that in turn have children will also be
 expandable.
 
-A number in the top right corner of the page will indicate how many more
-descriptions can be seen in the hierarchy. Click on that number to bring up the
-next page of results.
+The amount of top-level records loaded into the hierarchy browser when it is 
+first visited will be determined by the :ref:`fwt-items-per-page` setting 
+available at |gears| **Admin > Settings > Treeview**. The default value is 50 
+- an :term:`administrator` can adjust this value up to 1,000.  
+
+At the top right of the page, a "Reset" will be present. Clicking this will 
+return the hierarchy browser to its original state, collapsing all opened nodes
+and displaying only the first load of records. 
+
+Additionally, if there are more top-level descriptions available than those 
+included in the initial load, a second button with a number in the top right 
+corner of the page will indicate how many more descriptions can be seen in the 
+hierarchy. Click on that number to bring up the next page of results.
 
 .. image:: images/browse-hierarchy-more.*
    :align: center
@@ -287,6 +297,7 @@ except:
   treeview (the user should then be able to return to the hierarchy browse page
   where they left off)
 * No filters or facets will be available on the hierarchy browse page
+* The Reset button will remain available at all times
 
 .. SEEALSO::
 
