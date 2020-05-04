@@ -254,11 +254,9 @@ and types of users in AtoM see: :ref:`User roles <user-roles>`.
    The default status of a newly created :term:`archival description` is
    DRAFT. :term:`Draft records <draft record>` are not visible to
    unauthenticated (i.e. not logged in) users such as :term:`researchers
-   <researcher>`. Under the :term:`Administration area` of the archival
-   description, users with publication privileges (see: :ref:`User roles
-   <user-roles>`) can select :term:`PUBLISHED <published record>` as the new
-   status of the archival description, making it available for read access to
-   the public.
+   <researcher>`. To publish your description, see: 
+
+   * :ref:`publish-archival-description`
 
 .. TIP::
 
