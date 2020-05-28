@@ -179,9 +179,14 @@ First, change the current directory:
 
 Now, run the upgrade-sql task:
 
+.. NOTE::
+
+   Depending on your database size, this task may use a lot of memory so we
+   suggest to run it without memory limit.
+
 .. code-block:: bash
 
-   $ php symfony tools:upgrade-sql
+   $ php -d memory_limit=-1 symfony tools:upgrade-sql
 
 .. _upgrading-restore-configuration-changes:
 
@@ -239,9 +244,14 @@ you've imported into your database, and clear the application cache.
 
 First, rebuild the search index:
 
+.. NOTE::
+
+   Depending on your site content, this task may use a lot of memory so we
+   suggest to run it without memory limit.
+
 .. code-block:: bash
 
-   php symfony search:populate
+   php -d memory_limit=-1 symfony search:populate
 
 For more information and options on this task, see:
 :ref:`maintenance-populate-search-index`.
