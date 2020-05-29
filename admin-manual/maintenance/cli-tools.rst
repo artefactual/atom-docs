@@ -253,6 +253,389 @@ Sample response:
 
 :ref:`Back to top <maintenance-cli-tools>`
 
+.. _cli-search-output:
+
+See the search index output for a description
+=============================================
+
+This task will output the full search index of a particular 
+:term:`archival description`, which can be useful for determining index mappings, 
+or troubleshooting why a search is not returning the expected results. The task
+takes the :term:`slug` of a target description as input. Basic syntax:
+
+.. code-block:: bash
+
+   php symfony search:document your-slug-here
+
+Where ``your-slug-here`` in the example above represents the :term:`slug` of the
+target description. Sample output: 
+
+.. code-block:: bash
+
+   {
+       "findingAid": {
+           "transcript": null,
+           "status": null
+       },
+       "slug": "example-fonds",
+       "parentId": "1",
+       "identifier": "F1",
+       "referenceCode": "F1",
+       "referenceCodeWithoutCountryAndRepo": "F1",
+       "levelOfDescriptionId": "2002760",
+       "publicationStatusId": "160",
+       "lft": "808",
+       "alternativeIdentifiers": [
+           {
+               "label": "Alternate identifier label 1",
+               "identifier": "ALT-ID1"
+           },
+           {
+               "label": "Alternative identifer label 2",
+               "identifier": "ALT-ID2"
+           }
+       ],
+       "ancestors": [
+           1
+       ],
+       "children": [
+           "2013948"
+       ],
+       "digitalObject": {
+           "mediaTypeId": "136",
+           "usageId": "166",
+           "filename": "cat.jpg",
+           "thumbnailPath": "\/uploads\/r\/example-repository\/1\/4\/7\/14733117bf539c20ab6d4596b2842eeb9314d6cf48cabad809b90c455ef377b0\/cat_142.jpg",
+           "digitalObjectAltText": null
+       },
+       "hasDigitalObject": true,
+       "dates": [
+           {
+               "startDate": "2015-01-01",
+               "startDateString": "2015-01-01",
+               "endDate": "2016-12-31",
+               "endDateString": "2016-12-31",
+               "actorId": "2013941",
+               "typeId": "111",
+               "sourceCulture": "en",
+               "i18n": {
+                   "languages": [
+                       "en"
+                   ],
+                   "en": {
+                       "date": "January 1, 2015 - December 31, 2016"
+                   }
+               }
+           },
+           {
+               "startDate": "2016-01-01",
+               "startDateString": "2016",
+               "endDate": "2016-12-31",
+               "endDateString": "2016",
+               "actorId": "2013943",
+               "typeId": "118",
+               "sourceCulture": "en",
+               "i18n": {
+                   "languages": [
+                       "en"
+                   ],
+                   "en": {
+                       "date": "2016"
+                   }
+               }
+           }
+       ],
+       "startDateSort": "2015-01-01",
+       "endDateSort": "2016-12-31",
+       "repository": {
+           "id": "2013921",
+           "slug": "example-repository",
+           "identifier": null,
+           "i18n": {
+               "languages": [
+                   "en"
+               ],
+               "en": {
+                   "authorizedFormOfName": "Example Repository"
+               }
+           }
+       },
+       "directPlaces": [
+           "2013929",
+           "2013930"
+       ],
+       "places": [
+           {
+               "id": "2013929",
+               "slug": "place-access-point-1",
+               "taxonomyId": "42",
+               "isProtected": false,
+               "numberOfDescendants": 0,
+               "createdAt": "2020-05-29T13:58:10Z",
+               "updatedAt": "2020-05-29T13:58:10Z",
+               "sourceCulture": "en",
+               "i18n": {
+                   "languages": [
+                       "en"
+                   ],
+                   "en": {
+                       "name": "Place access point 1"
+                   }
+               }
+           },
+           {
+               "id": "2013930",
+               "slug": "place-access-point-2",
+               "taxonomyId": "42",
+               "isProtected": false,
+               "numberOfDescendants": 0,
+               "createdAt": "2020-05-29T13:58:10Z",
+               "updatedAt": "2020-05-29T13:58:10Z",
+               "sourceCulture": "en",
+               "i18n": {
+                   "languages": [
+                       "en"
+                   ],
+                   "en": {
+                       "name": "Place access point 2"
+                   }
+               }
+           }
+       ],
+       "directSubjects": [
+           "2013925",
+           "2013926"
+       ],
+       "subjects": [
+           {
+               "id": "2013925",
+               "slug": "subject-access-point-1",
+               "taxonomyId": "35",
+               "isProtected": false,
+               "numberOfDescendants": 0,
+               "createdAt": "2020-05-29T13:58:10Z",
+               "updatedAt": "2020-05-29T13:58:10Z",
+               "sourceCulture": "en",
+               "i18n": {
+                   "languages": [
+                       "en"
+                   ],
+                   "en": {
+                       "name": "Subject access point 1"
+                   }
+               }
+           },
+           {
+               "id": "2013926",
+               "slug": "subject-access-point-2",
+               "taxonomyId": "35",
+               "isProtected": false,
+               "numberOfDescendants": 0,
+               "createdAt": "2020-05-29T13:58:10Z",
+               "updatedAt": "2020-05-29T13:58:10Z",
+               "sourceCulture": "en",
+               "i18n": {
+                   "languages": [
+                       "en"
+                   ],
+                   "en": {
+                       "name": "Subject access point 2"
+                   }
+               }
+           }
+       ],
+       "directGenres": [
+           "2013933",
+           "2013934"
+       ],
+       "genres": [
+           {
+               "id": "2013933",
+               "slug": "genre-access-point-1",
+               "taxonomyId": "78",
+               "isProtected": false,
+               "numberOfDescendants": 0,
+               "createdAt": "2020-05-29T13:58:10Z",
+               "updatedAt": "2020-05-29T13:58:10Z",
+               "sourceCulture": "en",
+               "i18n": {
+                   "languages": [
+                       "en"
+                   ],
+                   "en": {
+                       "name": "Genre access point 1"
+                   }
+               }
+           },
+           {
+               "id": "2013934",
+               "slug": "genre-access-point-2",
+               "taxonomyId": "78",
+               "isProtected": false,
+               "numberOfDescendants": 0,
+               "createdAt": "2020-05-29T13:58:10Z",
+               "updatedAt": "2020-05-29T13:58:10Z",
+               "sourceCulture": "en",
+               "i18n": {
+                   "languages": [
+                       "en"
+                   ],
+                   "en": {
+                       "name": "Genre access point 2"
+                   }
+               }
+           }
+       ],
+       "names": [
+           {
+               "id": "2013937",
+               "i18n": {
+                   "languages": [
+                       "en"
+                   ],
+                   "en": {
+                       "authorizedFormOfName": "Name access point 1"
+                   }
+               }
+           },
+           {
+               "id": "2013939",
+               "i18n": {
+                   "languages": [
+                       "en"
+                   ],
+                   "en": {
+                       "authorizedFormOfName": "Name access point 2"
+                   }
+               }
+           },
+           {
+               "id": "2013943",
+               "i18n": {
+                   "languages": [
+                       "en"
+                   ],
+                   "en": {
+                       "authorizedFormOfName": "Accumulator (ISAD 3.2.1)"
+                   }
+               }
+           }
+       ],
+       "creators": [
+           {
+               "id": "2013941",
+               "slug": "creator-isad-3-2-1",
+               "entityTypeId": null,
+               "hasDigitalObject": false,
+               "descriptionIdentifier": null,
+               "corporateBodyIdentifiers": null,
+               "actorRelations": [],
+               "createdAt": "2020-05-29T13:58:10Z",
+               "updatedAt": "2020-05-29T13:58:10Z",
+               "sourceCulture": "en",
+               "i18n": {
+                   "languages": [
+                       "en"
+                   ],
+                   "en": {
+                       "authorizedFormOfName": "Creator (ISAD 3.2.1)",
+                       "history": "Example fonds Creator history (ISAD 3.2.2). Note that this will be added to the related authority record for Creator (ISAD 3.2.1)."
+                   }
+               }
+           }
+       ],
+       "physicalObjects": [
+           {
+               "sourceCulture": "en",
+               "i18n": {
+                   "languages": [
+                       "en"
+                   ],
+                   "en": {
+                       "name": "Example Shelf",
+                       "location": "Example Shelf Location"
+                   }
+               }
+           }
+       ],
+       "generalNotes": [
+           {
+               "sourceCulture": "en",
+               "i18n": {
+                   "languages": [
+                       "en"
+                   ],
+                   "en": {
+                       "content": "Example fonds General note (ISAD 3.6.1)"
+                   }
+               }
+           },
+           {
+               "sourceCulture": "en",
+               "i18n": {
+                   "languages": [
+                       "en"
+                   ],
+                   "en": {
+                       "content": "Example fonds General note 2"
+                   }
+               }
+           }
+       ],
+       "archivistsNotes": [
+           {
+               "sourceCulture": "en",
+               "i18n": {
+                   "languages": [
+                       "en"
+                   ],
+                   "en": {
+                       "content": "Example fonds Archivist's notes (ISAD 3.7.1)"
+                   }
+               }
+           }
+       ],
+       "actRights": [],
+       "basisRights": [],
+       "createdAt": "2020-05-29T13:58:10Z",
+       "updatedAt": "2020-05-29T13:58:10Z",
+       "sourceCulture": "en",
+       "i18n": {
+           "languages": [
+               "en"
+           ],
+           "en": {
+               "title": "Example fonds",
+               "extentAndMedium": "Example fonds Extent and medium (ISAD 3.1.5)",
+               "archivalHistory": "Example fonds Archival history (ISAD 3.2.3)",
+               "acquisition": "Immediate source of acquisition or transfer (ISAD 3.2.4)",
+               "scopeAndContent": "Example fonds Scope and content (ISAD 3.3.1)",
+               "appraisal": "Example fonds Appraisal, destruction and scheduling (ISAD 3.3.2)",
+               "accruals": "Example fonds Accruals (ISAD 3.3.3)",
+               "arrangement": "Example fonds System of arrangement (ISAD 3.3.4)",
+               "accessConditions": "Example fonds Conditions governing access (ISAD, 3.4.1)",
+               "reproductionConditions": "Example fonds Conditions governing reproduction (ISAD 3.4.2)",
+               "physicalCharacteristics": "Example fonds Physical characteristics and technical requirements (ISAD 3.4.4)",
+               "findingAids": "Example fonds Finding aids (ISAD 3.4.5)",
+               "locationOfOriginals": "Example fonds Existence and location of originals (ISAD 3.5.1)",
+               "locationOfCopies": "Example fonds Existence and location of copies (ISAD 3.5.2)",
+               "relatedUnitsOfDescription": "Example fonds Related units of description (ISAD 3.5.3)",
+               "institutionResponsibleIdentifier": "Example fonds Institution identifier (Control area)",
+               "rules": "Example fondsRules or conventions (ISAD 3.7.2)",
+               "sources": "Example fonds Sources (Control area)",
+               "revisionHistory": "Example fonds Dates of creation, revision and deletion (Control area)"
+           }
+       }
+   }
+
+.. SEEALSO::
+
+   * :ref:`cli-search-status`
+   * :ref:`maintenance-populate-search-index`
+   * :ref:`es-fields-atom`
+
+:ref:`Back to top <maintenance-cli-tools>`
+
 .. _cli-regenerate-derivatives:
 
 Regenerating derivatives
