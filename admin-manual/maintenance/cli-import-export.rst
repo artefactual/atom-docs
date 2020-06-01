@@ -2019,7 +2019,7 @@ This example could also be written as follows, use the short names for the optio
 
 .. SEEALSO::
 
-   * :ref:`cli-normalize-physical-object:`
+   * :ref:`cli-normalize-physical-object`
 
 
 :ref:`Back to top <cli-import-export>`
