@@ -2017,6 +2017,11 @@ This example could also be written as follows, use the short names for the optio
 
    php symfony csv:physicalobject-import -u -s --multi-match="all" -p -o=10 -l="/usr/share/nginx/atom/errors.log" -i /path/to/my/storage.csv
 
+.. SEEALSO::
+
+   * :ref:`cli-normalize-physical-object:`
+
+
 :ref:`Back to top <cli-import-export>`
 
 .. _csv-import-progress:

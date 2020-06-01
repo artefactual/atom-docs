@@ -1149,6 +1149,10 @@ to manage physical object storage locations and to perform the following:
 * Consolidate duplicated storage location information.
 * Delete physical object storage locations not linked to any descriptions.
 
+.. SEEALSO::
+
+   * :ref:`csv-import-storage-cli`
+
 Normalize physical object data
 ------------------------------
 
