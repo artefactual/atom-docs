@@ -1580,7 +1580,10 @@ You can delete a description's associated digital object from the command-line
 if you know the related description's :term:`slug`, using the 
 ``digitalobject:delete`` task. The task also includes an option to delete 
 digital objects from all descendant records, when a 
-:term:`parent <parent record>` description slug is provided.  
+:term:`parent <parent record>` description slug is provided. Alternatively, you 
+can delete **all** digital objects associated with a particular 
+:term:`archival institution` by prodiving the :term:`slug` of the associated
+:term:`repository` instead of a description slug.   
 
 .. TIP::
 
@@ -1596,9 +1599,10 @@ The basic syntax for the task is:
 
 .. code-block:: bash
 
-    php symfony digitalobject:delete slug-of-description
+    php symfony digitalobject:delete target-slug
 
-Where ``slug-of-description`` represents the slug of the target record. 
+Where ``target-slug`` represents the slug of the target record - either an 
+:term:`archival description` or an :term:`archival institution`. 
 
 By running ``php symfony help digitalobject:delete`` we can see the
 command-line's help output for the task:
@@ -1612,9 +1616,22 @@ The ``--application``, ``--env``, and ``connection`` options **should not be
 used** - AtoM requires the uses of the pre-set defaults for Symfony to be
 able to execute the task.
 
+The ``--dry-run`` option can be used to test the effects of the task by 
+reviewing the console output. When used, no deletions will take place and your
+data will be unchanged, but the console output will give you a count of affected
+records to review. An example output:
+
+.. image:: images/cli-delete-object-dry.*
+   :align: center
+   :width: 85%
+   :alt: An image of the command-line's dry run output for the digital object delete task
+
 **Deleting digital objects from a multi-level hierarchy**
 
-The task also include one user option, ``--and-descendants``, that can be used to delete all digital objects from an :term:`archival unit`. When using the ``--and-descendants`` option, the slug you provide should be for the top-level description in the hierarchy. Example use: 
+The task also includes the ``--and-descendants`` option, which can be used to
+delete all digital objects from all levels of an :term:`archival unit`. When
+using the ``--and-descendants`` option, the slug you provide should be for the
+top-level description in the hierarchy. Example use:
 
 .. code-block:: bash
 
@@ -1622,6 +1639,36 @@ The task also include one user option, ``--and-descendants``, that can be used t
 
 Where ``slug-of-top-description`` represents the slug of the top-level 
 :term:`parent <parent record>` description. 
+
+Additionally, the ``--media-types`` option can be used to target only a specific 
+type of digital object for deletion. Options supported are: 
+
+* audio
+* video
+* image
+* text
+* other
+
+Example usage - deleting only video files from all levels of an archival 
+hierarchy:
+
+.. code-block:: bash
+
+   php symfony digitalobject:delete --media-type="video" --and-descendants slug-of-top-description
+
+**Deleting all digital objects associated with a repository**
+
+Instead of providing an :term:`archival description` slug, you can provide the 
+:term:`slug` of an :term:`archival institution` (AKA repository) record to 
+delete **all** digital objects linked to descriptions associated with a 
+particular repository. When a repository slug is used, the ``--and-descendants`` 
+option will be ignored - by default, providing a repository slug means that ALL 
+associated digital objects at all levels will be deleted from the related 
+descriptions. 
+
+You can still use the ``--dry-run`` and ``--media-types`` options when providing 
+an archival institution slug. 
+
 
 .. IMPORTANT::
 
