@@ -1478,7 +1478,10 @@ and any existing data in the related field will be preserved.
    At this time, not all fields in the :term:`authority record` template can
    be updated. Primarily, these are fields that are found in other tables in
    the AtoM database than the primary authority record table. For further
-   details, see: :ref:`csv-actors-match-update`.
+   details, see: 
+
+   * :ref:`csv-update-actors`
+   * :ref:`csv-actors-update-fields`
 
 With the "*delete-and-replace*" update option, AtoM will delete the matches
 prior to importing the CSV data as a new record to replace it.

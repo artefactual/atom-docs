@@ -2624,6 +2624,7 @@ with any additional import options available when importing updates.
 
 **Jump to:**
 
+* :ref:`csv-actors-update-fields`
 * :ref:`csv-actors-match-update`
 * :ref:`csv-actors-delete-replace`
 * :ref:`csv-actors-update-gui`
@@ -2652,6 +2653,72 @@ will skip the unmatched CSV row and report it in the console output found on
 the :ref:`Job details <job-details>` page of the related import job - see:
 :ref:`manage-jobs` for more information.
 
+.. _csv-actors-update-fields:
+
+Authority record fields that will support update imports
+--------------------------------------------------------
+
+Currently not all fields in AtoM's :term:`authority record` metadata template
+can be updated via import. Only those fields which are found in AtoM's primary
+``actor`` and ``actor_i18n`` database tables will support updates in place. 
+Additionally, because the ``authorizedFormOfName`` field is used for matching
+on import, editing this field will cause a match to fail - meaning it can't be
+updated via CSV import. Below is a list of supported fields that can be updated
+in place: 
+
+* typeOfEntity
+* corporateBodyIdentifiers    
+* datesOfExistence    
+* history 
+* places  
+* legalStatus 
+* functions   
+* mandates    
+* internalStructures  
+* generalContext
+* digitalObjectURI
+* digitalObjectPath
+* descriptionIdentifier   
+* institutionIdentifier   
+* rules   
+* status  
+* levelOfDetail   
+* revisionHistory 
+* sources 
+* maintenanceNotes
+
+.. NOTE::
+
+   While the ``typeOfEntity`` can be updated via CSV import, at present the 
+   import will only succeed when using terms that have already been added to the 
+   Actor Entity Types :term:`taxonomy`. If you try to add a new entity type
+   via import without **first** adding it to the taxonomy, the import will fail! 
+
+There are also additional fields that are not stored in AtoM's primary
+:term:`authority record` database tables that can potentially receive new
+data via an update import. In these cases, existing data will **not**
+be replaced - instead, the update import will append new data to the existing 
+resources, leaving the current data in place as well. These fields typically 
+relate to :term:`access point` fields (such as subjects, places, and 
+occupations), as well as alternative forms of name.  
+
+Below is a list of fields to which new data can be appended via an update
+import - any existing data will be left in place:
+
+* parallelFormsOfName 
+* standardizedFormsOfName 
+* otherFormsOfName
+* actorOccupations   
+* actorOccupationNotes
+* subjectAccessPoints 
+* placeAccessPoints 
+
+.. NOTE::
+
+   Attempting to update the note associated with an existing actor occupation 
+   :term:`access point` will cause the access point to be duplicated - the
+   updated note will be associated with the new duplicate term. 
+
 .. _csv-actors-match-update:
 
 Update authority records in place via CSV import
@@ -2678,27 +2745,14 @@ To import a CSV as updates to existing authority records, select the option
 
    At this time, not all fields in the :term:`authority record` can be updated.
    Primarily, these are fields that are found in other tables in the AtoM
-   database than the primary authority record table. Examples of fields that
-   **cannot** currently be updated this way include:
-
-   * Name (changing the authority record name in your CSV will cause the match
-     to fail)
-   * Parallel form(s) of name
-   * Standardized form(s) of name according to other rules
-   * Other form(s) of name
-   * Any relationships to other authority records
-   * Language(s)
-   * Script(s)
+   database than the primary authority record table. Please see the list of
+   supported fields in the :ref:`section above <csv-actors-update-fields>` for 
+   more information.
 
    If you wish to update these fields, you might want to either make the
    changes manually, or consider the "delete and replace" method. However,
-   please read the details :ref:`below <csv-repo-delete-replace>` on the
+   please read the details :ref:`below <csv-actors-delete-replace>` on the
    limitations of Delete and replace as well before proceeding!
-
-   Note as well that any existing :term:`access point` data (for example, the
-   Occupations access point on the authority record) cannot be modified or
-   removed via this method - though new access points can be added via this
-   "Match and update" approach.
 
 See :ref:`below <csv-actors-update-gui>` for step-by-step instructions on
 importing repository updates via the user interface.
@@ -2724,7 +2778,7 @@ find them and manually delete them via the user interface after the import.
 Once the original matched authority record has been deleted, the CSV
 import proceeds as if the record is new. That is to say, just as AtoM does not
 automatically delete entities related to the original archival institution,
-it *also* not automatically re-link previously related entities.
+it **also** does not automatically re-link previously related entities.
 
 .. WARNING::
 
@@ -2755,7 +2809,7 @@ import page.
          user interface
 
 See :ref:`below <csv-actors-update-gui>` for step-by-step instructions on
-importing repository updates via the user interface.
+importing authority record updates via the user interface.
 
 .. _csv-actors-update-gui:
 
@@ -2830,6 +2884,7 @@ updates.
 
    You can read more about each update option in the sections above:
 
+   * :ref:`csv-actors-update-fields`
    * :ref:`csv-actors-match-update`
    * :ref:`csv-actors-delete-replace`
 
