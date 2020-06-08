@@ -1119,6 +1119,7 @@ Here is the list of related entity fields that are searchable in the global
    creators.otherNames.i18n.%LANG%.name
    creators.parallelNames.i18n.%LANG%.name
    creators.standardizedNames.i18n.%LANG%.name
+   creators.i18n.%LANG%.history
    genres.i18n.%LANG%.name
    names.i18n.%LANG%.authorizedFormOfName
    names.otherNames.i18n.%LANG%.name
