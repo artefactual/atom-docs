@@ -439,7 +439,8 @@ Subject and Place browse pages
 
 :term:`Subject` and :term:`Place` terms can be used in AtoM as
 :term:`access points <access point>`, and then browsed to explore the
-:term:`archival descriptions <archival description>` to which they are linked.
+:term:`archival descriptions <archival description>` and/or 
+:term:`authority records <authority record>` to which they are linked.
 For more information, see:
 :ref:`Browse subjects and places <browse-subjects-places>`.
 
@@ -449,28 +450,39 @@ For more information, see:
    :alt: Context menu shown for term browse
 
 When a term has been selected from the Subject or Places browse page, the user is
-redirected to a term browse page, listing descriptions related to that term as
-an access point. The context menu on this term browse page appears on both the
-left and right-hand sides, and includes the following elements:
+redirected to a term browse page, listing descriptions and authorities related 
+to that term as an access point. The context menu on this term browse page 
+appears on both the left and right-hand sides, and includes the following 
+elements:
 
 1. A terms :term:`treeview` on the left side of the page, with a list view and a
    term search included in separate tabs. The terms treeview is discussed in
-   greater detail below: :ref:`context-menu-terms-treeview`.
+   greater detail below: :ref:`context-menu-terms-treeview`. For further 
+   information on searching for terms, see: 
+   :ref:`Searching for terms <dedicated-search-terms>`.
 
-2. Below the :term:`treeview`, addtional :term:`facet filters <facet filter>` that
-   can be applied to the browse results are listed. For more information on using
-   facet filters in AtoM, see: :ref:`recurring-facet-filters`.
+2. Below the :term:`treeview`, addtional :term:`facet filters <facet filter>` 
+   that can be applied to the browse results are listed, if relevant. For more 
+   information on using facet filters in AtoM, see: :ref:`recurring-facet-filters`.
 
 3. On the right side of the page, additional contextual information is provided.
    This includes:
 
-   * A count of :term:`archival description` results that have been linked to
-     the term
+   * A count of the currently selected :term:`entity` type results that have 
+     been linked to the term. AtoM will only display related results for one
+     entity type at a time - you can use the results tabs at the top of the 
+     :term:`view page` to switch between :term:`archival description` and 
+     :term:`authority record` result lists. The count shown in the right context 
+     menu is specific to the currently selected entity type - in the screenshot
+     above for example, it is showing a count of related descriptions, and not
+     a total of all results across entity types. 
    * If the current term is part of a hierarchy, a link to the
      :term:`parent record` is included under the heading *Broader term*.
    * If the current term has :term:`children <child record>` in the taxonomy, a
      count of child terms nested under the current selection is listed under the
      heading *No. narrower terms*.
+   * SKOS import and export links are also provided in the right-hand context 
+     menu. For more information, see: :ref:`import-export-skos`.
 
 .. SEEALSO::
 

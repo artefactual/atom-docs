@@ -1274,14 +1274,10 @@ Terms
    :height: 18
    :width: 18
 
-As of AtoM 2.1, a  dedicated search box for :term:`terms <term>` has been provided
-on the :ref:`browse page <page-type-browse>` for each :term:`taxonomy`. In
-AtoM 2.1, the public interface for browsing :term:`places <place>` and
-:term:`subjects <subject>` was redesigned to make useful elements of the
-taxonomy and term management pages available to unauthenticated (i.e. public)
-users - for more information, see: :ref:`terms`.
+A dedicated search box for :term:`terms <term>` is available on the 
+:ref:`browse page <page-type-browse>` for each :term:`taxonomy`. 
 
-In the following example, the :term:`Place` taxonomy has been used to
+In the following example, the :term:`Places <place>` taxonomy has been used to
 demonstrate the search functionality, because it is one of the modules (along
 with Subjects) where the search box is available to both authenticated and
 public users. However, the same search box has been included on all
@@ -1355,11 +1351,14 @@ and then selecting a taxonomy).
    :width: 70%
    :alt: An image of the places search results
 
-6. The results page includes a :term:`sort button` (allowing you to sort
-   results to show them in alphabetic order, or most recently created/updated)
-   and a set of :term:`facet filters <facet filter>` to help you sift through
-   results. For more information on these elements, see
+6. The results page includes :term:`sort buttons <sort button>` (allowing you to 
+   sort results to show them in alphabetic order or most recently 
+   created/updated) and a set of :term:`facet filters <facet filter>` to help 
+   you sift through results. For more information on these elements, see
    :ref:`recurring-sort-button` and :ref:`recurring-facet-filters`.
+
+   For more information on the :term:`user interface` elements available on term 
+   search and browse pages, see: :ref:`browse-subjects-places`
 
 .. TIP::
 
@@ -1376,7 +1375,15 @@ and then selecting a taxonomy).
 
 8. When you have found the record you are searching for, click on its title in
    the results, and AtoM will redirect you to the selected term's
-   :term:`view page`.
+   :term:`view page`. The view page will include any further information 
+   available about the term (such as scope and source notes, related terms, etc), 
+   as well as tabs showing related :term:`archival description` and 
+   :term:`authority record` results that have been linked to the term. 
+
+.. image:: images/term-view-page.*
+   :align: center
+   :width: 70%
+   :alt: An image of a term view page, with related results tabs at the top
 
 .. _es-fields-term:
 

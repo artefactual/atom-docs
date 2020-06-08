@@ -1068,12 +1068,13 @@ value with the current page number.
 Subjects and Places are two different kinds of :term:`terms <term>`, which are
 managed via :term:`taxonomies <taxonomy>`. Subjects and Places, however, can also
 be used as :term:`access points <access point>` associated with
-:term:`archival descriptions <archival description>`, and public users can
-browse terms and view :term:`published <published record>` descriptions
-associated with those terms as access points.
+:term:`archival descriptions <archival description>` and 
+:term:`authority records <authority record>`, and public users can browse terms 
+and view :term:`published <published record>` descriptions and/or authority 
+records associated with those terms as access points.
 
 To do so, click the :term:`Browse menu`, then click either Subjects or Places.
-The following images and instructions will use examples from the Place browse
+The following images and instructions will use examples from the Places browse
 page - however, the page types are exactly the same for the Subjects browse.
 Once clicked, a user will be redirected to a browse page.
 
@@ -1097,8 +1098,9 @@ browse page. Each is described below.
    :term:`administrator` can also configure application-wide defaults for public
    and authenticated users via **Admin > Settings** - for more information, see:
    :ref:`sort-browser-users` and :ref:`sort-browser-anonymous`.
-3. The number of descriptions associated with a particular term as an
-   :term:`access point` is listed in the "Results" column.
+3. The number of descriptions and authority records associated with a particular 
+   term as an :term:`access point` are listed in the *Archival description 
+   count* and *Authority record count* columns.
 4. If alternate, non-preferred names have been added to the term's "Use for"
    :term:`field`, they will be displayed under the authorized form of name.
 5. If a term listed in the browse page has :term:`children <child record>` (e.g.
@@ -1115,7 +1117,7 @@ browse page. Each is described below.
 A count of total terms is provided at the top of the browse page. Terms appearing
 in the first column of the browse page's table are hyperlinks - click on a term
 to see further information about the term and related descriptions. AtoM will
-redirect you to a new browse page, described below.
+redirect you to a term view page, described below.
 
 .. image:: images/browse-place-term2.*
    :align: center
@@ -1136,7 +1138,12 @@ redirect you to a new browse page, described below.
    AtoM, see: :ref:`translate`.
 3. Additional contextual information is included in the :term:`context menu`.
    For more detailed information on the elements of the context menu in this page,
-   see the :ref:`context-menu-terms` entry on the Context menu page.
+   see the :ref:`context-menu-terms` entry on the Context menu page. Note that 
+   for the Results count, this is :term:`entity` specific - in the example 
+   shown here, it is showing the count of related :term:`archival description` 
+   records, since the results tab (described below in 8) is currently on
+   the description results. A separate count for related :term:`authority record` 
+   results will be shown when the tab is changed. 
 4. A :term:`treeview` for navigating hierarchically organized terms is included in
    the left-hand context menu. Details on its features and uses are described
    here: :ref:`Terms treeview <context-menu-terms-treeview>`.
@@ -1146,18 +1153,26 @@ redirect you to a new browse page, described below.
    more information on the fields available and their uses, see:
    :ref:`term-data-entry`.
 6. Below the :term:`treeview`, addtional :term:`facet filters <facet filter>` that
-   can be applied to the browse results are listed. For more information on using
-   facet filters in AtoM, see: :ref:`recurring-facet-filters`.
+   can be applied to the browse results are listed, if available. For more 
+   information on using facet filters in AtoM, see: :ref:`recurring-facet-filters`.
 7. If a user is authenticated (i.e. logged in) and has edit permissions, a
    :term:`button block` will be visible on the page, allowing the user to edit,
    delete, or add new terms. For more general information on working with terms
    in AtoM, see: :ref:`terms`, and especially :ref:`term-data-entry`. Public
    users who are not logged in will not see the button block.
-8. Below the term information, :term:`archival descriptions
-   <archival description>` that are linked to the current term as
-   :term:`access points <access point>` are displayed as results. Clicking on a
-   description result will redirect the user to the :term:`view page` for that
-   result.
+8. At the top of the page, result tabs will be available, showing a count
+   of related :term:`archival descriptions <archival description>` and 
+   :term:`authority records <authority record>`, where the current term has 
+   been used as an :term:`access point`. The related results for the currently
+   selected tab are shown further below (see 9). Click the tabs to show the 
+   related results for each :term:`entity` type.
+9. Below the term information, results that are linked to the current term as
+   :term:`access points <access point>` are displayed. Clicking on a related result 
+   will redirect the user to the :term:`view page` for that record. Note that 
+   while access points can be linked to both authority records and descriptions, 
+   only one :term:`entity` type is shown at a time. Use the result tabs at the 
+   top of the page (described above in 8) to switch between the different result 
+   types.
 
 .. _browse-subjects-places-results:
 
