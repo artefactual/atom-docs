@@ -57,13 +57,14 @@ such as:
   cache, for example) - default is sfAPCCache
 * Enable read-only mode, if you want to remove the login button and prevent
   users from logging into the application.
-* Set a Google Maps API key (for use in the Archival institution template,
-  to generate dynamic Google Maps)
 * Set a Google Analytics API key, for basic installation-wide analytics via
-  Google
+  Google - see: :ref:`maintenance-web-analytics`
+* Set a Google Tag Manager API key, for further element-specific analytics
 * Enable htmlpurifier_ - limits HTML on static pages to a white-list of approved
   elements and attributes, to prevent XSS - see: :ref:`security-static-pages`
   for more information.
+* Increase the maximum allowed value for the full-width :term:`treeview` paging
+  limit - see: :ref:`fwt-items-per-page`
 
 .. image:: images/app-yml-settings.*
    :align: center

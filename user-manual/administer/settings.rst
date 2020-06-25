@@ -2451,7 +2451,26 @@ by choosing "reset".
 
 To allow for more records to be loaded initially, and with each subsequent click
 of the "More" button, an :term:`administrator` can adjust this "Items per page"
-value. The minimum value is 10, and the maximum value that can be set is 1,000.
+value. The minimum value is 10, and the maximum value that can be set via the 
+:term:`user interface` is 10,000.
+
+.. TIP::
+
+   If your site has very large hierarchies and you need to set the initial page 
+   load value higher than 10,000 records, a system administrator can modify this 
+   max value in the configuration file found at ``config/app.yml``.
+   Look for the following line in the file: 
+
+   .. code-block:: bash
+
+      treeview_items_per_page_max: 10000
+
+   After the change, you will need to clear the application cache, and restart
+   PHP-FPM. For more information, see:
+
+   * :ref:`customization-config-files`
+   * :ref:`maintenance-clear-cache`
+   * :ref:`troubleshooting-restart-php-fpm`
 
 The behavior is similar for the :term:`hierarchy browser`, though instead of 
 affecting the number of :term:`children <child record>` loaded below the 
