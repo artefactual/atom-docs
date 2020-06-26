@@ -881,6 +881,32 @@ rebuild all nested sets in AtoM:
 
    php symfony propel:build-nested-set
 
+This task also includes one option that can be used to exclude certain 
+:term:`entity` types from the task's execution. The ``--exclude-tables`` option 
+supports the following options:
+
+* information_object
+* term
+* menu
+
+Multiple options can be passed by separating them with a comma. Example use - if 
+you only wanted to rebuild the nested set for information objects (AKA 
+:term:`archival descriptions <archival description>`), then you can exclude the 
+term and menu rebuilds like so:
+
+.. code-block:: bash
+
+   php symfony propel:build-nested-set --exclude-tables="term,menu"
+
+Example output:
+
+.. image:: images/cli-nested-set-exclude-types.*
+   :align: center
+   :width: 85%
+   :alt:   An image of the nested set task being run when using exclude-tables
+
+:ref:`Back to top <maintenance-cli-tools>`
+
 .. _cli-generate-slugs:
 
 Generate slugs
