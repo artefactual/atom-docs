@@ -63,7 +63,8 @@ can be used.
 
 .. SEEALSO::
 
-   * :ref:`clipboard-save-setting`
+   * :ref:`clipboard-settings`
+   * :ref:`clipboard-sending`
    * :ref:`archival-descriptions`
    * :ref:`authority-records`
    * :ref:`archival-institutions`
@@ -343,6 +344,10 @@ Clipboard page - but be aware: using the "Clear selections" option in the
 Clipboard menu when elsewhere in the application will **immediately** remove
 all results!
 
+.. SEEALSO::
+
+   * :ref:`clipboard-sending`
+
 .. _clipboard-export-all:
 
 Using the clipboard to export records
@@ -363,6 +368,7 @@ general :ref:`import-export` documentation. For more information, see:
    * :ref:`clipboard`
    * :ref:`manage-jobs`
    * :ref:`csv-export-search`
+   * :ref:`clipboard-sending`
 
 :ref:`Back to top <clipboard>`
 
@@ -430,6 +436,10 @@ number for later.
 Once you've recorded the saved clipboard's ID, you can now exit your browser. 
 See :ref:`below <load-saved-clipboard>` for instructions on how to load your
 clipboard during a future session. 
+
+.. SEEALSO::
+
+   * :ref:`clipboard-sending`
 
 :ref:`Back to top <clipboard>`
 

@@ -11,6 +11,7 @@ Below, you will find information on the following :term:`information areas
 <information area>`:
 
 * :ref:`Global settings <global-settings>`
+* :ref:`clipboard-settings`
 * :ref:`dip-upload-settings`
 * :ref:`Default page elements <default-page-elements>`
 * :ref:`Default templates <default-templates>`
@@ -963,6 +964,24 @@ avoid constantly triggering many jobs.
    For more information on this functionality, see:
    :ref:`xml-export-clipboard`
 
+:ref:`Back to top <settings>`
+
+.. _clipboard-settings:
+
+Clipboard settings
+==================
+
+.. image:: images/clipboard-settings.*
+   :align: center
+   :width: 80%
+   :alt: Clipboard settings page in AtoM
+
+These settings allow an :term:`administrator` to configure and/or enable certain
+features related to AtoM's :term:`clipboard` functionality. For more information
+on using the clipboard, see: 
+
+* :ref:`clipboard`
+
 .. _clipboard-save-setting:
 
 Saved clipboard maximum age
@@ -990,6 +1009,77 @@ the database.
    clipboards will be purged the following day! If you intend to allow your
    users to make use of the Saved clipboard feature, be sure to configure this
    to a reasonable value - e.g. 30 (days), etc.
+
+.. _clipboard-sending:
+
+Clipboard sending
+-----------------
+
+.. _JSON: https://en.wikipedia.org/wiki/JSON
+.. _POST or GET: https://www.w3schools.com/tags/ref_httpmethods.asp
+
+These settings can be configured to integrate the clipboard with a third-party
+site or application, for use in reference requests, loans, or other similar 
+cases. When configured, it will allow results on the clipboard to be sent to a 
+specified URL as a `JSON`_ array of :term:`slugs <slug>`. Data can be sent using 
+either HTTP `POST or GET`_ methods.  
+
+When a user adds items to the clipboard and these settings are enabled, an 
+additional button will display on the clipboard's :term:`view page`. The button 
+text can be customized, along with the text shown to the user while the results 
+are being sent. When clicked, AtoM will send a JSON array of the clipboard 
+results to the target URL, and then will redirect the user to that URL for 
+further action. 
+
+.. image:: images/clipboard-send-button.*
+   :align: center
+   :width: 80%
+   :alt: An example of a Clipboard send button with customized text
+
+In new installations, this functionality is disabled by default, but can be 
+configured and enabled via the settings described below. 
+
+Enable clipboard send functionality
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This setting enables or disables the :term:`Clipboard` send functionality 
+globally. When set to "No", the Clipboard send button will not be displayed on
+the clipboard's :term:`view page`.
+
+External URL to send clipboard contents to
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Enter the URL to which you would like your array of clipboard results to be sent. 
+Must be a valid HTTP or HTTPS URL. 
+
+Example value: ``http://myarchives.example.com/archives-request``
+
+Send button text
+^^^^^^^^^^^^^^^^
+
+When the Clipboard send functionality is enabled, an additional button is added
+to the Clipboard's :term:`view page`. The default text in new installations is
+simply "Send" but an :term:`administrator` can modify this as needed. 
+
+Text or HTML to display when sending clipboard contents
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In the brief interval before the user is redirected to the external URL, the 
+text added to this setting is what will be shown to the user while the clipboard
+results are being sent. The default text in new installations is "Sending..." 
+but this too can be customized as desired. 
+
+.. NOTE:: 
+
+   In most cases, this page will not be shown long enough for the user to read 
+   much text, unless the clipboard results are extensive. We recommend keeping
+   this message fairly short and simple. 
+
+HTTP method to use when sending clipboard contents
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+An :term:`administrator` can choose between using HTTP `POST or GET`_ methods
+for delivering the clipboard payload to the external site. 
 
 :ref:`Back to top <settings>`
 
