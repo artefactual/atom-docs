@@ -671,8 +671,8 @@ entity. Basic instructions for each are included below.
    :term:`archival institutions <archival institution>`.  These full-text search
    results have **not** been `weighted
    <http://dictionary.reference.com/browse/weighted+search>`__ to favor title
-   matches, etc., **except for accessions**. If you see results without matches in
-   the title (or name), it means the search term(s) appears somewhere in the
+   matches, etc., **except for accessions**. If you see results without matches
+   in the title (or name), it means the search term(s) appears somewhere in the
    body of the record. Note: with the release of 2.5, an advanced search
    screen is provided for :term:`authority records <authority record>`.
 
@@ -688,8 +688,9 @@ entity. Basic instructions for each are included below.
    :height: 19
 
 When browsing :term:`authority records <authority record>` users have two
-options: the dedicated search box and the advanced search options screen. All
-indexed fields can be searched in the dedicated search box including:
+options for searching: the dedicated search box and the advanced search options
+screen. All indexed fields can be searched in the dedicated search box
+including:
 
 * **All forms of name** in the Identity area as well as
 * **All fields** in the Description area (Dates of existence, History, Places,
@@ -698,8 +699,9 @@ indexed fields can be searched in the dedicated search box including:
 * **Access points**: occupation and occupation notes, subjects, places
 * **Dates of creation, revision, and deletion** and **Sources** in the Control
   area
+* **Related authority records** filtered by relationship type
 
-Further search options  to filter results using the advanced search options:
+Further search options to filter results using the advanced search options:
 
 * **Repository**
 * **Digital object available**
@@ -785,19 +787,101 @@ with particular fields in the authority record edit template, see:
 
 **To search for authority records in AtoM using the advanced search options:**
 
-With the 2.5 release users now can narrow their searches further using the
-Advanced search options. In this search screen users can:
+Users can narrow their searches further using the Advanced search options. In
+this search screen users can:
 
 * Restrict results to certain specified fields
 * Limit results by repository
 * Find results that have digital objects attached
 * Find results by entity type
 * Find results in which specified fields are empty
+* Find all related authority records
+* Find all related authority records, filtered by a relationship type
+* Find all authority records that have a specific relationship type
 
 .. image:: images/authority-advanced-search.*
    :align: center
    :width: 70%
    :alt: Authority record advanced search options
+
+
+.. _search-authority-record-relationships:
+
+Search authority record relationships
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Users can find related Authority records by searching on links that were made in
+the :ref:`Relationships area <link-two-authority-records>` on the Authority
+record create and edit templates.
+
+You can find the Related Authority Record field on the last row of the Authority
+record advanced search screen. When you begin to type in a value in this field,
+AtoM will auto-complete names from existing Authority records in its database.
+
+.. image:: images/authority-advanced-search-related-authority.*
+   :align: center
+   :width: 70%
+   :alt: Related authority record auto-complete
+
+The user selects a relationship type from the existing :term:`taxonomy` of
+relations.AtoM comes with several pre-loaded :ref:`default terms in the Actor
+relation type taxonomy <default-actor-relation-types>`. You can add more
+relationship types by :ref:`editing this taxonomy <hierarchical-taxonomies>`.
+
+.. image:: images/authority-advanced-search-relationship-type.*
+   :align: center
+   :width: 70%
+   :alt: Select Authority record relationship type
+
+This advanced search returned one hit where it found "an associate of"
+Waterloo Lutheran University.
+
+.. image:: images/authority-advanced-search-is-associate-of.*
+   :align: center
+   :width: 70%
+   :alt: Select Authority record relationship type
+
+You can also leave the Relationship field empty and select **Search**.
+
+.. image:: images/authority-advanced-search-blank-relationship.*
+   :align: center
+   :width: 70%
+   :alt: Empty value for Authority record relationship type
+
+AtoM will then return hits for **all** the Authority records that have a
+relationship record linked to the selected Authority record.
+
+.. image:: images/authority-advanced-search-all-relationships.*
+   :align: center
+   :width: 70%
+   :alt: All relationships for an Authority record
+
+In this case, Waterloo Lutheran University was linked to two other Authority
+records. You already know about the relationship to Waterloo Lutheran Seminary.
+If you follow the link to the related Wilfrid Laurier University Authority
+record and look in its relationship area, you see that it has a
+predecessor/successor relationship with Waterloo Lutheran University.
+
+.. image:: images/authority-advanced-search-predecessor-relationship.*
+   :align: center
+   :width: 70%
+   :alt: A predecessor relationship with Wilfrid Laurier University
+
+You can also do an advanced search on a Relationship type (such as "is the
+associate of") and leave the Related Authority record field blank.
+
+.. image:: images/authority-advanced-search-blank-related-authority.*
+   :align: center
+   :width: 70%
+   :alt: A relationship search with just a relationship type
+
+AtoM will then return **all** the Authority records that have this type
+of relationship.
+
+.. image:: images/authority-advanced-search-all-associative-relationships.*
+   :align: center
+   :width: 70%
+   :alt: All is-the-associate-of relationships
 
 .. _es-fields-actor:
 
@@ -1274,8 +1358,8 @@ Terms
    :height: 18
    :width: 18
 
-A dedicated search box for :term:`terms <term>` is available on the 
-:ref:`browse page <page-type-browse>` for each :term:`taxonomy`. 
+A dedicated search box for :term:`terms <term>` is available on the
+:ref:`browse page <page-type-browse>` for each :term:`taxonomy`.
 
 In the following example, the :term:`Places <place>` taxonomy has been used to
 demonstrate the search functionality, because it is one of the modules (along
@@ -1351,13 +1435,13 @@ and then selecting a taxonomy).
    :width: 70%
    :alt: An image of the places search results
 
-6. The results page includes :term:`sort buttons <sort button>` (allowing you to 
-   sort results to show them in alphabetic order or most recently 
-   created/updated) and a set of :term:`facet filters <facet filter>` to help 
+6. The results page includes :term:`sort buttons <sort button>` (allowing you to
+   sort results to show them in alphabetic order or most recently
+   created/updated) and a set of :term:`facet filters <facet filter>` to help
    you sift through results. For more information on these elements, see
    :ref:`recurring-sort-button` and :ref:`recurring-facet-filters`.
 
-   For more information on the :term:`user interface` elements available on term 
+   For more information on the :term:`user interface` elements available on term
    search and browse pages, see: :ref:`browse-subjects-places`
 
 .. TIP::
@@ -1375,10 +1459,10 @@ and then selecting a taxonomy).
 
 8. When you have found the record you are searching for, click on its title in
    the results, and AtoM will redirect you to the selected term's
-   :term:`view page`. The view page will include any further information 
-   available about the term (such as scope and source notes, related terms, etc), 
-   as well as tabs showing related :term:`archival description` and 
-   :term:`authority record` results that have been linked to the term. 
+   :term:`view page`. The view page will include any further information
+   available about the term (such as scope and source notes, related terms, etc),
+   as well as tabs showing related :term:`archival description` and
+   :term:`authority record` results that have been linked to the term.
 
 .. image:: images/term-view-page.*
    :align: center
