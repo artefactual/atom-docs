@@ -731,6 +731,8 @@ managed in the Actor Relation Type :term:`taxonomy`, and new terms can be added
 as well. Below is an overview of the default terms included and their
 relationships, and instructions on how to add new converse relationships.
 
+.. _default-actor-relation-types:
+
 Default Actor relation type terms in AtoM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
