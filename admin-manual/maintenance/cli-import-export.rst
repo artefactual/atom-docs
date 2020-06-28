@@ -14,12 +14,8 @@ information, see: :ref:`manage-jobs` and :ref:`installation-asynchronous-jobs`.
 However, there may be occasions where it is more efficient to import directly
 from the command-line. For example, XML files can only be imported one at a
 time via the user interface, but the command-line task supports bulk XML
-import. Also, the user interface only supports the import of the basic
-:term:`authority record` CSV - though additional CSVs for relationships and
-alternate forms of name can be imported via the command-line to further
-supplement your data. As a final example, the Digital object load task
-(described :ref:`below <digital-object-load-task>`) is only available via the
-command-line.
+import. Also the Digital object load task (described :ref:`below
+<digital-object-load-task>`) is only available via the command-line.
 
 The following will outline the options available for command-line imports and
 exports in AtoM.
@@ -139,7 +135,7 @@ can be found in AtoM in ``/lib/model/QubitTaxonomy.php`` (see on GitHub
 
    php symfony import:bulk --taxonomy="35" /path/to/mySKOSfiles
 
-.. NOTE:: 
+.. NOTE::
 
    To ensure a successful import with SKOS files, please use the **absolute**
    path to your SKOS file(s), not a relative path from your current location
@@ -151,7 +147,7 @@ can be found in AtoM in ``/lib/model/QubitTaxonomy.php`` (see on GitHub
 
       SKOS/mySKOSfile.xml
 
-   Example of an absolute path: 
+   Example of an absolute path:
 
    .. code-block:: bash
 
@@ -545,16 +541,16 @@ way as described for the archival description export options
 :ref:`above <cli-bulk-export-usage>`. Please refer there for more detailed usage
 notes. Below is an example application, using the ``--criteria`` option:
 
-**Example: using the** ``--criteria`` **option to select only authority records 
+**Example: using the** ``--criteria`` **option to select only authority records
 whose entity type is "family"**
 
-First, you will need to know the entity type ID for family. Entity type is a 
+First, you will need to know the entity type ID for family. Entity type is a
 :term:`term` maintained in the Actor entity types :term:`taxonomy` - when
 elements from a different table in the database are linked to actors, the
 term ID is used. Here are the term object IDs for the Actor entity types:
 
-============== =======          
-Term           Term ID 
+============== =======
+Term           Term ID
 ============== =======
 Corporate body 131
 Person         132
@@ -563,16 +559,16 @@ Family         133
 
 .. TIP::
 
-   An easy way to figure this out in the user interface is to use the related 
-   Entity type facet on the authority record browse page, and look at the 
+   An easy way to figure this out in the user interface is to use the related
+   Entity type facet on the authority record browse page, and look at the
    resulting URL. For example, if we go to the public AtoM demo site, navigate
    to the Authority record browse page, and use the facet to limit the results
-   to those records with an Entity type of family, the resulting URL is: 
+   to those records with an Entity type of family, the resulting URL is:
 
    * https://demo.accesstomemory.org/actor/browse?types=133&sort=alphabetic
 
    See the ``133`` in the URL? This represents the Entity type we have applied
-   to filter the results! 
+   to filter the results!
 
 We can now use the entity type to limit our export to include only those
 authority records with an entity type of "Family," like so:
@@ -604,6 +600,7 @@ the CLI. Below are basic instructions for each available import type.
 * :ref:`csv-import-events-cli`
 * :ref:`csv-repository-import-cli`
 * :ref:`csv-actor-import-cli`
+* :ref:`csv-authority-relationships`
 * :ref:`csv-import-accessions-cli`
 * :ref:`csv-import-deaccessions-cli`
 * :ref:`csv-import-storage-cli`
@@ -643,9 +640,9 @@ Check filepaths before importing digital objects
 ------------------------------------------------
 
 AtoM includes a command-line task to help double-check import files that involve
-:term:`digital objects <digital object>`. The task will take the path to a CSV 
+:term:`digital objects <digital object>`. The task will take the path to a CSV
 file and the path to a directory of digital objects as inputs, and will report
-on any potential errors, such as: 
+on any potential errors, such as:
 
 * Any digital objects in the filesystem directory that aren't referenced in
   the CSV data
@@ -656,8 +653,8 @@ on any potential errors, such as:
 This can be a useful way of verifying :term:`archival description` or
 :term:`authority record` CSV imports that use the ``digitalObjectPath`` column
 to link local digital objects during the import, or for double-checking the
-CSV accompanying a :ref:`digital object load <digital-object-load-task>`, before 
-you actually import your data. 
+CSV accompanying a :ref:`digital object load <digital-object-load-task>`, before
+you actually import your data.
 
 .. SEEALSO::
 
@@ -665,7 +662,7 @@ you actually import your data.
    * :ref:`csv-actor-import-cli`
    * :ref:`csv-descriptions-digital-objects`
 
-The basic syntax of the task is: 
+The basic syntax of the task is:
 
 .. code-block:: bash
 
@@ -676,18 +673,18 @@ directory is located on the server, and ``path/to/csv-file.csv`` is the path
 to the CSV file with your import metadata.
 
 By default, this task expects the column in the CSV with the digital object
-file paths to be named ``digitalObjectPath``, as it is in the description and 
-authority record CSV templates. However, the task also includes one user option, 
-``--csv-column-name``, that can be used to specify a different CSV column to 
-check. This allows you to use the task to review a 
-:ref:`digital object load task <digital-object-load-task>` CSV for example, 
-which uses a column named ``filename`` instead. An example: 
+file paths to be named ``digitalObjectPath``, as it is in the description and
+authority record CSV templates. However, the task also includes one user option,
+``--csv-column-name``, that can be used to specify a different CSV column to
+check. This allows you to use the task to review a
+:ref:`digital object load task <digital-object-load-task>` CSV for example,
+which uses a column named ``filename`` instead. An example:
 
 .. code-block:: bash
 
    php symfony csv:digital-object-path-check --csv-column-name="filename" /usr/share/nginx/atom/import-images/ /usr/share/nginx/atom/digital-object-load.csv
 
-An example of the task output: 
+An example of the task output:
 
 .. image:: images/do-path-check-example.*
   :align: center
@@ -872,7 +869,7 @@ and any existing data in the related field will be preserved.
    prevent duplication however - so if you have left the same creator/event
    information as previously, it will be ignored.
 
-   For more information on supported fields for updating, see: 
+   For more information on supported fields for updating, see:
 
    * :ref:`csv-descriptions-update-fields`
 
@@ -885,17 +882,17 @@ and any existing data in the related field will be preserved.
    includes the General note, Archivist's note, and the RAD- and DACS-specific
    note type fields in AtoM's archival description templates. This means that
    in addition to related entities, **notes cannot be deleted or updated with
-   this method**, though again, you can append new notes if desired. 
+   this method**, though again, you can append new notes if desired.
 
    If you wish to make updates to these entitites or fields, consider using
    the "Delete and replace" update option instead - though be sure to read up
    on the behavior and limitations of that method as well!
 
-   Finally, note that without the ``--rountrip`` option (described below), 
+   Finally, note that without the ``--rountrip`` option (described below),
    title, identifier, and repository may be used as matching criteria. This means
-   that trying to import updates to these fields may cause matching to fail, 
-   unless you successfully meet the first matching criteria or use the 
-   ``--roundtrip`` option. For more information on matching, see: 
+   that trying to import updates to these fields may cause matching to fail,
+   unless you successfully meet the first matching criteria or use the
+   ``--roundtrip`` option. For more information on matching, see:
 
    * :ref:`csv-descriptions-match-criteria`
    * :ref:`csv-legacy-id-mapping`
@@ -1002,14 +999,14 @@ see: :ref:`cli-regenerate-derivatives`.
 
 Finally, the ``--roundtrip`` option is useful when attempting to update records
 that have been exported from the same system which you are trying to update
-via import ("roundtripping" implies exporting a CSV, making changes, and then 
-re-importing it as an update). On export, AtoM populates the ``legacyId`` 
-column with the unique database object ID value used in AtoM. When the 
-``--roundtrip`` option is used, AtoM will **only** look for exact matches on the 
-``legacyId`` in the CSV, comparing it against AtoM's internal description 
+via import ("roundtripping" implies exporting a CSV, making changes, and then
+re-importing it as an update). On export, AtoM populates the ``legacyId``
+column with the unique database object ID value used in AtoM. When the
+``--roundtrip`` option is used, AtoM will **only** look for exact matches on the
+``legacyId`` in the CSV, comparing it against AtoM's internal description
 object ID values and bypassing all other matching criteria. This can be useful
-when trying to update secondary matching criteria values such as the title, 
-identifier, and/or repository associated with a description. 
+when trying to update secondary matching criteria values such as the title,
+identifier, and/or repository associated with a description.
 
 .. IMPORTANT::
 
@@ -1034,15 +1031,15 @@ option provides a more reliable matching criteria when roundtripping
 descriptions in the same system. The ``--roundtrip`` should be used in
 conjunction with the ``--update`` option.
 
-Example use: 
+Example use:
 
 .. code-block:: bash
 
    php symfony csv:import --update="match-and-update" --roundtrip /path/to/rad_0000000001.csv
 
 Normally, the ``--roundtrip`` option, when used, will first ask you if you have
-a backup of your database before proceding. However, you can skip this 
-confirmation requirement by adding the ``--no-confirmation`` option as well. 
+a backup of your database before proceding. However, you can skip this
+confirmation requirement by adding the ``--no-confirmation`` option as well.
 
 :ref:`Back to top <cli-import-export>`
 
@@ -1265,13 +1262,10 @@ Importing authority records
 ---------------------------
 
 The :term:`authority record` import tool allows you to import data about
-people, familiies, and organizations. A typical authority record import can
-be conducted via the :term:`user interface` - for more information, see:
-:ref:`csv-import-authority-records-gui`. However, inn addition to importing
-data detailing these entities, the command-line tool also allows the
-simultaneous import of supplementary data (in separate CSV files) on how these
-entities relate to each other and alternate names by which these entities are
-known.
+people, familiies, and organizations. Note that authority records and their
+relationship data can also be imported via the :term:`user interface` - for more
+information, see: :ref:`csv-import-authority-records-gui` and
+:ref:`csv-import-authority-record-relationships-gui`.
 
 You can view the example CSV files for authority records in the AtoM code (at
 ``lib/task/import/example/authority_records/``) or they can be downloaded
@@ -1279,115 +1273,24 @@ directly here:
 
 * https://wiki.accesstomemory.org/Resources/CSV_templates#Authority_records
 
-The primary documentation for preparing the main authority record CSV template
+The primary documentation for preparing the authority record CSV template
 can be found in the User Manual, here:
 
 * :ref:`csv-import-authority-records`
-
-However, the basic information on preparing the supplementary Actor
-Relationships CSV and the Actor Aliases will be described below.
 
 .. SEEALSO::
 
    * :ref:`authority-records`
    * :ref:`csv-before-you-import`
    * :ref:`csv-import-authority-records-gui`
+   * :ref:`csv-import-authority-record-relationships-gui`
 
-.. _csv-authority-alternate-names:
-
-Alternate names CSV
-^^^^^^^^^^^^^^^^^^^
-
-This CSV template, also known as the Aliases CSV template, can be imported at
-the same time as the Authority record CSV template to supply addtional forms of
-name. The :ref:`ISAAR-CPF standard <isaar-template>` upon which the AtoM
-authority record template is based includes 3 fields for alternate forms of
-name:
-
-* Parallel form(s) of name
-* Standardized form(s) of name according to other rules
-* Other form(s) of name
-
-Consult the related standard for more information. For guidance on data entry
-and a link to the related standard, see
-:ref:`ISAAR-CPF template <isaar-template>`.
-
-The Alternate names CSV is very simple, comprised of just 4 columns:
-
-* The ``parentAuthorizedFormOfName`` should match exactly a target name in the
-  related authority record CSV being imported. The aliases (or alternate
-  names) included in the Aliases CSV will be associated with that actor's
-  :term:`authority record` following import.
-* The ``alternateForm`` should include the alternate name or alias you wish to
-  import.
-* The ``formType`` column contains data about what kind of alternate is being
-  created. Each alias can be one of three forms: a parallel form, a standardized
-  form according to other descriptive practices, or an "other" form. Enter
-  either "parallel", "standardized", or "other" as a value in this the cells
-  of this column. For more information on the distinction between these three
-  types of alternate names, please consult the International Council
-  on Archives' ISAAR-CPF standard - specifically sections 5.1.3 to 5.1.5.
-* The ``culture`` column indicates to AtoM the language of the descriptions
-  being uploaded. This column expects two-letter ISO 639-1 language code
-  values - for example, "en" for English; "fr" for French, "it" for Italian,
-  etc. See `Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
-  for a full list of ISO 639-1 language codes.
-
-.. _csv-authority-relationships:
-
-Relationships CSV
-^^^^^^^^^^^^^^^^^
-
-The Relationships CSV template can be imported at the same time as the
-Authority record CSV template to create relationships between actors (i.e.
-:term:`authority records <authority record>`. For more information on this
-functionality as seen in the :term:`user interface`, see:
-:ref:`link-two-authority-records`.
-
-The Relationships CSV contains 8 columns:
-
-* The ``sourceAuthorizedFormOfName`` is used to specify one of the actors
-  included in the Authority record CSV upload. This field should match
-  exactly one of the actors listed in the ``authorizedFormOfName`` column of
-  the Authority record CSV.
-* The ``targetAuthorizedFormOfName`` is also used to specify another one of
-  the actors in the Authority record CSV upload - the actor with which you
-  intend to create a relationship. The values entered into this column should
-  match exactly one of the actors listed in the ``authorizedFormOfName``
-  column of the Authority record CSV.
-* The ``category`` column contains data about the type of relationship you are
-  creating, and maps to ISAAR 5.3.2 Category of Relationship. The terms
-  recommended in the ISAAR standard are maintained in the Actor Relation Type
-  :term:`taxonomy` in AtoM. Values entered should be either "associative",
-  "family", "hierarchical", or "temporal". For more information on the
-  distinction between these terms, please consult the International Council
-  on Archives' ISAAR-CPF standard - specifically, section  5.3.2.
-* The ``date`` field is a free-text string field that will allow a user to
-  enter a date or date range for the relationship. It allows the use of special
-  characters and typographical marks to indicate approximation (e.g. [ca.
-  1900]) and/or uncertainty (e.g. [199-?]). Use the ``startDate`` and
-  ``endDate`` fields to enter ISO-formated date values (e.g. YYYY-MM-DD,
-  YYYY-MM, or YYYY) that correspond to the free-text *date* field. Public users
-  in the interface will see the ``date`` field values when viewing
-  relationships; the ``startDate`` and ``endDate`` values are not visible, and
-  are used for date range searching in the application.
-* The ``culture`` column indicates to AtoM the language of the descriptions
-  being uploaded. This column expects two-letter ISO 639-1 language code
-  values - for example, "en" for English; "fr" for French, "it" for Italian,
-  etc. See `Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
-  for a full list of ISO 639-1 language codes.
-
-
-.. _csv-import-authority-records-cli:
-
-Importing authority records
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Example use - run from AtoM's root directory:
+Run the CSV import task from AtoM's root directory. To use the example authority
+record import file that is included with the AtoM installation:
 
 .. code-block:: bash
 
-   php symfony csv:authority-import lib/task/import/example/authority_records/example_authority_records.csv
+   php symfony csv:authority-import lib/task/import/example/authority_records/example_authority_records.csv --index
 
 There are also various command-line options that can be used, as illustrated in
 the options depicted in the image below:
@@ -1411,15 +1314,6 @@ options can be used the same was as described in the section
 :ref:`above <csv-import-descriptions-cli>` on importing descriptions. For more
 information on the ``--rows-until-update`` option, see also the section below,
 :ref:`csv-import-progress`.
-
-The ``--alias-file`` and ``--relation-file`` options are used to import
-accompanying alternate name (aka Alias data) and relationship CSV files at
-the same time as the authority record CSV import. An example of each will be
-given below, though they can be used together. Jump to:
-
-* :ref:`csv-import-aliases-cli`
-* :ref:`csv-import-relations-cli`
-
 Use the ``--source-name`` option (described  in the CSV import
 documentation :ref:`here <csv-legacy-id-mapping>`) to specify the source name
 that will be added to the keymap table. This can be useful for improving the
@@ -1442,10 +1336,11 @@ root directory, run:
 
    php symfony cc && php symfony search:populate
 
-However, if you would like to index the import as it progresses, the
-``--index`` option can be used to enable this. This is useful if you have a
-large database, and don't want to have to re-index everything. For more
-information on indexing options, see: :ref:`maintenance-populate-search-index`.
+However, if you are running a small import or simply would like to index the
+import as it progresses, the ``--index`` option can be used to enable this.
+This is useful if you have a large database, and don't want to have to re-index
+everything. For more information on indexing options, see:
+:ref:`maintenance-populate-search-index`.
 
 The ``--update`` option can be used when you want to use a CSV import to
 update existing authority records, instead of creating new records. There
@@ -1457,9 +1352,7 @@ repository record in the CSV. The matching criteria for authority records is
 based on an **exact** match on the authorized form of name of the existing
 authority record. This means that you cannot use the ``--update`` option to
 update the authorized form of name of your existing authority records, or AtoM
-will fail to find the correct match on import. Note that at this time, the
-update options **only** work with the data found in the primary Authority
-record CSV template - ``--update`` cannot update Relations and Alias data.
+will fail to find the correct match on import.
 
 .. TIP::
 
@@ -1478,7 +1371,7 @@ and any existing data in the related field will be preserved.
    At this time, not all fields in the :term:`authority record` template can
    be updated. Primarily, these are fields that are found in other tables in
    the AtoM database than the primary authority record table. For further
-   details, see: 
+   details, see:
 
    * :ref:`csv-update-actors`
    * :ref:`csv-actors-update-fields`
@@ -1504,7 +1397,7 @@ it *also* not automatically re-link previously related entities.
 
    This means that if your :term:`authority record` is linked to
    descriptions, a repository, or other authority records, using the "Delete
-   and replace"method will **unlink all descriptions, repositories,
+   and replace" method will **unlink all descriptions, repositories,
    and authority records** - these will not be automatically re-linked with
    the new import!
 
@@ -1550,67 +1443,73 @@ records (based on the authorized form of name) will be ignored during the
 import, and reported in the console log shown on the
 :ref:`Job details <job-details>` page of the related import job.
 
-.. _csv-import-aliases-cli:
 
-Importing alternate names (Alias data)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. _csv-authority-relationships:
 
-Alternate names are defined in a separate CSV file. Each alias can be one of
-three forms: a parallel form, a standardized form, or "other" form. See the
-section on data entry :ref:`above <csv-authority-alternate-names>` for further
-guidance.
+Import authority record relationships
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Relationships between authority records can be imported in a CSV file. This
+import can be done :ref:`via the user interface <csv-import-authority-record-relationships-gui>`
+or from the command line, as explained below.
 
-An example CSV template file of supplementary alias data is available in the
-AtoM source code ( at
-``lib/task/import/example/authority_records/example_authority_
-record_aliases.csv``) or can be downloaded here:
+Another way to create relationships between two authority records is via
+the user interface. See: :ref:`link-two-authority-records`.
 
-* https://wiki.accesstomemory.org/Resources/CSV_templates#Authority_records
+The primary documentation for preparing the authority record relationships CSV
+template can be found in the User Manual, here:
 
-The Alternate names CSV file must be imported at the same time as its related
-Authority record CSV file. The ``--alias-file`` command-line option is used
-to specify a separate path to the Alternate names CSV, with a back slash
-( ``\`` ) used to separate it from the path of the original authority record
-CSV, as shown below.
+* :ref:`csv-import-authority-record-relationships`
 
-**Example import of authority records and corresponding aliases:**
-
-.. code-block:: bash
-
-   php symfony csv:authority-import lib/task/import/example/authority_records/example_authority_records.csv \
-   --alias-file=lib/task/import/example/authority_records/example_authority_record_aliases.csv
-
-
-.. _csv-import-relations-cli:
-
-Importing Relations data
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-Relations between authority records are also defined in a separate CSV file.
-Each relationship can be either hierarchical, temporal, family, or
-associative. See the section on data entry
-:ref:`above <csv-authority-relationships>` for further guidance.
-
-An example CSV template file of relation data is available in the AtoM source
-code ( at
-``lib/task/import/example/authority_records/example_authority_record_relat
-ionships.csv``) or can be downloaded here:
+An example CSV template containing relationship data is available in the AtoM
+source code at ``lib/task/import/example/authority_records/
+example_authority_record_relationships.csv`` or it can be downloaded here:
 
 * https://wiki.accesstomemory.org/Resources/CSV_templates#Authority_records
 
-The Relationships CSV file must be imported at the same time as its related
-Authority record CSV file. The ``--relation-file`` command-line option is used
-to specify a separate path to the Relationships names CSV, with a back slash
-( ``\`` ) used to separate it from the path of the original authority record
-CSV, as shown below.
+Note that the Relationships CSV file can only import relationships between
+two authority records that already exist in the AtoM database and using a
+relationship type term that has already been created in the Actor
+relation type taxonomy. For more information on managing and
+creating relation type terms, see: :ref:`terms`; see specifically :ref:`add-converse-term`.
 
-**Example import of authority records and corresponding relationships:**
+Assuming you have already imported the authority records in the
+``lib/task/import/example/authority_records/example_authority_records.csv``
+file, here is an example import that establishes a relationship between
+those authority records:
 
 .. code-block:: bash
 
-   php symfony csv:authority-import lib/task/import/example/authority_records/example_authority_records.csv \
-   --relation-file=lib/task/import/example/authority_records/example_authority_record_relationships.csv
+   php symfony csv:authority-relation-import lib/task/import/example/authority_records/example_authority_record_relationships.csv --index
 
+Include the ``--index`` parameter to update the search index for each
+imported relationship. Otherwise run ``php symfony search:populate`` to
+rebuild your entire application index in one batch after the import
+completes.
+
+When an authority record in the Relationship CSV file does not match an existing
+authority record, AtoM will ignore that row in the CSV file and provide a
+warning to indicate that a match was not found.
+
+As with other import jobs, you can add an ``--update`` parameter to specify
+more specific import behaviour. Specifically:
+
+* ``--update="match-and-update"`` : AtoM will look for a match on the
+  ``subjectAuthorizedFormOfName`` and ``objectAuthorizedFormOfName``. If the
+  ``relationType`` is also the same, then AtoM will update any new values for
+  the description, dates, and/or culture fields found in that row of the
+  CSV file. If the ``relationType`` is different, then AtoM will create a new
+  relationship between the two authority records using this new relationship
+  type along with any values found in the description, dates, and/or culture
+  fields. If a newly imported relationship matches an existing relationship but
+  the ``match-and-update`` parameter is not being used, then AtoM will ignore
+  that row in the CSV file and provide a warning to indicate that an update was
+  not made.
+
+* ``--update="delete-and-replace"`` : AtoM will look for a match on the
+  ``subjectAuthorizedFormOfName`` and ``objectAuthorizedFormOfName`` fields.
+  When it finds these matches, AtoM will delete **all** existing relationships
+  records between these two authority records and replace them with the one or
+  more new relationships found in the CSV file.
 
 :ref:`Back to top <cli-import-export>`
 
@@ -1699,29 +1598,29 @@ However, if you would like to index the import as it progresses, the
 large database, and don't want to have to re-index everything. For more
 information on indexing options, see: :ref:`maintenance-populate-search-index`.
 
-The ``--assign-id`` option can be used to automatically assign the next unique 
-accession number value to each incoming record, based on the accession mask and 
-counter settings available in **Admin > Settings > Identifiers**. For more 
-information on these settings, see: 
+The ``--assign-id`` option can be used to automatically assign the next unique
+accession number value to each incoming record, based on the accession mask and
+counter settings available in **Admin > Settings > Identifiers**. For more
+information on these settings, see:
 
 * :ref:`enable-accession-mask`
 * :ref:`accession-mask`
 * :ref:`accession-counter`
 
-Typically, populating the ``accessionNumber`` column in an 
-:term:`accession record` CSV import is required for the row not to be skipped. 
-However, when the ``--assign-id`` option is used, you can leave this column 
-blank in the CSV file. On import, AtoM will add the next available unique 
-accession number value, based on the mask and counter settings. 
+Typically, populating the ``accessionNumber`` column in an
+:term:`accession record` CSV import is required for the row not to be skipped.
+However, when the ``--assign-id`` option is used, you can leave this column
+blank in the CSV file. On import, AtoM will add the next available unique
+accession number value, based on the mask and counter settings.
 
 .. IMPORTANT::
 
    The accession counter may not auto-increment in the user interface after the
    import completes. To ensure that the next time you generate an accession number
-   in the :term:`user interface` you don't get an error, make sure you check the 
+   in the :term:`user interface` you don't get an error, make sure you check the
    incremental number of the last accession in your import against the counter
-   value, and manually increment the counter to this number post-import if it 
-   has not updated automatically. 
+   value, and manually increment the counter to this number post-import if it
+   has not updated automatically.
 
    See: :ref:`accession-counter`
 
@@ -1732,15 +1631,15 @@ accession number value, based on the mask and counter settings.
 Import deaccession records
 --------------------------
 
-The deaccession import tool allows you to import data about deaccession activies, 
-which can be appended to :term:`accession records <accession record>` in AtoM. 
+The deaccession import tool allows you to import data about deaccession activies,
+which can be appended to :term:`accession records <accession record>` in AtoM.
 For more general information on working with deaccession records in AtoM, consult
 the User manual: :ref:`deaccessions`. For the task to succeed, an accession number
-for an existing accession must be provided for each row - it is not possible to 
-create new accession records while importing deaccession CSV data. 
+for an existing accession must be provided for each row - it is not possible to
+create new accession records while importing deaccession CSV data.
 
-An example CSV template file is available in the 
-``lib/task/import/example/example_deaccessions.csv`` directory of AtoM, 
+An example CSV template file is available in the
+``lib/task/import/example/example_deaccessions.csv`` directory of AtoM,
 or it can be downloaded here:
 
 * https://wiki.accesstomemory.org/Resources/CSV_templates#Deaccession_records
@@ -1787,14 +1686,14 @@ The ``--application``, ``--env``, and ``--connection`` options **should not be
 used** - AtoM requires the uses of the pre-set defaults for symfony to be
 able to execute the import.
 
-The ``--rows-until-update``, ``--skip-rows``,  and ``--error-log`` options can 
-be used the same was as described in the section 
+The ``--rows-until-update``, ``--skip-rows``,  and ``--error-log`` options can
+be used the same was as described in the section
 :ref:`above <csv-import-descriptions-cli>` on importing descriptions. If you
 wish a summary of warnings reported in the console log, you can use the
 ``--error-log`` option - it takes a path to a new text file as input, and
-will copy all console warnings to this log file. Acceptable file extensions for 
-the log file are ``.txt`` or ``.log``. For more information on the 
-``--rows-until-update`` option, see also the section below, 
+will copy all console warnings to this log file. Acceptable file extensions for
+the log file are ``.txt`` or ``.log``. For more information on the
+``--rows-until-update`` option, see also the section below,
 :ref:`csv-import-progress`.
 
 More than 1 row of data (i.e more than 1 deaccession record) can be associated
@@ -1817,7 +1716,7 @@ managing physical storage data in AtoM in the User manual:
 
 * :ref:`physical-storage`
 
-The basic syntax for this task is: 
+The basic syntax for this task is:
 
 .. code-block:: bash
 
@@ -1833,24 +1732,24 @@ can be Windows (``\r\n``) or Linux (``\n``) formatted. For more general
 suggestions on properly preparing your CSV for import, see:
 :ref:`csv-encoding-newline`.
 
-You can find a copy of the example physical object CSV import template on the 
-`AtoM wiki <https://wiki.accesstomemory.org/Resources/CSV_templates>`__, or 
-stored locally in AtoM's code at 
+You can find a copy of the example physical object CSV import template on the
+`AtoM wiki <https://wiki.accesstomemory.org/Resources/CSV_templates>`__, or
+stored locally in AtoM's code at
 ``lib/task/import/example/example_physicalobject.csv``
 
-The CSV template contains 6 columns, summarized below: 
+The CSV template contains 6 columns, summarized below:
 
 * **legacyID**: A unique value, used to capture database identifiers from legacy
   systems during data migrations for easier troubleshooting. Not
   required for new import data, but recommended. Can be any alphanumeric
   characters. Does not display in AtoM's :term:`user interface`.
 * **name**: Free-text. The container name to be used in AtoM
-* **type**: Type of container. Links to AtoM's Physical Object Type taxonomy. 
-  See :ref:`manage-storage-types` in the User manual for more information and 
-  default terms. A new term in the CSV data will create a new corresponding 
+* **type**: Type of container. Links to AtoM's Physical Object Type taxonomy.
+  See :ref:`manage-storage-types` in the User manual for more information and
+  default terms. A new term in the CSV data will create a new corresponding
   term in the Physical Object Type taxonomy in AtoM on import.
 * **location**: Free text. Used to add information about a container's location.
-* **culture**: Language of the import data. Expects ISO 639-1 two-letter 
+* **culture**: Language of the import data. Expects ISO 639-1 two-letter
   language codes. If left unpopulated, it will default to ``en`` during import.
 * **descriptionSlugs**: multi-value input for the :term:`slugs <slug>` of
   related :term:`archival descriptions <archival description>`. When linking a
@@ -1863,7 +1762,7 @@ The CSV template contains 6 columns, summarized below:
    identifies a page in AtoM. It is the part of the URL located at the end of
    the URL path and often is indicative of the name or title of the page
    (e.g.: in  ``www.youratom.com/this-description``, the slug is
-   ``this-description``). For more information on slugs in AtoM, see: 
+   ``this-description``). For more information on slugs in AtoM, see:
 
    * :ref:`slugs-in-atom`
 
@@ -1876,61 +1775,61 @@ on the ``csv:physicalobject-import`` command:
    :width: 90%
    :alt: An image command-line options for the physicalobject:import task
 
-The ``--application``, ``--env``, and ``--connection`` options should **not** be 
-used - AtoM requires the use of the pre-set defaults for symfony to be able to 
+The ``--application``, ``--env``, and ``--connection`` options should **not** be
+used - AtoM requires the use of the pre-set defaults for symfony to be able to
 execute the import.
 
-The ``--culture`` option can be used to specify a default culture code for the 
-CSV import using a two letter ISO 639-1 code (e.g. ``en`` for English, ``fr`` 
-for French).  The ``culture`` column in the CSV import file can be used to 
-specify a culture for that row, and will override the default culture value set 
-with this option.  The default value if this option is not specified is ``en`` 
+The ``--culture`` option can be used to specify a default culture code for the
+CSV import using a two letter ISO 639-1 code (e.g. ``en`` for English, ``fr``
+for French).  The ``culture`` column in the CSV import file can be used to
+specify a culture for that row, and will override the default culture value set
+with this option.  The default value if this option is not specified is ``en``
 for English.
 
-The ``--debug`` or ``-d`` option outputs timing data for various import 
+The ``--debug`` or ``-d`` option outputs timing data for various import
 subprocesses to help identify and diagnose bottlenecks.
 
-The ``--empty-overwrite`` or ``-e`` option will cause empty columns to overwrite 
-existing data in AtoM when updating existing physical storage data via the 
+The ``--empty-overwrite`` or ``-e`` option will cause empty columns to overwrite
+existing data in AtoM when updating existing physical storage data via the
 ``--update`` option.  This option **must** be used with the ``--update`` option.
 
-The ``--error-log`` or ``-l`` option can be used to specify a file to log errors 
-encountered during import.  Note that it is possible for critical errors in the 
-import to halt the import completely, in which case the critical error will not 
-be written to the log file, but will be output to the console (STDERR) instead.  
-Other error messages and warnings will be logged to the file.  Output that is 
-not a warning or error (e.g. progress indicators) will not be logged to the 
-error log, but will be output to console (STDOUT) and can be saved to file if 
-desired by redirecting STDOUT to a file. This option expects a path to where the 
-log should be output. Example: 
+The ``--error-log`` or ``-l`` option can be used to specify a file to log errors
+encountered during import.  Note that it is possible for critical errors in the
+import to halt the import completely, in which case the critical error will not
+be written to the log file, but will be output to the console (STDERR) instead.
+Other error messages and warnings will be logged to the file.  Output that is
+not a warning or error (e.g. progress indicators) will not be logged to the
+error log, but will be output to console (STDOUT) and can be saved to file if
+desired by redirecting STDOUT to a file. This option expects a path to where the
+log should be output. Example:
 
 .. code-block:: bash
 
    php symfony physicalobject:import --error-log="/usr/share/nginx/atom/import-log.txt" lib/task/import/example/example_physicalobject.csv
 
 You can leave the file extension off the error log path, but the path must end
-in the file name you want used for the log file. Acceptable file extensions 
+in the file name you want used for the log file. Acceptable file extensions
 include ``.log`` or ``.txt``.
 
-The ``--header`` option can be used to specify a comma delimited list of strings 
-(e.g. ``--header="name,type,location,culture"``) that will be used as column 
-names for the import.  This option should **not** be used for CSV import files 
-that already include column headers (such as the ``example_physicalobject.csv`` 
-template), as the first row will be imported as physical object data. If the 
-``--header`` option is not used, the first row of the CSV file will be used as 
-column header names. The number of column names passed to ``--header`` must 
+The ``--header`` option can be used to specify a comma delimited list of strings
+(e.g. ``--header="name,type,location,culture"``) that will be used as column
+names for the import.  This option should **not** be used for CSV import files
+that already include column headers (such as the ``example_physicalobject.csv``
+template), as the first row will be imported as physical object data. If the
+``--header`` option is not used, the first row of the CSV file will be used as
+column header names. The number of column names passed to ``--header`` must
 match the number of columns in the import file.
 
-The ``--index`` or ``-i`` option adds imported data to the AtoM search index 
-incrementally during execution of the import script.  For large imports it may 
-be desirable to omit the index option as the import will run more quickly, and 
-then run ``php symfony search:populate`` to update the search index after the 
-import is complete. For more information on populating the search index, see: 
+The ``--index`` or ``-i`` option adds imported data to the AtoM search index
+incrementally during execution of the import script.  For large imports it may
+be desirable to omit the index option as the import will run more quickly, and
+then run ``php symfony search:populate`` to update the search index after the
+import is complete. For more information on populating the search index, see:
 :ref:`maintenance-populate-search-index`.
 
 The ``--multi-match`` option determines how the import script will handle an
 import name that matches more than one physical object name in AtoM when the
-``--update`` option is used. It expects one of 3 values as input: "skip", 
+``--update`` option is used. It expects one of 3 values as input: "skip",
 "first", or "all." The default value of "skip" will not update any
 existing records if the import name matches multiple existing records, and
 will report the matched and skipped rows in the error log or STDERR.  The
@@ -1941,44 +1840,44 @@ match your expectations for ordering based on the database primary key or
 default ordering.  The "all" option will update all records in the database
 that match the import name.
 
-The ``--partial-matches`` or ``-p`` option will match any records in the AtoM 
-database where record name starts with the import name value. For instance, an 
-import name of "box" will match existing records "boxes", "box1", and 
-"box-hollinger", but will not match "hollinger-box" or "bo".  Note that matches 
-are **not** case sensitive, and the ``--multi-match`` option will determine 
+The ``--partial-matches`` or ``-p`` option will match any records in the AtoM
+database where record name starts with the import name value. For instance, an
+import name of "box" will match existing records "boxes", "box1", and
+"box-hollinger", but will not match "hollinger-box" or "bo".  Note that matches
+are **not** case sensitive, and the ``--multi-match`` option will determine
 which matched records are updated in the case of multiple matching records.
 
-The ``--rows-until-update`` or ``-r`` option controls how often the import task 
-will output information about the progress of the import process. For more on 
-this general import option, see below: :ref:`csv-import-progress`. 
+The ``--rows-until-update`` or ``-r`` option controls how often the import task
+will output information about the progress of the import process. For more on
+this general import option, see below: :ref:`csv-import-progress`.
 
-The ``--skip-unmatched`` or ``-s`` option must be used with the ``--update`` 
-option, and prevents the unwanted creation of new records in the database.  
-CSV rows that match an existing record in the database (by name) will update 
-the matched record or records (see the ``--multi-match`` option for information 
-on multiple matches). Normally, when a match is not found duing an update import, 
-AtoM will treat an unmatched row as new data, and will create a new container - 
-however, with the ``skip-unmatched`` option used as well, CSV records that do 
-not match an existing database record will be ignored.  A warning message will 
-be output to the error log or STDERR for each CSV record that is skipped because 
+The ``--skip-unmatched`` or ``-s`` option must be used with the ``--update``
+option, and prevents the unwanted creation of new records in the database.
+CSV rows that match an existing record in the database (by name) will update
+the matched record or records (see the ``--multi-match`` option for information
+on multiple matches). Normally, when a match is not found duing an update import,
+AtoM will treat an unmatched row as new data, and will create a new container -
+however, with the ``skip-unmatched`` option used as well, CSV records that do
+not match an existing database record will be ignored.  A warning message will
+be output to the error log or STDERR for each CSV record that is skipped because
 it does not match an existing container record.
 
-The ``--skip-rows`` or ``-o`` option will skip the specified number of rows in the 
-CSV, and then start importing data after that point.  For instance, specifying 
-``--skip-rows=100`` would start the import at row 101 of the CSV import file. 
-The ``--skip-rows`` option is normally used to resume an import that failed or 
-was aborted to prevent duplicating already imported data. Please note that 
-unless the ``--header`` option is used, the first row of the CSV file is assumed 
-to contain field names rather than data, and this row is **not** counted when 
-determining the number of skipped rows. For example, if the ``--header`` option 
-is not specified and ``--skip-rows=10``, the first eleven rows of the CSV file 
-(i.e. the header plus 10 data rows) will be skipped, and the 12th CSV row will 
+The ``--skip-rows`` or ``-o`` option will skip the specified number of rows in the
+CSV, and then start importing data after that point.  For instance, specifying
+``--skip-rows=100`` would start the import at row 101 of the CSV import file.
+The ``--skip-rows`` option is normally used to resume an import that failed or
+was aborted to prevent duplicating already imported data. Please note that
+unless the ``--header`` option is used, the first row of the CSV file is assumed
+to contain field names rather than data, and this row is **not** counted when
+determining the number of skipped rows. For example, if the ``--header`` option
+is not specified and ``--skip-rows=10``, the first eleven rows of the CSV file
+(i.e. the header plus 10 data rows) will be skipped, and the 12th CSV row will
 be the first record imported.
 
-The ``--source-name`` option is used to logically group multiple imports 
-together if a single data set has been split into multiple CSV files to prevent 
-running out memory during an import, or to limit the time each import takes to 
-complete. For exmaple, ``--source-name="January 2020 import"`` could be used for 
+The ``--source-name`` option is used to logically group multiple imports
+together if a single data set has been split into multiple CSV files to prevent
+running out memory during an import, or to limit the time each import takes to
+complete. For exmaple, ``--source-name="January 2020 import"`` could be used for
 multiple CSV files that comprise a January 2020 data update.
 
 Finally, the ``--update``  or ``-u`` option will attempt to match each import
@@ -1994,8 +1893,8 @@ includes a container named "box-1234", and there is an existing physical
 object in AtoM named "Box-1234," then the existing physical object will be
 updated with the CSV data instead of creating a new physical object in AtoM.
 
-Please note that the ``--empty-overwrite``, ``--skip-unmatched``, 
-``--multi-match``, and ``--partial-match`` options all affect the match and 
+Please note that the ``--empty-overwrite``, ``--skip-unmatched``,
+``--multi-match``, and ``--partial-match`` options all affect the match and
 update criteria when using the ``--update`` option.
 
 **An example**
@@ -2072,8 +1971,8 @@ attached. AtoM does not allow more than one digital object per information
 object (with the exception of derivatives), and each digital object must have
 a corresponding information object to describe it, so this one-to-one
 relationship must be respected in the CSV import file. See the "NOTES ON USE" at
-the bottom of this task's documentation for more information on how the task 
-will behave if more than one CSV row points at a single archival description. 
+the bottom of this task's documentation for more information on how the task
+will behave if more than one CSV row points at a single archival description.
 
 The second CSV column column identifies the related :term:`information object`
 (AKA :term:`archival description`), to which you wish to attach your digital
@@ -2082,32 +1981,32 @@ therefore 3 different possible column header names, depending on the method
 you use:
 
 * The first option is ``information_object_id``. This is a unique internal
-  value assigned to each :term:`information object` in AtoM's database - it is 
-  not visible via the :term:`user interface` and you may have to perform a 
-  SQL query to find it out. For instructions on how to do so, see 
-  :ref:`cli-access-mysql` and :ref:`cli-object-id`. 
+  value assigned to each :term:`information object` in AtoM's database - it is
+  not visible via the :term:`user interface` and you may have to perform a
+  SQL query to find it out. For instructions on how to do so, see
+  :ref:`cli-access-mysql` and :ref:`cli-object-id`.
 * The second option is ``slug``. A :term:`slug` is a word or sequence of words
   that make up the last part of a URL in AtoM. It is the part of the URL that
   uniquely identifies the resource and often is indicative of the name or
   title of the page (e.g.: in *www.yourwebpage.com/about*, the slug is
   *about*). The slug is meant to provide a unique, human-readable, permanent
   link to a resource. For more information on slugs in AtoM, see:
-  :ref:`slugs-in-atom`. The values entered into this column are case sensitive, 
-  meaning that capitalization matters - AtoM will not match ``My-Slug`` to 
-  ``my-slug``, for example. 
+  :ref:`slugs-in-atom`. The values entered into this column are case sensitive,
+  meaning that capitalization matters - AtoM will not match ``My-Slug`` to
+  ``my-slug``, for example.
 * Finally, the description ``identifier`` can be used instead if preferred. A
   :term:`description's <archival description>` identifier is visible in the
   :term:`user interface`, which can make it less difficult to discover.
   **However**, if the target description's identifier is not unique
-  throughout your AtoM instance, the digital object may not be attached to the 
-  correct description - AtoM will attach it to the first matching identifier it 
+  throughout your AtoM instance, the digital object may not be attached to the
+  correct description - AtoM will attach it to the first matching identifier it
   finds.
 
-The final CSV, once prepared, should have **only** 2 columns - one for the 
-``filename``, and a second column with information on the related description 
-(i.e. either ``information_object_id``, ``slug``, or ``identifier``). The task 
-will take a path to this CSV as input - and it includes a number of additional 
-options, described in more detail below. 
+The final CSV, once prepared, should have **only** 2 columns - one for the
+``filename``, and a second column with information on the related description
+(i.e. either ``information_object_id``, ``slug``, or ``identifier``). The task
+will take a path to this CSV as input - and it includes a number of additional
+options, described in more detail below.
 
 Using the digital object load task
 ----------------------------------
@@ -2115,14 +2014,14 @@ Using the digital object load task
 Before using this task, you will need to prepare:
 
 * A CSV file with 2 columns -  **EITHER** ``information_object_id`` and
-  ``filename``, **OR** ``identifier`` and ``filename``, **OR** ``slug`` and 
-  ``filename`` . See above for further details on each option. 
+  ``filename``, **OR** ``identifier`` and ``filename``, **OR** ``slug`` and
+  ``filename`` . See above for further details on each option.
 * A directory with your digital objects inside of it
 
 .. IMPORTANT::
 
    You cannot use ``information_object_id``, ``slug``, and ``identifier`` in
-   the same CSV - only **one** of these columns must be present. 
+   the same CSV - only **one** of these columns must be present.
 
    If you use the ``identifier`` column, make sure your target description
    identifiers are **unique** in AtoM - otherwise your digital objects may not
@@ -2137,8 +2036,8 @@ and the CSV is prepared in a spreadsheet application:
    :alt: Example CSV for digitalobject:load task using identifier
 
 The task also includes an option to provide a default file path prefix to your
-digital object directory (explained further below). Here is an example of a 
-CSV prepared using the ``slug`` column, with the full path to each object 
+digital object directory (explained further below). Here is an example of a
+CSV prepared using the ``slug`` column, with the full path to each object
 omitted:
 
 .. image:: images/digital-object-load-slug.*
@@ -2148,8 +2047,8 @@ omitted:
 
 .. TIP::
 
-   Before proceeding, make sure that you have reviewed the general CSV 
-   preparation instructions included in the User Manual 
+   Before proceeding, make sure that you have reviewed the general CSV
+   preparation instructions included in the User Manual
    :ref:`here <csv-encoding-newline>`, to ensure that your CSV will work when
    used with the ``digitalobject:load`` task. The key point when creating a
    CSV is to ensure the following:
@@ -2157,10 +2056,10 @@ omitted:
    * The CSV file is saved with UTF-8 encodings
    * The CSV file uses Linux/Unix style end-of-line characters (``/n``)
 
-   Additionally, AtoM also has a task that can be used to double-check your 
-   load CSV against the :term:`digital object` directory, looking for any 
-   discrepencies such as unused files, incorrect or duplicate file paths in the 
-   CSV, etc. For more information, see: 
+   Additionally, AtoM also has a task that can be used to double-check your
+   load CSV against the :term:`digital object` directory, looking for any
+   discrepencies such as unused files, incorrect or duplicate file paths in the
+   CSV, etc. For more information, see:
 
    * :ref:`csv-check-filepaths-digital-objects`
 
@@ -2242,47 +2141,47 @@ use a trailing slash to finish your path prefix - e.g.:
 
 The ``--attach-only`` option changes the behavior of where the task will attach
 the associated digital object. When used, rather than attaching the digital
-object to the target description, AtoM will instead always create a new stub 
-:term:`child <child record>` description, and attach the digital object there. 
+object to the target description, AtoM will instead always create a new stub
+:term:`child <child record>` description, and attach the digital object there.
 This can be useful if you want to pass multiple digital objects to the same
-parent description - for example, attaching individual TIFF files of book 
-pages as children to an item-level record describing the book. 
+parent description - for example, attaching individual TIFF files of book
+pages as children to an item-level record describing the book.
 
 .. TIP::
 
-   See the "NOTES ON USE" section below to learn more about the load task's 
-   default behaviors when multiple CSV rows point to the same 
-   :term:`archival description` and no other task options are used. 
+   See the "NOTES ON USE" section below to learn more about the load task's
+   default behaviors when multiple CSV rows point to the same
+   :term:`archival description` and no other task options are used.
 
 The ``--replace`` option can be used if you want to overwrite existing digital
 objects with those indicated in the CSV. When used, AtoM will delete any existing
-attached digital object it finds and then attach the new object. 
+attached digital object it finds and then attach the new object.
 
 .. IMPORTANT::
 
-   You cannot use the ``--replace`` and ``--attach-only`` options at the same 
-   time. This will generate the error: 
+   You cannot use the ``--replace`` and ``--attach-only`` options at the same
+   time. This will generate the error:
 
    ``Cannot use option "--attach-only" with "--replace".``
 
    Additionally, this option overrides the default multi-row behavior described
-   below (in the "notes on use"), and those of the ``--attach-only`` option. 
-   When the ``--replace`` option is used: 
+   below (in the "notes on use"), and those of the ``--attach-only`` option.
+   When the ``--replace`` option is used:
 
    * If the import CSV contains one image for a specific description and the
-     description specified in the CSV does not have a digital object attached to 
+     description specified in the CSV does not have a digital object attached to
      it, this digital object will be imported and linked.
    * If the import CSV contains one image for a specific description and the
      description specified in the CSV already has one attached, the attached
      digital object will be deleted and the one specified in the CSV will be
      imported and linked.
    * If the import CSV contains **more than one** image for a specific
-     description, and the description does **not** yet have a digital object 
+     description, and the description does **not** yet have a digital object
      directly linked to it, the *last* image specified in the CSV for this
      target description will be linked.
    * If the import CSV contains **more than one** image for a specific
-     description, and the description **does** already has a digital object 
-     directly linked to it, the existing image will be deleted and the *last* 
+     description, and the description **does** already has a digital object
+     directly linked to it, the existing image will be deleted and the *last*
      image specified in the CSV for this target description will be linked.
 
 **TO RUN THE DIGITAL OBJECT LOAD TASK**
@@ -2293,21 +2192,21 @@ attached digital object it finds and then attach the new object.
 
 **NOTES ON USE**
 
-* If a single CSV row points to a description that already has a 
+* If a single CSV row points to a description that already has a
   :term:`digital object`, then the row will be skipped and reported in the console
-* If the CSV contains *multiple* rows pointing at a description that already 
-  has a digital object, then new stub child descriptions will be created 
-  below the target, and digital objects will be attached there. If child 
-  descripitons already exist, they will be ignored (meaning, running the task 
+* If the CSV contains *multiple* rows pointing at a description that already
+  has a digital object, then new stub child descriptions will be created
+  below the target, and digital objects will be attached there. If child
+  descripitons already exist, they will be ignored (meaning, running the task
   more than once will result in duplicate child descriptions).
-* Note that the ``--attach-only`` and ``--replace`` options change the above 
-  default behaviors when multiple rows point to one description. Read the 
-  option descriptions above for more information. 
+* Note that the ``--attach-only`` and ``--replace`` options change the above
+  default behaviors when multiple rows point to one description. Read the
+  option descriptions above for more information.
 * Remember to repopulate the search index afterwards if you haven't used the
   ``--index`` option! For more information, see:
   :ref:`maintenance-populate-search-index`.
 * Additionally, if you use the ``--skip-nested-set-build`` option, you will need
-  to manually rebuild the nested set after the task has completed. See: 
+  to manually rebuild the nested set after the task has completed. See:
   :ref:`cli-rebuild-nested-set`.
 
 Regenerating derivatives
@@ -2368,9 +2267,9 @@ Export CSV files from the command-line
 ======================================
 
 In addition to bulk XML import and export, AtoM also includes tasks to export
-:term:`archival descriptions <archival description>` and 
-:term:`authority records <authority record>` in bulk from the command-line in 
-CSV format. 
+:term:`archival descriptions <archival description>` and
+:term:`authority records <authority record>` in bulk from the command-line in
+CSV format.
 
 **Jump to:**
 
@@ -2392,8 +2291,8 @@ Export archival descriptions in CSV from the command-line
 The CSV export task is a command-line task that will allow a system
 administrator with access to the root AtoM directory to export some or all
 :term:`archival descriptions <archival description>` held in AtoM in CSV
-format. This template is the same as that used for :ref:`csv-import`, and the 
-export produced can therefore also be used to import data into another AtoM 
+format. This template is the same as that used for :ref:`csv-import`, and the
+export produced can therefore also be used to import data into another AtoM
 instance.
 
 Example use - run from AtoM's root directory:
@@ -2555,8 +2454,8 @@ Export authority records in CSV from the command-line
 The CSV authority export task is a command-line task that will allow a system
 administrator with access to the root AtoM directory to export some or all
 :term:`authority records <authority record>` held in AtoM in CSV
-format. This template is the same as that used for the authority record 
-:ref:`csv-import`, and the export produced can therefore also be used to import 
+format. This template is the same as that used for the authority record
+:ref:`csv-import`, and the export produced can therefore also be used to import
 data into another AtoM instance.
 
 Example use - run from AtoM's root directory:
@@ -2569,6 +2468,10 @@ If you specify just a path to a directory, AtoM will generate a name for the
 CSV. If you wish to name your CSV file, then you can specify the target
 filename in the path (e.g. in the above example, "*example.csv*" is the target
 filename).
+
+If your database includes relationships between authority records, these will
+exported along with the authority records CSV file in a separate ``relations``
+CSV file.
 
 .. _csv-export-authority-cli-options:
 

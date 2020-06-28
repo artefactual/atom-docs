@@ -184,10 +184,7 @@ Available example files are:
 * ISAD archival description CSV template
 * RAD archival description CSV template
 * Authority record CSV template
-
-  * Authority record aliases CSV template
-  * Authority record relationships CSV template
-
+* Authority record relationships CSV template
 * Accessions CSV template
 * Deaccessions CSV template
 * Events CSV template
@@ -306,10 +303,10 @@ Depending on the size of your import data, this work can be done manually
 using a spreadsheet program - simply cut and paste your data into the
 corresponding cell in the provided import templates. However, for larger data
 sets, data transformation can be done with custom programming (for example, a
-Python script written by a :term:`developer`),  existing tools such as
-the open source Pentaho
-`Data Integration <http://community.pentaho.com/projects/data-integration/>`__
-application, or by use of a CSV transformation script.
+Python script written by a :term:`developer`), open source tools such as `Open
+Refine <https://openrefine.org/>`__ or `Pentaho Data Integration <http:/
+community.pentaho.com/projects/data-integration/>`__, or via a CSV
+transformation script.
 
 We have included some guidelines for creating custom CSV transformation
 scripts. See:
@@ -525,9 +522,9 @@ Both methods of establishing hierarchical relationships are described below.
 
 .. NOTE::
 
-   If you want your records to import as **top-level descriptions**, simply 
-   include a ``legacyID`` value, and leave both the ``parentID`` and 
-   ``qubitParentSlug`` columns blank for that row. 
+   If you want your records to import as **top-level descriptions**, simply
+   include a ``legacyID`` value, and leave both the ``parentID`` and
+   ``qubitParentSlug`` columns blank for that row.
 
 .. _csv-description-legacy-id:
 
@@ -592,8 +589,8 @@ parent description.
 Alternately, if you are using the command-line to perform your import, you can
 use the ``--default-parent-slug`` option in the command-line to set a default
 slug value, that will be used when no *qubitParentSlug* or *parentID* values
-have been included for the row. For more information, see the details in the 
-Administrator's manual on command-line CSV export: 
+have been included for the row. For more information, see the details in the
+Administrator's manual on command-line CSV export:
 :ref:`csv-import-descriptions-cli`.
 
 Here is an example of the first few columns of a CSV file (shown in a
@@ -776,7 +773,7 @@ during import when possible. However, to avoid collisions, or situations in
 which multiple imports overwrite the same authority record in a
 :term:`multi-repository system`, the approach is conservative - for a match to
 be made and a link to an existing record added instead of a new record being
-created, the authorized form of name must bean *exact* match, **and** the
+created, the authorized form of name must be an *exact* match, **and** the
 existing authority record in AtoM must be linked to the same repository as the
 incoming records' repository column value. The presence of a matching or
 different actor history, and the import type (import as new, match and update,
@@ -941,10 +938,10 @@ value.
 
 .. TIP::
 
-   AtoM includes a command-line task that can be used to double-check your 
-   CSV's ``digitalObjectPath`` values  against a :term:`digital object` 
-   directory, looking for any discrepencies such as unused files, incorrect or 
-   duplicate file paths in the CSV, etc. For more information, see: 
+   AtoM includes a command-line task that can be used to double-check your
+   CSV's ``digitalObjectPath`` values  against a :term:`digital object`
+   directory, looking for any discrepencies such as unused files, incorrect or
+   duplicate file paths in the CSV, etc. For more information, see:
 
    * :ref:`csv-check-filepaths-digital-objects`
 
@@ -1032,13 +1029,13 @@ Other data entry notes
 Importing translations
 ----------------------
 
-As of version 2.6, AtoM will allow you to import new descriptions in multiple 
+As of version 2.6, AtoM will allow you to import new descriptions in multiple
 languages at once, as a way of adding translations to your source content during
-an import. 
+an import.
 
-At this time, not all CSV fields support translation imports. Only 
+At this time, not all CSV fields support translation imports. Only
 those fields found in AtoM's ``information_object_i18n`` database table can
-be imported as translations. These include: 
+be imported as translations. These include:
 
 * title
 * alternateTitle
@@ -1047,7 +1044,7 @@ be imported as translations. These include:
 * archivalHistory
 * acquisition
 * scopeAndContent
-* appraisal 
+* appraisal
 * accruals
 * arrangement
 * accessConditions
@@ -1065,13 +1062,13 @@ be imported as translations. These include:
 The translation import works on the following logic: whenever AtoM encounters
 two CSV rows that have the **same** ``legacyId`` value, but **different**
 ``culture`` values, AtoM will import the second row as a translation of the
-first. AtoM expects two-letter ISO 639-1 culture codes to be used in the 
-``culture`` column - e.g. ``en`` for English, ``fr`` for French, etc. See the 
+first. AtoM expects two-letter ISO 639-1 culture codes to be used in the
+``culture`` column - e.g. ``en`` for English, ``fr`` for French, etc. See the
 section above, :ref:`csv-descriptions-other-fields`, for further information.
 
 **Preparing translations for import**
 
-To import new archival descriptions with translations: 
+To import new archival descriptions with translations:
 
 * Make sure that every row in your CSV has a ``legacyId`` and a ``culture``
   value
@@ -1084,7 +1081,7 @@ To import new archival descriptions with translations:
 * In the translation rows, leave any columns that do not support translation
   blank
 
-An example CSV: 
+An example CSV:
 
 .. image:: images/csv-translation-example.*
    :align: center
@@ -1093,9 +1090,9 @@ An example CSV:
 
 .. TIP::
 
-   Most fields that can't currently be translated via CSV import can still be 
-   translated via AtoM's :term:`user interface`. For more information on 
-   translating content via the user interface, see: 
+   Most fields that can't currently be translated via CSV import can still be
+   translated via AtoM's :term:`user interface`. For more information on
+   translating content via the user interface, see:
 
    * :ref:`translate-content`
 
@@ -1296,10 +1293,10 @@ with the additional import options available when importing updates.
 Fields that will support update imports
 ---------------------------------------
 
-Currently, not all fields in AtoM's :term:`archival description` metadata 
+Currently, not all fields in AtoM's :term:`archival description` metadata
 templates can be updated via import. Only those fields which are found in AtoM's
-primary ``information_object`` and ``information_object_i18n`` database tables 
-will support updates in place. Below is a list of supported fields: 
+primary ``information_object`` and ``information_object_i18n`` database tables
+will support updates in place. Below is a list of supported fields:
 
 * title
 * identifier
@@ -1338,34 +1335,34 @@ will support updates in place. Below is a list of supported fields:
 
 .. IMPORTANT::
 
-   Please note that, while title, identifier, and repository **can** be updated 
-   via CSV import, they are also used as part of the matching criteria when 
-   importing updates via the user interface. As such, trying to update these 
-   fields via CSV import may cause the matching to fail. 
+   Please note that, while title, identifier, and repository **can** be updated
+   via CSV import, they are also used as part of the matching criteria when
+   importing updates via the user interface. As such, trying to update these
+   fields via CSV import may cause the matching to fail.
 
-   See below for further information on AtoM's import matching criteria: 
+   See below for further information on AtoM's import matching criteria:
 
    * :ref:`csv-descriptions-match-criteria`
 
-   Note that the command-line import task includes a ``--roundtrip`` option that, 
-   when used with the ``--update`` option, limits matching to the objectID value 
-   (included in the legacyID column on export). Using this option can allow for 
-   updates to title, identifier, and repository, since the only matching criteria 
-   used is the legacyID value in your import CSV. For more information, see: 
+   Note that the command-line import task includes a ``--roundtrip`` option that,
+   when used with the ``--update`` option, limits matching to the objectID value
+   (included in the legacyID column on export). Using this option can allow for
+   updates to title, identifier, and repository, since the only matching criteria
+   used is the legacyID value in your import CSV. For more information, see:
 
    * :ref:`csv-import-descriptions-cli`
 
-There are also additional fields that are not stored in AtoM's primary 
+There are also additional fields that are not stored in AtoM's primary
 :term:`information object` database tables that can potentially receive new data
-via an update import. In these cases, existing data will **not** be replaced - 
-instead, the update import will append **new** data to the existing resources. 
-These fields typically relate to note fields (such as all the custom note types 
-in the :ref:`RAD <rad-template>` and :ref:`DACS <dacs-template>` templates), or 
-linked :term:`entities <entity>` such as :term:`terms <term>`, 
-:term:`authority records <authority record>`, etc. 
+via an update import. In these cases, existing data will **not** be replaced -
+instead, the update import will append **new** data to the existing resources.
+These fields typically relate to note fields (such as all the custom note types
+in the :ref:`RAD <rad-template>` and :ref:`DACS <dacs-template>` templates), or
+linked :term:`entities <entity>` such as :term:`terms <term>`,
+:term:`authority records <authority record>`, etc.
 
-Below is a list of fields to which new data can be appended via an update 
-import - any existing data will be left in place: 
+Below is a list of fields to which new data can be appended via an update
+import - any existing data will be left in place:
 
 * accessionNumber
 * radGeneralMaterialDesignation
@@ -1395,12 +1392,12 @@ import - any existing data will be left in place:
 * physicalObjectLocation
 * physicalObjectType
 
-Finally, please note that ``eventActors`` (i.e. :term:`creators <creator>` and 
-other actors associated with different event types) and other related ``event`` 
-fields are a special case. Please see the table in the section above to 
-determine the matching criteria and resulting behavior: 
+Finally, please note that ``eventActors`` (i.e. :term:`creators <creator>` and
+other actors associated with different event types) and other related ``event``
+fields are a special case. Please see the table in the section above to
+determine the matching criteria and resulting behavior:
 
-* :ref:`csv-actor-matching` 
+* :ref:`csv-actor-matching`
 
 .. _csv-descriptions-match-criteria:
 
@@ -1434,19 +1431,19 @@ existing archival descriptions during a CSV import:
   considered not to have a match. Depending on user settings during import, it
   will either import as new, or be skipped and reported in the Job details page.
 
-.. TIP:: 
+.. TIP::
 
-   AtoM's command-line CSV import includes an addtional option, called 
+   AtoM's command-line CSV import includes an addtional option, called
    ``--roundtrip``, that bypasses the above set of criteria. Instead, it will
-   **only** look for an exact match on the legacyID value in your import CSV, 
-   against the unique internal database object ID associated with every record. 
-   AtoM populates the ``legacyId`` column with objectID values during export, 
-   so this option is useful when roundtripping (AKA exporting a CSV, updating 
+   **only** look for an exact match on the legacyID value in your import CSV,
+   against the unique internal database object ID associated with every record.
+   AtoM populates the ``legacyId`` column with objectID values during export,
+   so this option is useful when roundtripping (AKA exporting a CSV, updating
    its metadata, and then re-importing it as an update) in the same system. It's
    also useful when you want to update the title, identifier, and repository
-   values of a description, since otherwise these are used as matching criteria. 
+   values of a description, since otherwise these are used as matching criteria.
 
-   For more information, see: 
+   For more information, see:
 
    * :ref:`csv-import-descriptions-cli`
 
@@ -2410,16 +2407,15 @@ Prepare authority records for CSV import
 ========================================
 
 The :term:`authority record` import tool allows you to import data about
-people, familiies, and organizations. In addition to importing data detailing
-these entities, the tool also allows the simultaneous import of supplementary
-data (in separate CSV files) on how these entities relate to each other and
-alternate names these entities are known by.
+people, families, and organizations. In addition to importing data detailing
+these entities, the tool also allows the import of supplementary
+data on how these entities relate to each other (See :ref:`csv-import-authority-record-relationships`).
 
 You can view the example CSV files for authority records in the AtoM code (at
 ``lib/task/import/example/authority_records/``) or they can be downloaded
 directly here:
 
-* https://wiki.accesstomemory.org/Resources/CSV_templates#Other_CSV_templates
+* https://wiki.accesstomemory.org/Resources/CSV_templates#Authority_records
 
 .. IMPORTANT::
 
@@ -2487,14 +2483,31 @@ use:
 * Minimal
 * Partial
 
+As long as they are separated with a pipe character (``|``), multiple values can be included in a single column for the following multi-value fields:
+
+* parallelFormsOfName
+* standardizedFormsOfName
+* otherFormsOfName
+* actorOccupations
+* actorOccupationNotes
+* subjectAccessPoints
+* placeAccessPoints
+
+You can upload a digital object to link to the authority record (e.g. a profile
+picture of the authority record's subject) by including its relative file path
+on the AtoM server in the ``digitalObjectPath`` column or by including a link
+to the digital object's external online location in the ``digitalObjectURI``
+column.
+
 .. TIP::
 
-   Some fields available in the :term:`user interface` (such as alternative
-   forms of name, as well as the Relationships area, where you can link one
-   authority record to another) are not available in this CSV template.
-   However, two additional CSV templates can be imported  at the same time by
-   a system administrator via the command-line interface to add this
-   information. For more information, see: :ref:`csv-actor-import-cli`.
+   Fields that are available in the Relationships area of the authority record
+   :term:`user interface` are not available in this CSV template. However, you
+   can use a separate CSV template to import these via the same user interface.
+   See :ref:`csv-import-authority-record-relationships`. A system administrator
+   can also import authority record relationship data with additional
+   "match-and-replace" or "delete-and-replace" options via the command-line
+   interface. For more information, see: :ref:`csv-authority-relationships`.
 
 
 .. _csv-import-authority-records-gui:
@@ -2660,64 +2673,64 @@ Authority record fields that will support update imports
 
 Currently not all fields in AtoM's :term:`authority record` metadata template
 can be updated via import. Only those fields which are found in AtoM's primary
-``actor`` and ``actor_i18n`` database tables will support updates in place. 
+``actor`` and ``actor_i18n`` database tables will support updates in place.
 Additionally, because the ``authorizedFormOfName`` field is used for matching
 on import, editing this field will cause a match to fail - meaning it can't be
 updated via CSV import. Below is a list of supported fields that can be updated
-in place: 
+in place:
 
 * typeOfEntity
-* corporateBodyIdentifiers    
-* datesOfExistence    
-* history 
-* places  
-* legalStatus 
-* functions   
-* mandates    
-* internalStructures  
+* corporateBodyIdentifiers
+* datesOfExistence
+* history
+* places
+* legalStatus
+* functions
+* mandates
+* internalStructures
 * generalContext
 * digitalObjectURI
 * digitalObjectPath
-* descriptionIdentifier   
-* institutionIdentifier   
-* rules   
-* status  
-* levelOfDetail   
-* revisionHistory 
-* sources 
+* descriptionIdentifier
+* institutionIdentifier
+* rules
+* status
+* levelOfDetail
+* revisionHistory
+* sources
 * maintenanceNotes
 
 .. NOTE::
 
-   While the ``typeOfEntity`` can be updated via CSV import, at present the 
-   import will only succeed when using terms that have already been added to the 
+   While the ``typeOfEntity`` can be updated via CSV import, at present the
+   import will only succeed when using terms that have already been added to the
    Actor Entity Types :term:`taxonomy`. If you try to add a new entity type
-   via import without **first** adding it to the taxonomy, the import will fail! 
+   via import without **first** adding it to the taxonomy, the import will fail!
 
 There are also additional fields that are not stored in AtoM's primary
 :term:`authority record` database tables that can potentially receive new
 data via an update import. In these cases, existing data will **not**
-be replaced - instead, the update import will append new data to the existing 
-resources, leaving the current data in place as well. These fields typically 
-relate to :term:`access point` fields (such as subjects, places, and 
-occupations), as well as alternative forms of name.  
+be replaced - instead, the update import will append new data to the existing
+resources, leaving the current data in place as well. These fields typically
+relate to :term:`access point` fields (such as subjects, places, and
+occupations), as well as alternative forms of name.
 
 Below is a list of fields to which new data can be appended via an update
 import - any existing data will be left in place:
 
-* parallelFormsOfName 
-* standardizedFormsOfName 
+* parallelFormsOfName
+* standardizedFormsOfName
 * otherFormsOfName
-* actorOccupations   
+* actorOccupations
 * actorOccupationNotes
-* subjectAccessPoints 
-* placeAccessPoints 
+* subjectAccessPoints
+* placeAccessPoints
 
 .. NOTE::
 
-   Attempting to update the note associated with an existing actor occupation 
+   Attempting to update the note associated with an existing actor occupation
    :term:`access point` will cause the access point to be duplicated - the
-   updated note will be associated with the new duplicate term. 
+   updated note will be associated with the new duplicate term.
 
 .. _csv-actors-match-update:
 
@@ -2741,12 +2754,13 @@ To import a CSV as updates to existing authority records, select the option
    :alt: An image of the Update matches option in the CSV import user
          interface
 
+
 .. IMPORTANT::
 
    At this time, not all fields in the :term:`authority record` can be updated.
    Primarily, these are fields that are found in other tables in the AtoM
    database than the primary authority record table. Please see the list of
-   supported fields in the :ref:`section above <csv-actors-update-fields>` for 
+   supported fields in the :ref:`section above <csv-actors-update-fields>` for
    more information.
 
    If you wish to update these fields, you might want to either make the
@@ -2977,6 +2991,181 @@ updates.
 
 :ref:`Back to top <csv-import>`
 
+.. _csv-import-authority-record-relationships:
+
+Prepare authority record relationships for CSV import
+=====================================================
+
+The :term:`authority record` relationships import tool allows you to import
+information that links people, families, and organizations. For more information
+on how to use this functionality in the :term:`user interface`, see:
+:ref:`link-two-authority-records`.
+
+You can view the example CSV files for authority record relationships in the
+AtoM code at ``lib/task/import/example/authority_records/`` or they can be
+downloaded directly here:
+
+* https://wiki.accesstomemory.org/Resources/CSV_templates#Authority_records
+
+The Relationships CSV template can only be used to link existing authority
+records that are already present in the AtoM database. AtoM won't create new
+authority records when it encounters unknown names in the Relationship CSV
+file. Therefore, :ref:`create-authority-record` first if you are planning to
+import relationships for new people, families, or organizations.
+
+The Relationships CSV file contains 8 columns:
+
+* The ``subjectAuthorizedFormOfName`` is used to specify one of the actors
+  included in the Authority record CSV upload. This field should match
+  exactly one the "Authorized Form Of Name" field values in AtoM's existing
+  authority records.
+* The ``objectAuthorizedFormOfName`` is used to specify the actor with which you
+  intend to create a new relationship. This field should also match
+  one the "Authorized Form Of Name" field values in AtoM's existing
+  authority records.
+* The ``relationType`` column contains data about the type of relationship you
+  are creating, and maps to ISAAR 5.3.2 Category of Relationship. The terms
+  recommended in the ISAAR standard are used as defaults in the Actor Relation
+  Type :term:`taxonomy` in AtoM. For more information on the distinction
+  between these terms, please consult the International Council
+  on Archives' ISAAR-CPF standard - specifically, section  5.3.2..
+
+  .. image:: images/relationship-type-defaults.*
+     :align: center
+     :width: 85%
+     :alt: An image of the Relationship type default terms
+
+  These terms can be edited and managed in the Actor Relation Type taxonomy.
+  Users can also add their own custom relationship types, e.g.
+  "has students", "is a student of". For more information on managing and
+  creating terms, see: :ref:`terms`; see specifically :ref:`add-converse-term`.
+
+.. NOTE::
+
+  You cannot add new relationTypes using the CSV template. If AtoM
+  encounters a relationType in the CSV template that does not already exist
+  in its database, it will output "Unknown relationship type ... skipping row"
+  in its import job report.
+
+.. IMPORTANT::
+
+  When a ``relationType`` is added on CSV import, AtoM will automatically
+  update the converse term, so only enter one row for each relationship. For
+  example, if ``subjectAuthorizedFormOfName`` is "Alice", ``relationType`` is
+  "is the parent of", and ``objectAuthorizedFormOfName`` is "Bob". Then upon
+  import the Bob authority record will also be updated with an "is a child of"
+  "Alice" relationship.
+
+* The ``description`` field is a free-text string field that allows a user to
+  provide further contextual information about the relationship.
+* The ``date`` field is a free-text string field that will allow a user to
+  enter a date or date range for the relationship. It allows the use of special
+  characters and typographical marks to indicate approximation (e.g. [ca.
+  1900]) and/or uncertainty (e.g. [199-?]). Use the ``startDate`` and
+  ``endDate`` fields to enter ISO-formatted date values (e.g. YYYY-MM-DD,
+  YYYY-MM, or YYYY) that correspond to the free-text *date* field. Public users
+  in the interface will see the ``date`` field values when viewing
+  relationships; the ``startDate`` and ``endDate`` values are not visible, and
+  are used for date range searching in the application.
+* The ``culture`` column indicates to AtoM the language of the descriptions
+  being uploaded. This column expects two-letter ISO 639-1 language code
+  values - for example, "en" for English; "fr" for French, "it" for Italian,
+  etc. See `Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
+  for a full list of ISO 639-1 language codes.
+
+.. _csv-import-authority-record-relationships-gui:
+
+Import new authority record relationships via CSV
+=================================================
+
+.. IMPORTANT::
+
+   Before proceeding, make sure that you have reviewed the "Before you import"
+   instructions :ref:`above <csv-before-you-import>`, to ensure that your
+   CSV import will work. Most importantly, make sure:
+
+   * Your CSV file is saved with UTF-8 encodings
+   * Your CSV file uses Linux/Unix style end-of-line characters (``/n``)
+   * AtoM already contains the authority records you intend to establish a
+     relationship between and your CSV file matches their "Authorized Form Of
+     Name" values exactly.
+   * You've reviewed the instructions in the section above on preparing your
+     CSV file and have made sure it conforms to the recommendations. See:
+     :ref:`csv-import-authority-record-relationships`.
+
+**To import authority records via the user interface:**
+
+1. Click on the |import| :ref:`Import <main-menu-import>` menu, located in
+   the AtoM :ref:`header bar <atom-header-bar>`, and select "CSV".
+
+.. image:: images/import-menu-csv.*
+   :align: center
+   :width: 30%
+   :alt: The import menu
+
+2. AtoM will redirect you to the CSV import page. Make sure that the "Type"
+   :term:`drop-down menu` is set to "Authority record relationships".
+
+.. image:: images/csv-import-page-relationships.*
+   :align: center
+   :width: 85%
+   :alt: The CSV import page in AtoM, set to import new Authority records relationships
+
+3. If you do not want your files indexed during the import, you can click the
+   checkbox labelled "Do not index imported items." This will prevent the new
+   records from automatically being added to AtoM's search index.
+
+.. WARNING::
+
+   If you do not index your records during import, they will not be
+   discoverable via search in the user interface! To make them visible in the
+   interface again, a system administrator will need to rebuild the search index.
+   See: :ref:`maintenance-populate-search-index`.
+
+4. Click the "Browse" button to open a window on your local computer. Select
+   the Authority record relationship CSV file that you would like to import.
+
+.. image:: images/csv-import-browse.*
+   :align: center
+   :width: 25%
+   :alt: Clicking the "Browse" button in the CSV import page
+
+5. When you have selected the file from your device, its name will appear
+   next to the "Browse" button. Click the "Import" button located in the
+   :term:`button block` to begin your import.
+
+.. image:: images/import-button-block.*
+   :align: center
+   :width: 80%
+   :alt: The import button on the CSV import page
+
+.. NOTE::
+
+   Depending on the size of your CSV import, this can take some time to
+   complete. Be patient! Remember, you can always check on the status of an
+   import by reviewing the :ref:`Job details <job-details>` page of the related
+   import job - see: :ref:`manage-jobs` for more information.
+
+7. After your import is complete, AtoM will indicate that the import has been
+   initiated. A notification at the top of the page will also provide you with
+   a link to the :ref:`Job details <job-details>` page of the related import
+   job. Alternatively, you can click the "Back" button in the
+   :term:`button block` at the bottom of the page to return to the CSV import
+   page, or navigate elsewhere in the application.
+
+.. image:: images/csv-import-completed.*
+   :align: center
+   :width: 85%
+   :alt: When a CSV import has been initiated in AtoM
+
+.. SEEALSO::
+
+   If you want to update existing relationship records or delete and replace
+   them, then an AtoM system administrator can do so using the CLI CSV import
+   tool. See: :ref:`csv-authority-relationships`.
+
+:ref:`Back to top <csv-import>`
+
 .. _csv-import-accessions:
 
 Prepare accession records for CSV import
@@ -3029,11 +3218,11 @@ to a description (see: :ref:`link-accession-description`).
    While the user interface will allow an accession record to be linked to many
    archival descriptions, at this time the ``qubitParentSlug`` column in the CSV
    import template for accessions **cannot support multiple values** - attempting
-   to use a pipe separator to add multiple description slugs will cause the 
-   import to fail. You can add only one related archival description slug to 
-   each row in the ``qubitParentSlug`` column - if you need to link your 
+   to use a pipe separator to add multiple description slugs will cause the
+   import to fail. You can add only one related archival description slug to
+   each row in the ``qubitParentSlug`` column - if you need to link your
    accession record to multiple descriptions, we recommend doing this manually
-   via the :term:`user interface` after the import has completed. 
+   via the :term:`user interface` after the import has completed.
 
 Most fields in the CSV template have been named in a fairly obvious way,
 translating a simplified version of the field name in the AtoM
