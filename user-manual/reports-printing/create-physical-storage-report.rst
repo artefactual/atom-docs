@@ -16,26 +16,194 @@ Create physical storage location and Box label reports
 
 This page of the user manual focuses on printing storage location reports, as
 well as Box label :term:`CSV` files. To learn about linking
-:term:`physical storage` location to an :term:`archival description` please
-see :ref:`Physical storage <physical-storage>`. For file and item report
-generation, see: :ref:`file-item-reports`.
+:term:`physical storage` containers to an :term:`archival description` or an 
+:term:`accession record`, please see :ref:`Physical storage <physical-storage>`. 
+For file and item report generation, see: :ref:`file-item-reports`.
 
-The following sections require :term:`administrator` access and
-:term:`permissions <access privilege>`. For more information on user roles and
-permissions, see:
+The following sections require either :term:`Administrator` or (in some cases) 
+Editor access and :term:`permissions <access privilege>`. For more 
+information on user roles and permissions, see:
 
 * :ref:`user-roles`
 * :ref:`edit-user-permissions`
 
 **Jump to:**
 
+* :ref:`global-storage-report`
 * :ref:`storage-report-view`
 * :ref:`storage-report-manage`
 * :ref:`box-label-report`
 
+.. _global-storage-report:
+
+Create a global physical storage report
+=======================================
+
+AtoM includes a global physical storage report that can be generated via the 
+:term:`user interface` from the :term:`Physical storage` module and downloaded
+as a CSV file from the :ref:`Jobs <manage-jobs>` page. This report is focused
+on container relations (i.e. physical storage containers linked to other 
+:term:`entity` types in AtoM, such as 
+:term:`archival description <archival description>` and 
+:term:`accession records <accession record>`), and can also be used to identify
+unlinked containers. Export options on the report generation page allow users to 
+choose which of these criteria should be included when creating the report:
+
+.. image:: images/storage-report-config.*
+   :align: center
+   :width: 80%
+   :alt: An image showing the configuration options on the storage report export 
+         page
+
+The report will include 1 row for every relation - meaning that a single 
+container might appear in multiple rows of the CSV report, showing each time
+the storage container has been linked to a description or acccesion. 
+
+The image below shows 3 rows from an example report, as an example. The first
+row below the column headers displays an unlinked container - that is, a
+container in the physical storage module that is not linked to any
+descriptions or accessions. The second and third rows show a single container
+(named "X40") linked to an accession record and a description:
+
+.. image:: images/storage-report-example.*
+   :align: center
+   :width: 90%
+   :alt: Example rows from a global storage report CSV
+
+.. TIP::
+
+   One of the ways this report can be used is to identify unlinked physical
+   storage containers. AtoM also has a command-line task that can be used to 
+   delete unlinked storage containers - for more information, see: 
+
+   * :ref:`cli-normalize-physical-object`
+
+**Report columns**
+
+Below is a summary of the columns included in the global physical storage report. 
+
+* **physicalObjectName**: The name assigned to the :term:`physical storage` 
+  container.
+* **physicalObjectLocation**: The location assigned to the storage container. In 
+  AtoM's data entry for the physical storage module, this is a free-text field. 
+* **physicalObjectType**: The type of storage container. These values are derived
+  from the Physical Object Types :term:`taxonomy` in AtoM's data entry for the 
+  physical storage module.
+* **holdingType**: Describes the type of relation in this row. If the container
+  is not linked to any other entities, this will be blank. If the row describes
+  a relation with an :term:`archival description`, the value will be 
+  ``description``. If the row describes a relation with an 
+  :term:`accession record`, the value will be ``accession``. 
+* **holdingIdentifier**: The identifier of the related record. If ``holdingType``
+  is "description", then this value will be an :term:`archival description` 
+  identifier. If ``holdingType`` is "accession" then this value will be an 
+  :term:`accession's <accession record>` primary accession number. If the 
+  container is unlinked, this column will be blank.
+* **holdingTitle**: The title of the related resource (either 
+  :term:`archival description` or :term:`accession record`). If the container is 
+  unlinked, this column will be blank.
+* **levelOfDescription**: Applies only to related archival descriptions. Will 
+  show the level of description assigned to the related record.  
+* **holdingSlug**: The :term:`slug` of the related record. If the container is 
+  unlinked, this column will be blank.
+
+.. IMPORTANT::
+
+   This CSV is intended as a report, and **cannot** be re-imported into AtoM
+   as metadata. AtoM has separate CSV templates for importing accessions, 
+   archival descriptions, and physical storage data. For more information, see 
+   :ref:`csv-import`.
+
+**To export a global report of physical storage container relations**:
+
+1. Click on the "Manage" menu and Select "Physical storage" from the drop-down
+   list.
+
+.. image:: images/navigate-physical-storage.*
+   :align: center
+   :width: 60%
+   :alt: Using the manage menu to navigate to Physical Storage.
+
+2. AtoM will take you to the Browse physical storage screen. 
+
+.. image:: images/browse-physical-storage.*
+   :align: center
+   :width: 80%
+   :alt: Browsing the physical storage locations.
+
+3. At the bottom of the page in the :term:`button block`, click the button that 
+   says "Export storage report".
+
+.. image:: images/storage-button-block.*
+   :align: center
+   :width: 80%
+   :alt: An image of the button block at the bottom of the Physical storage 
+         browse page.
+
+4. AtoM will redirect you to a report configuration page, with three options:
+
+   * **Include unlinked containers**: containers that are not currently linked
+     to any other :term:`entity` will be included in the report when checked.
+   * **Include containers linked to accessions**: containers that are linked to
+     :term:`accession records <accession record>` will be included in the report
+     when checked.
+   * **Include containers linked to descriptions**: containters that are linked
+     to :term:`archival description` records will be included in the report when
+     checked.
+  
+   You can uncheck options as desired - for example, if you only want to identify
+   what storage containers are not currently being used in AtoM, you could check
+   only "Include unlinked containers" and uncheck the other two options. When 
+   you have configured your choice, click the "Export" button to begin the report
+   generation.
+
+.. image:: images/storage-report-config.*
+   :align: center
+   :width: 80%
+   :alt: An image showing the configuration options on the storage report export 
+         page
+
+.. NOTE:: 
+
+   You must choose at least one of the three configuration options, or the 
+   report will not export. Instead, AtoM will show a warning notification and
+   direct you back to the configuration options to update your selection. 
+
+   .. image:: images/storage-report-warning.*
+      :align: center
+      :width: 80%
+      :alt: 
+
+5. Once the Export button has been clicked, AtoM will reload the page and display
+   a notification letting you know that the report is being generated. The 
+   notification includes a hyperlink to the :ref:`Jobs <manage-jobs>` page, where
+   the report can be downloaded once finalized. You can click this link now
+   to go to the Jobs page, or navigate there anytime via **Manage > Jobs**. 
+
+.. TIP::
+
+   Remember, the resulting report is focused on container **relations**, and 
+   not just on the containers themselves. Because of this, the same physical 
+   storage container might be described in multiple rows of your export. Each
+   row in the CSV report represents a relation (or for unlinked containers, a 
+   lack of one), so if a single storage container is linked to 5 
+   :term:`archival description` records and 5 
+   :term:`accession records <accession record>`, that storage container would 
+   appear in 10 rows in the exported report. 
+
+   These options are designed to be inclusive by default. For example, if a
+   container named "X1" is linked to both a description and an accession record,
+   and you check only "*Include containers linked to accessions*" in the 
+   configuration options before exporting, then X1 would still be included in 
+   the resulting report. The same would be true if exporting only containers 
+   linked to descriptions. 
+
+:ref:`Back to top <create-physical-storage-report>`
+
+
 .. _storage-report-view:
 
-Create physical storage report via the Reports module
+Create a physical storage report for an archival unit
 =====================================================
 
 Users can create a :term:`physical storage` report from any
@@ -196,18 +364,24 @@ View archival description screen for that record.
 
 .. _storage-report-manage:
 
-Create physical storage report from the Manage menu
-===================================================
+Create physical storage report for a single container
+=====================================================
 
 AtoM also provides a simple report that lists all :term:`archival description`
 records associated with a particular storage location. This report is
-optimized for printing, and can be accessed via the Physical storage module.
+optimized for printing, and can be accessed via the Physical storage module. For
+more information on working with the Physical storage module, see: 
 
-.. SEEALSO::
+* :ref:`physical-storage`
 
-   * :ref:`physical-storage`
+.. IMPORTANT::
 
-**To view the physical storage report:**
+   While storage locations can be linked to :term:`accessions <accession record>`,
+   at present accession records are **not** included in this container report. 
+   This report will only include a list of linked :term:`archival description` 
+   records. 
+
+**To view the container physical storage report:**
 
 1. Click on the "Manage" menu and Select "Physical storage" from the drop-down
    list.
@@ -254,8 +428,9 @@ Generate a box label report via the Reports module
 ==================================================
 
 Users can create a simple :term:`physical storage` report that can be used
-to create box labels for your physical storage, via the Reports module.
-The report includes columns for the following:
+to create box labels for your physical storage, via the Reports module 
+associated with an :term:`archival description`. The report includes columns for 
+the following:
 
 * :term:`Reference code`
 * Physical object name (i.e. container name)

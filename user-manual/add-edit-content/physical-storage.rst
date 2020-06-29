@@ -15,13 +15,16 @@ Physical storage
    :width: 18
 
 AtoM allows archival institutions to create relationships between
-:term:`archival descriptions <archival description>` and their physical storage
-locations.
+:term:`archival descriptions <archival description>` and
+:term:`accession records <accession record>` and their associated physical
+storage containers and locations.
 
 .. SEEALSO::
 
    * :ref:`archival-descriptions`
    * :ref:`csv-import-storage-cli`
+   * :ref:`create-physical-storage-report`
+   * :ref:`cli-normalize-physical-object` (command-line tasks)
 
 .. _manage-storage-types:
 

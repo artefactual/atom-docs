@@ -1178,6 +1178,7 @@ to manage physical object storage locations and to perform the following:
 .. SEEALSO::
 
    * :ref:`csv-import-storage-cli`
+   * :ref:`global-storage-report`
 
 Normalize physical object data
 ------------------------------
