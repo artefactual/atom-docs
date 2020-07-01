@@ -41,6 +41,7 @@ materials have been arranged.
 
 * :ref:`Add a new accession record <add-new-accession>`
 
+  * :Ref:`add-accession-alt-ids`
   * :ref:`Add a donor <add-accession-donor>`
   * :ref:`Add rights to an accession record <add-accession-rights>`
   * :ref:`Link an accession record to an archival description
@@ -126,6 +127,13 @@ Add a new accession record
    :width: 80%
    :alt: An image of the accession number warning
 
+.. TIP::
+
+   AtoM also allows you to add alternative accession numbers, giving each a 
+   type and associated note if desired. For more information, see below:
+
+   * :ref:`add-accession-alt-ids`
+
 4. The accession record edit template provides a variety of field types for
    data entry (e.g., calendar, free-text, pop-up dialogs and :term:`drop-downs
    <drop-down menu>`). Remember to click on each :term:`information area` to
@@ -142,6 +150,72 @@ Add a new accession record
    :alt: An image of the accession button block
 
 :ref:`Back to top <accession-records>`
+
+.. _add-accession-alt-ids:
+
+Add alternative identifiers to your accession
+---------------------------------------------
+
+In addition to the primary accession number, you can also add additional 
+alternative identifiers from the :term:`edit page` of an :term:`accession record`. 
+This can be useful for capturing legacy identifiers, transfer IDs, conservation
+treatment numbers, barcodes, and more. You can add multiple alternative 
+identifers, and each can be assigned a type (using :term:`terms <term>` managed 
+as a user-editable controlled vocabulary in a :term:`taxonomy`) and an 
+accompanying free-text descriptive note. 
+
+In the Edit accession record screen, under the Accession number :term:`field`
+(located at the top of the :term:`edit page`), click the text reading "Add 
+alternative identifier(s)". AtoM will display new fields below the accession 
+number:
+
+.. image:: images/accession-alt-ids.*
+   :align: center
+   :width: 70%
+   :alt: An image of the alternative identifier edit fields
+
+There are three fields available per identifier:
+
+* **Type**: A term or phrase that characterizes the nature of the identifier.
+* **Identifier**: A code that is assigned to the material to support
+  identification in the course of processes and activities such as
+  acquisition, transfer, ingest, and conservation.
+* **Note**: Additional information about the identifier, including contextual
+  information on the purpose of the identifier.
+
+The "Type" :term:`field` is a :term:`drop-down menu` containing controlled 
+vocabulary terms. It's not possible to add new terms in this screen, but 
+users with sufficient access :term:`permissions <access privilege>` can modify
+and delete existing terms, and add new terms as needed, via |manage| **Manage > 
+Taxonomies**.
+
+.. TIP::
+
+   The :term:`taxonomy` controlling the values available in the Type field is 
+   called "*Accession alternative identifier type*." In new installations, the 
+   only default term included is "Accession alternative identifier." For more 
+   information on how to add, edit, and delete terms in a taxonomy, see: 
+
+   * :ref:`terms`
+
+The "Identifier" field on the right, and the larger "Note" field below it, are 
+both free-text fields. 
+
+You can also add multiple identifiers as needed. Click the "Add new" link in
+the bottom of the alternative identifier widget, and a new set of fields will 
+appear:
+
+.. image:: images/accession-alt-ids-more.*
+   :align: center
+   :width: 70%
+   :alt: An image of the alternative identifier edit fields
+
+When you're done, you can continue data entry elsewhere in the accession record
+:term:`edit page` as needed. Remember to scroll down and click the Save button 
+in the :term:`button block` at the bottom of the page when you're done with your
+edits!
+
+:ref:`Back to top <accession-records>` 
 
 .. _add-accession-donor:
 
@@ -223,7 +297,8 @@ Add rights to an accession record
 ---------------------------------
 
 After an accession record is created, you may add a rights record to it by clicking
-"More" then "Create new rights in the :term:`button block`.
+"More" then "Create new rights" in the :term:`button block` at the bottom of the 
+accession record's :term:`view page`.
 
 .. image:: images/accessions-rights-add.*
    :align: center

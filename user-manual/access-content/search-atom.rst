@@ -1069,6 +1069,8 @@ box to return results.
 
 .. code-block:: none
 
+   alternativeIdentifiers.i18n.%LANG.name
+   alternativeIdentifiers.i18n.%LANG.note
    createdAt
    date
    i18n.%LANG.appraisal
