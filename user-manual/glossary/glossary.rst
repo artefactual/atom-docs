@@ -988,8 +988,9 @@ Glossary
     Physical storage is a grouping of :term:`fields <field>` relating to
     the management of physical objects such as folders, boxes, shelves,
     and cabinets. In AtoM, users can create and edit information about
-    physical objects by clicking on the "Link physical storage" button in
-    the :term:`button block` of an :term:`archival description`. See
+    physical objects by clicking on the "Link physical storage" option, found
+    under the "More" menu in the :term:`button block` of an 
+    :term:`archival description` or :term:`accession record`. See
     :ref:`Physical storage <physical-storage>`.
 
   Place

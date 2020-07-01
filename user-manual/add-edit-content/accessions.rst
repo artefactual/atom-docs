@@ -48,6 +48,7 @@ materials have been arranged.
     <link-accession-description>`
   * :ref:`View the accession record <view-accession>`
 
+* :ref:`link-accession-container`
 * :ref:`Edit an existing accession record <edit-accession-record>`
 * :ref:`Add an accrual <add-accession-accrual>`
 * :ref:`Add a legacy accession record <add-legacy-accession>`
@@ -393,6 +394,24 @@ to:
    selecting a record from the accessions :ref:`browse page <page-type-browse>`
 
 :ref:`Back to top <accession-records>`
+
+.. _link-accession-container:
+
+Link an accession to a physical storage container
+=================================================
+
+In addition to supporting a free-text "Location information" field in the main
+accession record :term:`edit page`, AtoM also supports the ability to link an 
+:term:`accession record` to a :term:`physical storage` container. One accession
+record can be linked to many storage containers, just as one physical storage
+container can be linked to many accession records and 
+:term:`archival descriptions <archival description>`. 
+
+For detailed instructions on how to link physical storage containers to 
+accession records, see: 
+
+* :ref:`link-physical-storage`
+
 
 .. _edit-accession-record:
 
