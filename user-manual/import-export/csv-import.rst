@@ -75,6 +75,7 @@ will be described in greater detail below, along with other import options.
 * :ref:`csv-update-actors`
 * :ref:`csv-import-accessions`
 * :ref:`csv-import-accessions-gui`
+* :ref:`csv-accession-update-gui`
 
 .. SEEALSO::
 
@@ -960,6 +961,15 @@ columns are related to the creation of physical objects and physical storage
 locations related to an :term:`archival description`.
 
 .. image:: images/csv-physical-object.*
+   :align: center
+   :width: 75%
+   :alt: example CSV physicalObject rows
+
+These fields will also support ``|`` pipe separators to add multiple physical
+storage containers per row. When piping one column, each related column must
+also be piped correspondingly:
+
+.. image:: images/csv-physical-object-piped.*
    :align: center
    :width: 75%
    :alt: example CSV physicalObject rows
@@ -3186,7 +3196,7 @@ An example CSV template file is available in the
 ``lib/task/import/example/example_accessions.csv`` directory of AtoM, or it
 can be downloaded here:
 
-* https://wiki.accesstomemory.org/Resources/CSV_templates#Other_CSV_templates
+* https://wiki.accesstomemory.org/Resources/CSV_templates#Accessions
 
 .. SEEALSO::
 
@@ -3195,13 +3205,10 @@ can be downloaded here:
 Below you'll find brief data entry guidelines for preparing a CSV file of
 accessions data for import.
 
-The ``acquisitionDate`` column expects date strings to be formatted according
-to the `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`__ date format
-standard - that is, YYYY-MM-DD. ISO 8601 prescribes, as a minimum, a four-digit
-year [YYYY]. If the date range is not formatted according to ISO 8601 formatting,
-then AtoM will use the PHP date_parse function (which adds '1' as default value
-to the month and day if they are missing) to modify the date to a YYYY-MM-DD
-format.
+.. _csv-accessions-parentslug:
+
+Linking an imported accession to an archival description
+--------------------------------------------------------
 
 To link incoming accession records to an existing archival description, you can
 add a column named  ``qubitParentSlug``. This column will behave similarly to
@@ -3223,6 +3230,11 @@ to a description (see: :ref:`link-accession-description`).
    each row in the ``qubitParentSlug`` column - if you need to link your
    accession record to multiple descriptions, we recommend doing this manually
    via the :term:`user interface` after the import has completed.
+
+.. _csv-accessions-standard-fields:
+
+Standards related fields
+------------------------
 
 Most fields in the CSV template have been named in a fairly obvious way,
 translating a simplified version of the field name in the AtoM
@@ -3246,6 +3258,48 @@ Some of the taxonomy-related fields in the CSV template include:
   Default values are: Complete, Incomplete, In-Progress.
 * ``processingPriority`` - listed in the user interface as "Processing
   priority." Default values are: High, Medium, Low.
+
+.. _csv-accession-storage:
+
+Physical object-related import columns
+--------------------------------------
+
+The ``physicalObjectName``, ``physicalObjectLocation``, and ``physicalObjectType``
+columns are related to the creation of physical storage containers and locations 
+related to an :term:`accession record`.
+
+.. image:: images/csv-physical-object.*
+   :align: center
+   :width: 75%
+   :alt: example CSV physicalObject rows
+
+For more information on working with physical storage in AtoM, see:
+:ref:`physical-storage`.
+
+These fields will also support ``|`` pipe separators to add multiple physical
+storage containers per row. When piping one column, each related column must
+also be piped correspondingly:
+
+.. image:: images/csv-physical-object-piped.*
+   :align: center
+   :width: 75%
+   :alt: example CSV physicalObject rows
+
+.. IMPORTANT::
+
+   If your CSV import contains physical storage information, the CSV file must
+   contain information in both of the folllowing physical object storage fields:
+   ``physicalObjectName`` and ``physicalObjectLocation``. Entering information
+   in ``physicalObjectName`` only will result in the creation of duplicates,
+   since AtoM defaults to duplicates rather than accidentally merging separate
+   records with the same location. For example, several collections may
+   contain ``physicalObjectName`` Box 1, but adding ``physicalObjectLocation``
+   Shelf 1 will differentiate it from Box 1 on Shelf 5.
+
+.. _csv-accession-creators:
+
+Creator-related import columns (actors and events)
+--------------------------------------------------
 
 The ``creators`` column can be used to add the name(s) of the :term:`creator`
 of the accession materials. For now, only creation events are supported, so the
@@ -3273,6 +3327,57 @@ accept multiple values, separated using the pipe ``|`` character.
    date for creator 1 of 2), you must still pipe the field when adding the
    second creator's endDate values, or else they will be matched up with
    creator 1!
+
+.. _csv-accession-donors:
+
+Donor-related import columns
+----------------------------
+
+The following columms relate to donor information in the CSV import template:
+
+* ``donorName`` 
+* ``donorStreetAddress``
+* ``donorCity``
+* ``donorRegion``
+* ``donorCountry``
+* ``donorPostalCode``
+* ``donorTelephone``
+* ``donorFax``
+* ``donorEmail``
+* ``donorNote``
+* ``donorContactPerson``
+
+On import, data entry in these columns will be treated as a single donor. 
+Post-import, Donor records can be managed separately from accessions in AtoM's 
+:term:`user interface`. For more information on managing Donor records, see:
+
+* :ref:`donors`
+
+.. IMPORTANT::
+
+   At this time Donor-related :term:`fields <field>` in the 
+   :term:`accession record` CSV template **cannot be pipe separated** to 
+   include more than one donor per row. At present, you can only import
+   one donor per accession in your CSV import. 
+
+   However, new donor information added to an updated CSV template with the 
+   exact same accession number will be appended as a new donor - so it is 
+   possible to use an update import to add an additional donor to an existing
+   accession record. For more information on updating accession records via 
+   CSV import, see below: :ref:`csv-accession-update-gui`.
+
+.. _csv-accession-other-notes:
+
+Other accession CSV data entry notes
+------------------------------------
+
+The ``acquisitionDate`` column expects date strings to be formatted according
+to the `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`__ date format
+standard - that is, YYYY-MM-DD. ISO 8601 prescribes, as a minimum, a four-digit
+year [YYYY]. If the date range is not formatted according to ISO 8601 formatting,
+then AtoM will use the PHP date_parse function (which adds '1' as default value
+to the month and day if they are missing) to modify the date to a YYYY-MM-DD
+format.
 
 The ``culture`` column indicates to AtoM the default language of the
 accession records being uploaded. This column expects two-letter ISO 639-1
@@ -3372,5 +3477,89 @@ Create new accession records via CSV import
    occur for many reasons - please review the checklist
    :ref:`above <csv-import-accessions-gui>` for suggestions on resolving the
    most common reasons that CSV imports fail.
+
+:ref:`Back to top <csv-import>`
+
+.. _csv-accession-update-gui:
+
+Update existing accessions via CSV import
+=========================================
+
+If a CSV of :term:`accession record` metadata is imported that contains rows
+with the **exact same** accession number as an existing accesion, it's possible
+to update the existing accession record with the incoming row. Matching takes 
+place exclusively against the accession number, meaning:
+
+* It's not possible to update the accession number of an existing accession 
+  record via CSV import
+* Any deviation from the original accession number will result in a new 
+  accession record being created. 
+
+A CSV import can contain a mix of new accession records and rows that are 
+intended to update existing accession records. 
+
+.. _csv-accession-update-fields:
+
+Fields that will support update imports
+---------------------------------------
+
+Currently not all fields in AtoM's :term:`accession record` metadata templates 
+can be updated via import. Only those fields that are found in AtoM's primary
+``accession`` and ``accession_i18n`` database tables will support updates in 
+place. Below is a list of supported fields: 
+
+* title
+* acquisitionDate
+* sourceOfAcquisition
+* locationInformation
+* acquisitionType
+* resourceType
+* title
+* archivalHistory
+* scopeAndContent
+* appraisal
+* physicalCondition
+* receivedExtentUnits
+* processingStatus
+* processingPriority
+* processingNotes 
+
+There are also additional fields that are not stored in AtoM’s primary
+accesion record database tables that can potentially receive new data via
+an update import. In these cases, existing data will **not** be replaced -
+instead, the update import will append **new** data to the existing resources.
+These fields typically include related :term:`entities <entity>` such as donors, 
+:term:`creators <creator>` and event dates, :term:`physical storage`, as well
+as alternative identifiers. 
+
+Below is a list of fields to which new data can be appended via an update
+import - any existing data will be left in place:
+
+* alternativeIdentifiers
+* alternativeIdentifierTypes
+* alternativeIdentifierNotes
+* physicalObjectName
+* physicalObjectLocation
+* physicalObjectType
+* donorName 
+* donorStreetAddress 
+* donorCity
+* donorRegion
+* donorCountry
+* donorPostalCode
+* donorTelephone
+* donorFax
+* donorEmail
+* donorNote
+* donorContactPerson
+* creators
+* eventTypes
+* eventDates
+* eventStartDates
+* eventEndDates
+
+The process for importing updates is identical to importing a CSV of new
+:term:`accession record` metadata - see :ref:`above <csv-import-accessions-gui>` 
+for step-by-step instructions on how to import an accession record CSV in AtoM.
 
 :ref:`Back to top <csv-import>`
