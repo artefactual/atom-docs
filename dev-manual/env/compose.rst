@@ -100,6 +100,9 @@ It's time to use Docker Compose in order to provision our containers:
    # Execute a command in the running container atom: purge database
    docker-compose exec atom php symfony tools:purge --demo
 
+   # Execute another command: build stylesheets
+   docker-compose exec atom make -C plugins/arDominionPlugin
+
 .. TIP::
 
    While you wait, take the opportunity to check out our `Dockerfile <https://github.com/artefactual/atom/blob/stable/2.5.x/Dockerfile>`__,
@@ -155,20 +158,20 @@ Let's verify that two workers have subscribed to Gearman:
    # Send STATUS command
    STATUS
 
-   0a2a58137e05032d1140fdbd0d6dccbb-arInheritRightsJob                0	  0	  2
-   0a2a58137e05032d1140fdbd0d6dccbb-arFileImportJob                   0	  0	  2
-   0a2a58137e05032d1140fdbd0d6dccbb-arInformationObjectXmlExportJob   0	  0	  2
-   0a2a58137e05032d1140fdbd0d6dccbb-arActorXmlExportJob               0	  0	  2
-   0a2a58137e05032d1140fdbd0d6dccbb-arCalculateDescendantDatesJob     0	  0	  2
-   0a2a58137e05032d1140fdbd0d6dccbb-arXmlExportSingleFileJob          0	  0	  2
-   0a2a58137e05032d1140fdbd0d6dccbb-arUpdatePublicationStatusJob      0	  0	  2
-   0a2a58137e05032d1140fdbd0d6dccbb-arObjectMoveJob                   0	  0	  2
-   0a2a58137e05032d1140fdbd0d6dccbb-arInformationObjectCsvExportJob   0	  0	  2
-   0a2a58137e05032d1140fdbd0d6dccbb-arUpdateEsIoDocumentsJob          0	  0	  2
-   0a2a58137e05032d1140fdbd0d6dccbb-arActorCsvExportJob               0	  0	  2
-   0a2a58137e05032d1140fdbd0d6dccbb-arRepositoryCsvExportJob          0	  0	  2
-   0a2a58137e05032d1140fdbd0d6dccbb-arFindingAidJob                   0	  0	  2
-   0a2a58137e05032d1140fdbd0d6dccbb-arGenerateReportJob               0	  0	  2
+   0a2a58137e05032d1140fdbd0d6dccbb-arInheritRightsJob                0	  0   2
+   0a2a58137e05032d1140fdbd0d6dccbb-arFileImportJob                   0	  0   2
+   0a2a58137e05032d1140fdbd0d6dccbb-arInformationObjectXmlExportJob   0	  0   2
+   0a2a58137e05032d1140fdbd0d6dccbb-arActorXmlExportJob               0	  0   2
+   0a2a58137e05032d1140fdbd0d6dccbb-arCalculateDescendantDatesJob     0	  0   2
+   0a2a58137e05032d1140fdbd0d6dccbb-arXmlExportSingleFileJob          0	  0   2
+   0a2a58137e05032d1140fdbd0d6dccbb-arUpdatePublicationStatusJob      0	  0   2
+   0a2a58137e05032d1140fdbd0d6dccbb-arObjectMoveJob                   0	  0   2
+   0a2a58137e05032d1140fdbd0d6dccbb-arInformationObjectCsvExportJob   0	  0   2
+   0a2a58137e05032d1140fdbd0d6dccbb-arUpdateEsIoDocumentsJob          0	  0   2
+   0a2a58137e05032d1140fdbd0d6dccbb-arActorCsvExportJob               0	  0   2
+   0a2a58137e05032d1140fdbd0d6dccbb-arRepositoryCsvExportJob          0	  0   2
+   0a2a58137e05032d1140fdbd0d6dccbb-arFindingAidJob                   0	  0   2
+   0a2a58137e05032d1140fdbd0d6dccbb-arGenerateReportJob               0	  0   2
 
 You could temporarily stop all the services with ``docker-compose stop`` (which
 will need ``docker-compose up -d`` later to start the services again) or both
