@@ -37,11 +37,15 @@ AtoM |version| requires MySQL 8.0 or higher as it uses common table expressions.
 Also, we've experienced very good results using forks like Percona Server or
 MariaDB, so don't be afraid and use them if you want!
 
+For MySQL, check the latest APT repository version in their 
+`downloads page <https://dev.mysql.com/downloads/repo/apt/>`__ and download it
+from there or use `wget` as below.
+
 .. code-block:: bash
 
-   wget https://dev.mysql.com/get/mysql-apt-config_0.8.14-1_all.deb
-   sudo dpkg -i mysql-apt-config_0.8.14-1_all.deb
-   rm mysql-apt-config_0.8.14-1_all.deb
+   wget https://dev.mysql.com/get/mysql-apt-config_0.8.15-1_all.deb
+   sudo dpkg -i mysql-apt-config_0.8.15-1_all.deb
+   rm mysql-apt-config_0.8.15-1_all.deb
    sudo apt update
    sudo apt install mysql-server
 
@@ -59,6 +63,28 @@ set to "Use Legacy Authentication Method".**
    .. code-block:: bash
 
       sudo mysql_secure_installation
+
+Finally, let’s configure our MySQL modes. The The MySQL server can operate in
+different SQL modes, which affects the SQL syntax MySQL supports and the data
+validation checks it performs. We’ll add our preferred mode settings in a new
+file.
+
+First, let’s create a new file with our SQL modes.
+
+Paste the following values in a new file at ``/etc/mysql/conf.d/mysqld.cnf``
+and save:
+
+.. code-block:: bash
+
+   [mysqld]
+   sql_mode=ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+   optimizer_switch='block_nested_loop=off'
+
+Now we’ll restart MySQL:
+
+.. code-block:: bash
+
+   sudo systemctl restart mysql
 
 .. _linux-ubuntu-bionic-dependency-elasticsearch:
 
@@ -561,28 +587,6 @@ Note that the ``INDEX``, ``CREATE`` and ``ALTER`` privileges are only necessary
 during the installation process or when you are upgrading AtoM to a newer
 version. They can be removed from the user once you are finished with the
 installation or you can change the user used by AtoM in :ref:`config.php <config-config-php>`.
-
-Finally, let’s configure our MySQL modes. The The MySQL server can operate in
-different SQL modes, which affects the SQL syntax MySQL supports and the data
-validation checks it performs. We’ll add our preferred mode settings in a new
-file.
-
-First, let’s create a new file with our SQL modes.
-
-Paste the following values in a new file at ``/etc/mysql/conf.d/mysqld.cnf``
-and save:
-
-.. code-block:: bash
-
-   [mysqld]
-   sql_mode=STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
-   optimizer_switch='block_nested_loop=off'
-
-Now we’ll restart MySQL:
-
-.. code-block:: bash
-
-   sudo systemctl restart mysql
 
 .. _linux-ubuntu-bionic-run-installer:
 
