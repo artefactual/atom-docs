@@ -1211,7 +1211,7 @@ The basic syntax for the task is:
 
 .. code-block:: bash
 
-    php symfony cache:xml-representations
+    php -d memory_limit=-1  symfony cache:xml-representations
 
 By running ``php symfony help cache:xml-representations`` we can see the
 command-line's help output for the task:
