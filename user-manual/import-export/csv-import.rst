@@ -113,9 +113,11 @@ CSV.
    environment, if possible. Instead, consider deploying a development/test
    version of your AtoM instance, performing the import(s) there, reviewing the
    data for any problems and making any required edits via the user interface,
-   and then migrating this data to your production server. For more information,
-   please see our section on :ref:`Server migration <server-migration>` in the
-   Administrators manual.
+   and then migrating this data to your production server. For more information 
+   on how to migrate data, see: 
+
+   * :ref:`installation-upgrading`
+   * :ref:`maintenance-data-backup`
 
   .. _csv-determine-import-complexity:
 
