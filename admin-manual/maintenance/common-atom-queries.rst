@@ -241,7 +241,7 @@ From the `MySQL documentation <https://dev.mysql.com/doc/refman/8.0/en/sql-mode.
 
 During installation, at the :ref:`linux-ubuntu-bionic-create-database` step,
 we configure the global SQL mode in a separate file, added to
-``/etc/mysql/conf.d/mysqld.conf``. However, sometimes this step is missed, or
+``/etc/mysql/conf.d/mysqld.cnf``. However, sometimes this step is missed, or
 the mode settings aren't configured properly, or you simply want an easy to
 way to check on the current mode settings used in the database.
 
@@ -256,24 +256,27 @@ recommended in the :ref:`linux-ubuntu-bionic-create-database` step of the
 installation documentation. However, if you do need to make changes, there are
 two ways you can accomplish this. 
 
-The first method is via SQL. To change the global SQL mode settings, use: 
+The first method is via SQL. To change the global SQL mode settings, use the 
+following general pattern: 
 
 .. code-block:: mysql
 
-   SET GLOBAL sql_mode = 'modes';
+   SET GLOBAL sql_mode = 'MODE_1,MODE_2';
 
-Where ``modes`` is replaced by the values you want to set. Use commas to 
+Where ``MODE_1,MODE_2`` is replaced by the values you want to set. Use commas to 
 separate modes - an example: 
 
 .. code-block:: mysql
 
-   SET GLOBAL sql_mode = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
+   SET GLOBAL sql_mode = 'ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
-You can also use the following to change the session SQL modes: 
+You can also use the following pattern to change the session SQL modes: 
 
 .. code-block:: mysql
 
-   SET SESSION sql_mode = 'modes';
+   SET SESSION sql_mode = 'MODE_1,MODE_2';
+
+Again, where ``MODE_1,MODE_2`` is replaced by the values you want to set.
 
 You may need to restart MySQL after making changes. Run the following after 
 exiting the MySQL command prompt:  
@@ -287,19 +290,19 @@ file. These steps are performed via the unix command-line - if you have already
 entere the MySQL command prompt, exit now. 
 
 As noted above, our installation instructions recommend creating this file 
-at ``/etc/mysql/conf.d/mysqld.conf``. If you missed that step and have **not** 
+at ``/etc/mysql/conf.d/mysqld.cnf``. If you missed that step and have **not** 
 previously created a file in this location, you can do so with the following:
 
 .. code-block:: bash
 
-   sudo touch /etc/mysql/conf.d/mysqld.conf
+   sudo touch /etc/mysql/conf.d/mysqld.cnf
 
 You can then use the ``nano`` command-line text editor (or the text editor of 
 your choosing) to open the file for editing: 
 
 .. code-block:: bash
 
-   sudo nano /etc/mysql/conf.d/mysqld.conf
+   sudo nano /etc/mysql/conf.d/mysqld.cnf
    
 You will need to restart MySQL after making changes to this file:  
 
