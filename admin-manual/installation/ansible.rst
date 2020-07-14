@@ -14,10 +14,9 @@ a number of Ansible roles that will enable you to compose complex distributed
 environments. These roles could as well be used against a single server, in fact
 our Vagrant box is built using these Ansible roles.
 
-We've built a couple of examples on how to deploy AtoM:
+We've built an example on how to deploy AtoM:
 
-* `AtoM + Ubuntu 14.04 (trusty) <https://github.com/artefactual/deploy-pub/tree/master/playbooks/atom-trusty>`_
-* `AtoM + Ubuntu 16.04 (xenial) <https://github.com/artefactual/deploy-pub/tree/master/playbooks/atom-xenial>`_
+* `AtoM + Ubuntu 18.04 (bionic) <https://github.com/artefactual/deploy-pub/tree/master/playbooks/atom-bionic>`_
 
 These examples use Vagrant to provision virtual machines. This is useful during
 the experimentation phase so you don't have to worry about the costs of hosting

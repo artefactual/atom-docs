@@ -284,21 +284,13 @@ and the atom-workers managed by the job scheduler.
 
 **To restart PHP-FPM**:
 
-Ubuntu 16.04 with PHP 7.0:
-
-.. code-block:: bash
-
-   sudo systemctl restart php7.0-fpm
-
-Ubuntu 18.04 with PHP 7.2:
-
 .. code-block:: bash
 
    sudo systemctl restart php7.2-fpm
 
 **Optionally, to restart Memcached**:
 
-Ubuntu 16.04 or 18.04:
+Ubuntu 18.04:
 
 .. code-block:: bash
 
@@ -306,7 +298,7 @@ Ubuntu 16.04 or 18.04:
 
 **To restart the atom-workers**:
 
-Ubuntu 16.04 or 18.04:
+Ubuntu 18.04:
 
 .. code-block:: bash
 
@@ -417,13 +409,7 @@ To clear the application cache:
 
 For more information, see: :ref:`maintenance-clear-cache`.
 
-To restart PHP-FPM on Ubuntu 16.04 with PHP 7.0:
-
-.. code-block:: bash
-
-   sudo systemctl restart php7.0-fpm
-
-To restart PHP-FPM on Ubuntu 18.04 with PHP 7.2:
+To restart PHP-FPM:
 
 .. code-block:: bash
 

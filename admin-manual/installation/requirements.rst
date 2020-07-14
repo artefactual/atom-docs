@@ -67,7 +67,7 @@ of each component.
   have deprecated a number of APIs still used in AtoM
 * `Java <https://www.java.com/en/>`__ 8 (required for Elasticsearch)
 * `MySQL <https://www.mysql.com/>`__ 8.0
-* `PHP <http://php.net/>`__ 7.0 (with Ubuntu 16.04) or 7.2 (with Ubuntu 18.04)
+* `PHP <http://php.net/>`__ 7.2
 * `Gearman job server <http://gearman.org>`__
 
 Optionally, Memcached can be used as cache engine:
@@ -78,7 +78,7 @@ Additionally, the following PHP extensions are mandatory:
 
 * cURL
 * JSON
-* APC (apcu in PHP 5.5+, apcu-bc also required in PHP 7.0+)
+* APC (apcu-bc also required)
 * PDO and PDO-MySQL
 * XSL
 

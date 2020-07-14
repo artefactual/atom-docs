@@ -2167,8 +2167,7 @@ there is also a ``--demo`` option available:
    .. code-block:: bash
 
       php symfony cc
-      sudo systemctl restart php7.0-fpm (Ubuntu 16.04)
-      sudo systemctl restart php7.2-fpm (Ubuntu 18.04)
+      sudo systemctl restart php7.2-fpm
 
    Optionally, if you're using Memcached as cache engine:
 

@@ -166,10 +166,8 @@ has its own configuration file that defines some important global PHP settings
 like timeouts, and environment variables that may also modify the way that
 AtoM works as documented in accesstomemory.org.
 
-The file of the pool is located at ``/etc/php/7.0/fpm/pool.d/atom.conf``
-(Ubuntu 16.04) or ``/etc/php/7.2/fpm/pool.d/atom.conf`` (Ubuntu 18.04). Edit
-with ``nano``. Once saved, run: ``sudo systemctl restart php7.0-fpm`` (Ubuntu
-16.04), or ``sudo systemctl restart php7.2-fpm`` (Ubuntu 18.04), and the
+The file of the pool is located at ``/etc/php/7.2/fpm/pool.d/atom.conf``. Edit
+with ``nano``. Once saved, run: ``sudo systemctl restart php7.2-fpm``, and the
 changes will apply.
 
 .. SEEALSO::

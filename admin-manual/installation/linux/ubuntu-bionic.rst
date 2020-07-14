@@ -39,21 +39,24 @@ MariaDB, so don't be afraid and use them if you want!
 
 For MySQL, check the latest APT repository version in their 
 `downloads page <https://dev.mysql.com/downloads/repo/apt/>`__ and download it
-from there or use `wget` as below.
+from there or use `wget` as below. When asked about which product do you wish
+to configure, leave the defaults, select "Ok" and continue.
 
 .. code-block:: bash
 
    wget https://dev.mysql.com/get/mysql-apt-config_0.8.15-1_all.deb
    sudo dpkg -i mysql-apt-config_0.8.15-1_all.deb
-   rm mysql-apt-config_0.8.15-1_all.deb
-   sudo apt update
-   sudo apt install mysql-server
 
 During the installation, you will be prompted to set a password for the default
 administrator user (root). We strongly recommend that you use a strong password
 and please write it down somewhere safe, you are going to need it later. **Also,
 you will be asked to select the default authentication plugin, which has to be
 set to "Use Legacy Authentication Method".**
+
+.. code-block:: bash
+
+   sudo apt update
+   sudo apt install mysql-server
 
 .. TIP::
 
@@ -451,9 +454,9 @@ Option 1: Download the tarball
 
 .. code-block:: bash
 
-   wget https://storage.accesstomemory.org/releases/atom-2.5.3.tar.gz
+   wget https://storage.accesstomemory.org/releases/atom-2.6.0.tar.gz
    sudo mkdir /usr/share/nginx/atom
-   sudo tar xzf atom-2.5.3.tar.gz -C /usr/share/nginx/atom --strip 1
+   sudo tar xzf atom-2.6.0.tar.gz -C /usr/share/nginx/atom --strip 1
 
 Please note that the tarball may not be available yet if this version is still
 in development. In this case, you can try the alternative installation method
@@ -468,19 +471,19 @@ Install git:
 
 .. code-block:: bash
 
-   sudo apt install git unzip
+   sudo apt install git
 
 .. code-block:: bash
 
    sudo mkdir /usr/share/nginx/atom
-   sudo git clone -b stable/2.5.x http://github.com/artefactual/atom.git /usr/share/nginx/atom
+   sudo git clone -b stable/2.6.x http://github.com/artefactual/atom.git /usr/share/nginx/atom
 
 If you are not interested in downloading all the history from git, you could
 also truncate it to a specific number of revisions, e.g.: just one revision
 
 .. code-block:: bash
 
-   sudo git clone --depth 1 http://github.com/artefactual/atom.git /usr/share/nginx/atom
+   git clone -b stable/2.6.x --depth 1 http://github.com/artefactual/atom.git /usr/share/nginx/atom
 
 We use `Composer`_ to install and manage some third-party PHP libraries. To
 install Composer download and run the Composer installer according to the
@@ -516,7 +519,8 @@ After downloading the code, you will need to compile the CSS files:
 
 .. code-block:: bash
 
-   sudo apt install npm make
+   curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+   sudo apt install nodejs npm make
    sudo npm install -g "less@<2.0.0"
    sudo make -C /usr/share/nginx/atom/plugins/arDominionPlugin
 

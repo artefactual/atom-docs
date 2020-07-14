@@ -28,12 +28,12 @@ tested as well; other web servers might be used but they are not tested by
 AtoM :term:`developers <developer>`.
 
 A database on a database server. `MySQL
-<https://en.wikipedia.org/wiki/MySQL>`_ (5.6+) is used in development but AtoM
+<https://en.wikipedia.org/wiki/MySQL>`_ (8.0) is used in development but AtoM
 uses a database abstraction layer and is therefore potentially compatible with
 Postgres, SQLite, SQLServer, Oracle, etc. (other solutions are not tested by
 AtoM developers)
 
-PHP (7.0+) software code that manages requests and responses between the web
+PHP 7.2 software code that manages requests and responses between the web
 clients, the application logic, and the application content stored in
 the database. AtoM also makes use of a number of PHP extensions; see:
 :ref:`installation-requirements`.

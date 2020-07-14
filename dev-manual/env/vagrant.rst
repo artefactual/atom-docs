@@ -183,7 +183,7 @@ run ``git pull --rebase``. After pulling in new code, you will want to do the fo
 
 * Clear cache: ``php symfony cc``
 
-* Restart services: ``sudo systemctl restart php7.0-fpm`` and ``sudo
+* Restart services: ``sudo systemctl restart php7.2-fpm`` and ``sudo
   systemctl restart atom-worker``
 
 .. NOTE::

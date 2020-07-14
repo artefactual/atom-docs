@@ -58,8 +58,7 @@ not, check the box and then save the change using the Save button located in the
    .. code:: bash
 
       sudo service nginx restart
-      sudo systemctl restart php7.0-fpm (for Ubuntu 16.04)
-      sudo systemctl restart php7.2-fpm (for Ubuntu 18.04)
+      sudo systemctl restart php7.2-fpm
       php symfony cc
 
 After enabling the plugin, you will want to make sure that you generated

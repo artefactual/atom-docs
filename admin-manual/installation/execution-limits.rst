@@ -13,7 +13,6 @@ useful guide we recommend reading: `Common pitfalls
 Some of these values are set during installation, in the PHP configuration
 pool you set up here:
 
-* :ref:`16.04 PHP Configuration <linux-ubuntu-xenial-dependency-php>`
 * :ref:`18.04 PHP Configuration <linux-ubuntu-bionic-dependency-php>`
 
 .. _execution-php-ini:
@@ -167,15 +166,6 @@ If you do make changes to the PHP configuration poool and/or the ``php.ini``
 default settings, you should restart PHP-FPM after, and clear your application
 caches and restart Memcached (if you're using it as cache engine).
 
-**In Ubuntu 16.04 with PHP 7.0:**
-
-.. code-block:: bash
-
-   sudo systemctl restart php7.0-fpm
-   php symfony cc
-
-**In Ubuntu 18.04 with PHP 7.2:**
-
 .. code-block:: bash
 
    sudo systemctl restart php7.2-fpm
@@ -183,7 +173,7 @@ caches and restart Memcached (if you're using it as cache engine).
 
 **Optionally, to restart Memcached**:
 
-Ubuntu 16.04 or 18.04:
+Ubuntu 18.04:
 
 .. code-block:: bash
 

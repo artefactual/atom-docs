@@ -164,14 +164,6 @@ You should consider restarting PHP-FPM if:
 
 **How**
 
-If you're using Ubuntu 16.04 with PHP 7.0:
-
-.. code-block:: bash
-
-   sudo systemctl restart php7.0-fpm
-
-If you're using Ubuntu 18.04 with PHP 7.2:
-
 .. code-block:: bash
 
    sudo systemctl restart php7.2-fpm
@@ -206,7 +198,7 @@ You should consider restarting Nginx if:
 
 **How**
 
-If you're using Ubuntu 16.04 or 18.04 with PHP 7.x:
+If you're using Ubuntu 18.04:
 
 .. code-block:: bash
 
@@ -236,7 +228,7 @@ You should consider restarting Memcached if you're using it when:
 
 **How**
 
-If you're using Ubuntu 16.04 or 18.04 with PHP 7.x:
+If you're using Ubuntu 18.04:
 
 .. code-block:: bash
 
@@ -291,7 +283,7 @@ You should consider restarting the atom-worker if:
 
 **How**
 
-If you're using Ubuntu 16.04 0r 18.04 with PHP 7.x:
+If you're using Ubuntu 18.04:
 
 .. code-block:: bash
 
@@ -383,7 +375,7 @@ while monitoring.
 
    More information on using top:
 
-   * http://manpages.ubuntu.com/manpages/xenial/man1/top.1.html
+   * http://manpages.ubuntu.com/manpages/bionic/man1/top.1.html
    * https://www.lifewire.com/linux-top-command-2201163
 
    More information on using htop:
@@ -1063,7 +1055,6 @@ Be sure to include the following information in any support-related post:
 * Details on your installation environment, such as:
 
   * Did you follow our :ref:`recommended installation instructions <installation-linux>`?
-  * If yes, are you using Ubuntu 16.04 or 18.04?
   * If no, what have you changed? Tell us more about your environment
 
 * Any stack trace or web server error logs relevant to the issue - see:
@@ -1316,7 +1307,7 @@ This indicates an issue with Elasticsearch.
 First, make sure that you have followed all the installation instructions for
 Elasticsearch, as outlined in our recommended installation documentation:
 
-* :ref:`Elasticsearch installation <linux-ubuntu-xenial-dependency-elasticsearch>`
+* :ref:`Elasticsearch installation <linux-ubuntu-bionic-dependency-elasticsearch>`
 
 You can get basic configuration and status information about your search index
 with the following command-line task: 
@@ -1325,7 +1316,7 @@ with the following command-line task:
 
 You can try restarting Elasticsearch with the following:
 
-**Ubuntu 16.04 or 18.04**
+**Ubuntu 18.04**
 
 .. code-block:: bash
 
@@ -1527,7 +1518,7 @@ there are no local copies (like the :term:`thumbnail` in search results)
 available, please make sure you have the following dependencies installed:
 
 * :ref:`other-dependencies`
-* :ref:`linux-ubuntu-xenial-other-packages`
+* :ref:`linux-ubuntu-bionic-other-packages`
 
 If you have them installed, you can try regenerating your :term:`digital object`
 derivatives with the following command:

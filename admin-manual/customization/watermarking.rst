@@ -38,7 +38,7 @@ to begin with.
    watermarking to work in AtoM. For more information, see: 
 
    * :ref:`Requirements: other dependencies <other-dependencies>`
-   * :ref:`Installation: other packages <linux-ubuntu-xenial-other-packages>` 
+   * :ref:`Installation: other packages <linux-ubuntu-bionic-other-packages>` 
 
 
 .. _watermarking-apply:

@@ -60,10 +60,10 @@ The simplest way to run a worker is from your terminal:
 
    php symfony jobs:worker
 
-A better way to run a worker is to use a process supervisor like systemd
-(included in Ubuntu 16.04 and 18.04). This is documented below.
+A better way to run a worker is to use a process supervisor like systemd. This
+is documented below.
 
-systemd (Ubuntu 16.04, 18.04)
+systemd (Ubuntu 18.04)
 -----------------------------
 
 Create the following service (:file:`/usr/lib/systemd/system/atom-worker.service`):
@@ -96,13 +96,15 @@ Create the following service (:file:`/usr/lib/systemd/system/atom-worker.service
       If you are not using PHP 7.2, be sure to update the `ExecStart` filepath
       in the `[Service]` section of  the sample configuration block above!
       Currently it assumes PHP 7.2 is being used, and will not  work for
-      installations using PHP 7.0 without modification.
+      installations using a different PHP version without modification.
 
-Now reload systemd:
+Now reload systemd, enable and start the AtoM worker:
 
 .. code-block:: bash
 
    sudo systemctl daemon-reload
+   sudo systemctl enable atom-worker
+   sudo systemctl start atom-worker
 
 You can control the service execution status with the following commands:
 
