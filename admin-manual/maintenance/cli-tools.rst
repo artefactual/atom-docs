@@ -984,10 +984,6 @@ Slugs can also be manually deleted via SQL queries. For further information on
 deleting slugs from AtoM's database via SQL, see :ref:`common-atom-queries` - 
 particularly, :ref:`sql-delete-slugs`.
 
-.. SEEALSO::
-
-   * :ref:`sql-truncate-slugs`
-
 .. _slugs-in-atom:
 
 Notes on slugs in AtoM
@@ -1366,11 +1362,10 @@ record that is updated, providing a visual indication of progress.
 
    This task is NOT designed for scalability. If you are planning on updating
    the publication status of thousands of records, we recommend using SQL to
-   do so instead. We have included instructions on how to do so below - see:
+   do so instead. See:
 
    * :ref:`sql-update-publication-status`
-   * :ref:`sql-update-publication-status-repo`
-
+   
 :ref:`Back to top <maintenance-cli-tools>`
 
 .. _cli-unlink-creators:
