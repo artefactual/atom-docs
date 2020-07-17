@@ -256,4 +256,27 @@ To access the PMM server interface, visit http://localhost:63006:
 * Username: ``pmm``
 * Password: ``pmm``
 
+Varnish Cache
+=============
+
+The development environment can also be extended with a `Varnish Cache
+<https://varnish-cache.org/>`__ container installed in front of Nginx.
+It's configured to cache all and ignore cookies to simulate a read-only
+public site, and therefore authentication doesn't work.
+
+.. code-block:: bash
+
+   export COMPOSE_FILE="$PWD/docker/docker-compose.dev.yml:$PWD/docker/docker-compose.varnish.yml"
+   docker-compose up -d
+
+To access AtoM through Varnish, visit http://localhost:63007.
+
+.. TIP::
+
+   To see the Varnish logs use:
+
+   .. code-block:: bash
+
+      docker-compose exec varnish varnishlog
+
 :ref:`Back to top <dev-env-compose>`
