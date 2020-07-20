@@ -34,8 +34,8 @@ MySQL
 -----
 
 AtoM |version| requires MySQL 8.0 or higher as it uses common table expressions.
-Also, we've experienced very good results using forks like Percona Server or
-MariaDB, so don't be afraid and use them if you want!
+Also, we've experienced very good results using Percona Server for MySQL 8.0,
+so don't be afraid and use it if you want!
 
 For MySQL, check the latest APT repository version in their 
 `downloads page <https://dev.mysql.com/downloads/repo/apt/>`__ and download it
