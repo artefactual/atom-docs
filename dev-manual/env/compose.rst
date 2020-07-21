@@ -51,14 +51,14 @@ Now using git, check out the sources of AtoM and change your current directory:
 
 .. code-block:: bash
 
-   git clone -b qa/2.6.x https://github.com/artefactual/atom.git atom
+   git clone -b qa/2.x https://github.com/artefactual/atom.git atom
    cd atom
 
 .. note::
 
    The source code (the entire "atom" folder) is copied to the Docker container
    on the build process and used to create the instance. For example, clone the
-   "stable/2.5.x" branch if you want to test the latest stable version of AtoM.
+   "stable/2.6.x" branch if you want to test the latest stable version of AtoM.
 
 Now set the environment variable ``COMPOSE_FILE`` to tell Compose what is the
 location of our YAML file. You could do the same using the ``-f`` flag but we
@@ -105,10 +105,10 @@ It's time to use Docker Compose in order to provision our containers:
 
 .. TIP::
 
-   While you wait, take the opportunity to check out our `Dockerfile <https://github.com/artefactual/atom/blob/stable/2.5.x/Dockerfile>`__,
+   While you wait, take the opportunity to check out our `Dockerfile <https://github.com/artefactual/atom/blob/qa/2.x/Dockerfile>`__,
    which describes the steps that are taken to build the AtoM image. It is
    based on Alpine Linux + PHP 7.2 and the rest of dependencies. In addition,
-   our `docker-compose.dev.yml <https://github.com/artefactual/atom/blob/stable/2.5.x/docker/docker-compose.dev.yml>`__
+   our `docker-compose.dev.yml <https://github.com/artefactual/atom/blob/qa/2.x/docker/docker-compose.dev.yml>`__
    file shows how AtoM is orchestrated together with its service dependencies.
    It is an environment meant to be used by developers.
 
