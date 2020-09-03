@@ -203,6 +203,20 @@ you to the :term:`home page` (view-only access).
 .. note:: AtoM automatically logs you out after thirty minutes of inactivity.
    To resume editing, you will have to log back in
 
+.. figure:: images/cas-login.*
+   :align: right
+   :figwidth: 20%
+   :width: 100%
+   :alt: An image of the log in drop-down with a CAS link button
+
+   The log-in button in AtoM when CAS single sign-on is enabled
+
+If your AtoM site has :ref:`CAS single sign-on <cas-enabling>` enabled, you
+will be presented with a link to log in via your institution's CAS server.
+You will not be able to edit your user profile in AtoM. You will need to
+contact your CAS administrator to make any changes to your profile.
+When you log out of AtoM you will also be logged out of the CAS domain.
+
 :ref:`Back to top <getting-started-all>`
 
 .. _user-roles:

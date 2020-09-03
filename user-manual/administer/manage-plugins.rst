@@ -76,6 +76,11 @@ sfSkosPlugin  Data transform plugin. Enables XML import and export of
 arOaiPlugin   `OAI <http://www.openarchives.org/>`_ plugin. Allows AtoM
               database to be enabled as an OAI repository. See also
               :ref:`OAI repository settings <oai-repository>`.
+arCasPlugin   `CAS <https://www.apereo.org/projects/cas>`_ plugin. Enables
+              authentication via CAS Single sign-on, including optional
+              setting of AtoM user groups from CAS user attributes. For
+              information on how to configure the plugin, see
+              :ref:`Enabling CAS authentication <cas-enabling>`.
 ============= ===============================================================
 
 :ref:`Back to the top <manage-plugins>`

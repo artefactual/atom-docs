@@ -11,3 +11,4 @@ Customization
    theming
    watermarking
    localization
+   authentication

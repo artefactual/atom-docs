@@ -110,7 +110,7 @@ apps/qubit/config/settings.yml
 
 * Symfony and PHP settings - see the Symfony documentation for more general
   information: http://symfony.com/legacy/doc/reference/1_4/en/04-Settings
-* For things like default_culture, default_timezone, etc
+* For things like default_culture, default_timezone, login_module, etc
 * Includes settings for error handling behavior as well - be careful
   changing these! We don't recommend it.
 
@@ -121,7 +121,7 @@ config/factories.yml
 
 * Another Symfony 1.x configuration file
 * More details at: http://symfony.com/legacy/doc/reference/1_4/en/05-factories
-* Useful for changing logging options, user authentication (LDAP), etc
+* Useful for changing logging options, user class (e.g. LDAP or CAS), etc
 * We don't recommend changing this file unless you know what you're doing!
 * See: :ref:`maintenance-logging` for some ideas on how to work with these
   settings to change or improve logging in AtoM
@@ -174,3 +174,4 @@ changes will apply.
 
    * :ref:`security-application`
    * :ref:`read-only-mode`
+   * :ref:`customization-authentication`

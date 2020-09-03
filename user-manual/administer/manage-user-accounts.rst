@@ -104,8 +104,8 @@ application, via the :term:`main menu`.
       :alt: An image of Active/Inactive tabs in the Browse users page
 
 3. Scroll to the bottom of the "List users" page and click the "Add new" button
-   in the :term:`button block`. AtoM will direct you to a blank User :term:`edit
-   page`.
+   in the :term:`button block`. AtoM will direct you to a blank User 
+   :term:`edit page`.
 
 .. image:: images/add-new-user-blank.*
    :align: center
@@ -127,13 +127,22 @@ application, via the :term:`main menu`.
 
    Although only an authenticated (i.e. logged-in) :term:`administrator` can
    edit a user's profile, users can view their own :term:`profiles <user
-   profile>` and change their :term:`passwords <password>`) by going through the
+   profile>` and change their :term:`passwords <password>`) by going through 
+   the
    :term:`header bar`. For more information, see: :ref:`Change password
    <change-password>`.
 
-5. In the "Access control" information area, type the appropriate "User groups".
-   As you type, matching results will load in a :term:`drop-down menu` below the
-   field. See :ref:`below <add-group>` for more information on user groups.
+.. NOTE::
+
+   If your AtoM site has :ref:`CAS single sign-on <cas-enabling>` enabled then
+   users will not be able to update their credentials from the profile page.
+   An AtoM administrator will not be able to make username, email or password 
+   changes either. To do so, you need to contact your CAS administrator.
+
+5. In the "Access control" information area, type the appropriate "User 
+   groups". As you type, matching results will load in a :term:`drop-down menu`
+   below the field. See :ref:`below <add-group>` for more information on user 
+   groups.
 
 .. IMPORTANT::
 
@@ -145,6 +154,12 @@ application, via the :term:`main menu`.
    information on editing user :term:`access privileges <access privilege>`
    and a list of the default permissions per group, see
    :ref:`Edit user permissions <edit-user-permissions>`.
+
+.. NOTE::
+
+   If your AtoM site has :ref:`CAS single sign-on <cas-enabling>` 3.0 enabled 
+   then making changes to group membership will not take effect. You will need 
+   to contact your CAS administrator to make any group membership changes.
 
 .. SEEALSO::
 
@@ -167,11 +182,11 @@ application, via the :term:`main menu`.
    both "English" and "Spanish".
 
    Once one user role has been selected, it will appear in bullet form under
-   "User groups" and a second group can then be added. To remove a selected user
-   group, simply hover over the user group you would like to select; click on
-   the "**X**" that will appear next the group name. The same instructions can
-   be applied to the "Allowed languages for translation" :term:`information
-   area`.
+   "User groups" and a second group can then be added. To remove a selected 
+   user group, simply hover over the user group you would like to select;  
+   click on the "**X**" that will appear next the group name. The same 
+   instructions can be applied to the "Allowed languages for translation" 
+   :term:`information area`.
 
 7. You can quit the creation process at any time by clicking the "Cancel"
    button, or exiting (i.e. clicking "**X**") the window. Any changes made will
@@ -210,9 +225,9 @@ application, via the :term:`main menu`.
 
 .. Note::
 
-   By default, the user will be automatically *Active* once the new user account
-   has been created. You must enter :term:`edit mode` and un-check the box
-   next to "Active" |Inactive| in order to make a user "Inactive". For more
+   By default, the user will be automatically *Active* once the new user 
+   account has been created. You must enter :term:`edit mode` and un-check the 
+   box next to "Active" |Inactive| in order to make a user "Inactive". For more
    information, see: :ref:`mark-user-inactive`.
 
    .. image:: images/user-active-inactive.*
@@ -270,6 +285,12 @@ A new user can also be added to AtoM from the :term:`view page` of any other
    :width: 60%
    :alt: An image of the button block on a user page
 
+.. NOTE::
+
+   If your AtoM site has :ref:`CAS single sign-on <cas-enabling>` enabled then
+   you will not be able to add new users. You will need to contact your CAS 
+   administrator to create new user accounts.
+
 5. AtoM takes you to a blank :term:`edit page` for data entry. Enter data as
    required. For further guidance on specific fields, see steps 4-6 in the
    section :ref:`above <add-user-main>`.
@@ -279,11 +300,11 @@ A new user can also be added to AtoM from the :term:`view page` of any other
    :width: 80%
    :alt: An image of a new User page in edit mode
 
-6. You can quit the creation process at any time by clicking the “Cancel” button
-   in the :term:`button block`; any data already entered will not be saved, and
-   no new user record will be created. Note that simply navigating away from the
-   page by any other means, **without first clicking "Create"** will also result
-   in no new record being created.
+6. You can quit the creation process at any time by clicking the “Cancel” 
+   button in the :term:`button block`; any data already entered will not be 
+   saved, and no new user record will be created. Note that simply navigating 
+   away from the page by any other means, **without first clicking "Create"** 
+   will also result in no new record being created.
 7. To save the new user record, click the :term:`"Create" button <Create
    button>` located in the :term:`button block` at the bottom of the record.
 

@@ -113,6 +113,12 @@ will reveal a :term:`drop-down menu` with the option to log out, or to visit
 the user's profile page, where a user can upate their credentials (username,
 email, password).
 
+.. NOTE::
+
+   If your AtoM site has :ref:`CAS single sign-on <cas-enabling>` enabled then
+   you will not be able to update your credentials from your profile page.
+   You will need to contact your CAS administrator to make any changes.
+
 * For more information on logging in, see: :ref:`Log in <log-in>`
 * For information on user roles, see: :ref:`User roles <user-roles>`
 
