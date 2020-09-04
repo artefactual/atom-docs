@@ -519,9 +519,8 @@ After downloading the code, you will need to compile the CSS files:
 
 .. code-block:: bash
 
-   curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
    sudo apt install nodejs npm make
-   sudo npm install -g "less@<2.0.0"
+   sudo npm install -g "less@<4.0.0"
    sudo make -C /usr/share/nginx/atom/plugins/arDominionPlugin
 
 .. _linux-ubuntu-bionic-filesystem-permissions:
