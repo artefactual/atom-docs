@@ -26,13 +26,14 @@ Below, you will find information on the following :term:`information areas
 * :ref:`privacy-notification`
 * :ref:`Security panel <security-panel>`
 * :ref:`Site information <site-information>`
+* :ref:`Storage service <storage-service>`
 * :ref:`treeview-settings`
 * :ref:`User interface labels <user-interface-labels>`
 
-Each of the settings areas listed above is accessible via a list of links on the
-left-hand side of the settings page. Click on the appropriate link, and click
-save after making your changes. A notification will appear confirming that your
-changes have been saved.
+Each of the settings areas listed above is accessible via a list of links on 
+the left-hand side of the settings page. Click on the appropriate link, and 
+click save after making your changes. A notification will appear confirming 
+that your changes have been saved.
 
 .. figure:: images/settings-saved-notification.*
    :align: center
@@ -553,7 +554,8 @@ color of the institution will also be displayed behind the scoped search results
    * :ref:`edit-institution-theme`
 
 Additionally, the :ref:`search-box-delimiters` are disabled when Institutional
-scoping is enabled - the global :term:`search box` in the AtoM :term:`header bar`
+scoping is enabled - the global :term:`search box` in the AtoM 
+:term:`header bar`
 will only return results from all repositories, while the dedicated search box
 inside the :term:`institution block` can be used to search the holdings of the
 scoped repository. As such, the institution block offers users a method of
@@ -2247,6 +2249,140 @@ AtoM will automatically add this when building the absolute URLs.
 
 To save any modifications, click the "Save" button located below the
 "Site Description" field.
+
+:ref:`Back to top <settings>`
+
+
+.. _storage-service:
+
+Storage Service
+===============
+In this section, :term:`administrators <administrator>` can enable the
+download of original files and Archival Information Packages (AIPs) from an 
+`Archivematica <https://archivematica.org>`_ digital preservation system that 
+has uploaded Dissemination Information Package (DIP) access copies to AtoM.
+
+.. IMPORTANT::
+
+   Both the **arStorageServicePlugin** and **arRestApiPlugin** must be enabled 
+   for this "Storage service" option to appear on the Settings menu and for 
+   the Archivematica integration to work. See 
+   :ref:`Manage Plugins <manage-plugins>`.
+
+1. Fill in the appropriate value for the address of the Storage Service API 
+   used by the Archivematica instance. This is typically located at port 8000. 
+   Don't forget to add the api version.
+2. Log into the Storage Service with an authorized account. Go to 
+   **Administration > Users** and  click the "Edit" button for an active 
+   account. Note the "Username" and copy the "Api key" at the bottom of the 
+   page.
+3. Enter these values in the "Storage Service username" field and "Storage 
+   Service API key" field on the AtoM Storage Service settings form.
+4. Toggle the "Enable AIP download" option to "Enabled". Press the "Save" 
+   button.
+
+.. image:: images/storage-service-settings.*
+   :align: center
+   :width: 90%
+   :alt: Storage service settings
+
+.. NOTE::
+  
+   By default this will only enable Archivematica File and AIP download for 
+   users that are members of the "Adminstrator" group. 
+
+5. Browse to a digital object that was created using the DIP Upload feature. 
+   Download links are located to the right of the File and AIP UUIDs.
+
+.. image:: images/digital-object-preservation-copies-with-access.*
+   :align: center
+   :width: 90%
+   :alt: Digital object preservation copies, with download access 
+
+.. NOTE::
+  
+   When these links are clicked a new tab will temporarily open and will 
+   remain open until the Storage Service responds to the request. Once the 
+   file download begins, the download tab will disappear to be replaced with 
+   the download status icon for your browser. The files are saved with the 
+   name sent in the Storage Service response. If there is an error with the 
+   call to the Storage Service, the error status page will be displayed in 
+   this tab.
+
+6. To enable this feature for other user groups you must update the 
+   ``security.yml`` file in the arStorageServicePlugin folder. Starting from 
+   the root folder of the AtoM application, e.g.
+
+    .. code-block:: bash 
+       
+       /usr/share/nginx/atom
+
+    it is found at:
+
+    .. code-block:: bash 
+       
+       plugins/arStorageServicePlugin/modules/arStorageService/config/
+       security.yml
+
+7. The default content is:
+
+    .. code-block:: bash 
+       
+       all:
+         is_secure: true
+         credentials: administrator
+
+8. The ``all`` setting indicates that administrator users have the ability to 
+   download both AIPs and original files. If you want to give another user  
+   group (e.g. editors) the same capability, you would edit the 
+   ``security.yml`` file to read:
+
+    .. code-block:: bash 
+       
+       all:
+         is_secure: true
+         credentials: [[ administrator, editor ]]
+
+9. You can also configure more fine-grained permissions to allow for the 
+   download of just AIPs or just for original files by using the ``download`` 
+   or ``extractFile`` settings.
+
+10. If you use the ``download`` or ``extractFile`` setting, it overrides the
+    ``all`` setting and you need to repeat those user group values in the more 
+    granular permission. Otherwise those groups will lose their permissions. 
+    For example, in the settings below, the administrator and editor groups 
+    have to be added to ``download`` and ``extractFile`` in order for them to 
+    retain both AIP and original file download permission.
+
+    .. code-block:: bash 
+       
+       all:
+         is_secure: true
+         credentials: [[ administrator, editor ]]
+       
+       download:
+         is_secure: true
+         credentials: [[ administrator, editor, contributor ]]
+       
+       extractFile:
+         is_secure: true
+         credentials: [[ admninistrator, editor, translator ]]
+
+11. In the examples above, members of the administrator and editor user group
+    can download both AIP packages and original files. Contributors can only 
+    download AIPs and translators can only download original files. Members of 
+    other user groups (e.g. authenticated) do not have any download 
+    permissions and will not see a download link or icon next to the AIP UUID 
+    or File UUID.
+
+.. IMPORTANT::
+
+   After making changes to the ``security.yml`` file, refresh the application
+   cache for the new permission settings to take effect:
+
+     .. code-block:: bash
+
+        php symfony cc
 
 :ref:`Back to top <settings>`
 

@@ -21,7 +21,7 @@ To enable or disable a plugin:
 
 .. image:: images/list-plugins.*
    :align: center
-   :width: 70%
+   :width: 90%
    :alt: List and enable plugins screen
 
 2. Check or uncheck the plugins you wish to enable or disable. Click Save.
@@ -65,22 +65,27 @@ sfIsdiahPlugin International Standard for Describing Institutions with
 
 **Other plugins**
 
-============= ===============================================================
-Name          Purpose
-============= ===============================================================
-qtSwordPlugin `SWORD <http://swordapp.org/>`_ plugin. Necessary for DIP
-              upload from Archivematica. An :term:`Administrator` will also
-              need to enable job scheduler in :ref:`Settings <settings>`.
-sfSkosPlugin  Data transform plugin. Enables XML import and export of
-              :term:`Simple Knowledge Organization System <skos>` (SKOS) data.
-arOaiPlugin   `OAI <http://www.openarchives.org/>`_ plugin. Allows AtoM
-              database to be enabled as an OAI repository. See also
-              :ref:`OAI repository settings <oai-repository>`.
-arCasPlugin   `CAS <https://www.apereo.org/projects/cas>`_ plugin. Enables
-              authentication via CAS Single sign-on, including optional
-              setting of AtoM user groups from CAS user attributes. For
-              information on how to configure the plugin, see
-              :ref:`Enabling CAS authentication <cas-enabling>`.
-============= ===============================================================
+====================== ========================================================
+Name                   Standard
+====================== ========================================================
+arOaiPlugin            `OAI <http://www.openarchives.org/>`_ plugin. Allows 
+                       AtoM database to be enabled as an OAI repository. See
+                       also :ref:`OAI repository settings <oai-repository>`.
+arRestApiPlugin        `REST <https://restfulapi.net/>`_ plugin. Allows AtoM
+                       to provide an application programming interface (API) 
+                       to external applications.
+qtSwordPlugin          `SWORD <http://swordapp.org/>`_ plugin. Necessary for 
+                       DIP upload from Archivematica. An :term:`Administrator` 
+                       will also need to enable job scheduler in :ref:`
+                       Settings <settings>`.
+sfSkosPlugin           Data transform plugin. Enables XML import and export of
+                       :term:`Simple Knowledge Organization System <skos>` 
+                       (SKOS) data.
+arStorageServicePlugin `Archivematica <https://archivematica.org>`_ Storage
+                       Service plugin. Allows AtoM users to download AIPs and 
+                       files from Archivematica. See also :ref:`Storage 
+                       serivce settings <storage-service>`.
+====================== ========================================================
+
 
 :ref:`Back to the top <manage-plugins>`
