@@ -1978,7 +1978,7 @@ configuring and using the Copyright statement, see: :ref:`copyright-pop-up`.
 The Permissions page also includes a "Preservation system access statement" 
 setting. When enabled, this will display customizable text about any access 
 conditions that might be placed on linked files that are held in an integrated 
-preservation system such as `Archivematica <https://www.archivematica.org/>`_. 
+preservation system such as `Archivematica <https://www.archivematica.org/>`__. 
 Note that these statement only appear in the metadata section for original 
 files and preservation copies. For more information see :ref:`Digital object 
 metadata for preservation files <digital-object-preservation>`.
@@ -2259,7 +2259,7 @@ Storage Service
 ===============
 In this section, :term:`administrators <administrator>` can enable the
 download of original files and Archival Information Packages (AIPs) from an 
-`Archivematica <https://archivematica.org>`_ digital preservation system that 
+`Archivematica <https://archivematica.org>`__ digital preservation system that 
 has uploaded Dissemination Information Package (DIP) access copies to AtoM.
 
 .. IMPORTANT::
