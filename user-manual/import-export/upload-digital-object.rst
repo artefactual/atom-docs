@@ -203,11 +203,11 @@ When you link a digital object to an :term:`archival description`, the "Digital
 object metadata" section on the archival description :term:`view page` will 
 include an "Access Copies" subsection.
 
-   .. NOTE::
+.. NOTE::
 
-      An unauthenticated user will not see a digital object and its "Access
-      copies" metadata if the archival description it is attached to has a
-      "draft" instead of "published" status.
+   An unauthenticated user will not see a digital object and its "Access
+   copies" metadata if the archival description it is attached to has a
+   "draft" instead of "published" status.
 
 1. Clicking on the "Access copies" subsection label link will collapse or 
    expand the subsection. 
@@ -302,22 +302,22 @@ description` :term:`slug` in AtoM then thumbnails for the digital objects
 in that Dissemenation Information Package (DIP) will be displayed in the 
 archival description's digital object :term:`carousel`.
 
-   .. NOTE::
+.. NOTE::
 
-      An unauthenticated user will not see a digital object and its metadata 
-      if the archival description it is attached to has a "draft" instead of 
-      "published" status.
+   An unauthenticated user will not see a digital object and its metadata 
+   if the archival description it is attached to has a "draft" instead of 
+   "published" status.
 
 When selecting one of the digital objects included in the DIP upload, the 
 "Digital object metadata" section on the archival description view page will 
 include a "Preservation Copies" and "Access Copies" subsection.
 
-   .. NOTE::
+.. NOTE::
 
-      When the preservation system uploads a DIP with digital objects to AtoM, 
-      it will generate "Master file", "Reference copy", and "Thumbnail copy" 
-      representations with their metadata displayed in the "Access copies" 
-      subsection.
+   When the preservation system uploads a DIP with digital objects to AtoM, 
+   it will generate "Master file", "Reference copy", and "Thumbnail copy" 
+   representations with their metadata displayed in the "Access copies" 
+   subsection.
 
 1. Clicking on either of these subsection label links will collapse or expand 
    the subsection. See the :ref:`digital-object-metadata` above for more about
@@ -327,10 +327,10 @@ include a "Preservation Copies" and "Access Copies" subsection.
    "Original file" and "Preservation copy" representations that are stored in 
    the preservation system. 
 
-   .. NOTE::
+.. NOTE::
 
-      If the preservation system did not generate a preservation copy then 
-      only the "Original file" section is shown.
+   If the preservation system did not generate a preservation copy then 
+   only the "Original file" section is shown.
 
 3. The "Preservation copy" metadata includes filename, filesize, and a 
    timestamp for when the preservation system normalized (i.e. transcoded) the 
@@ -386,11 +386,11 @@ include a "Preservation Copies" and "Access Copies" subsection.
    icon under the "Original file" label will be coloured black. Otherwise it 
    is coloured grey.
 
-   .. NOTE::
+.. NOTE::
 
-      By default, access to the preservation copy is only available via the 
-      preservation system, therefore the box icon under the "Preservation 
-      copy"  label is always coloured grey for all users.
+   By default, access to the preservation copy is only available via the 
+   preservation system, therefore the box icon under the "Preservation 
+   copy"  label is always coloured grey for all users.
 
 :ref:`Back to top <upload-digital-object>`
 
@@ -446,7 +446,8 @@ similar:
       :width: 80%
       :alt: Authority record with linked image
 
-.. Note::
+.. NOTE::
+
    Unauthenticated users (i.e. not logged in) cannot download digital
    objects associated with authority records.
 
