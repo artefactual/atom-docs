@@ -1958,7 +1958,7 @@ information on working with rights in AtoM.
 The permissions settings page is divided into 3 sections - PREMIS access
 permissions, PREMIS access statements, and the Copyright statement.
 
-For information on configuring the PEMIS access permissions, see:
+For information on configuring the PREMIS access permissions, see:
 :ref:`rights-digital-object` (and for an example use case, see:
 :ref:`rights-digital-object-example`). For information on configuring the PREMIS
 access statements, see: :ref:`disallow-statements`. For information on
@@ -1966,8 +1966,43 @@ configuring and using the Copyright statement, see: :ref:`copyright-pop-up`.
 
 .. image:: images/permissions-settings.*
    :align: center
-   :width: 80%
+   :width: 90%
    :alt: Permissions settings in AtoM
+
+.. _preservation-access-statement:
+
+**Preservation system access statement**
+
+The Permissions page also includes a "Preservation system access statement" 
+setting. When enabled, this will display customizable text about any access 
+conditions that might be placed on linked files that are held in an integrated 
+preservation system such as `Archivematica <https://www.archivematica.org/>`_. 
+Note that these statement only appear in the metadata section for original 
+files and preservation copies. For more information see :ref:`Digital object 
+metadata for preservation files <digital-object-preservation>`.
+
+To use the condition statement, write the notice that applies to your 
+institution in the text field. For example, you may not distribute original 
+files and preservation copies over the Internet but do provide access to them 
+on a dedicated machine in your  reference room. So your preservation system 
+access statement may read: "Access only provided on reference room computer.". 
+
+Toggle the "Enable access statement" option to "yes" and press "Save".
+
+.. image:: images/preservation-system-access-statement.*
+   :align: center
+   :width: 90%
+   :alt: Preservation system access statement
+
+The statement now appears next to a "Permissions" label in the **Digital 
+object metadata > Preservation Copies** section on your archival description 
+view pages.
+
+.. image:: images/preservation-system-access-statement-display.*
+   :align: center
+   :width: 90%
+   :alt: Display of preservation system access statement
+
 
 :ref:`Back to top <settings>`
 

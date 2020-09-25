@@ -62,6 +62,8 @@ see the :ref:`recurring-carousel` entry in :ref:`navigate`.
 See below for more information on:
 
 * :ref:`Linking single digital objects to archival descriptions <link-digital-object>`
+* :ref:`Digital object metadata <digital-object-metadata>`
+* :ref:`Digital object metadata for preservation files <digital-object-preservation>`
 * :ref:`Linking single digital objects to authority records <link-to-authority>`
 * :ref:`Uploading multiple digital objects <upload-multiple-objects>`
 * :ref:`Uploading PDFs <upload-pdf>`
@@ -190,6 +192,208 @@ See :ref:`below <edit-digital-object>` for more information on making changes to
 your :term:`digital object`.
 
 :ref:`Back to top <upload-digital-object>`
+
+
+.. _digital-object-metadata:
+
+Digital object metadata
+=======================
+
+When you link a digital object to an :term:`archival description`, the "Digital
+object metadata" section on the archival description :term:`view page` will 
+include an "Access Copies" subsection.
+
+   .. NOTE::
+
+      An unauthenticated user will not see a digital object and its "Access
+      copies" metadata if the archival description it is attached to has a
+      "draft" instead of "published" status.
+
+1. Clicking on the "Access copies" subsection label link will collapse or 
+   expand the subsection. 
+
+2. The "Access Copies" subsection will include metadata about the "Master
+   file", "Reference copy", and "Thumbnail copy" representations of the
+   digital object. Specifically: filename, media type, mime-type, filesize,
+   and uploaded (the timestamp for when the digital object was uploaded to
+   AtoM).
+
+   .. image:: images/access-copies-section.*
+      :align: center
+      :width: 90%
+      :alt: digital object metadata with access enabled for all representations
+
+3. An administrator user can toggle the display of specific "Digital object 
+   metadata" section fields on or off in the **Admin > Visible elements >
+   Digital object metadata area** section. This only affects display for 
+   unauthenticated users. Any authenticated users will see all metadata 
+   elements in each section as long as those fields contain a value. For more 
+   information, see: :ref:`visible-elements`. 
+
+4. If the Reference representation or Thumbnail representation is deleted via
+   the "Edit digital object" page, then the "Reference copy" and/or "Thumbnail 
+   copy" metadata is no longer displayed on the archival description view 
+   page. Additionaly, the thumbnail is not show on Browse pages and the 
+   reference copy is not displayed on view pages.
+
+5. The filename for each representation is either shown as plain text or as a
+   hyperlink. If it is a hyperlink, it indicates that this user has access to 
+   this representation. Clicking on the hyperlink will load the file.
+
+6. If the filename is in hyperlink format, the icon underneath the "Master
+   file", "Reference copy", and "Thumbnail copy" label is coloured black. It 
+   is coloured grey if the user does not have access and the hyperlink is not 
+   shown.
+
+   .. image:: images/digital-object-no-master-access.*
+      :align: center
+      :width: 90%
+      :alt: digital object without access to master representation 
+
+
+   .. TIP::
+
+      Access to the "Master file", "Reference copy", and "Thumbnail copy" can 
+      be configured per user group. The "Access master", "Access reference", 
+      and/or "Access thumbnail" permission can be set to "Grant" or "Deny" for 
+      any user group, including unauthenticated ("anonymous") users. See: :ref:`edit-user-permissions`. 
+
+8. Access to the "Master file", "Reference copy", and "Thumbnail copy" may be
+   overridden by actionable PREMIS rights configured for individual archival 
+   descriptions and their digital object. See :ref:`rights-digital-object`. 
+   For example, if a PREMIS right is added to an archival description where 
+   the "Act" is "Disseminate" and the "Restriction" is "Disallow", then the 
+   hyperlinks in the "Digital object metadata" section are no longer active, 
+   all the document icons are coloured grey, and the reference copy of the 
+   digital object is no longer displayed on the archival description view 
+   page. Instead the customizable text of the "Disallow statement" is
+   displayed at the top of the page as well as in a "Permissions" field for 
+   each Access copy representation, e.g. "Access to this record is restricted 
+   because it contains personal or confidential information. Please contact 
+   the Reference Archivist for more information on accessing this record.". 
+
+   .. image:: images/digital-object-premis-disallow.*
+      :align: center
+      :width: 90%
+      :alt: digital object PREMIS rights set to disallow
+
+   .. NOTE::
+
+      If the "Restriction" were to be changed to "Conditional" and the default 
+      permission settings are enabled then the "Reference copy" and "Thumbnail 
+      copy" become available again as hyperlinks and these representations are 
+      once again displayed on the AtoM templates. The customizable text for 
+      the "Condition Statement" is displayed in a "Permissions" field for the 
+      "Master file" representation, e.g. "This record has not yet been 
+      reviewed for personal or confidential information. Please contact the 
+      Reference Archivist to request access and initiate an access review.".
+
+:ref:`Back to top <upload-digital-object>`
+
+.. _digital-object-preservation:
+
+Digital object metadata for preservation files
+==============================================
+
+If you or another user of a preservation system (e.g. 
+`Archivematica <https://www.archivematica.org/>`_) has sent a 
+:ref:`DIP upload <archivematica:upload-atom>` to an :term:`archival
+description` :term:`slug` in AtoM then thumbnails for the digital objects 
+in that Dissemenation Information Package (DIP) will be displayed in the 
+archival description's digital object :term:`carousel`.
+
+   .. NOTE::
+
+      An unauthenticated user will not see a digital object and its metadata 
+      if the archival description it is attached to has a "draft" instead of 
+      "published" status.
+
+When selecting one of the digital objects included in the DIP upload, the 
+"Digital object metadata" section on the archival description view page will 
+include a "Preservation Copies" and "Access Copies" subsection.
+
+   .. NOTE::
+
+      When the preservation system uploads a DIP with digital objects to AtoM, 
+      it will generate "Master file", "Reference copy", and "Thumbnail copy" 
+      representations with their metadata displayed in the "Access copies" 
+      subsection.
+
+1. Clicking on either of these subsection label links will collapse or expand 
+   the subsection. See the :ref:`digital-object-metadata` above for more about
+   the "Access copies" section.
+
+2. The "Preservation Copies" subsection will include metadata about the
+   "Original file" and "Preservation copy" representations that are stored in 
+   the preservation system. 
+
+   .. NOTE::
+
+      If the preservation system did not generate a preservation copy then 
+      only the "Original file" section is shown.
+
+3. The "Preservation copy" metadata includes filename, filesize, and a 
+   timestamp for when the preservation system normalized (i.e. transcoded) the 
+   preservation copy from the original file.  
+
+4. The "Original file" metadata may include filename, file format name, file 
+   format version, format registry key (the unique key assigned to the file 
+   format by a format registry), format registry name (e.g. PRONOM), filesize, 
+   and ingested (the timestamp for when the preservation system received the 
+   original file).
+
+5. If the preservation action system statement option is enabled, you will
+   also see a "Permissions" field with custom text that is populated by an 
+   Administrator user via 
+   **Admin > Settings > Permissions > Preservation system access statement** 
+   (e.g. "Access only provided on research room computer"). For more 
+   information see :ref:`Preservation system access statement 
+   <preservation-access-statement>`.
+
+   .. image:: images/digital-object-preservation-copies-no-access.*
+      :align: center
+      :width: 90%
+      :alt: digital object preservation copy display, without access
+
+6. An administrator user can toggle the display of specific "Digital object 
+   metadata" section fields on or off via **Admin > Visible elements > Digital 
+   object metadata area**. This only affects display for unauthenticted users. 
+   Any authenticated users will see all metadata elements in each section as 
+   long as those fields contain a value. For more 
+   information, see: :ref:`visible-elements`. 
+
+7. If you are logged in and belong to the "authenticated" group, then you will 
+   also see the File UUID and AIP UUID for the Original file. The file UUID is 
+   the preservation system's universally unique identifier for the file and 
+   the Archival Information Package (AIP) UUID is the universally unique 
+   identifier for the preservation system package which contains the file 
+   along with other related files.
+
+8. If the preservation copies came from the Archivematica preservation system 
+   and AtoM has enabled the "arStorageServicePlugin" to allow for AIP 
+   download, then users that belong to a group with Download AIP permissions 
+   (by default Administrators only) will also see a "Download file" and 
+   "Download AIP" link next to each UUID. Clicking on them will fetch the file 
+   or the full AIP from the preservation system. See 
+   :ref:`Storage service settings <storage-service>`.
+
+   .. image:: images/digital-object-preservation-copies-with-access.*
+      :align: center
+      :width: 90%
+      :alt: digital object preservation copy display, with access
+
+9. If the user has "Download file" and "Download AIP" permissions then the box 
+   icon under the "Original file" label will be coloured black. Otherwise it 
+   is coloured grey.
+
+   .. NOTE::
+
+      By default, access to the preservation copy is only available via the 
+      preservation system, therefore the box icon under the "Preservation 
+      copy"  label is always coloured grey for all users.
+
+:ref:`Back to top <upload-digital-object>`
+
 
 .. _link-to-authority:
 
