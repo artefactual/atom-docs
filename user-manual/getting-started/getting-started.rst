@@ -213,7 +213,7 @@ you to the :term:`home page` (view-only access).
 
 If your AtoM site has :ref:`CAS single sign-on <cas-enabling>` enabled, you
 will be presented with a link to log in via your institution's CAS server.
-You will not be able to edit your user profile in AtoM. You will need to
+You will be able to view but not edit your user profile in AtoM. You will need to
 contact your CAS administrator to make any changes to your profile.
 When you log out of AtoM you will also be logged out of the CAS domain.
 
