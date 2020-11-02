@@ -237,13 +237,19 @@ include an "Access Copies" subsection.
    reference copy is not displayed on view pages.
 
 5. The filename for each representation is either shown as plain text or as a
-   hyperlink. If it is a hyperlink, it indicates that this user has access to 
-   this representation. Clicking on the hyperlink will load the file.
+   hyperlink. If it is a hyperlink, it indicates that this user has explicit 
+   download permission for this representation.
 
-6. If the filename is in hyperlink format, the icon underneath the "Master
-   file", "Reference copy", and "Thumbnail copy" label is coloured black. It 
-   is coloured grey if the user does not have access and the hyperlink is not 
-   shown.
+6. The icon underneath the "Master file", "Reference copy", and "Thumbnail copy" 
+   label is coloured black or grey. If it is grey it indicates that the user does
+   not have access to that representation. Note that in the case of unauthorized
+   users, the default setting is to display the reference copy at the top of the
+   archival description view page. Therefore, the icon is coloured black for 
+   reference copies by default. However, an explicit hyperlink is not provided
+   in the digital object metadata section for unauthorized users. This is to 
+   respect institutional policies around displaying a copyright access statement 
+   for downloaded digital materials. That feature only works for Master file 
+   representations. See :ref:`copyright-pop-up`.
 
    .. image:: images/digital-object-no-master-access.*
       :align: center
@@ -256,7 +262,8 @@ include an "Access Copies" subsection.
       Access to the "Master file", "Reference copy", and "Thumbnail copy" can 
       be configured per user group. The "Access master", "Access reference", 
       and/or "Access thumbnail" permission can be set to "Grant" or "Deny" for 
-      any user group, including unauthenticated ("anonymous") users. See: :ref:`edit-user-permissions`. 
+      any user group, including unauthenticated ("anonymous") users. 
+      See: :ref:`edit-user-permissions`. 
 
 8. Access to the "Master file", "Reference copy", and "Thumbnail copy" may be
    overridden by actionable PREMIS rights configured for individual archival 
@@ -281,9 +288,8 @@ include an "Access Copies" subsection.
 
       If the "Restriction" were to be changed to "Conditional" and the default 
       permission settings are enabled then the "Reference copy" and "Thumbnail 
-      copy" become available again as hyperlinks and these representations are 
-      once again displayed on the AtoM templates. The customizable text for 
-      the "Condition Statement" is displayed in a "Permissions" field for the 
+      copy" become available again on the AtoM template. The customizable text 
+      for the "Condition Statement" is displayed in a "Permissions" field for the 
       "Master file" representation, e.g. "This record has not yet been 
       reviewed for personal or confidential information. Please contact the 
       Reference Archivist to request access and initiate an access review.".
