@@ -15,5 +15,6 @@ set of links to each chapter's main sections.
    api/browse-taxonomies
    api/browse-io
    api/read-io
+   api/download-do
 
 :ref:`Back to top <dev-manual-index>`

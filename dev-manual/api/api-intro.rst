@@ -12,11 +12,12 @@ key associated with a user account can be passed with each request; details on
 each option and on generating an API key are included below in the
 :ref:`api-intro-auth` section.
 
-There are three endpoints available:
+There are several endpoints available:
 
 * :ref:`Browse taxonomy terms <api-browse-taxonomies>`
 * :ref:`Browse information objects <api-browse-io>`
 * :ref:`Read information object <api-read-io>`
+* :ref:`Download digital object <api-download-do>`
 
 .. _api-intro-plugin:
 
