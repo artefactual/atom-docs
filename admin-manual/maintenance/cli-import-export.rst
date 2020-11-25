@@ -2462,14 +2462,12 @@ Example use - run from AtoM's root directory:
 
 .. code-block:: bash
 
-   php symfony csv:authority-export /path/to/my/export-location/example.csv
+   php symfony csv:authority-export /path/to/my/export-location/
 
-If you specify just a path to a directory, AtoM will generate a name for the
-CSV. If you wish to name your CSV file, then you can specify the target
-filename in the path (e.g. in the above example, "*example.csv*" is the target
-filename).
+Specify a path to a directory where you want AtoM to generate a
+CSV. By default, filenames are numerically generated (e.g. 0000000001.csv, 0000000002.csv).
 
-If your database includes relationships between authority records, these will
+If your database includes relationships between authority records, these will be
 exported along with the authority records CSV file in a separate ``relations``
 CSV file.
 
