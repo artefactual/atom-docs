@@ -15,8 +15,12 @@ from __future__ import unicode_literals
 
 import sys
 import os
-import urllib2
 import json
+
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -36,14 +40,14 @@ extensions = [
 
 # Obtain intersphinx_mapping
 inventory = 'https://gist.githubusercontent.com/qubot/2dd2f7f96e51121061d4/raw/sphinxdoc-inventory.json'
-response = urllib2.urlopen(inventory)
+response = urlopen(inventory)
 intersphinx_mapping = json.load(response)
 for item in intersphinx_mapping:
     intersphinx_mapping[item] = tuple(intersphinx_mapping[item])
 
 # Obtain extlinks dictionary
 inventory = 'https://gist.githubusercontent.com/qubot/3969ebadc9c48574d16a/raw/sphinxdoc-extlinks.json'
-response = urllib2.urlopen(inventory)
+response = urlopen(inventory)
 extlinks = json.load(response)
 for item in extlinks:
     extlinks[item] = tuple(extlinks[item])
@@ -109,6 +113,8 @@ pygments_style = 'sphinx'
 
 # If true, keep warnings as "system message" paragraphs in the built documents.
 #keep_warnings = False
+
+suppress_warnings = ['ref.term']
 
 
 # -- Options for HTML output ---------------------------------------------------

@@ -178,3 +178,7 @@ pseudoxml:
 
 dos2unix:
 	find . -name "*.txt" | grep -v _build | xargs -IF fromdos F
+
+.PHONY: test
+test:
+	$(MAKE) html ALLSPHINXOPTS="-W --keep-going -n ."
