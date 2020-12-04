@@ -119,6 +119,6 @@ you can use:
        "index" : {
            "number_of_replicas" : 0
       }
-   }
+   }'
 
 :ref:`Back to the top <maintenance-elasticsearch>`
