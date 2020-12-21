@@ -10,5 +10,6 @@ Customization
    config-files
    theming
    watermarking
-   localization
    authentication
+   localization
+   
