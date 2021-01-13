@@ -280,3 +280,4 @@ sample requests and responses for available endpoints.
 * :ref:`api-browse-taxonomies`
 * :ref:`api-browse-io`
 * :ref:`api-read-io`
+* :ref:`api-download-do`
