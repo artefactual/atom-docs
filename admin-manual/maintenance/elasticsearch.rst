@@ -21,7 +21,7 @@ the following to /etc/elasticsearch/config/elasticsearch.yml
 
 .. code:: bash
 
-   node.local: true # disable network
+   transport.type: local # disable network
 
 Check the status of your Elasticsearch index
 ============================================
