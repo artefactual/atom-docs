@@ -409,7 +409,7 @@ Ubuntu packages using the command below.
 
    The command specified below uses the ``--no-install-recommends`` parameter:
    this is intentional and ensures that only dependencies are installed and not
-   'recommended' or 'suggested' packages. If ``--no-install-recommends`` is not
+   'recommended' packages. If ``--no-install-recommends`` is not
    specified, openjdk-8-jre will be installed as a dependency for one of the
    recommended packages. Since openjdk-8-jre-headless was already installed in
    the Elasticsearch installation section above, we want to prevent installing
