@@ -446,7 +446,7 @@ on logging in, see: :ref:`Log in <log-in>`.
 3. On loading, the :term:`edit page` displays the record with all
    :term:`information areas <information area>` closed; click on an
    information area to access the :term:`fields <field>` grouped under it. If
-   you've clicked on an an :term:`area header` directly, the edit page will
+   you've clicked on an :term:`area header` directly, the edit page will
    load with that area open.
 
 .. image:: images/description-collapsed.*
