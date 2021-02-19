@@ -579,7 +579,7 @@ In case your MySQL server is **not** the same as your web server, replace
    :command:`DROP DATABASE` command and then create it again.
 
 Additionally, it's always a good idea to create a specific MySQL user for AtoM
-to keep things safer. This is how you can create an user called ``atom`` with
+to keep things safer. This is how you can create a user called ``atom`` with
 password ``12345`` and the permissions needed for the database created above.
 
 .. code-block:: bash
