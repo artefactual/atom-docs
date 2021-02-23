@@ -464,3 +464,27 @@ will allow you to "unzip" a ZIP file.
   :alt: An image of the jobs page after an XML export has been executed
 
 :ref:`Back to top <export-xml>`
+
+**To include digital objects with your XML export:**
+
+Some AtoM sites are :ref:`configured <clipboard-settings>` configured to enable
+users to include attached digital objects when exporting archival descriptions
+from the clipboard. In this case, the Export options screen will include a
+checkbox for “Include digital objects”.
+
+.. image:: images/export-digital-objects-clipboard-job-xml.*
+  :align: center
+  :width: 85%
+  :alt: Export options with include digital objects selected
+
+If digital objects are included in the export, they will be contained in the
+same ZIP package as the XML files. 
+
+Note that if the “Include digital objects” checkbox is checked, it is no longer
+possible to include descendants in the export, and the “Include descendents”
+checkbox will be greyed out. This means you will need to individually add the
+descriptions with digital objects to the clipboard if you want to export them,
+rather than just adding a parent description.
+
+
+:ref:`Back to top <export-xml>`
