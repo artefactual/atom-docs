@@ -344,6 +344,27 @@ will allow you to "unzip" a ZIP file.
 
    * https://wiki.accesstomemory.org/Resources/CSV_templates
 
+**To include digital objects with your CSV export:**
+
+Some AtoM sites are configured to enable users to include attached digital
+objects when exporting archival descriptions from the clipboard. In this case,
+the Export options screen will include a checkbox for “Include digital objects”.
+
+.. image:: images/export-digital-objects-clipboard-job-xml.*
+  :align: center
+  :width: 85%
+  :alt: Export options with include digital objects selected
+
+
+If digital objects are included in the export, they will be contained in the
+same ZIP package as the CSV files. 
+
+Note that if the “Include digital objects” checkbox is checked, it is no longer
+possible to include descendants in the export, and the “Include descendents”
+checkbox will be greyed out.
+
+
+
 :ref:`Back to top <csv-export>`
 
 .. _csv-export-jobs:

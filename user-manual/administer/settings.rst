@@ -1085,6 +1085,27 @@ for delivering the clipboard payload to the external site.
 
 :ref:`Back to top <settings>`
 
+Enable digital object export functionality
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In AtoM 2.7 and higher, administrators can enable users to include digital
+objects with archival description XML and CSV exports from the clipboard. When
+set to Yes, the clipboard export options screen will include an “Include digital
+objects” checkbox. If the user checks that checkbox, any digital objects
+attached to the archival descriptions being exported will be included in the ZIP
+package the user downloads.
+
+Note that if the user checks the “Include digital objects” checkbox in the
+export options screen, it is no longer possible to include descendants in the
+export, and the “Include descendents” checkbox will be greyed out. This is a
+safeguard designed to prevent users from deliberately or inadvertently exporting
+large descriptive hierarchies with hundreds or thousands of digital objects
+attached at descendant levels of description.
+
+
+:ref:`Back to top <settings>`
+
+
 .. _dip-upload-settings:
 
 DIP upload
