@@ -1100,7 +1100,10 @@ export options screen, it is no longer possible to include descendants in the
 export, and the “Include descendents” checkbox will be greyed out. This is a
 safeguard designed to prevent users from deliberately or inadvertently exporting
 large descriptive hierarchies with hundreds or thousands of digital objects
-attached at descendant levels of description.
+attached at descendant levels of description. Administrators should ensure that
+the server on which the AtoM instance is installed has enough processing power,
+memory and storage space to create and temporarily store zipped packages of the
+digital objects selected for download.
 
 
 :ref:`Back to top <settings>`

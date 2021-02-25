@@ -346,9 +346,10 @@ will allow you to "unzip" a ZIP file.
 
 **To include digital objects with your CSV export:**
 
-Some AtoM sites are configured to enable users to include attached digital
-objects when exporting archival descriptions from the clipboard. In this case,
-the Export options screen will include a checkbox for “Include digital objects”.
+Some AtoM sites are :ref:`clipboard-settings` configured to enable users to
+include attached digital objects when exporting archival descriptions from the
+clipboard. In this case, the Export options screen will include a checkbox for
+“Include digital objects”.
 
 .. image:: images/export-digital-objects-clipboard-job-xml.*
   :align: center
@@ -361,7 +362,9 @@ same ZIP package as the CSV files.
 
 Note that if the “Include digital objects” checkbox is checked, it is no longer
 possible to include descendants in the export, and the “Include descendents”
-checkbox will be greyed out.
+checkbox will be greyed out. This means you will need to individually add the
+descriptions with digital objects to the clipboard if you want to export them,
+rather than just adding a parent description.
 
 
 
