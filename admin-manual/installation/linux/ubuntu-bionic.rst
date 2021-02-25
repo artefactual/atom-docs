@@ -409,11 +409,11 @@ Ubuntu packages using the command below.
 
    The command specified below uses the ``--no-install-recommends`` parameter:
    this is intentional and ensures that only dependencies are installed and not
-   'recommended' or 'suggested' packages. If ``--no-install-recommends`` is not
-   specified, openjdk-8-jre will be installed as a dependency for one of the
-   recommended packages. Since openjdk-8-jre-headless was already installed in
-   the Elasticsearch installation section above, we want to prevent installing
-   the openjdk-8-jre package as well.
+   'recommended' packages. If ``--no-install-recommends`` is not    specified, 
+   openjdk-8-jre will be installed as a dependency for one of the recommended 
+   packages. Since openjdk-8-jre-headless was already installed in the 
+   Elasticsearch installation section above, we want to prevent installing the 
+   openjdk-8-jre package as well.
 
 .. code-block:: bash
 
@@ -579,7 +579,7 @@ In case your MySQL server is **not** the same as your web server, replace
    :command:`DROP DATABASE` command and then create it again.
 
 Additionally, it's always a good idea to create a specific MySQL user for AtoM
-to keep things safer. This is how you can create an user called ``atom`` with
+to keep things safer. This is how you can create a user called ``atom`` with
 password ``12345`` and the permissions needed for the database created above.
 
 .. code-block:: bash
