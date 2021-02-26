@@ -467,10 +467,10 @@ will allow you to "unzip" a ZIP file.
 
 **To include digital objects with your XML export:**
 
-Some AtoM sites are :ref:`clipboard-settings` configured to enable users to
-include attached digital objects when exporting archival descriptions from the
-clipboard. In this case, the Export options screen will include a checkbox for
-“Include digital objects”.
+Some AtoM sites are :ref:`configured <clipboard-settings>` configured to enable
+users to include attached digital objects when exporting archival descriptions
+from the clipboard. In this case, the Export options screen will include a
+checkbox for “Include digital objects”.
 
 .. image:: images/export-digital-objects-clipboard-job-xml.*
   :align: center
