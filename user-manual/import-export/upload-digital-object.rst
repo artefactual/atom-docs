@@ -492,12 +492,6 @@ description.
    :width: 70%
    :alt: A image of the upload multiple images edit page
 
-.. NOTE::
-
-   The following workflow has been known to fail when using Firefox as your
-   webbrowser. For this particular workflow, we recommend using another
-   browser, such as Chrome.
-
 **To upload multiple digital objects in AtoM:**
 
 1. Navigate to the :term:`view page` of an existing
@@ -513,20 +507,22 @@ description.
    :width: 80%
    :alt: An image of the options in the More button located in the button block
 
-3. Select a title for the objects  - this will be used as the title for the
-   associated :term:`archival description` that will be created for each object
-   uploaded. Each object will also have its own title field once selected, but
-   if you do not wish to individually name each object, an automated
-   title can be added to all objects using the title field at the top of the
-   upload page. Currently the default is image 01, image 02, etc. (which will
-   appear as a placeholder (i.e. image %dd%) in the "Title field").
+3. Select a default title for the objects  - this will be used as the title
+   for the associated :term:`archival description` that will be created for
+   each object uploaded. Each object will also have its own title field that
+   can be customized later in the process, but if you do not wish to
+   individually name each object's associated description, an automated title
+   can be added to all objects using the title field at the top of the upload
+   page. The ``%dd%`` in the default title provided represents an incrementing
+   2-digit number - that is to say, the default will use image 01, image 02,
+   etc. However, this can be customized as needed:
 
 .. image:: images/import-objects-title.*
    :align: center
    :width: 80%
    :alt: Choosing the default title added to child descriptions
 
-4. Choose a :term:`level of description`. Unlike the
+4. Choose a default :term:`level of description`. Unlike the
    :ref:`link-digital-object` option, which attaches the :term:`digital object`
    directly to the :term:`archival description` at that level, the "Import
    multiple objects" option requires the user to designate a level of
@@ -544,37 +540,80 @@ description.
 
    For users wishing to include multiple individual images as "views" of a
    single item, AtoM now includes "Part" as a level of description included at
-   installation.
+   installation. An :term:`administrator` can customize the levels of 
+   description available in AtoM - for more information, see: 
 
-5. Click the blue "Select files" link and select multiple files to upload.
+   * :ref:`terms`
+
+5. Add your digital objects. You can drag and drop a selection onto the pane
+   provided (as shown in the image below), or you can click the "browse" link
+   and use your computer's file explorer to find and select the digital
+   objects you would like to load.
+
+.. image:: images/import-objects-drag.*
+   :align: center
+   :width: 80%
+   :alt: Dragging digital objects into AtoM's multi-uploader
+
 6. Once selected, the page will show previews of all the objects. If you like,
-   you can edit the title for each object under to the preview. Remember, the
-   title you enter here will be the title used for the associated
-   :term:`archival description` that will be created for each
-   :term:`digital object` uploaded.
+   you can edit the title for each description that will be created, by
+   clicking the pencil icon under to the preview. However, once we click the
+   "Upload" button, a separate page dedicated to customizing the description
+   titles will be provided (see step 9 below). Remember, the title you enter 
+   here will be the title used for the associated :term:`archival description` 
+   that will be created for each :term:`digital object` uploaded.
 
 .. image:: images/import-objects-title2.*
    :align: center
    :width: 80%
    :alt: Customizing individual description titles for each object uploaded
 
-7. You can quit the upload process at any time by clicking the "Cancel" button
+7. If necessary, you can click the black "X" icon on the top right of the
+   thumbnail generated to remove an object from the upload. You can also add
+   additional objects either by dragging them in, or by using the "Add more" link 
+   provived in the top right corner of the upload area.
+
+.. NOTE::
+
+   The ``%dd%`` incremental counter used in the default Title field will
+   **only** ever increment up to the next number - even if you remove
+   previously added objects!
+
+   For example, if you added 3 images using the default title (i.e. image 01,
+   image 02, image 03), then removed one and uploaded a different image, this
+   new image would **not** be image 03 - it would be added as "image 04."
+
+   Any discrepancies can be easily reviewed and modified on the next page of
+   the importer, where each image will be shown next to an editable title
+   field.
+
+8. You can quit the upload process at any time by clicking the "Cancel" button
    in the :term:`button block`; any digital objects already uploaded will not be
    saved. Note that simply navigating away from the page by any other means,
-   **without first clicking "Import"** will also result in no new digital
+   **without first clicking "Upload"** will also result in no new digital
    objects being uploaded.
-8. Click the "Import" button in the :term:`button block` when you are satisfied
-   with your changes. When you return to the :term:`view page`, you will see
-   that the objects have all been attached to the :term:`archival description`
-   as :term:`child records <child record>` of that description. If the digital
-   object :ref:`recurring-carousel` is enabled (see
-   :ref:`default-page-elements` for instructions on enabling or disabling the
-   carousel), you will also see the thumbnails of your uploaded digital
-   objects in the carousel.
+9. Click the "Upload" button in the :term:`button block` when you are satisfied
+   with your changes. AtoM will upload the images using the default description 
+   titles provided, but will immediately redirect you to a page where you can 
+   individually customize those default titles if desired: 
+
+.. image:: images/import-objects-title-change.*
+   :align: center
+   :width: 80%
+   :alt: Customizing the description titles of the uploaded digital objects
+
+10. When you are satisfied with the associated description titles, click the
+    "Save" button in the :term:`button block` at the bottom of the page. When
+    you return to the :term:`view page`, you will see that the objects have
+    all been attached to the :term:`archival description` as :term:`child
+    records <child record>` of that description. If the digital object
+    :ref:`recurring-carousel` is enabled (see :ref:`default-page-elements` for 
+    instructions on enabling or disabling the carousel), you will also see the 
+    thumbnails of your uploaded digital objects in the carousel.
 
 .. image:: images/import-objects-children.*
    :align: center
-   :width: 80%
+   :width: 70%
    :alt: An image of a description after uploading multiple digital objects
 
 :ref:`Back to top <upload-digital-object>`
