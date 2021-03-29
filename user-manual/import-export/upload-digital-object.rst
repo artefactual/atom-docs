@@ -263,6 +263,14 @@ your :term:`digital object`.
 Upload multiple digital objects to archival descriptions
 ========================================================
 
+.. IMPORTANT::
+
+   The following instructions refer to the Flash-based multi-uploader that was 
+   included in AtoM 2.6.2 and earlier releases. Since then, Flash has been 
+   deprecated and support has been removed from most browsers. The 2.6.3 release
+   includes a new multiuploader - for instructions on its use, please refer to 
+   the 2.7 documentation page.
+
 In AtoM, there is a 1:1 relationship between
 :term:`archival descriptions <archival description>` and
 :term:`digital objects <digital object>` - that is, only one digital object
