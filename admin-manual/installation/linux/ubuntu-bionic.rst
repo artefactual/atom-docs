@@ -667,8 +667,21 @@ out the following page for further installation details:
 
 .. _linux-ubuntu-bionic-configuration-files:
 
-Configure AtoM via the command-line
-===================================
+Configure AtoM
+==============
+
+It's important that you change the CSRF secret in `apps/qubit/config/settings.yml`
+(line 37) to a 32 chars alphanumeric string. E.g.:
+
+.. code-block:: yml
+
+   all:
+    .settings:
+      # Form security secret (CSRF protection)
+      csrf_secret:            nTZQtEDJu27Zrhu23qw6XDECMSwcSHAN
+
+Other configuration settings
+----------------------------
 
 There are various settings that can only be configured via the command-line -
 for example, the default timezone of the application. Depending on your local
