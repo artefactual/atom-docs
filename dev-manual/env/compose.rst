@@ -210,6 +210,11 @@ As you can see in the right column:
 * Memcached can be accessed through port 63004, only from the host.
 * The Gearman server can be accessed through port 63005, only from the host.
 
+.. image:: images/atom-docker-env.*
+   :align: center
+   :width: 80%
+   :alt: A representation of the AtoM Docker containers and ports
+
 AtoM should be now accessible from your browser. To connect from the host, use
 the following address: http://localhost:63001.
 
