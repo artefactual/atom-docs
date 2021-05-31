@@ -217,6 +217,12 @@ You will be able to view but not edit your user profile in AtoM. You will need t
 contact your CAS administrator to make any changes to your profile.
 When you log out of AtoM you will also be logged out of the CAS domain.
 
+AtoM also has an :ref:`LDAP <ldap-enabling>` module that can change how 
+authentication is handled. For more information on both CAS and LDAP 
+authentication configuration, see: 
+
+* :ref:`customization-authentication`
+
 :ref:`Back to top <getting-started-all>`
 
 .. _user-roles:

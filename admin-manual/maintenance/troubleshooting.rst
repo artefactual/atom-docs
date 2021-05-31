@@ -166,7 +166,7 @@ You should consider restarting PHP-FPM if:
 
 .. code-block:: bash
 
-   sudo systemctl restart php7.2-fpm
+   sudo systemctl restart php7.4-fpm
 
 .. SEEALSO::
 

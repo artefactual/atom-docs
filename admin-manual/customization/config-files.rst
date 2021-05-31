@@ -126,6 +126,10 @@ config/factories.yml
 * See: :ref:`maintenance-logging` for some ideas on how to work with these
   settings to change or improve logging in AtoM
 
+.. SEEALSO::
+
+   * :ref:`customization-authentication`
+
 .. _config-config-php:
 
 config/config.php
