@@ -431,6 +431,16 @@ vector.
 Serve
 =====
 
+There are many web servers out there capable of working well with
+`PHP <http://php.net/>`__. `Apache <https://httpd.apache.org/>`__ is probably
+the most popular and we like it, but we've found that
+`Nginx <http://nginx.com/>`__ adapts itself much better to limited resource
+environments while it also scales better and more predictably under high loads.
+You are welcome to try other solutions, but the following documentation will
+focus on Nginx and PHP-FPM.
+
+Additionally, AtoM requires the configuration of a Gearman worker service.
+
 .. _linux-ubuntu-bionic-filesystem-permissions:
 
 Filesystem permissions
@@ -601,32 +611,24 @@ remove it:
 .. _linux-ubuntu-bionic-dependency-httpd:
 .. _linux-ubuntu-bionic-dependency-httpd-nginx:
 
-Web server
-----------
-
-There are many web servers out there capable of working well with
-`PHP <http://php.net/>`__. `Apache <https://httpd.apache.org/>`__ is probably
-the most popular and we like it, but we've found that
-`Nginx <http://nginx.com/>`__ adapts itself much better to limited resource
-environments while it also scales better and more predictably under high loads.
-You are welcome to try other solutions, but the following documentation will
-focus on Nginx.
-
-.. WARNING::
-
-   The following instructions assume that the Nginx package is creating the
-   directory :file:`/usr/share/nginx` and that is the location where we are
-   going to place the AtoM sources. However, we have been told this location may
-   be different in certain environments (e.g. :file:`/var/www`) or you may opt
-   for a different location. If that is the case, please make sure that you
-   update the configuration snippets that we share later in this document
-   according to your location.
+Nginx
+-----
 
 In Ubuntu, the installation of Nginx is simple:
 
 .. code-block:: bash
 
    sudo apt install nginx
+
+.. WARNING::
+
+   These instructions assume that the Nginx package is creating the
+   directory :file:`/usr/share/nginx` and that is the location where we are
+   going to place the AtoM sources. However, we have been told this location may
+   be different in certain environments (e.g. :file:`/var/www`) or you may opt
+   for a different location. If that is the case, please make sure that you
+   update the configuration snippets that we share later in this document
+   according to your location.
 
 Nginx deploys a default server (aka VirtualHost, for Apache users) called
 **default** and you can find it in :file:`/etc/nginx/sites-available/default`.
