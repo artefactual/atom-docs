@@ -58,7 +58,7 @@ Now using git, check out the sources of AtoM and change your current directory:
 
    The source code (the entire "atom" folder) is copied to the Docker container
    on the build process and used to create the instance. For example, clone the
-   "stable/2.6.x" branch if you want to test the latest stable version of AtoM.
+   "stable/|version|.x" branch if you want to test the latest stable version of AtoM.
 
 Now set the environment variable ``COMPOSE_FILE`` to tell Compose what is the
 location of our YAML file. You could do the same using the ``-f`` flag but we

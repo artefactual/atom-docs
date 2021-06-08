@@ -454,9 +454,9 @@ Option 1: Download the tarball
 
 .. code-block:: bash
 
-   wget https://storage.accesstomemory.org/releases/atom-2.6.0.tar.gz
+   wget https://storage.accesstomemory.org/releases/atom-2.7.0.tar.gz
    sudo mkdir /usr/share/nginx/atom
-   sudo tar xzf atom-2.6.0.tar.gz -C /usr/share/nginx/atom --strip 1
+   sudo tar xzf atom-2.7.0.tar.gz -C /usr/share/nginx/atom --strip 1
 
 Please note that the tarball may not be available yet if this version is still
 in development. In this case, you can try the alternative installation method
@@ -476,14 +476,14 @@ Install git:
 .. code-block:: bash
 
    sudo mkdir /usr/share/nginx/atom
-   sudo git clone -b stable/2.6.x http://github.com/artefactual/atom.git /usr/share/nginx/atom
+   sudo git clone -b stable/2.7.x http://github.com/artefactual/atom.git /usr/share/nginx/atom
 
 If you are not interested in downloading all the history from git, you could
 also truncate it to a specific number of revisions, e.g.: just one revision
 
 .. code-block:: bash
 
-   git clone -b stable/2.6.x --depth 1 http://github.com/artefactual/atom.git /usr/share/nginx/atom
+   git clone -b stable/2.7.x --depth 1 http://github.com/artefactual/atom.git /usr/share/nginx/atom
 
 We use `Composer`_ to install and manage some third-party PHP libraries. To
 install Composer download and run the Composer installer according to the
