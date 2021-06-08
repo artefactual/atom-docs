@@ -365,7 +365,7 @@ creates the Elasticsearch index.
    cd /usr/share/nginx/atom
    php symfony tools:install
 
-The installation process will ask for configuration details such as the location
+The installation task will ask for configuration details such as the location
 of your database server. In some cases, it may provide default values, such as
 ``atom`` for the database name. If you have followed this document to the letter
 (including creating a different database user in the database configuration step
@@ -475,7 +475,7 @@ or supervise with specific tools like upstart, supervisord or systemd.
 The worker will wait for jobs that are assigned by the job server.
 
 We will use systemd to manage the AtoM worker, create the following service
-:file:`/usr/lib/systemd/system/atom-worker.service`:
+file :file:`/usr/lib/systemd/system/atom-worker.service`:
 
 .. code-block:: none
 
@@ -515,8 +515,14 @@ Now reload systemd, enable and start the AtoM worker:
    sudo systemctl enable atom-worker
    sudo systemctl start atom-worker
 
+And confirm the service is active and running:
+
+.. code-block:: bash
+
+   sudo systemctl status atom-worker
+
 Check out the following page for more information about asynchronous jobs and
-worker management ::ref:`installation-asynchronous-jobs`.
+worker management: :ref:`installation-asynchronous-jobs`.
 
 .. _linux-ubuntu-bionic-serve-php-fpm:
 
