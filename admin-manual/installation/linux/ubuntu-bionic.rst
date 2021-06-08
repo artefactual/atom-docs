@@ -143,136 +143,6 @@ Start the service and configure it to start when the system is booted.
    sudo systemctl enable elasticsearch
    sudo systemctl start elasticsearch
 
-.. _linux-ubuntu-bionic-dependency-httpd:
-
-Web server
-----------
-
-There are many web servers out there capable of working well with
-`PHP <http://php.net/>`__. `Apache <https://httpd.apache.org/>`__ is probably
-the most popular and we like it, but we've found that
-`Nginx <http://nginx.com/>`__ adapts itself much better to limited resource
-environments while it also scales better and more predictably under high loads.
-You are welcome to try other solutions, but the following documentation will
-focus on Nginx.
-
-.. WARNING::
-
-   The following instructions assume that the Nginx package is creating the
-   directory :file:`/usr/share/nginx` and that is the location where we are
-   going to place the AtoM sources. However, we have been told this location may
-   be different in certain environments (e.g. :file:`/var/www`) or you may opt
-   for a different location. If that is the case, please make sure that you
-   update the configuration snippets that we share later in this document
-   according to your location.
-
-.. _linux-ubuntu-bionic-dependency-httpd-nginx:
-
-Nginx
-`````
-
-In Ubuntu, the installation of Nginx is simple:
-
-.. code-block:: bash
-
-   sudo apt install nginx
-
-Nginx deploys a default server (aka VirtualHost, for Apache users) called
-**default** and you can find it in :file:`/etc/nginx/sites-available/default`.
-In order to install AtoM you could edit the existing server block or add a new
-one. We are going to you show you how to do the latter:
-
-.. code-block:: bash
-
-   sudo touch /etc/nginx/sites-available/atom
-   sudo ln -sf /etc/nginx/sites-available/atom /etc/nginx/sites-enabled/atom
-   sudo rm /etc/nginx/sites-enabled/default
-
-We have now created the configuration file and linked it from sites-enabled/,
-which is the directory that Nginx will look for. This means that you could
-disable a site by removing its symlink from sites-enabled/ while keeping the
-original one under sites-available/, in case that you want to re-use it in the
-future. You can do this with the Nginx default server.
-
-The following is a recommended server block for AtoM. Put the following contents
-in :file:`/etc/nginx/sites-available/atom`.
-
-.. code-block:: nginx
-
-   upstream atom {
-     server unix:/run/php7.2-fpm.atom.sock;
-   }
-
-   server {
-
-     listen 80;
-     root /usr/share/nginx/atom;
-
-     # http://wiki.nginx.org/HttpCoreModule#server_name
-     # _ means catch any, but it's better if you replace this with your server
-     # name, e.g. archives.foobar.com
-     server_name _;
-
-     client_max_body_size 72M;
-
-     # http://wiki.nginx.org/HttpCoreModule#try_files
-     location / {
-       try_files $uri /index.php?$args;
-     }
-
-     location ~ /\. {
-       deny all;
-       return 404;
-     }
-
-     location ~* (\.yml|\.ini|\.tmpl)$ {
-       deny all;
-       return 404;
-     }
-
-     location ~* /(?:uploads|files)/.*\.php$ {
-       deny all;
-       return 404;
-     }
-
-     location ~* /uploads/r/(.*)/conf/ {
-
-     }
-
-     location ~* ^/uploads/r/(.*)$ {
-       include /etc/nginx/fastcgi_params;
-       set $index /index.php;
-       fastcgi_param SCRIPT_FILENAME $document_root$index;
-       fastcgi_param SCRIPT_NAME $index;
-       fastcgi_pass atom;
-     }
-
-     location ~ ^/private/(.*)$ {
-       internal;
-       alias /usr/share/nginx/atom/$1;
-     }
-
-     location ~ ^/(index|qubit_dev)\.php(/|$) {
-       include /etc/nginx/fastcgi_params;
-       fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-       fastcgi_split_path_info ^(.+\.php)(/.*)$;
-       fastcgi_pass atom;
-     }
-
-     location ~* \.php$ {
-       deny all;
-       return 404;
-     }
-
-   }
-
-Now you need to enable and reload Nginx:
-
-.. code-block:: bash
-
-   sudo systemctl enable nginx
-   sudo systemctl reload nginx
-
 .. _linux-ubuntu-bionic-dependency-php:
 
 PHP
@@ -295,91 +165,6 @@ If you are using Memcached as cache engine, you will also need to install `php-m
 
    sudo apt install php-memcache
 
-Let's add a new PHP pool for AtoM by adding the following contents in a new file
-called :file:`/etc/php/7.2/fpm/pool.d/atom.conf`:
-
-.. code-block:: ini
-
-   [atom]
-
-   ; The user running the application
-   user = www-data
-   group = www-data
-
-   ; Use UNIX sockets if Nginx and PHP-FPM are running in the same machine
-   listen = /run/php7.2-fpm.atom.sock
-   listen.owner = www-data
-   listen.group = www-data
-   listen.mode = 0600
-
-   ; The following directives should be tweaked based in your hardware resources
-   pm = dynamic
-   pm.max_children = 30
-   pm.start_servers = 10
-   pm.min_spare_servers = 10
-   pm.max_spare_servers = 10
-   pm.max_requests = 200
-
-   chdir = /
-
-   ; Some defaults for your PHP production environment
-   ; A full list here: http://www.php.net/manual/en/ini.list.php
-   php_admin_value[expose_php] = off
-   php_admin_value[allow_url_fopen] = on
-   php_admin_value[memory_limit] = 512M
-   php_admin_value[max_execution_time] = 120
-   php_admin_value[post_max_size] = 72M
-   php_admin_value[upload_max_filesize] = 64M
-   php_admin_value[max_file_uploads] = 10
-   php_admin_value[cgi.fix_pathinfo] = 0
-   php_admin_value[display_errors] = off
-   php_admin_value[display_startup_errors] = off
-   php_admin_value[html_errors] = off
-   php_admin_value[session.use_only_cookies] = 0
-
-   ; APC
-   php_admin_value[apc.enabled] = 1
-   php_admin_value[apc.shm_size] = 64M
-   php_admin_value[apc.num_files_hint] = 5000
-   php_admin_value[apc.stat] = 0
-
-   ; Zend OPcache
-   php_admin_value[opcache.enable] = 1
-   php_admin_value[opcache.memory_consumption] = 192
-   php_admin_value[opcache.interned_strings_buffer] = 16
-   php_admin_value[opcache.max_accelerated_files] = 4000
-   php_admin_value[opcache.validate_timestamps] = 0
-   php_admin_value[opcache.fast_shutdown] = 1
-
-   ; This is a good place to define some environment variables, e.g. use
-   ; ATOM_DEBUG_IP to define a list of IP addresses with full access to the
-   ; debug frontend or ATOM_READ_ONLY if you want AtoM to prevent
-   ; authenticated users
-   env[ATOM_DEBUG_IP] = "10.10.10.10,127.0.0.1"
-   env[ATOM_READ_ONLY] = "off"
-
-The process manager has to be enabled and restarted:
-
-.. code-block:: bash
-
-   sudo systemctl enable php7.2-fpm
-   sudo systemctl start php7.2-fpm
-
-If the service fails to start, make sure that the configuration file has been
-has been pasted properly. You can also check the syntax by running:
-
-.. code-block:: bash
-
-   sudo php-fpm7.2 --test
-
-If you are not planning to use the default PHP pool (``www``), feel free to
-remove it:
-
-.. code-block:: bash
-
-   sudo rm /etc/php/7.2/fpm/pool.d/www.conf
-   sudo systemctl restart php7.2-fpm
-
 .. _linux-ubuntu-bionic-gearman:
 
 Gearman job server
@@ -390,12 +175,6 @@ Gearman job server is required by AtoM as of version 2.2.
 .. code-block:: bash
 
    sudo apt install gearman-job-server
-
-We'll configure the job server and the workers after initial installation (see
-:ref:`below <linux-ubuntu-bionic-workers>`). Full configuration detalis can be
-found here:
-
-* :ref:`installation-asynchronous-jobs`.
 
 .. _linux-ubuntu-bionic-other-packages:
 
@@ -434,8 +213,8 @@ dependencies at once:
 
 .. _linux-ubuntu-bionic-install-atom:
 
-Download AtoM
-=============
+Download
+========
 
 Now that we have installed and configured all dependencies, we are ready to
 download and install AtoM itself. The safest way is to install AtoM from the
@@ -524,27 +303,6 @@ After downloading the code, you will need to compile the CSS files:
    sudo npm install -g "less@<2.0.0"
    sudo make -C /usr/share/nginx/atom/plugins/arDominionPlugin
 
-.. _linux-ubuntu-bionic-filesystem-permissions:
-
-Filesystem permissions
-======================
-
-By default, Nginx runs as the www-data user. There are a few directories under
-AtoM that must be writable by the web server. The easiest way to ensure this is
-to update the owner of the AtoM directory and its contents by running:
-
-.. code-block:: bash
-
-   sudo chown -R www-data:www-data /usr/share/nginx/atom
-
-If you are deploying AtoM in a shared environment we recommend you to pay
-attention to the permissions assigned to **others**. The following is an
-example on how to clear all mode bits for others:
-
-.. code-block:: bash
-
-   sudo chmod o= /usr/share/nginx/atom
-
 .. _linux-ubuntu-bionic-create-database:
 
 Create the database
@@ -594,8 +352,8 @@ installation or you can change the user used by AtoM in :ref:`config.php <config
 
 .. _linux-ubuntu-bionic-run-installer:
 
-Run the web installer
-=====================
+Run the installer
+=================
 
 You should now be ready to run the installer. It's a simple web interface that
 changes some internal configuration files according to your environment and adds
@@ -644,31 +402,10 @@ The rest of the fields can be filled as you need:
    password can also be changed by an :term:`administrator` after installation
    via the :term:`user interface` - see: :ref:`edit-user`.
 
-.. _linux-ubuntu-bionic-workers:
-
-Deployment of workers
-=====================
-
-Gearman is used in AtoM to add support for asynchronous tasks like
-SWORD deposits, managing rights inheritance, and generating finding aids. Check
-out the following page for further installation details:
-:ref:`installation-asynchronous-jobs`.
-
-.. IMPORTANT::
-
-   You **must** complete the installation instructions found on the Job Scheduler
-   page for your AtoM installation to be fully functional! Increasingly in AtoM,
-   the job scheduler is used to support long-running tasks, some of which are
-   core functionality such as updating the :term:`publication status` of a
-   descriptive hierarchy, moving descriptions to a new :term:`parent record`, and
-   much more. Please do this now! See:
-
-   * :ref:`installation-asynchronous-jobs`
-
 .. _linux-ubuntu-bionic-configuration-files:
 
-Configure AtoM via the command-line
-===================================
+Configure
+=========
 
 There are various settings that can only be configured via the command-line -
 for example, the default timezone of the application. Depending on your local
@@ -688,6 +425,269 @@ We strongly encourage our users to configure a firewall because some of the
 services configured should not be exposed in the wild, e.g. Elasticsearch was
 not designed to be accessible from untrusted networks and it's a common attack
 vector.
+
+.. _linux-ubuntu-bionic-serve:
+
+Serve
+=====
+
+.. _linux-ubuntu-bionic-filesystem-permissions:
+
+Filesystem permissions
+----------------------
+
+By default, Nginx runs as the www-data user. There are a few directories under
+AtoM that must be writable by the web server. The easiest way to ensure this is
+to update the owner of the AtoM directory and its contents by running:
+
+.. code-block:: bash
+
+   sudo chown -R www-data:www-data /usr/share/nginx/atom
+
+If you are deploying AtoM in a shared environment we recommend you to pay
+attention to the permissions assigned to **others**. The following is an
+example on how to clear all mode bits for others:
+
+.. code-block:: bash
+
+   sudo chmod o= /usr/share/nginx/atom
+
+.. _linux-ubuntu-bionic-workers:
+
+Deployment of workers
+---------------------
+
+Gearman is used in AtoM to add support for asynchronous tasks like
+SWORD deposits, managing rights inheritance, and generating finding aids. Check
+out the following page for further installation details:
+:ref:`installation-asynchronous-jobs`.
+
+.. IMPORTANT::
+
+   You **must** complete the installation instructions found on the Job Scheduler
+   page for your AtoM installation to be fully functional! Increasingly in AtoM,
+   the job scheduler is used to support long-running tasks, some of which are
+   core functionality such as updating the :term:`publication status` of a
+   descriptive hierarchy, moving descriptions to a new :term:`parent record`, and
+   much more. Please do this now! See:
+
+   * :ref:`installation-asynchronous-jobs`
+
+.. _linux-ubuntu-bionic-serve-php-fpm:
+
+PHP-FPM
+-------
+
+Let's add a new PHP pool for AtoM by adding the following contents in a new file
+called :file:`/etc/php/7.2/fpm/pool.d/atom.conf`:
+
+.. code-block:: ini
+
+   [atom]
+
+   ; The user running the application
+   user = www-data
+   group = www-data
+
+   ; Use UNIX sockets if Nginx and PHP-FPM are running in the same machine
+   listen = /run/php7.2-fpm.atom.sock
+   listen.owner = www-data
+   listen.group = www-data
+   listen.mode = 0600
+
+   ; The following directives should be tweaked based in your hardware resources
+   pm = dynamic
+   pm.max_children = 30
+   pm.start_servers = 10
+   pm.min_spare_servers = 10
+   pm.max_spare_servers = 10
+   pm.max_requests = 200
+
+   chdir = /
+
+   ; Some defaults for your PHP production environment
+   ; A full list here: http://www.php.net/manual/en/ini.list.php
+   php_admin_value[expose_php] = off
+   php_admin_value[allow_url_fopen] = on
+   php_admin_value[memory_limit] = 512M
+   php_admin_value[max_execution_time] = 120
+   php_admin_value[post_max_size] = 72M
+   php_admin_value[upload_max_filesize] = 64M
+   php_admin_value[max_file_uploads] = 10
+   php_admin_value[cgi.fix_pathinfo] = 0
+   php_admin_value[display_errors] = off
+   php_admin_value[display_startup_errors] = off
+   php_admin_value[html_errors] = off
+   php_admin_value[session.use_only_cookies] = 0
+
+   ; APC
+   php_admin_value[apc.enabled] = 1
+   php_admin_value[apc.shm_size] = 64M
+   php_admin_value[apc.num_files_hint] = 5000
+   php_admin_value[apc.stat] = 0
+
+   ; Zend OPcache
+   php_admin_value[opcache.enable] = 1
+   php_admin_value[opcache.memory_consumption] = 192
+   php_admin_value[opcache.interned_strings_buffer] = 16
+   php_admin_value[opcache.max_accelerated_files] = 4000
+   php_admin_value[opcache.validate_timestamps] = 0
+   php_admin_value[opcache.fast_shutdown] = 1
+
+   ; This is a good place to define some environment variables, e.g. use
+   ; ATOM_DEBUG_IP to define a list of IP addresses with full access to the
+   ; debug frontend or ATOM_READ_ONLY if you want AtoM to prevent
+   ; authenticated users
+   env[ATOM_DEBUG_IP] = "10.10.10.10,127.0.0.1"
+   env[ATOM_READ_ONLY] = "off"
+
+The process manager has to be enabled and restarted:
+
+.. code-block:: bash
+
+   sudo systemctl enable php7.2-fpm
+   sudo systemctl start php7.2-fpm
+
+If the service fails to start, make sure that the configuration file has been
+has been pasted properly. You can also check the syntax by running:
+
+.. code-block:: bash
+
+   sudo php-fpm7.2 --test
+
+If you are not planning to use the default PHP pool (``www``), feel free to
+remove it:
+
+.. code-block:: bash
+
+   sudo rm /etc/php/7.2/fpm/pool.d/www.conf
+   sudo systemctl restart php7.2-fpm
+
+.. _linux-ubuntu-bionic-dependency-httpd:
+.. _linux-ubuntu-bionic-dependency-httpd-nginx:
+
+Web server
+----------
+
+There are many web servers out there capable of working well with
+`PHP <http://php.net/>`__. `Apache <https://httpd.apache.org/>`__ is probably
+the most popular and we like it, but we've found that
+`Nginx <http://nginx.com/>`__ adapts itself much better to limited resource
+environments while it also scales better and more predictably under high loads.
+You are welcome to try other solutions, but the following documentation will
+focus on Nginx.
+
+.. WARNING::
+
+   The following instructions assume that the Nginx package is creating the
+   directory :file:`/usr/share/nginx` and that is the location where we are
+   going to place the AtoM sources. However, we have been told this location may
+   be different in certain environments (e.g. :file:`/var/www`) or you may opt
+   for a different location. If that is the case, please make sure that you
+   update the configuration snippets that we share later in this document
+   according to your location.
+
+In Ubuntu, the installation of Nginx is simple:
+
+.. code-block:: bash
+
+   sudo apt install nginx
+
+Nginx deploys a default server (aka VirtualHost, for Apache users) called
+**default** and you can find it in :file:`/etc/nginx/sites-available/default`.
+In order to install AtoM you could edit the existing server block or add a new
+one. We are going to you show you how to do the latter:
+
+.. code-block:: bash
+
+   sudo touch /etc/nginx/sites-available/atom
+   sudo ln -sf /etc/nginx/sites-available/atom /etc/nginx/sites-enabled/atom
+   sudo rm /etc/nginx/sites-enabled/default
+
+We have now created the configuration file and linked it from sites-enabled/,
+which is the directory that Nginx will look for. This means that you could
+disable a site by removing its symlink from sites-enabled/ while keeping the
+original one under sites-available/, in case that you want to re-use it in the
+future. You can do this with the Nginx default server.
+
+The following is a recommended server block for AtoM. Put the following contents
+in :file:`/etc/nginx/sites-available/atom`.
+
+.. code-block:: nginx
+
+   upstream atom {
+      server unix:/run/php7.2-fpm.atom.sock;
+   }
+
+   server {
+
+      listen 80;
+      root /usr/share/nginx/atom;
+
+      # http://wiki.nginx.org/HttpCoreModule#server_name
+      # _ means catch any, but it's better if you replace this with your server
+      # name, e.g. archives.foobar.com
+      server_name _;
+
+      client_max_body_size 72M;
+
+      # http://wiki.nginx.org/HttpCoreModule#try_files
+      location / {
+         try_files $uri /index.php?$args;
+      }
+
+      location ~ /\. {
+         deny all;
+         return 404;
+      }
+
+      location ~* (\.yml|\.ini|\.tmpl)$ {
+         deny all;
+         return 404;
+      }
+
+      location ~* /(?:uploads|files)/.*\.php$ {
+         deny all;
+         return 404;
+      }
+
+      location ~* /uploads/r/(.*)/conf/ {
+
+      }
+
+      location ~* ^/uploads/r/(.*)$ {
+         include /etc/nginx/fastcgi_params;
+         set $index /index.php;
+         fastcgi_param SCRIPT_FILENAME $document_root$index;
+         fastcgi_param SCRIPT_NAME $index;
+         fastcgi_pass atom;
+      }
+
+      location ~ ^/private/(.*)$ {
+         internal;
+         alias /usr/share/nginx/atom/$1;
+      }
+
+      location ~ ^/(index|qubit_dev)\.php(/|$) {
+         include /etc/nginx/fastcgi_params;
+         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+         fastcgi_split_path_info ^(.+\.php)(/.*)$;
+         fastcgi_pass atom;
+      }
+
+      location ~* \.php$ {
+         deny all;
+         return 404;
+      }
+
+   }
+
+Now you need to enable and reload Nginx:
+
+.. code-block:: bash
+
+   sudo systemctl enable nginx
+   sudo systemctl reload nginx
 
 .. _`Composer`: https://getcomposer.org/
 .. _`globally`: https://getcomposer.org/doc/00-intro.md#globally
