@@ -355,50 +355,50 @@ installation or you can change the user used by AtoM in :ref:`config.php <config
 Run the installer
 =================
 
-You should now be ready to run the installer. It's a simple web interface that
-changes some internal configuration files according to your environment and adds
-the necessary tables and initial data to the database recently created.
+You should now be ready to run the installer. It's a simple command line
+interface task that configures AtoM according to your environment, adds
+the necessary tables and initial data to the database recently created and
+creates the Elasticsearch index.
 
-Open your browser and type the URL in the address bar. The URL can greatly
-change depending on your web server configuration. The URL will usually be
-something like http://localhost. AtoM will redirect you to the installer
-automatically.
+.. code-block:: bash
 
-The installation process consists of a number of steps where you will be asked
-for configuration details such as the location of your database server. In some
-cases, it may provide default values, such as ``root`` for the database username.
-If you have followed this document to the letter (including creating a different
-database user in the database configuration step
+   cd /usr/share/nginx/atom
+   php symfony tools:install
+
+The installation process will ask for configuration details such as the location
+of your database server. In some cases, it may provide default values, such as
+``atom`` for the database name. If you have followed this document to the letter
+(including creating a different database user in the database configuration step
 :ref:` above <linux-ubuntu-bionic-create-database>`, this is how you should fill
-the following fields:
+the configuration:
 
-* Database name: ``atom``
-* Database username: ``atom``
-* Database password: ``12345``
 * Database host: ``localhost``
 * Database port: ``3306``
+* Database name: ``atom``
+* Database user: ``atom``
+* Database password: ``12345``
 * Search host: ``localhost``
 * Search port: ``9200``
 * Search index: ``atom``
 
-Of course, some of these fields will look very different if you are running
+Of course, some of these values will look very different if you are running
 AtoM in a distributed way, where your services like MySQL or Elasticsearch are
 running in separate machines.
 
-The rest of the fields can be filled as you need:
+The rest of the configuration can be filled as you need:
 
 * Site title
 * Site description
 * Site base URL
-* Username
-* E-mail address
-* Password
+* Admin email
+* Admin username
+* Admin password
 
 .. TIP::
 
    You can always change the :term:`site title`, :term:`site description`, and
    :term:`Base URL` later via **Admin > Settings > Site information**. See:
-   :ref:`site-information` for more information. The Username, email, and
+   :ref:`site-information` for more information. The admin email, username and
    password can also be changed by an :term:`administrator` after installation
    via the :term:`user interface` - see: :ref:`edit-user`.
 
@@ -408,9 +408,9 @@ Configure
 =========
 
 There are various settings that can only be configured via the command-line -
-for example, the default timezone of the application. Depending on your local
-requirements, it may be preferable to configure some of these now. For more
-information on these settings see: :ref:`customization-config-files`.
+for example, the default timezone and culture of the application. Depending on
+your local requirements, it may be preferable to configure some of these now.
+For more information on these settings see: :ref:`customization-config-files`.
 
 .. _linux-ubuntu-bionic-security-considerations:
 
