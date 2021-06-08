@@ -357,7 +357,7 @@ Run the installer
 
 You should now be ready to run the installer. It's a simple command line
 interface task that configures AtoM according to your environment, adds
-the necessary tables and initial data to the database recently created and
+the necessary tables and initial data to the recently created database and
 creates the Elasticsearch index.
 
 .. code-block:: bash
@@ -474,7 +474,7 @@ and much more. A worker is just a CLI task that you can run in a terminal
 or supervise with specific tools like upstart, supervisord or systemd.
 The worker will wait for jobs that are assigned by the job server.
 
-We will use systemd to manage the AtoM worker, create the following service
+We will use systemd to manage the AtoM worker; create the following service
 file :file:`/usr/lib/systemd/system/atom-worker.service`:
 
 .. code-block:: none
