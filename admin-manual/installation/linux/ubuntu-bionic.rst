@@ -417,9 +417,9 @@ For more information on these settings see: :ref:`customization-config-files`.
 Security considerations
 =======================
 
-Now that AtoM is installed, please take a moment to read our
-:ref:`security section <security>` where we will show you how to
-configure the firewall in Ubuntu and back up AtoM.
+Now that AtoM is configured and installed, please take a moment to read our
+:ref:`security section <security>` where we will show you how to configure
+the firewall in Ubuntu and other options in AtoM configuration.
 
 We strongly encourage our users to configure a firewall because some of the
 services configured should not be exposed in the wild, e.g. Elasticsearch was
