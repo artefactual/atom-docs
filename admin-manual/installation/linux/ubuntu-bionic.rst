@@ -457,21 +457,56 @@ example on how to clear all mode bits for others:
 Deployment of workers
 ---------------------
 
-Gearman is used in AtoM to add support for asynchronous tasks like
-SWORD deposits, managing rights inheritance, and generating finding aids. Check
-out the following page for further installation details:
-:ref:`installation-asynchronous-jobs`.
+Gearman is used in AtoM to support asynchronous tasks, some of which are
+core functionality such as updating the :term:`publication status` of a
+descriptive hierarchy, moving descriptions to a new :term:`parent record`,
+and much more. A worker is just a CLI task that you can run in a terminal
+or supervise with specific tools like upstart, supervisord or systemd.
+The worker will wait for jobs that are assigned by the job server.
+
+We will use systemd to manage the AtoM worker, create the following service
+:file:`/usr/lib/systemd/system/atom-worker.service`:
+
+.. code-block:: none
+
+   [Unit]
+   Description=AtoM worker
+   After=network.target
+   # High interval and low restart limit to increase the possibility
+   # of hitting the rate limits in long running recurrent jobs.
+   StartLimitIntervalSec=24h
+   StartLimitBurst=3
+
+   [Install]
+   WantedBy=multi-user.target
+
+   [Service]
+   Type=simple
+   User=www-data
+   Group=www-data
+   WorkingDirectory=/usr/share/nginx/atom
+   ExecStart=/usr/bin/php7.2 -d memory_limit=-1 -d error_reporting="E_ALL" symfony jobs:worker
+   KillSignal=SIGTERM
+   Restart=on-failure
+   RestartSec=30
 
 .. IMPORTANT::
 
-   You **must** complete the installation instructions found on the Job Scheduler
-   page for your AtoM installation to be fully functional! Increasingly in AtoM,
-   the job scheduler is used to support long-running tasks, some of which are
-   core functionality such as updating the :term:`publication status` of a
-   descriptive hierarchy, moving descriptions to a new :term:`parent record`, and
-   much more. Please do this now! See:
+   If you are not using PHP 7.2, be sure to update the `ExecStart` filepath
+   in the `[Service]` section of  the sample configuration block above!
+   Currently it assumes PHP 7.2 is being used, and will not  work for
+   installations using a different PHP version without modification.
 
-   * :ref:`installation-asynchronous-jobs`
+Now reload systemd, enable and start the AtoM worker:
+
+.. code-block:: bash
+
+   sudo systemctl daemon-reload
+   sudo systemctl enable atom-worker
+   sudo systemctl start atom-worker
+
+Check out the following page for more information about asynchronous jobs and
+worker management ::ref:`installation-asynchronous-jobs`.
 
 .. _linux-ubuntu-bionic-serve-php-fpm:
 
