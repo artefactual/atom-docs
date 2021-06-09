@@ -10,8 +10,8 @@ fundamental changes to things like how errors are handled.
 
 We defined some sane configuration defaults in our :ref:`installation instructions
 <installation-linux>`. Namely, these settings are defined in the PHP pool
-(:file:`/etc/php7.2/fpm/php-fpm.conf`) and they are prioritized over those
-defined in :file:`/etc/php/7.2/fpm/php.ini`. Be aware that multiple configuration
+(:file:`/etc/php7.4/fpm/php-fpm.conf`) and they are prioritized over those
+defined in :file:`/etc/php/7.4/fpm/php.ini`. Be aware that multiple configuration
 files are read when PHP starts up, therefore it is a good practice to check the
 final configuration state when you are deploying AtoM. You can use
 `phpinfo() <https://www.php.net/manual/en/function.phpinfo.php>`__ for that 
@@ -60,8 +60,8 @@ to check both locations.
 
 The first is an environment variable defined in the PHP pool set up during
 installation. The location of this file may vary depending on your PHP 
-version and installation method, but typically for PHP 7.2, you can find this 
-file at ``/etc/php/7.2/fpm/pool.d/atom.conf``.  
+version and installation method, but typically for PHP 7.4, you can find this 
+file at ``/etc/php/7.4/fpm/pool.d/atom.conf``.  
 
 The file contains an environment variable called ``ATOM_READ_ONLY``. To put 
 AtoM into read-only mode (so login is disabled), change this value to "on," like

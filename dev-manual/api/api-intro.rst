@@ -59,7 +59,7 @@ not, check the box and then save the change using the Save button located in the
    .. code:: bash
 
       sudo service nginx restart
-      sudo systemctl restart php7.2-fpm
+      sudo systemctl restart php7.4-fpm
       php symfony cc
 
 After enabling the plugin, you will want to make sure that you generated

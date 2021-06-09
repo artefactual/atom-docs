@@ -33,7 +33,7 @@ uses a database abstraction layer and is therefore potentially compatible with
 Postgres, SQLite, SQLServer, Oracle, etc. (other solutions are not tested by
 AtoM developers)
 
-PHP 7.2 software code that manages requests and responses between the web
+PHP 7.4 software code that manages requests and responses between the web
 clients, the application logic, and the application content stored in
 the database. AtoM also makes use of a number of PHP extensions; see:
 :ref:`installation-requirements`.

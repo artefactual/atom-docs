@@ -12,4 +12,4 @@ Debian, CentOS or Fedora.
 .. toctree::
    :maxdepth: 1
 
-   ubuntu-bionic
+   ubuntu

@@ -286,19 +286,15 @@ and the atom-workers managed by the job scheduler.
 
 .. code-block:: bash
 
-   sudo systemctl restart php7.2-fpm
+   sudo systemctl restart php7.4-fpm
 
 **Optionally, to restart Memcached**:
-
-Ubuntu 18.04:
 
 .. code-block:: bash
 
    sudo systemctl restart memcached
 
 **To restart the atom-workers**:
-
-Ubuntu 18.04:
 
 .. code-block:: bash
 
@@ -413,7 +409,7 @@ To restart PHP-FPM:
 
 .. code-block:: bash
 
-   sudo systemctl restart php7.2-fpm
+   sudo systemctl restart php7.4-fpm
 
 If you are using Memcached with AtoM, you may also want to restart it:
 

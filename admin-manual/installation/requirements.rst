@@ -67,7 +67,7 @@ of each component.
   have deprecated a number of APIs still used in AtoM
 * `Java <https://www.java.com/en/>`__ 8 (required for Elasticsearch)
 * `MySQL <https://www.mysql.com/>`__ 8.0
-* `PHP <http://php.net/>`__ 7.2
+* `PHP <http://php.net/>`__ 7.4
 * `Gearman job server <http://gearman.org>`__
 
 Optionally, Memcached can be used as cache engine:
