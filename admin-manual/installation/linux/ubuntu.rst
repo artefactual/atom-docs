@@ -375,6 +375,9 @@ The rest of the configuration can be filled as you need:
    password can also be changed by an :term:`administrator` after installation
    via the :term:`user interface` - see: :ref:`edit-user`.
 
+For more information about this task, including ways to automate it, check its
+full documentation in :ref:`the command line tools page <cli-installer>`.
+
 .. _installation-ubuntu-configuration-files:
 
 Configure

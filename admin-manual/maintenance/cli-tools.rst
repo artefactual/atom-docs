@@ -2113,6 +2113,80 @@ after. See:
 
 :ref:`Back to top <maintenance-cli-tools>`
 
+.. _cli-installer:
+
+Installer
+=========
+
+Configure and initialize a new AtoM instance:
+
+.. code:: bash
+
+   php symfony tools:install
+
+.. warning::
+
+   This will delete configuration files and ALL DATA in your AtoM instance!
+   Be sure this is what you want to do before you proceed. You may want to
+   back up your database first - see :ref:`below <cli-backup-db>`
+
+This task will prompt you for the following configuration details to connect to
+the MySQL and Elasticsearch severs and initialize the database and the search
+index:
+
+* Database host *(default: localhost)*
+* Database port *(default: 3306)*
+* Database name *(default: atom)*
+* Database user *(default: atom)*
+* Database password
+* Search host *(default: localhost)*
+* Search port *(default: 9200)*
+* Search index *(default: atom)*
+
+It will also ask you for site information and administrator details:
+
+* Site title *(default: AtoM)*
+* Site description *(default: Access to Memory)*
+* Site base URL *(default: http://127.0.0.1)*
+* Admin email
+* Admin username
+* Admin password
+
+Alternatively, the ``--demo`` option will avoid the prompts for the site
+information and administrator details, using the following values:
+
+* Site title: *Demo site*
+* Site description: *Demo site*
+* Site base URL: *http://127.0.0.1*
+* Admin email: *demo@example.com*
+* Admin username: *demo*
+* Admin password: *demo*
+
+To automate the task, there is an option for each of the configuration details
+mentioned above, alongside a ``--no-confirmation`` option, so the task could be
+executed as follows to avoid user interaction completely:
+
+.. code:: bash
+
+   php symfony tools:install \
+     --database-host=localhost \
+     --database-port=3306 \
+     --database-name=atom \
+     --database-user=atom \
+     --database-password=12345 \
+     --search-host=elasticsearch \
+     --search-port=9200 \
+     --search-index=atom \
+     --site-title=AtoM \
+     --site-description='Access to Memory' \
+     --site-base-url=http://127.0.0.1 \
+     --admin-email=demo@example.com \
+     --admin-username=demo \
+     --admin-password=demo \
+     --no-confirmation
+
+:ref:`Back to top <maintenance-cli-tools>`
+
 .. _cli-purge-data:
 
 Purging all data
