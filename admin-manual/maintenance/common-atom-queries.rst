@@ -239,7 +239,7 @@ From the `MySQL documentation <https://dev.mysql.com/doc/refman/8.0/en/sql-mode.
   performs. This makes it easier to use MySQL in different environments and to
   use MySQL together with other database servers.
 
-During installation, at the :ref:`linux-ubuntu-bionic-create-database` step,
+During installation, at the :ref:`installation-ubuntu-create-database` step,
 we configure the global SQL mode in a separate file, added to
 ``/etc/mysql/conf.d/mysqld.cnf``. However, sometimes this step is missed, or
 the mode settings aren't configured properly, or you simply want an easy to
@@ -252,7 +252,7 @@ We can check the current SQL mode settings with the following query:
    SELECT @@sql_mode, @@GLOBAL.SQL_MODE;
 
 We do **not** recommend arbitrarily changing the SQL mode from those 
-recommended in the :ref:`linux-ubuntu-bionic-create-database` step of the 
+recommended in the :ref:`installation-ubuntu-create-database` step of the 
 installation documentation. However, if you do need to make changes, there are
 two ways you can accomplish this. 
 

@@ -13,7 +13,7 @@ useful guide we recommend reading: `Common pitfalls
 Some of these values are set during installation, in the PHP configuration
 pool you set up here:
 
-* :ref:`18.04 PHP Configuration <linux-ubuntu-bionic-dependency-php>`
+* :ref:`20.04 PHP-FPM Configuration <installation-ubuntu-serve-php-fpm>`
 
 .. _execution-php-ini:
 
@@ -168,12 +168,10 @@ caches and restart Memcached (if you're using it as cache engine).
 
 .. code-block:: bash
 
-   sudo systemctl restart php7.2-fpm
+   sudo systemctl restart php7.4-fpm
    php symfony cc
 
 **Optionally, to restart Memcached**:
-
-Ubuntu 18.04:
 
 .. code-block:: bash
 

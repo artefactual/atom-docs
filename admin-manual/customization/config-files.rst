@@ -170,8 +170,8 @@ has its own configuration file that defines some important global PHP settings
 like timeouts, and environment variables that may also modify the way that
 AtoM works as documented in accesstomemory.org.
 
-The file of the pool is located at ``/etc/php/7.2/fpm/pool.d/atom.conf``. Edit
-with ``nano``. Once saved, run: ``sudo systemctl restart php7.2-fpm``, and the
+The file of the pool is located at ``/etc/php/7.4/fpm/pool.d/atom.conf``. Edit
+with ``nano``. Once saved, run: ``sudo systemctl restart php7.4-fpm``, and the
 changes will apply.
 
 .. SEEALSO::

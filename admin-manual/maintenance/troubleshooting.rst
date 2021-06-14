@@ -198,8 +198,6 @@ You should consider restarting Nginx if:
 
 **How**
 
-If you're using Ubuntu 18.04:
-
 .. code-block:: bash
 
    sudo systemctl reload nginx
@@ -227,8 +225,6 @@ You should consider restarting Memcached if you're using it when:
 * You are trying to ensure all application caches are cleared
 
 **How**
-
-If you're using Ubuntu 18.04:
 
 .. code-block:: bash
 
@@ -282,8 +278,6 @@ You should consider restarting the atom-worker if:
 * You have a job that never seems to complete in the queue
 
 **How**
-
-If you're using Ubuntu 18.04:
 
 .. code-block:: bash
 
@@ -375,13 +369,12 @@ while monitoring.
 
    More information on using top:
 
-   * http://manpages.ubuntu.com/manpages/bionic/man1/top.1.html
+   * http://manpages.ubuntu.com/manpages/focal/man1/top.1.html
    * https://www.lifewire.com/linux-top-command-2201163
 
    More information on using htop:
 
    * https://hisham.hm/htop/
-   * http://idroot.net/linux/install-htop-ubuntu-16-04-lts/
    * https://www.howtogeek.com/howto/ubuntu/using-htop-to-monitor-system-processes-on-linux/
 
 :ref:`Back to top <maintenance-troubleshooting>`
@@ -416,7 +409,7 @@ information, see:
    Some PHP settings are configured in the PHP pool set up during installation, 
    and should be adjusted there. See for example: 
 
-   * :ref:`Ubuntu 18.04 PHP pool setup <linux-ubuntu-bionic-dependency-php>`
+   * :ref:`Ubuntu 20.04 PHP-FPM pool setup <installation-ubuntu-serve-php-fpm>`
 
 Remember, if you make any changes to your PHP settings (either in the ``php.ini``
 file, or in your application PHP pool), you will need to restart PHP-FPM after
@@ -1307,7 +1300,7 @@ This indicates an issue with Elasticsearch.
 First, make sure that you have followed all the installation instructions for
 Elasticsearch, as outlined in our recommended installation documentation:
 
-* :ref:`Elasticsearch installation <linux-ubuntu-bionic-dependency-elasticsearch>`
+* :ref:`Elasticsearch installation <installation-ubuntu-dependencies-elasticsearch>`
 
 You can get basic configuration and status information about your search index
 with the following command-line task: 
@@ -1315,8 +1308,6 @@ with the following command-line task:
 * :ref:`cli-search-status`
 
 You can try restarting Elasticsearch with the following:
-
-**Ubuntu 18.04**
 
 .. code-block:: bash
 
@@ -1518,7 +1509,7 @@ there are no local copies (like the :term:`thumbnail` in search results)
 available, please make sure you have the following dependencies installed:
 
 * :ref:`other-dependencies`
-* :ref:`linux-ubuntu-bionic-other-packages`
+* :ref:`installation-ubuntu-dependencies-other-packages`
 
 If you have them installed, you can try regenerating your :term:`digital object`
 derivatives with the following command:
@@ -1594,7 +1585,7 @@ ensure that the ``read_only`` setting is set to ``false``. See:
 
 .. IMPORTANT::
 
-   There is also an environment variable maintained in ``/etc/php/7.2/fpm/php-fpm.conf``
+   There is also an environment variable maintained in ``/etc/php/7.4/fpm/php-fpm.conf``
    that can override the one in ``config/app.yml``. We recommend checking both
    files. In the ``atom.conf`` file, ensure that ``env[ATOM_READ_ONLY]`` is set
    to "off" to disable this setting and allow users to log in again.

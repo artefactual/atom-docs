@@ -58,7 +58,7 @@ Now using git, check out the sources of AtoM and change your current directory:
 
    The source code (the entire "atom" folder) is copied to the Docker container
    on the build process and used to create the instance. For example, clone the
-   "stable/2.6.x" branch if you want to test the latest stable version of AtoM.
+   "stable/|version|.x" branch if you want to test the latest stable version of AtoM.
 
 Now set the environment variable ``COMPOSE_FILE`` to tell Compose what is the
 location of our YAML file. You could do the same using the ``-f`` flag but we
@@ -84,9 +84,9 @@ It's time to use Docker Compose in order to provision our containers:
    <https://www.elastic.co/guide/en/elasticsearch/reference/5.6/vm-max-map-count.html>`__
    for more information.
 
-   The containers for the application use ``php:7.2-fpm-alpine`` as their base
+   The containers for the application use ``php:7.4-fpm-alpine`` as their base
    image. If an old version of this image has been already downloaded by the
-   Docker engine in the host, run ``docker pull php:7.2-fpm-alpine`` to get the
+   Docker engine in the host, run ``docker pull php:7.4-fpm-alpine`` to get the
    latest version before creating the containers. It has to be based on Alpine
    v3.8 or higher to be able to install some packages.
 
@@ -107,7 +107,7 @@ It's time to use Docker Compose in order to provision our containers:
 
    While you wait, take the opportunity to check out our `Dockerfile <https://github.com/artefactual/atom/blob/qa/2.x/Dockerfile>`__,
    which describes the steps that are taken to build the AtoM image. It is
-   based on Alpine Linux + PHP 7.2 and the rest of dependencies. In addition,
+   based on Alpine Linux + PHP 7.4 and the rest of dependencies. In addition,
    our `docker-compose.dev.yml <https://github.com/artefactual/atom/blob/qa/2.x/docker/docker-compose.dev.yml>`__
    file shows how AtoM is orchestrated together with its service dependencies.
    It is an environment meant to be used by developers.
