@@ -203,7 +203,7 @@ Installation
 
 * :ref:`installation-intended-audience`
 * :ref:`installation-requirements`
-* :ref:`installation-linux`
+* :ref:`installation-ubuntu`
 * :ref:`installation-windows`
 * :ref:`installation-macosx`
 * :ref:`installation-ansible`

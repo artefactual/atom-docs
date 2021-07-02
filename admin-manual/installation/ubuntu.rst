@@ -6,7 +6,10 @@ Linux - Ubuntu 20.04 LTS (Focal Fossa)
 
 Most of the configuration steps described in this document apply to any modern
 Linux environment, however some of them will apply only to Ubuntu and likely to
-any Ubuntu-based distribution.
+any Ubuntu-based distribution. **Please be aware**: we do our release 
+development and testing using Ubuntu LTS releases, and cannot guarantee that 
+other versions, distributions, or operating systems will work as expected with
+the following instructions. 
 
 This document is based in `Ubuntu 20.04 LTS (Focal Fossa)`_. Once you have
 installed it, you should be able to follow the instructions described below.
@@ -20,6 +23,18 @@ In particular, we are going to use Ubuntu packages that can be found under the
    consider setting up the :ref:`firewall <security-firewall>` before you start
    installing the services described below to avoid exposing them to outside
    access.
+
+**Junmp to:**
+
+* :ref:`installation-ubuntu-dependencies`
+* :ref:`installation-ubuntu-download`
+* :ref:`installation-ubuntu-create-database`
+* :ref:`installation-ubuntu-installer`
+* :ref:`installation-ubuntu-configuration-files`
+* :ref:`installation-ubuntu-security-considerations`
+* :ref:`installation-ubuntu-serve`
+* :ref:`installation-ubuntu-use-atom`
+
 
 .. _installation-ubuntu-dependencies:
 
@@ -185,10 +200,11 @@ dependencies at once:
 
    sudo apt install imagemagick ghostscript poppler-utils ffmpeg
 
+
 .. _installation-ubuntu-download:
 
-Download
-========
+Download AtoM
+=============
 
 Now that we have installed and configured all dependencies, we are ready to
 download and install AtoM itself. The safest way is to install AtoM from the
@@ -707,6 +723,23 @@ Now you need to enable and reload Nginx:
 
    sudo systemctl enable nginx
    sudo systemctl reload nginx
+
+.. _installation-ubuntu-use-atom:
+
+Start using AtoM
+================
+
+Congratulations! Your new AtoM |version| installation should now be ready to
+use. You can access it by entering your base URL into a web browser - the
+:term:`administrator` account login details will be those you entered when
+configuring the installer. See :ref:`getting-started-all` for further
+information on your first steps using AtoM.
+
+If you encounter any issues, we recommend consulting the 
+:ref:`maintenance-troubleshooting` documentation for suggestions on how to
+resolve common errors.
+
+:ref:`Back to top <installation-ubuntu>` 
 
 
 .. _`Ubuntu 20.04 LTS (Focal Fossa)`: http://releases.ubuntu.com/focal/
