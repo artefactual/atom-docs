@@ -221,24 +221,24 @@ Check the status of your Elasticsearch index
 
 This task will allow a system administrator to review the status of AtoM's
 Elasticsearch index without having to access any configuration files. The task
-output will include: 
+output will include:
 
 * Installed Elasticsearch version
 * Search host
 * Port
 * Index name
-* Document index status for all primary :term:`entity` types in AtoM (including 
+* Document index status for all primary :term:`entity` types in AtoM (including
   Accession, Actor, AIP, Function, Information object, Repository, and Term)
 
 The task should be run from AtoM's root installation directory. It will not
 make any changes, but can provide useful information when troubleshooting
-issues or seeking support. To run the task: 
+issues or seeking support. To run the task:
 
 .. code-block:: bash
 
    php symfony search:status
 
-Sample response: 
+Sample response:
 
 .. image:: images/cli-search-status-response.*
    :align: center
@@ -258,8 +258,8 @@ Sample response:
 See the search index output for a description
 =============================================
 
-This task will output the full search index of a particular 
-:term:`archival description`, which can be useful for determining index mappings, 
+This task will output the full search index of a particular
+:term:`archival description`, which can be useful for determining index mappings,
 or troubleshooting why a search is not returning the expected results. The task
 takes the :term:`slug` of a target description as input. Basic syntax:
 
@@ -268,7 +268,7 @@ takes the :term:`slug` of a target description as input. Basic syntax:
    php symfony search:document your-slug-here
 
 Where ``your-slug-here`` in the example above represents the :term:`slug` of the
-target description. Sample output: 
+target description. Sample output:
 
 .. code-block:: bash
 
@@ -718,12 +718,12 @@ execute the command like so:
 Similarly, the ``--media-type`` (or ``-m``) option can be use to limit the
 regeneration to a specific media type. AtoM uses 5 media types: audio, video,
 image, text, and other; the application displays the media type for each digital object in
-the Digital object metadata :term:`area <information area>` on the 
+the Digital object metadata :term:`area <information area>` on the
 :term:`view page` of the associated :term:`archival description`. This task will
 **only** work with the first 4 types - currently "other" is not supported.
 
-For example, if you only wanted to regenerate derivatives for your uploaded 
-videos, you could execute the command like so: 
+For example, if you only wanted to regenerate derivatives for your uploaded
+videos, you could execute the command like so:
 
 .. code:: bash
 
@@ -780,8 +780,8 @@ user can supply the path to a JSON file that lists the internal
 digital_object ID's associated with the digital objects targeted and stored in
 AtoM's database. These digital_object ID's will first need to be determined
 by crafting an SQL query designed to meet your specific criteria. Help crafting
-these queries is not covered here (though see :ref:`common-atom-queries`, for a 
-basic introduction to SQL queries in AtoM) - in general, we only recommend this 
+these queries is not covered here (though see :ref:`common-atom-queries`, for a
+basic introduction to SQL queries in AtoM) - in general, we only recommend this
 task be used by experienced administators.
 
 Once you have determined the IDs of the digital objects you would like to target
@@ -881,17 +881,17 @@ rebuild all nested sets in AtoM:
 
    php symfony propel:build-nested-set
 
-This task also includes one option that can be used to exclude certain 
-:term:`entity` types from the task's execution. The ``--exclude-tables`` option 
+This task also includes one option that can be used to exclude certain
+:term:`entity` types from the task's execution. The ``--exclude-tables`` option
 supports the following options:
 
 * information_object
 * term
 * menu
 
-Multiple options can be passed by separating them with a comma. Example use - if 
-you only wanted to rebuild the nested set for information objects (AKA 
-:term:`archival descriptions <archival description>`), then you can exclude the 
+Multiple options can be passed by separating them with a comma. Example use - if
+you only wanted to rebuild the nested set for information objects (AKA
+:term:`archival descriptions <archival description>`), then you can exclude the
 term and menu rebuilds like so:
 
 .. code-block:: bash
@@ -954,7 +954,7 @@ to manually insert a slug into the database for that entity.
 For information objects, the generate slugs task will respect the global
 settings for the source from which description permalinks are created. These
 settings can be controlled by an :term:`administrator` via the user interface
-- for more information, see: 
+- for more information, see:
 
 * :ref:`description-permalinks`.
 * :ref:`permissive-slugs`
@@ -981,7 +981,7 @@ generated slugs, you can use the ``--delete`` option, like so:
    :ref:`rename-title-slug`
 
 Slugs can also be manually deleted via SQL queries. For further information on
-deleting slugs from AtoM's database via SQL, see :ref:`common-atom-queries` - 
+deleting slugs from AtoM's database via SQL, see :ref:`common-atom-queries` -
 particularly, :ref:`sql-delete-slugs`.
 
 .. _slugs-in-atom:
@@ -1011,22 +1011,22 @@ Users, Groups        Automatically generated
 Other entities       Name
 ==================== =============================
 
-By default in new  installations, AtoM will "sanitize" slugs, removing spaces, 
+By default in new  installations, AtoM will "sanitize" slugs, removing spaces,
 special characters, punctuation, and capital letters. However, this behavior can
-be changed by an administrator to allow a more permissive slug generation 
-pattern, where any UTF-8 character allowed by 
-`RFC 3987 <https://tools.ietf.org/html/rfc3987>`__ in an Internationalized 
-Resource Identifier 
+be changed by an administrator to allow a more permissive slug generation
+pattern, where any UTF-8 character allowed by
+`RFC 3987 <https://tools.ietf.org/html/rfc3987>`__ in an Internationalized
+Resource Identifier
 (`IRI <https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier>`__)
-can be used. For more information, see: 
+can be used. For more information, see:
 
 * :ref:`permissive-slugs`
 
-When this permissive mode is enabled, AtoM will allow the following to be used 
-in slugs: 
+When this permissive mode is enabled, AtoM will allow the following to be used
+in slugs:
 
 * a-z, A-Z, and 0-9
-* All unicode characters specified in `RFC 3987 <https://tools.ietf.org/html/rfc3987>`__, 
+* All unicode characters specified in `RFC 3987 <https://tools.ietf.org/html/rfc3987>`__,
   including characters with accents
 * The following punctuation symbols: ``, - _ ~ : = * @``
 
@@ -1036,10 +1036,10 @@ permissive mode is enabled, some sanitization will still take place. For
 example:
 
 * Spaces will still be replaced by dashes
-* Special characters not listed above will be stripped - examples include: 
+* Special characters not listed above will be stripped - examples include:
   ``! ` " ' # $ / | \ + % ( ) { } [ ] . < > ?``
 
-When the permissive setting is set to "No" and slugs are being more 
+When the permissive setting is set to "No" and slugs are being more
 comprehensively sanitized, generated slugs will only allow digits, letters,
 and dashes. Sequences of unaccepted characters (e.g. accented or special
 characters, etc.) are replaced with valid characters such as English alphabet
@@ -1048,7 +1048,7 @@ equivalents or dashes. This conforms to general practice around slug creation
 characters are usually replaced by letters from the English alphabet,
 punctuation marks are generally removed, and long page titles should also be
 truncated to keep the final URL to a reasonable length"
-(`Wikipedia <http://en.wikipedia.org/wiki/Clean_URL#Slug>`__). 
+(`Wikipedia <http://en.wikipedia.org/wiki/Clean_URL#Slug>`__).
 
 In AtoM, all slugs are truncated to a maximum of 250 characters. Case matters
 for the uniqueness of a slug - for example: ``my-slug`` is not considered the
@@ -1066,7 +1066,7 @@ title), AtoM will assign it a randomly generated alpha-numeric slug. Once
 assigned, slugs for archival descriptions can be changed through the
 :term:`user interface`. Slugs for other entity types cannot be changed through
 the user interface - either the record must be deleted and a new record created,
-or you must manipulate the database directly, or use the :ref:`cli-generate-slugs` 
+or you must manipulate the database directly, or use the :ref:`cli-generate-slugs`
 task described above.
 
 .. TIP::
@@ -1139,14 +1139,14 @@ entered using two-letter ISO  639-1 language code values - for example,
 See `Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__ for a
 full list of ISO 639-1 language codes.
 
-The taxonomy name value should be entered as it is seen in the 
-:term:`user interface` in **Manage > Taxonomies** for the culture you want to 
-normalize (i.e. if you are trying to normalize the French terms, then use the 
-French name of the related taxonomy). This value is case sensitive. If the 
-taxonomy name has spaces (i.e. if it is more than one word), use quotation 
+The taxonomy name value should be entered as it is seen in the
+:term:`user interface` in **Manage > Taxonomies** for the culture you want to
+normalize (i.e. if you are trying to normalize the French terms, then use the
+French name of the related taxonomy). This value is case sensitive. If the
+taxonomy name has spaces (i.e. if it is more than one word), use quotation
 marks around the taxonomy name.
 
-Below is an example of running this command on French terms in the Description 
+Below is an example of running this command on French terms in the Description
 Details Level taxonomy:
 
 .. code:: bash
@@ -1196,7 +1196,7 @@ task essentially aids in the consolidation of duplicate storage locations.
 .. image:: images/cli-physical-obj-normalize.png
    :align: center
    :width: 70%
-   :alt:   An image of the CLI options when invoking the physicalobject:normalize 
+   :alt:   An image of the CLI options when invoking the physicalobject:normalize
            command
 
 By entering ``php symfony help physicalobject:normalize`` into the command-line,
@@ -1365,7 +1365,7 @@ record that is updated, providing a visual indication of progress.
    do so instead. See:
 
    * :ref:`sql-update-publication-status`
-   
+
 :ref:`Back to top <maintenance-cli-tools>`
 
 .. _cli-unlink-creators:
@@ -1419,11 +1419,11 @@ record` (i.e. one linked to descriptions as a :term:`creator`) as input. When
 used, it restricts the affected descriptions to those associated with a
 specific creator.
 
-The ``--description-slug`` option takes the :term:`slug` of an 
-:term:`archival description` as input, and when used, restricts the changes to 
-the specified :term:`archival unit` and its descendants. 
+The ``--description-slug`` option takes the :term:`slug` of an
+:term:`archival description` as input, and when used, restricts the changes to
+the specified :term:`archival unit` and its descendants.
 
-An example of using the task to restrict the changes to a specific collection: 
+An example of using the task to restrict the changes to a specific collection:
 
 .. code-block:: bash
 
@@ -1436,21 +1436,21 @@ An example of using the task to restrict the changes to a specific collection:
 Move description relations from one authority record to another
 ===============================================================
 
-This task allows a user to specify a source :term:`authority record`, and a 
+This task allows a user to specify a source :term:`authority record`, and a
 target. When run, the task will move all :term:`archival description` relations
-from the source to the target, including event relations (i.e. :term:`creator` 
-and other event type relations) and name :term:`access points <access point>`. 
+from the source to the target, including event relations (i.e. :term:`creator`
+and other event type relations) and name :term:`access points <access point>`.
 Any existing description relations already associated with the target authority
-record will be unaffected by the task.  
+record will be unaffected by the task.
 
-This can be useful in scenarios such as: 
+This can be useful in scenarios such as:
 
-* When performing a data migration or an update import, and you accidentally 
+* When performing a data migration or an update import, and you accidentally
   create duplicate authority records
-* When attempting to update an authority causes timeouts (relations 
+* When attempting to update an authority causes timeouts (relations
   can be moved to a new authority with the correct information, or a temporary
   authority while the source record is updated)
-* Manually cleaning up near-duplicates in a :term:`multi-repository system` (e.g. 
+* Manually cleaning up near-duplicates in a :term:`multi-repository system` (e.g.
   combining "John Smith" and "Smith, John" into a single authority record)
 
 The task accepts two :term:`slugs <slug>` as input - the slug of the source
@@ -1467,27 +1467,27 @@ the target (i.e. the authority to which you want to move your relations).
 
    * :ref:`slugs-in-atom`
 
-The basic syntax of this task is: 
+The basic syntax of this task is:
 
 .. code-block:: bash
 
    php symfony actor:move-description-relations source-slug target-slug
 
-Where ``source-slug`` is the :term:`slug` of the authority with the relations, 
-and ``target-slug`` represents the slug of the authority record where the 
-relations will be moved. 
+Where ``source-slug`` is the :term:`slug` of the authority with the relations,
+and ``target-slug`` represents the slug of the authority record where the
+relations will be moved.
 
-By default, this task will update AtoM's search index as it runs. However, if 
-you want to disable this behavior (for example, if you are moving hundreds or 
-thousands of relations and want to optimize for performance), you can prevent 
-this by using the ``--skip-index`` option. Example use with this option: 
+By default, this task will update AtoM's search index as it runs. However, if
+you want to disable this behavior (for example, if you are moving hundreds or
+thousands of relations and want to optimize for performance), you can prevent
+this by using the ``--skip-index`` option. Example use with this option:
 
 .. code-block:: bash
 
    php symfony actor:move-description-relations --skip-index source-slug target-slug
 
 If you skip the search index update, you will need to manually update the search
-index after: 
+index after:
 
 .. code-block:: bash
 
@@ -1590,22 +1590,22 @@ Enter "y" if you are certain you would like to delete all draft records.
 Delete a digital object
 =======================
 
-AtoM maintains a 1:1 relationship between a :term:`digital object` and an 
-:term:`information object` (AKA an :term:`archival description`) - this means 
-that every digital object in AtoM must have an associated description, and a 
+AtoM maintains a 1:1 relationship between a :term:`digital object` and an
+:term:`information object` (AKA an :term:`archival description`) - this means
+that every digital object in AtoM must have an associated description, and a
 description cannot be linked to more than 1 digital object. For more general
-information on digital objects in AtoM, see: 
+information on digital objects in AtoM, see:
 
 * :ref:`upload-digital-object`
 
 You can delete a description's associated digital object from the command-line
-if you know the related description's :term:`slug`, using the 
-``digitalobject:delete`` task. The task also includes an option to delete 
-digital objects from all descendant records, when a 
-:term:`parent <parent record>` description slug is provided. Alternatively, you 
-can delete **all** digital objects associated with a particular 
+if you know the related description's :term:`slug`, using the
+``digitalobject:delete`` task. The task also includes an option to delete
+digital objects from all descendant records, when a
+:term:`parent <parent record>` description slug is provided. Alternatively, you
+can delete **all** digital objects associated with a particular
 :term:`archival institution` by prodiving the :term:`slug` of the associated
-:term:`repository` instead of a description slug.   
+:term:`repository` instead of a description slug.
 
 .. TIP::
 
@@ -1613,7 +1613,7 @@ can delete **all** digital objects associated with a particular
    identifies a page in AtoM. It is the part of the URL located at the end of
    the URL path and often is indicative of the name or title of the page
    (e.g.: in  ``www.youratom.com/this-description``, the slug is
-   ``this-description``). For more information on slugs in AtoM, see: 
+   ``this-description``). For more information on slugs in AtoM, see:
 
    * :ref:`slugs-in-atom`
 
@@ -1623,8 +1623,8 @@ The basic syntax for the task is:
 
     php symfony digitalobject:delete target-slug
 
-Where ``target-slug`` represents the slug of the target record - either an 
-:term:`archival description` or an :term:`archival institution`. 
+Where ``target-slug`` represents the slug of the target record - either an
+:term:`archival description` or an :term:`archival institution`.
 
 By running ``php symfony help digitalobject:delete`` we can see the
 command-line's help output for the task:
@@ -1638,7 +1638,7 @@ The ``--application``, ``--env``, and ``connection`` options **should not be
 used** - AtoM requires the uses of the pre-set defaults for Symfony to be
 able to execute the task.
 
-The ``--dry-run`` option can be used to test the effects of the task by 
+The ``--dry-run`` option can be used to test the effects of the task by
 reviewing the console output. When used, no deletions will take place and your
 data will be unchanged, but the console output will give you a count of affected
 records to review. An example output:
@@ -1659,11 +1659,11 @@ top-level description in the hierarchy. Example use:
 
     php symfony digitalobject:delete --and-descendants slug-of-top-description
 
-Where ``slug-of-top-description`` represents the slug of the top-level 
-:term:`parent <parent record>` description. 
+Where ``slug-of-top-description`` represents the slug of the top-level
+:term:`parent <parent record>` description.
 
-Additionally, the ``--media-types`` option can be used to target only a specific 
-type of digital object for deletion. Options supported are: 
+Additionally, the ``--media-types`` option can be used to target only a specific
+type of digital object for deletion. Options supported are:
 
 * audio
 * video
@@ -1671,7 +1671,7 @@ type of digital object for deletion. Options supported are:
 * text
 * other
 
-Example usage - deleting only video files from all levels of an archival 
+Example usage - deleting only video files from all levels of an archival
 hierarchy:
 
 .. code-block:: bash
@@ -1680,23 +1680,23 @@ hierarchy:
 
 **Deleting all digital objects associated with a repository**
 
-Instead of providing an :term:`archival description` slug, you can provide the 
-:term:`slug` of an :term:`archival institution` (AKA repository) record to 
-delete **all** digital objects linked to descriptions associated with a 
-particular repository. When a repository slug is used, the ``--and-descendants`` 
-option will be ignored - by default, providing a repository slug means that ALL 
-associated digital objects at all levels will be deleted from the related 
-descriptions. 
+Instead of providing an :term:`archival description` slug, you can provide the
+:term:`slug` of an :term:`archival institution` (AKA repository) record to
+delete **all** digital objects linked to descriptions associated with a
+particular repository. When a repository slug is used, the ``--and-descendants``
+option will be ignored - by default, providing a repository slug means that ALL
+associated digital objects at all levels will be deleted from the related
+descriptions.
 
-You can still use the ``--dry-run`` and ``--media-types`` options when providing 
-an archival institution slug. 
+You can still use the ``--dry-run`` and ``--media-types`` options when providing
+an archival institution slug.
 
 
 .. IMPORTANT::
 
-   This task will **not** automatically update the search index. You will need 
+   This task will **not** automatically update the search index. You will need
    to manually run the ``search:populate`` task after using this task. For more
-   information, see: 
+   information, see:
 
    * :ref:`maintenance-populate-search-index`
 
@@ -1787,8 +1787,8 @@ object (aka :term:`archival description`) and the total count:
 In some cases with very large hierarchies (for example, an
 :term:`archival unit` with thousands or tens of thousands of descendants),
 available system memory may be exhausted during this process, and the task may
-crash before all XML can be generated. In that case, the ``--skip`` and 
-``--limit`` options can be useful for managing partial loads to avoid using all 
+crash before all XML can be generated. In that case, the ``--skip`` and
+``--limit`` options can be useful for managing partial loads to avoid using all
 system memory.
 
 The ``--limit`` option can be used to limit the amount of XML files generated
@@ -1801,7 +1801,7 @@ could run the task like so:
 
 .. code-block:: bash
 
-   php symfony cache:xml-representations --limit="10" 
+   php symfony cache:xml-representations --limit="10"
 
 The ``--skip`` option accepts as a parameter the number of information objects
 to be skipped - so for example, if the task crashed while trying to generate
@@ -1812,15 +1812,15 @@ information object 2445 again by skipping the first 2444, like so:
 
    php symfony cache:xml-representations --skip="2444"
 
-Below is an example of using these two options together. First, we use the 
-``--limit`` option to generate the XML for only the first 10 descriptions. Then, 
-in our second pass, we skip the first 10 with the ``--skip`` option, and limit 
-the next pass to 5 descriptions: 
+Below is an example of using these two options together. First, we use the
+``--limit`` option to generate the XML for only the first 10 descriptions. Then,
+in our second pass, we skip the first 10 with the ``--skip`` option, and limit
+the next pass to 5 descriptions:
 
 .. image:: images/cli-cache-xml-example.*
    :align: center
    :width: 85%
-   :alt: An image of using the cache:xml task with the --skip and --limit options 
+   :alt: An image of using the cache:xml task with the --skip and --limit options
 
 .. NOTE::
 
@@ -2473,12 +2473,53 @@ This log can be used, in event of an incomplete import, to either establish
 where the import stopped or to manually remove the imported digital objects.
 Undo logs contain two columns: the object ID of the :term:`information object`
 to which objects have beem imported, and the DIP directory from which the objects
-were imported. For more information object IDs, see :ref:`common-atom-queries` - 
+were imported. For more information object IDs, see :ref:`common-atom-queries` -
 particularly, :ref:`cli-object-id`.
 
 Similarly, the ``--audit`` option can be used to verify that all objects
 specified in the CSV file were imported. If any are found to be missing, then the
 object's filename will be output in the console.
+
+:ref:`Back to top <maintenance-cli-tools>`
+
+.. _cli-finding-aid-generate:
+
+Generate a finding aid
+======================
+
+Generates a finding aid document in PDF or RTF format and attaches it to a
+top-level archival description.
+
+.. code:: bash
+
+   php symfony finding-aid:generate top-level-description-slug
+
+.. image:: images/cli-finding-aid-generate.*
+   :align: center
+   :width: 70%
+   :alt: An image of the help page for the finding-aid:generate CLI tool
+
+The ``slug`` parameter is required and must be the :term:`slug` of a top-level
+archival description, usually a Fonds or Collection level description.
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for Symfony to be
+able to execute the task.
+
+The ``--format`` option determines the file format of the generated finding aid.
+Two formats are supported: "pdf" (default) or "rtf" (rich text format).
+
+The ``--model`` option selects the finding aid template used when generating the
+finding aid.  The "inventory-summary" (default) model includes less descriptive
+data for lower level descriptions (e.g. series, files, items) than the
+"full-details" model.
+
+The ``--verbose`` / ``-v`` option outputs additional debugging information to the
+terminal.
+
+.. SEEALSO::
+
+   * :ref:`print-finding-aids`
 
 :ref:`Back to top <maintenance-cli-tools>`
 
@@ -2488,9 +2529,9 @@ Run a generic PHP script
 ========================
 
 For cases where you need to manipulate your data and there are no existing tasks
-that will accomplish what you need, AtoM has the ability to execute generic PHP 
-scripts via the ``tools:run`` commmand. This task will accept the path to a PHP 
-file as input, and when run will execute the script. Example use: 
+that will accomplish what you need, AtoM has the ability to execute generic PHP
+scripts via the ``tools:run`` commmand. This task will accept the path to a PHP
+file as input, and when run will execute the script. Example use:
 
 .. code-block:: bash
 
@@ -2498,36 +2539,36 @@ file as input, and when run will execute the script. Example use:
 
 .. IMPORTANT::
 
-   We **strongly recommend** you make backups of your data before executing 
+   We **strongly recommend** you make backups of your data before executing
    arbitrary PHP scripts in AtoM, and that you understand what the script will
    do. If you haven't written the script yourself, be sure you trust its source!
 
 This task includes two additional options to support logging. The ``--log`` option
-will capture information about the script's execution in AtoM's default log 
-location,  ``log/tools_run.log``. If a ``tools_run.log`` file already exists at 
-that location, AtoM will append new log data to it the existing file. 
+will capture information about the script's execution in AtoM's default log
+location,  ``log/tools_run.log``. If a ``tools_run.log`` file already exists at
+that location, AtoM will append new log data to it the existing file.
 
-Alternatively, you can specify your own log name and location by using the 
-``--log_file`` option in conjunction with ``--log``. This option accepts a file 
+Alternatively, you can specify your own log name and location by using the
+``--log_file`` option in conjunction with ``--log``. This option accepts a file
 path and name as input, allowing you to specify a different location for the log
-file. 
+file.
 
-Example usage: 
+Example usage:
 
 .. code-block:: bash
 
    php symfony tools:run --log /path/to/my/php-script.php
 
-This will execute the script at ``path/to/my/php-script.php``, and create the 
-file ``log/tools_run.log`` or append data to it if ``log/tools_run.log`` already 
+This will execute the script at ``path/to/my/php-script.php``, and create the
+file ``log/tools_run.log`` or append data to it if ``log/tools_run.log`` already
 exists.
 
 .. code-block:: bash
 
    php symfony tools:run --log --log_file="my-log-file.log" /path/to/my/php-script.php
 
-This will execute the script at ``path/to/my/php-script.php``, and create the 
-file ``my-log-file.log`` in the current location, or append data to it if 
-``my-log-file.log`` already exists. 
+This will execute the script at ``path/to/my/php-script.php``, and create the
+file ``my-log-file.log`` in the current location, or append data to it if
+``my-log-file.log`` already exists.
 
 :ref:`Back to top <maintenance-cli-tools>`

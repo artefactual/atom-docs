@@ -35,6 +35,7 @@ it can be downloaded by any user, via a link provided in the right-hand
    * :ref:`archival-descriptions`
    * :ref:`manage-jobs`
    * :ref:`context-menu`
+   * :ref:`cli-finding-aid-generate` (command line tool)
 
 Finding aids in AtoM are generated asynchronously in the background using
 `Gearman <http://gearman.org>`__, AtoM's job manager. You will need to make sure
