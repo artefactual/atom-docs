@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  atom_docs:
+    container_name: atom_docs
+    build: .
+    volumes:
+      - .:/etc/Sphinx/source
+    ports:
+      - 8100:80
