@@ -1812,10 +1812,23 @@ information object 2445 again by skipping the first 2444, like so:
 
    php symfony cache:xml-representations --skip="2444"
 
-Below is an example of using these two options together. First, we use the
-``--limit`` option to generate the XML for only the first 10 descriptions. Then,
-in our second pass, we skip the first 10 with the ``--skip`` option, and limit
-the next pass to 5 descriptions:
+Finally, the ``--format`` option can be used to limit the XML generated to
+just one of the two supported options - EAD 2002 XML, or DC XML. By default, the 
+task will generate and cache XML for both formats - however, by using the 
+``--format`` option and passing either ``ead`` or ``dc`` as the option value, 
+you can limit the XML to selected format. For example, to generate and cache only
+EAD 2002 XML: 
+
+.. code-block:: bash
+
+   php symfony cache:xml-representations --format="ead" 
+
+**Example usage**
+
+Below is an example of using two options together. First, we use the
+``--limit`` option to generate the XML for only the first 10 descriptions.
+Then, in our second pass, we skip the first 10 with the ``--skip`` option, and
+limit the next pass to 5 descriptions:
 
 .. image:: images/cli-cache-xml-example.*
    :align: center
