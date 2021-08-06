@@ -24,6 +24,7 @@ exports in AtoM.
 
 * :ref:`cli-bulk-import-xml`
 * :ref:`cli-bulk-export`
+* :ref:`csv-validation-cli`
 * :ref:`csv-import-cli`
 * :ref:`digital-object-load-task`
 * :ref:`csv-export-cli`
@@ -32,9 +33,10 @@ exports in AtoM.
 
    The following pages in the User Manual relate to import and export. We
    strongly recommend reviewing the CSV preparation recommendations found on
-   the :ref:`csv-import` page prior to import CSV data.
+   the :ref:`csv-import` page prior to importing CSV data.
 
    * :ref:`csv-import`
+   * :ref:`csv-validation`
    * :ref:`csv-before-you-import`
    * :ref:`import-xml`
    * :ref:`import-export-skos`
@@ -580,69 +582,262 @@ authority records with an entity type of "Family," like so:
 
 :ref:`Back to top <cli-import-export>`
 
-.. _csv-import-cli:
+.. _csv-validation-cli:
 
-Import CSV files via the command-line
-=====================================
+Validate CSV files via the command-line before import
+=====================================================
 
-As of AtoM 2.4, the import and export functionality in the
-:term:`user interface` is supported by the job scheduler, meaning that large
-CSV files can be imported via the user interface without timing out as in
-previous versions. However, there are some options available via the
-command-line that do not have equivalents in the user interface. For this
-reason, there may be times when it is preferable to import a CSV records via
-the CLI. Below are basic instructions for each available import type.
+To help users avoid bad imports and unexpected outcomes, AtoM supports two CSV
+validation tasks that can be run in advance of an import. The first task 
+provides general validation, and also includes support in the 
+:term:`user interface` - for more information on CSV validation via the user 
+interface, see: 
+
+* :ref:`csv-validation`
+
+The second task, currently only supported via the command-line, can be used to
+help review import files that import :term:`digital objects <digital object>`, 
+to ensure that the digital object files match what is found in the accompanying
+import CSV. 
 
 **Jump to:**
 
+* :ref:`csv-validation-cli-task`
 * :ref:`csv-check-filepaths-digital-objects`
-* :ref:`csv-import-descriptions-cli`
-* :ref:`csv-import-events-cli`
-* :ref:`csv-repository-import-cli`
-* :ref:`csv-actor-import-cli`
-* :ref:`csv-authority-relationships`
-* :ref:`csv-import-accessions-cli`
-* :ref:`csv-import-deaccessions-cli`
-* :ref:`csv-import-storage-cli`
-* :ref:`csv-import-progress`
-* :ref:`digital-object-load-task`
 
-You can find all of the CSV templates on the AtoM wiki, at:
+.. _csv-validation-cli-task:
 
-* https://wiki.accesstomemory.org/Resources/CSV_templates
+Validate a CSV import file via the command-line
+-----------------------------------------------
 
-Examples are also stored directly in the AtoM codebase - see:
-``lib/task/import/example``
+This task can be run prior to import as a way of checking for common issues in
+CSV formatting and data preparation. Details on how to interpret the results
+included in the console report can be found in the User Manual, here:
 
-.. IMPORTANT::
+* :ref:`csv-validation`
 
-   Please carefully review the information included on the :ref:`csv-import`
-   page prior to attempting a CSV import via the command-line! Here is a basic
-   checklist of things to review  before importing a CSV:
+The basic syntax for running the validation task is: 
 
-   * You are using the correct CSV template for both the type of record you
-     want to import, and for the version of AtoM you have installed. You can
-   * CSV file is saved with UTF-8 encodings
-   * CSV file uses Linux/Unix style end-of-line characters (``/n``)
-   * All :term:`parent <parent record>` descriptions appear in rows **above**
-     their children if you are importing hierarchicla data (such as
-     descriptions)
+.. code-block:: bash
 
-The :ref:`csv-import` User manual documentation also includes more specific
-guidance for preparing a CSV for each entity type - ensure you have reviewed
-it carefully prior to import.
+   php symfony csv:check-import /path/to/my/file.csv
 
-All CSV import command-line tasks should be run from the root AtoM directory.
+.. SEEALSO::
+
+   * :ref:`csv-check-filepaths-digital-objects`
+   * :ref:`csv-validation`
+   * :ref:`csv-import`
+   * :ref:`csv-import-cli`
+
+.. image:: images/cli-csv-validation-help.*
+  :align: center
+  :width: 90%
+  :alt: An image of the command-line output for the CSV validation task
+
+By typing ``php symfony help csv:check-import`` into the command-line from
+your root AtoM installation directory without specifying the location of a
+CSV, you will able able to see the CSV import options available (pictured
+above). A brief explanation of each is included below.
+
+The ``--application``, ``--env``, and ``--connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the task.
+
+The task includes two output options for the validation results - a shorter 
+version that does not include a sample output row and in some cases includes 
+less details on each test outcome (and which matches what is shown in the 
+console log on the :ref:`job details <job-details>` page when run via the 
+:term:`user interface`), and a somewhat longer version with more
+details. If the task is run without options, the short version will be the 
+default used. However, if you would like to see the more detailed report, you 
+can add the ``--verbose`` (or ``-i`` for short) flag to the task, 
+like so: 
+
+.. code-block:: bash
+
+   php symfony csv:check-import --verbose /path/to/my/file.csv
+
+.. TIP::
+
+   If you are not sure how to locate issues reported during validation in your
+   CSV, we recommend running the validation task again using the ``--verbose`` 
+   option, as it will include additional information (such as row numbers, 
+   problem values, etc) that should help you know where to look in the CSV
+   file to review and resolve issues. 
+ 
+For :term:`archival descriptions <archival description>`, the task can provide
+some basic checks on the ``legacyID`` and ``parentID`` columns used to structure
+hierarchical data in the CSV, to ensure that all ``parentID`` values match a 
+``legacyID`` value found in the CSV. However, since CSV imports can also be 
+used as updates to existing records, the ``--source`` option can be used to 
+provide a source name value, that will then be used to check for matches in 
+AtoM's database in the ``keymap`` table from prior imports if no matches are
+found in the CSV. 
+
+.. TIP:: 
+
+   For more information on source names, the keymap table, and CSV import 
+   updates, see: 
+
+   * :ref:`csv-legacy-id-mapping`
+   * :ref:`csv-descriptions-updates`
+   * :ref:`csv-import-descriptions-cli`
+
+The value provided with the ``--source`` option should match the source name 
+value used during previous imports - AtoM will use this value to look for a 
+match in the ``keymap`` table, and will then be able to check if ``parentID``
+values in the CSV being validated match ``legacyID`` values from prior imports 
+with the matching source name as well. 
+
+By default, the validation task expects :term:`archival description` CSVs as 
+input to be validated - at present, this :term:`entity` type has the most 
+comprehensive set of tests. However, most of the tests can be run on any CSV
+import type, such as checking for UTF-8 encoding and proper line endings; 
+checking culture values; etc. The ``--class-name`` option can be used to specify
+a different :term:`entity` type of CSV to validate. Supported options include: 
+
+* ``QubitInformationObject``: archival description CSV (default)
+* ``QubitActor``: authority record CSV
+* ``QubitAccession``: accession record CSV
+* ``QubitRepository``: archival institution record CSV
+* ``QubitEvent``: event data CSV (used to add actor-description events via import)
+* ``QubitRelation-actor``: authority record relationship CSV
+
+For example, to validate a CSV of :term:`authority record` data, the basic task
+syntax would look something like the following: 
+
+.. code-block:: bash
+
+   php symfony csv:check-import --class-name="QubitActor" /path/to/my/authorities.csv
+
+Run without additional options, all supported tests will be run for the selected
+:term:`entity` when validating a CSV. However, the ``--specific-tests`` option
+can be used to specify only a subset of checks that should be performed when the
+task is executed. A brief summary of the test class names and relevant entity 
+types is provided below - for more detailed information on each test, 
+see the User Manual: :ref:`csv-validation`. 
+
++---------------------------------+------------------------------------------+
+| Test class name                 | Supported entity type(s)                 |
++=================================+==========================================+
+| CsvSampleValuesValidator        | All entities                             |
++---------------------------------+------------------------------------------+
+| CsvFileEncodingValidator        | All entities                             |
++---------------------------------+------------------------------------------+
+| CsvColumnNameValidator          | All entities                             |
++---------------------------------+------------------------------------------+
+| CsvColumnCountValidator         | All entities                             |
++---------------------------------+------------------------------------------+
+| CsvDigitalObjectPathValidator   | QubitInformationObject                   |
++---------------------------------+------------------------------------------+
+| CsvDigitalObjectUriValidator    | QubitInformationObject                   |
++---------------------------------+------------------------------------------+
+| CsvDuplicateColumnNameValidator | All entities                             |
++---------------------------------+------------------------------------------+
+| CsvEmptyRowValidator            | All entities                             |
++---------------------------------+------------------------------------------+
+| CsvCultureValidator             | All entities                             |
++---------------------------------+------------------------------------------+
+| CsvLanguageValidator            | QubitInformationObject, QubitRepository  |
++---------------------------------+------------------------------------------+
+| CsvFieldLengthValidator         | All entities                             |
++---------------------------------+------------------------------------------+
+| CsvParentValidator              | QubitInformationObject                   |
++---------------------------------+------------------------------------------+
+| CsvLegacyIdValidator            | QubitInformationObject                   |
++---------------------------------+------------------------------------------+
+| CsvEventValuesValidator         | QubitInformationObject                   |
++---------------------------------+------------------------------------------+
+| CsvScriptValidator              | QubitInformationObject                   |
++---------------------------------+------------------------------------------+
+| CsvRepoValidator                | QubitInformationObject                   |
++---------------------------------+------------------------------------------+
+
+You can include more than one test class name using the ``--specific-tests`` 
+option, by separating each test class name by a comma. An example: 
+
+.. code-block:: bash
+
+   php symfony csv:check-import --specific-tests="CsvSampleValuesValidator,CsvColumnNameValidator" /path/to/my/import.csv
+
+Finally, the ``--path-to-digital-objects`` option can be used when importing
+:term:`archival description` records that include a :term:`digital object`
+path in the ``digitalObjectPath`` CSV column. To import local digital objects
+using this CSV column, the digital objects must be available somewhere on
+the local file system - for more information on including digital objects in 
+CSV imports, see: 
+
+* :ref:`csv-descriptions-digital-objects`
+
+The ``--path-to-digital-objects`` option can then be used to include the path
+to where the related digital objects are located on the local filesystem, so that
+further validation checks can be run against them. Possible check outputs 
+include: 
+
+* **INFO**: The ``digitalObjectPath`` column is not present in the CSV file.
+* **ERROR**: The path to the digital object directory specified in the validation
+  task option cannot be found or accessed
+* **WARNING**: A ``digitalObjectURI`` value is also specified in the CSV for a
+  given row. Note that in such a case, if you proceed with the import, AtoM
+  will favor the ``digitalObjectURI`` column value and ignore the
+  ``digitalObjectPath`` value for the target row.
+* **WARNING**: There are digital objects in the folder that are not referenced by
+  the CSV. These will not be imported if you proceed with the CSV import.
+* **ERROR**: There are digital objects specified in the CSV that cannot be
+  found in the related objects directory. The import will fail at this point
+  if you attempt to proceed.
+* **WARNING**: A digital object is referred to more than once in the CSV. 
+  If you choose to proceed, here are some notes on the outcome: 
+  
+  * Only one :term:`master digital object` will be stored. Clicking through on 
+    the :term:`reference display copy` of the digital object shown on the 
+    description :term:`view page` of each record will point to the same master.
+  * Each description will have its own unique derivatives - this means you can
+    delete the :term:`thumbnail` and/or the :term:`reference display copy` 
+    associated with one description without impacting the others
+  * Deleting the :term:`master digital object` on one description will **not** 
+    automatically delete it everywhere - other descriptions are unaffected, and 
+    the digital object will not actually be removed from the filesystem's 
+    ``uploads`` directory until *all* description relations are deleted.
+
+An example of running the task when providing a path to a digital objects 
+directory:
+
+.. code-block:: bash
+
+   php symfony csv:check-import --path-to-digital-objects="/usr/share/nginx/atom/my-upload-files" /path/to/my/import.csv 
+
+.. SEEALSO:: 
+
+   For specific information on the validation outputs for the 
+   ``digitalObjectPath`` checks, see: 
+
+   * :ref:`csv-validation-do-path`
+
+   There is also a separate command-line task that can be used to check the 
+   filepaths associated with a digital object upload, that can be used when 
+   using the :ref:`digital object load <digital-object-load-task>` task. See 
+   below for more information: 
+
+   * :ref:`csv-check-filepaths-digital-objects`
+
+For more information on all the validation tests the task can run and how to
+interpret the results, please see:
+
+* :ref:`csv-validation`
+
+:ref:`Back to top <cli-import-export>`
 
 .. _csv-check-filepaths-digital-objects:
 
 Check filepaths before importing digital objects
 ------------------------------------------------
 
-AtoM includes a command-line task to help double-check import files that involve
-:term:`digital objects <digital object>`. The task will take the path to a CSV
-file and the path to a directory of digital objects as inputs, and will report
-on any potential errors, such as:
+In addition to the general :ref:`CSV validation task <csv-validation-cli-task>`, 
+AtoM also includes a command-line task to help double-check import files that 
+involve :term:`digital objects <digital object>`. The task will take the path to 
+a CSV file and the path to a directory of digital objects as inputs, and will 
+report on potential errors, such as:
 
 * Any digital objects in the filesystem directory that aren't referenced in
   the CSV data
@@ -690,6 +885,69 @@ An example of the task output:
   :align: center
   :width: 85%
   :alt: An image of the command-line output for the path-check task
+
+
+:ref:`Back to top <cli-import-export>`
+
+.. _csv-import-cli:
+
+Import CSV files via the command-line
+=====================================
+
+As of AtoM 2.4, the import and export functionality in the
+:term:`user interface` is supported by the job scheduler, meaning that large
+CSV files can be imported via the user interface without timing out as in
+previous versions. However, there are some options available via the
+command-line that do not have equivalents in the user interface. For this
+reason, there may be times when it is preferable to import a CSV records via
+the CLI. Below are basic instructions for each available import type.
+
+**Jump to:**
+
+* :ref:`csv-import-descriptions-cli`
+* :ref:`csv-import-events-cli`
+* :ref:`csv-repository-import-cli`
+* :ref:`csv-actor-import-cli`
+* :ref:`csv-authority-relationships`
+* :ref:`csv-import-accessions-cli`
+* :ref:`csv-import-deaccessions-cli`
+* :ref:`csv-import-storage-cli`
+* :ref:`csv-import-progress`
+* :ref:`digital-object-load-task`
+
+You can find all of the CSV templates on the AtoM wiki, at:
+
+* https://wiki.accesstomemory.org/Resources/CSV_templates
+
+Examples are also stored directly in the AtoM codebase - see:
+``lib/task/import/example``
+
+.. IMPORTANT::
+
+   Please carefully review the information included on the :ref:`csv-import`
+   page prior to attempting a CSV import via the command-line! Here is a basic
+   checklist of things to review  before importing a CSV:
+
+   * You are using the correct CSV template for both the type of record you
+     want to import, and for the version of AtoM you have installed. You can
+   * CSV file is saved with UTF-8 encodings
+   * CSV file uses Linux/Unix style end-of-line characters (``/n``)
+   * All :term:`parent <parent record>` descriptions appear in rows **above**
+     their children if you are importing hierarchicla data (such as
+     descriptions)
+
+   AtoM also supports a CSV validation task that can be run from the 
+   command-line or the user interface, that can help identify common errors in 
+   CSVs prior to import. For more information, see: 
+
+   * :ref:`csv-validation-cli`
+   * :ref:`csv-validation`
+
+The :ref:`csv-import` User manual documentation includes more specific
+guidance for preparing a CSV for each entity type - ensure you have reviewed
+it carefully prior to import.
+
+All CSV import command-line tasks should be run from the root AtoM directory.
 
 .. _csv-import-descriptions-cli:
 

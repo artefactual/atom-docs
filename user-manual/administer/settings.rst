@@ -11,6 +11,7 @@ Below, you will find information on the following :term:`information areas
 <information area>`:
 
 * :ref:`Global settings <global-settings>`
+* :ref:`csv-validator-settings`
 * :ref:`clipboard-settings`
 * :ref:`dip-upload-settings`
 * :ref:`Default page elements <default-page-elements>`
@@ -636,9 +637,10 @@ administrator can modify in one of AtoM's configuration files - see:
 Enable description change logging
 ---------------------------------
 
+.. _audit log: https://en.wikipedia.org/wiki/Audit_trail
 
-This setting will enable a basic `audit log <https://en.wikipedia.org/wiki/Audit_trail>`__
-for :term:`archival descriptions <archival description>` in AtoM. When enabled,
+This setting will enable a basic `audit log`_ for 
+:term:`archival descriptions <archival description>` in AtoM. When enabled,
 the log will capture basic information on creation and modification events
 related to archival descriptions, including date, type (creation or
 modification), :term:`username`, and/or related description title, depending on
@@ -746,6 +748,8 @@ For further context on slugs in AtoM, see: :ref:`slugs-in-atom`
 Use any valid URI path segment and uppercase character in slugs
 ---------------------------------------------------------------
 
+.. _RFC 3987: https://tools.ietf.org/html/rfc3987
+
 This setting will affect how AtoM generates permalinks, or :term:`slugs <slug>`
 for new records. In new installations, this setting is set to "No" by default.
 
@@ -754,9 +758,8 @@ Sequences of unaccepted characters (e.g. accented or special characters, etc.)
 are replaced with valid characters such as English alphabet equivalents or
 dashes. When set to to "Yes," AtoM will allow upper case characters, any valid
 unicode characters as specified in
-`RFC 3987 <https://tools.ietf.org/html/rfc3987>`__ including accented characters,
-and some special characters such as: ``, - _ ~ : = * @``. For further details,
-see:
+`RFC 3987`_ including accented characters, and some special characters such 
+as: ``, - _ ~ : = * @``. For further details, see:
 
 * :ref:`slugs-in-atom`
 
@@ -809,10 +812,12 @@ logged in) users.
 SWORD deposit directory
 -----------------------
 
+.. _Archivematica: https://www.archivematica.org/
+
 The SWORD deposit directory is currently being used to support packages
-deposited by `Archivematica <https://www.archivematica.org/>`__ into AtoM.
-If you do not know the name of your deposit directory, consult with your
-systems administrator. The default is ``/tmp``.
+deposited by `Archivematica`_ into AtoM. If you do not know the name of your 
+deposit directory, consult with your system administrator. The default is 
+``/tmp``.
 
 .. _maps-api-key:
 
@@ -965,6 +970,71 @@ avoid constantly triggering many jobs.
    generated on request via AtoM's job scheduler - the cached XML is not used.
    For more information on this functionality, see:
    :ref:`xml-export-clipboard`
+
+:ref:`Back to top <settings>`
+
+.. _csv-validator-settings:
+
+CSV Validator settings
+======================
+
+.. image:: images/csv-validator-settings.*
+   :align: center
+   :width: 90%
+   :alt: An image of the CSV Validator setting options
+
+To help avoid unexpected :ref:`CSV import <csv-import>` problems, AtoM includes 
+a CSV validation task that can check for and report on common issues found in 
+CSV files prior to import. This task can be run independently of import, 
+either via the command-line or the :term:`user interface`. For more 
+information, see: 
+
+* :ref:`csv-validation-ui`
+* :ref:`csv-validation-cli`
+
+.. SEEALSO::
+
+   * :ref:`csv-import`
+   * :ref:`cli-import-export`
+
+Additionally, these settings allow an :term:`administrator` to configure 
+validation to run automatically before any CSV import performed via the 
+:term:`user interface`.  
+
+There are three configurable options in the CSV validator settings. The 
+default setting in new installations is **Off** - when this option is set, no
+validation will be performed when a CSV is imported via the user interface.
+
+The other two settings will enable AtoM to automatically run validation
+whenever a CSV import is initiated via the user interface, though with 
+different behaviors: 
+
+* When the **Permissive** option is set, only :ref:`csv-validation-error` 
+  messages during validation will prevent the CSV import from proceeding. 
+  :ref:`csv-validation-warning` messages will still be reported in related
+  console log output shown on the :term:`job details page <job-details>` of 
+  the CSV import, but they will not prevent the import from proceeding. 
+* When the **Strict** option is set, both :ref:`csv-validation-error` and 
+  :ref:`csv-validation-warning` messages returned during validation will
+  prevent the import from proceeding.
+
+Issues that prevent import will need to be resolved before the CSV import can
+be successfully re-launched, or else the setting will need to be changed by an 
+:term:`administrator`. 
+
+For more information on how to interpret the results of the validation report,
+and general information on the structure of the report, see: 
+
+* :ref:`csv-validation`
+
+.. NOTE::
+ 
+   This setting does **not** impact CSV imports peformed from the command-line. 
+   However, the validation task can be run independently from an import via
+   the command-line as well. For more information, see: 
+
+   * :ref:`csv-validation-cli`
+   * :ref:`csv-import-cli`
 
 :ref:`Back to top <settings>`
 
@@ -1165,6 +1235,8 @@ digital object can be attached and uploaded.
 Default page elements
 =====================
 
+.. _API Key: https://developers.google.com/maps/documentation/javascript/get-api-key
+
 This section allows :term:`administrators <administrator>` to enable or disable
 certain page elements. Unless they have been overridden by a specific theme,
 these settings will be used site-wide.
@@ -1215,10 +1287,8 @@ dynamic Google map in the Digital object metadata
 .. IMPORTANT::
 
    To be able to enable this setting, you must first request a Google MAPS
-   `API Key <https://developers.google.com/maps/documentation/javascript/get-api-key>`__,
-   and the Google Maps Javascript API key setting in **Admin > Settings >
-   Global** must be populated - see: :ref:`maps-api-key`
-
+   `API Key`_, and the Google Maps Javascript API key setting in |gears| 
+   **Admin > Settings > Global** must be populated - see: :ref:`maps-api-key`
 
 When unchecked, the above elements will be hidden from display after you save
 the default page element settings. This can be useful for customization - for
@@ -1327,8 +1397,8 @@ use the setting value when regenerating PDF derivatives.
 
    If you enter a page number that does not exist for one or more of your
    derivatives (for example, entering 99 as the value, when your PDF only has
-   9 pages), AtoM will use the closest available value (in this example, page
-   9) when generating the derivatives.
+   9 pages), AtoM will use the closest available value (in this example, page 9) 
+   when generating the derivatives.
 
 If you make changes, remember to click the "Save" button in the
 :term:`button block`.
@@ -1378,10 +1448,12 @@ see :ref:`Print finding aids <print-finding-aids>`; specifically,
 Add/Remove languages
 ====================
 
+.. _Weblate: https://translations.artefactual.com/
+
 AtoM relies on volunteer translators from the community to support new language
 options. The translations are managed using an Artefactual-hosted instance of
-`Weblate <https://translations.artefactual.com/>`__ and community
-members can learn more about contibuting translations here:
+`Weblate`_ and community members can learn more about contibuting translations 
+here:
 
 * https://wiki.accesstomemory.org/Resources/Translation
 
@@ -1527,6 +1599,8 @@ See:
 Accession mask
 --------------
 
+.. _PHP strftime parameters: https://www.php.net/manual/en/function.strftime.php
+
 When working with an :term:`accession record`, AtoM requires that a unique
 Accession number be added - for more information, see:
 :ref:`add-new-accession`. To help ensure that accession record numbers are
@@ -1544,11 +1618,10 @@ mask setting, the first accession you create, if it was generated on January
 01, 2018, would have an accession number of ``2018-01-01/1``.
 
 This mask, or default counter, can be changed by an :term:`administrator` to
-suit institutional needs, using text strings and
-`PHP strftime parameters <http://php.net/manual/en/function.strftime.php#refsect1-function.strftime-parameters>`_.
+suit institutional needs, using text strings and `PHP strftime parameters`_.
 To add leading zeroes to the unique incrementing number for example, you can
-add more ``i`` characters to the mask setting - so for example ``%Y-%m-%d/#iii``
-would lead to incremental numbers like 001, 002, 003, etc.
+add more ``i`` characters to the mask setting - so for example
+``%Y-%m-%d/#iii`` would lead to incremental numbers like 001, 002, 003, etc.
 
 The value of the incremental number is based on the :ref:`accession-counter`
 value, described below. An administrator can choose to manually change or
@@ -1636,10 +1709,10 @@ have an identifier of ``2018-01-01/1``. The value of the parameter, *#i*,
 represents the :ref:`identifier-counter` value.
 
 This mask, can be changed by an :term:`administrator` to suit institutional
-needs, using text strings and `PHP strftime parameters <http://php.net/manual/en/function.strftime.php#refsect1-function.strftime-parameters>`_.
-To add leading zeroes to the unique incrementing number for example, you can
-add more ``i`` characters to the mask setting - so for example ``%Y-%m-%d/#iii``
-would lead to incremental numbers like 001, 002, 003, etc.
+needs, using text strings and `PHP strftime parameters`_. To add leading
+zeroes to the unique incrementing number for example, you can add more ``i``
+characters to the mask setting - so for example ``%Y-%m-%d/#iii`` would lead
+to incremental numbers like 001, 002, 003, etc.
 
 The value of the incremental number is based on the :ref:`identifier-counter`
 value, described below. An administrator can choose to manually change or
@@ -1942,8 +2015,10 @@ information on using Markdown in AtoM, see: :ref:`formatting`.
 OAI repository
 ==============
 
-`Open Archives Initiative <http://www.openarchives.org/>`_, or OAI, is a
-protocol for metadata harvesting that allows automatic data harvesting
+.. _Open Archives Initiative: http://www.openarchives.org/
+
+The `Open Archives Initiative`_ Protocol for Metadata Harvesting, or OAI-PMH, 
+is a protocol for metadata harvesting that allows automatic data harvesting
 and crawling within other systems that support OAI harvesters.
 
 .. image:: images/oai-repository.*
@@ -2002,10 +2077,10 @@ configuring and using the Copyright statement, see: :ref:`copyright-pop-up`.
 The Permissions page also includes a "Preservation system access statement" 
 setting. When enabled, this will display customizable text about any access 
 conditions that might be placed on linked files that are held in an integrated 
-preservation system such as `Archivematica <https://www.archivematica.org/>`__. 
-Note that these statement only appear in the metadata section for original 
-files and preservation copies. For more information see :ref:`Digital object 
-metadata for preservation files <digital-object-preservation>`.
+preservation system such as `Archivematica`_. Note that these statement only 
+appear in the metadata section for original files and preservation copies. For 
+more information see 
+:ref:`Digital object metadata for preservation files <digital-object-preservation>`.
 
 To use the condition statement, write the notice that applies to your 
 institution in the text field. For example, you may not distribute original 
@@ -2039,6 +2114,8 @@ Privacy notification
 
 .. _cookies: https://en.wikipedia.org/wiki/HTTP_cookie
 .. _GDPR: https://en.wikipedia.org/wiki/General_Data_Protection_Regulation
+.. _Google Analytics: https://www.google.com/analytics/
+.. _Data Processing Terms: https://privacy.google.com/businesses/processorterms/
 
 The Privacy notification provides :term:`administrators <administrator>` with
 a configurable notification banner that, when enabled, will be shown to all
@@ -2060,11 +2137,10 @@ customizable and could be repurposed for any use.
    However, certain features (such as the :ref:`clipboard`) may not function
    properly without the aid of cookies.
 
-   AtoM supports integration with `Google Analytics <https://www.google.com/analytics/>`__
-   for the purposes of gathering statistics on page views, site usage, user
-   location, and other data on site visits. All data collected by Google Analytics
-   are stored and processed by Google, according to the Google Ads
-   `Data Processing Terms <https://privacy.google.com/businesses/processorterms/>`__.
+   AtoM supports integration with `Google Analytics`_ for the purposes of 
+   gathering statistics on page views, site usage, user location, and other 
+   data on site visits. All data collected by Google Analytics are stored and 
+   processed by Google, according to the Google Ads `Data Processing Terms`_.
 
    None of the information gathered through the use of cookies or Google
    Analytics is used for any purpose other than the ones described here.
@@ -2189,11 +2265,12 @@ range. For example:
 Require SSL for all administrator functionality
 -----------------------------------------------
 
-This feature allows administrators the option to enable the `Hypertext
-Transfer Protocol Secure (HTTPS) <http://en.wikipedia.org/wiki/HTTP_Secure>`_,
-which is a protocol for security over a computer network. It works by layering
-the Hypertext Transfer Protocol (HTTP) with the SSL/TLS protocol (Secure
-Sockets Layer/Transport Layer Security).
+.. _HTTPS: http://en.wikipedia.org/wiki/HTTP_Secure
+
+This feature allows administrators the option to enable the Hypertext Transfer
+Protocol Secure (`HTTPS`_), which is a protocol for security over a computer
+network. It works by layering the Hypertext Transfer Protocol (HTTP) with the
+SSL/TLS protocol (Secure Sockets Layer/Transport Layer Security).
 
 .. WARNING::
 
@@ -2283,7 +2360,7 @@ Storage Service
 ===============
 In this section, :term:`administrators <administrator>` can enable the
 download of original files and Archival Information Packages (AIPs) from an 
-`Archivematica <https://archivematica.org>`__ digital preservation system that 
+`Archivematica`_ digital preservation system that 
 has uploaded Dissemination Information Package (DIP) access copies to AtoM.
 
 .. IMPORTANT::
@@ -2501,8 +2578,8 @@ treeview that contains all descriptions.
 This new browsing mode will be disabled by default in new installations. To
 offer that option to users, an administrator can enable this feature by choosing
 'Yes' to 'Show browse hierarchy page' in the treeview settings. When enabled, a
-new link will appear on the archival description :ref:`search/browse page <browse>`, labelled
-"Browse by hierarchy."
+new link will appear on the archival description 
+:ref:`search/browse page <browse>`, labelled "Browse by hierarchy."
 
 For more information on browsing with this option, see:
 
@@ -2607,8 +2684,11 @@ the behavior of the full-width treeview.
 Sort treeview (information object)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This setting determines how lower-level :term:`descriptions <archival
-description>` are sorted in an archival description's :term:`context menu`.
+.. _ASCII: https://en.wikipedia.org/wiki/Ascii
+
+This setting determines how lower-level 
+:term:`descriptions <archival description>` are sorted in an archival 
+description's :term:`context menu`.
 
 * Selecting "manual" means the descriptions will appear in the order in which
   they were entered into AtoM. If manual sort is selected, editors can also
@@ -2628,12 +2708,11 @@ the treeview sort setting is set to "Manual." For more information, see:
 .. TIP::
 
    AtoM's search index is based on Elasticsearch, which sorts characters based
-   on the order of the in the `ASCII <https://en.wikipedia.org/wiki/Ascii>`_
-   character encoding scheme. This can result in seemingly wrong orders when
-   sorting by identifier- for example, 1-1 will be followed by 1-10 instead of
-   1-2. The solution is to use **leading zeroes** when forumulating
-   identifiers that you wish to sort in a human- readable order, e.g. 1-01,
-   1-02, etc.
+   on the order of the in the `ASCII`_ character encoding scheme. This can
+   result in seemingly wrong orders when sorting by identifier- for example,
+   1-1 will be followed by 1-10 instead of 1-2. The solution is to use
+   **leading zeroes** when forumulating identifiers that you wish to sort in a
+   human- readable order, e.g. 1-01, 1-02, etc.
 
 .. _fullwidth-treeview-settings:
 

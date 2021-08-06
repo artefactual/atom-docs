@@ -45,6 +45,7 @@ links to each chapter's main sections.
    import-export/export-xml
    import-export/csv-import
    import-export/csv-export
+   import-export/csv-validation
    import-export/import-export-skos
    import-export/oai-pmh
    administer/manage-user-accounts

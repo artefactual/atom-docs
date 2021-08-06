@@ -11,12 +11,27 @@ CSV import
    :height: 18
    :width: 18
 
+.. _CSV: http://en.wikipedia.org/wiki/Comma-separated_values
+.. _character encoding: http://en.wikipedia.org/wiki/Character_encoding
+.. _UTF-8: http://en.wikipedia.org/wiki/UTF-8
+.. _camelCase: http://en.wikipedia.org/wiki/CamelCase
+.. _CSV import templates: https://wiki.accesstomemory.org/Resources/CSV_templates
+.. _Calc: https://www.libreoffice.org/discover/calc/
+.. _ISO 639-1: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+.. _Gearman: http://gearman.org
+.. _ICA: http://www.ica.org/
+.. _Newline: http://en.wikipedia.org/wiki/Newline
+.. _Open Refine: https://openrefine.org/
+.. _Pentaho Data Integration: https://help.hitachivantara.com/Documentation/Pentaho/9.1/Products/Pentaho_Data_Integration
+.. _Unicode: https://www.unicode.org/iso15924/iso15924-codes.html
+.. _ISO 8601: https://en.wikipedia.org/wiki/ISO_8601
+
 Most often understood as an acronym for "comma-separated values" (though
 sometimes called "character-separated values" because the separator character
-does not have to be a comma), CSV is a file format that stores tabular data in
-plain-text form. Information with common properties that can be expressed as a
-sequence of fields sharing a common header can be stored in plain-text using
-the CSV format, making it application agnostic and highly transportable.
+does not have to be a comma), `CSV`_ is a file format that stores tabular data
+in plain-text form. Information with common properties that can be expressed
+as a sequence of fields sharing a common header can be stored in plain-text
+using the CSV format, making it application agnostic and highly transportable.
 
 A CSV file consists of a number of records (rows), that have identical fields,
 separated by commas (or in some cases, another separator). Often a header
@@ -25,10 +40,8 @@ naming each column and indicating what kind of data the column contains. Data
 is then entered using a separator or delimitor (such as a comma) to indicate a
 separation of fields (or cells), and a line break or carriage return to
 indicate rows (i.e. different records). Most spreadsheet applications (such as
-OpenOffice Calc or MS Excel) can open CSV files and express them as a
-spreadsheet. See
-`Wikipedia <http://en.wikipedia.org/wiki/Comma-separated_values>`__ for more
-information on CSV.
+LibreOffice Calc or MS Excel) can open CSV files and express them as a
+spreadsheet. See Wikipedia for more information on `CSV`_.
 
 **In AtoM**, the CSV import function allows user to import data from a
 spreadsheet, or another database (so long as the export from the database is
@@ -40,10 +53,10 @@ cause unexpected results.
 
 CSV imports peformed via the :term:`user interface` in AtoM are are executed
 as :term:`jobs <job>` and performed asynchronously in the background to avoid
-timeouts in the web browser. Jobs in AtoM are handled by
-`Gearman <http://gearman.org>`__, and the status of AtoM jobs can be seen in
-the :term:`user interface` via the **Manage > Jobs** page. For more information,
-see: :ref:`manage-jobs` and :ref:`installation-asynchronous-jobs`.
+timeouts in the web browser. Jobs in AtoM are handled by `Gearman`_, and the 
+status of AtoM jobs can be seen in the :term:`user interface` via the 
+**Manage > Jobs** page. For more information, see: :ref:`manage-jobs` and 
+:ref:`installation-asynchronous-jobs`.
 
 To import CSV files, a user must be logged in as an :term:`administrator`.
 For more information on user groups and permissions, see:
@@ -81,7 +94,12 @@ will be described in greater detail below, along with other import options.
 
    All AtoM CSV templates can be found on the AtoM wiki:
 
-   * `CSV import templates <https://wiki.accesstomemory.org/Resources/CSV_templates>`__
+   * `CSV import templates`_
+
+   AtoM also includes a method of validating a CSV prior to import, which can
+   help avoid many common issues. For more information, see: 
+
+   * :ref:`csv-validation`
 
    CSV imports can also be completed by a system administrator via the
    command-line interface. For more information, see The Administrator's
@@ -119,50 +137,27 @@ CSV.
    * :ref:`installation-upgrading`
    * :ref:`maintenance-data-backup`
 
-  .. _csv-determine-import-complexity:
+**Jump to**
 
-Determining import complexity
------------------------------
-
-To quickly gauge the complexity of CSV data you wish to import, the
-``csv:check-import`` command can be used in the command-line. This command
-displays the following:
-
-* The number of rows of data (useful when estimating the amount of processing
-  time needed to perform the import, and whether or not you can use the
-  :term:`user interface` to perform the import)
-* The number of columns (useful when estimating the amount of developer time
-  needed to map the columns to AtoM data - see: :ref:`csv-column-mapping`
-  below)
-* How many instances of pipe (|) characters are found in each column (pipe
-  characters are used by some systems to put multiple values in a single cell
-  of data)
-* Sample column values
-
-You will need access to the command-line of the server on which AtoM is
-installed, and you will need to know the file path where your CSV is currently
-located. Run the command from the root directory of your AtoM install.
-
-**Example use:**
-
-.. code-block:: bash
-
-   php symfony csv:check-import lib/task/import/example/rad/example_information_objects_rad.csv
+* :ref:`csv-column-mapping`
+* :ref:`csv-encoding-newline`
+* :ref:`csv-data-transformation`
+* :ref:`csv-testing-import`
+* :ref:`csv-estimate-import-duration`
 
 .. _csv-column-mapping:
 
 CSV Column mapping
 ------------------
 
-AtoM was originally built to encourage broad adoption and use of the
-`ICA <http://www.ica.org/>`__'s international standards, and expanded to support
-other recognized standards. Consequently, all of
-the description templates in AtoM correspond to a recognized content or
-metadata exchange standard, and many of the fields in our underlying database
-model are also inspired by ICA standards. For your data to import
-successfully into AtoM, you will first need to map it to one of our existing
-CSV templates, which are derived from the various standards-based templates
-available in AtoM for description.
+AtoM was originally built to encourage broad adoption and use of the `ICA`_'s
+international standards, and expanded to support other recognized standards.
+Consequently, all of the description templates in AtoM correspond to a
+recognized content or metadata exchange standard, and many of the fields in
+our underlying database model are also inspired by ICA standards. For your
+data to import successfully into AtoM, you will first need to map it to one of
+our existing CSV templates, which are derived from the various standards-based
+templates available in AtoM for description.
 
 Mapping your data to the supplied CSV templates below implies a familiarity
 with the standards used in AtoM, so you can make appropriate decisions on
@@ -192,10 +187,11 @@ Available example files are:
 * Deaccessions CSV template
 * Events CSV template
 * Repository CSV template
+* Physical storage locations CSV template
 
 All CSV templates can be found on the AtoM wiki:
 
-* https://wiki.accesstomemory.org/Resources/CSV_templates
+* `CSV import templates`_
 
 You can also find all example CSV import templates included in your AtoM
 installation, in: ``lib/task/import/example``.
@@ -207,13 +203,25 @@ each column to the correct AtoM fields.
 
 .. TIP::
 
-   A good way to make sure your column mapping is correct is to create a
-   blank row after the top row and populate this with test values. You can
-   then do an import, stop it after the first row (using CTRL-C), and make
-   sure that all the values from the CSV row are present in AtoM. Including,
-   in each field of a row, the letter corresponding to the corresponding
-   spreadsheet column (including, for example, the text "(A)" for data in
-   spreadsheet column A) makes it easy to quickly determine if a field is
+   If you would like to better understand how AtoM's import columns map to 
+   supported data entry fields in your chosen template, try importing one of 
+   `CSV import templates`_ found on the AtoM wiki. Each field in these 
+   templates is populated with example data that includes the name of the 
+   related standards-based field - for example, the example data in the 
+   :ref:`ISAD(G) <isad-template>` import template for the ``scopeAndContent`` 
+   field is "Example fonds Scope and content (ISAD 3.3.1)". Comparing the 
+   example data in your import template with the resulting record in AtoM 
+   should help you better understand how the column names map to AtoM's 
+   standard-based data entry fields. 
+
+   Another good way to make sure your column mapping is correct while using 
+   your own metadata is to create a blank row after the top row and populate 
+   this with test values. You can then do an import, stop it after the first 
+   row (using ``CTRL+C`` if importing from the command-line), and make sure 
+   that all the values from the CSV row are present in AtoM. Including, in 
+   each field of a row, the letter corresponding to the corresponding 
+   spreadsheet column (including, for example, the text "(A)" for data in 
+   spreadsheet column A) makes it easy to quickly determine if a field is 
    showing up on the AtoM side after import.
 
 .. _csv-encoding-newline:
@@ -222,17 +230,30 @@ Verify character encoding and line endings
 ------------------------------------------
 
 For your CSV files to import properly, you will need to ensure two things
-prior to importing: that the
-`character encoding <http://en.wikipedia.org/wiki/Character_encoding>`__ of
-your CSV file is set to `UTF-8 <http://en.wikipedia.org/wiki/UTF-8>`__, and
-that the end-of-line characters used in your CSV conform to the Unix/Linux
-style of newline character.
+prior to importing: that the `character encoding`_ of your CSV file is set to 
+`UTF-8`_, and that the end-of-line characters used in your CSV conform to the 
+Unix/Linux style of newline character.
 
 .. IMPORTANT::
 
    Your import will likely **fail** if you don't ensure these two things are
    are correctly set prior to import! Please review the sub-sections below
    for further details.
+
+   Note that AtoM includes a command-line task that can validate an import CSV
+   for common issues (including a check for UTF-8 encoding and line endings),
+   producing a report that flags errors that will cause the import to fail, as
+   well as providing warnings on elements that will not halt the import, but
+   could lead to unexpected results if unintended. This task is also supported
+   via the :term:`user interface`, and can be run independently of import, as
+   well as configured by an :term:`administrator` to run automatically before 
+   any CSV import. 
+
+   For more information including tips on how to troubleshoot encoding issues, 
+   see:
+
+   * :ref:`csv-validation`
+   * :ref:`csv-validation-utf8`
 
 .. _csv-utf8-encoding:
 
@@ -241,22 +262,23 @@ Character encoding (UTF-8)
 
 For a CSV file to upload properly into AtoM (and display any special
 characters such as accents contained in the data), your CSV file must use a
-`UTF-8 <http://en.wikipedia.org/wiki/UTF-8>`__ character encoding. If you have
-used a Windows or Mac spreadsheet application (such as Excel, for example),
-it's possible that the default character encoding will **not** be UTF-8. For
-example, Excel uses  machine-specific ANSI encoding as its defaults during
-install, so an EN-US installation might use Windows-1252 encoding by default,
-rather than something more universal such as UTF-8 (the default encoding in
-AtoM). This can cause problems on import into AtoM with special characters and
-diacritics. Make sure that if you are using Excel or another spreadsheet
-application, you are setting the character encoding to UTF-8. Many open source
-spreadsheet programs, such as LibreOffice Calc, use UTF-8 by default, and
-include an easy means for users to change the default encoding.
+`UTF-8`_ character encoding. If you have used a Windows or Mac spreadsheet
+application (such as Excel, for example), it's possible that the default
+character encoding will **not** be UTF-8. For example, Excel uses
+machine-specific ANSI encoding as its defaults during install, so an EN-US
+installation might use Windows-1252 encoding by default, rather than something
+more universal such as UTF-8 (the default encoding in AtoM). This can cause
+problems on import into AtoM with special characters and diacritics. Make sure
+that if you are using Excel or another spreadsheet application, you are
+setting the character encoding to UTF-8. Many open source spreadsheet
+programs, such as LibreOffice Calc, use UTF-8 by default, and include an easy
+means for users to change the default encoding.
 
 .. TIP::
 
-   For Excel users, here is an eHow guide on converting CSV files to UTF-8:
-   http://www.ehow.com/how_8387439_save-csv-utf8.html
+   For Excel users, here is an quick guide on converting CSV files to UTF-8:
+   
+   * https://itstillworks.com/12530497/how-to-save-csv-in-utf-8
 
 .. _csv-line-endings:
 
@@ -267,8 +289,7 @@ Line endings
 line break, is a special character or sequence of characters signifying the
 end of a line of text. The actual codes representing a newline vary across
 operating systems, which can be a problem when exchanging text files between
-systems with different newline representations." (`Wikipedia
-<http://en.wikipedia.org/wiki/Newline>`__)
+systems with different newline representations." (Wikipedia entry on `Newline`_ )
 
 Here are some of the differences:
 
@@ -283,6 +304,12 @@ may encounter import issues. There are many command-line utilities and free
 software options out there to convert newline characters. Please ensure that
 your spreadsheet is using the correct line endings prior to upload, otherwise
 the upload will fail.
+
+We recommend the use of LibreOffice `Calc`_ as an open source spreadsheet
+application for preparing and managing CSV import metadata. By default, Calc
+will allow you to configure the `character encoding`_ used to display a file 
+each time it is opened, and will use the correct line-ending characters by 
+default when a CSV file is saved using `UTF-8` encoding.
 
 .. _csv-data-transformation:
 
@@ -306,13 +333,12 @@ Depending on the size of your import data, this work can be done manually
 using a spreadsheet program - simply cut and paste your data into the
 corresponding cell in the provided import templates. However, for larger data
 sets, data transformation can be done with custom programming (for example, a
-Python script written by a :term:`developer`), open source tools such as `Open
-Refine <https://openrefine.org/>`__ or `Pentaho Data Integration <http:/
-community.pentaho.com/projects/data-integration/>`__, or via a CSV
-transformation script.
+Python script written by a :term:`developer`), open source tools such as 
+`Open Refine`_ or `Pentaho Data Integration`_, or via a CSV transformation 
+script.
 
 We have included some guidelines for creating custom CSV transformation
-scripts. See:
+scripts on the AtoM wiki. See:
 
 * https://wiki.accesstomemory.org/Resources/CSV_transformation
 
@@ -321,13 +347,50 @@ scripts. See:
    Creating custom CSV scripts is an activity generally performed by a
    :term:`developer`.
 
+.. _csv-testing-import:
+
+Testing and validating your import
+----------------------------------
+
+AtoM includes a command-line task that can validate an import CSV for common
+issues, producing a report that flags errors that will cause the import to fail, 
+as well as providing warnings on elements that will not halt the import, but 
+could lead to unexpected results if unintended. This task is also supported
+via the :term:`user interface`, and can be run independently of import, as well
+as configured by an :term:`administrator` to run automatically before any
+CSV import. For more information, see: 
+
+* :ref:`csv-validation`
+
+Despite this, AtoM cannot validate the actual metadata included in each row -
+meaning the CSV can in some cases be considered valid and well-formed, yet
+still lead to undesirable results. For large imports in particular, it may be
+wise to perform a test import first into a separate test instance of your
+AtoM installation. 
+
+To do so, you may want to clone your AtoM site and test your import on the
+clone before importing to your production AtoM installation. This prevents you
+from having to delete any improperly imported data. During import testing if
+you want to delete all imported data you can use the command-line purge tool.
+
+See: :ref:`cli-purge-data` in the Administrator's manual for more information.
+
+Alternatively, the Docker and Vagrant development environments offer an easy
+way to set up a test instance of AtoM on a personal computer, and could be used
+for local import testing prior to a final import into a production site. For
+more information, see: 
+
+* :ref:`dev-env-vagrant`
+* :ref:`dev-env-compose`
+
 .. _csv-estimate-import-duration:
 
 Estimating import duration
 --------------------------
 
 Once you've mapped the columns names in your CSV export to the corresponding
-AtoM-compatible CSV column names you may wish to perform a test import.
+AtoM-compatible CSV column names and validated your initial metadata,  you may 
+also wish to perform a test import.
 
 A test import gives you an idea how long the import will take to complete on
 your hardware. To estimate how long it will take to import 20,000 rows of CSV
@@ -338,21 +401,7 @@ If your test import proves to be too slow on your hardware, or you don't have
 hardware to spare, you can consider using cloud computing resources, such as
 Open Hosting, Amazon EC2, or Rackspace Cloud.
 
-.. _csv-testing-import:
-
-Testing your import
--------------------
-
-Once you've prepared your import, you may want to clone your AtoM site and
-test your import on the clone before importing to your production AtoM
-installation. This prevents you from having to delete any improperly imported
-data. During import testing if you want to delete all imported data you can
-use the command-line purge tool.
-
-See: :ref:`cli-purge-data` in the Administrator's manual for more information.
-
 :ref:`Back to top <csv-import>`
-
 
 .. _csv-legacy-id-mapping:
 
@@ -454,6 +503,13 @@ option to each CSV import, with a common name added for each, will prevent
 AtoM from duplicating import data, such as :term:`terms <term>` and actors
 (:term:`authority records <authority record>`) during import.
 
+For more information on command-line imports, see: :ref:`cli-import-export`. 
+
+.. SEEALSO::
+
+   * CSV validation - :ref:`csv-validation-legacyid`
+   * CSV validation - :ref:`csv-validation-parent`
+
 :ref:`Back to top <csv-import>`
 
 .. _csv-import-descriptions:
@@ -481,6 +537,10 @@ can prepare your archival descriptions for import.
 * :ref:`csv-description-standards-fields`
 * :ref:`csv-descriptions-other-fields`
 * :ref:`csv-description-translations`
+
+.. SEEALSO::
+
+   * :ref:`csv-validation`
 
 .. _csv-description-hierarchies:
 
@@ -552,7 +612,6 @@ spreadsheet application), importing a **Fonds > Series > Item** hierarchy:
    :width: 80%
    :alt: example CSV parentID rows
 
-
 .. IMPORTANT::
 
    When the CSV is imported, it progresses row by row - meaning, if your CSV
@@ -570,6 +629,11 @@ If there is still no match, then a warning will be included in the console
 output (shown on the :ref:`Job details <job-details>` page), and the record will
 be imported as a top-level description. Be sure to double-check the results
 post-import!
+
+.. SEEALSO::
+
+   * CSV validation - :ref:`csv-validation-legacyid`
+   * CSV validation - :ref:`csv-validation-parent`
 
 .. _csv-description-parent-slug:
 
@@ -621,6 +685,10 @@ new series to the *parentID* column of the new files.
    *qubitParentSlug* value. In general, each row must have **only** one or the
    other - either a parent slug, or a parent ID.
 
+.. SEEALSO::
+
+   * CSV validation - :ref:`csv-validation-parent`
+
 .. _csv-descriptions-actor-columns:
 
 Creator-related import columns (actors and events)
@@ -665,9 +733,9 @@ discussion of their use:
    archival description :term:`view page`. May use free-text, including
    typographical conventions to express approximation or uncertainty (e.g.
    [190-?]; [ca. 1885]).
-* ``eventStartDates``: Internal ISO-8601 formatted (e.g. YYYY, YYYY-MM,
+* ``eventStartDates``: Internal `ISO 8601`_ formatted (e.g. YYYY, YYYY-MM,
    YYYY-MM-DD) start date of event
-* ``eventEndDates``: Internal ISO-8601 formatted (e.g. YYYY, YYYY-MM,
+* ``eventEndDates``: Internal `ISO 8601`_ formatted (e.g. YYYY, YYYY-MM,
    YYYY-MM-DD) end date of event
 
 .. image:: images/date-range-search-fields-used.*
@@ -720,7 +788,7 @@ the key behaviors are outlined below:
   description CSV import (i.e. data contained in the *eventActorHistories* CSV
   column will be mapped to the "History" :term:`field` (ISAAR-CPF 5.2.2) in the
   related :term:`authority record` (generated from the data contained in the
-  *creators* column of the CSV), and then is presented in AtoM in any related
+  *eventActors* column of the CSV), and then is presented in AtoM in any related
   descriptions where the entity is listed as a creator.
 * Where multiple creator names and histories are included in an import,
   *eventActors* and *eventActorHistories* elements are matched 1:1 in the
@@ -747,7 +815,7 @@ the key behaviors are outlined below:
   :term:`field` (ISAAR-CPF 5.2.2) - the authority record will be left
   untitled, until the user manually adds the appropriate :term:`name` to the
   authority record. Similarly, if there are more *eventActorHistories* elements
-  included in an import than  creator names included in the *creators* column,
+  included in an import than  creator names included in the *eventActors* column,
   the final biographical/administrative history will be mapped to an
   untitled authority record. Because the :term:`slug` is normally based on the
   title of the authority record, AtoM will generate a random alphanumeric
@@ -892,13 +960,14 @@ update the authorized form of name of a linked authority record.
 .. SEEALSO::
 
    * :ref:`ead-actors-import`
+   * CSV validation - :ref:`csv-validation-event-io`
 
 .. _csv-descriptions-digital-objects:
 
 Digital object-related import columns
 -------------------------------------
 
-As of AtoM 2.1, two new columns have been added to the
+As of AtoM 2.1, two new columns have been added to the 
 :ref:`ISAD <isad-template>` and :ref:`RAD <rad-template>` CSV import
 templates: ``digitalObjectPath`` and ``digitalObjectURI``. These columns will
 allow you to link or upload a :term:`digital object` and attach it to the new
@@ -948,10 +1017,18 @@ value.
 
    * :ref:`csv-check-filepaths-digital-objects`
 
+   There is also a more robust validation task that, if run from the 
+   command-line, can check digital object file paths as well as a number of other
+   common issues. For more information, see: 
+
+   * :ref:`csv-validation-cli-task` 
+
 .. SEEALSO::
 
    * :ref:`upload-digital-object`
    * :ref:`digital-object-load-task`
+   * CSV validation - :ref:`csv-validation-do-path`
+   * CSV validation - :ref:`csv-validation-do-uri`
 
 .. _csv-descriptions-storage:
 
@@ -977,39 +1054,61 @@ also be piped correspondingly:
    :alt: example CSV physicalObject rows
 
 For more information on working with physical storage in AtoM, see:
-:ref:`physical-storage`.
+:ref:`physical-storage`. AtoM also supports command-line imports of physical 
+storage data - for more information, see: :ref:`csv-import-storage-cli`. 
 
 .. IMPORTANT::
 
-   If your CSV import contains physical storage information, the CSV file must
-   contain information in both of the physical object storage fields:
-   ``physicalObjectName`` and ``physicalObjectLocation``. Entering information
-   in ``physicalObjectName`` only will result in the creation of duplicates,
-   since AtoM defaults to duplicates rather than accidentally merging separate
-   records with the same location. For example, several collections may
-   contain ``physicalObjectName`` Box 1, but adding ``physicalObjectLocation``
-   Shelf 1 will differentiate it from Box 1 on Shelf 5.
+   If your description CSV import contains physical storage information, the
+   CSV file must contain information in both of the physical object storage
+   fields: ``physicalObjectName`` and ``physicalObjectLocation``. Entering
+   information in ``physicalObjectName`` only will result in the creation of
+   duplicates, since AtoM defaults to duplicates rather than accidentally
+   merging separate records with the same location. For example, several
+   collections may contain ``physicalObjectName`` Box 1, but adding
+   ``physicalObjectLocation`` Shelf 1 will differentiate it from Box 1 on
+   Shelf 5.
 
 .. _csv-description-standards-fields:
 
 Standards related fields
 -------------------------
 
-Most fields in the CSV template have been named in a fairly obvious way,
+Most fields in the CSV templates have been named in a fairly obvious way,
 translating a simplified version of the field name in our data entry
-templates into a condensed `camelCase <http://en.wikipedia.org/wiki/CamelCase>`__.
-For example, the Rules for Archival description's General Material
-Designation is rendered in the CSV header as *radGeneralMaterialDesignation*.
-In both the RAD and ISAD templates, the Scope and Content field is marked by
-the CSV header *scopeAndContent*. However, for users seeking a full mapping
-of fields, consult the :ref:`RAD template <rad-template>` and
-:ref:`ISAD template <isad-template>` pages for further details.
+templates into a condensed `camelCase`_. For example, the Rules for Archival 
+Description's (:ref:`RAD <rad-template>`) "General Material Designation" is 
+rendered in the CSV column header as ``radGeneralMaterialDesignation``. In 
+both the RAD and :ref:`ISAD <isad-template>`> templates, the Scope and Content 
+field is mapped to the CSV column name ``scopeAndContent``. However, for users 
+seeking a full mapping of fields, consult the :ref:`RAD template <rad-template>` 
+and :ref:`ISAD(G) template <isad-template>` pages for further details.
 
-The *culture* column indicates to AtoM the default language of the descriptions
+.. TIP::
+
+   If you would like to better understand how AtoM's import columns map to 
+   supported data entry fields in your chosen template, try importing one of 
+   `CSV import templates`_ found on the AtoM wiki. Each field in these 
+   templates is populated with example data that includes the name of the 
+   related standards-based field - for example, the example data in the ISAD(G)
+   import template for the ``scopeAndContent`` field is "Example fonds Scope 
+   and content (ISAD 3.3.1)". Comparing the example data in your import 
+   template with the resulting record in AtoM should help you better understand
+   how the column names map to AtoM's standard-based data entry fields. 
+
+The ``culture`` column indicates to AtoM the default language of the descriptions
 being uploaded. This column expects two-letter ISO 639-1 language code
 values - for example, "en" for English; "fr" for French, "it" for Italian,
-etc. See `Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
-for a full list of ISO 639-1 language codes.
+etc. See Wikipedia for a full list of `ISO 639-1`_ language codes, and see
+the following link for a full list of AtoM supported languages and corresponding
+culture codes: 
+
+* https://bit.ly/AtoM-langs
+
+.. SEEALSO::
+
+   * :ref:`csv-description-translations`
+   * :ref:`csv-validation`
 
 .. _csv-descriptions-other-fields:
 
@@ -1018,14 +1117,13 @@ Other data entry notes
 
 * *language* and *languageOfDescription*, like *culture*, expect two-letter
   ISO 639-1 language code values - for example, "en" for English; "fr" for French,
-  "it" for Italian, etc. See `Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
-  for a full list of ISO 639-1 language codes. Unlike the *culture* column,
-  however, these two fields will accept multiple values separated by a pipe
-  character - for example, ``en|fr|it``.
+  "it" for Italian, etc. See Wikipedia for a full list of `ISO 639-1`_ language 
+  codes. Unlike the *culture* column,  however, these two fields will accept 
+  multiple values separated by a pipe character - for example, ``en|fr|it``.
 * The *script* and *scriptOfDescription* columns expect four-letter ISO 15924
   script code values - for example, "Latn" for Latin-based scripts, "Cyrl"
-  for Cyrillic scripts, etc. See `Unicode <www.unicode.org/iso15924/codelists.html>`__
-  for a full list of ISO 15924 script codes.
+  for Cyrillic scripts, etc. See `Unicode`_ for a full list of ISO 15924 script 
+  codes.
 * Alternative identifiers and their display labels can be imported using the
   *alternativeIdentifiers* and *alternativeIdentifierLabels* columns. Use pipe
   (``|``) separators to add multiple values. There should be a 1:1 relationship
@@ -1035,6 +1133,18 @@ Other data entry notes
   accession record and an archival description being imported via CSV. See the
   section on Accession CSV import :ref:`below <csv-import-accessions>` for more
   information.
+
+.. SEEALSO::
+
+   Full list of AtoM supported languages and corresponding ISO 639-1 codes: 
+
+   * https://bit.ly/AtoM-langs
+
+   There are several CSV validation checks available that will review metadata
+   values in the language, script, and culture columns of a CSV. For more
+   information, see: 
+
+   * :ref:`csv-validation`
 
 .. _csv-description-translations:
 
@@ -1072,11 +1182,12 @@ be imported as translations. These include:
 * institutionIdentifier
 
 The translation import works on the following logic: whenever AtoM encounters
-two CSV rows that have the **same** ``legacyId`` value, but **different**
-``culture`` values, AtoM will import the second row as a translation of the
-first. AtoM expects two-letter ISO 639-1 culture codes to be used in the
-``culture`` column - e.g. ``en`` for English, ``fr`` for French, etc. See the
-section above, :ref:`csv-descriptions-other-fields`, for further information.
+two consecutive CSV rows that have the **same** ``legacyId`` value, but
+**different** ``culture`` values, AtoM will import the second row as a
+translation of the first. AtoM expects two-letter ISO 639-1 culture codes to
+be used in the ``culture`` column - e.g. ``en`` for English, ``fr`` for
+French, etc. See the section above, :ref:`csv-descriptions-other-fields`, for
+further information.
 
 **Preparing translations for import**
 
@@ -1089,7 +1200,7 @@ To import new archival descriptions with translations:
   culture rows
 * Translation rows must have a **different** ``culture`` value as their source
   culture rows
-* Make sure that all ``culture`` values use ISO 639-1 two-letter codes
+* Make sure that all ``culture`` values use `ISO 639-1`_ two-letter codes
 * In the translation rows, leave any columns that do not support translation
   blank
 
@@ -1117,6 +1228,10 @@ An example CSV:
    save. When you return to your description and view it in the translation
    culture, the translated entity will now also display in the translation
    culture.
+
+.. SEEALSO::
+
+   * CSV validation - :ref:`csv-validation-legacyid`
 
 :ref:`Back to top <csv-import>`
 
@@ -1146,7 +1261,7 @@ identify matches, see below, :ref:`csv-descriptions-match-criteria`.
    of things to check for importing a CSV of archival descriptions via the
    user interface:
 
-   * CSV file is saved with UTF-8 encodings
+   * CSV file is saved with `UTF-8`_ character encoding
    * CSV file uses Linux/Unix style end-of-line characters (``/n``)
    * All :term:`parent <parent record>` descriptions appear in rows **above**
      their children
@@ -1165,6 +1280,13 @@ identify matches, see below, :ref:`csv-descriptions-match-criteria`.
      above: :ref:`csv-import-descriptions`
    * You have reviewed how the :ref:`authority record matching <csv-actor-matching>`
      behavior works above, and know what to expect with your import.
+
+   AtoM also supports a CSV validation task that can be run from the
+   command-line or the :term:`user interface`, that can help identify common
+   errors in CSVs prior to import. For more information, see:
+
+   * :ref:`csv-validation`
+   * :ref:`csv-validation-cli`
 
 If you have double-checked the above, you should be ready to import your
 descriptions.
@@ -1248,29 +1370,41 @@ descriptions.
 .. TIP::
 
    Want to find your recent imports? You can use the
-   :ref:`sort button <recurring-sort-button>` located in the top-right hand
+   :ref:`sort buttons <recurring-sort-button>` located in the top-right hand
    side of the archival description browse page to change the results display
-   to be ordered by "Most recent" if it is not already - that way, the most
-   recently added or edited descriptions will appear at the top of the
-   results. If you have come directly here after importing your descriptions,
-   they should appear at the top of the results.
+   to be ordered by "Date modified" in "Descending" direction if they are not
+   already - that way, the most recently added or edited descriptions will
+   appear at the top of the results. If you have come directly here after
+   importing your descriptions, they should appear at the top of the results.
 
    .. image:: images/csv-import-browse-page.*
       :align: center
       :width: 85%
       :alt: The browse page following a CSV import
 
-
 8. If any warnings or errors are encountered, AtoM will display them on
    :ref:`Job details <job-details>` page of the related import job.
    Generally, errors will cause an import to fail, while warnings will be
-   logged but will allow the import to proceed anyway. Errors can
-   occur for many reasons - please review the checklist
+   logged but will allow the import to proceed anyway - however, an 
+   :term:`administrator` can configure the CSV import validation to run 
+   automatically on all imports, and when this setting is set to "strict" even
+   warnings will prevent a CSV import from proceeding. For more information, 
+   see:
+
+   * :ref:`csv-validation`
+   * :ref:`csv-validator-settings`
+
+   Errors and warnings can occur for many reasons - please review the checklist
    :ref:`above <csv-import-descriptions-gui>` for suggestions on resolving
-   the most common reasons that CSV imports fail. In the example pictured
-   below, the CSV includes a ``qubitParentSlug`` value for a description that
-   does not exist - so AtoM cannot attach the CSV row description to its
-   intended parent:
+   the most common reasons that CSV imports fail. Note that validation can also
+   be run independently of an import - doing so via the :term:`user interface` 
+   will also generate a downloadable TXT file report with further details on 
+   errors and warnings encountered, that should help you troubleshoot any 
+   issues. See the :ref:`csv-validation` documentation for further details.  
+
+   In the example error pictured below, the CSV includes a ``qubitParentSlug`` 
+   value for a description that does not exist - so AtoM cannot attach the CSV 
+   row description to its intended parent:
 
 .. image:: images/csv-import-error.*
   :align: center
@@ -1629,7 +1763,7 @@ Importing updates via the user interface
    basic checklist of things to check for importing a CSV of archival
    descriptions updates via the user interface:
 
-   * CSV file is saved with UTF-8 encodings
+   * CSV file is saved with `UTF-8`_ character encoding
    * CSV file uses Linux/Unix style end-of-line characters (``/n``)
    * All :term:`parent <parent record>` descriptions appear in rows **above**
      their children
@@ -1649,6 +1783,13 @@ Importing updates via the user interface
    * If you are using the "Update matches ignoring blank fields in CSV"
      option, you have reviewed which entities and fields cannot be updated
      using this method (see above, :ref:`csv-descriptions-update-match`).
+
+   AtoM also supports a CSV validation task that can be run from the
+   command-line or the :term:`user interface`, that can help identify common
+   errors in CSVs prior to import. For more information, see:
+
+   * :ref:`csv-validation`
+   * :ref:`csv-validation-cli`
 
 If you have double-checked the above, you should be ready to import your
 updates.
@@ -1788,12 +1929,12 @@ updates.
 .. TIP::
 
    Want to find your recently updated records? You can use the
-   :ref:`sort button <recurring-sort-button>` located in the top-right hand
+   :ref:`sort buttons <recurring-sort-button>` located in the top-right hand
    side of the archival description browse page to change the results display
-   to be ordered by "Most recent" if it is not already - that way, the most
-   recently added or edited descriptions will appear at the top of the
-   results. If you have come directly here after importing your descriptions,
-   they should appear at the top of the results.
+   to be ordered by "Date modified" in "Descending" direction if they are not
+   already - that way, the most recently added or edited descriptions will
+   appear at the top of the results. If you have come directly here after
+   importing your descriptions, they should appear at the top of the results.
 
    .. image:: images/csv-import-browse-page.*
       :align: center
@@ -1803,10 +1944,22 @@ updates.
 10. If any warnings or errors are encountered, AtoM will display them on
     :ref:`Job details <job-details>` page of the related import job.
     Generally, errors will cause an import to fail, while warnings will be
-    logged but will allow the import to proceed anyway. Errors can
-    occur for many reasons - please review the checklist
+    logged but will allow the import to proceed anyway - however, an 
+    :term:`administrator` can configure the CSV import validation to run 
+    automatically on all imports, and when this setting is set to "strict" even
+    warnings will prevent a CSV import from proceeding. For more information, 
+    see:
+
+    * :ref:`csv-validation`
+    * :ref:`csv-validator-settings`
+
+    Errors and warnings can occur for many reasons - please review the checklist
     :ref:`above <csv-descriptions-updates-ui>` for suggestions on resolving
-    the most common reasons that CSV import updates fail.
+    the most common reasons that CSV imports fail. Note that validation can also
+    be run independently of an import - doing so via the :term:`user interface` 
+    will also generate a downloadable TXT file report with further details on 
+    errors and warnings encountered, that should help you troubleshoot any 
+    issues. See the :ref:`csv-validation` documentation for further details.
 
 :ref:`Back to top <csv-import>`
 
@@ -1847,7 +2000,7 @@ template file is available in the AtoM source code
    * The target description was imported using either the command line or the
      CSV import in the :term:`user interface` - events import will **not** work
      with descriptions created in the user interface.
-   * The CSV file is saved with UTF-8 encodings
+   * The CSV file is saved with `UTF-8`_ character encoding
    * The CSV file uses Linux/Unix style end-of-line characters (``/n``)
    * All *legacyID* values entered correspond to the *legacyID* values of
      their corresponding archival descriptions
@@ -1859,6 +2012,13 @@ template file is available in the AtoM source code
      matches the authorized form of name in the authority record exactly. See
      above for more information on how AtoM attempts to identify authority
      record matches: :ref:`csv-actor-matching`.
+
+   AtoM also supports a CSV validation task that can be run from the
+   command-line or the :term:`user interface`, that can help identify common
+   errors in CSVs prior to import. For more information, see:
+
+   * :ref:`csv-validation`
+   * :ref:`csv-validation-cli`
 
 If you have double-checked the above, you should be ready to import your
 events.
@@ -1943,6 +2103,25 @@ Import events via CSV
 
    * https://projects.artefactual.com/issues/9649#note-7
 
+7. If any warnings or errors are encountered, AtoM will display them on
+   :ref:`Job details <job-details>` page of the related import job.
+   Generally, errors will cause an import to fail, while warnings will be
+   logged but will allow the import to proceed anyway  - however, an 
+   :term:`administrator` can configure the CSV import validation to run 
+   automatically on all imports, and when this setting is set to "strict" even
+   warnings will prevent a CSV import from proceeding. For more information, 
+   see:
+
+   * :ref:`csv-validation`
+   * :ref:`csv-validator-settings`
+
+   Errors and warnings can occur for many reasons - please review the checklist
+   :ref:`above <csv-import-events>` for suggestions on resolving
+   the most common reasons that CSV imports fail. Note that validation can also
+   be run independently of an import - doing so via the :term:`user interface` 
+   will also generate a downloadable TXT file report with further details on 
+   errors and warnings encountered, that should help you troubleshoot any 
+   issues. See the :ref:`csv-validation` documentation for further details.
 
 .. _csv-import-repositories:
 
@@ -1960,6 +2139,7 @@ Find the example CSV import template here:
 .. SEEALSO::
 
    * :ref:`archival-institutions`
+   * :ref:`csv-validation`
 
 Repository CSV columns
 ----------------------
@@ -1999,11 +2179,10 @@ International Standard for Describing Institutions with Archival Holdings
 related standard, see: :ref:`ISDIAH edit template <isdiah-template>`.
 Generally, fields in the CSV template have been named in a fairly obvious way,
 translating a simplified version of the field name in our data entry templates
-into a condensed `camelCase <http://en.wikipedia.org/wiki/CamelCase>`__. For
-example, ISDIAH 5.3.2, Geographical and cultural context (in the Description
-:term:`Area <information area>`) becomes ``geoCulturalContext`` in the CSV
-template. Consult the :ref:`ISDIAH <isdiah-template>` page for further help
-with fields.
+into a condensed `camelCase`_. For example, ISDIAH 5.3.2, Geographical and 
+cultural context (in the Description :term:`Area <information area>`) becomes 
+``geoCulturalContext`` in the CSV template. Consult the 
+:ref:`ISDIAH <isdiah-template>` page for further help with fields.
 
 The ``descStatus`` and ``descDetail`` columns are both also related to
 controlled term :term:`taxonomies <taxonomy>` in AtoM - the "Description
@@ -2020,11 +2199,20 @@ The ``descDetails`` column has the following default terms available for use:
 * Minimal
 * Partial
 
-The ``culture`` column indicates to AtoM the language of the descriptions
-being uploaded. This column expects two-letter ISO 639-1 language code values
-- for example, "en" for English; "fr" for French, "it" for Italian, etc. See
-`Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__ for a
-full list of ISO 639-1 language codes.
+The ``culture`` column indicates to AtoM the language of the records being
+uploaded. This column expects two-letter ISO 639-1 language code values - for 
+example, "en" for English; "fr" for French, "it" for Italian, etc. See 
+Wikipedia for a full list of `ISO 639-1`_ language codes, and see the following 
+link for a full list of AtoM supported languages and corresponding culture 
+codes:
+
+* https://bit.ly/AtoM-langs
+
+.. SEEALSO::
+
+   * CSV validation - :ref:`csv-validation-culture`
+   * CSV validation - :ref:`csv-validation-fieldlength`
+   * CSV validation - :ref:`csv-validation-language-repo`
 
 .. _csv-import-repos-ui:
 
@@ -2037,10 +2225,17 @@ Import new archival institutions via CSV
    instructions above, to ensure that your CSV import will work. Most
    importantly, make sure your:
 
-   * CSV file is saved with UTF-8 encodings
+   * CSV file is saved with `UTF-8`_ character encoding
    * CSV file uses Linux/Unix style end-of-line characters (``/n``)
    * You have prepared your repository CSV data following the recommendations
      in the section above, :ref:`csv-import-repositories`.
+
+   AtoM also supports a CSV validation task that can be run from the
+   command-line or the :term:`user interface`, that can help identify common
+   errors in CSVs prior to import. For more information, see:
+
+   * :ref:`csv-validation`
+   * :ref:`csv-validation-cli`
 
 **To import new archival institutions via the user interface:**
 
@@ -2126,6 +2321,26 @@ Import new archival institutions via CSV
    :width: 85%
    :alt: When a CSV import has been initiated in AtoM
 
+8. If any warnings or errors are encountered, AtoM will display them on
+   :ref:`Job details <job-details>` page of the related import job.
+   Generally, errors will cause an import to fail, while warnings will be
+   logged but will allow the import to proceed anyway  - however, an 
+   :term:`administrator` can configure the CSV import validation to run 
+   automatically on all imports, and when this setting is set to "strict" even
+   warnings will prevent a CSV import from proceeding. For more information, 
+   see:
+
+   * :ref:`csv-validation`
+   * :ref:`csv-validator-settings`
+
+   Errors and warnings can occur for many reasons - please review the checklist
+   :ref:`above <csv-import-repos-ui>` for suggestions on resolving
+   the most common reasons that CSV imports fail. Note that validation can also
+   be run independently of an import - doing so via the :term:`user interface` 
+   will also generate a downloadable TXT file report with further details on 
+   errors and warnings encountered, that should help you troubleshoot any 
+   issues. See the :ref:`csv-validation` documentation for further details.
+
 .. _csv-repo-update:
 
 Update archival institutions via CSV import
@@ -2159,7 +2374,6 @@ records" checkbox. When no matches are found with this option checked, AtoM
 will skip the unmatched CSV row and report it in the console output found on
 the :ref:`Job details <job-details>` page of the related import job - see:
 :ref:`manage-jobs` for more information.
-
 
 .. _csv-repo-update-match:
 
@@ -2280,7 +2494,7 @@ Importing repository updates in the user interface
    instructions above, to ensure that your CSV import will work. Most
    importantly, make sure your:
 
-   * CSV file is saved with UTF-8 encodings
+   * CSV file is saved with `UTF-8`_ character encoding
    * CSV file uses Linux/Unix style end-of-line characters (``/n``)
    * You have prepared your repository CSV data following the recommendations
      in the section above, :ref:`csv-import-repositories`
@@ -2289,6 +2503,13 @@ Importing repository updates in the user interface
      wish to update
    * You have reviewed the sections above on each of the update behaviors and
      their limitations, and know what to expect.
+
+   AtoM also supports a CSV validation task that can be run from the
+   command-line or the :term:`user interface`, that can help identify common
+   errors in CSVs prior to import. For more information, see:
+
+   * :ref:`csv-validation`
+   * :ref:`csv-validation-cli`
 
 If you have double-checked the above, you should be ready to import your
 updates.
@@ -2406,10 +2627,22 @@ updates.
 9. If any warnings or errors are encountered, AtoM will display them on
    :ref:`Job details <job-details>` page of the related import job.
    Generally, errors will cause an import to fail, while warnings will be
-   logged but will allow the import to proceed anyway. Errors can
-   occur for many reasons - please review the checklist
-   :ref:`above <csv-repo-updates-ui>` for suggestions on resolving the most
-   common reasons that CSV import updates fail.
+   logged but will allow the import to proceed anyway  - however, an 
+   :term:`administrator` can configure the CSV import validation to run 
+   automatically on all imports, and when this setting is set to "strict" even
+   warnings will prevent a CSV import from proceeding. For more information, 
+   see:
+
+   * :ref:`csv-validation`
+   * :ref:`csv-validator-settings`
+
+   Errors and warnings can occur for many reasons - please review the checklist
+   :ref:`above <csv-repo-updates-ui>` for suggestions on resolving
+   the most common reasons that CSV imports fail. Note that validation can also
+   be run independently of an import - doing so via the :term:`user interface` 
+   will also generate a downloadable TXT file report with further details on 
+   errors and warnings encountered, that should help you troubleshoot any 
+   issues. See the :ref:`csv-validation` documentation for further details.
 
 :ref:`Back to top <csv-import>`
 
@@ -2421,7 +2654,8 @@ Prepare authority records for CSV import
 The :term:`authority record` import tool allows you to import data about
 people, families, and organizations. In addition to importing data detailing
 these entities, the tool also allows the import of supplementary
-data on how these entities relate to each other (See :ref:`csv-import-authority-record-relationships`).
+data on how these entities relate to each other (See 
+:ref:`csv-import-authority-record-relationships`).
 
 You can view the example CSV files for authority records in the AtoM code (at
 ``lib/task/import/example/authority_records/``) or they can be downloaded
@@ -2447,11 +2681,22 @@ directly here:
 A brief explanation of the main fields in authority record CSV template is
 included below.
 
-The ``culture`` column indicates to AtoM the language of the descriptions
-being uploaded. This column expects two-letter ISO 639-1 language code values
-- for example, "en" for English; "fr" for French, "it" for Italian, etc. See
-`Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__ for a
-full list of ISO 639-1 language codes.
+.. SEEALSO::
+
+   * :ref:`csv-validation`
+
+The ``culture`` column indicates to AtoM the language of the records being
+uploaded. This column expects two-letter ISO 639-1 language code values - for 
+example, "en" for English; "fr" for French, "it" for Italian, etc. See 
+Wikipedia for a full list of `ISO 639-1`_ language codes, and see the following 
+link for a full list of AtoM supported languages and corresponding culture 
+codes:
+
+* https://bit.ly/AtoM-langs
+
+.. SEEALSO::
+
+   * CSV validation - :ref:`csv-validation-culture`
 
 The ``typeOfEntity`` column maps to the entity type terms recommended in
 ISAAR-CPF 5.1.1 Type of Entity, and maintained in AtoM in the *Actor Entity
@@ -2468,11 +2713,10 @@ See also: :ref:`authority-records`.
 
 Most fields in the CSV template have been named in a fairly obvious way,
 translating a simplified version of the field name in our data entry
-templates into a condensed `camelCase <http://en.wikipedia.org/wiki/CamelCase>`__.
-For example, ISAAR 5.2.1, Dates of Existence (in the ISAAR Description
-:term:`Area <information area>`) becomes ``datesOfExistence`` in the CSV
-template. Consult the :ref:`ISDIAH <isaar-template>` data entry page for
-further help with fields.
+templates into a condensed `camelCase`_. For example, ISAAR 5.2.1, Dates of 
+Existence (in the ISAAR Description :term:`Area <information area>`) becomes 
+``datesOfExistence`` in the CSV template. Consult the 
+:ref:`ISDIAH <isaar-template>` data entry page for further help with fields.
 
 The ``history`` column, which conforms to ISAAR 5.2.2, will appear as the
 Administrative or Biographical history in any  :term:`archival description`
@@ -2488,14 +2732,15 @@ the following default terms available for use:
 * Revised
 * Draft
 
-The ``levelOfDetails`` column has the following default terms available for
+The ``levelOfDetail`` column has the following default terms available for
 use:
 
 * Full
 * Minimal
 * Partial
 
-As long as they are separated with a pipe character (``|``), multiple values can be included in a single column for the following multi-value fields:
+As long as they are separated with a pipe character (``|``), multiple values 
+can be included in a single column for the following multi-value fields:
 
 * parallelFormsOfName
 * standardizedFormsOfName
@@ -2533,7 +2778,7 @@ Import new authority records via CSV
    instructions :ref:`above <csv-before-you-import>`, to ensure that your
    CSV import will work. Most importantly, make sure:
 
-   * Your CSV file is saved with UTF-8 encodings
+   * Your CSV file is saved with `UTF-8`_ character encoding
    * Your CSV file uses Linux/Unix style end-of-line characters (``/n``)
    * If you intend to import archival descriptions as well and hope to link
      them to your authority records, make sure you are importing the authority
@@ -2545,6 +2790,13 @@ Import new authority records via CSV
    * You've reviewed the instructions in the section above on preparing your
      CSV file and have made sure it conforms to the recommendations. See:
      :ref:`csv-import-authority-records`.
+
+   AtoM also supports a CSV validation task that can be run from the
+   command-line or the :term:`user interface`, that can help identify common
+   errors in CSVs prior to import. For more information, see:
+
+   * :ref:`csv-validation`
+   * :ref:`csv-validation-cli`
 
 **To import authority records via the user interface:**
 
@@ -2629,6 +2881,26 @@ Import new authority records via CSV
    :align: center
    :width: 85%
    :alt: When a CSV import has been initiated in AtoM
+
+8. If any warnings or errors are encountered, AtoM will display them on
+   :ref:`Job details <job-details>` page of the related import job.
+   Generally, errors will cause an import to fail, while warnings will be
+   logged but will allow the import to proceed anyway  - however, an 
+   :term:`administrator` can configure the CSV import validation to run 
+   automatically on all imports, and when this setting is set to "strict" even
+   warnings will prevent a CSV import from proceeding. For more information, 
+   see:
+
+   * :ref:`csv-validation`
+   * :ref:`csv-validator-settings`
+
+   Errors and warnings can occur for many reasons - please review the checklist
+   :ref:`above <csv-import-authority-records-gui>` for suggestions on resolving
+   the most common reasons that CSV imports fail. Note that validation can also
+   be run independently of an import - doing so via the :term:`user interface` 
+   will also generate a downloadable TXT file report with further details on 
+   errors and warnings encountered, that should help you troubleshoot any 
+   issues. See the :ref:`csv-validation` documentation for further details.
 
 :ref:`Back to top <csv-import>`
 
@@ -2848,7 +3120,7 @@ Updating authority records via import in the user inteface
    instructions above, to ensure that your CSV import will work. Most
    importantly, make sure your:
 
-   * CSV file is saved with UTF-8 encodings
+   * CSV file is saved with `UTF-8`_ character encoding
    * CSV file uses Linux/Unix style end-of-line characters (``/n``)
    * You have prepared your authority record CSV data following the
      recommendations in the section above, :ref:`csv-import-authority-records`
@@ -2861,6 +3133,13 @@ Updating authority records via import in the user inteface
      delete these entities.
    * You have reviewed the sections above on each of the update behaviors and
      their limitations, and know what to expect.
+
+   AtoM also supports a CSV validation task that can be run from the
+   command-line or the :term:`user interface`, that can help identify common
+   errors in CSVs prior to import. For more information, see:
+
+   * :ref:`csv-validation`
+   * :ref:`csv-validation-cli`
 
 If you have double-checked the above, you should be ready to import your
 updates.
@@ -2996,10 +3275,22 @@ updates.
 10. If any warnings or errors are encountered, AtoM will display them on
     :ref:`Job details <job-details>` page of the related import job.
     Generally, errors will cause an import to fail, while warnings will be
-    logged but will allow the import to proceed anyway. Errors can
-    occur for many reasons - please review the checklist
-    :ref:`above <csv-update-actors>` for suggestions on resolving the most
-    common reasons that CSV import updates fail.
+    logged but will allow the import to proceed anyway  - however, an 
+    :term:`administrator` can configure the CSV import validation to run 
+    automatically on all imports, and when this setting is set to "strict" even
+    warnings will prevent a CSV import from proceeding. For more information, 
+    see:
+
+    * :ref:`csv-validation`
+    * :ref:`csv-validator-settings`
+
+    Errors and warnings can occur for many reasons - please review the checklist
+    :ref:`above <csv-actors-update-gui>` for suggestions on resolving
+    the most common reasons that CSV imports fail. Note that validation can also
+    be run independently of an import - doing so via the :term:`user interface` 
+    will also generate a downloadable TXT file report with further details on 
+    errors and warnings encountered, that should help you troubleshoot any 
+    issues. See the :ref:`csv-validation` documentation for further details.
 
 :ref:`Back to top <csv-import>`
 
@@ -3024,6 +3315,10 @@ records that are already present in the AtoM database. AtoM won't create new
 authority records when it encounters unknown names in the Relationship CSV
 file. Therefore, :ref:`create-authority-record` first if you are planning to
 import relationships for new people, families, or organizations.
+
+.. SEEALSO::
+   
+   * :ref:`csv-validation`
 
 The Relationships CSV file contains 8 columns:
 
@@ -3079,11 +3374,16 @@ The Relationships CSV file contains 8 columns:
   in the interface will see the ``date`` field values when viewing
   relationships; the ``startDate`` and ``endDate`` values are not visible, and
   are used for date range searching in the application.
-* The ``culture`` column indicates to AtoM the language of the descriptions
-  being uploaded. This column expects two-letter ISO 639-1 language code
-  values - for example, "en" for English; "fr" for French, "it" for Italian,
-  etc. See `Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
-  for a full list of ISO 639-1 language codes.
+* The ``culture`` column indicates to AtoM the language of the records being
+  uploaded. This column expects two-letter ISO 639-1 language code values -
+  for example, "en" for English; "fr" for French, "it" for Italian, etc. See
+  Wikipedia for a full list of `ISO 639-1`_ language codes, and see the
+  following link for a full list of AtoM supported languages and corresponding
+  culture codes: https://bit.ly/AtoM-langs
+
+.. SEEALSO::
+   
+   * CSV validation - :ref:`csv-validation-culture`
 
 .. _csv-import-authority-record-relationships-gui:
 
@@ -3096,7 +3396,7 @@ Import new authority record relationships via CSV
    instructions :ref:`above <csv-before-you-import>`, to ensure that your
    CSV import will work. Most importantly, make sure:
 
-   * Your CSV file is saved with UTF-8 encodings
+   * Your CSV file is saved with `UTF-8`_ characther encoding
    * Your CSV file uses Linux/Unix style end-of-line characters (``/n``)
    * AtoM already contains the authority records you intend to establish a
      relationship between and your CSV file matches their "Authorized Form Of
@@ -3104,6 +3404,13 @@ Import new authority record relationships via CSV
    * You've reviewed the instructions in the section above on preparing your
      CSV file and have made sure it conforms to the recommendations. See:
      :ref:`csv-import-authority-record-relationships`.
+
+   AtoM also supports a CSV validation task that can be run from the
+   command-line or the :term:`user interface`, that can help identify common
+   errors in CSVs prior to import. For more information, see:
+
+   * :ref:`csv-validation`
+   * :ref:`csv-validation-cli`
 
 **To import authority records via the user interface:**
 
@@ -3121,7 +3428,8 @@ Import new authority record relationships via CSV
 .. image:: images/csv-import-page-relationships.*
    :align: center
    :width: 85%
-   :alt: The CSV import page in AtoM, set to import new Authority records relationships
+   :alt: The CSV import page in AtoM, set to import new Authority records 
+         relationships
 
 3. If you do not want your files indexed during the import, you can click the
    checkbox labelled "Do not index imported items." This will prevent the new
@@ -3131,8 +3439,8 @@ Import new authority record relationships via CSV
 
    If you do not index your records during import, they will not be
    discoverable via search in the user interface! To make them visible in the
-   interface again, a system administrator will need to rebuild the search index.
-   See: :ref:`maintenance-populate-search-index`.
+   interface again, a system administrator will need to rebuild the search 
+   index. See: :ref:`maintenance-populate-search-index`.
 
 4. Click the "Browse" button to open a window on your local computer. Select
    the Authority record relationship CSV file that you would like to import.
@@ -3176,6 +3484,27 @@ Import new authority record relationships via CSV
    them, then an AtoM system administrator can do so using the CLI CSV import
    tool. See: :ref:`csv-authority-relationships`.
 
+8. If any warnings or errors are encountered, AtoM will display them on
+   :ref:`Job details <job-details>` page of the related import job.
+   Generally, errors will cause an import to fail, while warnings will be
+   logged but will allow the import to proceed anyway  - however, an 
+   :term:`administrator` can configure the CSV import validation to run 
+   automatically on all imports, and when this setting is set to "strict" even
+   warnings will prevent a CSV import from proceeding. For more information, 
+   see:
+
+   * :ref:`csv-validation`
+   * :ref:`csv-validator-settings`
+
+   Errors and warnings can occur for many reasons - please review the checklist
+   :ref:`above <csv-import-authority-record-relationships-gui>` for suggestions 
+   on resolving the most common reasons that CSV imports fail. Note that 
+   validation can also be run independently of an import - doing so via the 
+   :term:`user interface` will also generate a downloadable TXT file report with 
+   further details on errors and warnings encountered, that should help you 
+   troubleshoot any issues. See the :ref:`csv-validation` documentation for 
+   further details.
+
 :ref:`Back to top <csv-import>`
 
 .. _csv-import-accessions:
@@ -3194,7 +3523,7 @@ Alternatively, you can use the ``qubitParentSlug`` column to link an existing
 description in AtoM to new or updated accessions records via your import -
 more details below.
 
-An example CSV template file is available in the
+An example CSV template file is available in the 
 ``lib/task/import/example/example_accessions.csv`` directory of AtoM, or it
 can be downloaded here:
 
@@ -3203,9 +3532,19 @@ can be downloaded here:
 .. SEEALSO::
 
    * :ref:`accession-records`
+   * :ref:`csv-validation`
 
 Below you'll find brief data entry guidelines for preparing a CSV file of
 accessions data for import.
+
+**Jump to:**
+
+* :ref:`csv-accessions-parentslug`
+* :ref:`csv-accessions-standard-fields`
+* :ref:`csv-accession-storage`
+* :ref:`csv-accession-creators`
+* :ref:`csv-accession-donors`
+* :ref:`csv-accession-other-notes`
 
 .. _csv-accessions-parentslug:
 
@@ -3240,10 +3579,9 @@ Standards related fields
 
 Most fields in the CSV template have been named in a fairly obvious way,
 translating a simplified version of the field name in the AtoM
-:term:`user interface` into a condensed `camelCase <http://en.wikipedia.org/wiki/CamelCase>`__
-in our data entry. For example, the "Immediate source of acquisition" field in
-the user interface is represented in the CSV template as the
-``sourceOfAcquisition`` column.
+:term:`user interface` into a condensed `camelCase`_ in our data entry. For 
+example, the "Immediate source of acquisition" field in the user interface is 
+represented in the CSV template as the ``sourceOfAcquisition`` column.
 
 Some fields are linked to a :term:`taxonomy` of controlled values in AtoM,
 maintained as :term:`terms <term>`. These are generally represented in the
@@ -3260,6 +3598,19 @@ Some of the taxonomy-related fields in the CSV template include:
   Default values are: Complete, Incomplete, In-Progress.
 * ``processingPriority`` - listed in the user interface as "Processing
   priority." Default values are: High, Medium, Low.
+
+The ``culture`` column indicates to AtoM the language of the records being
+uploaded. This column expects two-letter ISO 639-1 language code values - for 
+example, "en" for English; "fr" for French, "it" for Italian, etc. See 
+Wikipedia for a full list of `ISO 639-1`_ language codes, and see the following 
+link for a full list of AtoM supported languages and corresponding culture 
+codes:
+
+* https://bit.ly/AtoM-langs
+
+.. SEEALSO::
+
+   * CSV validation - :ref:`csv-validation-culture`
 
 .. _csv-accession-storage:
 
@@ -3311,7 +3662,7 @@ those in the archival description CSV templates - The ``eventDates`` field
 will map to the free-text display date field in AtoM, where users can use special
 characters to express approximation, uncertainty, etc. (e.g. [190-?];
 [ca. 1885]), while ``eventStartDates`` and ``eventEndDates`` should include
-ISO 8601-formatted date values (YYYY-MM-DD, YYYY-MM, or YYYY). If there are
+`ISO 8601`_ formatted date values (YYYY-MM-DD, YYYY-MM, or YYYY). If there are
 multiple creators/events associated with the accession, these fields can all
 accept multiple values, separated using the pipe ``|`` character.
 
@@ -3374,18 +3725,11 @@ Other accession CSV data entry notes
 ------------------------------------
 
 The ``acquisitionDate`` column expects date strings to be formatted according
-to the `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`__ date format
-standard - that is, YYYY-MM-DD. ISO 8601 prescribes, as a minimum, a four-digit
-year [YYYY]. If the date range is not formatted according to ISO 8601 formatting,
-then AtoM will use the PHP date_parse function (which adds '1' as default value
-to the month and day if they are missing) to modify the date to a YYYY-MM-DD
-format.
-
-The ``culture`` column indicates to AtoM the default language of the
-accession records being uploaded. This column expects two-letter ISO 639-1
-language code values - for example, "en" for English; "fr" for French, "it"
-for Italian, etc. See `Wikipedia <http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
-for a full list of ISO 639-1 language codes.
+to the `ISO 8601`_ date format standard - that is, YYYY-MM-DD. ISO 8601 
+prescribes, as a minimum, a four-digit year [YYYY]. If the date range is not 
+formatted according to ISO 8601 formatting, then AtoM will use the PHP 
+``date_parse`` function (which adds '1' as default value to the month and day 
+if they are missing) to modify the date to a YYYY-MM-DD format.
 
 :ref:`Back to top <csv-import>`
 
@@ -3400,10 +3744,17 @@ Create new accession records via CSV import
    instructions above, to ensure that your CSV import will work. Most
    importantly, make sure your:
 
-   * CSV file is saved with UTF-8 encodings
+   * CSV file is saved with `UTF-8`_ character encoding
    * CSV file uses Linux/Unix style end-of-line characters (``/n``)
    * You have prepared your CSV data in accordance with the accession CSV
      guidance provided above - :ref:`csv-import-accessions`.
+
+   AtoM also supports a CSV validation task that can be run from the
+   command-line or the :term:`user interface`, that can help identify common
+   errors in CSVs prior to import. For more information, see:
+
+   * :ref:`csv-validation`
+   * :ref:`csv-validation-cli`
 
 **To import an accessions CSV file via the user interface:**
 
@@ -3475,10 +3826,22 @@ Create new accession records via CSV import
 7. If any warnings or errors are encountered, AtoM will display them on
    :ref:`Job details <job-details>` page of the related import job.
    Generally, errors will cause an import to fail, while warnings will be
-   logged but will allow the import to proceed anyway. Errors can
-   occur for many reasons - please review the checklist
-   :ref:`above <csv-import-accessions-gui>` for suggestions on resolving the
-   most common reasons that CSV imports fail.
+   logged but will allow the import to proceed anyway  - however, an 
+   :term:`administrator` can configure the CSV import validation to run 
+   automatically on all imports, and when this setting is set to "strict" even
+   warnings will prevent a CSV import from proceeding. For more information, 
+   see:
+
+   * :ref:`csv-validation`
+   * :ref:`csv-validator-settings`
+
+   Errors and warnings can occur for many reasons - please review the checklist
+   :ref:`above <csv-import-accessions-gui>` for suggestions on resolving
+   the most common reasons that CSV imports fail. Note that validation can also
+   be run independently of an import - doing so via the :term:`user interface` 
+   will also generate a downloadable TXT file report with further details on 
+   errors and warnings encountered, that should help you troubleshoot any 
+   issues. See the :ref:`csv-validation` documentation for further details.
 
 :ref:`Back to top <csv-import>`
 

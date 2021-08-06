@@ -120,7 +120,8 @@ application.
 * :ref:`Upload digital objects <upload-digital-object>`
 * :ref:`import-xml`
 * :ref:`export-xml`
-* :ref:`CSV import <csv-import>`
+* :ref:`csv-validation`
+* :ref:`csv-import`
 * :ref:`csv-export`
 * :ref:`import-export-skos`
 * :ref:`oai-pmh`
