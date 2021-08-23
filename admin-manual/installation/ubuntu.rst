@@ -508,7 +508,7 @@ Now reload systemd, enable and start the AtoM worker:
    sudo systemctl start atom-worker
 
 Check out the following page for more information about asynchronous jobs and
-worker management: :ref:`installation-asynchronous-jobs`.
+worker management: :ref:`maintenance-asynchronous-jobs`.
 
 .. _installation-ubuntu-serve-php-fpm:
 

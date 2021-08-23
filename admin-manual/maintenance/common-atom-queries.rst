@@ -494,7 +494,7 @@ records; generating :ref:`reports <file-item-reports>` or
 :ref:`imports and exports <import-export>` via the :term:`user interface`; and 
 more. For more information, see: 
 
-* :ref:`installation-asynchronous-jobs`
+* :ref:`maintenance-asynchronous-jobs`
 * :ref:`manage-jobs`
 
 Occasionally, the atom-worker may stall mid-process, or there is currently no
@@ -574,6 +574,7 @@ to reset the fail count:
 For more information, see: 
 
 * :ref:`troubleshooting-restart-job-scheduler`
+* :ref:`maintenance-asynchronous-jobs`
 
 :ref:`Back to the top <common-atom-queries>`
 

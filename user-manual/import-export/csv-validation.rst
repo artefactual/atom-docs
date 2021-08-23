@@ -42,7 +42,7 @@ To help avoid unexpected CSV import problems, AtoM includes a CSV validation
 task that can check for and report on common issues found in CSV files prior
 to import. This task can be run from the command-line, and is also supported
 in the :term:`user interface` and run asynchronously by the
-:ref:`job scheduler <installation-asynchronous-jobs>`. An :term:`administrator`
+:ref:`job scheduler <maintenance-asynchronous-jobs>`. An :term:`administrator`
 can also configure validation to be run automatically before any CSV import 
 performed via the user interface.
 

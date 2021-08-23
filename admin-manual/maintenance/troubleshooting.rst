@@ -265,7 +265,8 @@ balance processing, and to call functions between languages.*"
 .. SEEALSO::
 
    * http://gearman.org/
-   * :ref:`installation-asynchronous-jobs`
+   * :ref:`installation-ubuntu-serve-workers`
+   * :ref:`maintenance-asynchronous-jobs`
    * :ref:`manage-jobs`
 
 **When**
@@ -321,6 +322,11 @@ Other useful commands for managing the AtoM worker:
    sudo systemctl start atom-worker    # Starts the worker
    sudo systemctl stop atom-worker     # Stops the worker
    sudo systemctl status atom-worker   # Obtains current status
+
+For more detailed information on managing the job scheduler and the 
+``atom-worker``, see: 
+
+* :ref:`maintenance-asynchronous-jobs`
 
 :ref:`Back to top <maintenance-troubleshooting>`
 
@@ -1122,6 +1128,8 @@ error log for error messages. See:
 Why do I get a 500 (Internal Server) error?
 -------------------------------------------
 
+.. _AtoM User Forum: https://groups.google.com/forum/#!forum/ica-atom-users
+
 The 500 error is a very general HTTP status code that indicates a problem in the
 web server. You will need to check your web server error logs first, to get more
 information about the nature of the error. See:
@@ -1129,11 +1137,27 @@ information about the nature of the error. See:
 * :ref:`maintenance-webserver`
 * :ref:`troubleshooting-logs-debug`
 
+One common cause of 500 errors in AtoM is when AtoM attempts to run an 
+asynchronous, but the job scheduler is not running as expected. You will 
+know this is the case if you see the following message in the webserver error
+log:
+
+.. code-block:: bash
+
+   "No Gearman worker available that can handle the job."
+
+If this is the case, we recommend restarting the ``atom-worker`` and then 
+re-trying the task that led to the 500 error. For more information on managing 
+the ``atom-worker`` and the job scheduler, see: 
+
+* :ref:`maintenance-asynchronous-jobs`
+* :ref:`troubleshooting-restart-job-scheduler`
+
 If you're not sure what to do with the error message you find, and it is not
 addressed in the other FAQ sections below, then you can collect as much
-information as you can, search the `AtoM User Forum <https://groups.google.com/forum/#!forum/ica-atom-users>`__,
-and start a new thread if you are unable to find anything relevant that will
-help you resolve the issue. See:
+information as you can, search the `AtoM User Forum`_, and start a new thread 
+if you are unable to find anything relevant that will help you resolve the issue. 
+See:
 
 * :ref:`troubleshooting-first-steps`
 * :ref:`troubleshooting-support`

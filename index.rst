@@ -210,7 +210,7 @@ Installation
 * :ref:`installation-ansible`
 * :ref:`installation-upgrading`
 * :ref:`installation-execution-limits`
-* :ref:`installation-asynchronous-jobs`
+
 
 .. _admin-maintenance:
 
@@ -227,6 +227,7 @@ Maintenance
 * :ref:`maintenance-data-backup`
 * :ref:`common-atom-queries`
 * :ref:`maintenance-tuning`
+* :ref:`installation-asynchronous-jobs`
 * :ref:`maintenance-troubleshooting`
 * :ref:`debug-mode`
 * :ref:`maintenance-elasticsearch`

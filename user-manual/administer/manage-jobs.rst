@@ -21,7 +21,10 @@ browser.
 .. IMPORTANT::
 
    You must have the necessary dependencies installed and configured to be able
-   manage asynchronous jobs in AtoM. See: :ref:`installation-asynchronous-jobs`.
+   manage asynchronous jobs in AtoM. See: 
+
+   * Installation: :ref:`installation-ubuntu-serve-workers`.
+   * :ref:`maintenance-asynchronous-jobs`
 
 Prior to AtoM 2.2, only the ingest of `Archivematica <https://www.archivematica.org>`__
 DIPs was processed asynchronously. See
@@ -183,10 +186,13 @@ AtoM will indicate this in the jobs page with a message.
 
 .. SEEALSO::
 
-   The Administrator's manual has an installation page for setting up
-   `Gearman <http://gearman.org>`__ and asynchronous job support in AtoM. The
-   page also includes some examples of how to manage workers and jobs from the
-   command-line - see: :ref:`installation-gearman-job-worker`.
+   The Administrator's manual includes installation instructions for setting up
+   `Gearman <http://gearman.org>`__ and asynchronous job support in AtoM. A 
+   separate page also includes some examples of how to manage workers and 
+   jobs from the command-line. For more information, see: 
+
+   * Installation: :ref:`installation-ubuntu-serve-workers`.
+   * :ref:`maintenance-asynchronous-jobs`
 
 .. _job-details:
 
