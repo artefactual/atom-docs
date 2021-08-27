@@ -177,6 +177,13 @@ view. An administrator can review all finding aid generation requests via the
 Jobs page - for more information on managing :term:`jobs <job>` in AtoM, see:
 :ref:`manage-jobs`.
 
+.. TIP::
+
+   It's possible to add an institutional logo to the cover page of your
+   generated finding aids. For more information, see below:
+
+   * :ref:`generate-finding-aid-logo`
+
 **To generate or upload a finding aid:**
 
 1. Navigate to the :term:`archival description` for which you would like to
@@ -315,6 +322,46 @@ Jobs page - for more information on managing :term:`jobs <job>` in AtoM, see:
       :width: 80%
       :alt: An image of a finding aid link for an Uploaded finding aid
 
+.. _generate-finding-aid-logo:
+
+Include a repository logo in a generated finding aid
+----------------------------------------------------
+
+It's possible to have a logo included on the cover page of a generated 
+:term:`finding aid`, such as the logo of your :term:`archival institution`. 
+
+To do so, you will need a logo, and access to the root installation directory 
+of your Atom installation. 
+
+The finding logo filesize and format should follow the requirements for 
+:term:`repository` logos: 
+
+* No larger than 256 KB in size
+* PNG format
+* Dimensions between 200 x 200 to 270 x 270px
+
+The logo must be named ``pdf-logo.png``, and be placed in the ``images`` 
+directory, which is found just below the root AtoM installation directory. 
+
+Once added the logo will appear on any PDF finding aid you generate in the 
+future. It will **not** be retroactively added to existing finding aids. 
+
+Example output: 
+
+.. image:: images/fa-logo.*
+   :align: center
+   :width: 55%
+   :alt: An image of a generated PDF finding aid cover page with a logo
+
+.. NOTE::
+
+   At this time, only one logo can be added to the ``images`` directory for use
+   in finding aid generation, and it applies globally to all finding aids
+   generated after it has been added. 
+
+   This means it is currently not possible to generate finding aids with 
+   separate :term:`archival institution` logos in a 
+   :term:`multi-repository system`.
 
 :ref:`Back to top <print-finding-aids>`
 
