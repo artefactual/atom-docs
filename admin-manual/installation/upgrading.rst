@@ -131,6 +131,17 @@ and downloads created by the job scheduler (such as
 
       rm -f /usr/share/nginx/atom/downloads/jobs/*
 
+   Alternatively, AtoM has a command-line task that can help remove 
+   unnecessary temporary data, including the content of the ``jobs`` 
+   subdirectory. For more information, see: 
+
+   * :ref:`tools-expire`
+
+   For more general information on the structure of the ``uploads`` and 
+   ``downloads`` directories in AtoM, see: 
+
+   * Data backup: :ref:`backup-uploads-downloads`
+
 2. Dump the contents of your old database to a temporary file, change the
    database name if needed:
 
@@ -305,7 +316,7 @@ and the atom-workers managed by the job scheduler.
 
    For further information on configuring the job scheduler, see:
 
-   * :ref:`installation-asynchronous-jobs`
+   * :ref:`maintenance-asynchronous-jobs`
 
 
 .. _upgrading-use-software:

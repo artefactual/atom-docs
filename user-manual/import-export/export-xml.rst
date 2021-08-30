@@ -294,6 +294,8 @@ record's :term:`view page`.
 Export multiple XML files using the Clipboard
 =============================================
 
+.. _ZIP: https://wikipedia.org/wiki/Zip_(file_format)
+
 AtoM includes a :term:`clipboard` that allows users to "pin" results to it for
 review or further action. For more information, see: :ref:`clipboard`.
 
@@ -311,18 +313,34 @@ clipboard in XML format:
 
 .. NOTE::
 
-   You can also perform CSV imports from the clipboard. For more information,
+   You can also perform CSV exports from the clipboard. For more information,
    see: :ref:`csv-export-clipboard`.
 
-.. SEEALSO::
+   For general information on managing jobs and using the clipboard, see: 
 
    * :ref:`clipboard`
    * :ref:`manage-jobs`
 
-When downloaded, the XML files will be compressed in a
-`ZIP <https://wikipedia.org/wiki/Zip_(file_format)>`__ archive - there are many
-free utilities (likely there is one already included on your computer) that
-will allow you to "unzip" a ZIP file.
+When downloaded, the XML files will be compressed in a `ZIP`_ archive - there 
+are many free utilities (likely there is one already included on your 
+computer) that will allow you to "unzip" a ZIP file.
+
+.. NOTE::
+
+   XML exports performed via the :term:`clipboard` are stored in the ``jobs`` 
+   subdirectory of the AtoM ``downloads`` directory. These packages are **not** 
+   automatically deleted after download, meaning a system administrator should 
+   periodically remove unnecessary older packages to conserve disk space, such 
+   as during upgrades. For more information on the structure of the 
+   ``downloads`` directory, see:
+
+   * :ref:`backup-uploads-downloads`
+
+   Note that AtoM also has a command-line task that can be used by a system 
+   administrator to manage and delete the contents of the ``jobs`` subdirectory. 
+   For more information, see:
+
+   * :ref:`tools-expire`
 
 **To generate and download XML exports of clipboard results:**
 

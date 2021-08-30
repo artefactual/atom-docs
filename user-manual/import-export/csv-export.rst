@@ -16,6 +16,8 @@ CSV export
 .. |clip| image:: images/paperclip.png
    :height: 18
 
+.. _ZIP: https://wikipedia.org/wiki/Zip_(file_format)
+
 Most often understood as an acronym for "comma-separated values" (though
 sometimes called "character-separated values" because the separator character
 does not have to be a comma), CSV is a file format that stores tabular data in
@@ -38,6 +40,23 @@ information on CSV.
 **In AtoM**, there are several kinds of CSV exports available exports from the
 :ref:`clipboard`; export of :term:`archival description` advanced search
 results; and an export of jobs completed. Each will be outlined below.
+
+.. NOTE::
+
+   CSV exports performed via the :term:`user interface` are generated as 
+   compressed `ZIP`_ packages, stored in the ``jobs`` subdirectory of the AtoM
+   ``downloads`` directory. These packages are **not** automatically deleted
+   after download, meaning a system administrator should periodically remove
+   unnecessary older packages to conserve disk space, such as during upgrades. 
+   For more information on the structure of the ``downloads`` directory, see:
+
+   * :ref:`backup-uploads-downloads`
+
+   Note that AtoM also has a command-line task that can be used by a system 
+   administrator to manage and delete the contents of the ``jobs`` subdirectory. 
+   For more information, see:
+
+   * :ref:`tools-expire` 
 
 **Jump to:**
 

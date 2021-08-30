@@ -121,6 +121,12 @@ you may want to back up the rest of the contents of this directory.
 
       rm -f /usr/share/nginx/atom/downloads/jobs/*
 
+   Alternatively, AtoM has a command-line task that can help remove 
+   unnecessary temporary data, including the content of the ``jobs`` 
+   subdirectory. For more information, see: 
+
+   * :ref:`tools-expire`
+
 An example of creating a zipped tarball of your downloads directory: 
 
 .. code:: bash

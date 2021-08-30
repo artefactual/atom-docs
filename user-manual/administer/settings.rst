@@ -1082,6 +1082,11 @@ the database.
    users to make use of the Saved clipboard feature, be sure to configure this
    to a reasonable value - e.g. 30 (days), etc.
 
+Note that AtoM also has a command-line task that can be used by a system 
+administrator to manage and delete saved clipboards. For more information, see:
+
+* :ref:`tools-expire`
+
 .. _clipboard-sending:
 
 Clipboard sending

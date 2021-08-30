@@ -401,6 +401,12 @@ can be made available when a researcher visit is scheduled.
    sure you configure this setting before using the "Save clipboard" option,
    to ensure that saved results are not lost!
 
+   Note that AtoM also has a command-line task that can be used by a system 
+   administrator to manage and delete saved clipboards. For more information, 
+   see:
+
+   * :ref:`tools-expire`
+
 **To save and reload Clipboard results:**
 
 When you are ready to leave your current session, click on the 
@@ -469,6 +475,12 @@ on arrangement and description sharing work in progress.
    By default in new installations, **this setting is set to 0 days** - make
    sure you configure this setting before using the "Save clipboard" option,
    to ensure that saved results are not lost!
+
+   Note that AtoM also has a command-line task that can be used by a system 
+   administrator to manage and delete saved clipboards. For more information, 
+   see:
+
+   * :ref:`tools-expire`
 
 **To load a saved clipboard in AtoM**:
 
