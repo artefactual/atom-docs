@@ -227,7 +227,7 @@ Maintenance
 * :ref:`maintenance-data-backup`
 * :ref:`common-atom-queries`
 * :ref:`maintenance-tuning`
-* :ref:`installation-asynchronous-jobs`
+* :ref:`maintenance-asynchronous-jobs`
 * :ref:`maintenance-troubleshooting`
 * :ref:`debug-mode`
 * :ref:`maintenance-elasticsearch`
