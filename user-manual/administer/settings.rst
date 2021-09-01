@@ -29,6 +29,7 @@ Below, you will find information on the following :term:`information areas
 * :ref:`Site information <site-information>`
 * :ref:`Storage service <storage-service>`
 * :ref:`treeview-settings`
+* :ref:`upload-settings`
 * :ref:`User interface labels <user-interface-labels>`
 
 Each of the settings areas listed above is accessible via a list of links on 
@@ -87,16 +88,14 @@ This section will describe each setting in the "Global" :term:`information area`
 * :ref:`default-description-view`
 * :ref:`Multiple repositories <multiple-repositories>`
 * :ref:`enable-scoping`
-* :ref:`Default archival institution upload limit <default-institution-upload>`
-* :ref:`Total space available for uploads <total-upload-space>`
 * :ref:`enable-audit-logging`
-* :ref:`Upload multi-page files as multiple descriptions <upload-multi-files>`
 * :ref:`Show tooltips <tooltips>`
 * :ref:`Generate description permalinks from <description-permalinks>`
 * :ref:`permissive-slugs`
 * :ref:`Default publication status <default-publication-status>`
 * :ref:`drafts-notification`
 * :ref:`SWORD deposit directory <sword-directory>`
+* :ref:`maps-api-key`
 * :ref:`cache-xml-setting`
 * :ref:`clipboard-save-setting`
 
@@ -135,6 +134,10 @@ see:
 
 * :ref:`installation-upgrading`
 * :ref:`check-updates`
+
+.. SEEALSO::
+
+   * :ref:`cli-get-version` (command-line task)
 
 .. _check-updates:
 
@@ -513,6 +516,8 @@ because it will be too repetitive. Other changes include:
    * :ref:`archival-descriptions`
    * :ref:`archival-institutions`
    * :ref:`enable-scoping`
+   * :ref:`repository-upload-setting`
+   * :ref:`default-institution-upload`
 
 .. _enable-scoping:
 
@@ -596,41 +601,12 @@ on working with menus, see: :ref:`manage-menus`.
 
    * :ref:`archival-institutions`
    * :ref:`browse-scoped-holdings`
+   * :ref:`multiple-repositories` (setting)
+   * :ref:`repository-upload-setting`
+   * :ref:`default-institution-upload`
 
 
 :ref:`Back to top <settings>`
-
-.. _default-institution-upload:
-
-Default archival institution upload limit (GB)
-----------------------------------------------
-
-Enter the upload limit in GB allowed for uploading digital objects. Use "-1" as
-the value for unlimited upload space. This setting can be modified by an
-authenticated (i.e. logged-in) :term:`administrator`.
-
-A value of "0" (zero) disables file upload.
-
-For more information, see :ref:`upload-digital-object`.
-
-.. TIP::
-
-   While this setting is global, an upload limit can also be set by an
-   :term:`administrator` on a per-repository basis, from the
-   :term:`archival institution` page. For more information, see:
-   :ref:`upload-limit`.
-
-.. _total-upload-space:
-
-Total space available for uploads
----------------------------------
-
-This field will display the used space for
-:term:`digital objects <digital object>` as well as the total space available.
-The space available is determined by a configurable setting that a system
-administrator can modify in one of AtoM's configuration files - see:
-
-* :ref:`config-app-yml`
 
 .. _enable-audit-logging:
 
@@ -668,30 +644,6 @@ more information on using the Description updates module, see:
 
 * :ref:`search-updates`
 
-.. _upload-multi-files:
-
-Upload multi-page files as multiple descriptions
-------------------------------------------------
-
-Normally, a multi-page file such as a PDF is uploaded as a single
-:term:`digital object`, linked to a single target :term:`archival description`.
-However, it is possible to break up each page into its own digital object, and
-attach these to new :term:`child <child record>` descriptions
-
-Select "yes" if you would like each page of a multi-page file to be attached
-to a separate :term:`child-level <child record>` description. For example, a
-PDF file with 10 pages uploaded to a description would result in 10 individual
-descriptions, one for each page in the file.
-
-Select, "no" if you would like one multi-page file to be attached to a single
-description.
-
-.. seealso::
-
-   * :ref:`archival-descriptions`
-   * :ref:`upload-digital-object`
-   * :ref:`Digital object derivative settings <digital-object-derivatives>`
-
 .. _tooltips:
 
 Show tooltips
@@ -705,6 +657,10 @@ edit templates are based (e.g. RAD, ISAD, etc).
 :term:`Administrators <administrator>` can select "yes" to to have tooltips
 appear in :term:`edit pages <edit page>` as the user enters data. Selecting "no"
 will disable tooltips.
+
+.. SEEALSO::
+
+   * :ref:`data-entry`
 
 .. _description-permalinks:
 
@@ -2846,6 +2802,134 @@ affecting the number of :term:`children <child record>` loaded below the
 top-level :term:`archival description`, here the setting will determine how many
 top-level descriptions are loaded in the initial view. See 
 :ref:`browse-hierarchy-browser` for more information. 
+
+:ref:`Back to top <settings>`
+
+.. _upload-settings:
+
+Uploads
+=======
+
+.. image:: images/upload-settings.*
+   :align: center
+   :width: 90%
+   :alt: An image of the Uploads settings in AtoM
+
+These settings allow an :term:`administrator` to manage the upload of 
+:term:`digital objects <digital object>` to AtoM, including per-repository 
+upload limits when AtoM is used as a :term:`multi-repository system`. 
+
+**Jump to:**
+
+* :ref:`total-upload-space`
+* :ref:`repository-upload-setting`
+* :ref:`default-institution-upload`
+* :ref:`upload-multi-files`
+
+.. SEEALSO::
+
+   * :ref:`upload-digital-object`
+   * :ref:`digital-object-derivatives`
+   * :ref:`upload-limit`
+   * :ref:`archival-institutions`
+
+.. _total-upload-space:
+
+Total space available for uploads
+---------------------------------
+
+This field will display the used space for 
+:term:`digital objects <digital object>` as well as the total space available.
+The space available is determined by a configurable setting that a system
+administrator can modify in one of AtoM's configuration files - see:
+
+* :ref:`config-app-yml`
+
+.. _repository-upload-setting:
+
+Archival institution upload limits
+----------------------------------
+
+In addition to setting a global limit on the total space available for 
+:term:`digital object` uploads, an :term:`administrator` can also set 
+individual upload limits per :term:`archival institution`, which can be useful
+when AtoM is used as a :term:`multi-repository system`. There is also 
+a setting for configuring what the default upload limit is per repository - see
+below:
+
+* :ref:`default-institution-upload`
+
+This setting controls whether or not the configurable per-repository upload
+limit widget is enabled and displayed. When set to "Enabled", an administrator
+can further customize the upload limit per archival institution using the
+widget displayed to authenticated (i.e. logged in) users on the related
+repository :term:`view page`. However, disabling this widget can sometimes be
+useful for improving page load performance, particularly in large
+installations.
+
+For more information on using the per-repository upload limit widget, see:
+
+* :ref:`upload-limit`
+
+.. image:: images/upload-limit.*
+   :align: center
+   :width: 90%
+   :alt: An image of the per-repository upload limit widget in AtoM
+
+.. _default-institution-upload:
+
+Default archival institution upload limit (GB)
+----------------------------------------------
+
+In addition to setting a :ref:`global limit <total-upload-space>` on the total 
+space available for :term:`digital object` uploads, it's also possible to set
+a default limit per :term:`archival institution` when using AtoM as a 
+:term:`multi-repository system`. When set, this will be applied as the new 
+default upload limit per institution. 
+
+Enter the upload limit in GB allowed for uploading digital objects. Use "-1" as
+the value for unlimited upload space. This setting can be modified by an
+authenticated (i.e. logged-in) :term:`administrator`.
+
+A value of "0" (zero) disables file upload.
+
+For more information, see :ref:`upload-digital-object`.
+
+.. TIP::
+
+   While this setting sets a default global limit per repository, an indiviual 
+   upload limit can also be set by an :term:`administrator` on a per-repository 
+   basis, from the :term:`archival institution` page. For more information, see:
+   :ref:`upload-limit`.
+
+   Note that an administrator can also disable the display of this widget, 
+   which can sometimes be useful for improving page load performance. See above:
+
+   * :ref:`repository-upload-setting`
+
+.. _upload-multi-files:
+
+Upload multi-page files as multiple descriptions
+------------------------------------------------
+
+Normally, a multi-page file such as a PDF is uploaded as a single
+:term:`digital object`, linked to a single target :term:`archival description`.
+However, it is possible to break up each page into its own digital object, and
+attach these to new :term:`child <child record>` descriptions
+
+Select "yes" if you would like each page of a multi-page file to be attached
+to a separate :term:`child-level <child record>` description. For example, a
+PDF file with 10 pages uploaded to a description would result in 10 individual
+descriptions, one for each page in the file.
+
+Select, "no" if you would like one multi-page file to be attached to a single
+description.
+
+.. SEEALSO::
+
+   * :ref:`archival-descriptions`
+   * :ref:`upload-digital-object`
+   * :ref:`Digital object derivative settings <digital-object-derivatives>`
 
 :ref:`Back to top <settings>`
 

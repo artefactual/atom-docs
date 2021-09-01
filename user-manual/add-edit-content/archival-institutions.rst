@@ -1288,6 +1288,16 @@ left-hand side of the institution's page.
    roles see: :ref:`User roles <user-roles>`. For information on logging in,
    see: :ref:`Log in <log-in>`.
 
+   Note that an administrator can also disable the display of this widget, 
+   which can sometimes be useful for improving page load performance. See above:
+
+   * :ref:`repository-upload-setting`
+
+   Additionally, note that a system administrator can configure a global 
+   upload limit - see:
+
+   * :ref:`total-upload-space`
+
 **To set the digital object upload limit for an archival institution:**
 
 1. Navigate to the :term:`archival institution` you wish to edit. You can do
