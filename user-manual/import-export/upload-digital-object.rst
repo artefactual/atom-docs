@@ -646,15 +646,14 @@ Otherwise, the process for uploading PDFs is the same as described above.
 Edit digital objects
 ====================
 
-Any :term:`digital object` that has been uploaded and linked to an
-:term:`archival description` or :term:`authority record` can be edited at any
-time by an authenticated (i.e. logged-in) user.
-
-To edit a digital object:
-
 .. |pencil| image:: images/pencil.png
    :height: 18
    :width: 18
+
+Any :term:`digital object` that has been uploaded and linked to an
+:term:`archival description` or :term:`authority record` can be edited at any
+time by an authenticated (i.e. logged-in) user. Accessing the digital object
+:term:`edit page` is the same for all of the following options: 
 
 1. Navigate to the :term:`view page` of an existing :term:`archival description`
    or :term:`authority record` that has an associated :term:`digital object`.
@@ -664,56 +663,185 @@ To edit a digital object:
    page, all representations (i.e. :term:`master <master digital object>`
    representation, :term:`reference <reference display copy>` representation and
    :term:`thumbnail` representation) of the :term:`digital object` will be
-   listed, along with information on their Filename, Filesize and Media Type.
-4. The Media type is used by the Media type facet in the search/browse pages -
-   in some cases, AtoM might not properly detect the media type, and you can
-   adjust it here for better results. Values include: Audio, Image, Video, Text,
-   and Other. For more information on filter facets in AtoM, see:
-   :ref:`recurring-facet-filters`.
-5. You can add alternative text to display if the image cannot be displayed in
-   your browser.
-6. You can also add latitude and longitude values to the Master digital object's
-   metadata for basic geolocation support. This can configured to display a
-   dynamic Google map in AtoM - for more information, see below:
+   listed, along with information on their Filename, Filesize, Media Type, and 
+   other options.
 
-   * :ref:`digital-object-map`
+From this edit page, you can perform the following actions:
+
+**Jump to**
+
+* :ref:`edit-do-metadata`
+* :ref:`edit-do-derivs`
+* :ref:`edit-do-srt-vtt`
+* :ref:`edit-do-save`
+
+.. SEEALSO::
+
+   * :ref:`Upload settings <upload-settings>`
+   * :ref:`Digital object derivative settings <digital-object-derivatives>`
+   * :ref:`DIP upload settings <dip-upload-settings>`
+
+.. _edit-do-metadata:
+
+Edit the digital object metadata
+--------------------------------
+
+The top part of the digital object :term:`edit page` will include basic
+metadata about the original digital object in the "Master" 
+:term:`information area`. Basic technical metadata such as Filename and Filesize
+are display only, and cannot be edited. However, you can change other metadata
+elements such as the Media type, Alt text, and latitude/longitude values 
+associated with the digital object.
+
+.. image:: images/edit-digi-object-master.*
+   :align: center
+   :width: 80%
+   :alt: An image of the metadata fields shown below the master digital object
+         in the digital object edit page
+
+The Media type is used by the Media type facet in the search/browse pages -
+in some cases, AtoM might not properly detect the media type, and you can
+adjust it here for better results. Values include: Audio, Image, Video, Text,
+and Other. For more information on filter facets in AtoM, see:
+:ref:`recurring-facet-filters`.
+
+In the "Alt text" :term:`field`, you can add alternative text to display if
+the image cannot be displayed in your browser. This text will also be used by
+accessibility supports such as screen readers.
+
+You can also add latitude and longitude values to the Master digital object's
+metadata for basic geolocation support. This can configured to display a 
+dynamic Google map in AtoM - for more information, see below:
+
+* :ref:`digital-object-map`
+
+.. _edit-do-derivs:
 
 Edit reference and thumbnail representations
 --------------------------------------------
 
-6. If you wish to use a different image as the :term:`thumbnail` or
-   :term:`reference <reference display copy>` version this is also performed
-   from the Edit digital object screen. First click delete in Reference
-   representation or Thumbnail area. 
+Below the Master :term:`information area` on the digital object 
+:term:`edit page`, you will also find sections for the various derivatives 
+created upon upload - the :term:`reference display copy` and the 
+:term:`thumbnail`. While these derivatives are typically automatically created
+by AtoM during digital object upload, you can delete them, and either 
+re-generate them or upload your own versions. Since thumbnails are used in 
+search and browse results and the reference copy is displayed on the related
+:term:`archival description` view page, this can be a useful way to customize
+the display of your digital objects. 
 
 .. image:: images/edit-thumbnail.*
    :align: center
-   :width: 70%
-   :alt: Deleting a thumbnail or reference image
+   :width: 90%
+   :alt: The Reference and Thumbnail representation areas in the Digital object
+         edit page
 
-7. AtoM will ask the user to confirm that they would like to delete the
-   thumbnail/reference image. After confirming, the Edit digital object
-   screen will allow the user to upload a new reference representation by
-   clicking Browse and selecting a file from their computer, or auto-generate a
-   new representation from the master image.
+If you wish to use a different image as the :term:`thumbnail` or 
+:term:`reference <reference display copy>`, first click the "Delete" link in 
+the relevant :term:`area <information area>`. 
+
+AtoM will ask you to confirm that you would like to delete the derivative. 
+After confirming, the Edit digital object screen will then give you the option 
+to upload a new derivative by clicking Browse and selecting a file from your 
+local computer, or else auto-generate a new representation from the master image.
 
 .. image:: images/upload-thumbnail.*
    :align: center
-   :width: 70%
+   :width: 90%
    :alt: Upload or create a new thumbnail or reference image.
 
-Save changes
-------------
+.. TIP::
 
-8. You can quit the edit process at any time by clicking the "Cancel" button
-   in the :term:`button block`; any edits made to digital objects will not be
-   saved. Note that simply navigating away from the page by any other means,
-   **without first clicking "Save"** will also result in no new digital objects
-   being uploaded.
+   Somewhat confusingly, the digital object :term:`edit page` will use the 
+   thumbnail to provide a preview of both the :term:`thumbnail` and 
+   :term:`reference <reference display copy>` derivatives, and the reference
+   copy to provide a preview of the :term:`master digital object`. 
 
-9. Once all your changes have been made, click the "Save" button in the
-   :term:`button block`. You will be redirected back to the
-   :term:`archival description's <archival description>` :term:`view page`.
+   Because of this, don't be alarmed if, for example, you are trying to replace
+   the thumbnail and after confirming the deletion of the current version, you
+   see the preview of the reference copy missing! The original reference copy
+   will remain unchanged until you edit it, even if the preview shown in this
+   page is no longer correct once your derivatives have been customized. 
+
+.. _edit-do-srt-vtt:
+
+Add subtitle, caption, and/or chapter files to audio and video
+--------------------------------------------------------------
+
+.. _WebVTT: https://en.wikipedia.org/wiki/WebVTT
+.. _SubRip Text: https://en.wikipedia.org/wiki/SubRip#SubRip_file_format
+.. _UTF-8: https://en.wikipedia.org/wiki/UTF-8
+
+AtoM also supports the ability to upload `WebVTT`_ (``.vtt``) or `SubRip Text`_ 
+(``.srt``) files to audio and video :term:`digital objects <digital object>` as
+a means of adding chapter markers, captions, or subtitles to your content. 
+Captions and subtitles can also be added in multiple languages. 
+
+.. image:: images/edit-do-chapters-captions.*
+   :align: center
+   :width: 90%
+   :alt: The Chapters and Caption/Subtitles upload options in the digital object
+         edit page
+
+Files used should be in ``.vtt`` or ``.srt`` format, and should use `UTF-8`_ 
+character encoding. 
+
+Click the "Choose file" button to open a local file explorer, and select the
+file you wish to upload from your device. If you're adding Caption or Subtitle
+files, be sure to select the correct language from the Language 
+:term:`drop-down menu` before uploading. 
+
+.. IMPORTANT::
+
+   Currently, the largest file size supported for these file uploads is 64 MiB.
+
+Once you have :ref:`saved your changes <edit-do-save>`, you will be re-directed
+to the view page of the related :term:`archival description` or 
+:term:`authority record`.
+
+When captions or subtitles are correctly added, they will appear under the "CC"
+icon on the media player: 
+
+.. image:: images/edit-do-cc-example.*
+   :align: center
+   :width: 75%
+   :alt: An image of the media player showing the captions menu
+
+When chapters are correctly added, they will appear under the menu icon on
+the media player:
+
+.. image:: images/edit-do-chapter-example.*
+   :align: center
+   :width: 75%
+   :alt: An image of the media player showing the chapter menu
+
+You can re-enter :term:`edit mode` to make further changes as needed, or to
+add additional subtitles or captions in other languages. Basic metadata about
+the files will be shown, including the file name and size, as well as an option
+to delete the current uploads. Note that you can only have one chapter file
+per digital object, but multiple subtitle or caption files for multilingual
+support: 
+
+.. image:: images/edit-do-chapters-captions-2.*
+   :align: center
+   :width: 90%
+   :alt: The Chapters and Caption/Subtitles upload options in the digital object
+         edit page, when files have previously been uploaded
+
+.. _edit-do-save:
+
+Save your changes
+-----------------
+
+You can quit the edit process at any time by clicking the "Cancel" button
+in the :term:`button block`; any edits made to digital objects will not be
+saved. Note that simply navigating away from the page by any other means,
+**without first clicking "Save"** will also result in no new digital objects
+being uploaded.
+
+Once all your changes have been made, click the "Save" button in the
+:term:`button block`. You will be redirected back to the related record's 
+:term:`view page`.
 
 All changes made can be edited once again, at any time, by following the steps
 outlined above.
