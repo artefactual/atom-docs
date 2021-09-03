@@ -881,6 +881,13 @@ rebuild all nested sets in AtoM:
 
    php symfony propel:build-nested-set
 
+.. IMPORTANT::
+
+   You should also run the ``search:populate`` task to re-index your site 
+   after rebuilding the nested set. For more information and task options, see:
+
+   * :ref:`maintenance-populate-search-index`
+
 This task also includes one option that can be used to exclude certain
 :term:`entity` types from the task's execution. The ``--exclude-tables`` option
 supports the following options:
@@ -927,6 +934,13 @@ the following command:
 .. code:: bash
 
    php symfony propel:generate-slugs
+
+.. IMPORTANT::
+
+   You should also run the ``search:populate`` task to re-index your site 
+   after generating slugs. For more information and task options, see:
+
+   * :ref:`maintenance-populate-search-index`
 
 This task will work for the following entities:
 

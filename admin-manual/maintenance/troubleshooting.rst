@@ -675,6 +675,14 @@ You might consider rebuilding the nested set if:
 
 For more information, see: :ref:`cli-rebuild-nested-set`
 
+.. IMPORTANT::
+
+   You should also run the ``search:populate`` task to re-index your site 
+   after rebuilding the nested set. For more information and task options, see:
+
+   * :ref:`maintenance-populate-search-index`
+
+
 .. _troubleshooting-slugs:
 
 Generating slugs
@@ -719,6 +727,13 @@ You might want to try re-generating slugs if:
    php symfony propel:generate-slugs
 
 For more information, see: :ref:`cli-generate-slugs`
+
+.. IMPORTANT::
+
+   You should also run the ``search:populate`` task to re-index your site 
+   after generating slugs. For more information and task options, see:
+
+   * :ref:`maintenance-populate-search-index`
 
 :ref:`Back to top <maintenance-troubleshooting>`
 
