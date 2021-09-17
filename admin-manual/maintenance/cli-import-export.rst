@@ -644,14 +644,14 @@ used** - AtoM requires the uses of the pre-set defaults for symfony to be
 able to execute the task.
 
 The task includes two output options for the validation results - a shorter 
-version that does not include a sample output row and in some cases includes 
-less details on each test outcome (and which matches what is shown in the 
-console log on the :ref:`job details <job-details>` page when run via the 
-:term:`user interface`), and a somewhat longer version with more
-details. If the task is run without options, the short version will be the 
-default used. However, if you would like to see the more detailed report, you 
-can add the ``--verbose`` (or ``-i`` for short) flag to the task, 
-like so: 
+report version that does not include a sample output row and in some cases 
+includes less details on each test outcome (and which matches what is shown in 
+the console log on the :ref:`job details <job-details>` page when run via the 
+:term:`user interface`), and a more detailed version with additional 
+information intended to help you locate reported issues. If the task is run 
+without options, the short report will be the default used. However, if you 
+would like to see the more detailed report, you can add the ``--verbose`` 
+(or ``-i`` for short) flag to the task, like so: 
 
 .. code-block:: bash
 

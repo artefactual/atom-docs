@@ -63,12 +63,18 @@ import.
 
 **Jump to:**
 
+* :ref:`csv-validation-settings`
 * :ref:`csv-validation-ui`
 * :ref:`csv-validation-structure`
+  
+  * :ref:`csv-validation-short-long`
+  * :ref:`csv-validation-summary`
+  * :ref:`csv-validation-msg-types`
+
+* :ref:`csv-validation-classes`
 * :ref:`csv-validation-all`
 * :ref:`csv-validation-io`
 * :ref:`csv-validation-repo`
-* :ref:`csv-validation-settings`
 
 .. SEEALSO::
 
@@ -89,6 +95,36 @@ import.
    * :ref:`import-export-skos`
    * :ref:`upload-digital-object`
 
+.. _csv-validation-settings:
+
+CSV validator import settings
+=============================
+
+In addition to being able to run CSV validation on its own either via 
+:ref:`the user interface <csv-validation-ui>` or the 
+:ref:`command line <csv-validation-cli>`, it is also possible for an 
+:term:`administrator` to configure AtoM to run validation automatically before
+any CSV import performed via the :term:`user interface`. 
+
+This can be configured via |gears| **Admin > Settings > CSV Validator**. 
+
+.. image:: images/csv-validator-settings.*
+   :align: center
+   :width: 90%
+   :alt: An image of the CSV Validator setting options
+
+For further information on the supported options, see: 
+
+* :ref:`csv-validator-settings`
+
+.. SEEALSO::
+
+   * :ref:`settings`
+   * :ref:`manage-user-accounts`
+   * :ref:`edit-user-permissions`
+
+:ref:`Back to top <csv-validation>`
+
 .. _csv-validation-ui: 
 
 Validate a CSV via the user interface
@@ -103,6 +139,17 @@ When performed via the user interface, CSV validation can be accessed via the
 asynchronously as a :term:`job`, and the validation results will be available
 on the related :ref:`job details page <job-details>` - for more information on 
 managing jobs, see: :ref:`manage-jobs`. 
+
+The :ref:`command-line task <csv-validation-cli>` used to run validation has
+two report output modes - by default, a short version of the report is used,
+but users can specify a ``--verbose`` option for additional details to be
+included in output. When run via the user interface, the output shown in the
+console section of the related :ref:`job details page <job-details>` will show
+the short report. The longer detailed report is available on the jobs page as
+a downloadable TXT file. For more information on the differences between the
+two outputs, see:
+
+* :ref:`csv-validation-short-long`
 
 To validate CSV files, a user must be logged in as an :term:`administrator`.
 For more information on user groups and permissions, see:
@@ -165,9 +212,9 @@ For more information on user groups and permissions, see:
    selecting |manage| **Manage > Jobs** and then clicking on the related job. 
    For more information on jobs, see: :ref:`manage-jobs`. 
 7. The related :ref:`Job details <job-details>` page will display a short 
-   summary version of the validation results in the console log. Additionally, 
+   summary version of the validation report in the console log. Additionally, 
    you can click the hyperlink in the Overview section of the job details page
-   to download a more detailed verbose version of the validation report, which
+   to download a more :ref:`detailed report <csv-validation-short-long>`, which
    will include further information on the results of each each. See below for
    additional information on how to interpret the results. 
 
@@ -193,7 +240,7 @@ CSV validation report structure
 
 This section will provide an overview of how the validation results are 
 structured, including the difference between the short summary output shown
-in the related :ref:`job details <job-details>` page and the more verbose 
+in the related :ref:`job details <job-details>` page and the more detailed 
 downloadable TXT file version, the various message types found in the report,
 and the available test classes that can be run against different AtoM 
 :term:`entity` types and CSV import templates.  
@@ -203,45 +250,46 @@ and the available test classes that can be run against different AtoM
 * :ref:`csv-validation-short-long`
 * :ref:`csv-validation-summary`
 * :ref:`csv-validation-msg-types`
-* :ref:`csv-validation-classes`
 
 .. _csv-validation-short-long:
 
-Short vs verbose report modes
------------------------------
+Short vs detailed report modes
+------------------------------
 
-CSV validation in AtoM is handled by a command-line task - when run via the 
+CSV validation in AtoM is handled by a 
+:ref:`command-line task <csv-validation-cli>` - when run via the 
 :term:`user interface`, it is handled as a :term:`job` that runs asynchronously 
-in the background until completed, when results can be found on the related 
-:ref:`job details <job-details>` page. For more information on the command-line 
-task, see: 
+in the background until completed. Results can be found on the related 
+:ref:`job details <job-details>` page. 
 
-* :ref:`csv-validation-cli`
+The CLI task has two primary report modes - the default shorter report that
+only includes high-level information on validation 
+:ref:`errors <csv-validation-error>` and 
+:ref:`warnings <csv-validation-warning>`, and an
+additional ``--verbose`` task option that when used, will output a more
+detailed version of the report. This verbose task option includes additional
+details in the resulting report on each error and warning found, which should
+help you to locate and resolve the related issue. Sometimes this will include
+affected row numbers; in other cases it will output problematic values found
+or even the entire affected row.
 
-The task has two primary report modes - the default shorter version that only 
-includes high-level information on validation :ref:`errors <csv-validation-error>` 
-and :ref:`warnings <csv-validation-warning>`, and an additional option that can 
-output a more verbose version of the report. This more verbose option includes 
-additional details on each error and warning found that should help you to 
-locate and resolve the related issue. Sometimes this will include affected row 
-numbers; in other cases it will output problematic values found or even the 
-entire affected row. 
-
-The verbose output also contains :ref:`info <csv-validation-info>` messages, 
+The detailed report may also contain :ref:`info <csv-validation-info>` messages, 
 providing further information to help you assess the validity of your CSV
 file. See :ref:`below <csv-validation-msg-types>` for more information on 
 validation message types. 
 
+**Short vs detailed reports in the user interface**
+
 In the user interface, the output shown in the console log of the related 
-:ref:`job details <job-details>` page will always be the short version. 
-Meanwhile, clicking the "Link" hyperlink in the summary section of the job 
-details page will allow you to download the verbose version of the validation
-report as a TXT file that can be opened locally. 
+:ref:`job details <job-details>` page will always be the short report. Clicking 
+the "Link" hyperlink in the summary section of the job details page will allow 
+you to download the detailed validation report as a TXT file that can be opened 
+locally. 
 
 .. TIP:: 
 
    If you are unsure where to find an error or warning identified in your CSV 
-   by the validation process, we recommend checking the downloadable verbose 
+   by the validation process, we recommend checking the downloadable detailed 
    report for further information.
 
 .. _csv-validation-summary:
@@ -296,9 +344,9 @@ Validation message types
 
 The validation report can contain three different types of messages - errors, 
 warnings, and info messages. By default, only errors and warnings are included
-in the :ref:`short version <csv-validation-short-long>` of the report shown in
-the console log output of the related :ref:`job details <job-details>` page. The
-downloadable verbose report will also include additional info messages. Details
+in the :ref:`short report <csv-validation-short-long>` shown in the console log 
+output of the related :ref:`job details <job-details>` page. The
+downloadable detailed report will also include additional info messages. Details
 on each type of message are included below. 
 
 **Jump to:**
@@ -331,7 +379,7 @@ on each type of message are included below.
       Invalid culture values: notACultureCode, en|fr|es
       Rows with a blank culture value will be imported using AtoM's default source culture.
 
-   This :ref:`csv-validation-culture` test output includes both warnings and 
+   This :ref:`csv-validation-culture` test result includes both warnings and 
    errors. Rows with blank culture values will only trigger a 
    :ref:`csv-validation-warning` because AtoM's default fallback behavior when
    no culture value is provided for a given row is to use the default 
@@ -445,13 +493,13 @@ INFO
 ^^^^
 
 Finally, **info** messages are only included in the downloadable 
-:ref:`verbose version <csv-validation-short-long>` of the validation report. 
+:ref:`detailed version <csv-validation-short-long>` of the validation report. 
 These are typically general information outputs intended to help a user 
 determine if the CSV is well-formed and will import as expected. Unless 
 something unexpected is seen in the output, no particular remedial action is 
 necessary for info messages. 
 
-There are two types of info messages found in the verbose validation report. 
+There are two types of info messages found in the detailed validation report. 
 First, some messages include additional general information about the CSV, 
 intended to aid in review. For example, the CSV column count check will tell
 you how many columns were found in the CSV: 
@@ -501,10 +549,12 @@ passed. Some examples:
    -------------------
    CSV does not have any blank rows.
 
+:ref:`Back to top <csv-validation>`
+
 .. _csv-validation-classes:
 
 CSV validation test classes
----------------------------
+===========================
 
 Each test that is run as part of the validation process belongs to a test class 
 focused on a specific part of the validation process. Some test classes may have
@@ -521,7 +571,7 @@ different checks it will perform, leading to 5 different possible outputs:
 * If a pipe separator is found in one of the rows of the culture column, it will
   emit an :ref:`csv-validation-error`
 * If all culture column values are populated and valid, the 
-  :ref:`verbose <csv-validation-short-long>` output will include an 
+  :ref:`detailed <csv-validation-short-long>` report will include an 
   :ref:`csv-validation-info` message confirming this
 
 For further details on this particular test suite, see: 
@@ -610,7 +660,7 @@ Sample values check
 * **Test class:** CsvSampleValuesValidator
 
 The sample values check is normally an :ref:`csv-validation-info` message that 
-is included in the :ref:`verbose <csv-validation-short-long>` report for all
+is included in the :ref:`detailed <csv-validation-short-long>` report for all
 :term:`entity types`. It is useful for confirming at a glance that the 
 separator character is properly set (typically a comma in a `CSV`_) - the task 
 will output the column headers and the first row of metadata output as key-value 
@@ -639,11 +689,11 @@ will import as expected.
 ERROR - duplicate columns
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-However, the sample values task *will* throw an :ref:`csv-validation-error` and
-appear early in the summary output if duplicate columns are detected. This is 
-an error because when more than one column shares the same name, AtoM does not 
-know which should be validated, used on import, or output as part of the sample
-values when running validation. 
+However, the sample values task *will* throw an :ref:`csv-validation-error`
+and appear early in the short report version if duplicate columns are
+detected. This is an error because when more than one column shares the same
+name, AtoM does not know which should be validated, used on import, or output
+as part of the sample values when running validation.
 
 **Recommendations**
 
@@ -823,7 +873,7 @@ cut and pasted from another application (for example, an MS Word document) that
 is not using UTF-8 encoding. 
 
 In this case, the detailed output included in the downloadable  
-:ref:`verbose report <csv-validation-short-long>` will include line numbers for
+:ref:`detailed report <csv-validation-short-long>` will include line numbers for
 the affected rows. Use this information to find and review the data. In some 
 cases you may need to retype certain inputs once the file itself has been saved
 using UTF-8 encoding. 
@@ -959,7 +1009,7 @@ as UTF-8 CSV files will use comma separators and double quotation string
 delimiters by default. 
 
 Finally, in some cases this error may be caused by improper 
-`character encoding`_. If the encoding is not UTF-8, then commas in your CSV
+`character encoding`_. If the encoding is not `UTF-8`_, then commas in your CSV
 may not be rendered as expected, triggering the validation error. For further
 information and troubleshooting recommendations, see: 
 
@@ -1008,7 +1058,7 @@ If any columns with the exact same name are identified, the test will output an
 The short version of the report shown in the console log of the related 
 :ref:`job details <job-details>` page will include the name of any duplicated
 columns, and a count of how many times they appear in the CSV. No additional 
-information is provided in the :ref:`verbose <csv-validation-short-long>` 
+information is provided in the :ref:`detailed <csv-validation-short-long>` 
 report. 
 
 **Recommendation**
@@ -1067,9 +1117,9 @@ can lead to thousands of unintentional blank rows being appended to the CSV.
 
 **Recommendation**
 
-The :ref:`verbose <csv-validation-short-long>` report will also include a list 
-of row numbers where the blank rows have been found - we recommend consulting
-this for guidance on where to find the reported issue. 
+The downloadable :ref:`detailed <csv-validation-short-long>` report will also
+include a list of row numbers where the blank rows have been found - we
+recommend consulting this for guidance on where to find the reported issue.
 
 If the blank row is in the middle of your metadata, it should be easy to find
 and delete using a spreadsheet application such as LibreOffice `Calc`_. 
@@ -1357,10 +1407,10 @@ maintained internally. If a mismatch is found, AtoM will emit an
 
 **Recommendation**
 
-The short validation output shown in the console log of the related 
+The short validation report shown in the console log of the related 
 :ref:`job details <job-details>` page will provide a count of how many invalid 
 culture values were found in the CSV. Meanwhile, the detailed output in the 
-downloadable :ref:`verbose report <csv-validation-short-long>` will also 
+downloadable :ref:`detailed report <csv-validation-short-long>` will also 
 include affected line numbers to help you identify the problem rows. 
 
 Verify the values you have entered in these rows against the list of supported
@@ -1382,11 +1432,11 @@ language the record should be saved as in the database.
 
 **Recommendation**
 
-The short validation output shown in the console log of the related 
+The short validation report shown in the console log of the related 
 :ref:`job details <job-details>` page will provide a count of how many rows 
 have a pipe separator in the ``culture`` column of the CSV Meanwhile, the 
 detailed output in the downloadable 
-:ref:`verbose report <csv-validation-short-long>` will also include affected 
+:ref:`detailed report <csv-validation-short-long>` will also include affected 
 line numbers to help you identify the problem rows. 
 
 Review and update the values you have entered in these rows, and ensure that 
@@ -1417,11 +1467,11 @@ specified during installation, and stored in a
 
 **Recommendation**
 
-The short validation output shown in the console log of the related 
+The short validation report shown in the console log of the related 
 :ref:`job details <job-details>` page will provide a count of how many rows 
 have no value entered in the ``culture`` column of the CSV. Meanwhile, the 
 detailed output in the downloadable 
-:ref:`verbose report <csv-validation-short-long>` will also include affected 
+:ref:`detailed report <csv-validation-short-long>` will also include affected 
 line numbers to help you identify the problem rows.
 
 If your import metadata is in the same language as the default language of your
@@ -1575,7 +1625,7 @@ addition of ISO 3116 country codes to specify locale, such as ``pt_BR``
 The short report shown in the console log of the related 
 :ref:`job details <job-details>` page will include a count of rows that have
 values that exceed the 11 character limit. The downloadable 
-:ref:`verbose report <csv-validation-short-long>` will also include an output
+:ref:`detailed report <csv-validation-short-long>` will also include an output
 of the problematic values in the Details section.
 
 **Recommendation**
@@ -1621,7 +1671,7 @@ limit to each individual value and not the entire string.
 The short report shown in the console log of the related 
 :ref:`job details <job-details>` page will include a count of rows that have
 individual values that exceed the 6 character limit. The downloadable 
-:ref:`verbose report <csv-validation-short-long>` will also include an output
+:ref:`detailed report <csv-validation-short-long>` will also include an output
 of the problematic values in the Details section.
 
 **Recommendation**
@@ -1662,7 +1712,7 @@ limit to each individual value and not the entire string.
 The short report shown in the console log of the related 
 :ref:`job details <job-details>` page will include a count of rows that have
 individual values that exceed the 4 character limit. The downloadable 
-:ref:`verbose report <csv-validation-short-long>` will also include an output
+:ref:`detailed report <csv-validation-short-long>` will also include an output
 of the problematic values in the Details section.
 
 **Recommendation**
@@ -1806,12 +1856,11 @@ The AtoM data model does **not** support two different versions of an
 consequently, if two rows are found together with the same ID and the same
 culture value, an import error will be triggered. 
 
-When this error is encountered during validation, the short version of the 
-report shown in the console log of the related :ref:`job details <job-details>` 
-page will include a count of non-unique ``legacyId`` values found in the 
-CSV. Meanwhile, the longer downloadable 
-:ref:`detailed report <csv-validation-short-long>` will also include an output
-of any ``legacyId`` value found that is not unique in the CSV. 
+When this error is encountered during validation, the short report shown in the 
+console log of the related :ref:`job details <job-details>` page will include a 
+count of non-unique ``legacyId`` values found in the CSV. Meanwhile, the longer 
+downloadable :ref:`detailed report <csv-validation-short-long>` will also 
+include an output of any ``legacyId`` value found that is not unique in the CSV. 
 
 .. NOTE::
 
@@ -1871,12 +1920,11 @@ make future :ref:`update imports <csv-descriptions-updates>` more difficult to
 properly match during import, as the ``legacyId`` is part of the initial 
 criteria used to identify matches for updating. 
 
-When this issue is encountered during validation, the short version of the 
-report shown in the console log of the related :ref:`job details <job-details>` 
-page will include a count of non-unique ``legacyId`` values found in the 
-CSV. Meanwhile, the longer downloadable 
-:ref:`detailed report <csv-validation-short-long>` will also include an output
-of any ``legacyId`` value found that is not unique in the CSV.
+When this issue is encountered during validation, the short report shown in the 
+console log of the related :ref:`job details <job-details>` page will include a 
+count of non-unique ``legacyId`` values found in the CSV. Meanwhile, the longer 
+downloadable :ref:`detailed report <csv-validation-short-long>` will also 
+include an output of any ``legacyId`` value found that is not unique in the CSV.
 
 **Recommendation**
 
@@ -3472,9 +3520,9 @@ to those maintained internally. If a mismatch is found, AtoM will emit an
 The short report shown in the console log of the related 
 :ref:`job details <job-details>` page will include a count of rows with 
 invalid ``scriptOfDescription`` values, as well as a list of the invalid 
-values found during the validation test. Additionally, the details included in 
-the downloadable :ref:`verbose report <csv-validation-short-long>` will also 
-include a list of CSV row numbers where issues have been found. 
+values found during the validation test. Additionally, the downloadable 
+:ref:`detailed report <csv-validation-short-long>` will also include a list of 
+CSV row numbers where issues have been found. 
 
 **Recommendation**
 
@@ -3566,8 +3614,8 @@ to those maintained internally. If a mismatch is found, AtoM will emit an
 The short report shown in the console log of the related 
 :ref:`job details <job-details>` page will include a count of rows with invalid
 ``language`` values, as well as a list of the invalid values found during the 
-validation test. Additionally, the details included in the downloadable 
-:ref:`verbose report <csv-validation-short-long>` will also include a list of
+validation test. Additionally, the downloadable 
+:ref:`detailed report <csv-validation-short-long>` will also include a list of
 CSV row numbers where issues have been found. 
 
 **Recommendation**
@@ -3598,32 +3646,3 @@ Sample output
 
 :ref:`Back to top <csv-validation>`
 
-.. _csv-validation-settings:
-
-CSV validation import settings
-==============================
-
-In addition to being able to run CSV validation on its own either via 
-:ref:`the user interface <csv-validation-ui>` or the 
-:ref:`command line <csv-validation-cli>`, it is also possible for an 
-:term:`administrator` to configure AtoM to run validation automatically before
-any CSV import performed via the :term:`user interface`. 
-
-This can be configured via |gears| **Admin > Settings > CSV Validator**. 
-
-.. image:: images/csv-validator-settings.*
-   :align: center
-   :width: 90%
-   :alt: An image of the CSV Validator setting options
-
-For further information on the supported options, see: 
-
-* :ref:`csv-validator-settings`
-
-.. SEEALSO::
-
-   * :ref:`settings`
-   * :ref:`manage-user-accounts`
-   * :ref:`edit-user-permissions`
-
-:ref:`Back to top <csv-validation>`
