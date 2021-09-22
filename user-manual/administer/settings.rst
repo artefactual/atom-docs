@@ -1010,6 +1010,12 @@ on using the clipboard, see:
 
 * :ref:`clipboard`
 
+**Jump to:**
+
+* :ref:`clipboard-save-setting`
+* :ref:`clipboard-sending`
+* :ref:`clipboard-do-export-setting`
+
 .. _clipboard-save-setting:
 
 Saved clipboard maximum age
@@ -1116,26 +1122,49 @@ for delivering the clipboard payload to the external site.
 
 :ref:`Back to top <settings>`
 
+.. _clipboard-do-export-setting:
+
 Enable digital object export functionality
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------
 
-In AtoM 2.7 and higher, administrators can enable users to include digital
-objects with archival description XML and CSV exports from the clipboard. When
-set to Yes, the clipboard export options screen will include an “Include digital
-objects” checkbox. If the user checks that checkbox, any digital objects
-attached to the archival descriptions being exported will be included in the ZIP
-package the user downloads. Administrators should ensure that the server on
-which the AtoM instance is installed has enough processing power, memory and
-storage space to create and temporarily store zipped packages of the digital
-objects selected for download.
+In AtoM 2.7 and higher, an :term:`administrator` can enable users to include 
+:term:`digital objects <digital object>` with :term:`archival description` XML 
+and CSV exports from the clipboard. By default, this setting is set to "No" in
+new installations. 
 
-Note that if the user checks the “Include digital objects” checkbox in the
+When set to Yes, the clipboard export options screen will include an "Include
+digital objects" checkbox. If the user checks that checkbox, any digital
+objects attached to the archival descriptions being exported will be included
+in the ZIP package the user downloads. Administrators should ensure that the
+server on which the AtoM instance is installed has enough processing power,
+memory and storage space to create and temporarily store zipped packages of
+the digital objects selected for download.
+
+.. TIP::
+
+   AtoM has a command-line task that system administrators can use to manage
+   the deletion of temporary files, including ZIP packages generated for user
+   download. For more information, see: 
+
+   * :ref:`tools-expire`
+
+Note that if the user checks the "Include digital objects" checkbox in the
 export options screen, it is no longer possible to include descendants in the
-export, and the “Include descendents” checkbox will be greyed out. This is a
+export, and the "Include descendents" checkbox will be greyed out. This is a
 safeguard designed to prevent users from deliberately or inadvertently exporting
 large descriptive hierarchies with hundreds or thousands of digital objects
 attached at descendant levels of description. 
 
+For more information on using this feature, see: 
+
+* :ref:`xml-export-clipboard-do`
+* :ref:`csv-export-clipboard-do`
+
+.. SEEALSO:: 
+
+   * :ref:`clipboard`
+   * :ref:`csv-export-clipboard`
+   * :ref:`xml-export-clipboard`
 
 :ref:`Back to top <settings>`
 

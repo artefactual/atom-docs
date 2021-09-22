@@ -188,6 +188,8 @@ will allow you to "unzip" a ZIP file.
 Export Clipboard results in CSV format
 ======================================
 
+.. _ZIP: https://wikipedia.org/wiki/Zip_(file_format)
+
 AtoM includes a :term:`clipboard` that allows users to "pin" results to it for
 review or further action. For more information, see: :ref:`clipboard`.
 
@@ -208,15 +210,21 @@ clipboard in CSV format:
    You can also perform XML imports from the clipboard. For more information,
    see: :ref:`xml-export-clipboard`.
 
-.. SEEALSO::
+   Depending on the settings enabled by an :term:`administrator`, it may
+   also be possible for users to download :term:`digital objects <digital object>`
+   associated with archival descriptions from the clipboard. See: 
+
+   * :ref:`csv-export-clipboard-do`
+   * :ref:`clipboard-settings`
+
+   For general information on managing jobs and using the clipboard, see: 
 
    * :ref:`clipboard`
    * :ref:`manage-jobs`
 
-When downloaded, the file will be compressed in a
-`ZIP <https://wikipedia.org/wiki/Zip_(file_format)>`__ archive - there are many
-free utilities (likely there is one already included on your computer) that
-will allow you to "unzip" a ZIP file.
+When downloaded, the file will be compressed in a `ZIP`_ archive - there are
+many free utilities (likely there is one already included on your computer)
+that will allow you to "unzip" a ZIP file.
 
 **To generate and download a CSV export of clipboard results:**
 
@@ -254,8 +262,21 @@ will allow you to "unzip" a ZIP file.
 6. An :term:`archival description` CSV export will include additional
    configuration options. Public users can select whether only the current
    description should be exported or all descendants (i.e. lower-level
-   records). If you want to include lower levels of description as well, click
-   the checkbox marked "Include descendants".
+   records). 
+
+   .. TIP::
+
+      AtoM also includes a setting that an :term:`administrator` can enable
+      that will add an additional export configuration option to the clipboard, 
+      allowing users to download :term:`digital objects <digital object>` that
+      are associated with :term:`archival descriptions <archival description>`.
+
+      For more information, see below: 
+
+      * :ref:`csv-export-clipboard-do`
+
+   If you want to include lower levels of description in your clipboard export, 
+   click the checkbox marked "Include descendants".
 
    .. image:: images/csv-export-descriptions-01.*
       :align: center
@@ -363,29 +384,35 @@ will allow you to "unzip" a ZIP file.
 
    * https://wiki.accesstomemory.org/Resources/CSV_templates
 
-**To include digital objects with your CSV export:**
+.. _csv-export-clipboard-do:
+
+Including digital objects in a clipboard CSV export
+---------------------------------------------------
 
 Some AtoM sites are :ref:`configured <clipboard-settings>` to enable users to
 include attached digital objects when exporting archival descriptions from the
 clipboard. In this case, the Export options screen will include a checkbox for
-“Include digital objects”.
+"Include digital objects".
 
 .. image:: images/export-digital-objects-clipboard-job-xml.*
   :align: center
   :width: 85%
   :alt: Export options with include digital objects selected
 
-
 If digital objects are included in the export, they will be contained in the
 same ZIP package as the CSV files. 
 
-Note that if the “Include digital objects” checkbox is checked, it is no longer
-possible to include descendants in the export, and the “Include descendents”
+Note that if the "Include digital objects" checkbox is checked, it is no longer
+possible to include descendants in the export, and the "Include descendents"
 checkbox will be greyed out. This means you will need to individually add the
 descriptions with digital objects to the clipboard if you want to export them,
 rather than just adding a parent description.
 
+.. SEEALSO::
 
+   * :ref:`clipboard-do-export-setting` (Clipboard settings)
+   * :ref:`xml-export-clipboard-do`
+   * :ref:`tools-expire` (command-line task)
 
 :ref:`Back to top <csv-export>`
 
