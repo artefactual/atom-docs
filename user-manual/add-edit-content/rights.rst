@@ -43,8 +43,16 @@ rights Basis. See :ref:`rights-digital-object`, below.
 * :ref:`rights-inheritance`
 * :ref:`rights-digital-object`
 * :ref:`disallow-statements`
+* :ref:`preservation-access-statement`
 * :ref:`copyright-pop-up`
 * :ref:`manage-rights-holders`
+
+.. SEEALSO::
+
+   * :ref:`permissions` (settings)
+   * :ref:`upload-digital-object`
+   * :ref:`archival-descriptions`
+   * :ref:`accession-records`
 
 .. _add-rights:
 
@@ -55,8 +63,9 @@ This section describes how to add a new :term:`rights record` by using the
 rights dialog provided through the add/edit template. You must add rights to
 an existing accession record or archival description. To create an accession
 record or archival description first, please see:
-:ref:`Add new accession record <add-new-accession>` or
-:ref:`Add new archival description <add-archival-description>`.
+
+* :ref:`Add new accession record <add-new-accession>`
+* :ref:`Add new archival description <add-archival-description>`
 
 .. NOTE::
 
@@ -273,6 +282,7 @@ from the archival description in view mode:
    confirmation, so be sure to click only when you are positive you wish to
    delete the rights information!
 
+:ref:`Back to top <rights>`
 
 .. _rights-inheritance:
 
@@ -321,6 +331,8 @@ parent record as you indicated.
    Scheduler. If the parent description has many children, it may take some time
    for all of the children to inherit the rights. See :ref:`Manage Jobs <manage-jobs>`
    for more information.
+
+:ref:`Back to top <rights>`
 
 .. _rights-digital-object:
 
@@ -386,7 +398,6 @@ relates to the display of digital objects.
    interpretations. New terms can be added to the Rights act taxonomy as need,
    and unnecessary terms can be altered or deleted. For more information on
    managing terms and taxonomies, see: :ref:`terms`.
-
 
 Next, use the permissions table to indicate whether viewing/downloading
 digital objects should be allowed or disallowed. You will set these permissions for
@@ -471,7 +482,7 @@ it to view/download the original.
 Example: Configuring copyright permissions
 ------------------------------------------
 
-Here is an example use case:
+Here is an example use case: 
 
 Suppose an institution has determined that their digital objects fall into
 3 categories: those that are in the public domain, those that are definitely
@@ -548,6 +559,8 @@ The image will display in its reference representation, but will not be
    For another possible way of dealing with access to digital objects with
    conditional copyright restrictions, see below, :ref:`copyright-pop-up`.
 
+:ref:`Back to top <rights>`
+
 .. _disallow-statements:
 
 Configure Disallowed and Conditional access statements
@@ -562,6 +575,22 @@ customizable access statement in its place:
    :width: 80%
    :alt: Example of an access statement shown when access to a reference
          display copy is restricted via PREMIS rights
+
+Depending on how you have configured the permissions (see above, 
+:ref:`rights-digital-object`), the access statement will also display in the 
+:term:`digital object` metadata :term:`information area` for relevant versions
+of the digital object that are restricted by rights: 
+
+.. image:: images/access-statement-do.*
+   :align: center
+   :width: 80%
+   :alt: Example of an access statement shown in the digital object metadata 
+         area when access to both the master and reference display copy are 
+         restricted via PREMIS rights
+
+.. SEEALSO::
+
+   * :ref:`digital-object-metadata`
 
 Access statements are intended to be user-friendly explanations of why access
 is restricted, and what the user can do (if anything) to gain access (for
@@ -600,6 +629,75 @@ You can customize the access statements for each Rights basis, as needed based
 on local practice. When you have made the edits you want to each Basis tab,
 remember to scroll down and click "Save" in the :term:`button block` at the
 bottom of the page.
+
+:ref:`Back to top <rights>`
+
+.. _preservation-access-statement:
+
+Configure a preservation system access statement
+================================================
+
+.. _Archivematica: https://www.archivematica.org/
+
+In addition to supporting the local upload or linking of 
+:term:`digital objects <digital object>`, Atom also supports basic integration
+with `Archivematica`_, a digital preservation workflow system. When used 
+together, Archivematica can generate access derivatives from preservation files
+to be uploaded in AtoM. For more information, consult the Archivematica 
+documentation:
+
+* :ref:`archivematica:upload-atom`
+
+Since access to preservation files is frequently not publicly available by 
+default, an :term:`administrator` can configure a custom preservation access 
+statement to appear next to preservation metadata displayed in AtoM's digital 
+object metadata :term:`information area`. For more information on the display
+of preservation file metadata in AtoM, see: 
+
+* :ref:`digital-object-preservation`
+
+Access statements are intended to be user-friendly explanations of why access
+is restricted, and what the user can do (if anything) to gain access (for
+example, contact the Reference Archivist, etc). Preservation access statements
+can be configured by an :term:`administrator` separately from the 
+:ref:`Conditional and Disallow access statements <disallow-statements>` via
+AtoM's :ref:`permissions` settings. 
+
+When enabled, this setting will display customizable text about any access
+conditions that might be placed on linked files that are held in an integrated
+preservation system such as `Archivematica`_. Note that these statement only
+appear in the metadata section for original files and preservation copies.
+
+**Using the preservation access statement**
+
+The setting can be accessed by an :term:`administrator` via |gears| **Admin > 
+Settings > Permissions**. See: 
+
+* :ref:`permissions`
+
+To use the access statement, write the notice that applies to your 
+institution in the text field. For example, you may not distribute original 
+files and preservation copies over the Internet but do provide access to them 
+on a dedicated machine in your  reference room. So your preservation system 
+access statement may read: "Access only provided on reference room computer.". 
+
+Toggle the "Enable access statement" option to "yes" and press "Save".
+
+.. image:: images/preservation-system-access-statement.*
+   :align: center
+   :width: 90%
+   :alt: Preservation system access statement
+
+The statement now appears next to a "Permissions" label in the **Digital 
+object metadata > Preservation Copies** section on your archival description 
+view pages.
+
+.. image:: images/preservation-system-access-statement-display.*
+   :align: center
+   :width: 90%
+   :alt: Display of preservation system access statement
+
+:ref:`Back to top <rights>`
 
 .. _copyright-pop-up:
 
@@ -800,6 +898,8 @@ descriptions with associated digital objects, see the section above,
    :ref:`above <rights-digital-object>`. For information on uploading digital
    objects, see: :ref:`upload-digital-object`. For information on the Visible
    elements module, see: :ref:`visible-elements`.
+
+:ref:`Back to top <rights>`
 
 .. _manage-rights-holders:
 

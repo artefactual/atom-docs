@@ -2046,54 +2046,30 @@ make PREMIS rights records in
 attached :term:`digital objects <digital object>`. See :ref:`rights` for more
 information on working with rights in AtoM.
 
-The permissions settings page is divided into 3 sections - PREMIS access
-permissions, PREMIS access statements, and the Copyright statement.
+The permissions settings page is divided into 4 sections:
 
-For information on configuring the PREMIS access permissions, see:
-:ref:`rights-digital-object` (and for an example use case, see:
-:ref:`rights-digital-object-example`). For information on configuring the PREMIS
-access statements, see: :ref:`disallow-statements`. For information on
-configuring and using the Copyright statement, see: :ref:`copyright-pop-up`.
+* PREMIS access permissions
+* PREMIS access statements
+* Copyright statement
+* Preservation system access statement
 
 .. image:: images/permissions-settings.*
    :align: center
    :width: 90%
    :alt: Permissions settings in AtoM
 
-.. _preservation-access-statement:
+For information on configuring the PREMIS access permissions, see:
+:ref:`rights-digital-object` (and for an example use case, see:
+:ref:`rights-digital-object-example`). 
 
-**Preservation system access statement**
+For information on configuring the PREMIS access statements, see: 
+:ref:`disallow-statements`. 
 
-The Permissions page also includes a "Preservation system access statement" 
-setting. When enabled, this will display customizable text about any access 
-conditions that might be placed on linked files that are held in an integrated 
-preservation system such as `Archivematica`_. Note that these statement only 
-appear in the metadata section for original files and preservation copies. For 
-more information see 
-:ref:`Digital object metadata for preservation files <digital-object-preservation>`.
+For information on configuring and using the Copyright statement, see: 
+:ref:`copyright-pop-up`.
 
-To use the condition statement, write the notice that applies to your 
-institution in the text field. For example, you may not distribute original 
-files and preservation copies over the Internet but do provide access to them 
-on a dedicated machine in your  reference room. So your preservation system 
-access statement may read: "Access only provided on reference room computer.". 
-
-Toggle the "Enable access statement" option to "yes" and press "Save".
-
-.. image:: images/preservation-system-access-statement.*
-   :align: center
-   :width: 90%
-   :alt: Preservation system access statement
-
-The statement now appears next to a "Permissions" label in the **Digital 
-object metadata > Preservation Copies** section on your archival description 
-view pages.
-
-.. image:: images/preservation-system-access-statement-display.*
-   :align: center
-   :width: 90%
-   :alt: Display of preservation system access statement
-
+For information on configurating and using the Preservation system access 
+statement, see: :ref:`preservation-access-statement`. 
 
 :ref:`Back to top <settings>`
 

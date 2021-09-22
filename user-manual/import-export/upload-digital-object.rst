@@ -267,7 +267,11 @@ include an "Access Copies" subsection.
 
 8. Access to the "Master file", "Reference copy", and "Thumbnail copy" may be
    overridden by actionable PREMIS rights configured for individual archival 
-   descriptions and their digital object. See :ref:`rights-digital-object`. 
+   descriptions and their digital object. See: 
+
+   * :ref:`rights-digital-object`
+   * :ref:`disallow-statements`
+
    For example, if a PREMIS right is added to an archival description where 
    the "Act" is "Disseminate" and the "Restriction" is "Disallow", then the 
    hyperlinks in the "Digital object metadata" section are no longer active, 
@@ -301,12 +305,13 @@ include an "Access Copies" subsection.
 Digital object metadata for preservation files
 ==============================================
 
+.. _Archivematica: https://www.archivematica.org/
+
 If you or another user of a preservation system (e.g. 
-`Archivematica <https://www.archivematica.org/>`_) has sent a 
-:ref:`DIP upload <archivematica:upload-atom>` to an :term:`archival
-description` :term:`slug` in AtoM then thumbnails for the digital objects 
-in that Dissemenation Information Package (DIP) will be displayed in the 
-archival description's digital object :term:`carousel`.
+`Archivematica`_) has sent a :ref:`DIP upload <archivematica:upload-atom>` to 
+an :term:`archival description` :term:`slug` in AtoM then thumbnails for the 
+digital objects in that Dissemenation Information Package (DIP) will be 
+displayed in the archival description's digital object :term:`carousel`.
 
 .. NOTE::
 
@@ -350,11 +355,9 @@ include a "Preservation Copies" and "Access Copies" subsection.
 
 5. If the preservation action system statement option is enabled, you will
    also see a "Permissions" field with custom text that is populated by an 
-   Administrator user via 
-   **Admin > Settings > Permissions > Preservation system access statement** 
-   (e.g. "Access only provided on research room computer"). For more 
-   information see :ref:`Preservation system access statement 
-   <preservation-access-statement>`.
+   :term:`administrator` via **Admin > Settings > Permissions > Preservation 
+   system access statement** (e.g. "Access only provided on research room 
+   computer"). For more information, see: :ref:`preservation-access-statement`.
 
    .. image:: images/digital-object-preservation-copies-no-access.*
       :align: center
