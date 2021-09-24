@@ -72,6 +72,7 @@ the Admin-Menus menu (see: :ref:`Manage menus <manage-menus>`).
 
 **Jump to:**
 
+* :ref:`browse-result-limits`
 * :ref:`browse-descriptions`
 
   * :ref:`browse-hierarchy`
@@ -90,6 +91,69 @@ the Admin-Menus menu (see: :ref:`Manage menus <manage-menus>`).
 * :ref:`browse-functions`
 
 **Or, jump to** :ref:`browse-authenticated`
+
+.. _browse-result-limits:
+
+Search, browse, and result limits
+---------------------------------
+
+In the event that there are more than 10,000 results to return when searching
+or browsing, AtoM will stop loading to preserve memory capacity, and the user
+will see the following message when attempting to jump to later results:
+
+.. image:: images/sort-options.*
+   :align: center
+   :width: 70%
+   :alt: Sort options error message
+
+With the release of 2.5, a second sort option has been added in the top
+right-hand corner to allow the user to change a sort from ascending to
+descending. This allows the user to quickly review the results from the end of
+the list. Note: this sort option is available for
+
+* :term:`Accession <accession record>`
+* :term:`Archival descriptions <archival description>`
+* :term:`Archival institututions <archival institution>`
+* :term:`Authority records <authority record>`
+* Donors
+* :term:`Functions <function>`
+* :term:`Rights holders <rights record>`
+* Browse :term:`digital objects <digital object>`
+* :ref:`Clipboard results page <clipboard>`
+* :term:`Taxonomies <taxonomy>`
+
+The default sort is ascending.
+
+.. image:: images/sort-ascending.*
+   :align: center
+   :width: 70%
+   :alt: Sort option ascending
+
+By choosing 'Direction: Descending' the user can view the browse results from
+the end of the list:
+
+.. image:: images/sort-descending.*
+   :align: center
+   :width: 70%
+   :alt: Sort option descending
+
+For more information, see: 
+
+* :ref:`recurring-sort-button`
+
+.. IMPORTANT::
+
+   Results may not be exactly as expected. Alphabetic sort order in AtoM is
+   'ASCII-betical'. For more, see :ref:`navigate`.
+
+Alternatively, a system administrator can adjust the results limit via AtoM's
+``search.yml`` configuration file, to increase it beyond the default 10,000 
+record limit. **Doing so will impact memory usage** and may require additional
+system memory. For more information, see: 
+
+* :ref:`config-search`
+
+:ref:`Back to top <browse>`
 
 .. _browse-descriptions:
 
@@ -124,12 +188,11 @@ top-right of the page above the results.
    users, in **Admin > Settings > Global**. For more information, see:
    :ref:`sort-browser-users` and :ref:`sort-browser-anonymous`.
 
-Users can narrow the results list with the available
+Users can narrow the results list with the available 
 :term:`facet filters <facet filter>` on the left-hand side of the screen. For
 more information on using the facet filters in AtoM, see:
 :ref:`recurring-facet-filters`; especially
 :ref:`Using facet filters in AtoM <using-facet-filters>`.
-
 
 At the top of the :term:`archival description` browse page's list of results,
 the number of descriptions with :term:`digital objects <digital object>` is
@@ -186,53 +249,6 @@ Additionally, the results include helpful contextual information, including:
    * :ref:`recurring-page-elements`
    * :ref:`recurring-facet-filters`
    * :ref:`archival-descriptions`
-
-:ref:`Back to top <browse>`
-
-In the event that there are more than 10,000 results to return when browsing,
-AtoM will stop loading to preserve memory capacity, and the user will see the
-following message:
-
-.. image:: images/sort-options.*
-   :align: center
-   :width: 70%
-   :alt: Sort options error message
-
-With the release of 2.5, a second sort option has been added in the top
-right-hand corner to allow the user to change a sort from ascending to
-descending. This allows the user to quickly review the results from the end of
-the list. Note: this sort option is available for
-
-* :term:`Accession <accession record>`
-* :term:`Archival descriptions <archival description>`
-* :term:`Archival institututions <archival institution>`
-* :term:`Authority records <authority record>`
-* Donors
-* :term:`Functions <function>`
-* :term:`Rights holders <rights record>`
-* Browse :term:`digital objects <digital object>`
-* :ref:`Clipboard results page <clipboard>`
-* :term:`Taxonomies <taxonomy>`
-
-The default sort is ascending.
-
-.. image:: images/sort-ascending.*
-   :align: center
-   :width: 70%
-   :alt: Sort option ascending
-
-By choosing 'Direction: Descending' the user can view the browse results from
-the end of the list:
-
-.. image:: images/sort-descending.*
-   :align: center
-   :width: 70%
-   :alt: Sort option descending
-
-.. IMPORTANT::
-
-   Results may not be exactly as expected. Alphabetic sort order in AtoM is
-   'ASCII-betical'. For more, see :ref:`navigate`.
 
 .. _browse-hierarchy-browser:
 

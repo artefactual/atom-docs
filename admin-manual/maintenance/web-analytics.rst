@@ -92,6 +92,8 @@ Replace ``UA-XXXXX-X`` with your tracking ID. Once you are done, remember to
 
    * :ref:`customization-config-files`
 
+.. _google-analytics-repo-pageviews:
+
 Google Analytics for tracking institutional pageviews
 +++++++++++++++++++++++++++++++++++++++++++++++++++++
 

@@ -85,6 +85,8 @@ For more information on how the search in AtoM is configured, see
 
    * :ref:`Advanced search <advanced-search>`
    * :ref:`navigate`
+   * :ref:`recurring-page-elements`
+   * :ref:`browse-result-limits`
 
 .. _atom-search-box:
 
@@ -109,6 +111,17 @@ operators - see: :ref:`Advanced search <advanced-search>`, specifically:
 
 * :ref:`advanced-search-via-searchbox`
 * :ref:`advanced-search-operators`
+
+**Jump to:**
+
+* :ref:`search-typeahead`
+* :ref:`search-box-delimiters`
+* :ref:`search-results-facets`
+
+.. SEEALSO::
+
+   * :ref:`browse-result-limits`
+   * :ref:`recurring-page-elements`
 
 .. _search-typeahead:
 

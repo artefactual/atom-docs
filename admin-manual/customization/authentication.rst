@@ -48,6 +48,18 @@ The first thing to do is to activate the ``arCasPlugin``. This can be done by
 by adding the plugin name to the ``$plugins`` array in 
 ``config/ProjectConfiguration.class.php``.
 
+.. IMPORTANT::
+
+   While the plugin could technically be enabled by an :term:`administrator` 
+   logging in and enabling it in the :term:`user interface` via |gears| 
+   **Admin > Plugins**, doing so would require authenticating locally without
+   CAS enabled - and the additional configuration file changes described below
+   will not yet be in place. 
+
+   For security best practices, we recommend a system administrator enable
+   the plugin using the method described above, so no local authentication 
+   accounts are stored in AtoM when the intention is to use CAS. 
+
 Next, configure the CAS settings (CAS version, server name, server port, server
 path, and server SSL certificate) in the ``arCasPlugin``'s ``app.yml`` config
 file with the details of the CAS server you wish to use for authentication.
@@ -61,10 +73,15 @@ and password ``django-cas-ng``.
    While CAS server SSL validation can be disabled for development, we strongly
    discourage doing so in a production environment.
 
-Next, change the default login module to ``cas`` in
+For further information and additional configuration options, see the 
+:ref:`customization-config-files` documentation - specifically: 
+
+* :ref:`cas-app-yml`
+
+Next, change the default login module to ``cas`` in 
 ``apps/qubit/config/settings.yml``.
 
-Finally, change the user class to ``casUser`` in
+Finally, change the user class to ``casUser`` in 
 ``apps/qubit/config/factories.yml``.
 
 .. TIP::
@@ -74,7 +91,6 @@ Finally, change the user class to ``casUser`` in
 
    * :ref:`maintenance-clear-cache`
    * :ref:`troubleshooting-restart-php-fpm`
-
 
 .. _cas-groups:
 

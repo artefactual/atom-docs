@@ -1392,9 +1392,9 @@ When results are ordered by "Most recent," the most recently added and/or
 edited records in the results will appear at the top of the list, allowing users
 to discover new or recently updated content.
 
-When the sort order is set to "Identifier," results are
-displayed by the identifier, based on an alphabetic **ASCII sort** (more
-information on ASCII sort is included in the IMPORTANT note below).
+When the sort order is set to "Identifier," results are displayed by the 
+identifier, based on an alphabetic **ASCII sort** (more information on ASCII 
+sort is included in the IMPORTANT note below).
 
 When the sort order is set to "Reference code," (on the :term:`archival description`
 browse page) results are based on the full inherited reference
@@ -1454,6 +1454,12 @@ customized to offer sorting options specific to accession records, including:
 * Most recent (created or updated)
 * Title
 * Acquisition date
+
+.. SEEALSO::
+
+   * :ref:`browse-result-limits`
+   * :ref:`config-search`
+   * :ref:`browse`
 
 .. _recurring-institution-logos:
 
