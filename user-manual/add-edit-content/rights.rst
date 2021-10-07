@@ -714,8 +714,35 @@ In these cases, AtoM includes the ability to configure a customizable
 copyright pop-up notice, that will appear for all users when they try to
 access the :term:`master digital object`. The copyright pop-up must be viewed,
 and an "Accept" button clicked (acknowledging the terms in the pop-up), before
-access to the master digital object is granted. This pop-up will come into
-effect when:
+access to the master digital object is granted. 
+
+.. IMPORTANT::
+
+   The copyright statment will **only** work when it is applied to digital
+   objects that are uploaded locally - not to those linked via URL to an
+   external web address! This is because the pop-up relates to the
+   :term:`master digital object`. When you upload locally, then the master
+   digital object is stored in AtoM. When you link to an external digital
+   object, AtoM will generate local derivatives (ie the
+   :term:`reference display copy` and the :term:`thumbnail`), but the master
+   is still external!
+
+   We suggest using a different (perhaps custom) Basis, and applying rights
+   with the settings configured to deny access to the master digital object,
+   if you wish to restrict access to external digital objects. You can also
+   hide the source URL from the Digital object metadata
+   :term:`area <information area>` via the Visible elements module.
+
+   For more information on configuring PREMIS settings, see
+   :ref:`above <rights-digital-object>`. For information on uploading digital
+   objects, see: :ref:`upload-digital-object`. For information on the Visible
+   elements module, see: :ref:`visible-elements`.
+
+There are two ways the copyright pop-up can be configured - either it can be
+set globally to apply to **all** locally uploaded digital objects (even if no
+Rights statement is applied), or else it can be configured to show only
+under certain conditions, including the presence of a related Rights record. 
+In this second case, the pop-up will come into effect when:
 
 * The copyright pop-up is enabled in |gears| **Admin > Settings >
   Permissions**
@@ -784,9 +811,21 @@ Configuring the copyright pop-up
    :alt: An example of the Copyright statement preview page
 
 5. Clicking "Close" in the copyright statement preview tab will close the tab.
-6. When you are done configuring your copyright statement, don't forget to
+6. If you want the copyright pop-up to apply globally to all digital objects, 
+   there is an additional setting below - Set the "Apply to gevery digital 
+   object" radio button to "Yes":
+
+.. image:: images/copyright-pop-up-global.*
+   :align: center
+   :width: 80%
+   :alt: The setting to make the copyright pop-up apply globally
+
+7. When you are done configuring your copyright statement, don't forget to
    scroll down and click the "Save" button in the :term:`button block` at the
    bottom of the page.
+
+There are some additional configuration steps required for the copyright 
+pop-up to be properly applied - see below for more information. 
 
 .. _copyright-pop-up-apply:
 
@@ -794,16 +833,17 @@ Applying the Copyright statement pop-up
 ---------------------------------------
 
 Now that you have enabled and configured the Copyright statement, there are
-still 3 other conditions that must be met before your copyright statement will
+still other conditions that must be met before your copyright statement will
 be seen:
 
 * Users must be granted sufficient :term:`access privileges <access
-  privilege>` to access the :term:`master digital object`
-* A Rights statement with a Copyright basis and the Restriction set to
-  "Conditional" must be attached to the associated
-  :term:`archival description`
-* The :term:`digital object` is uploaded locally, **not** linked via a web
-  address (i.e. from an external site).
+  privilege>` to access the :term:`master digital object`.
+* The :term:`digital object` must be uploaded locally, **not** linked via a web
+  address or URL (i.e. from an external site).
+* If you are not using the "Apply to every digital object" setting, then there
+  there is also an additional condition: a Rights statement with a Copyright 
+  basis and the Restriction set to "Conditional" must be attached to the 
+  associated :term:`archival description.`
 
 **Step 1: Granting sufficient access**
 
@@ -826,6 +866,11 @@ permissions**:
    For more information on working with Users and Groups in AtoM, see:
    :ref:`manage-user-accounts`. For more information on configuring the
    permissions for Users and Groups, see: :ref:`edit-user-permissions`.
+
+If you are using the "Apply to every digital object" setting for the copyright 
+pop-up, then nothing else needs to be done. Otherwise, there are additional
+steps to configure so that the copyright pop-up will only be selectively 
+applied: 
 
 You will also need to ensure that the PREMIS Rights permissions you have
 configured in |gears| **Admin > Settings > Permissions** will allow your users
@@ -850,11 +895,19 @@ further details on configuration). For the copyright pop-up statement to be
 presented, we still have to apply the appropriate Rights to related
 :term:`archival descriptions <archival description>`.
 
-**Step 2 - Applying the appropriate PREMIS rights**
+**Step 2 - Applying the appropriate PREMIS rights (selective copyright pop-up)**
 
-The Copyright statement is only triggered when specific PREMIS rights have
-been associated with the :term:`archival description` to which the
-:term:`digital object` is attached:
+.. NOTE::
+
+   These requirements only apply when using the copyright pop-up selectively. 
+   If you have used the "Apply to every digital object" setting, then no
+   associated Rights statement is required - the copyright pop-up will always
+   be displayed before users are granted access to locally stored 
+   :term:`master digital objects <master digital object>`.
+
+Unless the global setting is used, the Copyright statement is only triggered 
+when specific PREMIS rights have been associated with the 
+:term:`archival description` to which the :term:`digital object` is attached:
 
 * **Act**: Whichever act you have chosen to be actionable in |gears| **Admin >
   Settings > Permissions**. See :ref:`above <rights-digital-object>` for
@@ -876,28 +929,6 @@ For further guidance in applying actionable PREMIS rights to archival
 descriptions with associated digital objects, see the section above,
 :ref:`rights-archival-description`. For an example use case, see:
 :ref:`rights-digital-object-example`.
-
-.. IMPORTANT::
-
-   The copyright statment will **only** work when it is applied to digital
-   objects that are uploaded locally - not to those linked via URL to an
-   external web address! This is because the pop-up relates to the
-   :term:`master digital object`. When you upload locally, then the master
-   digital object is stored in AtoM. When you link to an external digital
-   object, AtoM will generate local derivatives (ie the
-   :term:`reference display copy` and the :term:`thumbnail`), but the master
-   is still external!
-
-   We suggest using a different (perhaps custom) Basis, and applying rights
-   with the settings configured to deny access to the master digital object,
-   if you wish to restrict access to external digital objects. You can also
-   hide the source URL from the Digital object metadata
-   :term:`area <information area>` via the Visible elements module.
-
-   For more information on configuring PREMIS settings, see
-   :ref:`above <rights-digital-object>`. For information on uploading digital
-   objects, see: :ref:`upload-digital-object`. For information on the Visible
-   elements module, see: :ref:`visible-elements`.
 
 :ref:`Back to top <rights>`
 
