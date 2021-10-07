@@ -91,7 +91,7 @@ base64 encoded version of the string ``<user_email@example.com>:<password>``.
 
 .. code-block:: bash
 
-   curl -u demo@example.com:demo http://www.example.com/api
+   curl -L -u demo@example.com:demo http://www.example.com/api
 
 **Example request header**
 
@@ -202,7 +202,7 @@ the header.
 
 .. code-block:: bash
 
-   curl -H "REST-API-Key: 90e458ded261c7a5" "http://www.example.com/index.php/api/informationobjects"
+   curl -L -H "REST-API-Key: 90e458ded261c7a5" "http://www.example.com/index.php/api/informationobjects"
 
 See the subsequent pages for more details on each endpoint, and available
 parameters. There are three endpoints available:
