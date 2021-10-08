@@ -1395,24 +1395,30 @@ If you make changes, remember to click the "Save" button in the
 
 .. _max-image-width:
 
-Maximum image width (pixels)
-----------------------------
+Maximum length on longest edge (pixels)
+---------------------------------------
+
+This setting determines the maximum size of the :term:`reference display copy` 
+derivative created from a :term:`master digital object` during digital object
+upload. It is measured in pixels, and will be applied either to height or
+width - whichever side reaches the pixel limit first. 
 
 One of AtoM's design assumptions is that the display dimensions of files
 users upload typically will be too large to fit into the :term:`view page` for
 an :term:`archival description`. Therefore, when you upload a file, AtoM creates
 a :term:`reference display copy` for displaying in the view page.
 
-AtoM ships with a default setting specifying the maximum width of the
+AtoM ships with a default setting specifying the maximum width or height of the
 :term:`reference display copy` at **480 pixels**. This is the optimized width
 given AtoM's :term:`field` width. :term:`Administrators <administrator>`,
 however, can increase or decrease the maximum reference image
-width to suit the requirements of their institution or network.
+size to suit the requirements of their institution or network.
 
 .. seealso::
 
    * :ref:`Styling static pages <styling-static-page>`
    * :ref:`Themes & Theming <themes>`
+   * :ref:`Upload settings <upload-settings>`
 
 :ref:`Back to top <settings>`
 
