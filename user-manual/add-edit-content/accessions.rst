@@ -41,20 +41,19 @@ materials have been arranged.
 
 * :ref:`Add a new accession record <add-new-accession>`
 
-  * :Ref:`add-accession-alt-ids`
-  * :ref:`Add a donor <add-accession-donor>`
-  * :ref:`Add rights to an accession record <add-accession-rights>`
-  * :ref:`Link an accession record to an archival description
-    <link-accession-description>`
-  * :ref:`View the accession record <view-accession>`
+  * :ref:`add-accession-alt-ids`
+  * :ref:`add-accession-donor`
+  * :ref:`add-accession-events`
+  * :ref:`add-accession-rights`
+  * :ref:`link-accession-description`
+  * :ref:`view-accession`
 
 * :ref:`link-accession-container`
-* :ref:`Edit an existing accession record <edit-accession-record>`
-* :ref:`Add an accrual <add-accession-accrual>`
-* :ref:`Add a legacy accession record <add-legacy-accession>`
-* :ref:`Create an archival description from an accession record
-  <create-accession-description>`
-* :ref:`Delete an accession record <delete-accession-record>`
+* :ref:`edit-accession-record`
+* :ref:`add-accession-accrual`
+* :ref:`add-legacy-accession`
+* :ref:`create-accession-description`
+* :ref:`delete-accession-record`
 
 .. NOTE::
 
@@ -289,6 +288,88 @@ Donor records can be accessed via the :term:`main menu` by navigating to
    Donor records can be created and managed separately from :term:`accession
    records <accession record>`. For a full explanation of donors, go to the
    :ref:`donors` page
+
+:ref:`Back to top <accession-records>`
+
+.. _add-accession-events:
+
+Add events to an accession record
+---------------------------------
+
+.. _CAAIS: http://archivescanada.ca/CWG_AccessionStandard
+
+Events are a method of capturing key dates and activities taken by staff 
+throughout the accession process, and serve to create an audit trail of
+actions taken during processing. 
+
+The Administrative :term:`information area` contains a number of related
+:term:`fields <field>` that can be used to capture information about events
+performed:
+
+.. image:: images/accession-event-edit.*
+   :align: center
+   :width: 90%
+   :alt: An image of the event section in the accession edit template
+
+The entire block of related fields can be repeated as needed to capture
+additional events, by clicking the "Add new" link below the list of fields.
+You can also remove a row of related fields by clicking the **X** to the right
+of the field block.
+
+On save, the fields will display in the :term:`view page` of the 
+:term:`accession record` grouped as follows: 
+
+.. code-block:: none
+
+   Event date (Event type): Event agent
+   Event note
+
+Example: 
+
+.. image:: images/accession-event-example.*
+   :align: center
+   :width: 90%
+   :alt: An example of an event shown in the view page of an accession record
+
+.. _accession-event-fields:
+
+Event fields
+^^^^^^^^^^^^
+
+**Type**: This is a :term:`drop-down menu` linked to a :term:`taxonomy` 
+containing controlled vocabulary :term:`terms <term>`. By default during 
+installation, this "Accession event type" taxonomy only contains one term 
+(Physical transfer). However, an :term:`administrator` can add additional terms
+as needed. 
+
+Example event type terms, taken from the Canadian Archival Accession Information 
+Standard (`CAAIS`_):
+
+* Physical transfer
+* Legal transfer
+* Deed of Gift signed
+* Transfer Agreement signed
+* Ceremonial protocol acknowledging value
+* Reboxing started
+* Reboxing completed
+* Archival appraisal
+* Disk image created
+* Checksums created
+* Deaccessioned
+
+**Event date**: The calendar date on which the event occurred. This is a 
+free-text field, so dates can be entered according to local convention and 
+preference.
+
+**Event agent**:  Agents are actors who have roles in events. This field is
+typically used to capture the name of the staff member responsible for the 
+event, though in some cases an agent may be an organization or a software
+application. This is a free-text field - for consistency, the name should be 
+formatted consistently in accordance with relevant descriptive standards and 
+local policies or conventions. 
+
+**Event note**: Any additional information related to the event not otherwise
+recorded. This is a free-text field.  
 
 :ref:`Back to top <accession-records>`
 
