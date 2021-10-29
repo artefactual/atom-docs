@@ -1718,8 +1718,8 @@ an archival institution slug.
 
 .. _tools-expire:
 
-Delete temporary data (saved clipboards and downloads)
-======================================================
+Delete temporary data (saved clipboards, access log, and downloads)
+===================================================================
 
 In the process of using your AtoM installation, you may generate some data
 that is only needed temporarily, and can be deleted once no longer needed. 
@@ -1737,6 +1737,12 @@ There is a setting that an :term:`administrator` can use to
 this does not provide a bulk method to remove all saved clipboards at once if
 desired. 
 
+Finally, AtoM has a database table called the ``access_log``, which is updated 
+every time an :term:`archival description`, :term:`authority record`, or 
+:term:`archival institution` is viewed. This table is used to populate the 
+:ref:`popular-this-week` on the homepage, but there is no in-built mechanism
+to clear old results from the table. 
+
 Fortunately, AtoM has a command-line task that can be used to manage these
 temporary data elements at will. 
 
@@ -1744,10 +1750,12 @@ The basic syntax for the task is:
 
 .. code-block:: bash
 
-    php symfony tools:expire data-type
+    php symfony tools:expire-data data-type
 
-Where ``data-type`` represents one of two supported parameters:
+Where ``data-type`` represents one of three supported parameters:
 
+* ``access_log``: clears the access log table associated with the 
+  :ref:`popular-this-week` on the homepage
 * ``clipboard``: clears saved clipboards from AtoM's database
 * ``job``: clears the contents of the ``jobs`` subdirectory in the AtoM 
   ``downloads`` directory
@@ -1757,11 +1765,11 @@ Where ``data-type`` represents one of two supported parameters:
    :width: 80%
    :alt: An image showing the organization of the donwloads directory
 
-You can also specify both options at once using a comma, like so:
+You can also specify all options at once using a comma, like so:
 
 .. code-block:: bash
 
-   php symfony tools:expire clipboard,job
+   php symfony tools:expire-data access_log,clipboard,job
 
 .. IMPORTANT::
 
@@ -1779,13 +1787,13 @@ You can also specify both options at once using a comma, like so:
    If the the clipboard save maximum age setting is set to 0, **all** saved
    clipboards will be deleted by default when the task is run. 
 
-By running ``php symfony help digitalobject:delete`` we can see the
+By running ``php symfony help tools:expire-data`` we can see the
 command-line's help output for the task:
 
 .. image:: images/cli-expire-help.*
    :align: center
    :width: 90%
-   :alt: An image showing the help output for the tools:expire command-line task
+   :alt: An image showing the help output for the tools:expire-data command-line task
 
 The ``--application``, ``--env``, and ``connection`` options **should not be
 used** - AtoM requires the uses of the pre-set defaults for Symfony to be
@@ -1799,7 +1807,7 @@ download ZIPs from the ``jobs`` subdirectory that were created before January
 
 .. code-block:: bash
 
-   php symfony tools:expire --older-than="2020-01-01" job
+   php symfony tools:expire-data --older-than="2020-01-01" job
 
 This option can be particularly useful when deleting saved clipboards. By 
 default, AtoM will use the administrative setting :ref:`clipboard-save-setting` 
@@ -1811,7 +1819,7 @@ proceeding, once per data type:
 
 .. image:: images/cli-expire-confirm.*
    :align: center
-   :width: 00%
+   :width: 90%
    :alt: An image showing the confirmation message when running the 
          tools:expire command
 

@@ -147,13 +147,23 @@ Administrators who are interested in more granular analytics information are
 encouraged to use a third-party analytics tool - for more information, see:
 :ref:`maintenance-web-analytics` in the Administrator's Manual.
 
+.. IMPORTANT::
+
+   To populate the results shown in the "Popular this week" widget, AtoM's 
+   database has an ``access_log`` table that is automatically updated every 
+   time an :term:`archival description`, :term:`authority record`, or 
+   :term:`archival institution` is viewed. This data is **not automatically 
+   cleared** over time, but a system administrator can use the command-line
+   ``tools:expire-data`` task to clear old data from the access log. For more 
+   information, see: 
+
+   * :ref:`tools-expire`
+
 .. TIP::
 
    A :term:`developer` who wishes to hide the Popular this week menu from
-   view can do so by commenting out Line 25 in
-   ``/apps/qubit/modules/staticpage/templates/homeSuccess.php``. For more
-   information, see `this <https://groups.google.com/d/msg/ica-atom-users/rfI2Mt01ULk/vcf-0I04T_AJ>`__
-   post in our User Forum.
+   view can do so by commenting out Line 23 in
+   ``/apps/qubit/modules/staticpage/templates/homeSuccess.php``. 
 
 :ref:`Back to top <getting-started-all>`
 
