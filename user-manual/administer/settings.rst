@@ -1268,6 +1268,13 @@ and is only used on the RAD template.
    :alt: An image of the Copyright status and GMD filters in the advanced
          search panel
 
+.. TIP::
+
+   AtoM has a separate setting that can disable 
+   :term:`finding aid <print-finding-aids>` generation and upload. When 
+   disabled, the related filter in the :term:`advanced search panel` will
+   also be hidden. For more information, see: :ref:`print-finding-aid-settings`.
+
 The Digital object map setting relates to the ability for users to add basic
 geolocation data to :term:`digital objects <digital object>`, by displaying a
 dynamic Google map in the Digital object metadata
@@ -1429,7 +1436,7 @@ Finding aid
 
 These settings configure how AtoM generates :term:`finding aids <finding aid>`
 from :term:`archival descriptions <archival description>`. For more information,
-see :ref:`Print finding aids <print-finding-aids>`; specifically,
+see :ref:`print-finding-aids`; specifically,
 :ref:`print-finding-aid-settings` includes a description of each settings field.
 
 .. image:: images/finding-aid-settings.*

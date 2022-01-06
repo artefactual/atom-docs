@@ -84,6 +84,19 @@ clicking on "Finding aid" in the settings menu on the left side of the page.
    :width: 80%
    :alt: Finding aid settings
 
+**Finding aids enabled**: This setting will enable or disable the finding aid
+upload and generation functionality in AtoM. When disabled, finding aid links 
+(and options for authenticated users) are not displayed in archival description 
+:term:`view pages <view page>`, finding aid generation is disabled, and the 
+Finding aid search filter in the archival description 
+:term:`advanced search panel` is hidden. Additionally, other settings on this
+page will be hidden until the feature is re-enabled. 
+
+.. SEEALSO:: 
+
+   For additional :term:`advanced search panel` fields that can be hidden
+   via settings changes, see: :ref:`default-page-elements`.
+
 **Finding aid format**: AtoM can generate finding aids in either Portable
 Document Format (PDF), or in Rich Text Format (RTF). Choose whether you would
 like :term:`finding aids <finding aid>` generated in PDF or RTF - essentially, if

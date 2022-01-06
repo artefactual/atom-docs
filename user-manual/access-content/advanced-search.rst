@@ -269,6 +269,13 @@ via a friendly :term:`user interface`.
     * *Uploaded*: Return only matching descriptions that have an uploaded
       finding aid.
 
+.. NOTE:: 
+
+   Finding aid generation can be disabled by an :term:`administrator` via
+   |gears| **Admin > Settings > Finding aid**. When disabled, the related
+   filter in the advanced search panel will also be hidden. For more
+   information, see: :ref:`print-finding-aid-settings`.
+
 * **Copyright status**: AtoM :term:`archival description` templates include a
   the ability to add Rights statements, drawn from elements of the
   `PREMIS <http://www.loc.gov/standards/premis/>`__
