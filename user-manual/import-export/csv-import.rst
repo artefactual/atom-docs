@@ -1378,12 +1378,12 @@ import - any existing data will be left in place:
 
 * accessionNumber
 * radGeneralMaterialDesignation
-* radStatementOfResponsibilityNote
+* radTitleStatementOfResponsibilityNote
 * radTitleAttributionsAndConjectures
 * radTitleContinues
 * radTitleSourceOfTitleProper
 * radTitleVariationsInTitle
-* radParallelTitles
+* radTitleParallelTitles
 * subjectAccessPoints
 * placeAccessPoints
 * genreAccessPoints

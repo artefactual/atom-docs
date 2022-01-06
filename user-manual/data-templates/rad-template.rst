@@ -1786,7 +1786,7 @@ Other notes - Publisher's series
 
 **Template field** Other notes - Publisher's series
 
-**CSV Column** ``radPublishersSeriesNote``
+**CSV Column** ``radNotePublishersSeries``
 
 **RAD Rule** "Make notes on important details of publisher's series that are not
 included in the Publisher's series area, including variant series titles,
@@ -1832,7 +1832,7 @@ Other notes- Signatures note
 
 **Template field** Other notes- Signatures note
 
-**CSV Column** ``radNoteSignatures``
+**CSV Column** ``radNoteSignaturesInscriptions``
 
 **RAD Rule** "Make notes on signatures, inscriptions, or monograms, etc.,
 which appear on the unit being described. Indicate where such signatures and
@@ -1856,7 +1856,7 @@ Other notes - General note
 
 **Template field** Other notes - General note
 
-**CSV Column** ``radNoteGeneral``
+**CSV Column** ``generalNote``
 
 **RAD Rule** "Use this note to record any other descriptive information
 considered important but not falling within the definitions of the other notes.
