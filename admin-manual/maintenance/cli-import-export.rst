@@ -26,6 +26,7 @@ exports in AtoM.
 * :ref:`cli-bulk-export`
 * :ref:`csv-validation-cli`
 * :ref:`csv-import-cli`
+* :ref:`delete-csv-io-import-cli`
 * :ref:`digital-object-load-task`
 * :ref:`csv-export-cli`
 
@@ -964,6 +965,11 @@ it carefully prior to import.
 
 All CSV import command-line tasks should be run from the root AtoM directory.
 
+.. SEEALSO::
+
+   * :ref:`cli-backup-db`
+   * :ref:`delete-csv-io-import-cli`
+
 .. _csv-import-descriptions-cli:
 
 Importing archival descriptions
@@ -1313,6 +1319,11 @@ Example use:
 Normally, the ``--roundtrip`` option, when used, will first ask you if you have
 a backup of your database before proceding. However, you can skip this
 confirmation requirement by adding the ``--no-confirmation`` option as well.
+
+.. SEEALSO::
+
+   * :ref:`cli-backup-db`
+   * :ref:`delete-csv-io-import-cli`
 
 :ref:`Back to top <cli-import-export>`
 
@@ -2223,6 +2234,158 @@ Example use reporting progress every 5 rows:
 This can be useful for large imports, to ensure the import is still progressing,
 and to try to roughly determine how far the task has progressed and how long
 it will take to complete.
+
+:ref:`Back to top <cli-import-export>`
+
+.. _delete-csv-io-import-cli: 
+
+Delete descriptions created by a CSV import
+===========================================
+
+Even with :ref:`csv-validation` available, occasionally a CSV import will have 
+unexpected results, and it can be time consuming to manually delete 
+:term:`archival description` records created by a bad import. 
+
+Fortunately, AtoM has a command-line task that can delete descriptions created
+by a CSV import. The task will **not** delete other 
+:term:`entity types <entity>` created by the import (such as linked 
+:term:`access point` terms, :term:`authority records <authority record>`, 
+:term:`archival institutions <archival institution>`, etc) since these may be 
+related to other records in AtoM - you would need to find and delete these 
+manually if desired. However, this CLI task can still make undoing a bad 
+archival description CSV import much easier, provided the task is used 
+carefully with a proper understanding of its methods and limitations. 
+
+How it works: using the source name as the task parameter
+---------------------------------------------------------
+
+When a CSV import is performed in AtoM, two values are added to a database
+table called the keymap table for every row in the CSV: 
+
+.. image:: images/csv-keymap-table.*
+   :align: center
+   :width: 80%
+   :alt: An image showing the fields in the keymap MySQL database table
+
+* **legacyId**: The ``legacyId`` value used in the CSV for that row will be stored
+  in the keymap table's ``source_id`` field
+* **source name**: A source name for the CSV will be stored in the 
+  ``source_name`` field of the keymap table. The command-line CSV 
+  :ref:`archival description import task <csv-import-descriptions-cli>` includes 
+  a ``--source-name`` option that allows a user to manually define the source
+  name used; if this is not specified (such as during imports via the 
+  :term:`user interface`, where no option for manually entering a source name 
+  is provided), then the filename of the CSV (including the ``.csv`` extension) 
+  is used by default. 
+
+These values are used in the matching logic used for update imports. For more
+general information on the use of the keymap table values, see: 
+
+* :ref:`csv-import-descriptions-cli`
+* :ref:`csv-descriptions-match-criteria` (importing CSV updates)
+
+This command-line task to delete records from an import will also use the source
+name value of the original import, stored in the keymap table, to identify 
+records for deletion. 
+
+Finding the source name of a record
+-----------------------------------
+
+You can always check in the user interface what source name was used for 
+records created via an import by entering into :term:`edit mode` and navigating 
+to the Administration :term:`area <information area>` of the :term:`edit page` - 
+the source name used will be diplayed there:
+
+.. image:: images/source-name-ui.*
+   :align: center
+   :width: 90%
+   :alt: An image of the source name used during import, shown in the
+         Administration area of the AtoM edit page.
+
+Alternatively, you can use SQL to find the source name and ID values associated
+with a description. See: 
+
+* :ref:`cli-access-mysql`
+* :ref:`sql-source-name`
+
+.. IMPORTANT::
+
+   If you have not used unique filenames (or manually specified source names)
+   during your imports, you may end up deleting more records than intended! 
+   We **strongly** recommend making a backup of your data before proceeding. 
+
+   See: 
+
+   * :ref:`maintenance-data-backup`
+   * :ref:`cli-backup-db`
+
+Task usage
+----------
+
+The basic syntax for the command-line task to delete :term:`archival description`
+records from a previous CSV import is: 
+
+.. code-block:: bash
+
+   php symfony import:delete sourcename
+
+Where ``sourcename`` represents the ``source_name`` value associated with the 
+import, stored in AtoM's keymap database table. 
+
+By running ``php symfony help import:delete`` we can also see the console's help 
+output for the task:
+
+.. image:: images/cli-import-delete-help.*
+   :align: center
+   :width: 90%
+   :alt: An image of the help output shown in the console for the import:delete 
+         command-line task
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for Symfony to be
+able to execute the task.
+
+Normally when run, the task will first remind you to create a database backup
+before proceeding, and will ask for confirmation before executing the task:
+
+.. image:: images/cli-import-delete-confirm.*
+   :align: center
+   :width: 90%
+   :alt: An image of the confirmation message shown when running the 
+         import:delete command-line task
+
+However to support scripted automation, or for a system administrator to simply
+skip this confirmation step, you can use the ``--force`` (or ``-f``) option
+to bypass confirmation. 
+
+The ``--verbose`` (or ``-v``) option can be used to provide a more detailed
+output in the console as the task progresses, which can aid in debugging. 
+
+Additionally, if you would like to save the console output for review and 
+debugging, you can write the console log output to a file, by using the 
+``--logfile`` (or ``-l``) option and providing a file path and filename for 
+the target logfile, as in the example below: 
+
+.. code-block:: bash
+
+   php symfony import:delete --verbose --logfile="path/to/my/logfile.txt" my-bad-import.csv
+
+.. IMPORTANT::
+
+   If you use this task, remember: 
+
+   * You should make a backup of your databse first, so if the results are
+     unexpected, you can load your backup. See: :ref:`cli-backup-db`
+   * Your source name should be unique for the target records. If you've
+     imported multiple records with generic file names (or manually added
+     source names) such as "isad-000001.csv", then the task may delete more
+     records than you expect!
+   * The task will **not** delete related :term:`entity` types created by the
+     import, such as linked :term:`access point` terms, 
+     :term:`authority records <authority record>`, 
+     :term:`archival institutions <archival institution>`, etc. since these may 
+     be related to other records in AtoM. You will need to find and delete these 
+     manually if desired
 
 :ref:`Back to top <cli-import-export>`
 
