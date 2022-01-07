@@ -611,16 +611,31 @@ Validate a CSV import file via the command-line
 -----------------------------------------------
 
 This task can be run prior to import as a way of checking for common issues in
-CSV formatting and data preparation. Details on how to interpret the results
-included in the console report can be found in the User Manual, here:
+CSV formatting and data preparation. Unlike the validation option supported
+via the :term:`user interface`, the command-line task can also be pointed at a
+directory of CSV files to perform bulk CSV validation instead of one file at a
+time. However, while the user interface supports a downloadable text file
+report of the validation output, the command-line task will currently only
+output results in the console.
+
+Details on how to interpret the results included in the console report can be 
+found in the User Manual, here:
 
 * :ref:`csv-validation`
 
-The basic syntax for running the validation task is: 
+The basic syntax for running the validation task against a single CSV is: 
 
 .. code-block:: bash
 
    php symfony csv:check-import /path/to/my/file.csv
+
+To run validation against multiple CSVs at once, place them in a common 
+directory accessible by AtoM and provide a path to the directory itself, 
+instead of to an individual CSV: 
+
+.. code-block:: bash
+
+   php symfony csv:check-import /path/to/my/directory/
 
 .. SEEALSO::
 
