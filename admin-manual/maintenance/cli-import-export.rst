@@ -26,6 +26,7 @@ exports in AtoM.
 * :ref:`cli-bulk-export`
 * :ref:`csv-validation-cli`
 * :ref:`csv-import-cli`
+* :ref:`audit-io-csv-import-cli`
 * :ref:`delete-csv-io-import-cli`
 * :ref:`digital-object-load-task`
 * :ref:`csv-export-cli`
@@ -2237,6 +2238,130 @@ it will take to complete.
 
 :ref:`Back to top <cli-import-export>`
 
+.. _audit-io-csv-import-cli:
+
+Audit a CSV import
+==================
+
+With large CSV files, it can sometimes be difficult to determine if all rows 
+imported as expected. This simple command-line task can be used following a 
+CSV import to determine if a match can be found in AtoM's database for each 
+row in the import CSV. 
+
+How it works: using the keymap table and the import source name
+---------------------------------------------------------------
+
+When a CSV import is performed in AtoM, two values are added to a database
+table called the keymap table for every row in the CSV: 
+
+.. image:: images/csv-keymap-table.*
+   :align: center
+   :width: 80%
+   :alt: An image showing the fields in the keymap MySQL database table
+
+* **legacyId**: The ``legacyId`` value used in the CSV for that row will be stored
+  in the keymap table's ``source_id`` field
+* **source name**: A source name for the CSV will be stored in the 
+  ``source_name`` field of the keymap table. The command-line CSV import tasks 
+  (such as the :ref:`archival description import task <csv-import-descriptions-cli>`) 
+  include a ``--source-name`` option that allows a user to manually define the 
+  source name used; if this is not specified (such as during imports via the 
+  :term:`user interface`, where no option for manually entering a source name 
+  is provided), then the filename of the CSV (including the ``.csv`` extension) 
+  is used by default. 
+
+These values are also used in the matching logic used for update imports. For
+more general information on the use of the keymap table values, see:
+
+* :ref:`csv-import-descriptions-cli`
+* :ref:`csv-descriptions-match-criteria` (importing archival description CSV 
+  updates)
+
+This audit task will use the sourcename of the import to find related values
+in the keymap table, and then will compare every CSV row's ``legacyId`` values
+with those found in the ``source_id`` column of the keymap database table. 
+
+If a row is found in the CSV without a corresponding match in the keymap table, 
+then this will be reported in the console. You can then address the issue
+however you'd prefer, such as: 
+
+* Creating a new CSV with the missing rows as a follow-up import
+* Loading a database backup and then re-performing the original import
+* Using the :ref:`delete-csv-io-import-cli` task described below to delete the 
+  results of the first import, before re-performing the import
+* Manually creating the missing records
+* Etc. 
+
+Task usage
+----------
+
+The basic syntax for the CSV audit import task is: 
+
+.. code-block:: bash
+
+   php symfony csv:audit-import sourcename filename
+
+Where ``sourcename`` represents the source name used during the original CSV
+import (which will default to the CSV filename, including the extension, if 
+none is defined during import), and where ``filename`` represents the current
+path and filename where the original import CSV is located, so it can be used 
+for comparison against AtoM's keymap table. 
+
+.. TIP::
+
+   See below for tips on how to find the source name of a previously imported
+   record in AtoM:
+
+   * :ref:`delete-csv-io-import-cli-sourcename`
+
+Sample task execution and output on a 3-row description CSV: 
+
+.. image:: images/cli-audit-import-example.*
+   :align: center
+   :width: 90%
+   :alt: An example run of the csv:audit-import task
+
+By running ``php symfony help csv:audit-import`` we can also see the console's
+help output for the task:
+
+.. image:: images/cli-audit-import-help.*
+   :align: center
+   :width: 90%
+   :alt: An image of the help output shown in the console for the csv:audit-import 
+         command-line task
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for Symfony to be
+able to execute the task.
+
+The ``--target-name`` option is used to specify the :term:`entity` type of the
+records in the accompanying CSV. The default when this option is not specified
+is ``information_object`` (i.e. :term:`archival description`). Supported options 
+include: 
+
+* information_object (i.e. :term:`archival description`)
+* actor (i.e. :term:`authority record`)
+* repository (i.e. :term:`archival institution`)
+* event
+* accession
+* physical_object (i.e. :term:`physical storage`)
+
+Below is an example command to audit an authority record CSV import, where the
+original import source name was set to ``myauthoritiesimport``:
+
+.. code-block:: bash
+
+   php symfony csv:audit-import --target-name='actor' 'myauthoritiesimport' lib/task/import/example/authority_records/example_authority_records.csv
+
+Finally, the ``--id-column-name`` option is useful if you are using a
+transformation script as part of an automated process, such as a migration
+from a different legacy system. This option can be used to tell AtoM to use a
+different CSV column name instead of the default ``legacyId`` column when
+comparing values in the CSV against the ``source_id`` column in the keymap
+table of AtoM's database.
+
+:ref:`Back to top <cli-import-export>`
+
 .. _delete-csv-io-import-cli: 
 
 Delete descriptions created by a CSV import
@@ -2255,6 +2380,8 @@ related to other records in AtoM - you would need to find and delete these
 manually if desired. However, this CLI task can still make undoing a bad 
 archival description CSV import much easier, provided the task is used 
 carefully with a proper understanding of its methods and limitations. 
+
+.. _delete-csv-io-import-cli-summary:
 
 How it works: using the source name as the task parameter
 ---------------------------------------------------------
@@ -2287,6 +2414,8 @@ general information on the use of the keymap table values, see:
 This command-line task to delete records from an import will also use the source
 name value of the original import, stored in the keymap table, to identify 
 records for deletion. 
+
+.. _delete-csv-io-import-cli-sourcename:
 
 Finding the source name of a record
 -----------------------------------
