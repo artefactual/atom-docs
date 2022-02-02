@@ -44,8 +44,8 @@ to configure, leave the defaults, select "Ok" and continue.
 
 .. code-block:: bash
 
-   wget https://dev.mysql.com/get/mysql-apt-config_0.8.15-1_all.deb
-   sudo dpkg -i mysql-apt-config_0.8.15-1_all.deb
+   wget https://dev.mysql.com/get/mysql-apt-config_0.8.22-1_all.deb
+   sudo dpkg -i mysql-apt-config_0.8.22-1_all.deb
 
 During the installation, you will be prompted to set a password for the default
 administrator user (root). We strongly recommend that you use a strong password
