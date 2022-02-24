@@ -37,10 +37,11 @@ To download the ISAD(G) CSV template for AtoM, please visit our wiki page:
 Field descriptions
 ==================
 
-DACS is maintained by the Society of American Archivists
-(`SAA <http://www2.archivists.org>`__), and is available at:
+DACS is maintained by the Society of American Archivists 
+(`SAA <http://www2.archivists.org>`__), and the version used in AtoM is 
+available at:
 
-* http://saa.archivists.org/store/describing-archives-a-content-standard-dacs/223/
+* https://files.archivists.org/pubs/DACS2E-2013_v0315.pdf
 
 Information below includes:
 
@@ -84,9 +85,14 @@ Identifier
 
 **ISAD CSV Column** ``identifier``
 
-**DACS Rule** At the highest level of a multilevel description or in a single level description, provide a unique identifier for the materials being described in accordance with the institution's administrative control system.
-Optionally, devise unique identifiers at lower levels of a multilevel description. (DACS 2.1.3)
-The country and repository code will be automatically added from the linked repository record to form a full reference code.
+**DACS Rule**: At the highest level of a multilevel description or in a single
+level description, provide a unique identifier for the materials being
+described in accordance with the institution's administrative control system.
+
+Optionally, devise unique identifiers at lower levels of a multilevel
+description. (DACS 2.1.3) The country and repository code will be
+automatically added from the linked repository record to form a full reference
+code.
 
 **EAD**
 
@@ -104,9 +110,18 @@ Name and Location of Repository
 
 **ISAD CSV Column** ``repository``
 
-**DACS Rule** Explicitly state the name of the repository, including any parent bodies. (DACS 2.2.2)
-Search for an existing name in the archival institution records by typing in the first few letters of the name.
-Alternatively, type a new name to create and link tidentifier
+**DACS Rule**: Explicitly state the name of the repository, including any
+parent bodies. (DACS 2.2.2) 
+
+.. TIP:: 
+
+   Search for an existing name in the archival institution records by typing
+   in the first few letters of the name into AtoM's autocomplete field.
+   Alternatively, type a new name to create a stub :term:`repository` record
+   and link it to the current description on save. For more general
+   information, see:
+
+   * :ref:`link-archival-institution`
 
 **EAD**
 
@@ -125,9 +140,9 @@ Levels of Description
 
 **ISAD CSV Column** ``levelOfDescription``
 
-**DACS Rule** Select a level of description from the drop-down menu.
-Follow any relevant local or institutional guidelines in selecting the proper level of description.
-See DACS (2013) Chapter 1 for further guidance.
+**DACS Rule**: Select a level of description from the drop-down menu. Follow
+any relevant local or institutional guidelines in selecting the proper level
+of description. See DACS (2013) Chapter 1 for further guidance.
 
 **EAD**
 
@@ -155,7 +170,11 @@ Title
 
 **ISAD CSV Column** ``title``
 
-**DACS Rule** In the absense of a meaningful formal title, compose a brief title that uniquely identifies the material, normally consisting of a name segment, a term indicating the nature of the unit being described, and optionally a topical segment.
+**DACS Rule**: In the absense of a meaningful formal title, compose a brief
+title that uniquely identifies the material, normally consisting of a name
+segment, a term indicating the nature of the unit being described, and
+optionally a topical segment.
+
 Do not enclose devised titles in square brackets. (DACS 2.3.3)
 
 **EAD**
@@ -174,11 +193,9 @@ Date
 
 **ISAD CSV Columns** ``eventDates``, ``eventTypes``, ``eventStartDates``, ``eventEndDates``
 
-**DACS Rule** Record dates of creation, record-keeping activity, publication, or broadcast (``eventTypes``) as appropriate to the materials being described. (DACS 2.4.3)
-The Date field (``eventDates``) can be used to enter free-text date information, including typographical marks to express approximation, uncertainty, or qualification.
-Use the start and end fields (``eventStartDates`` and ``eventEndDates``) to make the dates searchable.
-Do not use any qualifiers or typographical symbols in the start and end fields.
-Acceptable date formats: YYYYMMDD, YYYY-MM-DD, YYYY-MM, YYYY.
+**DACS Rule** Record dates of creation, record-keeping activity, publication,
+or broadcast (``eventTypes``) as appropriate to the materials being described.
+(DACS 2.4.3)
 
 **EAD**
 
@@ -186,6 +203,22 @@ Acceptable date formats: YYYYMMDD, YYYY-MM-DD, YYYY-MM, YYYY.
 
    <did>
      <unitdate encodinganalog="3.1.3">
+
+**Notes**
+
+The Date field (``eventDates``) can be used to enter free-text date
+information, including typographical marks to express approximation,
+uncertainty, or qualification. 
+
+Use the start and end fields (``eventStartDates`` and ``eventEndDates``) to 
+make the dates searchable. Do not use any qualifiers or typographical symbols 
+in the start and end fields. Acceptable date formats: YYYYMMDD, YYYY-MM-DD, 
+YYYY-MM, YYYY.
+
+For more on how the controlled start and end date fields are used in searching, 
+see: 
+
+* :ref:`date-range-search`
 
 .. _dacs-extent:
 
@@ -196,8 +229,11 @@ Extent
 
 **ISAD CSV Column** ``extentAndMedium``
 
-**DACS Rule** Record the quantity of the material in terms of its physical extent as linear or cubic feet, number of items, or number of containers or carriers. (DACS 2.5.4)
-Optionally, record the quantity in terms of the material type(s) (DACS 2.5.5), and/or qualify the statement of physical extent to hgihlight the existence of material types that are important. (DACS 2.5.6)
+**DACS Rule**: Record the quantity of the material in terms of its physical
+extent as linear or cubic feet, number of items, or number of containers or
+carriers. (DACS 2.5.4) Optionally, record the quantity in terms of the
+material type(s) (DACS 2.5.5), and/or qualify the statement of physical extent
+to hgihlight the existence of material types that are important. (DACS 2.5.6)
 
 **EAD**
 
@@ -215,9 +251,12 @@ Creator
 
 **ISAD CSV Column** ``eventActors``
 
-**DACS Rule** Record the name(s) of the creator(s) identified in the name elevent in the devised title of the materials using standardized vocabularies or with rules for formulating standardized names (DACS 2.6.4).
-Search for an existing name in the authority records by typing the first few characters of the name.
-Alternatively, type a new name to create and link to a new authority record.
+**DACS Rule**: Record the name(s) of the creator(s) identified in the name
+elevent in the devised title of the materials using standardized vocabularies
+or with rules for formulating standardized names (DACS 2.6.4). Search for an
+existing name in the authority records by typing the first few characters of
+the name. Alternatively, type a new name to create and link to a new authority
+record.
 
 **EAD**
 
@@ -241,7 +280,8 @@ Child level identifier
 
 **ISAD CSV Column** ``identifier``
 
-**DACS Rule** Provide a unique identifier for the materials being described in accordance with the institution's administrative control system.
+**DACS Rule**: Provide a unique identifier for the materials being described
+in accordance with the institution's administrative control system.
 
 **EAD** See the EAD mappings in the related fields.
 
@@ -252,7 +292,7 @@ Level of description
 
 **ISAD CSV Column** ``levelOfDescription``
 
-**DACS Rule:** Record the level of this unit of description.
+**DACS Rule**: Record the level of this unit of description.
 
 **EAD** See the EAD mappings in the related fields.
 
@@ -263,7 +303,8 @@ Title
 
 **ISAD CSV Column** ``title``
 
-**DACS Rule:** In the absence of a meaningful formal title, compose a brief title that uniquely identifies the material.
+**DACS Rule**: In the absence of a meaningful formal title, compose a brief
+title that uniquely identifies the material.
 
 **EAD** See the EAD mappings in the related fields above.
 
@@ -274,12 +315,13 @@ Date
 
 **ISAD CSV Column** ``eventDates``
 
-**DACS Rule:** Record a date of creation.
-
-**EAD** See the EAD mappings in the related fields above.
-
 .. IMPORTANT::
-  To include child levels in the ISAD CSV for import, the ``parentId`` column must contain the legacy ID of the parent record. For example, if the parent record has the legacy ID *249* recorded in the ``legacyId`` column, the child record must have the number *249* in the ``parentId`` column, as shown in the table here:
+  
+  To include child levels in the ISAD CSV for import, the ``parentId`` column
+  must contain the legacy ID of the parent record. For example, if the parent
+  record has the legacy ID *249* recorded in the ``legacyId`` column, the
+  child record must have the number *249* in the ``parentId`` column, as shown
+  in the table here:
 
     +--------------------+------------+----------+
     | title              | legacyId   | parentId |
@@ -288,6 +330,10 @@ Date
     +--------------------+------------+----------+
     | DACS child level   | 250        | 249      |
     +--------------------+------------+----------+
+
+**DACS Rule:** Record a date of creation.
+
+**EAD** See the EAD mappings in the related fields above.
 
 
 :ref:`Back to the top <dacs-template>`
@@ -315,15 +361,13 @@ Scope and content
 
 **ISAD CSV Column** ``scopeAndContent``
 
-**DACS Rule** Record information about the nature of the materials and activities being reflected in the unit being described to enable users to judge its relevance,
-including information about functions, activities, transactions, and processes;
-documentary form(s) or intellectual characteristics;
-content dates;
-geographic areas and places;
-subject matter;
-completeness of the amterials;
-or any other information that assists the user in evaluating the relevance of the materials.
-(DACS 3.1)
+**DACS Rule**: Record information about the nature of the materials and
+activities being reflected in the unit being described to enable users to
+judge its relevance, including information about functions, activities,
+transactions, and processes; documentary form(s) or intellectual
+characteristics; content dates; geographic areas and places; subject matter;
+completeness of the materials; or any other information that assists the user
+in evaluating the relevance of the materials. (DACS 3.1)
 
 **EAD**
 
@@ -341,8 +385,8 @@ System of Arrangement
 
 **ISAD CSV Column** ``arrangement``
 
-**DACS Rule** Describe the current arrangement of the materials in terms of the various aggregations within it and their relationships.
-(DACS 3.2.3)
+**DACS Rule**: Describe the current arrangement of the materials in terms of
+the various aggregations within it and their relationships. (DACS 3.2.3)
 
 **EAD**
 
@@ -376,8 +420,11 @@ Conditions governing access
 
 **ISAD CSV Column** ``accessConditions``
 
-**DACS Rule** Give information about any restrictions on access to the unit being described (or parts thereof) as a result of the nature of the information therein or statutory/contractual requirements. As appropriate, specify the details of the restriction. If there are no restrictions, state that fact.
-(DACS 4.1.5)
+**DACS Rule**: Give information about any restrictions on access to the unit
+being described (or parts thereof) as a result of the nature of the
+information therein or statutory/contractual requirements. As appropriate,
+specify the details of the restriction. If there are no restrictions, state
+that fact. (DACS 4.1.5)
 
 **EAD**
 
@@ -395,8 +442,9 @@ Physical access
 
 **ISAD CSV Column** ``physicalCharacteristics``
 
-**DACS Rule** Provide information about the physical characteristics or condition of the unit being described that limit access to it or restrict its use.
-(DACS 4.2.5)
+**DACS Rule**: Provide information about the physical characteristics or
+condition of the unit being described that limit access to it or restrict its
+use. (DACS 4.2.5)
 
 **EAD**
 
@@ -414,8 +462,9 @@ Technical access
 
 **ISAD CSV Column** Not mapped to ISAD(G) CSV template
 
-**DACS Rule** Provide information about any special equipment required to view or access the unit being described, if it is not clear from the Extent element.
-(DACS 4.3.5)
+**DACS Rule**: Provide information about any special equipment required to
+view or access the unit being described, if it is not clear from the Extent
+element. (DACS 4.3.5)
 
 **EAD** Not mapped to EAD.
 
@@ -428,8 +477,10 @@ Conditions governing reproduction and use
 
 **ISAD CSV Column** ``reproductionConditions``
 
-**DACS Rule** Give information about copyright status and any other conditions governing the reproduction, publication, and further use (e.g., display, public screening, broadcast, etc.) of the unit being described after access has been provided.
-(DACS 4.4.5)
+**DACS Rule**: Give information about copyright status and any other
+conditions governing the reproduction, publication, and further use (e.g.,
+display, public screening, broadcast, etc.) of the unit being described after
+access has been provided. (DACS 4.4.5)
 
 **EAD**
 
@@ -453,8 +504,8 @@ Languages of the material
    `ISO 639-1 <http://www.loc.gov/standards/iso639-2/php/code_list.php>`_ when
    importing from CSV.
 
-**DACS Rule** Record the language(s) of the materials being described.
-(DACS 4.5.2)
+**DACS Rule**: Record the language(s) of the materials being described. (DACS 
+4.5.2)
 
 **EAD**
 
@@ -479,7 +530,7 @@ Scripts of the material
    `ISO 15924 <http://www.unicode.org/iso15924/iso15924-codes.html>`_ when
    importing from CSV.
 
-**DACS Rule** Record the scripts(s) of the materials being described.
+**DACS Rule**: Record the scripts(s) of the materials being described.
 
 **EAD**
 
@@ -498,9 +549,9 @@ Language and script notes
 
 **ISAD CSV Column** ``languageNotes``
 
-**DACS Rule** Record information about any distinctive alphabets, scripts, symbol systems, or abbreviations employed (DACS 4.5.3).
-If there is no language content, record “no linguistic content.”
-(DACS 4.5.4)
+**DACS Rule**: Record information about any distinctive alphabets, scripts,
+symbol systems, or abbreviations employed (DACS 4.5.3). If there is no
+language content, record “no linguistic content.” (DACS 4.5.4)
 
 **EAD**
 
@@ -518,9 +569,12 @@ Finding aids
 
 **ISAD CSV Column** ``findingAids``
 
-**DACS Rule** Record information about any existing finding aids that provide information relating to the context and contents of the unit being described including any relevant information about its location or availability, and any other information necessary to assist the user in evaluating its usefulness.
-Include finding aids prepared by the creator (e.g., registers, indexes, etc.) that are part of the unit being described.
-(DACS 4.6.2)
+**DACS Rule**: Record information about any existing finding aids that provide
+information relating to the context and contents of the unit being described
+including any relevant information about its location or availability, and any
+other information necessary to assist the user in evaluating its usefulness.
+Include finding aids prepared by the creator (e.g., registers, indexes, etc.)
+that are part of the unit being described. (DACS 4.6.2)
 
 **EAD**
 
@@ -554,9 +608,11 @@ Custodial history
 
 **ISAD CSV Column** ``archivalHistory``
 
-**DACS Rule** Record the successive transfers of ownership, responsibility, or custody or control of the unit being described from the time it left the possession of the creator until its acquisition by the repository, along with the dates thereof,
-insofar as this information can be ascertained and is significant to the user’s understanding of the authenticity.
-(DACS 5.1.3)
+**DACS Rule**:  Record the successive transfers of ownership, responsibility,
+or custody or control of the unit being described from the time it left the
+possession of the creator until its acquisition by the repository, along with
+the dates thereof, insofar as this information can be ascertained and is
+significant to the user’s understanding of the authenticity. (DACS 5.1.3)
 
 **EAD**
 
@@ -574,8 +630,9 @@ Immediate source of acquisition or transfer
 
 **ISAD CSV Column** ``acquisition``
 
-**DACS Rule** Record the source(s) from which the materials being described were acquired, the date(s) of acquisition, and the method of acquisition, if this information is not confidential.
-(DACS 5.2.3)
+**DACS Rule**: Record the source(s) from which the materials being described
+were acquired, the date(s) of acquisition, and the method of acquisition, if
+this information is not confidential. (DACS 5.2.3)
 
 **EAD**
 
@@ -593,8 +650,10 @@ Appraisal, destruction and scheduling information
 
 **ISAD CSV Column** ``appraisal``
 
-**DACS Rule** Where the destruction or retention of archival materials has a bearing on the interpretation and use of the unit being described, provide information about the materials destroyed or retained and provide the reason(s) for the appraisal decision(s), where known.
-(DACS 5.3.4)
+**DACS Rule**: Where the destruction or retention of archival materials has a
+bearing on the interpretation and use of the unit being described, provide
+information about the materials destroyed or retained and provide the
+reason(s) for the appraisal decision(s), where known. (DACS 5.3.4)
 
 **EAD**
 
@@ -612,9 +671,8 @@ Accruals
 
 **ISAD CSV Column** ``accruals``
 
-**DACS Rule** If known, indicate whether or not further accruals are expected.
-When appropriate, indicate frequency and volume.
-(DACS 5.4.2)
+**DACS Rule**: If known, indicate whether or not further accruals are
+expected. When appropriate, indicate frequency and volume. (DACS 5.4.2)
 
 **EAD**
 
@@ -647,10 +705,10 @@ Existence and location of originals
 
 **ISAD CSV Column** ``locationOfOriginals``
 
-**DACS Rule** If the materials being described are reproductions and the originals are located elsewhere, give the location of the originals.
-(DACS 6.1.4)
-Record any identifying numbers that may help in locating the originals in the cited location.
-(DACS 6.1.6)
+**DACS Rule**: If the materials being described are reproductions and the
+originals are located elsewhere, give the location of the originals. (DACS
+6.1.4) Record any identifying numbers that may help in locating the originals
+in the cited location. (DACS 6.1.6)
 
 **EAD**
 
@@ -668,10 +726,13 @@ Existence and location of copies
 
 **ISAD CSV Column** ``locationOfCopies``
 
-**DACS Rule** If a copy of all or part of the material being described is available, in addition to the originals, record information about the medium and location of the copy, any identifying numbers, and any conditions on the use or availability of the copy.
-If a copy of only a part of the unit being described is available, indicate which part.
-If the materials being described are available via remote access (electronically or otherwise), provide the relevant information needed to access them.
-(DACS 6.2.3)
+**DACS Rule**: If a copy of all or part of the material being described is
+available, in addition to the originals, record information about the medium
+and location of the copy, any identifying numbers, and any conditions on the
+use or availability of the copy. If a copy of only a part of the unit being
+described is available, indicate which part. If the materials being described
+are available via remote access (electronically or otherwise), provide the
+relevant information needed to access them. (DACS 6.2.3)
 
 **EAD**
 
@@ -689,8 +750,11 @@ Related archival materials
 
 **ISAD CSV Column** ``relatedUnitsOfDescription``
 
-**DACS Rule** If there are materials that have a direct and significant connection to those being described by reason of closely shared responsibility or sphere of activity, provide the title, location, and, optionally, the reference number(s) of the related materials and their relationship with the materials being described.
-(DACS 6.3.5)
+**DACS Rule**: If there are materials that have a direct and significant
+connection to those being described by reason of closely shared responsibility
+or sphere of activity, provide the title, location, and, optionally, the
+reference number(s) of the related materials and their relationship with the
+materials being described. (DACS 6.3.5)
 
 **EAD**
 
@@ -708,10 +772,18 @@ Related descriptions
 
 **ISAD CSV Column** N/A
 
-**DACS Rule** To create a relationship between this description and another description held in AtoM, begin typing the name of the related description and select it from the autocomplete drop-down menu when it appears below.
-Multiple relationships can be created.
+**DACS Rule**: N/A
 
 **EAD** Not mapped to EAD.
+
+**Notes**
+
+To create a relationship between this :term:`archival description` and another 
+description held in AtoM, begin typing the name of the related description and 
+select it from the autocomplete :term:`drop-down menu` when it appears below. 
+Multiple relationships can be created. For more information, see: 
+
+* :ref:`link-related-descriptions`
 
 .. _dacs-publication-notes:
 
@@ -722,7 +794,11 @@ Publication notes
 
 **ISAD CSV Column** ``publicationNote``
 
-**DACS Rule** No rule.
+**DACS Rule**: Record a citation to, or information about, a publication that
+is about or is based on the use, study, or analysis of the materials being
+described. Provide sufficient information to indicate the relationship between
+the publication and the unit being described. This includes annotated
+editions. (DACS 6.4.4)
 
 **EAD**
 
@@ -755,8 +831,8 @@ General note(s)
 
 **ISAD CSV Column** ``generalNote``
 
-**DACS Rule** Record, as needed, information not accommodated by any of the defined elements of description.
-(DACS 7.1.2)
+**DACS Rule**: Record, as needed, information not accommodated by any of the
+defined elements of description. (DACS 7.1.2)
 
 **EAD**
 
@@ -775,12 +851,11 @@ Specialized note(s)
 
 **ISAD CSV Column** N/A
 
-**DACS Rule** Select a note type from the drop-down menu and record, as needed, specialized information not accommodated by any of the defined elements of description,
-including Conservation (DACS 7.1.3),
-Citation (DACS 7.1.5),
-Alphanumeric designation (DACS 7.1.6),
-Variant title information (DACS 7.1.7),
-or Processing information (DACS 7.1.8).
+**DACS Rule**: Select a note type from the drop-down menu and record, as
+needed, specialized information not accommodated by any of the defined
+elements of description, including Conservation (DACS 7.1.3), Citation (DACS
+7.1.5), Alphanumeric designation (DACS 7.1.6), Variant title information (DACS
+7.1.7), or Processing information (DACS 7.1.8).
 
 **EAD**
 
@@ -843,8 +918,8 @@ Sources used
 
 **ISAD CSV Column** ``sources``
 
-**DACS Rule** Record relevant information about sources consulted in establishing or revising the description.
-(DACS 8.1.3)
+**DACS Rule**: Record relevant information about sources consulted in
+establishing or revising the description. (DACS 8.1.3)
 
 **EAD**
 
@@ -863,8 +938,8 @@ Rules or conventions
 
 **ISAD CSV Column** ``rules``
 
-**DACS Rule** Record the international, national or local rules or conventions followed in preparing the description.
-(DACS 8.1.4)
+**DACS Rule**: Record the international, national or local rules or
+conventions followed in preparing the description. (DACS 8.1.4)
 
 **EAD**
 
@@ -883,8 +958,8 @@ Archivist and date
 
 **ISAD CSV Column** ``archivistNote``
 
-**DACS Rule** Record the name(s) of the person(s) who created or revised the description, as well as the creation or revision date.
-(DACS 8.1.5)
+**DACS Rule**: Record the name(s) of the person(s) who created or revised the
+description, as well as the creation or revision date. (DACS 8.1.5)
 
 **EAD**
 
@@ -909,6 +984,11 @@ Access points
 
    The data entry fields for the Access points area.
 
+The DACS standard does not include rules about access points, but it does 
+include general high-level guidance on their use and where relevant information
+can be found when constructing controlled vocabulary terms (See pg xxiv in 
+Describing ARchives: A Content Standard, Second Edition). 
+
 .. _dacs-subject-access-points:
 
 Subject access points
@@ -918,7 +998,20 @@ Subject access points
 
 **ISAD CSV Column** ``subjectAccessPoints``
 
-**DACS Rule** No rule.
+**DACS Rule**: The topical subject matter to which the records pertain is among 
+the most important aspects of the archival materials. Terms suggesting topics 
+that might be employed as access points may be found in the following areas of 
+the descriptive record: 
+
+* Title Element (2.3) 
+* Scope and Content Element (3.1) 
+* Administrative/Biographical History Element (2.7)
+
+A variety of general and specialized subject thesauri, including the *Library of 
+Congress Authorities*, may be employed as the source for standardized 
+terminology.
+
+**EAD**
 
 .. code-block:: xml
 
@@ -934,7 +1027,17 @@ Place access points
 
 **ISAD CSV Column** ``placeAccessPoints``
 
-**DACS Rule** No rule.
+**DACS Rule**: The names of places and geographic features to which the records 
+pertain may be important to researchers. Geographic place-names that should be 
+considered for use as access points may be found in the following parts of the 
+descriptive record: 
+
+* Name of Creator(s) Element (2.6) 
+* Title Element (2.3) 
+* Scope and Content Element (3.1) 
+* Administrative/Biographical History Element (2.7) 
+
+**EAD**
 
 .. code-block:: xml
 
@@ -950,7 +1053,25 @@ Genre access points
 
 **ISAD CSV Column** ``genreAccessPoints``
 
-**DACS Rule** No rule.
+**DACS Rule**: Terms that indicate the documentary form(s) or intellectual
+characteristics of the records being described (e.g., minutes, diaries,
+reports, watercolors, or documentaries) provide the user with an indication of
+the content of the materials based on an understanding of the common
+properties of particular document types. For example, one can deduce the
+contents of ledgers because they are a standard form of accounting record, one
+that typically contains certain types of data. Documentary forms are most
+often noted in the following areas of the descriptive record: 
+
+* Title Element (2.3)
+* Extent Element (2.5)
+* Scope and Content Element (3.1)
+ 
+The *Art & Architecture Thesaurus*, the *Library of Congress Authorities*, or
+appropriate media-specific thesauri should be the first sources consulted for
+terms denoting documentary forms and literary genres.
+
+
+**EAD**
 
 .. code-block:: xml
 
@@ -966,12 +1087,43 @@ Name access points
 
 **ISAD CSV Column** ``nameAccessPoints``
 
-**DACS Rule** No rule.
+**DACS Rule**: The names of persons, families, and organizations that are
+associated with a body of archival materials, either as the creator or the
+subject of the records, constitute an important pathway by which researchers
+discover relevant materials. Names that are rendered as nominal access points
+can be found in several areas of the descriptive record:
+
+* Name of Creator(s) Element (2.6) 
+* Title Element (2.3) 
+* Scope and Content Element (3.1) 
+* Administrative/Biographical History Element (2.7) 
+* Custodial History Element (5.1) 
+* Immediate Source of Acquisition Element (5.2)
+
+At a minimum, an access point should be made for every name included in the
+Name of Creator(s) Element in a single-level description or at the highest
+level in a multilevel description. Names found in other descriptive elements
+may be utilized as access points in accordance with local or consortial
+practice.
+
+**EAD**
 
 .. code-block:: xml
 
    <controlaccess>
       <name role="subject">
+
+.. NOTE:: 
+
+   The DACS standard also recommends access points related to occupations, as 
+   well as functions and activities. In AtoM, this data can be captured on
+   other :term:`entity` types, such as :term:`authority records <authority record>`
+   (which allow the addition of Occupation access points) and :term:`function` 
+   records. For more information, see: 
+
+   * :ref:`authority-records`
+   * :ref:`authority-access-points`
+   * :ref:`functions`
 
 :ref:`Back to the top <dacs-template>`
 
@@ -997,7 +1149,7 @@ Display standard
 
 **CSV column** N/A
 
-**RAD Rule** N/A
+**DACS Rule** N/A
 
 **EAD** N/A
 
@@ -1014,11 +1166,12 @@ Display standard
 Publication status
 ------------------
 
-**Template field** Publication status is available under the More tab located on the object view screen.
+**Template field** Publication status is available under the More tab located 
+on the description :term:`view page`.
 
 **CSV column** publicationsStatus
 
-**RAD Rule** N/A
+**DACS Rule** N/A
 
 **EAD**
 
