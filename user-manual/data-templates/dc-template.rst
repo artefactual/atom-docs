@@ -257,6 +257,34 @@ will be associated with the creation or availability of the resource."
 * You can add multiple dates as needed. Click the "Add new" hyperlink to add
   another date row.
 
+.. _dc-description:
+
+Description
+-----------
+
+**Template field**: Description
+
+**CSV Column**: ``scopeAndContent``
+
+**DC Rule**: "An account of the resource. Description may include but is not
+limited to: an abstract, a table of contents, a graphical representation, or a
+free-text account of the resource."
+
+**DC XML**:
+
+.. code-block:: xml
+
+   <dc:description>
+
+**Notes**: You can click and drag the bottom of the :term:`field` to expand it,
+in case you are writing a long description and require more room.
+
+.. TIP::
+
+   This element will map to Scope and Content in equivalent archival standards
+   such as :ref:`RAD <rad-template>`, :ref:`DACS <dacs-template>`, and
+   :ref:`ISAD(G) <isad-template>`.
+
 .. _dc-subject:
 
 Subject
@@ -299,34 +327,6 @@ an "**X**". You can click the **X** to remove the term.
 
    * :ref:`terms`
    * :ref:`add-term-fly`
-
-.. _dc-description:
-
-Description
------------
-
-**Template field**: Description
-
-**CSV Column**: ``scopeAndContent``
-
-**DC Rule**: "An account of the resource. Description may include but is not
-limited to: an abstract, a table of contents, a graphical representation, or a
-free-text account of the resource."
-
-**DC XML**:
-
-.. code-block:: xml
-
-   <dc:description>
-
-**Notes**: You can click and drag the bottom of the :term:`field` to expand it,
-in case you are writing a long description and require more room.
-
-.. TIP::
-
-   This element will map to Scope and Content in equivalent archival standards
-   such as :ref:`RAD <rad-template>`, :ref:`DACS <dacs-template>`, and
-   :ref:`ISAD(G) <isad-template>`.
 
 .. _dc-type:
 
@@ -407,12 +407,6 @@ determine the software, hardware or other equipment needed to display or
 operate the resource.Recommended best practice is to use a controlled
 vocabulary such as the list of Internet Media Types [MIME]."
 
-.. IMPORTANT::
-
-   If the resource you are currently describing is already linked to
-   a digital object, the Internet Media Types (MIME) will be added automatically
-   upon output. It is recommended that you avoid duplicating those values here.
-
 **DC XML**:
 
 .. code-block:: xml
@@ -421,7 +415,9 @@ vocabulary such as the list of Internet Media Types [MIME]."
 
 **Notes**: This field crosswalks from Extent and medium in the
 :ref:`ISAD <isad-template>` template, Extent in the :ref:`DACS <dacs-template>`,
-and Physical description in the :ref:`RAD <rad-template>` template.
+and Physical description in the :ref:`RAD <rad-template>` template. As such, 
+while DCMI recommends the use of a controlled vocabulary for this metadata, 
+AtoM's DC Format is a free-text field. 
 
 .. _dc-source:
 
