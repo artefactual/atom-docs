@@ -227,6 +227,8 @@ Migrate translations
 Regenerate the digital object reference and thumbnail images (optional)
 =======================================================================
 
+.. _release 2.6.3: https://wiki.accesstomemory.org/Releases/Release_announcements/Release_2.6.3
+
 If you are upgrading from version 1.3.1 or earlier, you may want to regenerate
 the :term:`digital object` :term:`reference <reference display copy>` and
 :term:`thumbnail` images. The thumbnail size was smaller in 1.x, so those
@@ -244,6 +246,20 @@ Now, run the regen-derivatives task:
 
 For more information on this task and its available options, see:
 :ref:`cli-regenerate-derivatives`.
+
+.. IMPORTANT::
+
+   If you are upgrading from version 2.6.2 or earlier, we recommend that you
+   regenerate derivatives for any video files you may have linked or uploaded
+   as digital objects. Prior to `release 2.6.3`_, AtoM generated FLV 
+   derivatives as the :term:`reference display copy` for video digital objects, 
+   to be used in AtoM's previous Flash-based media player. After release 2.6.3, 
+   Flash is no longer supported, and regenerating your video derivatives will
+   replace any FLV files with MP4 derivatives instead, ensuring they will play
+   as expected in the new media player. 
+
+   The regen-derivatives task supports a ``--media-type`` option that can be 
+   used to limit the regeneration to only videos if desired. 
 
 .. _upgrading-rebuild-index-cc:
 
