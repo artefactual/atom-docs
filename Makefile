@@ -6,6 +6,7 @@ SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = _build
+LINKCHECKDIR  = _build/linkcheck
 
 # User-friendly check for sphinx-build
 ifeq ($(shell which $(SPHINXBUILD) >/dev/null 2>&1; echo $$?), 1)
@@ -182,3 +183,9 @@ dos2unix:
 .PHONY: test
 test:
 	$(MAKE) html ALLSPHINXOPTS="-W --keep-going -n ."
+
+.PHONY: checklinks
+checklinks:
+	$(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(LINKCHECKDIR)
+	@echo
+	@echo "Check finished. Report is in $(LINKCHECKDIR)."
