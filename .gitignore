@@ -1,5 +1,6 @@
 /_build
-*.DS_Store
+/_static/api/html
 /.env
 /.vscode
+*.DS_Store
 __pycache__

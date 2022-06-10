@@ -1,0 +1,201 @@
+openapi: "3.0.3"
+info:
+  version: 1.0.0
+  title: Access to Memory API
+  description: "[Access to Memory](https://accesstomemory.org) REST API documentation"
+  license:
+    name: MIT
+paths:
+  /api:
+    get:
+      summary: Get application version
+      operationId: index
+      responses:
+        200:
+          description: The AtoM version number
+          content:
+            application/json:
+              schema:
+                required:
+                  - version
+                properties:
+                  version:
+                    type: string
+                example:
+                  "version": "2.6.0"
+  /api/informationobjects:
+    get:
+      summary: A paged array of information objects
+      operationId: informationobjectsBrowse
+      tags:
+        - information object
+      parameters:
+        - $ref: "#/components/parameters/SfCulture"
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Skip"
+        - $ref: "#/components/parameters/Sort"
+      responses:
+        200:
+          description: An paged array of information objects
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InformationObjectList"
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    post:
+      summary: Create a new information object
+      operationId: informationObjectCreate
+      tags:
+        - information object
+      responses:
+        201:
+          description: Null response
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /api/informationobjects/{slug}:
+    get:
+      summary: Detailed data for the requested information object
+      operationId: informationobjectsRead
+      tags:
+        - information object
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          description: The slug of the information object to retrieve
+          schema:
+            type: string
+      responses:
+        200:
+          description: Expected response to a valid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InformationObjectBrief"
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  parameters:
+    Limit:
+      name: limit
+      in: query
+      description: Limit number of results returned
+      required: false
+      schema:
+        type: integer
+        default: 10
+        example: 25
+    SfCulture:
+      name: sf_culture
+      in: query
+      description: Desired language for response data as a two letter ISO code (e.g. "en", "fr")
+      required: false
+      schema:
+        type: string
+        default: "en"
+        minLength: 2
+        maxLength: 3
+    Skip:
+      name: skip
+      in: query
+      description: Skip first N results
+      required: false
+      schema:
+        type: integer
+        default: 0
+        example: 10
+    Sort:
+      name: sort
+      in: query
+      description: Sort order of results
+      required: false
+      schema:
+        type: string
+        default: identifier
+        example: lastUpdated
+        enum:
+          - identifier
+          - alphabetic
+          - date
+          - lastUpdated
+  schemas:
+    InformationObjectList:
+      required:
+        - total
+        - results
+      properties:
+        total:
+          type: integer
+          example: 1
+        results:
+          items:
+            $ref: "#/components/schemas/InformationObjectBrief"
+    InformationObjectBrief:
+      required:
+        - reference_code
+        - slug
+        - title
+        - physical_characteristics
+      properties:
+        reference_code:
+          type: string
+        slug:
+          type: string
+        title:
+          type: string
+        physical_characteristics:
+          type: string
+        repository:
+          type: string
+        level_of_descrption:
+          type: string
+        creators:
+          type: array
+          items:
+            type: string
+        creation_dates:
+          type: array
+          items:
+            type: string
+        place_access_points:
+          type: array
+          items:
+            type: string
+        thumbnail_url:
+          type: string
+      example:
+        reference_code: "CA ON00311 PF41"
+        title: "John Honsberger fonds"
+        repository: "The Law Society of Upper Canada Archives"
+        physical_characteristics: "Some items in the fonds are stored folded."
+        level_of_description: "Fonds"
+        creators:
+          - "Honsberger, John David"
+        creation_dates:
+          - "1763-2012"
+        place_access_points:
+          - "Toronto"
+        thumbnail_url: "http://127.0.0.1/uploads/r/law-society-of-upper-canada-archives/2/5/1/251a9152c6e71751519dc49086d62f3abde38d34619f66516ca0edf97076a1cf/honsberger_142.jpg"
+    Error:
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

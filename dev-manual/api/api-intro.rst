@@ -18,6 +18,7 @@ There are several endpoints available:
 * :ref:`Browse information objects <api-browse-io>`
 * :ref:`Read information object <api-read-io>`
 * :ref:`Download digital object <api-download-do>`
+* `Full API definition <../../_static/api/html/index.html>`_
 
 .. _api-intro-plugin:
 

@@ -180,12 +180,15 @@ pseudoxml:
 dos2unix:
 	find . -name "*.txt" | grep -v _build | xargs -IF fromdos F
 
+.PHONY: apihtml
+apihtml:
+	@docker container run --rm --user $(shell id -u):$(shell id -g) \
+		--volume $(CURDIR):/local openapitools/openapi-generator-cli \
+		generate \
+			--input-spec /local/_static/api/openapi.yaml \
+			--generator-name html \
+			--output /local/_static/api/html/
+
 .PHONY: test
 test:
 	$(MAKE) html ALLSPHINXOPTS="-W --keep-going -n ."
-
-.PHONY: checklinks
-checklinks:
-	$(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(LINKCHECKDIR)
-	@echo
-	@echo "Check finished. Report is in $(LINKCHECKDIR)."
