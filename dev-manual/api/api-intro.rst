@@ -18,6 +18,7 @@ There are several endpoints available:
 * :ref:`Browse information objects <api-browse-io>`
 * :ref:`Read information object <api-read-io>`
 * :ref:`Download digital object <api-download-do>`
+* `AtoM OpenAPI specification <../../api.html>`_
 
 .. _api-intro-plugin:
 

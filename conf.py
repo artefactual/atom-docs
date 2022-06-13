@@ -41,6 +41,7 @@ needs_sphinx = "1.1.3"
 extensions = [
     "sphinx.ext.extlinks",
     "sphinx.ext.intersphinx",
+    "sphinxcontrib.redoc",
 ]
 
 # Obtain intersphinx_mapping
@@ -271,3 +272,16 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 # texinfo_no_detailmenu = False
+
+# -- Options for Redoc OpenAPI renderer ----------------------------------------
+
+redoc_uri = "https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"
+
+redoc = [
+    {
+        "name": "Access to Memory API",
+        "page": "api",
+        "spec": "_static/api/openapi.yaml",
+        "embed": True,
+    }
+]

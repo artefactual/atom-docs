@@ -1,5 +1,5 @@
 /_build
-*.DS_Store
 /.env
 /.vscode
+*.DS_Store
 __pycache__
