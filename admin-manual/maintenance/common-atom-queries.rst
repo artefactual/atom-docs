@@ -1064,7 +1064,7 @@ currently in your database, you can use the following query:
 
 .. code-block:: mysql
 
-   SELECT COUNT(*) FROM information_object AND id <> 1;   
+   SELECT COUNT(*) FROM information_object WHERE id <> 1;   
 
 Note that translations are stored in the ``information_object_i18n`` table, and 
 would not be counted using this query. You can change the above to use the i18n 
