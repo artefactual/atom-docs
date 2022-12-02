@@ -101,7 +101,7 @@ OpenJDK but Oracle's JVM would also work.
 
 .. code-block:: bash
 
-   sudo apt install openjdk-8-jre-headless apt-transport-https
+   sudo apt install openjdk-11-jre-headless apt-transport-https software-properties-common
 
 After successfully installing Java, proceed to install Elasticsearch. Download
 and install the public signing key used in their repository:
@@ -186,6 +186,23 @@ Ubuntu packages using the command below.
 .. code-block:: bash
 
    sudo apt install --no-install-recommends fop libsaxon-java
+
+Make sure the default java command points to the java version 11 binary (ignore
+errors):
+
+.. code-block:: bash
+
+   sudo update-java-alternatives -s java-1.11.0-openjdk-amd64
+
+.. TIP::
+
+   To list all the available jdk installs and the java update-alternatives
+   selections:
+
+   .. code-block:: bash
+
+      sudo update-java-alternatives -l
+      sudo update-alternatives --get-selections | grep java
 
 If you want AtoM to be able to process :term:`digital objects <digital object>`
 in formats like JPEG or to extract the text from your PDF documents, there are
