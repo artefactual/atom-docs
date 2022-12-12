@@ -201,6 +201,42 @@ will allow you to "unzip" a ZIP file.
 
 **To generate and download a CSV export of clipboard results:**
 
+The default descriptive template used by AtoM is ISAD(G) and any exports from 
+your AtoM instance will use the ISAD(G) template. In this version of AtoM, users
+can now select to export their descriptions in RAD format, but this will need to 
+be configured prior to exporting from the clipboard. To change the default template 
+in your AtoM instance navigate to the Admin menu in the top right hand corner and from
+the drop down menu select 'Settings'
+
+.. image:: images/AtoM-admin-menu-dropdown.*
+   :align: center
+   :width: 90%
+   :alt: An image Admin menu dropdown options.
+
+Once you are in the ‘Settings’ menu, on the left hand side, select ‘Default template’ 
+and there you will find three options: Archival description, Authority record and 
+Archival institutions. Go to the ‘Archival description’ and from the dropdown menu 
+select: ‘RAD, July 2008 version. Canadian Council of Archives’:
+
+.. image:: images/description-menu-Dropdown.*
+   :align: center
+   :width: 90%
+   :alt: An image of the dropdown menue description template options.
+
+Once the selection has been made hit ‘Save’ and then when material is exported from the 
+Clipboard or when the export function is used, the related csv exports will have a ‘rad_’ prefix 
+to indicate that the csv fields will conform with RAD. 
+
+.. image:: images/csv-download-RAD-prefix.*
+   :align: center
+   :width: 90%
+   :alt: An image of an export in RAD in a local environment.
+
+Once you have configured your instance then your description and your exports will use the
+RAD description template.
+
+**To generate and download a CSV export of clipboard results:**
+
 1. You should first ensure that you have the results you would like to export
    already pinned to the Clipboard. For more information on using AtoM's
    Clipboard module, see: :ref:`clipboard`.
