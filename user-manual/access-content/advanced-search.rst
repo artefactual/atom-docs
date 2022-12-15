@@ -1081,6 +1081,7 @@ the syntax described in the introductory section
    identifier
    levelOfDescriptionId
    materialTypeId
+   publicationNote
    publicationStatusId
    referenceCode
    referenceCodeWithoutCountryAndRepo
