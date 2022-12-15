@@ -368,6 +368,10 @@ RAD description template.
       :width: 90%
       :alt: The notification message for authenticated users performing an export
 
+   Authenticated users will be able to see in their exports a **slug** column which is a new
+   feature in this release. This will help authenticated users with updating of digital object 
+   and descriptions.
+   
    For **public users**, first a notification that the job has been initiated
    will be displayed, with a link that will refresh the page to see if there
    are updates. Users can use the **X** icon on the right of the notification
