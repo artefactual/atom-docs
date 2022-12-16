@@ -42,7 +42,7 @@ This is the opportunity to find out what has been changed in the new release,
 and if there are new features, enhancements and bug fixes that may be of
 interest to you and your organization.
 
-You can always find the full release notes on the AtoM wiki, here: 
+You can always find the full release notes on the AtoM wiki, here:
 
 * https://wiki.accesstomemory.org/Releases/Release_announcements
 
@@ -131,14 +131,14 @@ and downloads created by the job scheduler (such as
 
       rm -f /usr/share/nginx/atom/downloads/jobs/*
 
-   Alternatively, AtoM has a command-line task that can help remove 
-   unnecessary temporary data, including the content of the ``jobs`` 
-   subdirectory. For more information, see: 
+   Alternatively, AtoM has a command-line task that can help remove
+   unnecessary temporary data, including the content of the ``jobs``
+   subdirectory. For more information, see:
 
    * :ref:`tools-expire`
 
-   For more general information on the structure of the ``uploads`` and 
-   ``downloads`` directories in AtoM, see: 
+   For more general information on the structure of the ``uploads`` and
+   ``downloads`` directories in AtoM, see:
 
    * Data backup: :ref:`backup-uploads-downloads`
 
@@ -251,15 +251,15 @@ For more information on this task and its available options, see:
 
    If you are upgrading from version 2.6.2 or earlier, we recommend that you
    regenerate derivatives for any video files you may have linked or uploaded
-   as digital objects. Prior to `release 2.6.3`_, AtoM generated FLV 
-   derivatives as the :term:`reference display copy` for video digital objects, 
-   to be used in AtoM's previous Flash-based media player. After release 2.6.3, 
+   as digital objects. Prior to `release 2.6.3`_, AtoM generated FLV
+   derivatives as the :term:`reference display copy` for video digital objects,
+   to be used in AtoM's previous Flash-based media player. After release 2.6.3,
    Flash is no longer supported, and regenerating your video derivatives will
    replace any FLV files with MP4 derivatives instead, ensuring they will play
-   as expected in the new media player. 
+   as expected in the new media player.
 
-   The regen-derivatives task supports a ``--media-type`` option that can be 
-   used to limit the regeneration to only videos if desired. 
+   The regen-derivatives task supports a ``--media-type`` option that can be
+   used to limit the regeneration to only videos if desired.
 
 .. _upgrading-rebuild-index-cc:
 
@@ -368,7 +368,9 @@ Upgrading with a custom theme plugin
 If you have developed a custom theme plugin for your application (for more
 information, see :ref:`customization-custom-theme`), you may need to perform
 an additional step following an upgrade to ensure that all pages are styled
-correctly.
+correctly. Please note that the instructions below are for upgrading a custom
+theme that continues to the Bootstrap 2 (“BS2”). Documentation for upgrading to
+BS5 will be provided at a later date.
 
 Specifically, :ref:`job-details` may not appear properly styled in a custom
 theme without an additional step. To ensure your Jobs pages properly inherit
@@ -401,9 +403,9 @@ Finally, if your custom theme includes modifications to the static page files
 ``homeSuccess.php`` and ``indexSuccess.php`` (for example, if your theme
 includes a **custom homepage**), then you will also need to ensure that when
 displaying the page content, ``render_value`` calls in these files are updated
-to ``render_value_html``. 
+to ``render_value_html``.
 
-Specifically, your modified files should be updated to match these lines: 
+Specifically, your modified files should be updated to match these lines:
 
 * Line 18 in `indexSuccess.php
   <https://github.com/artefactual/atom/blob/HEAD/apps/qubit/modules/staticpage/templates/indexSuccess.php#L18>`__

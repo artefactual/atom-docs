@@ -18,9 +18,22 @@ This section describes how to change the theme, :term:`site title`,
 Change theme
 ============
 
-AtoM 2 ships with 2 themes: the default :term:`Dominion theme` (grey, white and
-black with the AtoM logo) and the Archives Canada theme (yellow, blue and
-white with the ArchivesCanada logo).
+AtoM 2.7 ships with 3 themes: the default :term:`Dominion theme`
+(arDominionPlugin) and the Archives Canada theme (arArchivesCanadaPlugin).
+
+The Dominion themes are grey, white and black with the AtoM logo. The Archives
+Canada theme is yellow, blue and white with the ArchivesCanada logo (see images
+below).
+
+The new version of the Dominion theme is based on Bootstrap 5 (“BS5”), a
+framework for developing websites. BS5 provides a number of improvements over
+the previous version (“BS2”) such as better security, responsiveness and
+accessibility.
+
+If you’re a brand new AtoM user, we suggest that you use the BS5 theme. If you
+are performing an upgrade to 2.7 from an older version, and you have a custom
+theme, we recommend you continue to use BS2 at this time.
+
 
 .. figure:: images/dominion-theme.*
    :align: center
