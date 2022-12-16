@@ -275,8 +275,8 @@ Glossary
     those logged in) can also perform CSV exports of Clipboard results via the
     user interface. The clipboard is **session-based** - meaning that it does
     not persist between user sessions. When you close your browser, any
-    results on the clipboard will be lost. However, users have the option of 
-    saving clipboard results, which can then be loaded in a future session.  
+    results on the clipboard will be lost. However, users have the option of
+    saving clipboard results, which can then be loaded in a future session.
     See: :ref:`clipboard`
 
   Clipboard menu
@@ -530,11 +530,13 @@ Glossary
 
   Dominion theme
      The Dominion theme is the default theme that ships with AtoM 2.0. It has
-     been built using `Twitter Bootstrap <http://getbootstrap.com/>`__ 2.3,
+     been built using `Twitter Bootstrap <http://getbootstrap.com/>`__,
      with some added `JavaScript <https://en.wikipedia.org/wiki/Javascript>`__
      elements, and features a black :term:`header bar` and a light grey
-     application background color.  AtoM has been designed so that other themes
-     can be added to the application as plugins, after which an
+     application background color. AtoM 2.7 ships with a newer version of the
+     Dominion theme based on Bootsrap version 5 that provides accessibility and
+     other user interface improvements. AtoM has been designed so that other
+     themes can be added to the application as plugins, after which an
      :term:`administrator` can change the application theme via the
      :term:`user interface` by navigating to **Admin > Themes**. See
      :ref:`Themes and theming <themes>`.
@@ -806,14 +808,14 @@ Glossary
     :ref:`change-institution-background`.
 
   Hierarchy browser
-    The hierarchy browser is a :term:`user interface` element that can be 
-    enabled or disabled by an :term:`administrator` via the :term:`treeview` 
+    The hierarchy browser is a :term:`user interface` element that can be
+    enabled or disabled by an :term:`administrator` via the :term:`treeview`
     settings page. When enabled, it provides users with a full-width treeview
-    of all of AtoM's :term:`archival description` :term:`holdings`. Users can 
+    of all of AtoM's :term:`archival description` :term:`holdings`. Users can
     expand and collapse individual nodes to explore the hierarchical arrangement
-    of a specific :term:`archival unit`; however, clicking any node in the 
-    hierarchy browser will redirect the user to the related description's 
-    :term:`view page`. See: :ref:`browse-hierarchy-browser` and 
+    of a specific :term:`archival unit`; however, clicking any node in the
+    hierarchy browser will redirect the user to the related description's
+    :term:`view page`. See: :ref:`browse-hierarchy-browser` and
     :ref:`treeview-settings`.
 
   Holdings
@@ -856,14 +858,14 @@ Glossary
     resource, not necessarily archival in origin.
 
   Institution block
-    An element of the Institutional scoping setting (found in **Admin > Settings 
-    > Global**), this :term:`user interface` element comprises of a 
-    :term:`repository` logo, dedicated search box, and dedicated browse menu 
+    An element of the Institutional scoping setting (found in **Admin > Settings
+    > Global**), this :term:`user interface` element comprises of a
+    :term:`repository` logo, dedicated search box, and dedicated browse menu
     that will return search or browse pages related to the :term:`holdings` of a
-    particular institution. When enabled, the institution block appears on the 
-    :term:`view page` of a repository, as well as any search or browse page that 
-    has been filtered (i.e. "scoped") to a particular 
-    :term:`archival institution`. For more information, see: :ref:`enable-scoping`.  
+    particular institution. When enabled, the institution block appears on the
+    :term:`view page` of a repository, as well as any search or browse page that
+    has been filtered (i.e. "scoped") to a particular
+    :term:`archival institution`. For more information, see: :ref:`enable-scoping`.
 
   Job
     In AtoM, a job refers to a set of operations requested by a user that are
@@ -989,7 +991,7 @@ Glossary
     the management of physical objects such as folders, boxes, shelves,
     and cabinets. In AtoM, users can create and edit information about
     physical objects by clicking on the "Link physical storage" option, found
-    under the "More" menu in the :term:`button block` of an 
+    under the "More" menu in the :term:`button block` of an
     :term:`archival description` or :term:`accession record`. See
     :ref:`Physical storage <physical-storage>`.
 

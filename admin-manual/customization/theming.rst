@@ -7,6 +7,13 @@ Theming
 AtoM themes can be customized by editing the appropriate css and .php files, or
 you can create a custom theme.
 
+Please note AtoM 2.7 introduced a new version of the Bootstrap (“BS5”) web
+framework, and shipped with a theme based on BS5. Creating a custom theme using
+BS5 is slightly different than documented below (which was written using the
+original BS2 framework provided in previous versions of AtoM). This
+documentation will be updated, but in the meantime it is still possible to
+create a custom theme using BS2 using the instructions below.
+
 
 Customize how an AtoM theme looks
 ---------------------------------
