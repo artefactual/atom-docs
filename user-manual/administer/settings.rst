@@ -775,6 +775,54 @@ deposited by `Archivematica`_ into AtoM. If you do not know the name of your
 deposit directory, consult with your system administrator. The default is 
 ``/tmp``.
 
+AtoM 2.7 has added a new feature that deletes the DIP directory from the SWORD
+deposit after uploading the DIP to AtoM. In order for AtoM to delete this
+directory, the AtoM user (`www-data` or `nginx` by default) must have write
+permissions to this directory in order to delete it. The easiest way is to use
+the setfacl command.
+
+Using the default SWORD deposit (```/tmp```) will not work and setfacl should not be
+used on the ```/tmp``` directory as it could cause security issues when setting new
+permissions.
+
+If you are using the `archivematica` user to rsync from Archivematoca to AtoM,
+you can create a new SWORD deposit directory on ```/home/archivematica```.
+
+First, install the `acl` package on Ubuntu or CentOS:
+
+.. code-block:: bash
+
+   sudo apt-get install acl # Ubuntu
+   sudo yum install acl  # CentOS
+
+Create a new SWORD deposit directory:
+
+.. code-block:: bash
+
+   sudo mkdir /home/archivematica/atom_sword_deposit
+   sudo chown archivematica:www-data /home/archivematica/atom_sword_deposit
+   sudo chmod 770 /home/archivematica/atom_sword_deposit
+
+Set the ACL on new directory:
+
+.. code-block:: bash
+
+   sudo setfacl -d -m u:www-data:rwX /home/archivematica/atom_sword_deposit
+
+   The ACL sets `rw-` permissions for files and `rwx` permissions for
+   directories for the nginx user and then the `www-data` (or `nginx`) user can
+   delete the temporay DIP directory.
+
+.. NOTE::
+
+   Use the `nginx` group and user on CentOS instead of `www-data`.
+
+
+Almost all the *NIX filesystems support ACL. NFSv4 can support ACLs but still
+requires the server to support ACLs. Anyways you can force the uid and gid for
+new files when mounting cifs or nfs on ``/etc/fstab``.
+
+
 .. _maps-api-key:
 
 Google Maps Javascript API key setting
@@ -1183,6 +1231,16 @@ This setting is for users who are uploading content from a linked
 Archivematica instance. Archivematica is an open-source digital preservation
 system developed by Artefactual Systems, the same creators of AtoM. For more
 information, see: https://www.archivematica.org
+
+.. NOTE::
+
+   AtoM 2.7 has added a new feature that deletes the DIP directory from the
+   SWORD deposit after uploading the DIP to AtoM. In order for AtoM to delete
+   this directory, the AtoM user (www-data or nginx by default) must have write
+   permissions to this directory in order to delete it. More info in SWORD
+   deposit directory section.
+
+   * :ref:`SWORD deposit directory <sword-directory>`
 
 .. SEEALSO::
 
