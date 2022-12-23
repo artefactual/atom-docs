@@ -471,6 +471,10 @@ example on how to clear all mode bits for others:
 
    sudo chmod o= /usr/share/nginx/atom
 
+If you are planning to do DIP uploads from AM, check the :ref:`SWORD deposit
+directory section <sword-directory>` to set the permissions of that
+directory.
+
 .. _installation-ubuntu-serve-workers:
 
 Deployment of workers
