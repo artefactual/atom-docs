@@ -809,9 +809,9 @@ Set the ACL on new directory:
 
    sudo setfacl -d -m u:www-data:rwX /home/archivematica/atom_sword_deposit
 
-   The ACL sets `rw-` permissions for files and `rwx` permissions for
-   directories for the nginx user and then the `www-data` (or `nginx`) user can
-   delete the temporay DIP directory.
+The ACL sets `rw-` permissions for files and `rwx` permissions for directories
+for the nginx user and then the `www-data` (or `nginx`) user can delete the
+temporay DIP directory.
 
 .. NOTE::
 
