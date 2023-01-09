@@ -299,14 +299,18 @@ For development environments, the dev libraries should also be installed:
 
    sudo ~/composer.phar install
 
-After downloading the code, you will need to compile the CSS files:
+After downloading the code, you will need to compile the themes files:
 
 .. code-block:: bash
 
    sudo apt install npm make
-   sudo npm install -g "less@<4.0.0"
+   sudo npm install -g "less@<4.0.0" n
+   sudo n stable
+   sudo npm install
+   sudo npm run build
    sudo make -C /usr/share/nginx/atom/plugins/arDominionPlugin
    sudo make -C /usr/share/nginx/atom/plugins/arArchivesCanadaPlugin
+   sudo rm -rf node_modules
 
 .. _installation-ubuntu-create-database:
 
