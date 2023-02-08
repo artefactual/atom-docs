@@ -22,7 +22,7 @@ archival materials and are arranged into hierarchical levels (:term:`fonds`,
 series, files, items, and variations of these in accordance with institutional
 standards).
 
-Archival desription is *also* an activity, however - generally accompanied by
+Archival description is *also* an activity, however - generally accompanied by
 the process of archival arrangemenent, it is the outcome of a process to gain
 intellectual control over a resource or collection of resources and provide
 end users (such as :term:`researchers <researcher>`) with a means of
