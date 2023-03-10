@@ -128,7 +128,7 @@ see:
 
 * Installing AtoM with:
 
-  * :ref:`Linux <installation-linux>`
+  * :ref:`Linux Ubuntu <installation-ubuntu>`
   * :ref:`Windows <installation-windows>`
   * :ref:`Mac OS X <installation-macosx>`
 
@@ -818,7 +818,7 @@ temporay DIP directory.
    Use the `nginx` group and user on CentOS instead of `www-data`.
 
 
-Almost all the *NIX filesystems support ACL. NFSv4 can support ACLs but still
+Almost all the \*NIX filesystems support ACL. NFSv4 can support ACLs but still
 requires the server to support ACLs. Anyways you can force the uid and gid for
 new files when mounting cifs or nfs on ``/etc/fstab``.
 
