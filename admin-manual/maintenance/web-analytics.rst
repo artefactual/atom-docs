@@ -82,9 +82,9 @@ ID to the ``config/app.yml`` configuration file:
 
 .. code-block:: yaml
 
-     google_analytics_api_key: UA-XXXXX-X
+     google_analytics_api_key: G-XXXXXXXXXX
 
-Replace ``UA-XXXXX-X`` with your tracking ID. Once you are done, remember to
+Replace ``G-XXXXXXXXXX`` with your tracking ID. Once you are done, remember to
 :ref:`clear the cache <maintenance-clear-cache>` and 
 :ref:`restart PHP-FPM <troubleshooting-restart-php-fpm>`.
 
@@ -126,7 +126,7 @@ index number below the API key and make sure that the setting is uncommented.
 
 .. code-block:: yaml
 
-     google_analytics_api_key: UA-XXXXX-X
+     google_analytics_api_key: G-XXXXXXXXXX
      google_analytics_institutions_dimension_index: 1
 
 Once you are done, remember to
