@@ -921,33 +921,6 @@ more information, see: :ref:`recurring-sort-button`. Additionally, an
 either created or modified (or both) records withing a specific date range -
 for more information, see: :ref:`search-updates`.
 
-However,  there is a way to query the ES fields directly -  The 2 Elasticsearch
-fields are called ``createdAt`` and ``updatedAt``. When a new record is created,
-``createdAt`` and ``updatedAt`` are initially the same. After subsequent
-edits, the ``createdAt``  will never change, while the ``updatedAt`` value is
-updated to the most recent time. Here are some example queries, which can be
-used in the AtoM global search box:
-
-.. code-block:: none
-
-   updatedAt:[2010-01-01 TO 2012-12-31]
-
-This will return all records last modified between Jan 1 2010 and Dec 31 2012
-
-.. code-block:: none
-
-   updatedAt:[* TO 2012-01-01]
-
-In this case, the asterix is a wildcard. This will return all records modified
-before 2012-01-01. For more information on wildcards and other special
-characters for Boolean searching, see above, :ref:`advanced-search-operators`.
-
-.. code-block:: none
-
-   createdAt:[2012-01-01 TO *]
-
-This will return all records created after January 1, 2012.
-
 .. _es-digital-objects:
 
 Searching for digital objects
