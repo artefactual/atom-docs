@@ -115,7 +115,7 @@ AtoM makes use of several PHP extensions, services, and libraries that are used
 to support the functionality of the application. These are not managed directly
 by AtoM or Symfony, and their use and location will depend on your particular
 installation environment. The following commands assume you have followed our
-:ref:`recommended installation instructions <installation-linux>` - if you have
+:ref:`recommended installation instructions <installation-ubuntu>` - if you have
 made changes, some of the commands may be different in your installation.
 
 Restarting services can be a useful first step in trying to resolve issues - if
@@ -1068,7 +1068,7 @@ Be sure to include the following information in any support-related post:
 * Your full AtoM version number - see: :ref:`application-version`
 * Details on your installation environment, such as:
 
-  * Did you follow our :ref:`recommended installation instructions <installation-linux>`?
+  * Did you follow our :ref:`recommended installation instructions <installation-ubuntu>`?
   * If no, what have you changed? Tell us more about your environment
 
 * Any stack trace or web server error logs relevant to the issue - see:

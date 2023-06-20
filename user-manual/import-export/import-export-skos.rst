@@ -63,7 +63,7 @@ and run asynchronously in the background as a job. To be able to import terms
 via the user interface, you must have the AtoM job scheduler properly
 installed and configured. For more information see:
 
-* :ref:`installation-asynchronous-jobs`
+* :ref:`maintenance-asynchronous-jobs`
 * :ref:`manage-jobs`
 
 You must be logged in with sufficient

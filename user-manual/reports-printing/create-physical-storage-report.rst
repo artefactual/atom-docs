@@ -230,7 +230,7 @@ Physical storage reports generated with this particular workflow in AtoM are
 generated asynchronously in the background using `Gearman <http://gearman.org>`__,
 AtoM's job manager. You will need to make sure that Gearman is properly
 configured during installation to be able to generate reports - for more
-information, see: :ref:`installation-asynchronous-jobs`. Additional information
+information, see: :ref:`maintenance-asynchronous-jobs`. Additional information
 about the status of any report generation :term:`job` can also be seen via
 **Manage > Jobs** - for more information on the Jobs management page in AtoM,
 see: :ref:`manage-jobs`.
@@ -461,7 +461,7 @@ descriptions associated with a storage location, see above,
 Box label reports in AtoM are generated asynchronously in the background using
 `Gearman <http://gearman.org>`__, AtoM's job manager. You will need to make sure
 that Gearman is properly configured during installation to be able to generate
-reports - for more information, see: :ref:`installation-asynchronous-jobs`.
+reports - for more information, see: :ref:`maintenance-asynchronous-jobs`.
 Additional information about the status of any report generation :term:`job` can
 also be seen via **Manage > Jobs** - for more information on the Jobs management
 page in AtoM, see: :ref:`manage-jobs`.

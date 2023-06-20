@@ -9,7 +9,7 @@ The behavior of PHP code often depends strongly on the values of many
 fundamental changes to things like how errors are handled.
 
 We defined some sane configuration defaults in our :ref:`installation instructions
-<installation-linux>`. Namely, these settings are defined in the PHP pool
+<installation-ubuntu>`. Namely, these settings are defined in the PHP pool
 (:file:`/etc/php7.4/fpm/php-fpm.conf`) and they are prioritized over those
 defined in :file:`/etc/php/7.4/fpm/php.ini`. Be aware that multiple configuration
 files are read when PHP starts up, therefore it is a good practice to check the

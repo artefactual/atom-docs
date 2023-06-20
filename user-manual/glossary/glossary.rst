@@ -878,7 +878,7 @@ Glossary
     `Archivematica <https://www.archivematica.org>`__. Jobs in AtoM are handled
     by `Gearman <http://gearman.org>`__, and the status of AtoM jobs can be seen
     in the :term:`user interface` via the **Manage > Jobs** page. For more
-    information, see: :ref:`manage-jobs` and :ref:`installation-asynchronous-jobs`.
+    information, see: :ref:`manage-jobs` and :ref:`maintenance-asynchronous-jobs`.
 
   Language menu
     The language menu, located in the top-right corner of the page, allows

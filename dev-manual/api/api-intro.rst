@@ -52,7 +52,7 @@ not, check the box and then save the change using the Save button located in the
    to the command-line may have to restart your webserver and php-fpm for the
    changes to take effect. We also recommend clearing the application cache. If
    you are using our recommended installation configuration (see:
-   :ref:`installation-linux`) such as Nginx for your web server, you can restart
+   :ref:`installation-ubuntu`) such as Nginx for your web server, you can restart
    these services with the following commands from the root directory of your
    AtoM installation:
 
