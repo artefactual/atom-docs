@@ -1,5 +1,6 @@
 extlinks = {
     "issue": ("https://projects.artefactual.com/issues/%s", "issue #%s"),
+    "at-issue": ("https://github.com/artefactual/atom/issues/%s", "AtoM issue#%s"),
     "at-pr": ("https://github.com/artefactual/atom/pull/%s", "AtoM PR#%s"),
     "at-gh": ("https://github.com/artefactual/atom/blob/HEAD/%s", None),
     "am-pr": (
