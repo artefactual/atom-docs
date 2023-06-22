@@ -784,6 +784,14 @@ you wanted an image of email, named "contact-image.jpg" included on your static
 ...where ``/path/to`` represents the internal URL path to the location of
 ``contact-image.jpg`` on your host server, or the path to a web-accessible image.
 
+.. NOTE::
+   If you are using a Bootstrap 5 theme and have a wide image, you might notice that it goes outside bounds.
+   Use the ``img-fluid`` class to fix this.
+
+   .. code-block:: bash
+
+      <img class="img-fluid" src="../path/to/contact-image.jpg">
+
 To center the image, you can wrap the ``<img>`` image element in a ``<div>``
 element, with a ``text-center"`` class, like this:
 
@@ -799,6 +807,12 @@ class:
 
    <img class="img-rounded" src="../path/to/my-bunny-image.jpg">
 
+Or if you're using a Bootstrap 5 theme, use the ``rounded`` class instead.
+
+.. code-block:: bash
+
+   <img class="rounded" src="../path/to/my-bunny-image.jpg">
+
 Produces:
 
 .. image:: images/img-rounded.*
@@ -811,6 +825,12 @@ Make an image circular using the ``img-circle`` bootstrap class:
 .. code-block:: bash
 
    <img class="img-circle" src="../path/to/my-bunny-image.jpg">
+
+Or if you're using a Bootstrap 5 theme, use the ``rounded-circle`` class instead.
+
+.. code-block:: bash
+
+   <img class="rounded-circle" src="../path/to/my-bunny-image.jpg">
 
 Produces:
 
@@ -825,6 +845,12 @@ Or give your images a frame, like on our digital object browse page, using the
 .. code-block:: bash
 
    <img class="img-polaroid" src="../path/to/my-bunny-image.jpg">
+
+Or if you're using a Bootstrap 5 theme, use the ``img-thumbnail`` class instead.
+
+.. code-block:: bash
+
+   <img class="img-thumbnail" src="../path/to/my-bunny-image.jpg">
 
 Produces:
 
@@ -844,9 +870,6 @@ Produces:
    To link to external images using Markdown instead of HTML, see: 
 
    * :ref:`formatting-images`
-
-   Note that reusing Bootstrap CSS classes is not possible with the Markdown 
-   syntax. 
 
 .. _static-boxes-dividers:
 
@@ -909,5 +932,19 @@ Other Bootstrap alert classes that can be used to style containers include
    :align: center
    :width: 70%
    :alt: An image of various boxes styled with Bootstrap classes
+
+.. NOTE::
+   If you are using a Bootstrap 5 theme, your alert will not have a background
+   color by default. You can include an ``alert-primary`` class or one of the
+   other alert classes listed above if you wish to apply a background color
+   and border on your alert.
+
+   .. code-block:: bash
+
+      <div style="alert alert-primary">Welcome message appears here</div>
+      <div style="alert alert-secondary">Welcome message appears here</div>
+      <div style="alert alert-info">Welcome message appears here</div>
+      <div style="alert alert-warning">Welcome message appears here</div>
+      <div style="alert alert-danger">Welcome message appears here</div>
 
 :ref:`Back to top <manage-static-pages>`

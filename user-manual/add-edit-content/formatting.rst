@@ -374,7 +374,7 @@ The basic format for inline image linking is like so:
 
 .. code-block:: none
 
-   ![alt text](http://www.my-example-image.com/cat.png "title text")
+   ![alt text](http://www.my-example-image.com/cat.png "title text"){.optional-css-class}
 
 Some examples of both formats: 
 
@@ -396,6 +396,17 @@ An image of how these will render in AtoM:
    :align: center
    :width: 90%
    :alt: An example of markdown image formatting rendered in AtoM
+
+
+.. NOTE::
+
+   If you are using a Bootstrap 5 theme and have a wide image on a static page,
+   you might notice that it goes outside bounds.
+   Use the ``img-fluid`` class to fix this.
+
+   .. code-block:: bash
+
+      ![alt text](http://www.my-example-image.com/cat.png "title text"){.img-fluid}
 
 :ref:`Back to top <formatting>`
 
