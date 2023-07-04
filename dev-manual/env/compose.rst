@@ -4,8 +4,8 @@
 Docker Compose
 ==============
 
-Linux containers and Docker are radically changing the way that applications
-are developed, built, distributed and deployed. The AtoM team is experimenting
+Linux containers and Docker have radically changed the way applications are
+developed, built, distributed and deployed. The AtoM team is experimenting
 with new workflows that make use of containers. This document introduces our
 new development workflow based on Docker and `Docker Compose <https://docs.docker.com/compose/>`__.
 The latter is a tool that help us to run multi-container applications like AtoM
@@ -97,6 +97,20 @@ It's time to use Docker Compose in order to provision our containers:
    # and the AtoM image has to be built.
    docker-compose up -d
 
+All seven docker containers should now be up and running.
+
+.. IMPORTANT::
+
+   If the atom command below to purge the database fails with the message:
+   ``PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted ...``,
+   you can increase the memory allocated to the Atom container by either adding
+   the line ``ATOM_PHP_MEMORY_LIMIT=1G`` to the file ``docker/etc/environment``
+   or alternatively run the command without memory limits
+   ``docker-compose exec atom php -d memory_limit=-1 symfony tools:purge --demo``
+
+
+.. code-block:: bash
+
    # Execute a command in the running container atom: purge database
    docker-compose exec atom php symfony tools:purge --demo
 
@@ -126,7 +140,7 @@ restarted after the database is populated for the first time:
 
 .. IMPORTANT::
 
-   To avoid reseting the configuration files to their default version each time
+   To avoid resetting the configuration files to their default version each time
    the containers are created, the following files are only generated if they
    don't exist already in the source code:
 
