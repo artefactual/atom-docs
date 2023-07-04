@@ -779,18 +779,10 @@ you wanted an image of email, named "contact-image.jpg" included on your static
 
 .. code-block:: bash
 
-   ``<img src=".../path/to/contact-image.jpg">``
+   <img src=".../path/to/contact-image.jpg">
 
 ...where ``/path/to`` represents the internal URL path to the location of
 ``contact-image.jpg`` on your host server, or the path to a web-accessible image.
-
-.. NOTE::
-   If you are using a Bootstrap 5 theme and have a wide image, you might notice that it goes outside bounds.
-   Use the ``img-fluid`` class to fix this.
-
-   .. code-block:: bash
-
-      <img class="img-fluid" src="../path/to/contact-image.jpg">
 
 To center the image, you can wrap the ``<img>`` image element in a ``<div>``
 element, with a ``text-center"`` class, like this:
