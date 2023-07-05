@@ -9,7 +9,7 @@ tasks are executed as :term:`jobs <job>` and performed asynchronously in the
 background to avoid timeouts in the browser. Jobs in AtoM are handled by
 `Gearman <http://gearman.org>`__, and the status of AtoM jobs can be seen
 in the :term:`user interface` via the **Manage > Jobs** page. For more
-information, see: :ref:`manage-jobs` and :ref:`installation-asynchronous-jobs`.
+information, see: :ref:`manage-jobs` and :ref:`maintenance-asynchronous-jobs`.
 
 However, there may be occasions where it is more efficient to import directly
 from the command-line. For example, XML files can only be imported one at a

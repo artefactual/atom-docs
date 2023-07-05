@@ -70,7 +70,7 @@ Install the latest version of AtoM
 
 Follow the instructions available in our documentation on :ref:`installation`
 - our most comprehensive installation notes are included in the
-:ref:`Linux <installation-linux>` section, with additional information for
+:ref:`Linux <installation-ubuntu>` section, with additional information for
 different operating systems and server configurations.
 
 .. IMPORTANT::

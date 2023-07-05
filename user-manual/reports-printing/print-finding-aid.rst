@@ -40,7 +40,7 @@ it can be downloaded by any user, via a link provided in the right-hand
 Finding aids in AtoM are generated asynchronously in the background using
 `Gearman <http://gearman.org>`__, AtoM's job manager. You will need to make sure
 that Gearman is properly configured during installation to be able to generate
-finding aids - for more information, see: :ref:`installation-asynchronous-jobs`.
+finding aids - for more information, see: :ref:`maintenance-asynchronous-jobs`.
 Additional information about the status of any Finding aid generation :term:`job`
 can also be seen via |edit| **Manage > Jobs** - for more information on the Job
 management page in AtoM, see: :ref:`manage-jobs`.
@@ -493,7 +493,7 @@ finding aids, and some suggestions on how to address them.
 
 Before proceeding, make sure that you have followed all the installation
 requirements for job scheduling in AtoM - for more information, see:
-:ref:`installation-asynchronous-jobs`.
+:ref:`maintenance-asynchronous-jobs`.
 
 The AtoM Jobs page can possibly supply you with more information on any errors
 encountered, as finding aid generation is a :term:`job` handled asynchronously

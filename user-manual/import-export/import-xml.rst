@@ -26,7 +26,7 @@ asynchronously in the background to avoid timeouts in the browser. Jobs in AtoM
 are handled by `Gearman <http://gearman.org>`__, and the status of AtoM jobs
 can be seen in the :term:`user interface` via the **Manage > Jobs** page. For
 more information, see: :ref:`manage-jobs` and
-:ref:`installation-asynchronous-jobs`.
+:ref:`maintenance-asynchronous-jobs`.
 
 To import XML files, a user must be logged in as an :term:`administrator`.
 For more information on user groups and permissions, see:

@@ -22,7 +22,7 @@ in a web browser and used for printing.
 Report generation is managed by AtoM's job scheduler, so it is performed
 asynchronously in the background. To work, a system administrator must have
 installed and configured all job scheduler requirements - for more
-information, see: :ref:`installation-asynchronous-jobs`.
+information, see: :ref:`maintenance-asynchronous-jobs`.
 
 Once generated, reports are saved in a ``reports`` subdirectory of the
 ``downloads`` directory, until new reports are generated to replace them.

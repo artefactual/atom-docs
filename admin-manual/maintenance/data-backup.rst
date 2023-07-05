@@ -95,7 +95,7 @@ An example of creating a zipped tarball of your uploads directory:
 AtoM's ``downloads`` directory is where :ref:`reports <reports-printing>`, 
 :ref:`cached xml <cache-xml-setting>`, generated and uploaded 
 :ref:`finding aids <print-finding-aids>` and downloads created by the 
-:ref:`job scheduler <installation-asynchronous-jobs>` (such as
+:ref:`job scheduler <maintenance-asynchronous-jobs>` (such as
 :ref:`clipboard exports <csv-export-clipboard>`) are kept:
 
 .. image:: images/downloads-directory.*

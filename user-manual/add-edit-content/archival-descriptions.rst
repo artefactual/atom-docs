@@ -1779,7 +1779,7 @@ lower level of description can also be moved so that it becomes a new
 .. SEEALSO::
 
    * :ref:`manage-jobs`
-   * :ref:`installation-asynchronous-jobs`
+   * :ref:`maintenance-asynchronous-jobs`
 
 :ref:`Back to top <archival-descriptions>`
 

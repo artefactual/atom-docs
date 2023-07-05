@@ -90,8 +90,8 @@ And the following PHP extensions are optional:
 .. note::
 
    All these dependencies can run in a number of different operative systems,
-   including :ref:`installation-windows`, :ref:`installation-macosx`, Solaris,
-   FreeBSD or :ref:`installation-linux`.
+   including :ref:`installation-windows`, :ref:`installation-macosx`, or
+   Ubuntu Linux :ref:`installation-ubuntu`.
 
 .. _other-dependencies:
 

@@ -245,13 +245,13 @@ and there you will find three options: Archival description, Authority record an
 Archival institutions. Go to the ‘Archival description’ and from the dropdown menu 
 select: ‘RAD, July 2008 version. Canadian Council of Archives’:
 
-.. image:: images/description-menu-Dropdown.*
+.. image:: images/description-menu-dropdown.*
    :align: center
    :width: 90%
    :alt: An image of the dropdown menue description template options.
 
 Once the selection has been made hit ‘Save’ and then when material is exported from the 
-Clipboard or when the export function is used, the related csv exports will have a ‘rad_’ prefix 
+Clipboard or when the export function is used, the related csv exports will have a ``rad_`` prefix 
 to indicate that the csv fields will conform with RAD. 
 
 .. image:: images/csv-download-RAD-prefix.*
