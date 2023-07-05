@@ -101,10 +101,10 @@ All seven docker containers should now be up and running.
 
 .. IMPORTANT::
 
-   If the atom command below to purge the database fails with the message:
-   ``PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted ...``,
-   you can increase the memory allocated to the Atom container by either adding
-   the line ``ATOM_PHP_MEMORY_LIMIT=1G`` to the file ``docker/etc/environment``
+   If the atom container command below to purge the database fails with the
+   message: ``PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted
+   ...``,  you can increase the memory allocated  by either adding the line
+   ``ATOM_PHP_MEMORY_LIMIT=1G`` to the file ``docker/etc/environment``
    or alternatively run the command without memory limits
    ``docker-compose exec atom php -d memory_limit=-1 symfony tools:purge --demo``
 
