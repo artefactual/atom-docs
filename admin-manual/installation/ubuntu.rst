@@ -6,10 +6,10 @@ Linux - Ubuntu 20.04 LTS (Focal Fossa)
 
 Most of the configuration steps described in this document apply to any modern
 Linux environment, however some of them will apply only to Ubuntu and likely to
-any Ubuntu-based distribution. **Please be aware**: we do our release 
-development and testing using Ubuntu LTS releases, and cannot guarantee that 
+any Ubuntu-based distribution. **Please be aware**: we do our release
+development and testing using Ubuntu LTS releases, and cannot guarantee that
 other versions, distributions, or operating systems will work as expected with
-the following instructions. 
+the following instructions.
 
 This document is based in `Ubuntu 20.04 LTS (Focal Fossa)`_. Once you have
 installed it, you should be able to follow the instructions described below.
@@ -238,9 +238,9 @@ Option 1: Download the tarball
 
 .. code-block:: bash
 
-   wget https://storage.accesstomemory.org/releases/atom-2.7.2.tar.gz
+   wget https://storage.accesstomemory.org/releases/atom-2.7.3.tar.gz
    sudo mkdir /usr/share/nginx/atom
-   sudo tar xzf atom-2.7.2.tar.gz -C /usr/share/nginx/atom --strip 1
+   sudo tar xzf atom-2.7.3.tar.gz -C /usr/share/nginx/atom --strip 1
 
 Please note that the tarball may not be available yet if this version is still
 in development. In this case, you can try the alternative installation method
@@ -760,11 +760,11 @@ use. You can access it by entering your base URL into a web browser - the
 configuring the installer. See :ref:`getting-started-all` for further
 information on your first steps using AtoM.
 
-If you encounter any issues, we recommend consulting the 
+If you encounter any issues, we recommend consulting the
 :ref:`maintenance-troubleshooting` documentation for suggestions on how to
 resolve common errors.
 
-:ref:`Back to top <installation-ubuntu>` 
+:ref:`Back to top <installation-ubuntu>`
 
 
 .. _`Ubuntu 20.04 LTS (Focal Fossa)`: http://releases.ubuntu.com/focal/
