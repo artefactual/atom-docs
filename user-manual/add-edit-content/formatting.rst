@@ -398,16 +398,6 @@ An image of how these will render in AtoM:
    :alt: An example of markdown image formatting rendered in AtoM
 
 
-.. NOTE::
-
-   If you are using a Bootstrap 5 theme and have a wide image on a static page,
-   you might notice that it goes outside bounds.
-   Use the ``img-fluid`` class to fix this.
-
-   .. code-block:: bash
-
-      ![alt text](http://www.my-example-image.com/cat.png "title text"){.img-fluid}
-
 :ref:`Back to top <formatting>`
 
 .. _formatting-raw:
