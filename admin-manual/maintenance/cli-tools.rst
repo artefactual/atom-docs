@@ -1114,6 +1114,45 @@ AtoM, see: :ref:`manage-static-pages`.
    For developers interested in seeing the code where slugs are handled in
    AtoM, see ``/lib/model/QubitSlug.php``
 
+.. _cli-rename-slugs:
+
+Rename slugs
+============
+
+This command line tool can be used to rename existing slugs in AtoM. It offers
+the ability to either rename a single slug, or to run a batch rename using a
+csv file.
+
+.. code:: bash
+
+   php symfony tools:rename [<old-slug> <new-slug>] [--csv=<path-to-file.csv>]
+
+**Task options**
+
+.. image:: images/cli-rename-slug.*
+   :align: center
+   :width: 70%
+   :alt: An image of the CLI options when invoking the tools:rename-slug command
+
+By entering ``php symfony help tools:rename-slug`` into the command-line, you
+see the options and descriptions available on this tool, as pictured above.
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the task.
+
+When used without any other options, the rename slugs task expects two
+arguments: an existing slug, and a new name for the existing slug.
+
+The ``--csv`` option can be used to provide a CSV file to use for a batch
+import. The supplied CSV file only needs two columns: an oldSlug column
+(containing the existing slugs), and a newSlug column. Here is an example:
+
+.. image:: images/cli-rename-example.*
+   :align: center
+   :width: 70%
+   :alt: An image of an example CSV file used for a rename-slug command
+
 .. _cli-normalize-taxonomy:
 
 Taxonomy normalization
