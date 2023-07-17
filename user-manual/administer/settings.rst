@@ -699,6 +699,13 @@ For further context on slugs in AtoM, see: :ref:`slugs-in-atom`
 
    * :ref:`rename-title-slug`
 
+.. SEEALSO::
+
+   Users can also update slug(s) via a command line tool. For more information,
+   see:
+
+   * :ref:`cli-rename-slugs`
+
 .. _permissive-slugs:
 
 Use any valid URI path segment and uppercase character in slugs
