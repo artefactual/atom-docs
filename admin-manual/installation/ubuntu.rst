@@ -24,7 +24,7 @@ In particular, we are going to use Ubuntu packages that can be found under the
    installing the services described below to avoid exposing them to outside
    access.
 
-**Junmp to:**
+**Jump to:**
 
 * :ref:`installation-ubuntu-dependencies`
 * :ref:`installation-ubuntu-download`
@@ -673,6 +673,18 @@ future. You can do this with the Nginx default server.
 The following is a recommended server block for AtoM. Put the following
 contents in :file:`/etc/nginx/sites-available/atom`.
 
+.. WARNING::
+
+   This example listens for connections on port 80 using basic http without
+   encryption.
+
+   While this is ok for testing AtoM locally on a private network, any public
+   implementation of AtoM should be secured using TLS/SSL certificates
+   such that your content is served over HTTPS.
+
+   The `Mozilla SSL Configuration Generator`_ is useful for assisting with adding
+   the appropriate blocks to your Nginx configuration file.
+
 .. code-block:: nginx
 
    upstream atom {
@@ -691,24 +703,23 @@ contents in :file:`/etc/nginx/sites-available/atom`.
 
       client_max_body_size 72M;
 
-      # http://wiki.nginx.org/HttpCoreModule#try_files
+      location ~* ^/(css|dist|js|images|plugins|vendor)/.*\.(css|png|jpg|js|svg|ico|gif|pdf|woff|ttf)$ {
+
+      }
+
+      location ~* ^/(downloads)/.*\.(pdf|xml|html|csv|zip)$ {
+
+      }
+
+      location ~ ^/(ead.dtd|favicon.ico|robots.txt|sitemap.*)$ {
+
+      }
+
       location / {
          try_files $uri /index.php?$args;
-      }
-
-      location ~ /\. {
-         deny all;
-         return 404;
-      }
-
-      location ~* (\.yml|\.ini|\.tmpl)$ {
-         deny all;
-         return 404;
-      }
-
-      location ~* /(?:uploads|files)/.*\.php$ {
-         deny all;
-         return 404;
+         if (-f $request_filename) {
+            return 403;
+         }
       }
 
       location ~* /uploads/r/(.*)/conf/ {
@@ -733,11 +744,6 @@ contents in :file:`/etc/nginx/sites-available/atom`.
          fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
          fastcgi_split_path_info ^(.+\.php)(/.*)$;
          fastcgi_pass atom;
-      }
-
-      location ~* \.php$ {
-         deny all;
-         return 404;
       }
 
    }
@@ -780,3 +786,4 @@ resolve common errors.
 .. _`Apache`: https://httpd.apache.org/
 .. _`Nginx`: http://nginx.com/
 .. _`PHP-FPM`: http://php-fpm.org/
+.. _`Mozilla SSL Configuration Generator`: https://ssl-config.mozilla.org/
