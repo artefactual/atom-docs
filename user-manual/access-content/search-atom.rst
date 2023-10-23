@@ -199,27 +199,12 @@ between a global search setting and a setting restricted to the
 
 When a user has viewed an :term:`archival institution` record or an
 :term:`archival description` related to an archival institution, clicking in
-the search box will reveal a set of :term:`radio buttons <radio button>` that
-allow the user limit the search results to the holdings of the most recently
-viewed :term:`archival institution`, or to search globally (i.e., across all
-records in the application).
-
-Help text appears in the :term:`search box` to indicate at a glance which
-setting is engaged: if the search box text says "Search", the delimiter is set
-to perform a global search. If the help text says "Search [Name of
-Institution]" (where the name of the current related institution appears),
-this indicates that the delimiter is set to limit search box query results to
-the :term:`holdings` of that institution.
-
-.. NOTE::
-
-   When a user views a linked :term:`archival description` or an
-   :term:`archival institution` record, the :term:`search box` delimiter will
-   **default to search within that institution**. If you would like to
-   perform a global search (i.e. across all records in the application),
-   switch the radio button to *Global search* before proceeding. See
-   :ref:`below <search-using-delimiters>` for further instructions on using
-   the search box delimiters.
+the search box (in Bootstrap 2 themes) or clicking the gear icon
+(in Bootstrap 5 themes) will reveal a set of
+:term:`radio buttons <radio button>` that allow the user to limit the search
+results to the holdings of the most recently viewed
+:term:`archival institution`, or to search globally
+(i.e., across all records in the application).
 
 When the delimiter is set to limit search results to a specific
 :term:`archival institution`, :term:`typeahead` search results for
