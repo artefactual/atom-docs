@@ -15,27 +15,32 @@ This section describes how to change the theme, :term:`site title`,
 
 .. _themes-change-theme:
 
+.. IMPORTANT::
+
+   Bootstrap 2 themes have been deprecated and will be removed in a future
+   release. Please consider switching to a Bootstrap 5 theme.
+
 Change theme
 ============
 
-AtoM 2.7 ships with 3 themes: the default :term:`Dominion theme`
-(arDominionPlugin) and the Archives Canada theme (arArchivesCanadaPlugin).
+AtoM 2.7 and up ships with 3 themes: the default :term:`Dominion theme`
+(arDominionB5Plugin) and the Archives Canada theme (arArchivesCanadaPlugin).
 
 The Dominion themes are grey, white and black with the AtoM logo. The Archives
 Canada theme is yellow, blue and white with the ArchivesCanada logo (see images
 below).
 
-The new version of the Dominion theme is based on Bootstrap 5 (“BS5”), a
+The default version of the Dominion theme is based on Bootstrap 5 (“BS5”), a
 framework for developing websites. BS5 provides a number of improvements over
 the previous version (“BS2”) such as better security, responsiveness and
 accessibility.
 
-If you’re a brand new AtoM user, we suggest that you use the BS5 theme. If you
-are performing an upgrade to 2.7 from an older version, and you have a custom
-theme, we recommend you continue to use BS2 at this time.
+If you’re a brand new AtoM user, please use the default BS5 theme. If you
+are performing an upgrade from an older version, and you have a custom
+theme, we recommend upgrading that theme to use BS5.
 
 
-.. figure:: images/dominion-theme.*
+.. figure:: images/dominionB5-theme.*
    :align: center
    :figwidth: 60%
    :width: 100%
@@ -67,6 +72,10 @@ To change the theme:
 
 2. Click on the :term:`radio button` in the "Enabled" column for the theme
    you wish to have enabled and click "Save."
+
+.. SEEALSO::
+
+   * :ref:`Create a custom theme <customization-custom-theme>`
 
 .. _themes-add-remove-elements:
 
