@@ -4,16 +4,22 @@
 Theming
 =======
 
-AtoM themes can be customized by editing the appropriate css and .php files, or
-you can create a custom theme.
+AtoM themes can be customized by editing the appropriate css/scss and .php files,
+or you can create a custom theme.
 
 Please note AtoM 2.7 introduced a new version of the Bootstrap (“BS5”) web
-framework, and shipped with a theme based on BS5. Creating a custom theme using
-BS5 is slightly different than documented below (which was written using the
-original BS2 framework provided in previous versions of AtoM). This
-documentation will be updated, but in the meantime it is still possible to
-create a custom theme using BS2 using the instructions below.
+framework, and shipped with a theme based on BS5.
 
+Bootstrap 2 Deprecation Notice
+------------------------------
+
+Bootstrap 2 themes have been deprecated and will be removed in a future release.
+Please consider switching to a Bootstrap 5 theme.
+
+.. SEEALSO::
+
+   * :ref:`Change theme <themes-change-theme>`
+   * :ref:`Create a custom theme <customization-custom-theme>`
 
 Customize how an AtoM theme looks
 ---------------------------------
@@ -54,23 +60,121 @@ don't have to get your hands too dirty. It's in the details where most of the
 complexities are found. Dominion is the result of a cyclic process of testing
 and refining by a large community of users, try not to underestimate that!
 
-AtoM bundles two themes: arDominionPlugin and arArchivesCanadaPlugin. Their
-names follow the naming convention of Symfony 1.x plugins, because that is how
-themes are implemented in AtoM. You may want to read more about Symfony plugins
+AtoM bundles three themes: arDominionPlugin, arDominionB5Plugin and arArchivesCanadaPlugin.
+Their names follow the naming convention of Symfony 1.x plugins, because that is
+how themes are implemented in AtoM. You may want to read more about Symfony plugins
 later following `one of their guides <http://symfony.com/legacy/doc/gentle-introduction/1_4/en/17-Extending-Symfony#chapter_17_plug_ins>`_.
 
-arDominionPlugin is the default theme, i.e. the theme that will be used in a
+arDominionB5Plugin is the default theme, i.e. the theme that will be used in a
 fresh installation. arArchivesCanadaPlugin was developed as an extension of the
 former and the following instructions will show you how to create your custom
 theme as we did with arArchivesCanadaPlugin.
 
-Assuming that you already have AtoM installed in your development environment
-(you can use our :ref:`Vagrant box <dev-env-vagrant>`), let's start
-building the plugin structure from the command line. Our theme is going to be
-called Corcovado (arCorcovadoPlugin). We are going to track its contents with
-git and publish them in a remote repository hosted by GitHub so we can enable
-others to contribute in the development. The repository is open source so you
-can use it for your own reference, see https://github.com/artefactual-labs/atom-theme-corcovado.
+.. TIP::
+
+   The following instructions assume you already have an AtoM development environment set up
+   locally. If not, we have two development-friendly environments for AtoM - see:
+
+   * :ref:`dev-env-vagrant`
+   * :ref:`dev-env-compose`
+
+++++++++++++++++++++++++
+Custom Bootstrap 5 Theme
+++++++++++++++++++++++++
+
+With the new BS5 framework, creating a custom theme that is an extension
+of the default arDominionB5Plugin theme has become significantly easier. A
+skeleton for an empty AtoM theme plugin that extends arDominionB5Plugin without
+any modifications can be found in this `arThemeB5Plugin repository
+<https://github.com/artefactual-labs/arThemeB5Plugin>`_.
+
+Additional steps for tarball installations:
+*******************************************
+
+If not already installed, first `download the node.js binary distributuion
+<https://nodejs.org/en/download>`_ and export the PATH variable.
+
+The tarball is missing two required files for this: copy the
+`package.json <https://github.com/artefactual/atom/blob/stable/2.7.x/package.json>`_
+and `webpack.config.js <https://github.com/artefactual/atom/blob/stable/2.7.x/webpack.config.js>`_
+from the *correct stable branch* (*stable/2.7.x* for AtoM 2.7) of our
+`AtoM repo <https://github.com/artefactual/atom/>`_.
+
+Test that everything has been installed correctly:
+
+.. code-block:: bash
+
+   $ npm install
+   $ npm run build
+
+If you encounter any issues at this point, we recommend resolving any issues by
+consulting the :ref:`maintenance-troubleshooting` documentation before continuing.
+
+Let's begin creating our new BS5 Theme:
+***************************************
+
+.. code-block:: bash
+
+   $ cd ~/atom
+   $ git clone --depth=1 https://github.com/artefactual-labs/arThemeB5Plugin.git plugins/arCustomThemeB5Plugin
+   $ rm -rf plugins/arThemeB5Plugin/.git plugins/arB5ThemePlugin/README.md
+
+Here, we've cloned the repo directly into the `atom/plugins` directory, renaming
+the theme to `arCustomThemeB5Plugin`, and removed the git related files.
+
+.. code-block:: bash
+
+   $ cd plugins/arCustomThemeB5Plugin/config/
+   $ mv arThemeB5PluginConfiguration.class.php arCustomThemeB5PluginConfiguration.class.php
+
+To configure the theme plugin, we've renamed the config filename to match the
+plugin name. Next, we need to change the `class name <https://github.com/artefactual-labs/arThemeB5Plugin/blob/main/config/arThemeB5PluginConfiguration.class.php#L23>`_
+to match the new config filename (`arCustomThemeB5PluginConfiguration` for this
+example).
+
+Optionally, you can update the theme summary and version within the config file
+and change the theme image thumbnail by replacing `arCustomThemeB5Plugin/images/image.png`.
+
+To change the logo for BS5 themes, add the logo to `plugins/arCustomThemeB5Plugin/images/logo.png`.
+Style changes can be made directly to, or linked in, the `main SCSS file <https://github.com/artefactual-labs/arThemeB5Plugin/blob/main/scss/main.scss>`_.
+Custom javascripts can be added to the js directory and linked in the `main js file <https://github.com/artefactual-labs/arThemeB5Plugin/blob/main/js/main.js>`_.
+
+For additional functionlity modifications, copy files required into the new `plugins/arCustomThemeB5Plugin`
+directory for overwriting. Due to file precedence, when copying files, first
+check the `plugins/arDominionB5Plugin` for the required file, and only copy from
+`apps/qubit` when the file is not found in `plugins/arDominionB5Plugin`. Files
+copied should have the same file path with `plugin/arCustomThemeB5Plugin` replacing
+`apps/qubit` or `plugins/arDominionB5Plugin`.
+
+.. code-block:: bash
+
+   cd ~/atom
+   npm install
+   npm run build
+
+Once you've made all the required changes to your theme, build the theme assets,
+and you should now be able to use your new theme!
+
+.. TIP::
+
+   If you are still not seeing your changes take effect, remember to
+   :ref:`clear the Symfony cache <maintenance-clear-cache>` and your
+   web browser's cache as well!
+
+++++++++++++++++++++++++
+Custom Bootstrap 2 Theme
+++++++++++++++++++++++++
+
+.. NOTE::
+
+   Bootstrap 2 themes have been deprecated and will be removed in a future
+   release. Please consider switching to a Bootstrap 5 theme.
+
+Let's start building the plugin structure from the command line. Our theme is
+going to be called Corcovado (arCorcovadoPlugin). We are going to track its
+contents with git and publish them in a remote repository hosted by GitHub so we
+can enable others to contribute in the development. The repository is open source
+so you can use it for your own reference, see https://github.com/artefactual-labs/atom-theme-corcovado.
 You can also `create your own repository <https://help.github.com/articles/create-a-repo/>`_.
 
 Let's begin to do some real work:
