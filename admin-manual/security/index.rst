@@ -8,5 +8,6 @@ Security
    :maxdepth: 1
 
    application
+   csp-headers
    firewall
    backups

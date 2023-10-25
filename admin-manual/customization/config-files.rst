@@ -178,6 +178,12 @@ such as:
   are co-tenanted on the same server.
 * ``treeview_items_per-page_max``: Increase the maximum allowed value for the
   full-width :term:`treeview` paging limit - see: :ref:`fwt-items-per-page`
+* ``response_header``: The CSP `repsonse_header` setting is used to set the CSP
+  header type and can have one of two values: `Content-Security-Policy` or 
+  `Content-Security-Policy-Report-Only`. See :ref:`csp-configuration` for
+  additional details.
+* ``directives``: The CSP `directives` setting contains the CSP policy that will
+  be sent in the CSP header. See :ref:`csp-configuration` for additional details.
 
 .. image:: images/app-yml-settings.*
    :align: center

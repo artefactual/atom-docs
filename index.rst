@@ -249,6 +249,7 @@ Security
 --------
 
 * :ref:`security-application`
+* :ref:`security-csp-headers`
 * :ref:`security-firewall`
 * :ref:`security-backups`
 
