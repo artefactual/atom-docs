@@ -210,6 +210,8 @@ parameters. There are three endpoints available:
 * :ref:`Browse taxonomy terms <api-browse-taxonomies>`
 * :ref:`Browse information objects <api-browse-io>`
 * :ref:`Read information object <api-read-io>`
+* :ref:`Download digital objects <api-download-do>`
+* :ref:`Add physical objects <api-add-po>`
 
 .. _api-intro-i18n:
 
