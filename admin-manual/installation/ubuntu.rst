@@ -301,6 +301,17 @@ For development environments, the dev libraries should also be installed:
 
 After downloading the code, you will need to compile the themes files:
 
+Compile Bootstrap 5 Theme Files:
+********************************
+
+.. code-block:: bash
+
+   sudo npm install
+   sudo npm run build
+
+Compile Bootstrap 2 Theme Files:
+********************************
+
 .. code-block:: bash
 
    sudo apt install npm make
@@ -766,9 +777,16 @@ use. You can access it by entering your base URL into a web browser - the
 configuring the installer. See :ref:`getting-started-all` for further
 information on your first steps using AtoM.
 
-If you encounter any issues, we recommend consulting the
-:ref:`maintenance-troubleshooting` documentation for suggestions on how to
-resolve common errors.
+.. TIP::
+
+   After implementing the above changes during the initial setup, you might need
+   to :ref:`clear the cache <maintenance-clear-cache>` and
+   :ref:`restart PHP-FPM <troubleshooting-restart-php-fpm>` for the changes to
+   take effect.
+
+   If you encounter any other issues, we recommend consulting the
+   :ref:`maintenance-troubleshooting` documentation for suggestions on how to
+   resolve common errors.
 
 :ref:`Back to top <installation-ubuntu>`
 
