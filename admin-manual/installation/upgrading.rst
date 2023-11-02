@@ -368,9 +368,57 @@ Upgrading with a custom theme plugin
 If you have developed a custom theme plugin for your application (for more
 information, see :ref:`customization-custom-theme`), you may need to perform
 an additional step following an upgrade to ensure that all pages are styled
-correctly. Please note that the instructions below are for upgrading a custom
-theme that continues to the Bootstrap 2 (“BS2”). Documentation for upgrading to
-BS5 will be provided at a later date.
+correctly.
+
++++++++++++
+Bootstrap 5
++++++++++++
+
+Additional steps for tarball installations:
+*******************************************
+
+If not already installed, first `download the node.js binary distributuion
+<https://nodejs.org/en/download>`_ and export the PATH variable.
+
+The tarball is missing two required files for this: copy the
+`package.json <https://github.com/artefactual/atom/blob/stable/2.7.x/package.json>`_
+and `webpack.config.js <https://github.com/artefactual/atom/blob/stable/2.7.x/webpack.config.js>`_
+from the *correct stable branch* ("stable/|version|" for AtoM |version|) of our
+`AtoM repo <https://github.com/artefactual/atom/>`_.
+
+Test that everything has been installed correctly:
+
+.. code-block:: bash
+
+   $ npm install
+   $ npm run build
+
+If you encounter any issues at this point, we recommend resolving them by
+consulting the :ref:`maintenance-troubleshooting` documentation before continuing.
+
+Rebuild BS5 theme assets:
+*************************
+
+.. code-block:: bash
+
+   cd ~/atom
+   npm install
+   npm run build
+
+.. TIP::
+
+   If you are still not seeing your changes take effect, remember to
+   :ref:`clear the Symfony cache <maintenance-clear-cache>` and your
+   web browser's cache as well!
+
++++++++++++
+Bootstrap 2
++++++++++++
+
+.. NOTE::
+
+   Bootstrap 2 themes have been deprecated and will be removed in a future
+   release. Please consider switching to a Bootstrap 5 theme.
 
 Specifically, :ref:`job-details` may not appear properly styled in a custom
 theme without an additional step. To ensure your Jobs pages properly inherit
@@ -413,10 +461,10 @@ Specifically, your modified files should be updated to match these lines:
   <https://github.com/artefactual/atom/blob/HEAD/apps/qubit/modules/staticpage/templates/homeSuccess.php#L28>`__
 
 Recompiling after making modifications
---------------------------------------
+======================================
 
 After making any necessary updates to your custom theme, you should rebuild
-the CSS for the custom themeplugin, using the ``make`` command. Here is an
+the CSS for the custom theme plugin, using the ``make`` command. Here is an
 example of rebuilding the CSS for the ArchivesCanada theme - you can swap in
 the name of your plugin:
 
