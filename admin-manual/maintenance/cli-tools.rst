@@ -883,7 +883,7 @@ rebuild all nested sets in AtoM:
 
 .. IMPORTANT::
 
-   You should also run the ``search:populate`` task to re-index your site 
+   You should also run the ``search:populate`` task to re-index your site
    after rebuilding the nested set. For more information and task options, see:
 
    * :ref:`maintenance-populate-search-index`
@@ -937,7 +937,7 @@ the following command:
 
 .. IMPORTANT::
 
-   You should also run the ``search:populate`` task to re-index your site 
+   You should also run the ``search:populate`` task to re-index your site
    after generating slugs. For more information and task options, see:
 
    * :ref:`maintenance-populate-search-index`
@@ -1779,31 +1779,31 @@ Delete temporary data (saved clipboards, access log, and downloads)
 ===================================================================
 
 In the process of using your AtoM installation, you may generate some data
-that is only needed temporarily, and can be deleted once no longer needed. 
+that is only needed temporarily, and can be deleted once no longer needed.
 
-For example, :ref:`CSV <csv-export>` and :ref:`XML <export-xml>` exports are 
+For example, :ref:`CSV <csv-export>` and :ref:`XML <export-xml>` exports are
 generated as compressed ZIP files, and are stored in a ``jobs`` subdirectory
 of the AtoM ``downloads`` directory, so users can download local copies of
-their exports. While these files are rarely needed after the initial download, 
-AtoM currently has no automated method of clearing these files. 
+their exports. While these files are rarely needed after the initial download,
+AtoM currently has no automated method of clearing these files.
 
 Additionally, users can :ref:`save clipboard results <save-clipboard>` for use
-in later sessions - when saved these clipboard are stored in AtoM's database. 
-There is a setting that an :term:`administrator` can use to 
-:ref:`set an expiry limit on saved clipboards <clipboard-save-setting>`, but 
+in later sessions - when saved these clipboard are stored in AtoM's database.
+There is a setting that an :term:`administrator` can use to
+:ref:`set an expiry limit on saved clipboards <clipboard-save-setting>`, but
 this does not provide a bulk method to remove all saved clipboards at once if
-desired. 
+desired.
 
-Finally, AtoM has a database table called the ``access_log``, which is updated 
-every time an :term:`archival description`, :term:`authority record`, or 
-:term:`archival institution` is viewed. This table is used to populate the 
+Finally, AtoM has a database table called the ``access_log``, which is updated
+every time an :term:`archival description`, :term:`authority record`, or
+:term:`archival institution` is viewed. This table is used to populate the
 :ref:`popular-this-week` on the homepage, but there is no in-built mechanism
-to clear old results from the table. 
+to clear old results from the table.
 
 Fortunately, AtoM has a command-line task that can be used to manage these
-temporary data elements at will. 
+temporary data elements at will.
 
-The basic syntax for the task is: 
+The basic syntax for the task is:
 
 .. code-block:: bash
 
@@ -1811,10 +1811,10 @@ The basic syntax for the task is:
 
 Where ``data-type`` represents one of three supported parameters:
 
-* ``access_log``: clears the access log table associated with the 
+* ``access_log``: clears the access log table associated with the
   :ref:`popular-this-week` on the homepage
 * ``clipboard``: clears saved clipboards from AtoM's database
-* ``job``: clears the contents of the ``jobs`` subdirectory in the AtoM 
+* ``job``: clears the contents of the ``jobs`` subdirectory in the AtoM
   ``downloads`` directory
 
 .. image:: images/downloads-directory.*
@@ -1830,19 +1830,19 @@ You can also specify all options at once using a comma, like so:
 
 .. IMPORTANT::
 
-   If you have set an 
+   If you have set an
    :ref:`expiry limit on saved clipboards <clipboard-save-setting>` via AtoM's
-   settings, the task will use this as a parameter for what saved clipboards 
+   settings, the task will use this as a parameter for what saved clipboards
    to delete. For example, if you have the expiry limit setting configured to
-   10 days, then running the ``tools:expire`` job for the clipboard on 
-   January 10th would only delete clipboard saves older than January 1st by 
+   10 days, then running the ``tools:expire`` job for the clipboard on
+   January 10th would only delete clipboard saves older than January 1st by
    default. This is to avoid accidentally deleting clipboards that your end
    users may still expect to be able to retrieve. However, the ``--older-than``
    command-line option, described below, can be used to specify your own
-   date range. 
+   date range.
 
    If the the clipboard save maximum age setting is set to 0, **all** saved
-   clipboards will be deleted by default when the task is run. 
+   clipboards will be deleted by default when the task is run.
 
 By running ``php symfony help tools:expire-data`` we can see the
 command-line's help output for the task:
@@ -1859,31 +1859,31 @@ able to execute the task.
 The ``--older-than`` option can be used to limit the deletion by time range. It
 accepts date inputs in ISO 8601 format (i.e. ``YYYY-MM-DD``), and will delete
 any elements that are older than the specified date. Example use, deleting all
-download ZIPs from the ``jobs`` subdirectory that were created before January 
-1, 2020: 
+download ZIPs from the ``jobs`` subdirectory that were created before January
+1, 2020:
 
 .. code-block:: bash
 
    php symfony tools:expire-data --older-than="2020-01-01" job
 
-This option can be particularly useful when deleting saved clipboards. By 
-default, AtoM will use the administrative setting :ref:`clipboard-save-setting` 
+This option can be particularly useful when deleting saved clipboards. By
+default, AtoM will use the administrative setting :ref:`clipboard-save-setting`
 value when deleting saved clipboard data. However, you can specify your own
-range using this parameter to override the default. 
+range using this parameter to override the default.
 
-Additionally, by default the task will ask you to confirm the operation before 
+Additionally, by default the task will ask you to confirm the operation before
 proceeding, once per data type:
 
 .. image:: images/cli-expire-confirm.*
    :align: center
    :width: 90%
-   :alt: An image showing the confirmation message when running the 
+   :alt: An image showing the confirmation message when running the
          tools:expire command
 
-However, experienced developers and system administrators can skip this 
+However, experienced developers and system administrators can skip this
 confirmation step by using the ``--force`` (or ``-f`` for short) option. This
 is useful if you would like to create a script that runs the command-line
-task on a periodic basis for example. 
+task on a periodic basis for example.
 
 .. SEEALSO::
 
@@ -2005,15 +2005,15 @@ information object 2445 again by skipping the first 2444, like so:
    php symfony cache:xml-representations --skip="2444"
 
 Finally, the ``--format`` option can be used to limit the XML generated to
-just one of the two supported options - EAD 2002 XML, or DC XML. By default, the 
-task will generate and cache XML for both formats - however, by using the 
-``--format`` option and passing either ``ead`` or ``dc`` as the option value, 
+just one of the two supported options - EAD 2002 XML, or DC XML. By default, the
+task will generate and cache XML for both formats - however, by using the
+``--format`` option and passing either ``ead`` or ``dc`` as the option value,
 you can limit the XML to selected format. For example, to generate and cache only
-EAD 2002 XML: 
+EAD 2002 XML:
 
 .. code-block:: bash
 
-   php symfony cache:xml-representations --format="ead" 
+   php symfony cache:xml-representations --format="ead"
 
 **Example usage**
 
@@ -2213,7 +2213,7 @@ The ``--taxonomy-id`` option expects as its value the internal ID of the
 target taxonomy. Below is a list of some of the more commonly used taxonomies
 in AtoM, and their IDs. This list is NOT comprehensive - to see the full list,
 navigate to ``/lib/model/QubitTaxonomy.php``, or see a full list in AtoM's
-code on GitHub :at-gh:`here <lib/model/QubitTaxonomy.php#L20>`.
+code on GitHub `here <https://github.com/artefactual/atom/blob/HEAD/lib/model/QubitTaxonomy.php#L20>`_.
 
 =================================== ===
 Taxonomy name                       ID
