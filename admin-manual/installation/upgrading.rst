@@ -380,11 +380,14 @@ Additional steps for tarball installations:
 If not already installed, first `download the node.js binary distributuion
 <https://nodejs.org/en/download>`_ and export the PATH variable.
 
-The tarball is missing two required files for this: copy the
-`package.json <https://github.com/artefactual/atom/blob/stable/2.7.x/package.json>`_
-and `webpack.config.js <https://github.com/artefactual/atom/blob/stable/2.7.x/webpack.config.js>`_
-from the *correct stable branch* ("stable/|version|" for AtoM |version|) of our
-`AtoM repo <https://github.com/artefactual/atom/>`_.
+The tarball is missing three required files for this:
+
+* :version-ref:`package.json<https://github.com/artefactual/atom/blob/stable/{version}.x/package.json>`
+* :version-ref:`package-lock.json<https://github.com/artefactual/atom/blob/stable/{version}.x/package-lock.json>`
+* :version-ref:`webpack.config.js <https://github.com/artefactual/atom/blob/stable/{version}.x/webpack.config.js>`
+
+Copy the above files from the *correct stable branch*
+(stable/|version|.x for AtoM |version|) of our `AtoM repo <https://github.com/artefactual/atom/>`_.
 
 Test that everything has been installed correctly:
 
