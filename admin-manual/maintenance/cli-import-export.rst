@@ -116,7 +116,7 @@ the :term:`terms <term>` are imported to the correct :term:`taxonomy`. As
 input, the ``--taxonomy`` option takes a taxonomy ID - these are permanent
 identifiers used internally in AtoM to manage the various taxonomies, which
 can be found in AtoM in ``/lib/model/QubitTaxonomy.php`` (see on GitHub
-:at-gh:`here <lib/model/QubitTaxonomy.php#L20>`).
+`here <https://github.com/artefactual/atom/blob/HEAD/lib/model/QubitTaxonomy.php#L20>`_).
 
 .. TIP::
 
@@ -572,17 +572,17 @@ Validate CSV files via the command-line before import
 =====================================================
 
 To help users avoid bad imports and unexpected outcomes, AtoM supports two CSV
-validation tasks that can be run in advance of an import. The first task 
-provides general validation, and also includes support in the 
-:term:`user interface` - for more information on CSV validation via the user 
-interface, see: 
+validation tasks that can be run in advance of an import. The first task
+provides general validation, and also includes support in the
+:term:`user interface` - for more information on CSV validation via the user
+interface, see:
 
 * :ref:`csv-validation`
 
 The second task, currently only supported via the command-line, can be used to
-help review import files that import :term:`digital objects <digital object>`, 
+help review import files that import :term:`digital objects <digital object>`,
 to ensure that the digital object files match what is found in the accompanying
-import CSV. 
+import CSV.
 
 **Jump to:**
 
@@ -602,20 +602,20 @@ time. However, while the user interface supports a downloadable text file
 report of the validation output, the command-line task will currently only
 output results in the console.
 
-Details on how to interpret the results included in the console report can be 
+Details on how to interpret the results included in the console report can be
 found in the User Manual, here:
 
 * :ref:`csv-validation`
 
-The basic syntax for running the validation task against a single CSV is: 
+The basic syntax for running the validation task against a single CSV is:
 
 .. code-block:: bash
 
    php symfony csv:check-import /path/to/my/file.csv
 
-To run validation against multiple CSVs at once, place them in a common 
-directory accessible by AtoM and provide a path to the directory itself, 
-instead of to an individual CSV: 
+To run validation against multiple CSVs at once, place them in a common
+directory accessible by AtoM and provide a path to the directory itself,
+instead of to an individual CSV:
 
 .. code-block:: bash
 
@@ -642,15 +642,15 @@ The ``--application``, ``--env``, and ``--connection`` options **should not be
 used** - AtoM requires the uses of the pre-set defaults for symfony to be
 able to execute the task.
 
-The task includes two output options for the validation results - a shorter 
-report version that does not include a sample output row and in some cases 
-includes less details on each test outcome (and which matches what is shown in 
-the console log on the :ref:`job details <job-details>` page when run via the 
-:term:`user interface`), and a more detailed version with additional 
-information intended to help you locate reported issues. If the task is run 
-without options, the short report will be the default used. However, if you 
-would like to see the more detailed report, you can add the ``--verbose`` 
-(or ``-i`` for short) flag to the task, like so: 
+The task includes two output options for the validation results - a shorter
+report version that does not include a sample output row and in some cases
+includes less details on each test outcome (and which matches what is shown in
+the console log on the :ref:`job details <job-details>` page when run via the
+:term:`user interface`), and a more detailed version with additional
+information intended to help you locate reported issues. If the task is run
+without options, the short report will be the default used. However, if you
+would like to see the more detailed report, you can add the ``--verbose``
+(or ``-i`` for short) flag to the task, like so:
 
 .. code-block:: bash
 
@@ -659,41 +659,41 @@ would like to see the more detailed report, you can add the ``--verbose``
 .. TIP::
 
    If you are not sure how to locate issues reported during validation in your
-   CSV, we recommend running the validation task again using the ``--verbose`` 
-   option, as it will include additional information (such as row numbers, 
+   CSV, we recommend running the validation task again using the ``--verbose``
+   option, as it will include additional information (such as row numbers,
    problem values, etc) that should help you know where to look in the CSV
-   file to review and resolve issues. 
- 
+   file to review and resolve issues.
+
 For :term:`archival descriptions <archival description>`, the task can provide
 some basic checks on the ``legacyID`` and ``parentID`` columns used to structure
-hierarchical data in the CSV, to ensure that all ``parentID`` values match a 
-``legacyID`` value found in the CSV. However, since CSV imports can also be 
-used as updates to existing records, the ``--source`` option can be used to 
-provide a source name value, that will then be used to check for matches in 
+hierarchical data in the CSV, to ensure that all ``parentID`` values match a
+``legacyID`` value found in the CSV. However, since CSV imports can also be
+used as updates to existing records, the ``--source`` option can be used to
+provide a source name value, that will then be used to check for matches in
 AtoM's database in the ``keymap`` table from prior imports if no matches are
-found in the CSV. 
+found in the CSV.
 
-.. TIP:: 
+.. TIP::
 
-   For more information on source names, the keymap table, and CSV import 
-   updates, see: 
+   For more information on source names, the keymap table, and CSV import
+   updates, see:
 
    * :ref:`csv-legacy-id-mapping`
    * :ref:`csv-descriptions-updates`
    * :ref:`csv-import-descriptions-cli`
 
-The value provided with the ``--source`` option should match the source name 
-value used during previous imports - AtoM will use this value to look for a 
+The value provided with the ``--source`` option should match the source name
+value used during previous imports - AtoM will use this value to look for a
 match in the ``keymap`` table, and will then be able to check if ``parentID``
-values in the CSV being validated match ``legacyID`` values from prior imports 
-with the matching source name as well. 
+values in the CSV being validated match ``legacyID`` values from prior imports
+with the matching source name as well.
 
-By default, the validation task expects :term:`archival description` CSVs as 
-input to be validated - at present, this :term:`entity` type has the most 
+By default, the validation task expects :term:`archival description` CSVs as
+input to be validated - at present, this :term:`entity` type has the most
 comprehensive set of tests. However, most of the tests can be run on any CSV
-import type, such as checking for UTF-8 encoding and proper line endings; 
+import type, such as checking for UTF-8 encoding and proper line endings;
 checking culture values; etc. The ``--class-name`` option can be used to specify
-a different :term:`entity` type of CSV to validate. Supported options include: 
+a different :term:`entity` type of CSV to validate. Supported options include:
 
 * ``QubitInformationObject``: archival description CSV (default)
 * ``QubitActor``: authority record CSV
@@ -703,7 +703,7 @@ a different :term:`entity` type of CSV to validate. Supported options include:
 * ``QubitRelation-actor``: authority record relationship CSV
 
 For example, to validate a CSV of :term:`authority record` data, the basic task
-syntax would look something like the following: 
+syntax would look something like the following:
 
 .. code-block:: bash
 
@@ -712,9 +712,9 @@ syntax would look something like the following:
 Run without additional options, all supported tests will be run for the selected
 :term:`entity` when validating a CSV. However, the ``--specific-tests`` option
 can be used to specify only a subset of checks that should be performed when the
-task is executed. A brief summary of the test class names and relevant entity 
-types is provided below - for more detailed information on each test, 
-see the User Manual: :ref:`csv-validation`. 
+task is executed. A brief summary of the test class names and relevant entity
+types is provided below - for more detailed information on each test,
+see the User Manual: :ref:`csv-validation`.
 
 +---------------------------------+------------------------------------------+
 | Test class name                 | Supported entity type(s)                 |
@@ -752,8 +752,8 @@ see the User Manual: :ref:`csv-validation`.
 | CsvRepoValidator                | QubitInformationObject                   |
 +---------------------------------+------------------------------------------+
 
-You can include more than one test class name using the ``--specific-tests`` 
-option, by separating each test class name by a comma. An example: 
+You can include more than one test class name using the ``--specific-tests``
+option, by separating each test class name by a comma. An example:
 
 .. code-block:: bash
 
@@ -763,15 +763,15 @@ Finally, the ``--path-to-digital-objects`` option can be used when importing
 :term:`archival description` records that include a :term:`digital object`
 path in the ``digitalObjectPath`` CSV column. To import local digital objects
 using this CSV column, the digital objects must be available somewhere on
-the local file system - for more information on including digital objects in 
-CSV imports, see: 
+the local file system - for more information on including digital objects in
+CSV imports, see:
 
 * :ref:`csv-descriptions-digital-objects`
 
 The ``--path-to-digital-objects`` option can then be used to include the path
 to where the related digital objects are located on the local filesystem, so that
-further validation checks can be run against them. Possible check outputs 
-include: 
+further validation checks can be run against them. Possible check outputs
+include:
 
 * **INFO**: The ``digitalObjectPath`` column is not present in the CSV file.
 * **ERROR**: The path to the digital object directory specified in the validation
@@ -785,38 +785,38 @@ include:
 * **ERROR**: There are digital objects specified in the CSV that cannot be
   found in the related objects directory. The import will fail at this point
   if you attempt to proceed.
-* **WARNING**: A digital object is referred to more than once in the CSV. 
-  If you choose to proceed, here are some notes on the outcome: 
-  
-  * Only one :term:`master digital object` will be stored. Clicking through on 
-    the :term:`reference display copy` of the digital object shown on the 
+* **WARNING**: A digital object is referred to more than once in the CSV.
+  If you choose to proceed, here are some notes on the outcome:
+
+  * Only one :term:`master digital object` will be stored. Clicking through on
+    the :term:`reference display copy` of the digital object shown on the
     description :term:`view page` of each record will point to the same master.
   * Each description will have its own unique derivatives - this means you can
-    delete the :term:`thumbnail` and/or the :term:`reference display copy` 
+    delete the :term:`thumbnail` and/or the :term:`reference display copy`
     associated with one description without impacting the others
-  * Deleting the :term:`master digital object` on one description will **not** 
-    automatically delete it everywhere - other descriptions are unaffected, and 
-    the digital object will not actually be removed from the filesystem's 
+  * Deleting the :term:`master digital object` on one description will **not**
+    automatically delete it everywhere - other descriptions are unaffected, and
+    the digital object will not actually be removed from the filesystem's
     ``uploads`` directory until *all* description relations are deleted.
 
-An example of running the task when providing a path to a digital objects 
+An example of running the task when providing a path to a digital objects
 directory:
 
 .. code-block:: bash
 
-   php symfony csv:check-import --path-to-digital-objects="/usr/share/nginx/atom/my-upload-files" /path/to/my/import.csv 
+   php symfony csv:check-import --path-to-digital-objects="/usr/share/nginx/atom/my-upload-files" /path/to/my/import.csv
 
-.. SEEALSO:: 
+.. SEEALSO::
 
-   For specific information on the validation outputs for the 
-   ``digitalObjectPath`` checks, see: 
+   For specific information on the validation outputs for the
+   ``digitalObjectPath`` checks, see:
 
    * :ref:`csv-validation-do-path`
 
-   There is also a separate command-line task that can be used to check the 
-   filepaths associated with a digital object upload, that can be used when 
-   using the :ref:`digital object load <digital-object-load-task>` task. See 
-   below for more information: 
+   There is also a separate command-line task that can be used to check the
+   filepaths associated with a digital object upload, that can be used when
+   using the :ref:`digital object load <digital-object-load-task>` task. See
+   below for more information:
 
    * :ref:`csv-check-filepaths-digital-objects`
 
@@ -832,10 +832,10 @@ interpret the results, please see:
 Check filepaths before importing digital objects
 ------------------------------------------------
 
-In addition to the general :ref:`CSV validation task <csv-validation-cli-task>`, 
-AtoM also includes a command-line task to help double-check import files that 
-involve :term:`digital objects <digital object>`. The task will take the path to 
-a CSV file and the path to a directory of digital objects as inputs, and will 
+In addition to the general :ref:`CSV validation task <csv-validation-cli-task>`,
+AtoM also includes a command-line task to help double-check import files that
+involve :term:`digital objects <digital object>`. The task will take the path to
+a CSV file and the path to a directory of digital objects as inputs, and will
 report on potential errors, such as:
 
 * Any digital objects in the filesystem directory that aren't referenced in
@@ -935,9 +935,9 @@ Examples are also stored directly in the AtoM codebase - see:
      their children if you are importing hierarchicla data (such as
      descriptions)
 
-   AtoM also supports a CSV validation task that can be run from the 
-   command-line or the user interface, that can help identify common errors in 
-   CSVs prior to import. For more information, see: 
+   AtoM also supports a CSV validation task that can be run from the
+   command-line or the user interface, that can help identify common errors in
+   CSVs prior to import. For more information, see:
 
    * :ref:`csv-validation-cli`
    * :ref:`csv-validation`
@@ -2225,16 +2225,16 @@ it will take to complete.
 Audit a CSV import
 ==================
 
-With large CSV files, it can sometimes be difficult to determine if all rows 
-imported as expected. This simple command-line task can be used following a 
-CSV import to determine if a match can be found in AtoM's database for each 
-row in the import CSV. 
+With large CSV files, it can sometimes be difficult to determine if all rows
+imported as expected. This simple command-line task can be used following a
+CSV import to determine if a match can be found in AtoM's database for each
+row in the import CSV.
 
 How it works: using the keymap table and the import source name
 ---------------------------------------------------------------
 
 When a CSV import is performed in AtoM, two values are added to a database
-table called the keymap table for every row in the CSV: 
+table called the keymap table for every row in the CSV:
 
 .. image:: images/csv-keymap-table.*
    :align: center
@@ -2243,51 +2243,51 @@ table called the keymap table for every row in the CSV:
 
 * **legacyId**: The ``legacyId`` value used in the CSV for that row will be stored
   in the keymap table's ``source_id`` field
-* **source name**: A source name for the CSV will be stored in the 
-  ``source_name`` field of the keymap table. The command-line CSV import tasks 
-  (such as the :ref:`archival description import task <csv-import-descriptions-cli>`) 
-  include a ``--source-name`` option that allows a user to manually define the 
-  source name used; if this is not specified (such as during imports via the 
-  :term:`user interface`, where no option for manually entering a source name 
-  is provided), then the filename of the CSV (including the ``.csv`` extension) 
-  is used by default. 
+* **source name**: A source name for the CSV will be stored in the
+  ``source_name`` field of the keymap table. The command-line CSV import tasks
+  (such as the :ref:`archival description import task <csv-import-descriptions-cli>`)
+  include a ``--source-name`` option that allows a user to manually define the
+  source name used; if this is not specified (such as during imports via the
+  :term:`user interface`, where no option for manually entering a source name
+  is provided), then the filename of the CSV (including the ``.csv`` extension)
+  is used by default.
 
 These values are also used in the matching logic used for update imports. For
 more general information on the use of the keymap table values, see:
 
 * :ref:`csv-import-descriptions-cli`
-* :ref:`csv-descriptions-match-criteria` (importing archival description CSV 
+* :ref:`csv-descriptions-match-criteria` (importing archival description CSV
   updates)
 
 This audit task will use the sourcename of the import to find related values
 in the keymap table, and then will compare every CSV row's ``legacyId`` values
-with those found in the ``source_id`` column of the keymap database table. 
+with those found in the ``source_id`` column of the keymap database table.
 
-If a row is found in the CSV without a corresponding match in the keymap table, 
+If a row is found in the CSV without a corresponding match in the keymap table,
 then this will be reported in the console. You can then address the issue
-however you'd prefer, such as: 
+however you'd prefer, such as:
 
 * Creating a new CSV with the missing rows as a follow-up import
 * Loading a database backup and then re-performing the original import
-* Using the :ref:`delete-csv-io-import-cli` task described below to delete the 
+* Using the :ref:`delete-csv-io-import-cli` task described below to delete the
   results of the first import, before re-performing the import
 * Manually creating the missing records
-* Etc. 
+* Etc.
 
 Task usage
 ----------
 
-The basic syntax for the CSV audit import task is: 
+The basic syntax for the CSV audit import task is:
 
 .. code-block:: bash
 
    php symfony csv:audit-import sourcename filename
 
 Where ``sourcename`` represents the source name used during the original CSV
-import (which will default to the CSV filename, including the extension, if 
+import (which will default to the CSV filename, including the extension, if
 none is defined during import), and where ``filename`` represents the current
-path and filename where the original import CSV is located, so it can be used 
-for comparison against AtoM's keymap table. 
+path and filename where the original import CSV is located, so it can be used
+for comparison against AtoM's keymap table.
 
 .. TIP::
 
@@ -2296,7 +2296,7 @@ for comparison against AtoM's keymap table.
 
    * :ref:`delete-csv-io-import-cli-sourcename`
 
-Sample task execution and output on a 3-row description CSV: 
+Sample task execution and output on a 3-row description CSV:
 
 .. image:: images/cli-audit-import-example.*
    :align: center
@@ -2309,7 +2309,7 @@ help output for the task:
 .. image:: images/cli-audit-import-help.*
    :align: center
    :width: 90%
-   :alt: An image of the help output shown in the console for the csv:audit-import 
+   :alt: An image of the help output shown in the console for the csv:audit-import
          command-line task
 
 The ``--application``, ``--env``, and ``connection`` options **should not be
@@ -2318,8 +2318,8 @@ able to execute the task.
 
 The ``--target-name`` option is used to specify the :term:`entity` type of the
 records in the accompanying CSV. The default when this option is not specified
-is ``information_object`` (i.e. :term:`archival description`). Supported options 
-include: 
+is ``information_object`` (i.e. :term:`archival description`). Supported options
+include:
 
 * information_object (i.e. :term:`archival description`)
 * actor (i.e. :term:`authority record`)
@@ -2344,24 +2344,24 @@ table of AtoM's database.
 
 :ref:`Back to top <cli-import-export>`
 
-.. _delete-csv-io-import-cli: 
+.. _delete-csv-io-import-cli:
 
 Delete descriptions created by a CSV import
 ===========================================
 
-Even with :ref:`csv-validation` available, occasionally a CSV import will have 
-unexpected results, and it can be time consuming to manually delete 
-:term:`archival description` records created by a bad import. 
+Even with :ref:`csv-validation` available, occasionally a CSV import will have
+unexpected results, and it can be time consuming to manually delete
+:term:`archival description` records created by a bad import.
 
 Fortunately, AtoM has a command-line task that can delete descriptions created
-by a CSV import. The task will **not** delete other 
-:term:`entity types <entity>` created by the import (such as linked 
-:term:`access point` terms, :term:`authority records <authority record>`, 
-:term:`archival institutions <archival institution>`, etc) since these may be 
-related to other records in AtoM - you would need to find and delete these 
-manually if desired. However, this CLI task can still make undoing a bad 
-archival description CSV import much easier, provided the task is used 
-carefully with a proper understanding of its methods and limitations. 
+by a CSV import. The task will **not** delete other
+:term:`entity types <entity>` created by the import (such as linked
+:term:`access point` terms, :term:`authority records <authority record>`,
+:term:`archival institutions <archival institution>`, etc) since these may be
+related to other records in AtoM - you would need to find and delete these
+manually if desired. However, this CLI task can still make undoing a bad
+archival description CSV import much easier, provided the task is used
+carefully with a proper understanding of its methods and limitations.
 
 .. _delete-csv-io-import-cli-summary:
 
@@ -2369,7 +2369,7 @@ How it works: using the source name as the task parameter
 ---------------------------------------------------------
 
 When a CSV import is performed in AtoM, two values are added to a database
-table called the keymap table for every row in the CSV: 
+table called the keymap table for every row in the CSV:
 
 .. image:: images/csv-keymap-table.*
    :align: center
@@ -2378,33 +2378,33 @@ table called the keymap table for every row in the CSV:
 
 * **legacyId**: The ``legacyId`` value used in the CSV for that row will be stored
   in the keymap table's ``source_id`` field
-* **source name**: A source name for the CSV will be stored in the 
-  ``source_name`` field of the keymap table. The command-line CSV 
-  :ref:`archival description import task <csv-import-descriptions-cli>` includes 
+* **source name**: A source name for the CSV will be stored in the
+  ``source_name`` field of the keymap table. The command-line CSV
+  :ref:`archival description import task <csv-import-descriptions-cli>` includes
   a ``--source-name`` option that allows a user to manually define the source
-  name used; if this is not specified (such as during imports via the 
-  :term:`user interface`, where no option for manually entering a source name 
-  is provided), then the filename of the CSV (including the ``.csv`` extension) 
-  is used by default. 
+  name used; if this is not specified (such as during imports via the
+  :term:`user interface`, where no option for manually entering a source name
+  is provided), then the filename of the CSV (including the ``.csv`` extension)
+  is used by default.
 
 These values are used in the matching logic used for update imports. For more
-general information on the use of the keymap table values, see: 
+general information on the use of the keymap table values, see:
 
 * :ref:`csv-import-descriptions-cli`
 * :ref:`csv-descriptions-match-criteria` (importing CSV updates)
 
 This command-line task to delete records from an import will also use the source
-name value of the original import, stored in the keymap table, to identify 
-records for deletion. 
+name value of the original import, stored in the keymap table, to identify
+records for deletion.
 
 .. _delete-csv-io-import-cli-sourcename:
 
 Finding the source name of a record
 -----------------------------------
 
-You can always check in the user interface what source name was used for 
-records created via an import by entering into :term:`edit mode` and navigating 
-to the Administration :term:`area <information area>` of the :term:`edit page` - 
+You can always check in the user interface what source name was used for
+records created via an import by entering into :term:`edit mode` and navigating
+to the Administration :term:`area <information area>` of the :term:`edit page` -
 the source name used will be diplayed there:
 
 .. image:: images/source-name-ui.*
@@ -2414,7 +2414,7 @@ the source name used will be diplayed there:
          Administration area of the AtoM edit page.
 
 Alternatively, you can use SQL to find the source name and ID values associated
-with a description. See: 
+with a description. See:
 
 * :ref:`cli-access-mysql`
 * :ref:`sql-source-name`
@@ -2422,10 +2422,10 @@ with a description. See:
 .. IMPORTANT::
 
    If you have not used unique filenames (or manually specified source names)
-   during your imports, you may end up deleting more records than intended! 
-   We **strongly** recommend making a backup of your data before proceeding. 
+   during your imports, you may end up deleting more records than intended!
+   We **strongly** recommend making a backup of your data before proceeding.
 
-   See: 
+   See:
 
    * :ref:`maintenance-data-backup`
    * :ref:`cli-backup-db`
@@ -2434,22 +2434,22 @@ Task usage
 ----------
 
 The basic syntax for the command-line task to delete :term:`archival description`
-records from a previous CSV import is: 
+records from a previous CSV import is:
 
 .. code-block:: bash
 
    php symfony import:delete sourcename
 
-Where ``sourcename`` represents the ``source_name`` value associated with the 
-import, stored in AtoM's keymap database table. 
+Where ``sourcename`` represents the ``source_name`` value associated with the
+import, stored in AtoM's keymap database table.
 
-By running ``php symfony help import:delete`` we can also see the console's help 
+By running ``php symfony help import:delete`` we can also see the console's help
 output for the task:
 
 .. image:: images/cli-import-delete-help.*
    :align: center
    :width: 90%
-   :alt: An image of the help output shown in the console for the import:delete 
+   :alt: An image of the help output shown in the console for the import:delete
          command-line task
 
 The ``--application``, ``--env``, and ``connection`` options **should not be
@@ -2462,20 +2462,20 @@ before proceeding, and will ask for confirmation before executing the task:
 .. image:: images/cli-import-delete-confirm.*
    :align: center
    :width: 90%
-   :alt: An image of the confirmation message shown when running the 
+   :alt: An image of the confirmation message shown when running the
          import:delete command-line task
 
 However to support scripted automation, or for a system administrator to simply
 skip this confirmation step, you can use the ``--force`` (or ``-f``) option
-to bypass confirmation. 
+to bypass confirmation.
 
 The ``--verbose`` (or ``-v``) option can be used to provide a more detailed
-output in the console as the task progresses, which can aid in debugging. 
+output in the console as the task progresses, which can aid in debugging.
 
-Additionally, if you would like to save the console output for review and 
-debugging, you can write the console log output to a file, by using the 
-``--logfile`` (or ``-l``) option and providing a file path and filename for 
-the target logfile, as in the example below: 
+Additionally, if you would like to save the console output for review and
+debugging, you can write the console log output to a file, by using the
+``--logfile`` (or ``-l``) option and providing a file path and filename for
+the target logfile, as in the example below:
 
 .. code-block:: bash
 
@@ -2483,7 +2483,7 @@ the target logfile, as in the example below:
 
 .. IMPORTANT::
 
-   If you use this task, remember: 
+   If you use this task, remember:
 
    * You should make a backup of your databse first, so if the results are
      unexpected, you can load your backup. See: :ref:`cli-backup-db`
@@ -2492,10 +2492,10 @@ the target logfile, as in the example below:
      source names) such as "isad-000001.csv", then the task may delete more
      records than you expect!
    * The task will **not** delete related :term:`entity` types created by the
-     import, such as linked :term:`access point` terms, 
-     :term:`authority records <authority record>`, 
-     :term:`archival institutions <archival institution>`, etc. since these may 
-     be related to other records in AtoM. You will need to find and delete these 
+     import, such as linked :term:`access point` terms,
+     :term:`authority records <authority record>`,
+     :term:`archival institutions <archival institution>`, etc. since these may
+     be related to other records in AtoM. You will need to find and delete these
      manually if desired
 
 :ref:`Back to top <cli-import-export>`
