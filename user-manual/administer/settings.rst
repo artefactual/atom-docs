@@ -16,7 +16,6 @@ Below, you will find information on the following :term:`information areas
 * :ref:`dip-upload-settings`
 * :ref:`Default page elements <default-page-elements>`
 * :ref:`Default templates <default-templates>`
-* :ref:`Diacritics <diacritics>`
 * :ref:`digital-object-derivatives`
 * :ref:`Finding aid <finding-aid>`
 * :ref:`Add/Remove languages <add-remove-languages>`
@@ -33,9 +32,9 @@ Below, you will find information on the following :term:`information areas
 * :ref:`upload-settings`
 * :ref:`User interface labels <user-interface-labels>`
 
-Each of the settings areas listed above is accessible via a list of links on
-the left-hand side of the settings page. Click on the appropriate link, and
-click save after making your changes. A notification will appear confirming
+Each of the settings areas listed above is accessible via a list of links on 
+the left-hand side of the settings page. Click on the appropriate link, and 
+click save after making your changes. A notification will appear confirming 
 that your changes have been saved.
 
 .. figure:: images/settings-saved-notification.*
@@ -561,7 +560,7 @@ color of the institution will also be displayed behind the scoped search results
    * :ref:`edit-institution-theme`
 
 Additionally, the :ref:`search-box-delimiters` are disabled when Institutional
-scoping is enabled - the global :term:`search box` in the AtoM
+scoping is enabled - the global :term:`search box` in the AtoM 
 :term:`header bar`
 will only return results from all repositories, while the dedicated search box
 inside the :term:`institution block` can be used to search the holdings of the
@@ -616,7 +615,7 @@ Enable description change logging
 
 .. _audit log: https://en.wikipedia.org/wiki/Audit_trail
 
-This setting will enable a basic `audit log`_ for
+This setting will enable a basic `audit log`_ for 
 :term:`archival descriptions <archival description>` in AtoM. When enabled,
 the log will capture basic information on creation and modification events
 related to archival descriptions, including date, type (creation or
@@ -722,7 +721,7 @@ Sequences of unaccepted characters (e.g. accented or special characters, etc.)
 are replaced with valid characters such as English alphabet equivalents or
 dashes. When set to to "Yes," AtoM will allow upper case characters, any valid
 unicode characters as specified in
-`RFC 3987`_ including accented characters, and some special characters such
+`RFC 3987`_ including accented characters, and some special characters such 
 as: ``, - _ ~ : = * @``. For further details, see:
 
 * :ref:`slugs-in-atom`
@@ -779,8 +778,8 @@ SWORD deposit directory
 .. _Archivematica: https://www.archivematica.org/
 
 The SWORD deposit directory is currently being used to support packages
-deposited by `Archivematica`_ into AtoM. If you do not know the name of your
-deposit directory, consult with your system administrator. The default is
+deposited by `Archivematica`_ into AtoM. If you do not know the name of your 
+deposit directory, consult with your system administrator. The default is 
 ``/tmp``.
 
 AtoM 2.7 has added a new feature that deletes the DIP directory from the SWORD
@@ -995,11 +994,11 @@ CSV Validator settings
    :width: 90%
    :alt: An image of the CSV Validator setting options
 
-To help avoid unexpected :ref:`CSV import <csv-import>` problems, AtoM includes
-a CSV validation task that can check for and report on common issues found in
-CSV files prior to import. This task can be run independently of import,
-either via the command-line or the :term:`user interface`. For more
-information, see:
+To help avoid unexpected :ref:`CSV import <csv-import>` problems, AtoM includes 
+a CSV validation task that can check for and report on common issues found in 
+CSV files prior to import. This task can be run independently of import, 
+either via the command-line or the :term:`user interface`. For more 
+information, see: 
 
 * :ref:`csv-validation-ui`
 * :ref:`csv-validation-cli`
@@ -1009,41 +1008,41 @@ information, see:
    * :ref:`csv-import`
    * :ref:`cli-import-export`
 
-Additionally, these settings allow an :term:`administrator` to configure
-validation to run automatically before any CSV import performed via the
-:term:`user interface`.
+Additionally, these settings allow an :term:`administrator` to configure 
+validation to run automatically before any CSV import performed via the 
+:term:`user interface`.  
 
-There are three configurable options in the CSV validator settings. The
+There are three configurable options in the CSV validator settings. The 
 default setting in new installations is **Off** - when this option is set, no
 validation will be performed when a CSV is imported via the user interface.
 
 The other two settings will enable AtoM to automatically run validation
-whenever a CSV import is initiated via the user interface, though with
-different behaviors:
+whenever a CSV import is initiated via the user interface, though with 
+different behaviors: 
 
-* When the **Permissive** option is set, only :ref:`csv-validation-error`
-  messages during validation will prevent the CSV import from proceeding.
+* When the **Permissive** option is set, only :ref:`csv-validation-error` 
+  messages during validation will prevent the CSV import from proceeding. 
   :ref:`csv-validation-warning` messages will still be reported in related
-  console log output shown on the :term:`job details page <job-details>` of
-  the CSV import, but they will not prevent the import from proceeding.
-* When the **Strict** option is set, both :ref:`csv-validation-error` and
+  console log output shown on the :term:`job details page <job-details>` of 
+  the CSV import, but they will not prevent the import from proceeding. 
+* When the **Strict** option is set, both :ref:`csv-validation-error` and 
   :ref:`csv-validation-warning` messages returned during validation will
   prevent the import from proceeding.
 
 Issues that prevent import will need to be resolved before the CSV import can
-be successfully re-launched, or else the setting will need to be changed by an
-:term:`administrator`.
+be successfully re-launched, or else the setting will need to be changed by an 
+:term:`administrator`. 
 
 For more information on how to interpret the results of the validation report,
-and general information on the structure of the report, see:
+and general information on the structure of the report, see: 
 
 * :ref:`csv-validation`
 
 .. NOTE::
-
-   This setting does **not** impact CSV imports peformed from the command-line.
+ 
+   This setting does **not** impact CSV imports peformed from the command-line. 
    However, the validation task can be run independently from an import via
-   the command-line as well. For more information, see:
+   the command-line as well. For more information, see: 
 
    * :ref:`csv-validation-cli`
    * :ref:`csv-import-cli`
@@ -1062,7 +1061,7 @@ Clipboard settings
 
 These settings allow an :term:`administrator` to configure and/or enable certain
 features related to AtoM's :term:`clipboard` functionality. For more information
-on using the clipboard, see:
+on using the clipboard, see: 
 
 * :ref:`clipboard`
 
@@ -1100,7 +1099,7 @@ the database.
    users to make use of the Saved clipboard feature, be sure to configure this
    to a reasonable value - e.g. 30 (days), etc.
 
-Note that AtoM also has a command-line task that can be used by a system
+Note that AtoM also has a command-line task that can be used by a system 
 administrator to manage and delete saved clipboards. For more information, see:
 
 * :ref:`tools-expire`
@@ -1114,38 +1113,38 @@ Clipboard sending
 .. _POST or GET: https://www.w3schools.com/tags/ref_httpmethods.asp
 
 These settings can be configured to integrate the clipboard with a third-party
-site or application, for use in reference requests, loans, or other similar
-cases. When configured, it will allow results on the clipboard to be sent to a
-specified URL as a `JSON`_ array of :term:`slugs <slug>`. Data can be sent using
-either HTTP `POST or GET`_ methods.
+site or application, for use in reference requests, loans, or other similar 
+cases. When configured, it will allow results on the clipboard to be sent to a 
+specified URL as a `JSON`_ array of :term:`slugs <slug>`. Data can be sent using 
+either HTTP `POST or GET`_ methods.  
 
-When a user adds items to the clipboard and these settings are enabled, an
-additional button will display on the clipboard's :term:`view page`. The button
-text can be customized, along with the text shown to the user while the results
-are being sent. When clicked, AtoM will send a JSON array of the clipboard
-results to the target URL, and then will redirect the user to that URL for
-further action.
+When a user adds items to the clipboard and these settings are enabled, an 
+additional button will display on the clipboard's :term:`view page`. The button 
+text can be customized, along with the text shown to the user while the results 
+are being sent. When clicked, AtoM will send a JSON array of the clipboard 
+results to the target URL, and then will redirect the user to that URL for 
+further action. 
 
 .. image:: images/clipboard-send-button.*
    :align: center
    :width: 80%
    :alt: An example of a Clipboard send button with customized text
 
-In new installations, this functionality is disabled by default, but can be
-configured and enabled via the settings described below.
+In new installations, this functionality is disabled by default, but can be 
+configured and enabled via the settings described below. 
 
 Enable clipboard send functionality
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This setting enables or disables the :term:`Clipboard` send functionality
+This setting enables or disables the :term:`Clipboard` send functionality 
 globally. When set to "No", the Clipboard send button will not be displayed on
 the clipboard's :term:`view page`.
 
 External URL to send clipboard contents to
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Enter the URL to which you would like your array of clipboard results to be sent.
-Must be a valid HTTP or HTTPS URL.
+Enter the URL to which you would like your array of clipboard results to be sent. 
+Must be a valid HTTP or HTTPS URL. 
 
 Example value: ``http://myarchives.example.com/archives-request``
 
@@ -1154,27 +1153,27 @@ Send button text
 
 When the Clipboard send functionality is enabled, an additional button is added
 to the Clipboard's :term:`view page`. The default text in new installations is
-simply "Send" but an :term:`administrator` can modify this as needed.
+simply "Send" but an :term:`administrator` can modify this as needed. 
 
 Text or HTML to display when sending clipboard contents
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the brief interval before the user is redirected to the external URL, the
+In the brief interval before the user is redirected to the external URL, the 
 text added to this setting is what will be shown to the user while the clipboard
-results are being sent. The default text in new installations is "Sending..."
-but this too can be customized as desired.
+results are being sent. The default text in new installations is "Sending..." 
+but this too can be customized as desired. 
 
-.. NOTE::
+.. NOTE:: 
 
-   In most cases, this page will not be shown long enough for the user to read
+   In most cases, this page will not be shown long enough for the user to read 
    much text, unless the clipboard results are extensive. We recommend keeping
-   this message fairly short and simple.
+   this message fairly short and simple. 
 
 HTTP method to use when sending clipboard contents
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 An :term:`administrator` can choose between using HTTP `POST or GET`_ methods
-for delivering the clipboard payload to the external site.
+for delivering the clipboard payload to the external site. 
 
 :ref:`Back to top <settings>`
 
@@ -1183,10 +1182,10 @@ for delivering the clipboard payload to the external site.
 Enable digital object export functionality
 ------------------------------------------
 
-In AtoM 2.7 and higher, an :term:`administrator` can enable users to include
-:term:`digital objects <digital object>` with :term:`archival description` XML
+In AtoM 2.7 and higher, an :term:`administrator` can enable users to include 
+:term:`digital objects <digital object>` with :term:`archival description` XML 
 and CSV exports from the clipboard. By default, this setting is set to "No" in
-new installations.
+new installations. 
 
 When set to Yes, the clipboard export options screen will include an "Include
 digital objects" checkbox. If the user checks that checkbox, any digital
@@ -1200,7 +1199,7 @@ the digital objects selected for download.
 
    AtoM has a command-line task that system administrators can use to manage
    the deletion of temporary files, including ZIP packages generated for user
-   download. For more information, see:
+   download. For more information, see: 
 
    * :ref:`tools-expire`
 
@@ -1209,14 +1208,14 @@ export options screen, it is no longer possible to include descendants in the
 export, and the "Include descendents" checkbox will be greyed out. This is a
 safeguard designed to prevent users from deliberately or inadvertently exporting
 large descriptive hierarchies with hundreds or thousands of digital objects
-attached at descendant levels of description.
+attached at descendant levels of description. 
 
-For more information on using this feature, see:
+For more information on using this feature, see: 
 
 * :ref:`xml-export-clipboard-do`
 * :ref:`csv-export-clipboard-do`
 
-.. SEEALSO::
+.. SEEALSO:: 
 
    * :ref:`clipboard`
    * :ref:`csv-export-clipboard`
@@ -1336,8 +1335,8 @@ and is only used on the RAD template.
 
 .. TIP::
 
-   AtoM has a separate setting that can disable
-   :term:`finding aid <print-finding-aids>` generation and upload. When
+   AtoM has a separate setting that can disable 
+   :term:`finding aid <print-finding-aids>` generation and upload. When 
    disabled, the related filter in the :term:`advanced search panel` will
    also be hidden. For more information, see: :ref:`print-finding-aid-settings`.
 
@@ -1350,7 +1349,7 @@ dynamic Google map in the Digital object metadata
 .. IMPORTANT::
 
    To be able to enable this setting, you must first request a Google MAPS
-   `API Key`_, and the Google Maps Javascript API key setting in |gears|
+   `API Key`_, and the Google Maps Javascript API key setting in |gears| 
    **Admin > Settings > Global** must be populated - see: :ref:`maps-api-key`
 
 When unchecked, the above elements will be hidden from display after you save
@@ -1402,68 +1401,6 @@ viewed in the templates that have been selected.
 
    * :ref:`data-entry`
    * :ref:`descriptive-standards`
-
-:ref:`Back to top <settings>`
-
-.. _diacritics:
-
-Diacritics
-=================
-
-Diacritics, also known as accents, are dots and glyphs written above or
-below certain letters of the alphabet of many languages, indicating something
-about thir pronounciation. Languages using diacritics vary from using a single
-diacritic to multiple diacritics on a single letter.
-
-AtoM uses `Elasticsearch <https://www.elastic.co/products/elasticsearch>`__ (ES)
-as its search index, which offers a variety of filters and analyzers to convert or
-strip strings into their Latin equivalents for searching purposes. By default,
-AtoM is configured for languages using a single diacritic, but not multiple.
-However, :term:`Administrators <administrator>` can create additional mappings
-for special characters by uploading a YAML file to AtoM.
-
-.. image:: images/diacritics.*
-   :align: center
-   :width: 70%
-   :alt: An image of the Diacritics setting in AtoM
-
-To enable the setting, a valid character mapping YAML must be uploaded to AtoM.
-
-
-A character mapping YAML should be constructed like so::
-
-   # Custom diacritics char filter
-   type: mapping
-   mappings:
-     - ’ => '
-     - Ɂ => '
-     - ɂ => '
-     - À => A
-     - Á => A
-     - Ä => A
-     - Ā => A
-     - Ą => A
-     - Ǎ => A
-     - Ç => C
-
-Note that YAML files are case sensitive and structured as a map or a list,
-following a hierarchy based on the indentation. The first line is an optional
-comment but the following 2 lines are required for AtoM to configure these mappings.
-The rest are examples of mapping special characters (on the left of the ``=>``)
-to its Latin equivalent (on the right of the ``=>``) for ES to process. Each
-mapping should be indented with 2 spaces (tabs are not accepted for indentation)
-and listed with a ``-``.
-
-.. IMPORTANT::
-
-   If you change this setting, for changes take effect, a system administrator
-   will need to :ref:`populate the search <maintenance-populate-search-index>`.
-   Clearing your web browser and :ref:`the application cache <maintenance-clear-cache>`,
-   are also recommended.
-
-.. SEEALSO::
-
-   * :ref:`advanced-search`
 
 :ref:`Back to top <settings>`
 
@@ -1522,7 +1459,7 @@ use the setting value when regenerating PDF derivatives.
 
    If you enter a page number that does not exist for one or more of your
    derivatives (for example, entering 99 as the value, when your PDF only has
-   9 pages), AtoM will use the closest available value (in this example, page 9)
+   9 pages), AtoM will use the closest available value (in this example, page 9) 
    when generating the derivatives.
 
 If you make changes, remember to click the "Save" button in the
@@ -1533,10 +1470,10 @@ If you make changes, remember to click the "Save" button in the
 Maximum length on longest edge (pixels)
 ---------------------------------------
 
-This setting determines the maximum size of the :term:`reference display copy`
+This setting determines the maximum size of the :term:`reference display copy` 
 derivative created from a :term:`master digital object` during digital object
 upload. It is measured in pixels, and will be applied either to height or
-width - whichever side reaches the pixel limit first.
+width - whichever side reaches the pixel limit first. 
 
 One of AtoM's design assumptions is that the display dimensions of files
 users upload typically will be too large to fit into the :term:`view page` for
@@ -1583,7 +1520,7 @@ Add/Remove languages
 
 AtoM relies on volunteer translators from the community to support new language
 options. The translations are managed using an Artefactual-hosted instance of
-`Weblate`_ and community members can learn more about contibuting translations
+`Weblate`_ and community members can learn more about contibuting translations 
 here:
 
 * https://wiki.accesstomemory.org/Resources/Translation
@@ -1977,9 +1914,9 @@ information to help orient the user.
    duplication in the display!
 
    Note as well, this setting does **not** affect the behavior of DC XML exports.
-   This behavior can be managed separately via a different setting - see below:
+   This behavior can be managed separately via a different setting - see below: 
 
-   * :ref:`inherit-reference-dc`
+   * :ref:`inherit-reference-dc` 
 
 .. SEEALSO::
 
@@ -1994,42 +1931,42 @@ Inherit reference code (DC XML)
 -------------------------------
 
 This setting controls whether an individual :term:`archival description`'s
-identifier or its full inherited :term:`reference code` is used when a
-description is exported as Dublin Core XML (including when exposed via AtoM's
-:ref:`oai-pmh` module.
+identifier or its full inherited :term:`reference code` is used when a 
+description is exported as Dublin Core XML (including when exposed via AtoM's 
+:ref:`oai-pmh` module.  
 
 .. SEEALSO::
 
-   * For more information on reference codes in AtoM and how inheritance works,
+   * For more information on reference codes in AtoM and how inheritance works, 
      see above: :ref:`inherit-reference-code`
-   * To set the default separator character used in inherited reference codes,
+   * To set the default separator character used in inherited reference codes, 
      see: :ref:`reference-code-separator`
    * To learn more about Dublin Core in AtoM, see: :ref:`dc-template`
    * For more on XML export, see: :ref:`export-xml`
-   * To learn more about how Dublin Core XML is used in AtoM's OAI repository
+   * To learn more about how Dublin Core XML is used in AtoM's OAI repository 
      module, see: :ref:`oai-pmh`
 
-When set to "No," only the current description's identifier will be included in
+When set to "No," only the current description's identifier will be included in 
 DC XML exports. When set to "Yes," AtoM will use the reference code inheritance
-model described above in :ref:`inherit-reference-code`, meaning in addition to
-the description's local identifier, the ``<dc:identifer>`` will also include:
+model described above in :ref:`inherit-reference-code`, meaning in addition to 
+the description's local identifier, the ``<dc:identifer>`` will also include: 
 
-* The country code of any related :term:`archival institution` (derived from the
+* The country code of any related :term:`archival institution` (derived from the 
   country added in the address section of the related :term:`repository` record)
 * The repository identifier of any related :term:`archival institution`
 * Identifiers of any :term:`parent <parent record>` descriptions, separated by
   the default separator defined in the :ref:`reference-code-separator` setting
 
-By default, this setting is set to "No" in new installations.
+By default, this setting is set to "No" in new installations. 
 
 .. IMPORTANT::
 
-   This setting does **not** alter the behavior of how identifiers / reference
-   codes are displayed on description :term:`view pages <view page>`, nor does
-   it affect how identifiers are handled in EAD 2002 XML exports.
+   This setting does **not** alter the behavior of how identifiers / reference 
+   codes are displayed on description :term:`view pages <view page>`, nor does 
+   it affect how identifiers are handled in EAD 2002 XML exports. 
 
-   Both of these are instead affected by the :ref:`inherit-reference-code`
-   setting, described above.
+   Both of these are instead affected by the :ref:`inherit-reference-code` 
+   setting, described above. 
 
 :ref:`Back to top <settings>`
 
@@ -2148,7 +2085,7 @@ OAI repository
 
 .. _Open Archives Initiative: http://www.openarchives.org/
 
-The `Open Archives Initiative`_ Protocol for Metadata Harvesting, or OAI-PMH,
+The `Open Archives Initiative`_ Protocol for Metadata Harvesting, or OAI-PMH, 
 is a protocol for metadata harvesting that allows automatic data harvesting
 and crawling within other systems that support OAI harvesters.
 
@@ -2201,16 +2138,16 @@ The permissions settings page is divided into 4 sections:
 
 For information on configuring the PREMIS access permissions, see:
 :ref:`rights-digital-object` (and for an example use case, see:
-:ref:`rights-digital-object-example`).
+:ref:`rights-digital-object-example`). 
 
-For information on configuring the PREMIS access statements, see:
-:ref:`disallow-statements`.
+For information on configuring the PREMIS access statements, see: 
+:ref:`disallow-statements`. 
 
-For information on configuring and using the Copyright statement, see:
+For information on configuring and using the Copyright statement, see: 
 :ref:`copyright-pop-up`.
 
-For information on configurating and using the Preservation system access
-statement, see: :ref:`preservation-access-statement`.
+For information on configurating and using the Preservation system access 
+statement, see: :ref:`preservation-access-statement`. 
 
 :ref:`Back to top <settings>`
 
@@ -2244,9 +2181,9 @@ customizable and could be repurposed for any use.
    However, certain features (such as the :ref:`clipboard`) may not function
    properly without the aid of cookies.
 
-   AtoM supports integration with `Google Analytics`_ for the purposes of
-   gathering statistics on page views, site usage, user location, and other
-   data on site visits. All data collected by Google Analytics are stored and
+   AtoM supports integration with `Google Analytics`_ for the purposes of 
+   gathering statistics on page views, site usage, user location, and other 
+   data on site visits. All data collected by Google Analytics are stored and 
    processed by Google, according to the Google Ads `Data Processing Terms`_.
 
    None of the information gathered through the use of cookies or Google
@@ -2387,15 +2324,15 @@ SSL/TLS protocol (Secure Sockets Layer/Transport Layer Security).
    will end up locking yourself out of your site!
 
 Select yes to require all HTTP requests to be redirected to the HTTPS server,
-changing the URI scheme from "http" to "https." This will only apply to users
+changing the URI scheme from "http" to "https." This will only apply to users 
 who are authenticated (logged-in) or visiting the login page. Any attempts to
-log in without using proper HTTPS will redirect to the home page.
+log in without using proper HTTPS will redirect to the home page. 
 
 .. TIP::
 
-   If you have accidentally enabled this setting and locked yourself out of
+   If you have accidentally enabled this setting and locked yourself out of 
    your AtoM site, a system administrator can use SQL to turn off the setting in
-   the database. For more information, see:
+   the database. For more information, see: 
 
    * :ref:`sql-disable-ssl`
 
@@ -2466,27 +2403,27 @@ To save any modifications, click the "Save" button located below the
 Storage Service
 ===============
 In this section, :term:`administrators <administrator>` can enable the
-download of original files and Archival Information Packages (AIPs) from an
-`Archivematica`_ digital preservation system that
+download of original files and Archival Information Packages (AIPs) from an 
+`Archivematica`_ digital preservation system that 
 has uploaded Dissemination Information Package (DIP) access copies to AtoM.
 
 .. IMPORTANT::
 
-   Both the **arStorageServicePlugin** and **arRestApiPlugin** must be enabled
-   for this "Storage service" option to appear on the Settings menu and for
-   the Archivematica integration to work. See
+   Both the **arStorageServicePlugin** and **arRestApiPlugin** must be enabled 
+   for this "Storage service" option to appear on the Settings menu and for 
+   the Archivematica integration to work. See 
    :ref:`Manage Plugins <manage-plugins>`.
 
-1. Fill in the appropriate value for the address of the Storage Service API
-   used by the Archivematica instance. This is typically located at port 8000.
+1. Fill in the appropriate value for the address of the Storage Service API 
+   used by the Archivematica instance. This is typically located at port 8000. 
    Don't forget to add the api version.
-2. Log into the Storage Service with an authorized account. Go to
-   **Administration > Users** and  click the "Edit" button for an active
-   account. Note the "Username" and copy the "Api key" at the bottom of the
+2. Log into the Storage Service with an authorized account. Go to 
+   **Administration > Users** and  click the "Edit" button for an active 
+   account. Note the "Username" and copy the "Api key" at the bottom of the 
    page.
-3. Enter these values in the "Storage Service username" field and "Storage
+3. Enter these values in the "Storage Service username" field and "Storage 
    Service API key" field on the AtoM Storage Service settings form.
-4. Toggle the "Enable AIP download" option to "Enabled". Press the "Save"
+4. Toggle the "Enable AIP download" option to "Enabled". Press the "Save" 
    button.
 
 .. image:: images/storage-service-settings.*
@@ -2495,92 +2432,92 @@ has uploaded Dissemination Information Package (DIP) access copies to AtoM.
    :alt: Storage service settings
 
 .. NOTE::
+  
+   By default this will only enable Archivematica File and AIP download for 
+   users that are members of the "Adminstrator" group. 
 
-   By default this will only enable Archivematica File and AIP download for
-   users that are members of the "Adminstrator" group.
-
-5. Browse to a digital object that was created using the DIP Upload feature.
+5. Browse to a digital object that was created using the DIP Upload feature. 
    Download links are located to the right of the File and AIP UUIDs.
 
 .. image:: images/digital-object-preservation-copies-with-access.*
    :align: center
    :width: 90%
-   :alt: Digital object preservation copies, with download access
+   :alt: Digital object preservation copies, with download access 
 
 .. NOTE::
-
-   When these links are clicked a new tab will temporarily open and will
-   remain open until the Storage Service responds to the request. Once the
-   file download begins, the download tab will disappear to be replaced with
-   the download status icon for your browser. The files are saved with the
-   name sent in the Storage Service response. If there is an error with the
-   call to the Storage Service, the error status page will be displayed in
+  
+   When these links are clicked a new tab will temporarily open and will 
+   remain open until the Storage Service responds to the request. Once the 
+   file download begins, the download tab will disappear to be replaced with 
+   the download status icon for your browser. The files are saved with the 
+   name sent in the Storage Service response. If there is an error with the 
+   call to the Storage Service, the error status page will be displayed in 
    this tab.
 
-6. To enable this feature for other user groups you must update the
-   ``security.yml`` file in the arStorageServicePlugin folder. Starting from
+6. To enable this feature for other user groups you must update the 
+   ``security.yml`` file in the arStorageServicePlugin folder. Starting from 
    the root folder of the AtoM application, e.g.
 
-    .. code-block:: bash
-
+    .. code-block:: bash 
+       
        /usr/share/nginx/atom
 
     it is found at:
 
-    .. code-block:: bash
-
+    .. code-block:: bash 
+       
        plugins/arStorageServicePlugin/modules/arStorageService/config/
        security.yml
 
 7. The default content is:
 
-    .. code-block:: bash
-
+    .. code-block:: bash 
+       
        all:
          is_secure: true
          credentials: administrator
 
-8. The ``all`` setting indicates that administrator users have the ability to
-   download both AIPs and original files. If you want to give another user
-   group (e.g. editors) the same capability, you would edit the
+8. The ``all`` setting indicates that administrator users have the ability to 
+   download both AIPs and original files. If you want to give another user  
+   group (e.g. editors) the same capability, you would edit the 
    ``security.yml`` file to read:
 
-    .. code-block:: bash
-
+    .. code-block:: bash 
+       
        all:
          is_secure: true
          credentials: [[ administrator, editor ]]
 
-9. You can also configure more fine-grained permissions to allow for the
-   download of just AIPs or just for original files by using the ``download``
+9. You can also configure more fine-grained permissions to allow for the 
+   download of just AIPs or just for original files by using the ``download`` 
    or ``extractFile`` settings.
 
 10. If you use the ``download`` or ``extractFile`` setting, it overrides the
-    ``all`` setting and you need to repeat those user group values in the more
-    granular permission. Otherwise those groups will lose their permissions.
-    For example, in the settings below, the administrator and editor groups
-    have to be added to ``download`` and ``extractFile`` in order for them to
+    ``all`` setting and you need to repeat those user group values in the more 
+    granular permission. Otherwise those groups will lose their permissions. 
+    For example, in the settings below, the administrator and editor groups 
+    have to be added to ``download`` and ``extractFile`` in order for them to 
     retain both AIP and original file download permission.
 
-    .. code-block:: bash
-
+    .. code-block:: bash 
+       
        all:
          is_secure: true
          credentials: [[ administrator, editor ]]
-
+       
        download:
          is_secure: true
          credentials: [[ administrator, editor, contributor ]]
-
+       
        extractFile:
          is_secure: true
          credentials: [[ admninistrator, editor, translator ]]
 
 11. In the examples above, members of the administrator and editor user group
-    can download both AIP packages and original files. Contributors can only
-    download AIPs and translators can only download original files. Members of
-    other user groups (e.g. authenticated) do not have any download
-    permissions and will not see a download link or icon next to the AIP UUID
+    can download both AIP packages and original files. Contributors can only 
+    download AIPs and translators can only download original files. Members of 
+    other user groups (e.g. authenticated) do not have any download 
+    permissions and will not see a download link or icon next to the AIP UUID 
     or File UUID.
 
 .. IMPORTANT::
@@ -2685,7 +2622,7 @@ treeview that contains all descriptions.
 This new browsing mode will be disabled by default in new installations. To
 offer that option to users, an administrator can enable this feature by choosing
 'Yes' to 'Show browse hierarchy page' in the treeview settings. When enabled, a
-new link will appear on the archival description
+new link will appear on the archival description 
 :ref:`search/browse page <browse>`, labelled "Browse by hierarchy."
 
 For more information on browsing with this option, see:
@@ -2697,16 +2634,16 @@ For more information on browsing with this option, see:
 Make full width treeview collapsible on description pages
 ---------------------------------------------------------
 
-This setting affects the default display of the full width treeview when users
-first arrive on the :term:`view page` of an :term:`archival description`. See
+This setting affects the default display of the full width treeview when users 
+first arrive on the :term:`view page` of an :term:`archival description`. See 
 :ref:`treeview-type` above for more information on the different treeview types
-available in AtoM.
+available in AtoM. 
 
 By default in new AtoM installations, this setting will be disabled (i.e. set
 to "no"). When this setting is enabled (i.e. set to "yes"), the full-width
 treeview will be wrapped in a collapsible section, similar to
 :ref:`advanced-search-interface` on archival description search and browse
-pages.
+pages. 
 
 .. image:: images/treeview-collapsed.*
    :align: center
@@ -2716,7 +2653,7 @@ pages.
 Once the setting is enabled, the treeview collapsible section will be closed
 when users first arrive on a :term:`view page`, but users can click to expand
 it, and it will maintain its open state as users navigate to different
-descriptions in the hierarchy via the treeview nodes.
+descriptions in the hierarchy via the treeview nodes. 
 
 .. image:: images/treeview-expanded.*
    :align: center
@@ -2727,9 +2664,9 @@ Users can click the container heading again at any time to collapse or expand
 the treeview. Navigating elsewhere or triggering a full page refresh will
 result in the treeview widget returning to its default collapsed state.
 
-An :term:`administrator` can also customize the labels used on the widget - the
-default text included during installation reads "Show hierarchy" when collapsed,
-and "Hide hierarchy" when expanded. To customize these default labels, see:
+An :term:`administrator` can also customize the labels used on the widget - the 
+default text included during installation reads "Show hierarchy" when collapsed, 
+and "Hide hierarchy" when expanded. To customize these default labels, see: 
 
 * :ref:`user-interface-labels`
 
@@ -2744,18 +2681,18 @@ and "Hide hierarchy" when expanded. To customize these default labels, see:
 Show browse hierarchy page
 --------------------------
 
-The :term:`hierarchy browser` is a :term:`user interface` element that can be
-enabled or disabled by an :term:`administrator`. When enabled, it provides end
-users with a full-width :term:`treeview` of all of AtoM's
-:term:`archival description` :term:`holdings`. Users can expand and collapse
-individual nodes in the treeview to explore the hierarchical arrangement of a
-specific :term:`archival unit`; however, clicking any node in the hierarchy
-browser will redirect the user to the related description's :term:`view page`.
-For more information on using the hierarchy browser, see:
+The :term:`hierarchy browser` is a :term:`user interface` element that can be 
+enabled or disabled by an :term:`administrator`. When enabled, it provides end 
+users with a full-width :term:`treeview` of all of AtoM's 
+:term:`archival description` :term:`holdings`. Users can expand and collapse 
+individual nodes in the treeview to explore the hierarchical arrangement of a 
+specific :term:`archival unit`; however, clicking any node in the hierarchy 
+browser will redirect the user to the related description's :term:`view page`. 
+For more information on using the hierarchy browser, see: 
 :ref:`browse-hierarchy-browser`.
 
 When "Show browse hierarchy page" is set to **yes**, a new option will be added
-to the archival description browse page, above the results:
+to the archival description browse page, above the results: 
 
 .. image:: images/browse-hierarchy-choice.*
    :align: center
@@ -2793,8 +2730,8 @@ Sort treeview (information object)
 
 .. _ASCII: https://en.wikipedia.org/wiki/Ascii
 
-This setting determines how lower-level
-:term:`descriptions <archival description>` are sorted in an archival
+This setting determines how lower-level 
+:term:`descriptions <archival description>` are sorted in an archival 
 description's :term:`context menu`.
 
 * Selecting "manual" means the descriptions will appear in the order in which
@@ -2850,7 +2787,7 @@ So for a Series level description with an identifier of 004 called
 
 Each configurable element is described further below.
 
-.. SEEALSO::
+.. SEEALSO:: 
 
    * :ref:`treeview-collapsible`
 
@@ -2890,17 +2827,17 @@ setting.
 Items per page
 ^^^^^^^^^^^^^^
 
-This setting controls how many immediate :term:`child <child record>`
+This setting controls how many immediate :term:`child <child record>` 
 descriptions are loaded below the top-level description when users first visit
 a hierarchical description's :term:`view page`. It also controls the number
 of top-level descriptions that are added to the :term:`hierarchy browser` on
 first load
 
 Like the sidebar treeview, for performance reasons AtoM may not load all
-available descriptions at once in the full-width treeview, when there are many
-immediate :term:`children <child record>` below the top-level description in the
-:term:`archival unit`. The default value for this behavior is 50 - meaning, if
-there are more than 50 immediate children below the parent description, AtoM
+available descriptions at once in the full-width treeview, when there are many 
+immediate :term:`children <child record>` below the top-level description in the 
+:term:`archival unit`. The default value for this behavior is 50 - meaning, if 
+there are more than 50 immediate children below the parent description, AtoM 
 will add a count of the number of remaining records not immediately displayed to
 a button in the top right corner.
 
@@ -2922,15 +2859,15 @@ by choosing "reset".
 
 To allow for more records to be loaded initially, and with each subsequent click
 of the "More" button, an :term:`administrator` can adjust this "Items per page"
-value. The minimum value is 10, and the maximum value that can be set via the
+value. The minimum value is 10, and the maximum value that can be set via the 
 :term:`user interface` is 10,000.
 
 .. TIP::
 
-   If your site has very large hierarchies and you need to set the initial page
-   load value higher than 10,000 records, a system administrator can modify this
+   If your site has very large hierarchies and you need to set the initial page 
+   load value higher than 10,000 records, a system administrator can modify this 
    max value in the configuration file found at ``config/app.yml``.
-   Look for the following line in the file:
+   Look for the following line in the file: 
 
    .. code-block:: bash
 
@@ -2943,11 +2880,11 @@ value. The minimum value is 10, and the maximum value that can be set via the
    * :ref:`maintenance-clear-cache`
    * :ref:`troubleshooting-restart-php-fpm`
 
-The behavior is similar for the :term:`hierarchy browser`, though instead of
-affecting the number of :term:`children <child record>` loaded below the
+The behavior is similar for the :term:`hierarchy browser`, though instead of 
+affecting the number of :term:`children <child record>` loaded below the 
 top-level :term:`archival description`, here the setting will determine how many
-top-level descriptions are loaded in the initial view. See
-:ref:`browse-hierarchy-browser` for more information.
+top-level descriptions are loaded in the initial view. See 
+:ref:`browse-hierarchy-browser` for more information. 
 
 :ref:`Back to top <settings>`
 
@@ -2961,9 +2898,9 @@ Uploads
    :width: 90%
    :alt: An image of the Uploads settings in AtoM
 
-These settings allow an :term:`administrator` to manage the upload of
-:term:`digital objects <digital object>` to AtoM, including per-repository
-upload limits when AtoM is used as a :term:`multi-repository system`.
+These settings allow an :term:`administrator` to manage the upload of 
+:term:`digital objects <digital object>` to AtoM, including per-repository 
+upload limits when AtoM is used as a :term:`multi-repository system`. 
 
 **Jump to:**
 
@@ -2984,7 +2921,7 @@ upload limits when AtoM is used as a :term:`multi-repository system`.
 Total space available for uploads
 ---------------------------------
 
-This field will display the used space for
+This field will display the used space for 
 :term:`digital objects <digital object>` as well as the total space available.
 The space available is determined by a configurable setting that a system
 administrator can modify in one of AtoM's configuration files - see:
@@ -2996,10 +2933,10 @@ administrator can modify in one of AtoM's configuration files - see:
 Archival institution upload limits
 ----------------------------------
 
-In addition to setting a global limit on the total space available for
-:term:`digital object` uploads, an :term:`administrator` can also set
+In addition to setting a global limit on the total space available for 
+:term:`digital object` uploads, an :term:`administrator` can also set 
 individual upload limits per :term:`archival institution`, which can be useful
-when AtoM is used as a :term:`multi-repository system`. There is also
+when AtoM is used as a :term:`multi-repository system`. There is also 
 a setting for configuring what the default upload limit is per repository - see
 below:
 
@@ -3027,11 +2964,11 @@ For more information on using the per-repository upload limit widget, see:
 Default archival institution upload limit (GB)
 ----------------------------------------------
 
-In addition to setting a :ref:`global limit <total-upload-space>` on the total
+In addition to setting a :ref:`global limit <total-upload-space>` on the total 
 space available for :term:`digital object` uploads, it's also possible to set
-a default limit per :term:`archival institution` when using AtoM as a
-:term:`multi-repository system`. When set, this will be applied as the new
-default upload limit per institution.
+a default limit per :term:`archival institution` when using AtoM as a 
+:term:`multi-repository system`. When set, this will be applied as the new 
+default upload limit per institution. 
 
 Enter the upload limit in GB allowed for uploading digital objects. Use "-1" as
 the value for unlimited upload space. This setting can be modified by an
@@ -3043,12 +2980,12 @@ For more information, see :ref:`upload-digital-object`.
 
 .. TIP::
 
-   While this setting sets a default global limit per repository, an indiviual
-   upload limit can also be set by an :term:`administrator` on a per-repository
+   While this setting sets a default global limit per repository, an indiviual 
+   upload limit can also be set by an :term:`administrator` on a per-repository 
    basis, from the :term:`archival institution` page. For more information, see:
    :ref:`upload-limit`.
 
-   Note that an administrator can also disable the display of this widget,
+   Note that an administrator can also disable the display of this widget, 
    which can sometimes be useful for improving page load performance. See above:
 
    * :ref:`repository-upload-setting`
@@ -3101,11 +3038,11 @@ The code, therefore, uses generic terms for entities.
 :term:`Administrators <administrator>` can specify how they want these
 :term:`terms <term>` to appear in the :term:`user interface` labels to suit the
 institution's collections. The default labels that ship with AtoM are terms
-typically used by archival institutions, but can be customized as desired.
+typically used by archival institutions, but can be customized as desired. 
 Additionally, some of the user interface label settings allow an administrator
-to customize the display labels on particular user interface elements, such as
-the text shown for collapsing and expanding the full width treeview when the
-:ref:`treeview-collapsible` is enabled.
+to customize the display labels on particular user interface elements, such as 
+the text shown for collapsing and expanding the full width treeview when the  
+:ref:`treeview-collapsible` is enabled. 
 
 .. image:: images/user-interface-label.*
    :align: center
@@ -3144,15 +3081,15 @@ see glossary definitions and descriptions of how the terms are used in AtoM.
   when enabled, this is the default placeholder help text that will appear in the
   per-institution search box included in the :term:`institution block`. For more
   information, see: :ref:`enable-scoping`
-* fullTreeviewCollapseOpenedButtonText: Text used in the setting to
+* fullTreeviewCollapseOpenedButtonText: Text used in the setting to 
   :ref:`treeview-collapsible`. This text will be displayed on the collapsible widget
-  when the widget is expanded, showing the descriptions. The text used should
-  suggest to users that clicking it will cause the widget to collapse, hiding the
-  treeview.
-* fullTreeviewCollapseClosedButtonText: Text used in the setting to
+  when the widget is expanded, showing the descriptions. The text used should 
+  suggest to users that clicking it will cause the widget to collapse, hiding the 
+  treeview.   
+* fullTreeviewCollapseClosedButtonText: Text used in the setting to 
   :ref:`treeview-collapsible`. This text will be displayed on the collapsible widget
-  when the widget is collapsed, hiding the descriptions. The text used should
-  suggest to users that clicking it will cause the widget to expand, showing the
+  when the widget is collapsed, hiding the descriptions. The text used should 
+  suggest to users that clicking it will cause the widget to expand, showing the 
   treeview.
 
 :term:`User interface <user interface>` labels can be changed by
