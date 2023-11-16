@@ -1435,14 +1435,6 @@ the filename of a linked digital object will be covered on the
    specific description on an external website, they may break after changing
    the slug.
 
-.. SEEALSO::
-
-   Users can also update slug(s) via a command line tool. For more information,
-   see:
-
-   * :ref:`cli-rename-slugs`
-
-
 :ref:`Back to top <archival-descriptions>`
 
 .. _view-modification-history:
