@@ -21,7 +21,7 @@ browser.
 .. IMPORTANT::
 
    You must have the necessary dependencies installed and configured to be able
-   manage asynchronous jobs in AtoM. See:
+   manage asynchronous jobs in AtoM. See: 
 
    * Installation: :ref:`installation-ubuntu-serve-workers`.
    * :ref:`maintenance-asynchronous-jobs`
@@ -110,17 +110,16 @@ below: :ref:`job-details`.
 
 **User**: The :term:`username` of the AtoM user who initiated the job.
 
-.. image:: images/manage-jobs-tabs.*
+.. image:: images/manage-jobs-active-tab.*
    :align: right
    :width: 20%
-   :alt: An image of the Jobs page tabs
+   :alt: An image of the Jobs page tab
 
-The Jobs page also includes tabs that allows users to view only those jobs that
-are currently still being executed (e.g., a status of "Running") or jobs that
-have failed (e.g., a status of "Error"). These can be useful when a large number
-of jobs are being executed simultaneously, and/or the list of jobs has not been
-cleared in some time. Click on one of the other tabs to switch the view from
-"All jobs" to "Active jobs" or "Failed jobs". AtoM will refresh the page and
+The Jobs page also includes a tab that allows users to view only those jobs that
+are currently still being executed (e.g., a status of "Running"). This can be
+useful when a large number of jobs are being executed simultaneously, and/or the
+list of jobs has not been cleared in some time. Click on the blue hyperlink to
+switch the view from "All jobs" to "Active jobs". AtoM will refresh the page and
 the table will be limited to the selected view.
 
 .. _jobs-button-block:
@@ -188,9 +187,9 @@ AtoM will indicate this in the jobs page with a message.
 .. SEEALSO::
 
    The Administrator's manual includes installation instructions for setting up
-   `Gearman <http://gearman.org>`__ and asynchronous job support in AtoM. A
-   separate page also includes some examples of how to manage workers and
-   jobs from the command-line. For more information, see:
+   `Gearman <http://gearman.org>`__ and asynchronous job support in AtoM. A 
+   separate page also includes some examples of how to manage workers and 
+   jobs from the command-line. For more information, see: 
 
    * Installation: :ref:`installation-ubuntu-serve-workers`.
    * :ref:`maintenance-asynchronous-jobs`
@@ -229,6 +228,6 @@ All authenticated (e.g. logged in) users can access the Jobs page. However, most
 users will only see jobs and be able to clear jobs which they have started. Only
 an :term:`administrator` can see the status of all jobs - however, like all users,
 administrators can only clear jobs that belong to them. Administrators can clear
-jobs that are associated with tasks run on the command-line.
+jobs that are associated with tasks run on the command-line. 
 
 :ref:`Back to top <manage-jobs>`
