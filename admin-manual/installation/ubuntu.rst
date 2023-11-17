@@ -718,7 +718,7 @@ contents in :file:`/etc/nginx/sites-available/atom`.
 
       }
 
-      location ~* ^/(downloads)/.*\.(pdf|xml|html|csv|zip)$ {
+      location ~* ^/(downloads)/.*\.(pdf|xml|html|csv|zip|rtf)$ {
 
       }
 
