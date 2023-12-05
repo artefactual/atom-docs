@@ -48,20 +48,10 @@ is allowed to run on the webpage. In doing so, CSP effectively protects against
 cross-site scripting (`XSS`_) attacks and other security threats, making the
 user's browsing experience safer and more secure.
 
-.. mermaid::
-
-   sequenceDiagram
-       participant Browser
-       participant Server
-
-       Browser ->> Server: HTTP Request
-       note over Server: Generate unique nonce and<br/>store in session variable
-       note over Server: Build CSP header directive including nonce to use in reponse
-
-       note over Server: Tag each inline script with nonce
-       Server ->> Browser: HTTP Response
-       note over Browser: Verify reponse sources<br/>against values in CSP directive<br />rejecting any that do not match
-
+.. image:: images/CSP-sequence-diagram.*
+   :align: center
+   :width: 90%
+   :alt: An image describing the use of CSP headers to validate a requested page.
 
 .. _csp-configuration:
 
