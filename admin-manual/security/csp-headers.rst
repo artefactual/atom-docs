@@ -19,8 +19,8 @@ execution and reduce the attack surface, enhancing the overall security posture
 of web applications.
 
 Starting in AtoM 2.8, AtoM has built in support for CSP headers when Bootstrap 5
-based themes are in use. When installing AtoM 2.8 from scratch, there's
-a pre-configured CSP directive setting in place and CSP headers will be in use by
+based themes are in use. When installing AtoM 2.8 from scratch, there's a
+pre-configured CSP directive setting in place which is set to report-only mode by
 default. These default settings serve as a foundation compatible with the upgraded
 Bootstrap 5 based Dominion theme and can be used as a base for custom themes based
 on Dominion.
@@ -65,8 +65,14 @@ This is the default configuration you'll find in AtoM's :ref:`config-app-yml` fi
    # Content Security Policy (CSP) header configuration. CSP settings apply
    # only when a B5 theme is active, else these settings are bypassed.
    csp:
-       response_header: Content-Security-Policy
-       directives: "default-src 'self'; font-src 'self'; img-src 'self' https://www.gravatar.com/avatar/ blob:; script-src 'self' 'nonce'; style-src 'self' 'nonce'; worker-src 'self' blob:; frame-ancestors 'self';"
+       response_header: Content-Security-Policy-Report-Only
+       directives: "default-src 'self'; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://*.googleapis.com https://*.gstatic.com *.google.com *.googleusercontent.com data: https://www.gravatar.com/avatar/ https://*.google-analytics.com https://*.googletagmanager.com blob:; script-src 'self' https://*.googletagmanager.com 'nonce' https://*.googleapis.com https://*.gstatic.com *.google.com https://*.ggpht.com *.googleusercontent.com blob:; style-src 'self' 'nonce' https://fonts.googleapis.com; worker-src 'self' blob:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.googleapis.com *.google.com https://*.gstatic.com data: blob:; frame-ancestors 'self';"
+
+.. NOTE::
+   This directive includes sources from Google to support AtoMs's Google Analytics and Google
+   Maps integrations. If these are not needed, it is possible to remove the Google sources from
+   the default directive. If at some future time it was desired to activate Google Analytics
+   or Google Maps, these sources would need to be re-added to the directive.
 
 The CSP ``repsonse_header`` setting is used to set the CSP header type and can have one of
 two values:
@@ -80,24 +86,31 @@ two values:
   resources allowing developers to test and monitor potential violations without
   affecting the functionality of the web page. This is useful for testing a new policy or
   changes to an existing policy without risking breakage. Violations will be reported to
-  the browser's console.
+  the browser's console. This setting is the default.
+
+.. IMPORTANT::
+   In order to activate CSP header protection, you will need to update the CSP
+   ``response_header`` from ``Content-Security-Policy-Report-Only`` to
+   ``Content-Security-Policy`` in your app.yml file.
 
 The CSP ``directives`` setting contains the CSP policy that will be sent in the CSP header.
 The value for the ``directives`` setting above is the default when the Dominion theme is
 in use. Multiple directives get delineated with a semicolon (``;``).
 
 .. IMPORTANT::
-    The value ``nonce`` in the above example is a placeholder and will be replaced
-    with a generated unique value when AtoM generates the page response.
+   The value ``nonce`` in the above example is a placeholder and will be replaced
+   with a generated unique value when AtoM generates the page response.
 
 The specific directives defined in the defaults above are as follows:
 
-- default-src: if resources aren't mentioned in other sections, this policy is applied.
-- font-src: stipulates which fonts can be loaded.
-- img-src: stipulates which images can be loaded.
-- script-src: stipulates which scripts can be loaded.
-- style-src: stipulates which styles or CSS can be loaded.
-- frame-ancestors 'self': determines which domains can embed the page as a frame.
+- default-src: If resources aren't mentioned in other sections, this policy is applied.
+- font-src: Stipulates which fonts can be loaded.
+- img-src: Stipulates which images can be loaded.
+- script-src: Stipulates which scripts can be loaded.
+- style-src: Stipulates which styles or CSS can be loaded.
+- worker-src: Defines valid sources for web workers and nested browsing contexts loaded using elements such as <frame> and <iframe>.
+- connect-src: Specifies the URLs that the application can connect to using script interfaces like XMLHttpRequest, fetch, WebSocket, and EventSource.
+- frame-ancestors 'self': Determines which domains can embed the page as a frame. This directive restricts who can embed the page in frames, iframes, embeds, or objects.
 
 Specifying ``self`` ensures that only trusted resources from the *same origin* are loaded
 and executed.
@@ -135,7 +148,7 @@ Implementing a Content Security Policy For Your Custom Theme
       # only when a B5 theme is active, else these settings are bypassed.
       csp:
          response_header: Content-Security-Policy-Report-Only
-         directives: "default-src 'self'; font-src 'self'; img-src 'self' https://www.gravatar.com/avatar/ blob:; script-src 'self' 'nonce'; style-src 'self' 'nonce'; worker-src 'self' blob:; frame-ancestors 'self';"
+         directives: "default-src 'self'; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://*.googleapis.com https://*.gstatic.com *.google.com *.googleusercontent.com data: https://www.gravatar.com/avatar/ https://*.google-analytics.com https://*.googletagmanager.com blob:; script-src 'self' https://*.googletagmanager.com 'nonce' https://*.googleapis.com https://*.gstatic.com *.google.com https://*.ggpht.com *.googleusercontent.com blob:; style-src 'self' 'nonce' https://fonts.googleapis.com; worker-src 'self' blob:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.googleapis.com *.google.com https://*.gstatic.com data: blob:; frame-ancestors 'self';"
 
    For those who have crafted a custom theme, but haven't used AtoM's default Bootstrap 5
    Dominion theme as a foundation, it's recommended to start with a more restrictive
@@ -165,11 +178,20 @@ Implementing a Content Security Policy For Your Custom Theme
 
 2. Monitor in the browser watching for CSP violations.
 
-   The line number can be obtained from the error as shown in Chrome's dev tools console.
+   In Chrome's Developer Tools, click on the "Console" tab. This tab displays logs,
+   errors, and warnings related to the webpage you are inspecting.
+
+   In the Console, look for messages that begin with ``Content Security Policy``. These
+   messages indicate CSP violations. CSP violation messages typically include
+   information about what part of the policy was violated and what resource was blocked.
 
 3. Look for and fix any violations by adding nonce to inline script, style, etc.
 
-   Use "view source" to find the implicated line - find and fix the violation in the
+   Alongside each CSP violation message in the Console, Chrome provides the source
+   file's name and the line number where the violation occurred. This information
+   is useful for pinpointing the exact part of your code responsible for the violation.
+
+   Use "view source" to find the implicated line and find the violation in the
    underlying code. Most of these are going to be inline assets - scripts, styles, etc.
    See: :ref:`csp-allow-inline-sources`.
 
@@ -245,13 +267,12 @@ headache when specifying the domain. E.g. if all assets are loaded from the
 ``avatar`` endpoint, then it is better to be more specific than allow scripts
 to be run from the entire ``https://www.gravatar.com`` domain.
 
-If your theme makes use of Google Analytics, Tag Manager, or the Maps API, then
-you may need to whitelist additional sources. We recommend consulting Google's
-documentation for this:
+If your theme makes use of other services beyond Google Analytics, or the Maps API, then
+you may need to whitelist additional sources. We recommend consulting the vendor's
+documentation for this. For example, Matomo Analytics provides the following configuration
+tips:
 
-* https://developers.google.com/tag-manager/web/csp
-* https://developers.google.com/web/fundamentals/security/csp/
-* https://content-security-policy.com/examples/google-maps/
+* https://matomo.org/faq/general/faq_20904/
 
 .. SEEALSO::
 
