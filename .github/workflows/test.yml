@@ -18,3 +18,7 @@ jobs:
       - name: "Run build test"
         run: |
           make test
+      - name: "Check spelling"
+        run: |
+          pip install sphinxcontrib-spelling
+          sphinx-build -b spelling ./ _build/spelling
