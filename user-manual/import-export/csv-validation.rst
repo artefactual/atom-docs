@@ -2967,7 +2967,7 @@ When using the ``--path-to-digital-objects`` option with the command-line
 validation task, **do not** include the absolute path to your digital object(s)
 in your CSV's ``digitalObjectPath`` column. The purpose of the 
 ``--path-to-digital-objects`` option is to provide AtoM with a single shared 
-location for all files intede to be uploaded as digital objects. As such, 
+location for all files intended to be uploaded as digital objects. As such, 
 the CSV should only contain the filename of the target digital object per row. 
 If you specify in both locations (i.e. using the absolute path the relevant 
 CSV rows *and* the ``--path-to-digital-objects`` CLI option), AtoM may combine 
