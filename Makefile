@@ -177,9 +177,15 @@ pseudoxml:
 	@echo
 	@echo "Build finished. The pseudo-XML files are in $(BUILDDIR)/pseudoxml."
 
+spelling:
+	$(SPHINXBUILD) -b spelling $(ALLSPHINXOPTS) $(BUILDDIR)/spelling
+	@echo
+	@echo "Build finished. The spelling files are in $(BUILDDIR)/spelling."
+
 dos2unix:
 	find . -name "*.txt" | grep -v _build | xargs -IF fromdos F
 
 .PHONY: test
 test:
 	$(MAKE) html ALLSPHINXOPTS="-W --keep-going -n ."
+	$(MAKE) spelling ALLSPHINXOPTS="-W --keep-going -n ."
