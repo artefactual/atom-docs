@@ -57,7 +57,7 @@ choose which of these criteria should be included when creating the report:
 
 The report will include 1 row for every relation - meaning that a single 
 container might appear in multiple rows of the CSV report, showing each time
-the storage container has been linked to a description or acccession. 
+the storage container has been linked to a description or accession. 
 
 The image below shows 3 rows from an example report, as an example. The first
 row below the column headers displays an unlinked container - that is, a
