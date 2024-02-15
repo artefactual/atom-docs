@@ -135,6 +135,12 @@ plugin name. Next, we need to change the `class name <https://github.com/artefac
 to match the new config filename (`arCustomThemeB5PluginConfiguration` for this
 example).
 
+.. image:: images/theme-config.*
+   :align: center
+   :width: 80%
+   :alt: Example theme confiuration
+
+
 Optionally, you can update the theme summary and version within the config file
 and change the theme image thumbnail by replacing `arCustomThemeB5Plugin/images/image.png`.
 
