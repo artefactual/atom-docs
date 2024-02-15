@@ -363,7 +363,7 @@ Glossary
     in all term edit pages. Examples of default converse terms include: *is the
     parent of* and *is the child of*, or *is the employer of* and *is the
     employee of*. Actor relation terms are used in the ISAAR Relationships
-    dialogue to establish relationshps between
+    dialogue to establish relationships between
     :term:`authority records <authority record>`. When one term is added as a
     relationship qualifier to an authority record, its converse term will
     automatically appear on the related authority record. A term whose converse
@@ -789,8 +789,8 @@ Glossary
     :ref:`atom-header-bar`.
 
   Hex color code
-    A hexidecimal color code is a method of expressing web based colors using
-    hexidecimal notation. Hexidecimal notatation is a positional numerical
+    A hexadecimal color code is a method of expressing web based colors using
+    hexadecimal notation. Hexadecimal notatation is a positional numerical
     system that uses a base of 16 distinct symbols (0-9 to represent values
     zero to nine, A-F to represent values ten to fifteen) to represent binary
     notation in a more human-readable manner. In a hex color code, 6
@@ -1151,7 +1151,7 @@ Glossary
     of* and *is the employee of*, while examples of a default self-reciprocal
     terms include *is the sibling of* and *is the associate of*. Actor relation
     :term:`terms <term>` are used in the ISAAR Relationships dialogue to
-    establish relationshps between :term:`authority records <authority record>`.
+    establish relationships between :term:`authority records <authority record>`.
     When one term is added as a relationship qualifier to an authority record,
     its converse term will automatically appear on the related authority record.
     Terms marked as self-reciprocal will automatically appear similarly on
