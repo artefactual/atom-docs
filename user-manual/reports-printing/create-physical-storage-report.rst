@@ -57,7 +57,7 @@ choose which of these criteria should be included when creating the report:
 
 The report will include 1 row for every relation - meaning that a single 
 container might appear in multiple rows of the CSV report, showing each time
-the storage container has been linked to a description or acccesion. 
+the storage container has been linked to a description or acccession. 
 
 The image below shows 3 rows from an example report, as an example. The first
 row below the column headers displays an unlinked container - that is, a
@@ -147,7 +147,7 @@ Below is a summary of the columns included in the global physical storage report
    * **Include containers linked to accessions**: containers that are linked to
      :term:`accession records <accession record>` will be included in the report
      when checked.
-   * **Include containers linked to descriptions**: containters that are linked
+   * **Include containers linked to descriptions**: containers that are linked
      to :term:`archival description` records will be included in the report when
      checked.
   
@@ -255,7 +255,7 @@ see: :ref:`manage-jobs`.
    :alt: The reports menu link in the right-hand context menu of a description
 
 3. AtoM will reload the page to display report generation options. Options
-   avalailable will depend on a) whether you are authenticated (i.e. logged
+   available will depend on a) whether you are authenticated (i.e. logged
    in), and b) the lower-level descriptions available in this
    :term:`archival unit`. For more information on file and item list reports,
    see: :ref:`file-item-reports`.
@@ -486,7 +486,7 @@ page in AtoM, see: :ref:`manage-jobs`.
    :alt: The reports menu link in the right-hand context menu of a description
 
 3. AtoM will reload the page to display report generation options. Options
-   avalailable will depend on a) whether you are authenticated (i.e. logged
+   available will depend on a) whether you are authenticated (i.e. logged
    in), and b) the lower-level descriptions available in this
    :term:`archival unit`. For more information on file and item list reports,
    see: :ref:`file-item-reports`.

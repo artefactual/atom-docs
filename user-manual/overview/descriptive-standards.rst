@@ -44,7 +44,7 @@ Support
 produce outputs that are compliant with that standard. This includes the
 ability to enter data in :term:`fields <field>` that represent all of the
 :term:`data elements <data element>` required by the standard, interact with
-(view, edit, search) data in ways structured by and labeled according to the
+(view, edit, search) data in ways structured by and labelled according to the
 terms of the standard, and output (print, export) data in formats compliant
 with the standard.
 

@@ -57,7 +57,7 @@ check the box and then save the change using the Save button located in the
 
 .. TIP::
 
-   Setting not taking effect? In some cases, a system administator with access
+   Setting not taking effect? In some cases, a system administrator with access
    to the command-line may have to restart your webserver and php-fpm for the
    changes to take effect. We also recommend clearing the application cache. If
    you are using our recommended installation configuration (see:
@@ -127,7 +127,7 @@ request.
 **OAI repository code**
 
 An alpha-numeric code can be added in the value field to uniquely identify this
-particular OAI repository within its network domain to create a unqiue, OAI
+particular OAI repository within its network domain to create a unique, OAI
 compliant identifier.
 
 This field will **only accept letters and numbers** - any attempt to enter a symbol
@@ -176,7 +176,7 @@ the repository code entered in the field above, separated by a colon.
 
 This is an example of the auto-generated, OAI compliant identifier which is
 created for each item in this particular OAI repository. The sample OAI
-identifer is returned as part of the response to an OAI
+identifier is returned as part of the response to an OAI
 :ref:`Identify <oai-identify>` request submitted by a harvester.
 
 **Resumption token limit**
@@ -391,7 +391,7 @@ OAI-PMH 2.0 documentation, available at:
 Presently, AtoM can expose metadata in 2 XML formats via the OAI Repository
 module: ``oai_dc`` (i.e. simple Dublin Core XML), and ``oai_ead`` (i.e. EAD
 2002 XML). See the :ref:`oai-list-metadata-formats` Verb example below for
-mroe information.
+more information.
 
 OAI verbs covered below include:
 
@@ -611,7 +611,7 @@ Both parameters can be used together if needed to target a particular range.
 .. TIP::
 
    The earliest date stamp associated with the records available from the
-   repsository is included in a typical Identify response. See above,
+   repository is included in a typical Identify response. See above,
    :ref:`oai-identify`.
 
 .. _oai-list-records:
