@@ -129,7 +129,7 @@ descriptions, see :ref:`below <ead-description-matching>`.
 
 .. _xml-description-matching:
 
-Matching critera for description XML imports
+Matching criteria for description XML imports
 --------------------------------------------
 
 As an archival management system, AtoM's data model has many different entity
@@ -471,13 +471,13 @@ above: :ref:`xml-description-matching`.
    description. To prevent contradictory options, these limiters are mutually
    exclusive - you cannot pick a repository AND a top-level description.
 
-   To limit your matches to the holdings of a specifc
+   To limit your matches to the holdings of a specific
    :term:`archival institution`, use the :term:`drop-down menu` to select the
    name of the related institution
 
    To limit your matches to a specific top-level description, place your
    cursor in the "Top-level description" field and begin to slowly type the
-   name of the top-level description. This :term:`field` is an autcomplete
+   name of the top-level description. This :term:`field` is an autocomplete
    menu - as you begin to type, AtoM will display matching records in the
    :term:`drop-down menu` that will appear below. When you see the top-level
    description you want to use as a match limit, click on it in the drop-down
@@ -852,12 +852,12 @@ described above: :ref:`actor-xml-matching`.
 6. To improve the default matching behavior (described in detail above:
    :ref:`actor-xml-matching`), you can provide further criteria to help
    AtoM find the correct match. You can limit the authority record matches to
-   only those which have been linked to a specifc :term:`archival institution`
+   only those which have been linked to a specific :term:`archival institution`
    as the maintainer - records that have no link to a repository, or to a
    different :term:`repository`, will be ignored. For more information on
    linking an authority record to a repository, see: :ref:`link-repo-actor`.
 
-   To limit your matches to authority records maintained by a specifc
+   To limit your matches to authority records maintained by a specific
    :term:`archival institution`, use the :term:`drop-down menu` to select the
    name of the related institution.
 
