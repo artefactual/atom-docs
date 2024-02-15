@@ -130,7 +130,7 @@ descriptions, see :ref:`below <ead-description-matching>`.
 .. _xml-description-matching:
 
 Matching criteria for description XML imports
---------------------------------------------
+---------------------------------------------
 
 As an archival management system, AtoM's data model has many different entity
 types, which can be linked in a number of ways. This supports the reusability
