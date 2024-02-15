@@ -25,7 +25,7 @@ principles:
 
 * Users with :term:`translator` :term:`access privilege` should be able to
   contribute translations of content (e.g., archival descriptions) from the
-  source language to their assigned lanaguges using the translation interface
+  source language to their assigned languages using the translation interface
   available in AtoM.
 
 * The :term:`administrator` should be able to remove languages that are
