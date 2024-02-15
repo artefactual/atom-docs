@@ -107,7 +107,7 @@ OAI repository settings field descriptions
 
 **Require API key authentication**
 
-A boolean value (e.g. true [yes] or false [no]) that determines if requests
+A Boolean value (e.g. true [yes] or false [no]) that determines if requests
 will be accepted from any harvester, or if only those requests which include
 an authorized API key will receive responses. Instructions on how to configure
 an API key per AtoM :term:`user account` are included below - see:

@@ -167,7 +167,7 @@ By default, the export is created on-request via the web browser.
    An :term:`administrator` does have the option of turning on a setting that
    will generate the XML for archival descriptions in advance on save, so that
    large files can be served up without needing to be generated on the fly.
-   There is also a command-line task that will allow a system administator to
+   There is also a command-line task that will allow a system administrator to
    generate cached XML for all existing descriptions.
 
    Note that pre-generated, cached XML files never contain
