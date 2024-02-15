@@ -170,7 +170,7 @@ Title
 
 **ISAD CSV Column** ``title``
 
-**DACS Rule**: In the absense of a meaningful formal title, compose a brief
+**DACS Rule**: In the absence of a meaningful formal title, compose a brief
 title that uniquely identifies the material, normally consisting of a name
 segment, a term indicating the nature of the unit being described, and
 optionally a topical segment.
@@ -233,7 +233,7 @@ Extent
 extent as linear or cubic feet, number of items, or number of containers or
 carriers. (DACS 2.5.4) Optionally, record the quantity in terms of the
 material type(s) (DACS 2.5.5), and/or qualify the statement of physical extent
-to hgihlight the existence of material types that are important. (DACS 2.5.6)
+to highlight the existence of material types that are important. (DACS 2.5.6)
 
 **EAD**
 
@@ -987,7 +987,7 @@ Access points
 The DACS standard does not include rules about access points, but it does 
 include general high-level guidance on their use and where relevant information
 can be found when constructing controlled vocabulary terms (See pg xxiv in 
-Describing ARchives: A Content Standard, Second Edition). 
+Describing Archives: A Content Standard, Second Edition). 
 
 .. _dacs-subject-access-points:
 

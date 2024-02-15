@@ -427,7 +427,7 @@ Edit
 * Groups :term:`fields <field>` by collapsible :term:`information areas
   <information area>` - :term:`fields <field>` can be hidden or displayed by
   section.
-* Provides :term:`button block` that contains buttons for saving or canceling
+* Provides :term:`button block` that contains buttons for saving or cancelling
   changes.
 * Accessible to :term:`contributors <contributor>`, :term:`editors <editor>`,
   and :term:`administrators <administrator>`; not accessible to
@@ -446,7 +446,7 @@ Edit digital object
    :alt: Example of the edit digital object page
 
    An example of the edit page for a digital object. Access this page
-   throught the "More" button in the :term:`button block` of the related
+   through the "More" button in the :term:`button block` of the related
    description.
 
 The Edit digital object page allows the authorized (i.e. logged in) User with

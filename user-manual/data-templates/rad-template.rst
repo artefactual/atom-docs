@@ -674,7 +674,7 @@ Issuing jurisdiction and denomination (philatelic)
 issuing the philatelic records." (RAD 12.3B1) "For all units possessing a
 denomination (e.g., postage stamps, revenue stamps, postal stationery items),
 give the denomination in a standardized format, recording the denomination
-number in arabic numerals followed by the name of the currency unit. Include a
+number in Arabic numerals followed by the name of the currency unit. Include a
 denomination statement even if the denomination is already recorded as part of
 the title proper or other title information." (RAD 12.3C1)
 
@@ -738,7 +738,7 @@ create and link to a new authority record.
 
    When entering the description manually, the Creator field is found in the
    RAD template  within the Dates of creation :term:`information area`,
-   labeled as "Actor name."
+   labelled as "Actor name."
 
 .. IMPORTANT::
 
@@ -1047,7 +1047,7 @@ Physical description
 **CSV Column** ``extentAndMedium``
 
 **RAD Rule** "At all levels record the extent of the unit being described by
-giving the number of physical units in arabic numerals and the specific
+giving the number of physical units in Arabic numerals and the specific
 material designation as instructed in subrule .5B in the chapter(s) dealing
 with the broad class(es) of material to which the unit being described
 belongs." (RAD 1.5B1) Include other physical details and dimensions as

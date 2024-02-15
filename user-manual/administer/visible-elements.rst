@@ -43,7 +43,7 @@ it will NOT be visible to public users (e.g. those not logged in).
 
 .. IMPORTANT::
 
-   ALL authenticated users, from contributers to adminstrators, **will** be
+   ALL authenticated users, from contributors to administrators, **will** be
    able to see those elements hidden from the public via the hidden elements
    module. If you are logged in, the Visible Elements module is not in
    operation.

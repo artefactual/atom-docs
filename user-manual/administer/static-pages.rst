@@ -872,7 +872,7 @@ You can add styled boxes around text by wrapping content in the HTML ``<div>``
 element, and then using inline CSS to modify the
 appearance of the box. For colors, use the HTML or RGB values for the color you
 would like to use, rather than generic names such as "red," "blue," etc. - most
-browsers support a limited pallette of colors using names such as this, and the
+browsers support a limited palette of colors using names such as this, and the
 results may be inconsistent across browsers. There are many free HTML color
 wheels available that allow you to choose a color and copy its HTML# or RGB
 values; for example: http://www.colorpicker.com/
