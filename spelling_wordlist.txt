@@ -1,0 +1,12 @@
+AtoM
+Archivematica
+Artefactual
+Calc
+Gearman
+config
+hostname
+subdirectory
+Symfony
+yml
+sfAPPCCache
+fonds
