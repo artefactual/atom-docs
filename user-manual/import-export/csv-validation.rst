@@ -397,7 +397,7 @@ ERROR
 ^^^^^
 
 An **error** identifies and issue that will either cause an import to fail, or
-else is likely to lead to unexpected and undesireable results. Imports that fail
+else is likely to lead to unexpected and undesirable results. Imports that fail
 midway through may also cause 
 :ref:`data corruption <troubleshooting-data-corruption>`, requiring further 
 action from a system administrator to resolve. These issues are the ones you 
@@ -601,7 +601,7 @@ test classes, and what :ref:`entity-types` the test class can be run against.
 +---------------------------------+--------------------------------------------+
 | CsvColumnCountValidator         | All entities                               |
 +---------------------------------+--------------------------------------------+
-| CsvDigitalObjectPathValidator   | Archival deccription                       |
+| CsvDigitalObjectPathValidator   | Archival description                       |
 +---------------------------------+--------------------------------------------+
 | CsvDigitalObjectUriValidator    | Archival description                       |
 +---------------------------------+--------------------------------------------+
@@ -751,10 +751,10 @@ This test will attempt to determine the `character encoding`_ of the CSV to
 determine if it is compatible with AtoM's import requirements. 
 
 In computing, character encoding is a method used to represent the letters,
-numbers, and symbols used in textual commmunication. The character encoding
+numbers, and symbols used in textual communication. The character encoding
 represents the way that a coded character set is mapped to bytes for
 manipulation in a computer. As such, it provides a sort of key for converting
-the stored binary information into recognizeable symbols making up a character
+the stored binary information into recognizable symbols making up a character
 set. For more general information, see:
 
 * https://en.wikipedia.org/wiki/Character_encoding
@@ -778,7 +778,7 @@ to cut and paste content from an application like Microsoft Word into a CSV,
 some characters may not be saved as UTF-8 depending on the settings of each
 file. 
 
-With this in mind, this suite of tests will attempt to look for common signfiers
+With this in mind, this suite of tests will attempt to look for common signifiers
 of UTF-8 encoding in the header of a file, and will also attempt to evaluate
 the characters themselves, to determine if any non-UTF-8 characters can be 
 found in the CSV. If evidence of non-UTF-8 characters are found, the test will
@@ -792,7 +792,7 @@ output an :ref:`csv-validation-error` message.
 
 .. _csv-validation-utf81:
 
-ERROR - This file includes a unicode BOM, but it is not UTF-8
+ERROR - This file includes a Unicode BOM, but it is not UTF-8
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A `byte order mark`_ (BOM) is a hidden sequence of bytes at the start of a
@@ -953,7 +953,7 @@ commas to be used to indicate cell divisions in an import file (hence the name,
 "comma-separated values", or `CSV`_). However, tabular text data can be 
 separated a number of different ways, such as using tabs (TSV) instead. If you
 have used a spreadsheet application to prepare your data, you may not notice 
-the difference, as the user inteface display in the application will still
+the difference, as the user interface display in the application will still
 structure your data into rows and columns. Re-saving your file and ensuring you
 are saving it as a `UTF-8`_ encoded CSV file may be one way to resolve this 
 issue. If you're unsure, you can also try opening the file in a `text editor`_
@@ -972,7 +972,7 @@ row values should all be separated by commas in a well-formed CSV.
 Another possible formatting issue is the use of unexpected string delimiter 
 characters in the CSV. Since commas can regularly appear in user-input 
 metadata added to a CSV, many spreadsheet applications will use a 
-string delimter to encapsulate cell values and ensure that inline commas are
+string delimiter to encapsulate cell values and ensure that inline commas are
 not mistaken for separators. AtoM expects double quotations (``"``) to be used 
 around user text as the string delimiter - but again, this may depend on the 
 settings of your spreadsheet application, and the use of a different string
@@ -1144,7 +1144,7 @@ troubleshooting this:
   :ref:`character encoding <csv-utf8-encoding>`, separator, and delimiter
   values to be used every time you open a CSV, and seems to handle
   line-ending characters much better by default. We strongly recommend this over 
-  MS Excel for preparing AtoM CSV data for impot.
+  MS Excel for preparing AtoM CSV data for import.
 * Opening a CSV in a `text editor`_ can make locating blank rows easier - they
   should appear as just a line of commas in a CSV - e.g. ``,,,,,,,,,,,,,,,,``
   etc. However, **be very careful** about editing the CSV in a text editor,
@@ -2524,7 +2524,7 @@ To avoid unnecessary import errors, AtoM does have some import fallback behavior
 in place. When an actor is referenced in one of the event columns that does not
 have an associated ``eventType`` value, AtoM will treat the actor on import as a
 :term:`creator`. This way, it is possible to create CSVs that have only one 
-date of creation and multiple actors without piping all date-related imputs. So
+date of creation and multiple actors without piping all date-related inputs. So
 long as the actor values are properly piped, the import will succeed, even if
 the validation warning is returned. 
 
@@ -2704,7 +2704,7 @@ will not lead to more repository records being created than expected.
 
 Otherwise, compare any repository names with those found in your AtoM 
 installation, and correct any variations in spelling found to ensure your
-descriptions will link to the existing repostiory record before re-validating
+descriptions will link to the existing repository record before re-validating
 the CSV to confirm the issue is resolved. 
 
 .. _csv-validation-repo-io-output:

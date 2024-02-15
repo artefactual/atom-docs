@@ -37,7 +37,7 @@ A CSV file consists of a number of records (rows), that have identical fields,
 separated by commas (or in some cases, another separator). Often a header
 column (i.e. the cell values in first or top row of a CSV file) is included,
 naming each column and indicating what kind of data the column contains. Data
-is then entered using a separator or delimitor (such as a comma) to indicate a
+is then entered using a separator or delimiter (such as a comma) to indicate a
 separation of fields (or cells), and a line break or carriage return to
 indicate rows (i.e. different records). Most spreadsheet applications (such as
 LibreOffice Calc or MS Excel) can open CSV files and express them as a
@@ -51,7 +51,7 @@ various different :term:`entity` types. AtoM expects the column headers used in
 the templates and imports that do not conform to this pattern will fail or
 cause unexpected results.
 
-CSV imports peformed via the :term:`user interface` in AtoM are are executed
+CSV imports performed via the :term:`user interface` in AtoM are are executed
 as :term:`jobs <job>` and performed asynchronously in the background to avoid
 timeouts in the web browser. Jobs in AtoM are handled by `Gearman`_, and the 
 status of AtoM jobs can be seen in the :term:`user interface` via the 
@@ -432,7 +432,7 @@ When CSV data is imported into AtoM, values in the *legacyID* column are
 stored in AtoM's keymap table, in a column named *source_id*. A system
 administrator or :term:`developer` can access this information, either via
 the command-line, or by using a graphical application such as
-`phpMyAdmin <http://www.phpmyadmin.net>`__ to look up exising legacy ID values
+`phpMyAdmin <http://www.phpmyadmin.net>`__ to look up existing legacy ID values
 in the *source_id* column of the MySQL keymap table.
 
 .. NOTE::
@@ -458,7 +458,7 @@ mapping subsequent imports.
    You can always check what source name was used for records created via an
    import by entering into :term:`edit mode` and navigating to the
    Administration :term:`area <information area>` of the :term:`edit page` -
-   the source name used will be diplayed there:
+   the source name used will be displayed there:
 
    .. image:: images/source-name-ui.*
       :align: center
@@ -708,7 +708,7 @@ Creation, the *eventActor* is the creator, and the various *eventDates* fields
 are the dates of creation associated with the description.
 
 However, some standards support other types of events as well. For example,
-the :ref:`ISAD(G) template <isad-template>` in AtoM also supports Accummulation
+the :ref:`ISAD(G) template <isad-template>` in AtoM also supports Accumulation
 as an event type, while the Canadian :ref:`RAD template <rad-template>` allows
 direct association between actors and events, and includes many other event
 types, such as contribution, broadcasting, manufacturing, and more.
@@ -1012,7 +1012,7 @@ value.
 
    AtoM includes a command-line task that can be used to double-check your
    CSV's ``digitalObjectPath`` values  against a :term:`digital object`
-   directory, looking for any discrepencies such as unused files, incorrect or
+   directory, looking for any discrepancies such as unused files, incorrect or
    duplicate file paths in the CSV, etc. For more information, see:
 
    * :ref:`csv-check-filepaths-digital-objects`
@@ -1563,7 +1563,7 @@ existing archival descriptions during a CSV import:
    You can always check what source name was used for records created via an
    import by entering into :term:`edit mode` and navigating to the
    Administration :term:`area <information area>` of the :term:`edit page` -
-   the source name used will be diplayed there:
+   the source name used will be displayed there:
 
    .. image:: images/source-name-ui.*
       :align: center
@@ -1579,7 +1579,7 @@ existing archival descriptions during a CSV import:
 
 .. TIP::
 
-   AtoM's command-line CSV import includes an addtional option, called
+   AtoM's command-line CSV import includes an additional option, called
    ``--roundtrip``, that bypasses the above set of criteria. Instead, it will
    **only** look for an exact match on the legacyID value in your import CSV,
    against the unique internal database object ID associated with every record.
@@ -1612,7 +1612,7 @@ if you are intending to only import updates to existing records.
    If you are working with hierarchical data and you include a ``parentID``
    value in a CSV import that cannot be matched on import (for example, the
    parent is not included in the CSV, and a matching parentID is not found in
-   the keymap table duing import, AtoM will add the record as a top-level
+   the keymap table during import, AtoM will add the record as a top-level
    description. The console output shown on the :ref:`Job details <job-details>`
    page of the related import job will say "attaching to root" for that
    record.
@@ -1663,7 +1663,7 @@ To import a CSV as updates to existing descriptions, select the option
    ignored.
 
    The one exception to this is updating the biographical or administrative
-   history of a related :term:`authority record`, which requires specifc
+   history of a related :term:`authority record`, which requires specific
    criteria. See scenario **2B** in the section above,
    :ref:`csv-actor-matching`.
 
@@ -1673,7 +1673,7 @@ To import a CSV as updates to existing descriptions, select the option
    in addition to related entities, **notes cannot be deleted or updated with
    this method**
 
-   If you wish to make updates to these entitites or fields, consider using
+   If you wish to make updates to these entities or fields, consider using
    the "Delete and replace" update option instead - though be sure to read up
    on the behavior and limitations of that method as well!
 
@@ -1865,13 +1865,13 @@ updates.
    limiters are mutually exclusive - you cannot pick a repository AND a
    top-level description.
 
-   To limit your matches to the holdings of a specifc
+   To limit your matches to the holdings of a specific
    :term:`archival institution`, use the :term:`drop-down menu` to select the
    name of the related institution
 
    To limit your matches to a specific top-level description, place your
    cursor in the "Top-level description" field and begin to slowly type the
-   name of the top-level description. This :term:`field` is an autcomplete
+   name of the top-level description. This :term:`field` is an autocomplete
    menu - as you begin to type, AtoM will display matching records in the
    :term:`drop-down menu` that will appear below. When you see the top-level
    description you want to use as a match limit, click on it in the drop-down
@@ -2409,7 +2409,7 @@ To import a CSV as updates to existing repository records, select the option
    * Parallel form(s) of name
    * Other form(s) of name
    * Institution type
-   * Locality, Revion, Country, and Postal code in Contact area
+   * Locality, Region, Country, and Postal code in Contact area
    * Languages
    * Scripts
    * Status
@@ -2706,7 +2706,7 @@ values - Person, Corporate body, or Family.
 Almost all other fields are drawn directly from the :term:`authority record`
 edit template in AtoM, which is based upon the International Council on
 Archives' International Standard Archival Authority Record for Corporate
-Bodies, Persons and Famillies (ISAAR-CPF). For more information on the use of
+Bodies, Persons and Families (ISAAR-CPF). For more information on the use of
 each field, see the Data entry page on the
 :ref:`ISAAR-CPF template <isaar-template>` and consult the related standard.
 See also: :ref:`authority-records`.
@@ -3111,8 +3111,8 @@ importing authority record updates via the user interface.
 
 .. _csv-actors-update-gui:
 
-Updating authority records via import in the user inteface
-----------------------------------------------------------
+Updating authority records via import in the user interface
+-----------------------------------------------------------
 
 .. IMPORTANT::
 
@@ -3209,7 +3209,7 @@ updates.
    To learn more about linking an authority record to a repository, see:
    :ref:`link-repo-actor`.
 
-   To limit your matches to the holdings of a specifc
+   To limit your matches to the holdings of a specific
    :term:`archival institution`, use the :term:`drop-down menu` to select the
    name of the related repository.
 
@@ -3396,7 +3396,7 @@ Import new authority record relationships via CSV
    instructions :ref:`above <csv-before-you-import>`, to ensure that your
    CSV import will work. Most importantly, make sure:
 
-   * Your CSV file is saved with `UTF-8`_ characther encoding
+   * Your CSV file is saved with `UTF-8`_ character encoding
    * Your CSV file uses Linux/Unix style end-of-line characters (``/n``)
    * AtoM already contains the authority records you intend to establish a
      relationship between and your CSV file matches their "Authorized Form Of
@@ -3590,7 +3590,7 @@ accession record :term:`edit page` in the user interface as a
 select. To learn more about managing taxonomies and terms, see: :ref:`terms`.
 Some of the taxonomy-related fields in the CSV template include:
 
-* ``acquisitionType`` - listed in the user inteface as "Acquisition type."
+* ``acquisitionType`` - listed in the user interface as "Acquisition type."
   Default values are: Deposit, Gift, Purchase, Transfer.
 * ``resourceType`` - listed in the user interface as "Resource type." Default
   values are: Public transfer, Private transfer.
@@ -3641,7 +3641,7 @@ also be piped correspondingly:
 .. IMPORTANT::
 
    If your CSV import contains physical storage information, the CSV file must
-   contain information in both of the folllowing physical object storage fields:
+   contain information in both of the following physical object storage fields:
    ``physicalObjectName`` and ``physicalObjectLocation``. Entering information
    in ``physicalObjectName`` only will result in the creation of duplicates,
    since AtoM defaults to duplicates rather than accidentally merging separate
@@ -3686,7 +3686,7 @@ accept multiple values, separated using the pipe ``|`` character.
 Donor-related import columns
 ----------------------------
 
-The following columms relate to donor information in the CSV import template:
+The following columns relate to donor information in the CSV import template:
 
 * ``donorName`` 
 * ``donorStreetAddress``
@@ -3851,7 +3851,7 @@ Update existing accessions via CSV import
 =========================================
 
 If a CSV of :term:`accession record` metadata is imported that contains rows
-with the **exact same** accession number as an existing accesion, it's possible
+with the **exact same** accession number as an existing accession, it's possible
 to update the existing accession record with the incoming row. Matching takes 
 place exclusively against the accession number, meaning:
 
@@ -3890,7 +3890,7 @@ place. Below is a list of supported fields:
 * processingNotes 
 
 There are also additional fields that are not stored in AtoM’s primary
-accesion record database tables that can potentially receive new data via
+accession record database tables that can potentially receive new data via
 an update import. In these cases, existing data will **not** be replaced -
 instead, the update import will append **new** data to the existing resources.
 These fields typically include related :term:`entities <entity>` such as donors, 
