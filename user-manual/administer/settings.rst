@@ -3043,7 +3043,7 @@ For more information, see :ref:`upload-digital-object`.
 
 .. TIP::
 
-   While this setting sets a default global limit per repository, an indiviual
+   While this setting sets a default global limit per repository, an individual
    upload limit can also be set by an :term:`administrator` on a per-repository
    basis, from the :term:`archival institution` page. For more information, see:
    :ref:`upload-limit`.

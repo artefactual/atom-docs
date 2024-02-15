@@ -314,7 +314,7 @@ Extent and medium
 **CSV Column** ``extentAndMedium``
 
 **ISAD Rule** "Record the extent of the unit of description by giving the number
-of physical or logical units in arabic numerals and the unit of measurement.
+of physical or logical units in Arabic numerals and the unit of measurement.
 Give the specific medium (media) of the unit of description. Separate
 multiple extents with a linebreak. (ISAD 3.1.5)"
 
@@ -418,8 +418,8 @@ a new name to create and link to a new authority record. (ISAD 3.2.1)
 
 :ref:`Back to the top <isad-template>`
 
-Biographical or Administative history
--------------------------------------
+Biographical or Administrative history
+--------------------------------------
 
 **Template field** N/A
 
@@ -687,7 +687,7 @@ Conditions of access and use area
 
    The data entry fields for the Conditions of access and use area in the
    ISAD(G) template, including Conditions governing access, Conditions governing
-   reproduction, Language of material, Script of material, Lanuage and script
+   reproduction, Language of material, Script of material, Language and script
    notes, Physical characteristics and technical requirements, and Finding
    aids.
 
@@ -1179,7 +1179,7 @@ Description control area
    :alt: An image of the data entry fields in the Description control area
 
    The data entry fields for the Description control are in the ISAD(G) template,
-   including Description identifier, Institution identidier, Rules or
+   including Description identifier, Institution identifier, Rules or
    conventions, Status, Level of detail, Dates of creation, revision and
    deletion, Language(s), Script(s), Sources and Archivist's notes.
 
