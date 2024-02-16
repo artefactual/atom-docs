@@ -57,7 +57,7 @@ assigned new terms in addition to any locked values.
    the locked term "Location."
 
    Other default terms (such as Box, Filing cabinet, Folder, etc) can be
-   edited or delted by users - these are not locked terms, but are included by
+   edited or deleted by users - these are not locked terms, but are included by
    default for convenience. New terms can be added by users - see
    :ref:`add-term`, below, for more information.
 
@@ -73,7 +73,7 @@ terms, related terms, and narrower terms. This is of particular use for
 example, if the term "Vancouver" is added as a place access point to an
 :term:`archival description`, and in the Places taxonomy "Vancouver" has the
 broader (or parent) term of "British columbia", the access point will appear
-on the related archival description as "**British columbia >> Vancouver**":
+on the related archival description as "**British Columbia >> Vancouver**":
 
 .. image:: images/place-access-points.*
    :align: center
@@ -255,7 +255,7 @@ The following gives a brief overview of the fields included in the Term
 Add an access point "on the fly" from an archival description
 -------------------------------------------------------------
 
-The ISAD Glossary deines an :term:`access point` as a "name, term, keyword,
+The ISAD Glossary defines an :term:`access point` as a "name, term, keyword,
 phrase or code that may be used to search, identify and locate an archival
 description." In AtoM, :term:`name`, :term:`place`, and :term:`subject` access
 points are a way of associating specific terms contained or referenced within
@@ -664,7 +664,7 @@ in viewing.
    taxonomy - "Buildings and structures" is being related to "Architecture"
 
 3. When you see the term you would like to add as a related term, click on it
-   - it will be added to the field. Remeber, you cannot create new terms from
+   - it will be added to the field. Remember, you cannot create new terms from
    this field - they must already exist in AtoM to be added as related terms.
    For instructions on creating a new term, see :ref:`above <add-term>`.
 4. Once you have selected the related :term:`term` from the
@@ -757,7 +757,7 @@ taxonomy:
    The default terms included in the Actor relation type taxonomy
 
 Some of these terms have a **converse** (e.g. opposite and reciprocal)
-relationhip to other sibling terms. Others are **self-reciprocal** (e.g. they
+relationship to other sibling terms. Others are **self-reciprocal** (e.g. they
 act as their own converse term as well). For example:
 
 * Under the *family* term:
