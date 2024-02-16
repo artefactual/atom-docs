@@ -53,7 +53,7 @@ For more information on edit privileges and user roles see: :ref:`User roles
    <main-menu-admin>` menu in the :term:`main menu` located in the
    :term:`header bar` and select "Menus" from the :term:`drop-down menu`.
    AtoM will direct you to the "Site menu list" :term:`view page`.
-2. Scroll to the bottom of thepage and click on the :term:`Add new button` in
+2. Scroll to the bottom of the page and click on the :term:`Add new button` in
    the :term:`button block`.
 3. AtoM takes you to a blank :term:`edit page` for data entry. On loading, the
    :term:`edit page` displays all the :term:`information areas
