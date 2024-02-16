@@ -305,7 +305,7 @@ On the next screen, decide:
 
 1. If you want the rights record(s) inherited by all descendants (children) or
 only descendants with digital objects associated with them (see Make rights
-actionalable on digital objects, below) and,
+actionable on digital objects, below) and,
 
 2. Whether you would like to delete any rights which pre-exist in the child
 records and replace with the parent rights (option 1) or combine the parent
@@ -606,7 +606,7 @@ Scroll down to the section labelled "PREMIS access statements":
    :alt: An image of the PREMIS access statements in Settings
 
 The different Rights basis terms along the left act as tabs - click on one to
-flip the view and display the current accesss statement text for that basis.
+flip the view and display the current access statement text for that basis.
 Each basis has a Conditional access statement (when the associated rights
 restriction is set to "Conditional" and the permissions table setting for
 the :term:`reference display copy` is set to "Disallow"), and A Disallow access
@@ -718,12 +718,12 @@ access to the master digital object is granted.
 
 .. IMPORTANT::
 
-   The copyright statment will **only** work when it is applied to digital
+   The copyright statement will **only** work when it is applied to digital
    objects that are uploaded locally - not to those linked via URL to an
    external web address! This is because the pop-up relates to the
    :term:`master digital object`. When you upload locally, then the master
    digital object is stored in AtoM. When you link to an external digital
-   object, AtoM will generate local derivatives (ie the
+   object, AtoM will generate local derivatives (i.e. the
    :term:`reference display copy` and the :term:`thumbnail`), but the master
    is still external!
 
@@ -812,7 +812,7 @@ Configuring the copyright pop-up
 
 5. Clicking "Close" in the copyright statement preview tab will close the tab.
 6. If you want the copyright pop-up to apply globally to all digital objects, 
-   there is an additional setting below - Set the "Apply to gevery digital 
+   there is an additional setting below - Set the "Apply to every digital 
    object" radio button to "Yes":
 
 .. image:: images/copyright-pop-up-global.*
