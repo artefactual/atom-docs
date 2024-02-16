@@ -217,7 +217,7 @@ Here is how the above nested lists would display in AtoM:
 Note that spacing is very important to get right with nested lists. Note as
 well how the numbering resets in ordered list screenshot example - the actual
 number you add does not matter. Markdown will maintain the numbering order of
-the primary list based on the level of indentation and will continute the
+the primary list based on the level of indentation and will continue the
 number after nesting.
 
 Below are some more detailed examples with a mix of list elements: 
@@ -357,7 +357,7 @@ of the image to succeed:
   VPN restrictions, etc. will cause the link to fail. 
 * You must provide a link directly to the :term:`digital object` - that is, the 
   link must end in the file extension (e.g. ``.jpg``, ``.png``, etc). This is 
-  often acheived by right-clicking on an image in a webpage and selecting 
+  often achieved by right-clicking on an image in a webpage and selecting 
   "view image", and then using the URL provided on the resulting page. 
 * Your image URLs must be HTTP or HTTPS based - FTP links or internal 
   network shares not available on the public web will not work. 
