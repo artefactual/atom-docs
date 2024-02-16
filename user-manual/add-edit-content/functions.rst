@@ -30,7 +30,7 @@ Archives (`ICA <http://www.ica.org/>`__) defines a function as:
          the ISDF standard
 
    From the ISDF, Appendix A: "Representation of the relationships of
-   functions with corporate bodeis and archival resources"
+   functions with corporate bodies and archival resources"
 
 Associated predominantly with :term:`corporate bodies <corporate body>`,
 functions may be generally understood as the activities of an organization (or
@@ -43,8 +43,8 @@ time, be merged with other departments, or eventually decommissioned; equally,
 it may fall under the jurisdiction of many different divisions or other
 higher-level organizational units throughout its existence. To ensure more
 accurate records management over time, many organizations have applied a
-system of functional classication, which is based on the analysis of functions
-and activities of an organization, and the transactions which consitute these
+system of functional classification, which is based on the analysis of functions
+and activities of an organization, and the transactions which constitute these
 activities.
 
 In 2007, recognizing the value that this approach could have for
@@ -52,8 +52,8 @@ archivists, the ICA released its first draft of the *International Standard
 for Describing Functions*. In the overview to the standard, they point out the
 value that the description of functions can have, noting that it can play a
 "vital role" in explaining the provenance of records by "placing them more
-securily in the context of their creation and use." Understanding how and wny
-records were created, what purpose or function they were designed to fulfil,
+securely in the context of their creation and use." Understanding how and why
+records were created, what purpose or function they were designed to fulfill,
 and how they relate to other records created by the same organization can be
 essential for properly interpreting archival materials. The ICA notes:
 
@@ -382,7 +382,7 @@ Link a function to an archival description
 AtoM can also create a linked relationship between a :term:`function` and an
 :term:`archival description`. An archival description is a body of information
 about an archival record, or an aggregate of records, which provides
-contextual information about the archival materials and are gnerally
+contextual information about the archival materials and are generally
 arranged into hierarchical levels (such as fonds, series, files, and items,
 and variations of these in accordance with national and international
 standards). For more information on working with archival descriptions in AtoM,
