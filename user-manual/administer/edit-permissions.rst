@@ -84,7 +84,7 @@ privilege>` of either a group or a user by navigating between 4 different
 
 Clicking on a specific :term:`permissions tab` will direct you to the
 :term:`view page` of that permission, where the :term:`access privileges <access
-privilege>` for that permission will be displayed under a :term:`field` labeled
+privilege>` for that permission will be displayed under a :term:`field` labelled
 as *Action*. An authenticated (i.e. logged-in) :term:`administrator` can edit
 access privileges by switching from :term:`view mode` to :term:`edit mode`;
 simply click the :term:`"Edit" button <Edit button>` in the :term:`button
@@ -1564,7 +1564,7 @@ archival institution, you can remove those permissions using these steps:
    :alt: Example of how to remove permissions in a taxonomy.
 
    In this example, a user has been given permission to create new taxonomy
-   terms. In order to remoke this permission, an administrator would change
+   terms. In order to revoke this permission, an administrator would change
    the permission to deny, or to revert to the default for that user's group,
    change the permission to inherit.
 
