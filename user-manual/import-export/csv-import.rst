@@ -796,7 +796,7 @@ the key behaviors are outlined below:
   example, if the *eventActors* column contains ``name 1|name 2``, the
   *eventActorHistories* should  also include ``history 1|history 2`` to match on
   import. If there is **no** history for the first actor, you can include
-  ``NULL``, and AtoM will ignore the imput - e.g. ``name 1|name 2`` should be
+  ``NULL``, and AtoM will ignore the input - e.g. ``name 1|name 2`` should be
   matched with ``NULL|history 2`` to include only a history for name 2.
 * This same ``NULL`` approach can be used for any matched date values where
   multiple actor names are included for import - ``eventDates``,
