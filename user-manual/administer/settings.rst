@@ -2209,7 +2209,7 @@ For information on configuring the PREMIS access statements, see:
 For information on configuring and using the Copyright statement, see:
 :ref:`copyright-pop-up`.
 
-For information on configurating and using the Preservation system access
+For information on configuring and using the Preservation system access
 statement, see: :ref:`preservation-access-statement`.
 
 :ref:`Back to top <settings>`
