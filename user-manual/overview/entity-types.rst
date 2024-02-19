@@ -158,7 +158,7 @@ Functions
 Functions provide a means of describing the activities of records
 :term:`creators <creator>` and other actors linked to records creation and
 maintenance. Analysis of the functions of :term:`corporate bodies <corporate
-body>` is important as the basis for many recordkeeping activities. Functions
+body>` is important as the basis for many record keeping activities. Functions
 are recognised as generally being more stable than administrative structures,
 which are often amalgamated or devolved when restructuring takes place.
 Functions are therefore well suited to act as a basis for the appraisal,
