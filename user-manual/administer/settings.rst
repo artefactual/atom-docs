@@ -819,7 +819,7 @@ Set the ACL on new directory:
 
 The ACL sets `rw-` permissions for files and `rwx` permissions for directories
 for the nginx user and then the `www-data` (or `nginx`) user can delete the
-temporay DIP directory.
+temporary DIP directory.
 
 .. NOTE::
 
@@ -833,7 +833,7 @@ new files when mounting cifs or nfs on ``/etc/fstab``.
 
 .. _maps-api-key:
 
-Google Maps Javascript API key setting
+Google Maps JavaScript API key setting
 --------------------------------------
 
 This setting allows you to store and use a Google Maps API key - AtoM relies
@@ -1206,7 +1206,7 @@ the digital objects selected for download.
 
 Note that if the user checks the "Include digital objects" checkbox in the
 export options screen, it is no longer possible to include descendants in the
-export, and the "Include descendents" checkbox will be greyed out. This is a
+export, and the "Include descendants" checkbox will be greyed out. This is a
 safeguard designed to prevent users from deliberately or inadvertently exporting
 large descriptive hierarchies with hundreds or thousands of digital objects
 attached at descendant levels of description.
@@ -1350,7 +1350,7 @@ dynamic Google map in the Digital object metadata
 .. IMPORTANT::
 
    To be able to enable this setting, you must first request a Google MAPS
-   `API Key`_, and the Google Maps Javascript API key setting in |gears|
+   `API Key`_, and the Google Maps JavaScript API key setting in |gears|
    **Admin > Settings > Global** must be populated - see: :ref:`maps-api-key`
 
 When unchecked, the above elements will be hidden from display after you save
@@ -1412,7 +1412,7 @@ Diacritics
 
 Diacritics, also known as accents, are dots and glyphs written above or
 below certain letters of the alphabet of many languages, indicating something
-about their pronounciation. Languages using diacritics vary from using a single
+about their pronunciation. Languages using diacritics vary from using a single
 diacritic to multiple diacritics on a single letter.
 
 AtoM uses `Elasticsearch <https://www.elastic.co/products/elasticsearch>`__ (ES)
@@ -1583,7 +1583,7 @@ Add/Remove languages
 
 AtoM relies on volunteer translators from the community to support new language
 options. The translations are managed using an Artefactual-hosted instance of
-`Weblate`_ and community members can learn more about contibuting translations
+`Weblate`_ and community members can learn more about contributing translations
 here:
 
 * https://wiki.accesstomemory.org/Resources/Translation
@@ -1887,7 +1887,7 @@ number in sequence.
 Reference code separator
 ------------------------
 
-The reference code separator is the character separating hierarchal elements
+The reference code separator is the character separating hierarchical elements
 in a :term:`reference code` (see Inherit reference code,
 :ref:`below <inherit-reference-code>`).The default reference code separator
 appears as a dash ``-`` in AtoM, which can be changed by an
