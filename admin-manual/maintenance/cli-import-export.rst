@@ -1030,7 +1030,7 @@ for further tips and details on the uses of this option.
    You can always check what source name was used for records created via an
    import by entering into :term:`edit mode` and navigating to the
    Administration :term:` area <information area>` of the :term:`edit page` -
-   the source name used will be diplayed there:
+   the source name used will be displayed there:
 
    .. image:: images/source-name-ui.*
       :align: center
@@ -2405,7 +2405,7 @@ Finding the source name of a record
 You can always check in the user interface what source name was used for
 records created via an import by entering into :term:`edit mode` and navigating
 to the Administration :term:`area <information area>` of the :term:`edit page` -
-the source name used will be diplayed there:
+the source name used will be displayed there:
 
 .. image:: images/source-name-ui.*
    :align: center
