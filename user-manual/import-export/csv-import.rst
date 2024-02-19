@@ -955,7 +955,7 @@ update the authorized form of name of a linked authority record.
    archival description is deleted - existing authority records and other
    entities (e.g. :term:`access points <access point>`, etc) are not
    automatically deleted. If you have created a new authority record, make
-   sure you remember to manually delete any superceded versions!
+   sure you remember to manually delete any superseded versions!
 
 .. SEEALSO::
 
@@ -2151,7 +2151,7 @@ section on legacy ID mapping above - see: :ref:`csv-legacy-id-mapping`.
 
 The ``uploadLimit`` column allows a user to set a default upload limit for a
 repository at the time of import. This value should be a number, representing
-Gigabytes. For more information on the use of respository upload limits in
+Gigabytes. For more information on the use of repository upload limits in
 AtoM, see: :ref:`upload-limit`.
 
 The ``types`` column relates to the institution type found in the Identity
