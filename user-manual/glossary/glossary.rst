@@ -761,7 +761,7 @@ Glossary
     Archives (`ICA <http://www.ica.org/>`__) defines a function as "Any
     high level purpose, responsibility or task assigned to the
     accountability agenda of a corporate body by legislation, policy or
-    mandate. Functions may be decomposed into sets of co-ordinated
+    mandate. Functions may be decomposed into sets of coordinated
     operations such as subfunctions, business processes, activities, tasks
     or transactions" (ISDF Glossary).
 
