@@ -72,7 +72,7 @@ terms, related terms, and narrower terms. This is of particular use for
 :term:`breadcrumb trail` when a term is added as an access point - for
 example, if the term "Vancouver" is added as a place access point to an
 :term:`archival description`, and in the Places taxonomy "Vancouver" has the
-broader (or parent) term of "British columbia", the access point will appear
+broader (or parent) term of "British Columbia", the access point will appear
 on the related archival description as "**British Columbia >> Vancouver**":
 
 .. image:: images/place-access-points.*
