@@ -910,7 +910,7 @@ From the authority record
    remove the relationship link. You can also repeat this process to add
    multiple links by clicking the "Add new" button below the Related
    resources again - AtoM will open a new pop-up dialog. Repeat steps 3-7 as
-   needed. If more desccriptions have been linked than the global 
+   needed. If more descriptions have been linked than the global 
    :ref:`results per page <results-page>` setting (which defaults to 10 in new 
    installations), AtoM will add a pager - you can click "Show more" button 
    below the list of linked descriptions to load the next set
