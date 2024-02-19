@@ -523,7 +523,7 @@ If digital objects are included in the export, they will be contained in the
 same ZIP package as the XML files. 
 
 Note that if the "Include digital objects" checkbox is checked, it is no longer
-possible to include descendants in the export, and the "Include descendents"
+possible to include descendants in the export, and the "Include descendants"
 checkbox will be greyed out. This means you will need to individually add the
 descriptions with digital objects to the clipboard if you want to export them,
 rather than just adding a parent description.
