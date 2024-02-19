@@ -252,7 +252,7 @@ Creator
 **ISAD CSV Column** ``eventActors``
 
 **DACS Rule**: Record the name(s) of the creator(s) identified in the name
-elevent in the devised title of the materials using standardized vocabularies
+relevant in the devised title of the materials using standardized vocabularies
 or with rules for formulating standardized names (DACS 2.6.4). Search for an
 existing name in the authority records by typing the first few characters of
 the name. Alternatively, type a new name to create and link to a new authority
