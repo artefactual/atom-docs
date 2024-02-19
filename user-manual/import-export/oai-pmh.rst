@@ -58,7 +58,7 @@ check the box and then save the change using the Save button located in the
 .. TIP::
 
    Setting not taking effect? In some cases, a system administrator with access
-   to the command-line may have to restart your webserver and php-fpm for the
+   to the command-line may have to restart your web server and php-fpm for the
    changes to take effect. We also recommend clearing the application cache. If
    you are using our recommended installation configuration (see:
    :ref:`installation-ubuntu`) such as Nginx for your web server, you can restart
@@ -272,7 +272,7 @@ status response.
 1. Navigate to |gears| **Admin > Users** via the :term:`main menu`, and find
    the user account for which you would like to generate an API key. Click the
    Edit button located in the :term:`button block` of the user's Profile page.
-   For more information on managing user acccounts, see:
+   For more information on managing user accounts, see:
    :ref:`manage-user-accounts`, specifically: :ref:`edit-user`.
 2. AtoM will redirect you to the :term:`edit page` for the user. At the bottom
    of the profile edit page, in the Access control
