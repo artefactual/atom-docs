@@ -3078,7 +3078,7 @@ the :term:`archival description` CSV contain metadata in both the
 
 In AtoM, a 1:1 relationship is maintained between archival descriptions and
 digital objects - meaning that for every :term:`archival description`, you can
-only attach one :term:`digital object`. For more general infomation on 
+only attach one :term:`digital object`. For more general information on 
 managing digital objects in AtoM, see: 
 
 * :ref:`upload-digital-object`
