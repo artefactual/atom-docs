@@ -354,7 +354,7 @@ many web browsers and harvesters have a built-in timeout limit of
 approximately 1 minute, to prevent long-running tasks and requests from
 exhausting system resources. Because of this, attempts to expose EAD 2002 XML
 for large descriptive hierarchies via OAI-PMH can fail, as the timeout limit
-is reachedbefore the document can be fully generated and served to the end user.
+is reached before the document can be fully generated and served to the end user.
 
 To avoid this, AtoM includes this setting, which allows users to pre-generate
 XML exports via AtoM's job scheduler, and then cache them in the ``downloads``
