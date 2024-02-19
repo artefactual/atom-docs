@@ -193,7 +193,7 @@ such as:
 .. IMPORTANT::
 
    Symfony (the PHP framework that AtoM uses) has a cascading system of
-   priorization for configuration files - if you create an ``app.yml`` file in
+   prioritization for configuration files - if you create an ``app.yml`` file in
    ``apps/qubit/config/``, its settings will override those found in
    ``config/app.yml``. This can be useful if you want to change some
    configuration values without actually altering AtoM's installation
@@ -302,7 +302,7 @@ index used in AtoM, including:
 * The normalizers, analyzers and filters used by Elasticsearch. See the
   `Elasticsearch`_ documentation for more information on these, and be sure
   you are looking at the documentation for the correct ES version
-* Number of shards and replicas created - these are paramters used for 
+* Number of shards and replicas created - these are parameters used for 
   performance optimization and scalability. See the `Elasticsearch`_ 
   documentation for more information
 * The tokenizers and filters used per culture - these can be useful to adjust
@@ -412,7 +412,7 @@ request originated, but this may not always work as expected when there are
 different domains or subdomains used, and can break the authentication procedure.
 
 To avoid this, system administrators can use the ``service_url`` parameter to
-specify the perferred service URL for your AtoM site that the CAS server
+specify the preferred service URL for your AtoM site that the CAS server
 should redirect users to after successfully completing authentication. 
 
 Example: 
@@ -685,7 +685,7 @@ Administrators can browse, view, edit, and delete storage records.
 * ``autocomplete``: Sets access to viewing matching containers when linking
   physical storage to other entities via the available autocomplete. See: 
   :ref:`link-physical-storage`.
-* ``boxList``: Sets access to the box list report, avaiable by clicking on the
+* ``boxList``: Sets access to the box list report, available by clicking on the
   printer icon on the view page of the related storage container. For more
   information, see: :ref:`storage-report-manage`.
 * ``browse``: Sets access to the physical storage browse page
@@ -720,7 +720,7 @@ and translator user groups, and delete permissions to the administrator group.
   modified. 
 * ``edit``: Sets access to the ability to modify existing static pages, and 
   create new ones
-* ``list``: Sets acess to the browse page for existing static pages. 
+* ``list``: Sets access to the browse page for existing static pages. 
 
 .. NOTE::
 
@@ -760,7 +760,7 @@ user groups. For a general overview of the AtoM header bar and its menus, see:
   that some top-level menu nodes cannot be deleted, just modified. 
 * ``edit``: Sets access to the ability to modify existing menu links, and 
   create new ones
-* ``list``: Sets acess to the menu management page listing all menus and nodes. 
+* ``list``: Sets access to the menu management page listing all menus and nodes. 
 
 .. NOTE::
 
