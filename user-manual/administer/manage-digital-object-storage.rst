@@ -29,7 +29,7 @@ Manage digital object storage per institution
    :width: 50%
    :alt: A image of the upload limit dialogue box
 
-#. In the "Upload limit" menu, click the "Edit" link. A dialogue box will apear
+#. In the "Upload limit" menu, click the "Edit" link. A dialogue box will appear
    that will allow for 1 of 3 options:
 
    * **Disable uploads** will prevent users from uploading any digital objects.
