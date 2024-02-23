@@ -120,7 +120,7 @@ Let's begin creating our new BS5 Theme:
 
    $ cd ~/atom
    $ git clone --depth=1 https://github.com/artefactual-labs/arThemeB5Plugin.git plugins/arCustomThemeB5Plugin
-   $ rm -rf plugins/arThemeB5Plugin/.git plugins/arB5ThemePlugin/README.md
+   $ rm -rf plugins/arCustomThemeB5Plugin/.git plugins/arCustomThemeB5Plugin/README.md
 
 Here, we've cloned the repo directly into the `atom/plugins` directory, renaming
 the theme to `arCustomThemeB5Plugin`, and removed the git related files.
