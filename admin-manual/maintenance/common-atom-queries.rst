@@ -287,7 +287,7 @@ exiting the MySQL command prompt:
 
 The second way of changing the SQL mode is via the separate mysqld configuration
 file. These steps are performed via the UNIX command-line - if you have already
-entere the MySQL command prompt, exit now. 
+entered the MySQL command prompt, exit now. 
 
 As noted above, our installation instructions recommend creating this file 
 at ``/etc/mysql/conf.d/mysqld.cnf``. If you missed that step and have **not** 

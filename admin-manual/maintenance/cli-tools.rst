@@ -178,7 +178,7 @@ notes such as Accompanying material notes; Archivists' notes; etc.) to an
 :term:`archival description`, then by default, the user ID of that user is
 associated with the note in the database. Because of this, AtoM will not let you
 delete a user without first removing the user association from the notes, and
-the task will be aborted without delting the user account:
+the task will be aborted without deleting the user account:
 
 .. image:: images/cli-delete-user-notes.*
    :align: center
@@ -657,7 +657,7 @@ objects to existing :term:`descriptions  <archival description>` (see:
 reference images properly for digital objects that were loaded (e.g. due to a
 crash or absence of ``convert`` being installed, etc. - see under requirements,
 :ref:`other-dependencies`). In this case, you can regenerate
-these thumbsnail/reference images using the following command:
+these thumbnail/reference images using the following command:
 
 .. code:: bash
 
@@ -782,7 +782,7 @@ AtoM's database. These digital_object ID's will first need to be determined
 by crafting an SQL query designed to meet your specific criteria. Help crafting
 these queries is not covered here (though see :ref:`common-atom-queries`, for a
 basic introduction to SQL queries in AtoM) - in general, we only recommend this
-task be used by experienced administators.
+task be used by experienced administrators.
 
 Once you have determined the IDs of the digital objects you would like to target
 with the task, you can place them in square brackets in a JSON file, separated by
@@ -1040,7 +1040,7 @@ When this permissive mode is enabled, AtoM will allow the following to be used
 in slugs:
 
 * a-z, A-Z, and 0-9
-* All unicode characters specified in `RFC 3987 <https://tools.ietf.org/html/rfc3987>`__,
+* All Unicode characters specified in `RFC 3987 <https://tools.ietf.org/html/rfc3987>`__,
   including characters with accents
 * The following punctuation symbols: ``, - _ ~ : = * @``
 
@@ -1675,7 +1675,7 @@ if you know the related description's :term:`slug`, using the
 digital objects from all descendant records, when a
 :term:`parent <parent record>` description slug is provided. Alternatively, you
 can delete **all** digital objects associated with a particular
-:term:`archival institution` by prodiving the :term:`slug` of the associated
+:term:`archival institution` by providing the :term:`slug` of the associated
 :term:`repository` instead of a description slug.
 
 .. TIP::
@@ -1997,7 +1997,7 @@ could run the task like so:
 
 The ``--skip`` option accepts as a parameter the number of information objects
 to be skipped - so for example, if the task crashed while trying to generate
-the XML for infomation object 2445 of 5528, then you could restart it on
+the XML for information object 2445 of 5528, then you could restart it on
 information object 2445 again by skipping the first 2444, like so:
 
 .. code-block:: bash
