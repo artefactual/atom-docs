@@ -1091,7 +1091,7 @@ task described above.
    * :ref:`rename-title-slug`
 
    Users can also use the CLI rename-slug tool if they want to update one or
-   more slugs via the command line. For more infomation, see:
+   more slugs via the command line. For more information, see:
 
    * :ref:`cli-rename-slugs`
 
@@ -1937,7 +1937,7 @@ AtoM will fall back to the default behavior of generating the XML on request.
 
 In an OAI-PMH request, if a cached version of the EAD 2002 XML is available,
 AtoM will serve it in response to ``oai_ead`` requests - if there is **not** a
-cached version, then AtoM will return a "Metadata format unavailable" reponse.
+cached version, then AtoM will return a "Metadata format unavailable" response.
 In contrast, if no cached DC XML exists, the OAI Repository module will
 generate DC XML on the fly to respond to the request.  For further information,
 see: :ref:`oai-pmh`.
@@ -1946,7 +1946,7 @@ By default, cached XML files are generated for public users, meaning that
 :term:`draft <draft record>` descriptions are **not** included in the XML.
 
 When engaged, this setting will **not** retroactively generate and cache XML
-for existing descriptions. Howeveer, this command-line task can be used to
+for existing descriptions. However, this command-line task can be used to
 generate and cache EAD 2002 and DC XML for all existing descriptions.
 
 The basic syntax for the task is:
@@ -2071,7 +2071,7 @@ present, it will only remove HTML from the following :term:`entity` types:
 * :term:`archival institution` (aka :term:`repository` records)
 * :term:`rights record`
 
-Other entities in AtoM (such as accessions, user and goup records, terms, etc.)
+Other entities in AtoM (such as accessions, user and group records, terms, etc.)
 will not be affected.
 
 .. IMPORTANT::
@@ -2113,8 +2113,8 @@ The task will have the following effects on HTML elements:
 * Styling elements, such as ``<em>``, ``<b>``, ``<strong>``, ``<i>``, etc.
   will be removed with no substitutions (the text they wrap will be
   preserved).
-* List elements (``<li>``) will be replaced with an asterix and a space -
-  AtoM's edit templates already include a helper that will transform asterixes
+* List elements (``<li>``) will be replaced with an asterisk and a space -
+  AtoM's edit templates already include a helper that will transform asterisks
   used this way into bullets. So, ``<ul><li>This item</li></ul>`` will become
   ``* This item``
 * Definition list elements such as ``<dd>``, ``<dt>``, etc (which were briefly
@@ -2158,7 +2158,7 @@ The CSV output for the task includes the following columns:
 * **parentId**: the object ID of the the parent to which the term is linked.
 
   * Even in a taxonomy that is not organized hierarchically, terms are linked
-    to a root term object. If the terms are organized heirarchically, then the
+    to a root term object. If the terms are organized hierarchically, then the
     ``parentID`` value will be the objectID of the parent term.
 
 * **taxonomy**: the ID of the taxonomy to which the terms belong. In AtoM,
@@ -2263,7 +2263,7 @@ Auto-populate repository latitude and longitude values
 AtoM includes the ability for users to add dynamic Google maps to the
 :term:`view page` of a repository. To do so, a user must first have a Google
 `API Key <https://developers.google.com/maps/documentation/javascript/get-api-key>`__,
-and the Google Maps Javascript API key setting in **Admin > Settings** must be
+and the Google Maps JavaScript API key setting in **Admin > Settings** must be
 populated - see:
 
 * :ref:`maps-api-key`
@@ -2565,7 +2565,7 @@ specific location for the sitemap XML files on output - by default, they are
 added to AtoM's root directory.
 
 The ``--base-url`` option can be used to specify a base URL for the AtoM
-instance, used in the sitmap XML files generated. Note that AtoM will use the
+instance, used in the sitemap XML files generated. Note that AtoM will use the
 value entered in the **Admin > Settings > Site information** page for the Base
 URL by default, so if you've added the correct value there, you shouldn't need
 this option. See: :ref:`site-information` for more on Base URLs.
@@ -2635,7 +2635,7 @@ simple :term:`CSV` file. The CSV can be named anything, but must have the
 extension ``.csv`` for the upload to work. The CSV must include a ``filename``
 column, which specifies the full name of each object. Additionally, include
 **either** an ``identifier`` column (if your identifier values in AtoM are
-unique) or, preferrably, a ``slug`` column, so AtoM knows the description to
+unique) or, preferably, a ``slug`` column, so AtoM knows the description to
 which each object will be attached.
 
 .. image:: images/cli-dip-csv.*
@@ -2677,7 +2677,7 @@ descriptions) have digital objects added to them as a result of running the task
 This log can be used, in event of an incomplete import, to either establish
 where the import stopped or to manually remove the imported digital objects.
 Undo logs contain two columns: the object ID of the :term:`information object`
-to which objects have beem imported, and the DIP directory from which the objects
+to which objects have been imported, and the DIP directory from which the objects
 were imported. For more information object IDs, see :ref:`common-atom-queries` -
 particularly, :ref:`cli-object-id`.
 
@@ -2735,7 +2735,7 @@ Run a generic PHP script
 
 For cases where you need to manipulate your data and there are no existing tasks
 that will accomplish what you need, AtoM has the ability to execute generic PHP
-scripts via the ``tools:run`` commmand. This task will accept the path to a PHP
+scripts via the ``tools:run`` command. This task will accept the path to a PHP
 file as input, and when run will execute the script. Example use:
 
 .. code-block:: bash

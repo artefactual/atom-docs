@@ -108,7 +108,7 @@ The database is now restored to the point when you dumped it.
    Additionally, make sure that the MySQL version hasn't changed between
    releases - if it has, make sure you've properly followed the latest
    installation instructions for the latest version, and check the
-   :ref:`Upgrading <installation-upgrading>` documentation for any addtional
+   :ref:`Upgrading <installation-upgrading>` documentation for any additional
    steps (such as dropping and recreating the database first, and possibly
    changing certain MySQL parameters).
 
@@ -186,7 +186,7 @@ Once submitted, your command prompt should now say something like ``mysql>``.
 You can now input a SQL query directly.
 
 You can exit the MySQL command prompt at any time simply by typing ``exit``. You 
-will be returned to the unix command-line interface. 
+will be returned to the UNIX command-line interface. 
 
 .. IMPORTANT::
 
@@ -286,7 +286,7 @@ exiting the MySQL command prompt:
    sudo systemctl restart mysql
 
 The second way of changing the SQL mode is via the separate mysqld configuration
-file. These steps are performed via the unix command-line - if you have already
+file. These steps are performed via the UNIX command-line - if you have already
 entere the MySQL command prompt, exit now. 
 
 As noted above, our installation instructions recommend creating this file 
@@ -390,7 +390,7 @@ To find out the location of the log, use:
    SHOW VARIABLES LIKE 'general_log_file';
    
 This should give you a file path and log name - you can exit the MySQL command 
-prompt and use the unix command-line interface to navigate to the file and view
+prompt and use the UNIX command-line interface to navigate to the file and view
 its contents. 
 
 **Important:** remember to disable the log after you've run the queries you
@@ -511,7 +511,7 @@ exhausted before the job could complete. When this happens, the
 though it never completes. 
 
 AtoM does include a command-line task that can clear all running and queued jobs, 
-as well as clear the job history from the database. This can be run in unix 
+as well as clear the job history from the database. This can be run in UNIX 
 command-line from AtoM's root installation directory, like so: 
 
 .. code-block:: bash
@@ -748,7 +748,7 @@ you'd like to delete):
    **Remember**, you will run into problems if you don't replace the slug!
    You can use the generate slugs task to do so; see
    :ref:`cli-generate-slugs`. Remember as well: if you are trying to
-   replace a randomnly generated slug, but you haven't filled in the data
+   replace a randomly generated slug, but you haven't filled in the data
    field from which the slug is normally derived prior to deleting the old
    slug (see :ref:`slugs-in-atom` for more on how slugs are generated
    in AtoM), you will end up with another randomly generated slug!
@@ -1171,7 +1171,7 @@ typo, or adding the same default content to a field. Once again, SQL can help us
 
 For this example, let's say we've accidentally entered "digital image" instead of 
 "digital image" throughout our descriptions. Now we want to replace all 
-occurences of "digital image" in the *Extent and medium* field across all our
+occurrences of "digital image" in the *Extent and medium* field across all our
 descriptions in English with the corrected version, "digital image":
 
 .. code-block:: mysql
