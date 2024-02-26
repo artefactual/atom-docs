@@ -169,7 +169,7 @@ The ``--application``, ``--env``, and ``connection`` options **should not be
 used** - AtoM requires the uses of the pre-set defaults for symfony to be
 able to execute the task.
 
-The command, when run, will normally prompt you for comfirmation before
+The command, when run, will normally prompt you for confirmation before
 proceeding. However, if you wish to skip the confirmation step, you can use the
 ``--force`` or ``-f`` option.
 

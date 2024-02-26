@@ -2122,7 +2122,7 @@ The ``--skip-unmatched`` or ``-s`` option must be used with the ``--update``
 option, and prevents the unwanted creation of new records in the database.
 CSV rows that match an existing record in the database (by name) will update
 the matched record or records (see the ``--multi-match`` option for information
-on multiple matches). Normally, when a match is not found duing an update import,
+on multiple matches). Normally, when a match is not found during an update import,
 AtoM will treat an unmatched row as new data, and will create a new container -
 however, with the ``skip-unmatched`` option used as well, CSV records that do
 not match an existing database record will be ignored.  A warning message will
@@ -2144,7 +2144,7 @@ be the first record imported.
 The ``--source-name`` option is used to logically group multiple imports
 together if a single data set has been split into multiple CSV files to prevent
 running out memory during an import, or to limit the time each import takes to
-complete. For exmaple, ``--source-name="January 2020 import"`` could be used for
+complete. For example, ``--source-name="January 2020 import"`` could be used for
 multiple CSV files that comprise a January 2020 data update.
 
 Finally, the ``--update``  or ``-u`` option will attempt to match each import
@@ -2485,7 +2485,7 @@ the target logfile, as in the example below:
 
    If you use this task, remember:
 
-   * You should make a backup of your databse first, so if the results are
+   * You should make a backup of your database first, so if the results are
      unexpected, you can load your backup. See: :ref:`cli-backup-db`
    * Your source name should be unique for the target records. If you've
      imported multiple records with generic file names (or manually added
@@ -2605,7 +2605,7 @@ omitted:
 
    Additionally, AtoM also has a task that can be used to double-check your
    load CSV against the :term:`digital object` directory, looking for any
-   discrepencies such as unused files, incorrect or duplicate file paths in the
+   discrepancies such as unused files, incorrect or duplicate file paths in the
    CSV, etc. For more information, see:
 
    * :ref:`csv-check-filepaths-digital-objects`
@@ -2744,7 +2744,7 @@ attached digital object it finds and then attach the new object.
 * If the CSV contains *multiple* rows pointing at a description that already
   has a digital object, then new stub child descriptions will be created
   below the target, and digital objects will be attached there. If child
-  descripitons already exist, they will be ignored (meaning, running the task
+  descriptions already exist, they will be ignored (meaning, running the task
   more than once will result in duplicate child descriptions).
 * Note that the ``--attach-only`` and ``--replace`` options change the above
   default behaviors when multiple rows point to one description. Read the
@@ -2762,7 +2762,7 @@ Regenerating derivatives
 Sometimes the ``digitalobject:load`` task won't generate the :term:`thumbnail`
 and :term:`reference <reference display copy>` images properly for digital
 objects that were loaded (e.g. due to a crash or absence of convert installed,
-etc.). In this case, you can regenerate these thumbsnail/reference images using
+etc.). In this case, you can regenerate these thumbnail/reference images using
 the following command:
 
 .. code-block:: bash
@@ -2798,7 +2798,7 @@ searched by users. To do so, enter the following into the command-line:
 .. TIP::
 
    If you have used the ``--index`` option while running your command-line
-   imports, then you will not need to reindex - when used, the ``--index``
+   imports, then you will not need to re-index - when used, the ``--index``
    option will progressively add records to the search index as they are
    created during the import process.
 
