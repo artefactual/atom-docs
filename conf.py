@@ -48,6 +48,7 @@ extensions = [
 # spelling
 
 spelling_lang="en_CA"
+tokenizer_lang="en_CA"
 
 spelling_word_list_filename = ['spelling_wordlist.txt']
 
