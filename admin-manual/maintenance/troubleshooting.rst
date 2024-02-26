@@ -958,7 +958,7 @@ another entity type in AtoM, you'll need to do some research! We have collected
 some resources below to assist you.
 
 First, we make copies of the AtoM database's Entity Relationship Diagrams (ERDs)
-available on the AtoM wiki. An ERD is a data modeling technique that graphically
+available on the AtoM wiki. An ERD is a data modelling technique that graphically
 illustrates an information system's entities and the relationships between those
 entities. The AtoM ERDs can help you understand what tables exist in the AtoM
 database and how they are related. You can find them on our wiki here:
@@ -1005,7 +1005,7 @@ in the example below with the name of the target taxonomy):
      AND name = 'Taxonomy name') AND term_i18n.culture = 'en';
 
 Return the number of times a term is linked to a description, sorting terms from
-most used to least. This will return all terms across taxonomies - if youw want
+most used to least. This will return all terms across taxonomies - if you want
 to see only one particular term, uncomment (aka remove the ``#`` at the start of
 the line) the ``WHERE`` line and add the target term ID in place of the ``XXX``:
 
@@ -1116,7 +1116,7 @@ Why do I get a blank white screen?
 ----------------------------------
 
 A blank, white screen in AtoM means that an error has occurred when loading
-the page. AtoM usually supresses error messages in production mode for
+the page. AtoM usually suppresses error messages in production mode for
 security reasons, so the first thing to do is put the application in Debug
 mode, then re-try whatever you were doing when you got the white screen. See:
 
@@ -1254,9 +1254,9 @@ installed. Below is a relevant link for MySQL 8.0:
 * https://dev.mysql.com/doc/refman/8.0/en/gone-away.html
 
 It may be helpful to increase the level of verbosity in the MySQL logs to see if
-more detailss are available. From the MySQL documentation:
+more details are available. From the MySQL documentation:
 
-  You can get more information about the lost connections by starting mysqld with
+  You can get more information about the lost connections by starting MySQL with
   the ``--log-warnings=2`` option. This logs some of the disconnected errors in
   the ``hostname.err`` file. See Section 5.4.2, "The Error Log":
 
@@ -1597,7 +1597,7 @@ panel - ensure you are logging in from a white-listed IP.
 
 If you have accidentally turned on the "Require SSL" setting and can't log in,
 it's possible to use SQL to disable this setting. For basic information on
-accesssing MySQL via the command-line, see: :ref:`cli-access-mysql`. You will
+accessing MySQL via the command-line, see: :ref:`cli-access-mysql`. You will
 need to know the user and password you used for the database when installing AtoM,
 as well as the database name.
 
