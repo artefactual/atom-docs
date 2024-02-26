@@ -50,7 +50,7 @@ Bulk import of XML files
 ========================
 
 While XML files can be imported individually via the :term:`user interface`
-(see: :ref:`import-xml`), it may be desireable to import multiple
+(see: :ref:`import-xml`), it may be desirable to import multiple
 XML files through the command line. The ``import:bulk`` command-line task can
 be used to import the following types of XML data:
 
@@ -141,7 +141,7 @@ can be found in AtoM in ``/lib/model/QubitTaxonomy.php`` (see on GitHub
 
 Below is a list of some of the more commonly used taxonomies in AtoM, and
 their IDs. This list is NOT comprehensive - to see the full list, navigate to
-``/lib/model/QubitTaxonomy.php``, or visit the Github link above.
+``/lib/model/QubitTaxonomy.php``, or visit the GitHub link above.
 
 =================================== ===
 Taxonomy name                       ID
@@ -247,7 +247,7 @@ imports to existing records, see:
 
    Related :term:`enities <entity>` that were linked to the matched and
    deleted records are **not** also deleted - if you want them removed, they
-   must be manually deleted separately. Simliarly, on import of the
+   must be manually deleted separately. Similarly, on import of the
    replacement record(s), recreating the previous links to other related
    entities is not guaranteed - AtoM proceeds with the replacement import as
    if it were new, and uses the matching and linking criteria described in the
@@ -323,7 +323,7 @@ Bulk export of XML files
 ========================
 
 While XML files can be exported individually via the :term:`user interface`
-(see: :ref:`export-xml`), it may be desireable to export multiple
+(see: :ref:`export-xml`), it may be desirable to export multiple
 XML files, or large files (typically larger than 1 MB) through the command line.
 This can avoid browser-timeout issues when trying to export large files, and
 it can be useful for extracting several descriptions at the same time. XML
@@ -932,7 +932,7 @@ Examples are also stored directly in the AtoM codebase - see:
    * CSV file is saved with UTF-8 encodings
    * CSV file uses Linux/Unix style end-of-line characters (``/n``)
    * All :term:`parent <parent record>` descriptions appear in rows **above**
-     their children if you are importing hierarchicla data (such as
+     their children if you are importing hierarchical data (such as
      descriptions)
 
    AtoM also supports a CSV validation task that can be run from the
@@ -1136,7 +1136,7 @@ and any existing data in the related field will be preserved.
    * :ref:`csv-descriptions-update-fields`
 
    The one exception to this is updating the biographical or administrative
-   history of a related :term:`authority record`, which requires specifc
+   history of a related :term:`authority record`, which requires specific
    criteria. See scenario **2B** in the following section of the User manual:
    :ref:`csv-actor-matching`.
 
@@ -1146,7 +1146,7 @@ and any existing data in the related field will be preserved.
    in addition to related entities, **notes cannot be deleted or updated with
    this method**, though again, you can append new notes if desired.
 
-   If you wish to make updates to these entitites or fields, consider using
+   If you wish to make updates to these entities or fields, consider using
    the "Delete and replace" update option instead - though be sure to read up
    on the behavior and limitations of that method as well!
 
@@ -1300,7 +1300,7 @@ Example use:
    php symfony csv:import --update="match-and-update" --roundtrip /path/to/rad_0000000001.csv
 
 Normally, the ``--roundtrip`` option, when used, will first ask you if you have
-a backup of your database before proceding. However, you can skip this
+a backup of your database before proceeding. However, you can skip this
 confirmation requirement by adding the ``--no-confirmation`` option as well.
 
 .. SEEALSO::
@@ -1529,7 +1529,7 @@ Importing authority records
 ---------------------------
 
 The :term:`authority record` import tool allows you to import data about
-people, familiies, and organizations. Note that authority records and their
+people, families, and organizations. Note that authority records and their
 relationship data can also be imported via the :term:`user interface` - for more
 information, see: :ref:`csv-import-authority-records-gui` and
 :ref:`csv-import-authority-record-relationships-gui`.
@@ -1898,7 +1898,7 @@ accession number value, based on the mask and counter settings.
 Import deaccession records
 --------------------------
 
-The deaccession import tool allows you to import data about deaccession activies,
+The deaccession import tool allows you to import data about deaccession activities,
 which can be appended to :term:`accession records <accession record>` in AtoM.
 For more general information on working with deaccession records in AtoM, consult
 the User manual: :ref:`deaccessions`. For the task to succeed, an accession number

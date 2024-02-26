@@ -201,7 +201,7 @@ reset the fail counter with the following:
 
 If you see the following message when attempting to restart the 
 ``atom-worker``, it is likely you have hit the start rate limit and will 
-need to clear it before successfullly restarting:
+need to clear it before successfully restarting:
 
 .. code-block:: bash
 

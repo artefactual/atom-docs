@@ -112,7 +112,7 @@ Other dependencies
 to create image derivatives (reference and :term:`thumbnail`) from the
 :term:`master digital object`, including the creation of derivatives from
 uploaded multi-page TIFFs. ImageMagick *and* Ghostscript are required for
-creating single page and mulit-page PDF derivative images as well.
+creating single page and multi-page PDF derivative images as well.
 
 **Ghostscript**
 

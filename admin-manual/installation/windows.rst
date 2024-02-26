@@ -31,7 +31,7 @@ in Windows. Some of the most popular virtualization tools in Windows are:
 
 You should be able to use a virtual appliance in the virtualization tool of
 your choice. However, Artefactual does **not** maintain production-ready virtual
-applicances - so you will need an experienced technical administator to help you
+appliances - so you will need an experienced technical administrator to help you
 create and configure one if that is the approach you'd like to take. We do
 provide a :ref:`Vagrant box <dev-env-vagrant>` for developers and users
 interested in testing AtoM on their laptops, but the Vagrant box is not intended

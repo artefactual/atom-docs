@@ -204,8 +204,8 @@ Now, run the upgrade-sql task:
 Restore configuration changes
 =============================
 
-If you made any change to the old AtoM instace configuration files, like
-setting a custom session timeout or a Google Analitycs API key, make sure to
+If you made any change to the old AtoM instance configuration files, like
+setting a custom session timeout or a Google Analytics API key, make sure to
 bring those changes to the new instance if you want to keep them.
 
 .. _upgrading-migrate-translations:
@@ -218,7 +218,7 @@ Migrate translations
    At this time, we are troubleshooting challenges in translation migration
    process from older releases to |version|. Please see issue
    `#5505 <https://projects.artefactual.com/issues/5505>`__ for progress - we
-   will update this documentation with instructions when the tranlsation
+   will update this documentation with instructions when the translation
    migration process has been optimized and tested. Thank you in advance for
    your patience.
 
