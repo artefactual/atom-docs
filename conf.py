@@ -42,7 +42,7 @@ extensions = [
     "sphinx.ext.extlinks",
     "sphinx.ext.intersphinx",
     "sphinx_version_ref",
-   "sphinxcontrib.spelling",
+    "sphinxcontrib.spelling",
 ]
 
 # spelling
