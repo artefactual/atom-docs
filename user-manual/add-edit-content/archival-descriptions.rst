@@ -13,7 +13,7 @@ Archival Descriptions
    :width: 18
 
 Archival descriptions are one of the core :ref:`entity-types` in AtoM and
-provide users with invaluable contextual infomation about the resources held
+provide users with invaluable contextual information about the resources held
 by an :term:`archival institution`.
 
 In AtoM, an archival description is a body of information about an archival
@@ -23,7 +23,7 @@ series, files, items, and variations of these in accordance with institutional
 standards).
 
 Archival description is *also* an activity, however - generally accompanied by
-the process of archival arrangemenent, it is the outcome of a process to gain
+the process of archival arrangement, it is the outcome of a process to gain
 intellectual control over a resource or collection of resources and provide
 end users (such as :term:`researchers <researcher>`) with a means of
 conceptualizing the organization of these resources and navigating to the
@@ -475,7 +475,7 @@ on logging in, see: :ref:`Log in <log-in>`.
    description :term:`edit page`.
 
    One populated, you can still edit the supplied value - place your cursor in
-   the identiier :term:`field` and make any desired changes. For more
+   the identifier :term:`field` and make any desired changes. For more
    information, see:
 
    * :ref:`enable-identifier-mask`
