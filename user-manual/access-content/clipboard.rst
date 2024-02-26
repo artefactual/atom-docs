@@ -107,12 +107,12 @@ the different :term:`entity` types:
 The menu has four options. The "Clear selections" option will remove all items
 (across all entity types) currently pinned to the clipboard. On the clipboard
 page, they won't be cleared until you refresh the browser, giving you an
-opportunity to repin them if you've removed them by accident - however,
+opportunity to re-pin them if you've removed them by accident - however,
 anywhere else in the application, this **removal will be immediate**. The "Go
-to clipboard" option in the menu will take you to the Cliboard page, described
+to clipboard" option in the menu will take you to the Clipboard page, described
 in more detail below: :ref:`clipboard-page`. The "Save clipboard" option will
 allow you to save your selections and return to them at a future session, and
-the "Load clipbaord" option will load a previously saved selection. For more
+the "Load clipboard" option will load a previously saved selection. For more
 information on these options, see below:
 
 * :ref:`save-clipboard`
