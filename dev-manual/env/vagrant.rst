@@ -122,7 +122,7 @@ planning to use git and submit code to a repository.
    and `email <https://help.github.com/articles/setting-your-email-in-git/>`__ in
    Git.
 
-4. Create a new SSH keys to authenticate against a git server like Github.
+4. Create a new SSH keys to authenticate against a git server like GitHub.
    Optionally you can forward your local SSH agent using `ForwardAgent`, e.g.
    run ``vagrant ssh -- -A`` or ``vagrant ssh -- -o ForwardAgent=yes`` instead
    of just ``vagrant ssh``. Alternatively, you can set ``config.ssh.forward_agent``
