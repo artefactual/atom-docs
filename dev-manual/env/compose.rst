@@ -90,6 +90,12 @@ It's time to use Docker Compose in order to provision our containers:
    latest version before creating the containers. It has to be based on Alpine
    v3.8 or higher to be able to install some packages.
 
+.. note::
+
+   To enable LDAP Authentication with docker, jump to :ref:`Enable LDAP Authentication
+   with Docker <ldap-auth-docker>`.
+
+
 .. code-block:: bash
 
    # Create and start containers. This may take a while the first time you run
@@ -194,6 +200,46 @@ stop and remove related containers, network and volumes by running:
 .. code-block:: bash
 
    docker-compose down --volumes
+
+.. _ldap-auth-docker:
+
+Enable LDAP Authentication with Docker
+======================================
+
+.. code-block:: bash
+
+   # Create and start containers. This may take a while the first time you run
+   # it because all the images have to be downloaded (e.g. percona, memcached)
+   # and the AtoM image has to be built.
+   #
+   # Launch AtoM with auth-network for openldap container.
+   docker-compose -f docker/docker-compose.dev.yml -f docker/docker-compose.auth-network.yml up -d
+
+There should be seven docker containers running, and getting the following warning
+message is normal: ``WARNING: Some networks were defined but are not used by any
+service: auth-network``
+
+Check that auth-network exists by running:
+
+.. code-block:: bash
+
+   docker network ls
+
+To get the host IP of your openldap container from ``auth-network``, run the following:
+
+.. code-block:: bash
+
+   docker inspect auth-network
+
+You should see a container named ``openldap_openldap_1`` with an ``IPv4Address`` value. This
+value will be used as the Host value in your LDAP authentication settings page.
+For more information on enabling LDAP Authentication, see :ref:`Enable LDAP Authentiation <ldap-enabling>`.
+
+.. note::
+
+   If you make changes to ``config/factories.yml`` after starting docker, you will
+   need to restart your ``atom_worker`` container by running ``docker compose restart
+   atom_worker`` for changes to take place.
 
 Connect to AtoM
 ===============
