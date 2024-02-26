@@ -23,7 +23,7 @@ Database backup - overview of options
 .. _phpMyAdmin: https://www.phpmyadmin.net/
 .. _MySQL Workbench: https://www.mysql.com/products/workbench/
 
-We recommend reviewing the overview linked below provided by Wordpress
+We recommend reviewing the overview linked below provided by WordPress
 for backing up AtoM data, as both applications use MySQL:
 
 * `Backing up your database <https://wordpress.org/support/article/backing-up-your-database/>`_
@@ -141,7 +141,7 @@ Translations backup
 Each public AtoM release includes new :term:`user interface` translations 
 supplied by the global AtoM translation community. However, users with 
 sufficient :term:`permissions <access privilege>` can also add local 
-user interface translations directly via AtoM's user inteface. For more 
+user interface translations directly via AtoM's user interface. For more 
 information, see: 
 
 * :ref:`translate-interface`
@@ -154,7 +154,7 @@ to backup the translation files in the ``/apps/qubit/i18n`` directory.
    At this time, we are troubleshooting challenges in the translation migration
    process from older releases to |version|. Please see issue
    `#5505 <https://projects.artefactual.com/issues/5505>`__ for progress - we
-   will update this documentation with instructions when the tranlsation
+   will update this documentation with instructions when the translation
    migration process has been optimized and tested. Thank you in advance for
    your patience.
 

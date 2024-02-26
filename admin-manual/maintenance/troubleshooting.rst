@@ -59,7 +59,7 @@ differently if accessed from home as opposed to work (i.e. might firewalls, VPNs
 or other restrictions be affecting your access)? Is the issue particular to a
 specific user or group, or does it affect all users? If it's an error related to
 a task supported by the job scheduler, is it just this one task that isn't working,
-or are all jobs failling? And so forth.
+or are all jobs failing? And so forth.
 
 With a detailed step-by-step guide to reproducing the issue, we can now better
 diagnose the problem and consider what we can try to resolve it.
@@ -522,7 +522,7 @@ after regular business hours.
 
 .. TIP::
 
-   If you don't need to reindex all :term:`entity types <entity>`, you
+   If you don't need to re-index all :term:`entity types <entity>`, you
    might want to try using the task's ``--exclude-types`` option. See the full
    task documentation for more details:
 

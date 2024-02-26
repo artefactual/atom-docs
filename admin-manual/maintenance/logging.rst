@@ -44,7 +44,7 @@ The ``factories.yml`` file in AtoM has 4 main environmentally-aware
 ``dev`` (for development and debugging - i.e. ``qubit_dev.php``, when the site
 is in :ref:`debug-mode`), and ``all``, which are  the default settings
 inherited by the other factories, unless they are more explicitly defined
-within each and overrriden. According to Symfony:
+within each and overridden. According to Symfony:
 
     When symfony needs a value from a configuration file, it merges the
     configuration found in the current environment section with the ``all``
@@ -115,7 +115,7 @@ EMERG-level messages. Setting ``level`` to DEBUG will log all events.
    Logging: http://symfony.com/legacy/doc/gentle-introduction/1_4/en/16-Application-Management-Tools#chapter_16_logging
 
 
-Example 1: Add a cli factory for increased logging
+Example 1: Add a CLI factory for increased logging
 --------------------------------------------------
 
 You can also add new factories to the ``factories.yml`` file, to create custom

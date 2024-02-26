@@ -818,7 +818,7 @@ query to protect the root ID of those records, like so:
    User account and contact information slugs are always randomly generated -
    they are not based on the user name. Generally, you shouldn't need to
    delete these slugs - when they are regenerated, they will still be random.
-   If you are experiencing problems that you suspect orginate from a missing
+   If you are experiencing problems that you suspect originate from a missing
    user slug, try running the    :ref:`generate slugs task <cli-generate-slugs>` 
    first.
 
@@ -886,7 +886,7 @@ restart PHP-FPM, and repopulate the search index. See:
 * :ref:`maintenance-clear-cache`
 * :ref:`maintenance-populate-search-index`
 
-If you don't want to reindex your entire site (which may take time), you can
+If you don't want to re-index your entire site (which may take time), you can
 use the ``search:populate`` task's ``--slug`` option to update the index 
 just for the record whose slug you updated. See the 
 :ref:`indexing task <maintenance-populate-search-index>` documentation for more
@@ -1169,14 +1169,14 @@ typo, or adding the same default content to a field. Once again, SQL can help us
 
 **Fixing typos globally in a field**
 
-For this example, let's say we've accidentally entered "digtal image" instead of 
+For this example, let's say we've accidentally entered "digital image" instead of 
 "digital image" throughout our descriptions. Now we want to replace all 
-occurences of "digtal image" in the *Extent and medium* field across all our
+occurences of "digital image" in the *Extent and medium* field across all our
 descriptions in English with the corrected version, "digital image":
 
 .. code-block:: mysql
 
-   UPDATE information_object_i18n SET extent_and_medium=REPLACE(extent_and_medium, 'digtal image', 'digital image') WHERE culture='en';
+   UPDATE information_object_i18n SET extent_and_medium=REPLACE(extent_and_medium, 'digital image', 'digital image') WHERE culture='en';
 
 Another example: let's globally replace the word "tea" with the word "coffee" in the
 scope and content field of all English descriptions across AtoM:
@@ -1558,8 +1558,8 @@ creation, accumulation, etc).
 
 .. _sql-update-actor-history:
 
-Upate the history field of an authority record
-----------------------------------------------
+Update the history field of an authority record
+-----------------------------------------------
 
 The following example covers how the biographical or administrative history field 
 (:ref:`ISAAR-CPF <isaar-template>` 5.2.2) can be updated via SQL. 
@@ -1775,7 +1775,7 @@ second query example in the section above:
 * :ref:`sql-taxonomy-name-id` 
 
 Let's say we want to add a Spanish translation for the Genre taxonomy, which 
-we've determed has an ID of 78 in our installation. 
+we've determined has an ID of 78 in our installation. 
 
 If there is already a Spanish taxonomy name present in the database, we can
 update it with: 
@@ -1858,8 +1858,8 @@ To make the fields reusable where relevant across :term:`entity` types, notes
 are stored in their own tables. Additionally, the property tables are used to
 extend the basic data model to support additional fields - for example, the 
 :term:`information object` (AKA :term:`archival description`) database schema
-was modeled against the `ICA's`_ :ref:`ISAD(G) <isad-template>` standard, but 
-the Canadian :ref:`RAD <rad-template>` standard (which was originally adapated 
+was modelled against the `ICA's`_ :ref:`ISAD(G) <isad-template>` standard, but 
+the Canadian :ref:`RAD <rad-template>` standard (which was originally adapted 
 from the AACR2 library cataloguing standard) includes many additional fields. 
 These were instead added to the property tables as key-value pairs, linked by
 ID back to the information object tables as needed. 
@@ -1884,7 +1884,7 @@ The ``note`` and ``note_i18n`` tables include fields such as:
 * Note fields found in the Control :term:`areas <information area>` of various
   :term:`entity` types (such as descriptions and authority records);
 * Notes particular to certain standards templates, such as the Canadian 
-  :ref:`RAD <rad-template>` standard template (exmaples include Physical 
+  :ref:`RAD <rad-template>` standard template (examples include Physical 
   description note, Conservation note, Sources of title proper, etc)
 
 The actual field labels for each note type are stored in the term tables, so
