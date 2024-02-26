@@ -508,7 +508,7 @@ steps involved in searching for
      :term:`facet filter` available on the left-hand column of the search
      results page. For more information on Facet filters in AtoM, see:
      :ref:`recurring-facet-filters`. There is also a general digital object
-     filter inclued in the :term:`Advanced search panel` - see
+     filter included in the :term:`Advanced search panel` - see
      :ref:`advanced-search`.
 
 * **F**: The :term:`Clipboard` icon appears on all archival description
@@ -957,7 +957,7 @@ Location information                   x5
 Processing notes                       x5
 Immediate source of acquisition        x5
 Archival/custodial history             x5
-Appraisal, desctruction and scheduling
+Appraisal, destruction and scheduling
 Physical condition
 Primary contact name
 Received extent units
