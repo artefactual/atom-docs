@@ -260,7 +260,7 @@ is the query string.
    ``/api/informationobjects/?sq0=taxes+AND+investments&sf0=scopeAndContent``
 
    This is the same as manually increasing the parameter numbers and repeating
-   the criteria indivudually, like so:
+   the criteria individually, like so:
 
    ``/api/informationobjects?sq0=taxes&sfo=scopeAndContent&sq1=investments&sf1=scopeAndContent``
 
@@ -323,7 +323,7 @@ The filter parameters below are the same as those found in the
 small variations (such as the ``skip`` parameter).
 
 In many cases, the parameters expect internal IDs as the values for the
-parameters. Since these ids are automatically generated via mysql autonumerics
+parameters. Since these ids are automatically generated via MySQL autonumerics
 (and thus subject to change over time), and because all :term:`terms <term>`
 in AtoM exist in user-editable :term:`taxonomies <taxonomy>`, it is not possible
 to list all available options for each parameter - it will depend on the data
@@ -382,7 +382,7 @@ include:
   The options available are identical to those found in the
   :ref:`recurring-sort-button` for archival descriptions, and are described
   below. When the parameter is not included, the default sort order is
-  whatever has been set in the :ref:`sort-browser-users` setting. Otions:
+  whatever has been set in the :ref:`sort-browser-users` setting. Options:
 
   * ``identifier``: sort results by :term:`reference code`
   * ``alphabetic``: sort results alphabetically. Note that in AtoM,
@@ -423,7 +423,7 @@ include:
     they are under copyright: ``/api/informationobjects?copyrightStatus=335``
 
 * **materialType**: Relates to the Canadian
-  :ref:`RAD standard's <rad-template>` General material desgination (GMD)
+  :ref:`RAD standard's <rad-template>` General material designation (GMD)
   terms - terms are found in AtoM's Material type  :term:`taxonomy`.
   Returns results limited to those linked to a particular GMD term. Expects
   the internal ID of a particular :term:`term` from the Material type taxonomy

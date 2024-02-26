@@ -8,7 +8,7 @@ AtoM maintains an `Elasticsearch <http://www.elasticsearch.org/>`__ search
 index to provide fast, full-text search results with
 :term:`faceting <Facet filter>`.
 
-Occasionaly it is necessary to repopulate the Elasticsearch index from the
+Occasionally it is necessary to repopulate the Elasticsearch index from the
 primary database, especially after operations that affect many records, e.g.
 
 * Importing data (CSV or EAD import)
@@ -44,7 +44,7 @@ The ``--application`` and ``--env`` options **should not be used** - AtoM
 requires the uses of the pre-set defaults for Symfony to be able to execute
 the task.
 
-The ``--slug`` option can be used to specify a specifc resource to be 
+The ``--slug`` option can be used to specify a specific resource to be 
 re-indexed. If the target resource is hierarchical (i.e. an 
 :term:`archival description` with lower-level :term:`children <child record>`), 
 the descendant records will also be indexed. If you **don't** want lower-level
@@ -73,7 +73,7 @@ Below is a list of the types that can be excluded using this option:
 
 * :term:`accession <accession record>`
 * actor (i.e. :term:`authority record`)
-* aip (indexed during a DIP upload from `Archivematica <https://www.archivematica.org/>`__)
+* AIP (indexed during a DIP upload from `Archivematica <https://www.archivematica.org/>`__)
 * :term:`function`
 * informationobject (i.e. :term:`archival description`)
 * repository (i.e. :term:`archival institution`)

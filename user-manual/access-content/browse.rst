@@ -67,7 +67,7 @@ information.
    :alt: Search box with browse menu
 
 The browse options listed below are in their default order, however,
-adminstrative users can change the order, or remove browse options, through
+administrative users can change the order, or remove browse options, through
 the Admin-Menus menu (see: :ref:`Manage menus <manage-menus>`).
 
 **Jump to:**
@@ -176,7 +176,7 @@ disengage this filter by clicking the **X** on the "Only top-level descriptions"
 :ref:`browse-hierarchy-top-filter`).
 
 The automatic sort is alphabetic by default for public users and by most
-recently updated (date modifed) for authenticated users, but users can
+recently updated (date modified) for authenticated users, but users can
 change the sort to most recently updated, identifier, reference code, and start
 or end date, using the :ref:`sort button <recurring-sort-button>` located at the
 top-right of the page above the results.
@@ -223,7 +223,7 @@ Additionally, the results include helpful contextual information, including:
    :alt: An image of a search results stub
 
 * *Level of description* - i.e. fonds, series, file, item, etc. The
-  :term:`level of description` will be diplayed next to the orange identifier,
+  :term:`level of description` will be displayed next to the orange identifier,
   below the title of the record.
 * *Publication status* - if a description's :term:`publication status` is
   "draft" (i.e. it is not visible to public users), the draft status will be
@@ -368,7 +368,7 @@ Using the top-level description filter
 
 
 3. Choose a description by clicking the hyperlink description name.
-4. To see all child-l;evel descriptions, You can display all results by clicking
+4. To see all child-level descriptions, You can display all results by clicking
    the **X** on the "top-level descriptions" :term:`filter tag`.
 5. You can continue to refine your browsing using :term:`facet filter` or :ref:`advanced-search`.
 
@@ -412,7 +412,7 @@ unit is not included in the "Part of" facet filter).
    unit. This will be indicated, and can be quickly removed, via the
    :term:`filter tag` with the name of the unit at the top of the
    search/browse results page. You can continue to apply further facets and
-   fliters as desired to narrow your results within the selected archival unit.
+   filters as desired to narrow your results within the selected archival unit.
 
 
 .. _browse-hierarchy-list:
@@ -468,7 +468,7 @@ the other options in this part of the context menu.
    AtoM will reload all search/browse results (i.e. the page will no longer be
    limited to the selected archival unit).
 
-4. You can continue to apply further facets and fliters as desired to narrow
+4. You can continue to apply further facets and filters as desired to narrow
    your results within the selected archival unit.
 
 .. SEEALSO::
@@ -540,7 +540,7 @@ descriptive hierarchy.
    :width: 70%
    :alt: An image of the Digital object browse page limited to a collection
 
-4. You can continue to apply further facets and fliters as desired to narrow
+4. You can continue to apply further facets and filters as desired to narrow
    your results within the selected archival unit.
 
 .. SEEALSO::
@@ -727,7 +727,7 @@ limited to the current :term:`archival unit`.
    The Quick search bar will accept Boolean operators (see
    :ref:`advanced-search-operators` for more information), including the ** * **
    wildcard character. If you just want to use the Quick search to access the
-   browse link, you can enter an asterix and press enter - AtoM will return
+   browse link, you can enter an asterisk and press enter - AtoM will return
    a subset of all results, and then provide the browse link.
 
    Of course, an easier way to do this would be to use the "Browse as list"
@@ -806,7 +806,7 @@ view, pictured above, or the "table" view:
    :alt: View of browsing archival institutions, table view
 
 In the table view, the columns that appear as blue hyperlinks (the Name,
-Region, and Locality columnns) can be clicked to sort the results
+Region, and Locality columns) can be clicked to sort the results
 alphabetically by that column. Click the column header once to sort in
 descending (A-Z) order; click again to sort in ascending (Z-A) order.
 
@@ -1304,7 +1304,7 @@ the Digital object browse page to a "list" view like that found on the
    :alt: The view toggle button on the Description browse page
 
 Users can also use the other facets and filters available in the
-:ref:`recurring-facet-filters` and the :ref:`advanced-search` panel to furthe
+:ref:`recurring-facet-filters` and the :ref:`advanced-search` panel to further
 narrow results.
 
 .. SEEALSO::

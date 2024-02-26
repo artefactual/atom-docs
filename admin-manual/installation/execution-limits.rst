@@ -162,7 +162,7 @@ Adjusting PHP script execution limits
 After making configuration changes
 ==================================
 
-If you do make changes to the PHP configuration poool and/or the ``php.ini``
+If you do make changes to the PHP configuration pool and/or the ``php.ini``
 default settings, you should restart PHP-FPM after, and clear your application
 caches and restart Memcached (if you're using it as cache engine).
 
@@ -189,7 +189,7 @@ caches and restart Memcached (if you're using it as cache engine).
 
    *  https://www.slideshare.net/accesstomemory/atoms-command-line-tasks-an-introduction
 
-   New to using the unix command-line? If so, this slide deck will help you
+   New to using the UNIX command-line? If so, this slide deck will help you
    get started:
 
    * https://www.slideshare.net/accesstomemory/commandline-101

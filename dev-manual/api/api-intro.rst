@@ -48,7 +48,7 @@ not, check the box and then save the change using the Save button located in the
 
 .. TIP::
 
-   Setting not taking effect? In some cases, a system administator with access
+   Setting not taking effect? In some cases, a system administrator with access
    to the command-line may have to restart your webserver and php-fpm for the
    changes to take effect. We also recommend clearing the application cache. If
    you are using our recommended installation configuration (see:
@@ -69,7 +69,7 @@ an API key, so you can send requests to the available endpoints. See
 .. SEEALSO::
 
    For more information on available plugins in AtoM, see:
-   :ref:`manage-plugins`. For more information on Symonfy 1.x plugin
+   :ref:`manage-plugins`. For more information on Symfony 1.x plugin
    development, consult the Symfony Project
    `documentation <http://symfony.com/legacy/doc>`__; in particular, see this
    section on Plugins:

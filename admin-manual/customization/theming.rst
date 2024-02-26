@@ -4,7 +4,7 @@
 Theming
 =======
 
-AtoM themes can be customized by editing the appropriate css/scss and .php files,
+AtoM themes can be customized by editing the appropriate CSS/SCSS and .php files,
 or you can create a custom theme.
 
 Please note AtoM 2.7 introduced a new version of the Bootstrap (“BS5”) web
@@ -148,7 +148,7 @@ To change the logo for BS5 themes, add the logo to `plugins/arCustomThemeB5Plugi
 Style changes can be made directly to, or linked in, the `main SCSS file <https://github.com/artefactual-labs/arThemeB5Plugin/blob/main/scss/main.scss>`_.
 Custom javascripts can be added to the js directory and linked in the `main js file <https://github.com/artefactual-labs/arThemeB5Plugin/blob/main/js/main.js>`_.
 
-For additional functionlity modifications, copy files required into the new `plugins/arCustomThemeB5Plugin`
+For additional functionality modifications, copy files required into the new `plugins/arCustomThemeB5Plugin`
 directory for overwriting. Due to file precedence, when copying files, first
 check the `plugins/arDominionB5Plugin` for the required file, and only copy from
 `apps/qubit` when the file is not found in `plugins/arDominionB5Plugin`. Files

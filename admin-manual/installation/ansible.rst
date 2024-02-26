@@ -35,4 +35,4 @@ many machines are involved.
    or point us to the area of the code that needs to be changed. Thank you!
 
 Ryerson University Library & Archives leads the development of a similar
-solution targetting Chef. `Their repositories are open source <https://github.com/ryersonlibrary?utf8=%E2%9C%93&query=atom>`_.
+solution targeting Chef. `Their repositories are open source <https://github.com/ryersonlibrary?utf8=%E2%9C%93&query=atom>`_.

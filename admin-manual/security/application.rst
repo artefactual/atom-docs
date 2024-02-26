@@ -82,7 +82,7 @@ Change this value to:
 
    read_only: true
 
-Once again, you will need to restart PHP-FPM after editing tihs file. 
+Once again, you will need to restart PHP-FPM after editing this file. 
 
 .. IMPORTANT::
    

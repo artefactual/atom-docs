@@ -279,7 +279,7 @@ via a friendly :term:`user interface`.
 * **Copyright status**: AtoM :term:`archival description` templates include a
   the ability to add Rights statements, drawn from elements of the
   `PREMIS <http://www.loc.gov/standards/premis/>`__
-  (Preservation Medata: Impmlementation Strategies) metadata standard
+  (Preservation Metadata: Implementation Strategies) metadata standard
   maintained by the U.S. Library of Congress. Through this module, a user can
   add a copyright status to an archival description (with values including
   Public Domain, Under copyright, or Unknown). This filter will limit search
@@ -328,7 +328,7 @@ via a friendly :term:`user interface`.
     :term:`search box` will require you to restart your search from the
     beginning.
 
-12. Your search can be modified at any time and the results refrehsed
+12. Your search can be modified at any time and the results refreshed
     accordingly by simply changing the required search terms and
     :term:`fields <field>`, and clicking "Search" once again. You can also
     restart your search at any time; simply click the "Reset" button in the
@@ -593,7 +593,7 @@ By default in AtoM, the :term:`Boolean search` settings of AtoM are set to
 use **AND** as the default operator when multiple search terms are entered.
 This means that by default, a search for *city hall* will return results that
 include "city" **AND** "hall" - however, the order of terms doesn't matter in
-the results returned, and they may not necesarily appear together.
+the results returned, and they may not necessarily appear together.
 
 **To search for an exact phrase** in AtoM, use double quotes to contain the
 terms you wish to search. For example, search *"city hall"* to return results
@@ -647,7 +647,7 @@ Note that there are many complex factors that go into how search relevance is
 determined and ranked in Elasticsearch, and it may not always be immediately
 apparent why some records appear higher in the returned results than others.
 For example, the number of other words in a given field will affect how
-elasticsearch ranks the relevance. So a search for "photographs" might return
+Elasticsearch ranks the relevance. So a search for "photographs" might return
 a result higher in the list that ONLY has the word photographs in the scope
 and content, than one where the word "photograph" appears in a 20-word long
 title - even though the added weights to the title field are technically
@@ -660,10 +660,10 @@ Boolean operators
 ------------------
 
 In AtoM, :term:`Boolean search` operators are supported in the :term:`search
-box` and in the Adanced search menu. Boolean searching is a particular
+box` and in the Advanced search menu. Boolean searching is a particular
 application of what is known as Boolean logic, a subset of algebra used for
 creating true/false statements. Since computers operate in binary (using ones
-and zeroes), computer logic can often be expressed in boolen terms
+and zeroes), computer logic can often be expressed in boolean terms
 (true/false). Boolean expressions use a number of operators, the most common
 of which are **AND**, **OR**, and **AND NOT**. Using Boolean operators in
 terms of search queries (i.e. Boolean search) allows a user to limit, widen, or
@@ -686,7 +686,7 @@ search interface.
    use **AND** as the default operator when multiple search terms are entered.
    This means that by default, a search for *chocolate cake* will return results
    that include "chocolate" **AND** "cake". If you want to broaden your search
-   to return records that include either term, you must expclitly use the OR
+   to return records that include either term, you must explicitly use the OR
    operator.
 
 **Using Boolean operators in the AtoM search box:**
@@ -762,7 +762,7 @@ search interface.
 +--------+-------------------------------------------------------------------+
 | ``[]`` | Closed interval range search. Example: ["Frogstar" TO             |
 |        | "Magrathea"] will return results in the alphabetic range          |
-|        | between "Frogstar" and "Magrathea", including"Frogstar" and       |
+|        | between "Frogstar" and "Magrathea", including "Frogstar" and      |
 |        | "Magrathea".                                                      |
 +--------+-------------------------------------------------------------------+
 | ``{}`` | Open interval range search. Example: {"Frogstar" TO "Magrathea"}  |
@@ -785,7 +785,7 @@ Expert searching and indexed Elasticsearch fields
 =================================================
 
 Below is a list of all indexed archival description field names as they are
-found in Elasticsearch. Expert users can use the infomation below to target
+found in Elasticsearch. Expert users can use the information below to target
 search queries to specific indexed fields, and implement search parameters
 otherwise not directly available via the :term:`user interface`.
 
@@ -852,7 +852,7 @@ must be entered as part of the field name, because nested within each i18n
 element of the index there will be a different term for each language.
 
 In the full field list below, some fields listed include ``%LANG%`` - this is
-a **placeholder** indicating that you must insert the specifc 2-letter ISO
+a **placeholder** indicating that you must insert the specific 2-letter ISO
 language code for the culture you want to search in - e.g. ``en`` for English,
 ``fr`` for French, etc. For example, the Extent and medium field is listed
 below as: ``i18n.%LANG%.extentAndMedium``.

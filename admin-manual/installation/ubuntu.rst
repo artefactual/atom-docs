@@ -353,7 +353,7 @@ In case your MySQL server is **not** the same as your web server, replace
 
 .. warning::
 
-   Plase make sure that you are using an empty database! Don't reuse an old
+   Please make sure that you are using an empty database! Don't reuse an old
    database unless it's empty. You can always drop it by using the
    :command:`DROP DATABASE` command and then create it again.
 
