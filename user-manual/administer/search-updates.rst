@@ -113,7 +113,7 @@ administrators can easily add new updates to the clipboard for export.
    The number of results per page is controlled by the Results per page
    setting in |gears| **Admin > Settings**. By default, this setting shows 10
    results per page, but an :term:`administrator` can change this. For more
-   infomation, see: :ref:`results-page`.
+   information, see: :ref:`results-page`.
 
 10. You can add results directly to the :term:`Clipboard` using the links in
     the right-hand column of the results table. To add all the results

@@ -965,7 +965,7 @@ are viewing only the holdings of a particular institution.
    :alt: An image of an archival description browse page, limited to the holdings
          of a particular repository, with insittutional scoping enabled.
 
-You can remove the insitutional scoping and see all global browse results a
+You can remove the institutional scoping and see all global browse results a
 number of different ways:
 
 * By clicking the **X** on the :term:`filter tag` for the repository at the top
@@ -994,7 +994,7 @@ of the current :term:`repository`.
    :alt: An image of an institution block with the browse menu open
 
 If you follow these links, the institution block will remain visible on the
-related browse page, and if a background color has been applied to the instituion,
+related browse page, and if a background color has been applied to the institution,
 it will also be present on the browse page.
 
 .. TIP::
@@ -1168,7 +1168,7 @@ redirect you to a term view page, described below.
    and can be edited by authenticated (i.e. logged in) users with edit rights. For
    more information on the fields available and their uses, see:
    :ref:`term-data-entry`.
-6. Below the :term:`treeview`, addtional :term:`facet filters <facet filter>` that
+6. Below the :term:`treeview`, additional :term:`facet filters <facet filter>` that
    can be applied to the browse results are listed, if available. For more 
    information on using facet filters in AtoM, see: :ref:`recurring-facet-filters`.
 7. If a user is authenticated (i.e. logged in) and has edit permissions, a

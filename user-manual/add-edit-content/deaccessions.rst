@@ -24,7 +24,7 @@ practice.
 In AtoM, a :term:`deaccession record` can be added to an existing
 :term:`accession record`. The deacession record comprises several basic
 fields to capture information about the materials being deaccession and the
-reasons behind the deaccssion. Fields include:
+reasons behind the deaccession. Fields include:
 
 * Deaccession number
 * Scope (whole accession, or only part)

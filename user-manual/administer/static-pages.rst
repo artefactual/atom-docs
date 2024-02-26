@@ -273,7 +273,7 @@ To edit an existing static page in AtoM:
    * Alternatively, if a link to the static page has been added to the 
      |info| :ref:`Quick links menu <quick-links-menu>` found in the 
      :term:`main menu` of the :term:`header bar`, you can open this menu and 
-     select the static page you woul like to edit from the :term:`drop-down menu`.
+     select the static page you would like to edit from the :term:`drop-down menu`.
 
 .. TIP::
 
@@ -853,7 +853,7 @@ Produces:
 
 .. TIP::
 
-   Resuing existing Bootstrap CSS classes is a good way to style elements when
+   Reusing existing Bootstrap CSS classes is a good way to style elements when
    you have the htmlpurifier_ setting engaged - see above,
    :ref:`security-static-pages` for more information.
 
@@ -872,7 +872,7 @@ You can add styled boxes around text by wrapping content in the HTML ``<div>``
 element, and then using inline CSS to modify the
 appearance of the box. For colors, use the HTML or RGB values for the color you
 would like to use, rather than generic names such as "red," "blue," etc. - most
-browsers support a limited pallette of colors using names such as this, and the
+browsers support a limited palette of colors using names such as this, and the
 results may be inconsistent across browsers. There are many free HTML color
 wheels available that allow you to choose a color and copy its HTML# or RGB
 values; for example: http://www.colorpicker.com/

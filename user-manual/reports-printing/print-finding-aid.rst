@@ -172,7 +172,7 @@ on using the Visible elements module, see: :ref:`visible-elements`.
    the description before you can generate a finding aid. You will still have
    the option to upload a finding aid - but remember, if the associated
    description is in Draft mode, users won't be able to access it, or your
-   uplaoded finding aid until it's published.
+   uploaded finding aid until it's published.
 
 :ref:`Back to top <print-finding-aids>`
 

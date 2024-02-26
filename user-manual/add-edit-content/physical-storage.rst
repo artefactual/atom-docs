@@ -493,7 +493,7 @@ Visibility and physical storage
 ===============================
 
 Administrators are able to choose to make physical storage information
-available to unauthenicated (not logged-in) users or not through the
+available to unauthenticated (not logged-in) users or not through the
 :ref:`Visible elements <visible-elements>` section of the Admin menu.
 
 .. image:: images/physical-storage-hide.*
@@ -507,7 +507,7 @@ To access the visible elements menu, click on the |gears|
 :term:`drop-down menu`.
 
 Click on "Physical storage" to show the Physical storage check box. Check the
-box to allow unauthenicated users to see storage information or uncheck to
+box to allow unauthenticated users to see storage information or uncheck to
 disallow. Click save.
 
 If visible, physical storage information will appear in the right hand column

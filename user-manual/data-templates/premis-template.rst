@@ -61,7 +61,7 @@ values, drawn from PREMIS, are:
 * Policy
 * Statute
 
-A user with suffient :term:`permissions <access privilege>` can modify
+A user with sufficient :term:`permissions <access privilege>` can modify
 existing terms or add new terms to the taxonomy. When new terms are added,
 they will show up in the configurable Permissions table found in **Admin >
 Settings > Permissions**. For more information, see:

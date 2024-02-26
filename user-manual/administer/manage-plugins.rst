@@ -53,7 +53,7 @@ arDacsPlugin   Describing Archives: A Content Standard (DACS).
 sfIsaarPlugin  International Standard Archival Authority Record for Corporate
                Bodies, Persons and Families (ISAAR (CPF)).
 sfIsdfPlugin   International Standard for Describing Functions (ISDF).
-sfDcPlugin     Simple Dubin Core (DC).
+sfDcPlugin     Simple Dublin Core (DC).
 sfEacPlugin    Encoded Archival Context (EAC).
 sfEadPlugin    Encoded Archival Description (EAD).
 sfRadPlugin    Rules for Archival Description (RAD).

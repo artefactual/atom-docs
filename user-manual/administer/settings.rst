@@ -589,7 +589,7 @@ installation, the default text label is "Search our collection."
    :width: 90%
    :alt: An image of the Institution search holdings label settings
 
-The institution block's dedicted browse menu can also be customized via **Admin
+The institution block's dedicated browse menu can also be customized via **Admin
 > Manage menus**, under the ``browseInstitution`` menu - for more information
 on working with menus, see: :ref:`manage-menus`.
 
@@ -721,7 +721,7 @@ When set to "No," generated slugs will only allow digits, letters, and dashes.
 Sequences of unaccepted characters (e.g. accented or special characters, etc.)
 are replaced with valid characters such as English alphabet equivalents or
 dashes. When set to to "Yes," AtoM will allow upper case characters, any valid
-unicode characters as specified in
+Unicode characters as specified in
 `RFC 3987`_ including accented characters, and some special characters such
 as: ``, - _ ~ : = * @``. For further details, see:
 
@@ -793,7 +793,7 @@ Using the default SWORD deposit (```/tmp```) will not work and setfacl should no
 used on the ```/tmp``` directory as it could cause security issues when setting new
 permissions.
 
-If you are using the `archivematica` user to rsync from Archivematoca to AtoM,
+If you are using the `archivematica` user to rsync from Archivematica to AtoM,
 you can create a new SWORD deposit directory on ```/home/archivematica```.
 
 First, install the `acl` package on Ubuntu or CentOS:
@@ -819,7 +819,7 @@ Set the ACL on new directory:
 
 The ACL sets `rw-` permissions for files and `rwx` permissions for directories
 for the nginx user and then the `www-data` (or `nginx`) user can delete the
-temporay DIP directory.
+temporary DIP directory.
 
 .. NOTE::
 
@@ -833,7 +833,7 @@ new files when mounting cifs or nfs on ``/etc/fstab``.
 
 .. _maps-api-key:
 
-Google Maps Javascript API key setting
+Google Maps JavaScript API key setting
 --------------------------------------
 
 This setting allows you to store and use a Google Maps API key - AtoM relies
@@ -947,7 +947,7 @@ AtoM will fall back to the default behavior of generating the XML on request.
 
 In an OAI-PMH request, if a cached version of the EAD 2002 XML is available,
 AtoM will serve it in response to ``oai_ead`` requests - if there is **not** a
-cached version, then AtoM will return a "Metadata format unavailable" reponse.
+cached version, then AtoM will return a "Metadata format unavailable" response.
 In contrast, if no cached DC XML exists, the OAI Repository module will
 generate DC XML on the fly to respond to the request. For further information,
 see: :ref:`oai-pmh`.
@@ -1041,7 +1041,7 @@ and general information on the structure of the report, see:
 
 .. NOTE::
 
-   This setting does **not** impact CSV imports peformed from the command-line.
+   This setting does **not** impact CSV imports performed from the command-line.
    However, the validation task can be run independently from an import via
    the command-line as well. For more information, see:
 
@@ -1206,7 +1206,7 @@ the digital objects selected for download.
 
 Note that if the user checks the "Include digital objects" checkbox in the
 export options screen, it is no longer possible to include descendants in the
-export, and the "Include descendents" checkbox will be greyed out. This is a
+export, and the "Include descendants" checkbox will be greyed out. This is a
 safeguard designed to prevent users from deliberately or inadvertently exporting
 large descriptive hierarchies with hundreds or thousands of digital objects
 attached at descendant levels of description.
@@ -1350,7 +1350,7 @@ dynamic Google map in the Digital object metadata
 .. IMPORTANT::
 
    To be able to enable this setting, you must first request a Google MAPS
-   `API Key`_, and the Google Maps Javascript API key setting in |gears|
+   `API Key`_, and the Google Maps JavaScript API key setting in |gears|
    **Admin > Settings > Global** must be populated - see: :ref:`maps-api-key`
 
 When unchecked, the above elements will be hidden from display after you save
@@ -1412,7 +1412,7 @@ Diacritics
 
 Diacritics, also known as accents, are dots and glyphs written above or
 below certain letters of the alphabet of many languages, indicating something
-about thir pronounciation. Languages using diacritics vary from using a single
+about their pronunciation. Languages using diacritics vary from using a single
 diacritic to multiple diacritics on a single letter.
 
 AtoM uses `Elasticsearch <https://www.elastic.co/products/elasticsearch>`__ (ES)
@@ -1583,7 +1583,7 @@ Add/Remove languages
 
 AtoM relies on volunteer translators from the community to support new language
 options. The translations are managed using an Artefactual-hosted instance of
-`Weblate`_ and community members can learn more about contibuting translations
+`Weblate`_ and community members can learn more about contributing translations
 here:
 
 * https://wiki.accesstomemory.org/Resources/Translation
@@ -1783,7 +1783,7 @@ counter is used to inform the incremental value used in the
    can only automatically track and increment the number based on accessions
    created manually via the :term:`user interface`. This is another reason why
    the accession counter is an editable value - if you perform a CSV import of
-   accessions, you may wish to manualy increment the counter to the correct
+   accessions, you may wish to manually increment the counter to the correct
    value, to ensure consistency.
 
 .. _enable-identifier-mask:
@@ -1824,7 +1824,7 @@ Identifier mask
 
 The Identifier mask can be used to manage the creation of unique
 :term:`archival description` identifier values when creating new
-descriptins. By enabling the identifier mask, all descriptions created through
+descriptions. By enabling the identifier mask, all descriptions created through
 the user interface will be assigned an identifier based on a pre-defined pattern.
 
 On installation, the identifier mask is **disabled** by default - to change
@@ -1879,7 +1879,7 @@ number in sequence.
    AtoM can only automatically track and increment the number based on records
    created manually via the :term:`user interface`. This is another reason why
    the identifier counter is an editable value - if you perform a CSV import
-   of descriptions, you may wish to manualy increment the counter to the
+   of descriptions, you may wish to manually increment the counter to the
    correct value, to ensure consistency.
 
 .. _reference-code-separator:
@@ -1887,7 +1887,7 @@ number in sequence.
 Reference code separator
 ------------------------
 
-The reference code separator is the character separating hierarchal elements
+The reference code separator is the character separating hierarchical elements
 in a :term:`reference code` (see Inherit reference code,
 :ref:`below <inherit-reference-code>`).The default reference code separator
 appears as a dash ``-`` in AtoM, which can be changed by an
@@ -2209,7 +2209,7 @@ For information on configuring the PREMIS access statements, see:
 For information on configuring and using the Copyright statement, see:
 :ref:`copyright-pop-up`.
 
-For information on configurating and using the Preservation system access
+For information on configuring and using the Preservation system access
 statement, see: :ref:`preservation-access-statement`.
 
 :ref:`Back to top <settings>`
@@ -2497,7 +2497,7 @@ has uploaded Dissemination Information Package (DIP) access copies to AtoM.
 .. NOTE::
 
    By default this will only enable Archivematica File and AIP download for
-   users that are members of the "Adminstrator" group.
+   users that are members of the "Administrator" group.
 
 5. Browse to a digital object that was created using the DIP Upload feature.
    Download links are located to the right of the File and AIP UUIDs.
@@ -2818,7 +2818,7 @@ the treeview sort setting is set to "Manual." For more information, see:
    on the order of the in the `ASCII`_ character encoding scheme. This can
    result in seemingly wrong orders when sorting by identifier- for example,
    1-1 will be followed by 1-10 instead of 1-2. The solution is to use
-   **leading zeroes** when forumulating identifiers that you wish to sort in a
+   **leading zeroes** when formulating identifiers that you wish to sort in a
    human- readable order, e.g. 1-01, 1-02, etc.
 
 .. _fullwidth-treeview-settings:
@@ -3043,7 +3043,7 @@ For more information, see :ref:`upload-digital-object`.
 
 .. TIP::
 
-   While this setting sets a default global limit per repository, an indiviual
+   While this setting sets a default global limit per repository, an individual
    upload limit can also be set by an :term:`administrator` on a per-repository
    basis, from the :term:`archival institution` page. For more information, see:
    :ref:`upload-limit`.

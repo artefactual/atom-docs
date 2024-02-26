@@ -130,7 +130,7 @@ To link a single :term:`digital object`:
    :width: 80%
    :alt: A image of the link digital object edit page
 
-4. **To upload a digital object locally**, cick the "Choose File" button to
+4. **To upload a digital object locally**, click the "Choose File" button to
    navigate to and select a file on your computer or device. Click "Open" once
    the item has been selected from the window that will appear.
 5. **To link to an object on the internet**, enter the URL to the external
@@ -233,7 +233,7 @@ include an "Access Copies" subsection.
 4. If the Reference representation or Thumbnail representation is deleted via
    the "Edit digital object" page, then the "Reference copy" and/or "Thumbnail 
    copy" metadata is no longer displayed on the archival description view 
-   page. Additionaly, the thumbnail is not show on Browse pages and the 
+   page. Additionally, the thumbnail is not show on Browse pages and the 
    reference copy is not displayed on view pages.
 
 5. The filename for each representation is either shown as plain text or as a
@@ -310,7 +310,7 @@ Digital object metadata for preservation files
 If you or another user of a preservation system (e.g. 
 `Archivematica`_) has sent a :ref:`DIP upload <archivematica:upload-atom>` to 
 an :term:`archival description` :term:`slug` in AtoM then thumbnails for the 
-digital objects in that Dissemenation Information Package (DIP) will be 
+digital objects in that Dissemination Information Package (DIP) will be 
 displayed in the archival description's digital object :term:`carousel`.
 
 .. NOTE::
@@ -366,7 +366,7 @@ include a "Preservation Copies" and "Access Copies" subsection.
 
 6. An administrator user can toggle the display of specific "Digital object 
    metadata" section fields on or off via **Admin > Visible elements > Digital 
-   object metadata area**. This only affects display for unauthenticted users. 
+   object metadata area**. This only affects display for unauthenticated users. 
    Any authenticated users will see all metadata elements in each section as 
    long as those fields contain a value. For more 
    information, see: :ref:`visible-elements`. 
@@ -430,7 +430,7 @@ similar:
    can either upload a digital object, or link to an existing digital object
    available on the internet.
 
-4. **To upload a digital object locally**, cick the "Choose File" button to
+4. **To upload a digital object locally**, click the "Choose File" button to
    navigate to and select a file on your computer or device. Click "Open" once
    the item has been selected from the window that will appear.
 5. **To link to an object on the internet**, enter the URL to the external
@@ -574,7 +574,7 @@ description.
 7. If necessary, you can click the black "X" icon on the top right of the
    thumbnail generated to remove an object from the upload. You can also add
    additional objects either by dragging them in, or by using the "Add more" link 
-   provived in the top right corner of the upload area.
+   provided in the top right corner of the upload area.
 
 .. NOTE::
 
@@ -880,7 +880,7 @@ Google account. For more information, see:
 * https://developers.google.com/maps/documentation/javascript/get-api-key
 
 Additionally, in **Admin > Settings > Default page elements**, the "Digital
-obect map" setting checkbox must be checked. Remember to save your changes in
+object map" setting checkbox must be checked. Remember to save your changes in
 the Settings area!
 
 .. image:: images/digi-map-setting.*
@@ -954,7 +954,7 @@ values to an existing digital object (Examples show this process for
 4. When you save the record, AtoM will return you to the archival
    description's :term:`view page`. In the Digital object metadata area, you
    should now see a Google map showing your coordinates with a pin. You can
-   zoom, pan, change the map type, and clik to view a full Google map in a new
+   zoom, pan, change the map type, and click to view a full Google map in a new
    tab.
 
 .. image:: images/digi-object-map.*
@@ -970,7 +970,7 @@ values to an existing digital object (Examples show this process for
    Find your location on a map - zoom in to make it as precise as possible. If
    you right-click and select the "What's here?" option that will appear in
    the context menu that appears, Google Maps will display the latitude and
-   longitude values, along with any addtional information it has:
+   longitude values, along with any additional information it has:
 
    .. image:: images/google-lat-longs.*
       :align: center
@@ -1144,7 +1144,7 @@ To delete a :term:`digital object` that has been uploaded and linked to an
 Adding a watermark to reference images
 ======================================
 
-A system administator can place a watermark file in AtoM's root directory, so
+A system administrator can place a watermark file in AtoM's root directory, so
 a digital watermark is overlayed over all :term:`reference display copy` images
 generated when a digital object is uploaded.
 
@@ -1227,7 +1227,7 @@ AtoM:
 +----------------+--------------------------------+--------------------------+
 |                | Vorbis                         | Apple Computer QuickDraw |
 +----------------+--------------------------------+--------------------------+
-|                | WavPack                        | Quicktime Graphisc SMC   |
+|                | WavPack                        | Quicktime Graphics SMC   |
 +----------------+--------------------------------+--------------------------+
 |                | Windows Media Audio 1          | RealVideo RV10           |
 +----------------+--------------------------------+--------------------------+

@@ -204,7 +204,7 @@ retrieval information is excluded), and sorted by :term:`reference code`:
 
 Now here is the same item list report, but with the :ref:`reports-public-setting`
 Admin setting set to "No" (so retrieval information is *included* this time),
-and sorted by Retrieval information. Notice the addtional column to the
+and sorted by Retrieval information. Notice the additional column to the
 right, called "Retrieval information," that includes :term:`physical storage`
 information:
 

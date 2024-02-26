@@ -134,7 +134,7 @@ Edit theme for an archival institution
 
 In :term:`multi-repository systems <multi-repository system>` institutions
 can change the appearance of individual institution pages and results pages
-by uploading an instution logo, banner and changing the background colour.
+by uploading an institution logo, banner and changing the background colour.
 For instructions, see
 :ref:`Archival institutions- Edit theme <edit-institution-theme>`
 

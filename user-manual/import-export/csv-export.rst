@@ -29,7 +29,7 @@ A CSV file consists of a number of records (rows), that have identical fields,
 separated by commas (or in some cases, another separator). Often a header
 column (i.e. the cell values in first or top row of a CSV file) is included,
 naming each column and indicating what kind of data the column contains. Data
-is then entered using a separator or delimitor (such as a comma) to indicate a
+is then entered using a separator or delimiter (such as a comma) to indicate a
 separation of fields (or cells), and a line break or carriage return to
 indicate rows (i.e. different records). Most spreadsheet applications (such as
 OpenOffice Calc or MS Excel) can open CSV files and express them as a
@@ -395,7 +395,7 @@ RAD description template.
             export
 
    For public users, the download notification will remain visible as you
-   navigate around AtoM until you click the "**X**" to remove the notifcation.
+   navigate around AtoM until you click the "**X**" to remove the notification.
 
 9. On the jobs page, authenticated users will find information about the
    export job, including a download link when the task is done. Check the "Job
@@ -443,7 +443,7 @@ If digital objects are included in the export, they will be contained in the
 same ZIP package as the CSV files. 
 
 Note that if the "Include digital objects" checkbox is checked, it is no longer
-possible to include descendants in the export, and the "Include descendents"
+possible to include descendants in the export, and the "Include descendants"
 checkbox will be greyed out. This means you will need to individually add the
 descriptions with digital objects to the clipboard if you want to export them,
 rather than just adding a parent description.

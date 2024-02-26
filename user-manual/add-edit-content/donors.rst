@@ -8,13 +8,13 @@ The `SAA Glossary <http://www2.archivists.org/glossary>`__ defines a donor as
 "*An individual or organization who gives property or money to another without
 reciprocal compensation,*" adding that in many instances, "*individuals who
 donate collections are not the provenance of the collection.*" This implies
-that a donor is not nessarily the :term:`creator` of the materials being
+that a donor is not necessarily the :term:`creator` of the materials being
 donated to a :term:`repository` - rather, they are the last legal custodian of
 the records before they are passed to a :term:`repository` for long-term
 preservation.
 
 In AtoM, donor records can be used more generically than the SAA Glossary
-defintion - they can be used to manage records of all individuals who supply
+definition - they can be used to manage records of all individuals who supply
 records and other materials to a repository, whether freely or with the
 expectation of compensation. Donor records are a way to maintain a record of
 the provenance of :ref:`accessions <accession-records>`, so that donors can be
@@ -85,7 +85,7 @@ Using the donor dialog in the accessions template
    :alt: An image of the Manage menu
 
 2. In the :term:`accession record` :term:`edit page`, Navigate to the
-   "Donor/Trasferring body" :term:`information area` and click the "Add new"
+   "Donor/Transferring body" :term:`information area` and click the "Add new"
    button.
 
 .. image:: images/add-new-donor.*
@@ -109,7 +109,7 @@ Using the donor dialog in the accessions template
    complete the related fields in the dialog as needed. Fields available in
    the :term:`donor dialog` include:
 
-   * **Name** - an autcomplete field where you can link to an existing donor
+   * **Name** - an autocomplete field where you can link to an existing donor
      record or enter a new name to create a new donor record.
    * **Main tab:**
 
@@ -136,7 +136,7 @@ Using the donor dialog in the accessions template
 
    When new information is entered into the :term:`donor dialog`, a new Donor
    record is created. Alternatively, if you have selected an existing donor
-   using the autcomplete values in the Name field, you can edit the existing
+   using the autocomplete values in the Name field, you can edit the existing
    contact information.
 
 5. Once you have completed entering the donor information, click on the
@@ -342,7 +342,7 @@ that you would like to associate with the donor. To do so:
    :term:`information areas <information area>` closed; click on an
    information area to access the :term:`fields <field>` grouped under it.
 5. In the :term:`accession record` :term:`edit page`, Navigate to the
-   "Donor/Trasferring body" :term:`information area` and click the "Add new"
+   "Donor/Transferring body" :term:`information area` and click the "Add new"
    button.
 
 .. image:: images/add-new-donor.*

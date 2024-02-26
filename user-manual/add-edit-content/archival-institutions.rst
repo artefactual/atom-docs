@@ -198,8 +198,8 @@ archival institution in :term:`edit mode`.
 
 .. _add-institution-description-edit:
 
-Add a new archival instituion from an archival description edit page
---------------------------------------------------------------------
+Add a new archival institution from an archival description edit page
+---------------------------------------------------------------------
 
 A new archival institution can be generated from an :term:`archival description`
 record at any time; it does not first have to be created separately.
@@ -436,7 +436,7 @@ populated based on data entered into the "Type" :term:`field` in the Identity
 
 The **Geographic subregion** and **Thematic area** facets are managed as
 :term:`access points <access point>`, and must be manually added in the
-Access points :term:`area <information area>` of the archival institiution
+Access points :term:`area <information area>` of the archival institution
 :term:`edit page`. Similar to the :term:`place` and :term:`subject` access point
 fields available on :term:`archival descriptions <archival description>`, all
 access points included by default or added by users are managed as
@@ -695,7 +695,7 @@ Change the background color of an archival institution
 This new design feature allows authenticated (i.e. logged in)
 :term:`administrators <administrator>` to customize their archival institution
 record by changing the background color of the page. Users can choose and
-modify (i.e. hue, tint) a color from a pre-determined color pallette.
+modify (i.e. hue, tint) a color from a pre-determined color palette.
 Changing the background color in an archival institution :term:`edit page`
 will automatically change the background color of all the :term:`archival
 description` pages linked to that specific institution.
@@ -743,8 +743,8 @@ description` pages linked to that specific institution.
    background for all related :term:`archival descriptions
    <archival description>` as well. Use the slider on the right of the
    :term:`color picker` drop-down to select a **hue** - you can click or drag
-   the slider bar to dynamically change the color in the pallette. Use the
-   pallette to select a **tint** - you can click or drag in the pallette to
+   the slider bar to dynamically change the color in the palette. Use the
+   palette to select a **tint** - you can click or drag in the palette to
    dynamically change the color. There is also a text-box provided where you
    can manually enter a :term:`hex color code` if you with. The selected
    color will be displayed in the small preview box next to the
@@ -782,7 +782,7 @@ Add/edit a logo to an existing archival institution
 Authenticated (i.e. logged in) :term:`administrators <administrator>` also have
 the option to customize the :term:`archival institution` record by adding a logo
 to the institution's page. Below are instructions to :ref:`add a logo
-<add-logo>` and :ref:`edit and/or delete an exisiting logo <edit-logo>` for an
+<add-logo>` and :ref:`edit and/or delete an existing logo <edit-logo>` for an
 archival institution.
 
 .. _add-logo:
@@ -860,10 +860,10 @@ appearing above the name of the archival institution, as well as on any
 
 .. _edit-logo:
 
-Edit/remove an exisiting logo for an archival institution
+Edit/remove an existing logo for an archival institution
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**To edit an exisiting logo:**
+**To edit an existing logo:**
 
 1.  Navigate to the :term:`archival institution` you wish to edit. You can do
     this by :doc:`browsing <../access-content/browse>` or
@@ -885,7 +885,7 @@ Edit/remove an exisiting logo for an archival institution
    :alt: An image of the edit theme button in the button block
 
 3.  From here, navigate to the "Style" area, under the "Logo" :term:`field`,
-    click the "Browse" button under the exisiting logo.
+    click the "Browse" button under the existing logo.
 
 .. image:: images/upload-new-logo.*
    :align: center
@@ -966,7 +966,7 @@ Once uploaded, the banner will appear on the archival institution's :term:`view
 page`, below the institution's name. Unlike the institution's logo, the banner
 will *not* appear on any :term:`archival description` pages linked to the
 archival institution. Below are instructions to :ref:`add a banner <add-banner>`
-and :ref:`edit and/or delete an exisiting banner <edit-banner>` for an archival
+and :ref:`edit and/or delete an existing banner <edit-banner>` for an archival
 institution.
 
 .. _add-banner:
@@ -1058,7 +1058,7 @@ Edit/remove an existing banner for an archival institution
    :alt: An image of the edit theme button in the button block
 
 3.  From here, navigate to the "Style" area, under the "Logo" :term:`field`,
-    click the "Choose file" button under the exisiting logo.
+    click the "Choose file" button under the existing logo.
 4.  A separate window will open; select the image on your computer that you'd
     like to replace the existing banner with. See the :ref:`previous section
     <banner-size-requirements>` for direction on AtoM **sizing requirements**
@@ -1223,7 +1223,7 @@ the :term:`user interface`.
 
 3. Navigate to |gears| **Admin > Settings** and scroll down to near the bottom
    of the Global settings page. Add your Maps API key to the field marked
-   "Google Maps Javascript API key setting." For more information, see:
+   "Google Maps JavaScript API key setting." For more information, see:
    :ref:`maps-api-key`. Don't forget to save your settings after making
    changes, using the :term:`button block` at the bottom of the Settings page.
 
@@ -1313,7 +1313,7 @@ left-hand side of the institution's page.
    :width: 50%
    :alt: An image of the archival institution upload limit settings
 
-3. A dialogue box will apear that will allow for 1 of 3 options:
+3. A dialogue box will appear that will allow for 1 of 3 options:
 
    * **Disable uploads** will prevent users from uploading any
      :term:`digital objects <digital object>`.

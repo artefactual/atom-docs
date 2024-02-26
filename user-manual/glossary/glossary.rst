@@ -188,7 +188,7 @@ Glossary
     logic, a subset of algebra used for creating true/false statements
     originally developed by George Boole, a 19th century English
     mathematician. Since computers operate in binary (using ones and zeroes),
-    computer logic can often be expressed in boolen terms (true/false).
+    computer logic can often be expressed in Boolean terms (true/false).
     Boolean expressions use a number of operators, the most common of which
     are AND, OR, and NOT - using Boolean operators in terms of search queries
     (Boolean search) allows a user to limit, widen, or otherwise define a
@@ -196,8 +196,8 @@ Glossary
     search statements,allowing complex queries to be expressed in human-
     readable form - for example, searching "fonds OR collection" would widen a
     search to include results that have either term in their title. In AtoM,
-    boolean search operators are supported in the :term:`search box` and in
-    the Adanced search menu - see: :ref:`Search <search-atom>` and
+    Boolean search operators are supported in the :term:`search box` and in
+    the Advanced search menu - see: :ref:`Search <search-atom>` and
     :ref:`Advanced search <advanced-search>`.
 
   Breadcrumb trail
@@ -271,7 +271,7 @@ Glossary
   Clipboard
     The Clipboard is a :term:`user interface` element that allows users to
     select records while searching and browsing, and add them to a list (the
-    "clipboard"), for later review or further action. Authenicated users (i.e.
+    "clipboard"), for later review or further action. Authenticated users (i.e.
     those logged in) can also perform CSV exports of Clipboard results via the
     user interface. The clipboard is **session-based** - meaning that it does
     not persist between user sessions. When you close your browser, any
@@ -298,12 +298,12 @@ Glossary
   Color picker
     A color picker is a graphical :term:`user interface` element that allows
     users to set a :term:`hex color code` when theming an element of the
-    application by selecting from a visual representation of a color pallette,
+    application by selecting from a visual representation of a color palette,
     instead of keying in alphanumeric values such as a :term:`hex color code`.
     In AtoM, the color picker is made up of a text-box where users can enter a
     :term:`hex color code`, a preview box where the color selected is
     displayed, a slider (on the right-hand side of the drop-down) where a user
-    can select a hue, and a pallette (main part of drop-down) where a user can
+    can select a hue, and a palette (main part of drop-down) where a user can
     select a tint. In AtoM a color picker is used when choosing the background
     color of an :term:`archival institution` - see:
     :ref:`change-institution-background`.
@@ -363,7 +363,7 @@ Glossary
     in all term edit pages. Examples of default converse terms include: *is the
     parent of* and *is the child of*, or *is the employer of* and *is the
     employee of*. Actor relation terms are used in the ISAAR Relationships
-    dialogue to establish relationshps between
+    dialogue to establish relationships between
     :term:`authority records <authority record>`. When one term is added as a
     relationship qualifier to an authority record, its converse term will
     automatically appear on the related authority record. A term whose converse
@@ -417,7 +417,7 @@ Glossary
     fields, separated by commas (or in some cases, another separator). Often a
     header column (i.e. the cell values in first or top row of a CSV file) is
     included, naming each column and indicating what kind of data the column
-    contains. Data is then entered using a separator or delimitor (such as a
+    contains. Data is then entered using a separator or delimiter (such as a
     comma) to indicate a separation of fields (or cells), and a line break or
     carriage return to indicate rows (i.e. different records). Most
     spreadsheet applications (such as OpenOffice Calc or MS Excel) can open
@@ -761,7 +761,7 @@ Glossary
     Archives (`ICA <http://www.ica.org/>`__) defines a function as "Any
     high level purpose, responsibility or task assigned to the
     accountability agenda of a corporate body by legislation, policy or
-    mandate. Functions may be decomposed into sets of co-ordinated
+    mandate. Functions may be decomposed into sets of coordinated
     operations such as subfunctions, business processes, activities, tasks
     or transactions" (ISDF Glossary).
 
@@ -789,8 +789,8 @@ Glossary
     :ref:`atom-header-bar`.
 
   Hex color code
-    A hexidecimal color code is a method of expressing web based colors using
-    hexidecimal notation. Hexidecimal notatation is a positional numerical
+    A hexadecimal color code is a method of expressing web based colors using
+    hexadecimal notation. Hexadecimal notation is a positional numerical
     system that uses a base of 16 distinct symbols (0-9 to represent values
     zero to nine, A-F to represent values ten to fifteen) to represent binary
     notation in a more human-readable manner. In a hex color code, 6
@@ -1151,7 +1151,7 @@ Glossary
     of* and *is the employee of*, while examples of a default self-reciprocal
     terms include *is the sibling of* and *is the associate of*. Actor relation
     :term:`terms <term>` are used in the ISAAR Relationships dialogue to
-    establish relationshps between :term:`authority records <authority record>`.
+    establish relationships between :term:`authority records <authority record>`.
     When one term is added as a relationship qualifier to an authority record,
     its converse term will automatically appear on the related authority record.
     Terms marked as self-reciprocal will automatically appear similarly on

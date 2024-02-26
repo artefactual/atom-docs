@@ -209,8 +209,8 @@ Sources
 "Record the sources consulted in establishing the description." ISDIAH 5.6.8,
 ISAAR 5.4.8, ISDF 5.4.8
 
-"Record relevant information about sources conslulted in establishing or
-revising the description." DACS 8.1.3. **Note** that this field is labeled
+"Record relevant information about sources consulted in establishing or
+revising the description." DACS 8.1.3. **Note** that this field is labelled
 "Sources used" in the :ref:`DACS template <dacs-template>`.
 
 .. image:: images/control-area-sources.*
@@ -254,7 +254,7 @@ prepared it." ISAD 3.7.1
 
 "Record the name(s) of the person(s) who created or revised the description,
 as well as the creation or revision date." DACS 8.1.5. **Note** that this
-field is labeled "Archivist and date" in the
+field is labelled "Archivist and date" in the
 :ref:`DACS template <dacs-template>`.
 
 .. image:: images/control-area-archivists-notes.*

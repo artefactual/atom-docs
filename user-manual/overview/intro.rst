@@ -89,7 +89,7 @@ Therefore **there is no cost to download any of the software required to run
 the AtoM application.**
 
 Our documentation is also freely available under a  Creative Commons
-Attribution-ShareAlike 3.0 Unported licence (`CC BY SA
+Attribution-ShareAlike 3.0 Unported license (`CC BY SA
 <http://creativecommons.org/licenses/by-sa/3.0/>`__), and we maintain a free
 public `User forum <https://groups.google.com/forum/#!forum/ica-atom-users>`__.
 

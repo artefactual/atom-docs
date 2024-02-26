@@ -84,7 +84,7 @@ privilege>` of either a group or a user by navigating between 4 different
 
 Clicking on a specific :term:`permissions tab` will direct you to the
 :term:`view page` of that permission, where the :term:`access privileges <access
-privilege>` for that permission will be displayed under a :term:`field` labeled
+privilege>` for that permission will be displayed under a :term:`field` labelled
 as *Action*. An authenticated (i.e. logged-in) :term:`administrator` can edit
 access privileges by switching from :term:`view mode` to :term:`edit mode`;
 simply click the :term:`"Edit" button <Edit button>` in the :term:`button
@@ -482,7 +482,7 @@ Default settings: Editor
 
 By default an editor can search, browse, create, edit/update, view draft, delete
 and export descriptions and edit :term:`controlled vocabulary`
-:term:`terms <term>`. However, editors do not have access to the administror
+:term:`terms <term>`. However, editors do not have access to the administrator
 tab. An editor can change the :term:`publication status` of an
 :term:`information object`. An editor can access the :term:`reference
 <reference display copy>` and :term:`master digital object`. An editor is also
@@ -839,7 +839,7 @@ to edit user permissions by archival description.
 6. A user's :term:`access privileges <access privilege>` can also be edited
    according to a specific *archival description* or *archival institution*. To
    do this, click on either the "Permissions by archival description"
-   or "Permisisons by archival institution" :term:`information area` to access
+   or "Permissions by archival institution" :term:`information area` to access
    the :term:`fields <field>` under them.
 7. To specify a user's access privileges for one or
    more specific :term:`archival descriptions <archival description>`, click on
@@ -931,13 +931,13 @@ permissions by archival description.
 6. A group's :term:`access privileges <access privilege>` can also be edited
    according to a specific *archival description* or *archival institution*. To
    do this, click on either the "Permissions by archival description"
-   or the "Permisisons by archival institution" :term:`information area` to
+   or the "Permissions by archival institution" :term:`information area` to
    access the :term:`fields <field>` under them.
 
 .. IMPORTANT::
 
    To limit a group's access privileges to one or more specific archival
-   institutions, you need to create a **new group** (or edit an exisiting custom
+   institutions, you need to create a **new group** (or edit an existing custom
    group), rather than edit one of the default user groups (e.g. editor or
    contributor). See: :ref:`add-group`
 
@@ -1564,7 +1564,7 @@ archival institution, you can remove those permissions using these steps:
    :alt: Example of how to remove permissions in a taxonomy.
 
    In this example, a user has been given permission to create new taxonomy
-   terms. In order to remoke this permission, an administrator would change
+   terms. In order to revoke this permission, an administrator would change
    the permission to deny, or to revert to the default for that user's group,
    change the permission to inherit.
 

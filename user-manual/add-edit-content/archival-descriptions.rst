@@ -215,7 +215,7 @@ and types of users in AtoM see: :ref:`User roles <user-roles>`.
    description :term:`edit page`.
 
    One populated, you can still edit the supplied value - place your cursor in
-   the identiier :term:`field` and make any desired changes.
+   the identifier :term:`field` and make any desired changes.
 
    An :term:`administrator` can also turn on a setting so that the identifier
    field is pre-populated with a unique value, based on the
@@ -360,7 +360,7 @@ for more information on navigation in AtoM.
    You must be logged in to be able to create a new :term:`archival
    description` in AtoM. See: :ref:`Log in <log-in>`.
 
-1. In the :term:`view page` of the parent :term:`archival description`, scoll
+1. In the :term:`view page` of the parent :term:`archival description`, scroll
    to the bottom of the record to the :term:`button block` and click the "Add
    new" button.
 
@@ -1078,7 +1078,7 @@ used within the cultural heritage community. For more information on
 standards used in AtoM, see: :ref:`descriptive-standards`.
 
 You can change the :term:`display standard` for an individual archival
-description in the adminstration area while editing an archival description.
+description in the administration area while editing an archival description.
 This allows you to choose a different description template per archival
 description than the template you have chosen in your AtoM
 :ref:`settings <default-templates>`. This includes at different levels of the
@@ -1414,7 +1414,7 @@ the filename of a linked digital object will be covered on the
    notification banner will appear at the top of the page acknowledging your
    edits. If the value you have entered for the slug has been changed by AtoM
    (e.g. sanitized to remove special characters, spaces, or capital letters,
-   or incremented to make the slug uniqe), the message will mention this so
+   or incremented to make the slug unique), the message will mention this so
    you can review the slug in your browser's address bar.
 
 .. image:: images/rename-slug-warning-banner.*
@@ -1505,7 +1505,7 @@ so:
      Note that for administrators, these usernames will appear as hyperlinks - an
      administrator can click the hyperlink to navigate to the related user's 
      :term:`profile <user profile>` page, where a full history of that user's 
-     desrciption modifications can be seen. For more information, see: 
+     description modifications can be seen. For more information, see: 
      :ref:`user-modification-history`. 
 
 .. image:: images/mod-history-1.*
@@ -1718,7 +1718,7 @@ lower level of description can also be moved so that it becomes a new
    orient yourself, a :term:`breadcrumb trail` will appear above the list of
    potential archival descriptions, indicating where in the
    :term:`archival unit's <archival unit>` you are currently located - this is
-   intented to help Users understand if they are moving the record to
+   intended to help Users understand if they are moving the record to
    a subfonds, series, sub-series, or a file.
 
 .. image:: images/move-breadcrumb.*

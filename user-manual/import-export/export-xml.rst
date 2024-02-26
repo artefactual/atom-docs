@@ -69,7 +69,7 @@ full EAD 2002 XML file can be generated.
    An :term:`administrator` does have the option of turning on a setting that
    will generate the XML for archival descriptions in advance on save, so that
    large files can be served up without needing to be generated on the fly.
-   There is also a command-line task that will allow a system administator to
+   There is also a command-line task that will allow a system administrator to
    generate cached XML for all existing descriptions.
 
    Note that pre-generated, cached XML files never contain
@@ -167,7 +167,7 @@ By default, the export is created on-request via the web browser.
    An :term:`administrator` does have the option of turning on a setting that
    will generate the XML for archival descriptions in advance on save, so that
    large files can be served up without needing to be generated on the fly.
-   There is also a command-line task that will allow a system administator to
+   There is also a command-line task that will allow a system administrator to
    generate cached XML for all existing descriptions.
 
    Note that pre-generated, cached XML files never contain
@@ -481,7 +481,7 @@ computer) that will allow you to "unzip" a ZIP file.
             export
 
    For public users, the download notification will remain visible as you
-   navigate around AtoM until you click the "**X**" to remove the notifcation.
+   navigate around AtoM until you click the "**X**" to remove the notification.
 
 9. On the jobs page, authenticated users will find information about the
    export job, including a download link when the task is done. Check the "Job
@@ -523,7 +523,7 @@ If digital objects are included in the export, they will be contained in the
 same ZIP package as the XML files. 
 
 Note that if the "Include digital objects" checkbox is checked, it is no longer
-possible to include descendants in the export, and the "Include descendents"
+possible to include descendants in the export, and the "Include descendants"
 checkbox will be greyed out. This means you will need to individually add the
 descriptions with digital objects to the clipboard if you want to export them,
 rather than just adding a parent description.
