@@ -135,7 +135,7 @@ Add a new accession record
    * :ref:`add-accession-alt-ids`
 
 4. The accession record edit template provides a variety of field types for
-   data entry (e.g., calendar, free-text, pop-up dialogs and :term:`drop-downs
+   data entry (e.g., calendar, free-text, pop-up dialogues and :term:`drop-downs
    <drop-down menu>`). Remember to click on each :term:`information area` to
    access the data entry fields grouped under it. Enter data as required
    (further information on filling out specific parts of the accession record
@@ -160,7 +160,7 @@ In addition to the primary accession number, you can also add additional
 alternative identifiers from the :term:`edit page` of an :term:`accession record`. 
 This can be useful for capturing legacy identifiers, transfer IDs, conservation
 treatment numbers, barcodes, and more. You can add multiple alternative 
-identifers, and each can be assigned a type (using :term:`terms <term>` managed 
+identifiers, and each can be assigned a type (using :term:`terms <term>` managed 
 as a user-editable controlled vocabulary in a :term:`taxonomy`) and an 
 accompanying free-text descriptive note. 
 
@@ -250,7 +250,7 @@ location, and Other details. Be sure to click on each tab and
 complete the related fields in the dialog as needed. Fields available in the
 :term:`donor dialog` include:
 
-* **Name** - an autcomplete field where you can link to an existing donor
+* **Name** - an autocomplete field where you can link to an existing donor
   record or enter a new name to create a new donor record.
 * **Main tab:**
 
@@ -277,7 +277,7 @@ complete the related fields in the dialog as needed. Fields available in the
 
 When new information is entered into the :term:`donor dialog`, a new Donor
 record is created. Alternatively, if you have selected an existing donor
-using the autcomplete values in the Name field, you can edit the existing
+using the autocomplete values in the Name field, you can edit the existing
 contact information.
 
 Donor records can be accessed via the :term:`main menu` by navigating to
@@ -499,7 +499,7 @@ accession records, see:
 Edit an existing accession record
 =================================
 
-Existing :term:`accession records <accession record>` can be upated at any
+Existing :term:`accession records <accession record>` can be updated at any
 time by a logged-in user with edit privileges.
 
 1. Navigate to the record you want to edit. You can do this via the
@@ -765,7 +765,7 @@ one that you would like to use.
 
 The accession record is not aimed at end-user description, but AtoM provides
 the option to create an archival description from an accession record to
-prevent uneccessary re-entry of existing data an improve a user's workflow.
+prevent unneccessary re-entry of existing data an improve a user's workflow.
 The following archival description :term:`fields <field>` inherit the data
 entered into the :term:`accession record`:
 
