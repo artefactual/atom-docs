@@ -765,7 +765,7 @@ one that you would like to use.
 
 The accession record is not aimed at end-user description, but AtoM provides
 the option to create an archival description from an accession record to
-prevent unneccessary re-entry of existing data an improve a user's workflow.
+prevent unnecessary re-entry of existing data an improve a user's workflow.
 The following archival description :term:`fields <field>` inherit the data
 entered into the :term:`accession record`:
 
