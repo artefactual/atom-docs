@@ -209,7 +209,7 @@ results to the holdings of the most recently viewed
 When the delimiter is set to limit search results to a specific
 :term:`archival institution`, :term:`typeahead` search results for
 :term:`archival descriptions <archival description>` will also be limited to
-the :term:`holdings` of that institution. However, other typehead results,
+the :term:`holdings` of that institution. However, other types head results,
 such as :term:`authority record` and :term:`archival institution`
 suggestions, will **not** be limited (instead AtoM will continue to make
 suggestions from all records in the application for those types).
@@ -424,7 +424,7 @@ steps involved in searching for
   contextual information, including:
 
   * *Level of description* - i.e. fonds, series, file, item, etc. The
-    :term:`level of description` will be diplayed next to the orange identifier,
+    :term:`level of description` will be displayed next to the orange identifier,
     below the title of the record.
   * *Publication status* - if a description's :term:`publication status` is
     "draft" (i.e. it is not visible to public users), the draft status will be
@@ -459,7 +459,7 @@ steps involved in searching for
   available on archival description search/browse pages can include:
 
   * **Language:** Filters for content in a different available language (i.e.,
-    if the content has been tranlsated into more than one language)
+    if the content has been translated into more than one language)
   * **Part of:** Allows users to limit results to
     :term:`children <child record>` of the selected top-level description
   * **Archival institution:** Limits results to only the holdings of the
@@ -888,7 +888,7 @@ Elasticsearch Authority record fields
 
 Below is a list of all indexed :term:`authority record` field names as they
 are found in Elasticsearch, the search index used in AtoM. Expert users can
-use the infomation below to target search queries to specific indexed fields,
+use the information below to target search queries to specific indexed fields,
 and implement search parameters otherwise not directly available via the
 :term:`user interface`. For more introductory information on syntax and basic
 use, see the Advanced search documentation - specifically,
@@ -1051,7 +1051,7 @@ Elasticsearch Accession record fields
 
 Below is a list of all indexed :term:`accession record` field names as they
 are found in Elasticsearch, the search index used in AtoM. Expert users can
-use the infomation below to target search queries to specific indexed fields,
+use the information below to target search queries to specific indexed fields,
 and implement search parameters otherwise not directly available via the
 :term:`user interface`. For more introductory information on syntax and basic
 use, see the Advanced search documentation - specifically,
@@ -1279,7 +1279,7 @@ Elasticsearch Archival institution record fields
 
 Below is a list of all indexed :term:`repository` field names as they
 are found in Elasticsearch, the search index used in AtoM. Expert users can
-use the infomation below to target search queries to specific indexed fields,
+use the information below to target search queries to specific indexed fields,
 and implement search parameters otherwise not directly available via the
 :term:`user interface`. For more introductory information on syntax and basic
 use, see the Advanced search documentation - specifically,
@@ -1476,7 +1476,7 @@ Elasticsearch term fields
 
 Below is a list of all indexed :term:`term` field names as they
 are found in Elasticsearch, the search index used in AtoM. Expert users can
-use the infomation below to target search queries to specific indexed fields,
+use the information below to target search queries to specific indexed fields,
 and implement search parameters otherwise not directly available via the
 :term:`user interface`. For more introductory information on syntax and basic
 use, see the Advanced search documentation - specifically,
