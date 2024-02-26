@@ -852,7 +852,7 @@ must be entered as part of the field name, because nested within each i18n
 element of the index there will be a different term for each language.
 
 In the full field list below, some fields listed include ``%LANG%`` - this is
-a **placeholder** indicating that you must insert the specifc 2-letter ISO
+a **placeholder** indicating that you must insert the specific 2-letter ISO
 language code for the culture you want to search in - e.g. ``en`` for English,
 ``fr`` for French, etc. For example, the Extent and medium field is listed
 below as: ``i18n.%LANG%.extentAndMedium``.
