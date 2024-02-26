@@ -151,7 +151,7 @@ The specific features of each treeview display option will be outlined below.
 * :ref:`context-menu-treeview-sidebar`
 * :ref:`context-menu-treeview-full`
 
-Users can also click on the "Quick search" tab to search for desriptions
+Users can also click on the "Quick search" tab to search for descriptions
 within the current archival unit. For more information on using the Treeview
 quick search, see: :ref:`treeview-search`.
 
@@ -461,7 +461,7 @@ elements:
    information on searching for terms, see: 
    :ref:`Searching for terms <dedicated-search-terms>`.
 
-2. Below the :term:`treeview`, addtional :term:`facet filters <facet filter>` 
+2. Below the :term:`treeview`, additional :term:`facet filters <facet filter>` 
    that can be applied to the browse results are listed, if relevant. For more 
    information on using facet filters in AtoM, see: :ref:`recurring-facet-filters`.
 
