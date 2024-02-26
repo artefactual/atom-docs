@@ -110,7 +110,7 @@ account` can enter their credentials (email and password) to log into the
 application. Once a user has successfully logged in, the log-in button will
 display their chosen user name. Clicking on the log-in button after logging in
 will reveal a :term:`drop-down menu` with the option to log out, or to visit
-the user's profile page, where a user can upate their credentials (username,
+the user's profile page, where a user can update their credentials (username,
 email, password).
 
 .. NOTE::
@@ -337,7 +337,7 @@ browse lists for key :ref:`entity types <entity-types>` in AtoM -
 When selecting from the Manage menu's :term:`drop-down <drop-down menu>`, the
 user is redirected to a browse page for the selected :term:`entity` or record
 type. Users can also access the :term:`Jobs <job>` page for managing
-asynchrononous jobs run in the background - for more information, see:
+asynchronous jobs run in the background - for more information, see:
 :ref:`manage-jobs`
 
 The Manage menu is distinct from the :term:`Browse menu` (available next to
@@ -521,7 +521,7 @@ drop-down includes an option to view all records for a particular record
 type - clicking the "View all" link for a particular type of record will
 redirect the user to a browse page of results.
 
-Additionaly, when a user has viewed an :term:`archival institution` record,
+Additionally, when a user has viewed an :term:`archival institution` record,
 clicking in the search box will reveal a set of :term:`radio buttons <radio
 button>` that allow the user limit the search results to the holdings of the
 most recently viewed :term:`archival institution`, or to search globally
@@ -744,7 +744,7 @@ Column headers
 
 :term:`Column headers <column header>` appear at the top of the lists on list
 pages and some browse results (e.g., :term:`subject` and :term:`place` browse
-pages), and give the name of the :term:`field` for whatever is being isted
+pages), and give the name of the :term:`field` for whatever is being listed
 below. On some pages, the column headers include a |caret-down-grey| caret
 icon next to the column header :term:`field` name - when pressed, these icons
 will reverse the sort order of the data in the list based on that column
@@ -828,7 +828,7 @@ includes:
 
 * :term:`Thumbnails <thumbnail>` of lower-level digital objects
 * The title of the description to which the digital object is attached (titles
-  are truncated with an `...` elipsis after 25 characters)
+  are truncated with an `...` ellipsis after 25 characters)
 * A draggable slider bar (for navigating with touch or using a mouse - right
   and left arrow keys can also be used for keyboard navigation)
 * If the lower-levels of description include more than 10 digital objects, a
@@ -974,7 +974,7 @@ being pulled from.
 **Archival descriptions**
 
 * **Language:** Filters for content in a different available language (i.e.,
-  if the content has been tranlsated into more than one language)
+  if the content has been translated into more than one language)
 * **Part of:** Allows users to limit results to
   :term:`children <child record>` of the selected top-level description
 * **Archival institution:** Limits results to only the holdings of the
@@ -1005,7 +1005,7 @@ standards-based data-entry template, see: :ref:`data-entry`.
 **Archival institutions**
 
 * **Language:** Filters for content in a different available language (i.e.,
-  if the content has been tranlsated into more than one language)
+  if the content has been translated into more than one language)
 * **Archive type:** Limits results to those with a type matching data in the
   "Type" :term:`field` in the Identity :term:`area <information area>` of the
   :ref:`ISDIAH <isdiah-template>` archival institution edit template
@@ -1041,7 +1041,7 @@ institution access points, see: :ref:`institution-access-points`.
   in the "Type of entity" :term:`field` available in the Identity :term:`area
   <information area>` of the :ref:`ISAAR <isaar-template>` edit template for
   :term:`authority records <authority record>`
-* **Maintained by:** Lmits results to those records being maintained by the
+* **Maintained by:** Limits results to those records being maintained by the
   related :term:`archival institution`. Depends on the authority being linked
   to a repository via the "Maintaining institution" field in the authority
   record - for more information, see: :ref:`link-repo-actor`.
@@ -1049,7 +1049,7 @@ institution access points, see: :ref:`institution-access-points`.
   :term:`access point` added to the Occupations field in the "Access points"
   :term:`area <information area>` of the authority record edit template.
 
-For more infomration on working with :term:`authority records <authority
+For more information on working with :term:`authority records <authority
 record>` for people, families, and :term:`corporate bodies <corporate body>`,
 see :ref:`authority-records`. For help with specific fields in the authority
 record edit template, see: :ref:`ISAAR(CPF) template <isaar-template>`.
@@ -1155,7 +1155,7 @@ records <authority record>`, :term:`terms <term>` (such as :term:`places
 <place>` and :term:`subjects  <subject>`), :term:`functions <function>`,
 :term:`physical storage` locations, donors,
 :term:`rights records <rights record>`, as well as on any other page or
-content type where a user might have to add, edit, or delte data (e.g.
+content type where a user might have to add, edit, or delete data (e.g.
 :term:`static pages <static page>`, user and group permissions pages, etc).
 In short, the :term:`button block` appears anywhere a user will need to
 perform actions (add, edit, delete, move, and/or duplicate) on user data
