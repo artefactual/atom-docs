@@ -4,7 +4,7 @@
 Theming
 =======
 
-AtoM themes can be customized by editing the appropriate css/scss and .php files,
+AtoM themes can be customized by editing the appropriate CSS/SCSS and .php files,
 or you can create a custom theme.
 
 Please note AtoM 2.7 introduced a new version of the Bootstrap (“BS5”) web
