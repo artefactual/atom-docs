@@ -5,7 +5,7 @@ Content Security Policy Headers
 ===============================
 
 Content Security Policy (`CSP`_) headers are a critical component of web security,
-serving as a robust defense against a wide range of online threats. These
+serving as a robust defence against a wide range of online threats. These
 headers, which are implemented on web servers and embedded within web pages,
 define a set of directives that instruct a browser on how to handle and restrict
 the execution of various web resources, such as scripts, stylesheets, and
@@ -262,7 +262,7 @@ adding:
 
    Content-Security-Policy-Report-Only: default-src 'self'; font-src 'self'; img-src 'self' https://www.gravatar.com/avatar/; script-src 'self'; style-src 'self'; frame-ancestors 'self';
 
-Note it is good to be as specific as possible without creating a maintainance
+Note it is good to be as specific as possible without creating a maintenance
 headache when specifying the domain. E.g. if all assets are loaded from the
 ``avatar`` endpoint, then it is better to be more specific than allow scripts
 to be run from the entire ``https://www.gravatar.com`` domain.

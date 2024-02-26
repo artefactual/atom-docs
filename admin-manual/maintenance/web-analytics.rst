@@ -399,7 +399,7 @@ description.
 3. The Category, Action and Label tracking parameters are arbitrary values
    that become dimensions in the `Google Analytics`_ event reports so you can
    adjust them conveniently. For example, we're going to use the URL of the
-   archival description as the Event label, so click the lego block button
+   archival description as the Event label, so click the Lego block button
    next to the field and select the "Click URL" variable.
 
 .. image:: images/gtm-tags-event.*
