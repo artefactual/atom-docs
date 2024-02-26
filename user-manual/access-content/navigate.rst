@@ -1036,7 +1036,7 @@ institution access points, see: :ref:`institution-access-points`.
 **Authority records (People & organizations)**
 
 * **Language:** Filters for content in a different available language (i.e.,
-  if the content has been tranlsated into more than one language)
+  if the content has been translated into more than one language)
 * **Entity type:** Limits results to those with a type matching data entered
   in the "Type of entity" :term:`field` available in the Identity :term:`area
   <information area>` of the :ref:`ISAAR <isaar-template>` edit template for

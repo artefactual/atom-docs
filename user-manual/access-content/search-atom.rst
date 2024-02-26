@@ -1038,7 +1038,7 @@ For more information on working with accession records in AtoM, see:
 
 5. You can click the |searchreset| button next to your search term in the
    dedicated search box to clear the field and begin a new search.
-   Alternately, simply place the cursor in the search box and enter a new
+   Alternatively, simply place the cursor in the search box and enter a new
    search term.
 6. When you have found the record you are searching for, click on its title in
    the results, and AtoM will redirect you to the selected accession record's

@@ -727,7 +727,7 @@ limited to the current :term:`archival unit`.
    The Quick search bar will accept Boolean operators (see
    :ref:`advanced-search-operators` for more information), including the ** * **
    wildcard character. If you just want to use the Quick search to access the
-   browse link, you can enter an asterix and press enter - AtoM will return
+   browse link, you can enter an asterisk and press enter - AtoM will return
    a subset of all results, and then provide the browse link.
 
    Of course, an easier way to do this would be to use the "Browse as list"
