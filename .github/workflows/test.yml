@@ -16,7 +16,7 @@ jobs:
         run: |
           pip install -r requirements.txt
           locale -a
-          sudo apt-get install -y hunspell-en-ca hypen-en-ca
+          sudo apt-get install -y hunspell-en-ca hyphen-en-ca
           locale -a
       - name: "Run build test"
         run: |
