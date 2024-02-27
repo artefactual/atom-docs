@@ -178,7 +178,7 @@ pseudoxml:
 	@echo "Build finished. The pseudo-XML files are in $(BUILDDIR)/pseudoxml."
 
 spelling:
-	$(SPHINXBUILD) -b spelling -D spelling_lang=en_CA $(ALLSPHINXOPTS) $(BUILDDIR)/spelling
+	$(SPHINXBUILD) -b spelling $(ALLSPHINXOPTS) $(BUILDDIR)/spelling
 	@echo
 	@echo "Build finished. The spelling files are in $(BUILDDIR)/spelling."
 
