@@ -1503,7 +1503,7 @@ Publication status
 
 **Template field** Publication status is available under the More tab located on the object view screen.
 
-**CSV column** ``publicationsStatus``
+**CSV column** ``publicationStatus``
 
 **RAD Rule** N/A
 
