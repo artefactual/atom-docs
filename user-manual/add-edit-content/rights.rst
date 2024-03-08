@@ -482,7 +482,7 @@ it to view/download the original.
 Example: Configuring copyright permissions
 ------------------------------------------
 
-Here is an example use case: 
+Here is an example use case:
 
 Suppose an institution has determined that their digital objects fall into
 3 categories: those that are in the public domain, those that are definitely
@@ -576,16 +576,16 @@ customizable access statement in its place:
    :alt: Example of an access statement shown when access to a reference
          display copy is restricted via PREMIS rights
 
-Depending on how you have configured the permissions (see above, 
-:ref:`rights-digital-object`), the access statement will also display in the 
+Depending on how you have configured the permissions (see above,
+:ref:`rights-digital-object`), the access statement will also display in the
 :term:`digital object` metadata :term:`information area` for relevant versions
-of the digital object that are restricted by rights: 
+of the digital object that are restricted by rights:
 
 .. image:: images/access-statement-do.*
    :align: center
    :width: 80%
-   :alt: Example of an access statement shown in the digital object metadata 
-         area when access to both the master and reference display copy are 
+   :alt: Example of an access statement shown in the digital object metadata
+         area when access to both the master and reference display copy are
          restricted via PREMIS rights
 
 .. SEEALSO::
@@ -639,29 +639,29 @@ Configure a preservation system access statement
 
 .. _Archivematica: https://www.archivematica.org/
 
-In addition to supporting the local upload or linking of 
+In addition to supporting the local upload or linking of
 :term:`digital objects <digital object>`, Atom also supports basic integration
-with `Archivematica`_, a digital preservation workflow system. When used 
+with `Archivematica`_, a digital preservation workflow system. When used
 together, Archivematica can generate access derivatives from preservation files
-to be uploaded in AtoM. For more information, consult the Archivematica 
+to be uploaded in AtoM. For more information, consult the Archivematica
 documentation:
 
 * :ref:`archivematica:upload-atom`
 
-Since access to preservation files is frequently not publicly available by 
-default, an :term:`administrator` can configure a custom preservation access 
-statement to appear next to preservation metadata displayed in AtoM's digital 
+Since access to preservation files is frequently not publicly available by
+default, an :term:`administrator` can configure a custom preservation access
+statement to appear next to preservation metadata displayed in AtoM's digital
 object metadata :term:`information area`. For more information on the display
-of preservation file metadata in AtoM, see: 
+of preservation file metadata in AtoM, see:
 
 * :ref:`digital-object-preservation`
 
 Access statements are intended to be user-friendly explanations of why access
 is restricted, and what the user can do (if anything) to gain access (for
 example, contact the Reference Archivist, etc). Preservation access statements
-can be configured by an :term:`administrator` separately from the 
+can be configured by an :term:`administrator` separately from the
 :ref:`Conditional and Disallow access statements <disallow-statements>` via
-AtoM's :ref:`permissions` settings. 
+AtoM's :ref:`permissions` settings.
 
 When enabled, this setting will display customizable text about any access
 conditions that might be placed on linked files that are held in an integrated
@@ -670,16 +670,16 @@ appear in the metadata section for original files and preservation copies.
 
 **Using the preservation access statement**
 
-The setting can be accessed by an :term:`administrator` via |gears| **Admin > 
-Settings > Permissions**. See: 
+The setting can be accessed by an :term:`administrator` via |gears| **Admin >
+Settings > Permissions**. See:
 
 * :ref:`permissions`
 
-To use the access statement, write the notice that applies to your 
-institution in the text field. For example, you may not distribute original 
-files and preservation copies over the Internet but do provide access to them 
-on a dedicated machine in your  reference room. So your preservation system 
-access statement may read: "Access only provided on reference room computer.". 
+To use the access statement, write the notice that applies to your
+institution in the text field. For example, you may not distribute original
+files and preservation copies over the Internet but do provide access to them
+on a dedicated machine in your  reference room. So your preservation system
+access statement may read: "Access only provided on reference room computer.".
 
 Toggle the "Enable access statement" option to "yes" and press "Save".
 
@@ -688,8 +688,8 @@ Toggle the "Enable access statement" option to "yes" and press "Save".
    :width: 90%
    :alt: Preservation system access statement
 
-The statement now appears next to a "Permissions" label in the **Digital 
-object metadata > Preservation Copies** section on your archival description 
+The statement now appears next to a "Permissions" label in the **Digital
+object metadata > Preservation Copies** section on your archival description
 view pages.
 
 .. image:: images/preservation-system-access-statement-display.*
@@ -714,7 +714,7 @@ In these cases, AtoM includes the ability to configure a customizable
 copyright pop-up notice, that will appear for all users when they try to
 access the :term:`master digital object`. The copyright pop-up must be viewed,
 and an "Accept" button clicked (acknowledging the terms in the pop-up), before
-access to the master digital object is granted. 
+access to the master digital object is granted.
 
 .. IMPORTANT::
 
@@ -741,7 +741,7 @@ access to the master digital object is granted.
 There are two ways the copyright pop-up can be configured - either it can be
 set globally to apply to **all** locally uploaded digital objects (even if no
 Rights statement is applied), or else it can be configured to show only
-under certain conditions, including the presence of a related Rights record. 
+under certain conditions, including the presence of a related Rights record.
 In this second case, the pop-up will come into effect when:
 
 * The copyright pop-up is enabled in |gears| **Admin > Settings >
@@ -811,8 +811,8 @@ Configuring the copyright pop-up
    :alt: An example of the Copyright statement preview page
 
 5. Clicking "Close" in the copyright statement preview tab will close the tab.
-6. If you want the copyright pop-up to apply globally to all digital objects, 
-   there is an additional setting below - Set the "Apply to every digital 
+6. If you want the copyright pop-up to apply globally to all digital objects,
+   there is an additional setting below - Set the "Apply to every digital
    object" radio button to "Yes":
 
 .. image:: images/copyright-pop-up-global.*
@@ -824,8 +824,8 @@ Configuring the copyright pop-up
    scroll down and click the "Save" button in the :term:`button block` at the
    bottom of the page.
 
-There are some additional configuration steps required for the copyright 
-pop-up to be properly applied - see below for more information. 
+There are some additional configuration steps required for the copyright
+pop-up to be properly applied - see below for more information.
 
 .. _copyright-pop-up-apply:
 
@@ -841,9 +841,9 @@ be seen:
 * The :term:`digital object` must be uploaded locally, **not** linked via a web
   address or URL (i.e. from an external site).
 * If you are not using the "Apply to every digital object" setting, then there
-  there is also an additional condition: a Rights statement with a Copyright 
-  basis and the Restriction set to "Conditional" must be attached to the 
-  associated :term:`archival description.`
+  there is also an additional condition: a Rights statement with a Copyright
+  basis and the Restriction set to "Conditional" must be attached to the
+  associated :term:`archival description`.
 
 **Step 1: Granting sufficient access**
 
@@ -867,10 +867,10 @@ permissions**:
    :ref:`manage-user-accounts`. For more information on configuring the
    permissions for Users and Groups, see: :ref:`edit-user-permissions`.
 
-If you are using the "Apply to every digital object" setting for the copyright 
+If you are using the "Apply to every digital object" setting for the copyright
 pop-up, then nothing else needs to be done. Otherwise, there are additional
-steps to configure so that the copyright pop-up will only be selectively 
-applied: 
+steps to configure so that the copyright pop-up will only be selectively
+applied:
 
 You will also need to ensure that the PREMIS Rights permissions you have
 configured in |gears| **Admin > Settings > Permissions** will allow your users
@@ -899,14 +899,14 @@ presented, we still have to apply the appropriate Rights to related
 
 .. NOTE::
 
-   These requirements only apply when using the copyright pop-up selectively. 
+   These requirements only apply when using the copyright pop-up selectively.
    If you have used the "Apply to every digital object" setting, then no
    associated Rights statement is required - the copyright pop-up will always
-   be displayed before users are granted access to locally stored 
+   be displayed before users are granted access to locally stored
    :term:`master digital objects <master digital object>`.
 
-Unless the global setting is used, the Copyright statement is only triggered 
-when specific PREMIS rights have been associated with the 
+Unless the global setting is used, the Copyright statement is only triggered
+when specific PREMIS rights have been associated with the
 :term:`archival description` to which the :term:`digital object` is attached:
 
 * **Act**: Whichever act you have chosen to be actionable in |gears| **Admin >
