@@ -146,8 +146,18 @@ Protocol (IP) network" (Wikipedia). When this is enabled, users attempting to
 log in will use the credentials associated with their LDAP account, instead 
 of local account credentials, when :ref:`logging in <log-in>` to AtoM. 
 
-.. IMPORTANT::
+LDAP authentication in AtoM, by default, uses StartTLS for encryption. StartTLS
+starts an unencrypted plaintext connection to the LDAP server, on port 389, then
+upgrades the connection to begin Transport Layer Security (TLS) encryption. The
+use of StartTLS is on by default, but can be disabled via settings in the
+:ref:`app.yml <config-app-yml>`.
 
+.. WARNING::
+
+   While StartTLS encryption on the LDAP server can be disabled, we strongly 
+   discourage doing so in a production environment.
+
+.. IMPORTANT::
    To enable LDAP authentication in AtoM, manually installing the ``php-ldap``
    extension is required.
 

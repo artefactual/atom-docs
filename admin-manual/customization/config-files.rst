@@ -184,6 +184,10 @@ such as:
   additional details.
 * ``directives``: The CSP `directives` setting contains the CSP policy that will
   be sent in the CSP header. See :ref:`csp-configuration` for additional details.
+* ``enable_tls_encryption``: Controls StartTLS encryption for LDAP authentication.
+  It defaults to true, even if this variable is not defined in the file, enabling
+  StartTLS, but can be set to false to disable StartTLS encryption. See
+  :ref:`ldap-enabling` for additional details.
 
 .. image:: images/app-yml-settings.*
    :align: center
