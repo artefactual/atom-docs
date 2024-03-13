@@ -139,20 +139,31 @@ Enabling LDAP authentication
 
 .. _LDAP: https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol
 
-AtoM can also be configured to authenticate users using (`LDAP`_ ), an "open, 
+AtoM can also be configured to authenticate users using `LDAP`_, an "open,
 vendor-neutral, industry standard application protocol for accessing and 
 maintaining distributed directory information services over an Internet 
 Protocol (IP) network" (Wikipedia). When this is enabled, users attempting to 
 log in will use the credentials associated with their LDAP account, instead 
 of local account credentials, when :ref:`logging in <log-in>` to AtoM. 
 
-Enabling LDAP authentication in AtoM requires manually editing a few AtoM 
-configuration files. For more general information on how to do this, see
-:ref:`Manage AtoM configuration files <customization-config-files>`.
+.. IMPORTANT::
 
-First, we'll need to make a small change in the ``config/factories.yml`` 
-configuration file. You can open this file with ``nano`` or another text editor 
-to make the changes. Starting from AtoM's root installation directory, run: 
+   To enable LDAP authentication in AtoM, manually installing the ``php-ldap``
+   extension is required.
+
+Enabling LDAP authentication in AtoM requires manually installing the LDAP extension
+and editing a few AtoM configuration files. For more general information on how
+to do this, see :ref:`Manage AtoM configuration files <customization-config-files>`.
+
+First, we'll need to install the php LDAP extension:
+
+.. code-block:: bash
+
+   sudo apt-get install php-ldap
+
+Next, make a small change in the ``config/factories.yml`` configuration file.
+You can open this file with ``nano`` or another text editor to make the changes.
+Starting from AtoM's root installation directory, run:
 
 .. code-block:: bash
 
@@ -191,8 +202,7 @@ Change the ``myUser`` value to ``ldapUser``:
     user:
       class: ldapUser
 
-Exit and save your changes, and the clear the application cache and restart 
-PHP-FPM.
+Exit and save your changes, then clear the application cache and restart PHP-FPM.
 
 * :ref:`maintenance-clear-cache`
 * :ref:`troubleshooting-restart-php-fpm`
