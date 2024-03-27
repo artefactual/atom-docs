@@ -2899,8 +2899,8 @@ first load
 Like the sidebar treeview, for performance reasons AtoM may not load all
 available descriptions at once in the full-width treeview, when there are many
 immediate :term:`children <child record>` below the top-level description in the
-:term:`archival unit`. The default value for this behavior is 50 - meaning, if
-there are more than 50 immediate children below the parent description, AtoM
+:term:`archival unit`. The default value for this behavior is 8000 - meaning, if
+there are more than 8000 immediate children below the parent description, AtoM
 will add a count of the number of remaining records not immediately displayed to
 a button in the top right corner.
 
