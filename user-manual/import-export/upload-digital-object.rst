@@ -200,7 +200,7 @@ Digital object metadata
 =======================
 
 When you link a digital object to an :term:`archival description`, the "Digital
-object metadata" section on the archival description :term:`view page` will 
+object metadata" section on the archival description :term:`view page` will
 include an "Access Copies" subsection.
 
 .. NOTE::
@@ -209,8 +209,8 @@ include an "Access Copies" subsection.
    copies" metadata if the archival description it is attached to has a
    "draft" instead of "published" status.
 
-1. Clicking on the "Access copies" subsection label link will collapse or 
-   expand the subsection. 
+1. Clicking on the "Access copies" subsection label link will collapse or
+   expand the subsection.
 
 2. The "Access Copies" subsection will include metadata about the "Master
    file", "Reference copy", and "Thumbnail copy" representations of the
@@ -223,65 +223,65 @@ include an "Access Copies" subsection.
       :width: 90%
       :alt: digital object metadata with access enabled for all representations
 
-3. An administrator user can toggle the display of specific "Digital object 
+3. An administrator user can toggle the display of specific "Digital object
    metadata" section fields on or off in the **Admin > Visible elements >
-   Digital object metadata area** section. This only affects display for 
-   unauthenticated users. Any authenticated users will see all metadata 
-   elements in each section as long as those fields contain a value. For more 
-   information, see: :ref:`visible-elements`. 
+   Digital object metadata area** section. This only affects display for
+   unauthenticated users. Any authenticated users will see all metadata
+   elements in each section as long as those fields contain a value. For more
+   information, see: :ref:`visible-elements`.
 
 4. If the Reference representation or Thumbnail representation is deleted via
-   the "Edit digital object" page, then the "Reference copy" and/or "Thumbnail 
-   copy" metadata is no longer displayed on the archival description view 
-   page. Additionally, the thumbnail is not show on Browse pages and the 
+   the "Edit digital object" page, then the "Reference copy" and/or "Thumbnail
+   copy" metadata is no longer displayed on the archival description view
+   page. Additionally, the thumbnail is not show on Browse pages and the
    reference copy is not displayed on view pages.
 
 5. The filename for each representation is either shown as plain text or as a
-   hyperlink. If it is a hyperlink, it indicates that this user has explicit 
+   hyperlink. If it is a hyperlink, it indicates that this user has explicit
    download permission for this representation.
 
-6. The icon underneath the "Master file", "Reference copy", and "Thumbnail copy" 
+6. The icon underneath the "Master file", "Reference copy", and "Thumbnail copy"
    label is coloured black or grey. If it is grey it indicates that the user does
    not have access to that representation. Note that in the case of unauthorized
    users, the default setting is to display the reference copy at the top of the
-   archival description view page. Therefore, the icon is coloured black for 
+   archival description view page. Therefore, the icon is coloured black for
    reference copies by default. However, an explicit hyperlink is not provided
-   in the digital object metadata section for unauthorized users. This is to 
-   respect institutional policies around displaying a copyright access statement 
-   for downloaded digital materials. That feature only works for Master file 
+   in the digital object metadata section for unauthorized users. This is to
+   respect institutional policies around displaying a copyright access statement
+   for downloaded digital materials. That feature only works for Master file
    representations. See :ref:`copyright-pop-up`.
 
    .. image:: images/digital-object-no-master-access.*
       :align: center
       :width: 90%
-      :alt: digital object without access to master representation 
+      :alt: digital object without access to master representation
 
 
    .. TIP::
 
-      Access to the "Master file", "Reference copy", and "Thumbnail copy" can 
-      be configured per user group. The "Access master", "Access reference", 
-      and/or "Access thumbnail" permission can be set to "Grant" or "Deny" for 
-      any user group, including unauthenticated ("anonymous") users. 
-      See: :ref:`edit-user-permissions`. 
+      Access to the "Master file", "Reference copy", and "Thumbnail copy" can
+      be configured per user group. The "Access master", "Access reference",
+      and/or "Access thumbnail" permission can be set to "Grant" or "Deny" for
+      any user group, including unauthenticated ("anonymous") users.
+      See: :ref:`edit-user-permissions`.
 
 8. Access to the "Master file", "Reference copy", and "Thumbnail copy" may be
-   overridden by actionable PREMIS rights configured for individual archival 
-   descriptions and their digital object. See: 
+   overridden by actionable PREMIS rights configured for individual archival
+   descriptions and their digital object. See:
 
    * :ref:`rights-digital-object`
    * :ref:`disallow-statements`
 
-   For example, if a PREMIS right is added to an archival description where 
-   the "Act" is "Disseminate" and the "Restriction" is "Disallow", then the 
-   hyperlinks in the "Digital object metadata" section are no longer active, 
-   all the document icons are coloured grey, and the reference copy of the 
-   digital object is no longer displayed on the archival description view 
+   For example, if a PREMIS right is added to an archival description where
+   the "Act" is "Disseminate" and the "Restriction" is "Disallow", then the
+   hyperlinks in the "Digital object metadata" section are no longer active,
+   all the document icons are coloured grey, and the reference copy of the
+   digital object is no longer displayed on the archival description view
    page. Instead the customizable text of the "Disallow statement" is
-   displayed at the top of the page as well as in a "Permissions" field for 
-   each Access copy representation, e.g. "Access to this record is restricted 
-   because it contains personal or confidential information. Please contact 
-   the Reference Archivist for more information on accessing this record.". 
+   displayed at the top of the page as well as in a "Permissions" field for
+   each Access copy representation, e.g. "Access to this record is restricted
+   because it contains personal or confidential information. Please contact
+   the Reference Archivist for more information on accessing this record.".
 
    .. image:: images/digital-object-premis-disallow.*
       :align: center
@@ -290,12 +290,12 @@ include an "Access Copies" subsection.
 
    .. NOTE::
 
-      If the "Restriction" were to be changed to "Conditional" and the default 
-      permission settings are enabled then the "Reference copy" and "Thumbnail 
-      copy" become available again on the AtoM template. The customizable text 
-      for the "Condition Statement" is displayed in a "Permissions" field for the 
-      "Master file" representation, e.g. "This record has not yet been 
-      reviewed for personal or confidential information. Please contact the 
+      If the "Restriction" were to be changed to "Conditional" and the default
+      permission settings are enabled then the "Reference copy" and "Thumbnail
+      copy" become available again on the AtoM template. The customizable text
+      for the "Condition Statement" is displayed in a "Permissions" field for the
+      "Master file" representation, e.g. "This record has not yet been
+      reviewed for personal or confidential information. Please contact the
       Reference Archivist to request access and initiate an access review.".
 
 :ref:`Back to top <upload-digital-object>`
@@ -307,56 +307,56 @@ Digital object metadata for preservation files
 
 .. _Archivematica: https://www.archivematica.org/
 
-If you or another user of a preservation system (e.g. 
-`Archivematica`_) has sent a :ref:`DIP upload <archivematica:upload-atom>` to 
-an :term:`archival description` :term:`slug` in AtoM then thumbnails for the 
-digital objects in that Dissemination Information Package (DIP) will be 
+If you or another user of a preservation system (e.g.
+`Archivematica`_) has sent a :ref:`DIP upload <archivematica:upload-atom>` to
+an :term:`archival description` :term:`slug` in AtoM then thumbnails for the
+digital objects in that Dissemination Information Package (DIP) will be
 displayed in the archival description's digital object :term:`carousel`.
 
 .. NOTE::
 
-   An unauthenticated user will not see a digital object and its metadata 
-   if the archival description it is attached to has a "draft" instead of 
+   An unauthenticated user will not see a digital object and its metadata
+   if the archival description it is attached to has a "draft" instead of
    "published" status.
 
-When selecting one of the digital objects included in the DIP upload, the 
-"Digital object metadata" section on the archival description view page will 
+When selecting one of the digital objects included in the DIP upload, the
+"Digital object metadata" section on the archival description view page will
 include a "Preservation Copies" and "Access Copies" subsection.
 
 .. NOTE::
 
-   When the preservation system uploads a DIP with digital objects to AtoM, 
-   it will generate "Master file", "Reference copy", and "Thumbnail copy" 
-   representations with their metadata displayed in the "Access copies" 
+   When the preservation system uploads a DIP with digital objects to AtoM,
+   it will generate "Master file", "Reference copy", and "Thumbnail copy"
+   representations with their metadata displayed in the "Access copies"
    subsection.
 
-1. Clicking on either of these subsection label links will collapse or expand 
+1. Clicking on either of these subsection label links will collapse or expand
    the subsection. See the :ref:`digital-object-metadata` above for more about
    the "Access copies" section.
 
 2. The "Preservation Copies" subsection will include metadata about the
-   "Original file" and "Preservation copy" representations that are stored in 
-   the preservation system. 
+   "Original file" and "Preservation copy" representations that are stored in
+   the preservation system.
 
 .. NOTE::
 
-   If the preservation system did not generate a preservation copy then 
+   If the preservation system did not generate a preservation copy then
    only the "Original file" section is shown.
 
-3. The "Preservation copy" metadata includes filename, filesize, and a 
-   timestamp for when the preservation system normalized (i.e. transcoded) the 
-   preservation copy from the original file.  
+3. The "Preservation copy" metadata includes filename, filesize, and a
+   timestamp for when the preservation system normalized (i.e. transcoded) the
+   preservation copy from the original file.
 
-4. The "Original file" metadata may include filename, file format name, file 
-   format version, format registry key (the unique key assigned to the file 
-   format by a format registry), format registry name (e.g. PRONOM), filesize, 
-   and ingested (the timestamp for when the preservation system received the 
+4. The "Original file" metadata may include filename, file format name, file
+   format version, format registry key (the unique key assigned to the file
+   format by a format registry), format registry name (e.g. PRONOM), filesize,
+   and ingested (the timestamp for when the preservation system received the
    original file).
 
 5. If the preservation action system statement option is enabled, you will
-   also see a "Permissions" field with custom text that is populated by an 
-   :term:`administrator` via **Admin > Settings > Permissions > Preservation 
-   system access statement** (e.g. "Access only provided on research room 
+   also see a "Permissions" field with custom text that is populated by an
+   :term:`administrator` via **Admin > Settings > Permissions > Preservation
+   system access statement** (e.g. "Access only provided on research room
    computer"). For more information, see: :ref:`preservation-access-statement`.
 
    .. image:: images/digital-object-preservation-copies-no-access.*
@@ -364,26 +364,26 @@ include a "Preservation Copies" and "Access Copies" subsection.
       :width: 90%
       :alt: digital object preservation copy display, without access
 
-6. An administrator user can toggle the display of specific "Digital object 
-   metadata" section fields on or off via **Admin > Visible elements > Digital 
-   object metadata area**. This only affects display for unauthenticated users. 
-   Any authenticated users will see all metadata elements in each section as 
-   long as those fields contain a value. For more 
-   information, see: :ref:`visible-elements`. 
+6. An administrator user can toggle the display of specific "Digital object
+   metadata" section fields on or off via **Admin > Visible elements > Digital
+   object metadata area**. This only affects display for unauthenticated users.
+   Any authenticated users will see all metadata elements in each section as
+   long as those fields contain a value. For more
+   information, see: :ref:`visible-elements`.
 
-7. If you are logged in and belong to the "authenticated" group, then you will 
-   also see the File UUID and AIP UUID for the Original file. The file UUID is 
-   the preservation system's universally unique identifier for the file and 
-   the Archival Information Package (AIP) UUID is the universally unique 
-   identifier for the preservation system package which contains the file 
+7. If you are logged in and belong to the "authenticated" group, then you will
+   also see the File UUID and AIP UUID for the Original file. The file UUID is
+   the preservation system's universally unique identifier for the file and
+   the Archival Information Package (AIP) UUID is the universally unique
+   identifier for the preservation system package which contains the file
    along with other related files.
 
-8. If the preservation copies came from the Archivematica preservation system 
-   and AtoM has enabled the "arStorageServicePlugin" to allow for AIP 
-   download, then users that belong to a group with Download AIP permissions 
-   (by default Administrators only) will also see a "Download file" and 
-   "Download AIP" link next to each UUID. Clicking on them will fetch the file 
-   or the full AIP from the preservation system. See 
+8. If the preservation copies came from the Archivematica preservation system
+   and AtoM has enabled the "arStorageServicePlugin" to allow for AIP
+   download, then users that belong to a group with Download AIP permissions
+   (by default Administrators only) will also see a "Download file" and
+   "Download AIP" link next to each UUID. Clicking on them will fetch the file
+   or the full AIP from the preservation system. See
    :ref:`Storage service settings <storage-service>`.
 
    .. image:: images/digital-object-preservation-copies-with-access.*
@@ -391,14 +391,14 @@ include a "Preservation Copies" and "Access Copies" subsection.
       :width: 90%
       :alt: digital object preservation copy display, with access
 
-9. If the user has "Download file" and "Download AIP" permissions then the box 
-   icon under the "Original file" label will be coloured black. Otherwise it 
+9. If the user has "Download file" and "Download AIP" permissions then the box
+   icon under the "Original file" label will be coloured black. Otherwise it
    is coloured grey.
 
 .. NOTE::
 
-   By default, access to the preservation copy is only available via the 
-   preservation system, therefore the box icon under the "Preservation 
+   By default, access to the preservation copy is only available via the
+   preservation system, therefore the box icon under the "Preservation
    copy"  label is always coloured grey for all users.
 
 :ref:`Back to top <upload-digital-object>`
@@ -543,8 +543,8 @@ description.
 
    For users wishing to include multiple individual images as "views" of a
    single item, AtoM now includes "Part" as a level of description included at
-   installation. An :term:`administrator` can customize the levels of 
-   description available in AtoM - for more information, see: 
+   installation. An :term:`administrator` can customize the levels of
+   description available in AtoM - for more information, see:
 
    * :ref:`terms`
 
@@ -562,8 +562,8 @@ description.
    you can edit the title for each description that will be created, by
    clicking the pencil icon under to the preview. However, once we click the
    "Upload" button, a separate page dedicated to customizing the description
-   titles will be provided (see step 9 below). Remember, the title you enter 
-   here will be the title used for the associated :term:`archival description` 
+   titles will be provided (see step 9 below). Remember, the title you enter
+   here will be the title used for the associated :term:`archival description`
    that will be created for each :term:`digital object` uploaded.
 
 .. image:: images/import-objects-title2.*
@@ -573,7 +573,7 @@ description.
 
 7. If necessary, you can click the black "X" icon on the top right of the
    thumbnail generated to remove an object from the upload. You can also add
-   additional objects either by dragging them in, or by using the "Add more" link 
+   additional objects either by dragging them in, or by using the "Add more" link
    provided in the top right corner of the upload area.
 
 .. NOTE::
@@ -596,9 +596,9 @@ description.
    **without first clicking "Upload"** will also result in no new digital
    objects being uploaded.
 9. Click the "Upload" button in the :term:`button block` when you are satisfied
-   with your changes. AtoM will upload the images using the default description 
-   titles provided, but will immediately redirect you to a page where you can 
-   individually customize those default titles if desired: 
+   with your changes. AtoM will upload the images using the default description
+   titles provided, but will immediately redirect you to a page where you can
+   individually customize those default titles if desired:
 
 .. image:: images/import-objects-title-change.*
    :align: center
@@ -610,8 +610,8 @@ description.
     you return to the :term:`view page`, you will see that the objects have
     all been attached to the :term:`archival description` as :term:`child
     records <child record>` of that description. If the digital object
-    :ref:`recurring-carousel` is enabled (see :ref:`default-page-elements` for 
-    instructions on enabling or disabling the carousel), you will also see the 
+    :ref:`recurring-carousel` is enabled (see :ref:`default-page-elements` for
+    instructions on enabling or disabling the carousel), you will also see the
     thumbnails of your uploaded digital objects in the carousel.
 
 .. image:: images/import-objects-children.*
@@ -633,7 +633,12 @@ that include a text layer (e.g., exported Word documents) will work. Search
 results will refer users to the PDF that contains the search term(s), but will
 not reveal the location of the term(s) within the PDF.
 
-Currently, AtoM 2.x truncates PDF text after the first 65,535 bytes.
+Currently, AtoM 2.x truncates indexed PDF text after approximately 16,777,215
+characters - which might roughly translate to between 1.5-2.8 million words,
+depending on the language and words used. This means that any additional text
+after this limit is reached would not be added to the search index (and
+therefore would not return any results during searches) - it does **not** mean
+that the PDF itself will be truncated or missing pages, etc.
 
 As mentioned above, it is possible to upload multi-page TIFFs or PDF files to
 be displayed with a page viewer and to upload each page as a child object of
@@ -656,7 +661,7 @@ Edit digital objects
 Any :term:`digital object` that has been uploaded and linked to an
 :term:`archival description` or :term:`authority record` can be edited at any
 time by an authenticated (i.e. logged-in) user. Accessing the digital object
-:term:`edit page` is the same for all of the following options: 
+:term:`edit page` is the same for all of the following options:
 
 1. Navigate to the :term:`view page` of an existing :term:`archival description`
    or :term:`authority record` that has an associated :term:`digital object`.
@@ -666,7 +671,7 @@ time by an authenticated (i.e. logged-in) user. Accessing the digital object
    page, all representations (i.e. :term:`master <master digital object>`
    representation, :term:`reference <reference display copy>` representation and
    :term:`thumbnail` representation) of the :term:`digital object` will be
-   listed, along with information on their Filename, Filesize, Media Type, and 
+   listed, along with information on their Filename, Filesize, Media Type, and
    other options.
 
 From this edit page, you can perform the following actions:
@@ -690,10 +695,10 @@ Edit the digital object metadata
 --------------------------------
 
 The top part of the digital object :term:`edit page` will include basic
-metadata about the original digital object in the "Master" 
+metadata about the original digital object in the "Master"
 :term:`information area`. Basic technical metadata such as Filename and Filesize
 are display only, and cannot be edited. However, you can change other metadata
-elements such as the Media type, Alt text, and latitude/longitude values 
+elements such as the Media type, Alt text, and latitude/longitude values
 associated with the digital object.
 
 .. image:: images/edit-digi-object-master.*
@@ -713,7 +718,7 @@ the image cannot be displayed in your browser. This text will also be used by
 accessibility supports such as screen readers.
 
 You can also add latitude and longitude values to the Master digital object's
-metadata for basic geolocation support. This can configured to display a 
+metadata for basic geolocation support. This can configured to display a
 dynamic Google map in AtoM - for more information, see below:
 
 * :ref:`digital-object-map`
@@ -723,15 +728,15 @@ dynamic Google map in AtoM - for more information, see below:
 Edit reference and thumbnail representations
 --------------------------------------------
 
-Below the Master :term:`information area` on the digital object 
-:term:`edit page`, you will also find sections for the various derivatives 
-created upon upload - the :term:`reference display copy` and the 
+Below the Master :term:`information area` on the digital object
+:term:`edit page`, you will also find sections for the various derivatives
+created upon upload - the :term:`reference display copy` and the
 :term:`thumbnail`. While these derivatives are typically automatically created
-by AtoM during digital object upload, you can delete them, and either 
-re-generate them or upload your own versions. Since thumbnails are used in 
+by AtoM during digital object upload, you can delete them, and either
+re-generate them or upload your own versions. Since thumbnails are used in
 search and browse results and the reference copy is displayed on the related
 :term:`archival description` view page, this can be a useful way to customize
-the display of your digital objects. 
+the display of your digital objects.
 
 .. image:: images/edit-thumbnail.*
    :align: center
@@ -739,13 +744,13 @@ the display of your digital objects.
    :alt: The Reference and Thumbnail representation areas in the Digital object
          edit page
 
-If you wish to use a different image as the :term:`thumbnail` or 
-:term:`reference <reference display copy>`, first click the "Delete" link in 
-the relevant :term:`area <information area>`. 
+If you wish to use a different image as the :term:`thumbnail` or
+:term:`reference <reference display copy>`, first click the "Delete" link in
+the relevant :term:`area <information area>`.
 
-AtoM will ask you to confirm that you would like to delete the derivative. 
-After confirming, the Edit digital object screen will then give you the option 
-to upload a new derivative by clicking Browse and selecting a file from your 
+AtoM will ask you to confirm that you would like to delete the derivative.
+After confirming, the Edit digital object screen will then give you the option
+to upload a new derivative by clicking Browse and selecting a file from your
 local computer, or else auto-generate a new representation from the master image.
 
 .. image:: images/upload-thumbnail.*
@@ -755,16 +760,16 @@ local computer, or else auto-generate a new representation from the master image
 
 .. TIP::
 
-   Somewhat confusingly, the digital object :term:`edit page` will use the 
-   thumbnail to provide a preview of both the :term:`thumbnail` and 
+   Somewhat confusingly, the digital object :term:`edit page` will use the
+   thumbnail to provide a preview of both the :term:`thumbnail` and
    :term:`reference <reference display copy>` derivatives, and the reference
-   copy to provide a preview of the :term:`master digital object`. 
+   copy to provide a preview of the :term:`master digital object`.
 
    Because of this, don't be alarmed if, for example, you are trying to replace
    the thumbnail and after confirming the deletion of the current version, you
    see the preview of the reference copy missing! The original reference copy
    will remain unchanged until you edit it, even if the preview shown in this
-   page is no longer correct once your derivatives have been customized. 
+   page is no longer correct once your derivatives have been customized.
 
 .. _edit-do-srt-vtt:
 
@@ -775,10 +780,10 @@ Add subtitle, caption, and/or chapter files to audio and video
 .. _SubRip Text: https://en.wikipedia.org/wiki/SubRip#SubRip_file_format
 .. _UTF-8: https://en.wikipedia.org/wiki/UTF-8
 
-AtoM also supports the ability to upload `WebVTT`_ (``.vtt``) or `SubRip Text`_ 
+AtoM also supports the ability to upload `WebVTT`_ (``.vtt``) or `SubRip Text`_
 (``.srt``) files to audio and video :term:`digital objects <digital object>` as
-a means of adding chapter markers, captions, or subtitles to your content. 
-Captions and subtitles can also be added in multiple languages. 
+a means of adding chapter markers, captions, or subtitles to your content.
+Captions and subtitles can also be added in multiple languages.
 
 .. image:: images/edit-do-chapters-captions.*
    :align: center
@@ -786,24 +791,24 @@ Captions and subtitles can also be added in multiple languages.
    :alt: The Chapters and Caption/Subtitles upload options in the digital object
          edit page
 
-Files used should be in ``.vtt`` or ``.srt`` format, and should use `UTF-8`_ 
-character encoding. 
+Files used should be in ``.vtt`` or ``.srt`` format, and should use `UTF-8`_
+character encoding.
 
 Click the "Choose file" button to open a local file explorer, and select the
 file you wish to upload from your device. If you're adding Caption or Subtitle
-files, be sure to select the correct language from the Language 
-:term:`drop-down menu` before uploading. 
+files, be sure to select the correct language from the Language
+:term:`drop-down menu` before uploading.
 
 .. IMPORTANT::
 
    Currently, the largest file size supported for these file uploads is 64 MiB.
 
 Once you have :ref:`saved your changes <edit-do-save>`, you will be re-directed
-to the view page of the related :term:`archival description` or 
+to the view page of the related :term:`archival description` or
 :term:`authority record`.
 
 When captions or subtitles are correctly added, they will appear under the "CC"
-icon on the media player: 
+icon on the media player:
 
 .. image:: images/edit-do-cc-example.*
    :align: center
@@ -823,7 +828,7 @@ add additional subtitles or captions in other languages. Basic metadata about
 the files will be shown, including the file name and size, as well as an option
 to delete the current uploads. Note that you can only have one chapter file
 per digital object, but multiple subtitle or caption files for multilingual
-support: 
+support:
 
 .. image:: images/edit-do-chapters-captions-2.*
    :align: center
@@ -843,7 +848,7 @@ saved. Note that simply navigating away from the page by any other means,
 being uploaded.
 
 Once all your changes have been made, click the "Save" button in the
-:term:`button block`. You will be redirected back to the related record's 
+:term:`button block`. You will be redirected back to the related record's
 :term:`view page`.
 
 All changes made can be edited once again, at any time, by following the steps
