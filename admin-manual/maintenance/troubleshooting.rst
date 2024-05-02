@@ -381,7 +381,7 @@ while monitoring.
    More information on using htop:
 
    * https://hisham.hm/htop/
-   * https://www.howtogeek.com/howto/ubuntu/using-htop-to-monitor-system-processes-on-linux/
+   * https://www.geeksforgeeks.org/using-htop-to-monitor-system-processes-on-linux/
 
 :ref:`Back to top <maintenance-troubleshooting>`
 
