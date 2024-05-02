@@ -34,5 +34,5 @@ many machines are involved.
    let us know the results. If you have suggestions, send us a pull request
    or point us to the area of the code that needs to be changed. Thank you!
 
-Ryerson University Library & Archives leads the development of a similar
-solution targeting Chef. `Their repositories are open source <https://github.com/ryersonlibrary?utf8=%E2%9C%93&query=atom>`_.
+Toronto Metropolitan University Libraries leads the development of a similar
+solution targeting Chef. `Their repositories are open source <https://github.com/torontomulibrary/atom_cookbook>`_.
