@@ -55,7 +55,7 @@ Check cluster health
 ====================
 
 See:
-http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/cluster-health.html
+https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-health.html
 
 .. code:: bash
 
