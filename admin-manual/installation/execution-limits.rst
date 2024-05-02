@@ -87,7 +87,7 @@ Adjusting PHP script execution limits
 
     max_execution_limit = 30
 
-**More info**: http://ca2.php.net/manual/info.configuration.php#ini.max-execution-time
+**More info**: https://www.php.net/manual/en/info.configuration.php#ini.max-execution-time
 
 ``memory_limit``:
   Limits the amount of memory a script may consume (in bytes [B], kilobytes
