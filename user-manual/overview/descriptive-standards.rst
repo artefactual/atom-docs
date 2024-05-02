@@ -111,7 +111,7 @@ Describing Archives: A Content Standard (DACS)
 
 DACS is maintained by the `Society of American Archivists
 <http://www2.archivists.org/>`__ and is available at
-http://files.archivists.org/pubs/DACS2E-2013.pdf (**PDF**). DACS-specific sections
+https://files.archivists.org/pubs/DACS2E-2013_v0315.pdf (**PDF**). DACS-specific sections
 of this manual are available at: Describing Archives: A Content Standard
 (:ref:`DACS <dacs-template>`)
 
