@@ -486,7 +486,7 @@ tracked.
 
 :ref:`Back to top <maintenance-web-analytics>`
 
-.. _`Google Analytics`: https://analytics.google.com/analytics/web/#/
+.. _`Google Analytics`: https://analytics.google.com/
 .. _`Create an event scoped custom dimension`: https://support.google.com/analytics/answer/10075209?hl=en#zippy=%2Ccreate-an-event-scoped-custom-dimension
 .. _`Google Tag Manager`: https://www.google.com/tagmanager/
 .. _`Configure GA4 in GTM`: https://support.google.com/tagmanager/answer/9442095?hl=en
