@@ -48,7 +48,7 @@ environment can be tricky, however, so be prepared for some hassle!
 Web servers
 ===========
 
-The good news is that the support of PHP in `IIS <http://www.iis.net/>`__ 7 or
+The good news is that the support of PHP in `IIS <https://www.iis.net/>`__ 7 or
 above is excellent. Check out the official website: http://php.iis.net.
 
 You can also use `Apache <https://httpd.apache.org/>`__ or
