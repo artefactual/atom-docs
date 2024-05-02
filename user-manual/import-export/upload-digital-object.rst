@@ -772,7 +772,7 @@ Add subtitle, caption, and/or chapter files to audio and video
 --------------------------------------------------------------
 
 .. _WebVTT: https://en.wikipedia.org/wiki/WebVTT
-.. _SubRip Text: https://en.wikipedia.org/wiki/SubRip#SubRip_file_format
+.. _SubRip Text: https://en.wikipedia.org/wiki/SubRip
 .. _UTF-8: https://en.wikipedia.org/wiki/UTF-8
 
 AtoM also supports the ability to upload `WebVTT`_ (``.vtt``) or `SubRip Text`_ 
