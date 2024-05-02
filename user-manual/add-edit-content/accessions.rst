@@ -296,7 +296,7 @@ Donor records can be accessed via the :term:`main menu` by navigating to
 Add events to an accession record
 ---------------------------------
 
-.. _CAAIS: http://archivescanada.ca/CWG_AccessionStandard
+.. _CAAIS: https://archivescanada.ca/wp-content/uploads/2023/07/CAAIS_2019May15_EN.pdf
 
 Events are a method of capturing key dates and activities taken by staff 
 throughout the accession process, and serve to create an audit trail of
