@@ -1419,7 +1419,6 @@ particularly demanding or unwanted web crawlers. For more information, see:
 * http://www.robotstxt.org/
 * https://en.wikipedia.org/wiki/Robots_exclusion_standard
 * https://www.google.com/webmasters/tools/robots-testing-tool
-* https://varvy.com/robottxt.html
 
 You can also look into increasing the execution limits configured for the
 site, so that more memory and time is made available before the limits are
