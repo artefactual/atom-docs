@@ -387,7 +387,7 @@ This file contains additional parameters that can be used to configure the
 Values that can be configured here include: 
 
 * ``cas_version`` can be set to 1.0, 2.0, or 3.0. For more information, see: 
-  https://apereo.github.io/cas/5.2.x/protocol/CAS-Protocol.html
+  https://apereo.github.io/cas/7.0.x/protocol/CAS-Protocol.html
 * You can configure the connection to your CAS authentication server by 
   adjusting the ``server_name``, ``server_port``, and ``server_path`` values
 * The location of your CAS server's SSL certificate can be configured. By 
