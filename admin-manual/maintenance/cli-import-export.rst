@@ -507,7 +507,7 @@ The EAC-CPF XML standard is prepared and maintained by the Technical Subcommitte
 for Encoded Archival Context of the Society of American Archivists and the
 Staatsbibliothek zu Berlin, and a version of the Tag Library is available at:
 
-* http://eac.staatsbibliothek-berlin.de/fileadmin/user_upload/schema/cpfTagLibrary.html
+* https://eac.staatsbibliothek-berlin.de/schema/v2/eac.html
 
 When using the task, EAC-CPF XML files will be exported to a directory; you must
 first create the target directory, and then you will specify the path to it when
