@@ -273,3 +273,13 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 # texinfo_no_detailmenu = False
+
+# -- Options for linkcheck ------------------------------------
+
+linkcheck_ignore = [
+    r'([(http:)(https:)]*(\/\/)*(localhost)(:)*[\d]*)',
+   # r'([(http:)(https:)]*(\/\/)*(10.10.10.20)(:)*[\d]*)',
+   # r'([(http:)(https:)]*(\/\/)*(192.168.168.198)(:)*[\d]*)',
+   # r'([(http:)(https:)]*(\/\/)*(192.168.168.192)(:)*[\d]*)',
+   # r'([(http:)(https:)]*(\/\/)[\S]*(.)*(github.com)([\s\S])*((.md)[#][\w-]*))',
+]
