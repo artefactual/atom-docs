@@ -1084,7 +1084,7 @@ The task is further outlined on the :ref:`maintenance-cli-tools` page - see:
    * Mike Hyllier's article on
      `Managing Hierarchical data in MySQL <http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/>`__
    * Evan Petersen's discussion of `nested sets
-     <http://www.evanpetersen.com/item/nested-sets.html>`__
+     <https://web.archive.org/web/20140122022451/http://www.evanpetersen.com/item/nested-sets.html>`__
    * Wikipedia's `Nested set model
      <http://en.wikipedia.org/wiki/Nested_set_model>`__
 
