@@ -68,7 +68,7 @@ to the user's browser.
 .. warning:: With the release of 2.0, AtoM will no longer support Internet
   Explorer (IE) 8 or earlier versions. If possible, please upgrade your browser
   to IE9 or higher, or use a supported browser such as `Firefox
-  <http://www.mozilla.org/en-US/firefox/fx/#desktop>`_,
+  <https://www.mozilla.org/firefox/>`_,
   `Chrome <https://www.google.com/intl/en_uk/chrome/browser/>`_,
   `Opera <http://www.opera.com/browser/>`_, or `Safari
   <http://www.apple.com/safari/>`_.
