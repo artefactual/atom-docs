@@ -668,7 +668,7 @@ entity. Basic instructions for each are included below.
    matches currently include: :term:`authority records <authority record>` and
    :term:`archival institutions <archival institution>`.  These full-text search
    results have **not** been `weighted
-   <http://dictionary.reference.com/browse/weighted+search>`__ to favor title
+   <https://foldoc.org/weighted+search>`__ to favor title
    matches, etc., **except for accessions**. If you see results without matches
    in the title (or name), it means the search term(s) appears somewhere in the
    body of the record. Note: with the release of 2.5, an advanced search
