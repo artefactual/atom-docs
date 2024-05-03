@@ -1989,7 +1989,7 @@ name of the actor involved in the event and the type of event. An example CSV
 template file is available in the AtoM source code
 (``lib/task/import/example_events.csv``) or can be downloaded here:
 
-* https://wiki.accesstomemory.org/Resources/CSV_templates
+* https://wiki.accesstomemory.org/Resources/CSV_templates#Events
 
 .. IMPORTANT::
 
