@@ -55,7 +55,7 @@ is available at:
 
 Currently AtoM supports the Digital Library Federation second level of adoption
 for MODS version 3.3 (see `DLF Aquifer MODS Guidelines Levels of Adoption
-<https://wiki.dlib.indiana.edu/display/DLFAquifer/MODS+Guidelines+Levels+of+Adoption>`__).
+<https://uisapp2.iu.edu/confluence-prd/display/iulDLFAquifer/MODS+Guidelines+Levels+of+Adoption>`__).
 
 Information below includes:
 
