@@ -381,7 +381,7 @@ while monitoring.
    More information on using htop:
 
    * https://hisham.hm/htop/
-   * https://www.howtogeek.com/howto/ubuntu/using-htop-to-monitor-system-processes-on-linux/
+   * https://www.geeksforgeeks.org/using-htop-to-monitor-system-processes-on-linux/
 
 :ref:`Back to top <maintenance-troubleshooting>`
 
@@ -1419,7 +1419,6 @@ particularly demanding or unwanted web crawlers. For more information, see:
 * http://www.robotstxt.org/
 * https://en.wikipedia.org/wiki/Robots_exclusion_standard
 * https://www.google.com/webmasters/tools/robots-testing-tool
-* https://varvy.com/robottxt.html
 
 You can also look into increasing the execution limits configured for the
 site, so that more memory and time is made available before the limits are

@@ -23,7 +23,7 @@ and it is suitable for both development and production environments.
    your own risk.
 
 If this is the first time that you have heard about containers you may find
-`The New Stack eBook Series <http://thenewstack.io/ebookseries/>`_ a useful
+`The New Stack eBook Series <https://thenewstack.io/ebooks/>`_ a useful
 resource to get up to speed quickly.
 
 Install Docker and Docker Compose

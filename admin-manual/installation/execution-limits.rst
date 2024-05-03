@@ -87,7 +87,7 @@ Adjusting PHP script execution limits
 
     max_execution_limit = 30
 
-**More info**: http://ca2.php.net/manual/info.configuration.php#ini.max-execution-time
+**More info**: https://www.php.net/manual/en/info.configuration.php#ini.max-execution-time
 
 ``memory_limit``:
   Limits the amount of memory a script may consume (in bytes [B], kilobytes
@@ -118,7 +118,7 @@ Adjusting PHP script execution limits
   | 512        | 70         |
   +------------+------------+
 
-**More info**: http://ca2.php.net/manual/ini.core.php#ini.memory-limit
+**More info**: https://www.php.net/manual/en/ini.core.php#ini.memory-limit
 
 ``post_max_size``:
   Sets max size of post data allowed. This setting also affects file upload.

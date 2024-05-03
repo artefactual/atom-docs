@@ -7,7 +7,7 @@ Describing Archives: A Content Standard (DACS 2013) data entry and CSV template
 On this page you will find:
 
 * Link to downloadable CSV template using
-  `ISAD(G) General International Standard Archival Description <http://www.ica.org/10207/standards/isadg-general-international-standard-archival-description-second-edition.html>`_
+  `ISAD(G) General International Standard Archival Description <https://www.ica.org/resource/isadg-general-international-standard-archival-description-second-edition/>`_
 * Description of fields used when entering or importing
   :term:`archival descriptions <archival description>` using DACS
   in a :term:`CSV` file or entering the data manually.

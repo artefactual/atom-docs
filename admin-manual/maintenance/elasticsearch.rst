@@ -55,7 +55,7 @@ Check cluster health
 ====================
 
 See:
-http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/cluster-health.html
+https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-health.html
 
 .. code:: bash
 
@@ -97,7 +97,7 @@ Cluster health is yellow
 
 If Cluster health returns as yellow, it "means that the primary shard is
 allocated but replicas are not"
-`[1] <http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/cluster-health.html#cluster-health>`_.
+`[1] <https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-health.html>`_.
 This often means that you have do not
 have enough ES nodes in your cluster to support the desired number of replicas
 of an index. This happens when you have indexes with ``number_of_replicas`` >

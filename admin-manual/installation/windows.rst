@@ -27,7 +27,7 @@ in Windows. Some of the most popular virtualization tools in Windows are:
 * VirtualBox (open source): https://www.virtualbox.org/
 * VMware: http://www.vmware.com/
 * Hyper-V (the official Windows hypervisor):
-  http://www.microsoft.com/hyper-v-server
+  https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/
 
 You should be able to use a virtual appliance in the virtualization tool of
 your choice. However, Artefactual does **not** maintain production-ready virtual
@@ -48,7 +48,7 @@ environment can be tricky, however, so be prepared for some hassle!
 Web servers
 ===========
 
-The good news is that the support of PHP in `IIS <http://www.iis.net/>`__ 7 or
+The good news is that the support of PHP in `IIS <https://www.iis.net/>`__ 7 or
 above is excellent. Check out the official website: http://php.iis.net.
 
 You can also use `Apache <https://httpd.apache.org/>`__ or

@@ -507,7 +507,7 @@ The EAC-CPF XML standard is prepared and maintained by the Technical Subcommitte
 for Encoded Archival Context of the Society of American Archivists and the
 Staatsbibliothek zu Berlin, and a version of the Tag Library is available at:
 
-* http://eac.staatsbibliothek-berlin.de/fileadmin/user_upload/schema/cpfTagLibrary.html
+* https://eac.staatsbibliothek-berlin.de/schema/v2/eac.html
 
 When using the task, EAC-CPF XML files will be exported to a directory; you must
 first create the target directory, and then you will specify the path to it when
@@ -1084,7 +1084,7 @@ The task is further outlined on the :ref:`maintenance-cli-tools` page - see:
    * Mike Hyllier's article on
      `Managing Hierarchical data in MySQL <http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/>`__
    * Evan Petersen's discussion of `nested sets
-     <http://www.evanpetersen.com/item/nested-sets.html>`__
+     <https://web.archive.org/web/20140122022451/http://www.evanpetersen.com/item/nested-sets.html>`__
    * Wikipedia's `Nested set model
      <http://en.wikipedia.org/wiki/Nested_set_model>`__
 

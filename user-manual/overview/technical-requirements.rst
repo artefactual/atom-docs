@@ -32,7 +32,7 @@ Older browsers that do not support JavaScript will not be able to view these
 effects. They are still able to access AtoM unimpaired; it just won't look as
 nice. It is recommended, therefore, that users employ modern web browsers
 that support JavaScript (such as `Firefox
-<http://www.mozilla.org/en-US/firefox/fx/#desktop>`_, `Chrome
+<http://www.mozilla.org/firefox>`_, `Chrome
 <https://www.google.com/intl/en_uk/chrome/browser/>`_, `Opera
 <http://www.opera.com/browser/>`_, or `Safari
 <http://www.apple.com/safari/>`_.)
