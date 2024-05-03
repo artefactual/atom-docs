@@ -95,7 +95,7 @@ Rules for Archival Description (RAD)
 
 RAD is maintained by the `Canadian Council of Archives
 <http://cdncouncilarchives.ca/>`__ and is available at
-http://www.cdncouncilarchives.ca/archdesrules.html. RAD-specific sections of
+https://archivescanada.ca/wp-content/uploads/2022/08/RADComplete_July2008.pdf . RAD-specific sections of
 this manual are available at: Rules for Archival Description (:ref:`RAD
 <rad-template>`).
 
