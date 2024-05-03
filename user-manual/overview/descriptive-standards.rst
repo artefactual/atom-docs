@@ -133,8 +133,7 @@ The MODS standard, maintained by the US Library of Congress `Network
 Development and MARC Standards Office <http://www.loc.gov/marc/ndmso.html>`__,
 is available at http://www.loc.gov/standards/mods/mods-outline.html. Currently
 AtoM supports the Digital Library Federation second level of adoption for MODS
-(see `DLF Aquifer MODS Guidelines Levels of Adoption <https://wiki.dlib.indian
-a.edu/display/DLFAquifer/MODS+Guidelines+Levels+of+Adoption>`__). MODS-
+(see `DLF Aquifer MODS Guidelines Levels of Adoption <https://uisapp2.iu.edu/confluence-prd/display/iulDLFAquifer/MODS+Guidelines+Levels+of+Adoption>`__). MODS-
 specific sections of this manual are available at: Metadata Object Description
 Schema (:ref:`MODS <mods-template>`).
 
