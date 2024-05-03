@@ -41,7 +41,7 @@ DACS is maintained by the Society of American Archivists
 (`SAA <http://www2.archivists.org>`__), and the version used in AtoM is 
 available at:
 
-* https://files.archivists.org/pubs/DACS2E-2013_v0315.pdf
+* https://www2.archivists.org/groups/technical-subcommittee-on-describing-archives-a-content-standard-dacs/describing-archives-a-content-standard-dacs-second-
 
 Information below includes:
 
