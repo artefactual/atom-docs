@@ -16,7 +16,6 @@ Maintenance
    data-backup
    common-atom-queries
    populate-search-index
-   tuning
    asynchronous-jobs
    troubleshooting
    debug
