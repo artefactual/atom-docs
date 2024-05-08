@@ -771,11 +771,10 @@ search interface.
 +--------+-------------------------------------------------------------------+
 
 For further examples of the use of these Boolean operators, users can consult
-the `Zend Lucene search documentation <http://framework.zend.com/manual/1.12/en/zend.search.lucene.query-language.html>`__
-as Elasticsearch is built on the same Apache Lucene base as the Zend
-framework. Developers interested in fine-tuning these settings, or technical
+the `Lucene search documentation <https://lucene.apache.org/core/2_9_4/queryparsersyntax.html>`__
+. Developers interested in fine-tuning these settings, or technical
 users interested in how Elasticsearch operates may wish to consult the
-`query string query <http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html>`__
+`query string query <https://www.elastic.co/guide/en/elasticsearch/reference/5.6/query-dsl-query-string-query.html>`__
 Elasticsearch reference documentation for more information on Elasticsearch's
 default behaviors, and possible configurations.
 

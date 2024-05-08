@@ -494,7 +494,7 @@ page` of any other authority record via the "Add new" button in the
 3. Enter data as required. The authority record edit template is based on the
    `ICA's <http://www.ica.org/>`__ *International Standard Archival Authority
    Record for Corporate Bodies, Persons and Families*
-   (`ISAAR <https://www.ica.org/isaar-cpf-international-standard-archival-authority-record-corporate-bodies-persons-and-families-2nd>`__).
+   (`ISAAR <https://www.ica.org/resource/isaar-cpf-international-standard-archival-authority-record-for-corporate-bodies-persons-and-families-2nd-edition/>`__).
    For more information on the use of particular fields in the ISAAR authority
    record edit template, see: :ref:`ISAAR(CPF) <isaar-template>`.
 4. You can quit the creation process at any time by clicking the "Cancel"

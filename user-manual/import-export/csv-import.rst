@@ -2134,7 +2134,7 @@ repository record data fields into AtoM. However, most fields are supported.
 
 Find the example CSV import template here:
 
-* https://wiki.accesstomemory.org/Resources/CSV_templates#Other_CSV_templates
+* https://wiki.accesstomemory.org/Resources/CSV_templates
 
 .. SEEALSO::
 

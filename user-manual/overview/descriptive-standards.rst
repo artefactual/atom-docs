@@ -95,7 +95,7 @@ Rules for Archival Description (RAD)
 
 RAD is maintained by the `Canadian Council of Archives
 <http://cdncouncilarchives.ca/>`__ and is available at
-http://www.cdncouncilarchives.ca/archdesrules.html. RAD-specific sections of
+https://archivescanada.ca/wp-content/uploads/2022/08/RADComplete_July2008.pdf. RAD-specific sections of
 this manual are available at: Rules for Archival Description (:ref:`RAD
 <rad-template>`).
 
@@ -111,7 +111,7 @@ Describing Archives: A Content Standard (DACS)
 
 DACS is maintained by the `Society of American Archivists
 <http://www2.archivists.org/>`__ and is available at
-https://files.archivists.org/pubs/DACS2E-2013_v0315.pdf (**PDF**). DACS-specific sections
+https://www2.archivists.org/groups/technical-subcommittee-on-describing-archives-a-content-standard-dacs/describing-archives-a-content-standard-dacs-second- (**PDF**). DACS-specific sections
 of this manual are available at: Describing Archives: A Content Standard
 (:ref:`DACS <dacs-template>`)
 
@@ -133,8 +133,7 @@ The MODS standard, maintained by the US Library of Congress `Network
 Development and MARC Standards Office <http://www.loc.gov/marc/ndmso.html>`__,
 is available at http://www.loc.gov/standards/mods/mods-outline.html. Currently
 AtoM supports the Digital Library Federation second level of adoption for MODS
-(see `DLF Aquifer MODS Guidelines Levels of Adoption <https://wiki.dlib.indian
-a.edu/display/DLFAquifer/MODS+Guidelines+Levels+of+Adoption>`__). MODS-
+(see `DLF Aquifer MODS Guidelines Levels of Adoption <https://uisapp2.iu.edu/confluence-prd/display/iulDLFAquifer/MODS+Guidelines+Levels+of+Adoption>`__). MODS-
 specific sections of this manual are available at: Metadata Object Description
 Schema (:ref:`MODS <mods-template>`).
 

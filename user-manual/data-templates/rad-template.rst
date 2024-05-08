@@ -7,7 +7,7 @@ Rules for Archival Description (RAD) data entry and CSV template
 On this page you will find:
 
 * Link to downloadable CSV template using
-  `Rules for Archival Description <http://www.cdncouncilarchives.ca/archdesrules.html>`_
+  `Rules for Archival Description <https://archivescanada.ca/wp-content/uploads/2022/08/RADComplete_July2008.pdf>`_
 * Description of fields used when entering or importing
   :term:`archival descriptions <archival description>` using Rules for Archival
   Description in a :term:`CSV` file or entering the data manually.
@@ -33,7 +33,7 @@ Field descriptions
 
 RAD is maintained by the `Canadian Council of Archives
 <http://www.cdncouncilarchives.ca>`_ and is available at
-http://www.cdncouncilarchives.ca/archdesrules.html.
+https://archivescanada.ca/wp-content/uploads/2022/08/RADComplete_July2008.pdf.
 
 Information below includes:
 
