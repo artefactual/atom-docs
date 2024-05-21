@@ -2728,6 +2728,48 @@ terminal.
 
 :ref:`Back to top <maintenance-cli-tools>`
 
+Find data integrity issues
+==========================
+
+Tries to find data integrity issues in the AtoM database, and attempts to repair
+them if requested.
+
+.. code:: bash
+
+   php symfony tools:data-integrity-repair /path/to/report/filename.csv
+
+
+The data integrity and repair task does the following:
+
+* Adds missing object rows for all resources extending QubitObject
+* Regenerates slugs to use them in CSV report
+* Adds missing parent ids to terms
+* Checks descriptions with missing data and provides options for attempting to
+  generate a list, fix them, or delete them
+* Re-builds the nested sets
+
+If the tool finds any records that have problems, they will be listed in a CSV
+report file. By default, the task saves them in a file named
+``affected-records.csv`` but a custom filename and path can be specified if the
+user wants to save this in a different location.
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for Symfony to be
+able to execute the task.
+
+The data integrity repair tool has 3 modes. By default it only generate reports,
+but it can also attempt to fix or delete affected records:
+
+.. code:: bash
+
+   php symfony tools:data-integrity-repair file/path/to/report.csv --mode=fix
+
+.. code:: bash
+
+   php symfony tools:data-integrity-repair file/path/to/report.csv --mode=delete
+
+:ref:`Back to top <maintenance-cli-tools>`
+
 .. _cli-tools-run:
 
 Run a generic PHP script
