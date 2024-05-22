@@ -2708,7 +2708,7 @@ The ``slug`` parameter is required and must be the :term:`slug` of a top-level
 archival description, usually a Fonds or Collection level description.
 
 The ``--application``, ``--env``, and ``connection`` options **should not be
-used** - AtoM requires the uses of the pre-set defaults for Symfony to be
+used** - AtoM requires the use of the pre-set defaults for Symfony to be
 able to execute the task.
 
 The ``--format`` option determines the file format of the generated finding aid.
@@ -2728,11 +2728,20 @@ terminal.
 
 :ref:`Back to top <maintenance-cli-tools>`
 
+.. _cli-tools-data-integrity:
+
 Find data integrity issues
 ==========================
 
-Tries to find data integrity issues in the AtoM database, and attempts to repair
-them if requested.
+AtoM can occasionally end up with missing or incorrect information in the
+database when large operations fail or are aborted mid-process - for example,
+attempting a large :ref:`move <move-archival-description>`,
+:ref:`publication status update <publish-archival-description>`,
+or :ref:`import <import-export>` via the web-based :term:`user interface`, and
+having it time out before the task completes.
+
+This task tries to find data integrity issues in the AtoM database, and
+attempts to repair them if requested.
 
 .. code:: bash
 
@@ -2754,11 +2763,14 @@ report file. By default, the task saves them in a file named
 user wants to save this in a different location.
 
 The ``--application``, ``--env``, and ``connection`` options **should not be
-used** - AtoM requires the uses of the pre-set defaults for Symfony to be
+used** - AtoM requires the use of the pre-set defaults for Symfony to be
 able to execute the task.
 
-The data integrity repair tool has 3 modes. By default it only generate reports,
-but it can also attempt to fix or delete affected records:
+The data integrity repair tool has 3 modes. By default it only generates
+a report listing records that have problems and doesn't make any changes to
+them. It is recommended to this first and look through the report before using
+one of the other two modes, which can be used to attempt fixing or deleting
+these records:
 
 .. code:: bash
 
@@ -2767,6 +2779,19 @@ but it can also attempt to fix or delete affected records:
 .. code:: bash
 
    php symfony tools:data-integrity-repair file/path/to/report.csv --mode=delete
+
+.. IMPORTANT::
+
+   If you plan to use the fix or repair mode, we **strongly recommend** you
+   make backups of your data prior to running this task.
+
+   * :ref:`cli-backup-db`
+
+.. SEEALSO::
+
+   * :ref:`troubleshooting-data-corruption`
+   * :ref:`cli-generate-slugs`
+   * :ref:`cli-rebuild-nested-set`
 
 :ref:`Back to top <maintenance-cli-tools>`
 
