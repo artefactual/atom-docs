@@ -165,8 +165,8 @@ the help text and options associated with this task:
    :width: 90%
    :alt: An image of the options available in the delete-user command
 
-The ``--application``, ``--env``, and ``connection`` options **should not be
-used** - AtoM requires the uses of the pre-set defaults for symfony to be
+The ``--application``, ``--env``, and ``--connection`` options **should not
+be used** - AtoM requires the use of the pre-set defaults for symfony to be
 able to execute the task.
 
 The command, when run, will normally prompt you for confirmation before
@@ -671,8 +671,8 @@ command-line, you can see the options available for this task:
    :width: 90%
    :alt: An image of the options available in the regen-derivatives command
 
-The ``--application``, ``--env``, and ``connection`` options **should not be
-used** - AtoM requires the uses of the pre-set defaults for symfony to be
+The ``--application``, ``--env``, and ``--connection`` options **should not
+be used** - AtoM requires the use of the pre-set defaults for symfony to be
 able to execute the task.
 
 The ``--index`` option is used to enable the rebuilding of the search index as
@@ -1143,8 +1143,8 @@ csv file.
 By entering ``php symfony help tools:rename-slug`` into the command-line, you
 see the options and descriptions available on this tool, as pictured above.
 
-The ``--application``, ``--env``, and ``connection`` options **should not be
-used** - AtoM requires the uses of the pre-set defaults for symfony to be
+The ``--application``, ``--env``, and ``--connection`` options **should not
+be used** - AtoM requires the use of the pre-set defaults for symfony to be
 able to execute the task.
 
 When used without any other options, the rename slugs task expects two
@@ -1195,9 +1195,9 @@ terms and will delete the others.
 By entering ``php symfony help taxonomy:normalize`` into the command-line, you
 see the options and descriptions available on this tool, as pictured above.
 
-The ``--application``, ``--env``, and ``connection`` options **should not be
-used** - AtoM requires the uses of the pre-set defaults for symfony to be
-able to execute the import.
+The ``--application``, ``--env``, and ``--connection`` options **should not
+be used** - AtoM requires the use of the pre-set defaults for symfony to
+be able to execute the import.
 
 The ``--culture`` option on this command-line tool is optional - the default
 value, if none is entered is *en* (English). The value you
@@ -1273,9 +1273,9 @@ task essentially aids in the consolidation of duplicate storage locations.
 By entering ``php symfony help physicalobject:normalize`` into the command-line,
 you see the options and descriptions available on this tool, as pictured above.
 
-The ``--application``, ``--env``, and ``connection`` options **should not be
-used** - AtoM requires the uses of the pre-set defaults for symfony to be
-able to execute the import.
+The ``--application``, ``--env``, and ``--connection`` options **should not
+be used** - AtoM requires the use of the pre-set defaults for symfony to
+be able to execute the import.
 
 The ``--name-only`` option specifies that the task only should match and
 consolidate based on the container's name.
@@ -1311,9 +1311,9 @@ By entering ``php symfony help physicalobject:delete-unlinked`` into the
 command-line, you see the options and descriptions available on this tool, as
 pictured above.
 
-The ``--application``, ``--env``, and ``connection`` options **should not be
-used** - AtoM requires the uses of the pre-set defaults for symfony to be
-able to execute the import.
+The ``--application``, ``--env``, and ``--connection`` options **should not
+be used** - AtoM requires the use of the pre-set defaults for symfony to
+be able to execute the import.
 
 The ``--name-only`` option specifies that the task only should match and
 consolidate based on the container's name.
@@ -1385,8 +1385,8 @@ this task - the term must already exist in AtoM, or the task will fail.
 By entering ``php symfony help tools:update-publication-status`` into the
 command-line, you see the options available on this tool, as pictured above.
 
-The ``--application``, ``--env``, and ``connection`` options **should not be
-used** - AtoM requires the uses of the pre-set defaults for symfony to be
+The ``--application``, ``--env``, and ``--connection`` options **should not
+be used** - AtoM requires the use of the pre-set defaults for symfony to be
 able to execute the task.
 
 In general and as in the user interface, if a :term:`parent <parent record>`
@@ -1481,8 +1481,8 @@ lower levels of description.
 By typing ``php symfony help tools:unlink-creators`` into the command-line, you
 can see the options available on the unlink creators task, as pictured above.
 
-The ``--application``, ``--env``, and ``connection`` options **should not be
-used** - AtoM requires the uses of the pre-set defaults for Symfony to be
+The ``--application``, ``--env``, and ``--connection`` options **should not
+be used** - AtoM requires the use of the pre-set defaults for Symfony to be
 able to execute the task.
 
 The ``--creator-slug`` option takes the :term:`slug` of an :term:`authority
@@ -1705,8 +1705,8 @@ command-line's help output for the task:
    :width: 85%
    :alt: An image of the command-line's help text for the digital object delete task
 
-The ``--application``, ``--env``, and ``connection`` options **should not be
-used** - AtoM requires the uses of the pre-set defaults for Symfony to be
+The ``--application``, ``--env``, and ``--connection`` options **should not
+be used** - AtoM requires the use of the pre-set defaults for Symfony to be
 able to execute the task.
 
 The ``--dry-run`` option can be used to test the effects of the task by
@@ -1852,8 +1852,8 @@ command-line's help output for the task:
    :width: 90%
    :alt: An image showing the help output for the tools:expire-data command-line task
 
-The ``--application``, ``--env``, and ``connection`` options **should not be
-used** - AtoM requires the uses of the pre-set defaults for Symfony to be
+The ``--application``, ``--env``, and ``--connection`` options **should not
+be used** - AtoM requires the use of the pre-set defaults for Symfony to be
 able to execute the task.
 
 The ``--older-than`` option can be used to limit the deletion by time range. It
@@ -1963,8 +1963,8 @@ command-line's help output for the task:
    :width: 85%
    :alt: An image of the command-line's help text for the Cache XML task
 
-The ``--application``, ``--env``, and ``connection`` options **should not be
-used** - AtoM requires the uses of the pre-set defaults for Symfony to be
+The ``--application``, ``--env``, and ``--connection`` options **should not
+be used** - AtoM requires the use of the pre-set defaults for Symfony to be
 able to execute the task.
 
 As the task progresses, the console will output the related ID of the current
@@ -2194,9 +2194,9 @@ work as expected. See the examples below.
 
 **Options**
 
-The ``--application``, ``--env``, and ``connection`` options **should not be
-used** - AtoM requires the uses of the pre-set defaults for symfony to be
-able to execute the export.
+The ``--application``, ``--env``, and ``--connection`` options **should not
+be used** - AtoM requires the use of the pre-set defaults for symfony to
+be able to execute the export.
 
 The ``--items-until-update`` option accepts a whole integer value, and will
 indicate the progress of the task every n items by printing a dot in the
@@ -2556,8 +2556,8 @@ Example use:
 By typing ``php symfony help tools:sitemap`` into the command-line, you can
 see the options available on the ``export:bulk`` command, as pictured above.
 
-The ``--application``, ``--env``, and ``connection`` options **should not be
-used** - AtoM requires the uses of the pre-set defaults for symfony to be
+The ``--application``, ``--env``, and ``--connection`` options **should not
+be used** - AtoM requires the use of the pre-set defaults for symfony to be
 able to execute the task.
 
 the ``--output-directory`` (or ``-O`` for short) option is used to specify a
@@ -2668,8 +2668,8 @@ options included with the task:
 As a parameter, the task requires a file path. The path should point to the
 top-level directory where you have added the DIP.
 
-The ``--application``, ``--env``, and ``connection`` options **should not be
-used** - AtoM requires the uses of the pre-set defaults for Symfony to be
+The ``--application``, ``--env``, and ``--connection`` options **should not
+be used** - AtoM requires the use of the pre-set defaults for Symfony to be
 able to execute the task.
 
 The ``--undo-log-dir`` option can be used to log which information objects (aka
@@ -2707,8 +2707,8 @@ top-level archival description.
 The ``slug`` parameter is required and must be the :term:`slug` of a top-level
 archival description, usually a Fonds or Collection level description.
 
-The ``--application``, ``--env``, and ``connection`` options **should not be
-used** - AtoM requires the uses of the pre-set defaults for Symfony to be
+The ``--application``, ``--env``, and ``--connection`` options **should not
+be used** - AtoM requires the use of the pre-set defaults for Symfony to be
 able to execute the task.
 
 The ``--format`` option determines the file format of the generated finding aid.
@@ -2725,6 +2725,73 @@ terminal.
 .. SEEALSO::
 
    * :ref:`print-finding-aids`
+
+:ref:`Back to top <maintenance-cli-tools>`
+
+.. _cli-tools-data-integrity:
+
+Find data integrity issues
+==========================
+
+AtoM can occasionally end up with missing or incorrect information in the
+database when large operations fail or are aborted mid-process - for example,
+attempting a large :ref:`move <move-archival-description>`,
+:ref:`publication status update <publish-archival-description>`,
+or :ref:`import <import-export>` via the web-based :term:`user interface`, and
+having it time out before the task completes.
+
+This task tries to find data integrity issues in the AtoM database, and
+attempts to repair them if requested.
+
+.. code:: bash
+
+   php symfony tools:data-integrity-repair /path/to/report/filename.csv
+
+
+The data integrity and repair task does the following:
+
+* Adds missing object rows for all resources extending QubitObject
+* Regenerates slugs to use them in CSV report
+* Adds missing parent ids to terms
+* Checks descriptions with missing data and provides options for attempting to
+  generate a list, fix them, or delete them
+* Re-builds the nested sets
+
+If the tool finds any records that have problems, they will be listed in a CSV
+report file. By default, the task saves them in a file named
+``affected-records.csv`` but a custom filename and path can be specified if the
+user wants to save this in a different location.
+
+The ``--application``, ``--env``, and ``--connection`` options **should not
+be used** - AtoM requires the use of the pre-set defaults for Symfony to be
+able to execute the task.
+
+The data integrity repair tool has 3 modes. By default it only generates
+a report listing records that have problems and doesn't make any changes to
+them. It is recommended to this first and look through the report before using
+one of the other two modes, which can be used to attempt fixing or deleting
+these records:
+
+.. code:: bash
+
+   php symfony tools:data-integrity-repair file/path/to/report.csv --mode=fix
+
+.. code:: bash
+
+   php symfony tools:data-integrity-repair file/path/to/report.csv --mode=delete
+
+.. IMPORTANT::
+
+   If you plan to use the fix or repair mode, we **strongly recommend** you
+   make backups of your data prior to running this task.
+
+   * :ref:`cli-backup-db`
+
+.. SEEALSO::
+
+   * :ref:`troubleshooting-data-corruption`
+   * :ref:`cli-generate-slugs`
+   * :ref:`cli-rebuild-nested-set`
 
 :ref:`Back to top <maintenance-cli-tools>`
 

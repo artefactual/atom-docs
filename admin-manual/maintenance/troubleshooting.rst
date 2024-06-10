@@ -775,6 +775,14 @@ common forms of information object data corruption, followed by further
 resources should you need to inspect and fix data corruption in other entity
 types.
 
+.. IMPORTANT::
+
+   AtoM includes a CLI task that can be used to find data corruption issues
+   and attempt to repair them. We **strongly recommend** using that first
+   before attempting to run SQL queries listed in the following sections.
+
+   * :ref:`cli-tools-data-integrity`
+
 .. _troubleshooting-corruption-ios:
 
 Data corruption in information objects
