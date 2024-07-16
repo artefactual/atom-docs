@@ -170,6 +170,7 @@ encouraged to use a third-party analytics tool - for more information, see:
    ``/apps/qubit/modules/staticpage/templates/homeSuccess.php``. 
    
    **BS5 themes**
+   
    Comment out lines 29-32 in
    ``plugins/arDominionB5Plugin/modules/staticpage/templates/homeSuccess.php``.
    
