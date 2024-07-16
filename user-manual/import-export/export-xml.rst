@@ -66,7 +66,7 @@ full EAD 2002 XML file can be generated.
 
 .. TIP::
 
-   An :term:`administrator` does have the option of turning on a setting that
+   An :term:`administrator` does have the option of turning on a setting (located at |path_xml_arch_desc|) that
    will generate the XML for archival descriptions in advance on save, so that
    large files can be served up without needing to be generated on the fly.
    There is also a command-line task that will allow a system administrator to
