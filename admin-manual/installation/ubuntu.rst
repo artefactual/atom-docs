@@ -714,7 +714,7 @@ contents in :file:`/etc/nginx/sites-available/atom`.
 
       client_max_body_size 72M;
 
-      location ~* ^/(css|dist|js|images|plugins|vendor)/.*\.(css|png|jpg|js|svg|ico|gif|pdf|woff|ttf)$ {
+      location ~* ^/(css|dist|js|images|plugins|vendor)/.*\.(css|png|jpg|js|svg|ico|gif|pdf|woff|woff2|otf|ttf)$ {
 
       }
 
