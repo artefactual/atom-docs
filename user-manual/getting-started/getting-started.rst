@@ -162,8 +162,10 @@ encouraged to use a third-party analytics tool - for more information, see:
 .. TIP::
 
    A :term:`developer` who wishes to hide the Popular this week menu from
-   view can do so by commenting out Line 23 in
-   ``/apps/qubit/modules/staticpage/templates/homeSuccess.php``. 
+   view can do so by commenting out lines 29-32 in
+   ``plugins/arDominionB5Plugin/modules/staticpage/templates/homeSuccess.php``.
+   
+   
 
 :ref:`Back to top <getting-started-all>`
 
