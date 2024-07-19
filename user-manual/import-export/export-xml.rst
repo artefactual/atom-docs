@@ -535,3 +535,5 @@ rather than just adding a parent description.
    * :ref:`tools-expire` (command-line task)
 
 :ref:`Back to top <export-xml>`
+
+.. |path_xml_arch_desc| replace:: `Admin -> Settings -> Global Settings (scroll down to the bottom)`

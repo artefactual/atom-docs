@@ -273,11 +273,3 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 # texinfo_no_detailmenu = False
-
-
-# -- Include as rst prolog or epilog
-# --------------------------------------------------
-
-rst_epilog="""
-.. |path_xml_arch_desc| replace:: `Admin -> Settings -> Global Settings (scroll down to the bottom)`
-"""

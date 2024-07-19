@@ -3170,3 +3170,5 @@ public users.
    for more information.
 
 :ref:`Back to top <settings>`
+
+.. |path_xml_arch_desc| replace:: `Admin -> Settings -> Global Settings (scroll down to the bottom)`
