@@ -76,7 +76,7 @@ python3 -m http.server -d _build/html/
 The HTML files for the documentation will be in
 `atom/_build/html/`.
 You can open the files in a browser of your choice, without having any access
-to the Internet.
+to the Internet, by accessing `http://localhost:8000`.
 
 While this offline version will not have the AtoM web theme, you will
 gain access to improved search features.
