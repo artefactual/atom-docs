@@ -283,3 +283,4 @@ sample requests and responses for available endpoints.
 * :ref:`api-browse-io`
 * :ref:`api-read-io`
 * :ref:`api-download-do`
+* :ref:`api-add-po`
