@@ -906,7 +906,7 @@ Because of this, attempts to export or harvest EAD 2002 XML for large
 descriptive hierarchies can fail, as the browser times out before the document
 can be fully generated and served to the end user.
 
-To avoid this, AtoM includes this setting, which allows users to pre-generate
+To avoid this, AtoM includes this setting (located at |path_xml_arch_desc|), which allows users to pre-generate
 XML exports via AtoM's job scheduler, and then cache them in the ``downloads``
 directory. This way, when users attempt to download large XML files, they can
 be served directly, instead of having to generate before the browser timeout
@@ -3170,3 +3170,5 @@ public users.
    for more information.
 
 :ref:`Back to top <settings>`
+
+.. |path_xml_arch_desc| replace:: `Admin -> Settings -> Global Settings (scroll down to the bottom)`
