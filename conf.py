@@ -273,3 +273,17 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 # texinfo_no_detailmenu = False
+
+
+# -- Options for linkcheck ------------------------------------
+
+linkcheck_ignore = [
+    r'([(http:)(https:)]*(\/\/)*(localhost)(:)*[\d]*)',
+    r'([(http:)(https:)]*(\/\/)*(townarchives.org)(/)*[\d]*)',
+    r'([(http:)(https:)]*(\/\/)*(www.example.com))',
+    r'([(http:)(https:)]*(\/\/)*(10.10.10.10)(:)*[\d]*)',
+    r'([(http:)(https:)]*(\/\/)[\S]*(.)*(github.com)([\s\S])*((.md)[#][\w-]*))',
+    r'([(http:)(https:)]*(\/\/)[\S]*(.)*(github.com)([\s\S])*((.php)[#][\w-]*))',
+    r'([(http:)(https:)]*(\/\/)[\S]*(.)*(github.com)([\s\S])*((.less)[#][\w-]*))',
+    r'([(http:)(https:)]*(\/\/)[\S]*(.)*(github.com/artefactual/atom/commit)([\s\S])*([#][\w-]*))',
+]
