@@ -2405,7 +2405,7 @@ Require strong passwords
 ------------------------
 
 This feature allows :term:`administrators <administrator>` to enhance login
-validation by requiring the use of strong passwords. Strong passwords use
+validation by requiring the use of strong passwords. Strong passwords use at
 least 8 characters, and contain characters from the following
 classes:
 
