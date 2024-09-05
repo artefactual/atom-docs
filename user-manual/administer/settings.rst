@@ -2417,6 +2417,10 @@ classes:
 Choose "yes" to require authenticated (logged-in) users to have strong
 passwords.
 
+Note that this feature does not apply retroactively to existing users' passwords
+i.e. after enabling this option, users will not be asked to change their password
+if it is not already a strong password.
+
 :ref:`Back to top <settings>`
 
 .. _site-information:
