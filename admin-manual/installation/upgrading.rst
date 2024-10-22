@@ -362,8 +362,8 @@ To set the site base URL:
 
 .. _upgrading-custom-themes:
 
-Upgrading with a custom theme plugin
-====================================
+Compile Theme Files
+===================
 
 If you have developed a custom theme plugin for your application (for more
 information, see :ref:`customization-custom-theme`), you may need to perform
@@ -373,6 +373,11 @@ correctly.
 +++++++++++
 Bootstrap 5
 +++++++++++
+
+.. NOTE::
+
+   The following steps are required for all Bootstrap 5 themes, including the
+   built in arDominionB5Plugin theme.
 
 Additional steps for tarball installations:
 *******************************************
