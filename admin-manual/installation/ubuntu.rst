@@ -299,10 +299,15 @@ For development environments, the dev libraries should also be installed:
 
    sudo ~/composer.phar install
 
+.. _installation-ubuntu-compile-theme-files:
+
+Compile Theme Files
+===================
+
 After downloading the code, you will need to compile the themes files:
 
 Compile Bootstrap 5 Theme Files:
-********************************
+--------------------------------
 
 .. code-block:: bash
 
@@ -310,7 +315,7 @@ Compile Bootstrap 5 Theme Files:
    sudo npm run build
 
 Compile Bootstrap 2 Theme Files:
-********************************
+--------------------------------
 
 .. code-block:: bash
 
