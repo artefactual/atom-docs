@@ -3033,11 +3033,14 @@ a default limit per :term:`archival institution` when using AtoM as a
 :term:`multi-repository system`. When set, this will be applied as the new
 default upload limit per institution.
 
-Enter the upload limit in GB allowed for uploading digital objects. Use "-1" as
-the value for unlimited upload space. This setting can be modified by an
-authenticated (i.e. logged-in) :term:`administrator`.
+Enter the upload limit in GB allowed for uploading digital objects. This setting
+can be modified by an authenticated (i.e. logged-in) :term:`administrator`.
 
-A value of "0" (zero) disables file upload.
+A value of "0" (zero) disables file upload. A value of "-1" sets unlimited upload
+space for all new and existing archival instituions, overriding upload limits set
+for individual archival institutions. To allow unlimited upload for individual
+archival institutions, set default value to a positive value (≥1) and see
+:ref:`repository-upload-setting`.
 
 For more information, see :ref:`upload-digital-object`.
 
