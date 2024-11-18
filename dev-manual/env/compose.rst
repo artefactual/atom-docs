@@ -114,6 +114,20 @@ All seven docker containers should now be up and running.
    # Execute a command in the running container atom: purge database
    docker-compose exec atom php symfony tools:purge --demo
 
+
+Compile Bootstrap 5 Theme Files:
+--------------------------------
+
+.. code-block:: bash
+
+   sudo npm install
+   sudo npm run build
+
+Compile Bootstrap 2 Theme Files:
+--------------------------------
+
+.. code-block:: bash
+
    # Execute another command: build stylesheets
    docker-compose exec atom make -C plugins/arDominionPlugin
 
