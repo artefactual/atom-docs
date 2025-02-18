@@ -16,7 +16,8 @@ our Vagrant box is built using these Ansible roles.
 
 We've built an example on how to deploy AtoM:
 
-* `AtoM + Ubuntu 20.04 (focal) <https://github.com/artefactual/deploy-pub/tree/master/playbooks/atom-focal>`_
+* `AtoM + Ubuntu 24.04 (numbat) <https://github.com/artefactual/deploy-pub/tree/dev/add-atom29-playbooks/playbooks/atom-noble>`_
+* `AtoM + Rocky9 <https://github.com/artefactual/deploy-pub/tree/dev/add-atom29-playbooks/playbooks/atom-rocky9>`_
 
 These examples use Vagrant to provision virtual machines. This is useful during
 the experimentation phase so you don't have to worry about the costs of hosting

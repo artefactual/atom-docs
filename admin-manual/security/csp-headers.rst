@@ -19,7 +19,7 @@ execution and reduce the attack surface, enhancing the overall security posture
 of web applications.
 
 Starting in AtoM 2.8, AtoM has built in support for CSP headers when Bootstrap 5
-based themes are in use. When installing AtoM 2.8 from scratch, there's a
+based themes are in use. When installing AtoM 2.8+ from scratch, there's a
 pre-configured CSP directive setting in place which is set to report-only mode by
 default. These default settings serve as a foundation compatible with the upgraded
 Bootstrap 5 based Dominion theme and can be used as a base for custom themes based

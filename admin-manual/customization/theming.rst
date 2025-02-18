@@ -92,7 +92,8 @@ Additional steps for tarball installations:
 *******************************************
 
 If not already installed, first `download the node.js binary distributuion
-<https://nodejs.org/en/download>`_ and export the PATH variable.
+<https://nodejs.org/en/download>`_ and export the PATH variable. AtoM requires
+the latest LTS version of node, v22 or above is required for AtoM 2.9+.
 
 The tarball is missing three required files for this:
 
