@@ -2441,7 +2441,7 @@ there is also a ``--demo`` option available:
    .. code-block:: bash
 
       php symfony cc
-      sudo systemctl restart php7.4-fpm
+      sudo systemctl restart php8.3-fpm
 
    Optionally, if you're using Memcached as cache engine:
 

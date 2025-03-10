@@ -1,8 +1,8 @@
 .. _installation-ubuntu:
 
-======================================
-Linux - Ubuntu 20.04 LTS (Focal Fossa)
-======================================
+==========================================
+Linux - Ubuntu 24.04 LTS (Noble Numbat)
+==========================================
 
 Most of the configuration steps described in this document apply to any modern
 Linux environment, however some of them will apply only to Ubuntu and likely to
@@ -11,7 +11,7 @@ development and testing using Ubuntu LTS releases, and cannot guarantee that
 other versions, distributions, or operating systems will work as expected with
 the following instructions.
 
-This document is based in `Ubuntu 20.04 LTS (Focal Fossa)`_. Once you have
+This document is based in `Ubuntu 24.04 LTS (Noble Numbat)`_. Once you have
 installed it, you should be able to follow the instructions described below.
 In particular, we are going to use Ubuntu packages that can be found under the
 `repositories`_ *main* and *universe*.
@@ -108,24 +108,20 @@ and install the public signing key used in their repository:
 
 .. code-block:: bash
 
-   wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-
-.. IMPORTANT::
-
-   Don't miss the dash ( ``-`` ) at the end of the above command!
+   wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
 
 Now add their repository:
 
 .. code-block:: bash
 
-   echo "deb https://artifacts.elastic.co/packages/5.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-5.x.list
+   echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/oss-6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
 
 Ready to be installed. Run:
 
 .. code-block:: bash
 
    sudo apt update
-   sudo apt install elasticsearch
+   sudo apt install -y elasticsearch-oss
 
 Start the service and configure it to start when the system is booted.
 
@@ -139,13 +135,14 @@ Start the service and configure it to start when the system is booted.
 PHP
 ---
 
-Ubuntu 20.04 bundles PHP 7.4, which is much faster than older releases. The
-following command will install it along with the rest of PHP extensions
+Ubuntu 24.04 bundles PHP 8.3, which is much faster than older releases.
+The following command will install it along with the rest of PHP extensions
 :ref:`required <installation-requirements>` by AtoM:
 
 .. code-block:: bash
 
-   sudo apt install php-common php7.4-common php7.4-cli php7.4-curl php7.4-json php7.4-ldap php7.4-mysql php7.4-opcache php7.4-readline php7.4-xml php7.4-mbstring php7.4-xsl php7.4-zip php-apcu php-apcu-bc
+   # For Ubuntu 24.04, running PHP 8.3
+   sudo apt install php-common php8.3-common php8.3-cli php8.3-curl php-json php8.3-ldap php8.3-mysql php8.3-opcache php8.3-readline php8.3-xml php8.3-mbstring php8.3-xsl php8.3-zip php-apcu
 
 If you are using Memcached as cache engine, you will also need to install
 `php-memcache`:
@@ -309,8 +306,13 @@ After downloading the code, you will need to compile the themes files:
 Compile Bootstrap 5 Theme Files:
 --------------------------------
 
+.. note::
+   When working with Bootstrap 5 themes, AtoM requires the latest LTS version of node.
+   Node v22 or above is required for AtoM 2.9+.
+
 .. code-block:: bash
 
+   sudo apt install npm
    sudo npm install
    sudo npm run build
 
@@ -528,16 +530,16 @@ file :file:`/usr/lib/systemd/system/atom-worker.service`:
    User=www-data
    Group=www-data
    WorkingDirectory=/usr/share/nginx/atom
-   ExecStart=/usr/bin/php7.4 -d memory_limit=-1 -d error_reporting="E_ALL" symfony jobs:worker
+   ExecStart=/usr/bin/php8.3 -d memory_limit=-1 -d error_reporting="E_ALL" symfony jobs:worker
    KillSignal=SIGTERM
    Restart=on-failure
    RestartSec=30
 
 .. IMPORTANT::
 
-   If you are not using PHP 7.4, be sure to update the `ExecStart` filepath
-   in the `[Service]` section of  the sample configuration block above!
-   Currently it assumes PHP 7.4 is being used, and will not  work for
+   If you are not using PHP 8.3, be sure to update the `ExecStart` filepath
+   in the `[Service]` section of the sample configuration block above!
+   Currently it assumes PHP 8.3 is being used, and will not work for
    installations using a different PHP version without modification.
 
 Now reload systemd, enable and start the AtoM worker:
@@ -561,10 +563,10 @@ scales better than other solutions like FastCGI.
 
 .. code-block:: bash
 
-   sudo apt install php7.4-fpm
+   sudo apt install php-fpm
 
 Let's add a new PHP pool for AtoM by adding the following contents in a new
-file called :file:`/etc/php/7.4/fpm/pool.d/atom.conf`:
+file called :file:`/etc/php/8.3/fpm/pool.d/atom.conf`:
 
 .. code-block:: ini
 
@@ -575,7 +577,7 @@ file called :file:`/etc/php/7.4/fpm/pool.d/atom.conf`:
    group = www-data
 
    ; Use UNIX sockets if Nginx and PHP-FPM are running in the same machine
-   listen = /run/php7.4-fpm.atom.sock
+   listen = /run/php-fpm.atom.sock
    listen.owner = www-data
    listen.group = www-data
    listen.mode = 0600
@@ -630,23 +632,23 @@ The process manager has to be enabled and started:
 
 .. code-block:: bash
 
-   sudo systemctl enable php7.4-fpm
-   sudo systemctl start php7.4-fpm
+   sudo systemctl enable php8.3-fpm
+   sudo systemctl start php8.3-fpm
 
 If the service fails to start, make sure that the configuration file has been
 has been pasted properly. You can also check the syntax by running:
 
 .. code-block:: bash
 
-   sudo php-fpm7.4 --test
+   sudo php-fpm8.3 --test
 
 If you are not planning to use the default PHP pool (``www``), feel free to
 remove it:
 
 .. code-block:: bash
 
-   sudo rm /etc/php/7.4/fpm/pool.d/www.conf
-   sudo systemctl restart php7.4-fpm
+   sudo rm /etc/php/8.3/fpm/pool.d/www.conf
+   sudo systemctl restart php8.3-fpm
 
 .. _installation-ubuntu-serve-nginx:
 
@@ -704,7 +706,7 @@ contents in :file:`/etc/nginx/sites-available/atom`.
 .. code-block:: nginx
 
    upstream atom {
-      server unix:/run/php7.4-fpm.atom.sock;
+      server unix:/run/php-fpm.atom.sock;
    }
 
    server {
@@ -796,7 +798,7 @@ information on your first steps using AtoM.
 :ref:`Back to top <installation-ubuntu>`
 
 
-.. _`Ubuntu 20.04 LTS (Focal Fossa)`: http://releases.ubuntu.com/focal/
+.. _`Ubuntu 24.04 LTS (Noble Numbat)`: http://releases.ubuntu.com/noble/
 .. _`repositories`: https://help.ubuntu.com/community/Repositories/Ubuntu
 .. _`download section`: http://www.accesstomemory.org/download
 .. _`public repository`: https://github.com/artefactual/atom

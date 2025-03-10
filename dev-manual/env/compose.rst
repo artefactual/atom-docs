@@ -62,15 +62,15 @@ Now using git, check out the sources of AtoM and change your current directory:
 
 Now set the environment variable ``COMPOSE_FILE`` to tell Compose what is the
 location of our YAML file. You could do the same using the ``-f`` flag but we
-don't want to do so each time we invoke the ``docker-compose`` command.
+don't want to do so each time we invoke the ``docker compose`` command.
 
 .. code-block:: bash
 
    # For bash users (most of you)
-   export COMPOSE_FILE="$PWD/docker/docker-compose.dev.yml"
+   export COMPOSE_FILE="$PWD/docker/docker compose.dev.yml"
 
    # For fish users
-   set -lx COMPOSE_FILE (pwd)/docker/docker-compose.dev.yml
+   set -lx COMPOSE_FILE (pwd)/docker/docker compose.dev.yml
 
 It's time to use Docker Compose in order to provision our containers:
 
@@ -81,21 +81,21 @@ It's time to use Docker Compose in order to provision our containers:
    in the container that will be created below. However, the same limit needs
    to be increased in the host running this environment. Check the
    `Elasticsearch documentation
-   <https://www.elastic.co/guide/en/elasticsearch/reference/5.6/vm-max-map-count.html>`__
+   <https://www.elastic.co/guide/en/elasticsearch/reference/6.8/vm-max-map-count.html>`__
    for more information.
 
-   The containers for the application use ``php:7.4-fpm-alpine`` as their base
+   The containers for the application use ``php:8.2-fpm-alpine`` as their base
    image. If an old version of this image has been already downloaded by the
-   Docker engine in the host, run ``docker pull php:7.4-fpm-alpine`` to get the
+   Docker engine in the host, run ``docker pull php:8.2-fpm-alpine`` to get the
    latest version before creating the containers. It has to be based on Alpine
-   v3.8 or higher to be able to install some packages.
+   v3.17 or higher to be able to install some packages.
 
 .. code-block:: bash
 
    # Create and start containers. This may take a while the first time you run
    # it because all the images have to be downloaded (e.g. percona, memcached)
    # and the AtoM image has to be built.
-   docker-compose up -d
+   docker compose up -d
 
 All seven docker containers should now be up and running.
 
@@ -106,13 +106,26 @@ All seven docker containers should now be up and running.
    ...``,  you can increase the memory allocated  by either adding the line
    ``ATOM_PHP_MEMORY_LIMIT=1G`` to the file ``docker/etc/environment``
    or alternatively run the command without memory limits
-   ``docker-compose exec atom php -d memory_limit=-1 symfony tools:purge --demo``
+   ``docker compose exec atom php -d memory_limit=-1 symfony tools:purge --demo``
 
 
 .. code-block:: bash
 
    # Execute a command in the running container atom: purge database
-   docker-compose exec atom php symfony tools:purge --demo
+   docker compose exec atom php symfony tools:purge --demo
+
+Compile Bootstrap 5 Theme Files:
+--------------------------------
+
+.. code-block:: bash
+
+   npm install
+   docker copmose exec atom npm run build
+
+Compile Bootstrap 2 Theme Files:
+--------------------------------
+
+.. code-block:: bash
 
 
 Compile Bootstrap 5 Theme Files:
@@ -129,14 +142,14 @@ Compile Bootstrap 2 Theme Files:
 .. code-block:: bash
 
    # Execute another command: build stylesheets
-   docker-compose exec atom make -C plugins/arDominionPlugin
+   docker compose exec atom make -C plugins/arDominionPlugin
 
 .. TIP::
 
    While you wait, take the opportunity to check out our `Dockerfile <https://github.com/artefactual/atom/blob/qa/2.x/Dockerfile>`__,
    which describes the steps that are taken to build the AtoM image. It is
-   based on Alpine Linux + PHP 7.4 and the rest of dependencies. In addition,
-   our `docker-compose.dev.yml <https://github.com/artefactual/atom/blob/qa/2.x/docker/docker-compose.dev.yml>`__
+   based on Alpine Linux + PHP 8.2 and the rest of dependencies. In addition,
+   our `docker compose.dev.yml <https://github.com/artefactual/atom/blob/qa/2.x/docker/docker-compose.dev.yml>`__
    file shows how AtoM is orchestrated together with its service dependencies.
    It is an environment meant to be used by developers.
 
@@ -150,7 +163,7 @@ restarted after the database is populated for the first time:
 
 .. code-block:: bash
 
-   docker-compose restart atom_worker
+   docker compose restart atom_worker
 
 .. IMPORTANT::
 
@@ -168,20 +181,20 @@ For example, you can monitor the output of some of your containers as follows:
 
 .. code-block:: bash
 
-   docker-compose logs -f atom atom_worker nginx
+   docker compose logs -f atom atom_worker nginx
 
 You can also scale the AtoM worker as needed:
 
 .. code-block:: bash
 
-   docker-compose up -d --scale atom_worker=2
+   docker compose up -d --scale atom_worker=2
 
 Let's verify that two workers have subscribed to Gearman:
 
 .. code-block:: bash
 
    # Establish a TCP connection to gearmand, port 4730
-   docker-compose exec atom bash -c "nc gearmand 4730"
+   docker compose exec atom bash -c "nc gearmand 4730"
 
    # Send STATUS command
    STATUS
@@ -201,13 +214,13 @@ Let's verify that two workers have subscribed to Gearman:
    0a2a58137e05032d1140fdbd0d6dccbb-arFindingAidJob                   0	  0   2
    0a2a58137e05032d1140fdbd0d6dccbb-arGenerateReportJob               0	  0   2
 
-You could temporarily stop all the services with ``docker-compose stop`` (which
-will need ``docker-compose up -d`` later to start the services again) or both
+You could temporarily stop all the services with ``docker compose stop`` (which
+will need ``docker compose up -d`` later to start the services again) or both
 stop and remove related containers, network and volumes by running:
 
 .. code-block:: bash
 
-   docker-compose down --volumes
+   docker compose down --volumes
 
 Connect to AtoM
 ===============
@@ -217,7 +230,7 @@ about the containers:
 
 .. code-block:: bash
 
-   $ docker-compose ps
+   $ docker compose ps
 
             Name                       Command               State                  Ports
    -----------------------------------------------------------------------------------------------------
@@ -281,8 +294,8 @@ variable, on Linux and macOS the separator is ``:``, on Windows it is ``;``.
 
    .. code-block:: bash
 
-      docker-compose rm pmm_client
-      docker-compose up -d
+      docker compose rm pmm_client
+      docker compose up -d
 
 To access the PMM server interface, visit http://localhost:63006:
 
@@ -300,7 +313,7 @@ public site, and therefore authentication doesn't work.
 .. code-block:: bash
 
    export COMPOSE_FILE="$PWD/docker/docker-compose.dev.yml:$PWD/docker/docker-compose.varnish.yml"
-   docker-compose up -d
+   docker compose up -d
 
 To access AtoM through Varnish, visit http://localhost:63007.
 
@@ -310,6 +323,6 @@ To access AtoM through Varnish, visit http://localhost:63007.
 
    .. code-block:: bash
 
-      docker-compose exec varnish varnishlog
+      docker compose exec varnish varnishlog
 
 :ref:`Back to top <dev-env-compose>`

@@ -54,15 +54,14 @@ purpose of the release and how best to install it.
 Make sure the dependencies are updated
 ======================================
 
-Since the 2.5 version, AtoM uses Elasticsearch 5.x. If you're upgrading from an
+As of version 2.9, AtoM uses Elasticsearch 6.8. If you're upgrading from an
 earlier version, please make sure to upgrade your Elasticsearch installation.
 You don't need to backup your index data as it will be recreated from the
 database later in the upgrade.
 
-You will also need to upgrade to Java 8 if the system is using a previous
-version, as this is a requirement for Elasticsearch 5.x.
+Elasticsearch is built using Java, and requires at least Java 8 in order to run.
 
-Since the 2.6 version, AtoM requires MySQL 8.0. Bellow we'll explain the steps
+Since the 2.6 version, AtoM requires MySQL 8.0. Below we'll explain the steps
 needed to move and upgrade the AtoM database to properly work with that version.
 
 Install the latest version of AtoM
@@ -313,7 +312,7 @@ and the atom-workers managed by the job scheduler.
 
 .. code-block:: bash
 
-   sudo systemctl restart php7.4-fpm
+   sudo systemctl restart php8.3-fpm
 
 **Optionally, to restart Memcached**:
 
@@ -494,7 +493,7 @@ To restart PHP-FPM:
 
 .. code-block:: bash
 
-   sudo systemctl restart php7.4-fpm
+   sudo systemctl restart php8.3-fpm
 
 If you are using Memcached with AtoM, you may also want to restart it:
 

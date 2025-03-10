@@ -599,6 +599,11 @@ the results returned, and they may not necessarily appear together.
 terms you wish to search. For example, search *"city hall"* to return results
 that contain both "city" and "hall" together in that exact order.
 
+.. NOTE::
+   Since AtoM 2.7, AtoM no longer indexes stop words, so searching for exact
+   phrases using stop words are not guaranteed. For lists of stopwords, see:
+   `Stop words by language <https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-stop-tokenfilter.html#analysis-stop-tokenfilter-stop-words-by-lang>`__.
+
 If you wish to use "OR" as the operator between terms, see the section below,
 :ref:`advanced-search-operators`.
 
@@ -714,9 +719,6 @@ search interface.
 +--------+-------------------------------------------------------------------+
 | Symbol | Use                                                               |
 +========+===================================================================+
-| ``"``  | Term enclosed in quotes must appear exactly as provided. Example: |
-|        | "towel" will find towel, but not towels.                          |
-+--------+-------------------------------------------------------------------+
 | ``+``  | Term after "+" must be in the result. Example: +tea cricket       |
 |        | requires that results that must contain the term tea in them, and |
 |        | may have the term cricket.                                        |
@@ -774,7 +776,7 @@ For further examples of the use of these Boolean operators, users can consult
 the `Lucene search documentation <https://lucene.apache.org/core/2_9_4/queryparsersyntax.html>`__
 . Developers interested in fine-tuning these settings, or technical
 users interested in how Elasticsearch operates may wish to consult the
-`query string query <https://www.elastic.co/guide/en/elasticsearch/reference/5.6/query-dsl-query-string-query.html>`__
+`query string query <https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl-query-string-query.html>`__
 Elasticsearch reference documentation for more information on Elasticsearch's
 default behaviors, and possible configurations.
 

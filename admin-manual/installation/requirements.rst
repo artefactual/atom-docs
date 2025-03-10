@@ -62,12 +62,13 @@ of each component.
 * A webserver like `Apache <https://httpd.apache.org/>`__ or
   `Nginx <http://nginx.com/>`__; Artefactual prefers the latter in
   development
-* `Elasticsearch <https://www.elastic.co/products/elasticsearch>`__ 5.x (we use
-  ES 5.6 in development). Elasticsearch 6.0 or newer is not supported as they
-  have deprecated a number of APIs still used in AtoM
+* `Elasticsearch <https://www.elastic.co/products/elasticsearch>`__ 6.x (we use
+  ES 6.8 in development). ES 7 is not supported as ES 7.11+ uses Server
+  Side Public License (SSPL) and Elastic License 2.0 (ELv2), which are not
+  approved by the Open Source Initiative.
 * `Java <https://www.java.com/en/>`__ 8 (required for Elasticsearch)
 * `MySQL <https://www.mysql.com/>`__ 8.0
-* `PHP <http://php.net/>`__ 7.4
+* `PHP <http://php.net/>`__ 8.x (8.1, 8.2, 8.3 are all supported)
 * `Gearman job server <http://gearman.org>`__
 
 Optionally, Memcached can be used as cache engine:

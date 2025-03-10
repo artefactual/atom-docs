@@ -166,7 +166,7 @@ You should consider restarting PHP-FPM if:
 
 .. code-block:: bash
 
-   sudo systemctl restart php7.4-fpm
+   sudo systemctl restart php8.3-fpm
 
 .. SEEALSO::
 
@@ -375,7 +375,7 @@ while monitoring.
 
    More information on using top:
 
-   * http://manpages.ubuntu.com/manpages/focal/man1/top.1.html
+   * http://manpages.ubuntu.com/manpages/noble/man1/top.1.html
    * https://www.lifewire.com/linux-top-command-2201163
 
    More information on using htop:
@@ -415,7 +415,7 @@ information, see:
    Some PHP settings are configured in the PHP pool set up during installation, 
    and should be adjusted there. See for example: 
 
-   * :ref:`Ubuntu 20.04 PHP-FPM pool setup <installation-ubuntu-serve-php-fpm>`
+   * :ref:`Ubuntu 24.04 PHP-FPM pool setup <installation-ubuntu-serve-php-fpm>`
 
 Remember, if you make any changes to your PHP settings (either in the ``php.ini``
 file, or in your application PHP pool), you will need to restart PHP-FPM after
@@ -1382,7 +1382,7 @@ has its own configuration file - you might want to review the relevant ES
 set-up and configuration documentation:
 
 * ES 1.7: https://www.elastic.co/guide/en/elasticsearch/reference/1.7/setup-configuration.html
-* ES 5.x: https://www.elastic.co/guide/en/elasticsearch/reference/5.2/settings.html
+* ES 6.8: https://www.elastic.co/guide/en/elasticsearch/reference/6.8/settings.html
 
 For more information on troubleshooting Elasticsearch, see: 
 
@@ -1631,7 +1631,7 @@ ensure that the ``read_only`` setting is set to ``false``. See:
 
 .. IMPORTANT::
 
-   There is also an environment variable maintained in ``/etc/php/7.4/fpm/php-fpm.conf``
+   There is also an environment variable maintained in ``/etc/php/8.3/fpm/php-fpm.conf``
    that can override the one in ``config/app.yml``. We recommend checking both
    files. In the ``atom.conf`` file, ensure that ``env[ATOM_READ_ONLY]`` is set
    to "off" to disable this setting and allow users to log in again.

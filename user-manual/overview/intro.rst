@@ -33,7 +33,7 @@ uses a database abstraction layer and is therefore potentially compatible with
 Postgres, SQLite, SQLServer, Oracle, etc. (other solutions are not tested by
 AtoM developers)
 
-PHP 7.4 software code that manages requests and responses between the web
+PHP 8.3 software code that manages requests and responses between the web
 clients, the application logic, and the application content stored in
 the database. AtoM also makes use of a number of PHP extensions; see:
 :ref:`installation-requirements`.
@@ -42,7 +42,7 @@ The Symfony (`1.4 <http://symfony.com/legacy>`_) framework that organizes the
 component parts using object orientation and best practice web design
 patterns.
 
-`Elasticsearch <http://www.elasticsearch.org/>`__ (5.x), a distributed
+`Elasticsearch <http://www.elasticsearch.org/>`__ (6.x), a distributed
 search server based on Apache Lucene, which acts as the application's search
 and analytic engine. Elasticsearch is not integrated directly into AtoM code
 as a library, but as a service deployed in the same network which AtoM
