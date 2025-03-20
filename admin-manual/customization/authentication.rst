@@ -335,7 +335,7 @@ login panel's "Email" field.
 .. image:: images/ldap-config-example.*
    :align: center
    :width: 90%
-   :alt: An image of example valudes in the LDAP authentication settings
+   :alt: An image of example values in the LDAP authentication settings
 
 In the above example, users would enter their LDAP username into AtoM's
 "Email" field in the login menu. If ``cn`` were used as the lookup attribute
@@ -381,6 +381,391 @@ see:
      whose only initial permissions in AtoM will be those of the Authenticated
      :term:`user group`. No password will be stored in AtoM with this method, 
      since the LDAP server handles authentication. This is the default behavior 
-     in AtoM when LDAP is enabled and no user accounts are present. 
+     in AtoM when LDAP is enabled and no user accounts are present.
+
+.. _oidc-enabling:
+
+Enabling OIDC authentication
+============================
+
+AtoM can be configured to authenticate users using OpenID Connect (OIDC) instead
+of local authentication. When this is enabled, users attempting to log in will be
+redirected to an external identity and access management (IAM) server for
+authentication. After successfully authenticating, a user account will be created
+if one does not exist already. Logging out from AtoM will then log the user out
+from both AtoM and the IAM server.
+
+Enabling OIDC authentication requires manually editing a few config files.
+For more information on how to do this, see :ref:`customization-config-files`
+
+.. NOTE::
+
+   Proper operation of the OIDC Plugin requires configuring AtoM with an external
+   cache. See :ref:`oidc-cache-configuration` for more information.
+
+Enable the plugin
+-----------------
+
+Create an empty file named ``activate-oidc-plugin`` in the root of the AtoM
+installation to enable the OIDC plugin. Permissions and ownership of this file
+should match the other folders in the AtoM folder.
+
+Add the plugin name to the ``$plugins`` array in ``config/ProjectConfiguration.class.php``
+
+.. image:: images/enable-oidc-plugin.*
+   :align: center
+   :width: 90%
+   :alt: Plugin name ``arOidcPlugin`` added in the ``$plugins`` array.
+
+.. IMPORTANT::
+   For security best practices, instead of having an administrator enabling the
+   plugin in the user interface, have a system administrator enable the plugin
+   as outlined above to avoid local authentication accounts stored in AtoM.
+
+Next, change the default login module to OIDC in ``apps/qubit/config/settings.yml``.
+
+.. image:: images/configure-oidc-login-module.*
+   :align: center
+   :width: 90%
+   :alt: Set ``login_module`` to ``oidc``.
+
+Finally, change the user class to ``oidcUser`` in ``apps/qubit/config/factories.yml``.
+
+.. image:: images/configure-oidc-user-class.*
+   :align: center
+   :width: 90%
+   :alt: Update user class to ``oidcUser``.
+
+Configure the OIDC settings in the plugin's ``app.yml`` file
+------------------------------------------------------------
+
+Next, configure the OIDC settings in the ``arOidcPlugin``'s ``app.yml`` config file
+with the details of the OIDC endpoint for authentication.
+
+.. WARNING::
+   While OIDC endpoint TLS validation may be disabled for development, it is
+   strongly discouraged to do so in a production environment.
+
+Update the ``providers`` array:
+
+.. image:: images/configure-oidc-settings-providers.*
+   :align: center
+   :width: 90%
+   :alt: Update the ``providers`` array in ``arOidcPlugin``'s ``app.yml``.
+
+One or many OIDC providers can be configured in the ``app.yml``. Each provider will
+have separate configuration for the following settings:
+
+.. NOTE::
+   If changing the primary provider name from the default ``primary``, uncomment
+   the setting ``primary_provider_name`` and specify the name of the primary provider.
+   Secondary providers can be named and triggered for use by specifying a query
+   param on the referring URL before pressing “Log in with SSO”. The query selector
+   name can be configured with the ``provider_query_param_name`` setting.
+
+**url**
+
+OIDC provider authentication redirect URL:
+
+Default for Dex in oidc-demo: http://dex:5556/dex
+
+Default for Keycloak direct in oidc-demo: http://keycloak:8080/realms/artefactual
+
+**client_id**
+
+The client identifier registered with the identity provider. This identifies a
+particular application instance authorized to connect to the OIDC provider for
+authentication services.
+
+**client_secret**
+
+The credential secret for the defined client.
+
+**primary_provider_name**
+
+Identifies the primary OIDC provider and corresponds to an entry in ``providers``
+above. The default provider name is ``primary``. If this setting is not defined,
+the default provider named ``primary`` will be set.
+
+This is the provider that will be selected for authentication when a user selects
+“Log in with SSO”.
+
+**provider_query_param_name**
+
+This setting enables the use of additional providers and identifies the name of
+the query param that can be added to the referring URL when selecting "Log in with
+SSO" button. The use case for this functionality is to allow support
+accounts not included in the primary IAM endpoint authenticate.
+
+To use, append the query param and the provider name to the URL before selecting
+"Log in with SSO". This must be uncommented to activate use of secondary providers.
+
+Ex. Use the ``sample_provider`` provider by modifying the URL before pressing "Log
+in with SSO":
+``http://127.0.0.1:63001/index.php?secondary=sample_provider``
+
+**redirect_url**
+
+URL that Keycloak should redirect back to once the authentication process 
+completes.
+
+**send_oidc_logout**
+
+This boolean value indicates to the OIDC plugin whether the IAM endpoint
+supports OIDC logout and this is safe to send. Keycloak supports this functionality
+so it is safe to send. For Dex, this should be set to ``false``.
+
+**logout_redirect_url**
+
+Use this setting to configure the URL to redirect to on Logout. This parameter
+is only used if ``send_oidc_logout`` is ``true``.
+
+**enable_refresh_token_use**
+
+Enables use of OIDC refresh tokens to periodically check-in with the IAM service
+to extend the user's session and ensure it has not been ended.
+
+When set to ``false``, user will remain authenticated until the user ends the 
+session in AtoM - in this case AtoM will not check if the session is still
+valid in the backend IAM system.
+
+When set to ``true``, AtoM will check in with the backend IAM system at intervals
+determined by the refresh token expiry setting in the IAM system (ex. Keycloak).
+This is dependent on a user actively using AtoM - an idle AtoM session will let
+the refresh tokens expire. Active sessions can be viewed and ended on the IAM side
+(ex. in Keycloak). AtoM will discover sessions have been ended the next time it
+refreshes the tokens.
+
+**server_cert**
+
+OIDC server TLS certificate location for server validation. Accepts a file path
+or ``false`` (to disable).
+
+It is recommended to refer to an external file for the ``server_cert`` rather than
+pasting the cert value into ``app.yml``.
+
+It is also recommended to have the ``server_cert`` file NOT be located in the AtoM
+application folder in a production setting. If the ``server_cert`` file is located
+in the AtoM folder there is a risk that a misconfiguration in the nginx config
+could expose the ``server_cert`` to the network.
+
+**scopes**
+
+OIDC scopes are used by an application during authentication to authorize access
+to a user's details, like name and email address.
+
+**set_groups_from_attributes**
+
+Setting to activate parsing OIDC groups into AtoM group membership. AtoM will
+attempt to translate OIDC groups to AtoM groups if ``true``. When activated, AtoM
+will refresh a user's groups in AtoM from the IAM system each time they login to
+ensure they are up-to-date.
+
+If this setting is ``false``, groups parsing will not occur and the user will only
+have the group ``authenticated`` on first log in. In this case, an AtoM admin will
+have to manually assign groups to the user after they authenticate the first time.
+
+See :ref:`oidc-user-groups` for more information.
+
+**user_groups**
+
+This setting maps OIDC roles to AtoM groups. The data structure is as follows:
+
+.. image:: images/configure-oidc-user-groups.*
+   :align: center
+   :width: 90%
+   :alt: Configure OIDC user_groups in `app.yml`.
+
+This entry maps the OIDC group ``atom-admin`` to the group administrator.
+The ``group_id`` is a database id - this value should not be changed for a default
+installation.
+
+**roles_source**
+
+This setting identifies the token which contains role claims. Options are
+``access-token``, ``id-token``, ``verified-claims``, or ``user-info``. Option
+``set_groups_from_attributes`` must be ``true`` to enable.
+Default is ``access-token``.
+
+**roles_path**
+
+This setting identifies the location of role claims within the token identified
+in ``roles_source`` above. This is an array containing the node path to locate the
+roles array within the OIDC token. By default this is found in Keycloak's access
+token under ``realm_access/roles``.
+
+**user_matching_source**
+
+This setting identifies how IAM users are matched to users in AtoM. There are two
+valid options:
+
+``user_matching_source: oidc-email`` or ``user_matching_source: oidc-username``
+
+Using ``oidc-username`` will work without additional scopes being requested.
+
+Using ``oidc-email`` requires the email scope to be set above in the scopes setting.
+Email is an optional user setup field in Keycloak but MUST be set if matching to
+pre-existing user accounts by email is going to work.
+
+See :ref:`oidc-user-groups` for more information.
+
+**auto_create_atom_user**
+
+Activate or disable the automatic creation of user records from OIDC endpoint
+details. Allowed settings are:
+
+``true`` (default): AtoM will automatically create a user record on first login.
+
+``false``: AtoM will not automatically create a user record on first login - user
+must be created in advance to successfully authenticate.
+
+If this setting is ``false``, the User settings page will allow users to be
+created and deleted. When this setting is ``true``, the ability to create and delete
+users is suppressed - users will automatically be created from details received
+from the OIDC endpoint.
+
+Clear the cache
+---------------
+
+After updating the settings listed above, clear the Symfony cache:
+``php symfony cc`` and restart ``php-fpm``.
+
+Deactivating the OIDC plugin
+----------------------------
+
+Deactiviating the OIDC plugin is a matter of reversing the steps taken to enable
+the plugin.
+
+First, delete the plugin name ``arOidcPlugin`` from the ``$plugins`` array in
+``config/ProjectConfiguration.class.php``.
+
+Then, revert the default login module to its original value of ``user`` in
+``apps/qubit/config/settings.yml``.
+
+Finally, revert the user class value to ``myUser`` in ``apps/qubit/config/factories.yml``.
+
+At this point, clear all caches and restart ``php-fpm``.
+
+.. NOTE::
+   User records created while the OIDC plugin was activated will require an
+   administrator to set a password for the user as these fields will be ``NULL``
+   in the database.
+
+   Any group membership settings applied to users while the OIDC plugin was
+   activated will remain set.
+
+.. _oidc-user-groups:
+
+Set user groups from OIDC groups
+--------------------------------
+
+User groups can be configured automatically based on user groups returned by OIDC
+endpoint during authentication. When enabled, this entitlement check occurs on
+each login so that changes made to group membership on the IAM server are reflected
+in AtoM on the next login.
+
+Enable via settings in the ``plugins/arOidcPlugin/config/app.yml``:
+
+First, enable the feature by setting ``set_groups_from_attributes`` to ``true``.
+
+Then, set the ``roles_source`` and ``roles_path`` to identify where to look for OIDC
+roles in the tokens returned from the OIDC enpoint. AtoM can be configured to look
+for role info in a few locations:
+``access-token``, ``id-token``, ``verified-claims``, or ``user-info``
+
+Finally, set the ``attribute_value`` of each group in ``user_groups`` to match the
+expected value for that group in the OIDC token.
+Groups can be added or removed from ``user_groups`` as desired. Proper configuration
+of ``attribute_value`` and a valid ``group_id`` are required to set group
+membership on login.
+
+.. NOTE::
+   When enabled, changes made by an administrator will be overwritten on the next
+   OIDC login.
+
+If ``set_groups_from_attributes`` is set to ``false``, an administrator will need
+to manually assign and administer group membership for each user. OIDC
+authenticated users will, by default, only have the ``authenticated`` group membership.
+
+.. IMPORTANT::
+   An administrator user must exist before activating the OIDC plugin if OIDC group
+   membership mapping is **DEACTIVATED**. This user will be required to assign
+   group memberships to new users. See :ref:`cli-promote-user-admin` for more information.
+
+Implications for user records created prior to activating OIDC plugin
+---------------------------------------------------------------------
+
+**Matching OIDC user info to existing users**
+
+AtoM user record must match the IAM user record. Set ``user_matching_source`` to
+either ``oidc-email`` or ``oidc-username``. Mismatch will result in a new user
+record to be created.
+
+**Existing password and salt fields**
+
+Once the OIDC plugin is activated, existing password hashes stored in user records
+will no longer be used, but valid again if the OIDC plugin is deactivated. If it
+is desired that users should **NOT** be allowed to authenticate locally, the
+password hash and salt fields must be deleted or set to ``NULL`` in the database.
+
+.. _oidc-cache-configuration:
+
+OIDC Cache Configuration
+------------------------
+
+External cache is required for the correct operation of the OIDC plugin authentication
+flow. To configure an external cache, the storage class definition in ``factories.yml``
+needs to be implemented in ``QubitCacheSessionStorage`` instead of ``QubitSessionStorage``.
+
+The default ``factories.yml`` storage definition is incompatible with the OIDC
+plugin authentication redirect pattern.
+
+.. code-block:: bash
+
+   storage:
+     class: QubitSessionStorage
+     param:
+       session_name: symfony
+       session_cookie_httponly: true
+       session_cookie_secure: true
+
+Example using ``QubitCacheSessionStorage``, demonstrating configuration for
+Memcache as backend.
+
+.. code-block:: bash
+
+   storage:
+     class: QubitCacheSessionStorage
+     param:
+       session_name: symfony
+       session_cookie_httponly: true
+       session_cookie_secure: true
+       cache:
+         class: sfMemcacheCache
+         param:
+           host: <memcache-host>
+           port: <memcache-port>
+           prefix: atom
+           storeCacheInfo: true
+           persistent: true
+
+Example using ``QubitCacheSessionStorage`` to connect to APC cache backend.
+
+.. code-block:: bash
+
+   storage:
+     class: QubitCacheSessionStorage
+     param:
+       session_name: symfony
+       session_cookie_httponly: true
+       session_cookie_secure: true
+       cache:
+         class: sfAPCCache
+         param:
+           storeCacheInfo: yes
+           prefix: atom-public
+           host: <apc-host>
+           port: <apc-port>
+           persistent: yes
 
 :ref:`Back to top <customization-authentication>`
