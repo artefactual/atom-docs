@@ -20,9 +20,10 @@ protocols.
 * :ref:`cas-enabling`
 * :ref:`cas-groups`
 * :ref:`ldap-enabling`
+* :ref:`oidc-enabling`
 
 .. SEEALSO::
-   
+
    * :ref:`customization-config-files`
    * :ref:`log-in`
    * :ref:`read-only-mode`
@@ -410,13 +411,6 @@ Create an empty file named ``activate-oidc-plugin`` in the root of the AtoM
 installation to enable the OIDC plugin. Permissions and ownership of this file
 should match the other folders in the AtoM folder.
 
-Add the plugin name to the ``$plugins`` array in ``config/ProjectConfiguration.class.php``
-
-.. image:: images/enable-oidc-plugin.*
-   :align: center
-   :width: 90%
-   :alt: Plugin name ``arOidcPlugin`` added in the ``$plugins`` array.
-
 .. IMPORTANT::
    For security best practices, instead of having an administrator enabling the
    plugin in the user interface, have a system administrator enable the plugin
@@ -465,11 +459,9 @@ have separate configuration for the following settings:
 
 **url**
 
-OIDC provider authentication redirect URL:
-
-Default for Dex in oidc-demo: http://dex:5556/dex
-
-Default for Keycloak direct in oidc-demo: http://keycloak:8080/realms/artefactual
+OIDC provider authentication redirect URL. This is the URL that you will be 
+redirecting to. For example, if redirecting to Keycloak, it will look something
+like: ``https:///realms/<atom_realm_name>``
 
 **client_id**
 

@@ -237,8 +237,12 @@ contact your CAS administrator to make any changes to your profile.
 When you log out of AtoM you will also be logged out of the CAS domain.
 
 AtoM also has an :ref:`LDAP <ldap-enabling>` module that can change how 
-authentication is handled. For more information on both CAS and LDAP 
-authentication configuration, see: 
+authentication is handled.
+
+Additionally, AtoM also supports :ref:`OIDC authentication <oidc-enabling>`
+instead of local authentication.
+
+For more information on CAS, LDAP and OIDC authentication configuration, see: 
 
 * :ref:`customization-authentication`
 
