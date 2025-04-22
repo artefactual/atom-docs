@@ -3032,9 +3032,9 @@ CSV authority export task options
   :width: 85%
   :alt: An image of the command-line options for CSV authority export
 
-By typing ``php symfony help csv:export`` into the command-line from your root
-directory, without specifying an export location of the CSV, you will able
-able to see the CSV import options available (pictured above). A brief
+By typing ``php symfony help csv:authority-export`` into the command-line from
+your root directory, without specifying an export location of the CSV, you will
+be able able to see the CSV import options available (pictured above). A brief
 explanation of each is included below.
 
 The ``--application``, ``--env``, and ``connection`` options **should not be
