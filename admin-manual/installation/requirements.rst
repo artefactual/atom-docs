@@ -94,6 +94,11 @@ And the following PHP extensions are optional:
    including :ref:`installation-windows`, :ref:`installation-macosx`, or
    Ubuntu Linux :ref:`installation-ubuntu`.
 
+.. IMPORTANT::
+
+   As of AtoM 2.9.1, AtoM is not backwards compatible with PHP 7 and therefore,
+   installation requires PHP 8.0+ and Ubuntu 22.04+.
+
 .. _other-dependencies:
 
 Other dependencies
