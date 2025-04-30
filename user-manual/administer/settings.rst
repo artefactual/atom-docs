@@ -2355,17 +2355,22 @@ security of AtoM.
 
 .. _security-limit-ip:
 
-Limit administrator functionality by IP address
+Limit authenticated functionality by IP address
 -----------------------------------------------
 
-This feature allows :term:`administrators <administrator>` to limit
-administrator functionality to one or more IP addresses or IP ranges. Separate
-multiple IP address or ranges by semicolons, and use a dash to indicate an IP
-range. For example:
+This feature allows :term:`administrators <administrator>` to limit the ability
+to view pages as an authenticated user to one or more IP addresses or IP ranges.
+Separate multiple IP address or ranges by semicolons, and use a dash to indicate
+an IP range. For example:
 
   * 192.168.0.1 (single IP address)
   * 192.168.0.1;192.168.0.255 (multiple unique IP addresses)
   * 192.168.0.1-192.168.0.255 (IP range)
+
+.. image:: images/limit-ip-filter-logic.*
+   :align: center
+   :width: 70%
+   :alt: Logic flow for QubitLimitIpFilter class
 
 .. _security-require-ssl:
 

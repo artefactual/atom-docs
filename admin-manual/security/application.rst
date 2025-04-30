@@ -96,7 +96,8 @@ AtoM security panel settings
 
 AtoM's :term:`user interface` also has some security settings that can be 
 configured by an :term:`administrator`, such as the ability to require strong
-passwords, or limiting login to a specific IP or range. For more information, 
-see: 
+passwords, or limiting the ability to view pages as an authenticated user to a
+specific IP or range.
+For more information, see: 
 
 * :ref:`Security panel <security-panel>`
