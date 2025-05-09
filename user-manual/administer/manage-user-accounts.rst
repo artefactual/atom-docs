@@ -987,10 +987,10 @@ Follow the instructions below to delete a user group in AtoM:
 Login security features
 =======================
 
-:term:`Administrators <administrator>` have the ability require logged-in
-users to have strong passwords, as well as limit administrator functionality
-by IP address or require SSL for all administrator functionality. These
-settings are found in Admin -> Settings -> Security.
+:term:`Administrators <administrator>` have the ability to require logged-in
+users to have strong passwords, as well as limiting the ability to view pages as
+an authenticated user by IP address or require SSL for all administrator functionality.
+These settings are found in Admin -> Settings -> Security.
 See :ref:`Security panel <security-panel>` for more information.
 
 :ref:`Back to top <manage-user-accounts>`
