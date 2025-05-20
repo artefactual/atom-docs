@@ -871,7 +871,7 @@ Edit/remove an existing logo for an archival institution
     institution - see :ref:`Access content <access-content>` for more
     information on navigation in AtoM.
 
-.. image:: images/edit-logo-bell.*
+.. image:: images/edit-law-society.*
    :align: center
    :width: 70%
    :alt: An image of an archival institution with an uploaded logo
