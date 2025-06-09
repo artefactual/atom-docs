@@ -191,15 +191,9 @@ When you have made your changes, remember to click "Save" in the
 .. IMPORTANT::
 
    Elements (e.g. :term:`fields <field>`) that are hidden via the Visible
-   elements module will not be visible to public users in the interface.
-   However, the data will still be contained in the EAD XML download available
-   to end users! Note that physical storage information, described below, is
-   different - because location information can be a security concern for some
-   users, when physical storage information is hidden via the Visible elements
-   module, it is also removed from the EAD XML export for public users.
-
-   For more information on EAD XML export, see:
-   :ref:`export-xml`
+   elements module will not be visible to public users in the interface
+   or XML/CSV exports. To view hidden Visible elements, user must be logged
+   in.
 
 :ref:`Back to top <visible-elements>`
 

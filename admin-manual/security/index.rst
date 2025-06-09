@@ -9,5 +9,6 @@ Security
 
    application
    csp-headers
+   js-challenge
    firewall
    backups
