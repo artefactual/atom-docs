@@ -119,22 +119,8 @@ Compile Bootstrap 5 Theme Files:
 
 .. code-block:: bash
 
-   npm install
+   docker compose exec atom npm install
    docker compose exec atom npm run build
-
-Compile Bootstrap 2 Theme Files:
---------------------------------
-
-.. code-block:: bash
-
-
-Compile Bootstrap 5 Theme Files:
---------------------------------
-
-.. code-block:: bash
-
-   sudo npm install
-   sudo npm run build
 
 Compile Bootstrap 2 Theme Files:
 --------------------------------
