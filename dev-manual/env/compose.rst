@@ -67,10 +67,10 @@ don't want to do so each time we invoke the ``docker compose`` command.
 .. code-block:: bash
 
    # For bash users (most of you)
-   export COMPOSE_FILE="$PWD/docker/docker compose.dev.yml"
+   export COMPOSE_FILE="$PWD/docker/docker-compose.dev.yml"
 
    # For fish users
-   set -lx COMPOSE_FILE (pwd)/docker/docker compose.dev.yml
+   set -lx COMPOSE_FILE (pwd)/docker/docker-compose.dev.yml
 
 It's time to use Docker Compose in order to provision our containers:
 
@@ -120,7 +120,7 @@ Compile Bootstrap 5 Theme Files:
 .. code-block:: bash
 
    npm install
-   docker copmose exec atom npm run build
+   docker compose exec atom npm run build
 
 Compile Bootstrap 2 Theme Files:
 --------------------------------
@@ -149,7 +149,7 @@ Compile Bootstrap 2 Theme Files:
    While you wait, take the opportunity to check out our `Dockerfile <https://github.com/artefactual/atom/blob/qa/2.x/Dockerfile>`__,
    which describes the steps that are taken to build the AtoM image. It is
    based on Alpine Linux + PHP 8.2 and the rest of dependencies. In addition,
-   our `docker compose.dev.yml <https://github.com/artefactual/atom/blob/qa/2.x/docker/docker-compose.dev.yml>`__
+   our `docker-compose.dev.yml <https://github.com/artefactual/atom/blob/qa/2.x/docker/docker-compose.dev.yml>`__
    file shows how AtoM is orchestrated together with its service dependencies.
    It is an environment meant to be used by developers.
 
