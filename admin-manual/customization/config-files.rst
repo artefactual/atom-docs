@@ -134,6 +134,7 @@ you may need to adjust as a system administrator.
 **Jump to:**
 
 * :ref:`config-app-yml`
+* :ref:`config-app-challenge-yml`
 * :ref:`config-settings-yml`
 * :ref:`config-factories-yml`
 * :ref:`config-config-php`
@@ -224,6 +225,26 @@ such as:
    read-only mode in AtoM, see: 
 
    * :ref:`read-only-mode`
+
+:ref:`Back to top <customization-config-files>`
+
+.. _config-app-challenge-yml:
+
+config/appChallenge.yml
+-----------------------
+
+This YAML file (`config/appChallenge.yml`) defines the settings for AtoM's
+built-in JavaScript challenge, including:
+
+  * Enabling or disabling the feature
+  * Cookie names, lifetimes, and security settings
+  * Customizable dialog text (titles, messages, prefixes/suffixes)
+  * Bypass rules (CIDR ranges, ASNs, user-agent patterns, country codes)
+
+For full implementation details and usage examples, see the JavaScript Challenge
+documentation:
+
+   :ref:`security-js-challenge`
 
 :ref:`Back to top <customization-config-files>`
 
