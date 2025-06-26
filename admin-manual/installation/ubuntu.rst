@@ -53,7 +53,7 @@ for MySQL 8.0, so don't be afraid and use it if you want!
 .. code-block:: bash
 
    sudo apt update
-   sudo apt install mysql-server
+   sudo apt install -y mysql-server
 
 .. TIP::
 
@@ -101,7 +101,7 @@ OpenJDK but Oracle's JVM would also work.
 
 .. code-block:: bash
 
-   sudo apt install openjdk-11-jre-headless apt-transport-https software-properties-common
+   sudo apt install -y openjdk-11-jre-headless apt-transport-https software-properties-common
 
 After successfully installing Java, proceed to install Elasticsearch. Download
 and install the public signing key used in their repository:
@@ -142,14 +142,14 @@ The following command will install it along with the rest of PHP extensions
 .. code-block:: bash
 
    # For Ubuntu 24.04, running PHP 8.3
-   sudo apt install php-common php8.3-common php8.3-cli php8.3-curl php-json php8.3-ldap php8.3-mysql php8.3-opcache php8.3-readline php8.3-xml php8.3-mbstring php8.3-xsl php8.3-zip php-apcu
+   sudo apt install -y php-common php8.3-common php8.3-cli php8.3-curl php-json php8.3-ldap php8.3-mysql php8.3-opcache php8.3-readline php8.3-xml php8.3-mbstring php8.3-xsl php8.3-zip php-apcu
 
 If you are using Memcached as cache engine, you will also need to install
 `php-memcache`:
 
 .. code-block:: bash
 
-   sudo apt install php-memcache
+   sudo apt install -y php-memcache
 
 .. _installation-ubuntu-dependencies-gearman:
 
@@ -160,7 +160,7 @@ Gearman job server is required by AtoM as of version 2.2.
 
 .. code-block:: bash
 
-   sudo apt install gearman-job-server
+   sudo apt install -y gearman-job-server
 
 .. _installation-ubuntu-dependencies-other-packages:
 
@@ -182,7 +182,7 @@ Ubuntu packages using the command below.
 
 .. code-block:: bash
 
-   sudo apt install --no-install-recommends fop libsaxon-java
+   sudo apt install -y --no-install-recommends fop libsaxon-java
 
 Make sure the default java command points to the java version 11 binary (ignore
 errors):
@@ -212,7 +212,7 @@ dependencies at once:
 
 .. code-block:: bash
 
-   sudo apt install imagemagick ghostscript poppler-utils ffmpeg
+   sudo apt install -y imagemagick ghostscript poppler-utils ffmpeg
 
 
 .. _installation-ubuntu-download:
@@ -236,7 +236,7 @@ Option 1: Download the tarball
 .. code-block:: bash
 
    wget https://storage.accesstomemory.org/releases/atom-latest.tar.gz
-   sudo mkdir /usr/share/nginx/atom
+   sudo mkdir -p /usr/share/nginx/atom
    sudo tar xzf atom-latest.tar.gz -C /usr/share/nginx/atom --strip 1
 
 Please note that the tarball may not be available yet if this version is still
@@ -252,7 +252,7 @@ Install git:
 
 .. code-block:: bash
 
-   sudo apt install git
+   sudo apt install -y git
 
 .. code-block:: bash
 
@@ -264,7 +264,7 @@ also truncate it to a specific number of revisions, e.g.: just one revision
 
 .. code-block:: bash
 
-   git clone -b stable/2.9.x --depth 1 http://github.com/artefactual/atom.git /usr/share/nginx/atom
+   sudo git clone -b stable/2.9.x --depth 1 http://github.com/artefactual/atom.git /usr/share/nginx/atom
 
 We use `Composer`_ to install and manage some third-party PHP libraries. To
 install Composer download and run the Composer installer according to the
@@ -312,7 +312,7 @@ Compile Bootstrap 5 Theme Files:
 
 .. code-block:: bash
 
-   sudo apt install npm
+   sudo apt install -y npm
    sudo npm install
    sudo npm run build
 
@@ -321,7 +321,7 @@ Compile Bootstrap 2 Theme Files:
 
 .. code-block:: bash
 
-   sudo apt install npm make
+   sudo apt install -y npm make
    sudo npm install -g "less@<4.0.0" n
    sudo n stable
    sudo npm install
@@ -392,7 +392,7 @@ creates the Elasticsearch index.
 .. code-block:: bash
 
    cd /usr/share/nginx/atom
-   php symfony tools:install
+   sudo php symfony tools:install
 
 The installation task will ask for configuration details such as the location
 of your database server. In some cases, it may provide default values, such as
@@ -563,7 +563,7 @@ scales better than other solutions like FastCGI.
 
 .. code-block:: bash
 
-   sudo apt install php-fpm
+   sudo apt install -y php-fpm
 
 Let's add a new PHP pool for AtoM by adding the following contents in a new
 file called :file:`/etc/php/8.3/fpm/pool.d/atom.conf`:
@@ -659,7 +659,7 @@ In Ubuntu, the installation of Nginx is simple:
 
 .. code-block:: bash
 
-   sudo apt install nginx
+   sudo apt install -y nginx
 
 .. WARNING::
 
