@@ -67,10 +67,10 @@ don't want to do so each time we invoke the ``docker compose`` command.
 .. code-block:: bash
 
    # For bash users (most of you)
-   export COMPOSE_FILE="$PWD/docker/docker compose.dev.yml"
+   export COMPOSE_FILE="$PWD/docker/docker-compose.dev.yml"
 
    # For fish users
-   set -lx COMPOSE_FILE (pwd)/docker/docker compose.dev.yml
+   set -lx COMPOSE_FILE (pwd)/docker/docker-compose.dev.yml
 
 It's time to use Docker Compose in order to provision our containers:
 
@@ -99,42 +99,21 @@ It's time to use Docker Compose in order to provision our containers:
 
 All seven docker containers should now be up and running.
 
-.. IMPORTANT::
-
-   If the atom container command below to purge the database fails with the
-   message: ``PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted
-   ...``,  you can increase the memory allocated  by either adding the line
-   ``ATOM_PHP_MEMORY_LIMIT=1G`` to the file ``docker/etc/environment``
-   or alternatively run the command without memory limits
-   ``docker compose exec atom php -d memory_limit=-1 symfony tools:purge --demo``
-
+Initialize the database:
+------------------------
 
 .. code-block:: bash
 
-   # Execute a command in the running container atom: purge database
-   docker compose exec atom php symfony tools:purge --demo
+   # Execute the purge command in the running container
+   docker compose exec atom php -d memory_limit=-1 symfony tools:purge --demo
 
 Compile Bootstrap 5 Theme Files:
 --------------------------------
 
 .. code-block:: bash
 
-   npm install
-   docker copmose exec atom npm run build
-
-Compile Bootstrap 2 Theme Files:
---------------------------------
-
-.. code-block:: bash
-
-
-Compile Bootstrap 5 Theme Files:
---------------------------------
-
-.. code-block:: bash
-
-   sudo npm install
-   sudo npm run build
+   docker compose exec atom npm install
+   docker compose exec atom npm run build
 
 Compile Bootstrap 2 Theme Files:
 --------------------------------
@@ -149,7 +128,7 @@ Compile Bootstrap 2 Theme Files:
    While you wait, take the opportunity to check out our `Dockerfile <https://github.com/artefactual/atom/blob/qa/2.x/Dockerfile>`__,
    which describes the steps that are taken to build the AtoM image. It is
    based on Alpine Linux + PHP 8.2 and the rest of dependencies. In addition,
-   our `docker compose.dev.yml <https://github.com/artefactual/atom/blob/qa/2.x/docker/docker-compose.dev.yml>`__
+   our `docker-compose.dev.yml <https://github.com/artefactual/atom/blob/qa/2.x/docker/docker-compose.dev.yml>`__
    file shows how AtoM is orchestrated together with its service dependencies.
    It is an environment meant to be used by developers.
 
