@@ -2814,14 +2814,16 @@ Export CSV files from the command-line
 ======================================
 
 In addition to bulk XML import and export, AtoM also includes tasks to export
-:term:`archival descriptions <archival description>` and
-:term:`authority records <authority record>` in bulk from the command-line in
+:term:`archival descriptions <archival description>`,
+:term:`authority records <authority record>`, and
+:term:`accession records <accession record>` in bulk from the command-line in
 CSV format.
 
 **Jump to:**
 
 * :ref:`csv-export-cli-descriptions`
 * :ref:`csv-export-cli-actors`
+* :ref:`csv-export-cli-accessions`
 
 .. SEEALSO::
 
@@ -3030,9 +3032,64 @@ CSV authority export task options
   :width: 85%
   :alt: An image of the command-line options for CSV authority export
 
-By typing ``php symfony help csv:export`` into the command-line from your root
-directory, without specifying an export location of the CSV, you will able
-able to see the CSV import options available (pictured above). A brief
+By typing ``php symfony help csv:authority-export`` into the command-line from
+your root directory, without specifying an export location of the CSV, you will
+be able able to see the CSV import options available (pictured above). A brief
+explanation of each is included below.
+
+The ``--application``, ``--env``, and ``connection`` options **should not be
+used** - AtoM requires the uses of the pre-set defaults for symfony to be
+able to execute the export.
+
+The ``--items-until-update`` option can be used for a simple visual
+representation of progress in the command-line. Enter a whole integer, to
+represent the number of rows should be imported from the CSV before the
+command-line prints a period (e.g. `` . `` ) in the console, as a sort of
+crude progress bar. For example, entering ``--items-until-update=5`` would
+mean that the import progresses, another period will be printed every 5 rows.
+This is a simple way to allow the command-line to provide a visual output of
+progress.
+
+:ref:`Back to top <cli-import-export>`
+
+.. _csv-export-cli-accessions:
+
+Export accession records in CSV from the command-line
+-----------------------------------------------------
+
+The CSV accession export task is a command-line task that will allow a system
+administrator with access to the root AtoM directory to export all
+:term:`accession records <accession record>` held in AtoM in CSV format. This
+template is the same as that used for the accession record :ref:`csv-import`,
+and the export produced can therefore also be used to import data into another
+AtoM instance.
+
+Example use - run from AtoM's root directory:
+
+.. code-block:: bash
+
+   php symfony csv:accession-export /path/to/my/export-location/accession.csv
+
+
+You may choose to change the path to the CSV file that the accession records get
+written to. You may also specify a path to a directory instead, and AtoM will
+generate a default name for the exported CSV.
+
+Note that it is not possible to export a sub-set of the accession records in
+your database. The accession exporter is only able to export *all* accessions
+into a single CSV file.
+
+CSV accession export task options
+---------------------------------
+
+.. image:: images/csv-accession-export-cli.*
+  :align: center
+  :width: 85%
+  :alt: An image of the command-line options for CSV accession export
+
+Entering ``php symfony help csv:accession-export`` into the command-line from
+your root AtoM directory with no other arguments will give you a list of options
+that can be used to modify the behaviour of the accession exporter. A brief
 explanation of each is included below.
 
 The ``--application``, ``--env``, and ``connection`` options **should not be
