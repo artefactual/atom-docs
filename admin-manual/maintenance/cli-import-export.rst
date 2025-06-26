@@ -3080,7 +3080,7 @@ your database. The accession exporter is only able to export *all* accessions
 into a single CSV file.
 
 CSV accession export task options
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/csv-accession-export-cli.*
   :align: center
