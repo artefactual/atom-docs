@@ -249,7 +249,7 @@ Monitoring
 ==========
 
 Extending the development environment, you can deploy an instance of
-[Percona Monitoring and Management](https://www.percona.com/doc/percona-monitoring-and-management)
+`Percona Monitoring and Management <https://www.percona.com/doc/percona-monitoring-and-management>`__
 configured by default to collect metrics and query analytics data from the
 MySQL server. To setup the PMM server and client services alongside all the
 others you'll need to indicate two Docker Compose files on the ``COMPOSE_FILE``
