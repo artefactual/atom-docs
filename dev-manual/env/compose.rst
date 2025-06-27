@@ -37,6 +37,8 @@ make sure that both `Docker Engine
 <https://docs.docker.com/compose/install/>`_  are installed following the
 instructions in the links.
 
+.. _spin-it-up:
+
 Spin it up
 ==========
 
@@ -303,5 +305,71 @@ To access AtoM through Varnish, visit http://localhost:63007.
    .. code-block:: bash
 
       docker compose exec varnish varnishlog
+
+Debugging the Application
+=========================
+
+The AtoM Docker development environment includes `Xdebug <https://xdebug.org/>`__
+support for debugging PHP code. This is a helpful tool if you are writing code
+for AtoM. You can use any Xdebug-compatible editor or IDE to debug the
+application running inside the ``atom`` Docker container. The example below
+shows how to configure VS Code, but similar setups are possible with other
+editors like PHPStorm or neovim.
+
+.. TIP::
+
+   The Xdebug configuration can be found in the `xdebug.ini <https://github.com/artefactual/atom/blob/qa/2.x/docker/etc/php/xdebug.ini>`__
+   file, which is automatically loaded in the Docker development environment.
+
+Setup VS Code for Debugging
+----------------------------
+
+1. Install the `PHP Debug <https://marketplace.visualstudio.com/items?itemName=xdebug.php-debug>`__
+   extension in VS Code.
+
+2. Create a ``.vscode/launch.json`` file in your AtoM project root with the
+   following configuration:
+
+.. code-block:: json
+
+   {
+      "version": "0.2.0",
+      "configurations": [
+         {
+            "name": "Listen for Xdebug",
+            "type": "php",
+            "request": "launch",
+            "port": 9003,
+            "pathMappings": {
+               "/atom/src": "${workspaceFolder}"
+            }
+         }
+      ]
+   }
+
+Using the Debugger
+^^^^^^^^^^^^^^^^^^
+
+1. First, :ref:`start the app in Docker using the dev compose file <spin-it-up>`.
+
+2. Set breakpoints in the PHP code in VS Code by clicking in the left margin of
+   the editor.
+
+3. Start the debug listener in VS Code:
+
+   - Open the Debug view (Ctrl+Shift+D / Cmd+Shift+D)
+   - Select "Listen for Xdebug" from the configuration dropdown
+   - Click the green play button or press F5
+
+4. Open your browser at http://localhost:63001 and trigger the code at the
+   set breakpoint by navigating to the proper page or taking the relevant
+   action. Breakpoints will also work if you are executing CLI tasks in the
+   ``atom`` Docker container.
+
+5. When a breakpoint is hit, VS Code will pause execution and allow you to:
+
+   - Inspect variables in the Variables panel
+   - Step through code using the debug controls
+   - Evaluate expressions in the Debug Console
 
 :ref:`Back to top <dev-env-compose>`
