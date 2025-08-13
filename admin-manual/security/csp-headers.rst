@@ -62,11 +62,22 @@ This is the default configuration you'll find in AtoM's :ref:`config-app-yml` fi
 
 .. code-block:: yaml
 
-   # Content Security Policy (CSP) header configuration. CSP settings apply
-   # only when a B5 theme is active, else these settings are bypassed.
+   # Content Security Policy (CSP) header configuration.
    csp:
-       response_header: Content-Security-Policy-Report-Only
-       directives: "default-src 'self'; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://*.googleapis.com https://*.gstatic.com *.google.com *.googleusercontent.com data: https://www.gravatar.com/avatar/ https://*.google-analytics.com https://*.googletagmanager.com blob:; script-src 'self' https://*.googletagmanager.com 'nonce' https://*.googleapis.com https://*.gstatic.com *.google.com https://*.ggpht.com *.googleusercontent.com blob:; style-src 'self' 'nonce' https://fonts.googleapis.com; worker-src 'self' blob:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.googleapis.com *.google.com https://*.gstatic.com data: blob:; frame-ancestors 'self';"
+      # Configure CSP response header to be either
+      # 'Content-Security-Policy-Report-Only' or 'Content-Security-Policy'
+      response_header: Content-Security-Policy-Report-Only
+      # Configure CSP response directives.
+      directives: >
+        default-src 'self';
+        font-src 'self' https://fonts.gstatic.com;
+        form-action 'self';
+        img-src 'self' https://*.googleapis.com https://*.gstatic.com *.google.com  *.googleusercontent.com data: https://www.gravatar.com/avatar/ https://*.google-analytics.com https://*.googletagmanager.com blob:;
+        script-src 'self' https://*.googletagmanager.com 'nonce' https://*.googleapis.com https://*.gstatic.com *.google.com https://*.ggpht.com *.googleusercontent.com blob:;
+        style-src 'self' 'nonce' https://fonts.googleapis.com;
+        worker-src 'self' blob:;
+        connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.googleapis.com *.google.com https://*.gstatic.com  data: blob:;
+        frame-ancestors 'self';
 
 .. NOTE::
    This directive includes sources from Google to support AtoMs's Google Analytics and Google
@@ -144,11 +155,20 @@ Implementing a Content Security Policy For Your Custom Theme
 
    .. code-block:: yaml
 
-      # Content Security Policy (CSP) header configuration. CSP settings apply
-      # only when a B5 theme is active, else these settings are bypassed.
-      csp:
-         response_header: Content-Security-Policy-Report-Only
-         directives: "default-src 'self'; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://*.googleapis.com https://*.gstatic.com *.google.com *.googleusercontent.com data: https://www.gravatar.com/avatar/ https://*.google-analytics.com https://*.googletagmanager.com blob:; script-src 'self' https://*.googletagmanager.com 'nonce' https://*.googleapis.com https://*.gstatic.com *.google.com https://*.ggpht.com *.googleusercontent.com blob:; style-src 'self' 'nonce' https://fonts.googleapis.com; worker-src 'self' blob:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.googleapis.com *.google.com https://*.gstatic.com data: blob:; frame-ancestors 'self';"
+      # Configure CSP response header to be either
+      # 'Content-Security-Policy-Report-Only' or 'Content-Security-Policy'
+      response_header: Content-Security-Policy-Report-Only
+      # Configure CSP response directives.
+      directives: >
+        default-src 'self';
+        font-src 'self' https://fonts.gstatic.com;
+        form-action 'self';
+        img-src 'self' https://*.googleapis.com https://*.gstatic.com *.google.com  *.googleusercontent.com data: https://www.gravatar.com/avatar/ https://*.google-analytics.com https://*.googletagmanager.com blob:;
+        script-src 'self' https://*.googletagmanager.com 'nonce' https://*.googleapis.com https://*.gstatic.com *.google.com https://*.ggpht.com *.googleusercontent.com blob:;
+        style-src 'self' 'nonce' https://fonts.googleapis.com;
+        worker-src 'self' blob:;
+        connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.googleapis.com *.google.com https://*.gstatic.com  data: blob:;
+        frame-ancestors 'self';
 
    For those who have crafted a custom theme, but haven't used AtoM's default Bootstrap 5
    Dominion theme as a foundation, it's recommended to start with a more restrictive
