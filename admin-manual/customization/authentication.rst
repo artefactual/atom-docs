@@ -397,7 +397,7 @@ if one does not exist already. Logging out from AtoM will then log the user out
 from both AtoM and the IAM server.
 
 Enabling OIDC authentication requires manually editing a few config files.
-For more information on how to do this, see :ref:`customization-config-files`
+For more information on how to do this, see :ref:`customization-config-files`.
 
 .. NOTE::
 
