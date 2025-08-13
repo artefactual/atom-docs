@@ -614,8 +614,7 @@ Users can change their own :term:`passwords <password>`. If a user forgets their
    :alt: An image of a user clicking on the Profile option
 
 3. You will be redirected to your user profile :term:`view page`. To change
-   your password, click the "Change password" button in the center of the
-   page.
+   your password, click the "Edit" button.
 
 .. image:: images/password-change.*
    :align: center
@@ -634,11 +633,13 @@ Users can change their own :term:`passwords <password>`. If a user forgets their
       :width: 85%
       :alt: An image of a administrator's profile page in view mode
 
-4. Enter your new :term:`password` under "New password" and enter it again
-   under "Confirm password". The green bar on the right will offer you an
-   indication of your password strength - use a mixture of upper and lower
-   case letters, numbers, and special characters (e.g. ! $ % & # etc) to
-   create a stronger password.
+4. First, verify with confirming the current password of the authenticated user.
+   If you are an :term:`administrator` changing the password for another user,
+   confirm with your password. Then, enter your new :term:`password` under "New
+   password" and enter it again under "Confirm password". The green bar on the
+   right will offer you an indication of your password strength - use a mixture
+   of upper and lower case letters, numbers, and special characters (e.g. ! $ %
+   & # etc) to create a stronger password.
 
 .. image:: images/reset-password.*
    :align: center
