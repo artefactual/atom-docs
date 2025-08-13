@@ -88,14 +88,8 @@ Google Analytics
 reports website traffic and activity, such as session duration, pages viewed
 per session, bounce rates of individuals using the site, and more.
 
-You can configure `Google Analytics`_ in AtoM by adding your tracking
-ID to the ``config/app.yml`` configuration file:
-
-.. code-block:: yaml
-
-     google_analytics_api_key: G-XXXXXXXXXX
-
-Replace ``G-XXXXXXXXXX`` with your tracking ID. Once you are done, remember to
+You can configure `Google Analytics`_ in AtoM by adding your Tracking ID under Web
+analytics in the Settings GUI. Once you are done, remember to
 :ref:`clear the cache <maintenance-clear-cache>` and
 :ref:`restart PHP-FPM <troubleshooting-restart-php-fpm>`.
 
