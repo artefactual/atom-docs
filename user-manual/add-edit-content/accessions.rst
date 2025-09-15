@@ -440,7 +440,7 @@ View the accession record
 -------------------------
 
 After creating an :term:`accession record`, save your new data by clicking
-"Save" in the :term:`button block` at the bottom of the accession record
+"Create" in the :term:`button block` at the bottom of the accession record
 :term:`edit page` (A user also has the option of clicking "Cancel", but all
 data entered will be lost), you can review the data in the accession record
 :term:`view page`.
@@ -457,11 +457,14 @@ In the :term:`button block` at the bottom of the screen you have the option(s)
 to:
 
 * :ref:`Edit the accession record <edit-accession-record>`
+* :ref:`Delete the accession record <delete-accession-record>`
+* :ref:`Add a deaccession record to the accession <add-deaccession-record>`
 * :ref:`Add an accrual to the accession <add-accession-accrual>`
-* :ref:`Create an archival description from the accession
-  <create-accession-description>`
-* :ref:`Delete an accession record <delete-accession-record>`
-* Under the "More button" you have the option to :ref:`add-rights-accession`
+* Under the "More button" you have the option to:
+
+   * :ref:`Create an archival description from the accession <create-accession-description>`
+   * :ref:`Add rights to the accession <add-rights-accession>`
+   * :ref:`Link the accession to a physical storage container <link-accession-container>`
 
 .. image:: images/accession-button-block.*
    :align: center
