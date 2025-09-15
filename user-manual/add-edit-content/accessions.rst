@@ -107,10 +107,10 @@ Add a new accession record
    :term:`Administrators <administrator>` can turn the accession mask on
    or off, and alter the default accession mask and counter (from which the
    accession number is generated) by navigating to |gears| **Admin > Settings
-   > Accession mask**. For more information, see: :ref:`accession-mask` and
-   :ref:`enable-accession-mask` in :ref:`settings` - see also the example
-   provided in the section on altering the accessions mask for legacy accessions,
-   :ref:`below <alter-accession-mask>`.
+   > Identifiers > Accession mask**. For more information, see:
+   :ref:`accession-mask` and :ref:`enable-accession-mask` in :ref:`settings` -
+   see also the example provided in the section on altering the accessions mask
+   for legacy accessions, :ref:`below <alter-accession-mask>`.
 
    .. image:: images/accession-mask.*
       :align: center
@@ -165,13 +165,13 @@ as a user-editable controlled vocabulary in a :term:`taxonomy`) and an
 accompanying free-text descriptive note. 
 
 In the Edit accession record screen, under the Accession number :term:`field`
-(located at the top of the :term:`edit page`), click the text reading "Add 
-alternative identifier(s)". AtoM will display new fields below the accession 
-number:
+(located at the top of the :term:`edit page`, within the **Basic Info**
+information area), click the text reading "Add alternative identifier(s)". AtoM
+will display new fields below the accession number:
 
 .. image:: images/accession-alt-ids.*
    :align: center
-   :width: 70%
+   :width: 90%
    :alt: An image of the alternative identifier edit fields
 
 There are three fields available per identifier:
@@ -207,7 +207,7 @@ appear:
 
 .. image:: images/accession-alt-ids-more.*
    :align: center
-   :width: 70%
+   :width: 90%
    :alt: An image of the alternative identifier edit fields
 
 When you're done, you can continue data entry elsewhere in the accession record
