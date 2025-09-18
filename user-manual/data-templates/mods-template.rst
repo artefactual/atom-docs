@@ -379,12 +379,11 @@ Names
 
 **ISAD CSV Column** ``nameAccessPoints``
 
-**MODS Rule** "Choose provenance, author, and other non-subject access points from
-the archival description, as appropriate. All access points must be apparent from
-the archival description to which they relate." (RAD 21.0B) The values in this field are
-drawn from the Authorized form of name field in authority records. Search for an
-existing name by typing the first few characters of the name. Alternatively, type
-a new name to create and link to a new authority record.
+**MODS Rule** The name of a person, organization, or event (conference, meeting,
+etc.) associated with the resource. The values in this field are drawn from the
+Authorized form of name field in authority records. Search for an existing name
+by typing the first few characters of the name. Alternatively, type a new name
+to create and link to a new authority record.
 
 **MODS XML**
 
@@ -515,4 +514,4 @@ Publication status
   draft and the EAD file will have the value "draft" in the
   <odd type="publicationStatus"> tag.
 
-:ref:`Back to the top <dc-template>`
+:ref:`Back to the top <mods-template>`

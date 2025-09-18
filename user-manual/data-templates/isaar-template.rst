@@ -53,6 +53,7 @@ Information below includes:
 * :ref:`isaar-identity-area`
 * :ref:`isaar-description-area`
 * :ref:`isaar-relationships-area`
+* :ref:`isaar-access-points`
 * :ref:`isaar-control-area`
 
 .. _isaar-identity-area:
@@ -108,6 +109,20 @@ Relationships area
 To DO
 
 :ref:`Back to the top <isaar-template>`
+
+.. _isaar-access-points:
+
+Access points
+=============
+
+.. figure:: images/isaar-access-points.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An image of the data entry fields in the Access points area
+
+   The data entry fields for the Access points area in the ISAAR template,
+   including Subject access points and Place access points.
 
 .. _isaar-control-area:
 
