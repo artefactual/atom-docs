@@ -104,7 +104,7 @@ can be altered and new narrow terms can be added:
    :width: 80%
    :alt: Editing a physical object type's relationships
 
-Click on save to save your changes.
+Click on "Save" to save your changes.
 
 .. _manage-storage-add-types:
 
@@ -212,7 +212,7 @@ Add, change, or remove container links
    the autocomplete :term:`drop-down menu` to select it.
 
 4. You can repeat this process as needed to add multiple containers. When you
-   are finished, click the Save button in the :term:`button block` at the
+   are finished, click the "Save" button in the :term:`button block` at the
    bottom of the :term:`edit page` to save your work. After saving, AtoM will
    redirect you to the :term:`view page` of the related record. You will see
    the linked physical storage container(s) listed in the right-hand
@@ -426,7 +426,7 @@ associated with the container, including the container name, location and type.
    * :ref:`manage-storage-types`
    * :ref:`terms`
 
-When you're done making your changes, click the Save button in the 
+When you're done making your changes, click the "Save" button in the 
 :term:`button block` at the bottom of the container's :term:`edit page`. AtoM
 will save your changes and redirect you to the :term:`view page` for the current
 container, so you can review your work. You can repeat this process as needed
@@ -508,7 +508,7 @@ To access the visible elements menu, click on the |gears|
 
 Click on "Physical storage" to show the Physical storage check box. Check the
 box to allow unauthenticated users to see storage information or uncheck to
-disallow. Click save.
+disallow. Click "Save".
 
 If visible, physical storage information will appear in the right hand column
 of the screen when viewing an :term:`archival description`.

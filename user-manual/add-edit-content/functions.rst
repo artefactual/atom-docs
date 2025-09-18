@@ -191,8 +191,8 @@ Add a new function from the Functions browse page
 
 .. image:: images/addnew-functions.*
    :align: center
+   :width: 90%
    :alt: An image of the "Add new" button in the button block
-
 
 3. AtoM takes you to a blank :term:`edit page` for data entry.
 4. On loading, the :term:`edit page` displays the record with all
@@ -339,12 +339,11 @@ and an existing function:
    :width: 40%
    :alt: The Related authority record pop-up dialog
 
-5. The first :term:`field` in the pop-up dialog, "Title of the related
-   resource," is an `auto-complete <https://en.wikipedia.org/wiki /Auto-
-   complete>`__ field: as you type, matching results will load in a
-   :term:`drop-down menu` below the field. When you see the
-   :term:`authority record` you would like to link, click on it to select
-   it.
+5. The first :term:`field` in the pop-up dialog, "Authorized form of name", is 
+   an `auto-complete <https://en.wikipedia.org/wiki/Auto-complete>`__ field: as
+   you type, matching results will load in a :term:`drop-down menu` below the
+   field. When you see the :term:`authority record` you would like to link, click
+   on it to select it.
 
 .. NOTE::
 

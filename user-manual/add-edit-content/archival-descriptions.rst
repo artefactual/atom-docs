@@ -197,7 +197,7 @@ and types of users in AtoM see: :ref:`User roles <user-roles>`.
 
 4. In the Identifier :term:`field`, you can automatically generate an
    identifier if desired, based on the settings defined in **Admin >
-   Settings** - for more information, see: :ref:`identifier-mask`. Click the
+   Settings > Identifiers** - for more information, see: :ref:`identifier-mask`. Click the
    "Generate identifier" link beneath the identifier field, and AtoM will
    populate the field with a unique value based on the identifier mask
    settings.
@@ -262,7 +262,7 @@ and types of users in AtoM see: :ref:`User roles <user-roles>`.
 
    :term:`Administrators <administrator>` can also change the default
    publication status of new records throughout the application via **Admin >
-   Settings > Global > Default publication status**. For more information,
+   Settings > Global > System**. For more information,
    see: :doc:`Settings <../administer/settings>`.
 
 :ref:`Back to top <archival-descriptions>`
@@ -273,7 +273,7 @@ and types of users in AtoM see: :ref:`User roles <user-roles>`.
 Add a new child description
 ---------------------------
 
-A :term:`child descriptions <child record>` is an archival description that is
+A :term:`child description <child record>` is an archival description that is
 part of a larger hierarchy, often a :term:`fonds` or :term:`collection`. A
 child record refers to a description of the :term:`archival unit` that is one
 :term:`level of description` lower than the current unit - for example, if a
@@ -311,8 +311,8 @@ This area is located in:
 Note that this method is not meant to replace more granular description - it
 allows a user to create a sort of skeleton structure to the whole of the
 description (such as a :term:`fonds` or :term:`collection`), which can
-improve supplement an archival :term:`arrangement` workflow - the :term:`child
-<child record>` descriptions can then be supplemented later.
+improve and/or supplement an archival :term:`arrangement` workflow - the
+:term:`child <child record>` descriptions can then be supplemented later.
 
 .. image:: images/description-add-children.*
    :align: center
@@ -512,7 +512,7 @@ records.
 .. NOTE::
 
    Administrators can change the default publication status, via **Admin >
-   Settings**. For more information, see: :ref:`Settings <settings>`.
+   Settings > Global > System**. For more information, see: :ref:`Settings <settings>`.
 
 Publication status can also be inherited from the highest :term:`level of
 description`, meaning that changes to the publication status of the
@@ -902,7 +902,7 @@ This can allow a user to avoid unnecessarily repeating data entry.
 6. You can quit the create process at any time by clicking the "Cancel" button
    in the :term:`button block`; no new record will be created. Note that
    simply navigating away from the page by any other means, **without first
-   clicking "Create"** will also result in no new record being created.
+   clicking "Save"** will also result in no new record being created.
 7. To save the duplicate as a new record, click the "Save" button located in
    the :term:`button block` at the bottom of the record.
 
@@ -1139,7 +1139,7 @@ description. Instructions are included below.
 7. You can quit the create process at any time by clicking the "Cancel" button
    in the :term:`button block`; no new record will be created. Note that
    simply navigating away from the page by any other means, **without first
-   clicking "Create"** will also result in no new record being created.
+   clicking "Save"** will also result in no new record being created.
 8. To save the record and display it with the new standards template, click
    the "Save" button located in the :term:`button block` at the bottom of
    the record.
@@ -1160,9 +1160,9 @@ As of AtoM 2.1, users can now add alternative identifiers to descriptions
 using the :ref:`ISAD(G) <isad-template>`, :ref:`RAD <rad-template>`, or
 :ref:`DACS <dacs-template>` standards-based description templates. This can be
 useful for keeping track of legacy identifiers or other relevant alphanumeric
-strings associated with the identification of your records, such as a bar
-code. To learn more about the description standards templates available in
-AtoM, see the following:
+strings associated with the identification of your records, such as a barcode.
+To learn more about the description standards templates available in AtoM,
+see the following:
 
 * :ref:`descriptive-standards`
 * :ref:`change-display-standard`
@@ -1194,7 +1194,7 @@ AtoM, see the following:
    :width: 80%
    :alt: An archival description with all information areas closed
 
-4. You will a link to reveal the Alternative identifiers field below the
+4. You will click a link to reveal the Alternative identifiers field below the
    Identifier field, whose location depends on which display standard you are
    using (ISAD, RAD, or DACS). In general, it will be found in the first
    :term:`information area` of the description template.
@@ -1273,8 +1273,8 @@ description - the slug is the unique part of that URL. In AtoM, the slug of an
 :term:`archival description` is generated automatically, from either the title
 of the description, or from the inherited :term:`reference code` of the
 description - an :term:`administrator` can determine which is used globally
-based on a setting available in **Admin > Settings > Global**. For more
-information, see: :ref:`description-permalinks`.
+based on a setting available in **Admin > Settings > Global > Permalinks**. For
+more information, see: :ref:`description-permalinks`.
 
 However, users with the appropriate :term:`permissions <access privilege>` can
 edit the slug, the title of the description, or even the filename of an
@@ -1295,8 +1295,8 @@ notification indicating this will be shown.
 .. TIP::
 
    An :term:`administrator` can enable more permissive slug generation via 
-   |gears| **Admin > Settings > Global**. When enabled, capitalization, accents, 
-   and some special characters are preserved. For more information, see: 
+   |gears| **Admin > Settings > Global > Permalinks**. When enabled, capitalization,
+   accents, and some special characters are preserved. For more information, see: 
 
    * :ref:`permissive-slugs`
    * :ref:`slugs-in-atom`
@@ -1354,11 +1354,11 @@ the filename of a linked digital object will be covered on the
    For more information on editing the :term:`digital object` filename with
    the rename module, see: :ref:`rename-digital-object`.
 
-4. To the right of the edit fields, there is a checkbox corresponding to each
-   field. By default, the title and slug checkboxes will be checked - this
-   means that they are enabled for editing. You can uncheck these fields at
-   any time to disable them - doing so will undo any changes made and prevent
-   the field from updating when the "Update" button is clicked.
+4. Above the edit fields, there is a checkbox corresponding to each field. By
+   default, all three checkboxes will be checked - this means that they are enabled
+   for editing. You can uncheck these fields at any time to disable them - doing
+   so will undo any changes made and prevent the field from updating when the
+   "Update" button is clicked.
 
 5. Place your cursor in the :term:`field` whose value you would like to edit,
    and make changes as necessary. For reference, the original value before
@@ -1387,10 +1387,9 @@ the filename of a linked digital object will be covered on the
       :alt: An image of editing the title value in the Rename module
 
 6. When editing the :term:`slug` of a description, if you enter a slug value
-   that is already in use in AtoM, a notification pop-up will appear when you
-   move your cursor out of the slug edit field, and AtoM will automatically
-   append an incremental number to the slug to make it unique. You can still
-   edit this value as desired to find a unique slug.
+   that is already in use in AtoM, when you move your cursor out of the slug edit
+   field, AtoM will automatically append an incremental number to the slug to
+   make it unique. You can still edit this value as desired to find a unique slug.
 
 .. image:: images/rename-slug-in-use.*
    :align: center
@@ -1399,10 +1398,10 @@ the filename of a linked digital object will be covered on the
 
 .. TIP::
 
-   To make sure you see the notification pop-up before saving your record, we
-   recommend actively moving the cursor out of the slug field after making an
-   edit, instead of directly clicking on the "Update" button while your cursor
-   is still in the slug edit field.
+   We recommend actively moving the cursor out of the slug field after making an
+   edit, to check the new slug to be saved, instead of directly clicking on the
+   "Update" button while your cursor is still in the slug edit field, in case the
+   new slug is already in use.
 
 7. When you are satisfied with your changes, click the "Update" button in the
    :term:`button block` at the bottom of the Rename module's edit page. If you
@@ -1451,7 +1450,7 @@ View the modification history of an archival description
 ========================================================
 
 AtoM has a basic audit log for archival descriptions that can be enabled by an
-:term:`administrator` in |gears| **Admin > Settings > Global** - see: 
+:term:`administrator` in |gears| **Admin > Settings > System** - see: 
 :ref:`enable-audit-logging`. 
 
 Once enabled, AtoM will capture basic information (including date, type, 
@@ -1506,26 +1505,26 @@ so:
      administrator can click the hyperlink to navigate to the related user's 
      :term:`profile <user profile>` page, where a full history of that user's 
      description modifications can be seen. For more information, see: 
-     :ref:`user-modification-history`. 
+     :ref:`user-modification-history`.
 
 .. image:: images/mod-history-1.*
    :align: center
    :width: 80%
    :alt: An image of the Modification history page for an archival description
 
-.. NOTE:: 
+.. NOTE::
 
    For records created or modified via actions performed via the command-line 
    interface (such as a CSV import, etc), no associated :term:`username` will 
    be shown. In the image above, the record was created via a command-line EAD
-   XML import - as such, the User field for the associated modification is 
-   empty. 
+   XML import - as such, the User field for the associated modification is
+   empty.
 
 4. The number of results included in the Modifications page is determined by 
-   the :ref:`results-page` setting in |gears| **Admin > Settings > Global**. 
-   If there are more results than the results per page setting, AtoM will 
-   display a pager at the bottom of the page, to allow you to page through 
-   the results.  
+   the :ref:`results-page` setting in |gears| **Admin > Settings > Global >
+   Search and Browse**. If there are more results than the results per page
+   setting, AtoM will display a pager at the bottom of the page, to allow you to
+   page through the results.
 
 .. image:: images/mod-history-2.*
    :align: center
@@ -1597,11 +1596,11 @@ the intellectual :term:`arrangement` of an :term:`archival unit`.
 3. In the :term:`treeview`, hover your cursor over the sibling record you wish
    to move - it can be any record on the same :term:`level of description` as
    the one currently being viewed.
-4. In the :ref:`context-menu-treeview-sidebar`, if the "Sort treeview" setting 
-   has been set to "Manual" by an :term:`administrator` in **Admin > Settings > 
-   Global > Sort treeview**, then you will see three horizontal lines or bars 
-   appear on the right-hand side of the record-title you are hovering over in 
-   the treeview. This means the item can be dragged and dropped to a new sort 
+4. In the :ref:`context-menu-treeview-sidebar`, if the "Sort (information objcct)"
+   setting has been set to "Manual" by an :term:`administrator` in **Admin >
+   Settings > Global > Treeview**, then you will see two horizontal lines or bars
+   appear on the right-hand side of the record-title you are hovering over in
+   the treeview. This means the item can be dragged and dropped to a new sort
    order.
 
 .. image:: images/sidebar-dragdrop.*
@@ -1843,6 +1842,13 @@ description and using the :term:`Delete button` located in the
    :align: center
    :width: 85%
    :alt: An image of a description delete warning
+
+.. NOTE::
+
+   Depending on your configurations in **Admin > Settings > Global > Search and
+   Browse**, in the "Results per page" field, a notification box may appear
+   providing a link to a full list of descendants to be deleted. The link will
+   direct you to a search page where you can narrow down or filter results further.
 
 .. WARNING::
 
