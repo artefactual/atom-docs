@@ -107,7 +107,7 @@ It's time to use Docker Compose in order to provision our containers:
    in the container that will be created below. However, the same limit needs
    to be increased in the host running this environment. Check the
    `Elasticsearch documentation
-   <https://www.elastic.co/guide/en/elasticsearch/reference/6.8/vm-max-map-count.html>`__
+   <https://www.elastic.co/guide/en/elasticsearch/reference/7.10/vm-max-map-count.html>`__
    for more information.
 
    The containers for the application use ``php:8.2-fpm-alpine`` as their base

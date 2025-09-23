@@ -776,7 +776,7 @@ For further examples of the use of these Boolean operators, users can consult
 the `Lucene search documentation <https://lucene.apache.org/core/2_9_4/queryparsersyntax.html>`__
 . Developers interested in fine-tuning these settings, or technical
 users interested in how Elasticsearch operates may wish to consult the
-`query string query <https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl-query-string-query.html>`__
+`query string query <https://www.elastic.co/guide/en/elasticsearch/reference/7.10/query-dsl-query-string-query.html>`__
 Elasticsearch reference documentation for more information on Elasticsearch's
 default behaviors, and possible configurations.
 

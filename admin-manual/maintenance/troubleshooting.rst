@@ -1382,7 +1382,7 @@ has its own configuration file - you might want to review the relevant ES
 set-up and configuration documentation:
 
 * ES 1.7: https://www.elastic.co/guide/en/elasticsearch/reference/1.7/setup-configuration.html
-* ES 6.8: https://www.elastic.co/guide/en/elasticsearch/reference/6.8/settings.html
+* ES 7.10: https://www.elastic.co/guide/en/elasticsearch/reference/7.10/settings.html
 
 For more information on troubleshooting Elasticsearch, see: 
 
