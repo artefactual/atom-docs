@@ -62,9 +62,9 @@ of each component.
 * A webserver like `Apache <https://httpd.apache.org/>`__ or
   `Nginx <http://nginx.com/>`__; Artefactual prefers the latter in
   development
-* `Elasticsearch <https://www.elastic.co/products/elasticsearch>`__ 6.x (we use
-  ES 6.8 in development). ES 7 is not supported as ES 7.11+ uses Server
-  Side Public License (SSPL) and Elastic License 2.0 (ELv2), which are not
+* `Elasticsearch <https://www.elastic.co/products/elasticsearch>`__ 7.x (we use
+  ES 7.10 in development). ES 7.11 - 8.15 is not supported by AtoM as it uses
+  Server Side Public License (SSPL) and Elastic License 2.0 (ELv2), which are not
   approved by the Open Source Initiative.
 * `Java <https://www.java.com/en/>`__ 8 (required for Elasticsearch)
 * `MySQL <https://www.mysql.com/>`__ 8.0

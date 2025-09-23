@@ -54,7 +54,7 @@ purpose of the release and how best to install it.
 Make sure the dependencies are updated
 ======================================
 
-As of version 2.9, AtoM uses Elasticsearch 6.8. If you're upgrading from an
+As of version 2.10, AtoM uses Elasticsearch 7.10. If you're upgrading from an
 earlier version, please make sure to upgrade your Elasticsearch installation.
 You don't need to backup your index data as it will be recreated from the
 database later in the upgrade.
