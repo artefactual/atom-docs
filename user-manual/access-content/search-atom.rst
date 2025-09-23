@@ -293,9 +293,8 @@ Using the Institutional search box delimiters
    filter>`, to help you sort through the results and find the content you are
    looking for. For more information on working with facet filters, see:
    :ref:`recurring-facet-filters`.
-10. Search results can be sorted either alphabetically, by most-recently
-    updated, by reference code, or by date of creation using the
-    :term:`sort button` available at the top-left side of the search results.
+10. Search results can be sorted by date modified, name or identifier using the 
+    :term:`sort button` available at the top-left side of the search results. 
     For more information, see: :ref:`recurring-sort-button`.
 
 :ref:`Back to top <search-atom>`
@@ -397,7 +396,7 @@ steps involved in searching for
    would like to see more results, finish entering your search term and press
    enter.
 5. If you have pressed enter, AtoM will redirect you to a search results page.
-   The following image has been annotated with letters (A-E in orange circles)
+   The following image has been annotated with letters (A-F in orange circles)
    to outline some of the features of the results page that will help you
    navigate, and narrow your search:
 
@@ -536,7 +535,7 @@ steps involved in searching for
    included at the bottom of the page to keep browsing the results. **NOTE:**
    whether or not there is a pager included will depend on the number of results
    returned, and the "Results per page" setting in **Admin > Settings >
-   Global > Results per page**. If it is set at the default 10 results per
+   Global > Search and Browse**. If it is set at the default 10 results per
    page, and your search has returned more than 10 results, you will see a
    pager at the bottom of the page like so:
 
@@ -615,9 +614,8 @@ in the left-hand :term:`context menu` of the description's :term:`view page`.
    :width: 25%
    :alt: An image of the treeview quick search returning results
 
-6. Matching results will be returned as blue hyperlinks. Click a results title
-   to navigate to the related description - AtoM will redirect you to a
-   :term:`view page` for the selected archival description.
+6. Click a results title to navigate to the related description - AtoM will
+   redirect you to a :term:`view page` for the selected archival description.
 7. If you are unable to find a description you are searching for, you can also
    try using the Advanced search interface, which includes filters to be able
    to limit by :term:`archival institution` and top-level description (e.g. by
@@ -762,8 +760,8 @@ with particular fields in the authority record edit template, see:
    :alt: An image of the authority record search results
 
 4. The results page includes a :term:`sort button` (allowing you to sort
-   results to show them in alphabetic order, or most recently created/updated)
-   and a set of :term:`facet filters <facet filter>` to help you sift through
+   results by date modified, name, or identifier) and a set of
+   :term:`facet filters <facet filter>` to help you sift through
    results. For more information on these elements, see
    :ref:`recurring-sort-button` and :ref:`recurring-facet-filters`.
 
@@ -775,10 +773,9 @@ with particular fields in the authority record edit template, see:
    special characters and boolean searching in AtoM, see:
    :ref:`advanced-search`.
 
-5. You can click the |searchreset| button next to your search term in the
-   dedicated search box to clear the field and begin a new search.
-   Alternately, simply place the cursor in the search box and enter a new
-   search term.
+5. You can hover the search box and use the |searchreset| button next to your
+   search term in the dedicated search box to clear the field and begin a new
+   search.
 6. When you have found the record you are searching for, click on its title in
    the results, and AtoM will redirect you to the selected authority record's
    :term:`view page`.
@@ -970,9 +967,8 @@ For more information on working with accession records in AtoM, see:
 
    In order to search by accession number, please use the prefix "identifier:" before
    the accession date (i.e. identifier:2015-12-28). This will pull up all accessions
-   that begin with the accession date 2015-12-28. Do not use the rest of the accession
-   number, as the backslash will break the search. This issue has been marked for resolution
-   in the 2.3 release of AtoM.
+   that begin with the accession date 2015-12-28. Do not use the rest of the
+   accession number, as the backslash will break the search.
 
 
 .. NOTE::
@@ -998,11 +994,11 @@ For more information on working with accession records in AtoM, see:
    :term:`main menu` for logged-in users, in the top-right of the AtoM
    :term:`header bar`) and choosing "Accessions" - i.e., **Manage >
    Accessions**.
-2.  AtoM will redirect you to the :term:`accessions <accession record>` browse
-    page. A list of your accessions will appear; if there are more than 10
-    results, a pager will be included. To begin searching for an accession,
-    place your cursor in the the :term:`dedicated search box` at the top of
-    the Accessions browse page.
+2. AtoM will redirect you to the :term:`accessions <accession record>` browse
+   page. A list of your accessions will appear; if there are more than 10
+   results, a pager will be included. To begin searching for an accession,
+   place your cursor in the the :term:`dedicated search box` at the top of
+   the Accessions browse page.
 
 .. image:: images/browse-accessions.*
    :align: center
@@ -1013,7 +1009,7 @@ For more information on working with accession records in AtoM, see:
 
    An :term:`administrator` can change the number of results per page for
    browse and search result pages throughout AtoM via **Admin > Settings >
-   Global > Results per page**. By default, the number is set to 10. For more
+   Global > Search and browse**. By default, the number is set to 10. For more
    information, see :ref:`settings`.
 
 3. Type a search term into the :term:`dedicated search box` and press enter,
@@ -1037,9 +1033,8 @@ For more information on working with accession records in AtoM, see:
    :alt: An image of the accession record search results
 
 5. You can click the |searchreset| button next to your search term in the
-   dedicated search box to clear the field and begin a new search.
-   Alternatively, simply place the cursor in the search box and enter a new
-   search term.
+   dedicated search box to clear the field and begin a new search, or use the
+   refresh button to clear the field and bring you back to the accession list.
 6. When you have found the record you are searching for, click on its title in
    the results, and AtoM will redirect you to the selected accession record's
    :term:`view page`.
@@ -1212,9 +1207,8 @@ particular fields in the archival institution record edit template, see:
 
 .. NOTE::
 
-   In the current release, results have not been weighted to favor title
-   matches. If you see results without matches in the title (i.e. the
-   authorized form of name), it means the search term(s) appears somewhere in
+   Results have not been weighted to favor title matches. If you see results
+   without matches in the title (i.e. the authorized form of name), it means the search term(s) appears somewhere in
    the body of the record.
 
 .. image:: images/repository-searchresults.*
@@ -1223,7 +1217,7 @@ particular fields in the archival institution record edit template, see:
    :alt: An image of the archival institution search results, card view
 
 4. Users can toggle between the table view and card view at any time during
-   the search process, using the view toggle button to the right of the search
+   the search process, using the view toggle button below the search
    box:
 
 .. image:: images/repository-searchresults-table.*
@@ -1436,10 +1430,8 @@ and then selecting a taxonomy).
    :alt: An image of the places search results
 
 6. The results page includes :term:`sort buttons <sort button>` (allowing you to
-   sort results to show them in alphabetic order or most recently
-   created/updated) and a set of :term:`facet filters <facet filter>` to help
-   you sift through results. For more information on these elements, see
-   :ref:`recurring-sort-button` and :ref:`recurring-facet-filters`.
+   sort results by date modified, name or identifier) and a set of :term:`facet filters <facet filter>` to help you sift through results. For more information
+   on these elements, see :ref:`recurring-sort-button` and :ref:`recurring-facet-filters`.
 
    For more information on the :term:`user interface` elements available on term
    search and browse pages, see: :ref:`browse-subjects-places`
@@ -1453,9 +1445,7 @@ and then selecting a taxonomy).
    :ref:`advanced-search`.
 
 7. You can click the |searchreset| button next to your search term in the
-   dedicated search box to clear the field and begin a new search.
-   Alternately, simply place the cursor in the search box and enter a new
-   search term.
+   dedicated search box to clear the field and begin a new search, or use the refresh button to clear the field and bring you back to the terms list.
 
 8. When you have found the record you are searching for, click on its title in
    the results, and AtoM will redirect you to the selected term's
@@ -1559,7 +1549,7 @@ For more information on working with donor records in AtoM, see:
 
    An :term:`administrator` can change the number of results per page for
    browse and search result pages throughout AtoM via **Admin > Settings >
-   Global > Results per page**. By default, the number is set to 10. For more
+   Global > Search and browse**. By default, the number is set to 10. For more
    information, see :ref:`settings`.
 
 3. Type a search term into the :term:`dedicated search box` and press enter,
@@ -1582,9 +1572,8 @@ For more information on working with donor records in AtoM, see:
 
 4. AtoM will reload the page with results. If there are more than 10 results,
    a pager will be included at the bottom of the results page. The results page
-   also includes a :term:`sort button` (allowing you to sort results to show
-   them in alphabetic order, or most recently created/updated). For more
-   information, see :ref:`recurring-sort-button`.
+   also includes a :term:`sort button` (allowing you to sort results by date modified, name, or identifier). For more information, see
+   :ref:`recurring-sort-button`.
 
 .. image:: images/donor-searchresults.*
    :align: center
@@ -1592,9 +1581,7 @@ For more information on working with donor records in AtoM, see:
    :alt: An image of the donor record search results
 
 5. You can click the |searchreset| button next to your search term in the
-   dedicated search box to clear the field and begin a new search.
-   Alternately, simply place the cursor in the search box and enter a new
-   search term.
+   dedicated search box to clear the field and begin a new search, or use the refresh button to clerar the field and bring you back to the donors list.
 6. When you have found the record you are searching for, click on its title in
    the results, and AtoM will redirect you to the selected donor record's
    :term:`view page`.
@@ -1656,7 +1643,7 @@ see: :ref:`rights`.
 
    An :term:`administrator` can change the number of results per page for
    browse and search result pages throughout AtoM via **Admin > Settings >
-   Global > Results per page**. By default, the number is set to 10. For more
+   Global > Search and browse**. By default, the number is set to 10. For more
    information, see :ref:`settings`.
 
 3. Type a search term into the :term:`dedicated search box` and press enter,
@@ -1679,9 +1666,8 @@ see: :ref:`rights`.
 
 4. AtoM will reload the page with results. If there are more than 10 results,
    a pager will be included at the bottom of the results page. The results page
-   also includes a :term:`sort button` (allowing you to sort results to show
-   them in alphabetic order, or most recently created/updated). For more
-   information, see :ref:`recurring-sort-button`.
+   also includes a :term:`sort button` (allowing you to sort results by date
+   modified, name or identifier). For more information, see :ref:`recurring-sort-button`.
 
 .. image:: images/rightsholders-results.*
    :align: center
@@ -1689,9 +1675,7 @@ see: :ref:`rights`.
    :alt: An image of the rights holder record search results
 
 5. You can click the |searchreset| button next to your search term in the
-   dedicated search box to clear the field and begin a new search.
-   Alternately, simply place the cursor in the search box and enter a new
-   search term.
+   dedicated search box to clear the field and begin a new search, or use the refresh button to clear the field and bring you back to the rights holder list.
 6. When you have found the record you are searching for, click on its title in
    the results, and AtoM will redirect you to the selected rights holder
    record's :term:`view page`.
@@ -1744,7 +1728,7 @@ functions edit template, see: :ref:`isdf-template`.
 
    An :term:`administrator` can change the number of results per page for
    browse and search result pages throughout AtoM via **Admin > Settings >
-   Global > Results per page**. By default, the number is set to 10. For more
+   Global > Search and browse**. By default, the number is set to 10. For more
    information, see :ref:`settings`.
 
 3. Type a search term into the :term:`dedicated search box` and press enter,
@@ -1765,8 +1749,7 @@ functions edit template, see: :ref:`isdf-template`.
 
 4. AtoM will reload the page with results. If there are more than 10 results,
    a pager will be included at the bottom of the results page. The results page
-   also includes a :term:`sort button` (allowing you to sort results to show
-   them in alphabetic order, or most recently created/updated). For more
+   also includes a :term:`sort button` (allowing you to sort results by date modified, name or identifier). For more
    information, see :ref:`recurring-sort-button`.
 
 .. image:: images/functions-searchresults.*
@@ -1775,9 +1758,7 @@ functions edit template, see: :ref:`isdf-template`.
    :alt: An image of the function search results
 
 5. You can click the |searchreset| button next to your search term in the
-   dedicated search box to clear the field and begin a new search.
-   Alternately, simply place the cursor in the search box and enter a new
-   search term.
+   dedicated search box to clear the field and begin a new search, or use the refresh button to clear the field and bring you back to the functions list.
 6. When you have found the record you are searching for, click on its title in
    the results, and AtoM will redirect you to the selected function's
    :term:`view page`.
@@ -1825,7 +1806,7 @@ For more information on working with User accounts in AtoM, see:
 
    An :term:`administrator` can change the number of results per page for
    browse and search result pages throughout AtoM via **Admin > Settings >
-   Global > Results per page**. By default, the number is set to 10. For more
+   Global > Search and browse**. By default, the number is set to 10. For more
    information, see :ref:`settings`.
 
 3. Type a search term (such as a name or email) into the :term:`dedicated
@@ -1842,7 +1823,7 @@ For more information on working with User accounts in AtoM, see:
 
    Users marked "Inactive" will **not** be included in search results. To
    locate an inactive user, you will have to browse through the list of users
-   who have been marked inactive. Use the blue tabs (sometimes called  "pills"
+   who have been marked inactive. Use the orange tabs (sometimes called "pills"
    due to their rounded shape) to switch from "Show active only" to "Show
    inactive only". For more information on users, see
    :ref:`manage-user-accounts`. For specific information on marking a user
@@ -1858,8 +1839,10 @@ For more information on working with User accounts in AtoM, see:
    names such as Esther and Reeves, as well as any email address ending in
    ".es".
 
-4. AtoM will reload the page with results. If there are more than 10 results,
-   a pager will be included at the bottom of the results page.
+4. AtoM will reload the page with results, including a :term:`sort button`
+   (allowing you to sort results by date modified, name, or identifier). If
+   there are more than 10 results, a pager will be included at the bottom of the
+   results page.
 
 .. image:: images/user-searchresults.*
    :align: center
@@ -1867,9 +1850,8 @@ For more information on working with User accounts in AtoM, see:
    :alt: An image of search results being returned on the User browse page.
 
 5. You can click the |searchreset| button next to your search term in the
-   dedicated search box to clear the field and begin a new search.
-   Alternately, simply place the cursor in the search box and enter a new
-   search term.
+   dedicated search box to clear the field and begin a new search, or use the
+   refresh button to clear the field and bring you back to the users list.
 6. When you have found the user record you are searching for, click on its
    title (i.e. user name) in the results, and AtoM will redirect you to the
    selected user's :term:`profile <user profile>`.
@@ -1916,7 +1898,7 @@ For more information on working with the Physical storage module in AtoM, see:
 
    An :term:`administrator` can change the number of results per page for
    browse and search result pages throughout AtoM via **Admin > Settings >
-   Global > Results per page**. By default, the number is set to 10. For more
+   Global > Search and browse**. By default, the number is set to 10. For more
    information, see :ref:`settings`.
 
 3. Type a search term (i.e. a whole or partial container name) into the
@@ -1924,8 +1906,10 @@ For more information on working with the Physical storage module in AtoM, see:
    |searchbutton| search button (represented by the magnifying glass icon to
    the right of the search box).
 
-4. AtoM will reload the page with results. If there are more than 10 results,
-   a pager will be included at the bottom of the results page.
+4. AtoM will reload the page with results, including a :term:`sort button`
+   (allowing you to sort results by date modified, name, or identifier). If
+   there are more than 10 results, a pager will be included at the bottom of
+   the results page.
 
 .. image:: images/search-storage.*
    :align: center
@@ -1933,9 +1917,9 @@ For more information on working with the Physical storage module in AtoM, see:
    :alt: An image of search results being returned in Physical storage.
 
 5. You can click the |searchreset| button next to your search term in the
-   dedicated search box to clear the field and begin a new search.
-   Alternately, simply place the cursor in the search box and enter a new
-   search term.
+   dedicated search box to clear the field and begin a new search, or use the
+   refresh button to clear the field and bring you back  to the physical storage
+   list.
 6. When you have found the user record you are searching for, click on its
    title (i.e. user name) in the results, and AtoM will redirect you to the
    selected container's :term:`view page`.

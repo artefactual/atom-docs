@@ -34,7 +34,7 @@ browser without first saving the clipboard results will result in all pinned
 items being lost. However, users can now save clipboards and reload the
 clipboard results in a future session if desired. An :term:`administrator` can
 also determine how long saved clipboards are stored in the database before being 
-purged, via a setting found in |gears| **Admin > Settings > Global** - see: 
+purged, via a setting found in |gears| **Admin > Settings > Clipboard** - see: 
 :ref:`clipboard-save-setting`. 
 
 .. IMPORTANT::
@@ -139,7 +139,7 @@ Clipboard will paginate if there are more than the global setting for
 When they are not selected, the clip icons are represented in light grey. When
 a user hovers over one, its background will turn grey, and a tooltip will
 appear. When a result has been selected and pinned to the clipboard by
-clicking on the clip icon, it will appear blue to indicate that the item is
+clicking on the clip icon, it will appear orange to indicate that the item is
 now pinned.
 
 **Search / browse pages**
@@ -221,7 +221,7 @@ are more than 10 results, a pager will appear.
 
    10 results per page is the default global setting in AtoM, but an
    :term:`administrator` can change this value via |gears| **Admin >
-   Settings**. For more information, see: :ref:`results-page`.
+   Settings > Search and browse**. For more information, see: :ref:`results-page`.
 
 The Clipboard page will only display one :term:`entity` type at a time - by
 default when first arriving on the page, :term:`archival description` results
@@ -266,9 +266,9 @@ button block - for more information on exporting from the clipboard, see:
 Print preview
 -------------
 
-Clicking this option will display a printer-optimized version of the page,
-with all buttons removed. Note that you will still need to use your browser's
-built-in print options for actual printing.
+Clicking this option will display a printer-optimized version of the page.
+Note that you will still need to use your browser's built-in print options for
+actual printing.
 
 .. image:: images/clipboard-print.*
    :align: center
@@ -284,10 +284,10 @@ ways. For more information, see: :ref:`recurring-sort-button`.
 Export CSV
 ----------
 
-Authenticated users (e.g. those logged in) can generate a CSV export of their
-clipboard results. When ready, the CSV is made available on the
-:ref:`Jobs <manage-jobs>` page. For more information, see:
-:ref:`csv-export-clipboard`.
+Users can generate a CSV export of their clipboard results. When ready, the CSV
+is made available on the :ref:`Jobs <manage-jobs>` page for authenticated users
+(e.g. those logged in) or a pop-up for unauthenticated users. For more information,
+see: :ref:`csv-export-clipboard`.
 
 Pinning and unpinning results on the clipboard
 ----------------------------------------------
@@ -393,7 +393,7 @@ can be made available when a researcher visit is scheduled.
    used heavily, saved clipboards are not stored indefinitely. Instead, an
    :term:`administrator` can configure how many days saved clipboards are
    stored before being purged from the database, via a setting in |gears|
-   **Admin > Settings > Global**. See:
+   **Admin > Settings > Clipboard**. See:
 
    * :ref:`clipboard-save-setting`
 
@@ -468,7 +468,7 @@ on arrangement and description sharing work in progress.
    used heavily, saved clipboards are not stored indefinitely. Instead, an
    :term:`administrator` can configure how many days saved clipboards are
    stored before being purged from the database, via a setting in |gears|
-   **Admin > Settings > Global**. See:
+   **Admin > Settings > Clipboard**. See:
 
    * :ref:`clipboard-save-setting`
 

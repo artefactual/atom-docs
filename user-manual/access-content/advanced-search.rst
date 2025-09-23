@@ -276,7 +276,7 @@ via a friendly :term:`user interface`.
    filter in the advanced search panel will also be hidden. For more
    information, see: :ref:`print-finding-aid-settings`.
 
-* **Copyright status**: AtoM :term:`archival description` templates include a
+* **Copyright status**: AtoM :term:`archival description` templates include the
   the ability to add Rights statements, drawn from elements of the
   `PREMIS <http://www.loc.gov/standards/premis/>`__
   (Preservation Metadata: Implementation Strategies) metadata standard
@@ -290,7 +290,7 @@ via a friendly :term:`user interface`.
   controlled field found within the :ref:`RAD template <rad-template>` for
   archival descriptions - it is a controlled vocabulary drawn directly from
   the Canadian Rules for Archival Description, and managed in one of AtoM's
-  :term:`taxnomies <taxonomy>` and used to define the type of material found
+  :term:`taxonomies <taxonomy>` and used to define the type of material found
   within an :term:`archival unit`. Select a GMD term from the
   :term:`drop-down menu` to limit search results to descriptions that have
   been been marked with the matching GMD value.
@@ -498,17 +498,19 @@ the specified parameter will be excluded.
 Using the date range search filter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When you place the cursor in the start date or end date fields of the date
-range search, a calendar :term:`drop-down menu` will appear. This "datepicker"
-offers a graphical user interface for selecting the date, if desired.
+When entering a start date or end date, follow the format of yyyy-mm-dd or use
+the calendar button to get a calendar datepicker :term:`drop-down menu` to appear.
+This "datepicker" offers a graphical user interface for selecting the date, if
+desired.
 
 .. image:: images/date-range-calendar.*
    :align: center
    :width: 80%
    :alt: An example of calendar widget dropdown in the date range fields
 
-Click on a day in the calendar to select that as your start or end date. You
-can also navigate through the months using the black forward and back buttons.
+If using the calendar datepicker, click on a day in the calendar to select that
+as your start or end date. You can also navigate through the months using the black
+forward and back buttons.
 
 The month and year can also be adjusted via the two drop-down menus:
 
@@ -636,7 +638,7 @@ is boosted in the returned results:
 Note that weighting in AtoM is **cumulative**, so a match in multiple weighted
 fields will increase amount the record is boosted.
 
-For example, if you searched for ``city hall 123``, this search would understood
+For example, if you searched for ``city hall 123``, this search would be understood
 as: look for archival descriptions that contain ``city`` AND ``hall`` AND
 ``123`` in any field. If I have a description that has an identifier of
 "123," the word "city" in the title, and the word "hall" in the scope and
@@ -914,7 +916,7 @@ the "Finding aids" field:
 Searching for recently created or modified descriptions
 -------------------------------------------------------
 
-First, remember that the "Most recent" option of the Sort button
+First, remember that the "Date modified" option of the Sort button
 found on the search/browse page will change the sort order of displayed
 results so that those most recently created or modified are shown first - for
 more information, see: :ref:`recurring-sort-button`. Additionally, an
@@ -947,7 +949,7 @@ Will return results that have a digital object attached.
 
 .. TIP::
 
-   Note that "Has digital objects" is also a filter in the Advanced search
+   Note that "Digital object available" is also a filter in the Advanced search
    panel available in the user interface. For more information, see above,
    :ref:`advanced-search-interface`.
 

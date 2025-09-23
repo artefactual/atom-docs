@@ -8,6 +8,14 @@ Context menu
    :height: 17
    :width: 17
 
+.. |caret-expand| image:: images/caret-expand.png
+   :height: 17
+   :width: 17
+
+.. |caret-collapse| image:: images/caret-collapse.png
+   :height: 17
+   :width: 17
+
 .. |gears| image:: images/gears.png
    :height: 17
    :width: 17
@@ -51,7 +59,7 @@ elements, depending on some configuration options set by an
    the above image, the treeview is set to Full-width display, so only the Quick
    search box is visible in the left-hand context menu (the full-width treeview
    appears in the central body of the page). An :term:`administrator` can set
-   the treeview display mode via **Admin > Settings > Global** - see:
+   the treeview display mode via **Admin > Settings > Treeview** - see:
    :ref:`treeview-type`. For more information on the Quick search, see:
    :ref:`treeview-search`.
 
@@ -162,7 +170,7 @@ quick search, see: :ref:`treeview-search`.
 
 :term:`Administrators <administrator>` can decide how they would like
 descriptions in the sidebar treeview to sort and display throughout their
-AtoM installation. See :ref:`sort-treeview`. For the full-width treeview, the
+AtoM installation. See :ref:`sort-treeview`. For the sidebar treeview, the
 sort is automatically set to Manual.
 
 In addition to supporting navigation, both treeview types can also be used to
@@ -258,7 +266,7 @@ series, and return to viewing all series below the fonds-level record.
    selected fonds-level description.
 
 An :term:`administrator` can also change the default sort order of the sidebar
-treeview via |gears| **Admin > Settings**. For more information, see:
+treeview via |gears| **Admin > Settings > Treeview**. For more information, see:
 :ref:`sort-treeview`.
 
 .. _context-menu-treeview-full:
@@ -309,9 +317,9 @@ descriptions with children.
 
 Basic indentation is used to better visually indicate the hierarchical
 relationships in the full-width treeview. When a description contains
-children, a **+** plus sign appears to the left of its title - click this (or
+children, a |caret-expand| sign appears to the left of its title - click this (or
 use the right arrow key when the record is selected) to expand the children.
-The **-** minus sign can then be clicked (or the left arrow key used) to
+The |caret-collapse| sign can then be clicked (or the left arrow key used) to
 collapse the :term:`parent record` again.
 
 Basic icons are also used to help visually distinguish different levels. At
@@ -341,8 +349,8 @@ the user presses the "enter" key to select the description for viewing.
 Like the sidebar treeview, for performance reasons AtoM may not load all
 available descriptions at once, when there are many immediate 
 :term:`children <child record>` below the top-level description in the 
-:term:`archival unit`. The default value for this behavior is 50 - meaning, if 
-there are more than 50 immediate children below the parent description, AtoM 
+:term:`archival unit`. The default value for this behavior is 10,000 - meaning, if 
+there are more than 10,000 immediate children below the parent description, AtoM 
 will add a count of the number of remaining records not immediately displayed to
 a button in the top right corner.
 
@@ -390,10 +398,10 @@ for display in each treeview node - for more information, see:
 2. Use the scroll bar or the up/down arrow keys to navigate up and down the
    displayed records.
 
-3. Click on the **+** "plus" sign beside a description with children to expand
-   or collapse all the children titles. If navigating with the keyboard, the
-   right arrow can be used. Click on the **-** "minus" sign to collapse the
-   child records again, or use the left arrow key.
+3. Click on the |caret-expand| sign beside a description with children to expand
+   or |caret-collapse| sign to collapse all the children titles. If navigating
+   with the keyboard, the right arrow can be used. Click on the |caret-collapse|
+   sign to collapse the child records again, or use the left arrow key.
 
 4. Click and drag the bottom bar of the treeview viewing area to expand it
 
@@ -517,8 +525,8 @@ Treeview tab
 
 The treeview tab is the default view for the terms treeview. It shows the terms
 belonging to the current :term:`taxonomy` (e.g. subjects or places) in hierarchical
-context, and allows to the user to browse these hierarchies by clicking on
-different nodes or titles in the treeview.
+context, and allows the user to browse these hierarchies by clicking on different
+nodes or titles in the treeview.
 
 To navigate using the terms treeview, users can do the following:
 
@@ -531,7 +539,7 @@ To navigate using the terms treeview, users can do the following:
 2. When a term has :term:`children <child record>` (e.g. narrower terms that are
    nested beneath it in the taxonomy), a |caret| "caret" icon appears next to
    the term in the treeview. Click on the |caret| "caret" beside a term with
-   children to expand or collapse all the children titles.
+   children to expand or collapse all the child titles.
 
 3. The treeview will only load a certain amount of records at a time. In large
    :term:`taxonomy` with many terms, ellipses ( ... ) may sometimes appear,
