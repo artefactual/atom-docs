@@ -961,6 +961,10 @@ Appraisal, destruction and scheduling
 Physical condition
 Primary contact name
 Received extent units
+Acquisition type
+Resource type
+Processing status
+Processing priority
 ====================================== ===========
 
 For more information on working with accession records in AtoM, see:
@@ -1133,6 +1137,14 @@ box to return results.
    donors.contactInformations.streetAddress
    donors.contactInformations.updatedAt
    donors.slug
+
+   Linked Terms - indexed fields
+   -----------------------------
+
+   acquisitionType.i18n.%LANG.name
+   processingPriority.i18n.%LANG.name
+   processingStatus.i18n.%LANG.name
+   resourceType.i18n.%LANG.name
 
 
 :ref:`Back to top <search-atom>`
