@@ -182,7 +182,7 @@ approximation, uncertainty, or qualification.
    Accumulation. When importing descriptions via CSV, use the ``eventTypes`` column.
 
    AtoM will also add a ``datechar`` attribute for different types of events.
-   Here is an example for as accumulation event date in EAD XML:
+   Here is an example for an accumulation event date in EAD XML:
 
    .. code-block:: xml
 
@@ -327,10 +327,10 @@ multiple extents with a linebreak. (ISAD 3.1.5)"
 
 .. NOTE::
 
-   AtoM will allow users to add additional EAD subelements to :term:`field` in
-   the :term:`edit page` to accommodate all the possibilities in EAD for more
+   AtoM will allow users to add additional EAD subelements to the :term:`field`
+   in the :term:`edit page` to accommodate all the possibilities in EAD for more
    granularity, such as ``<extent>``, ``<dimensions>``, ``<physfacet>``, and
-   ``<genreform>``. In the :term:`view page` the EAD tags will be hidden, but
+   ``<genreform>``. In the :term:`view page`, the EAD tags will be hidden, but
    preserved during export and re-import.
 
    .. image:: images/physdesc-ead-isad.*

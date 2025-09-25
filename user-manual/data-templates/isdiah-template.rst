@@ -36,6 +36,7 @@ Information below includes:
 * :ref:`isdiah-description-area`
 * :ref:`isdiah-access-area`
 * :ref:`isdiah-services-area`
+* :ref:`isdiah-access-points`
 * :ref:`isdiah-control-area`
 
 .. _isdiah-identity-area:
@@ -128,6 +129,20 @@ To DO
 
 :ref:`Back to the top <isaar-template>`
 
+.. _isdiah-access-points:
+
+Access points
+=============
+
+.. figure:: images/isdiah-access-points-area.*
+   :align: center
+   :figwidth: 80%
+   :width: 100%
+   :alt: An image of the data entry fields in the Access points area
+
+   The data entry fields for the Access points area in the ISDIAH template,
+   including Thematic area and Geographic subregion.
+
 .. _isdiah-control-area:
 
 Control area
@@ -144,4 +159,4 @@ Control area
 
 To DO
 
-:ref:`Back to the top <isaar-template>`
+:ref:`Back to the top <isdiah-template>`

@@ -32,7 +32,7 @@ the ISAD CSV template can be used for import, as all templates have been
 crosswalked in AtoM where possible.
 
 To test this, we recommend creating a full DC description in AtoM, and then
-changing the display template to DC, to determine where field in DC map to
+changing the display template to DC, to determine where fields in DC map to
 ISAD. For more information on changing the display template for a description,
 see: :ref:`change-display-standard`. If desired, all templates in AtoM can be
 changed at the  same time using the *Default template* setting available in
@@ -98,11 +98,11 @@ resource by means of a string conforming to a formal identification system."
 .. NOTE::
 
    An administrator can set the reference code to inherit from higher levels
-   of description via **Admin > Settings** - see: :ref:`inherit-reference-code`
-   for more information. However, since DC simple records are not designed for
-   hierarchical information, engaging this setting will **not** change how the
-   identifier is handled during export - only the identifier for the current
-   :term:`level of description` will be exported.
+   of description via **Admin > Settings > Identifiers** - see:
+   :ref:`inherit-reference-code` for more information. However, since DC simple
+   records are not designed for hierarchical information, engaging this setting
+   will **not** change how the identifier is handled during export - only the
+   identifier for the current :term:`level of description` will be exported.
 
 
 .. _dc-title:
@@ -168,7 +168,7 @@ Name(s)
 
 **Notes**:
 
-In the "Actor name" field enter the first few letters of the the actor's name.
+In the "Actor name" field enter the first few letters of the actor's name.
 A list of names will appear in the drop-down menu (generated from the names of
 existing authority records). If the name does not appear in the menu, type the
 name and a new :term:`authority record` will be created.

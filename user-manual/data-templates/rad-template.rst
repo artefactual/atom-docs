@@ -2303,9 +2303,8 @@ fields)."
 
 .. NOTE::
 
-   If there are sources to cite used used in a biographical
-   sketch or administrative history, record these in the sources field for the
-   :term:`authority record`.
+   If there are sources to cite used in a biographical sketch or administrative
+   history, record these in the sources field for the :term:`authority record`.
 
 
 :ref:`Back to the top <rad-template>`
