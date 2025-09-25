@@ -107,15 +107,15 @@ Add a new accession record
    :term:`Administrators <administrator>` can turn the accession mask on
    or off, and alter the default accession mask and counter (from which the
    accession number is generated) by navigating to |gears| **Admin > Settings
-   > Accession mask**. For more information, see: :ref:`accession-mask` and
+   > Identifiers**. For more information, see: :ref:`accession-mask` and
    :ref:`enable-accession-mask` in :ref:`settings` - see also the example
-   provided in the section on altering the accessions mask for legacy accessions,
-   :ref:`below <alter-accession-mask>`.
+   provided in the section on altering the accessions mask for legacy
+   accessions, :ref:`below <alter-accession-mask>`.
 
    .. image:: images/accession-mask.*
       :align: center
       :width: 90%
-      :alt: An image of the accessions mask in Global settings
+      :alt: An image of the accessions mask in Identifiers settings
 
 3. If you attempt to use a value for the Accession number that is not unique
    (i.e. is already in use by another :term:`accession record`), AtoM will
@@ -165,13 +165,13 @@ as a user-editable controlled vocabulary in a :term:`taxonomy`) and an
 accompanying free-text descriptive note. 
 
 In the Edit accession record screen, under the Accession number :term:`field`
-(located at the top of the :term:`edit page`), click the text reading "Add 
-alternative identifier(s)". AtoM will display new fields below the accession 
-number:
+(located at the top of the :term:`edit page`, within the **Basic Info**
+information area), click the text reading "Add alternative identifier(s)". AtoM
+will display new fields below the accession number:
 
 .. image:: images/accession-alt-ids.*
    :align: center
-   :width: 70%
+   :width: 90%
    :alt: An image of the alternative identifier edit fields
 
 There are three fields available per identifier:
@@ -207,7 +207,7 @@ appear:
 
 .. image:: images/accession-alt-ids-more.*
    :align: center
-   :width: 70%
+   :width: 90%
    :alt: An image of the alternative identifier edit fields
 
 When you're done, you can continue data entry elsewhere in the accession record
@@ -440,7 +440,7 @@ View the accession record
 -------------------------
 
 After creating an :term:`accession record`, save your new data by clicking
-"Save" in the :term:`button block` at the bottom of the accession record
+"Create" in the :term:`button block` at the bottom of the accession record
 :term:`edit page` (A user also has the option of clicking "Cancel", but all
 data entered will be lost), you can review the data in the accession record
 :term:`view page`.
@@ -457,11 +457,14 @@ In the :term:`button block` at the bottom of the screen you have the option(s)
 to:
 
 * :ref:`Edit the accession record <edit-accession-record>`
+* :ref:`Delete the accession record <delete-accession-record>`
+* :ref:`Add a deaccession record to the accession <add-deaccession-record>`
 * :ref:`Add an accrual to the accession <add-accession-accrual>`
-* :ref:`Create an archival description from the accession
-  <create-accession-description>`
-* :ref:`Delete an accession record <delete-accession-record>`
-* Under the "More button" you have the option to :ref:`add-rights-accession`
+* Under the "More button" you have the option to:
+
+   * :ref:`Create an archival description from the accession <create-accession-description>`
+   * :ref:`Add rights to the accession <add-rights-accession>`
+   * :ref:`Link the accession to a physical storage container <link-accession-container>`
 
 .. image:: images/accession-button-block.*
    :align: center
@@ -509,15 +512,15 @@ time by a logged-in user with edit privileges.
 
 2. AtoM will redirect you to the accession record :ref:`browse page
    <page-type-browse>`. Select the record you want by clicking on the
-   hyperlink Identifier. You can also search for an :term:`accession record`
-   with the accession records :term:`search box` located at the bottom of the
-   browse page. For more information on searching for :term:`accession records
-   <accession record>` in AtoM, see: :ref:`Searching for accession records
-   <dedicated-search-accessions>`.
+   hyperlinked accession title. You can also search for an
+   :term:`accession record` with the accession records :term:`search box`
+   located at the top of the browse page. For more information on searching for
+   :term:`accession records <accession record>` in AtoM, see:
+   :ref:`Searching for accession records <dedicated-search-accessions>`.
 
 .. image:: images/accession-browse.*
    :align: center
-   :width: 70%
+   :width: 90%
    :alt: The accession record browse page
 
 .. TIP::
@@ -533,7 +536,7 @@ time by a logged-in user with edit privileges.
       :width: 70%
       :alt: A link to a related accession in an archival description
 
-   Logged-in users with permissions can select the hyperlink accession record
+   Logged-in users with permissions can click the hyperlinked accession record
    identifier and AtoM will take them to the related accession record
    :term:`view page`. Unauthenticated users (i.e. those who are not logged in)
    will not be able to see the Accessions area; logged-in Users without
@@ -592,7 +595,7 @@ so:
 
 3. You will be redirected to an accession record :term:`edit page`, but but at
    the top of the edit template a message will read: **"You are creating an
-   accrual of the accession YYY-MM-DD/#."** (where YYYY-MM-DD/# represents the
+   accrual of the accession <Number>"** (where **<Number>** represents the
    Accession number to which you are adding an accrual)
 
 .. image:: images/add-accrual-message.*
@@ -674,14 +677,14 @@ Method 2: Altering the Accessions mask
 
 Users interested in creating an :term:`accession record` that has a legacy
 accession number associated with it via the AtoM :term:`user interface`, can
-do so by first editing the  Accessions mask in the **Admin > Settings >
-Global** area, and then creating a :ref:`new accession record
+do so by first editing the Accessions mask by navigating to |gears| **Admin >
+Settings > Identifiers**, and then creating a :ref:`new accession record
 <add-new-accession>`.
 
 .. image:: images/accession-mask.*
    :align: center
    :width: 70%
-   :alt: An image of the accessions mask in Global settings
+   :alt: An image of the accessions mask in Identifiers settings
 
 By default, AtoM creates the accession record identifier as a unique number
 compiled from [**YEAR MONTH DAY Incremental#**] - this is denoted in the
@@ -695,8 +698,8 @@ for example.
 To create a number of accessions from October 1998, an :term:`administrator`
 could edit the Accession mask like so: **1998-10/#i**
 
-If the changes are saved in |gears| **Admin > Settings > Global**, then when a
-user next creates a :ref:`new accession record <add-new-accession>`, the
+If the changes are saved in |gears| **Admin > Settings > Identifiers**, then
+when a user next creates a :ref:`new accession record <add-new-accession>`, the
 accession number will read:
 
 * 1998-10/1
@@ -708,8 +711,8 @@ And the following accession record's identifier (accession number) will read:
 .. warning::
 
    These changes will stay in effect until an :term:`administrator` returns
-   to the global settings menu via |gears| **Admin > Settings > Global** and
-   returns the Accession mask to the default setting. Don't forget to do
+   to the global settings menu via |gears| **Admin > Settings > Identifiers**
+   and returns the Accession mask to the default setting. Don't forget to do
    this, or all your new accessions will appear to be legacy accessions!
 
 .. _disable-accession-mask:
@@ -724,14 +727,15 @@ pre-populated values provided by the accessions mask when creating a
 
 However, when working with legacy accessions, it may be easier to simply
 disable the accessions mask, and manually populate the Accession number field.
-An :term:`administrator` can do this via |gears| **Admin > Settings** - for
-more information, see: :ref:`accession-mask` and :ref:`enable-accession-mask`
-in :ref:`settings`.
+An :term:`administrator` can do this via |gears| **Admin > Settings >
+Identifiers** and setting "Accession mask enabled" to **No**. For more
+information, see: :ref:`accession-mask` and :ref:`enable-accession-mask` in
+:ref:`settings`.
 
-.. image:: images/accession-mask.*
+.. image:: images/accession-mask-disabled.*
    :align: center
-   :width: 90%
-   :alt: An image of the accessions mask in Global settings
+   :width: 80%
+   :alt: An image of the accessions mask disabled in Identifiers settings
 
 Note that, even with the Accessions mask disabled, AtoM will still attempt
 to enforce unique Accession number values. If you attempt to use a value for
