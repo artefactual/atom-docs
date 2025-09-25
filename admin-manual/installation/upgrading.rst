@@ -369,41 +369,10 @@ information, see :ref:`customization-custom-theme`), you may need to perform
 an additional step following an upgrade to ensure that all pages are styled
 correctly.
 
-+++++++++++
-Bootstrap 5
-+++++++++++
-
-.. NOTE::
-
-   The following steps are required for all Bootstrap 5 themes, including the
-   built in arDominionB5Plugin theme.
-
-Additional steps for tarball installations:
-*******************************************
-
 If not already installed, first `download the node.js binary distributuion
 <https://nodejs.org/en/download>`_ and export the PATH variable.
 
-The tarball is missing three required files for this:
-
-* :version-ref:`package.json<https://github.com/artefactual/atom/blob/stable/{version}.x/package.json>`
-* :version-ref:`package-lock.json<https://github.com/artefactual/atom/blob/stable/{version}.x/package-lock.json>`
-* :version-ref:`webpack.config.js <https://github.com/artefactual/atom/blob/stable/{version}.x/webpack.config.js>`
-
-Copy the above files from the *correct stable branch*
-(stable/|version|.x for AtoM |version|) of our `AtoM repo <https://github.com/artefactual/atom/>`_.
-
-Test that everything has been installed correctly:
-
-.. code-block:: bash
-
-   $ npm install
-   $ npm run build
-
-If you encounter any issues at this point, we recommend resolving them by
-consulting the :ref:`maintenance-troubleshooting` documentation before continuing.
-
-Rebuild BS5 theme assets:
+Rebuild theme assets:
 *************************
 
 .. code-block:: bash
@@ -418,54 +387,6 @@ Rebuild BS5 theme assets:
    :ref:`clear the Symfony cache <maintenance-clear-cache>` and your
    web browser's cache as well!
 
-+++++++++++
-Bootstrap 2
-+++++++++++
-
-.. NOTE::
-
-   Bootstrap 2 themes have been deprecated and will be removed in a future
-   release. Please consider switching to a Bootstrap 5 theme.
-
-Specifically, :ref:`job-details` may not appear properly styled in a custom
-theme without an additional step. To ensure your Jobs pages properly inherit
-the base Dominion theming, you will need to add a call to import the
-``jobs.less`` CSS file to your theme plugin's ``main.less`` file. If you have
-followed our recommendations for creating a theme plugin, then you should find
-the ``main.less`` file for your plugin in
-``plugins/yourThemePluginName/css/main.less``. Here is an example of where you
-need to add a line in the ArchivesCanada theme plugin:
-
-* https://github.com/artefactual/atom/blob/HEAD/plugins/arArchivesCanadaPlugin/css/main.less#L78
-
-The line you will need to add is to import the base Jobs CSS, like so:
-
-.. code-block:: bash
-
-   @import "../../arDominionPlugin/css/less/jobs.less"
-
-Additionally, if you intend to use AtoM's :ref:`privacy-notification` feature
-with a custom theme, and you have customized the ``scaffolding.less`` file, you
-may need to update it. Changes are identified `here <https://goo.gl/d6HVVf>`__.
-If the theme has been customized, but the ``scaffolding.less`` file is being
-referenced from the ``arDominionPlugin`` theme then no modifications are
-required. You should also check if ``_header.php`` has been overridden in your
-custom theme. If so, the change highlighted in
-`this issue <https://github.com/artefactual/atom/commit/c65e84e809a5760c9814f8117a291bdb9a7491da#diff-e3a653026878cbc4745a5526934888d7R3>`__
-needs to be added to your custom ``_header.php`` file.
-
-Finally, if your custom theme includes modifications to the static page files
-``homeSuccess.php`` and ``indexSuccess.php`` (for example, if your theme
-includes a **custom homepage**), then you will also need to ensure that when
-displaying the page content, ``render_value`` calls in these files are updated
-to ``render_value_html``.
-
-Specifically, your modified files should be updated to match these lines:
-
-* Line 18 in `indexSuccess.php
-  <https://github.com/artefactual/atom/blob/HEAD/apps/qubit/modules/staticpage/templates/indexSuccess.php#L18>`__
-* Line 28 in `homeSuccess.php
-  <https://github.com/artefactual/atom/blob/HEAD/apps/qubit/modules/staticpage/templates/homeSuccess.php#L28>`__
 
 Recompiling after making modifications
 ======================================
