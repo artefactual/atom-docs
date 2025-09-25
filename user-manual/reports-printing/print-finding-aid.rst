@@ -120,8 +120,7 @@ need to be opened in a separate application.
 **Finding aid model**: At present, this setting will change how lower-level
 descriptions (e.g. :term:`children <child record>`, such as files and items) are
 presented in the finding aid. You can choose between "Full details" and
-"Inventory summary." Hover your cursor over the Finding aid model field label to
-see a brief tooltip:
+"Inventory summary."
 
 .. image:: images/finding-aid-settings-tooltip.*
    :align: center
