@@ -53,7 +53,7 @@ assigned new terms in addition to any locked values.
    storage container to a new or existing :term:`archival description` you
    must nest the storage container under "Container." Similarly, new locations
    can be created by users through the physical storage module's
-   :term:`user interface`, and they will automatically be added a children of
+   :term:`user interface`, and they will automatically be added as children of
    the locked term "Location."
 
    Other default terms (such as Box, Filing cabinet, Folder, etc) can be
@@ -275,7 +275,7 @@ leaving an :term:`archival description`) from an archival description
 field in the Access points area.
 
 Any terms previously created and any access point taxonomies already imported
-into AtoM will populate a the :term:`drop-down menu` when a user places the
+into AtoM will populate in the :term:`drop-down menu` when a user places the
 cursor in the related access point :term:`field`, to ensure that
 :term:`controlled vocabulary` terms are maintained, but multiple new terms can
 also be added. However, if a hierarchical relationship is to be established
@@ -799,7 +799,7 @@ Add a new converse relationship
    :alt: An image of a new converse term being created
 
 5. If the term is **self-reciprocal**, simply check the checkbox next to the
-   converse term field. AtoM will grey-out the field:
+   converse term field.
 
 .. image:: images/actor-relation-self-reciprocal.*
    :align: center
@@ -912,7 +912,7 @@ Subject and Place terms - an alternate workflow
 -----------------------------------------------
 
 The :term:`Subject` and :term:`Place` terms are often those most frequently
-accessed by AtoM users, as they can be linked to archival descriptions as as
+accessed by AtoM users, as they can be linked to archival descriptions as
 :term:`access points <access point>`, and are therefore visible to public
 users. To simplify the workflow for authenticated users, the :term:`button block`
 will be visible to logged-in users directly on the subject and place browse pages.
@@ -1012,9 +1012,9 @@ To delete a term, a user must also have a user account with sufficient
    :alt: An example of the delete term confirmation page
 
    An example of the deletion confirmation page for a place term with many
-   descendants (narrower terms) - in this case, the term "Canada" has 2753
+   descendants (narrower terms) - in this case, the term "Canada" has 2754
    narrower terms that will also be deleted, and "Canada" is used as a place
-   access point in 1 archival description.
+   access point in 2 archival description.
 
 5. You can cancel the delete request by clicking the "Cancel" button in the
    :term:`button block` at the bottom of the confirmation page. Note that

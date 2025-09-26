@@ -102,9 +102,9 @@ Add rights to an Accession record
    :width: 65%
    :alt: An image of searching for an accession
 
-3. When you have arrived at the record to which you wish to add rights, click
-   on "Create new rights" in the :term:`button block`. The PREMIS rights entry form
-   will appear.
+3. When you have arrived at the record to which you wish to add rights, click on
+   "More" in the :term:`button block` and click "Create new rights" from the
+   dropup menu. The PREMIS rights entry form will appear.
 
 .. image:: images/rights-button-block.*
    :align: center
@@ -347,9 +347,7 @@ digital object permissions are set. This means that digital object
 invisible to non-authenticated users by changing the rights record in
 conjunction with the appropriate administrative settings.
 
-To access the settings, click on the
-|gears| :ref:`Admin menu <main-menu-admin>` in the :term:`main menu` and
-select "Settings" from the :term:`drop-down menu`. Then click on "Permissions."
+To access the settings, go to **Admin > Settings > Permission**.
 
 .. image:: images/rights-digital-permissions.*
    :align: center
@@ -605,7 +603,7 @@ Scroll down to the section labelled "PREMIS access statements":
    :width: 80%
    :alt: An image of the PREMIS access statements in Settings
 
-The different Rights basis terms along the left act as tabs - click on one to
+The different Rights basis terms at the top act as tabs - click on one to
 flip the view and display the current access statement text for that basis.
 Each basis has a Conditional access statement (when the associated rights
 restriction is set to "Conditional" and the permissions table setting for
@@ -665,7 +663,7 @@ AtoM's :ref:`permissions` settings.
 
 When enabled, this setting will display customizable text about any access
 conditions that might be placed on linked files that are held in an integrated
-preservation system such as `Archivematica`_. Note that these statement only
+preservation system such as `Archivematica`_. Note that these statements only
 appear in the metadata section for original files and preservation copies.
 
 **Using the preservation access statement**
@@ -680,6 +678,10 @@ institution in the text field. For example, you may not distribute original
 files and preservation copies over the Internet but do provide access to them
 on a dedicated machine in your  reference room. So your preservation system
 access statement may read: "Access only provided on reference room computer.".
+
+.. SEEALSO::
+
+   For more information on working with HTML in AtoM, see: :ref:`manage-static-pages`.
 
 Toggle the "Enable access statement" option to "yes" and press "Save".
 
@@ -783,8 +785,8 @@ Configuring the copyright pop-up
    appear in your copyright statement. Content added here will be rendered
    similar to a :term:`static page` - that is, you can add HTML to style and
    structure the content. For tips on working with HTML in static pages, see:
-   :ref:`styling-static-page`. You can also drag the bottom of the text-box
-   down to expand it, if you need more room to work.
+   :ref:`styling-static-page`. You can also drag down from the right corner of
+   the text-box down to expand it, if you need more room to work.
 
 .. image:: images/copyright-pop-up-configured.*
    :align: center
@@ -940,7 +942,7 @@ Manage Rights holders records
 1. Users with :term:`editor` and :term:`administrator` access permissions can
    navigate to the :term:`main menu` located in the AtoM :term:`header bar` and
    click on the |edit| :ref:`Manage <main-menu-manage>` menu, then select
-   Rights holders from the drop-down list. AtoM will take you to a browse page
+   "Rights holders" from the drop-down list. AtoM will take you to a browse page
    for Rights holders.
 
 .. image:: images/manage-rightsholders.*
@@ -963,8 +965,8 @@ Manage Rights holders records
    provides a dedicated search box for searching existing rights holders in the
    system. For more information on using the Rights holders dedicated search
    box, see: :ref:`dedicated-search-rights`. The list of rights holders can be
-   browsed by "most recent" or "alphabetic" via the :ref:`recurring-sort-button`
-   on the page.
+   sorted by "Date modified", "Name", or "Identifier" via the
+   :ref:`recurring-sort-button` on the page.
 
 .. image:: images/browse-rightsholders.*
    :align: center
@@ -984,9 +986,9 @@ Manage Rights holders records
 
 5. If you click on the edit button, AtoM takes you to the Edit rights holder
    template. There are two areas: the Identity area and the Contact area. In
-   the Identity area there is one data entry field, authorized form of name.
-   In the Contact area there is add new button, which allows you to add a new
-   contact person. If you click on the add new button, AtoM opens a contact
+   the Identity area there is one data entry field, "Authorized form of name".
+   In the Contact area there is the "Add new" button, which allows you to add a
+   new contact person. If you click on the "Add new" button, AtoM opens a contact
    information dialogue with three tabs, Main, Physical location and Other
    details. Add as much information into the Related contact information
    dialogue and click on the Submit button.

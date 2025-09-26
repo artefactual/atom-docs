@@ -198,8 +198,8 @@ Taxonomies**.
 
    * :ref:`terms`
 
-The "Identifier" field on the right, and the larger "Note" field below it, are 
-both free-text fields. 
+The "Identifier" field in the middle, and the larger "Note" field on the right,
+are both free-text fields. 
 
 You can also add multiple identifiers as needed. Click the "Add new" link in
 the bottom of the alternative identifier widget, and a new set of fields will 
@@ -414,7 +414,7 @@ record :term:`edit page`.
 
 Placing the cursor in the data :term:`field` will activate a drop-down list of
 all archival descriptions entered into the database. The User selects the
-appropriate :term:`archival description` by moving through the list (a blue
+appropriate :term:`archival description` by moving through the list (a grey
 highlight will indicate which record you are selecting). Then Save the record
 by clicking "Save" in the :term:`button block` at the bottom of the accession
 :term:`edit page`.

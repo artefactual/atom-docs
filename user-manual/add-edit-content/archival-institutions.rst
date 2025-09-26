@@ -358,7 +358,7 @@ An archival institution's description can be edited at any time.
    :term:`information areas <information area>` closed; click on an
    information area to access the :term:`fields <field>` grouped under it.
 
-.. image:: images/new-archival-institution.*
+.. image:: images/edit-existing-archival-institution.*
    :align: center
    :width: 70%
    :alt: On loading, all information areas are closed; click one to expand
@@ -447,13 +447,13 @@ taxonomies in AtoM, see: :ref:`terms`.
 The **Geographic subregion** access point is intended to support better regional
 browsing in a :term:`multi-repository system`, especially in state, regional,
 or provincial union catalogues or :term:`networks <network>` where Region is
-not specific  enough. For example, *Southern Alberta*, *Northern Alberta*, and
-*Central Alberta* might be terms used in a province-wide union catalogue for
-Alberta, a province in Canada. AtoM does not include any default terms in
-this taxonomy. Users can add new terms directly to the taxonomy (see:
-:ref:`add-term-taxonomy`), or by entering new terms to the Geographic
-subregion field in the archival institution edit template (instructions on how
-to do this below).
+not specific  enough. AtoM does not include any default terms in this taxonomy.
+Users can add new terms directly to the taxonomy (see: :ref:`add-term-taxonomy`),
+or by entering new terms to the Geographic subregion field in the archival
+institution edit template (instructions on how to do this below).
+
+For example, *Southern Alberta*, *Northern Alberta*, and *Central Alberta* might
+be terms used in a province-wide union catalogue for Alberta, a province in Canada. 
 
 The **Thematic area** access point is intended to assist users in identifying
 major collecting areas of an archival institution by offering them a sense of
@@ -628,14 +628,13 @@ to link.
 
 .. IMPORTANT::
 
-   This method makes use of  an `auto-complete <https://en.wikipedia.org/wiki
-   /Auto-complete>`__ field to find the right :term:`archival institution` as
-   you begin to type its name/title. **Be sure** to pick the record from the
-   :term:`drop-down <drop-down menu>` when it appears - if you type the full
-   name and press enter, a new archival institution will be generated
-   instead of a link being created to an existing one! If, however, you wish
-   to add a new archival institution from the archival description's
-   :term:`edit page`, see :ref:`above <add-institution-description-edit>`.
+   This method makes use of  an `auto-complete <https://en.wikipedia.org/wiki/Auto-complete>`__
+   field to find the right :term:`archival institution` as you begin to type its
+   name/title. **Be sure** to pick the record from the :term:`drop-down <drop-down menu>`
+   when it appears - if you type the full name and press enter, a new archival
+   institution will be generated instead of a link being created to an existing
+   one! If, however, you wish to add a new archival institution from the archival
+   description's :term:`edit page`, see :ref:`above <add-institution-description-edit>`.
 
 4.  When you are done editing the record, save the :term:`archival
     description` by scrolling down and pressing "Save" in the :term:`button
@@ -725,8 +724,8 @@ description` pages linked to that specific institution.
    :alt: An image of the theme edit page in AtoM
 
 4. In the "Style" area, click on the Background color (you can click on the
-   title, the color swatch, or text box showing the :term:`hex color code`).
-   A :term:`color picker` will appear as a :term:`drop-down menu`.
+   title or the color swatch). A :term:`color picker` will appear as a
+   :term:`drop-down menu`.
 
 .. image:: images/theme-colorpicker.*
    :align: center
@@ -741,14 +740,14 @@ description` pages linked to that specific institution.
 5. Select the color that you would like to use as the background for your
    :term:`archival institution` record. This color will appear as the
    background for all related :term:`archival descriptions
-   <archival description>` as well. Use the slider on the right of the
-   :term:`color picker` drop-down to select a **hue** - you can click or drag
-   the slider bar to dynamically change the color in the palette. Use the
-   palette to select a **tint** - you can click or drag in the palette to
-   dynamically change the color. There is also a text-box provided where you
-   can manually enter a :term:`hex color code` if you with. The selected
-   color will be displayed in the small preview box next to the
-   :term:`hex color code` text-box. You can click anywhere outside of the the
+   <archival description>` as well. Use the slider below the :term:`color picker`
+   drop-down to select a **hue** - you can click or drag the slider bar to
+   dynamically change the color in the palette. Use the palette to select a
+   **tint** - you can click or drag in the palette to dynamically change the
+   color. There is also a text-box provided where you can manually enter a
+   :term:`hex color code`, or pick RGB or HSL values from the adjacent dropdown.
+   The selected color will be displayed in the small preview box next to the
+   :term:`hex color code` text-box. You can click anywhere outside of the
    :term:`color picker` to hide the :term:`drop-down <drop-down menu>`.
 6. You can quit the theming process at any time by clicking the "Cancel" button
    in the :term:`button block`; any changes made will not be saved. Note that
@@ -804,7 +803,7 @@ Add a logo for an archival institution
    :alt: An image of the edit theme button in the button block
 
 3.  From here, authenticated users can upload a logo. In the "Style" area, under
-    the "Logo" :term:`field`, click the "Browse" button.
+    the "Logo" :term:`field`, click the "Choose File" button.
 
 .. image:: images/upload-logo-area.*
    :align: center
@@ -871,7 +870,7 @@ Edit/remove an existing logo for an archival institution
     institution - see :ref:`Access content <access-content>` for more
     information on navigation in AtoM.
 
-.. image:: images/edit-logo-bell.*
+.. image:: images/edit-law-society.*
    :align: center
    :width: 70%
    :alt: An image of an archival institution with an uploaded logo
@@ -885,12 +884,12 @@ Edit/remove an existing logo for an archival institution
    :alt: An image of the edit theme button in the button block
 
 3.  From here, navigate to the "Style" area, under the "Logo" :term:`field`,
-    click the "Browse" button under the existing logo.
+    click the "Choose File" button under the existing logo.
 
 .. image:: images/upload-new-logo.*
    :align: center
    :width: 70%
-   :alt: Selecting the "Browse" button to upload a new logo
+   :alt: Selecting the "Choose File" button to upload a new logo
 
 4.  A separate window will open; select the image on your computer that you'd
     like to replace the existing logo with. See the :ref:`previous section
@@ -906,7 +905,7 @@ Edit/remove an existing logo for an archival institution
     the :term:`button block` at the bottom of the page. AtoM will reload the
     :term:`archival institution` in :term:`view mode`.
 
-.. image:: images/edit-theme-button.*
+.. image:: images/button-block-save.*
    :align: center
    :width: 70%
    :alt: A image of the institution after a successful logo change
@@ -1221,10 +1220,10 @@ the :term:`user interface`.
    `API key <https://developers.google.com/maps/documentation/javascript/get-api-key>`__
    from Google.
 
-3. Navigate to |gears| **Admin > Settings** and scroll down to near the bottom
-   of the Global settings page. Add your Maps API key to the field marked
-   "Google Maps JavaScript API key setting." For more information, see:
-   :ref:`maps-api-key`. Don't forget to save your settings after making
+3. Navigate to |gears| **Admin > Settings > Global > Integrations** and scroll
+   down to near the bottom of the Global settings page. Add your Maps API key to
+   the field marked "Google Maps JavaScript API key setting." For more information,
+   see: :ref:`maps-api-key`. Don't forget to save your settings after making
    changes, using the :term:`button block` at the bottom of the Settings page.
 
 4. Maps will only appear on an institution's :term:`view page` if the latitude

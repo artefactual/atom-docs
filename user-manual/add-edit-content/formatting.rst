@@ -137,7 +137,7 @@ to text, like so:
 .. code-block:: none
 
    Emphasis, aka italics, with *asterisks* or _underscores_.
-   
+
    Strong emphasis, aka bold, with **asterisks** or __ double underscores__.
 
    Combined bold and italics emphasis with **asterisks and _underscores_**.
@@ -269,8 +269,8 @@ In many cases, users may wish to add a hyperlink to an external site to the
 in AtoM - for example, a link to an external finding aid in the "Finding aids"
 field; a link to an external holdings list on a :term:`repository` page, etc.
 
-There are 2 main methods this can be accomplished - either in-line, or by adding
-a reference link. Inline links look like this: 
+There are 2 main methods by which this can be accomplished - either in-line, or
+by adding a reference link. Inline links look like this:
 
 .. code-block:: none
 
@@ -280,7 +280,7 @@ The above example will lead to "display text in square brackets" appearing as a
 hyperlink in the :term:`view page` of the :term:`entity` when saved.
 
 You can also separate the display text from the link, using the reference method, 
-like so: 
+like so:
 
 .. code-block:: none
 
@@ -298,20 +298,20 @@ available:
 .. code-block:: none
 
    [I'm an inline-style link](https://www.accesstomemory.org)
-   
+
    [I'm an inline-style link with title](https://www.acccesstomemory.org "AtoM's Homepage")
-   
+
    [I'm a reference-style link][Arbitrary case-insensitive reference text]
-   
+
    [You can use numbers for reference-style link definitions][1]
-   
+
    Or leave it empty and use the [link text itself].
-   
+
    URLs and URLs in angle brackets will automatically get turned into links.
    http://www.example.com or <http://www.example.com>.
-   
+
    Some text to show that the reference links can follow later.
-   
+
    [arbitrary case-insensitive reference text]: https://www.artefactual.com
    [1]: https://www.slideshare.net/accesstomemory
    [link text itself]: https://twitter.com/accesstomemory
@@ -323,7 +323,7 @@ An image of how these will render in AtoM:
    :width: 90%
    :alt: An example of markdown link formatting rendered in AtoM
 
-.. TIP:: 
+.. TIP::
 
    You can also link to existing pages in AtoM by simply providing the unique
    part of the path in the link. For example, if my AtoM site is located at 
