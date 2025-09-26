@@ -33,6 +33,7 @@ Below, you will find information on the following :term:`information areas
 * :ref:`treeview-settings`
 * :ref:`upload-settings`
 * :ref:`User interface labels <user-interface-labels>`
+* :ref:`Web analytics <web-analytics>`
 
 Each of the settings areas listed above is accessible via a list of links on
 the left-hand side of the settings page. Click on the appropriate link, and
@@ -3262,6 +3263,29 @@ public users.
    corresponding labels in the navigation menus. To change these menus, go to
    |gears| **Admin > Menus**. See the :ref:`Manage menus <manage-menus>` page
    for more information.
+
+:ref:`Back to top <settings>`
+
+.. _web-analytics:
+
+Web analytics
+=============
+
+In this section, :term:`administrators <administrator>` can update their web
+analytics information.
+
+Google Analytics tracking ID
+----------------------------
+
+AtoM includes built-in integration with `Google Analytics`_. You can add your
+Google Analytics tracking ID, in the following format:
+``G-XXXXXXXXXX``. Once you are done, remember to :ref:`clear the cache <maintenance-clear-cache>`
+and :ref:`restart PHP-FPM <troubleshooting-restart-php-fpm>`.
+
+.. seealso::
+
+   * :ref:`maintenance-web-analytics`
+   * :ref:`google-analytics`
 
 :ref:`Back to top <settings>`
 
