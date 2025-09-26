@@ -150,7 +150,7 @@ via the :term:`user interface` and/or create new static pages (see:
 :ref:`manage-static-pages`). Additionally, external links can be added to the
 quick links menu (or any menu) via **Admin > Menus** - often an administrator
 will add a direct link to their institution home page, and/or a link to the
-AtoM documentation (as a"Help" link).
+AtoM documentation (as a "Help" link).
 
 **For more information on managing menus and static pages, see:**
 
@@ -377,14 +377,18 @@ access to the import menu - however, administrators can also change user
 and group permissions (see: :ref:`edit-user-permissions` and
 :ref:`manage-user-accounts`).
 
-Two options are offered in the dropdown menu - XML (short for `eXtensible
+Three options are offered in the dropdown menu - XML (short for `eXtensible
 Markup Language <https://en.wikipedia.org/wiki/Xml>`__) and CSV (short for
 `Comma-Separated Values
-<https://en.wikipedia.org/wiki/Comma-separated_values>`__). Selecting one of
-the options from the Import :term:`drop-down menu` will redirect the user to
-an import page specific to the format chosen. Using these options, an
+<https://en.wikipedia.org/wiki/Comma-separated_values>`__), and SKOS (short for
+`Simple Knowledge Organization System
+<https://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System>`__). Selecting
+one of the options from the Import :term:`drop-down menu` will redirect the user
+to an import page specific to the format chosen. Using these options, an
 :term:`administrator` can import descriptions and :term:`terms <term>` into
 AtoM.
+
+For importing CSV files, there is an option in the dropdown menu to Validate CSV.
 
 **Find more information on:**
 
@@ -684,7 +688,7 @@ records, with links, on the left-hand side of the screen. The right-hand
 side of the screen includes links to related people and organizations (i.e.,
 :term:`authority records <authority record>`), :term:`subjects <subject>`, and
 :term:`places <place>`, as well as available formats for export and printing.
-Links in the right-hand column of the context menu are drawn from
+Links in the right-hand column of the context menu are drawn from access points.
 
 When viewing an :term:`authority record` for a person, family, or
 :term:`corporate body`, the left-hand side of the screen will show any
@@ -714,7 +718,7 @@ menu includes :term:`facet filters <facet filter>` that allow the user to
 iteratively narrow the results presented. If the browse page is for a
 :term:`term` that can be organized hierarchically in a :term:`taxonomy` (such
 as a :term:`place` or :term:`subject` term), a version of the :term:`treeview`
-is also presented, showing users the terms position in the hierarchy as well
+is also presented, showing users the term's position in the hierarchy as well
 as related "sibling" (i.e. on the same level) terms.
 
 **Find more information on using the Context menu:**
@@ -829,8 +833,8 @@ includes:
 * :term:`Thumbnails <thumbnail>` of lower-level digital objects
 * The title of the description to which the digital object is attached (titles
   are truncated with an `...` ellipsis after 25 characters)
-* A draggable slider bar (for navigating with touch or using a mouse - right
-  and left arrow keys can also be used for keyboard navigation)
+* A series of dots representing each digital object (for navigating with touch or
+  using a mouse)
 * If the lower-levels of description include more than 10 digital objects, a
   count of all digital objects at lower levels, and a button to view all in a
   browse page.
@@ -842,20 +846,15 @@ will load the related lower level of description (:term:`child record`),
 where a larger version of the image and its description can be viewed. By
 default, whenever there are more than 10 digital objects at lower levels,
 only the first 10 will be displayed; a total count of related digital
-objects, with a button to "View all" digital objects in a tile-based digital
+objects, with a button to "Show all" digital objects in a tile-based digital
 object browse page appears to indicate to the user that there are more
 digital objects than those displayed, and providing an option to view them
 all.
 
 **Using the carousel**
 
-* Drag the slider left/right to scroll through the :term:`thumbnails
-  <thumbnail>`
-
-  * If no slider appears, this means there is only one :term:`digital object`
-    at a lower :term:`level of description`.
-  * You can also use your keyboard right and left arrows to scroll
-
+* Click through the dots, each representing a :term:`thumbnail <thumbnail>`
+* Use the mouse scroll to scroll through the :term:`thumbnails <thumbnail>`
 * Click on a thumbnail to view its :term:`archival description` and a larger
   version of the :term:`digital object` that the thumbnail depicts
 * If there are more than 10 digital objects, click the "Show all" button to
@@ -928,7 +927,7 @@ menu>`; each facet can be expanded to view its available results/matches, or
 collapsed to hide match results, by clicking on the facet title - facet titles
 are highlighted in dark grey when opened in AtoM's :term:`Dominion theme`.
 
-Available facet results appear below each facet heading as blue :ref:`text
+Available facet results appear below each facet heading as :ref:`text
 links <recurring-text-links>`. When clicked by a user, the search/browse
 results on the page will reload, filtered to show only results that match the
 facet filter selected - for example, selecting "Series" in the Level of
@@ -938,20 +937,19 @@ reload the page results to display only series-level descriptions; clicking
 that have a :term:`name` :term:`access point` of "Ontario" added to their
 descriptions.
 
-When a facet match result has been selected, the text changes from a blue
-:ref:`text link <recurring-text-links>` to black underlined text. By
-default, all facet filters are set to "All" when a user first arrives
-at a search/browse page (unless a user has arrived from a pre-filtered query
-- for example, clicking "Browse all holdings" in the :term:`context menu` of
-an :term:`archival institution` page will take the user to a browse page
-filtered to the holdings of that institution). the "All" filter will become a
-blue :ref:`text link <recurring-text-links>` when another filter is engaged;
-clicking "All" will then remove the current facet filter and refresh the
-results page. When a filter is applied, all other facet results will be
-refreshed to reflect the current selection, presenting filter results that
-apply to the current results - for example, when "Ontario" has been applied
-as a place filter, the "Levels of description" facet results will now display
-results that apply only to the records being displayed (records with an
+When a facet match result has been selected, the :ref:`text link <recurring-text-links>` 
+becomes highlighted and underlined. By default, all facet filters are set to "All"
+when a user first arrives at a search/browse page (unless a user has arrived from
+a pre-filtered query - for example, clicking "Browse all holdings" in the
+:term:`context menu` of an :term:`archival institution` page will take the user
+to a browse page filtered to the holdings of that institution). the "All" filter
+:ref:`text link <recurring-text-links>` will no longer be highlighted or underlined
+when another filter is engaged; clicking "All" will then remove the current facet
+filter and refresh the results page. When a filter is applied, all other facet
+results will be refreshed to reflect the current selection, presenting filter
+results that apply to the current results - for example, when "Ontario" has been
+applied as a place filter, the "Levels of description" facet results will now
+display results that apply only to the records being displayed (records with an
 "Ontario" place :term:`access point`), until the previous facet filter is
 removed.
 
@@ -963,7 +961,7 @@ Facets available by record type in AtoM
 Currently facets are only available on :term:`archival description`,
 :term:`authority record`, and :term:`archival institution` search and browse
 pages. Additionally, filter buttons by media type are available in the
-top-right corner of the Browse digital objects page, which allow a user to
+bottom-left side of the Browse digital objects page, which allow a user to
 limit the results by available media type (image, audio, video, text, or
 other).
 
@@ -1088,18 +1086,16 @@ Using facet filters in AtoM:
 
 * Navigate to a :ref:`browse <browse>` or :ref:`search-atom` page
 * Available :term:`facet filters <facet filter>` will appear on the left-hand
-  side of the page (unless you are on the Digital objects browse page - the
-  filter buttons there are in the upper right-hand corner of the page). If
-  there are no facet filters present, they are not available for that
-  :term:`entity` (e.g. Place, Subject, Function browse pages, etc.)
+  side of the page. If there are no facet filters present, they are not available
+  for that :term:`entity` (e.g. Place, Subject, Function browse pages, etc.).
 * Click on the heading of a facet to expand or collapse its available options
 * The filter currently selected in a facet will appear in black underlined
-  text. Available filters appear as blue :ref:`text links
+  text. Available filters appear as black :ref:`text links
   <recurring-text-links>`
 * By default, filter options are set to display "All" when a user arrives to a
   browse page (unless a specific query has brought them there that engages a
   filter).
-* Click on a blue :ref:`text link <recurring-text-links>` to apply a filter
+* Click on a highlighted :ref:`text link <recurring-text-links>` to apply a filter
 * Click on "All" under a facet to remove an applied filter. Alternately, you
   can click on the related :term:`filter tag` that will appear above the
   search or browse results. For more information on filter tags, see:
@@ -1373,8 +1369,8 @@ Sort buttons
 The sort buttons (**Sort by** and **Direction**) are navigational tools that appear on
 some browse and search pages throughout AtoM. They allow a user to change the
 sort order of the results being displayed. Common values used in the Sort by
-button as it appears in AtoM include: Alphabetic, Relevance, Identifier,
-:term:`Reference code` Most recent, or Start date and End date. The **Direction**
+button as it appears in AtoM include: Title, Relevance, Identifier,
+:term:`Reference code`, Date Modified or Start date and End date. The **Direction**
 sort button reverses the direction (ascending or descending) of items according
 to the **Sort by** option.
 
@@ -1384,11 +1380,11 @@ buttons reveal the option(s) currently not selected - a user can click the
 desired option in the drop-down menu, and the page will reload in the new sort
 order.
 
-When the sort order is set to "Alphabetic,"results are organized A-Z. Note
+When the sort order is set to "Title", results are organized A-Z. Note
 that this is an **ASCII sort** - see the IMPORTANT note below for more
 information.
 
-When results are ordered by "Most recent," the most recently added and/or
+When results are ordered by "Date modified", the most recently added and/or
 edited records in the results will appear at the top of the list, allowing users
 to discover new or recently updated content.
 
@@ -1504,7 +1500,7 @@ positioned above the list of related :term:`holdings`.
 Additionally, institution logos are used on the :term:`archival institution`
 browse page (available via the :ref:`browse menu <browse-menu>`), the logos
 (or logo placeholders if no logo has been uploaded) are presented to the user
-in a tiled browse layout, with the title appearing below the logo in grey.
+in a tiled browse layout, with the title appearing below the logo.
 
 .. figure:: images/institution-logo-browse.*
    :align: center
@@ -1513,7 +1509,7 @@ in a tiled browse layout, with the title appearing below the logo in grey.
    :alt: An image of institution logos the archival institution browse page
 
    Institution logos on the Archival institution browse page. In the image,
-   the Alberton Museum and the Alex Youck School Museum represent
+   the National Museum of Scotland and Women's College Hospital represent
    institutions without uploaded logos, showing placeholders instead.
 
 **For information on adding a logo to an archival institution, see:**
