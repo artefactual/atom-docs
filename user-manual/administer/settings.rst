@@ -3028,6 +3028,17 @@ value. The minimum value is 10, and the maximum value that can be set via the
 
       treeview_items_per_page_max: 10000
 
+   With AtoM 2.9+, you will also need to update the ``max_result_window`` value
+   in ``plugins/arElasticSearchPlugin/config/search.yml``. This is required
+   because Elasticsearch enforces a hard limit (default: 10,000) on the maximum
+   number of results that can be retrieved from a single search query. Both values
+   must be increased together to successfully display hierarchies larger than 10,000
+   items.
+
+   .. code-block:: bash
+
+      max_result_window: 10000
+
    After the change, you will need to clear the application cache, and restart
    PHP-FPM. For more information, see:
 

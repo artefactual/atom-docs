@@ -345,7 +345,7 @@ that can be customized as needed. Be aware that making changes can increase
 the size of your ES index and require more resources (memory, disk space, etc)
 if changed.
 
-The first value is the ``index.mapping.total_fields.limit``. This setting
+The first value is the ``mapping.total_fields.limit``. This setting
 defines the maximum number of fields in an index. Field and object mappings,
 as well as field aliases count towards this limit. By default in new AtoM
 installations, this value is set to 3000. In particularly large installations
@@ -358,14 +358,14 @@ like the following message when attempting to run the
 
    Limit of total fields [3000] in index [atom] has been exceeded 
 
-The second value is the ``index.max_result_window`` setting. By default
-Elasticsearch sets a limit on the number of results returned, since these 
+The second value is the ``max_result_window`` setting. By default
+Elasticsearch sets a limit on the number of results returned, since these
 impact the amount of heap memory required for your search index. This value
 is set to 10,000 in AtoM by default in new installations.
 
-This means that, in the event that there are more than 10,000 results to return 
-when searching or browsing, AtoM will stop loading results after the limit is 
-reached, to preserve memory capacity, and the user will see the following 
+This means that, in the event that there are more than 10,000 results to return
+when searching or browsing, AtoM will stop loading results after the limit is
+reached, to preserve memory capacity, and the user will see the following
 message:
 
 .. image:: images/es-sort-options.*
@@ -374,10 +374,10 @@ message:
    :alt: Sort options error message
 
 Users can use the sort direction options in the 
-:ref:`Sort buttons <recurring-sort-button>` available on search and browse 
-pages to reverse the sort direction and view results from the end of the list. 
-However, if desired, a system administrator can increase the 
-``index.max_result_window`` value to allow more results to be accessed before
+:ref:`Sort buttons <recurring-sort-button>` available on search and browse
+pages to reverse the sort direction and view results from the end of the list.
+However, if desired, a system administrator can increase the
+``max_result_window`` value to allow more results to be accessed before
 the limit is reached. Be aware that this will impact memory usage!
 
 **If you make any changes to the** ``search.yml`` **file**, you should:
