@@ -19,8 +19,8 @@ execution and reduce the attack surface, enhancing the overall security posture
 of web applications.
 
 Starting in AtoM 2.8, AtoM has built in support for CSP headers when Bootstrap 5
-based themes are in use. When installing AtoM 2.8+ from scratch, there's a
-pre-configured CSP directive setting in place which is set to report-only mode by
+based themes are in use. When installing AtoM 2.10.1+ from scratch, there's a
+pre-configured CSP directive setting in place which is set to enforce mode by
 default. These default settings serve as a foundation compatible with the upgraded
 Bootstrap 5 based Dominion theme and can be used as a base for custom themes based
 on Dominion.
@@ -66,7 +66,7 @@ This is the default configuration you'll find in AtoM's :ref:`config-app-yml` fi
    csp:
       # Configure CSP response header to be either
       # 'Content-Security-Policy-Report-Only' or 'Content-Security-Policy'
-      response_header: Content-Security-Policy-Report-Only
+      response_header: Content-Security-Policy
       # Configure CSP response directives.
       directives: >
         default-src 'self';
@@ -98,11 +98,6 @@ two values:
   affecting the functionality of the web page. This is useful for testing a new policy or
   changes to an existing policy without risking breakage. Violations will be reported to
   the browser's console. This setting is the default.
-
-.. IMPORTANT::
-   In order to activate CSP header protection, you will need to update the CSP
-   ``response_header`` from ``Content-Security-Policy-Report-Only`` to
-   ``Content-Security-Policy`` in your app.yml file.
 
 The CSP ``directives`` setting contains the CSP policy that will be sent in the CSP header.
 The value for the ``directives`` setting above is the default when the Dominion theme is
@@ -259,7 +254,7 @@ If your application has inline scripts there are 4 choices:
 
    .. code-block:: none
 
-      Content-Security_policy-Report-Only: default-src 'self'; font-src 'self'; img-src 'self' https://www.gravatar.com/avatar/ blob:; script-src 'self' 'nonce-abcd1234567890'; style-src 'self' 'nonce-abcd1234567890'; worker-src 'self' blob:; frame-ancestors 'self';
+      Content-Security_policy: default-src 'self'; font-src 'self'; img-src 'self' https://www.gravatar.com/avatar/ blob:; script-src 'self' 'nonce-abcd1234567890'; style-src 'self' 'nonce-abcd1234567890'; worker-src 'self' blob:; frame-ancestors 'self';
 
 4. Remove the inline asset! Refactor the code to move the inline asset to the
    script and style bundle. If it's an inline style can it be replaced with a
@@ -280,7 +275,7 @@ adding:
 
 .. code-block:: none
 
-   Content-Security-Policy-Report-Only: default-src 'self'; font-src 'self'; img-src 'self' https://www.gravatar.com/avatar/; script-src 'self'; style-src 'self'; frame-ancestors 'self';
+   Content-Security-Policy: default-src 'self'; font-src 'self'; img-src 'self' https://www.gravatar.com/avatar/; script-src 'self'; style-src 'self'; frame-ancestors 'self';
 
 Note it is good to be as specific as possible without creating a maintenance
 headache when specifying the domain. E.g. if all assets are loaded from the
