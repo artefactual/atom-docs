@@ -868,8 +868,8 @@ Google account. For more information, see:
 
 .. _reports-public-setting:
 
-Generate archival description reports as public user
-----------------------------------------------------
+Generate archival description reports from public records
+---------------------------------------------------------
 
 This setting relates to the creation of file and item-level reports for
 archival descriptions, as well as finding aids - for more information, see:
