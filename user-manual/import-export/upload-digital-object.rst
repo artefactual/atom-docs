@@ -4,11 +4,11 @@
 Upload and manage digital objects
 =================================
 
-:term:`Digital objects <digital object>` objects are computer files that can be
+:term:`Digital objects <digital object>` are computer files that can be
 uploaded into and displayed by AtoM; they can include scanned images, digital
 photographs, sound and moving image files, and other scanned or born-digital
 items. AtoM allows the user to link a single :term:`digital object` to an
-:term:`archival description` or an an :term:`authority record`, or import
+:term:`archival description` or an :term:`authority record`, or import
 multiple digital objects to new lower :term:`levels of description <level of
 description>`. In AtoM, there is a 1:1 relationship between a digital object and
 an :term:`information object` - meaning every digital object must be associated
@@ -45,8 +45,8 @@ At higher :term:`levels of description <level of description>`, the
 :term:`view page` of a :term:`parent record` will include
 :term:`thumbnails <thumbnail>` of all digital objects registered at lower levels.
 The thumbnails are displayed using a :term:`carousel viewer <carousel>` so you
-can easily scroll through the set using your mouse or keyboard's arrow keys.
-Clicking on a thumbnail will redirect you to the :term:`view page` for the
+can easily scroll through the set using your mouse scroll. Clicking on a thumbnail
+will redirect you to the :term:`view page` for the
 :term:`description <archival description>` associated with that digital
 object. If more than 10 digital objects appear at lower levels, AtoM will
 display the first 10 in the :term:`carousel` and provide a link to a digital
@@ -164,10 +164,10 @@ To link a single :term:`digital object`:
 7. Objects with multiple pages, such as multi-page TIFFs or PDF files, will by
    default be displayed with single-page reference display copies. To have them
    viewed with a pager to allow the user to browse through the pages, go to
-   **Admin > Settings > Global > Upload multi-page files as multiple
-   descriptions** and select "Yes"; this will also cause all pages of a multi-
-   page object to appear individually as child records of the description to
-   which the object was uploaded. (See: :ref:`settings <upload-multi-files>`).
+   **Admin > Settings > Uploads** and select "Yes" radio button under **"Upload
+   multi-page files as multiple descriptions"**; this will also cause all pages
+   of a multi-page object to appear individually as child records of the description
+   to which the object was uploaded. (See: :ref:`settings <upload-multi-files>`).
 
 .. TIP::
 
@@ -233,7 +233,7 @@ include an "Access Copies" subsection.
 4. If the Reference representation or Thumbnail representation is deleted via
    the "Edit digital object" page, then the "Reference copy" and/or "Thumbnail
    copy" metadata is no longer displayed on the archival description view
-   page. Additionally, the thumbnail is not show on Browse pages and the
+   page. Additionally, the thumbnail is not shown on Browse pages and the
    reference copy is not displayed on view pages.
 
 5. The filename for each representation is either shown as plain text or as a
@@ -1057,15 +1057,14 @@ are included on the :ref:`archival-descriptions` documentation page - see:
    For more information on editing the :term:`slug` and/or title of a
    description with the rename module, see: :ref:`rename-title-slug`.
 
-4. To the right of the edit fields, there is a checkbox corresponding to each
-   field. By default, the title and slug checkboxes will be checked, and the
-   filename field will be unchecked. The checkbox associated with a field must
-   be checked to enable editing. You can uncheck these fields at any time to
-   disable them - doing so will undo any changes made and prevent the field from
-   updating when the "Update" button is clicked. To edit the filename of the
-   linked :term:`digital object`, check the "Update filename" box. You also
-   might wish to uncheck the Title and Slug boxes, to prevent any accidental
-   edits.
+4. Below the edit fields, there is a checkbox corresponding to each field. By
+   default, the title, slug, and filename checkboxes will be checked. The checkbox
+   associated with a field must be checked to enable editing. You can uncheck these
+   fields at any time to disable them - doing so will undo any changes made and
+   prevent the field from updating when the "Update" button is clicked. To edit
+   the filename of the linked :term:`digital object`, check the "Update filename"
+   box. You also might wish to uncheck the Title and Slug boxes, to prevent any
+   accidental edits.
 
 5. Place your cursor in the filename :term:`field` and make changes as necessary.
    For reference, the original value before  your changes is displayed below
