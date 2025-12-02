@@ -300,7 +300,7 @@ AtoM includes a :term:`clipboard` that allows users to "pin" results to it for
 review or further action. For more information, see: :ref:`clipboard`.
 
 Any user can generate XML exports of :term:`Clipboard` results, where the
-format is supported. The XML exports, after they are generated generated, are
+format is supported. The XML exports, after they are generated, are
 made available for download from the :ref:`Jobs <manage-jobs>` page. For public
 users who do not have access to the Jobs page, a notification
 will be displayed with a direct link to the download when the export is ready.
@@ -509,7 +509,7 @@ computer) that will allow you to "unzip" a ZIP file.
 Including digital objects with an XML clipboard export
 ------------------------------------------------------
 
-Some AtoM sites are :ref:`configured <clipboard-settings>` configured to enable
+Some AtoM sites are :ref:`configured <clipboard-settings>` to enable
 users to include attached digital objects when exporting archival descriptions
 from the clipboard. In this case, the Export options screen will include a
 checkbox for "Include digital objects".
