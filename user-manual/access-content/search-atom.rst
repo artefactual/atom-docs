@@ -198,11 +198,9 @@ between a global search setting and a setting restricted to the
 :term:`holdings` of a particular :term:`archival institution`.
 
 When a user has viewed an :term:`archival institution` record or an
-:term:`archival description` related to an archival institution, clicking in
-the search box (in Bootstrap 2 themes) or clicking the gear icon
-(in Bootstrap 5 themes) will reveal a set of
-:term:`radio buttons <radio button>` that allow the user to limit the search
-results to the holdings of the most recently viewed
+:term:`archival description` related to an archival institution, clicking the gear
+icon will reveal a set of :term:`radio buttons <radio button>` that allow the user
+to limit the search results to the holdings of the most recently viewed
 :term:`archival institution`, or to search globally
 (i.e., across all records in the application).
 
