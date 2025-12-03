@@ -120,8 +120,7 @@ need to be opened in a separate application.
 **Finding aid model**: At present, this setting will change how lower-level
 descriptions (e.g. :term:`children <child record>`, such as files and items) are
 presented in the finding aid. You can choose between "Full details" and
-"Inventory summary." Hover your cursor over the Finding aid model field label to
-see a brief tooltip:
+"Inventory summary."
 
 .. image:: images/finding-aid-settings-tooltip.*
    :align: center
@@ -143,7 +142,7 @@ description with full details on the right:
    :width: 95%
    :alt: Finding aid details comparison - Full details vs Inventory summary
 
-**Generate Finding Aid as public user**: This setting determines whether or not
+**Generate Finding Aid from public records**: This setting determines whether or not
 :term:`Draft <draft record>` records are included in the PDF generated, as well
 as :term:`physical storage` information, depending on your Visible elements
 settings for physical storage.
@@ -166,7 +165,7 @@ on using the Visible elements module, see: :ref:`visible-elements`.
 
 .. TIP::
 
-   If you have the "Generate Finding Aid as public user" setting set to "Yes,"
+   If you have the "Generate Finding Aid from public records" setting set to "Yes,"
    the option to generate a finding aid will **not appear** on any
    :term:`draft <draft record>` descriptions in AtoM. You will have to publish
    the description before you can generate a finding aid. You will still have
@@ -242,7 +241,7 @@ Jobs page - for more information on managing :term:`jobs <job>` in AtoM, see:
    It could be  because your :term:`archival description` is still in
    :term:`draft <draft record>` status, and your Finding aid
    :ref:`settings <print-finding-aid-settings>` are set to "Generate Finding Aid
-   as public user." AtoM will hide the link to generate finding aids from any
+   from public records." AtoM will hide the link to generate finding aids from any
    draft descriptions when this setting is engaged. You can either change your
    settings (see above), or you can publish the description - see:
    :ref:`publish-archival-description`. You'll still be able to upload a
@@ -515,7 +514,7 @@ Physical storage information is not included in my finding aid
 
 Physical storage information is excluded from the Finding aid if:
 
-* The "Generate Finding Aid as public user" setting is set to YES, **and**
+* The "Generate Finding Aid from public records" setting is set to YES, **and**
 * The Visible elements module for your template is set to hide physical storage
   information from public users (e.g. the box is unchecked).
 
@@ -541,7 +540,7 @@ I don't want to display physical storage information in my finding aid
 
 Physical storage information is excluded from the Finding aid if:
 
-* The "Generate Finding Aid as public user" setting is set to YES, **and**
+* The "Generate Finding Aid from public records" setting is set to YES, **and**
 * The Visible elements module for your template is set to hide physical storage
   information from public users (e.g. the box is unchecked).
 
@@ -553,7 +552,7 @@ your descriptions via AtoM's Visible elements module. To do so, navigate to
 option is |uncheck| unchecked.
 
 You will then need to check the finding aid settings, and make sure that the
-"Generate Finding Aid as public user" option is set to "yes". See
+"Generate Finding Aid from public records" option is set to "yes". See
 :ref:`above <print-finding-aid-settings>` for more details on the finding aid
 settings.
 
@@ -576,7 +575,7 @@ If you don't want draft descriptions shown in your finding aid, navigate to
 on the left. AtoM will load the finding aid settings, described in detail
 :ref:`above <print-finding-aid-settings>`.
 
-Make sure that the "Generate Finding Aid as public user" option is set to
+Make sure that the "Generate Finding Aid from public records" option is set to
 "yes", and remember to click the "Save" button in the :term:`button block` if
 you make any changes.
 
@@ -589,7 +588,7 @@ Now you can re-generate your finding aids, following the steps above,
    It could be  because your :term:`archival description` is still in
    :term:`draft <draft record>` status, and your Finding aid
    :ref:`settings <print-finding-aid-settings>` are set to "Generate Finding Aid
-   as public user." AtoM will hide the link to generate finding aids from any
+   from public records." AtoM will hide the link to generate finding aids from any
    draft descriptions when this setting is engaged. You can either change your
    settings (see above), or you can publish the description - see:
    :ref:`publish-archival-description`. You'll still be able to upload a
@@ -611,7 +610,7 @@ This could be because your archival description is in
 :term:`draft mode <draft record>`, and the Finding aid settings are set to
 generate as a public user.
 
-If you have the "Generate Finding Aid as public user" setting set to "Yes,"
+If you have the "Generate Finding Aid from public records" setting set to "Yes,"
 the option to generate a finding aid will **not appear** on any
 :term:`draft <draft record>` descriptions in AtoM. You will have to publish
 the description before you can generate a finding aid, or change the setting.
@@ -665,52 +664,5 @@ Now you can re-generate your finding aids, following the steps above,
    * :ref:`print-finding-aid-settings`
 
 .. _fa-trouble-ead-export-failed:
-
-Finding aid generation error; the jobs page says that "Exporting EAD has failed"
---------------------------------------------------------------------------------
-
-First, check if you have a working internet connection. AtoM will attempt to
-reach the EAD XML DTD kept at
-http://lcweb2.loc.gov/xmlcommon/dtds/ead2002/ead.dtd and if there is no
-internet connection the task may fail, with a message like this in the Job
-details page:
-
-.. image:: images/fa-saxon-fail.*
-   :align: center
-   :width: 95%
-   :alt: An example of a failed finding aid generation in the Jobs page
-
-If you restore your internet connection, you can try again - the issue may now
-be resolved.
-
-If not, it may have to do with the content you have added to your archival
-description.
-
-AtoM generates its PDF finding aids by first exporting the
-:term:`archival description` as `EAD XML <http://www.loc.gov/ead/tglib/index.html>`__,
-and then transforming that EAD XML using an
-`XSLT <https://en.wikipedia.org/wiki/XSLT>`__ into the desired format (PDF or RFT).
-
-For this process to work, the EAD XML must first be able to export - which means
-it must first be valid `XML <https://en.wikipedia.org/wiki/XML>`__.
-
-This means your EAD may fail to export properly if:
-
-* You've used unescaped special characters, such as ampersands ``&`` or ``<``
-  and ``>``.
-* You've used inline HTML elements to style the display of some fields in AtoM -
-  for example, using ``<em>`` or ``<i>`` elements for emphasis or italics.
-* You've cut and pasted non UTF-8 encoded characters into AtoM - a common example
-  would be the curvy quotation marks used in many word processing applications like
-  Microsoft Word, instead of the standard `UTF-8 <https://en.wikipedia.org/wiki/UTF-8>`__
-  straight quotes ``"``
-
-We suggest you try reviewing your description(s) in :term:`edit mode` and look
-for some of these common errors that can affect EAD export. Remove any HTML you
-have added inside AtoM's edit fields. Make sure that you replace any non-standard
-punctuation cut and pasted from common word processor applications.
-
-Now you can re-generate your finding aids, following the steps above,
-:ref:`generate-finding-aid`.
 
 :ref:`Back to top <print-finding-aids>`

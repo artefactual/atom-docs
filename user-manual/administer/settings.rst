@@ -20,6 +20,7 @@ Below, you will find information on the following :term:`information areas
 * :ref:`digital-object-derivatives`
 * :ref:`Finding aid <finding-aid>`
 * :ref:`Add/Remove languages <add-remove-languages>`
+* :ref:`Header customizations <header-customizations>`
 * :ref:`identifier-settings`
 * :ref:`inventory-settings`
 * :ref:`markdown-settings`
@@ -32,6 +33,7 @@ Below, you will find information on the following :term:`information areas
 * :ref:`treeview-settings`
 * :ref:`upload-settings`
 * :ref:`User interface labels <user-interface-labels>`
+* :ref:`Web analytics <web-analytics>`
 
 Each of the settings areas listed above is accessible via a list of links on
 the left-hand side of the settings page. Click on the appropriate link, and
@@ -866,8 +868,8 @@ Google account. For more information, see:
 
 .. _reports-public-setting:
 
-Generate archival description reports as public user
-----------------------------------------------------
+Generate archival description reports from public records
+---------------------------------------------------------
 
 This setting relates to the creation of file and item-level reports for
 archival descriptions, as well as finding aids - for more information, see:
@@ -1664,6 +1666,87 @@ To continue removing languages, repeat these steps as required.
    * :ref:`language-menu`
 
 :ref:`Back to top <settings>`
+
+.. _header-customizations:
+
+Header customizations
+=====================
+
+In this section, :term:`administrators <administrator>` can change the logo,
+change the favicon for the site, and customize the colour of the header.
+
+Upload logo
+-----------
+
+In AtoM, the site logo is the graphic that appears at the top of all pages in the
+left-hand corner of the :term:`header bar`.
+
+It is important to note that the logo must be in "Portable Network Graphics" (`PNG 
+<http://en.wikipedia.org/wiki/Portable_Network_Graphics>`__) format, with a 
+recommended **maximum height** of **50px**. A logo exceeding 50px may break the
+page layout, unless a developer has altered the theme of the page.
+
+The logo image, by default, is stored as **images/logo.png** inside the theme
+plugin directory, but is now configurable by an :term:`administrator` via
+**Admin > Settings > Header customizations** and configure the directory for this
+in **config/app.yml**. This directory will be used for uploading favicon as well.
+
+.. image:: images/header-customizations-static-config.*
+   :align: center
+   :width: 90%
+   :alt: An image of the `config/app.yml` for configuring static directory.
+
+.. image:: images/header-customizations-logo-upload.*
+   :align: center
+   :width: 90%
+   :alt: An image of the uploading a new logo in Header customizations settings.
+
+Use the 'Resotre Default AtoM Logo' radio to restore logo to AtoM's default logo,
+stored as **plugins/arDominionB5Plugin/images/default_atom_logo.png**.
+
+.. image:: images/header-customizations-logo-restore.*
+   :align: center
+   :width: 90%
+   :alt: An image of the Upload logo section of Header customizations settings.
+
+.. seealso::
+
+   * :ref:`site-logo`
+
+Upload favicon
+--------------
+
+The favicon is stored as **favicon.ico** in AtoM's root directory and the file
+must be in "ICO" file format. As of AtoM 2.10, an :term:`administrator` can now
+upload a new logo via **Admin > Settings > Header customizations** and configure
+the directory for this in **config/app.yml**. This directory will be used for
+uploading logo as well.
+
+.. image:: images/header-customizations-static-config.*
+   :align: center
+   :width: 30%
+   :alt: An image of the `config/app.yml` for configuring static directory.
+
+.. image:: images/header-customizations-favicon-upload.*
+   :align: center
+   :width: 90%
+   :alt: An image of the uploading a new favicon in Header customizations settings.
+
+Use the 'Restore Default AtoM Favicon' radio to restore favicon to AtoM's default
+favicon, stored as **images/default_atom_favicon.ico**.
+
+.. image:: images/header-customizations-favicon-restore.*
+   :align: center
+   :width: 30%
+   :alt: An image of the Upload favicon section of Header customizations settings.
+
+Change header background colour
+-------------------------------
+
+An :term:`administrator <administrator>` can use the colour selector to specify
+a colour to determine the background colour of the header. The hexadecimal value
+will be saved in the database, and will be used throughout all themes associated
+with the database.
 
 .. _identifier-settings:
 
@@ -2945,6 +3028,17 @@ value. The minimum value is 10, and the maximum value that can be set via the
 
       treeview_items_per_page_max: 10000
 
+   With AtoM 2.9+, you will also need to update the ``max_result_window`` value
+   in ``plugins/arElasticSearchPlugin/config/search.yml``. This is required
+   because Elasticsearch enforces a hard limit (default: 10,000) on the maximum
+   number of results that can be retrieved from a single search query. Both values
+   must be increased together to successfully display hierarchies larger than 10,000
+   items.
+
+   .. code-block:: bash
+
+      max_result_window: 10000
+
    After the change, you will need to clear the application cache, and restart
    PHP-FPM. For more information, see:
 
@@ -3180,6 +3274,29 @@ public users.
    corresponding labels in the navigation menus. To change these menus, go to
    |gears| **Admin > Menus**. See the :ref:`Manage menus <manage-menus>` page
    for more information.
+
+:ref:`Back to top <settings>`
+
+.. _web-analytics:
+
+Web analytics
+=============
+
+In this section, :term:`administrators <administrator>` can update their web
+analytics information.
+
+Google Analytics tracking ID
+----------------------------
+
+AtoM includes built-in integration with `Google Analytics`_. You can add your
+Google Analytics tracking ID, in the following format:
+``G-XXXXXXXXXX``. Once you are done, remember to :ref:`clear the cache <maintenance-clear-cache>`
+and :ref:`restart PHP-FPM <troubleshooting-restart-php-fpm>`.
+
+.. seealso::
+
+   * :ref:`maintenance-web-analytics`
+   * :ref:`google-analytics`
 
 :ref:`Back to top <settings>`
 

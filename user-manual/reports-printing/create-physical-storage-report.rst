@@ -218,9 +218,9 @@ start from the top-level description and generate the report there.
    Physical storage location reports are **only** available to authenticated
    (logged-in) users. However, all users can view and generate file and item
    reports - see: :ref:`file-item-reports`. Depending on a setting controlled
-   by an :term:`administrator` in |gears| **Admin > Settings**, these file and
-   item reports may or may not include physical storage information. For more
-   information, see: :ref:`reports-public-setting`.
+   by an :term:`administrator` in |gears| **Admin > Settings > Global > System**,
+   these file and item reports may or may not include physical storage information.
+   For more information, see: :ref:`reports-public-setting`.
 
 Reports generated this way are particular to the selected :term:`archival
 unit` - for storage location reports that show all related descriptions
@@ -338,10 +338,10 @@ and AtoM will take you to the related View physical storage screen.
    :alt: Screen showing contents of physical storage location
 
 You can choose to edit the physical storage by selecting the "edit" button in
-the button block,see Edit current container. You can choose to delete the
-physical storage by selecting the "delete" button in the :term:`button block`.
-For more information on working with physical storage locations, see:
-:ref:`physical-storage`.
+the button block, see: :ref:`Edit current container<manage-storage-edit-container>`.
+You can choose to delete the physical storage by selecting the "delete" button
+in the :term:`button block`. For more information on working with physical storage
+locations, see: :ref:`physical-storage`.
 
 You can also click on the |print| print icon in the title bar and AtoM will
 take you to a print preview page, showing all the contents of that physical
@@ -449,9 +449,9 @@ description and generate the report there.
    Box label reports are **only** available to authenticated (logged-in) users.
    However, all users can view and generate file and item reports - see:
    :ref:`file-item-reports`. Depending on a setting controlled by an
-   :term:`administrator` in |gears| **Admin > Settings**, these file and
-   item reports may or may not include physical storage information. For more
-   information, see: :ref:`reports-public-setting`.
+   :term:`administrator` in |gears| **Admin > Settings > Global > System**, these
+   file and item reports may or may not include physical storage information. For
+   more information, see: :ref:`reports-public-setting`.
 
 Reports generated this way are particular to the selected
 :term:`archival unit` - for storage location reports that show all related

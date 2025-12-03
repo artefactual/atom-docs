@@ -307,6 +307,11 @@ Compile Bootstrap 5 Theme Files:
 --------------------------------
 
 .. note::
+   If you're installing AtoM from the tarball, this step can be skipped since the
+   tarball includes pre-built theme files. These only need to be compiled if you
+   followed the git repository instructions for downloading AtoM.
+
+.. note::
    When working with Bootstrap 5 themes, AtoM requires the latest LTS version of node.
    Node v22 or above is required for AtoM 2.9+.
 
@@ -315,20 +320,6 @@ Compile Bootstrap 5 Theme Files:
    sudo apt install -y npm
    sudo npm install
    sudo npm run build
-
-Compile Bootstrap 2 Theme Files:
---------------------------------
-
-.. code-block:: bash
-
-   sudo apt install -y npm make
-   sudo npm install -g "less@<4.0.0" n
-   sudo n stable
-   sudo npm install
-   sudo npm run build
-   sudo make -C /usr/share/nginx/atom/plugins/arDominionPlugin
-   sudo make -C /usr/share/nginx/atom/plugins/arArchivesCanadaPlugin
-   sudo rm -rf node_modules
 
 .. _installation-ubuntu-create-database:
 

@@ -337,7 +337,7 @@ instructions have been included below.
 .. TIP::
 
    **Creators added will inherit to lower-levels of description.** In an effort
-   simplify the description workflow, lower-levels of description in AtoM will
+   to simplify the description workflow, lower-levels of description in AtoM will
    automatically inherit the :term:`creator` name(s) added at higher levels. So
    for example, if you add a creator to a :term:`fonds`-level description, you
    do not need to add the same name to all of the series, files, and items below -
@@ -588,12 +588,12 @@ In AtoM, access points are controlled value :term:`terms <term>` maintained in a
 AtoM supports three types of access points for authority records - Occupations,
 Places, and Subjects. By default in a new installation, the related taxonomy is
 empty, but as users add access point data to authority records, they are
-preserved as terms in the Actor occupation, Places, and Subjects taxonomies, so
+preserved as terms in the Occupation, Places, and Subjects taxonomies, so
 they can be managed and reused. For more information on working with terms and
 taxonomies in AtoM, see: :ref:`terms`.
 
 Each of the three access points includes an autocomplete field linked to the
-relevant taxonomy. The Actor occupations entry also includes a free-text note
+relevant taxonomy. The occupations entry also includes a free-text note
 field, where you can add further context specific to the person, family, or
 corporate body described in the related :term:`authority record`.
 
@@ -793,9 +793,9 @@ From the archival description
 
 .. IMPORTANT::
 
-   This method makes use of  an `auto-complete <https://en.wikipedia.org/wiki
-   /Auto-complete>`__ field to find the related :term:`authority record` as
-   you begin to type its name/title. **Be sure** to pick the record from the
+   This method makes use of  an `auto-complete <https://en.wikipedia.org/wiki/Auto-complete>`__
+   field to find the related :term:`authority record` as you begin to type its
+   name/title. **Be sure** to pick the record from the
    :term:`drop-down <drop-down menu>` when it appears - if you type the full
    name and press enter, a new :term:`authority record` will be generated
    instead of a link being created to an existing one!
@@ -815,12 +815,12 @@ From the archival description
 
 .. IMPORTANT::
 
-   This method makes use of  an `auto-complete <https://en.wikipedia.org/wiki
-   /Auto-complete>`__ field to find the related :term:`authority record` as
-   you begin to type its name/title. **Be sure** to pick the record from the
-   :term:`drop-down <drop-down menu>` when it appears - if you type the full
-   name and press enter, a new :term:`authority record` will be generated
-   instead of a link being created to an existing one!
+   This method makes use of  an `auto-complete <https://en.wikipedia.org/wiki/Auto-complete>`__
+   field to find the related :term:`authority record` as you begin to type its name/title.
+   **Be sure** to pick the record from the :term:`drop-down <drop-down menu>`
+   when it appears - if you type the full name and press enter, a new
+   :term:`authority record` will be generated instead of a link being created to
+   an existing one!
 
 5. To create links to multiple authority records, you can repeat this process
    as needed - both the creator fields, and the name access point fields in
@@ -845,14 +845,14 @@ From the archival description
 .. TIP::
 
    **Creators added will inherit to lower-levels of description.** In an effort
-   simplify the description workflow, lower-levels of description in AtoM will
+   to simplify the description workflow, lower-levels of description in AtoM will
    automatically inherit the :term:`creator` name(s) added at higher levels. So
    for example, if you add a creator to a :term:`fonds`-level description, you
    do not need to add the same name to all of the series, files, and items below -
    the name will automatically appear in the :term:`view page` of the lower-level
    descriptions, unless a different creator name is explicitly added in the
    :term:`edit page`. This behavior conforms with the principles outlined in
-   :ref:`ISAD <isad-template>` 2.4, which states: "*At the hightest appropriate
+   :ref:`ISAD <isad-template>` 2.4, which states: "*At the highest appropriate
    level, give information that is common to the component parts. Do not repeat
    information at a lower level of description that has already been given at a
    higher level.*"
@@ -938,14 +938,14 @@ From the authority record
 .. TIP::
 
    **Creators added will inherit to lower-levels of description.** In an effort
-   simplify the description workflow, lower-levels of description in AtoM will
+   to simplify the description workflow, lower-levels of description in AtoM will
    automatically inherit the :term:`creator` name(s) added at higher levels. So
    for example, if you add a creator to a :term:`fonds`-level description, you
    do not need to add the same name to all of the series, files, and items below -
    the name will automatically appear in the :term:`view page` of the lower-level
    descriptions, unless a different creator name is explicitly added in the
    :term:`edit page`. This behavior conforms with the principles outlined in
-   :ref:`ISAD <isad-template>` 2.4, which states: "*At the hightest appropriate
+   :ref:`ISAD <isad-template>` 2.4, which states: "*At the highest appropriate
    level, give information that is common to the component parts. Do not repeat
    information at a lower level of description that has already been given at a
    higher level.*"
@@ -1071,12 +1071,11 @@ Create a relationship between two authority records
 4. AtoM will open a pop-up dialog where you can select the related
    :term:`authority record` and define the nature and time frame of the
    relationship.
-5. The first :term:`field` in the pop-up dialog, "Title of the related
-   resource," is an `auto-complete <https://en.wikipedia.org/wiki /Auto-
-   complete>`__ field: as you type, matching results will load in a
-   :term:`drop-down menu` below the field. When you see the
-   :term:`authority record` you would like to link, click on it to select
-   it.
+5. The first :term:`field` in the pop-up dialog, "Authorized form of name", is
+   an `auto-complete <https://en.wikipedia.org/wiki/Auto-complete>`__ field:
+   as you type, matching results will load in a :term:`drop-down menu` below the
+   field. When you see the :term:`authority record` you would like to link,
+   click on it to select it.
 
 .. image:: images/relationship-dialogue.*
    :align: center
@@ -1091,7 +1090,7 @@ Create a relationship between two authority records
    and then follow these steps from the new record to create the
    relationship.
 
-6. The "Type of relationship" field is pre-populated with default terms,
+6. The "Relationship type" field is pre-populated with default terms,
    pictured in the image below. These terms can be edited and managed in the
    Actor Relation Type :term:`taxonomy`, and new terms can be added as well.
    For more information on managing terms, see: :ref:`terms`; see specifically
@@ -1214,12 +1213,11 @@ relationship between an existing authority record and an existing function:
 4. AtoM will open a pop-up dialog where you can select the related
    :term:`authority record` and define the nature and time frame of the
    relationship.
-5. The first :term:`field` in the pop-up dialog, "Title of the related
-   resource," is an `auto-complete <https://en.wikipedia.org/wiki /Auto-
-   complete>`__ field: as you type, matching results will load in a :term
-   :`drop-down menu` below the field. When you see the
-   :term:`authority record` you would like to link, click on it to select
-   it.
+5. The first :term:`field` in the pop-up dialog, "Authorized form of name", is
+   an `auto-complete <https://en.wikipedia.org/wiki/Auto-complete>`__ field:
+   as you type, matching results will load in a :term:`drop-down menu` below the
+   field. When you see the :term:`authority record` you would like to link,
+   click on it to select it.
 
 .. image:: images/function-relationship-dialogue.*
    :align: center

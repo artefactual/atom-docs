@@ -21,7 +21,7 @@ For authority records, this includes EAC-CPF XML.
    * :ref:`import-export-skos`
    * :ref:`csv-import`
 
-XML imports in AtoM are are executed as :term:`jobs <job>` and performed
+XML imports in AtoM are executed as :term:`jobs <job>` and performed
 asynchronously in the background to avoid timeouts in the browser. Jobs in AtoM
 are handled by `Gearman <http://gearman.org>`__, and the status of AtoM jobs
 can be seen in the :term:`user interface` via the **Manage > Jobs** page. For
@@ -39,7 +39,7 @@ In addition to importing new records, AtoM can also attempt to identify
 matches on existing records and delete the matches before importing the new
 records as replacements. This functionality is currently only available for
 EAD 2002 and EAC-CPF XML imports. It will be described in greater detail
-below, along other import options.
+below, along with other import options.
 
 **Jump to:**
 
@@ -316,7 +316,7 @@ interface`. To do so, you must be logged in as an :term:`administrator`.
 
 6. AtoM can check for existing records that seem to match the EAD
    2002 XML top-level description you are about to import, and skip these
-   record if desired - they will be reported in the
+   records if desired - they will be reported in the
    :ref:`Job details <job-details>` page of the related import job (see:
    :ref:`manage-jobs` for more information). To enable this option and skip
    matched records, click the checkbox labelled "Skip matched records."
@@ -333,8 +333,8 @@ interface`. To do so, you must be logged in as an :term:`administrator`.
    again, a system administrator will need to rebuild the search index. See:
    :ref:`maintenance-populate-search-index`.
 
-8. When you have configured your import options, click the "Browse" button to
-   open a window on your local computer. Select the XML file that you would
+8. When you have configured your import options, click the "Choose file" button
+   to open a window on your local computer. Select the XML file that you would
    like to import.
 
 .. image:: images/csv-import-browse.*
@@ -343,7 +343,7 @@ interface`. To do so, you must be logged in as an :term:`administrator`.
    :alt: Clicking the "Browse" button in the XML import page
 
 9. When you have selected the file from your device, its name will appear
-   next to the "Browse" button. Click the "Import" button located in the
+   next to the "Choose file" button. Click the "Import" button located in the
    :term:`button block` to begin your import.
 
 .. image:: images/import-button-block.*
@@ -373,9 +373,9 @@ interface`. To do so, you must be logged in as an :term:`administrator`.
 .. TIP::
 
    Want to find your recent imports? You can use the
-   :ref:`sort button <recurring-sort-button>` located in the top-right hand
+   :ref:`sort buttons <recurring-sort-button>` located in the top-right hand
    side of the archival description browse page to change the results display
-   to be ordered by "Most recent" if it is not already - that way, the most
+   to be ordered by "Date modified" if it is not already - that way, the most
    recently added or edited descriptions will appear at the top of the
    results. If you have come directly here after importing your descriptions,
    they should appear at the top of the results.
@@ -429,7 +429,7 @@ above: :ref:`xml-description-matching`.
 
 **To delete matches and import EAD XML replacement records:**
 
-1. Click on the import menu menu, then click on XML.
+1. Click on the import menu, then click on XML.
 
 .. image:: images/import-menu.*
    :align: center
@@ -473,7 +473,7 @@ above: :ref:`xml-description-matching`.
 
    To limit your matches to the holdings of a specific
    :term:`archival institution`, use the :term:`drop-down menu` to select the
-   name of the related institution
+   name of the related institution.
 
    To limit your matches to a specific top-level description, place your
    cursor in the "Top-level description" field and begin to slowly type the
@@ -495,17 +495,17 @@ above: :ref:`xml-description-matching`.
    again, a system administrator will need to rebuild the search index. See:
    :ref:`maintenance-populate-search-index`.
 
-8. When you have configured your import options, click the "Browse" button to
+8. When you have configured your import options, click the "Choose file" button to
    open a window on your local computer. Select the XML file that you would
    like to import.
 
 .. image:: images/csv-import-browse.*
    :align: center
    :width: 25%
-   :alt: Clicking the "Browse" button in the XML import page
+   :alt: Clicking the "Choose file" button in the XML import page
 
 9. When you have selected the file from your device, its name will appear
-   next to the "Browse" button. Click the "Import" button located in the
+   next to the "Choose file" button. Click the "Import" button located in the
    :term:`button block` to begin your import.
 
 .. image:: images/import-button-block.*
@@ -535,9 +535,9 @@ above: :ref:`xml-description-matching`.
 .. TIP::
 
    Want to find your recent imports? You can use the
-   :ref:`sort button <recurring-sort-button>` located in the top-right hand
+   :ref:`sort buttons <recurring-sort-button>` located in the top-right hand
    side of the archival description browse page to change the results display
-   to be ordered by "Most recent" if it is not already - that way, the most
+   to be ordered by "Date modified" if it is not already - that way, the most
    recently added or edited descriptions will appear at the top of the
    results. If you have come directly here after importing your descriptions,
    they should appear at the top of the results.
@@ -645,7 +645,7 @@ accidentally creating duplicate records.  In both cases, skipped records are
 reported in the :ref:`Job details <job-details>` page of the related import
 job (see: :ref:`manage-jobs` for more information).
 
-To identify matching authority records, AtoM uses compares the **authorized
+To identify matching authority records, AtoM compares the **authorized
 form of name** of the existing authority records against the import data. This
 means that the "Delete and replace" method will fail to identify a match if
 you are attempting to use it to update the authorized form of name of an
@@ -735,17 +735,17 @@ be logged in as an :term:`administrator`.
    again, a system administrator will need to rebuild the search index. See:
    :ref:`maintenance-populate-search-index`.
 
-7. When you have configured your import options, click the "Browse" button to
+7. When you have configured your import options, click the "Choose file" button to
    open a window on your local computer. Select the XML file that you would
    like to import.
 
 .. image:: images/csv-import-browse.*
    :align: center
    :width: 25%
-   :alt: Clicking the "Browse" button in the XML import page
+   :alt: Clicking the "Choose file" button in the XML import page
 
-9. When you have selected the file from your device, its name will appear
-   next to the "Browse" button. Click the "Import" button located in the
+8. When you have selected the file from your device, its name will appear
+   next to the "Choose file" button. Click the "Import" button located in the
    :term:`button block` to begin your import.
 
 .. image:: images/import-button-block.*
@@ -760,7 +760,7 @@ be logged in as an :term:`administrator`.
    import by reviewing the :ref:`Job details <job-details>` page of the related
    import job - see: :ref:`manage-jobs` for more information.
 
-10. After your import has begun, AtoM will indicate that the import has been
+9.  After your import has begun, AtoM will indicate that the import has been
     initiated. A notification at the top of the page will also provide you with
     a link to the :ref:`Job details <job-details>` page of the related import
     job. Alternatively, you can click the "Back" button in the
@@ -873,17 +873,17 @@ described above: :ref:`actor-xml-matching`.
    again, a system administrator will need to rebuild the search index. See:
    :ref:`maintenance-populate-search-index`.
 
-8. When you have configured your import options, click the "Browse" button to
+8. When you have configured your import options, click the "Choose file" button to
    open a window on your local computer. Select the XML file that you would
    like to import.
 
 .. image:: images/csv-import-browse.*
    :align: center
    :width: 25%
-   :alt: Clicking the "Browse" button in the XML import page
+   :alt: Clicking the "Choose file" button in the XML import page
 
 9. When you have selected the file from your device, its name will appear
-   next to the "Browse" button. Click the "Import" button located in the
+   next to the "Choose file" button. Click the "Import" button located in the
    :term:`button block` to begin your import.
 
 .. image:: images/import-button-block.*

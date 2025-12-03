@@ -64,6 +64,7 @@ information.
 
 .. image:: images/search-box-browse-button.*
    :align: left
+   :width: 90%
    :alt: Search box with browse menu
 
 The browse options listed below are in their default order, however,
@@ -122,22 +123,22 @@ the list. Note: this sort option is available for
 * :ref:`Clipboard results page <clipboard>`
 * :term:`Taxonomies <taxonomy>`
 
-The default sort is ascending.
-
-.. image:: images/sort-ascending.*
-   :align: center
-   :width: 70%
-   :alt: Sort option ascending
-
-By choosing 'Direction: Descending' the user can view the browse results from
-the end of the list:
+The default sort is descending.
 
 .. image:: images/sort-descending.*
    :align: center
    :width: 70%
+   :alt: Sort option ascending
+
+By choosing 'Direction: Ascending' the user can view the browse results from
+the beginning of the list:
+
+.. image:: images/sort-ascending.*
+   :align: center
+   :width: 70%
    :alt: Sort option descending
 
-For more information, see: 
+For more information, see:
 
 * :ref:`recurring-sort-button`
 
@@ -185,8 +186,8 @@ top-right of the page above the results.
 
    :term:`Administrators <administrator>` can change the default sort order
    on search/browse pages for both public and authenticated (i.e. logged in)
-   users, in **Admin > Settings > Global**. For more information, see:
-   :ref:`sort-browser-users` and :ref:`sort-browser-anonymous`.
+   users, in **Admin > Settings > Global > Search and browse**. For more
+   information, see: :ref:`sort-browser-users` and :ref:`sort-browser-anonymous`.
 
 Users can narrow the results list with the available 
 :term:`facet filters <facet filter>` on the left-hand side of the screen. For
@@ -210,8 +211,8 @@ descriptions, a pager will be provided at the bottom of the results.
 .. TIP::
 
    :term:`Administrators <administrator>` can change the default number of
-   results returned per page in **Admin > Settings > Global**. For more
-   information, see: :ref:`results-page`.
+   results returned per page in **Admin > Settings > Global > Search and browse**.
+   For more information, see: :ref:`results-page`.
 
 Results appear in the main column of the page - click on a result and AtoM will
 take you to a :term:`view page` for the related :term:`archival description`.
@@ -692,10 +693,10 @@ would need to navigate to the series record to see the inventory link.
 .. TIP::
 
    10 results per page is just the default setting in AtoM, but this can be
-   adjusted by an :term:`administrator` via **Admin > Settings > Global**. For
-   more information, see: :ref:`results-page`. The number of results included
-   on a single page of the inventory list is controlled by this global
-   setting, which affects all paged-results in the application.
+   adjusted by an :term:`administrator` via **Admin > Settings > Search and
+   browse**. For more information, see: :ref:`results-page`. The number of
+   results included on a single page of the inventory list is controlled by
+   this global setting, which affects all paged-results in the application.
 
 .. _browse-hierarchy-quick-search:
 
@@ -725,7 +726,7 @@ limited to the current :term:`archival unit`.
 .. TIP::
 
    The Quick search bar will accept Boolean operators (see
-   :ref:`advanced-search-operators` for more information), including the ** * **
+   :ref:`advanced-search-operators` for more information), including the **\***
    wildcard character. If you just want to use the Quick search to access the
    browse link, you can enter an asterisk and press enter - AtoM will return
    a subset of all results, and then provide the browse link.
@@ -811,7 +812,7 @@ alphabetically by that column. Click the column header once to sort in
 descending (A-Z) order; click again to sort in ascending (Z-A) order.
 
 Users can flip between the table and card views while browsing, using the
-view toggle button that appears to the right of the archival institution search box:
+view toggle button that appears below the archival institution search box:
 
 .. image:: images/view-toggle-repository.*
    :align: center
@@ -938,7 +939,7 @@ Browse institution holdings when Institutional scoping is enabled
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 AtoM includes an additional mode that can be enabled by an :term:`administrator`
-via |gears| **Admin > Settings > Global** called :ref:`enable-scoping`. When
+via |gears| **Admin > Settings > Global > Multi-repository** called :ref:`enable-scoping`. When
 institutional scoping is turned on, additional visual cues and user interface
 elements are added to better support searching and browsing within the holdings
 of one :term:`archival institution` when used in a :term:`multi-repository system`.
@@ -1040,18 +1041,18 @@ institution, beneath the logo and the holdings list.
    :alt: An image of list of maintained authority records on an archival
          institution's view page
 
-At the top of the maintained list is a **browse link**, that lists
+At the bottom of the maintained list is a **browse link**, that lists
 the total number of authority records maintained by the repository. Clicking
 on this link will take a user to an authority record browse page limited to
 the current repository. See :ref:`browse-authority-records` for more
 information on browsing.
 
-Below the browse link, an alphabetized list of authority records appears. The
+Above the browse link, an alphabetized list of authority records appears. The
 list consists of hyperlinks - clicking on one will take the user to the related
 authority record. The number of results in this list per page is controlled by
-the "results per page" setting found in **Admin > Settings > Global**.
-See: :ref:`results-page` for information on changing this value. The default
-value in AtoM is 10 results per page.
+the "results per page" setting found in **Admin > Settings > Global > Search and
+browse**. See: :ref:`results-page` for information on changing this value. The
+default value in AtoM is 10 results per page.
 
 A **count** appears under the maintained authority records list, which
 includes the number of results per page, and the total - e.g.
@@ -1245,8 +1246,8 @@ and return to displaying all related results.
 
 .. _browse-digital-objects:
 
-|digicon| Browse digital objects
---------------------------------
+|desc| Browse digital objects
+-----------------------------
 
 Click the Browse menu, then click Digital Objects.
 
@@ -1262,8 +1263,8 @@ digital objects, a pager will be provided at the bottom of the results.
 .. TIP::
 
    :term:`Administrators <administrator>` can change the default number of
-   results returned per page in **Admin > Settings > Global**. For more
-   information, see: :ref:`results-page`.
+   results returned per page in **Admin > Settings > Globa > Search and browse**.
+   For more information, see: :ref:`results-page`.
 
 Users can filter the results by :term:`media type` by clicking open the "Media
 type" :term:`facet <facet filter>` in the left-hand facet column and
@@ -1289,9 +1290,9 @@ sort options via the :ref:`recurring-sort-button` at the top right of the page.
 
    :term:`Administrators <administrator>` can change the default sort order
    on search/browse pages for both public and authenticated (i.e. logged in)
-   users, in **Admin > Settings > Global**. For more information, see:
-   :ref:`sort-browser-users` and :ref:`sort-browser-anonymous`. For more
-   information on the sort button in general, see:
+   users, in **Admin > Settings > Global > Search and browse**. For more
+   information, see: :ref:`sort-browser-users` and :ref:`sort-browser-anonymous`.
+   For more information on the sort button in general, see:
    :ref:`recurring-sort-button`.
 
 The view of the results can be toggled from the default "card" based view of

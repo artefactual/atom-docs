@@ -363,8 +363,8 @@ that you would like to associate with the donor. To do so:
 
 .. IMPORTANT::
 
-   This method makes use of  an `auto-complete <https://en.wikipedia.org/wiki
-   /Auto-complete>`__ field to find the related donor record as
+   This method makes use of an `auto-complete <https://en.wikipedia.org/wiki/Auto-complete>`__
+   field to find the related donor record as
    you begin to type its name/title. **Be sure** to pick the record from the
    :term:`drop-down <drop-down menu>` when it appears - if you type the full
    name and press enter, a new donor record will be generated

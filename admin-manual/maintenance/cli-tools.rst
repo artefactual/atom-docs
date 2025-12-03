@@ -2755,6 +2755,8 @@ The data integrity and repair task does the following:
 * Adds missing parent ids to terms
 * Checks descriptions with missing data and provides options for attempting to
   generate a list, fix them, or delete them
+* Looks for invalid descriptions, and empty descriptions with all fields set
+  to null
 * Re-builds the nested sets
 
 If the tool finds any records that have problems, they will be listed in a CSV
@@ -2775,6 +2777,14 @@ these records:
 .. code:: bash
 
    php symfony tools:data-integrity-repair file/path/to/report.csv --mode=fix
+
+.. NOTE::
+
+  Invalid or empty descriptions cannot be fixed, and can only be deleted. The
+  fix mode will skip any descriptions that fall in this category, but it will
+  still fix other data integrity issues. The data integrity and repair task
+  can then be run again in delete mode to remove any invalid or empty
+  descriptions.
 
 .. code:: bash
 

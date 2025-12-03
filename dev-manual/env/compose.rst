@@ -141,19 +141,11 @@ Compile Bootstrap 5 Theme Files:
    docker compose exec atom npm install
    docker compose exec atom npm run build
 
-Compile Bootstrap 2 Theme Files:
---------------------------------
-
-.. code-block:: bash
-
-   # Execute another command: build stylesheets
-   docker compose exec atom make -C plugins/arDominionPlugin
-
 .. TIP::
 
    While you wait, take the opportunity to check out our `Dockerfile <https://github.com/artefactual/atom/blob/qa/2.x/Dockerfile>`__,
    which describes the steps that are taken to build the AtoM image. It is
-   based on Alpine Linux + PHP 8.2 and the rest of dependencies. In addition,
+   based on Alpine Linux + PHP 8.3 and the rest of dependencies. In addition,
    our `docker-compose.dev.yml <https://github.com/artefactual/atom/blob/qa/2.x/docker/docker-compose.dev.yml>`__
    file shows how AtoM is orchestrated together with its service dependencies.
    It is an environment meant to be used by developers.

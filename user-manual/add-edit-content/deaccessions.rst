@@ -23,7 +23,7 @@ practice.
 
 In AtoM, a :term:`deaccession record` can be added to an existing
 :term:`accession record`. The deacession record comprises several basic
-fields to capture information about the materials being deaccession and the
+fields to capture information about the materials being deaccessioned and the
 reasons behind the deaccession. Fields include:
 
 * Deaccession number
@@ -84,9 +84,9 @@ record:
    :width: 75%
    :alt: An image of the button block on an accession record
 
-3. AtoM takes you to the empty deaccession edit template, open and ready for
-   data entry. Note that the Deaccession number will be added to the original
-   Accession record ID (shown at the top of the :term:`edit page`).
+3. AtoM takes you to the empty deaccession edit template, click "Deaccession area"
+   to expand the section for data entry. Note that the Deaccession number will be
+   added to the original Accession record ID (shown at the top of the :term:`edit page`).
 
 .. image:: images/new-deaccession.*
    :align: center
