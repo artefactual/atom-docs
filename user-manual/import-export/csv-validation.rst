@@ -3703,7 +3703,7 @@ Sample output
 
 .. _csv-validation-accession:
 
-CSV Validation Tests - accessions
+CSV validation tests - accessions
 =================================
 
 This section describes supplementary tests that are run when an
