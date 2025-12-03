@@ -142,7 +142,7 @@ description with full details on the right:
    :width: 95%
    :alt: Finding aid details comparison - Full details vs Inventory summary
 
-**Generate Finding Aid as public user**: This setting determines whether or not
+**Generate Finding Aid from public records**: This setting determines whether or not
 :term:`Draft <draft record>` records are included in the PDF generated, as well
 as :term:`physical storage` information, depending on your Visible elements
 settings for physical storage.
@@ -165,7 +165,7 @@ on using the Visible elements module, see: :ref:`visible-elements`.
 
 .. TIP::
 
-   If you have the "Generate Finding Aid as public user" setting set to "Yes,"
+   If you have the "Generate Finding Aid from public records" setting set to "Yes,"
    the option to generate a finding aid will **not appear** on any
    :term:`draft <draft record>` descriptions in AtoM. You will have to publish
    the description before you can generate a finding aid. You will still have
@@ -241,7 +241,7 @@ Jobs page - for more information on managing :term:`jobs <job>` in AtoM, see:
    It could be  because your :term:`archival description` is still in
    :term:`draft <draft record>` status, and your Finding aid
    :ref:`settings <print-finding-aid-settings>` are set to "Generate Finding Aid
-   as public user." AtoM will hide the link to generate finding aids from any
+   from public records." AtoM will hide the link to generate finding aids from any
    draft descriptions when this setting is engaged. You can either change your
    settings (see above), or you can publish the description - see:
    :ref:`publish-archival-description`. You'll still be able to upload a
@@ -514,7 +514,7 @@ Physical storage information is not included in my finding aid
 
 Physical storage information is excluded from the Finding aid if:
 
-* The "Generate Finding Aid as public user" setting is set to YES, **and**
+* The "Generate Finding Aid from public records" setting is set to YES, **and**
 * The Visible elements module for your template is set to hide physical storage
   information from public users (e.g. the box is unchecked).
 
@@ -540,7 +540,7 @@ I don't want to display physical storage information in my finding aid
 
 Physical storage information is excluded from the Finding aid if:
 
-* The "Generate Finding Aid as public user" setting is set to YES, **and**
+* The "Generate Finding Aid from public records" setting is set to YES, **and**
 * The Visible elements module for your template is set to hide physical storage
   information from public users (e.g. the box is unchecked).
 
@@ -552,7 +552,7 @@ your descriptions via AtoM's Visible elements module. To do so, navigate to
 option is |uncheck| unchecked.
 
 You will then need to check the finding aid settings, and make sure that the
-"Generate Finding Aid as public user" option is set to "yes". See
+"Generate Finding Aid from public records" option is set to "yes". See
 :ref:`above <print-finding-aid-settings>` for more details on the finding aid
 settings.
 
@@ -575,7 +575,7 @@ If you don't want draft descriptions shown in your finding aid, navigate to
 on the left. AtoM will load the finding aid settings, described in detail
 :ref:`above <print-finding-aid-settings>`.
 
-Make sure that the "Generate Finding Aid as public user" option is set to
+Make sure that the "Generate Finding Aid from public records" option is set to
 "yes", and remember to click the "Save" button in the :term:`button block` if
 you make any changes.
 
@@ -588,7 +588,7 @@ Now you can re-generate your finding aids, following the steps above,
    It could be  because your :term:`archival description` is still in
    :term:`draft <draft record>` status, and your Finding aid
    :ref:`settings <print-finding-aid-settings>` are set to "Generate Finding Aid
-   as public user." AtoM will hide the link to generate finding aids from any
+   from public records." AtoM will hide the link to generate finding aids from any
    draft descriptions when this setting is engaged. You can either change your
    settings (see above), or you can publish the description - see:
    :ref:`publish-archival-description`. You'll still be able to upload a
@@ -610,7 +610,7 @@ This could be because your archival description is in
 :term:`draft mode <draft record>`, and the Finding aid settings are set to
 generate as a public user.
 
-If you have the "Generate Finding Aid as public user" setting set to "Yes,"
+If you have the "Generate Finding Aid from public records" setting set to "Yes,"
 the option to generate a finding aid will **not appear** on any
 :term:`draft <draft record>` descriptions in AtoM. You will have to publish
 the description before you can generate a finding aid, or change the setting.
