@@ -15,11 +15,6 @@ This section describes how to change the theme, :term:`site title`,
 
 .. _themes-change-theme:
 
-.. IMPORTANT::
-
-   Bootstrap 2 themes have been deprecated and will be removed in a future
-   release. Please consider switching to a Bootstrap 5 theme.
-
 Change theme
 ============
 
