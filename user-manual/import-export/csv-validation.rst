@@ -3564,10 +3564,11 @@ Title Length Check (archival description)
 
 * **Test class:** CsvIOTitleLengthValidator
 
-This test is field length check that is specific to Archival Descriptions.
-It works the same way as :ref:`csv-validation-fieldlength` and checks if
-the ``title`` is longer than 1024 characters. However unlike the general
-field length check, this results in an :ref:`csv-validation-error`.
+This test is a field length check that is specific to Archival
+Descriptions. It works the same way as :ref:`csv-validation-fieldlength`
+and checks if the ``title`` is longer than 1024 characters.
+However, unlike the generalfield length check, this results in an
+:ref:`csv-validation-error`.
 
 .. _csv-validation-eventdate:
 
@@ -3585,7 +3586,7 @@ for the following date formats:
   - YYYY-MM
   - YYYY
 
-If any values that do not match these formats is found, it will return a
+If any values that do not match these formats are found, it will return a
 :ref:`csv-validation-error` during the validation process.
 
 Sample output
@@ -3721,9 +3722,9 @@ Title Length Check (accession)
 
 * **Test class:** CsvAccessionTitleLengthValidator
 
-This test is field length check that is specific to Accessions.
+This test is a field length check that is specific to Accessions.
 It works the same way as :ref:`csv-validation-fieldlength` and checks if
-the ``title`` is longer than 255 characters. However unlike the general
+the ``title`` is longer than 255 characters. However, unlike the general
 field length check, this results in an :ref:`csv-validation-error`.
 
 :ref:`Back to top <csv-validation>`
