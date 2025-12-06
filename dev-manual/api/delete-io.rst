@@ -34,4 +34,4 @@ Example response is truncated and edited for readability.
    Cache-Control: private
 
 
-:ref:`Back to top <api-add-po>`
+:ref:`Back to top <api-delete-io>`
