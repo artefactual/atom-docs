@@ -14,7 +14,10 @@ set of links to each chapter's main sections.
    api/api-intro
    api/browse-taxonomies
    api/browse-io
+   api/create-io
    api/read-io
+   api/update-io
+   api/delete-io
    api/download-do
    api/add-po
 

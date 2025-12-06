@@ -282,6 +282,9 @@ sample requests and responses for available endpoints.
 * :ref:`api-intro`
 * :ref:`api-browse-taxonomies`
 * :ref:`api-browse-io`
+* :ref:`api-create-io`
 * :ref:`api-read-io`
+* :ref:`api-update-io`
+* :ref:`api-delete-io`
 * :ref:`api-download-do`
 * :ref:`api-add-po`

@@ -16,7 +16,10 @@ There are several endpoints available:
 
 * :ref:`Browse taxonomy terms <api-browse-taxonomies>`
 * :ref:`Browse information objects <api-browse-io>`
+* :ref:`Create information object <api-create-io>`
 * :ref:`Read information object <api-read-io>`
+* :ref:`Update information object <api-update-io>`
+* :ref:`Delete information object <api-delete-io>`
 * :ref:`Download digital object <api-download-do>`
 
 .. _api-intro-plugin:
@@ -209,7 +212,10 @@ parameters. There are three endpoints available:
 
 * :ref:`Browse taxonomy terms <api-browse-taxonomies>`
 * :ref:`Browse information objects <api-browse-io>`
+* :ref:`Create information object <api-create-io>`
 * :ref:`Read information object <api-read-io>`
+* :ref:`Update information object <api-update-io>`
+* :ref:`Delete information object <api-delete-io>`
 * :ref:`Download digital objects <api-download-do>`
 * :ref:`Add physical objects <api-add-po>`
 
