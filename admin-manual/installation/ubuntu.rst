@@ -257,14 +257,14 @@ Install git:
 .. code-block:: bash
 
    sudo mkdir -p /usr/share/nginx/atom
-   sudo git clone -b stable/2.9.x http://github.com/artefactual/atom.git /usr/share/nginx/atom
+   sudo git clone -b stable/2.10.x http://github.com/artefactual/atom.git /usr/share/nginx/atom
 
 If you are not interested in downloading all the history from git, you could
 also truncate it to a specific number of revisions, e.g.: just one revision
 
 .. code-block:: bash
 
-   sudo git clone -b stable/2.9.x --depth 1 http://github.com/artefactual/atom.git /usr/share/nginx/atom
+   sudo git clone -b stable/2.10.x --depth 1 http://github.com/artefactual/atom.git /usr/share/nginx/atom
 
 We use `Composer`_ to install and manage some third-party PHP libraries. To
 install Composer download and run the Composer installer according to the
