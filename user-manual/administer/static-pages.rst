@@ -665,21 +665,24 @@ Examples of the Static pages menu in use
 Styling static pages
 ====================
 
-Basic styling of :term:`static pages <static page>` can be achieved in two ways. 
+Basic styling of :term:`static pages <static page>` can be achieved in two ways.
 
 The first method is to use AtoM's Markdown_ formatting to style content. For
-more information on formatting content using Markdown, see: 
+more information on formatting content using Markdown, see:
 
 * :ref:`formatting`
 
 The second method of styling AtoM static page content is by adding
-HTML_ and inline CSS_ code to the static page's editable area. There are
-plenty of online tutorials and resources out there for instruction on HTML and
-inline CSS use, but a few basic examples commonly employed by AtoM users have
-been included here as an example.
+HTML_ to the static page's editable area and calling BS5 or custom CSS_ classes
+defined in theme's SCSS files. There are plenty of online tutorials and resources
+out there for instruction on HTML and CSS use, but a few basic examples commonly
+employed by AtoM users have been included here as an example.
 
-You can use a mix of Markdown and HTML in static pages. Note that HTML content 
-is **not** supported outside of static pages in AtoM. 
+.. note::
+   AtoM now enforces a :ref:`security-csp-headers` across the application.
+   As a result, inline CSS styles within static page content will no longer
+   be applied. Consider using Markdown formatting or BS5 classes instead where
+   styling is required.
 
 See below for instructions on how to use HTML to create and edit:
 
