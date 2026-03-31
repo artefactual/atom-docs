@@ -113,6 +113,14 @@ information, see:
 * :ref:`config-app-yml`
 * :ref:`admin-security`
 
+.. NOTE::
+
+   AtoM now enforces a :ref:`security-csp-headers` across the application.
+   As a result, inline CSS styles within static page content will no longer
+   be applied. Consider using Markdown formatting or BS5 classes instead where
+   styling is required. For more information,
+   see: :ref:`styling-static-page`.
+
 When the configuration is set to ``true``, htmlpurifier_ will limit the available
 html elements to the following:
 
@@ -236,10 +244,10 @@ To edit the "Home page" in AtoM:
 
    .. TIP::
 
-      Users can use Markdown_, and/or HTML_ and inline CSS_ code to the "Content"
-      :term:`field` to format content, add hyperlinks, or further style the page
-      contents. See :ref:`below <styling-static-page>` for information on how 
-      to style :term:`static pages <static page>`. See also: :ref:`formatting`. 
+      Users can use Markdown_, and/or HTML_ code to the "Content" :term:`field`
+      to format content, add hyperlinks, or further style the page contents.
+      See :ref:`below <styling-static-page>` for information on how to style
+      :term:`static pages <static page>`. See also: :ref:`formatting`.
 
 5. You can quit the edit process at any time by clicking the "Cancel" button
    in the :term:`button block`; any data already entered will not be saved. Note
@@ -322,12 +330,12 @@ To edit an existing static page in AtoM:
    The main body content of the static page can be edited by changing the data
    in the "Content" section of the :term:`edit page`.
 
-.. TIP::   
+.. TIP::
 
-   Users can use Markdown_, and/or HTML_ and inline CSS_ code to the "Content"
-   :term:`field` to format content, add hyperlinks, or further style the page
-   contents. See :ref:`below <styling-static-page>` for information on how 
-   to style :term:`static pages <static page>`. See also: :ref:`formatting`. 
+   Users can use Markdown_, and/or HTML_ code to the "Content" :term:`field` to
+   format content, add hyperlinks, or further style the page contents.
+   See :ref:`below <styling-static-page>` for information on how
+   to style :term:`static pages <static page>`. See also: :ref:`formatting`.
 
 5. You can quit the edit process at any time by clicking the "Cancel" button
    in the :term:`button block`; any data already entered will not be saved. Note
@@ -387,7 +395,7 @@ To add a new static page in AtoM:
    When creating a new :term:`static page`, the :term:`slug` :term:`field` can
    either be customized or left blank. If you choose to customize the
    :term:`slug`, make the slug all lowercase, keep it short, and avoid accented
-   characters (e.g.: ``é``, ``ñ``, ``û``) and punctuation (e.g.: ``!``,``;``, 
+   characters (e.g.: ``é``, ``ñ``, ``û``) and punctuation (e.g.: ``!``, ``;``, 
    ``...``). 
 
    If you leave the :term:`field` blank, AtoM will automatically generate a slug
@@ -419,7 +427,7 @@ To add a new static page in AtoM:
       :term:`static page`. To avoid this, simply enter a custom :term:`slug`.
 
 5. The "Content" section is where the main page content of your new static
-   page should be added. You can add Markdown_, and/or HTML_ and inline CSS_
+   page should be added. You can add Markdown_, and/or HTML_ 
    code to the "Content" :term:`field` to format content, add hyperlinks, or
    further style the page contents. See :ref:`below <styling-static-page>` for
    information on how to style :term:`static pages <static page>`. See also:
@@ -517,12 +525,12 @@ the static pages module.
 
    * :ref:`manage-menus`
 
-**To add a custom sidebar menu wtih links to your static pages:**
+**To add a custom sidebar menu with links to your static pages:**
 
 1. Prepare the static pages you would like to use in the menu items. If you
    haven't created them yet, see above, :ref:`add-static-page` for guidance on
    creating new static pages, and below, :ref:`styling-static-page` for hints
-   on how to use HTML and simple inline-CSS to style them.
+   on how to style them.
 
 2. You will need to know the :term:`slug` you have assigned to each static
    page you want to add to the new menu - you can either return to the
@@ -678,7 +686,7 @@ defined in theme's SCSS files. There are plenty of online tutorials and resource
 out there for instruction on HTML and CSS use, but a few basic examples commonly
 employed by AtoM users have been included here as an example.
 
-.. note::
+.. NOTE::
    AtoM now enforces a :ref:`security-csp-headers` across the application.
    As a result, inline CSS styles within static page content will no longer
    be applied. Consider using Markdown formatting or BS5 classes instead where
@@ -787,8 +795,13 @@ you wanted an image of email, named "contact-image.jpg" included on your static
 ...where ``/path/to`` represents the internal URL path to the location of
 ``contact-image.jpg`` on your host server, or the path to a web-accessible image.
 
+.. NOTE::
+   AtoM now enforces a :ref:`security-csp-headers` across the application.
+   As a result, external resources will be blocked from loading on your static pages.
+   See :ref:`csp-allow-external-sources` for more information.
+
 To center the image, you can wrap the ``<img>`` image element in a ``<div>``
-element, with a ``text-center"`` class, like this:
+element, with a ``text-center`` class, like this:
 
 .. code-block:: bash
 
@@ -815,13 +828,7 @@ Produces:
    :width: 40%
    :alt: An image of a picture using the rounded class
 
-Make an image circular using the ``img-circle`` bootstrap class:
-
-.. code-block:: bash
-
-   <img class="img-circle" src="../path/to/my-bunny-image.jpg">
-
-Or if you're using a Bootstrap 5 theme, use the ``rounded-circle`` class instead.
+Make an image circular using the ``rounded-circle`` class instead.
 
 .. code-block:: bash
 
@@ -835,13 +842,7 @@ Produces:
    :alt: An image of a picture using the circle class
 
 Or give your images a frame, like on our digital object browse page, using the
-``img-polaroid`` class:
-
-.. code-block:: bash
-
-   <img class="img-polaroid" src="../path/to/my-bunny-image.jpg">
-
-Or if you're using a Bootstrap 5 theme, use the ``img-thumbnail`` class instead.
+``img-thumbnail`` class instead.
 
 .. code-block:: bash
 
@@ -872,7 +873,40 @@ Boxes and dividers
 ------------------
 
 You can add styled boxes around text by wrapping content in the HTML ``<div>``
-element, and then using inline CSS to modify the
+element, and then use Bootstrap classes to modify the appearance of the box.
+An example of this is the light yellow box that appears on the AtoM demo's
+"Welcome" static page warning users that the data will reset every hour. This
+yellow box is reusing an existing style class from the Bootstrap CSS framework
+that AtoM uses - you can make use of existing Bootstrap classes to help with
+styling, like so:
+
+.. code-block:: bash
+
+   <div class="alert alert-primary">Welcome message appears here</div>
+   <div class="alert alert-secondary">Welcome message appears here</div>
+   <div class="alert alert-success">Welcome message appears here</div>
+   <div class="alert alert-danger">Welcome message appears here</div>
+   <div class="alert alert-warning">Welcome message appears here</div>
+   <div class="alert alert-info">Welcome message appears here</div>
+   <div class="alert alert-light">Welcome message appears here</div>
+   <div class="alert alert-dark">Welcome message appears here</div>
+
+.. image:: images/div-alert-classes.*
+   :align: center
+   :width: 70%
+   :alt: An image of various boxes styled with Bootstrap classes
+
+.. IMPORTANT::
+
+   The examples above, using existing Bootstrap classes, **will** work even
+   when htmlpurifier is engaged or CSP headers are enforced.
+
+   However, the below example will **not** work if you have htmlpurifier_ engaged
+   or if :ref:`security-csp-headers` are enforced.
+
+   For more information, see the section above, :ref:`security-static-pages`.
+
+You can also acheive something similar using inline CSS to modify the
 appearance of the box. For colors, use the HTML or RGB values for the color you
 would like to use, rather than generic names such as "red," "blue," etc. - most
 browsers support a limited palette of colors using names such as this, and the
@@ -895,51 +929,5 @@ This is how the box will appear:
    :align: center
    :width: 70%
    :alt: An image of a box
-
-.. NOTE::
-
-   The above example will **not** work if you have htmlpurifier_ engaged in AtoM.
-   For more information, see the section above, :ref:`security-static-pages`
-   for more information. The examples below, reusing existing Bootstrap classes,
-   **will** work even when htmlpurifier is engaged.
-
-Another example of this is the light yellow box that appears on the AtoM demo's
-"Welcome" static page warning users that the data will reset every hour. This
-yellow box is reusing an existing style class from the Bootstrap CSS framework
-that AtoM uses - you can make use of existing Bootstrap classes to help with
-styling, like so:
-
-.. code-block:: bash
-
-   <div style="alert">Welcome message appears here</div>
-
-And here is the result:
-
-.. image:: images/welcome-box.*
-   :align: center
-   :width: 70%
-   :alt: An image of a box
-
-Other Bootstrap alert classes that can be used to style containers include
-``alert-success``, ``alert-info``, and ``alert-danger``:
-
-.. image:: images/div-alert-classes.*
-   :align: center
-   :width: 70%
-   :alt: An image of various boxes styled with Bootstrap classes
-
-.. NOTE::
-   If you are using a Bootstrap 5 theme, your alert will not have a background
-   color by default. You can include an ``alert-primary`` class or one of the
-   other alert classes listed above if you wish to apply a background color
-   and border on your alert.
-
-   .. code-block:: bash
-
-      <div style="alert alert-primary">Welcome message appears here</div>
-      <div style="alert alert-secondary">Welcome message appears here</div>
-      <div style="alert alert-info">Welcome message appears here</div>
-      <div style="alert alert-warning">Welcome message appears here</div>
-      <div style="alert alert-danger">Welcome message appears here</div>
 
 :ref:`Back to top <manage-static-pages>`
