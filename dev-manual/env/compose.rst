@@ -74,26 +74,20 @@ don't want to do so each time we invoke the ``docker compose`` command.
    # For fish users
    set -lx COMPOSE_FILE (pwd)/docker/docker-compose.dev.yml
 
-ARM-based machines
-------------------
+Apple Silicon and other ARM-based machines
+------------------------------------------
 
-If you are using an ARM-based machine such as Apple Silicon MacBooks, you will need to use
-an additional override file that is provided to ensure compatibility. The Elasticsearch and Percona
-images need to run with platform emulation since they don't support ARM64 natively.
+Docker automatically selects the native image variant for your Docker engine
+when an image publishes a multi-architecture manifest. The development service
+images used by AtoM, including Elasticsearch and Percona, now publish ARM64
+variants, so the default Compose file can run those services natively on Apple
+Silicon.
 
-For ARM-based machines, set the ``COMPOSE_FILE`` environment variable to include
-both the development file and the ARM override file:
-
-.. code-block:: bash
-
-   # For bash users (most of you)
-   export COMPOSE_FILE="$PWD/docker/docker-compose.dev.yml:$PWD/docker/docker-compose.override.arm.yml"
-
-   # For fish users
-   set -lx COMPOSE_FILE (pwd)/docker/docker-compose.dev.yml:(pwd)/docker/docker-compose.override.arm.yml
-
-This override file forces Docker to use platform emulation to run the Elasticsearch and Percona containers 
-with ``linux/amd64`` architecture on ARM-based machines.
+Platform emulation is only needed if a service is explicitly configured with
+``platform: linux/amd64``. We discourage that for everyday development on
+ARM-based machines because it forces the affected container to run through
+emulation instead of using the native ARM64 image, which is generally slower and
+more resource-intensive.
 
 Running the containers
 ======================
