@@ -211,6 +211,7 @@ high-level errors and warnings in a new ``qubit_prod.log`` file:
        param:
          level: warning
          file: %SF_LOG_DIR%/qubit_prod.log
+         loggers: ~
 
      storage:
        class: QubitSessionStorage
