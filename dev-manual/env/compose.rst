@@ -213,6 +213,123 @@ stop and remove related containers, network and volumes by running:
 
    docker compose down --volumes
 
+Other Useful Docker Commands
+============================
+
+Loading AtoM data in Docker
+---------------------------
+
+You will need to customize the path to your mysqldump file in the first
+line.
+
+.. code:: bash
+
+   docker compose cp [mysql source path] percona:[target save path in container] && \
+   docker compose exec percona mysql -h localhost -u atom -patom_12345 -e "DROP DATABASE IF EXISTS atom;" && \
+   docker compose exec percona mysql -h localhost -u atom -patom_12345 -e "CREATE DATABASE atom;" && \
+   docker compose exec percona bash -c "mysql -h localhost -u atom -patom_12345 atom < /atom.sql" && \
+   docker compose exec atom php -d memory_limit=-1 symfony tools:upgrade-sql --no-confirmation && \
+   docker compose exec atom php -d memory_limit=-1 symfony search:populate
+
+If you plan to use this command often, it is recommended that you turn
+it into a script for ease of use.
+
+Clearing AtoM caches
+--------------------
+
+.. code:: bash
+
+   docker compose exec atom php symfony cc && \
+   docker compose restart atom && \
+   docker compose restart memcached && \
+   docker compose restart atom_worker
+
+Run symfony without a memory limit
+----------------------------------
+
+This option, ``-d memory-limit=-1`` can be used with any command, setting
+the PHP memory limit to unlimited while running lengthy symfony scripts/tasks
+
+.. code:: bash
+
+   docker compose exec atom php -d memory_limit=-1 symfony tools:purge --demo
+
+
+Debugging and troubleshooting
+-----------------------------
+
+These commands and scripts can help with some common issues during
+development.
+
+If the Elasticsearch container keeps shutting down
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If your Elasticsearch container constantly shuts down within a few
+seconds of starting it, you may need to ``increase vm.max_map_count`` to
+262144 or higher in your host system. More information is available
+`here <https://github.com/artefactual-labs/am/tree/master/compose#elasticsearch-container>`__.
+
+Run
+
+.. code:: bash
+
+   sudo sysctl -w vm.max_map_count=262144
+
+before starting the ES docker container.
+
+Enable symfony debugging panel
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As of AtoM 2.10.1, you can run the symfony debugging panel by opening
+``index.php`` in AtoM root directory and change (Line 5) from:
+
+.. code:: php
+
+   $configuration = ProjectConfiguration::getApplicationConfiguration('qubit', 'prod', false);
+
+to
+
+.. code:: php
+
+   $configuration = ProjectConfiguration::getApplicationConfiguration('qubit', 'dev', false);
+
+This will enable the symfony debugging panel in AtoM. Remember to change
+it back before you commit any code!
+
+Also note that changing the last parameter to ‘true’ enables php
+warnings:
+
+.. code:: php
+
+   $configuration = ProjectConfiguration::getApplicationConfiguration('qubit', 'dev', true);
+
+Note: this debugging panel was broken between AtoM v2.8 and v2.10
+
+AtoM PHP logger
+---------------
+
+This function allows printing log messages directly into Docker container logs,
+usually into `atom` or `atom_worker` container logs. This can be added to any class,
+or add to `config/ProjectConfiguration.class.php` for global use.
+
+.. code:: php
+
+   function log_docker($message, $value = "")
+   {
+       if (is_string($value)) {
+           $val = $value."\\n";
+       } else {
+           $val = json_encode($value)."\\n";
+       }
+
+       if ($value != "" && $message != "") {
+           $message = $message.": ";
+       }
+
+       file_put_contents('php://stdout', ($message));
+       file_put_contents('php://stdout', ($val));
+   }
+
 Connect to AtoM
 ===============
 

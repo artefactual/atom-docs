@@ -150,14 +150,200 @@ check the `plugins/arDominionB5Plugin` for the required file, and only copy from
 copied should have the same file path with `plugin/arCustomThemeB5Plugin` replacing
 `apps/qubit` or `plugins/arDominionB5Plugin`.
 
+========================================
+Common theme customization code snippets
+========================================
+
+Splash on homepage
+------------------
+
+plugins/arCustomB5Plugin/modules/staticpage/templates/homeSuccess.php:
+
+.. code-block:: bash
+
+   $ <?php decorate_with('layout_homepage'); ?>
+
+
+plugins/arCustomB5Plugin/templates/layout_homepage.php:
+
+.. code-block:: bash
+
+   $ <?php echo get_partial('layout_start'); ?>
+
+
+Homepage carousel
+-----------------
+
+File structure:
+
+.. code-block:: bash
+
+  plugins/arXyzB5Plugin/
+  ├── carousel
+  │   ├── config.yml                      # sets captions for each image
+  │   ├── image01.jpg
+  │   ├── image02.jpg
+  │   └── image03.jpg
+  ├── js
+  │   ├── carousel.js                     # use as template
+  │   └── main.js                         # import
+  └── modules
+      └── staticpage
+          ├── actions
+          │   └── homeAction.class.php    # calls and sets $carouselItems array from /carousel directory
+          └── templates
+              └── homeSuccess.php
+
+Carousel `homeAction.class.php` snippet:
+
+.. code-block:: bash
+
+  class StaticPageHomeAction extends StaticPageIndexAction
+  {
+    public function execute($request)
+    {
+      parent::execute($request);
+
+      if (null === $this->carouselItems) {
+        $this->carouselItems = sfYaml::load('plugins/arXyzB5Plugin/carousel/config.yml');
+      }
+
+      $culture = $this->context->user->getCulture();
+      if (!in_array($culture, ['en', 'fr'])) {
+        $culture = 'en';
+      }
+      $this->culture = $culture;
+    }
+  }
+
+Carousel `homeSuccess.php` div snippet:
+
+.. code-block:: bash
+
+ <div id="carousel" class="carousel carousel-fade slide">
+    <div class="carousel-inner">
+      <?php foreach ($carouselItems as $key => $item) { ?>
+        <div class="item<?php if (0 == $n++) echo " active" ?>">
+          <?php echo image_tag('/plugins/arXyzB5Plugin/carousel/' . $key) ?>
+          <?php if ($item['fr'] && $sf_user->getCulture() == 'fr') { ?>
+            <div class="carousel-caption">
+              <p>
+                <?php echo $item['fr'] ?>
+              </p>
+            </div>
+          <?php } else { ?>
+            <div class="carousel-caption">
+              <p>
+                <?php echo $item['en'] ?>
+              </p>
+            </div>
+          <?php } ?>
+        </div>
+      <?php } ?>
+    </div>
+  </div>
+
+Carousel js snippet:
+
+.. code-block:: bash
+
+  (($) => {
+    "use strict";
+
+    $(() => {
+      var node = $("#carousel");
+
+      $(node)
+        .imagesLoaded()
+        .always(() => {
+          $(".carousel-inner").slick({
+            autoplay: true,
+            autoplaySpeed: 5000,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            draggable: false,
+            swipe: false,
+            arrows: true,
+            dots: false,
+          });
+  })(jQuery);
+
+To execute the custom carousel script, run the following command:
+
+.. code-block:: bash
+
+  $ npm run build
+
+
+Newest Additions component
+--------------------------
+
+`modules/default/templates/_newest.php` template snippet:
+
+.. code-block:: bash
+
+  <section id="newest-additions" class="card mb-3">
+    <h2 class="h5 p-3 mb-0">
+      <?php echo __('Newest additions'); ?>
+    </h2>
+    <div class="list-group list-group-flush">
+  <?php foreach ($newestAdditions as $item) { ?>
+      <?php $object = QubitObject::getById($item); ?>
+        <a
+          class="list-group-item list-group-item-action d-flex justify-content-between align-items-center text-break"
+          href="<?php echo url_for([$object]); ?>">
+          <?php echo render_title(esc_entities($object->__toString())) ?>
+        </a>
+      <?php } ?>
+    </div>
+  </section>
+
+`modules/default/actions/newestComponent.class.php` action code snippet:
+
+.. code-block:: bash
+
+  class DefaultNewestComponent extends sfComponent
+  {
+      private function getNewestAdditions()
+      {
+          $rootIds = array(QubitInformationObject::ROOT_ID, QubitRepository::ROOT_ID, QubitActor::ROOT_ID);
+
+          $sql = 'SELECT o.id FROM object o LEFT JOIN status s ON o.id = s.object_id WHERE o.class_name IN ("QubitInformationObject", "QubitRepository", "QubitActor") AND o.id NOT IN ( ' . implode(',', $rootIds) . ') AND s.status_id <> ? ORDER BY created_at DESC LIMIT 10';
+
+          $rows = QubitPdo::fetchAll($sql, array(QubitTerm::PUBLICATION_STATUS_DRAFT_ID));
+          return array_map(function($x) { return $x->id; }, $rows);
+      }
+
+      public function execute($request)
+      {
+          $this->newestAdditions = $this->getNewestAdditions();
+
+          if (0 == count($this->newestAdditions)) {
+              return sfView::NONE;
+          }
+      }
+  }
+
+`modules/staticpage/templates/homeSuccess.php` homeSuccess snippet:
+
+.. code-block:: bash
+
+  <?php echo get_component('default', 'newest', [
+      'limit' => 10,
+      'sf_cache_key' => $sf_user->getCulture(),
+  ]); ?>
+
+Rebuild theme assets
+--------------------
+
+Once you've made all the required changes to your theme, build the theme assets,
+and you should now be able to use your new theme!
+
 .. code-block:: bash
 
    cd ~/atom
    npm install
    npm run build
-
-Once you've made all the required changes to your theme, build the theme assets,
-and you should now be able to use your new theme!
 
 .. TIP::
 
