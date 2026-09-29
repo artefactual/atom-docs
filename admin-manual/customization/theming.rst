@@ -54,15 +54,14 @@ don't have to get your hands too dirty. It's in the details where most of the
 complexities are found. Dominion is the result of a cyclic process of testing
 and refining by a large community of users, try not to underestimate that!
 
-AtoM bundles three themes: arDominionPlugin, arDominionB5Plugin and arArchivesCanadaPlugin.
-Their names follow the naming convention of Symfony 1.x plugins, because that is
+AtoM bundles 1 theme: arDominionB5Plugin.
+The name follows the naming convention of Symfony 1.x plugins, because that is
 how themes are implemented in AtoM. You may want to read more about Symfony plugins
 later following `one of their guides <http://symfony.com/legacy/doc/gentle-introduction/1_4/en/17-Extending-Symfony#chapter_17_plug_ins>`_.
 
 arDominionB5Plugin is the default theme, i.e. the theme that will be used in a
-fresh installation. arArchivesCanadaPlugin was developed as an extension of the
-former and the following instructions will show you how to create your custom
-theme as we did with arArchivesCanadaPlugin.
+fresh installation. The following instructions will show you how to create your
+custom theme as an extension of the default theme, arDominionB5Plugin.
 
 .. TIP::
 

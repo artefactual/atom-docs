@@ -18,11 +18,10 @@ This section describes how to change the theme, :term:`site title`,
 Change theme
 ============
 
-AtoM 2.7 and up ships with 3 themes: the default :term:`Dominion theme`
-(arDominionB5Plugin) and the Archives Canada theme (arArchivesCanadaPlugin).
+AtoM 2.10 and up ships with 1 theme: the default :term:`Dominion theme`
+(arDominionB5Plugin).
 
-The Dominion themes are grey, white and black with the AtoM logo. The Archives
-Canada theme is yellow, blue and white with the ArchivesCanada logo (see images
+The Dominion themes are grey, white and black with the AtoM logo (see images
 below).
 
 The default version of the Dominion theme is based on Bootstrap 5 (“BS5”), a
@@ -42,14 +41,6 @@ theme, we recommend upgrading that theme to use BS5.
    :alt: Dominion theme homepage
 
    Dominion Canada theme homepage
-
-.. figure:: images/archives-canada-theme.*
-   :align: center
-   :figwidth: 60%
-   :width: 100%
-   :alt: Archives Canada theme homepage
-
-   Archives Canada theme homepage
 
 .. |gears| image:: images/gears.png
    :height: 18
