@@ -387,46 +387,6 @@ Rebuild theme assets:
    :ref:`clear the Symfony cache <maintenance-clear-cache>` and your
    web browser's cache as well!
 
-
-Recompiling after making modifications
-======================================
-
-After making any necessary updates to your custom theme, you should rebuild
-the CSS for the custom theme plugin, using the ``make`` command. Here is an
-example of rebuilding the CSS for the ArchivesCanada theme - you can swap in
-the name of your plugin:
-
-.. code-block:: bash
-
-   make -C plugins/arArchivesCanadaPlugin
-
-You will also want to clear the application cache, and restart PHP-FPM.
-
-To clear the application cache:
-
-.. code-block:: bash
-
-   php symfony cc
-
-For more information, see: :ref:`maintenance-clear-cache`.
-
-To restart PHP-FPM:
-
-.. code-block:: bash
-
-   sudo systemctl restart php8.3-fpm
-
-If you are using Memcached with AtoM, you may also want to restart it:
-
-.. code-block:: bash
-
-   sudo systemctl restart memcached
-
-.. TIP::
-
-   If you are still not seeing your changes take effect, remember to clear your
-   web browser's cache as well!
-
 Start using the software!
 =========================
 
