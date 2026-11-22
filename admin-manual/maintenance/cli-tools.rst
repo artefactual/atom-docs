@@ -2121,7 +2121,7 @@ The task will have the following effects on HTML elements:
   used in earlier versions of AtoM to structure physical description EAD
   import data) will be removed (the text they wrap will be preserved).
 * Paragraph tags (``<p>``) will be removed, and substituted with 2 line breaks
-  to preserve spacing (i.e. ``/n/n``)
+  to preserve spacing (i.e. ``\n\n``)
 * HTML escape characters (for example, ``&quot;``, ``&amp;``, ``&lt;``) will
   will be replaced with the character they represent (e.g. ``"``, ``&``,
   ``<``)

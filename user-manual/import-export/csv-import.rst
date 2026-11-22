@@ -1262,7 +1262,7 @@ identify matches, see below, :ref:`csv-descriptions-match-criteria`.
    user interface:
 
    * CSV file is saved with `UTF-8`_ character encoding
-   * CSV file uses Linux/Unix style end-of-line characters (``/n``)
+   * CSV file uses Linux/Unix style end-of-line characters (``\n``)
    * All :term:`parent <parent record>` descriptions appear in rows **above**
      their children
    * All new parent records have a *legacyID* value, and all
@@ -1764,7 +1764,7 @@ Importing updates via the user interface
    descriptions updates via the user interface:
 
    * CSV file is saved with `UTF-8`_ character encoding
-   * CSV file uses Linux/Unix style end-of-line characters (``/n``)
+   * CSV file uses Linux/Unix style end-of-line characters (``\n``)
    * All :term:`parent <parent record>` descriptions appear in rows **above**
      their children
    * All new parent records have a *legacyID* value, and all
@@ -2001,7 +2001,7 @@ template file is available in the AtoM source code
      CSV import in the :term:`user interface` - events import will **not** work
      with descriptions created in the user interface.
    * The CSV file is saved with `UTF-8`_ character encoding
-   * The CSV file uses Linux/Unix style end-of-line characters (``/n``)
+   * The CSV file uses Linux/Unix style end-of-line characters (``\n``)
    * All *legacyID* values entered correspond to the *legacyID* values of
      their corresponding archival descriptions
    * The events CSV file should be renamed to match the ``source_name`` value
@@ -2226,7 +2226,7 @@ Import new archival institutions via CSV
    importantly, make sure your:
 
    * CSV file is saved with `UTF-8`_ character encoding
-   * CSV file uses Linux/Unix style end-of-line characters (``/n``)
+   * CSV file uses Linux/Unix style end-of-line characters (``\n``)
    * You have prepared your repository CSV data following the recommendations
      in the section above, :ref:`csv-import-repositories`.
 
@@ -2495,7 +2495,7 @@ Importing repository updates in the user interface
    importantly, make sure your:
 
    * CSV file is saved with `UTF-8`_ character encoding
-   * CSV file uses Linux/Unix style end-of-line characters (``/n``)
+   * CSV file uses Linux/Unix style end-of-line characters (``\n``)
    * You have prepared your repository CSV data following the recommendations
      in the section above, :ref:`csv-import-repositories`
    * You have confirmed that the authorized form of name of the repository
@@ -2779,7 +2779,7 @@ Import new authority records via CSV
    CSV import will work. Most importantly, make sure:
 
    * Your CSV file is saved with `UTF-8`_ character encoding
-   * Your CSV file uses Linux/Unix style end-of-line characters (``/n``)
+   * Your CSV file uses Linux/Unix style end-of-line characters (``\n``)
    * If you intend to import archival descriptions as well and hope to link
      them to your authority records, make sure you are importing the authority
      records CSV **first**, that the authorized form of name used in the
@@ -3121,7 +3121,7 @@ Updating authority records via import in the user interface
    importantly, make sure your:
 
    * CSV file is saved with `UTF-8`_ character encoding
-   * CSV file uses Linux/Unix style end-of-line characters (``/n``)
+   * CSV file uses Linux/Unix style end-of-line characters (``\n``)
    * You have prepared your authority record CSV data following the
      recommendations in the section above, :ref:`csv-import-authority-records`
    * You have confirmed that the authorized form of name of the authority
@@ -3397,7 +3397,7 @@ Import new authority record relationships via CSV
    CSV import will work. Most importantly, make sure:
 
    * Your CSV file is saved with `UTF-8`_ character encoding
-   * Your CSV file uses Linux/Unix style end-of-line characters (``/n``)
+   * Your CSV file uses Linux/Unix style end-of-line characters (``\n``)
    * AtoM already contains the authority records you intend to establish a
      relationship between and your CSV file matches their "Authorized Form Of
      Name" values exactly.
@@ -3745,7 +3745,7 @@ Create new accession records via CSV import
    importantly, make sure your:
 
    * CSV file is saved with `UTF-8`_ character encoding
-   * CSV file uses Linux/Unix style end-of-line characters (``/n``)
+   * CSV file uses Linux/Unix style end-of-line characters (``\n``)
    * You have prepared your CSV data in accordance with the accession CSV
      guidance provided above - :ref:`csv-import-accessions`.
 
