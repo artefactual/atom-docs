@@ -930,7 +930,7 @@ Examples are also stored directly in the AtoM codebase - see:
    * You are using the correct CSV template for both the type of record you
      want to import, and for the version of AtoM you have installed. You can
    * CSV file is saved with UTF-8 encodings
-   * CSV file uses Linux/Unix style end-of-line characters (``/n``)
+   * CSV file uses Linux/Unix style end-of-line characters (``\n``)
    * All :term:`parent <parent record>` descriptions appear in rows **above**
      their children if you are importing hierarchical data (such as
      descriptions)
@@ -2601,7 +2601,7 @@ omitted:
    CSV is to ensure the following:
 
    * The CSV file is saved with UTF-8 encodings
-   * The CSV file uses Linux/Unix style end-of-line characters (``/n``)
+   * The CSV file uses Linux/Unix style end-of-line characters (``\n``)
 
    Additionally, AtoM also has a task that can be used to double-check your
    load CSV against the :term:`digital object` directory, looking for any
