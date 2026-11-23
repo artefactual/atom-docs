@@ -507,7 +507,9 @@ file :file:`/usr/lib/systemd/system/atom-worker.service`:
 
    [Unit]
    Description=AtoM worker
-   After=network.target
+   # Start only once MySQL and Gearman are up.
+   Wants=mysql.service gearman-job-server.service
+   After=network.target mysql.service gearman-job-server.service
    # High interval and low restart limit to increase the possibility
    # of hitting the rate limits in long running recurrent jobs.
    StartLimitIntervalSec=24h
