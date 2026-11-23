@@ -208,6 +208,49 @@ need to clear it before successfully restarting:
    Job for atom-worker.service failed.
    See "systemctl status atom-worker.service" and "journalctl -xe" for details.
 
+.. _maintenance-atom-worker-start-order:
+
+Starting the atom-worker after MySQL and Gearman
+------------------------------------------------
+
+If the ``atom-worker`` starts before MySQL and Gearman are ready, its first
+start fails and systemd tries again 30 seconds later. Each failed start counts
+towards the :ref:`start rate limit <maintenance-atom-worker-limit>`. A reboot
+can use 2 of the 3 allowed starts, and a package upgrade that restarts MySQL and
+Gearman soon afterwards can leave the worker stopped until the fail counter is
+reset.
+
+New installations following the Ubuntu
+:ref:`installation instructions <installation-ubuntu-serve-workers>` already
+set this start order. To add it to an existing installation, create a systemd
+override:
+
+.. code-block:: bash
+
+   sudo systemctl edit atom-worker
+
+Add the following lines in the editor, then save and exit:
+
+.. code-block:: none
+
+   [Unit]
+   # Start only once MySQL and Gearman are up.
+   Wants=mysql.service gearman-job-server.service
+   After=mysql.service gearman-job-server.service
+
+Clear any failed starts and restart the worker:
+
+.. code-block:: bash
+
+   sudo systemctl reset-failed atom-worker
+   sudo systemctl restart atom-worker
+
+.. NOTE::
+
+   These service names are the Ubuntu defaults. If MySQL runs on another server,
+   remove ``mysql.service`` from both lines. If Gearman runs on another server,
+   remove ``gearman-job-server.service`` from both lines.
+
 .. _maintenance-atom-worker-journal:
 
 Atom-worker journal
